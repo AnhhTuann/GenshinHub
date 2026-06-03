@@ -3,23 +3,29 @@ import { CharacterData } from '@/types/character';
 
 export default function CharacterCard({ character }: { character: CharacterData }) {
   const is5Star = character.rarity === 5;
-  const bgGradient = is5Star ? 'from-yellow-600/40 to-yellow-900/60 border-yellow-500/50' : 'from-purple-500/40 to-purple-900/60 border-purple-500/50';
+  
+  // Style viền và gradient tinh tế hơn, thêm shadow glow khi hover
+  const themeStyle = is5Star 
+    ? 'border-yellow-600/30 from-yellow-900/10 to-yellow-800/40 group-hover:border-yellow-400/80 group-hover:shadow-[0_0_20px_rgba(250,204,21,0.25)]' 
+    : 'border-purple-600/30 from-purple-900/10 to-purple-800/40 group-hover:border-purple-400/80 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]';
 
   return (
-    <Link href={`/characters/${character.id}`}>
-      <div className={`relative flex flex-col justify-end h-40 rounded-lg border-2 bg-gradient-to-t ${bgGradient} hover:scale-105 transition-all duration-200 overflow-hidden cursor-pointer`}>
+    <Link className="block group" href={`/characters/${character.id}`}>
+      <div className={`relative flex flex-col justify-end h-44 rounded-xl border bg-gradient-to-b ${themeStyle} transition-all duration-300 overflow-hidden`}>
+        
+        {/* Top-left Element icon */}
+        <div className="absolute top-2 left-2 z-10 w-7 h-7 drop-shadow-md">
+           <img src={`/elements/${character.element.toLowerCase()}.png`} alt={character.element} className="w-full h-full object-contain" onError={(e) => { (e.target as HTMLImageElement).src = 'https://placehold.co/24x24/333/FFF?text='+character.element.charAt(0); }} />
+        </div>
+
         <div className="absolute inset-0 flex items-center justify-center -z-10">
           <div 
-            className="w-full h-full opacity-90 bg-cover bg-center bg-no-repeat" 
+            className="w-full h-full opacity-90 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105" 
             style={{ backgroundImage: `url(${character.avatarUrl})` }}
           />
         </div>
-        <div className="absolute top-2 left-2 flex flex-col gap-1">
-          <span className="w-6 h-6 bg-black/70 rounded-full border border-gray-500 flex items-center justify-center text-xs font-bold text-white">
-            {character.element.charAt(0)}
-          </span>
-        </div>
-        <div className="w-full bg-[#1c1c22]/90 backdrop-blur-sm text-gray-100 text-center py-1.5 text-sm font-semibold truncate px-2 border-t border-white/10">
+        
+        <div className="w-full bg-[#1c1c22]/90 backdrop-blur-sm text-gray-100 text-center py-1.5 text-sm font-semibold truncate px-2 border-t border-white/10 group-hover:text-white transition-colors">
           {character.name}
         </div>
       </div>

@@ -5,18 +5,27 @@ import { CharacterData } from '@/types/character';
 export default async function Home() {
   const data = await fetchGraphQL(GET_CHARACTERS);
   const characters: CharacterData[] = data.characters;
+
   return (
-    <main className="p-4 md:p-8 font-sans">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="mb-8 border-b border-gray-800 pb-5 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+    <main className="relative min-h-screen bg-[#0b0b0e] text-gray-200 p-4 md:p-8 font-sans overflow-hidden">
+      
+      <div className="absolute top-[-10%] left-[50%] translate-x-[-50%] w-[800px] h-[400px] bg-yellow-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        
+        <div className="mb-8 border-b border-gray-800/60 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-2">Teyvat Database</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 mb-2 drop-shadow-sm">
+              Teyvat Database
+            </h1>
             <p className="text-gray-400 text-lg">Khám phá thông tin và cách build đồ chuẩn nhất.</p>
           </div>
-          <a href="/showcase" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition shadow-lg shadow-blue-500/20">
-            Tra cứu UID Showcase
-          </a>
+          
+          <button className="flex items-center gap-2 px-6 py-2.5 bg-[#1c1c22]/80 backdrop-blur-sm text-yellow-500 font-semibold rounded-lg border border-yellow-500/40 hover:bg-yellow-500/10 hover:border-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.25)] transition-all duration-300">
+            <span>🔍</span> Tra cứu UID Showcase
+          </button>
         </div>
+
         <CharacterGallery initialCharacters={characters}/>
       </div>
     </main>

@@ -77,7 +77,9 @@ async function main() {
       await prisma.character.create({
         data: {
           id: char.id, name: char.name, title: char.title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: char.region, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,
-          description: char.description, baseStats: char.baseStats, fandomUrl: char.fandomUrl,
+          description: char.description, 
+          baseHp: char.baseStats.hp, baseAtk: char.baseStats.atk, baseDef: char.baseStats.def, 
+          fandomUrl: char.fandomUrl,
           bestWeapons: { create: char.bestWeapons },
           bestArtifacts: { create: char.bestArtifacts }
         }

@@ -24,8 +24,5 @@ export const resolvers = {
         return null;
       }
     }
-  },
-  Character: {
-    baseStats: (parent: any) => parent.baseStats ? JSON.stringify(parent.baseStats) : null,
   }
 };

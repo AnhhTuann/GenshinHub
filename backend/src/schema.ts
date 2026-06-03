@@ -4,7 +4,7 @@ export const typeDefs = `#graphql
   type Character { 
     id: String!, name: String!, title: String!, rarity: Int!, element: String!, weapon: String!, region: String!, 
     avatarUrl: String!, splashArtUrl: String!, 
-    description: String, baseStats: String, fandomUrl: String,
+    description: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
     bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, bestTeams: [String!]! 
   }
   

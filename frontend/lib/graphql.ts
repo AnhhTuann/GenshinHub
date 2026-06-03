@@ -11,5 +11,5 @@ export async function fetchGraphQL(query: string, variables = {}) {
 }
 
 export const GET_CHARACTERS = `query GetCharacters { characters { id name element rarity avatarUrl weapon } }`;
-export const GET_CHARACTER_BY_ID = `query GetCharacterById($id: String!) { character(id: $id) { id name title rarity element weapon region avatarUrl splashArtUrl description baseStats fandomUrl talentPriority bestTeams bestWeapons { id name rank isF2P iconUrl subStat passiveDesc refinement } bestArtifacts { setName pieces sands goblet circlet subStatsPriority } } }`;
+export const GET_CHARACTER_BY_ID = `query GetCharacterById($id: String!) { character(id: $id) { id name title rarity element weapon region avatarUrl splashArtUrl description baseHp baseAtk baseDef fandomUrl talentPriority bestTeams bestWeapons { id name rank isF2P iconUrl subStat passiveDesc refinement } bestArtifacts { setName pieces sands goblet circlet subStatsPriority } } }`;
 export const GET_SHOWCASE = `query GetShowcase($uid: String!) { showcase(uid: $uid) { uid nickname level avatarUrl characters } }`;

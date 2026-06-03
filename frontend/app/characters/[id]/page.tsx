@@ -20,8 +20,6 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   const themeColor = is5Star ? 'text-yellow-500' : 'text-purple-400';
   const borderTheme = is5Star ? 'border-yellow-500/50' : 'border-purple-500/50';
   const gradientTheme = is5Star ? 'from-yellow-900/40' : 'from-purple-900/40';
-  
-  const parsedStats = character.baseStats ? JSON.parse(character.baseStats) : null;
 
   return (
     <main className="min-h-screen bg-[#0b0b0e] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
@@ -97,15 +95,15 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               <h4 className="text-white font-bold mb-4">Chỉ Số Cơ Bản (Lv. 90)</h4>
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
-                  <span className="text-green-400 font-black text-xl mb-1">{parsedStats?.hp?.toLocaleString() || '-'}</span>
+                  <span className="text-green-400 font-black text-xl mb-1">{character.baseHp?.toLocaleString()}</span>
                   <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base HP</span>
                 </div>
                 <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
-                  <span className="text-red-400 font-black text-xl mb-1">{parsedStats?.atk?.toLocaleString() || '-'}</span>
+                  <span className="text-red-400 font-black text-xl mb-1">{character.baseAtk?.toLocaleString()}</span>
                   <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base ATK</span>
                 </div>
                 <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
-                  <span className="text-blue-400 font-black text-xl mb-1">{parsedStats?.def?.toLocaleString() || '-'}</span>
+                  <span className="text-blue-400 font-black text-xl mb-1">{character.baseDef?.toLocaleString()}</span>
                   <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base DEF</span>
                 </div>
               </div>

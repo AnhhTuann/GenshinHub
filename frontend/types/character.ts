@@ -16,5 +16,9 @@ export interface CharacterData {
   id: string; name: string; title: string; rarity: Rarity; element: Element; weapon: WeaponType; region: Region;
   avatarUrl: string; splashArtUrl: string; bestWeapons: WeaponBuild[]; bestArtifacts: ArtifactBuild[];
   talentPriority: string[]; bestTeams: string[];
-  description?: string; baseStats?: string; fandomUrl?: string;
+  description: string;
+  baseHp: number;
+  baseAtk: number;
+  baseDef: number;
+  fandomUrl?: string;
 }

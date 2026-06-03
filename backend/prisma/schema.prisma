@@ -18,8 +18,10 @@ model Character {
   splashArtUrl   String
   
   // Extended data
-  description    String?
-  baseStats      Json?
+  description    String
+  baseHp         Int
+  baseAtk        Int
+  baseDef        Int
   fandomUrl      String?
 
   bestWeapons    CharacterWeapon[]

@@ -63,7 +63,10 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
       {/* Grid Nhân vật */}
       {filteredCharacters.length > 0 ? (
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-5">
-          {filteredCharacters.map((char) => <CharacterCard character={char} key={char.id}/>)}
+          {filteredCharacters.map((char) => (
+            // FIX LỖI Ở ĐÂY: Dùng ngoặc nhọn thuần túy, tuyệt đối không có ngoặc kép
+            <CharacterCard key={char.id} character={char} />
+          ))}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-24 text-gray-500 bg-[#15151a]/50 rounded-2xl border border-gray-800/50">

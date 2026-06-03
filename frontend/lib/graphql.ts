@@ -1,7 +1,12 @@
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
 
 export async function fetchGraphQL(query: string, variables = {}) {
-  const res = await fetch(GRAPHQL_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query, variables }), next: { revalidate: 60 } });
+  const res = await fetch(GRAPHQL_ENDPOINT, { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' }, 
+    body: JSON.stringify({ query, variables }), 
+    cache: 'no-store' 
+  });
   const json = await res.json();
   if (json.errors) {
     console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));

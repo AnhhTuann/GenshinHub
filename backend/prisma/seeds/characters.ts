@@ -235,6 +235,10 @@ export async function seedCharacters(prisma: PrismaClient) {
     }
 
     try {
+      await prisma.characterWeapon.deleteMany({ where: { characterId: char.id } });
+      await prisma.characterArtifact.deleteMany({ where: { characterId: char.id } });
+      await prisma.character.delete({ where: { id: char.id } }).catch(() => {});
+      
       await prisma.character.create({
         data: {
           id: char.id, name: char.name, title: title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: char.region, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,

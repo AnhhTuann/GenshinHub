@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import axios from 'axios';
 const prisma = new PrismaClient();
 
 // Hàm chuẩn hóa ID
@@ -71,14 +72,84 @@ async function main() {
   await prisma.characterArtifact.deleteMany({});
   await prisma.character.deleteMany({});
   
+  console.log(`Bắt đầu lấy dữ liệu từ api.ambr.top...`);
+  const ambrMap = new Map();
+  try {
+    // Lấy list Avatar tiếng Anh để map tên dễ dàng hơn
+    const { data: enData } = await axios.get('https://api.ambr.top/v2/en/avatar');
+    const items = enData?.data?.items || {};
+    
+    for (const key in items) {
+      const name = items[key].name;
+      // Dùng tên tiếng Anh viết thường để match với finalData
+      ambrMap.set(name.toLowerCase(), key);
+    }
+    console.log(`Đã tải danh sách Ambr: ${ambrMap.size} nhân vật.`);
+  } catch (e: any) {
+    console.log(`Lỗi không lấy được list Ambr: ${e.message}`);
+  }
+
   console.log(`Bắt đầu seed dữ liệu mới (${finalData.length} nhân vật)...`);
   for (const char of finalData) {
+    let description = char.description;
+    let baseHp = char.baseStats.hp;
+    let baseAtk = char.baseStats.atk;
+    let baseDef = char.baseStats.def;
+    let title = char.title;
+
+    try {
+      // Map tên của mình với Ambr
+      // Một số nhân vật có tên khác biệt giữa các API, ta có thể hardcode một chút hoặc dùng mặc định
+      let lookupName = char.name.toLowerCase();
+      if (lookupName === "raiden shogun") lookupName = "raiden shogun";
+      else if (lookupName === "tartaglia") lookupName = "tartaglia";
+      else if (lookupName === "traveler") lookupName = "traveler (anemo)"; // Ví dụ
+      
+      const ambrId = ambrMap.get(lookupName);
+      
+      if (ambrId) {
+        // Lấy chi tiết bằng tiếng Việt
+        const { data: detailData } = await axios.get(`https://api.ambr.top/v2/vi/avatar/${ambrId}`);
+        const detail = detailData?.data;
+        
+        if (detail) {
+           // Cập nhật Danh xưng (Title) tiếng Việt
+           if (detail.fetter && detail.fetter.title) {
+             title = detail.fetter.title;
+           }
+           
+           // Lấy cốt truyện
+           if (detail.fetter && detail.fetter.story) {
+             const storyObj = detail.fetter.story[0] || detail.fetter.story[1];
+             if (storyObj && storyObj.context) {
+               description = storyObj.context.replace(/\\n/g, '\n');
+             }
+           }
+           
+           // Lấy chỉ số cấp 90
+           if (detail.upgrade && detail.upgrade.promote) {
+             // Promote cuối cùng thường là level 90
+             const maxLevel = detail.upgrade.promote[detail.upgrade.promote.length - 1];
+             if (maxLevel && maxLevel.addProps) {
+               const props = maxLevel.addProps;
+               if (props.FIGHT_PROP_BASE_HP) baseHp = Math.round(props.FIGHT_PROP_BASE_HP);
+               if (props.FIGHT_PROP_BASE_ATTACK) baseAtk = Math.round(props.FIGHT_PROP_BASE_ATTACK);
+               if (props.FIGHT_PROP_BASE_DEFENSE) baseDef = Math.round(props.FIGHT_PROP_BASE_DEFENSE);
+             }
+           }
+        }
+        console.log(`Đã map thành công data Ambr cho ${char.name}`);
+      }
+    } catch (e: any) {
+       console.log(`Bỏ qua Ambr fetch cho ${char.name}: ${e.message}`);
+    }
+
     try {
       await prisma.character.create({
         data: {
-          id: char.id, name: char.name, title: char.title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: char.region, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,
-          description: char.description, 
-          baseHp: char.baseStats.hp, baseAtk: char.baseStats.atk, baseDef: char.baseStats.def, 
+          id: char.id, name: char.name, title: title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: char.region, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,
+          description: description, 
+          baseHp: baseHp, baseAtk: baseAtk, baseDef: baseDef, 
           fandomUrl: char.fandomUrl,
           bestWeapons: { create: char.bestWeapons },
           bestArtifacts: { create: char.bestArtifacts }

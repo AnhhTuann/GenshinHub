@@ -39,23 +39,23 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
     notFound();
   }
 
-  const borderColor = character.rarity === 5 ? 'border-amber-500/30' : 'border-purple-500/30';
   const borderColorSolid = character.rarity === 5 ? 'border-amber-500' : 'border-purple-500';
+  const borderColor = character.rarity === 5 ? 'border-amber-500/30' : 'border-purple-500/30';
   const glowColor = character.rarity === 5 ? 'bg-amber-500/10' : 'bg-purple-500/10';
   const textColor = character.rarity === 5 ? 'text-amber-500' : 'text-purple-400';
   const gradientColor = character.rarity === 5 ? 'from-amber-500/20' : 'from-purple-500/20';
 
   return (
-    <div className="flex-1 flex overflow-hidden flex-col md:flex-row">
+    <div className="flex-1 flex overflow-hidden flex-col md:flex-row min-h-0 bg-zinc-950 text-zinc-100">
       {/* Sidebar Info */}
-      <aside className="w-full md:w-80 border-r border-zinc-800 p-6 flex flex-col gap-6 bg-zinc-950 shrink-0 overflow-y-auto md:overflow-visible">
+      <aside className="w-full md:w-80 border-r border-zinc-800 p-6 flex flex-col gap-6 bg-zinc-950 shrink-0 overflow-y-auto md:overflow-visible relative z-20">
         <Link href="/" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors w-fit">
           <ChevronLeft className="w-4 h-4" />
           Back to Characters
         </Link>
         
         <div className={`relative aspect-[3/4] rounded-2xl bg-zinc-900 border border-zinc-800 overflow-hidden group mt-2 shrink-0 md:shrink`}>
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10 w-full h-full pointer-events-none"></div>
           
           <div className={`absolute inset-0 ${glowColor} flex items-center justify-center`}>
             {character.splashArtUrl ? (
@@ -63,6 +63,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                 src={character.splashArtUrl} 
                 alt={`${character.name} Splash`} 
                 fill
+                sizes="(max-width: 768px) 100vw, 320px"
                 referrerPolicy="no-referrer"
                 className="object-cover opacity-60 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />
@@ -76,7 +77,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 z-20 relative">
           <div className="bg-zinc-900/50 p-3 rounded-xl border border-zinc-800">
             <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Element</div>
             <div className={`flex items-center gap-2 font-semibold ${textColor}`}>
@@ -86,18 +87,18 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
           </div>
           <div className="bg-zinc-900/50 p-3 rounded-xl border border-zinc-800">
             <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Weapon</div>
-            <div className="flex items-center gap-2 font-semibold">
+            <div className="flex items-center gap-2 font-semibold text-zinc-200">
               <WeaponIcon weapon={character.weapon} className="w-4 h-4 text-zinc-400" />
               {character.weapon}
             </div>
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 z-20 relative">
           <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Ascension Materials</div>
           <div className="flex flex-wrap gap-2">
             {character.ascensionMaterials.map((mat, i) => (
-              <div key={i} className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] text-center p-1 leading-none break-all" title={mat}>
+              <div key={i} className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] text-zinc-300 text-center p-1 leading-none break-all shadow-sm" title={mat}>
                 {mat.substring(0, 3).toUpperCase()}
               </div>
             ))}
@@ -105,21 +106,21 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
         </div>
         
         {character.baseStats && (
-          <div className="space-y-3 mt-auto">
+          <div className="space-y-3 mt-auto hidden md:block z-20 relative">
              <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Base Stats</div>
              <div className="bg-zinc-900/50 rounded-xl border border-zinc-800 p-3 text-xs space-y-2">
-               <div className="flex justify-between"><span className="text-zinc-400">HP</span><span className="font-mono">{character.baseStats.hp}</span></div>
-               <div className="flex justify-between"><span className="text-zinc-400">ATK</span><span className="font-mono">{character.baseStats.atk}</span></div>
-               <div className="flex justify-between"><span className="text-zinc-400">DEF</span><span className="font-mono">{character.baseStats.def}</span></div>
+               <div className="flex justify-between"><span className="text-zinc-400">HP</span><span className="font-mono text-zinc-200">{character.baseStats.hp}</span></div>
+               <div className="flex justify-between"><span className="text-zinc-400">ATK</span><span className="font-mono text-zinc-200">{character.baseStats.atk}</span></div>
+               <div className="flex justify-between"><span className="text-zinc-400">DEF</span><span className="font-mono text-zinc-200">{character.baseStats.def}</span></div>
              </div>
           </div>
         )}
       </aside>
 
       {/* Build Guide */}
-      <main className="flex-1 p-4 md:p-8 overflow-y-auto">
+      <main className="flex-1 p-4 md:p-8 overflow-y-auto bg-zinc-950/50">
         <div className="max-w-5xl mx-auto h-full">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 h-full">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 h-full pb-10">
             
             {/* Column 1: Weapons & Artifacts */}
             <div className="space-y-12">
@@ -138,7 +139,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                           {isTop ? 'S+' : 'A'}
                         </div>
                         <div>
-                          <div className="font-bold flex items-center gap-2">
+                          <div className="font-bold flex items-center gap-2 text-zinc-100">
                             {wp.name}
                             <span className="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">R{wp.refinement}</span>
                           </div>
@@ -160,8 +161,8 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                   {character.best_artifacts.map((art, index) => (
                     <div key={index} className="p-6 rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 relative overflow-hidden">
                       {art.rank === 1 && <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl ${gradientColor} to-transparent`}></div>}
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className={`w-16 h-16 rounded-xl border flex items-center justify-center ${glowColor} ${borderColor}`}>
+                      <div className="flex items-center gap-4 mb-6 relative z-10">
+                        <div className={`w-16 h-16 shrink-0 rounded-xl border flex items-center justify-center ${glowColor} ${borderColor}`}>
                            <Leaf className={`w-8 h-8 ${textColor}`} />
                         </div>
                         <div>
@@ -171,18 +172,18 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                           <div className={`text-xs font-medium mt-1 ${textColor}`}>{art.notes}</div>
                         </div>
                       </div>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-3 gap-2 relative z-10">
                         <div className="bg-zinc-950 p-3 rounded-lg border border-zinc-800 text-center flex flex-col justify-center">
                           <div className="text-[9px] uppercase text-zinc-500 mb-1 tracking-widest">Sands</div>
-                          <div className="text-xs font-bold leading-tight">{character.stat_priorities.sands.join(' / ')}</div>
+                          <div className="text-xs font-bold leading-tight text-zinc-200">{character.stat_priorities.sands.join(' / ')}</div>
                         </div>
                         <div className="bg-zinc-950 p-3 rounded-lg border border-zinc-800 text-center flex flex-col justify-center">
                           <div className="text-[9px] uppercase text-zinc-500 mb-1 tracking-widest">Goblet</div>
-                          <div className="text-xs font-bold leading-tight">{character.stat_priorities.goblet.join(' / ')}</div>
+                          <div className="text-xs font-bold leading-tight text-zinc-200">{character.stat_priorities.goblet.join(' / ')}</div>
                         </div>
                         <div className="bg-zinc-950 p-3 rounded-lg border border-zinc-800 text-center flex flex-col justify-center">
                           <div className="text-[9px] uppercase text-zinc-500 mb-1 tracking-widest">Circlet</div>
-                          <div className="text-xs font-bold leading-tight">{character.stat_priorities.circlet.join(' / ')}</div>
+                          <div className="text-xs font-bold leading-tight text-zinc-200">{character.stat_priorities.circlet.join(' / ')}</div>
                         </div>
                       </div>
                     </div>
@@ -205,7 +206,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                     const priorityText = idx === 0 ? textColor : idx === 1 ? 'text-zinc-400' : 'text-zinc-500';
                     return (
                       <div key={idx} className={`flex justify-between items-center bg-zinc-900/30 p-3 px-5 rounded-full border border-zinc-800 ${priorityOpacity}`}>
-                        <span className="text-sm font-medium">{stat}</span>
+                        <span className="text-sm font-medium text-zinc-200">{stat}</span>
                         <span className={`text-xs font-bold ${priorityText} uppercase tracking-wider`}>Priority {idx + 1}</span>
                       </div>
                     )
@@ -227,12 +228,12 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                         {team.characters.map((teamChar, charIdx) => {
                           const isMain = teamChar === character.name;
                           return (
-                            <div key={charIdx} className={`w-14 h-14 rounded-xl bg-zinc-800 border ${isMain ? borderColor : 'border-zinc-700/50'} relative overflow-hidden group`}>
-                               {/* Dummy character team images */}
+                            <div key={charIdx} className={`w-14 h-14 shrink-0 rounded-xl bg-zinc-800 border ${isMain ? borderColorSolid : 'border-zinc-700/50'} relative overflow-hidden group`}>
                                <Image 
                                   src={`https://genshin.jmp.blue/characters/${teamChar === 'Raiden Shogun' ? 'raiden' : teamChar === 'Kujou Sara' ? 'sara' : teamChar === 'Kaedehara Kazuha' ? 'kazuha' : teamChar === 'Kuki Shinobu' ? 'kuki' : teamChar.toLowerCase().replace(' ', '-')}/icon-big`} 
                                   alt={teamChar}
                                   fill
+                                  sizes="(max-width: 768px) 56px, 56px"
                                   referrerPolicy="no-referrer"
                                   className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                                />
@@ -257,7 +258,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                   <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
                   Talent Priority
                 </h3>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   {character.talentsPriority.map((talent, idx) => (
                     <div key={idx} className="flex items-center gap-2">
                        <span className={`text-xs font-bold px-3 py-1.5 rounded-lg border border-zinc-800 ${idx === 0 ? 'bg-zinc-100 text-zinc-900 border-zinc-100' : 'bg-zinc-900 text-zinc-300'}`}>

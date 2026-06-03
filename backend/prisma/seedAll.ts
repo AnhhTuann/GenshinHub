@@ -31,12 +31,12 @@ function parseChar(dataStr: string) {
   };
   const avatarKey = enkaNameMap[name] || name;
 
-  // Skirk: Enka chưa có, dùng ảnh từ Fandom Wiki
+  // Skirk: Enka chưa có, dùng ảnh local (đã tải từ Fandom Wiki)
   const specialAvatarUrls: any = {
-    "Skirk": "https://static.wikia.nocookie.net/gensin-impact/images/0/04/Skirk_Item.png/revision/latest?cb=20250618025148"
+    "Skirk": "/characters/skirk.png"
   };
   const specialSplashUrls: any = {
-    "Skirk": "https://static.wikia.nocookie.net/gensin-impact/images/0/04/Skirk_Item.png/revision/latest?cb=20250618025148"
+    "Skirk": "/characters/skirk.png"
   };
 
   return {

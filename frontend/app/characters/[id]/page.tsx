@@ -61,16 +61,10 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0e] via-[#0b0b0e]/20 to-transparent z-10 w-full h-full pointer-events-none"></div>
           
           <div className={`absolute inset-0 ${glowColor} flex items-center justify-center`}>
-            {character.splashArtUrl ? (
-              <img 
-                src={character.splashArtUrl} 
-                alt={`${character.name} Splash`} 
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
-              />
-            ) : (
-              <div className={`w-32 h-32 rounded-full border-4 ${borderColor} animate-pulse`}></div>
-            )}
+            <div 
+              className="w-full h-full bg-cover bg-center bg-no-repeat opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+              style={{ backgroundImage: character.splashArtUrl ? `url(${character.splashArtUrl})` : 'none' }}
+            />
           </div>
           <div className="absolute bottom-4 left-4 z-20">
             <span className={`text-[10px] uppercase tracking-widest ${textColor} font-bold mb-1 block flex items-center gap-1.5`}>
@@ -266,11 +260,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                           <Link href={`/characters/${teamCharId}`} key={charIdx} className={`rounded-xl bg-[#1c1c22] border border-gray-700/50 overflow-hidden group relative aspect-square transition-all hover:scale-[1.02] hover:border-gray-500`}>
                               <div className="w-full h-full relative">
                                 {teamChar ? (
-                                  <img 
-                                    src={teamChar.avatarUrl} 
-                                    alt={teamChar.name}
-                                    referrerPolicy="no-referrer"
-                                    className="w-full h-full object-cover transition-opacity"
+                                  <div 
+                                    className="w-full h-full bg-cover bg-center bg-no-repeat transition-opacity"
+                                    style={{ backgroundImage: `url(${teamChar.avatarUrl})` }}
                                   />
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-zinc-600 font-mono text-xs uppercase text-center p-2 break-all shadow-inner">

@@ -27,9 +27,17 @@ function parseChar(dataStr: string) {
   const enkaNameMap: any = {
     "Raiden Shogun": "Shougun", "Ayato": "Ayato", "Heizou": "Heizo", "Itto": "Itto", "Kokomi": "Kokomi", "Shinobu": "Shinobu", "Yae Miko": "Yae", "Wanderer": "Wanderer", "Tartaglia": "Tartaglia",
     "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel", "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Alhaitham": "Alhatham", "Kirara": "Momoka", "Lyney": "Liney", "Lynette": "Linette",
-    "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy", "Hu Tao": "Hutao"
+    "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy", "Hu Tao": "Hutao", "Lan Yan": "Lanyan"
   };
   const avatarKey = enkaNameMap[name] || name;
+
+  // Skirk: Enka chưa có, dùng ảnh từ Fandom Wiki
+  const specialAvatarUrls: any = {
+    "Skirk": "https://static.wikia.nocookie.net/gensin-impact/images/0/04/Skirk_Item.png/revision/latest?cb=20250618025148"
+  };
+  const specialSplashUrls: any = {
+    "Skirk": "https://static.wikia.nocookie.net/gensin-impact/images/0/04/Skirk_Item.png/revision/latest?cb=20250618025148"
+  };
 
   return {
     id: toId(name),
@@ -38,8 +46,8 @@ function parseChar(dataStr: string) {
     rarity: parseInt(rarity) || 5,
     element: element,
     weapon: weapon,
-    avatarUrl: toAvatar(avatarKey),
-    splashArtUrl: toSplash(avatarKey),
+    avatarUrl: specialAvatarUrls[name] || toAvatar(avatarKey),
+    splashArtUrl: specialSplashUrls[name] || toSplash(avatarKey),
     talentPriority: ["Normal Attack", "Elemental Skill", "Elemental Burst"],
     bestTeams: ["bennett", "xingqiu", "zhongli"],
     lore: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,

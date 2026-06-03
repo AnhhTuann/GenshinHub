@@ -47,6 +47,20 @@ const metaBuilds = [
       { rank: 2, name: "Răng Nanh Rỉ Sét", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí 4 sao Event phiên bản 1.2, cực ngon khi vừa giải quyết độ khát Năng lượng vừa buff thẳng Tỷ lệ Bạo Kích cho E.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Magnum.png" },
       { rank: 3, name: "Ống Đồng Yêu Sinh Mệnh", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí thay thế hoàn hảo cho Răng Nanh Rỉ Sét, cày cuốc miễn phí từ hội Câu Cá Fontaine, giải quyết dứt điểm thiếu hụt Nạp.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Machination.png" }
     ]
+  },
+  {
+    characterId: "xinyan",
+    bestWeapons: [
+      { rank: 1, name: "Xích Giác Phá Thạch Đao", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Tăng mạnh phòng ngự và sát thương đòn đánh thường/trọng kích dựa trên Phòng Ngự, rất phù hợp với khiên của Xinyan.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Itadorimaru.png" },
+      { rank: 2, name: "Thiên Không Kiêu Ngạo", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Cung cấp Hiệu Quả Nạp lớn giúp Xinyan dễ dàng nạp đầy Nộ và tạo thêm kiếm khí chân không gây sát thương Vật Lý.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Dvalin.png" },
+      { rank: 3, name: "Ly Cốt Kiếm", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tích lũy sát thương tăng dần theo thời gian, đem lại lượng sát thương đầu ra cực kỳ ổn định nếu được bảo kê tốt.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Kione.png" },
+      { rank: 4, name: "Kiếm Vô Công", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Tăng mạnh Tấn Công% và cường hóa hiệu quả Khiên. Hoàn hảo khi kết hợp với nhân vật tạo khiên như Xinyan.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Kunwu.png" },
+      { rank: 5, name: "Tiếng Gió Trong Rừng Thông", subStat: "Sát Thương Vật Lý", isF2P: false, refinement: "R1", reason: "Tăng cực nhiều Sát Thương Vật Lý và tốc độ đánh cho cả đội, tối ưu chuỗi combo xoay trọng kích của Xinyan.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Widsith.png" },
+      { rank: 6, name: "Đường Cùng Của Sói", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Bơm lượng Tấn Công khổng lồ và tăng mạnh sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Wolfmound.png" },
+      { rank: 7, name: "Vua Biển Đút Túi", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí Event F2P cực tốt, tăng chỉ số Tấn Công và gia tăng trực tiếp lượng sát thương từ Kỹ Năng Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_MillenniaTuna.png" },
+      { rank: 8, name: "Tuyết Vùi Tinh Bạc", subStat: "Sát Thương Vật Lý", isF2P: true, refinement: "R5", reason: "Lựa chọn rèn F2P tuyệt vời cung cấp chỉ số Sát Thương Vật Lý và tạo thêm băng rơi gây sát thương diện rộng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Dragonfell.png" },
+      { rank: 9, name: "Mẫu Cổ Hoa", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn quốc dân dễ tiếp cận, tăng Tấn Công và có tỷ lệ gây thêm sát thương vật lý diện rộng mỗi 15s.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Proto.png" }
+    ]
   }
 ];
 const charactersData = [

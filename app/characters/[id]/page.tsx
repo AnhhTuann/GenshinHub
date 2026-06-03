@@ -230,7 +230,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                             <div key={charIdx} className={`w-14 h-14 rounded-xl bg-zinc-800 border ${isMain ? borderColor : 'border-zinc-700/50'} relative overflow-hidden group`}>
                                {/* Dummy character team images */}
                                <Image 
-                                  src={`https://genshin.jmp.blue/characters/${teamChar.toLowerCase().replace(' ', '-')}/icon-big`} 
+                                  src={`https://genshin.jmp.blue/characters/${teamChar === 'Raiden Shogun' ? 'raiden' : teamChar === 'Kujou Sara' ? 'sara' : teamChar === 'Kaedehara Kazuha' ? 'kazuha' : teamChar === 'Kuki Shinobu' ? 'kuki' : teamChar.toLowerCase().replace(' ', '-')}/icon-big`} 
                                   alt={teamChar}
                                   fill
                                   referrerPolicy="no-referrer"

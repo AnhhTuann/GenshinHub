@@ -1,33 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
-import { CharacterData, Element, WeaponType } from '@/types/character';
-import { ChevronLeft, Flame, Droplets, Wind, Zap, Leaf, Snowflake, Mountain, Sword, Target, Crosshair, Book, MoreHorizontal } from 'lucide-react';
-
-function ElementIcon({ element, className = "w-4 h-4" }: { element: Element, className?: string }) {
-  switch (element) {
-    case 'Pyro': return <Flame className={`${className} text-red-500`} />;
-    case 'Hydro': return <Droplets className={`${className} text-blue-500`} />;
-    case 'Anemo': return <Wind className={`${className} text-teal-400`} />;
-    case 'Electro': return <Zap className={`${className} text-purple-500`} />;
-    case 'Dendro': return <Leaf className={`${className} text-green-500`} />;
-    case 'Cryo': return <Snowflake className={`${className} text-cyan-300`} />;
-    case 'Geo': return <Mountain className={`${className} text-yellow-600`} />;
-    default: return <div className={`${className} bg-zinc-500 rounded-full`} />;
-  }
-}
-
-function WeaponIcon({ weapon, className = "w-4 h-4" }: { weapon: WeaponType, className?: string }) {
-  switch (weapon) {
-    case 'Sword': return <Sword className={className} />;
-    case 'Claymore': return <MoreHorizontal className={className} />;
-    case 'Polearm': return <Target className={className} />;
-    case 'Bow': return <Crosshair className={className} />;
-    case 'Catalyst': return <Book className={className} />;
-    default: return <div className={`${className} bg-zinc-500 rounded-sm`} />;
-  }
-}
+import { CharacterData } from '@/types/character';
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
@@ -42,251 +16,231 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
   if (!character) notFound();
 
-  const borderColorSolid = character.rarity === 5 ? 'border-amber-500' : 'border-purple-500';
-  const borderColor = character.rarity === 5 ? 'border-amber-500/30' : 'border-purple-500/30';
-  const glowColor = character.rarity === 5 ? 'bg-amber-500/10' : 'bg-purple-500/10';
-  const textColor = character.rarity === 5 ? 'text-amber-500' : 'text-purple-400';
-  const gradientColor = character.rarity === 5 ? 'from-amber-500/20' : 'from-purple-500/20';
+  const is5Star = character.rarity === 5;
+  const themeColor = is5Star ? 'text-yellow-500' : 'text-purple-400';
+  const borderTheme = is5Star ? 'border-yellow-500/50' : 'border-purple-500/50';
+  const gradientTheme = is5Star ? 'from-yellow-900/40' : 'from-purple-900/40';
+  
+  const parsedStats = character.baseStats ? JSON.parse(character.baseStats) : null;
 
   return (
-    <div className="flex-1 flex overflow-hidden flex-col md:flex-row min-h-[calc(100vh-64px)] bg-[#0b0b0e] text-zinc-100 font-sans">
-      {/* Sidebar Info */}
-      <aside className="w-full md:w-80 border-r border-[#1c1c22] p-6 flex flex-col gap-6 bg-[#111115] shrink-0 overflow-y-auto md:overflow-visible relative z-20">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors w-fit">
-          <ChevronLeft className="w-4 h-4" />
+    <main className="min-h-screen bg-[#0b0b0e] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+      
+      <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
+        <Link className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-fit" href="/">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           Back to Characters
         </Link>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-8 items-start mt-4">
         
-        <div className={`relative aspect-[3/4] rounded-2xl bg-[#0b0b0e] border border-[#1c1c22] overflow-hidden group mt-2 shrink-0 md:shrink`}>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0e] via-[#0b0b0e]/20 to-transparent z-10 w-full h-full pointer-events-none"></div>
+        {/* Left Column (Sticky) */}
+        <div className="w-full lg:w-[35%] lg:sticky lg:top-24 flex flex-col gap-4">
           
-          <div className={`absolute inset-0 ${glowColor} flex items-center justify-center`}>
+          <div className={`relative w-full aspect-[3/4] rounded-2xl overflow-hidden border ${borderTheme} shadow-2xl`}>
+            
+            <div className={`absolute inset-0 bg-gradient-to-tr ${gradientTheme} to-transparent opacity-50`}></div>
+            
             <div 
-              className="w-full h-full bg-cover bg-center bg-no-repeat opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: character.splashArtUrl ? `url(${character.splashArtUrl})` : 'none' }}
             />
-          </div>
-          <div className="absolute bottom-4 left-4 z-20">
-            <span className={`text-[10px] uppercase tracking-widest ${textColor} font-bold mb-1 block flex items-center gap-1.5`}>
-              <ElementIcon element={character.element} className="w-3 h-3" />
-              {character.name}
-            </span>
-            <h2 className="text-2xl font-bold leading-tight text-white mb-2">{character.title}</h2>
-            <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider bg-black/80 border ${borderColorSolid}`}>
-              {"★".repeat(character.rarity)}
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3 z-20 relative">
-          <div className="bg-[#1c1c22]/50 p-3 rounded-xl border border-[#1c1c22]">
-            <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Region</div>
-            <div className="flex items-center gap-2 font-semibold text-zinc-300 text-sm">
-              {character.region}
-            </div>
-          </div>
-          <div className="bg-[#1c1c22]/50 p-3 rounded-xl border border-[#1c1c22]">
-            <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Weapon</div>
-            <div className="flex items-center gap-2 font-semibold text-zinc-300 text-sm">
-              <WeaponIcon weapon={character.weapon} className="w-4 h-4 text-zinc-400" />
-              {character.weapon}
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      {/* Build Guide & Encyclopedia */}
-      <main className="flex-1 p-4 md:p-8 overflow-y-auto bg-[#0b0b0e]">
-        <div className="max-w-5xl mx-auto h-full">
-          
-          {/* Lore & Base Stats Section */}
-          {(character.lore || character.baseStats) && (
-            <section className="mb-10 bg-[#15151a] p-6 rounded-2xl border border-[#1c1c22]">
-              <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-zinc-500 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
-                Encyclopedia
-              </h3>
-              
-              {character.lore && (
-                <div className="mb-6">
-                  <h4 className="text-xs font-bold text-zinc-400 mb-2 uppercase tracking-wider">Cốt truyện</h4>
-                  <p className="text-zinc-300 text-sm leading-relaxed whitespace-pre-line">{character.lore}</p>
-                </div>
-              )}
-              
-              {character.baseStats && (
-                <div>
-                  <h4 className="text-xs font-bold text-zinc-400 mb-2 uppercase tracking-wider">Chỉ số cơ bản</h4>
-                  <div className="bg-[#111115] p-3 rounded-xl border border-[#1c1c22] font-mono text-sm text-zinc-300">
-                    {character.baseStats}
-                  </div>
-                </div>
-              )}
-              
-              {character.fandomUrl && (
-                <div className="mt-4 pt-4 border-t border-[#1c1c22]">
-                  <a href={character.fandomUrl} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline">
-                    Xem chi tiết trên Fandom Wiki ↗
-                  </a>
-                </div>
-              )}
-            </section>
-          )}
-
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 h-full pb-10">
             
-            {/* Column 1: Weapons & Artifacts */}
-            <div className="space-y-12">
-              {/* Weapons */}
-              <section>
-                <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-zinc-500 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
-                  Best Weapons
-                </h3>
-                <div className="space-y-3">
-                  {character.bestWeapons.map((wp, index) => {
-                    const isTop = wp.rank === 1;
-                    return (
-                      <div key={index} className={`flex items-center justify-between p-4 rounded-xl ${isTop ? `bg-[#15151a] border-l-4 ${borderColorSolid} border-y border-r border-[#1c1c22]` : 'bg-[#15151a]/50 border border-[#1c1c22] opacity-80'}`}>
-                        <div className="flex gap-4 items-center">
-                          <div className={`w-12 h-12 flex-shrink-0 rounded flex items-center justify-center font-bold ${isTop ? glowColor + ' ' + textColor : 'bg-[#1c1c22] text-zinc-400'}`}>
-                            {isTop ? 'S+' : `R${wp.rank}`}
-                          </div>
-                          <div>
-                            <div className="font-bold flex items-center gap-2 text-zinc-100">
-                              {wp.name}
-                            </div>
-                          </div>
-                        </div>
-                        {wp.isF2P && (
-                           <span className="text-[10px] bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded font-mono uppercase font-bold">F2P</span>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-              </section>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent"></div>
 
-              {/* Artifacts */}
-              <section>
-                <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-zinc-500 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
-                  Recommended Artifacts
-                </h3>
-                <div className="space-y-4">
-                  {character.bestArtifacts.map((art, index) => (
-                    <div key={index} className="px-5 py-6 rounded-2xl bg-[#15151a] border border-[#1c1c22] relative overflow-hidden">
-                      {index === 0 && <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${gradientColor} to-transparent opacity-50`}></div>}
-                      <div className="flex items-center gap-4 mb-6 relative z-10">
-                        <div className={`w-14 h-14 shrink-0 rounded-xl border flex items-center justify-center ${glowColor} ${borderColor}`}>
-                           <Leaf className={`w-7 h-7 ${textColor}`} />
-                        </div>
-                        <div>
-                          <div className={`text-lg font-bold ${textColor === 'text-amber-500' ? 'text-amber-100' : 'text-purple-100'}`}>
-                            {art.setName}
-                          </div>
-                          <div className={`text-xs font-semibold mt-1 px-2 py-0.5 bg-black/50 w-fit rounded text-zinc-400 uppercase tracking-widest`}>{art.pieces}-Piece Set</div>
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 relative z-10 mb-4">
-                        <div className="bg-[#111115] p-3 rounded-lg border border-[#1c1c22] text-center flex flex-col justify-center">
-                          <div className="text-[10px] uppercase text-zinc-500 mb-1 tracking-widest">Sands</div>
-                          <div className="text-xs font-bold leading-tight text-zinc-200">{art.sands.join(' / ')}</div>
-                        </div>
-                        <div className="bg-[#111115] p-3 rounded-lg border border-[#1c1c22] text-center flex flex-col justify-center">
-                          <div className="text-[10px] uppercase text-zinc-500 mb-1 tracking-widest">Goblet</div>
-                          <div className="text-xs font-bold leading-tight text-zinc-200">{art.goblet.join(' / ')}</div>
-                        </div>
-                        <div className="bg-[#111115] p-3 rounded-lg border border-[#1c1c22] text-center flex flex-col justify-center">
-                          <div className="text-[10px] uppercase text-zinc-500 mb-1 tracking-widest">Circlet</div>
-                          <div className="text-xs font-bold leading-tight text-zinc-200">{art.circlet.join(' / ')}</div>
-                        </div>
-                      </div>
-
-                      {/* Substats inside Artifact Block */}
-                      <div className="mt-4 pt-4 border-t border-[#1c1c22]">
-                        <div className="text-[10px] uppercase text-zinc-500 mb-3 tracking-widest font-bold">Sub-stats Priority</div>
-                        <div className="flex flex-wrap items-center gap-1.5 gap-y-2">
-                          {art.subStatsPriority.map((stat, idx) => (
-                            <div key={idx} className="flex items-center gap-1.5">
-                              <span className={`text-xs font-medium px-2 py-1 rounded-md border ${idx === 0 ? `bg-[#1c1c22] text-zinc-100 ${borderColor}` : 'bg-transparent border-[#1c1c22] text-zinc-400'}`}>
-                                {stat}
-                              </span>
-                              {idx < art.subStatsPriority.length - 1 && <span className="text-zinc-700 text-[10px]">➔</span>}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-
-            {/* Column 2: Stats & Teams */}
-            <div className="space-y-12">
-
-              {/* Talents */}
-              <section>
-                <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-zinc-500 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
-                  Talent Priority
-                </h3>
-                <div className="flex items-center gap-2 flex-wrap bg-[#15151a] p-5 rounded-2xl border border-[#1c1c22]">
-                  {character.talentPriority.map((talent, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                       <span className={`text-xs font-bold px-3 py-1.5 rounded-lg border border-zinc-800 ${idx === 0 ? 'bg-zinc-100 text-zinc-900 border-zinc-100' : 'bg-zinc-900 text-zinc-300'}`}>
-                          {talent}
-                       </span>
-                       {idx < character.talentPriority.length - 1 && <span className="text-zinc-600 text-xs">➔</span>}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Team Synergies */}
-              <section>
-                <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-zinc-500 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
-                  Meta Team Comps
-                </h3>
-                <div className="space-y-4">
-                  <div className={`bg-[#15151a] p-5 rounded-2xl border border-[#1c1c22]`}>
-                    <div className="text-[10px] text-zinc-500 uppercase tracking-widest mb-4 font-bold">Recommended Teammates</div>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      {character.bestTeams.map((teamCharId, charIdx) => {
-                        const teamChar = characters.find(c => c.id === teamCharId);
-                        return (
-                          <Link href={`/characters/${teamCharId}`} key={charIdx} className={`rounded-xl bg-[#1c1c22] border border-gray-700/50 overflow-hidden group relative aspect-square transition-all hover:scale-[1.02] hover:border-gray-500`}>
-                              <div className="w-full h-full relative">
-                                {teamChar ? (
-                                  <div 
-                                    className="w-full h-full bg-cover bg-center bg-no-repeat transition-opacity"
-                                    style={{ backgroundImage: `url(${teamChar.avatarUrl})` }}
-                                  />
-                                ) : (
-                                  <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-zinc-600 font-mono text-xs uppercase text-center p-2 break-all shadow-inner">
-                                    {teamCharId}
-                                  </div>
-                                )}
-                              </div>
-                              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2 pt-6">
-                                <span className="text-[10px] font-bold text-white uppercase tracking-wider block text-center truncate">
-                                  {teamChar ? teamChar.name : teamCharId}
-                                </span>
-                              </div>
-                          </Link>
-                        )
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </section>
+            <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <img src={`/elements/${character.element.toLowerCase()}.png`} alt={character.element} className="w-5 h-5 drop-shadow-md" onError={(e) => (e.target as HTMLImageElement).style.display = 'none'} />
+                <span className="text-yellow-500 font-bold text-xs uppercase tracking-widest">{character.element}</span>
+              </div>
+              <h1 className="text-4xl font-black text-white mt-1 drop-shadow-lg">{character.name}</h1>
+              <p className="text-gray-300 font-medium text-lg drop-shadow-md">{character.title}</p>
               
+              <div className="flex text-yellow-400 text-sm mt-3">
+                {Array(character.rarity).fill(0).map((_, i) => <span key={i}>★</span>)}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-[#15151a] border border-gray-800/60 p-4 rounded-xl flex flex-col">
+              <span className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Region</span>
+              <span className="text-gray-100 font-medium">{character.region}</span>
+            </div>
+            <div className="bg-[#15151a] border border-gray-800/60 p-4 rounded-xl flex flex-col">
+              <span className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Weapon</span>
+              <span className="text-gray-100 font-medium flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gray-500"></span> {character.weapon}
+              </span>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+
+        {/* Right Column (Scrollable) */}
+        <div className="w-full lg:w-[65%] flex flex-col gap-8">
+          
+          {/* Encyclopedia & Stats */}
+          <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
+            <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Encyclopedia
+            </h3>
+            
+            {character.lore && (
+              <div className="mb-6">
+                <h4 className="text-white font-bold mb-2">Cốt Truyện</h4>
+                <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
+                  {character.lore}
+                </p>
+              </div>
+            )}
+            
+            {parsedStats && (
+              <div>
+                <h4 className="text-white font-bold mb-3">Chỉ Số Cơ Bản</h4>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-[#0b0b0e] border border-gray-800 p-3 rounded-lg flex flex-col items-center">
+                    <span className="text-green-400 font-bold text-lg">{parsedStats.hp?.toLocaleString() || '-'}</span>
+                    <span className="text-gray-500 text-xs mt-1">BASE HP</span>
+                  </div>
+                  <div className="bg-[#0b0b0e] border border-gray-800 p-3 rounded-lg flex flex-col items-center">
+                    <span className="text-red-400 font-bold text-lg">{parsedStats.atk?.toLocaleString() || '-'}</span>
+                    <span className="text-gray-500 text-xs mt-1">BASE ATK</span>
+                  </div>
+                  <div className="bg-[#0b0b0e] border border-gray-800 p-3 rounded-lg flex flex-col items-center">
+                    <span className="text-blue-400 font-bold text-lg">{parsedStats.def?.toLocaleString() || '-'}</span>
+                    <span className="text-gray-500 text-xs mt-1">BASE DEF</span>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {character.fandomUrl && (
+              <div className="mt-6 pt-4 border-t border-gray-800/60">
+                <a href={character.fandomUrl} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline">
+                  Xem chi tiết trên Fandom Wiki ↗
+                </a>
+              </div>
+            )}
+          </section>
+
+          <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
+            <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Best Weapons
+            </h3>
+            <div className="flex flex-col gap-4">
+              {character.bestWeapons.map((weapon, idx) => {
+                const isTop = weapon.rank === 1;
+                return (
+                  <div key={idx} className={`flex items-center justify-between p-4 rounded-xl border ${isTop ? 'bg-yellow-500/5 border-yellow-500/30' : 'bg-[#0b0b0e] border-gray-800'}`}>
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 flex items-center justify-center rounded-lg font-bold text-sm ${isTop ? 'bg-yellow-500/20 text-yellow-500' : 'bg-gray-800/50 text-gray-400'}`}>
+                        {isTop ? 'S+' : `R${weapon.rank}`}
+                      </div>
+                      <span className="font-semibold text-gray-100 text-lg">{weapon.name}</span>
+                    </div>
+                    {weapon.isF2P && (
+                      <span className="px-2 py-1 bg-green-900/30 border border-green-700/50 text-green-400 text-xs font-bold rounded">F2P</span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+
+          <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
+            <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Recommended Artifacts
+            </h3>
+            {character.bestArtifacts.map((artifact, idx) => (
+              <div key={idx} className="bg-[#0b0b0e] border border-gray-800 rounded-xl p-5 mb-4">
+                <div className="flex items-center gap-4 border-b border-gray-800 pb-4 mb-4">
+                  <div className="w-12 h-12 bg-yellow-900/20 rounded-lg flex items-center justify-center text-yellow-500 text-xl border border-yellow-700/30">✨</div>
+                  <div>
+                    <h4 className="font-bold text-gray-100 text-lg">{artifact.setName}</h4>
+                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">{artifact.pieces}-Piece Set</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-center mb-4">
+                  <div className="bg-[#15151a] p-3 rounded-lg border border-gray-800/50 flex flex-col justify-center">
+                    <span className="block text-gray-500 text-[10px] font-bold uppercase mb-1">Sands</span>
+                    <span className="text-gray-200 font-semibold text-sm">{artifact.sands.join(' / ')}</span>
+                  </div>
+                  <div className="bg-[#15151a] p-3 rounded-lg border border-gray-800/50 flex flex-col justify-center">
+                    <span className="block text-gray-500 text-[10px] font-bold uppercase mb-1">Goblet</span>
+                    <span className="text-gray-200 font-semibold text-sm">{artifact.goblet.join(' / ')}</span>
+                  </div>
+                  <div className="bg-[#15151a] p-3 rounded-lg border border-gray-800/50 flex flex-col justify-center">
+                    <span className="block text-gray-500 text-[10px] font-bold uppercase mb-1">Circlet</span>
+                    <span className="text-gray-200 font-semibold text-sm">{artifact.circlet.join(' / ')}</span>
+                  </div>
+                </div>
+                
+                <div className="border-t border-gray-800 pt-4">
+                  <span className="text-gray-500 text-[10px] font-bold uppercase mb-2 block">Sub-stats Priority</span>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {artifact.subStatsPriority.map((stat, sIdx) => (
+                      <div key={sIdx} className="flex items-center gap-2">
+                        <span className={`text-xs px-2 py-1 rounded border ${sIdx === 0 ? 'bg-gray-800 border-gray-600 text-gray-200' : 'border-gray-800 text-gray-400'}`}>
+                          {stat}
+                        </span>
+                        {sIdx < artifact.subStatsPriority.length - 1 && <span className="text-gray-700 text-[10px]">➔</span>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6">
+              <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Talent Priority
+              </h3>
+              <div className="flex flex-col gap-3">
+                {character.talentPriority.map((talent, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="bg-white text-black text-xs font-bold px-3 py-2 rounded-md whitespace-nowrap">
+                      {talent}
+                    </div>
+                    {idx < character.talentPriority.length - 1 && (
+                      <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6">
+              <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Meta Team Comps
+              </h3>
+              <span className="text-gray-500 text-[10px] font-bold uppercase mb-3 block">Recommended Teammates</span>
+              <div className="flex flex-wrap gap-3">
+                {character.bestTeams.map((teammateId) => {
+                  const teammate = characters.find(c => c.id === teammateId);
+                  return (
+                    <Link className="group relative" href={`/characters/${teammateId}`} key={teammateId}>
+                      <div className="w-16 h-16 rounded-xl overflow-hidden border border-gray-700 group-hover:border-white transition-colors bg-[#0b0b0e]">
+                         {teammate ? (
+                           <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${teammate.avatarUrl})` }} />
+                         ) : (
+                           <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-600 font-bold uppercase text-center break-all">{teammateId}</div>
+                         )}
+                      </div>
+                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-[10px] px-2 py-1 rounded whitespace-nowrap z-10 pointer-events-none">
+                        {teammate ? teammate.name : teammateId}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+    </main>
   );
 }

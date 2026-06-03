@@ -51,7 +51,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
             <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col gap-1">
               <div className="flex items-center gap-2">
-                <img src={`/elements/${character.element.toLowerCase()}.png`} alt={character.element} className="w-5 h-5 drop-shadow-md" onError={(e) => (e.target as HTMLImageElement).style.display = 'none'} />
+                <img src={`/elements/${character.element.toLowerCase()}.png`} alt={character.element} className="w-5 h-5 drop-shadow-md" />
                 <span className="text-yellow-500 font-bold text-xs uppercase tracking-widest">{character.element}</span>
               </div>
               <h1 className="text-4xl font-black text-white mt-1 drop-shadow-lg">{character.name}</h1>

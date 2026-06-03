@@ -27,17 +27,9 @@ function parseChar(dataStr: string) {
   const enkaNameMap: any = {
     "Raiden Shogun": "Shougun", "Ayato": "Ayato", "Heizou": "Heizo", "Itto": "Itto", "Kokomi": "Kokomi", "Shinobu": "Shinobu", "Yae Miko": "Yae", "Wanderer": "Wanderer", "Tartaglia": "Tartaglia",
     "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel", "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Alhaitham": "Alhatham", "Kirara": "Momoka", "Lyney": "Liney", "Lynette": "Linette",
-    "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy", "Hu Tao": "Hutao", "Lan Yan": "Lanyan"
+    "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy", "Hu Tao": "Hutao", "Lan Yan": "Lanyan", "Skirk": "SkirkNew"
   };
   const avatarKey = enkaNameMap[name] || name;
-
-  // Skirk: Enka chưa có, dùng ảnh local (đã tải từ Fandom Wiki)
-  const specialAvatarUrls: any = {
-    "Skirk": "/characters/skirk.png"
-  };
-  const specialSplashUrls: any = {
-    "Skirk": "/characters/skirk.png"
-  };
 
   return {
     id: toId(name),
@@ -46,8 +38,8 @@ function parseChar(dataStr: string) {
     rarity: parseInt(rarity) || 5,
     element: element,
     weapon: weapon,
-    avatarUrl: specialAvatarUrls[name] || toAvatar(avatarKey),
-    splashArtUrl: specialSplashUrls[name] || toSplash(avatarKey),
+    avatarUrl: toAvatar(avatarKey),
+    splashArtUrl: toSplash(avatarKey),
     talentPriority: ["Normal Attack", "Elemental Skill", "Elemental Burst"],
     bestTeams: ["bennett", "xingqiu", "zhongli"],
     lore: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,

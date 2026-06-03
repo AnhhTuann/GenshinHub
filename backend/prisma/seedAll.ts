@@ -42,7 +42,7 @@ function parseChar(dataStr: string) {
     splashArtUrl: toSplash(avatarKey),
     talentPriority: ["Normal Attack", "Elemental Skill", "Elemental Burst"],
     bestTeams: ["bennett", "xingqiu", "zhongli"],
-    lore: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
+    description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
     baseStats: { hp: 10000, atk: 300, def: 600 },
     fandomUrl: `https://genshin-impact.fandom.com/wiki/${name.replace(/ /g, '_')}`,
     bestWeapons: [
@@ -77,7 +77,7 @@ async function main() {
       await prisma.character.create({
         data: {
           id: char.id, name: char.name, title: char.title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: char.region, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,
-          lore: char.lore, baseStats: char.baseStats, fandomUrl: char.fandomUrl,
+          description: char.description, baseStats: char.baseStats, fandomUrl: char.fandomUrl,
           bestWeapons: { create: char.bestWeapons },
           bestArtifacts: { create: char.bestArtifacts }
         }

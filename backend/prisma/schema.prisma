@@ -18,7 +18,7 @@ model Character {
   splashArtUrl   String
   
   // Extended data
-  lore           String?
+  description    String?
   baseStats      Json?
   fandomUrl      String?
 

@@ -86,42 +86,30 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Encyclopedia
             </h3>
             
-            {character.lore && (
-              <div className="mb-6">
-                <h4 className="text-white font-bold mb-2">Cốt Truyện</h4>
-                <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
-                  {character.lore}
-                </p>
-              </div>
-            )}
+            <div className="mb-6 pb-6 border-b border-gray-800/50">
+              <h4 className="text-white font-bold mb-3">Cốt Truyện</h4>
+              <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
+                {character.description || "Dữ liệu cốt truyện đang được cập nhật..."}
+              </p>
+            </div>
             
-            {parsedStats && (
-              <div>
-                <h4 className="text-white font-bold mb-3">Chỉ Số Cơ Bản</h4>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-[#0b0b0e] border border-gray-800 p-3 rounded-lg flex flex-col items-center">
-                    <span className="text-green-400 font-bold text-lg">{parsedStats.hp?.toLocaleString() || '-'}</span>
-                    <span className="text-gray-500 text-xs mt-1">BASE HP</span>
-                  </div>
-                  <div className="bg-[#0b0b0e] border border-gray-800 p-3 rounded-lg flex flex-col items-center">
-                    <span className="text-red-400 font-bold text-lg">{parsedStats.atk?.toLocaleString() || '-'}</span>
-                    <span className="text-gray-500 text-xs mt-1">BASE ATK</span>
-                  </div>
-                  <div className="bg-[#0b0b0e] border border-gray-800 p-3 rounded-lg flex flex-col items-center">
-                    <span className="text-blue-400 font-bold text-lg">{parsedStats.def?.toLocaleString() || '-'}</span>
-                    <span className="text-gray-500 text-xs mt-1">BASE DEF</span>
-                  </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">Chỉ Số Cơ Bản (Lv. 90)</h4>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
+                  <span className="text-green-400 font-black text-xl mb-1">{parsedStats?.hp?.toLocaleString() || '-'}</span>
+                  <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base HP</span>
+                </div>
+                <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
+                  <span className="text-red-400 font-black text-xl mb-1">{parsedStats?.atk?.toLocaleString() || '-'}</span>
+                  <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base ATK</span>
+                </div>
+                <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
+                  <span className="text-blue-400 font-black text-xl mb-1">{parsedStats?.def?.toLocaleString() || '-'}</span>
+                  <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base DEF</span>
                 </div>
               </div>
-            )}
-            
-            {character.fandomUrl && (
-              <div className="mt-6 pt-4 border-t border-gray-800/60">
-                <a href={character.fandomUrl} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline">
-                  Xem chi tiết trên Fandom Wiki ↗
-                </a>
-              </div>
-            )}
+            </div>
           </section>
 
           <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">

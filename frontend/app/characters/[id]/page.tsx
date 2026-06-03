@@ -11,8 +11,8 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
     fetchGraphQL(GET_CHARACTERS)
   ]);
 
-  const character = characterData.character;
-  const characters = allCharactersData.characters;
+  const character: CharacterData = characterData.character;
+  const characters: CharacterData[] = allCharactersData.characters;
 
   if (!character) notFound();
 

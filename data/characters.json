@@ -1,0 +1,166 @@
+[
+  {
+    "id": "raiden-shogun",
+    "name": "Raiden Shogun",
+    "rarity": 5,
+    "element": "Electro",
+    "weapon": "Polearm",
+    "region": "Inazuma",
+    "title": "Plane of Euthymia",
+    "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
+    "avatarUrl": "https://genshin.jmp.blue/characters/raiden-shogun/icon-big",
+    "splashArtUrl": "https://genshin.jmp.blue/characters/raiden-shogun/gacha-splash",
+    "baseStats": {
+      "hp": 12907,
+      "atk": 337,
+      "def": 789
+    },
+    "best_weapons": [
+      {
+        "name": "Engulfing Lightning",
+        "rank": 1,
+        "refinement": 1,
+        "notes": "Best in slot, provides massive ER and converts ER to ATK."
+      },
+      {
+        "name": "\"The Catch\"",
+        "rank": 2,
+        "refinement": 5,
+        "notes": "Best F2P option, boosts Burst CRIT Rate and DMG."
+      }
+    ],
+    "best_artifacts": [
+      {
+        "rank": 1,
+        "sets": ["Emblem of Severed Fate", "Emblem of Severed Fate"],
+        "notes": "Provides high Energy Recharge and scales Burst DMG on ER."
+      }
+    ],
+    "stat_priorities": {
+      "sands": ["Energy Recharge", "ATK%"],
+      "goblet": ["Electro DMG Bonus", "ATK%"],
+      "circlet": ["CRIT Rate", "CRIT DMG"],
+      "subStats": ["Energy Recharge", "CRIT Rate", "CRIT DMG", "ATK%"]
+    },
+    "team_comps": [
+      {
+        "name": "Raiden National",
+        "characters": ["Raiden Shogun", "Xingqiu", "Xiangling", "Bennett"],
+        "description": "Powerful F2P-friendly team utilizing Raiden's energy restoration and quick-swap sub-DPS mechanics."
+      },
+      {
+        "name": "Raiden Hypercarry",
+        "characters": ["Raiden Shogun", "Kujou Sara", "Kaedehara Kazuha", "Bennett"],
+        "description": "Focuses on maximizing Raiden Shogun's personal damage."
+      }
+    ],
+    "talentsPriority": ["Elemental Burst", "Elemental Skill", "Normal Attack"],
+    "ascensionMaterials": ["Vajrada Amethyst", "Storm Beads", "Amakumo Fruit", "Handguard"]
+  },
+  {
+    "id": "nahida",
+    "name": "Nahida",
+    "rarity": 5,
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "region": "Sumeru",
+    "title": "Physic of Purity",
+    "description": "A lesser lord who was born from the branches of Irminsul, dwelling deep in the Sanctuary of Surasthana.",
+    "avatarUrl": "https://genshin.jmp.blue/characters/nahida/icon-big",
+    "splashArtUrl": "https://genshin.jmp.blue/characters/nahida/gacha-splash",
+    "baseStats": {
+      "hp": 10360,
+      "atk": 299,
+      "def": 630
+    },
+    "best_weapons": [
+      {
+        "name": "A Thousand Floating Dreams",
+        "rank": 1,
+        "refinement": 1,
+        "notes": "Best in slot, provides immense Elemental Mastery."
+      },
+      {
+        "name": "Sacrificial Fragments",
+        "rank": 2,
+        "refinement": 1,
+        "notes": "Great 4-star option for high EM."
+      }
+    ],
+    "best_artifacts": [
+      {
+        "rank": 1,
+        "sets": ["Deepwood Memories", "Deepwood Memories"],
+        "notes": "Essential for Dendro damage amplification."
+      }
+    ],
+    "stat_priorities": {
+      "sands": ["Elemental Mastery"],
+      "goblet": ["Elemental Mastery", "Dendro DMG Bonus"],
+      "circlet": ["Elemental Mastery", "CRIT Rate", "CRIT DMG"],
+      "subStats": ["Elemental Mastery", "CRIT Rate", "CRIT DMG"]
+    },
+    "team_comps": [
+      {
+        "name": "Hyperbloom",
+        "characters": ["Nahida", "Xingqiu", "Kuki Shinobu", "Yelan"],
+        "description": "One of the most powerful and consistent teams in the game."
+      }
+    ],
+    "talentsPriority": ["Elemental Skill", "Elemental Burst", "Normal Attack"],
+    "ascensionMaterials": ["Nagadus Emerald", "Quelled Creeper", "Kalpalata Lotus", "Fungal Spores"]
+  },
+  {
+    "id": "bennett",
+    "name": "Bennett",
+    "rarity": 4,
+    "element": "Pyro",
+    "weapon": "Sword",
+    "region": "Mondstadt",
+    "title": "Trial by Fire",
+    "description": "A righteous and good-natured adventurer from Mondstadt who's unfortunately extremely unlucky.",
+    "avatarUrl": "https://genshin.jmp.blue/characters/bennett/icon-big",
+    "splashArtUrl": "https://genshin.jmp.blue/characters/bennett/gacha-splash",
+    "baseStats": {
+      "hp": 12397,
+      "atk": 191,
+      "def": 771
+    },
+    "best_weapons": [
+      {
+        "name": "Aquila Favonia",
+        "rank": 1,
+        "refinement": 1,
+        "notes": "High base ATK for max buff."
+      },
+      {
+        "name": "Sapwood Blade",
+        "rank": 2,
+        "refinement": 1,
+        "notes": "Great craftable with high base ATK and ER."
+      }
+    ],
+    "best_artifacts": [
+      {
+        "rank": 1,
+        "sets": ["Noblesse Oblige", "Noblesse Oblige"],
+        "notes": "Further boosts team ATK upon using Burst."
+      }
+    ],
+    "stat_priorities": {
+      "sands": ["Energy Recharge", "HP%"],
+      "goblet": ["HP%"],
+      "circlet": ["Healing Bonus", "HP%"],
+      "subStats": ["Energy Recharge", "HP%"]
+    },
+    "team_comps": [
+      {
+        "name": "National Team Variations",
+        "characters": ["Bennett", "Xiangling", "Xingqiu", "Raiden Shogun"],
+        "description": "Universal support."
+      }
+    ],
+    "talentsPriority": ["Elemental Burst", "Elemental Skill", "Normal Attack"],
+    "ascensionMaterials": ["Agnidus Agate", "Everflame Seed", "Windwheel Aster", "Insignia"]
+  }
+]

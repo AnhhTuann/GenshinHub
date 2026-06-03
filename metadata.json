@@ -1,0 +1,6 @@
+{
+  "name": "Genshin Build Database",
+  "description": "Genshin Impact character database and build guide website.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

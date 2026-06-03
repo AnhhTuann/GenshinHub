@@ -5,6 +5,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model Character {
   id             String              @id
   name           String
@@ -15,11 +16,18 @@ model Character {
   region         String
   avatarUrl      String
   splashArtUrl   String
+  
+  // Extended data
+  lore           String?
+  baseStats      Json?
+  fandomUrl      String?
+
   bestWeapons    CharacterWeapon[]
   bestArtifacts  CharacterArtifact[]
   talentPriority String[]
   bestTeams      String[]
 }
+
 model CharacterWeapon {
   id          String    @id @default(uuid())
   weaponId    String
@@ -29,6 +37,7 @@ model CharacterWeapon {
   character   Character @relation(fields: [characterId], references: [id])
   characterId String
 }
+
 model CharacterArtifact {
   id               String    @id @default(uuid())
   setName          String
@@ -39,4 +48,35 @@ model CharacterArtifact {
   subStatsPriority String[]
   character        Character @relation(fields: [characterId], references: [id])
   characterId      String
+}
+
+// Encyclopedia
+model Weapon {
+  id          String  @id
+  name        String
+  rarity      Int
+  type        String
+  baseAtk     Int
+  subStat     String?
+  subStatValue Float?
+  passiveName String?
+  passiveDesc String?
+  iconUrl     String?
+}
+
+model ArtifactSet {
+  id          String  @id
+  name        String
+  rarityList  Int[]
+  piece2Desc  String
+  piece4Desc  String
+  iconUrl     String?
+}
+
+model Material {
+  id          String  @id
+  name        String
+  type        String
+  rarity      Int
+  iconUrl     String?
 }

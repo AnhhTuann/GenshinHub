@@ -101,9 +101,44 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
         </div>
       </aside>
 
-      {/* Build Guide */}
+      {/* Build Guide & Encyclopedia */}
       <main className="flex-1 p-4 md:p-8 overflow-y-auto bg-[#0b0b0e]">
         <div className="max-w-5xl mx-auto h-full">
+          
+          {/* Lore & Base Stats Section */}
+          {(character.lore || character.baseStats) && (
+            <section className="mb-10 bg-[#15151a] p-6 rounded-2xl border border-[#1c1c22]">
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-zinc-500 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-zinc-700"></span>
+                Encyclopedia
+              </h3>
+              
+              {character.lore && (
+                <div className="mb-6">
+                  <h4 className="text-xs font-bold text-zinc-400 mb-2 uppercase tracking-wider">Cốt truyện</h4>
+                  <p className="text-zinc-300 text-sm leading-relaxed whitespace-pre-line">{character.lore}</p>
+                </div>
+              )}
+              
+              {character.baseStats && (
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-400 mb-2 uppercase tracking-wider">Chỉ số cơ bản</h4>
+                  <div className="bg-[#111115] p-3 rounded-xl border border-[#1c1c22] font-mono text-sm text-zinc-300">
+                    {character.baseStats}
+                  </div>
+                </div>
+              )}
+              
+              {character.fandomUrl && (
+                <div className="mt-4 pt-4 border-t border-[#1c1c22]">
+                  <a href={character.fandomUrl} target="_blank" rel="noreferrer" className="text-xs text-blue-400 hover:underline">
+                    Xem chi tiết trên Fandom Wiki ↗
+                  </a>
+                </div>
+              )}
+            </section>
+          )}
+
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 h-full pb-10">
             
             {/* Column 1: Weapons & Artifacts */}

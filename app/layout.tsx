@@ -1,18 +1,23 @@
-import type {Metadata} from 'next';
-import './globals.css'; // Global styles
-import { Navbar } from '@/components/Navbar';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/shared/Navbar";
+
+const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
-  title: 'Genshin Build Database',
-  description: 'Genshin Impact character database and build guide website.',
+  title: "TeyvatDB - Genshin Impact Builds & Guides",
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className="bg-zinc-950 text-zinc-100 font-sans h-full flex flex-col overflow-hidden" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning>
+      <body className={`${inter.className} bg-[#111115] text-white antialiased`} suppressHydrationWarning>
         <Navbar />
-        {children}
+        <div className="min-h-screen">{children}</div>
+        <footer className="border-t border-gray-800 py-8 text-center text-gray-500 text-sm bg-[#0b0b0e]">
+          <p>© 2026 TeyvatDB.</p>
+        </footer>
       </body>
     </html>
   );

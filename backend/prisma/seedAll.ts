@@ -25,7 +25,8 @@ const charactersData = [
 function parseChar(dataStr: string) {
   const [name, element, weapon, rarity] = dataStr.split('|');
   const enkaNameMap: any = {
-    "Raiden Shogun": "Shougun", "Ayato": "Ayato", "Heizou": "Heizou", "Itto": "Itto", "Kokomi": "Kokomi", "Shinobu": "Shinobu", "Yae Miko": "Yae", "Wanderer": "Wanderer", "Tartaglia": "Tartaglia"
+    "Raiden Shogun": "Shougun", "Ayato": "Ayato", "Heizou": "Heizou", "Itto": "Itto", "Kokomi": "Kokomi", "Shinobu": "Shinobu", "Yae Miko": "Yae", "Wanderer": "Wanderer", "Tartaglia": "Tartaglia",
+    "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel", "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Gaming": "Jiaming", "Alhaitham": "Alhatham", "Kirara": "Momoka", "Lyney": "Liney", "Lynette": "Linette"
   };
   const avatarKey = enkaNameMap[name] || name;
 

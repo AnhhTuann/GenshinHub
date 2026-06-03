@@ -7,6 +7,48 @@ const toId = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').re
 const toAvatar = (name: string) => `https://enka.network/ui/UI_AvatarIcon_${name.replace(/[^a-zA-Z]/g, '')}.png`;
 const toSplash = (name: string) => `https://enka.network/ui/UI_Gacha_AvatarImg_${name.replace(/[^a-zA-Z]/g, '')}.png`;
 
+const metaBuilds = [
+  {
+    characterId: "hu-tao",
+    bestWeapons: [
+      { rank: 1, name: "Trượng Hộ Ma", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí 'trấn phái' hoàn hảo nhất, cung cấp lượng lớn HP và chuyển hóa lượng máu bị mất thành Tấn công cực mạnh.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Homa.png" },
+      { rank: 2, name: "Tai Ương Của Rồng", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R5", reason: "Lựa chọn 4 sao đột phá với đội hình Bốc Hơi, tăng sát thương cực lớn lên kẻ địch bị ấn Thủy hoặc Hỏa.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Stardust.png" },
+      { rank: 3, name: "Thương Bạch Nhị", subStat: "Tỷ Lệ Bạo Kích", isF2P: true, refinement: "R5", reason: "Vũ khí 3 sao F2P cực ngon kiếm từ rương Liyue, bù đắp Tỷ Lệ Bạo Kích và tăng sát thương đòn đánh thường.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Halberd.png" }
+    ]
+  },
+  {
+    characterId: "raiden-shogun",
+    bestWeapons: [
+      { rank: 1, name: "Đoạn Thảo Kính Phạt", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Vũ khí hoàn thiện tuyệt đối cho lôi thần, bơm mạnh Hiệu Quả Nạp và tự động chuyển hóa nó thành Tấn Công.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Narukami.png" },
+      { rank: 2, name: "Lao Xiên Cá", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí F2P miễn phí (từ câu cá) tuyệt vời nhất, trực tiếp buff Sát thương và Tỷ lệ bạo kích cho Kỹ năng Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Mori.png" },
+      { rank: 3, name: "Tây Phong Thương", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R5", reason: "Lựa chọn an toàn giúp Raiden Shogun spam Nộ mượt mà và làm sạc dự phòng cho các nhân vật tốn nhiều năng lượng trong đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Zephyrus.png" }
+    ]
+  },
+  {
+    characterId: "zhongli",
+    bestWeapons: [
+      { rank: 1, name: "Hắc Anh Thương", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Vũ khí 3 sao huyền thoại rẻ tiền nhưng mang lại lượng HP khổng lồ, biến khiên của Nham thần thành bất tử.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Noire.png" },
+      { rank: 2, name: "Tây Phong Thương", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R5", reason: "Lựa chọn đa dụng tối ưu cho lối chơi hỗ trợ, giúp Zhongli tạo hạt năng lượng trắng liên tục cho đồng đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Zephyrus.png" },
+      { rank: 3, name: "Trượng Hộ Ma", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Lựa chọn xa xỉ nếu bạn muốn Zhongli vừa có lượng Khiên đủ xài vừa thả thiên thạch bay màu quái vật.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Homa.png" }
+    ]
+  },
+  {
+    characterId: "neuvillette",
+    bestWeapons: [
+      { rank: 1, name: "Nghi Thức Dòng Chảy Vĩnh Hằng", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí sinh ra cho Neuvillette, tăng Sát thương Trọng Kích và hồi năng lượng mỗi khi lượng HP thay đổi.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Iudex.png" },
+      { rank: 2, name: "Ngọc Quý Lưu Trong Biển Chết", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Lựa chọn từ Nhật Ký Hành Trình cực kỳ mạnh, cung cấp rất nhiều HP tối đa khi nhân vật không đứng sân quá lâu.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Yue.png" },
+      { rank: 3, name: "Mẫu Kim Phách", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn F2P hoàn hảo, không chỉ bơm cực nhiều máu mà còn giải quyết bài toán hồi Năng lượng sau khi Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Proto.png" }
+    ]
+  },
+  {
+    characterId: "furina",
+    bestWeapons: [
+      { rank: 1, name: "Sắc Nước Thuần Khiết", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Trấn phái tăng mạnh sát thương Kỹ Năng Nguyên Tố và buff lượng HP tối đa khi máu đồng đội lên xuống.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Regalis.png" },
+      { rank: 2, name: "Răng Nanh Rỉ Sét", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí 4 sao Event phiên bản 1.2, cực ngon khi vừa giải quyết độ khát Năng lượng vừa buff thẳng Tỷ lệ Bạo Kích cho E.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Magnum.png" },
+      { rank: 3, name: "Ống Đồng Yêu Sinh Mệnh", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí thay thế hoàn hảo cho Răng Nanh Rỉ Sét, cày cuốc miễn phí từ hội Câu Cá Fontaine, giải quyết dứt điểm thiếu hụt Nạp.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Machination.png" }
+    ]
+  }
+];
 const charactersData = [
   // 1. Mondstadt
   ...["Albedo|Geo|Sword|5", "Amber|Pyro|Bow|4", "Barbara|Hydro|Catalyst|4", "Bennett|Pyro|Sword|4", "Dahlia|Hydro|Catalyst|4", "Diluc|Pyro|Claymore|5", "Diona|Cryo|Bow|4", "Durin|Anemo|Sword|5", "Eula|Cryo|Claymore|5", "Fischl|Electro|Bow|4", "Jean|Anemo|Sword|5", "Kaeya|Cryo|Sword|4", "Klee|Pyro|Catalyst|5", "Lisa|Electro|Catalyst|4", "Mika|Cryo|Polearm|4", "Mona|Hydro|Catalyst|5", "Noelle|Geo|Claymore|4", "Razor|Electro|Claymore|4", "Rosaria|Cryo|Polearm|4", "Sucrose|Anemo|Catalyst|4", "Varka|Anemo|Claymore|5", "Venti|Anemo|Bow|5"].map(c => ({ ...parseChar(c), region: "Mondstadt" })),
@@ -22,6 +64,7 @@ const charactersData = [
   ...["Aloy|Cryo|Bow|5", "Chasca|Anemo|Bow|5", "Tartaglia|Hydro|Bow|5", "Citlali|Cryo|Catalyst|5", "Columbina|Cryo|Sword|5", "Flins|Pyro|Claymore|4", "Iansan|Electro|Polearm|4", "Ifa|Dendro|Catalyst|4", "Illuga|Geo|Sword|4", "Ineffa|Anemo|Bow|4", "Kinich|Dendro|Claymore|5", "Mavuika|Pyro|Claymore|5", "Mualani|Hydro|Catalyst|5", "Nicole|Hydro|Catalyst|5", "Skirk|Void|Sword|5", "Traveler|Anemo|Sword|5", "Xilonen|Geo|Sword|5", "Arlecchino|Pyro|Polearm|5"].map(c => ({ ...parseChar(c), region: "Other" }))
 ];
 
+
 function parseChar(dataStr: string) {
   const [name, element, weapon, rarity] = dataStr.split('|');
   const enkaNameMap: any = {
@@ -31,8 +74,11 @@ function parseChar(dataStr: string) {
   };
   const avatarKey = enkaNameMap[name] || name;
 
+  const charId = toId(name);
+  const metaInfo = metaBuilds.find(m => m.characterId === charId);
+
   return {
-    id: toId(name),
+    id: charId,
     name: name,
     title: name + " Title",
     rarity: parseInt(rarity) || 5,
@@ -45,10 +91,19 @@ function parseChar(dataStr: string) {
     description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
     baseStats: { hp: 10000, atk: 300, def: 600 },
     fandomUrl: `https://genshin-impact.fandom.com/wiki/${name.replace(/ /g, '_')}`,
-    bestWeapons: [
-      { weaponId: "engulfing-lightning", name: "Thương Diệu", rank: 1, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/EquipIcon_Pole_Matsu.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", refinement: 1 },
-      { weaponId: "the-catch", name: "Lao Xiên Cá", rank: 2, isF2P: true, iconUrl: "https://gi.yatta.moe/assets/UI/EquipIcon_Pole_Morus.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", refinement: 5 },
-      { weaponId: "primordial-jade-winged-spear", name: "Hòa Phát Diên", rank: 3, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/EquipIcon_Pole_Morax.png", subStat: "Tỷ Lệ Bạo Kích", passiveDesc: "Tăng ATK khi đánh trúng kẻ địch. Stack tối đa 7 lần, ở mức tối đa tăng thêm sát thương bạo kích.", refinement: 1 },
+    bestWeapons: metaInfo ? metaInfo.bestWeapons.map(w => ({
+      weaponId: w.name.toLowerCase().replace(/ /g, '-'),
+      name: w.name,
+      rank: w.rank,
+      isF2P: w.isF2P,
+      iconUrl: w.iconUrl,
+      subStat: w.subStat,
+      passiveDesc: w.reason,
+      refinement: parseInt(w.refinement.replace('R', '')) || 1
+    })) : [
+      { weaponId: "engulfing-lightning", name: "Thương Diệu", rank: 1, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Narukami.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", refinement: 1 },
+      { weaponId: "the-catch", name: "Lao Xiên Cá", rank: 2, isF2P: true, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Mori.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", refinement: 5 },
+      { weaponId: "primordial-jade-winged-spear", name: "Hòa Phát Diên", rank: 3, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Morax.png", subStat: "Tỷ Lệ Bạo Kích", passiveDesc: "Tăng ATK khi đánh trúng kẻ địch. Stack tối đa 7 lần, ở mức tối đa tăng thêm sát thương bạo kích.", refinement: 1 },
     ],
     bestArtifacts: [
       { setName: "Thánh Di Vật Đề Cử", pieces: 4, sands: ["ATK%"], goblet: ["Elemental DMG Bonus"], circlet: ["CRIT Rate"], subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%"] }
@@ -162,4 +217,3 @@ export async function seedCharacters(prisma: PrismaClient) {
   console.log('Seed dữ liệu thành công!');
 }
 
-}

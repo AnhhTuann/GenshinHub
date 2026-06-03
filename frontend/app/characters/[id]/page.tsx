@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import charactersData from '@/data/characters.json';
+import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData, Element, WeaponType } from '@/types/character';
 import { ChevronLeft, Flame, Droplets, Wind, Zap, Leaf, Snowflake, Mountain, Sword, Target, Crosshair, Book, MoreHorizontal } from 'lucide-react';
-
-const characters: CharacterData[] = charactersData as CharacterData[];
 
 function ElementIcon({ element, className = "w-4 h-4" }: { element: Element, className?: string }) {
   switch (element) {
@@ -33,7 +31,15 @@ function WeaponIcon({ weapon, className = "w-4 h-4" }: { weapon: WeaponType, cla
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
-  const character = characters.find((c) => c.id === resolvedParams.id);
+  
+  const [characterData, allCharactersData] = await Promise.all([
+    fetchGraphQL(GET_CHARACTER_BY_ID, { id: resolvedParams.id }),
+    fetchGraphQL(GET_CHARACTERS)
+  ]);
+
+  const character = characterData.character;
+  const characters = allCharactersData.characters;
+
   if (!character) notFound();
 
   const borderColorSolid = character.rarity === 5 ? 'border-amber-500' : 'border-purple-500';

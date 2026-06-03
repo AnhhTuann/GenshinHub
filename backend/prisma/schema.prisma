@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model Character {
+  id             String              @id
+  name           String
+  title          String
+  rarity         Int
+  element        String
+  weapon         String
+  region         String
+  avatarUrl      String
+  splashArtUrl   String
+  bestWeapons    CharacterWeapon[]
+  bestArtifacts  CharacterArtifact[]
+  talentPriority String[]
+  bestTeams      String[]
+}
+model CharacterWeapon {
+  id          String    @id @default(uuid())
+  weaponId    String
+  name        String
+  rank        Int
+  isF2P       Boolean
+  character   Character @relation(fields: [characterId], references: [id])
+  characterId String
+}
+model CharacterArtifact {
+  id               String    @id @default(uuid())
+  setName          String
+  pieces           Int
+  sands            String[]
+  goblet           String[]
+  circlet          String[]
+  subStatsPriority String[]
+  character        Character @relation(fields: [characterId], references: [id])
+  characterId      String
+}

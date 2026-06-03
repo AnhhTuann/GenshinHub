@@ -1,9 +1,10 @@
 import CharacterGallery from '@/components/CharacterGallery';
-import charactersData from '@/data/characters.json';
+import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 
-export default function Home() {
-  const characters: CharacterData[] = charactersData as CharacterData[];
+export default async function Home() {
+  const data = await fetchGraphQL(GET_CHARACTERS);
+  const characters: CharacterData[] = data.characters;
   return (
     <main className="p-4 md:p-8 font-sans">
       <div className="max-w-[1400px] mx-auto">

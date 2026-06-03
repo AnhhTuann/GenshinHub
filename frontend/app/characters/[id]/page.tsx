@@ -126,21 +126,58 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
           <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
             <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Best Weapons
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Cấu hình DPS
             </h3>
-            <div className="flex flex-col gap-4">
+            
+            <div className="mb-4">
+              <div className="w-1 h-5 bg-blue-500 rounded-full inline-block align-middle mr-2"></div>
+              <span className="text-xl font-bold text-gray-200 align-middle">Vũ khí</span>
+            </div>
+
+            <div className="flex flex-col gap-6 mt-6">
               {character.bestWeapons.map((weapon, idx) => {
-                const isTop = weapon.rank === 1;
                 return (
-                  <div key={idx} className={`flex items-center justify-between p-4 rounded-xl border ${isTop ? 'bg-yellow-500/5 border-yellow-500/30' : 'bg-[#0b0b0e] border-gray-800'}`}>
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-lg font-bold text-sm ${isTop ? 'bg-yellow-500/20 text-yellow-500' : 'bg-gray-800/50 text-gray-400'}`}>
-                        {isTop ? 'S+' : `R${weapon.rank}`}
+                  <div key={idx} className="flex flex-col">
+                    <div className="flex items-center gap-4 p-3 rounded-xl border border-gray-700/50 bg-[#111115]/80">
+                      
+                      <div className="w-6 h-6 shrink-0 flex items-center justify-center rounded-full bg-[#1c2333] border border-[#26314a] text-[#7192d6] text-xs font-bold ml-1">
+                        {idx + 1}
                       </div>
-                      <span className="font-semibold text-gray-100 text-lg">{weapon.name}</span>
+                      
+                      {weapon.iconUrl ? (
+                        <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-[#d9b28a] to-[#a37955] p-[1px]">
+                           <img src={weapon.iconUrl} alt={weapon.name} className="w-full h-full object-cover bg-black/20 rounded-md" />
+                        </div>
+                      ) : (
+                        <div className="w-12 h-12 shrink-0 rounded-lg bg-gray-800 flex items-center justify-center text-xs text-gray-500">Img</div>
+                      )}
+                      
+                      <div className="flex flex-col justify-center">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold text-gray-100 text-base">{weapon.name}</span>
+                          {weapon.refinement && weapon.refinement > 1 && (
+                            <span className="bg-[#1c2333] text-[#7192d6] text-[10px] font-bold px-1.5 py-0.5 rounded border border-[#26314a]">
+                              R{weapon.refinement}
+                            </span>
+                          )}
+                          {weapon.isF2P && (
+                            <span className="bg-green-900/30 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-800/50">
+                              F2P
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-gray-400 text-xs mt-0.5">{weapon.subStat || 'Unknown Stat'}</span>
+                      </div>
                     </div>
-                    {weapon.isF2P && (
-                      <span className="px-2 py-1 bg-green-900/30 border border-green-700/50 text-green-400 text-xs font-bold rounded">F2P</span>
+                    
+                    {weapon.passiveDesc && (
+                      <p className="text-gray-400 text-sm mt-3 px-1 leading-relaxed">
+                        {weapon.passiveDesc.split(/(CRIT Rate|CRIT DMG|ATK%|Độ Tăng Tỷ Lệ Phá Tính|Tỷ Lệ Bạo Kích|ST Bạo Kích|Hiệu Quả Nạp Nguyên Tố|Tấn Công%|DMG chí)/g).map((part, i) => 
+                          /CRIT Rate|CRIT DMG|ATK%|Độ Tăng Tỷ Lệ Phá Tính|Tỷ Lệ Bạo Kích|ST Bạo Kích|Hiệu Quả Nạp Nguyên Tố|Tấn Công%|DMG chí/.test(part) ? (
+                            <span key={i} className="text-orange-400">{part}</span>
+                          ) : part
+                        )}
+                      </p>
                     )}
                   </div>
                 )

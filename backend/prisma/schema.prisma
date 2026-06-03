@@ -34,6 +34,10 @@ model CharacterWeapon {
   name        String
   rank        Int
   isF2P       Boolean
+  iconUrl     String?
+  subStat     String?
+  passiveDesc String?
+  refinement  Int?      @default(1)
   character   Character @relation(fields: [characterId], references: [id])
   characterId String
 }

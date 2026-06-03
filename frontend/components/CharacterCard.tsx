@@ -1,17 +1,19 @@
 "use client";
+import { useState } from 'react';
 import Link from 'next/link';
 import { CharacterData } from '@/types/character';
 
 export default function CharacterCard({ character }: { character: CharacterData }) {
   const is5Star = character.rarity === 5;
   const bgGradient = is5Star ? 'from-yellow-600/40 to-yellow-900/60 border-yellow-500/50' : 'from-purple-500/40 to-purple-900/60 border-purple-500/50';
+  const [imgError, setImgError] = useState(false);
 
   return (
     <Link href={`/characters/${character.id}`}>
       <div className={`relative flex flex-col justify-end h-40 rounded-lg border-2 bg-gradient-to-t ${bgGradient} hover:scale-105 transition-all duration-200 overflow-hidden cursor-pointer`}>
         <div className="absolute inset-0 flex items-center justify-center -z-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={character.avatarUrl} alt={character.name} className="object-cover w-full h-full opacity-90" onError={(e) => { e.currentTarget.style.display = 'none'; }} referrerPolicy="no-referrer" />
+          {!imgError && <img src={character.avatarUrl} alt={character.name} className="object-cover w-full h-full opacity-90" onError={() => setImgError(true)} referrerPolicy="no-referrer" />}
         </div>
         <div className="absolute top-2 left-2 flex flex-col gap-1">
           <span className="w-6 h-6 bg-black/70 rounded-full border border-gray-500 flex items-center justify-center text-xs font-bold text-white">

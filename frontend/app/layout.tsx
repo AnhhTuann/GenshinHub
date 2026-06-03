@@ -7,6 +7,8 @@ const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
   title: "TeyvatDB - Genshin Impact Builds & Guides",
+  description: "Cơ sở dữ liệu Genshin Impact - Tra cứu thông tin, chỉ số, thánh di vật và đội hình mạnh nhất cho các nhân vật.",
+  keywords: "Genshin Impact, TeyvatDB, Builds, Artifacts, Weapons, Characters",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

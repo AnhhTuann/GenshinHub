@@ -5,7 +5,7 @@ export async function fetchGraphQL(query: string, variables = {}) {
     method: 'POST', 
     headers: { 'Content-Type': 'application/json' }, 
     body: JSON.stringify({ query, variables }), 
-    cache: 'no-store' 
+    next: { revalidate: 3600 } // Cache 1 hour
   });
   const json = await res.json();
   if (json.errors) {

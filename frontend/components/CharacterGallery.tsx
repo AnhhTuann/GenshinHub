@@ -1,5 +1,6 @@
 "use client";
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import Image from 'next/image';
 import CharacterCard from './CharacterCard';
 import { CharacterData, Element } from '@/types/character';
 
@@ -8,6 +9,21 @@ const ELEMENTS: Element[] = ['Pyro', 'Hydro', 'Anemo', 'Electro', 'Dendro', 'Cry
 export default function CharacterGallery({ initialCharacters }: { initialCharacters: CharacterData[] }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedElement, setSelectedElement] = useState<Element | null>(null);
+
+  useEffect(() => {
+    const handleReset = () => {
+      setSearchQuery('');
+      setSelectedElement(null);
+    };
+    if (typeof window !== 'undefined') {
+      window.addEventListener('reset-search', handleReset);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('reset-search', handleReset);
+      }
+    };
+  }, []);
 
   const filteredCharacters = useMemo(() => {
     return initialCharacters.filter((char) => {
@@ -19,8 +35,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Filter Bar */}
-      <div className="flex flex-col lg:flex-row gap-4 justify-between items-center bg-[#15151a]/80 backdrop-blur-md p-3 md:p-4 rounded-2xl border border-gray-800/60 shadow-lg">
+      <div className="flex flex-col lg:flex-row gap-4 justify-between items-center bg-[#15151a]/90 backdrop-blur-sm p-3 md:p-4 rounded-2xl border border-gray-800/60 shadow-lg">
         <input 
           type="text" 
           placeholder="Tìm kiếm nhân vật..." 
@@ -36,9 +51,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
           >
             Tất Cả
           </button>
-          
-          <div className="w-[1px] h-6 bg-gray-800 mx-1"></div> {/* Divider */}
-
+          <div className="w-[1px] h-6 bg-gray-800 mx-1"></div>
           {ELEMENTS.map((el) => {
             const isSelected = selectedElement === el;
             return (
@@ -48,11 +61,12 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
                 className={`p-2 rounded-lg transition-all duration-300 group ${isSelected ? 'bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)]' : 'hover:bg-white/5'}`}
                 title={el}
               >
-                <img 
+                <Image 
                   src={`/elements/${el.toLowerCase()}.png`} 
                   alt={el} 
+                  width={24}
+                  height={24}
                   className={`w-6 h-6 object-contain transition-transform duration-300 ${isSelected ? 'scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]' : 'opacity-60 group-hover:opacity-100 group-hover:scale-110'}`}
-                  onError={(e) => { (e.target as HTMLImageElement).src = 'https://placehold.co/24x24/333/FFF?text='+el[0]; }}
                 />
               </button>
             )
@@ -60,11 +74,9 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
         </div>
       </div>
 
-      {/* Grid Nhân vật */}
       {filteredCharacters.length > 0 ? (
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-5">
           {filteredCharacters.map((char) => (
-            // FIX LỖI Ở ĐÂY: Dùng ngoặc nhọn thuần túy, tuyệt đối không có ngoặc kép
             <CharacterCard key={char.id} character={char} />
           ))}
         </div>

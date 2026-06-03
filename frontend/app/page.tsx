@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <main className="relative min-h-screen bg-[#0b0b0e] text-gray-200 p-4 md:p-8 font-sans overflow-hidden">
       
-      <div className="absolute top-[-10%] left-[50%] translate-x-[-50%] w-[800px] h-[400px] bg-yellow-600/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(202,138,4,0.1)_0,transparent_70%)] pointer-events-none -z-10"></div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         

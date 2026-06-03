@@ -1,7 +1,35 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
+import WeaponCard from '@/components/WeaponCard';
+import ArtifactCard from '@/components/ArtifactCard';
+import StatCard from '@/components/StatCard';
+import CharacterSidebar from '@/components/CharacterSidebar';
+import Image from 'next/image';
+
+export async function generateStaticParams() {
+  const data = await fetchGraphQL(GET_CHARACTERS);
+  return data.characters.map((char: any) => ({
+    id: char.id,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const data = await fetchGraphQL(GET_CHARACTER_BY_ID, { id: resolvedParams.id });
+  const character = data.character;
+  if (!character) return { title: 'Character Not Found' };
+  
+  return {
+    title: `${character.name} - TeyvatDB`,
+    description: character.title,
+    openGraph: {
+      images: [character.avatarUrl],
+    }
+  };
+}
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
@@ -16,14 +44,8 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
   if (!character) notFound();
 
-  const is5Star = character.rarity === 5;
-  const themeColor = is5Star ? 'text-yellow-500' : 'text-purple-400';
-  const borderTheme = is5Star ? 'border-yellow-500/50' : 'border-purple-500/50';
-  const gradientTheme = is5Star ? 'from-yellow-900/40' : 'from-purple-900/40';
-
   return (
     <main className="min-h-screen bg-[#0b0b0e] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
-      
       <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
         <Link className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-fit" href="/">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
@@ -32,48 +54,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-8 items-start mt-4">
-        
-        {/* Left Column (Sticky) */}
-        <div className="w-full lg:w-[35%] lg:sticky lg:top-24 flex flex-col gap-4">
-          
-          <div className={`relative w-full aspect-[3/4] rounded-2xl overflow-hidden border ${borderTheme} shadow-2xl`}>
-            
-            <div className={`absolute inset-0 bg-gradient-to-tr ${gradientTheme} to-transparent opacity-50`}></div>
-            
-            <div 
-              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: character.splashArtUrl ? `url(${character.splashArtUrl})` : 'none' }}
-            />
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent"></div>
-
-            <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col gap-1">
-              <div className="flex items-center gap-2">
-                <img src={`/elements/${character.element.toLowerCase()}.png`} alt={character.element} className="w-5 h-5 drop-shadow-md" />
-                <span className="text-yellow-500 font-bold text-xs uppercase tracking-widest">{character.element}</span>
-              </div>
-              <h1 className="text-4xl font-black text-white mt-1 drop-shadow-lg">{character.name}</h1>
-              <p className="text-gray-300 font-medium text-lg drop-shadow-md">{character.title}</p>
-              
-              <div className="flex text-yellow-400 text-sm mt-3">
-                {Array(character.rarity).fill(0).map((_, i) => <span key={i}>★</span>)}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-[#15151a] border border-gray-800/60 p-4 rounded-xl flex flex-col">
-              <span className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Region</span>
-              <span className="text-gray-100 font-medium">{character.region}</span>
-            </div>
-            <div className="bg-[#15151a] border border-gray-800/60 p-4 rounded-xl flex flex-col">
-              <span className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Weapon</span>
-              <span className="text-gray-100 font-medium flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gray-500"></span> {character.weapon}
-              </span>
-            </div>
-          </div>
-        </div>
+        <CharacterSidebar character={character} />
 
         {/* Right Column (Scrollable) */}
         <div className="w-full lg:w-[65%] flex flex-col gap-8">
@@ -94,18 +75,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             <div>
               <h4 className="text-white font-bold mb-4">Chỉ Số Cơ Bản (Lv. 90)</h4>
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
-                  <span className="text-green-400 font-black text-xl mb-1">{character.baseHp?.toLocaleString()}</span>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base HP</span>
-                </div>
-                <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
-                  <span className="text-red-400 font-black text-xl mb-1">{character.baseAtk?.toLocaleString()}</span>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base ATK</span>
-                </div>
-                <div className="bg-[#0b0b0e] border border-gray-800 p-4 rounded-xl flex flex-col items-center shadow-inner">
-                  <span className="text-blue-400 font-black text-xl mb-1">{character.baseDef?.toLocaleString()}</span>
-                  <span className="text-gray-500 text-[10px] uppercase font-bold tracking-wider">Base DEF</span>
-                </div>
+                <StatCard label="Base HP" value={character.baseHp || 0} colorClass="text-green-400" />
+                <StatCard label="Base ATK" value={character.baseAtk || 0} colorClass="text-red-400" />
+                <StatCard label="Base DEF" value={character.baseDef || 0} colorClass="text-blue-400" />
               </div>
             </div>
           </section>
@@ -121,53 +93,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             </div>
 
             <div className="flex flex-col gap-6 mt-6">
-              {character.bestWeapons.map((weapon, idx) => {
-                return (
-                  <div key={idx} className="flex flex-col">
-                    <div className="flex items-center gap-4 p-3 rounded-xl border border-gray-700/50 bg-[#111115]/80">
-                      
-                      <div className="w-6 h-6 shrink-0 flex items-center justify-center rounded-full bg-[#1c2333] border border-[#26314a] text-[#7192d6] text-xs font-bold ml-1">
-                        {idx + 1}
-                      </div>
-                      
-                      {weapon.iconUrl ? (
-                        <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-[#d9b28a] to-[#a37955] p-[1px]">
-                           <img src={weapon.iconUrl} alt={weapon.name} className="w-full h-full object-cover bg-black/20 rounded-md" />
-                        </div>
-                      ) : (
-                        <div className="w-12 h-12 shrink-0 rounded-lg bg-gray-800 flex items-center justify-center text-xs text-gray-500">Img</div>
-                      )}
-                      
-                      <div className="flex flex-col justify-center">
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-gray-100 text-base">{weapon.name}</span>
-                          {weapon.refinement && weapon.refinement > 1 && (
-                            <span className="bg-[#1c2333] text-[#7192d6] text-[10px] font-bold px-1.5 py-0.5 rounded border border-[#26314a]">
-                              R{weapon.refinement}
-                            </span>
-                          )}
-                          {weapon.isF2P && (
-                            <span className="bg-green-900/30 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-800/50">
-                              F2P
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-gray-400 text-xs mt-0.5">{weapon.subStat || 'Unknown Stat'}</span>
-                      </div>
-                    </div>
-                    
-                    {weapon.passiveDesc && (
-                      <p className="text-gray-400 text-sm mt-3 px-1 leading-relaxed">
-                        {weapon.passiveDesc.split(/(CRIT Rate|CRIT DMG|ATK%|Độ Tăng Tỷ Lệ Phá Tính|Tỷ Lệ Bạo Kích|ST Bạo Kích|Hiệu Quả Nạp Nguyên Tố|Tấn Công%|DMG chí)/g).map((part, i) => 
-                          /CRIT Rate|CRIT DMG|ATK%|Độ Tăng Tỷ Lệ Phá Tính|Tỷ Lệ Bạo Kích|ST Bạo Kích|Hiệu Quả Nạp Nguyên Tố|Tấn Công%|DMG chí/.test(part) ? (
-                            <span key={i} className="text-orange-400">{part}</span>
-                          ) : part
-                        )}
-                      </p>
-                    )}
-                  </div>
-                )
-              })}
+              {character.bestWeapons.map((weapon, idx) => (
+                <WeaponCard key={idx} weapon={weapon} index={idx} />
+              ))}
             </div>
           </section>
 
@@ -176,43 +104,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Recommended Artifacts
             </h3>
             {character.bestArtifacts.map((artifact, idx) => (
-              <div key={idx} className="bg-[#0b0b0e] border border-gray-800 rounded-xl p-5 mb-4">
-                <div className="flex items-center gap-4 border-b border-gray-800 pb-4 mb-4">
-                  <div className="w-12 h-12 bg-yellow-900/20 rounded-lg flex items-center justify-center text-yellow-500 text-xl border border-yellow-700/30">✨</div>
-                  <div>
-                    <h4 className="font-bold text-gray-100 text-lg">{artifact.setName}</h4>
-                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">{artifact.pieces}-Piece Set</span>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-center mb-4">
-                  <div className="bg-[#15151a] p-3 rounded-lg border border-gray-800/50 flex flex-col justify-center">
-                    <span className="block text-gray-500 text-[10px] font-bold uppercase mb-1">Sands</span>
-                    <span className="text-gray-200 font-semibold text-sm">{artifact.sands.join(' / ')}</span>
-                  </div>
-                  <div className="bg-[#15151a] p-3 rounded-lg border border-gray-800/50 flex flex-col justify-center">
-                    <span className="block text-gray-500 text-[10px] font-bold uppercase mb-1">Goblet</span>
-                    <span className="text-gray-200 font-semibold text-sm">{artifact.goblet.join(' / ')}</span>
-                  </div>
-                  <div className="bg-[#15151a] p-3 rounded-lg border border-gray-800/50 flex flex-col justify-center">
-                    <span className="block text-gray-500 text-[10px] font-bold uppercase mb-1">Circlet</span>
-                    <span className="text-gray-200 font-semibold text-sm">{artifact.circlet.join(' / ')}</span>
-                  </div>
-                </div>
-                
-                <div className="border-t border-gray-800 pt-4">
-                  <span className="text-gray-500 text-[10px] font-bold uppercase mb-2 block">Sub-stats Priority</span>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {artifact.subStatsPriority.map((stat, sIdx) => (
-                      <div key={sIdx} className="flex items-center gap-2">
-                        <span className={`text-xs px-2 py-1 rounded border ${sIdx === 0 ? 'bg-gray-800 border-gray-600 text-gray-200' : 'border-gray-800 text-gray-400'}`}>
-                          {stat}
-                        </span>
-                        {sIdx < artifact.subStatsPriority.length - 1 && <span className="text-gray-700 text-[10px]">➔</span>}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <ArtifactCard key={idx} artifact={artifact} />
             ))}
           </section>
 

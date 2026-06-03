@@ -28,6 +28,11 @@ model Character {
   bestArtifacts  CharacterArtifact[]
   talentPriority String[]
   bestTeams      String[]
+
+  @@index([element])
+  @@index([rarity])
+  @@index([weapon])
+  @@index([region])
 }
 
 model CharacterWeapon {
@@ -42,6 +47,8 @@ model CharacterWeapon {
   refinement  Int?      @default(1)
   character   Character @relation(fields: [characterId], references: [id])
   characterId String
+
+  @@index([characterId])
 }
 
 model CharacterArtifact {
@@ -54,6 +61,8 @@ model CharacterArtifact {
   subStatsPriority String[]
   character        Character @relation(fields: [characterId], references: [id])
   characterId      String
+
+  @@index([characterId])
 }
 
 // Encyclopedia

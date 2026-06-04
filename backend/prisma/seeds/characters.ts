@@ -286,6 +286,103 @@ const metaBuilds = [
         subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
       }
     ]
+  },
+  {
+    characterId: "diluc",
+    bestWeapons: [
+      { rank: 1, name: "Hải Đăng Bờ Biển Lau", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao và Tỷ Lệ Bạo Kích cực tốt. Khi Kỹ Năng Nguyên Tố đánh trúng địch hoặc nhận sát thương sẽ tăng mạnh Tấn Công%, cực kỳ tối ưu cho Diluc đứng sân.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Deshret.png" },
+      { rank: 2, name: "Xích Giác Phá Thạch Đao", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp lượng khổng lồ Sát Thương Bạo Kích. Mặc dù Diluc không tận dụng nhiều từ quy đổi Phòng Thủ, chỉ số bạo kích thuần vẫn giúp nó là lựa chọn cực mạnh.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Itadorimaru.png" },
+      { rank: 3, name: "Thiên Dương Rực Lửa", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tăng Tỷ Lệ Bạo Kích và 20% sát thương Kỹ Năng Nguyên Tố. Sau khi kích hoạt Thiêu Đốt hoặc dùng Nộ sẽ tăng mạnh Sát Thương Nguyên Tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_RadianceSword.png" },
+      { rank: 4, name: "Phán Quyết", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao và Tỷ Lệ Bạo Kích dồi dào. Sau phản ứng Kết Tinh sẽ tăng Sát Thương Nguyên Tố cho Diluc, thích hợp khi đi cùng đồng đội hệ Nham.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_GoldenVerdict.png" },
+      { rank: 5, name: "Kiếm Li Cốt", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí Battle Pass cực mạnh cho Diluc. Tăng sát thương đầu ra theo thời gian đứng sân, khuyên dùng đi kèm nhân vật tạo khiên để giữ tầng tích lũy.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Kione.png" },
+      { rank: 6, name: "Nanh Sơn Vương", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Tỷ Lệ Bạo Kích. Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch sẽ tăng Tấn Công% và Tăng Sát Thương Nguyên Tố cho toàn bộ kỹ năng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_EmeraldSword.png" },
+      { rank: 7, name: "Đường Cùng Của Sói", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Lượng Tấn Công% khổng lồ giúp Diluc gây sát thương ổn định. Khi đánh trúng địch có HP dưới 30% sẽ buff thêm lượng lớn Tấn Công cho cả đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Wolfmound.png" },
+      { rank: 8, name: "Kiếm Vô Công", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Tăng hiệu quả Khiên và Tấn Công% cộng dồn khi đánh trúng địch. Yêu cầu bắt buộc có khiên (như Zhongli) để phát huy tối đa sức mạnh.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Kunwu.png" },
+      { rank: 9, name: "Tiếng Gió Trong Rừng Thông", subStat: "Tăng Sát Thương Vật Lý", isF2P: false, refinement: "R1", reason: "Chỉ số ATK cơ bản cực cao và nội tại tăng Tấn Công%, Tốc Độ Tấn Công khi tích đủ tầng, dù dòng phụ Sát Thương Vật Lý bị lãng phí.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Widsith.png" },
+      { rank: 10, name: "Vũ Tài", subStat: "Tinh Thông Nguyên Tố", isF2P: true, refinement: "R5", reason: "Cực kỳ mạnh trong các đội hình phản ứng Bốc Hơi nhờ lượng Tinh Thông Nguyên Tố lớn và tăng sát thương lên kẻ địch bị ấn Thủy.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Perdue.png" },
+      { rank: 11, name: "Đóa Hoa Tôn Màu Thép", subStat: "Tinh Thông Nguyên Tố", isF2P: true, refinement: "R5", reason: "Lựa chọn F2P Event hoàn hảo cho đội phản ứng. Tăng Tinh Thông Nguyên Tố và Tấn Công% sau khi dùng Kỹ Năng Nguyên Tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Fleurfair.png" },
+      { rank: 12, name: "Bóng Tối Thủy Triều", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn Fontaine cung cấp lượng lớn Tấn Công% sau khi nhận hồi máu. Dễ dàng kích hoạt và tối ưu khi đi cùng Healer.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Vorpal.png" },
+      { rank: 13, name: "Hắc Nham Trảm Đao", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Sát Thương Bạo Kích tốt giúp dễ build chỉ số. Nội tại tăng Tấn Công khi hạ gục kẻ địch, thích hợp khi đấu nhiều quái lẻ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Blackrock.png" },
+      { rank: 14, name: "Thiên Không Kiêu Ngạo", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Cung cấp Hiệu Quả Nạp giúp spam Nộ mượt mà. Nội tại tăng nhẹ sát thương và tạo ra các lưỡi đao chân không gây dame vật lý.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Dvalin.png" },
+      { rank: 15, name: "Đao Chấn Động", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn Natlan cung cấp Tấn Công%. Thích hợp dùng trong các đội hình phản ứng có liên quan hệ Thảo để buff sát thương.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Isikhulu.png" }
+    ],
+    bestArtifacts: [
+      {
+        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Giấc Mộng Hoàng Kim",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Mix 2 bộ Tấn Công & 2 bộ Sát Thương Hỏa",
+        pieces: 2,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      }
+    ]
+  },
+  {
+    characterId: "bennett",
+    bestWeapons: [
+      { rank: 1, name: "Ánh Sáng Đêm Sương Mù", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao nhất game (674) giúp gia tăng tối đa lượng buff Tấn Công của Kỹ Năng Nộ, dù dòng phụ Sát Thương Bạo Kích ít có tác dụng hỗ trợ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Narukami.png" },
+      { rank: 2, name: "Xá Tội", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cực cao (674) giúp tối ưu hóa lượng buff Tấn Công. Chỉ số Sát Thương Bạo Kích tuy không quá lý tưởng cho lối chơi thuần hỗ trợ nhưng vẫn rất giá trị.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Estoc.png" },
+      { rank: 3, name: "Thương Diệu", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản tối đa (674) kết hợp hoàn hảo cùng dòng phụ Tỷ Lệ Bạo Kích. Hỗ trợ sạc Nộ tốt và buff sát thương hiệu quả.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_OuterSword.png" },
+      { rank: 4, name: "Phong Ưng Kiếm", subStat: "Tăng Sát Thương Vật Lý", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao (674) giúp cung cấp lượng buff ATK cực lớn cho đồng đội. Dòng phụ Sát Thương Vật Lý bị lãng phí nhưng nội tại tự hồi máu thỉnh thoảng giúp ích.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Falcon.png" },
+      { rank: 5, name: "Tia Sáng Nơi Hẻm Tối", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R1", reason: "Vũ khí 4 sao có Tấn Công cơ bản cao nhất (620). Tăng nhẹ sát thương cá nhân, dòng phụ Tinh Thông Nguyên Tố hỗ trợ phản ứng tốt.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Outlaw.png" },
+      { rank: 6, name: "Lời Thề Tự Do Cổ Xưa", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản khá tốt (608). Nội tại tăng Tấn Công% và sát thương đánh thường cho cả đội, hỗ trợ hoàn hảo cho đội hình phản ứng bốc hơi/tan chảy.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Widsith.png" },
+      { rank: 7, name: "Khúc Ca Núi Đá", subStat: "Phòng Thủ%", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cực cao (674) tương tự Thương Diệu, giúp sạc Nộ tốt và gia tăng lượng buff Tấn Công khổng lồ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_XochitlsTube.png" },
+      { rank: 8, name: "Thiên Không Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao (608) đi kèm dòng phụ Hiệu Quả Nạp rất lớn, giúp Bennett spam Nộ cực kỳ dễ dàng mà không lo thiếu nạp.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Dvalin.png" },
+      { rank: 9, name: "Kiếm Gỗ", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí rèn Sumeru F2P tốt nhất cho Bennett. Tấn công cơ bản ổn định (565), dòng phụ Hiệu Quả Nạp và tạo hạt buff tinh thông cho đồng đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Arakalari.png" },
+      { rank: 10, name: "Mẫu Trảm Nham", subStat: "Tăng Sát Thương Vật Lý", isF2P: true, refinement: "R1", reason: "Tấn công cơ bản tương đối tốt (565) cho vũ khí F2P dễ kiếm. Dòng phụ Vật Lý ít tác dụng, khuyên dùng khi không có lựa chọn nào khác.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Proto.png" },
+      { rank: 11, name: "Tai Họa Eshu", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Tấn công cơ bản cao (565) nhưng không có dòng phụ Hiệu Quả Nạp. Nội tại tăng Tấn Công% sau khi được hồi máu.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_SacrificialNgombe.png" },
+      { rank: 12, name: "Tây Phong Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Tấn công cơ bản thấp (454) làm giảm lượng buff Tấn Công. Tuy nhiên dòng phụ Nạp rất cao và nội tại sinh hạt năng lượng giúp sạc nhanh cho cả đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Zephyrus.png" }
+    ],
+    bestArtifacts: [
+      {
+        setName: "Nghi Thức Tông Thất Cổ",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
+        subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Tấn Công%"]
+      },
+      {
+        setName: "Giáo Quan",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
+        subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Tấn Công%"]
+      },
+      {
+        setName: "Thiếu Nữ Đáng Yêu",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
+        subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Tấn Công%"]
+      }
+    ]
   }
 ];
 const charactersData = [

@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'enka.network',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'gi.yatta.moe',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

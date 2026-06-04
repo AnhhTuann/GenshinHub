@@ -2,15 +2,34 @@ import Image from 'next/image';
 import { WeaponBuild } from '@/types/character';
 
 export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; index: number }) {
+  const rarity = weapon.rarity || 4;
+
+  let cardBg = "bg-[#111115]/80 border-gray-700/50";
+  let imgBg = "bg-gradient-to-br from-[#a256e8] to-[#6f38a6]"; // 4-star default purple
+  let starColor = "text-purple-400";
+  let stars = "★★★★";
+
+  if (rarity === 5) {
+    cardBg = "bg-[#1c1812]/80 border-amber-600/30";
+    imgBg = "bg-gradient-to-br from-[#FFE082] via-[#FFB300] to-[#E65100]";
+    starColor = "text-amber-400";
+    stars = "★★★★★";
+  } else if (rarity === 3) {
+    cardBg = "bg-[#12161c]/80 border-blue-600/30";
+    imgBg = "bg-gradient-to-br from-[#40C4FF] via-[#0288D1] to-[#01579B]";
+    starColor = "text-blue-400";
+    stars = "★★★";
+  }
+
   return (
     <div className="flex flex-col">
-      <div className="flex items-center gap-4 p-3 rounded-xl border border-gray-700/50 bg-[#111115]/80">
+      <div className={`flex items-center gap-4 p-3 rounded-xl border ${cardBg} transition-all duration-300 hover:border-opacity-80`}>
         <div className="w-6 h-6 shrink-0 flex items-center justify-center rounded-full bg-[#1c2333] border border-[#26314a] text-[#7192d6] text-xs font-bold ml-1">
           {index + 1}
         </div>
         
         {weapon.iconUrl ? (
-          <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-[#d9b28a] to-[#a37955] p-[1px]">
+          <div className={`w-12 h-12 shrink-0 rounded-lg overflow-hidden ${imgBg} p-[1px]`}>
             <Image 
               src={weapon.iconUrl} 
               alt={weapon.name} 
@@ -24,20 +43,23 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
         )}
         
         <div className="flex flex-col justify-center">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-gray-100 text-base">{weapon.name}</span>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="font-bold text-gray-100 text-base leading-none">{weapon.name}</span>
+            <span className={`${starColor} text-[10px] font-bold font-mono tracking-wider align-middle select-none`}>
+              {stars}
+            </span>
             {weapon.refinement && weapon.refinement > 1 && (
-              <span className="bg-[#1c2333] text-[#7192d6] text-[10px] font-bold px-1.5 py-0.5 rounded border border-[#26314a]">
+              <span className="bg-[#1c2333] text-[#7192d6] text-[10px] font-bold px-1.5 py-0.5 rounded border border-[#26314a] leading-none">
                 R{weapon.refinement}
               </span>
             )}
             {weapon.isF2P && (
-              <span className="bg-green-900/30 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-800/50">
+              <span className="bg-green-900/30 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-800/50 leading-none">
                 F2P
               </span>
             )}
           </div>
-          <span className="text-gray-400 text-xs mt-0.5">{weapon.subStat || 'Unknown Stat'}</span>
+          <span className="text-gray-400 text-xs mt-1.5">{weapon.subStat || 'Unknown Stat'}</span>
         </div>
       </div>
       

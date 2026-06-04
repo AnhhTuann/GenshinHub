@@ -5,7 +5,7 @@ export type Region = 'Mondstadt' | 'Liyue' | 'Inazuma' | 'Sumeru' | 'Fontaine' |
 
 export interface WeaponBuild {
   id: string; name: string; rank: number; isF2P: boolean;
-  iconUrl?: string; subStat?: string; passiveDesc?: string; refinement?: number;
+  iconUrl?: string; subStat?: string; passiveDesc?: string; refinement?: number; rarity?: number;
 }
 
 export interface ArtifactBuild {

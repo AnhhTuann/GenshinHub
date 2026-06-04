@@ -1,5 +1,5 @@
 export const typeDefs = `#graphql
-  type WeaponBuild { id: String!, name: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDesc: String, refinement: Int }
+  type WeaponBuild { id: String!, name: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDesc: String, refinement: Int, rarity: Int }
   type ArtifactBuild { setName: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]! }
   type Character { 
     id: String!, name: String!, title: String!, rarity: Int!, element: String!, weapon: String!, region: String!, 

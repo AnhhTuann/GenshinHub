@@ -10,6 +10,23 @@ const weaponsCache = new LRUCache({ max: 10, ttl: 1000 * 60 * 60 });
 const showcaseCache = new LRUCache({ max: 500, ttl: 1000 * 60 * 5 });
 
 export const resolvers = {
+  WeaponBuild: {
+    rarity: async (parent: any) => {
+      try {
+        const weapon = await prisma.weapon.findFirst({
+          where: {
+            OR: [
+              { name: parent.name },
+              { id: parent.weaponId }
+            ]
+          }
+        });
+        return weapon ? weapon.rarity : 4;
+      } catch (e) {
+        return 4;
+      }
+    }
+  },
   Query: {
     characters: async () => {
       const cached = charactersCache.get('all');

@@ -10,6 +10,28 @@ import CharacterSidebar from '@/components/CharacterSidebar';
 import Image from 'next/image';
 import { detailedTeamsData } from '@/data/teams';
 
+function translateStat(stat: string): string {
+  const map: Record<string, string> = {
+    "HP%": "HP%",
+    "Tinh Thông Nguyên Tố": "Elemental Mastery",
+    "Hiệu Quả Nạp": "Energy Recharge",
+    "Hiệu Quả Nạp Nguyên Tố": "Energy Recharge",
+    "Tấn Công%": "ATK%",
+    "Sát Thương Nguyên Tố Hỏa": "Pyro DMG Bonus",
+    "Sát Thương Nguyên Tố Lôi": "Electro DMG Bonus",
+    "Sát Thương Nguyên Tố Thủy": "Hydro DMG Bonus",
+    "Sát Thương Nguyên Tố Phong": "Anemo DMG Bonus",
+    "Sát Thương Nguyên Tố Băng": "Cryo DMG Bonus",
+    "Sát Thương Nguyên Tố Thảo": "Dendro DMG Bonus",
+    "Sát Thương Nguyên Tố Nham": "Geo DMG Bonus",
+    "Geo DMG Bonus": "Geo DMG Bonus",
+    "Sát Thương Vật Lý": "Physical DMG Bonus",
+    "Tỷ Lệ Bạo Kích": "CRIT Rate",
+    "Sát Thương Bạo Kích": "CRIT DMG"
+  };
+  return map[stat] || stat;
+}
+
 export async function generateStaticParams() {
   const data = await fetchGraphQL(GET_CHARACTERS);
   return data.characters.map((char: any) => ({
@@ -111,6 +133,57 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               <ArtifactCard key={idx} artifact={artifact} />
             ))}
           </section>
+
+          {/* Recommended Primary Stats Section */}
+          {character.bestArtifacts && character.bestArtifacts.length > 0 && (
+            <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
+              <div className="mb-6">
+                <div className="w-1 h-5 bg-[#22c55e] rounded-full inline-block align-middle mr-2"></div>
+                <span className="text-xl font-bold text-gray-200 align-middle">Recommended Primary Stats</span>
+              </div>
+              
+              <div className="flex flex-col gap-4 mt-6">
+                {/* Sands */}
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2.5 bg-[#182030] border border-blue-900/30 px-4 py-2 rounded-lg text-slate-200 font-bold w-28 shrink-0 shadow-sm">
+                    <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 2h12M6 22h12M6 2l6 7 6-7M6 22l6-7 6 7M12 9v4" />
+                    </svg>
+                    <span className="text-xs tracking-wider">Sands</span>
+                  </div>
+                  <span className="text-gray-300 font-medium text-sm">
+                    {character.bestArtifacts[0].sands.map(translateStat).join(' / ')}
+                  </span>
+                </div>
+
+                {/* Goblet */}
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2.5 bg-[#182030] border border-blue-900/30 px-4 py-2 rounded-lg text-slate-200 font-bold w-28 shrink-0 shadow-sm">
+                    <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a5 5 0 00-5 5v3a5 5 0 0010 0V7a5 5 0 00-5-5zM12 15v5m-4 2h8" />
+                    </svg>
+                    <span className="text-xs tracking-wider">Goblet</span>
+                  </div>
+                  <span className="text-gray-300 font-medium text-sm">
+                    {character.bestArtifacts[0].goblet.map(translateStat).join(' / ')}
+                  </span>
+                </div>
+
+                {/* Circlet */}
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2.5 bg-[#182030] border border-blue-900/30 px-4 py-2 rounded-lg text-slate-200 font-bold w-28 shrink-0 shadow-sm">
+                    <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2 4l3 12h14l3-12-6 4-4-4-4 4-6-4zm3 12a2 2 0 002 2h10a2 2 0 002-2" />
+                    </svg>
+                    <span className="text-xs tracking-wider">Circlet</span>
+                  </div>
+                  <span className="text-gray-300 font-medium text-sm">
+                    {character.bestArtifacts[0].circlet.map(translateStat).join(' / ')}
+                  </span>
+                </div>
+              </div>
+            </section>
+          )}
 
           {hasDetailedTeams ? (
             /* Full-width layout for Substats & Talents Priority when detailed teams exist (Recommended Teammates is hidden/redundant) */

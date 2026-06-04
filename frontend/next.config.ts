@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         hostname: 'gi.yatta.moe',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'genshin-impact.fandom.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

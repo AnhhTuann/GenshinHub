@@ -2,12 +2,13 @@ import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
 import { LRUCache } from 'lru-cache';
 
+// Forced restart to flush caches after db seed - final
 const prisma = new PrismaClient();
 
-const charactersCache = new LRUCache({ max: 10, ttl: 1000 * 60 * 60 });
-const characterCache = new LRUCache({ max: 500, ttl: 1000 * 60 * 60 });
-const weaponsCache = new LRUCache({ max: 10, ttl: 1000 * 60 * 60 });
-const showcaseCache = new LRUCache({ max: 500, ttl: 1000 * 60 * 5 });
+const charactersCache = new LRUCache<string, any>({ max: 10, ttl: 1000 * 60 * 60 });
+const characterCache = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 60 });
+const weaponsCache = new LRUCache<string, any>({ max: 10, ttl: 1000 * 60 * 60 });
+const showcaseCache = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 5 });
 
 export const resolvers = {
   WeaponBuild: {
@@ -27,11 +28,41 @@ export const resolvers = {
       }
     }
   },
+  ArtifactBuild: {
+    iconUrl: async (parent: any) => {
+      try {
+        const set = await prisma.artifactSet.findFirst({
+          where: { name: parent.setName }
+        });
+        return set ? set.iconUrl : null;
+      } catch (e) {
+        return null;
+      }
+    },
+    rarity: async (parent: any) => {
+      try {
+        const set = await prisma.artifactSet.findFirst({
+          where: { name: parent.setName }
+        });
+        if (set && set.rarityList && set.rarityList.length > 0) {
+          return Math.max(...set.rarityList);
+        }
+        return 5;
+      } catch (e) {
+        return 5;
+      }
+    }
+  },
   Query: {
     characters: async () => {
       const cached = charactersCache.get('all');
-      if (cached) return cached;
+      if (cached) {
+        console.log('Returning characters from cache (count: ' + cached.length + ')');
+        return cached;
+      }
+      console.log('Fetching characters from DB...');
       const data = await prisma.character.findMany({ include: { bestWeapons: true, bestArtifacts: true } });
+      console.log('Fetched ' + data.length + ' characters from DB');
       charactersCache.set('all', data);
       return data;
     },
@@ -71,3 +102,5 @@ export const resolvers = {
     }
   }
 };
+// Trigger nodemon restart to clear cache v3
+

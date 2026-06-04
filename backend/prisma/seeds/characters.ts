@@ -10,6 +10,7 @@ const toSplash = (name: string) => `https://enka.network/ui/UI_Gacha_AvatarImg_$
 const metaBuilds = [
   {
     characterId: "hu-tao",
+    talentPriority: ["Normal Attack", "Skill", "Burst"],
     bestWeapons: [
       { rank: 1, name: "Trượng Hộ Ma", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí 'trấn phái' tốt nhất, cung cấp lượng lớn HP và chuyển hóa máu thành Tấn Công cực mạnh.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Homa.png" },
       { rank: 2, name: "Quyền Trượng Cát Đỏ", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Lựa chọn thay thế mạnh mẽ nếu build theo hướng Tinh Thông Nguyên Tố cao, chuyển hóa TTNT thành Tấn Công.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Deshret.png" },
@@ -24,6 +25,48 @@ const metaBuilds = [
       { rank: 11, name: "Thương Hắc Nham", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp lượng lớn Sát Thương Bạo Kích nhưng nội tại yêu cầu hạ gục quái để kích hoạt, kém hiệu quả khi đấu Boss.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Blackrock.png" },
       { rank: 12, name: "Thương Thập Tự Kitain", subStat: "Tinh Thông Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí rèn F2P cung cấp Tinh Thông Nguyên Tố, tuy nhiên nội tại tiêu hao năng lượng không thực sự hữu dụng với Hu Tao.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Bakufu.png" },
       { rank: 13, name: "Đền Đáp Của Công Lý", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Không khuyến nghị do dòng phụ Hiệu Quả Nạp bị lãng phí và nội tại yêu cầu hồi máu, mâu thuẫn lối chơi thấp máu của cô.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Vorpal.png" }
+    ],
+    bestArtifacts: [
+      {
+        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: ["HP%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "Elemental Mastery", "HP%", "ATK%"]
+      },
+      {
+        setName: "Dòng Hồi Ức Bất Tận",
+        pieces: 4,
+        sands: ["HP%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "Elemental Mastery", "HP%", "ATK%"]
+      },
+      {
+        setName: "Giấc Mộng Hoàng Kim",
+        pieces: 4,
+        sands: ["HP%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "Elemental Mastery", "HP%", "ATK%"]
+      },
+      {
+        setName: "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP",
+        pieces: 2,
+        sands: ["HP%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "Elemental Mastery", "HP%", "ATK%"]
+      },
+      {
+        setName: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: ["HP%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "Elemental Mastery", "HP%", "ATK%"]
+      }
     ]
   },
   {
@@ -440,6 +483,100 @@ const metaBuilds = [
         subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
       }
     ]
+  },
+  {
+    characterId: "yanfei",
+    bestWeapons: [
+      { rank: 1, name: "Chân Ngôn Bí Hạp", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công căn bản và Sát Thương Bạo Kích cao. Kỹ Năng Nộ giúp tăng Tinh Thông Nguyên Tố để phản ứng Bốc Hơi mạnh mẽ hơn.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Sistrum.png" },
+      { rank: 2, name: "Nghi Thức Dòng Chảy Vĩnh Hằng", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Lượng Sát Thương Bạo Kích khổng lồ và tăng sát thương Đòn Đánh Thường. Hiệu ứng thay đổi HP dễ dàng được kích hoạt bởi các đòn Trọng Kích của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Iudex.png" },
+      { rank: 3, name: "Quản Đốc Vàng Ròng", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tỷ Lệ Bạo Kích cao và tăng Tấn Công% sau khi dùng Kỹ Năng Nguyên Tố, rất phù hợp với chu kỳ combo của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Wheatley.png" },
+      { rank: 4, name: "Tâm Niệm Sắc Màu", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Tinh Thông Nguyên Tố và Tỷ Lệ Bạo Kích. Sau khi kích hoạt phản ứng, cả đội nhận thêm Tấn Công%, có lợi cho cả Yanfei lẫn đồng đội hỗ trợ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_VaresaTransformer.png" },
+      { rank: 5, name: "Thời Khắc Lướt Sóng", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Sát Thương Bạo Kích cao và tăng tốc độ Đánh Thường. Phản ứng Bốc Hơi giúp tăng thêm Tinh Thông Nguyên Tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_MechaPufferfish.png" },
+      { rank: 6, name: "Cõi Mộng Ngàn Đêm", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R1", reason: "Tăng Tinh Thông Nguyên Tố cho cả đội và lượng lớn TTNT cá nhân. Rất lý tưởng cho đội hình chuyên phản ứng, tăng mạnh sát thương Bốc Hơi.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Ayus.png" },
+      { rank: 7, name: "Ánh Nhìn Tư Tế", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R1", reason: "Cung cấp Tỷ Lệ Bạo Kích và Hiệu Quả Nạp. Buff sát thương Kỹ Năng Nộ giúp tối ưu khả năng dồn sát thương của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Figurines.png" },
+      { rank: 8, name: "Dòng Chảy Trong Trẻo", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Lựa chọn rèn F2P cung cấp dòng phụ Tấn Công%. Nội tại tăng Sát Thương Nguyên Tố sau khi dùng Kỹ Năng Nguyên Tố, đơn giản nhưng hiệu quả.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Vorpal.png" },
+      { rank: 9, name: "Chương Nhạc Lang Thang", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R5", reason: "Nhận ngẫu nhiên các buff khi ra sân: Tấn Công%, Tăng Sát Thương Nguyên Tố hoặc Tinh Thông Nguyên Tố. Cả 3 buff đều cực kỳ có lợi cho lối chơi Bốc Hơi của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Troupe.png" },
+      { rank: 10, name: "Sương Mai", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Dòng phụ Sát Thương Bạo Kích. Sau khi kích hoạt phản ứng Nguyên Tố Hỏa, tăng Tấn Công và Tỷ Lệ Bạo Kích, rất đồng bộ với lối chơi của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Ziedas.png" }
+    ],
+    bestArtifacts: [
+      {
+        setName: "Đoàn Hát Lang Thang Đại Lục",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      }
+    ]
+  },
+  {
+    characterId: "yoimiya",
+    bestWeapons: [
+      { rank: 1, name: "Sấm Sét Rung Động", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Best-in-slot: high base ATK and CRIT DMG, passive boosts Normal Attack damage and stacks with her Pyro infusion.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Narukami.png" },
+      { rank: 2, name: "Nhược Thủy", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "High CRIT DMG and unconditional damage bonus. The passive condition (enemies nearby) is usually met in her attack range.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Kirin.png" },
+      { rank: 3, name: "Màn Ảo Thuật Đầu Tiên", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Provides CRIT DMG and ATK% based on party elemental diversity, which works well in reaction teams.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Pledge.png" },
+      { rank: 4, name: "Ngôi Sao Cực Đông", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "ATK% substat and passive that increases ATK and Skill/Burst damage. Requires stacking but effective.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Worldbane.png" },
+      { rank: 5, name: "Con Đường Thợ Săn", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Decent CRIT Rate stat stick; the passive boosts Charged Attacks, which are rarely used, so it's a fallback option.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Ayus.png" },
+      { rank: 6, name: "Cánh Thiên Không", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Solid CRIT Rate and extra CRIT DMG from passive. A reliable stat stick.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Dvalin.png" },
+      { rank: 7, name: "Nỏ Kéo", subStat: "Tỷ Lệ Bạo Kích", isF2P: true, refinement: "R5", reason: "3-star weapon with high CRIT Rate. Passive works at close range; good early game but inconsistent at longer ranges.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Sling.png" },
+      { rank: 8, name: "Cung Amos", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "High base ATK and passive that increases Normal and Charged Attack damage over time. Decent but outclassed by other options.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Amos.png" },
+      { rank: 9, name: "Cung Rỉ Sét", subStat: "Tấn Công%", isF2P: false, refinement: "R5", reason: "ATK% substat and passive that boosts Normal Attack damage by up to 80% at R5 while reducing Charged Attack damage. Excellent for her playstyle.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Recluse.png" }
+    ],
+    bestArtifacts: [
+      {
+        setName: "Dòng Hồi Ức Bất Tận",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      }
+    ]
+  },
+  {
+    characterId: "thoma",
+    bestWeapons: [
+      { rank: 1, name: "Giáo Thập Tự Kitain", subStat: "Tinh Thông Nguyên Tố", isF2P: true, refinement: "R5", reason: "Provides Elemental Mastery and refunds energy after using Skill, helping sustain Burst uptime.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Bakufu.png" },
+      { rank: 2, name: "Thương Tây Phong", subStat: "Hiệu Quả Nạp", isF2P: true, refinement: "R5", reason: "Generates energy particles for the team on CRIT, ensuring consistent Burst availability.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Zephyrus.png" },
+      { rank: 3, name: "Tai Ương Của Rồng", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R5", reason: "High Elemental Mastery substat and passive boosts damage against enemies affected by Hydro or Pyro.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Stardust.png" },
+      { rank: 4, name: "Quán Nguyệt Thương", subStat: "Tinh Thông Nguyên Tố", isF2P: true, refinement: "R5", reason: "Offers Elemental Mastery and creates a leaf that boosts ATK for the team, useful for driving reactions.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Arakalari.png" },
+      { rank: 5, name: "Hắc Anh Thương", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Noire.png" },
+      { rank: 6, name: "Thù Lao Của Chính Nghĩa", subStat: "HP%", isF2P: true, refinement: "R5", reason: "F2P spear with HP% and energy regeneration when using Skill, aiding Burst uptime.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Vorpal.png" }
+    ],
+    bestArtifacts: [
+      {
+        setName: "Đóa Hoa Trang Viên Thất Lạc",
+        pieces: 4,
+        sands: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Tinh Thông Nguyên Tố", "HP%"],
+        circlet: ["Tinh Thông Nguyên Tố", "HP%"],
+        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "HP%", "Tấn Công%"]
+      },
+      {
+        setName: "Giấc Mộng Hoàng Kim",
+        pieces: 4,
+        sands: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Tinh Thông Nguyên Tố", "HP%"],
+        circlet: ["Tinh Thông Nguyên Tố", "HP%"],
+        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "HP%", "Tấn Công%"]
+      }
+    ]
   }
 ];
 const charactersData = [
@@ -470,6 +607,41 @@ function parseChar(dataStr: string) {
   const charId = toId(name);
   const metaInfo = metaBuilds.find(m => m.characterId === charId);
 
+  let defaultWeapons: any[] = [];
+  switch (weapon) {
+    case 'Sword':
+      defaultWeapons = [
+        { weaponId: "primordial-jade-cutter", name: "Bàn Nham Kết Lục", rank: 5, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Morax.png", subStat: "Tỷ Lệ Bạo Kích", passiveDesc: "Tăng HP và Tấn Công.", refinement: 1 },
+        { weaponId: "amenoma-kageuchi", name: "Đoản Đao Amenoma", rank: 4, isF2P: true, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Bakufu.png", subStat: "Tấn Công%", passiveDesc: "Hồi năng lượng sau khi dùng Nộ.", refinement: 5 }
+      ];
+      break;
+    case 'Claymore':
+      defaultWeapons = [
+        { weaponId: "wolfs-gravestone", name: "Đường Cùng Của Sói", rank: 5, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Wolfmound.png", subStat: "Tấn Công%", passiveDesc: "Tăng mạnh Tấn Công.", refinement: 1 },
+        { weaponId: "prototype-archaic", name: "Mẫu Cổ Hoa", rank: 4, isF2P: true, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Proto.png", subStat: "Tấn Công%", passiveDesc: "Có xác suất gây sát thương AoE.", refinement: 5 }
+      ];
+      break;
+    case 'Bow':
+      defaultWeapons = [
+        { weaponId: "skyward-harp", name: "Cánh Thiên Không", rank: 5, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Dvalin.png", subStat: "Tỷ Lệ Bạo Kích", passiveDesc: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.", refinement: 1 },
+        { weaponId: "the-stringless", name: "Tuyệt Huyền", rank: 4, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Troupe.png", subStat: "Tinh Thông Nguyên Tố", passiveDesc: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.", refinement: 5 }
+      ];
+      break;
+    case 'Catalyst':
+      defaultWeapons = [
+        { weaponId: "lost-prayer-to-the-sacred-winds", name: "Điển Tích Tây Phong", rank: 5, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Fourwinds.png", subStat: "Tỷ Lệ Bạo Kích", passiveDesc: "Tăng tốc độ di chuyển và sát thương nguyên tố.", refinement: 1 },
+        { weaponId: "the-widsith", name: "Chương Nhạc Lang Thang", rank: 4, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Troupe.png", subStat: "Sát Thương Bạo Kích", passiveDesc: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.", refinement: 5 }
+      ];
+      break;
+    case 'Polearm':
+    default:
+      defaultWeapons = [
+        { weaponId: "engulfing-lightning", name: "Thương Diệu", rank: 5, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Narukami.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", refinement: 1 },
+        { weaponId: "the-catch", name: "Lao Xiên Cá", rank: 4, isF2P: true, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Mori.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", refinement: 5 }
+      ];
+      break;
+  }
+
   return {
     id: charId,
     name: name,
@@ -479,7 +651,7 @@ function parseChar(dataStr: string) {
     weapon: weapon,
     avatarUrl: toAvatar(avatarKey),
     splashArtUrl: toSplash(avatarKey),
-    talentPriority: ["Normal Attack", "Elemental Skill", "Elemental Burst"],
+    talentPriority: (metaInfo && metaInfo.talentPriority) ? metaInfo.talentPriority : ["Normal Attack", "Elemental Skill", "Elemental Burst"],
     bestTeams: ["bennett", "xingqiu", "zhongli"],
     description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
     baseStats: { hp: 10000, atk: 300, def: 600 },
@@ -493,11 +665,7 @@ function parseChar(dataStr: string) {
       subStat: w.subStat,
       passiveDesc: w.reason,
       refinement: parseInt(w.refinement.replace('R', '')) || 1
-    })) : [
-      { weaponId: "engulfing-lightning", name: "Thương Diệu", rank: 1, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Narukami.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", refinement: 1 },
-      { weaponId: "the-catch", name: "Lao Xiên Cá", rank: 2, isF2P: true, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Mori.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDesc: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", refinement: 5 },
-      { weaponId: "primordial-jade-winged-spear", name: "Hòa Phát Diên", rank: 3, isF2P: false, iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Morax.png", subStat: "Tỷ Lệ Bạo Kích", passiveDesc: "Tăng ATK khi đánh trúng kẻ địch. Stack tối đa 7 lần, ở mức tối đa tăng thêm sát thương bạo kích.", refinement: 1 },
-    ],
+    })) : defaultWeapons,
     bestArtifacts: (metaInfo && metaInfo.bestArtifacts) ? metaInfo.bestArtifacts : [
       { setName: "Thánh Di Vật Đề Cử", pieces: 4, sands: ["ATK%"], goblet: ["Elemental DMG Bonus"], circlet: ["CRIT Rate"], subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%"] }
     ]

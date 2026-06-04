@@ -14,10 +14,11 @@ export async function seedArtifacts(prisma: PrismaClient) {
         rarityList: item.levelList || [],
         piece2Desc: (affixes[0] as string) || '',
         piece4Desc: (affixes[1] as string) || '',
-        iconUrl: item.icon ? `https://gi.yatta.moe/assets/UI/${item.icon}.png` : null,
+        iconUrl: item.icon ? `https://gi.yatta.moe/assets/UI/reliquary/${item.icon}.png` : null,
       };
     });
-    await prisma.artifactSet.createMany({ data: artifactData, skipDuplicates: true });
+    await prisma.artifactSet.deleteMany({});
+    await prisma.artifactSet.createMany({ data: artifactData });
     console.log(`Đã seed thành công ${artifactData.length} Artifact Sets.`);
   } catch (e: any) {
     console.log('Lỗi seed Artifact Set:', e.message);

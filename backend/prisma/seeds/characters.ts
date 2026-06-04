@@ -86,7 +86,43 @@ const metaBuilds = [
       { rank: 12, name: "Vây Cá Chẻ Sóng", subStat: "Tấn Công%", isF2P: false, refinement: "R5", reason: "Sát thương Nộ tăng theo tổng năng lượng tiêu hao của cả đội, cực mạnh trong các đội hình tốn nhiều năng lượng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Maria.png" },
       { rank: 13, name: "Thương Lập Kiếm", subStat: "Tấn Công%", isF2P: false, refinement: "R5", reason: "Tăng mạnh Tấn Công% và Tỷ Lệ Bạo Kích dựa trên số thành viên Liyue trong đội hình.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Lapis.png" },
       { rank: 14, name: "Thương Tây Phong", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Ưu tiên nạp năng lượng cho cả đội thay vì sát thương cá nhân, tạo nhiều hạt nhân lượng khi bạo kích.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Zephyrus.png" }
-    ]
+    ],
+    talentPriority: ["Burst", "Skill", "Normal Attack"],
+    bestArtifacts: [
+      {
+        setName: "Dấu Ấn Ngăn Cách",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Lôi", "Tấn Công%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge", "Elemental Mastery"]
+      },
+      {
+        setName: "Nghi Thức Tông Thất Cổ",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Lôi", "Tấn Công%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge", "Elemental Mastery"]
+      },
+      {
+        setName: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
+        pieces: 2,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Lôi", "Tấn Công%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge", "Elemental Mastery"]
+      },
+      {
+        setName: "Thiên Nham Vững Chắc",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Lôi", "Tấn Công%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge", "Elemental Mastery"]
+      }
+    ],
+    bestTeams: ["kujou-sara", "kazuha", "bennett", "xiangling", "xingqiu", "chevreuse", "nahida", "yelan", "baizhu", "eula", "rosaria"]
   },
   {
     characterId: "zhongli",
@@ -652,7 +688,7 @@ function parseChar(dataStr: string) {
     avatarUrl: toAvatar(avatarKey),
     splashArtUrl: toSplash(avatarKey),
     talentPriority: (metaInfo && metaInfo.talentPriority) ? metaInfo.talentPriority : ["Normal Attack", "Elemental Skill", "Elemental Burst"],
-    bestTeams: ["bennett", "xingqiu", "zhongli"],
+    bestTeams: (metaInfo && metaInfo.bestTeams) ? metaInfo.bestTeams : ["bennett", "xingqiu", "zhongli"],
     description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
     baseStats: { hp: 10000, atk: 300, def: 600 },
     fandomUrl: `https://genshin-impact.fandom.com/wiki/${name.replace(/ /g, '_')}`,

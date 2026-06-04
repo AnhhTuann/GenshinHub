@@ -23,6 +23,31 @@ function getMixedSets(setName: string) {
     ];
   }
   
+  if (lower.includes("lôi") || lower.includes("tông thất") || lower.includes("dấu ấn")) {
+    return [
+      {
+        name: "Nghi Thức Tông Thất Cổ",
+        desc: "Tăng 20% Sát Thương Kỹ Năng Nộ",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15007_4.png"
+      },
+      {
+        name: "Như Sấm Thịnh Nộ",
+        desc: "Tăng 15% Sát Thương Nguyên Tố Lôi",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15005_4.png"
+      },
+      {
+        name: "Bộ Tăng Tấn Công +18%",
+        desc: "Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+      },
+      {
+        name: "Dấu Ấn Ngăn Cách",
+        desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+      }
+    ];
+  }
+  
   // Default fallback if we don't recognize the mix
   return [
     {

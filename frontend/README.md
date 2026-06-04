@@ -1,30 +1,30 @@
 # TeyvatDB - Frontend 🎨
 
-Đây là thư mục chứa mã nguồn giao diện người dùng của **TeyvatDB**, được phát triển dựa trên các công nghệ web hiện đại nhất để đảm bảo hiệu suất (Performance), tối ưu SEO và mang lại trải nghiệm tương tác mượt mà.
+Đây là thư mục chứa mã nguồn giao diện người dùng của **TeyvatDB**, được phát triển dựa trên các công nghệ web hiện đại để đảm bảo hiệu suất (Performance), tối ưu SEO và mang lại trải nghiệm tương tác mượt mà.
 
 ## 📦 Các Packages đã sử dụng và Công dụng
 
 | Package | Phiên bản | Công dụng |
 | :--- | :--- | :--- |
-| **Next.js** | `15.x` | Framework React chính, sử dụng App Router, Server Components và Server Actions để SSR/SSG giúp tối ưu SEO và tốc độ tải trang. |
-| **TailwindCSS** | `4.x` | Utility-first CSS framework để style giao diện trực tiếp trên class, giúp thiết kế nhanh và dễ dàng tạo các hiệu ứng Glassmorphism, Dark mode. |
-| **motion** | `12.x` | Thư viện tạo animation (hiệu ứng chuyển động) cho các component (như danh sách nhân vật, modal, hiệu ứng hover) giúp UI sinh động hơn. |
-| **lucide-react** | `0.553.x` | Bộ icon SVG nhẹ và sắc nét để dùng cho các nút bấm, thanh điều hướng và nhãn thông tin. |
-| **clsx & tailwind-merge** | `2.x / 3.x` | Tiện ích giúp nối các chuỗi class Tailwind một cách thông minh, tránh xung đột CSS khi viết các Component có thể tái sử dụng. |
-| **@google/genai** | `2.4.x` | Tích hợp Gemini AI (nếu có) để tạo các tính năng thông minh như chatbot gợi ý đội hình, tóm tắt tiểu sử nhân vật. |
+| **Next.js** | `15.x` | Framework React chính, sử dụng App Router, Server Components để tối ưu hiệu suất và SEO. |
+| **React & React DOM** | `19.x` | Thư viện cốt lõi xây dựng giao diện người dùng. |
+| **TailwindCSS** | `4.x` | Utility-first CSS framework để style giao diện, hỗ trợ tích hợp sâu qua `@tailwindcss/postcss`. |
+| **tw-animate-css** | `1.4.x` | Thư viện hỗ trợ tạo các hiệu ứng chuyển động (animations) phong phú dựa trên Tailwind. |
+| **class-variance-authority** | `0.7.x` | Tiện ích (CVA) hỗ trợ quản lý các trạng thái (variants) của UI component một cách an toàn và gọn gàng. |
+| **@hookform/resolvers** | `5.2.x` | Tích hợp xác thực dữ liệu (validation) cho form. |
 
 ## 📂 Cấu trúc thư mục (Directory Structure)
 
 - **`app/`**: Chứa các trang (Pages) của Next.js App Router (như `page.tsx`, `layout.tsx`).
-- **`components/`**: Chứa các UI Components độc lập và có thể tái sử dụng (như `CharacterGallery`, `Card`, `Navbar`).
+- **`components/`**: (Nếu có) Chứa các UI Components độc lập và có thể tái sử dụng.
 - **`lib/`**: Chứa các hàm tiện ích, cấu hình kết nối API. Nổi bật là file `graphql.ts` chịu trách nhiệm gọi API GraphQL tới Backend.
-- **`types/`**: Chứa định nghĩa kiểu dữ liệu (TypeScript Interfaces) để đảm bảo an toàn kiểu (Type-safe) khi code.
+- **`public/`**: Thư mục chứa các tài nguyên tĩnh như hình ảnh, biểu tượng.
 
 ## ⚙️ Cách thức hoạt động
 
 1. **Fetching Dữ liệu (GraphQL):** 
-   Frontend không sử dụng Apollo Client cồng kềnh mà dùng trực tiếp `fetch()` API mặc định của Next.js thông qua file `lib/graphql.ts`. Lệnh fetch gọi POST request tới endpoint `http://localhost:4000/graphql`.
+   Frontend dùng `fetch()` API mặc định của Next.js thông qua file `lib/graphql.ts` gửi POST request tới `http://localhost:4000/graphql`.
 2. **Caching (Lưu bộ đệm):** 
-   Dữ liệu trả về được Next.js cache tĩnh theo cơ chế ISR (`next: { revalidate: 60 }`). Nghĩa là cứ mỗi 60 giây, nếu có thay đổi từ DB, Next.js mới tải lại dữ liệu mới, giúp giảm tải cực lớn cho Backend và trang web tải ngay lập tức.
+   Dữ liệu có thể được Next.js cache tĩnh để giảm tải cho Backend và tăng tốc độ tải trang.
 3. **Hiển thị (Rendering):** 
-   Dữ liệu sau khi lấy được sẽ truyền vào các Server Components để render ra HTML trước khi gửi tới trình duyệt, tối ưu hoàn toàn cho các công cụ tìm kiếm (Google Bot).
+   Sử dụng Server Components để render sẵn HTML từ phía server, thân thiện với các công cụ tìm kiếm và cải thiện hiệu suất.

@@ -246,6 +246,7 @@ const metaBuilds = [
       { rank: 8, name: "Toukabou Shigure", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R5", reason: "Cung cấp Tinh Thông Nguyên Tố và tăng nhẹ sát thương sau khi đánh trúng kẻ địch. Vũ khí Event giới hạn thay thế tốt cho Thiết Phong Kích.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Kasabouzu.png" },
       { rank: 9, name: "Kiếm Phi Thiên", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Tăng Tấn Công sau khi thi triển Nộ. Chỉ sử dụng khi không có lựa chọn nào khác; chỉ số cơ bản thấp khiến vũ khí này không tối ưu.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Mitsurugi.png" }
     ],
+    talentPriority: ["Burst", "Skill", "Normal Attack"],
     bestArtifacts: [
       {
         setName: "Bóng Hình Màu Xanh",
@@ -253,17 +254,18 @@ const metaBuilds = [
         sands: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
         goblet: ["Tinh Thông Nguyên Tố"],
         circlet: ["Tinh Thông Nguyên Tố"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"]
+        subStatsPriority: ["Energy Recharge", "Elemental Mastery", "CRIT Rate"]
       },
       {
-        setName: "Giáo Quan",
+        setName: "Như Sấm Thịnh Nộ",
         pieces: 4,
         sands: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
         goblet: ["Tinh Thông Nguyên Tố"],
         circlet: ["Tinh Thông Nguyên Tố"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích"]
+        subStatsPriority: ["Energy Recharge", "Elemental Mastery", "CRIT Rate"]
       }
-    ]
+    ],
+    bestTeams: ["yelan", "furina", "sigewinne", "clorinde", "fischl", "nahida", "tartaglia", "xiangling", "bennett", "arlecchino", "kachina", "klee"]
   },
   {
     characterId: "nahida",

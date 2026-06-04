@@ -1231,5 +1231,202 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
         }
       ]
     }
+  ],
+  "kazuha": [
+    {
+      name: "Kazuha Pure Hydro Team #1",
+      rank: "SS",
+      description: "A high damage pure Hydro team that leverages Furina's DMG buffs, Kazuha's resistance shred and grouping, and Sigewinne's healing and Skill damage boost. Pure Hydro team focusing on high Hydro damage, with Furina providing DMG buffs, Kazuha reducing resistance and grouping, and Sigewinne healing and boosting Skill damage.",
+      members: [
+        {
+          characterId: "yelan",
+          role: "Main DPS",
+          roleDesc: "Hydro Main DPS. Deals high damage from off-field and on-field with continuous Hydro attacks.",
+          weapons: ["Aqua Simulacra"],
+          artifacts: ["4pc Marechaussee Hunter"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "furina",
+          role: "Sub DPS",
+          roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and massive party-wide damage buffs.",
+          weapons: ["Splendor of Tranquil Waters", "Wolf-Fang"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Anemo Support. Groups enemies, shreds Hydro resistance, and buffs Hydro damage.",
+          weapons: ["Freedom-Sworn", "Xiphos' Moonlight"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate"]
+        },
+        {
+          characterId: "sigewinne",
+          role: "Support",
+          roleDesc: "Hydro Support. Provides healing and increases team Elemental Skill damage.",
+          weapons: ["Silvershower Heartstring", "Favonius Warbow"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP"]
+        }
+      ]
+    },
+    {
+      name: "Kazuha Aggravate Team",
+      rank: "SS",
+      description: "An aggressive Aggravate team leveraging Clorinde's rapid Electro attacks and Fischl's off-field Electro application, with Nahida providing Dendro for reaction triggers, and Kazuha grouping enemies and limiting damage via Anemo swirling and Viridescent Venerer resistance shred.",
+      members: [
+        {
+          characterId: "clorinde",
+          role: "Main DPS",
+          roleDesc: "Electro Main DPS. Infuses Electro on Normal Attacks and deals fast damage.",
+          weapons: ["Absolution", "The Black Sword"],
+          artifacts: ["4pc Fragment of Harmonious Whimsy"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "fischl",
+          role: "Sub DPS",
+          roleDesc: "Electro Sub DPS. Deals high off-field Electro damage.",
+          weapons: ["Aqua Simulacra", "The Stringless"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM.",
+          weapons: ["A Thousand Floating Dreams", "Wandering Evenstar"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Anemo Support. Groups enemies, shreds Electro resistance, and buffs Electro damage.",
+          weapons: ["Freedom-Sworn", "Xiphos' Moonlight"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate"]
+        }
+      ]
+    },
+    {
+      name: "Kazuha Vaporize Team #1",
+      rank: "SS",
+      description: "A high-tier Vaporize team with Tartaglia as main DPS, utilizing Xiangling's off-field Pyro application, Kazuha's grouping and buffs, and Bennett's ATK boost and healing. Lilitse Child's Hydro attacks trigger Vaporize with Xiangling's Pyronado, while Kazuha provides Anemo swirl and elemental DMG buffs, and Bennett heals and boosts ATK.",
+      members: [
+        {
+          characterId: "tartaglia",
+          role: "Main DPS",
+          roleDesc: "Hydro Main DPS. Deals fast on-field AoE Hydro damage.",
+          weapons: ["Polar Star"],
+          artifacts: ["2pc Heart of Depth + 2pc Gladiator's Finale"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "xiangling",
+          role: "Sub DPS",
+          roleDesc: "Pyro Sub DPS. Deals high Pyro damage off-field with Pyronado.",
+          weapons: ["Engulfing Lightning", "The Catch"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Anemo Support. Double swirls to buff both Hydro and Pyro damage, and shreds resistances.",
+          weapons: ["Freedom-Sworn", "Xiphos' Moonlight"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
+          weapons: ["Aquila Favonia", "The Alley Flash"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Kazuha Pure Pyro",
+      rank: "SS",
+      description: "A powerful team centered on Arlecchino's Pyro damage, supported by Kazuha's crowd control and buffs, Bennett's ATK buff and healing, and Kazuha/Kashina grouping. Xiangling applies off-field Pyro, Arlecchino deals massive Pyro damage using her Bond of Life mechanics, Bennett supplies ATK buff and healing, while Kazuha gathers, groups and shreds RES.",
+      members: [
+        {
+          characterId: "arlecchino",
+          role: "Main DPS",
+          roleDesc: "Pyro Main DPS. Deals massive Pyro damage using Bond of Life mechanics.",
+          weapons: ["Crimson Moon's Semblance", "Deathmatch"],
+          artifacts: ["4pc Fragment of Harmonious Whimsy"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Anemo Support. Groups enemies, shreds Pyro resistance, and buffs Pyro damage.",
+          weapons: ["Freedom-Sworn", "Xiphos' Moonlight"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate"]
+        },
+        {
+          characterId: "kachina",
+          role: "Support",
+          roleDesc: "Geo Support. Triggers crystallize and buffs team damage using Cinder City set.",
+          weapons: ["Favonius Lance"],
+          artifacts: ["4pc Scroll of the Hero of Cinder City"],
+          substats: ["Energy Recharge", "DEF%", "DEF"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
+          weapons: ["Aquila Favonia", "The Alley Flash"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Kazuha Vaporization Team #2",
+      rank: "SS",
+      description: "A potent Vaporize team featuring Klee as the main DPS, supported by Furina, Kazuha, and Bennett. Leverage Furina's off-field Hydro application and Kazuha's Anemo Swirl to enable Klee's Vaporize reactions, while Bennett provides ATK buff and healing.",
+      members: [
+        {
+          characterId: "klee",
+          role: "Main DPS",
+          roleDesc: "Pyro Main DPS. Deals continuous Pyro damage and drives Vaporize reactions.",
+          weapons: ["Lost Prayer to the Sacred Winds", "The Widsith"],
+          artifacts: ["4pc Crimson Witch of Flames"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "furina",
+          role: "Sub DPS",
+          roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and party-wide DMG buffs.",
+          weapons: ["Splendor of Tranquil Waters", "Favonius Sword"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental damage.",
+          weapons: ["Freedom-Sworn", "Xiphos' Moonlight"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
+          weapons: ["Aquila Favonia", "The Alley Flash"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    }
   ]
 };

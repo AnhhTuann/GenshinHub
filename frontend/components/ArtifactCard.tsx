@@ -22,7 +22,26 @@ function getMixedSets(setName: string) {
       }
     ];
   }
-  
+  if (lower.includes("ma nữ") && lower.includes("tinh thông") && lower.includes("tấn công")) {
+    return [
+      {
+        name: "Diệm Liệt Ma Nữ Cháy Rực (2 món)",
+        desc: "Tăng 15% Sát Thương Nguyên Tố Hỏa",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15006_4.png"
+      },
+      {
+        name: "Bộ Tinh Thông Nguyên Tố +80 (2 món)",
+        desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+      },
+      {
+        name: "Bộ Tăng Tấn Công +18% (2 món)",
+        desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+      }
+    ];
+  }
+
   if (lower.includes("ma nữ") && lower.includes("tông thất") && lower.includes("dấu ấn")) {
     return [
       {

@@ -616,40 +616,50 @@ const metaBuilds = [
       { rank: 14, name: "Thiên Không Kiêu Ngạo", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Cung cấp Hiệu Quả Nạp giúp spam Nộ mượt mà. Nội tại tăng nhẹ sát thương và tạo ra các lưỡi đao chân không gây dame vật lý.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Dvalin.png" },
       { rank: 15, name: "Đao Chấn Động", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn Natlan cung cấp Tấn Công%. Thích hợp dùng trong các đội hình phản ứng có liên quan hệ Thảo để buff sát thương.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Isikhulu.png" }
     ],
+    talentPriority: ["Normal Attack", "Skill", "Burst"],
     bestArtifacts: [
       {
         setName: "Diệm Liệt Ma Nữ Cháy Rực",
         pieces: 4,
-        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        sands: ["Tinh Thông Nguyên Tố", "Tấn Công%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
-      },
-      {
-        setName: "Thợ Săn Marechaussee",
-        pieces: 4,
-        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
-        goblet: ["Sát Thương Nguyên Tố Hỏa"],
-        circlet: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích"],
-        subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Elemental Mastery", "Energy Recharge"]
       },
       {
         setName: "Giấc Mộng Hoàng Kim",
         pieces: 4,
-        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        sands: ["Tinh Thông Nguyên Tố", "Tấn Công%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Elemental Mastery", "Energy Recharge"]
       },
       {
-        setName: "Mix 2 bộ Tấn Công & 2 bộ Sát Thương Hỏa",
+        setName: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
         pieces: 2,
-        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        sands: ["Tinh Thông Nguyên Tố", "Tấn Công%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Elemental Mastery", "Energy Recharge"]
+      },
+      {
+        setName: "Lễ Bế Mạc Của Giác Đấu Sĩ",
+        pieces: 4,
+        sands: ["Tinh Thông Nguyên Tố", "Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Elemental Mastery", "Energy Recharge"]
+      },
+      {
+        setName: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: ["Tinh Thông Nguyên Tố", "Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Elemental Mastery", "Energy Recharge"]
       }
-    ]
+    ],
+    bestTeams: ["xingqiu", "kazuha", "zhongli", "venti", "albedo", "furina", "xianyun", "bennett", "sucrose", "ganyu", "diona", "ayaka"]
   },
   {
     characterId: "bennett",
@@ -716,40 +726,50 @@ const metaBuilds = [
       { rank: 17, name: "Cận Vệ Nhà Vua", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn Sumeru tăng Tinh Thông Nguyên Tố sau khi dùng kỹ năng, bổ trợ tốt cho các phản ứng nguyên tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Arakalari.png" },
       { rank: 18, name: "Hậu Duệ Mặt Trời", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Tỷ Lệ Bạo Kích. Đòn trọng kích trúng địch gây thêm sát thương Hỏa và tăng sát thương trọng kích tiếp theo lên mục tiêu đó.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Gurabad.png" }
     ],
+    talentPriority: ["Normal Attack", "Skill", "Burst"],
     bestArtifacts: [
+      {
+        setName: "Dòng Hồi Ức Bất Tận",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT DMG", "ATK%", "Elemental Mastery"]
+      },
       {
         setName: "Đoàn Hát Lang Thang Đại Lục",
         pieces: 4,
         sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
-        circlet: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích"],
-        subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        circlet: ["Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT DMG", "ATK%", "Elemental Mastery"]
       },
       {
         setName: "Diệm Liệt Ma Nữ Cháy Rực",
         pieces: 4,
         sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
-        circlet: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích"],
-        subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        circlet: ["Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT DMG", "ATK%", "Elemental Mastery"]
       },
       {
-        setName: "Thợ Săn Marechaussee",
+        setName: "Giấc Mộng Hoàng Kim",
         pieces: 4,
         sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
-        circlet: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích"],
-        subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        circlet: ["Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT DMG", "ATK%", "Elemental Mastery"]
       },
       {
-        setName: "Mix 2 bộ Tinh Thông & 2 bộ Sát Thương Hỏa",
+        setName: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
         pieces: 2,
         sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
-        circlet: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích"],
-        subStatsPriority: ["Sát Thương Bạo Kích", "Tỷ Lệ Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        circlet: ["Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT DMG", "ATK%", "Elemental Mastery"]
       }
-    ]
+    ],
+    bestTeams: ["xingqiu", "kazuha", "bennett", "ayaka", "zhongli", "raiden-shogun", "fischl"]
   },
   {
     characterId: "yanfei",

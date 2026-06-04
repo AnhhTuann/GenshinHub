@@ -330,7 +330,35 @@ const metaBuilds = [
       { rank: 2, name: "Cung Tây Phong", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Nội tại tinh luyện tạo hạt nhân lượng khi bạo kích bằng Kỹ Năng Nguyên Tố, giải quyết vấn đề nạp cho bản thân và toàn đội; Tấn Công cơ bản thấp không ảnh hưởng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Zephyrus.png" },
       { rank: 3, name: "Nhược Thủy", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Dòng phụ Sát Thương Bạo Kích khổng lồ và nội tại tăng HP% giúp tăng mạnh sát thương, nhưng đòi hỏi Hiệu Quả Nạp cao từ thánh di vật; chỉ dùng khi có thể đạt trên 200% Nạp.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Kirin.png" },
       { rank: 4, name: "Cung Tế Lễ", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R3", reason: "Nội tại tinh luyện reset hồi chiêu Kỹ Năng Nguyên Tố, tạo thêm hạt năng lượng; dòng phụ Hiệu Quả Nạp cao giúp giảm áp lực nạp.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Fossil.png" }
-    ]
+    ],
+    talentPriority: ["Burst", "Skill", "Normal Attack"],
+    bestArtifacts: [
+      {
+        setName: "Dấu Ấn Ngăn Cách",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Thủy", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "HP%"],
+        subStatsPriority: ["Energy Recharge", "HP%", "CRIT Rate", "CRIT DMG", "HP"]
+      },
+      {
+        setName: "Mix 2 bộ Dấu Ấn / HP / Thủy / Tông Thất",
+        pieces: 2,
+        sands: ["Hiệu Quả Nạp", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Thủy", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "HP%"],
+        subStatsPriority: ["Energy Recharge", "HP%", "CRIT Rate", "CRIT DMG", "HP"]
+      },
+      {
+        setName: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Thủy", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "HP%"],
+        subStatsPriority: ["Energy Recharge", "HP%", "CRIT Rate", "CRIT DMG", "HP"]
+      }
+    ],
+    bestTeams: ["arlecchino", "zhongli", "bennett", "hu-tao", "xingqiu", "wanderer", "faruzan", "thoma", "cyno", "nahida", "baizhu", "raiden-shogun", "xiangling", "kazuha", "nilou", "furina", "jean"]
   },
   {
     characterId: "kazuha",

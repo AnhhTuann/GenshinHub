@@ -17,7 +17,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 ### 💧 Thủy (Hydro)
 - [x] **Neuvillette** (`neuvillette`) — ✅ *Hoàn thiện (11 Vũ khí, TDV, Substats, Talents, Teams)*
 - [x] **Furina** (`furina`) — ✅ *Hoàn thiện (14 Vũ khí, TDV, Substats, Talents, Teams)*
-- [ ] **Yelan** (`yelan`) — ⏳ *4 Vũ khí*
+- [x] **Yelan** (`yelan`) — ✅ *Hoàn thiện (4 Vũ khí, TDV, Substats, Talents, Teams)*
 
 ### 🌪️ Phong (Anemo)
 - [x] **Kazuha** (`kazuha`) — ✅ *Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)*

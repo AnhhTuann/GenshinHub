@@ -17,5 +17,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | 11  | Klee          | `klee`          | ✅ Hoàn thành | Đầy đủ 13 vũ khí & Thánh Di Vật |
 | 12  | Diluc         | `diluc`         | ✅ Hoàn thành | Đầy đủ 15 vũ khí & Thánh Di Vật |
 | 13  | Bennett       | `bennett`       | ✅ Hoàn thành | Đầy đủ 12 vũ khí & Thánh Di Vật |
+| 14  | Amber         | `amber`         | ✅ Hoàn thành | Đầy đủ 18 vũ khí & Thánh Di Vật |
 
 _Danh sách này sẽ được cập nhật liên tục khi có nhân vật mới._
+

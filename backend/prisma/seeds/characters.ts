@@ -821,7 +821,24 @@ const metaBuilds = [
       { rank: 9, name: "Chương Nhạc Lang Thang", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R5", reason: "Nhận ngẫu nhiên các buff khi ra sân: Tấn Công%, Tăng Sát Thương Nguyên Tố hoặc Tinh Thông Nguyên Tố. Cả 3 buff đều cực kỳ có lợi cho lối chơi Bốc Hơi của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Troupe.png" },
       { rank: 10, name: "Sương Mai", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Dòng phụ Sát Thương Bạo Kích. Sau khi kích hoạt phản ứng Nguyên Tố Hỏa, tăng Tấn Công và Tỷ Lệ Bạo Kích, rất đồng bộ với lối chơi của Yanfei.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Ziedas.png" }
     ],
+    talentPriority: ["Normal Attack", "Burst", "Skill"],
     bestArtifacts: [
+      {
+        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Giấc Mộng Hoàng Kim",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
       {
         setName: "Đoàn Hát Lang Thang Đại Lục",
         pieces: 4,
@@ -831,14 +848,23 @@ const metaBuilds = [
         subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
       },
       {
-        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        setName: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
+        pieces: 2,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Thợ Săn Marechaussee",
         pieces: 4,
         sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
         subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
       }
-    ]
+    ],
+    bestTeams: ["yelan", "nahida", "zhongli", "xingqiu", "kazuha", "venti", "albedo", "sucrose", "bennett", "xiangling", "ganyu", "diona", "ayaka"]
   },
   {
     characterId: "yoimiya",
@@ -853,6 +879,7 @@ const metaBuilds = [
       { rank: 8, name: "Cung Amos", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "High base ATK and passive that increases Normal and Charged Attack damage over time. Decent but outclassed by other options.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Amos.png" },
       { rank: 9, name: "Cung Rỉ Sét", subStat: "Tấn Công%", isF2P: false, refinement: "R5", reason: "ATK% substat and passive that boosts Normal Attack damage by up to 80% at R5 while reducing Charged Attack damage. Excellent for her playstyle.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Bow_Recluse.png" }
     ],
+    talentPriority: ["Normal Attack", "Skill", "Burst"],
     bestArtifacts: [
       {
         setName: "Dòng Hồi Ức Bất Tận",
@@ -869,8 +896,33 @@ const metaBuilds = [
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
         subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Giấc Mộng Hoàng Kim",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Dư Âm Tế Lễ",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+      },
+      {
+        setName: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
+        pieces: 2,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
       }
-    ]
+    ],
+    bestTeams: ["xingqiu", "yunjin", "zhongli", "ayato", "yelan", "ganyu", "kazuha", "diona", "raiden-shogun", "bennett", "venti", "fischl", "chevreuse"]
   },
   {
     characterId: "thoma",

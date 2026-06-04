@@ -265,10 +265,49 @@ const metaBuilds = [
   {
     characterId: "furina",
     bestWeapons: [
-      { rank: 1, name: "Sắc Nước Thuần Khiết", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Trấn phái tăng mạnh sát thương Kỹ Năng Nguyên Tố và buff lượng HP tối đa khi máu đồng đội lên xuống.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Regalis.png" },
-      { rank: 2, name: "Răng Nanh Rỉ Sét", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí 4 sao Event phiên bản 1.2, cực ngon khi vừa giải quyết độ khát Năng lượng vừa buff thẳng Tỷ lệ Bạo Kích cho E.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Magnum.png" },
-      { rank: 3, name: "Ống Đồng Yêu Sinh Mệnh", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí thay thế hoàn hảo cho Răng Nanh Rỉ Sét, cày cuốc miễn phí từ hội Câu Cá Fontaine, giải quyết dứt điểm thiếu hụt Nạp.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Machination.png" }
-    ]
+      { rank: 1, name: "Sắc Nước Thuần Khiết", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí trấn phái tốt nhất. Tăng mạnh sát thương Kỹ Năng Nguyên Tố và buff lượng HP tối đa khi máu đồng đội thay đổi liên tục.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Regalis.png" },
+      { rank: 2, name: "Bàn Nham Kết Lục", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Tỷ Lệ Bạo Kích cực cao và lượng lớn Tấn Công dựa trên HP tối đa, giúp tăng mạnh sát thương và khả năng sinh tồn.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Morax.png" },
+      { rank: 3, name: "Răng Nanh Rỉ Sét", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí sự kiện F2P tuyệt vời. Cung cấp Hiệu Quả Nạp lớn và gia tăng trực tiếp sát thương cũng như Tỷ Lệ Bạo Kích của Kỹ Năng Nguyên Tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Magnum.png" },
+      { rank: 4, name: "Chìa Khóa Khaj-Nisut", subStat: "HP%", isF2P: false, refinement: "R1", reason: "Chỉ số HP% khổng lồ và nội tại tăng Tinh Thông Nguyên Tố cho bản thân cùng toàn đội, cực kỳ thích hợp cho các đội hình phản ứng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Deshret.png" },
+      { rank: 5, name: "Uraku Misugiri", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí tăng mạnh Sát Thương Bạo Kích và Kỹ Năng Nguyên Tố. Nội tại sẽ đạt hiệu quả tối đa khi trong đội có nhân vật hệ Nham.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Needle.png" },
+      { rank: 6, name: "Ống Đồng Yêu Sinh Mệnh", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí F2P từ hội Câu Cá Fontaine, giải quyết triệt để vấn đề nạp cho Furina đồng thời tăng Tỷ Lệ Bạo Kích cho Kỹ Năng Nguyên Tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Machination.png" },
+      { rank: 7, name: "Tây Phong Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Cung cấp Hiệu Quả Nạp cao và tạo thêm nhiều hạt nhân lượng để sạc cho bản thân cũng như hỗ trợ nạp năng lượng cho toàn đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Zephyrus.png" },
+      { rank: 8, name: "Nanh Sói", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Vũ khí từ Nhật Ký Hành Trình tăng Tỷ Lệ Bạo Kích và gia tăng sát thương Kỹ Năng Nguyên Tố/Nộ, giúp tối ưu lượng sát thương ngoài sân.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Boreas.png" },
+      { rank: 9, name: "Haran Geppaku Futsu", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Dòng phụ Tỷ Lệ Bạo Kích cao và tăng nhẹ Sát Thương Nguyên Tố, là lựa chọn tăng chỉ số tốt cho Furina.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Amenoma.png" },
+      { rank: 10, name: "Ánh Lá Phán Quyết", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp lượng lớn Sát Thương Bạo Kích và một ít Tỷ Lệ Bạo Kích, thích hợp sử dụng như một vũ khí thuần tăng chỉ số bạo.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Ayus.png" },
+      { rank: 11, name: "Ánh Sáng Đêm Sương Mù", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Tăng mạnh Sát Thương Bạo Kích và Sát Thương Nguyên Tố. Tuy nhiên việc tích luỹ đủ tầng đòi hỏi Furina phải đứng sân đánh thường.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Narukami.png" },
+      { rank: 12, name: "Thiên Không Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Giải quyết tốt vấn đề nạp cho Furina và cung cấp một lượng nhỏ Tỷ Lệ Bạo Kích, giúp tối ưu chu kỳ thi triển Kỹ Năng Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Dvalin.png" },
+      { rank: 13, name: "Kiếm Bến Tàu", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Vũ khí 4 sao giới hạn tăng chỉ số HP% và hồi phục năng lượng cho bản thân, giúp giảm bớt áp lực nạp và tăng lượng máu tối đa.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Mechanic.png" },
+      { rank: 14, name: "Thần Kiếm Lê Minh", subStat: "Sát Thương Bạo Kích", isF2P: true, refinement: "R5", reason: "Vũ khí 3 sao F2P cực mạnh nếu duy trì được HP trên 90%. Nên đi kèm với các healer mạnh để đảm bảo nhận đầy đủ buff.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Dawn.png" }
+    ],
+    talentPriority: ["Burst", "Skill", "Normal Attack"],
+    bestArtifacts: [
+      {
+        setName: "Đoàn Kịch Hoàng Kim",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "HP%"],
+        goblet: ["HP%", "Sát Thương Nguyên Tố Thủy"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Energy Recharge", "HP%", "CRIT Rate", "CRIT DMG", "HP"]
+      },
+      {
+        setName: "Thiên Nham Vững Chắc",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "HP%"],
+        goblet: ["HP%", "Sát Thương Nguyên Tố Thủy"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Energy Recharge", "HP%", "CRIT Rate", "CRIT DMG", "HP"]
+      },
+      {
+        setName: "Mix 2 bộ Thủy / Đoàn Kịch / HP / Dấu Ấn",
+        pieces: 2,
+        sands: ["Hiệu Quả Nạp", "HP%"],
+        goblet: ["HP%", "Sát Thương Nguyên Tố Thủy"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Energy Recharge", "HP%", "CRIT Rate", "CRIT DMG", "HP"]
+      }
+    ],
+    bestTeams: ["clorinde", "nahida", "baizhu", "neuvillette", "kazuha", "hu-tao", "yelan", "zhongli", "raiden-shogun", "jean", "nilou", "xiangling", "bennett", "noelle", "albedo", "gorou", "alhaitham", "yae-miko", "emilie"]
   },
   {
     characterId: "xinyan",

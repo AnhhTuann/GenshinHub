@@ -97,6 +97,31 @@ function getMixedSets(setName: string) {
       }
     ];
   }
+
+  if (lower.includes("đoàn kịch") || (lower.includes("đoàn") && lower.includes("mix"))) {
+    return [
+      {
+        name: "Đoàn Kịch Hoàng Kim (2 món)",
+        desc: "Tăng 20% sát thương Kỹ Năng Nguyên Tố",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15032_4.png"
+      },
+      {
+        name: "Bộ Thủy (2 món)",
+        desc: "Trái Tim Trầm Luân / Giấc Mộng Thủy Tiên (+15% Sát Thương Thủy)",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15016_4.png"
+      },
+      {
+        name: "Bộ HP (2 món)",
+        desc: "Thiên Nham Vững Chắc / Vầng Sáng Vourukasha (+20% HP)",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+      },
+      {
+        name: "Dấu Ấn Ngăn Cách (2 món)",
+        desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+      }
+    ];
+  }
   
   // Default fallback if we don't recognize the mix
   return [

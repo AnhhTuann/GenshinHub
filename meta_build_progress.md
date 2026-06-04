@@ -15,7 +15,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [ ] **Thoma** (`thoma`) — ⏳ *6 Vũ khí & TDV*
 
 ### 💧 Thủy (Hydro)
-- [x] **Neuvillette** (`neuvillette`) — 🟢 *Đã seed (mặc định)*
+- [x] **Neuvillette** (`neuvillette`) — ✅ *Hoàn thiện (11 Vũ khí, TDV, Substats, Talents, Teams)*
 - [x] **Furina** (`furina`) — 🟢 *Đã seed (mặc định)*
 - [ ] **Yelan** (`yelan`) — ⏳ *4 Vũ khí*
 

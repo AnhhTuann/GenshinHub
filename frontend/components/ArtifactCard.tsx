@@ -77,6 +77,26 @@ function getMixedSets(setName: string) {
       }
     ];
   }
+
+  if (lower.includes("thủy") && (lower.includes("hp") || lower.includes("thợ săn") || lower.includes("săn"))) {
+    return [
+      {
+        name: "Bộ Thủy (2 món)",
+        desc: "Trái Tim Trầm Luân / Giấc Mộng Thủy Tiên (+15% Sát Thương Thủy)",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15016_4.png"
+      },
+      {
+        name: "Bộ HP (2 món)",
+        desc: "Thiên Nham Vững Chắc / Vầng Sáng Vourukasha (+20% HP)",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+      },
+      {
+        name: "Thợ Săn Marechaussee (2 món)",
+        desc: "Tăng 15% sát thương Đánh Thường & Trọng Kích",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15031_4.png"
+      }
+    ];
+  }
   
   // Default fallback if we don't recognize the mix
   return [

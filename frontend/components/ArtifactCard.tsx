@@ -212,7 +212,7 @@ function getMixedSets(setName: string) {
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+      }
     ];
   }
   

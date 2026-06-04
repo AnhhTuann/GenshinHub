@@ -213,11 +213,79 @@ function getMixedSets(setName: string) {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
         iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+    ];
+  }
+  
+  if (lower.includes("lửa trắng xám") && (lower.includes("kỵ sĩ") || lower.includes("nhuốm máu"))) {
+    return [
+      {
+        name: "Lửa Trắng Xám (2 món)",
+        desc: "Tăng 25% Sát Thương Vật Lý",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15018_4.png"
+      },
+      {
+        name: "Kỵ Sĩ Đạo Nhuốm Máu (2 món)",
+        desc: "Tăng 25% Sát Thương Vật Lý",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15008_4.png"
+      }
+    ];
+  }
+
+  if (lower.includes("dấu ấn") && (lower.includes("lửa trắng xám") || lower.includes("kỵ sĩ") || lower.includes("vật lý"))) {
+    return [
+      {
+        name: "Dấu Ấn Ngăn Cách (2 món)",
+        desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+      },
+      {
+        name: "Bộ Sát Thương Vật Lý +25% (2 món)",
+        desc: "Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15018_4.png"
+      }
+    ];
+  }
+
+  if (lower.includes("vật lý") && (lower.includes("tấn công") || lower.includes("tông thất") || lower.includes("giáp") || lower.includes("phù hoa"))) {
+    return [
+      {
+        name: "Bộ Sát Thương Vật Lý +25% (2 món)",
+        desc: "Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15018_4.png"
+      },
+      {
+        name: "Bộ Tăng Tấn Công +18% (2 món)",
+        desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+      },
+      {
+        name: "Nghi Thức Tông Thất Cổ (2 món)",
+        desc: "Tăng 20% Sát Thương Kỹ Năng Nộ",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15007_4.png"
+      },
+      {
+        name: "Giấc Mộng Phù Hoa (2 món)",
+        desc: "Tăng 30% Phòng Ngự",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15023_4.png"
+      }
+    ];
+  }
+
+  if (lower.includes("tinh thông") && lower.includes("dấu ấn") && lower.includes("mix")) {
+    return [
+      {
+        name: "Bộ Tinh Thông Nguyên Tố +80 (2 món)",
+        desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+      },
+      {
+        name: "Dấu Ấn Ngăn Cách (2 món)",
+        desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
       }
     ];
   }
   
-  // Default fallback if we don't recognize the mix
   return [
     {
       name: "Bộ Chỉ Số 1 (2 món)",

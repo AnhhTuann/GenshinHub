@@ -11,8 +11,10 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Bennett** (`bennett`) — ✅ *Hoàn thiện (12 Vũ khí, TDV, Substats, Talents, Teams)*
 - [x] **Yanfei** (`yanfei`) — ✅ *Hoàn thiện (10 Vũ khí, TDV, Substats, Talents, Teams)*
 - [x] **Yoimiya** (`yoimiya`) — ✅ *Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)*
-- [ ] **Xinyan** (`xinyan`) — ⏳ *9 Vũ khí*
-- [ ] **Thoma** (`thoma`) — ⏳ *6 Vũ khí & TDV*
+- [x] **Xinyan** (`xinyan`) — ✅ *Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)*
+- [x] **Thoma** (`thoma`) — ✅ *Hoàn thiện (6 Vũ khí, TDV, Substats, Talents, Teams)*
+- [x] **Dehya** (`dehya`) — ✅ *Hoàn thiện (15 Vũ khí, TDV, Substats, Talents, Teams)*
+
 
 ### 💧 Thủy (Hydro)
 - [x] **Neuvillette** (`neuvillette`) — ✅ *Hoàn thiện (11 Vũ khí, TDV, Substats, Talents, Teams)*

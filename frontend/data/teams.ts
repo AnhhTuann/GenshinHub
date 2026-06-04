@@ -4490,5 +4490,713 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
         }
       ]
     }
+  ],
+  "xinyan": [
+    {
+      name: "Xinyan Physical Team #1",
+      rank: "A",
+      description: "A physical team centered on Eula, with Cryo and Electro reactions to reduce physical resistance via Superconduct. Maximize Eula's physical damage by using Superconduct to reduce enemy physical resistance, while Xinyan provides shielding and Bennett provides ATK buff and healing.",
+      members: [
+        {
+          characterId: "eula",
+          role: "Main DPS",
+          roleDesc: "Eula's physical damage is boosted by Superconduct.",
+          weapons: ["Skyward Pride", "Serpent Spine"],
+          artifacts: ["4pc Pale Flame"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "beidou",
+          role: "Sub DPS",
+          roleDesc: "Beidou's Burst provides continuous Electro DMG off-field to trigger Superconduct.",
+          weapons: ["Skyward Pride", "Serpent Spine"],
+          artifacts: ["2pc Thundering Fury", "2pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "xinyan",
+          role: "Support",
+          roleDesc: "Xinyan's shield provides a safe environment for team members.",
+          weapons: ["Wolf's Gravestone", "Whiteblind"],
+          artifacts: ["2pc Crimson Witch of Flames", "2pc Retracing Bolide"],
+          substats: ["Energy Recharge", "DEF%", "CRIT DMG", "CRIT Rate"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Bennett's Burst provides huge ATK buff and healing.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Xinyan Physical Team #2",
+      rank: "A",
+      description: "A physical team centered around Razor with Electro and Cryo for Superconduct. Xinyan provides shields, Qiqi heals and applies Cryo, and Bennett buffs ATK and heals. Razor's physical damage is maximized by triggering Superconduct to reduce enemy physical resistance. Xinyan provides a shield for safety, Qiqi applies Cryo off-field, and Bennett enhances ATK and healing.",
+      members: [
+        {
+          characterId: "razor",
+          role: "Main DPS",
+          roleDesc: "Main physical DPS, C4 reduces enemy DEF with Elemental Skill.",
+          weapons: ["Wolf's Gravestone", "Prototype Archaic"],
+          artifacts: ["4pc Gladiator's Finale"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "xinyan",
+          role: "Support",
+          roleDesc: "Provides a shield for safe play.",
+          weapons: ["Wolf's Gravestone", "Whiteblind"],
+          artifacts: ["2pc Crimson Witch of Flames", "2pc Retracing Bolide"],
+          substats: ["Energy Recharge", "DEF%", "CRIT DMG", "CRIT Rate"]
+        },
+        {
+          characterId: "qiqi",
+          role: "Support",
+          roleDesc: "Elemental Skill applies Cryo continuously and heals the team.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Maiden Beloved"],
+          substats: ["ATK%", "Energy Recharge", "HP%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Elemental Burst provides a large ATK buff and healing.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Xinyan Overload",
+      rank: "A",
+      description: "Xinyan's Pyro attacks combine with Electro from Fischl to trigger frequent Overload reactions, dealing AoE Pyro DMG. Kazuha provides Anemo grouping and resistance shred, while Bennett offers ATK buffs and healing.",
+      members: [
+        {
+          characterId: "xinyan",
+          role: "Main DPS",
+          roleDesc: "Xinyan's Skill reduces enemy DEF and provides a shield to boost DPS. Build with DEF% or ATK% to maximize shield strength and damage.",
+          weapons: ["Wolf's Gravestone", "Whiteblind"],
+          artifacts: ["4pc Retracing Bolide"],
+          substats: ["DEF%", "ATK%", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "fischl",
+          role: "Sub DPS",
+          roleDesc: "Fischl's Skill provides continuous off-field Electro application to trigger Overload, significantly boosts damage.",
+          weapons: ["Skyward Harp", "The Stringless"],
+          artifacts: ["4pc Thundering Fury"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Kazuha groups enemies, provides Anemo crowd control, DMG buffs, and reduces enemy Pyro and Electro resistance with Swirl.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    }
+  ],
+  "thoma": [
+    {
+      name: "Thoma Burgeon Team #1",
+      rank: "S",
+      description: "Thoma provides shield and triggers Burgeon with his Burst. Hydro from Ayato and Yelan combine with Dendro from Nahida to generate Dendro Cores, then Thoma's Pyro triggers Burgeon for massive AoE damage. Use Hydro from Ayato and Yelan with Dendro from Nahida to produce Dendro Cores, then Thoma's Pyro application via Burst triggers Burgeon for massive AoE damage.",
+      members: [
+        {
+          characterId: "ayato",
+          role: "Main DPS",
+          roleDesc: "With Thoma's shield in place, Ayato's Normal Attacks deal off-field Hydro/Pyro DMG and activate cores to trigger Burgeon.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Heart of Depth"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "yelan",
+          role: "Sub DPS",
+          roleDesc: "Provides continuous off-field Hydro attacks that react with Dendro to create Cores.",
+          weapons: ["Aqua Simulacra", "Favonius Warbow"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["HP%", "Energy Recharge", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Sustains off-field Dendro DMG on targets up to 8 enemies and triggers reactions. Burst buffers EM based on team diversity.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Provides shield for safety, triggers Burgeon with his Burst.",
+          weapons: ["Calamity Queller", "Kitain Cross Spear"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Energy Recharge", "Elemental Mastery", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Thoma Burgeon Team #2",
+      rank: "S",
+      description: "Thoma is the Support, Dendro from Nahida reacts with Hydro from Xingqiu and Yelan to trigger Bloom, then Thoma's Pyro triggers Burgeon. Generate Dendro cores with Nahida's Dendro and Hydro from Xingqiu/Yelan, then trigger Burgeon with Thoma's Pyro.",
+      members: [
+        {
+          characterId: "nahida",
+          role: "Main DPS",
+          roleDesc: "Nahida mainly drives DMG, uses Elemental Skill linking up to 8 enemies, sharing EM under triggering reactions. Shares EM and infuses Dendro.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Raincutter continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
+          weapons: ["Sapwood Blade"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "yelan",
+          role: "Sub DPS",
+          roleDesc: "Yelan provides continuous off-field Hydro attacks.",
+          weapons: ["Aqua Simulacra", "Favonius Warbow"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["HP%", "Energy Recharge", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Triggers Burgeon safety via Burst, EM scaling Burgeon DMG. Shield durability scales with HP.",
+          weapons: ["Favonius Lance"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Energy Recharge", "Elemental Mastery", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Thoma Vaporize Team",
+      rank: "S",
+      description: "Thoma's shield provides survivability for Hu Tao, while Xingqiu applies Hydro for Hu Tao's Vaporize. Kazuha provides grouping, DMG buff, and resistance shred. Thoma's shield provides survivability for Hu Tao to trigger Vaporize.",
+      members: [
+        {
+          characterId: "hu-tao",
+          role: "Main DPS",
+          roleDesc: "Hu Tao is the main DPS, her DMG is amplified by Vaporize.",
+          weapons: ["Staff of Homa", "Deathmatch"],
+          artifacts: ["4pc Crimson Witch of Flames"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Raincutter applies Hydro continuously.",
+          weapons: ["Sacrificial Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Provides crowd control, groups enemies, and buffs DMG.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Provides shield for safety, HP scaling shield strength.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Thoma Vaporize Melt Team",
+      rank: "S",
+      description: "Thoma is the Support in the team, Thoma's Skill and Burst are maintained by stacking Max HP, helping Hu Tao maximize her survivability. Hu Tao triggers Vaporize with Xingqiu's Hydro application, while Chongyun provides occasional Melt reactions. Thoma's shield enables Hu Tao to play aggressively.",
+      members: [
+        {
+          characterId: "hu-tao",
+          role: "Main DPS",
+          roleDesc: "Pyro main DPS, triggers reactions.",
+          weapons: ["Staff of Homa", "Deathmatch"],
+          artifacts: ["4pc Crimson Witch of Flames"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Hydro sub DPS.",
+          weapons: ["Sacrificial Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "chongyun",
+          role: "Sub DPS",
+          roleDesc: "Provides occasional Melt opportunities via Cryo fields.",
+          weapons: ["Wolf's Gravestone", "Serpent Spine"],
+          artifacts: ["2pc Noblesse Oblige", "2pc Blizzard Strayer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Shield support.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Thoma Vaporize Team #2",
+      rank: "A",
+      description: "A Hu Tao Vaporize team with Thoma providing shields, Bennett for ATK buff and healing, and Xingqiu for Hydro application. Thoma shields Hu Tao for survivability, Bennett provides ATK buff and healing, Xingqiu applies Hydro for Hu Tao's Vaporize reactions.",
+      members: [
+        {
+          characterId: "hu-tao",
+          role: "Main DPS",
+          roleDesc: "Pyro main DPS.",
+          weapons: ["Staff of Homa", "Deathmatch"],
+          artifacts: ["4pc Crimson Witch of Flames"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Hydro sub DPS.",
+          weapons: ["Sacrificial Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Provides ATK buff and healing.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Shield support.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Thoma Superconduct Team #1",
+      rank: "A",
+      description: "Eula's Burst is the main damage source, boosted by Superconduct, Raiden Shogun's Skill, and Tenacity of the Millelith. Thoma's shield ensures safe execution. Trigger Superconduct to reduce Physical RES for Eula's physical damage. Raiden provides energy and Burst DMG boost. Thoma shields the team.",
+      members: [
+        {
+          characterId: "eula",
+          role: "Main DPS",
+          roleDesc: "Eula's physical damage is boosted by Superconduct.",
+          weapons: ["Song of Broken Pines", "Serpent Spine"],
+          artifacts: ["4pc Pale Flame"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "raiden-shogun",
+          role: "Sub DPS",
+          roleDesc: "Provides Electro for Superconduct, boosts energy and Burst DMG.",
+          weapons: ["Engulfing Lightning", "The Catch"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "ATK%"]
+        },
+        {
+          characterId: "rosaria",
+          role: "Sub DPS",
+          roleDesc: "Cryo Sub DPS, acts as battery and buffs CRIT Rate.",
+          weapons: ["Skyward Spine", "Favonius Lance"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Shield support.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Thoma Superconduct Team #2",
+      rank: "A",
+      description: "A team centered around Eula's physical damage, boosted by Superconduct, Thoma's shield and Tenacity of the Millelith buff. Trigger Superconduct to reduce Physical RES, amplifying Eula's Physical Burst. Thoma provides shields and ATK buff via Tenacity of the Millelith.",
+      members: [
+        {
+          characterId: "eula",
+          role: "Main DPS",
+          roleDesc: "Eula is the main physical DPS.",
+          weapons: ["Song of Broken Pines", "Serpent Spine"],
+          artifacts: ["4pc Pale Flame"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "fischl",
+          role: "Sub DPS",
+          roleDesc: "Provides off-field Electro application to trigger Superconduct.",
+          weapons: ["Skyward Harp", "The Stringless"],
+          artifacts: ["4pc Thundering Fury"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "chongyun",
+          role: "Sub DPS",
+          roleDesc: "Acts as Cryo battery and speed buff support.",
+          weapons: ["Wolf's Gravestone", "Serpent Spine"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Shield support.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Crimson Vaporize Shield",
+      rank: "S",
+      description: "A Vaporize team featuring Yanfei as main DPS, Xingqiu applying Hydro, Sucrose boosting Elemental Mastery, and Thoma providing shields. Yanfei triggers Vaporize on enemies affected by Hydro from Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Thoma provides a shield for protection.",
+      members: [
+        {
+          characterId: "yanfei",
+          role: "Main DPS",
+          roleDesc: "Main Pyro DPS.",
+          weapons: ["Lost Prayer to the Sacred Winds", "The Widsith"],
+          artifacts: ["4pc Wanderer's Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Applies Hydro off-field to trigger Vaporize.",
+          weapons: ["Sacrificial Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "sucrose",
+          role: "Support",
+          roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
+          weapons: ["Sacrificial Fragments", "Mappa Mare"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Provides shields to protect the team.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    }
+  ],
+  "dehya": [
+    {
+      name: "Dehya Melting Team #1",
+      rank: "S",
+      description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
+      members: [
+        {
+          characterId: "ganyu",
+          role: "Main DPS",
+          roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
+          weapons: ["Hunter's Path", "Hamayumi"],
+          artifacts: ["4pc Wanderer's Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "dehya",
+          role: "Support",
+          roleDesc: "Elemental Skill creates a field that unleashes coordinated Pyro attacks.",
+          weapons: ["Favonius Greatsword"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["Energy Recharge", "HP%"]
+        },
+        {
+          characterId: "nahida",
+          role: "Support",
+          roleDesc: "Elemental Skill connects up to 8 enemies, dealing Dendro DMG and triggering reactions. Elemental Burst provides stable EM based on teammates' elements. Burning provides stable Pyro source.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Gilded Dreams"],
+          substats: ["Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+          weapons: ["Aquila Favonia", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Dehya Melt Team #2",
+      rank: "S",
+      description: "Ganyu's DMG is maximized by triggering Melt with Pyro from Dehya. Kazuha groups enemies and provides DMG buff, and Bennett provides ATK buff and healing. Ganyu triggers Melt with Pyro from Dehya's coordinated attacks, while Kazuha groups enemies and provides DMG buff, and Bennett boosts ATK and heals.",
+      members: [
+        {
+          characterId: "ganyu",
+          role: "Main DPS",
+          roleDesc: "Deals DMG via Burst and Charged Attack. Her attacks trigger Melt with Pyro from Dehya.",
+          weapons: ["Hunter's Path", "Hamayumi"],
+          artifacts: ["4pc Wanderer's Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "dehya",
+          role: "Sub DPS",
+          roleDesc: "Skill creates a field that unleashes coordinated Pyro damage when allies attack, enabling Melt for Ganyu.",
+          weapons: ["Favonius Greatsword"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["Energy Recharge", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides DMG buff, and reduces elemental resistance with Swirl.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Burst provides a large ATK buff and healing to teammates.",
+          weapons: ["Aquila Favonia", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Dehya Melt Team #3",
+      rank: "S",
+      description: "Ayaka's high Elemental Burst damage is maximized by triggering Melt with Pyro from Dehya. Kazuha groups and buffs, while Bennett provides ATK buff and healing. Ayaka's high Burst damage is maximized by triggering Melt with Pyro applied by Dehya's coordinated attacks.",
+      members: [
+        {
+          characterId: "ayaka",
+          role: "Main DPS",
+          roleDesc: "Ayaka's Elemental Burst deals high Cryo DMG which is maximized by Melting.",
+          weapons: ["Mistsplitter Reforged", "Amenoma Kageuchi"],
+          artifacts: ["2pc Noblesse Oblige", "2pc Blizzard Strayer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "dehya",
+          role: "Sub DPS",
+          roleDesc: "Dehya's Elemental Skill creates a field that triggers coordinated attacks, providing Pyro for Melting.",
+          weapons: ["Favonius Greatsword"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, applies swirled elements, provides DMG buff and reduces resistances.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+          weapons: ["Aquila Favonia", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Dehya Pure Pyro Team #1",
+      rank: "S",
+      description: "A mono-pyro team that focuses on maximizing Dehya's Elemental Burst damage with the support of Kazuha and Bennett. Maximize Dehya's Elemental Burst damage with Kazuha's Pyro DMG buff and resistance shred, and Bennett's ATK buff and healing.",
+      members: [
+        {
+          characterId: "dehya",
+          role: "Main DPS",
+          roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
+          weapons: ["Beacon of the Reed Sea"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "xiangling",
+          role: "Sub DPS",
+          roleDesc: "Xiangling's Elemental Burst provides huge amount of DMG off-field.",
+          weapons: ["Engulfing Lightning", "The Catch"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
+          weapons: ["Aquila Favonia", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Dehya Pure Pyro Team #2",
+      rank: "S",
+      description: "A team focused on maximizing Dehya's Elemental Burst damage with support from Kazuha, Mona, and Bennett. Maximize Dehya's Elemental Burst damage using Kazuha's DMG buff and resistance shred, Mona's Omen and DMG increase, and Bennett's ATK buff.",
+      members: [
+        {
+          characterId: "dehya",
+          role: "Main DPS",
+          roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
+          weapons: ["Beacon of the Reed Sea"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "mona",
+          role: "Support",
+          roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
+          weapons: ["Thrilling Tales of Dragon Slayers"],
+          artifacts: ["4pc Instructor"],
+          substats: ["Energy Recharge", "CRIT Rate", "CRIT DMG"]
+        },
+        {
+          characterId: "kazuha",
+          role: "Support",
+          roleDesc: "Kazuha groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Bennett's Elemental Burst provides a huge ATK buff and healing to the team.",
+          weapons: ["Aquila Favonia", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Dehya Burgeon Team",
+      rank: "A",
+      description: "A Burgeon team where Dehya triggers cores with her Skill. Nahida applies Dendro, Xingqiu applies Hydro, and Kuki Shinobu provides healing and triggers Hyperbloom/Burgeon. Dehya triggers Burgeon using her Skill on Bloom cores created by Nahida and Xingqiu. Kuki Shinobu provides healing and triggers Hyperbloom.",
+      members: [
+        {
+          characterId: "nahida",
+          role: "Main DPS",
+          roleDesc: "Mainly deals DMG via Skill connecting up to 8 enemies, and dealing Dendro DMG while triggering reactions. Her Burst buffs her skill based on teammates' elements.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "dehya",
+          role: "Support",
+          roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
+          weapons: ["Rainslasher"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "His Burst continuously applies Hydro to enemies, reacting with Dendro from Nahida to produce Bloom cores.",
+          weapons: ["Sapwood Blade"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["Energy Recharge", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "shinobu",
+          role: "Support",
+          roleDesc: "Provides healing and triggers Hyperbloom by using Skill on Dendro Cores. Maximizing Elemental Mastery increases Hyperbloom DMG.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Gilded Dreams"],
+          substats: ["Elemental Mastery", "HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Dehya Vaporization Team #2",
+      rank: "S",
+      description: "A team that leverages Burning to enable Vaporize reactions, with two off-field Pyro supports boosting Mualani's damage. Use Burning (from Dendro/Emilie and Pyro supports) to set up constant Pyro aura for Mualani's Hydro attacks to trigger Vaporize, dealing massive damage.",
+      members: [
+        {
+          characterId: "mualani",
+          role: "Main DPS",
+          roleDesc: "Uses Skill to enter Nightmind's Blessing, enhancing Normal Attacks to 'Shark Bite'. Gains 'Wave Momentum' on contact, firing 'Shark Missiles' at 3 stacks.",
+          weapons: ["Surf's Up", "Sacrificial Jade"],
+          artifacts: ["4pc Obsidian Codex"],
+          substats: ["HP%", "CRIT DMG", "CRIT Rate", "Elemental Mastery", "Energy Recharge"]
+        },
+        {
+          characterId: "emilie",
+          role: "Sub DPS",
+          roleDesc: "Summons 'Lumidouce Case' for intermittent Dendro damage. Burning state generates 'Scents' increasing range and damage. Burst further boosts scent damage.",
+          weapons: ["Lumidouce Elegy", "Deathmatch"],
+          artifacts: ["4pc Unfinished Reverie"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "xiangling",
+          role: "Sub DPS",
+          roleDesc: "Off-field Burst provides massive Pyro damage and consistent Pyro application.",
+          weapons: ["Engulfing Lightning", "Favonius Lance"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "dehya",
+          role: "Support",
+          roleDesc: "Creates a field via Skill that unleashes coordinated AoE Pyro attacks when enemies take damage.",
+          weapons: ["Favonius Greatsword"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["Energy Recharge", "HP%"]
+        }
+      ]
+    }
   ]
 };

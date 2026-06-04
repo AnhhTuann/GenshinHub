@@ -321,7 +321,43 @@ const metaBuilds = [
       { rank: 7, name: "Vua Biển Đút Túi", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí Event F2P cực tốt, tăng chỉ số Tấn Công và gia tăng trực tiếp lượng sát thương từ Kỹ Năng Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_MillenniaTuna.png" },
       { rank: 8, name: "Tuyết Vùi Tinh Bạc", subStat: "Sát Thương Vật Lý", isF2P: true, refinement: "R5", reason: "Lựa chọn rèn F2P tuyệt vời cung cấp chỉ số Sát Thương Vật Lý và tạo thêm băng rơi gây sát thương diện rộng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Dragonfell.png" },
       { rank: 9, name: "Mẫu Cổ Hoa", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn quốc dân dễ tiếp cận, tăng Tấn Công và có tỷ lệ gây thêm sát thương vật lý diện rộng mỗi 15s.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Proto.png" }
-    ]
+    ],
+    talentPriority: ["Normal Attack", "Burst", "Skill"],
+    bestArtifacts: [
+      {
+        setName: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        pieces: 2,
+        sands: ["Tấn Công%", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Vật Lý"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Hiệu Quả Nạp", "Phòng Ngự%"]
+      },
+      {
+        setName: "Lửa Trắng Xám",
+        pieces: 4,
+        sands: ["Tấn Công%", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Vật Lý"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Hiệu Quả Nạp", "Phòng Ngự%"]
+      },
+      {
+        setName: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+        pieces: 2,
+        sands: ["Tấn Công%", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Vật Lý"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Hiệu Quả Nạp", "Phòng Ngự%"]
+      },
+      {
+        setName: "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+        pieces: 2,
+        sands: ["Tấn Công%", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Vật Lý"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Hiệu Quả Nạp", "Phòng Ngự%"]
+      }
+    ],
+    bestTeams: ["eula", "beidou", "bennett", "razor", "qiqi", "fischl", "kazuha"]
   },
   {
     characterId: "yelan",
@@ -934,24 +970,106 @@ const metaBuilds = [
       { rank: 5, name: "Hắc Anh Thương", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Noire.png" },
       { rank: 6, name: "Thù Lao Của Chính Nghĩa", subStat: "HP%", isF2P: true, refinement: "R5", reason: "F2P spear with HP% and energy regeneration when using Skill, aiding Burst uptime.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Vorpal.png" }
     ],
+    talentPriority: ["Skill", "Burst", "Normal Attack"],
     bestArtifacts: [
       {
         setName: "Đóa Hoa Trang Viên Thất Lạc",
         pieces: 4,
-        sands: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
-        goblet: ["Tinh Thông Nguyên Tố", "HP%"],
-        circlet: ["Tinh Thông Nguyên Tố", "HP%"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "HP%", "Tấn Công%"]
+        sands: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố"],
+        circlet: ["Tinh Thông Nguyên Tố"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố", "HP%", "HP", "Tỷ Lệ Bạo Kích"]
       },
       {
         setName: "Giấc Mộng Hoàng Kim",
         pieces: 4,
-        sands: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
-        goblet: ["Tinh Thông Nguyên Tố", "HP%"],
-        circlet: ["Tinh Thông Nguyên Tố", "HP%"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "HP%", "Tấn Công%"]
+        sands: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố"],
+        circlet: ["Tinh Thông Nguyên Tố"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố", "HP%", "HP", "Tỷ Lệ Bạo Kích"]
+      },
+      {
+        setName: "Mix 2 bộ Tinh Thông / Dấu Ấn",
+        pieces: 2,
+        sands: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố"],
+        circlet: ["Tinh Thông Nguyên Tố"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố", "HP%", "HP", "Tỷ Lệ Bạo Kích"]
+      },
+      {
+        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố"],
+        circlet: ["Tinh Thông Nguyên Tố"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố", "HP%", "HP", "Tỷ Lệ Bạo Kích"]
       }
-    ]
+    ],
+    bestTeams: ["ayato", "yelan", "nahida", "xingqiu", "hu-tao", "kazuha", "chongyun", "bennett", "eula", "raiden-shogun", "rosaria", "fischl", "yanfei", "sucrose"]
+  },
+  {
+    characterId: "dehya",
+    bestWeapons: [
+      { rank: 1, name: "Hải Đăng Bờ Biển Lau", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công căn bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công% và HP% sau khi Kỹ Năng Nguyên Tố đánh trúng địch.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Marena.png" },
+      { rank: 2, name: "Xích Giác Phá Thạch Đao", subStat: "Sát Thương Bạo Kích", isF2P: false, refinement: "R1", reason: "Sát Thương Bạo Kích cao. Tuy chỉ số Phòng Ngự không quá hữu ích nhưng lượng ST bạo cao giúp bù đắp sát thương tốt.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Itadorimaru.png" },
+      { rank: 3, name: "Phán Quyết", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tấn công căn bản cao và Tỷ Lệ Bạo Kích tốt. Nội tại tăng sát thương Kỹ Năng Nguyên Tố sau phản ứng Kết Tinh.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_GoldenVerdict.png" },
+      { rank: 4, name: "Đường Cùng Của Sói", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Cung cấp lượng Tấn Công cực lớn cho Dehya và tăng sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Wolfmound.png" },
+      { rank: 5, name: "Nanh Vua Núi", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tỷ Lệ Bạo Kích cao và tăng sát thương đòn đánh sau khi trúng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi Burning.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Saurian.png" },
+      { rank: 6, name: "Ly Cốt Kiếm", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tăng sát thương đầu ra đáng kể khi tích đủ tầng nội tại, tuy nhiên cần duy trì khiên bảo vệ để tránh mất tầng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Kione.png" },
+      { rank: 7, name: "Đóa Hoa Tôn Màu Thép", subStat: "Tinh Thông Nguyên Tố", isF2P: true, refinement: "R5", reason: "Lựa chọn F2P cung cấp Tinh Thông Nguyên Tố và Tấn Công% sau khi kích hoạt phản ứng nguyên tố, rất mạnh cho lối chơi Burgeon.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Fleurfair.png" },
+      { rank: 8, name: "Kiếm Vũ Tài", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R5", reason: "Cung cấp Tinh Thông Nguyên Tố dồi dào và tăng mạnh sát thương lên kẻ địch bị ảnh hưởng bởi Thủy hoặc Lôi.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Raincutter.png" },
+      { rank: 9, name: "Bóng Tối Thủy Triều", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn F2P tăng Tấn Công% đáng kể khi nhận trị liệu, dễ kích hoạt khi đi kèm Healer.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Phoebe.png" },
+      { rank: 10, name: "Bá Vương Tối Thượng Siêu Cấp Ma Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Vũ khí sự kiện F2P tuyệt vời cung cấp Hiệu Quả Nạp giúp giảm áp lực nạp nộ và tăng Tấn Công% dựa trên Melusine đã giúp đỡ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Melusine.png" },
+      { rank: 11, name: "Gậy Trò Chuyện", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Tỷ Lệ Bạo Kích và tăng sát thương sau khi chịu ảnh hưởng của các trạng thái nguyên tố.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_TalkingStick.png" },
+      { rank: 12, name: "Kiếm Vô Công", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Tấn Công% cao và gia tăng hiệu quả khiên, hoạt động tốt nhất khi đi kèm nhân vật tạo khiên.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Kunwu.png" },
+      { rank: 13, name: "A Thousand Floating Suns", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Tỷ Lệ Bạo Kích tốt và tăng mạnh Tấn Công sau khi kích hoạt phản ứng Nguyên Tố Hỏa hoặc Thiêu Đốt.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Ayus.png" },
+      { rank: 14, name: "Thiên Không Kiêu Ngạo", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: false, refinement: "R1", reason: "Cung cấp Hiệu Quả Nạp lớn giúp duy trì chu kỳ nộ nạp cho Dehya.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Dvalin.png" },
+      { rank: 15, name: "Akoumaru", subStat: "Tấn Công%", isF2P: false, refinement: "R5", reason: "Tăng sát thương Kỹ Năng Nộ dựa trên tổng năng lượng nộ của cả đội, tối ưu hóa sát thương nổ của Dehya.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Claymore_Maria.png" }
+    ],
+    talentPriority: ["Burst", "Skill", "Normal Attack"],
+    bestArtifacts: [
+      {
+        setName: "Dấu Ấn Ngăn Cách",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "HP%", "Tinh Thông Nguyên Tố"]
+      },
+      {
+        setName: "Vầng Sáng Vourukasha",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "HP%", "Tinh Thông Nguyên Tố"]
+      },
+      {
+        setName: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
+        pieces: 2,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "HP%", "Tinh Thông Nguyên Tố"]
+      },
+      {
+        setName: "Ảo Mộng Chưa Hoàn Thành",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "HP%", "Tinh Thông Nguyên Tố"]
+      },
+      {
+        setName: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: ["Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "HP%", "Tinh Thông Nguyên Tố"]
+      }
+    ],
+    bestTeams: ["ganyu", "nahida", "bennett", "kazuha", "ayaka", "xiangling", "mona", "xingqiu", "shinobu", "mualani", "emilie"]
   }
 ];
 const charactersData = [

@@ -35,7 +35,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 
 ### 🪨 Nham (Geo)
 
-- [x] **Zhongli** (`zhongli`) — _Đầy đủ 13 vũ khí & Thánh Di Vật_
+- [x] **Zhongli** (`zhongli`) — _Đầy đủ 13 vũ khí, Thánh Di Vật, Substats, Talents & Team Builds_
 
 ---
 

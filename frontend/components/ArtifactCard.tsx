@@ -47,6 +47,21 @@ function getMixedSets(setName: string) {
       }
     ];
   }
+
+  if (lower.includes("vourukasha") || lower.includes("thiên nham")) {
+    return [
+      {
+        name: "Vầng Sáng Vourukasha",
+        desc: "Tăng 20% HP tối đa",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15030_4.png"
+      },
+      {
+        name: "Thiên Nham Vững Chắc",
+        desc: "Tăng 20% HP tối đa",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+      }
+    ];
+  }
   
   // Default fallback if we don't recognize the mix
   return [

@@ -141,16 +141,58 @@ const metaBuilds = [
       { rank: 12, name: "Mũi Nhọn Của Gió", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí cán dài F2P cung cấp Tấn Công% và nội tại tăng Tấn Công% sau khi kích hoạt phản ứng nguyên tố. Tạm ổn cho lối chơi sát thương Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Windvane.png" },
       { rank: 13, name: "Thương Tây Phong", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Hiệu Quả Nạp cao và sinh hạt nhân lượng cho toàn đội. Cần ưu tiên chỉ số Tỷ Lệ Bạo Kích để dễ kích hoạt nội tại.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Pole_Zephyrus.png" }
     ],
+    talentPriority: ["Skill", "Burst", "Normal Attack"],
     bestArtifacts: [
       {
-        setName: "Thánh Di Vật Đề Cử",
+        setName: "Phiến Đá Lâu Đời",
         pieces: 4,
-        sands: ["ATK%", "HP%"],
-        goblet: ["Geo DMG Bonus"],
-        circlet: ["CRIT Rate", "CRIT DMG"],
-        subStatsPriority: ["CRIT Rate", "CRIT DMG", "HP%", "ATK%"]
+        sands: ["HP%"],
+        goblet: ["HP%"],
+        circlet: ["HP%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["HP%", "HP", "Energy Recharge"]
+      },
+      {
+        setName: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        pieces: 4,
+        sands: ["HP%"],
+        goblet: ["HP%"],
+        circlet: ["HP%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["HP%", "HP", "Energy Recharge"]
+      },
+      {
+        setName: "Ký Ức Rừng Sâu",
+        pieces: 4,
+        sands: ["HP%"],
+        goblet: ["HP%"],
+        circlet: ["HP%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["HP%", "HP", "Energy Recharge"]
+      },
+      {
+        setName: "Giáo Quan",
+        pieces: 4,
+        sands: ["HP%"],
+        goblet: ["HP%"],
+        circlet: ["HP%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["HP%", "HP", "Energy Recharge"]
+      },
+      {
+        setName: "Thiên Nham Vững Chắc",
+        pieces: 4,
+        sands: ["HP%"],
+        goblet: ["HP%"],
+        circlet: ["HP%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["HP%", "HP", "Energy Recharge"]
+      },
+      {
+        setName: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
+        pieces: 2,
+        sands: ["HP%"],
+        goblet: ["HP%"],
+        circlet: ["HP%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["HP%", "HP", "Energy Recharge"]
       }
-    ]
+    ],
+    bestTeams: ["keqing", "fischl", "xiao", "jean", "albedo", "hu-tao", "xingqiu", "kazuha", "ganyu", "mona", "venti", "ayaka", "eula", "chongyun", "xiangling", "bennett"]
   },
   {
     characterId: "neuvillette",

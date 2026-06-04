@@ -562,40 +562,66 @@ const metaBuilds = [
       { rank: 12, name: "Ngọc Bích Hiến Tế", subStat: "Tỷ Lệ Bạo Kích", isF2P: false, refinement: "R1", reason: "Cung cấp Tỷ Lệ Bạo Kích. Tăng Tinh Thông Nguyên Tố và Tấn Công sau khi dùng kỹ năng, thích hợp cho đội phản ứng.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Yue.png" },
       { rank: 13, name: "Dòng Chảy Tinh Khiết", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Tăng mạnh Tấn Công% và tăng Sát Thương Nguyên Tố khi dùng kỹ năng, giảm áp lực nạp Nộ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Vorpal.png" }
     ],
+    talentPriority: ["Normal Attack", "Burst", "Skill"],
     bestArtifacts: [
       {
-        setName: "Lễ Bế Mạc Của Giác Đấu Sĩ (2) + Diệm Liệt Ma Nữ Cháy Rực (2)",
-        pieces: 2,
-        sands: ["Tấn Công%"],
-        goblet: ["Sát Thương Nguyên Tố Hỏa"],
-        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
-      },
-      {
-        setName: "Diệm Liệt Ma Nữ Cháy Rực",
+        setName: "Ngày Nổi Gió",
         pieces: 4,
         sands: ["Tấn Công%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
       },
       {
-        setName: "Lễ Bế Mạc Của Giác Đấu Sĩ (2) + Dòng Hồi Ức Bất Tận (2)",
+        setName: "Hiền Nhân Bốc Lửa",
+        pieces: 4,
+        sands: ["Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
+      },
+      {
+        setName: "Dư Âm Tế Lễ",
+        pieces: 4,
+        sands: ["Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
+      },
+      {
+        setName: "Sử Ký Đình Các Sa Mạc",
+        pieces: 4,
+        sands: ["Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
+      },
+      {
+        setName: "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn",
         pieces: 2,
         sands: ["Tấn Công%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
       },
       {
-        setName: "Đoàn Hát Lang Thang Đại Lục (2) + Diệm Liệt Ma Nữ Cháy Rực (2)",
-        pieces: 2,
+        setName: "Đoàn Hát Lang Thang Đại Lục",
+        pieces: 4,
         sands: ["Tấn Công%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa"],
         circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"]
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
+      },
+      {
+        setName: "Mảnh Chương Hài Hòa",
+        pieces: 4,
+        sands: ["Tấn Công%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa"],
+        circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
       }
-    ]
+    ],
+    bestTeams: ["xilonen", "furina", "bennett", "kazuha", "durin", "albedo", "fischl", "chevreuse", "citlali", "xianyun"]
   },
   {
     characterId: "diluc",
@@ -677,6 +703,7 @@ const metaBuilds = [
       { rank: 11, name: "Tai Họa Eshu", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Tấn công cơ bản cao (565) nhưng không có dòng phụ Hiệu Quả Nạp. Nội tại tăng Tấn Công% sau khi được hồi máu.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_SacrificialNgombe.png" },
       { rank: 12, name: "Tây Phong Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Tấn công cơ bản thấp (454) làm giảm lượng buff Tấn Công. Tuy nhiên dòng phụ Nạp rất cao và nội tại sinh hạt năng lượng giúp sạc nhanh cho cả đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Sword_Zephyrus.png" }
     ],
+    talentPriority: ["Burst", "Skill", "Normal Attack"],
     bestArtifacts: [
       {
         setName: "Nghi Thức Tông Thất Cổ",
@@ -684,7 +711,7 @@ const metaBuilds = [
         sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
         circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
-        subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Tấn Công%"]
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "HP%", "ATK%", "HP"]
       },
       {
         setName: "Giáo Quan",
@@ -692,17 +719,26 @@ const metaBuilds = [
         sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
         circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
-        subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Tấn Công%"]
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "HP%", "ATK%", "HP"]
       },
       {
-        setName: "Thiếu Nữ Đáng Yêu",
+        setName: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         pieces: 4,
         sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
         goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
         circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
-        subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Tấn Công%"]
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "HP%", "ATK%", "HP"]
+      },
+      {
+        setName: "Ký Ức Rừng Sâu",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%", "HP%"],
+        goblet: ["Sát Thương Nguyên Tố Hỏa", "HP%"],
+        circlet: ["Tỷ Lệ Bạo Kích", "HP%", "Tăng Trị Liệu"],
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "HP%", "ATK%", "HP"]
       }
-    ]
+    ],
+    bestTeams: ["tartaglia", "xiangling", "kazuha", "raiden-shogun", "kujou-sara", "yoimiya", "xingqiu", "klee", "ganyu", "diona", "hu-tao", "sucrose", "yanfei", "eula", "fischl"]
   },
   {
     characterId: "amber",

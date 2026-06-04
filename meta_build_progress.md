@@ -7,8 +7,8 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Xiangling** (`xiangling`) — ✅ *Hoàn thiện (19 Vũ khí, TDV, Substats, Talents, Teams)*
 - [x] **Amber** (`amber`) — ✅ *Hoàn thiện (18 Vũ khí, TDV, Substats, Talents, Teams)*
 - [x] **Diluc** (`diluc`) — ✅ *Hoàn thiện (15 Vũ khí, TDV, Substats, Talents, Teams)*
-- [ ] **Klee** (`klee`) — ⏳ *13 Vũ khí & TDV*
-- [ ] **Bennett** (`bennett`) — ⏳ *12 Vũ khí & TDV*
+- [x] **Klee** (`klee`) — ✅ *Hoàn thiện (13 Vũ khí, TDV, Substats, Talents, Teams)*
+- [x] **Bennett** (`bennett`) — ✅ *Hoàn thiện (12 Vũ khí, TDV, Substats, Talents, Teams)*
 - [ ] **Yanfei** (`yanfei`) — ⏳ *10 Vũ khí & TDV*
 - [ ] **Yoimiya** (`yoimiya`) — ⏳ *9 Vũ khí & TDV*
 - [ ] **Xinyan** (`xinyan`) — ⏳ *9 Vũ khí*

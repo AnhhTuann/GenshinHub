@@ -31,7 +31,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 
 ### 🌿 Thảo (Dendro)
 
-- [x] **Nahida** (`nahida`) — _Đầy đủ 18 vũ khí & Thánh Di Vật_
+- [x] **Nahida** (`nahida`) — _Đầy đủ 18 vũ khí, Thánh Di Vật, Substats, Talents & Team Builds_
 
 ### 🪨 Nham (Geo)
 

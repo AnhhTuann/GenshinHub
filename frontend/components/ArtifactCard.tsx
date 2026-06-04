@@ -62,6 +62,21 @@ function getMixedSets(setName: string) {
       }
     ];
   }
+
+  if (lower.includes("tinh thông") && lower.includes("ký ức")) {
+    return [
+      {
+        name: "Bộ Tinh Thông Nguyên Tố +80",
+        desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+      },
+      {
+        name: "Ký Ức Rừng Sâu",
+        desc: "Tăng 15% Sát Thương Nguyên Tố Thảo",
+        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15025_4.png"
+      }
+    ];
+  }
   
   // Default fallback if we don't recognize the mix
   return [

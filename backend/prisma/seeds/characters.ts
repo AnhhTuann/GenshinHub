@@ -287,6 +287,7 @@ const metaBuilds = [
       { rank: 17, name: "Câu Chuyện Diệt Rồng", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Cung cấp lượng lớn buff Tấn Công% cho nhân vật ra sân tiếp theo; chỉ dùng thuần hỗ trợ khi Nahida không gây sát thương.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Pulpfic.png" },
       { rank: 18, name: "Mẫu Kim Phách", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Hồi máu và phục hồi năng lượng cho toàn đội; sử dụng nếu cần gia tăng khả năng sinh tồn và nạp năng lượng thay vì TTNT.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Proto.png" }
     ],
+    talentPriority: ["Skill", "Burst", "Normal Attack"],
     bestArtifacts: [
       {
         setName: "Ký Ức Rừng Sâu",
@@ -294,7 +295,7 @@ const metaBuilds = [
         sands: ["Tinh Thông Nguyên Tố"],
         goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
         circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"]
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"]
       },
       {
         setName: "Giấc Mộng Hoàng Kim",
@@ -302,7 +303,7 @@ const metaBuilds = [
         sands: ["Tinh Thông Nguyên Tố"],
         goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
         circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"]
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"]
       },
       {
         setName: "Đoàn Kịch Hoàng Kim",
@@ -310,9 +311,34 @@ const metaBuilds = [
         sands: ["Tinh Thông Nguyên Tố"],
         goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
         circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-        subStatsPriority: ["Tinh Thông Nguyên Tố", "Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"]
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"]
+      },
+      {
+        setName: "Mix 2 bộ Tinh Thông & 2 bộ Ký Ức Rừng Sâu",
+        pieces: 2,
+        sands: ["Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
+        circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"]
+      },
+      {
+        setName: "Thiên Nham Vững Chắc",
+        pieces: 4,
+        sands: ["Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
+        circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"]
+      },
+      {
+        setName: "Đóa Hoa Trang Viên Thất Lạc",
+        pieces: 4,
+        sands: ["Tinh Thông Nguyên Tố"],
+        goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
+        circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+        subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"]
       }
-    ]
+    ],
+    bestTeams: ["raiden-shogun", "thoma", "kuki-shinobu", "yae-miko", "fischl", "zhongli", "kokomi", "kazuha", "yelan", "nilou", "traveler", "xingqiu", "cyno", "beidou", "ganyu", "bennett", "razor"]
   },
   {
     characterId: "xiangling",

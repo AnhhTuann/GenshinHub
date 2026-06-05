@@ -33,16 +33,18 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-[#15151a] border border-gray-800/60 p-4 rounded-xl flex flex-col">
-          <span className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Region</span>
-          <span className="text-gray-100 font-medium">{character.region}</span>
+      <div className="grid grid-cols-3 gap-2 md:gap-3">
+        <div className="bg-[#15151a] border border-gray-800/60 p-3 rounded-xl flex flex-col">
+          <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-1">Region</span>
+          <span className="text-gray-100 font-semibold text-sm md:text-base truncate">{character.region}</span>
         </div>
-        <div className="bg-[#15151a] border border-gray-800/60 p-4 rounded-xl flex flex-col">
-          <span className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-1">Weapon</span>
-          <span className="text-gray-100 font-medium flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-gray-500"></span> {character.weapon}
-          </span>
+        <div className="bg-[#15151a] border border-gray-800/60 p-3 rounded-xl flex flex-col">
+          <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-1">Birthday</span>
+          <span className="text-gray-100 font-semibold text-sm md:text-base truncate">{character.birthday || "Chưa rõ"}</span>
+        </div>
+        <div className="bg-[#15151a] border border-gray-800/60 p-3 rounded-xl flex flex-col">
+          <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-1">Weapon</span>
+          <span className="text-gray-100 font-semibold text-sm md:text-base truncate">{character.weapon}</span>
         </div>
       </div>
     </div>

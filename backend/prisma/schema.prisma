@@ -23,6 +23,7 @@ model Character {
   baseAtk        Int
   baseDef        Int
   fandomUrl      String?
+  birthday       String?
 
   bestWeapons    CharacterWeapon[]
   bestArtifacts  CharacterArtifact[]

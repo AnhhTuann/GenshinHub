@@ -212,6 +212,7 @@ function getMixedSets(setName: string) {
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       }
     ];
   }
@@ -372,7 +373,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-[#FFE082] via-[#FFB300] to-[#E65100] rounded-lg overflow-hidden shrink-0 p-[1px]">
                     <Image 
-                      src={mSet.iconUrl} 
+                      src={mSet.iconUrl || "/images/artifacts/UI_RelicIcon_15020_4.png"} 
                       alt={mSet.name} 
                       width={40} 
                       height={40} 

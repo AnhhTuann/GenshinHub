@@ -4,8 +4,8 @@ import { PrismaClient } from '@prisma/client';
 // Hàm chuẩn hóa ID
 const toId = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 // Hàm chuẩn hóa avatar url Enka
-const toAvatar = (name: string) => `/images/avatars/UI_AvatarIcon_${name.replace(/[^a-zA-Z]/g, '')}.png`;
-const toSplash = (name: string) => `/images/splash/UI_Gacha_AvatarImg_${name.replace(/[^a-zA-Z]/g, '')}.png`;
+const toAvatar = (name: string) => `/images/avatars/${toId(name)}.png`;
+const toSplash = (name: string) => `/images/splash/${toId(name)}.png`;
 
 const metaBuilds = [
   {
@@ -397,7 +397,7 @@ const metaBuilds = [
     bestTeams: ["arlecchino", "zhongli", "bennett", "hu-tao", "xingqiu", "wanderer", "faruzan", "thoma", "cyno", "nahida", "baizhu", "raiden-shogun", "xiangling", "kazuha", "nilou", "furina", "jean"]
   },
   {
-    characterId: "kazuha",
+    characterId: "kaedehara-kazuha",
     bestWeapons: [
       { rank: 1, name: "Lời Thề Tự Do Cổ Xưa", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R1", reason: "Tinh Thông Nguyên Tố cực cao và khả năng buff Tấn Công cho toàn đội. Trấn phái giúp tối đa hóa khả năng hỗ trợ và sát thương Khuếch Tán.", iconUrl: "/images/weapons/UI_EquipIcon_Sword_Widsith.png" },
       { rank: 2, name: "Tây Phong Kiếm", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Tạo hạt nhân lượng cho cả đội. Cực kỳ hữu dụng khi nhu cầu Hiệu Quả Nạp cao, đặc biệt khi đội hình không có Bennett.", iconUrl: "/images/weapons/UI_EquipIcon_Sword_Zephyrus.png" },
@@ -1123,21 +1123,133 @@ const metaBuilds = [
     bestTeams: ["varka", "prune", "bennett", "durin", "venti", "faruzan", "kinich", "iansan"]
   }
 ];
-const charactersData = [
-  // 1. Mondstadt
-  ...["Albedo|Geo|Sword|5", "Amber|Pyro|Bow|4", "Barbara|Hydro|Catalyst|4", "Bennett|Pyro|Sword|4", "Dahlia|Hydro|Catalyst|4", "Diluc|Pyro|Claymore|5", "Diona|Cryo|Bow|4", "Durin|Pyro|Sword|5", "Eula|Cryo|Claymore|5", "Fischl|Electro|Bow|4", "Jean|Anemo|Sword|5", "Kaeya|Cryo|Sword|4", "Klee|Pyro|Catalyst|5", "Lisa|Electro|Catalyst|4", "Mika|Cryo|Polearm|4", "Mona|Hydro|Catalyst|5", "Noelle|Geo|Claymore|4", "Prune|Anemo|Catalyst|5", "Razor|Electro|Claymore|4", "Rosaria|Cryo|Polearm|4", "Sucrose|Anemo|Catalyst|4", "Varka|Anemo|Claymore|5", "Venti|Anemo|Bow|5"].map(c => ({ ...parseChar(c), region: "Mondstadt" })),
-  // 2. Liyue
-  ...["Baizhu|Dendro|Catalyst|5", "Beidou|Electro|Claymore|4", "Chongyun|Cryo|Claymore|4", "Gaming|Pyro|Claymore|4", "Keqing|Electro|Sword|5", "Lan Yan|Anemo|Catalyst|4", "Ningguang|Geo|Catalyst|4", "Qiqi|Cryo|Sword|5", "Shenhe|Cryo|Polearm|5", "Xiangling|Pyro|Polearm|4", "Xianyun|Anemo|Catalyst|5", "Xiao|Anemo|Polearm|5", "Xingqiu|Hydro|Sword|4", "Xinyan|Pyro|Claymore|4", "Yanfei|Pyro|Catalyst|4", "Yaoyao|Dendro|Polearm|4", "Yun Jin|Geo|Polearm|4", "Zibai|Geo|Sword|4", "Hu Tao|Pyro|Polearm|5", "Zhongli|Geo|Polearm|5", "Yelan|Hydro|Bow|5", "Ganyu|Cryo|Bow|5"].map(c => ({ ...parseChar(c), region: "Liyue" })),
-  // 3. Inazuma
-  ...["Ayato|Hydro|Sword|5", "Chiori|Geo|Sword|5", "Gorou|Geo|Bow|4", "Heizou|Anemo|Catalyst|4", "Itto|Geo|Claymore|5", "Kirara|Dendro|Sword|4", "Kokomi|Hydro|Catalyst|5", "Kujou Sara|Electro|Bow|4", "Mizuki|Hydro|Bow|4", "Sayu|Anemo|Claymore|4", "Shinobu|Electro|Sword|4", "Thoma|Pyro|Polearm|4", "Yae Miko|Electro|Catalyst|5", "Yoimiya|Pyro|Bow|5", "Ayaka|Cryo|Sword|5", "Kazuha|Anemo|Sword|5", "Raiden Shogun|Electro|Polearm|5"].map(c => ({ ...parseChar(c), region: "Inazuma" })),
-  // 4. Sumeru
-  ...["Alhaitham|Dendro|Sword|5", "Candace|Hydro|Polearm|4", "Collei|Dendro|Bow|4", "Cyno|Electro|Polearm|5", "Dehya|Pyro|Claymore|5", "Dori|Electro|Claymore|4", "Faruzan|Anemo|Bow|4", "Kaveh|Dendro|Claymore|4", "Layla|Cryo|Sword|4", "Nahida|Dendro|Catalyst|5", "Nicole|Pyro|Catalyst|5", "Nilou|Hydro|Sword|5", "Sethos|Electro|Bow|4", "Tighnari|Dendro|Bow|5", "Wanderer|Anemo|Catalyst|5"].map(c => ({ ...parseChar(c), region: "Sumeru" })),
-  // 5. Fontaine
-  ...["Charlotte|Cryo|Catalyst|4", "Chevreuse|Pyro|Polearm|4", "Emilie|Dendro|Polearm|5", "Escoffier|Cryo|Polearm|5", "Freminet|Cryo|Claymore|4", "Linnea|Geo|Bow|4", "Lynette|Anemo|Sword|4", "Lyney|Pyro|Bow|5", "Sigewinne|Hydro|Bow|5", "Wriothesley|Cryo|Catalyst|5", "Furina|Hydro|Sword|5", "Neuvillette|Hydro|Catalyst|5", "Navia|Geo|Claymore|5"].map(c => ({ ...parseChar(c), region: "Fontaine" })),
-  // 6. Natlan & Others
-  ...["Aloy|Cryo|Bow|5", "Chasca|Anemo|Bow|5", "Tartaglia|Hydro|Bow|5", "Citlali|Cryo|Catalyst|5", "Columbina|Hydro|Catalyst|5", "Flins|Electro|Polearm|5", "Iansan|Electro|Polearm|4", "Ifa|Dendro|Catalyst|4", "Illuga|Geo|Sword|4", "Ineffa|Electro|Polearm|5", "Kinich|Dendro|Claymore|5", "Mavuika|Pyro|Claymore|5", "Mualani|Hydro|Catalyst|5", "Skirk|Cryo|Sword|5", "Traveler|Anemo|Sword|5", "Xilonen|Geo|Sword|5", "Arlecchino|Pyro|Polearm|5"].map(c => ({ ...parseChar(c), region: "Other" }))
-];
-
+  const charactersData = [
+    ...[
+      "Kamisato Ayaka|Cryo|Sword|5",
+      "Jean|Anemo|Sword|5",
+      "Lisa|Electro|Catalyst|4",
+      "Barbara|Hydro|Catalyst|4",
+      "Kaeya|Cryo|Sword|4",
+      "Diluc|Pyro|Claymore|5",
+      "Razor|Electro|Claymore|4",
+      "Amber|Pyro|Bow|4",
+      "Venti|Anemo|Bow|5",
+      "Xiangling|Pyro|Catalyst|4",
+      "Beidou|Electro|Claymore|4",
+      "Xingqiu|Hydro|Sword|4",
+      "Xiao|Anemo|Catalyst|5",
+      "Ningguang|Geo|Catalyst|4",
+      "Klee|Pyro|Catalyst|5",
+      "Zhongli|Geo|Catalyst|5",
+      "Fischl|Electro|Bow|4",
+      "Bennett|Pyro|Sword|4",
+      "Tartaglia|Hydro|Bow|5",
+      "Noelle|Geo|Claymore|4",
+      "Qiqi|Cryo|Sword|5",
+      "Chongyun|Cryo|Claymore|4",
+      "Ganyu|Cryo|Bow|5",
+      "Albedo|Geo|Sword|5",
+      "Diona|Cryo|Bow|4",
+      "Mona|Hydro|Catalyst|5",
+      "Keqing|Electro|Sword|5",
+      "Sucrose|Anemo|Catalyst|4",
+      "Xinyan|Pyro|Claymore|4",
+      "Rosaria|Cryo|Catalyst|4",
+      "Hu Tao|Pyro|Catalyst|5",
+      "Kaedehara Kazuha|Anemo|Sword|5",
+      "Yanfei|Pyro|Catalyst|4",
+      "Yoimiya|Pyro|Bow|5",
+      "Thoma|Pyro|Catalyst|4",
+      "Eula|Cryo|Claymore|5",
+      "Raiden Shogun|Electro|Catalyst|5",
+      "Sayu|Anemo|Claymore|4",
+      "Sangonomiya Kokomi|Hydro|Catalyst|5",
+      "Gorou|Geo|Bow|4",
+      "Kujou Sara|Electro|Bow|4",
+      "Arataki Itto|Geo|Claymore|5",
+      "Yae Miko|Electro|Catalyst|5",
+      "Shikanoin Heizou|Anemo|Catalyst|4",
+      "Yelan|Hydro|Bow|5",
+      "Kirara|Dendro|Sword|4",
+      "Aloy|Cryo|Bow|5",
+      "Shenhe|Cryo|Catalyst|5",
+      "Yun Jin|Geo|Catalyst|4",
+      "Kuki Shinobu|Electro|Sword|4",
+      "Kamisato Ayato|Hydro|Sword|5",
+      "Collei|Dendro|Bow|4",
+      "Dori|Electro|Claymore|4",
+      "Tighnari|Dendro|Bow|5",
+      "Nilou|Hydro|Sword|5",
+      "Cyno|Electro|Catalyst|5",
+      "Candace|Hydro|Catalyst|4",
+      "Nahida|Dendro|Catalyst|5",
+      "Layla|Cryo|Sword|4",
+      "Wanderer|Anemo|Catalyst|5",
+      "Faruzan|Anemo|Bow|4",
+      "Yaoyao|Dendro|Catalyst|4",
+      "Alhaitham|Dendro|Sword|5",
+      "Dehya|Pyro|Claymore|5",
+      "Mika|Cryo|Catalyst|4",
+      "Kaveh|Dendro|Claymore|4",
+      "Baizhu|Dendro|Catalyst|5",
+      "Lynette|Anemo|Sword|4",
+      "Lyney|Pyro|Bow|5",
+      "Freminet|Cryo|Claymore|4",
+      "Wriothesley|Cryo|Catalyst|5",
+      "Neuvillette|Hydro|Catalyst|5",
+      "Charlotte|Cryo|Catalyst|4",
+      "Furina|Hydro|Sword|5",
+      "Chevreuse|Pyro|Catalyst|4",
+      "Navia|Geo|Claymore|5",
+      "Gaming|Pyro|Claymore|4",
+      "Xianyun|Anemo|Catalyst|5",
+      "Chiori|Geo|Sword|5",
+      "Sigewinne|Hydro|Bow|5",
+      "Arlecchino|Pyro|Catalyst|5",
+      "Sethos|Electro|Bow|4",
+      "Clorinde|Electro|Sword|5",
+      "Emilie|Dendro|Catalyst|5",
+      "Kachina|Geo|Catalyst|4",
+      "Kinich|Dendro|Claymore|5",
+      "Mualani|Hydro|Catalyst|5",
+      "Xilonen|Geo|Sword|5",
+      "Chasca|Anemo|Bow|5",
+      "Ororon|Electro|Bow|4",
+      "Mavuika|Pyro|Claymore|5",
+      "Citlali|Cryo|Catalyst|5",
+      "Lan Yan|Anemo|Catalyst|4",
+      "Yumemizuki Mizuki|Anemo|Catalyst|5",
+      "Iansan|Electro|Catalyst|4",
+      "Varesa|Electro|Catalyst|5",
+      "Escoffier|Cryo|Catalyst|5",
+      "Ifa|Anemo|Catalyst|4",
+      "Skirk|Cryo|Sword|5",
+      "Dahlia|Hydro|Sword|4",
+      "Ineffa|Electro|Catalyst|5",
+      "Manekin|None|Sword|5",
+      "Manekina|None|Sword|5",
+      "Lauma|Dendro|Catalyst|5",
+      "Flins|Electro|Catalyst|5",
+      "Aino|Hydro|Claymore|4",
+      "Nefer|Dendro|Catalyst|5",
+      "Durin|Pyro|Sword|5",
+      "Jahoda|Anemo|Bow|4",
+      "Columbina|Hydro|Catalyst|5",
+      "Zibai|Geo|Sword|5",
+      "Illuga|Geo|Catalyst|4",
+      "Varka|Anemo|Claymore|5",
+      "Lohen|Cryo|Catalyst|5",
+      "Linnea|Geo|Bow|5",
+      "Nicole|Pyro|Catalyst|5",
+      "Prune|Anemo|Catalyst|4",
+      "Traveler (Anemo)|Anemo|Sword|5",
+      "Traveler (Geo)|Geo|Sword|5",
+      "Traveler (Electro)|Electro|Sword|5",
+      "Traveler (Dendro)|Dendro|Sword|5",
+      "Traveler (Hydro)|Hydro|Sword|5",
+      "Traveler (Pyro)|Pyro|Sword|5"
+    ].map(c => ({ ...parseChar(c), region: "Other" }))
+  ];
 
 function parseChar(dataStr: string) {
   const [name, element, weapon, rarity] = dataStr.split('|');
@@ -1193,8 +1305,8 @@ function parseChar(dataStr: string) {
     rarity: parseInt(rarity) || 5,
     element: element,
     weapon: weapon,
-    avatarUrl: toAvatar(avatarKey),
-    splashArtUrl: toSplash(avatarKey),
+    avatarUrl: toAvatar(name),
+    splashArtUrl: toSplash(name),
     talentPriority: (metaInfo && metaInfo.talentPriority) ? metaInfo.talentPriority : ["Normal Attack", "Elemental Skill", "Elemental Burst"],
     bestTeams: (metaInfo && metaInfo.bestTeams) ? metaInfo.bestTeams : ["bennett", "xingqiu", "zhongli"],
     description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
@@ -1262,14 +1374,14 @@ export async function seedCharacters(prisma: PrismaClient) {
       let lookupName = char.name.toLowerCase();
       if (lookupName === "raiden shogun") lookupName = "raiden shogun";
       else if (lookupName === "tartaglia") lookupName = "tartaglia";
-      else if (lookupName === "traveler") lookupName = "traveler (anemo)"; // Ví dụ
+      if (lookupName.startsWith("traveler")) lookupName = "traveler";
       
       const ambrId = ambrMap.get(lookupName);
       
       if (ambrId) {
         // Lấy chi tiết bằng tiếng Việt
         await new Promise(r => setTimeout(r, 200));
-        const { data: detailData } = await axios.get(`https://gi.yatta.moe/api/v2/vi/avatar/${ambrId}`);
+        await new Promise(r => setTimeout(r, 400)); const { data: detailData } = await axios.get(`https://gi.yatta.moe/api/v2/vi/avatar/${ambrId}`);
         const detail = detailData?.data;
         
         if (detail) {

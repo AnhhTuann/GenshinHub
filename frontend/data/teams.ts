@@ -5203,7 +5203,7 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
     {
       name: "Nicole Pyro Team #1",
       rank: "SS",
-      description: "A team built around Varka as a mixed damage main DPS, with Anemo and converted elemental attacks, supported by Phare's buffs and ADC buffs, Nicole's shielding and ADC boosts, and Bennett's ATK buff and healing.",
+      description: "A team built around Varka as a mixed damage main DPS, with Anemo and converted elemental attacks, supported by Prune's buffs and ADC buffs, Nicole's shielding and ADC boosts, and Bennett's ATK buff and healing.",
       members: [
         {
           characterId: "varka",
@@ -5214,7 +5214,7 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
           substats: ["CRIT Rate", "CRIT DMG", "ATK%", "ATK"]
         },
         {
-          characterId: "phare",
+          characterId: "prune",
           role: "Support",
           roleDesc: "Anemo Support. Provides Pyro stand and ADC buffs via Pyro attacks.",
           weapons: ["Angelos' Heptades", "Oathsworn Eye"],
@@ -5242,7 +5242,7 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
     {
       name: "Nicole Pyro Team #2",
       rank: "SS",
-      description: "A high-tier team featuring Varka as main DPS with Anemo and converted elemental damage, supported by Phare's buffs, Nicole's shield, and Durin's off-field Pyro and RES shred.",
+      description: "A high-tier team featuring Varka as main DPS with Anemo and converted elemental damage, supported by Prune's buffs, Nicole's shield, and Durin's off-field Pyro and RES shred.",
       members: [
         {
           characterId: "varka",
@@ -5253,7 +5253,7 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
           substats: ["CRIT Rate", "CRIT DMG", "ATK%", "ATK"]
         },
         {
-          characterId: "phare",
+          characterId: "prune",
           role: "Support",
           roleDesc: "Anemo Support. Provides Anemo support and buffs.",
           weapons: ["Angelos' Heptades", "Oathsworn Eye"],
@@ -5292,7 +5292,7 @@ export const detailedTeamsData: Record<string, DetailedTeam[]> = {
           substats: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge"]
         },
         {
-          characterId: "phare",
+          characterId: "prune",
           role: "Support",
           roleDesc: "Anemo Support. Another Anemo support for teamwide ADC buffs.",
           weapons: ["Angelos' Heptades", "Oathsworn Eye"],

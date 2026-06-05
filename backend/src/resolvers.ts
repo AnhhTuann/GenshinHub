@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
 import { LRUCache } from 'lru-cache';
 
-// Forced restart to flush caches after db seed - final v18
+// Forced restart to flush caches after db seed - final v19
 const prisma = new PrismaClient();
 
 const charactersCache = new LRUCache<string, any>({ max: 10, ttl: 1000 * 60 * 60 });
@@ -102,5 +102,5 @@ export const resolvers = {
     }
   }
 };
-// Trigger nodemon restart to clear cache v10
+// Trigger nodemon restart to clear cache v11
 

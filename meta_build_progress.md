@@ -15,7 +15,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Xinyan** (`xinyan`) — ✅ _Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Thoma** (`thoma`) — ✅ _Hoàn thiện (6 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Dehya** (`dehya`) — ✅ _Hoàn thiện (15 Vũ khí, TDV, Substats, Talents, Teams)_
-- [ ] **Nicole** (`nicole`) — ❌ _Chưa làm_
+- [x] **Nicole** (`nicole`) — ✅ _Hoàn thiện (10 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Durin** (`durin`) — ❌ _Chưa làm_
 - [ ] **Traveler-Pyro** (`traveler`) — ❌ _Chưa làm_
 - [ ] **Mavuika** (`mavuika`) — ❌ _Chưa làm_

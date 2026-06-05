@@ -1070,21 +1070,72 @@ const metaBuilds = [
       }
     ],
     bestTeams: ["ganyu", "nahida", "bennett", "kazuha", "ayaka", "xiangling", "mona", "xingqiu", "shinobu", "mualani", "emilie"]
+  },
+  {
+    characterId: "nicole",
+    bestWeapons: [
+      { rank: 1, name: "Trần Quang Thất Dụ", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao và dòng phụ Tấn Công% giúp việc đạt ngưỡng kích hoạt buff dễ dàng hơn.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_FairyGarden.png" },
+      { rank: 2, name: "Khóa Trần Thế", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Cung cấp lượng Tấn Công% cực lớn và tăng cường hiệu quả khiên, giúp tối ưu hóa cả khiên lẫn buff ATK.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Kunwu.png" },
+      { rank: 3, name: "Dư Âm Tiếng Hạc", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Tăng Tấn Công% cho toàn đội sau khi sử dụng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi hỗ trợ đồng đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_MountainGale.png" },
+      { rank: 4, name: "Quyển Thiên Không", subStat: "Tấn Công%", isF2P: false, refinement: "R1", reason: "Tấn công cơ bản cao và dòng phụ Tấn Công% lớn giúp đạt ngưỡng chỉ số cần thiết; đồng thời tăng nhẹ sát thương Phong.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Dvalin.png" },
+      { rank: 5, name: "Ánh Nhìn Tư Tế", subStat: "Tinh Thông Nguyên Tố", isF2P: false, refinement: "R1", reason: "Cung cấp Hiệu Quả Nạp và buff Tấn Công cho đội sau khi tạo khiên, tăng khả năng hồi nộ và hỗ trợ đồng đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Figurines.png" },
+      { rank: 6, name: "Con Ngươi Tuyên Thệ", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Chỉ số Hiệu Quả Nạp Nguyên Tố cao giúp duy trì chu kỳ Nộ hồi liên tục khi cần thiết.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Jyanome.png" },
+      { rank: 7, name: "Vòng Bạch Thần", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Tăng sát thương Nguyên Tố Lôi cho đồng đội sau phản ứng, rất mạnh khi đi kèm với đội hình có Lôi.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Bakufu.png" },
+      { rank: 8, name: "Dòng Chảy Tinh Khiết", subStat: "Tấn Công%", isF2P: true, refinement: "R5", reason: "Vũ khí rèn cung cấp Tấn Công% và cơ chế tự hồi phục, hỗ trợ đắc lực trong việc đạt ngưỡng chỉ số.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Vorpal.png" },
+      { rank: 9, name: "Tây Phong Mật Điển", subStat: "Hiệu Quả Nạp Nguyên Tố", isF2P: true, refinement: "R5", reason: "Tạo thêm hạt nhân năng lượng khi bạo kích giúp giảm áp lực nạp cho cả đội.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Zephyrus.png" },
+      { rank: 10, name: "Câu Chuyện Diệt Rồng", subStat: "HP%", isF2P: true, refinement: "R5", reason: "Tăng 48% Tấn Công cho nhân vật tiếp theo ra sân, là một lựa chọn hỗ trợ cổ điển nhưng cực kỳ mạnh mẽ.", iconUrl: "https://gi.yatta.moe/assets/UI/UI_EquipIcon_Catalyst_Pulpfic.png" }
+    ],
+    talentPriority: ["Skill", "Burst", "Normal Attack"],
+    bestArtifacts: [
+      {
+        setName: "Phước Lành Trời Cao",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Tấn Công%"],
+        circlet: ["Tấn Công%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tấn Công%", "Tỷ Lệ Bạo Kích"]
+      },
+      {
+        setName: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Tấn Công%"],
+        circlet: ["Tấn Công%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tấn Công%", "Tỷ Lệ Bạo Kích"]
+      },
+      {
+        setName: "Nghi Thức Tông Thất Cổ",
+        pieces: 4,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Tấn Công%"],
+        circlet: ["Tấn Công%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tấn Công%", "Tỷ Lệ Bạo Kích"]
+      },
+      {
+        setName: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
+        pieces: 2,
+        sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+        goblet: ["Tấn Công%"],
+        circlet: ["Tấn Công%", "Tỷ Lệ Bạo Kích"],
+        subStatsPriority: ["Hiệu Quả Nạp", "Tấn Công%", "Tỷ Lệ Bạo Kích"]
+      }
+    ],
+    bestTeams: ["varka", "phare", "bennett", "durin", "venti", "faruzan", "kinich", "iansan"]
   }
 ];
 const charactersData = [
   // 1. Mondstadt
-  ...["Albedo|Geo|Sword|5", "Amber|Pyro|Bow|4", "Barbara|Hydro|Catalyst|4", "Bennett|Pyro|Sword|4", "Dahlia|Hydro|Catalyst|4", "Diluc|Pyro|Claymore|5", "Diona|Cryo|Bow|4", "Durin|Anemo|Sword|5", "Eula|Cryo|Claymore|5", "Fischl|Electro|Bow|4", "Jean|Anemo|Sword|5", "Kaeya|Cryo|Sword|4", "Klee|Pyro|Catalyst|5", "Lisa|Electro|Catalyst|4", "Mika|Cryo|Polearm|4", "Mona|Hydro|Catalyst|5", "Noelle|Geo|Claymore|4", "Razor|Electro|Claymore|4", "Rosaria|Cryo|Polearm|4", "Sucrose|Anemo|Catalyst|4", "Varka|Anemo|Claymore|5", "Venti|Anemo|Bow|5"].map(c => ({ ...parseChar(c), region: "Mondstadt" })),
+  ...["Albedo|Geo|Sword|5", "Amber|Pyro|Bow|4", "Barbara|Hydro|Catalyst|4", "Bennett|Pyro|Sword|4", "Dahlia|Hydro|Catalyst|4", "Diluc|Pyro|Claymore|5", "Diona|Cryo|Bow|4", "Durin|Anemo|Sword|5", "Eula|Cryo|Claymore|5", "Fischl|Electro|Bow|4", "Jean|Anemo|Sword|5", "Kaeya|Cryo|Sword|4", "Klee|Pyro|Catalyst|5", "Lisa|Electro|Catalyst|4", "Mika|Cryo|Polearm|4", "Mona|Hydro|Catalyst|5", "Noelle|Geo|Claymore|4", "Phare|Anemo|Catalyst|5", "Razor|Electro|Claymore|4", "Rosaria|Cryo|Polearm|4", "Sucrose|Anemo|Catalyst|4", "Varka|Anemo|Claymore|5", "Venti|Anemo|Bow|5"].map(c => ({ ...parseChar(c), region: "Mondstadt" })),
   // 2. Liyue
   ...["Baizhu|Dendro|Catalyst|5", "Beidou|Electro|Claymore|4", "Chongyun|Cryo|Claymore|4", "Gaming|Pyro|Claymore|4", "Keqing|Electro|Sword|5", "Lan Yan|Anemo|Catalyst|4", "Ningguang|Geo|Catalyst|4", "Qiqi|Cryo|Sword|5", "Shenhe|Cryo|Polearm|5", "Xiangling|Pyro|Polearm|4", "Xianyun|Anemo|Catalyst|5", "Xiao|Anemo|Polearm|5", "Xingqiu|Hydro|Sword|4", "Xinyan|Pyro|Claymore|4", "Yanfei|Pyro|Catalyst|4", "Yaoyao|Dendro|Polearm|4", "Yun Jin|Geo|Polearm|4", "Zibai|Geo|Sword|4", "Hu Tao|Pyro|Polearm|5", "Zhongli|Geo|Polearm|5", "Yelan|Hydro|Bow|5", "Ganyu|Cryo|Bow|5"].map(c => ({ ...parseChar(c), region: "Liyue" })),
   // 3. Inazuma
   ...["Ayato|Hydro|Sword|5", "Chiori|Geo|Sword|5", "Gorou|Geo|Bow|4", "Heizou|Anemo|Catalyst|4", "Itto|Geo|Claymore|5", "Kirara|Dendro|Sword|4", "Kokomi|Hydro|Catalyst|5", "Kujou Sara|Electro|Bow|4", "Mizuki|Hydro|Bow|4", "Sayu|Anemo|Claymore|4", "Shinobu|Electro|Sword|4", "Thoma|Pyro|Polearm|4", "Yae Miko|Electro|Catalyst|5", "Yoimiya|Pyro|Bow|5", "Ayaka|Cryo|Sword|5", "Kazuha|Anemo|Sword|5", "Raiden Shogun|Electro|Polearm|5"].map(c => ({ ...parseChar(c), region: "Inazuma" })),
   // 4. Sumeru
-  ...["Alhaitham|Dendro|Sword|5", "Candace|Hydro|Polearm|4", "Collei|Dendro|Bow|4", "Cyno|Electro|Polearm|5", "Dehya|Pyro|Claymore|5", "Dori|Electro|Claymore|4", "Faruzan|Anemo|Bow|4", "Kaveh|Dendro|Claymore|4", "Layla|Cryo|Sword|4", "Nilou|Hydro|Sword|5", "Sethos|Electro|Bow|4", "Tighnari|Dendro|Bow|5", "Wanderer|Anemo|Catalyst|5", "Nahida|Dendro|Catalyst|5"].map(c => ({ ...parseChar(c), region: "Sumeru" })),
+  ...["Alhaitham|Dendro|Sword|5", "Candace|Hydro|Polearm|4", "Collei|Dendro|Bow|4", "Cyno|Electro|Polearm|5", "Dehya|Pyro|Claymore|5", "Dori|Electro|Claymore|4", "Faruzan|Anemo|Bow|4", "Kaveh|Dendro|Claymore|4", "Layla|Cryo|Sword|4", "Nahida|Dendro|Catalyst|5", "Nicole|Pyro|Catalyst|5", "Nilou|Hydro|Sword|5", "Sethos|Electro|Bow|4", "Tighnari|Dendro|Bow|5", "Wanderer|Anemo|Catalyst|5"].map(c => ({ ...parseChar(c), region: "Sumeru" })),
   // 5. Fontaine
   ...["Charlotte|Cryo|Catalyst|4", "Chevreuse|Pyro|Polearm|4", "Emilie|Dendro|Polearm|5", "Escoffier|Hydro|Sword|4", "Freminet|Cryo|Claymore|4", "Linnea|Hydro|Bow|4", "Lynette|Anemo|Sword|4", "Lyney|Pyro|Bow|5", "Sigewinne|Hydro|Bow|5", "Wriothesley|Cryo|Catalyst|5", "Furina|Hydro|Sword|5", "Neuvillette|Hydro|Catalyst|5", "Navia|Geo|Claymore|5"].map(c => ({ ...parseChar(c), region: "Fontaine" })),
   // 6. Natlan & Others
-  ...["Aloy|Cryo|Bow|5", "Chasca|Anemo|Bow|5", "Tartaglia|Hydro|Bow|5", "Citlali|Cryo|Catalyst|5", "Columbina|Cryo|Sword|5", "Flins|Pyro|Claymore|4", "Iansan|Electro|Polearm|4", "Ifa|Dendro|Catalyst|4", "Illuga|Geo|Sword|4", "Ineffa|Anemo|Bow|4", "Kinich|Dendro|Claymore|5", "Mavuika|Pyro|Claymore|5", "Mualani|Hydro|Catalyst|5", "Nicole|Hydro|Catalyst|5", "Skirk|Cryo|Sword|5", "Traveler|Anemo|Sword|5", "Xilonen|Geo|Sword|5", "Arlecchino|Pyro|Polearm|5"].map(c => ({ ...parseChar(c), region: "Other" }))
+  ...["Aloy|Cryo|Bow|5", "Chasca|Anemo|Bow|5", "Tartaglia|Hydro|Bow|5", "Citlali|Cryo|Catalyst|5", "Columbina|Cryo|Sword|5", "Flins|Pyro|Claymore|4", "Iansan|Electro|Polearm|4", "Ifa|Dendro|Catalyst|4", "Illuga|Geo|Sword|4", "Ineffa|Anemo|Bow|4", "Kinich|Dendro|Claymore|5", "Mavuika|Pyro|Claymore|5", "Mualani|Hydro|Catalyst|5", "Skirk|Cryo|Sword|5", "Traveler|Anemo|Sword|5", "Xilonen|Geo|Sword|5", "Arlecchino|Pyro|Polearm|5"].map(c => ({ ...parseChar(c), region: "Other" }))
 ];
 
 

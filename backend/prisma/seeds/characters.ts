@@ -1337,6 +1337,224 @@ for (const char of charactersData) {
 }
 const finalData = Array.from(uniqueMap.values());
 
+function removeVietnameseDiacritics(str: string) {
+  return str
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D');
+}
+
+function matchName(dbName: string, rawName: string) {
+  const clean = (s: string) => removeVietnameseDiacritics(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+  const dbClean = clean(dbName);
+  const rawClean = clean(rawName);
+
+  if (dbClean === rawClean) return true;
+
+  if (dbClean.startsWith('traveler') && rawClean.startsWith('traveler')) {
+    const travelerElements: Record<string, string[]> = {
+      anemo: ['phong', 'anemo'],
+      geo: ['nham', 'geo'],
+      electro: ['loi', 'electro'],
+      dendro: ['thao', 'dendro'],
+      hydro: ['thuy', 'hydro'],
+      pyro: ['hoa', 'pyro']
+    };
+    for (const [el, aliases] of Object.entries(travelerElements)) {
+      if (dbClean.includes(el)) {
+        return aliases.some(alias => rawClean.includes(alias));
+      }
+    }
+  }
+
+  // Common aliases
+  if (dbClean === 'kaedeharakazuha' && rawClean === 'kazuha') return true;
+  if (dbClean === 'sangonomiyakokomi' && rawClean === 'kokomi') return true;
+  if (dbClean === 'kamisatoayato' && rawClean === 'ayato') return true;
+  if (dbClean === 'kamisatoayaka' && rawClean === 'ayaka') return true;
+  if (dbClean === 'kujousara' && rawClean === 'sara') return true;
+  if (dbClean === 'aratakiitto' && rawClean === 'itto') return true;
+  if (dbClean === 'yaemiko' && rawClean === 'miko') return true;
+  if (dbClean === 'shikanoinheizou' && rawClean === 'heizou') return true;
+  if (dbClean === 'yumemizukimizuki' && rawClean === 'yumemizu') return true;
+  if (dbClean === 'lanyan' && rawClean === 'lanyan') return true;
+
+  return false;
+}
+
+const rawMetadata = `
+🔥 Hỏa (Pyro)
+Hu Tao | Liyue | 15/07
+Xiangling | Liyue | 02/11
+Amber | Mondstadt | 10/08
+Diluc | Mondstadt | 30/04
+Klee | Mondstadt | 27/07
+Bennett | Mondstadt | 29/02
+Yanfei | Liyue | 28/07
+Yoimiya | Inazuma | 21/06
+Xinyan | Liyue | 16/10
+Thoma | Mondstadt / Inazuma | 09/01
+Dehya | Sumeru | 07/04
+Nicole | Hexenzirkel (Hội Ma Nữ) | Chưa rõ
+Durin | Khởi nguồn từ Khaenri'ah | Chưa rõ
+Traveler (Hỏa) | Thế giới khác | Do người chơi chọn
+Mavuika | Natlan | Chưa rõ
+Arlecchino | Fontaine / Snezhnaya (Fatui) | 22/08
+Gaming | Liyue | 22/12
+Chevreuse | Fontaine | 10/01
+Lyney | Fontaine | 02/02
+
+💧 Thủy (Hydro)
+Neuvillette | Fontaine | 18/12
+Furina | Fontaine | 13/10
+Yelan | Liyue | 20/04
+Columbina | Snezhnaya (Fatui) | Chưa rõ
+Aino | Chưa rõ | Chưa rõ
+Dahlia | Mondstadt | Chưa rõ
+Mualani | Natlan | Chưa rõ
+Sigewinne | Fontaine | 30/03
+Traveler (Thủy) | Thế giới khác | Do người chơi chọn
+Nilou | Sumeru | 03/12
+Candace | Sumeru | 03/05
+Kamisato Ayato | Inazuma | 26/03
+Sangonomiya Kokomi | Inazuma | 22/02
+Tartaglia | Snezhnaya | 20/07
+Barbara | Mondstadt | 05/07
+Mona | Mondstadt | 31/08
+Xingqiu | Liyue | 09/10
+
+🌪️ Phong (Anemo)
+Kazuha | Inazuma | 29/10
+Prune | Chưa rõ | Chưa rõ
+Varka | Mondstadt | Chưa rõ
+Jahoda | Chưa rõ | Chưa rõ
+Ifa | Natlan | Chưa rõ
+Yumemizu | Chưa rõ | Chưa rõ
+Lan Yan | Liyue (Tin đồn) | Chưa rõ
+Chasca | Natlan | Chưa rõ
+Xianyun | Liyue | 11/04
+Lynette | Fontaine | 02/02
+Faruzan | Sumeru | 20/08
+Wanderer | Inazuma / Sumeru | 03/01
+Shikanoin Heizou | Inazuma | 24/07
+Sayu | Inazuma | 19/10
+Xiao | Liyue | 17/04
+Jean | Mondstadt | 14/03
+Sucrose | Mondstadt | 26/11
+Traveler (Phong) | Thế giới khác | Do người chơi chọn
+Venti | Mondstadt | 16/06
+
+⚡ Lôi (Electro)
+Raiden Shogun | Inazuma | 26/06
+Flins | Chưa rõ | Chưa rõ
+Ineffa | Chưa rõ | Chưa rõ
+Iansan | Natlan | Chưa rõ
+Varesa | Chưa rõ | Chưa rõ
+Ororon | Natlan | Chưa rõ
+Clorinde | Fontaine | 20/09
+Sethos | Sumeru | 15/05
+CynoSumeru23/06
+DoriSumeru21/12
+Kuki Shinobu | Inazuma | 27/07
+Yae Miko | Inazuma | 27/06
+Kujou Sara | Inazuma | 14/07
+Traveler (Lôi) | Thế giới khác | Do người chơi chọn
+Beidou | Liyue | 14/02
+Fischl | Mondstadt | 27/05
+Keqing | Liyue | 20/11
+Lisa | Mondstadt | 09/06
+Razor | Mondstadt | 09/09
+
+🌿 Thảo (Dendro)
+Nahida | Sumeru | 27/10
+Nefer | Chưa rõ | Chưa rõ
+Lauma | Chưa rõ | Chưa rõ
+Kinich | Natlan | Chưa rõ
+Emilie | Fontaine | 22/08
+Kirara | Inazuma | 22/01
+Baizhu | Liyue | 25/04
+Kaveh | Sumeru | 09/07
+Alhaitham | Sumeru | 11/02
+Yaoyao | Liyue | 06/03
+Collei | Sumeru | 08/05
+Tighnari | Sumeru | 29/12
+Traveler (Thảo) | Thế giới khác | Do người chơi chọn
+
+❄️ Băng (Cryo)
+Lohen | Chưa rõ | Chưa rõ
+Skirk | Vực Sâu (Abyss) | Chưa rõ
+Escoffier | Chưa rõ | Chưa rõ
+Citlali | Natlan | Chưa rõ
+Charlotte | Fontaine | 10/04
+Wriothesley | Fontaine | 23/11
+Freminet | Fontaine | 24/09
+Mika | Mondstadt | 11/08
+Layla | Sumeru | 19/12
+Shenhe | Liyue | 10/03
+Aloy | Thế giới khác (Horizon) | 04/04
+Kamisato Ayaka | Inazuma | 28/09
+Eula | Mondstadt | 25/10
+Rosaria | Mondstadt | 24/01
+Ganyu | Liyue | 02/12
+Diona | Mondstadt | 18/01
+Chongyun | Liyue | 07/09
+Kaeya | Khaenri'ah / Mondstadt | 30/11
+Qiqi | Liyue | 03/03
+
+🪨 Nham (Geo)
+Zhongli | Liyue | 31/12
+Linnea | Chưa rõ | Chưa rõ
+Illuga | Chưa rõ | Chưa rõ
+Zibai | Chưa rõ | Chưa rõ
+Xilonen | Natlan | Chưa rõ
+Kachina | Natlan | Chưa rõ
+Chiori | Inazuma / Fontaine | 13/03
+Navia | Fontaine | 16/08
+Yun Jin | Liyue | 21/05
+Arataki Itto | Inazuma | 01/06
+Gorou | Inazuma | 18/05
+Albedo | Mondstadt | 13/09
+Ningguang | Liyue | 26/08
+Noelle | Mondstadt | 21/03
+Traveler (Nham) | Thế giới khác | Do người chơi chọn
+`;
+
+function parseMetadata() {
+  const lines = rawMetadata.split('\n');
+  const results: { name: string; origin: string; birthday: string }[] = [];
+  
+  for (let line of lines) {
+    line = line.trim();
+    if (!line || line.startsWith('🔥') || line.startsWith('💧') || line.startsWith('🌪️') || line.startsWith('⚡') || line.startsWith('🌿') || line.startsWith('❄️') || line.startsWith('🪨')) {
+      continue;
+    }
+    
+    let name = '';
+    let origin = '';
+    let birthday = '';
+    
+    if (line.includes('|')) {
+      const parts = line.split('|').map(p => p.trim());
+      name = parts[0];
+      origin = parts[1];
+      birthday = parts[2] || 'Chưa rõ';
+    } else {
+      const match = line.match(/^([A-Za-z\\s()]+?)(Mondstadt|Liyue|Inazuma|Sumeru|Fontaine|Natlan|Snezhnaya|Khaenri'ah|Thế giới khác|Chưa rõ)(.*)$/i);
+      if (match) {
+        name = match[1].trim();
+        origin = match[2].trim();
+        birthday = match[3].trim() || 'Chưa rõ';
+      } else {
+        continue;
+      }
+    }
+    
+    results.push({ name, origin, birthday });
+  }
+  return results;
+}
+
 export async function seedCharacters(prisma: PrismaClient) {
   console.log(`Bắt đầu xoá dữ liệu cũ...`);
   await prisma.characterWeapon.deleteMany({});
@@ -1420,6 +1638,22 @@ export async function seedCharacters(prisma: PrismaClient) {
        console.log(`Bỏ qua Ambr fetch cho ${char.name}: ${e.message}`);
     }
 
+    let finalRegion = char.region;
+    let finalBirthday = "Chưa rõ";
+    
+    try {
+      const parsedMeta = parseMetadata();
+      const match = parsedMeta.find(m => matchName(char.name, m.name));
+      if (match) {
+        finalRegion = match.origin;
+        finalBirthday = match.birthday;
+      } else if (char.id === "manekin" || char.id === "manekina") {
+        finalRegion = "Chưa rõ";
+      }
+    } catch (err) {
+      // ignore
+    }
+
     try {
       await prisma.characterWeapon.deleteMany({ where: { characterId: char.id } });
       await prisma.characterArtifact.deleteMany({ where: { characterId: char.id } });
@@ -1427,7 +1661,7 @@ export async function seedCharacters(prisma: PrismaClient) {
       
       await prisma.character.create({
         data: {
-          id: char.id, name: char.name, title: title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: char.region, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,
+          id: char.id, name: char.name, title: title, rarity: char.rarity, element: char.element, weapon: char.weapon, region: finalRegion, birthday: finalBirthday, avatarUrl: char.avatarUrl, splashArtUrl: char.splashArtUrl, talentPriority: char.talentPriority, bestTeams: char.bestTeams,
           description: description, 
           baseHp: baseHp, baseAtk: baseAtk, baseDef: baseDef, 
           fandomUrl: char.fandomUrl,

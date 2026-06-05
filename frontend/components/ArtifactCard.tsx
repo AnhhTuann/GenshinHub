@@ -8,17 +8,17 @@ function getMixedSets(setName: string) {
       {
         name: "Diệm Liệt Ma Nữ Cháy Rực",
         desc: "Tăng 15% Sát Thương Nguyên Tố Hỏa",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15006_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15006_4.png"
       },
       {
         name: "Bộ Tinh Thông Nguyên Tố +80",
         desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15026_4.png"
       },
       {
         name: "Bộ HP +20%",
         desc: "Thiên Nham Vững Chắc / Vầng Sáng Vạn Hữu / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15017_4.png"
       }
     ];
   }
@@ -27,17 +27,17 @@ function getMixedSets(setName: string) {
       {
         name: "Diệm Liệt Ma Nữ Cháy Rực (2 món)",
         desc: "Tăng 15% Sát Thương Nguyên Tố Hỏa",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15006_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15006_4.png"
       },
       {
         name: "Bộ Tinh Thông Nguyên Tố +80 (2 món)",
         desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15026_4.png"
       },
       {
         name: "Bộ Tăng Tấn Công +18% (2 món)",
         desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15001_4.png"
       }
     ];
   }
@@ -47,17 +47,17 @@ function getMixedSets(setName: string) {
       {
         name: "Bộ Tăng Tấn Công +18% (2 món)",
         desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15001_4.png"
       },
       {
         name: "Diệm Liệt Ma Nữ Cháy Rực (2 món)",
         desc: "Tăng 15% Sát Thương Nguyên Tố Hỏa",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15006_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15006_4.png"
       },
       {
         name: "Thợ Săn Marechaussee (2 món)",
         desc: "Tăng 15% sát thương Đánh Thường & Trọng Kích",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15031_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15031_4.png"
       }
     ];
   }
@@ -67,27 +67,27 @@ function getMixedSets(setName: string) {
       {
         name: "Diệm Liệt Ma Nữ Cháy Rực (2 món)",
         desc: "Tăng 15% Sát Thương Nguyên Tố Hỏa",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15006_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15006_4.png"
       },
       {
         name: "Nghi Thức Tông Thất Cổ (2 món)",
         desc: "Tăng 20% Sát Thương Kỹ Năng Nộ",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15007_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15007_4.png"
       },
       {
         name: "Bộ Tăng Tấn Công +18% (2 món)",
         desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15001_4.png"
       },
       {
         name: "Bộ Tinh Thông Nguyên Tố +80 (2 món)",
         desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15026_4.png"
       },
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       }
     ];
   }
@@ -97,22 +97,22 @@ function getMixedSets(setName: string) {
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       },
       {
         name: "Bộ HP (2 món)",
         desc: "Thiên Nham Vững Chắc / Vầng Sáng Vourukasha (+20% HP)",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15017_4.png"
       },
       {
         name: "Bộ Thủy (2 món)",
         desc: "Trái Tim Trầm Luân / Giấc Mộng Thủy Tiên (+15% Sát Thương Thủy)",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15016_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15016_4.png"
       },
       {
         name: "Nghi Thức Tông Thất Cổ (2 món)",
         desc: "Tăng 20% Sát Thương Kỹ Năng Nộ",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15007_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15007_4.png"
       }
     ];
   }
@@ -122,22 +122,22 @@ function getMixedSets(setName: string) {
       {
         name: "Nghi Thức Tông Thất Cổ",
         desc: "Tăng 20% Sát Thương Kỹ Năng Nộ",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15007_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15007_4.png"
       },
       {
         name: "Như Sấm Thịnh Nộ",
         desc: "Tăng 15% Sát Thương Nguyên Tố Lôi",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15005_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15005_4.png"
       },
       {
         name: "Bộ Tăng Tấn Công +18%",
         desc: "Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15001_4.png"
       },
       {
         name: "Dấu Ấn Ngăn Cách",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       }
     ];
   }
@@ -147,12 +147,12 @@ function getMixedSets(setName: string) {
       {
         name: "Vầng Sáng Vourukasha",
         desc: "Tăng 20% HP tối đa",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15030_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15030_4.png"
       },
       {
         name: "Thiên Nham Vững Chắc",
         desc: "Tăng 20% HP tối đa",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15017_4.png"
       }
     ];
   }
@@ -162,12 +162,12 @@ function getMixedSets(setName: string) {
       {
         name: "Bộ Tinh Thông Nguyên Tố +80",
         desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15026_4.png"
       },
       {
         name: "Ký Ức Rừng Sâu",
         desc: "Tăng 15% Sát Thương Nguyên Tố Thảo",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15025_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15025_4.png"
       }
     ];
   }
@@ -177,17 +177,17 @@ function getMixedSets(setName: string) {
       {
         name: "Bộ Thủy (2 món)",
         desc: "Trái Tim Trầm Luân / Giấc Mộng Thủy Tiên (+15% Sát Thương Thủy)",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15016_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15016_4.png"
       },
       {
         name: "Bộ HP (2 món)",
         desc: "Thiên Nham Vững Chắc / Vầng Sáng Vourukasha (+20% HP)",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15017_4.png"
       },
       {
         name: "Thợ Săn Marechaussee (2 món)",
         desc: "Tăng 15% sát thương Đánh Thường & Trọng Kích",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15031_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15031_4.png"
       }
     ];
   }
@@ -197,17 +197,17 @@ function getMixedSets(setName: string) {
       {
         name: "Đoàn Kịch Hoàng Kim (2 món)",
         desc: "Tăng 20% sát thương Kỹ Năng Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15032_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15032_4.png"
       },
       {
         name: "Bộ Thủy (2 món)",
         desc: "Trái Tim Trầm Luân / Giấc Mộng Thủy Tiên (+15% Sát Thương Thủy)",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15016_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15016_4.png"
       },
       {
         name: "Bộ HP (2 món)",
         desc: "Thiên Nham Vững Chắc / Vầng Sáng Vourukasha (+20% HP)",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15017_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15017_4.png"
       },
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
@@ -221,12 +221,12 @@ function getMixedSets(setName: string) {
       {
         name: "Lửa Trắng Xám (2 món)",
         desc: "Tăng 25% Sát Thương Vật Lý",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15018_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15018_4.png"
       },
       {
         name: "Kỵ Sĩ Đạo Nhuốm Máu (2 món)",
         desc: "Tăng 25% Sát Thương Vật Lý",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15008_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15008_4.png"
       }
     ];
   }
@@ -236,12 +236,12 @@ function getMixedSets(setName: string) {
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       },
       {
         name: "Bộ Sát Thương Vật Lý +25% (2 món)",
         desc: "Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15018_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15018_4.png"
       }
     ];
   }
@@ -251,22 +251,22 @@ function getMixedSets(setName: string) {
       {
         name: "Bộ Sát Thương Vật Lý +25% (2 món)",
         desc: "Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15018_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15018_4.png"
       },
       {
         name: "Bộ Tăng Tấn Công +18% (2 món)",
         desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15001_4.png"
       },
       {
         name: "Nghi Thức Tông Thất Cổ (2 món)",
         desc: "Tăng 20% Sát Thương Kỹ Năng Nộ",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15007_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15007_4.png"
       },
       {
         name: "Giấc Mộng Phù Hoa (2 món)",
         desc: "Tăng 30% Phòng Ngự",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15023_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15023_4.png"
       }
     ];
   }
@@ -276,12 +276,12 @@ function getMixedSets(setName: string) {
       {
         name: "Bộ Tinh Thông Nguyên Tố +80 (2 món)",
         desc: "Đoàn Hát Lang Thang / Giấc Mộng Hoàng Kim / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15026_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15026_4.png"
       },
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       }
     ];
   }
@@ -291,12 +291,12 @@ function getMixedSets(setName: string) {
       {
         name: "Bộ Tăng Tấn Công +18% (2 món)",
         desc: "Lễ Bế Mạc Của Giác Đấu Sĩ / Dòng Hồi Ức Bất Tận / ...",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15001_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15001_4.png"
       },
       {
         name: "Dấu Ấn Ngăn Cách (2 món)",
         desc: "Tăng 20% Hiệu Quả Nạp Nguyên Tố",
-        iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+        iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
       }
     ];
   }
@@ -305,12 +305,12 @@ function getMixedSets(setName: string) {
     {
       name: "Bộ Chỉ Số 1 (2 món)",
       desc: "Tăng Tấn Công / Tinh Thông / Sát Thương Nguyên Tố",
-      iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15003_4.png"
+      iconUrl: "/images/artifacts/UI_RelicIcon_15003_4.png"
     },
     {
       name: "Bộ Chỉ Số 2 (2 món)",
       desc: "Tăng Hiệu Quả Nạp / HP / Tấn Công",
-      iconUrl: "https://gi.yatta.moe/assets/UI/reliquary/UI_RelicIcon_15020_4.png"
+      iconUrl: "/images/artifacts/UI_RelicIcon_15020_4.png"
     }
   ];
 }

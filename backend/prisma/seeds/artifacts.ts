@@ -14,7 +14,7 @@ export async function seedArtifacts(prisma: PrismaClient) {
         rarityList: item.levelList || [],
         piece2Desc: (affixes[0] as string) || '',
         piece4Desc: (affixes[1] as string) || '',
-        iconUrl: item.icon ? `https://gi.yatta.moe/assets/UI/reliquary/${item.icon}.png` : null,
+        iconUrl: item.icon ? `/images/artifacts/${item.icon}.png` : null,
       };
     });
     await prisma.artifactSet.deleteMany({});

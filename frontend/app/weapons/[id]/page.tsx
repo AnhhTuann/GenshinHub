@@ -85,7 +85,7 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Tất cả vũ khí
+          All Weapons
         </Link>
 
         {/* Hero Section */}
@@ -96,7 +96,7 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
           <div className="relative flex flex-col md:flex-row gap-8 p-8">
             {/* Weapon Image */}
             <div className={`w-40 h-40 flex-shrink-0 rounded-2xl bg-gradient-to-br ${RARITY_BG[rarity]} p-[2px] shadow-xl self-center`}>
-              <div className="w-full h-full rounded-2xl bg-[#0b0b0e]/90 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full h-full rounded-2xl bg-[#0b0b0e]/90 flex items-center justify-center overflow-hidden">
                 {weapon.iconUrl ? (
                   <Image src={weapon.iconUrl} alt={weapon.name} fill className="object-contain p-3" />
                 ) : (
@@ -114,7 +114,7 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
               {/* Stats Row */}
               <div className="flex flex-wrap gap-4">
                 <div className="bg-[#0b0b0e]/60 border border-gray-800/50 rounded-xl px-5 py-3">
-                  <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-1">ATK Cơ Bản</p>
+                      <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-1">Base ATK</p>
                   <p className="text-red-400 font-black text-2xl">{weapon.baseAtk}</p>
                 </div>
                 {weapon.subStat && (
@@ -123,8 +123,9 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
                     <p className="text-blue-400 font-black text-2xl">
                       {weapon.subStatValue ?? '—'}
                       {weapon.subStatValue && (
-                        weapon.subStat.includes('Tỷ') || weapon.subStat.includes('Hiệu') ||
-                        weapon.subStat.includes('Sát') || weapon.subStat.includes('%') ? '%' : ''
+                        weapon.subStat.includes('%') || weapon.subStat.includes('Rate') ||
+                        weapon.subStat.includes('DMG') || weapon.subStat.includes('Recharge') ||
+                        weapon.subStat.includes('Mastery') || weapon.subStat.includes('Bonus') ? '%' : ''
                       )}
                     </p>
                   </div>
@@ -158,8 +159,8 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
         <section>
           <h2 className="text-xl font-black text-white mb-4 flex items-center gap-2">
             <span className="w-1 h-6 rounded-full bg-yellow-500 inline-block"></span>
-            Nhân Vật Sử Dụng Được
-            <span className="text-gray-500 text-sm font-normal">({characters.length} nhân vật)</span>
+            Characters Who Can Use This
+            <span className="text-gray-500 text-sm font-normal">({characters.length} characters)</span>
           </h2>
 
           <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3">

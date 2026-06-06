@@ -29,7 +29,18 @@ export default function Navbar() {
           >
             Nhân Vật
           </Link>
-          <span className="text-sm font-medium text-gray-500 cursor-not-allowed">Vũ Khí (Coming Soon)</span>
+          <Link 
+            className="text-sm font-medium text-gray-300 hover:text-white transition-colors" 
+            href="/weapons"
+          >
+            Vũ Khí
+          </Link>
+          <Link 
+            className="text-sm font-medium text-gray-300 hover:text-white transition-colors" 
+            href="/artifacts"
+          >
+            Thánh Di Vật
+          </Link>
         </div>
         <div>
           <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">Đóng góp</button>

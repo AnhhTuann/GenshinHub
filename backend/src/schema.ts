@@ -8,13 +8,19 @@ export const typeDefs = `#graphql
     bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, bestTeams: [String!]! 
   }
   
-  type Weapon { id: String!, name: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, iconUrl: String }
+  type CharacterBasic { id: String!, name: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
+  type Weapon { id: String!, name: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveName: String, passiveDesc: String, iconUrl: String }
+  type ArtifactSet { id: String!, name: String!, rarityList: [Int!]!, piece2Desc: String, piece4Desc: String, iconUrl: String }
   type EnkaShowcase { uid: String!, nickname: String!, level: Int!, avatarUrl: String, characters: [String!] }
   
   type Query { 
     characters: [Character!]!, 
     character(id: String!): Character,
     weapons: [Weapon!]!,
+    weapon(id: String!): Weapon,
+    charactersByWeaponType(weaponType: String!): [CharacterBasic!]!,
+    artifacts: [ArtifactSet!]!,
+    artifactSet(id: String!): ArtifactSet,
     showcase(uid: String!): EnkaShowcase
   }
 `;

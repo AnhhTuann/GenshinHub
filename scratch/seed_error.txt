@@ -1,0 +1,97 @@
+﻿Environment variables loaded from .env
+Running seed command `ts-node prisma/seed.ts` ...
+--- Bß║«T ─Éß║ªU SEED DATABASE ---
+Bß║»t ─æß║ºu tß║úi danh s├ích Material...
+─É├ú seed th├ánh c├┤ng 764 Materials.
+Bß║»t ─æß║ºu tß║úi danh s├ích Artifact Sets...
+─É├ú seed th├ánh c├┤ng 61 Artifact Sets.
+Bß║»t ─æß║ºu tß║úi danh s├ích Weapons...
+─É├ú seed th├ánh c├┤ng 246 Weapons.
+Bß║»t ─æß║ºu xo├í dß╗» liß╗çu c┼⌐...
+Bß║»t ─æß║ºu lß║Ñy dß╗» liß╗çu tß╗½ api.ambr.top...
+─É├ú tß║úi danh s├ích Ambr: 118 nh├ón vß║¡t.
+Bß║»t ─æß║ºu seed dß╗» liß╗çu mß╗¢i (123 nh├ón vß║¡t)...
+Bß╗Å qua Ambr fetch cho Kamisato Ayaka: Request failed with status code 522
+Bß╗Å qua Ambr fetch cho Jean: Request failed with status code 522
+─É├ú map th├ánh c├┤ng data Ambr cho Lisa
+─É├ú map th├ánh c├┤ng data Ambr cho Barbara
+─É├ú map th├ánh c├┤ng data Ambr cho Kaeya
+─É├ú map th├ánh c├┤ng data Ambr cho Diluc
+─É├ú map th├ánh c├┤ng data Ambr cho Razor
+─É├ú map th├ánh c├┤ng data Ambr cho Amber
+─É├ú map th├ánh c├┤ng data Ambr cho Venti
+─É├ú map th├ánh c├┤ng data Ambr cho Xiangling
+─É├ú map th├ánh c├┤ng data Ambr cho Beidou
+─É├ú map th├ánh c├┤ng data Ambr cho Xingqiu
+─É├ú map th├ánh c├┤ng data Ambr cho Xiao
+─É├ú map th├ánh c├┤ng data Ambr cho Ningguang
+─É├ú map th├ánh c├┤ng data Ambr cho Klee
+─É├ú map th├ánh c├┤ng data Ambr cho Zhongli
+─É├ú map th├ánh c├┤ng data Ambr cho Fischl
+─É├ú map th├ánh c├┤ng data Ambr cho Bennett
+─É├ú map th├ánh c├┤ng data Ambr cho Tartaglia
+─É├ú map th├ánh c├┤ng data Ambr cho Noelle
+─É├ú map th├ánh c├┤ng data Ambr cho Qiqi
+─É├ú map th├ánh c├┤ng data Ambr cho Chongyun
+─É├ú map th├ánh c├┤ng data Ambr cho Ganyu
+─É├ú map th├ánh c├┤ng data Ambr cho Albedo
+─É├ú map th├ánh c├┤ng data Ambr cho Diona
+─É├ú map th├ánh c├┤ng data Ambr cho Mona
+─É├ú map th├ánh c├┤ng data Ambr cho Keqing
+─É├ú map th├ánh c├┤ng data Ambr cho Sucrose
+─É├ú map th├ánh c├┤ng data Ambr cho Xinyan
+─É├ú map th├ánh c├┤ng data Ambr cho Rosaria
+─É├ú map th├ánh c├┤ng data Ambr cho Hu Tao
+─É├ú map th├ánh c├┤ng data Ambr cho Kaedehara Kazuha
+─É├ú map th├ánh c├┤ng data Ambr cho Yanfei
+─É├ú map th├ánh c├┤ng data Ambr cho Yoimiya
+─É├ú map th├ánh c├┤ng data Ambr cho Thoma
+─É├ú map th├ánh c├┤ng data Ambr cho Eula
+─É├ú map th├ánh c├┤ng data Ambr cho Raiden Shogun
+─É├ú map th├ánh c├┤ng data Ambr cho Sayu
+─É├ú map th├ánh c├┤ng data Ambr cho Sangonomiya Kokomi
+─É├ú map th├ánh c├┤ng data Ambr cho Gorou
+─É├ú map th├ánh c├┤ng data Ambr cho Kujou Sara
+Bß╗Å qua Ambr fetch cho Arataki Itto: Request failed with status code 522
+─É├ú map th├ánh c├┤ng data Ambr cho Yae Miko
+Bß╗Å qua Ambr fetch cho Shikanoin Heizou: Request failed with status code 522
+─É├ú map th├ánh c├┤ng data Ambr cho Yelan
+─É├ú map th├ánh c├┤ng data Ambr cho Kirara
+─É├ú map th├ánh c├┤ng data Ambr cho Aloy
+─É├ú map th├ánh c├┤ng data Ambr cho Shenhe
+─É├ú map th├ánh c├┤ng data Ambr cho Yun Jin
+Bß╗Å qua Ambr fetch cho Kuki Shinobu: Request failed with status code 522
+─É├ú map th├ánh c├┤ng data Ambr cho Kamisato Ayato
+─É├ú map th├ánh c├┤ng data Ambr cho Collei
+─É├ú map th├ánh c├┤ng data Ambr cho Dori
+─É├ú map th├ánh c├┤ng data Ambr cho Tighnari
+─É├ú map th├ánh c├┤ng data Ambr cho Nilou
+─É├ú map th├ánh c├┤ng data Ambr cho Cyno
+─É├ú map th├ánh c├┤ng data Ambr cho Candace
+─É├ú map th├ánh c├┤ng data Ambr cho Nahida
+─É├ú map th├ánh c├┤ng data Ambr cho Layla
+Bß╗Å qua Ambr fetch cho Wanderer: Request failed with status code 522
+─É├ú map th├ánh c├┤ng data Ambr cho Faruzan
+─É├ú map th├ánh c├┤ng data Ambr cho Yaoyao
+─É├ú map th├ánh c├┤ng data Ambr cho Alhaitham
+─É├ú map th├ánh c├┤ng data Ambr cho Dehya
+─É├ú map th├ánh c├┤ng data Ambr cho Mika
+─É├ú map th├ánh c├┤ng data Ambr cho Kaveh
+─É├ú map th├ánh c├┤ng data Ambr cho Baizhu
+─É├ú map th├ánh c├┤ng data Ambr cho Lynette
+─É├ú map th├ánh c├┤ng data Ambr cho Lyney
+─É├ú map th├ánh c├┤ng data Ambr cho Freminet
+─É├ú map th├ánh c├┤ng data Ambr cho Wriothesley
+─É├ú map th├ánh c├┤ng data Ambr cho Neuvillette
+─É├ú map th├ánh c├┤ng data Ambr cho Charlotte
+─É├ú map th├ánh c├┤ng data Ambr cho Furina
+─É├ú map th├ánh c├┤ng data Ambr cho Chevreuse
+─É├ú map th├ánh c├┤ng data Ambr cho Navia
+─É├ú map th├ánh c├┤ng data Ambr cho Gaming
+─É├ú map th├ánh c├┤ng data Ambr cho Xianyun
+─É├ú map th├ánh c├┤ng data Ambr cho Chiori
+─É├ú map th├ánh c├┤ng data Ambr cho Sigewinne
+─É├ú map th├ánh c├┤ng data Ambr cho Arlecchino
+─É├ú map th├ánh c├┤ng data Ambr cho Sethos
+Bß╗Å qua Ambr fetch cho Clorinde: Request failed with status code 522
+─É├ú map th├ánh c├┤ng data Ambr cho Emilie

@@ -31,6 +31,9 @@ export const resolvers = {
   ArtifactBuild: {
     iconUrl: async (parent: any) => {
       try {
+        if (parent.setName === "Thánh Di Vật Đề Cử" || parent.setName.startsWith("Mix")) {
+          return "/images/artifacts/UI_RelicIcon_15001_4.png";
+        }
         const set = await prisma.artifactSet.findFirst({
           where: { name: parent.setName }
         });
@@ -79,6 +82,22 @@ export const resolvers = {
       const data = await prisma.weapon.findMany();
       weaponsCache.set('all', data);
       return data;
+    },
+    weapon: async (_: any, args: { id: string }) => {
+      return await prisma.weapon.findUnique({ where: { id: args.id } });
+    },
+    charactersByWeaponType: async (_: any, args: { weaponType: string }) => {
+      return await prisma.character.findMany({
+        where: { weapon: args.weaponType },
+        select: { id: true, name: true, element: true, rarity: true, avatarUrl: true, weapon: true },
+        orderBy: [{ rarity: 'desc' }, { name: 'asc' }]
+      });
+    },
+    artifacts: async () => {
+      return await prisma.artifactSet.findMany({ orderBy: [{ id: 'asc' }] });
+    },
+    artifactSet: async (_: any, args: { id: string }) => {
+      return await prisma.artifactSet.findUnique({ where: { id: args.id } });
     },
     showcase: async (_: any, args: { uid: string }) => {
       const cached = showcaseCache.get(args.uid);

@@ -1,0 +1,49 @@
+﻿Environment variables loaded from .env
+Running seed command `ts-node prisma/seed.ts` ...
+node.exe : C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:859
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Work\Genshin...rc\index.ts:859:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: Γ¿» Unable to compile TypeScript:
+prisma/seeds/characters.ts(1,8): error TS2300: Duplicate identifier 'axios'.
+prisma/seeds/characters.ts(2,10): error TS2300: Duplicate identifier 'PrismaClient'.
+prisma/seeds/characters.ts(5,7): error TS2451: Cannot redeclare block-scoped variable 'toId'.
+prisma/seeds/characters.ts(7,7): error TS2451: Cannot redeclare block-scoped variable 'toAvatar'.
+prisma/seeds/characters.ts(8,7): error TS2451: Cannot redeclare block-scoped variable 'toSplash'.
+prisma/seeds/characters.ts(10,7): error TS2451: Cannot redeclare block-scoped variable 'metaBuilds'.
+prisma/seeds/characters.ts(1126,11): error TS2451: Cannot redeclare block-scoped variable 'charactersData'.
+prisma/seeds/characters.ts(1254,8): error TS2300: Duplicate identifier 'axios'.
+prisma/seeds/characters.ts(1255,10): error TS2300: Duplicate identifier 'PrismaClient'.
+prisma/seeds/characters.ts(1258,7): error TS2451: Cannot redeclare block-scoped variable 'toId'.
+prisma/seeds/characters.ts(1260,7): error TS2451: Cannot redeclare block-scoped variable 'toAvatar'.
+prisma/seeds/characters.ts(1261,7): error TS2451: Cannot redeclare block-scoped variable 'toSplash'.
+prisma/seeds/characters.ts(1263,7): error TS2451: Cannot redeclare block-scoped variable 'metaBuilds'.
+prisma/seeds/characters.ts(2379,9): error TS2451: Cannot redeclare block-scoped variable 'charactersData'.
+
+    at createTSError (C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1985:10
+    at Object.require.extensions.<computed> [as .ts] 
+(C:\Work\GenshinHub\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1577:32)
+    at Module._load (node:internal/modules/cjs/loader:1379:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {
+  diagnosticCodes: [
+    2300, 2300, 2451,
+    2451, 2451, 2451,
+    2451, 2300, 2300,
+    2451, 2451, 2451,
+    2451, 2451
+  ]
+}
+
+An error occurred while running the seed command:
+Error: Command failed with exit code 1: ts-node prisma/seed.ts

@@ -84,7 +84,7 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
   const gradientTheme = is5Star ? 'from-yellow-900/40' : 'from-purple-900/40';
 
   return (
-    <div className="w-full lg:w-[35%] lg:sticky lg:top-24 flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <div className={`relative w-full aspect-[3/4] rounded-2xl overflow-hidden border ${borderTheme} shadow-2xl`}>
         
         <div className={`absolute inset-0 bg-gradient-to-tr ${gradientTheme} to-transparent opacity-50`}></div>

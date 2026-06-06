@@ -1,0 +1,977 @@
+--- MISSING AVATARS ---
+[]
+
+--- MISSING SPLASHES ---
+[]
+
+--- MISSING WEAPONS ---
+[]
+
+--- MISSING ARTIFACTS ---
+[
+  {
+    "character": "Kaedehara Kazuha",
+    "artifact": "Bóng Hình Màu Xanh",
+    "url": null
+  },
+  {
+    "character": "Kaedehara Kazuha",
+    "artifact": "Như Sấm Thịnh Nộ",
+    "url": null
+  },
+  {
+    "character": "Yanfei",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Yanfei",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Yanfei",
+    "artifact": "Đoàn Hát Lang Thang Đại Lục",
+    "url": null
+  },
+  {
+    "character": "Yanfei",
+    "artifact": "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
+    "url": null
+  },
+  {
+    "character": "Yanfei",
+    "artifact": "Thợ Săn Marechaussee",
+    "url": null
+  },
+  {
+    "character": "Yoimiya",
+    "artifact": "Dòng Hồi Ức Bất Tận",
+    "url": null
+  },
+  {
+    "character": "Yoimiya",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Yoimiya",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Yoimiya",
+    "artifact": "Dư Âm Tế Lễ",
+    "url": null
+  },
+  {
+    "character": "Yoimiya",
+    "artifact": "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
+    "url": null
+  },
+  {
+    "character": "Thoma",
+    "artifact": "Đóa Hoa Trang Viên Thất Lạc",
+    "url": null
+  },
+  {
+    "character": "Thoma",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Thoma",
+    "artifact": "Mix 2 bộ Tinh Thông / Dấu Ấn",
+    "url": null
+  },
+  {
+    "character": "Thoma",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Eula",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Raiden Shogun",
+    "artifact": "Dấu Ấn Ngăn Cách",
+    "url": null
+  },
+  {
+    "character": "Raiden Shogun",
+    "artifact": "Nghi Thức Tông Thất Cổ",
+    "url": null
+  },
+  {
+    "character": "Raiden Shogun",
+    "artifact": "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
+    "url": null
+  },
+  {
+    "character": "Raiden Shogun",
+    "artifact": "Thiên Nham Vững Chắc",
+    "url": null
+  },
+  {
+    "character": "Sayu",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Sangonomiya Kokomi",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Gorou",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kujou Sara",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Arataki Itto",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Yae Miko",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Shikanoin Heizou",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Yelan",
+    "artifact": "Dấu Ấn Ngăn Cách",
+    "url": null
+  },
+  {
+    "character": "Yelan",
+    "artifact": "Mix 2 bộ Dấu Ấn / HP / Thủy / Tông Thất",
+    "url": null
+  },
+  {
+    "character": "Yelan",
+    "artifact": "Thợ Săn Marechaussee",
+    "url": null
+  },
+  {
+    "character": "Kirara",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Aloy",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Shenhe",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Yun Jin",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kuki Shinobu",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kamisato Ayato",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Collei",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Dori",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Tighnari",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Nilou",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Cyno",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Candace",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Nahida",
+    "artifact": "Ký Ức Rừng Sâu",
+    "url": null
+  },
+  {
+    "character": "Nahida",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Nahida",
+    "artifact": "Đoàn Kịch Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Nahida",
+    "artifact": "Mix 2 bộ Tinh Thông & 2 bộ Ký Ức Rừng Sâu",
+    "url": null
+  },
+  {
+    "character": "Nahida",
+    "artifact": "Thiên Nham Vững Chắc",
+    "url": null
+  },
+  {
+    "character": "Nahida",
+    "artifact": "Đóa Hoa Trang Viên Thất Lạc",
+    "url": null
+  },
+  {
+    "character": "Layla",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Wanderer",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Faruzan",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Yaoyao",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Alhaitham",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Dehya",
+    "artifact": "Dấu Ấn Ngăn Cách",
+    "url": null
+  },
+  {
+    "character": "Dehya",
+    "artifact": "Vầng Sáng Vourukasha",
+    "url": null
+  },
+  {
+    "character": "Dehya",
+    "artifact": "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
+    "url": null
+  },
+  {
+    "character": "Dehya",
+    "artifact": "Ảo Mộng Chưa Hoàn Thành",
+    "url": null
+  },
+  {
+    "character": "Dehya",
+    "artifact": "Thợ Săn Marechaussee",
+    "url": null
+  },
+  {
+    "character": "Mika",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kaveh",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Baizhu",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Lynette",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Lyney",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Freminet",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Wriothesley",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Neuvillette",
+    "artifact": "Thợ Săn Marechaussee",
+    "url": null
+  },
+  {
+    "character": "Neuvillette",
+    "artifact": "Trái Tim Trầm Luân",
+    "url": null
+  },
+  {
+    "character": "Neuvillette",
+    "artifact": "Mix 2 bộ Thủy / HP / Thợ Săn",
+    "url": null
+  },
+  {
+    "character": "Neuvillette",
+    "artifact": "Sao Băng Bay Ngược",
+    "url": null
+  },
+  {
+    "character": "Neuvillette",
+    "artifact": "Đoàn Hát Lang Thang Đại Lục",
+    "url": null
+  },
+  {
+    "character": "Neuvillette",
+    "artifact": "Giấc Mộng Thủy Tiên",
+    "url": null
+  },
+  {
+    "character": "Charlotte",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Furina",
+    "artifact": "Đoàn Kịch Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Furina",
+    "artifact": "Thiên Nham Vững Chắc",
+    "url": null
+  },
+  {
+    "character": "Furina",
+    "artifact": "Mix 2 bộ Thủy / Đoàn Kịch / HP / Dấu Ấn",
+    "url": null
+  },
+  {
+    "character": "Chevreuse",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Navia",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Gaming",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Xianyun",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Chiori",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Sigewinne",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Arlecchino",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Sethos",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Clorinde",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Emilie",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kachina",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kinich",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Mualani",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Xilonen",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Chasca",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Ororon",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Mavuika",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Citlali",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Lan Yan",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Yumemizuki Mizuki",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Iansan",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Varesa",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Escoffier",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Ifa",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Skirk",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Dahlia",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Ineffa",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Manekin",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Manekina",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Lauma",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Flins",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Aino",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Jean",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Lisa",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Barbara",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Kaeya",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Diluc",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Diluc",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Diluc",
+    "artifact": "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
+    "url": null
+  },
+  {
+    "character": "Diluc",
+    "artifact": "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "url": null
+  },
+  {
+    "character": "Diluc",
+    "artifact": "Thợ Săn Marechaussee",
+    "url": null
+  },
+  {
+    "character": "Razor",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Amber",
+    "artifact": "Dòng Hồi Ức Bất Tận",
+    "url": null
+  },
+  {
+    "character": "Amber",
+    "artifact": "Đoàn Hát Lang Thang Đại Lục",
+    "url": null
+  },
+  {
+    "character": "Amber",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Amber",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Amber",
+    "artifact": "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
+    "url": null
+  },
+  {
+    "character": "Venti",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Xiangling",
+    "artifact": "Dấu Ấn Ngăn Cách",
+    "url": null
+  },
+  {
+    "character": "Xiangling",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Xiangling",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Xiangling",
+    "artifact": "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn",
+    "url": null
+  },
+  {
+    "character": "Xiangling",
+    "artifact": "Nghi Thức Tông Thất Cổ",
+    "url": null
+  },
+  {
+    "character": "Xiangling",
+    "artifact": "Ký Ức Rừng Sâu",
+    "url": null
+  },
+  {
+    "character": "Beidou",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Xingqiu",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Xiao",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Ningguang",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Ngày Nổi Gió",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Hiền Nhân Bốc Lửa",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Dư Âm Tế Lễ",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Sử Ký Đình Các Sa Mạc",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Đoàn Hát Lang Thang Đại Lục",
+    "url": null
+  },
+  {
+    "character": "Klee",
+    "artifact": "Mảnh Chương Hài Hòa",
+    "url": null
+  },
+  {
+    "character": "Kamisato Ayaka",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Nefer",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Durin",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Jahoda",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Columbina",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Fischl",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Bennett",
+    "artifact": "Nghi Thức Tông Thất Cổ",
+    "url": null
+  },
+  {
+    "character": "Bennett",
+    "artifact": "Giáo Quan",
+    "url": null
+  },
+  {
+    "character": "Bennett",
+    "artifact": "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+    "url": null
+  },
+  {
+    "character": "Bennett",
+    "artifact": "Ký Ức Rừng Sâu",
+    "url": null
+  },
+  {
+    "character": "Tartaglia",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Noelle",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Qiqi",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Chongyun",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Ganyu",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Zhongli",
+    "artifact": "Phiến Đá Lâu Đời",
+    "url": null
+  },
+  {
+    "character": "Zhongli",
+    "artifact": "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+    "url": null
+  },
+  {
+    "character": "Zhongli",
+    "artifact": "Ký Ức Rừng Sâu",
+    "url": null
+  },
+  {
+    "character": "Zhongli",
+    "artifact": "Giáo Quan",
+    "url": null
+  },
+  {
+    "character": "Zhongli",
+    "artifact": "Thiên Nham Vững Chắc",
+    "url": null
+  },
+  {
+    "character": "Zhongli",
+    "artifact": "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
+    "url": null
+  },
+  {
+    "character": "Albedo",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Diona",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Mona",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Keqing",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Sucrose",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Xinyan",
+    "artifact": "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+    "url": null
+  },
+  {
+    "character": "Xinyan",
+    "artifact": "Lửa Trắng Xám",
+    "url": null
+  },
+  {
+    "character": "Xinyan",
+    "artifact": "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+    "url": null
+  },
+  {
+    "character": "Xinyan",
+    "artifact": "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+    "url": null
+  },
+  {
+    "character": "Rosaria",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Zibai",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Illuga",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Varka",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Lohen",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Linnea",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Nicole",
+    "artifact": "Phước Lành Trời Cao",
+    "url": null
+  },
+  {
+    "character": "Nicole",
+    "artifact": "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+    "url": null
+  },
+  {
+    "character": "Nicole",
+    "artifact": "Nghi Thức Tông Thất Cổ",
+    "url": null
+  },
+  {
+    "character": "Nicole",
+    "artifact": "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
+    "url": null
+  },
+  {
+    "character": "Prune",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Traveler (Anemo)",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Traveler (Geo)",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Traveler (Electro)",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Traveler (Dendro)",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Traveler (Hydro)",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Traveler (Pyro)",
+    "artifact": "Thánh Di Vật Đề Cử",
+    "url": null
+  },
+  {
+    "character": "Hu Tao",
+    "artifact": "Diệm Liệt Ma Nữ Cháy Rực",
+    "url": null
+  },
+  {
+    "character": "Hu Tao",
+    "artifact": "Dòng Hồi Ức Bất Tận",
+    "url": null
+  },
+  {
+    "character": "Hu Tao",
+    "artifact": "Giấc Mộng Hoàng Kim",
+    "url": null
+  },
+  {
+    "character": "Hu Tao",
+    "artifact": "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP",
+    "url": null
+  },
+  {
+    "character": "Hu Tao",
+    "artifact": "Thợ Săn Marechaussee",
+    "url": null
+  }
+]

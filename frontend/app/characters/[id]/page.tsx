@@ -80,10 +80,12 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-8 items-start mt-4">
-        <CharacterSidebar character={character} />
+        <div className="w-full lg:w-[35%] lg:sticky lg:top-24 lg:self-start flex-shrink-0">
+          <CharacterSidebar character={character} />
+        </div>
 
         {/* Right Column (Scrollable) */}
-        <div className="w-full lg:w-[65%] flex flex-col gap-8">
+        <div className="w-full lg:w-[65%] flex flex-col gap-8 min-w-0">
           
           {/* Encyclopedia & Stats */}
           <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
@@ -356,7 +358,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                 <span className="text-xl font-bold text-gray-200 align-middle">Meta Team Comps</span>
               </div>
               
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8">
                 {detailedTeams.map((team, teamIdx) => (
                   <div key={teamIdx} className="bg-[#0b0b0e]/80 border border-gray-850 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/30 transition-all duration-300">
                     <div>
@@ -385,9 +387,21 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                       {/* Character Avatars Row */}
                       <div className="grid grid-cols-4 gap-2 mb-6 bg-[#15151a]/60 p-3 rounded-xl border border-gray-900/60">
                         {team.members.map((m, mIdx) => {
-                          const teammate = characters.find(c => c.id === m.characterId);
+                          const dbId = (() => {
+                            const mapping: Record<string, string> = {
+                              'kazuha': 'kaedehara-kazuha',
+                              'ayaka': 'kamisato-ayaka',
+                              'traveler': 'traveler-dendro',
+                              'kokomi': 'sangonomiya-kokomi',
+                              'yunjin': 'yun-jin',
+                              'ayato': 'kamisato-ayato',
+                              'shinobu': 'kuki-shinobu'
+                            };
+                            return mapping[m.characterId] || m.characterId;
+                          })();
+                          const teammate = characters.find(c => c.id === dbId);
                           return (
-                            <Link href={`/characters/${m.characterId}`} key={mIdx} className="group flex flex-col items-center gap-1">
+                            <Link href={`/characters/${dbId}`} key={mIdx} className="group flex flex-col items-center gap-1">
                               <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-gray-800 group-hover:border-white transition-all duration-300 bg-[#0b0b0e]">
                                 {teammate ? (
                                   <Image src={teammate.avatarUrl} alt={teammate.name} fill className="object-cover" />
@@ -409,7 +423,19 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                       {/* Detailed members list */}
                       <div className="flex flex-col gap-4">
                         {team.members.map((m, mIdx) => {
-                          const teammate = characters.find(c => c.id === m.characterId);
+                          const dbId = (() => {
+                            const mapping: Record<string, string> = {
+                              'kazuha': 'kaedehara-kazuha',
+                              'ayaka': 'kamisato-ayaka',
+                              'traveler': 'traveler-dendro',
+                              'kokomi': 'sangonomiya-kokomi',
+                              'yunjin': 'yun-jin',
+                              'ayato': 'kamisato-ayato',
+                              'shinobu': 'kuki-shinobu'
+                            };
+                            return mapping[m.characterId] || m.characterId;
+                          })();
+                          const teammate = characters.find(c => c.id === dbId);
                           return (
                             <div key={mIdx} className="bg-[#15151a]/30 border border-gray-800/40 rounded-xl p-4 flex flex-col gap-2">
                               <div className="flex items-center gap-2">

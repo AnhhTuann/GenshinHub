@@ -17,20 +17,28 @@ interface Weapon {
   iconUrl: string | null;
 }
 
-const WEAPON_TYPES = ['Tất cả', 'Kiếm Đơn', 'Trọng Kiếm', 'Vũ Khí Cán Dài', 'Cung', 'Pháp Khí'];
+const WEAPON_TYPES = ['All', 'Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'];
+// DB may store types in Vietnamese or English - map both
+const WEAPON_TYPE_DB: Record<string, string[]> = {
+  'Sword': ['Kiếm Đơn', 'Sword'],
+  'Claymore': ['Trọng Kiếm', 'Claymore'],
+  'Polearm': ['Vũ Khí Cán Dài', 'Polearm'],
+  'Bow': ['Cung', 'Bow'],
+  'Catalyst': ['Pháp Khí', 'Catalyst'],
+};
 const WEAPON_TYPE_ICONS: Record<string, string> = {
-  'Kiếm Đơn': '⚔️',
-  'Trọng Kiếm': '🗡️',
-  'Vũ Khí Cán Dài': '🔱',
-  'Cung': '🏹',
-  'Pháp Khí': '📖',
+  'Sword': '⚔️',
+  'Claymore': '🗡️',
+  'Polearm': '🔱',
+  'Bow': '🏹',
+  'Catalyst': '📖',
 };
 
 const RARITIES = [5, 4, 3, 2, 1];
 
 export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const [search, setSearch] = useState('');
-  const [selectedType, setSelectedType] = useState('Tất cả');
+  const [selectedType, setSelectedType] = useState('All');
   const [selectedRarities, setSelectedRarities] = useState<number[]>([5, 4, 3]);
   const [sortBy, setSortBy] = useState<'rarity' | 'name' | 'atk'>('rarity');
   const [sortAsc, setSortAsc] = useState(false);
@@ -45,7 +53,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const filtered = useMemo(() => {
     let result = weapons.filter(w => {
       const matchSearch = w.name.toLowerCase().includes(search.toLowerCase());
-      const matchType = selectedType === 'Tất cả' || w.type === selectedType;
+      const matchType = selectedType === 'All' || (WEAPON_TYPE_DB[selectedType]?.includes(w.type) ?? w.type === selectedType);
       const matchRarity = selectedRarities.includes(w.rarity);
       return matchSearch && matchType && matchRarity;
     });
@@ -87,10 +95,10 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
       <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
         <Link className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-fit mb-6" href="/">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-          Trang chủ
+          Home
         </Link>
-        <h1 className="text-4xl font-black text-white mb-1">⚔️ Vũ Khí</h1>
-        <p className="text-gray-400 text-sm">Khám phá toàn bộ {weapons.length} vũ khí trong Genshin Impact</p>
+        <h1 className="text-4xl font-black text-white mb-1">⚔️ Weapons</h1>
+        <p className="text-gray-400 text-sm">Explore all {weapons.length} weapons in Genshin Impact</p>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-6">
@@ -99,12 +107,12 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           <div className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-5 sticky top-6 flex flex-col gap-5">
             {/* Search */}
             <div>
-              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Tìm kiếm</label>
+              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Search</label>
               <div className="relative">
                 <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 <input
                   type="text"
-                  placeholder="Tên vũ khí..."
+                  placeholder="Weapon name..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
                   className="w-full bg-[#0b0b0e] border border-gray-700/60 rounded-xl pl-9 pr-3 py-2 text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:border-blue-500/60 transition-colors"
@@ -114,7 +122,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
 
             {/* Weapon Type Filter */}
             <div>
-              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Loại vũ khí</label>
+              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Weapon Type</label>
               <div className="flex flex-col gap-1.5">
                 {WEAPON_TYPES.map(type => (
                   <button
@@ -126,7 +134,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                         : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
                     }`}
                   >
-                    {type !== 'Tất cả' && <span className="mr-2">{WEAPON_TYPE_ICONS[type]}</span>}
+                    {type !== 'All' && <span className="mr-2">{WEAPON_TYPE_ICONS[type]}</span>}
                     {type}
                   </button>
                 ))}
@@ -135,7 +143,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
 
             {/* Rarity Filter */}
             <div>
-              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Độ hiếm</label>
+              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Rarity</label>
               <div className="flex flex-col gap-1.5">
                 {RARITIES.map(r => (
                   <button
@@ -160,12 +168,12 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
 
             {/* Sort */}
             <div>
-              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Sắp xếp</label>
+              <label className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2 block">Sort By</label>
               <div className="flex flex-col gap-1.5">
                 {[
-                  { key: 'rarity', label: 'Độ hiếm' },
-                  { key: 'atk', label: 'ATK cơ bản' },
-                  { key: 'name', label: 'Tên A-Z' },
+                  { key: 'rarity', label: 'Rarity' },
+                  { key: 'atk', label: 'Base ATK' },
+                  { key: 'name', label: 'Name A-Z' },
                 ].map(opt => (
                   <button
                     key={opt.key}
@@ -188,7 +196,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
 
             {/* Stats */}
             <div className="pt-3 border-t border-gray-800/50">
-              <p className="text-gray-500 text-xs">Hiển thị <span className="text-gray-300 font-bold">{filtered.length}</span> / {weapons.length} vũ khí</p>
+              <p className="text-gray-500 text-xs">Showing <span className="text-gray-300 font-bold">{filtered.length}</span> / {weapons.length} weapons</p>
             </div>
           </div>
         </div>
@@ -197,7 +205,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
         <div className="flex-1 min-w-0">
           {filtered.length === 0 ? (
             <div className="flex items-center justify-center h-64 text-gray-500">
-              Không tìm thấy vũ khí phù hợp
+              No weapons found
             </div>
           ) : (
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-7 gap-3">
@@ -285,7 +293,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-3 mb-4">
               <div className="bg-[#0b0b0e]/60 border border-gray-800/40 rounded-xl p-3">
-                <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-1">ATK cơ bản</p>
+                <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-1">Base ATK</p>
                 <p className="text-red-400 font-black text-xl">{selectedWeapon.baseAtk}</p>
               </div>
               {selectedWeapon.subStat && (
@@ -293,7 +301,14 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-1">{selectedWeapon.subStat}</p>
                   <p className="text-blue-400 font-black text-xl">
                     {selectedWeapon.subStatValue !== null
-                      ? `${selectedWeapon.subStatValue}${selectedWeapon.subStat?.includes('%') || selectedWeapon.subStat?.includes('Tỷ') || selectedWeapon.subStat?.includes('Sát') || selectedWeapon.subStat?.includes('Hiệu') ? '%' : ''}`
+                      ? `${selectedWeapon.subStatValue}${
+                          selectedWeapon.subStat?.includes('%') ||
+                          selectedWeapon.subStat?.includes('Mastery') ||
+                          selectedWeapon.subStat?.includes('Recharge') ||
+                          selectedWeapon.subStat?.includes('Bonus') ||
+                          selectedWeapon.subStat?.includes('Rate') ||
+                          selectedWeapon.subStat?.includes('DMG')
+                          ? '%' : ''}`
                       : '—'}
                   </p>
                 </div>

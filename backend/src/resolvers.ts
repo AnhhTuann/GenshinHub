@@ -73,8 +73,31 @@ export const resolvers = {
       const cached = characterCache.get(args.id);
       if (cached) return cached;
       const data = await prisma.character.findUnique({ where: { id: args.id }, include: { bestWeapons: true, bestArtifacts: true } });
-      if (data) characterCache.set(args.id, data);
-      return data;
+      if (!data) return null;
+
+      // Enrich bestWeapons with real iconUrl, rarity, id from Weapon table (match by name)
+      const weaponNames = data.bestWeapons.map((w: any) => w.name).filter(Boolean);
+      const weaponRecords = weaponNames.length > 0
+        ? await prisma.weapon.findMany({ where: { name: { in: weaponNames } } })
+        : [];
+      const weaponByName: Record<string, any> = {};
+      for (const w of weaponRecords) weaponByName[w.name] = w;
+
+      const enriched = {
+        ...data,
+        bestWeapons: data.bestWeapons.map((w: any) => {
+          const dbWeapon = weaponByName[w.name];
+          return {
+            ...w,
+            id: dbWeapon?.id || w.weaponId || w.id,
+            iconUrl: dbWeapon?.iconUrl || w.iconUrl,
+            rarity: dbWeapon?.rarity ?? w.rarity,
+            subStat: dbWeapon?.subStat || w.subStat,
+          };
+        }),
+      };
+      characterCache.set(args.id, enriched);
+      return enriched;
     },
     weapons: async () => {
       const cached = weaponsCache.get('all');

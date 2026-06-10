@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -19,15 +21,20 @@ export const metadata: Metadata = {
   keywords: "Genshin Impact, TeyvatDB, Builds, Artifacts, Weapons, Characters",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
-        <Navbar />
-        <div className="min-h-screen">{children}</div>
-        <footer className="border-t border-gray-900 py-8 text-center text-gray-500 text-sm bg-[#050508]">
-          <p>© 2026 TeyvatDB. All rights reserved.</p>
-        </footer>
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          <div className="min-h-screen">{children}</div>
+          <footer className="border-t border-gray-900 py-8 text-center text-gray-500 text-sm bg-[#050508]">
+            <p>© 2026 TeyvatDB. All rights reserved.</p>
+          </footer>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useMemo, useEffect } from 'react';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import CharacterCard from './CharacterCard';
 import { CharacterData, Element } from '@/types/character';
@@ -20,6 +21,7 @@ const ELEMENT_DETAILS: Record<Element, { color: string; border: string; glow: st
 export default function CharacterGallery({ initialCharacters }: { initialCharacters: CharacterData[] }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedElement, setSelectedElement] = useState<Element | null>(null);
+  const locale = useLocale();
 
   useEffect(() => {
     const handleReset = () => {
@@ -38,11 +40,12 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
 
   const filteredCharacters = useMemo(() => {
     return initialCharacters.filter((char) => {
-      const matchName = char.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const name = locale === 'en' ? char.nameEn : char.nameVi;
+      const matchName = name.toLowerCase().includes(searchQuery.toLowerCase());
       const matchElement = selectedElement ? char.element === selectedElement : true;
       return matchName && matchElement;
     });
-  }, [initialCharacters, searchQuery, selectedElement]);
+  }, [initialCharacters, searchQuery, selectedElement, locale]);
 
   return (
     <div className="flex flex-col gap-8">

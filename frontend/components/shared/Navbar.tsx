@@ -1,9 +1,12 @@
 "use client";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import {Link, usePathname, useRouter} from '@/i18n/routing';
+import {useLocale, useTranslations} from 'next-intl';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const locale = useLocale();
+  const router = useRouter();
+  const t = useTranslations('Common');
 
   const handleLogoClick = () => {
     if (typeof window !== 'undefined') {
@@ -12,11 +15,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: '/', label: 'Characters' },
-    { href: '/weapons', label: 'Weapons' },
-    { href: '/artifacts', label: 'Artifacts' },
+    { href: '/', label: t('characters') },
+    { href: '/weapons', label: t('weapons') },
+    { href: '/artifacts', label: t('artifacts') },
     { href: '/teams', label: 'Teams' },
-    { href: '/showcase', label: 'Showcase' },
+    { href: '/showcase', label: t('showcase') },
   ];
 
   return (
@@ -55,8 +58,19 @@ export default function Navbar() {
           })}
         </div>
 
-        <div>
-          <button className="relative overflow-hidden bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-black px-5 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 shadow-[0_4px_12px_rgba(234,179,8,0.25)] hover:shadow-[0_4px_20px_rgba(234,179,8,0.4)] active:scale-95">
+        <div className="flex items-center gap-3">
+          <select 
+            value={locale}
+            onChange={(e) => {
+              router.replace(pathname, {locale: e.target.value});
+            }}
+            className="bg-[#101015] border border-gray-800 text-gray-300 text-xs uppercase font-bold tracking-wider py-1.5 px-2 rounded-md outline-none hover:border-gray-600 transition-colors"
+          >
+            <option value="vi">VI</option>
+            <option value="en">EN</option>
+          </select>
+
+          <button className="relative overflow-hidden bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-black px-5 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 shadow-[0_4px_12px_rgba(234,179,8,0.25)] hover:shadow-[0_4px_20px_rgba(234,179,8,0.4)] active:scale-95 hidden sm:block">
             Contribute
           </button>
         </div>

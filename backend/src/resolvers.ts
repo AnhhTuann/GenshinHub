@@ -17,7 +17,8 @@ export const resolvers = {
         const weapon = await prisma.weapon.findFirst({
           where: {
             OR: [
-              { name: parent.name },
+              { nameEn: parent.nameEn },
+              { nameVi: parent.nameVi },
               { id: parent.weaponId }
             ]
           }
@@ -31,11 +32,11 @@ export const resolvers = {
   ArtifactBuild: {
     iconUrl: async (parent: any) => {
       try {
-        if (parent.setName === "Thánh Di Vật Đề Cử" || parent.setName.startsWith("Mix")) {
+        if (parent.setNameVi === "Thánh Di Vật Đề Cử" || parent.setNameVi.startsWith("Mix") || parent.setNameEn === "Recommended Artifacts" || parent.setNameEn.startsWith("Mix")) {
           return "/images/artifacts/UI_RelicIcon_15001_4.png";
         }
         const set = await prisma.artifactSet.findFirst({
-          where: { name: parent.setName }
+          where: { OR: [{ nameVi: parent.setNameVi }, { nameEn: parent.setNameEn }] }
         });
         return set ? set.iconUrl : null;
       } catch (e) {
@@ -45,7 +46,7 @@ export const resolvers = {
     rarity: async (parent: any) => {
       try {
         const set = await prisma.artifactSet.findFirst({
-          where: { name: parent.setName }
+          where: { OR: [{ nameVi: parent.setNameVi }, { nameEn: parent.setNameEn }] }
         });
         if (set && set.rarityList && set.rarityList.length > 0) {
           return Math.max(...set.rarityList);
@@ -76,17 +77,17 @@ export const resolvers = {
       if (!data) return null;
 
       // Enrich bestWeapons with real iconUrl, rarity, id from Weapon table (match by name)
-      const weaponNames = data.bestWeapons.map((w: any) => w.name).filter(Boolean);
+      const weaponNames = data.bestWeapons.map((w: any) => w.nameVi).filter(Boolean);
       const weaponRecords = weaponNames.length > 0
-        ? await prisma.weapon.findMany({ where: { name: { in: weaponNames } } })
+        ? await prisma.weapon.findMany({ where: { nameVi: { in: weaponNames } } })
         : [];
       const weaponByName: Record<string, any> = {};
-      for (const w of weaponRecords) weaponByName[w.name] = w;
+      for (const w of weaponRecords) weaponByName[w.nameVi] = w;
 
       const enriched = {
         ...data,
         bestWeapons: data.bestWeapons.map((w: any) => {
-          const dbWeapon = weaponByName[w.name];
+          const dbWeapon = weaponByName[w.nameVi];
           return {
             ...w,
             id: dbWeapon?.id || w.weaponId || w.id,
@@ -98,11 +99,12 @@ export const resolvers = {
         bestArtifacts: await Promise.all(data.bestArtifacts.map(async (a: any) => {
           // Match artifact set by name to get real iconUrl + English name
           const dbArtifact = await prisma.artifactSet.findFirst({
-            where: { name: a.setName }
+            where: { nameVi: a.setNameVi }
           });
           return {
             ...a,
-            setName: dbArtifact?.name || a.setName,
+            setNameEn: dbArtifact?.nameEn || a.setNameEn,
+            setNameVi: dbArtifact?.nameVi || a.setNameVi,
             iconUrl: dbArtifact?.iconUrl || null,
             rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
             artifactSetId: dbArtifact?.id || null,
@@ -126,8 +128,8 @@ export const resolvers = {
     charactersByWeaponType: async (_: any, args: { weaponType: string }) => {
       return await prisma.character.findMany({
         where: { weapon: args.weaponType },
-        select: { id: true, name: true, element: true, rarity: true, avatarUrl: true, weapon: true },
-        orderBy: [{ rarity: 'desc' }, { name: 'asc' }]
+        select: { id: true, nameEn: true, nameVi: true, element: true, rarity: true, avatarUrl: true, weapon: true },
+        orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }]
       });
     },
     artifacts: async () => {

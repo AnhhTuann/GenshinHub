@@ -1,9 +1,11 @@
 import CharacterGallery from '@/components/CharacterGallery';
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
 
 export default async function Home() {
+  const t = await getTranslations('Common');
   const data = await fetchGraphQL(GET_CHARACTERS);
   const characters: CharacterData[] = data.characters;
 
@@ -26,7 +28,7 @@ export default async function Home() {
           
           <Link href="/showcase">
             <button className="flex items-center gap-2.5 px-6 py-3 bg-[#111116]/80 backdrop-blur-md text-yellow-500 font-bold rounded-xl border border-yellow-500/20 hover:bg-yellow-500/10 hover:border-yellow-400/50 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)] transition-all duration-300 text-xs uppercase tracking-wider active:scale-95">
-              <span>🔍</span> Showcase Search
+              <span>🔍</span> {t('showcase')}
             </button>
           </Link>
         </div>

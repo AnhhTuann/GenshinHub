@@ -2,18 +2,22 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface Weapon {
   id: string;
-  name: string;
+  nameEn: string;
+  nameVi: string;
   rarity: number;
   type: string;
   baseAtk: number;
   subStat: string | null;
   subStatValue: number | null;
-  passiveName: string | null;
-  passiveDesc: string | null;
+  passiveNameEn: string | null;
+  passiveNameVi: string | null;
+  passiveDescEn: string | null;
+  passiveDescVi: string | null;
   iconUrl: string | null;
 }
 
@@ -41,6 +45,8 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const [selectedRarities, setSelectedRarities] = useState<number[]>([5, 4, 3]);
   const [sortBy, setSortBy] = useState<'rarity' | 'name' | 'atk'>('rarity');
   const [sortAsc, setSortAsc] = useState(false);
+  const locale = useLocale();
+  const t = useTranslations('Common');
 
   const toggleRarity = (r: number) => {
     setSelectedRarities(prev =>
@@ -50,7 +56,8 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
 
   const filtered = useMemo(() => {
     let result = weapons.filter(w => {
-      const matchSearch = w.name.toLowerCase().includes(search.toLowerCase());
+      const name = locale === 'en' ? w.nameEn : w.nameVi;
+      const matchSearch = name.toLowerCase().includes(search.toLowerCase());
       const matchType = selectedType === 'All' || (WEAPON_TYPE_DB[selectedType]?.includes(w.type) ?? w.type === selectedType);
       const matchRarity = selectedRarities.includes(w.rarity);
       return matchSearch && matchType && matchRarity;
@@ -59,11 +66,15 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
       let cmp = 0;
       if (sortBy === 'rarity') cmp = b.rarity - a.rarity;
       else if (sortBy === 'atk') cmp = b.baseAtk - a.baseAtk;
-      else if (sortBy === 'name') cmp = a.name.localeCompare(b.name);
+      else if (sortBy === 'name') {
+        const nameA = locale === 'en' ? a.nameEn : a.nameVi;
+        const nameB = locale === 'en' ? b.nameEn : b.nameVi;
+        cmp = nameA.localeCompare(nameB);
+      }
       return sortAsc ? -cmp : cmp;
     });
     return result;
-  }, [weapons, search, selectedType, selectedRarities, sortBy, sortAsc]);
+  }, [weapons, search, selectedType, selectedRarities, sortBy, sortAsc, locale]);
 
   const rarityBgColor = (rarity: number) => {
     if (rarity === 5) return 'from-[#a57c00]/30 to-[#5c3d00]/15 border-yellow-500/25 hover:border-yellow-500/50 shadow-[0_0_15px_rgba(234,179,8,0.05)]';
@@ -220,7 +231,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                       {weapon.iconUrl ? (
                         <Image
                           src={weapon.iconUrl}
-                          alt={weapon.name}
+                          alt={locale === 'en' ? weapon.nameEn : weapon.nameVi}
                           fill
                           className="object-contain p-1 group-hover:scale-105 transition-transform duration-350"
                         />
@@ -236,7 +247,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                       {'★'.repeat(weapon.rarity)}
                     </div>
                     <p className="text-[10px] text-gray-250 font-bold text-center leading-snug line-clamp-2 group-hover:text-white transition-colors max-w-full font-display">
-                      {weapon.name}
+                      {locale === 'en' ? weapon.nameEn : weapon.nameVi}
                     </p>
                   </div>
                 </Link>

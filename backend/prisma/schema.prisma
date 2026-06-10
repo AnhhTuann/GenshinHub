@@ -8,8 +8,10 @@ datasource db {
 
 model Character {
   id             String              @id
-  name           String
-  title          String
+  nameEn         String
+  nameVi         String
+  titleEn        String
+  titleVi        String
   rarity         Int
   element        String
   weapon         String
@@ -18,7 +20,8 @@ model Character {
   splashArtUrl   String
   
   // Extended data
-  description    String
+  descriptionEn  String
+  descriptionVi  String
   baseHp         Int
   baseAtk        Int
   baseDef        Int
@@ -37,24 +40,27 @@ model Character {
 }
 
 model CharacterWeapon {
-  id          String    @id @default(uuid())
-  weaponId    String
-  name        String
-  rank        Int
-  isF2P       Boolean
-  iconUrl     String?
-  subStat     String?
-  passiveDesc String?
-  refinement  Int?      @default(1)
-  character   Character @relation(fields: [characterId], references: [id])
-  characterId String
+  id            String    @id @default(uuid())
+  weaponId      String
+  nameEn        String
+  nameVi        String
+  rank          Int
+  isF2P         Boolean
+  iconUrl       String?
+  subStat       String?
+  passiveDescEn String?
+  passiveDescVi String?
+  refinement    Int?      @default(1)
+  character     Character @relation(fields: [characterId], references: [id])
+  characterId   String
 
   @@index([characterId])
 }
 
 model CharacterArtifact {
   id               String    @id @default(uuid())
-  setName          String
+  setNameEn        String
+  setNameVi        String
   pieces           Int
   sands            String[]
   goblet           String[]
@@ -68,31 +74,39 @@ model CharacterArtifact {
 
 // Encyclopedia
 model Weapon {
-  id          String  @id
-  name        String
-  rarity      Int
-  type        String
-  baseAtk     Int
-  subStat     String?
-  subStatValue Float?
-  passiveName String?
-  passiveDesc String?
-  iconUrl     String?
+  id            String  @id
+  nameEn        String
+  nameVi        String
+  rarity        Int
+  type          String
+  baseAtk       Int
+  subStat       String?
+  subStatValue  Float?
+  passiveNameEn String?
+  passiveNameVi String?
+  passiveDescEn String?
+  passiveDescVi String?
+  iconUrl       String?
 }
 
 model ArtifactSet {
-  id          String  @id
-  name        String
-  rarityList  Int[]
-  piece2Desc  String
-  piece4Desc  String
-  iconUrl     String?
+  id            String  @id
+  nameEn        String
+  nameVi        String
+  rarityList    Int[]
+  piece2DescEn  String
+  piece2DescVi  String
+  piece4DescEn  String
+  piece4DescVi  String
+  iconUrl       String?
 }
 
 model Material {
   id          String  @id
-  name        String
+  nameEn      String
+  nameVi      String
   type        String
   rarity      Int
   iconUrl     String?
 }
+

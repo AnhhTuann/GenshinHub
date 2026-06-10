@@ -1,9 +1,12 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { CharacterData } from '@/types/character';
+import { useLocale } from 'next-intl';
 
 export default function CharacterCard({ character }: { character: CharacterData }) {
+  const locale = useLocale();
   const is5Star = character.rarity === 5;
+  const name = locale === 'en' ? character.nameEn : character.nameVi;
   
   const cardBg = is5Star 
     ? 'border-amber-500/20 from-amber-950/10 via-amber-900/10 to-amber-800/30 group-hover:border-amber-400/60 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]' 
@@ -21,7 +24,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
         <div className="absolute inset-0 flex items-center justify-center -z-10 group-hover:scale-105 transition-transform duration-500">
           <Image 
             src={character.avatarUrl || 'https://placehold.co/150x150/222/FFF?text=?'} 
-            alt={character.name} 
+            alt={name} 
             fill
             className="object-cover w-full h-full opacity-90 mask-image-bottom"
           />
@@ -52,7 +55,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           
           {/* Name */}
           <span className="text-xs md:text-sm font-bold tracking-wide text-gray-100 truncate px-2 max-w-full">
-            {character.name}
+            {name}
           </span>
         </div>
       </div>

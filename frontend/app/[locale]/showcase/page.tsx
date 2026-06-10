@@ -1,8 +1,9 @@
 "use client";
 import { useState } from 'react';
 import { fetchGraphQL, GET_SHOWCASE } from '@/lib/graphql';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
 import { CHARACTER_MAP } from '@/lib/characterMap';
 
 export default function ShowcasePage() {
@@ -10,6 +11,8 @@ export default function ShowcasePage() {
   const [showcase, setShowcase] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const locale = useLocale();
+  const t = useTranslations('Showcase');
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,17 +44,17 @@ export default function ShowcasePage() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
           <div>
             <h1 className="text-4xl md:text-5xl font-display font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-500 mb-3">
-              PLAYER SHOWCASE
+              {t('title')}
             </h1>
             <p className="text-sm md:text-base text-zinc-400 max-w-2xl font-light">
-              Retrieve character data, builds, and profile details directly from Enka.Network using your Genshin Impact UID.
+              {t('description')}
             </p>
           </div>
           <Link 
             href="/" 
             className="px-5 py-2.5 bg-zinc-900/40 hover:bg-zinc-800/40 border border-white/5 hover:border-amber-500/30 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-zinc-300 hover:text-white"
           >
-            ← Back to Home
+            ← {t('backToHome')}
           </Link>
         </div>
 
@@ -61,7 +64,7 @@ export default function ShowcasePage() {
             type="text" 
             value={uid}
             onChange={(e) => setUid(e.target.value)}
-            placeholder="Enter Genshin Impact UID (e.g., 800000000)" 
+            placeholder={t('placeholder')}
             className="flex-1 bg-[#0f0f15]/80 text-white px-5 py-4 rounded-xl border border-white/5 focus:border-amber-500/50 outline-none text-lg transition duration-300 placeholder:text-zinc-600 backdrop-blur-md"
           />
           <button 
@@ -75,9 +78,9 @@ export default function ShowcasePage() {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Searching...
+                {t('searching')}
               </>
-            ) : 'Fetch Profile'}
+            ) : t('fetchProfile')}
           </button>
         </form>
 
@@ -132,7 +135,7 @@ export default function ShowcasePage() {
             {/* Showcase Characters */}
             <div className="relative z-10">
               <h3 className="text-xs font-bold font-display uppercase tracking-[0.25em] mb-6 text-zinc-400/80 flex items-center gap-2">
-                SHOWCASE CHARACTERS 
+                {t('showcaseCharacters')}
                 <span className="text-[10px] bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full font-mono font-normal text-zinc-300">
                   {showcase.characters.length}
                 </span>
@@ -210,7 +213,7 @@ export default function ShowcasePage() {
                 </div>
               ) : (
                 <div className="text-zinc-500 italic text-center py-8">
-                  No characters on display for this player profile. Make sure characters are added to your in-game showcase.
+                  {t('noCharacters')}
                 </div>
               )}
             </div>

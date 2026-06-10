@@ -103,14 +103,17 @@ export async function seedWeapons(prisma: PrismaClient) {
 
       weaponData.push({
         id,
-        name,
+        nameEn: name,
+        nameVi: name,
         rarity,
         type,
         baseAtk,
         subStat,
         subStatValue,
-        passiveName,
-        passiveDesc,
+        passiveNameEn: passiveName,
+        passiveNameVi: passiveName,
+        passiveDescEn: passiveDesc,
+        passiveDescVi: passiveDesc,
         iconUrl: item.icon ? `/images/weapons/${item.icon}.png` : null,
       });
     }

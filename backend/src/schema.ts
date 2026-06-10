@@ -1,16 +1,16 @@
 export const typeDefs = `#graphql
-  type WeaponBuild { id: String!, name: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDesc: String, refinement: Int, rarity: Int }
-  type ArtifactBuild { setName: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String }
+  type WeaponBuild { id: String!, nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int }
+  type ArtifactBuild { setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String }
   type Character { 
-    id: String!, name: String!, title: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
+    id: String!, nameEn: String!, nameVi: String!, titleEn: String!, titleVi: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
     avatarUrl: String!, splashArtUrl: String!, 
-    description: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
+    descriptionEn: String!, descriptionVi: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
     bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, bestTeams: [String!]! 
   }
   
-  type CharacterBasic { id: String!, name: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
-  type Weapon { id: String!, name: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveName: String, passiveDesc: String, iconUrl: String }
-  type ArtifactSet { id: String!, name: String!, rarityList: [Int!]!, piece2Desc: String, piece4Desc: String, iconUrl: String }
+  type CharacterBasic { id: String!, nameEn: String!, nameVi: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
+  type Weapon { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String }
+  type ArtifactSet { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
   type EnkaShowcase { uid: String!, nickname: String!, level: Int!, avatarUrl: String, characters: [String!] }
   
   type Query { 

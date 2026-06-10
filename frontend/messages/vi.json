@@ -1,0 +1,58 @@
+{
+  "Common": {
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "clear": "Xoá",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "back": "Quay lại",
+    "characters": "Nhân Vật",
+    "weapons": "Vũ Khí",
+    "artifacts": "Thánh Di Vật",
+    "showcase": "Trang Khoe",
+    "language": "Ngôn ngữ",
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt"
+  },
+  "Character": {
+    "rarity": "Độ hiếm",
+    "element": "Nguyên tố",
+    "weapon": "Vũ khí",
+    "region": "Khu vực",
+    "builds": "Cách lên đồ Đề Xuất",
+    "weapons": "Vũ Khí Tốt Nhất",
+    "artifacts": "Thánh Di Vật Tốt Nhất",
+    "teams": "Đội Hình Tốt Nhất",
+    "talents": "Ưu Tiên Thiên Phú",
+    "description": "Giới Thiệu",
+    "baseStats": "Chỉ Số Cơ Bản",
+    "hp": "HP",
+    "atk": "Tấn Công",
+    "def": "Phòng Ngự"
+  },
+  "Weapon": {
+    "baseAtk": "Tấn Công Căn Bản",
+    "subStat": "Chỉ Số Phụ",
+    "passive": "Nội Tại",
+    "refinement": "Tinh Luyện",
+    "f2p": "Dễ Sở Hữu"
+  },
+  "Artifact": {
+    "2piece": "Bộ 2 món",
+    "4piece": "Bộ 4 món",
+    "sands": "Đồng Hồ Cát",
+    "goblet": "Ly Không Gian",
+    "circlet": "Nón Lý Trí",
+    "substats": "Ưu Tiên Chỉ Số Phụ"
+  },
+  "Showcase": {
+    "title": "HỒ SƠ NGƯỜI CHƠI",
+    "description": "Lấy thông tin nhân vật, đội hình, và hồ sơ trực tiếp từ mạng Enka.Network thông qua UID Genshin Impact của bạn.",
+    "backToHome": "Về Trang Chủ",
+    "placeholder": "Nhập UID Genshin Impact (VD: 800000000)",
+    "searching": "Đang tìm...",
+    "fetchProfile": "Tìm Hồ Sơ",
+    "showcaseCharacters": "NHÂN VẬT TRƯNG BÀY",
+    "noCharacters": "Không có nhân vật nào được trưng bày. Hãy đảm bảo bạn đã thêm nhân vật vào hồ sơ trong game."
+  }
+}

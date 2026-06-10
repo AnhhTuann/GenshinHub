@@ -1,8 +1,12 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 import { WeaponBuild } from '@/types/character';
 
 export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; index: number }) {
+  const locale = useLocale();
+  const name = locale === 'en' ? weapon.nameEn : weapon.nameVi;
+  const passiveDesc = locale === 'en' ? weapon.passiveDescEn : weapon.passiveDescVi;
   const rarity = weapon.rarity || 4;
 
   let cardBg = "bg-[#111115]/50 border-gray-800/60";
@@ -33,7 +37,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
           <div className="w-full h-full bg-[#07070a]/90 rounded-xl overflow-hidden p-1">
             <Image
               src={weapon.iconUrl}
-              alt={weapon.name}
+              alt={name}
               width={56}
               height={56}
               className="w-full h-full object-contain rounded-md"
@@ -46,7 +50,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
 
       <div className="flex flex-col justify-center flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap mb-1">
-          <span className="font-extrabold text-white text-base leading-tight font-display">{weapon.name}</span>
+          <span className="font-extrabold text-white text-base leading-tight font-display">{name}</span>
           <span className={`${starColor} text-[10px] font-bold font-mono tracking-wider align-middle select-none`}>
             {stars}
           </span>
@@ -85,9 +89,9 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
         cardContent
       )}
 
-      {weapon.passiveDesc && (
+      {passiveDesc && (
         <p className="text-gray-400 text-xs md:text-sm mt-3 px-1 leading-relaxed border-l-2 border-gray-900 pl-3">
-          {weapon.passiveDesc.split(/(CRIT Rate|CRIT DMG|ATK%|Energy Recharge|Elemental Mastery|HP%|ATK|HP|DEF%|DEF|Sát Thương Bạo Kích|Tỷ Lệ Bạo Kích|Tinh Thông Nguyên Tố|Tấn Công|Tấn Công%|Hiệu Quả Nạp)/g).map((part, i) =>
+          {passiveDesc.split(/(CRIT Rate|CRIT DMG|ATK%|Energy Recharge|Elemental Mastery|HP%|ATK|HP|DEF%|DEF|Sát Thương Bạo Kích|Tỷ Lệ Bạo Kích|Tinh Thông Nguyên Tố|Tấn Công|Tấn Công%|Hiệu Quả Nạp)/g).map((part, i) =>
             /CRIT Rate|CRIT DMG|ATK%|Energy Recharge|Elemental Mastery|HP%|ATK|HP|DEF%|DEF|Sát Thương Bạo Kích|Tỷ Lệ Bạo Kích|Tinh Thông Nguyên Tố|Tấn Công|Tấn Công%|Hiệu Quả Nạp/.test(part) ? (
               <span key={i} className="text-yellow-500 font-bold">{part}</span>
             ) : part

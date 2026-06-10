@@ -2,14 +2,18 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 
 interface ArtifactSet {
   id: string;
-  name: string;
+  nameEn: string;
+  nameVi: string;
   rarityList: number[];
-  piece2Desc: string | null;
-  piece4Desc: string | null;
+  piece2DescEn: string | null;
+  piece2DescVi: string | null;
+  piece4DescEn: string | null;
+  piece4DescVi: string | null;
   iconUrl: string | null;
 }
 
@@ -29,14 +33,16 @@ function rarityBorder(rarityList: number[]) {
 export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[] }) {
   const [search, setSearch] = useState('');
   const [selectedRarity, setSelectedRarity] = useState<number | null>(null);
+  const locale = useLocale();
 
   const filtered = useMemo(() => {
     return artifacts.filter(a => {
-      const matchSearch = a.name.toLowerCase().includes(search.toLowerCase());
+      const name = locale === 'en' ? a.nameEn : a.nameVi;
+      const matchSearch = name.toLowerCase().includes(search.toLowerCase());
       const matchRarity = selectedRarity === null || a.rarityList.includes(selectedRarity);
       return matchSearch && matchRarity;
     });
-  }, [artifacts, search, selectedRarity]);
+  }, [artifacts, search, selectedRarity, locale]);
 
   return (
     <main className="min-h-screen bg-[#07070a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
@@ -148,7 +154,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
                         {artifact.iconUrl ? (
                           <Image
                             src={artifact.iconUrl}
-                            alt={artifact.name}
+                            alt={locale === 'en' ? artifact.nameEn : artifact.nameVi}
                             width={56}
                             height={56}
                             className="object-contain p-1 group-hover:scale-105 transition-transform duration-350"
@@ -162,21 +168,21 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                       <p className="text-white font-extrabold text-sm leading-snug mb-1 group-hover:text-yellow-100 transition-colors font-display">
-                        {artifact.name}
+                        {locale === 'en' ? artifact.nameEn : artifact.nameVi}
                       </p>
                       <RarityStars rarityList={artifact.rarityList} />
 
                       <div className="mt-2.5 space-y-1.5 border-t border-gray-950 pt-2.5">
-                        {artifact.piece2Desc && (
+                        {(locale === 'en' ? artifact.piece2DescEn : artifact.piece2DescVi) && (
                           <div className="flex gap-1.5">
                             <span className="text-gray-500 text-[8px] font-black mt-1 shrink-0 uppercase tracking-wider bg-white/5 border border-white/5 px-1 py-0.5 rounded leading-none">2PC</span>
-                            <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{artifact.piece2Desc}</p>
+                            <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{locale === 'en' ? artifact.piece2DescEn : artifact.piece2DescVi}</p>
                           </div>
                         )}
-                        {artifact.piece4Desc && (
+                        {(locale === 'en' ? artifact.piece4DescEn : artifact.piece4DescVi) && (
                           <div className="flex gap-1.5">
                             <span className="text-gray-500 text-[8px] font-black mt-1 shrink-0 uppercase tracking-wider bg-white/5 border border-white/5 px-1 py-0.5 rounded leading-none">4PC</span>
-                            <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{artifact.piece4Desc}</p>
+                            <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{locale === 'en' ? artifact.piece4DescEn : artifact.piece4DescVi}</p>
                           </div>
                         )}
                       </div>

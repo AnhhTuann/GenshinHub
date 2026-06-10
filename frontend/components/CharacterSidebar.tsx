@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { CharacterData } from '@/types/character';
+import { useLocale } from 'next-intl';
 
 const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: string; icon2?: string }> = {
   "hu tao": { name: "Staff of Homa", icon: "/images/weapons/UI_EquipIcon_Pole_Homa.png" },
@@ -78,8 +79,11 @@ function getSignatureWeapon(characterName: string) {
 }
 
 export default function CharacterSidebar({ character }: { character: CharacterData }) {
+  const locale = useLocale();
+  const name = locale === 'en' ? character.nameEn : character.nameVi;
+  const title = locale === 'en' ? character.titleEn : character.titleVi;
   const is5Star = character.rarity === 5;
-  const signatureWeapon = getSignatureWeapon(character.name);
+  const signatureWeapon = getSignatureWeapon(character.nameEn);
   const borderTheme = is5Star ? 'border-amber-500/20' : 'border-purple-500/20';
   const gradientTheme = is5Star ? 'from-amber-900/10' : 'from-purple-900/10';
 
@@ -106,8 +110,8 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
             </div>
             <span className="text-yellow-500 font-extrabold text-[10px] uppercase tracking-widest">{character.element}</span>
           </div>
-          <h1 className="text-3xl font-black text-white leading-none font-display uppercase tracking-tight drop-shadow-md">{character.name}</h1>
-          <p className="text-gray-300 font-bold text-sm leading-tight italic opacity-90 drop-shadow-sm">{character.title}</p>
+          <h1 className="text-3xl font-black text-white leading-none font-display uppercase tracking-tight drop-shadow-md">{name}</h1>
+          <p className="text-gray-300 font-bold text-sm leading-tight italic opacity-90 drop-shadow-sm">{title}</p>
           
           <div className="flex text-yellow-400 text-xs mt-2 select-none">
             {Array(character.rarity).fill(0).map((_, i) => <span key={i}>★</span>)}

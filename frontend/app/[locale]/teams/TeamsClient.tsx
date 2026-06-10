@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 import { detailedTeamsData, DetailedTeam } from '@/data/teams';
 
 // Flatten all teams with their "focus character" info
@@ -15,7 +16,8 @@ interface FlatTeam extends DetailedTeam {
 
 interface CharInfo {
   id: string;
-  name: string;
+  nameEn: string;
+  nameVi: string;
   element: string;
   rarity: number;
   avatarUrl: string;
@@ -54,6 +56,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
   const [filterElement, setFilterElement] = useState<string | null>(null);
   const [filterRank, setFilterRank] = useState<string | null>(null);
   const [expandedTeam, setExpandedTeam] = useState<string | null>(null);
+  const locale = useLocale();
 
   const charMap = useMemo(() => {
     const map: Record<string, CharInfo> = {};
@@ -71,7 +74,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
         result.push({
           ...team,
           focusCharId: charId,
-          focusCharName: focusChar.name,
+          focusCharName: locale === 'en' ? focusChar.nameEn : focusChar.nameVi,
           focusElement: focusChar.element,
           focusAvatarUrl: focusChar.avatarUrl,
         });
@@ -238,9 +241,9 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                             <div
                               key={mi}
                               className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-800/80 shadow-md"
-                              title={char.name}
+                              title={locale === 'en' ? char.nameEn : char.nameVi}
                             >
-                              <Image src={char.avatarUrl} alt={char.name} fill className="object-cover object-top" />
+                              <Image src={char.avatarUrl} alt={locale === 'en' ? char.nameEn : char.nameVi} fill className="object-cover object-top" />
                             </div>
                           );
                         })}
@@ -284,14 +287,14 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                                 {/* Char header */}
                                 <div className="flex items-center gap-3 mb-3 border-b border-gray-950 pb-2.5">
                                   <div className="relative w-11 h-11 rounded-xl overflow-hidden border border-gray-900 flex-shrink-0 p-0.5 bg-[#07070a]">
-                                    <Image src={char.avatarUrl} alt={char.name} fill className="object-cover object-top rounded-lg" />
+                                    <Image src={char.avatarUrl} alt={locale === 'en' ? char.nameEn : char.nameVi} fill className="object-cover object-top rounded-lg" />
                                     <div className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-black/45 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/5">
                                       <Image src={`/elements/${char.element.toLowerCase()}.png`} alt={char.element} width={10} height={10} className="object-contain" />
                                     </div>
                                   </div>
                                   <div className="min-w-0">
                                     <p className="text-white font-extrabold text-sm leading-tight truncate group-hover:text-yellow-400 transition-colors font-display">
-                                      {char.name}
+                                      {locale === 'en' ? char.nameEn : char.nameVi}
                                     </p>
                                     <span className={`inline-block text-[8px] font-black px-1.5 py-0.5 rounded border mt-1 uppercase tracking-widest leading-none ${roleStyle}`}>
                                       {member.role}

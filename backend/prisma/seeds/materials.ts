@@ -9,7 +9,7 @@ export async function seedMaterials(prisma: PrismaClient) {
     
     const materialData = mItems.map((item: any) => ({
       id: String(item.id),
-      name: item.name || 'Unknown',
+      nameVi: item.name || 'Unknown', nameEn: item.name || 'Unknown',
       type: item.type || 'Unknown',
       rarity: item.rank || 1,
       iconUrl: item.icon ? `https://enka.network/ui/${item.icon}.png` : null,

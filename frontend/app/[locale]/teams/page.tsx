@@ -11,7 +11,8 @@ export default async function TeamsPage() {
   const data = await fetchGraphQL(GET_CHARACTERS);
   const characters = (data.characters || []).map((c: any) => ({
     id: c.id,
-    name: c.name,
+    nameEn: c.nameEn,
+    nameVi: c.nameVi,
     element: c.element,
     rarity: c.rarity,
     avatarUrl: c.avatarUrl,

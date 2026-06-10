@@ -10,10 +10,10 @@ export async function seedArtifacts(prisma: PrismaClient) {
       const affixes = Object.values(item.affixList || {});
       return {
         id: String(item.id),
-        name: item.name || 'Unknown',
+        nameVi: item.name || 'Unknown', nameEn: item.name || 'Unknown',
         rarityList: item.levelList || [],
-        piece2Desc: (affixes[0] as string) || '',
-        piece4Desc: (affixes[1] as string) || '',
+        piece2DescVi: affixes[0] as string || "", piece2DescEn: affixes[0] as string || "",
+        piece4DescVi: affixes[1] as string || "", piece4DescEn: affixes[1] as string || "",
         iconUrl: item.icon ? `/images/artifacts/${item.icon}.png` : null,
       };
     });

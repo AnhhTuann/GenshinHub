@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
@@ -14,14 +15,14 @@ export async function generateStaticParams() {
   return data.characters.map((char: any) => ({ id: char.id }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const data = await fetchGraphQL(GET_CHARACTER_BY_ID, { id: resolvedParams.id });
   const character = data.character;
   if (!character) return { title: 'Character Not Found' };
   return {
-    title: `${character.name} - TeyvatDB`,
-    description: character.title,
+    title: `${resolvedParams.locale === 'en' ? character.nameEn : character.nameVi} - TeyvatDB`,
+    description: resolvedParams.locale === 'en' ? character.titleEn : character.titleVi,
     openGraph: { images: [character.avatarUrl] }
   };
 }
@@ -71,7 +72,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
   );
 }
 
-export default async function CharacterDetail({ params }: { params: Promise<{ id: string }> }) {
+export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const resolvedParams = await params;
 
   const [characterData, allCharactersData] = await Promise.all([
@@ -83,6 +84,13 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   const characters: CharacterData[] = allCharactersData.characters;
   if (!character) notFound();
 
+  const t = await getTranslations('Character');
+  const tCommon = await getTranslations('Common');
+  
+  const locale = resolvedParams.locale;
+  const name = locale === 'en' ? character.nameEn : character.nameVi;
+  const description = locale === 'en' ? character.descriptionEn : character.descriptionVi;
+
   const detailedTeams = detailedTeamsData[character.id] || [];
   const hasDetailedTeams = detailedTeams.length > 0;
   const is5Star = character.rarity === 5;
@@ -90,7 +98,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   const headerAccentColor = is5Star ? 'bg-yellow-500' : 'bg-purple-500';
 
   const firstArtifact = character.bestArtifacts?.find(
-    art => art.setName && !art.setName.includes('Thánh Di Vật') && !art.setName.includes('mix')
+    art => art.setNameVi && !art.setNameVi.includes('Thánh Di Vật') && !art.setNameVi.includes('mix')
   ) || character.bestArtifacts?.[0];
 
   return (
@@ -104,7 +112,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
           <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Characters
+          {tCommon('back')}
         </Link>
       </div>
 
@@ -125,19 +133,19 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               <SectionHeader label="Overview" color={headerAccentColor} />
 
               {/* Lore */}
-              {character.description && (
+              {description && (
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 border-l-2 border-gray-800 pl-4 italic">
-                  {character.description}
+                  {description}
                 </p>
               )}
 
               {/* Base Stats */}
               <div>
-                <p className="text-gray-550 text-[10px] font-black uppercase tracking-widest mb-3">Base Stats (Lv. 90)</p>
+                <p className="text-gray-550 text-[10px] font-black uppercase tracking-widest mb-3">{t('baseStats')} (Lv. 90)</p>
                 <div className="grid grid-cols-3 gap-3">
-                  <StatBadge label="Base HP" value={character.baseHp || 0} color="text-emerald-450" />
-                  <StatBadge label="Base ATK" value={character.baseAtk || 0} color="text-red-450" />
-                  <StatBadge label="Base DEF" value={character.baseDef || 0} color="text-blue-450" />
+                  <StatBadge label={t('hp')} value={character.baseHp || 0} color="text-emerald-450" />
+                  <StatBadge label={t('atk')} value={character.baseAtk || 0} color="text-red-450" />
+                  <StatBadge label={t('def')} value={character.baseDef || 0} color="text-blue-450" />
                 </div>
               </div>
             </div>
@@ -146,7 +154,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
           {/* 2. BEST WEAPONS */}
           {character.bestWeapons?.length > 0 && (
             <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
-              <SectionHeader label="Best Weapons" color="bg-amber-500" />
+              <SectionHeader label={t('weapons')} color="bg-amber-500" />
               <div className="flex flex-col gap-3.5">
                 {character.bestWeapons.map((weapon, idx) => (
                   <WeaponCard key={idx} weapon={weapon} index={idx} />
@@ -160,7 +168,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Recommended Artifacts */}
               <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
-                <SectionHeader label="Best Artifacts" color="bg-purple-500" />
+                <SectionHeader label={t('artifacts')} color="bg-purple-500" />
                 <div className="flex flex-col gap-3.5">
                   {character.bestArtifacts.map((artifact, idx) => (
                     <ArtifactCard key={idx} artifact={artifact} />
@@ -257,7 +265,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                             )}
                           </div>
                           <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/95 text-white text-[9px] font-bold px-2 py-0.5 rounded whitespace-nowrap z-10 border border-gray-800 shadow-xl">
-                            {teammate ? teammate.name : teammateId}
+                            {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : teammateId}
                           </div>
                         </Link>
                       );
@@ -309,14 +317,14 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                           <Link href={`/characters/${dbId}`} key={mIdx} className="group flex flex-col items-center gap-1">
                             <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-gray-900 group-hover:border-white/20 transition-all duration-300 bg-[#050508] p-0.5">
                               {teammate ? (
-                                <Image src={teammate.avatarUrl} alt={teammate.name} fill className="object-cover object-top rounded-lg" />
+                                <Image src={teammate.avatarUrl} alt={locale === 'en' ? teammate.nameEn : teammate.nameVi} fill className="object-cover object-top rounded-lg" />
                               ) : (
                                 <div className="w-full h-full flex items-center justify-center text-[9px] text-gray-500 font-bold uppercase text-center break-all px-1">{m.characterId}</div>
                               )}
                             </div>
                             <span className="text-[8px] text-gray-500 font-black group-hover:text-gray-300 text-center uppercase tracking-widest truncate w-full mt-1">{m.role}</span>
                             <span className="text-[11px] text-gray-300 font-bold text-center truncate w-full">
-                              {teammate ? teammate.name : m.characterId}
+                              {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
                             </span>
                           </Link>
                         );
@@ -336,7 +344,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                         return (
                           <div key={mIdx} className="bg-[#0d0d12]/40 border border-gray-950 rounded-xl p-4">
                             <div className="flex items-center gap-2 mb-2">
-                              <span className="text-white font-extrabold text-xs font-display">{teammate ? teammate.name : m.characterId}</span>
+                              <span className="text-white font-extrabold text-xs font-display">{teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}</span>
                               <span className="text-gray-800">·</span>
                               <span className="text-gray-500 text-[9px] font-black uppercase tracking-wider">{m.role}</span>
                             </div>

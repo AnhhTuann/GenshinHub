@@ -1,0 +1,58 @@
+{
+  "Common": {
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "loading": "Loading...",
+    "error": "Error",
+    "back": "Back",
+    "characters": "Characters",
+    "weapons": "Weapons",
+    "artifacts": "Artifacts",
+    "showcase": "Player Showcase",
+    "language": "Language",
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "Character": {
+    "rarity": "Rarity",
+    "element": "Element",
+    "weapon": "Weapon",
+    "region": "Region",
+    "builds": "Recommended Builds",
+    "weapons": "Best Weapons",
+    "artifacts": "Best Artifacts",
+    "teams": "Best Teams",
+    "talents": "Talent Priority",
+    "description": "Description",
+    "baseStats": "Base Stats",
+    "hp": "HP",
+    "atk": "ATK",
+    "def": "DEF"
+  },
+  "Weapon": {
+    "baseAtk": "Base ATK",
+    "subStat": "Sub Stat",
+    "passive": "Passive",
+    "refinement": "Refinement",
+    "f2p": "F2P Friendly"
+  },
+  "Artifact": {
+    "2piece": "2-Piece Set",
+    "4piece": "4-Piece Set",
+    "sands": "Sands of Eon",
+    "goblet": "Goblet of Eonothem",
+    "circlet": "Circlet of Logos",
+    "substats": "Substat Priority"
+  },
+  "Showcase": {
+    "title": "PLAYER SHOWCASE",
+    "description": "Retrieve character data, builds, and profile details directly from Enka.Network using your Genshin Impact UID.",
+    "backToHome": "Back to Home",
+    "placeholder": "Enter Genshin Impact UID (e.g., 800000000)",
+    "searching": "Searching...",
+    "fetchProfile": "Fetch Profile",
+    "showcaseCharacters": "SHOWCASE CHARACTERS",
+    "noCharacters": "No characters on display for this player profile. Make sure characters are added to your in-game showcase."
+  }
+}

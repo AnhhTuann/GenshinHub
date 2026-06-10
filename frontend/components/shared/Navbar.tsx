@@ -1,55 +1,64 @@
 "use client";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   const handleLogoClick = () => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new Event('reset-search'));
     }
   };
 
+  const navLinks = [
+    { href: '/', label: 'Characters' },
+    { href: '/weapons', label: 'Weapons' },
+    { href: '/artifacts', label: 'Artifacts' },
+    { href: '/teams', label: 'Teams' },
+    { href: '/showcase', label: 'Showcase' },
+  ];
+
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#111115]/90 backdrop-blur-md border-b border-gray-800 shadow-sm">
-      <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full bg-[#07070a]/80 backdrop-blur-xl border-b border-gray-900/80 shadow-lg">
+      <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
         <Link 
-          className="flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all duration-150" 
+          className="flex items-center gap-2.5 hover:opacity-90 active:scale-98 transition-all duration-150 group" 
           href="/"
           onClick={handleLogoClick}
         >
-          <span className="text-2xl">🌟</span>
-          <span className="text-xl font-bold text-white tracking-wide">
-            Teyvat<span className="text-yellow-500">DB</span>
+          <span className="text-2xl group-hover:rotate-12 transition-transform duration-300">🌟</span>
+          <span className="text-xl font-black text-white tracking-wider font-display">
+            TEYVAT<span className="text-yellow-500 font-extrabold">DB</span>
           </span>
         </Link>
-        <div className="hidden md:flex gap-6">
-          <Link 
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors" 
-            href="/"
-            onClick={handleLogoClick}
-          >
-            Nhân Vật
-          </Link>
-          <Link 
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors" 
-            href="/weapons"
-          >
-            Vũ Khí
-          </Link>
-          <Link 
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors" 
-            href="/artifacts"
-          >
-            Thánh Di Vật
-          </Link>
-          <Link 
-            className="text-sm font-medium text-gray-300 hover:text-white transition-colors" 
-            href="/teams"
-          >
-            Đội Hình
-          </Link>
+        
+        <div className="hidden md:flex items-center gap-1 bg-[#101015]/40 p-1 rounded-full border border-gray-900">
+          {navLinks.map((link) => {
+            const isActive = link.href === '/' 
+              ? pathname === '/' 
+              : pathname.startsWith(link.href);
+            return (
+              <Link 
+                key={link.href}
+                className={`text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-300 ${
+                  isActive 
+                    ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 shadow-[0_0_15px_rgba(234,179,8,0.1)]' 
+                    : 'text-gray-400 hover:text-gray-100 hover:bg-white/5 border border-transparent'
+                }`}
+                href={link.href}
+                onClick={link.href === '/' ? handleLogoClick : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
+
         <div>
-          <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all">Đóng góp</button>
+          <button className="relative overflow-hidden bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-black px-5 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 shadow-[0_4px_12px_rgba(234,179,8,0.25)] hover:shadow-[0_4px_20px_rgba(234,179,8,0.4)] active:scale-95">
+            Contribute
+          </button>
         </div>
       </div>
     </nav>

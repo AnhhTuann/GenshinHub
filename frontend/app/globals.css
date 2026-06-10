@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-outfit), sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07070a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c24;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a36;
+}
+
+/* Custom Utilities */
+.glass-panel {
+  background: rgba(13, 13, 18, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(20, 20, 30, 0.75);
+}
+
+.mask-image-bottom {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* Glow effects for rarity */
+.glow-rarity-5 {
+  box-shadow: 0 0 30px -5px rgba(230, 81, 0, 0.15);
+}
+
+.glow-rarity-4 {
+  box-shadow: 0 0 30px -5px rgba(106, 27, 154, 0.15);
+}
+
+/* Element color classes */
+.element-pyro { color: #ff5252; text-shadow: 0 0 10px rgba(255, 82, 82, 0.3); }
+.element-hydro { color: #40c4ff; text-shadow: 0 0 10px rgba(64, 196, 255, 0.3); }
+.element-cryo { color: #80d8ff; text-shadow: 0 0 10px rgba(128, 216, 255, 0.3); }
+.element-electro { color: #e040fb; text-shadow: 0 0 10px rgba(224, 64, 251, 0.3); }
+.element-anemo { color: #64ffda; text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
+.element-geo { color: #ffd740; text-shadow: 0 0 10px rgba(255, 215, 64, 0.3); }
+.element-dendro { color: #69f0ae; text-shadow: 0 0 10px rgba(105, 240, 174, 0.3); }

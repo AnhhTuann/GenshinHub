@@ -1,42 +1,17 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import WeaponCard from '@/components/WeaponCard';
 import ArtifactCard from '@/components/ArtifactCard';
-import StatCard from '@/components/StatCard';
 import CharacterSidebar from '@/components/CharacterSidebar';
-import Image from 'next/image';
 import { detailedTeamsData } from '@/data/teams';
-
-function translateStat(stat: string): string {
-  const map: Record<string, string> = {
-    "HP%": "HP%",
-    "Tinh Thông Nguyên Tố": "Elemental Mastery",
-    "Hiệu Quả Nạp": "Energy Recharge",
-    "Hiệu Quả Nạp Nguyên Tố": "Energy Recharge",
-    "Tấn Công%": "ATK%",
-    "Sát Thương Nguyên Tố Hỏa": "Pyro DMG Bonus",
-    "Sát Thương Nguyên Tố Lôi": "Electro DMG Bonus",
-    "Sát Thương Nguyên Tố Thủy": "Hydro DMG Bonus",
-    "Sát Thương Nguyên Tố Phong": "Anemo DMG Bonus",
-    "Sát Thương Nguyên Tố Băng": "Cryo DMG Bonus",
-    "Sát Thương Nguyên Tố Thảo": "Dendro DMG Bonus",
-    "Sát Thương Nguyên Tố Nham": "Geo DMG Bonus",
-    "Geo DMG Bonus": "Geo DMG Bonus",
-    "Sát Thương Vật Lý": "Physical DMG Bonus",
-    "Tỷ Lệ Bạo Kích": "CRIT Rate",
-    "Sát Thương Bạo Kích": "CRIT DMG"
-  };
-  return map[stat] || stat;
-}
 
 export async function generateStaticParams() {
   const data = await fetchGraphQL(GET_CHARACTERS);
-  return data.characters.map((char: any) => ({
-    id: char.id,
-  }));
+  return data.characters.map((char: any) => ({ id: char.id }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -44,19 +19,61 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const data = await fetchGraphQL(GET_CHARACTER_BY_ID, { id: resolvedParams.id });
   const character = data.character;
   if (!character) return { title: 'Character Not Found' };
-  
   return {
     title: `${character.name} - TeyvatDB`,
     description: character.title,
-    openGraph: {
-      images: [character.avatarUrl],
-    }
+    openGraph: { images: [character.avatarUrl] }
   };
+}
+
+// Section Header Component
+function SectionHeader({ label, color = 'bg-yellow-500' }: { label: string; color?: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-6">
+      <span className={`w-1 h-5 rounded-full ${color}`} />
+      <span className="text-sm font-black uppercase tracking-[0.2em] text-gray-400 font-display">{label}</span>
+    </div>
+  );
+}
+
+// Stat Badge
+function StatBadge({ label, value, color }: { label: string; value: number; color: string }) {
+  return (
+    <div className="bg-[#050508]/60 border border-gray-900 rounded-xl p-4 flex flex-col items-center gap-1 shadow-sm">
+      <span className={`text-2xl font-black font-display ${color}`}>{value.toLocaleString()}</span>
+      <span className="text-gray-600 text-[9px] font-black uppercase tracking-wider">{label}</span>
+    </div>
+  );
+}
+
+// Talent Row
+function TalentRow({ talent, index }: { talent: string; index: number }) {
+  let abbr = 'NA';
+  let bgColor = 'bg-gray-950 text-gray-400 border-gray-900';
+  const lower = talent.toLowerCase();
+  if (lower.includes('skill') || lower === 'e' || lower.includes('elemental skill')) {
+    abbr = 'E'; bgColor = 'bg-emerald-500/10 text-emerald-450 border-emerald-500/20';
+  } else if (lower.includes('burst') || lower === 'q' || lower.includes('elemental burst')) {
+    abbr = 'Q'; bgColor = 'bg-purple-500/10 text-purple-450 border-purple-500/20';
+  }
+  const displayName = talent.replace('Elemental ', '');
+  return (
+    <div className="flex items-center gap-3 bg-[#0d0d12]/50 border border-gray-900 rounded-xl p-3.5 hover:border-gray-800 transition-all duration-300">
+      <span className="w-5 h-5 rounded-full bg-[#101015] border border-gray-850 flex items-center justify-center text-gray-500 text-[10px] font-extrabold shrink-0">
+        {index + 1}
+      </span>
+      <span className={`text-[10px] font-black w-7 h-6 flex items-center justify-center rounded border ${bgColor}`}>
+        {abbr}
+      </span>
+      <span className="text-gray-200 text-sm font-semibold">{displayName}</span>
+      {index === 0 && <span className="ml-auto text-[9px] text-yellow-500 font-extrabold uppercase tracking-widest bg-yellow-500/5 px-2 py-0.5 rounded border border-yellow-500/10">Priority</span>}
+    </div>
+  );
 }
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
-  
+
   const [characterData, allCharactersData] = await Promise.all([
     fetchGraphQL(GET_CHARACTER_BY_ID, { id: resolvedParams.id }),
     fetchGraphQL(GET_CHARACTERS)
@@ -64,411 +81,290 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
   const character: CharacterData = characterData.character;
   const characters: CharacterData[] = allCharactersData.characters;
-
   if (!character) notFound();
 
   const detailedTeams = detailedTeamsData[character.id] || [];
   const hasDetailedTeams = detailedTeams.length > 0;
+  const is5Star = character.rarity === 5;
+  const accentColor = is5Star ? 'from-yellow-500/20' : 'from-purple-500/20';
+  const headerAccentColor = is5Star ? 'bg-yellow-500' : 'bg-purple-500';
+
+  const firstArtifact = character.bestArtifacts?.find(
+    art => art.setName && !art.setName.includes('Thánh Di Vật') && !art.setName.includes('mix')
+  ) || character.bestArtifacts?.[0];
 
   return (
-    <main className="min-h-screen bg-[#0b0b0e] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
-      <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
-        <Link className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-fit" href="/">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+    <main className="min-h-screen bg-[#07070a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+      {/* Back Button */}
+      <div className="max-w-7xl mx-auto px-6 pt-6">
+        <Link
+          className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-200 transition-colors text-xs font-black uppercase tracking-wider group"
+          href="/"
+        >
+          <svg className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
           Back to Characters
         </Link>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-8 items-start mt-4">
-        <div className="w-full lg:w-[35%] lg:sticky lg:top-24 lg:self-start flex-shrink-0">
+      <div className="max-w-7xl mx-auto px-6 mt-6 flex flex-col lg:flex-row gap-8 items-start">
+        {/* LEFT COLUMN — Sticky sidebar */}
+        <div className="w-full lg:w-[340px] lg:sticky lg:top-20 lg:self-start flex-shrink-0">
           <CharacterSidebar character={character} />
         </div>
 
-        {/* Right Column (Scrollable) */}
-        <div className="w-full lg:w-[65%] flex flex-col gap-8 min-w-0">
-          
-          {/* Encyclopedia & Stats */}
-          <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
-            <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Encyclopedia
-            </h3>
-            
-            <div className="mb-6 pb-6 border-b border-gray-800/50">
-              <h4 className="text-white font-bold mb-3">Cốt Truyện</h4>
-              <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
-                {character.description || "Dữ liệu cốt truyện đang được cập nhật..."}
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-4">Chỉ Số Cơ Bản (Lv. 90)</h4>
-              <div className="grid grid-cols-3 gap-4">
-                <StatCard label="Base HP" value={character.baseHp || 0} colorClass="text-green-400" />
-                <StatCard label="Base ATK" value={character.baseAtk || 0} colorClass="text-red-400" />
-                <StatCard label="Base DEF" value={character.baseDef || 0} colorClass="text-blue-400" />
+        {/* RIGHT COLUMN — Main content */}
+        <div className="flex-1 min-w-0 flex flex-col gap-6">
+
+          {/* 1. OVERVIEW CARD */}
+          <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl overflow-hidden relative shadow-xl">
+            {/* Accent top bar */}
+            <div className={`h-[3px] w-full bg-gradient-to-r ${accentColor} ${is5Star ? 'to-yellow-500/0 via-yellow-500' : 'to-purple-500/0 via-purple-500'}`} />
+            <div className="p-6">
+              <SectionHeader label="Overview" color={headerAccentColor} />
+
+              {/* Lore */}
+              {character.description && (
+                <p className="text-gray-400 text-sm leading-relaxed mb-6 border-l-2 border-gray-800 pl-4 italic">
+                  {character.description}
+                </p>
+              )}
+
+              {/* Base Stats */}
+              <div>
+                <p className="text-gray-550 text-[10px] font-black uppercase tracking-widest mb-3">Base Stats (Lv. 90)</p>
+                <div className="grid grid-cols-3 gap-3">
+                  <StatBadge label="Base HP" value={character.baseHp || 0} color="text-emerald-450" />
+                  <StatBadge label="Base ATK" value={character.baseAtk || 0} color="text-red-450" />
+                  <StatBadge label="Base DEF" value={character.baseDef || 0} color="text-blue-450" />
+                </div>
               </div>
             </div>
           </section>
 
-          <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
-            <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Cấu hình DPS
-            </h3>
-            
-            <div className="mb-4">
-              <div className="w-1 h-5 bg-blue-500 rounded-full inline-block align-middle mr-2"></div>
-              <span className="text-xl font-bold text-gray-200 align-middle">Vũ khí</span>
-            </div>
-
-            <div className="flex flex-col gap-6 mt-6">
-              {character.bestWeapons.map((weapon, idx) => (
-                <WeaponCard key={idx} weapon={weapon} index={idx} />
-              ))}
-            </div>
-          </section>
-
-          <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
-            <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Recommended Artifacts
-            </h3>
-            {character.bestArtifacts.map((artifact, idx) => (
-              <ArtifactCard key={idx} artifact={artifact} />
-            ))}
-          </section>
-
-          {/* Recommended Primary Stats Section */}
-          {character.bestArtifacts && character.bestArtifacts.length > 0 && (
-            <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8">
-              <div className="mb-6">
-                <div className="w-1 h-5 bg-[#22c55e] rounded-full inline-block align-middle mr-2"></div>
-                <span className="text-xl font-bold text-gray-200 align-middle">Recommended Primary Stats</span>
-              </div>
-              
-              <div className="flex flex-col gap-4 mt-6">
-                {/* Sands */}
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2.5 bg-[#182030] border border-blue-900/30 px-4 py-2 rounded-lg text-slate-200 font-bold w-28 shrink-0 shadow-sm">
-                    <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 2h12M6 22h12M6 2l6 7 6-7M6 22l6-7 6 7M12 9v4" />
-                    </svg>
-                    <span className="text-xs tracking-wider">Sands</span>
-                  </div>
-                  <span className="text-gray-300 font-medium text-sm">
-                    {character.bestArtifacts[0].sands.map(translateStat).join(' / ')}
-                  </span>
-                </div>
-
-                {/* Goblet */}
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2.5 bg-[#182030] border border-blue-900/30 px-4 py-2 rounded-lg text-slate-200 font-bold w-28 shrink-0 shadow-sm">
-                    <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a5 5 0 00-5 5v3a5 5 0 0010 0V7a5 5 0 00-5-5zM12 15v5m-4 2h8" />
-                    </svg>
-                    <span className="text-xs tracking-wider">Goblet</span>
-                  </div>
-                  <span className="text-gray-300 font-medium text-sm">
-                    {character.bestArtifacts[0].goblet.map(translateStat).join(' / ')}
-                  </span>
-                </div>
-
-                {/* Circlet */}
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2.5 bg-[#182030] border border-blue-900/30 px-4 py-2 rounded-lg text-slate-200 font-bold w-28 shrink-0 shadow-sm">
-                    <svg className="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2 4l3 12h14l3-12-6 4-4-4-4 4-6-4zm3 12a2 2 0 002 2h10a2 2 0 002-2" />
-                    </svg>
-                    <span className="text-xs tracking-wider">Circlet</span>
-                  </div>
-                  <span className="text-gray-300 font-medium text-sm">
-                    {character.bestArtifacts[0].circlet.map(translateStat).join(' / ')}
-                  </span>
-                </div>
+          {/* 2. BEST WEAPONS */}
+          {character.bestWeapons?.length > 0 && (
+            <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+              <SectionHeader label="Best Weapons" color="bg-amber-500" />
+              <div className="flex flex-col gap-3.5">
+                {character.bestWeapons.map((weapon, idx) => (
+                  <WeaponCard key={idx} weapon={weapon} index={idx} />
+                ))}
               </div>
             </section>
           )}
 
-          {hasDetailedTeams ? (
-            /* Full-width layout for Substats & Talents Priority when detailed teams exist (Recommended Teammates is hidden/redundant) */
-            <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-8 justify-between">
-              <div className="flex-1">
-                <div className="mb-4">
-                  <div className="w-1 h-5 bg-orange-500 rounded-full inline-block align-middle mr-2"></div>
-                  <span className="text-xl font-bold text-gray-200 align-middle">Substats Priority</span>
-                </div>
-                
-                {character.bestArtifacts && character.bestArtifacts[0]?.subStatsPriority && character.bestArtifacts[0].subStatsPriority.length > 0 ? (
-                  <div className="flex flex-wrap gap-x-4 gap-y-3">
-                    {character.bestArtifacts[0].subStatsPriority.map((stat, idx) => (
-                      <div key={idx} className="flex items-center gap-1.5">
-                        <span className="w-6 h-6 rounded bg-[#1d2942]/60 border border-[#2d3f64]/40 flex items-center justify-center text-[#60a5fa] text-xs font-bold">
-                          {idx + 1}
-                        </span>
-                        <span className="bg-[#1e293b]/30 border border-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-md font-semibold">
-                          {stat}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <span className="text-sm text-gray-500">No substats recommended</span>
-                )}
-              </div>
-
-              <div className="flex-1 md:border-l md:border-gray-800/60 md:pl-8">
-                <div className="mb-4">
-                  <div className="w-1 h-5 bg-red-500 rounded-full inline-block align-middle mr-2"></div>
-                  <span className="text-xl font-bold text-gray-200 align-middle">Talents Priority</span>
-                </div>
-                
+          {/* 3. ARTIFACTS + MAIN STATS */}
+          {character.bestArtifacts?.length > 0 && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Recommended Artifacts */}
+              <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+                <SectionHeader label="Best Artifacts" color="bg-purple-500" />
                 <div className="flex flex-col gap-3.5">
-                  {character.talentPriority.map((talent, idx) => {
-                    let abbreviation = "NA";
-                    if (talent.toLowerCase().includes("skill") || talent.toLowerCase() === "e") {
-                      abbreviation = "E";
-                    } else if (talent.toLowerCase().includes("burst") || talent.toLowerCase() === "q") {
-                      abbreviation = "Q";
-                    }
-                    
-                    let displayName = talent;
-                    if (talent === "Normal Attack") displayName = "Normal Attack";
-                    else if (talent === "Skill") displayName = "Skill";
-                    else if (talent === "Burst") displayName = "Burst";
-                    else if (talent === "Elemental Skill") displayName = "Skill";
-                    else if (talent === "Elemental Burst") displayName = "Burst";
-
-                    return (
-                      <div key={idx} className="flex items-center gap-3">
-                        <span className="w-6 h-6 rounded-full bg-[#1d2942]/60 border border-[#2d3f64]/40 flex items-center justify-center text-[#60a5fa] text-xs font-bold">
-                          {idx + 1}
-                        </span>
-                        <span className="bg-[#ebd9ab]/10 border border-[#ebd9ab]/20 text-[#d9c491] text-[10px] font-extrabold w-8 h-6 flex items-center justify-center rounded-full">
-                          {abbreviation}
-                        </span>
-                        <span className="text-gray-200 text-sm font-semibold">
-                          {displayName}
-                        </span>
-                      </div>
-                    );
-                  })}
+                  {character.bestArtifacts.map((artifact, idx) => (
+                    <ArtifactCard key={idx} artifact={artifact} />
+                  ))}
                 </div>
-              </div>
-            </section>
-          ) : (
-            /* Fallback 2-column layout for characters without detailed team comps */
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Substats & Talents Priority */}
-              <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 flex flex-col gap-8">
-                <div>
-                  <div className="mb-4">
-                    <div className="w-1 h-5 bg-orange-500 rounded-full inline-block align-middle mr-2"></div>
-                    <span className="text-xl font-bold text-gray-200 align-middle">Substats Priority</span>
-                  </div>
-                  
-                  {character.bestArtifacts && character.bestArtifacts[0]?.subStatsPriority && character.bestArtifacts[0].subStatsPriority.length > 0 ? (
-                    <div className="flex flex-wrap gap-x-4 gap-y-3">
-                      {character.bestArtifacts[0].subStatsPriority.map((stat, idx) => (
-                        <div key={idx} className="flex items-center gap-1.5">
-                          <span className="w-6 h-6 rounded bg-[#1d2942]/60 border border-[#2d3f64]/40 flex items-center justify-center text-[#60a5fa] text-xs font-bold">
-                            {idx + 1}
-                          </span>
-                          <span className="bg-[#1e293b]/30 border border-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-md font-semibold">
-                            {stat}
-                          </span>
+              </section>
+
+              {/* Main Stats + Substats + Talents */}
+              <div className="flex flex-col gap-6">
+                {/* Recommended Main Stats */}
+                {firstArtifact && (
+                  <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+                    <SectionHeader label="Main Stats" color="bg-cyan-500" />
+                    <div className="flex flex-col gap-3">
+                      {[
+                        { slot: 'Sands', icon: '⏳', values: firstArtifact.sands },
+                        { slot: 'Goblet', icon: '🏆', values: firstArtifact.goblet },
+                        { slot: 'Circlet', icon: '👑', values: firstArtifact.circlet },
+                      ].map(({ slot, icon, values }) => (
+                        <div key={slot} className="flex items-center gap-4 bg-[#050508]/60 border border-gray-950 rounded-xl px-4 py-3">
+                          <span className="text-lg shrink-0 select-none">{icon}</span>
+                          <span className="text-gray-500 text-[10px] font-black uppercase tracking-wider w-16 shrink-0 font-display">{slot}</span>
+                          <span className="text-gray-200 text-sm font-semibold">{values.join(' / ')}</span>
                         </div>
                       ))}
                     </div>
-                  ) : (
-                    <span className="text-sm text-gray-500">No substats recommended</span>
-                  )}
-                </div>
+                  </section>
+                )}
 
-                <div>
-                  <div className="mb-4">
-                    <div className="w-1 h-5 bg-red-500 rounded-full inline-block align-middle mr-2"></div>
-                    <span className="text-xl font-bold text-gray-200 align-middle">Talents Priority</span>
-                  </div>
-                  
-                  <div className="flex flex-col gap-3.5">
-                    {character.talentPriority.map((talent, idx) => {
-                      let abbreviation = "NA";
-                      if (talent.toLowerCase().includes("skill") || talent.toLowerCase() === "e") {
-                        abbreviation = "E";
-                      } else if (talent.toLowerCase().includes("burst") || talent.toLowerCase() === "q") {
-                        abbreviation = "Q";
-                      }
-                      
-                      let displayName = talent;
-                      if (talent === "Normal Attack") displayName = "Normal Attack";
-                      else if (talent === "Skill") displayName = "Skill";
-                      else if (talent === "Burst") displayName = "Burst";
-                      else if (talent === "Elemental Skill") displayName = "Skill";
-                      else if (talent === "Elemental Burst") displayName = "Burst";
+                {/* Sub-Stats Priority */}
+                {firstArtifact?.subStatsPriority?.length > 0 && (
+                  <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+                    <SectionHeader label="Sub-Stats Priority" color="bg-orange-500" />
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {firstArtifact.subStatsPriority.map((stat, idx) => (
+                        <div key={idx} className="flex items-center gap-1.5">
+                          <span className={`text-[10px] font-extrabold px-3 py-2 rounded-lg border tracking-wide ${
+                            idx === 0
+                              ? 'bg-yellow-500/10 border-yellow-500/20 text-yellow-400'
+                              : 'bg-[#050508] border-gray-950 text-gray-400'
+                          }`}>
+                            {stat}
+                          </span>
+                          {idx < firstArtifact.subStatsPriority.length - 1 && (
+                            <span className="text-gray-700 text-xs">›</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
 
-                      return (
-                        <div key={idx} className="flex items-center gap-3">
-                          <span className="w-6 h-6 rounded-full bg-[#1d2942]/60 border border-[#2d3f64]/40 flex items-center justify-center text-[#60a5fa] text-xs font-bold">
-                            {idx + 1}
-                          </span>
-                          <span className="bg-[#ebd9ab]/10 border border-[#ebd9ab]/20 text-[#d9c491] text-[10px] font-extrabold w-8 h-6 flex items-center justify-center rounded-full">
-                            {abbreviation}
-                          </span>
-                          <span className="text-gray-200 text-sm font-semibold">
-                            {displayName}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </section>
-
-              {/* Recommended Teammates */}
-              <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6">
-                <h3 className="text-gray-500 text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-500"></span> Recommended Teammates
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {character.bestTeams.map((teammateId) => {
-                    const teammate = characters.find(c => c.id === teammateId);
-                    return (
-                      <Link className="group relative" href={`/characters/${teammateId}`} key={teammateId}>
-                        <div className="w-16 h-16 rounded-xl overflow-hidden border border-gray-700 group-hover:border-white transition-colors bg-[#0b0b0e]">
-                           {teammate ? (
-                              <div className="w-full h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${teammate.avatarUrl})` }} />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-[10px] text-gray-600 font-bold uppercase text-center break-all">{teammateId}</div>
-                            )}
-                        </div>
-                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-[10px] px-2 py-1 rounded whitespace-nowrap z-10 pointer-events-none">
-                          {teammate ? teammate.name : teammateId}
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </section>
+                {/* Talent Priority */}
+                {character.talentPriority?.length > 0 && (
+                  <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+                    <SectionHeader label="Talent Priority" color="bg-red-500" />
+                    <div className="flex flex-col gap-3">
+                      {character.talentPriority.map((talent, idx) => (
+                        <TalentRow key={idx} talent={talent} index={idx} />
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </div>
             </div>
           )}
 
-          {/* Conditional Detailed Meta Teams Section */}
-          {detailedTeams && detailedTeams.length > 0 && (
-            <section className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-6 md:p-8 mt-8">
-              <div className="mb-6">
-                <div className="w-1 h-5 bg-[#3b82f6] rounded-full inline-block align-middle mr-2"></div>
-                <span className="text-xl font-bold text-gray-200 align-middle">Meta Team Comps</span>
-              </div>
-              
-              <div className="grid grid-cols-1 gap-8">
-                {detailedTeams.map((team, teamIdx) => (
-                  <div key={teamIdx} className="bg-[#0b0b0e]/80 border border-gray-850 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/30 transition-all duration-300">
-                    <div>
-                      {/* Team Header */}
-                      <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-800/50">
-                        <div className="flex items-center gap-3">
-                          <span className="w-6 h-6 rounded-full bg-blue-950 text-blue-300 flex items-center justify-center text-xs font-bold border border-blue-800/30">
-                            {teamIdx + 1}
-                          </span>
-                          <h4 className="text-lg font-bold text-gray-100">{team.name}</h4>
-                        </div>
-                        <span className={`px-2.5 py-0.5 rounded text-xs font-black uppercase tracking-wider ${
-                          team.rank === 'SS' ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20' :
-                          team.rank === 'S' ? 'bg-red-500/10 text-red-400 border border-red-500/20' :
-                          'bg-blue-500/10 text-blue-400 border border-blue-500/20'
-                        }`}>
-                          {team.rank}
-                        </span>
-                      </div>
-                      
-                      {/* Description with color tags support */}
-                      <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                        {team.description}
-                      </p>
-                      
-                      {/* Character Avatars Row */}
-                      <div className="grid grid-cols-4 gap-2 mb-6 bg-[#15151a]/60 p-3 rounded-xl border border-gray-900/60">
-                        {team.members.map((m, mIdx) => {
-                          const dbId = (() => {
-                            const mapping: Record<string, string> = {
-                              'kazuha': 'kaedehara-kazuha',
-                              'ayaka': 'kamisato-ayaka',
-                              'traveler': 'traveler-dendro',
-                              'kokomi': 'sangonomiya-kokomi',
-                              'yunjin': 'yun-jin',
-                              'ayato': 'kamisato-ayato',
-                              'shinobu': 'kuki-shinobu'
-                            };
-                            return mapping[m.characterId] || m.characterId;
-                          })();
-                          const teammate = characters.find(c => c.id === dbId);
-                          return (
-                            <Link href={`/characters/${dbId}`} key={mIdx} className="group flex flex-col items-center gap-1">
-                              <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-gray-800 group-hover:border-white transition-all duration-300 bg-[#0b0b0e]">
-                                {teammate ? (
-                                  <Image src={teammate.avatarUrl} alt={teammate.name} fill className="object-cover" />
-                                ) : (
-                                  <div className="w-full h-full flex items-center justify-center text-xs text-gray-500 font-bold uppercase text-center break-all">{m.characterId}</div>
-                                )}
-                              </div>
-                              <span className="text-[10px] text-gray-400 font-bold group-hover:text-gray-300 text-center uppercase tracking-wider truncate w-full">
-                                {m.role}
-                              </span>
-                              <span className="text-xs text-gray-200 font-semibold text-center truncate w-full">
-                                {teammate ? teammate.name : m.characterId}
-                              </span>
-                            </Link>
-                          );
-                        })}
-                      </div>
+          {/* 4. FALLBACK: Stats + Talents when no artifacts */}
+          {(!character.bestArtifacts || character.bestArtifacts.length === 0) && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {character.talentPriority?.length > 0 && (
+                <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+                  <SectionHeader label="Talent Priority" color="bg-red-500" />
+                  <div className="flex flex-col gap-3">
+                    {character.talentPriority.map((talent, idx) => (
+                      <TalentRow key={idx} talent={talent} index={idx} />
+                    ))}
+                  </div>
+                </section>
+              )}
+              {character.bestTeams?.length > 0 && !hasDetailedTeams && (
+                <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+                  <SectionHeader label="Recommended Teammates" color="bg-blue-500" />
+                  <div className="flex flex-wrap gap-3 mt-1">
+                    {character.bestTeams.map((teammateId) => {
+                      const teammate = characters.find(c => c.id === teammateId);
+                      return (
+                        <Link className="group relative" href={`/characters/${teammateId}`} key={teammateId}>
+                          <div className="w-14 h-14 rounded-xl overflow-hidden border border-gray-950 group-hover:border-white/20 transition-colors bg-[#050508] p-0.5">
+                            {teammate ? (
+                              <div className="w-full h-full bg-cover bg-center bg-top rounded-lg" style={{ backgroundImage: `url(${teammate.avatarUrl})` }} />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-[8px] text-gray-650 font-black uppercase text-center">{teammateId}</div>
+                            )}
+                          </div>
+                          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/95 text-white text-[9px] font-bold px-2 py-0.5 rounded whitespace-nowrap z-10 border border-gray-800 shadow-xl">
+                            {teammate ? teammate.name : teammateId}
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </section>
+              )}
+            </div>
+          )}
 
-                      {/* Detailed members list */}
-                      <div className="flex flex-col gap-4">
-                        {team.members.map((m, mIdx) => {
-                          const dbId = (() => {
-                            const mapping: Record<string, string> = {
-                              'kazuha': 'kaedehara-kazuha',
-                              'ayaka': 'kamisato-ayaka',
-                              'traveler': 'traveler-dendro',
-                              'kokomi': 'sangonomiya-kokomi',
-                              'yunjin': 'yun-jin',
-                              'ayato': 'kamisato-ayato',
-                              'shinobu': 'kuki-shinobu'
-                            };
-                            return mapping[m.characterId] || m.characterId;
-                          })();
-                          const teammate = characters.find(c => c.id === dbId);
-                          return (
-                            <div key={mIdx} className="bg-[#15151a]/30 border border-gray-800/40 rounded-xl p-4 flex flex-col gap-2">
-                              <div className="flex items-center gap-2">
-                                <span className="text-gray-100 font-bold text-sm">{teammate ? teammate.name : m.characterId}</span>
-                                <span className="text-gray-600 text-xs">•</span>
-                                <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">{m.role}</span>
+          {/* 5. META TEAM COMPS */}
+          {hasDetailedTeams && (
+            <section className="bg-[#0d0d12]/50 border border-gray-900 rounded-3xl p-6 shadow-xl">
+              <SectionHeader label="Meta Team Comps" color="bg-blue-500" />
+
+              <div className="flex flex-col gap-6">
+                {detailedTeams.map((team, teamIdx) => (
+                  <div key={teamIdx} className="bg-[#050508]/60 border border-gray-950 rounded-2xl p-5 hover:border-blue-500/20 transition-all duration-350">
+                    {/* Team Header */}
+                    <div className="flex items-center justify-between mb-4 border-b border-gray-950 pb-3">
+                      <div className="flex items-center gap-3">
+                        <span className="w-6 h-6 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-xs font-black border border-blue-500/20 font-display">
+                          {teamIdx + 1}
+                        </span>
+                        <h4 className="font-extrabold text-white text-base font-display">{team.name}</h4>
+                      </div>
+                      <span className={`px-2.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border ${
+                        team.rank === 'SS' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' :
+                        team.rank === 'S' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+                        'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                      }`}>
+                        {team.rank} Tier
+                      </span>
+                    </div>
+
+                    <p className="text-gray-400 text-xs md:text-sm mb-5 leading-relaxed italic">{team.description}</p>
+
+                    {/* Character Avatars Row */}
+                    <div className="grid grid-cols-4 gap-3 mb-5 bg-[#07070a]/80 p-3 rounded-xl border border-gray-950">
+                      {team.members.map((m, mIdx) => {
+                        const mapping: Record<string, string> = {
+                          'kazuha': 'kaedehara-kazuha', 'ayaka': 'kamisato-ayaka',
+                          'traveler': 'traveler-dendro', 'kokomi': 'sangonomiya-kokomi',
+                          'yunjin': 'yun-jin', 'ayato': 'kamisato-ayato', 'shinobu': 'kuki-shinobu'
+                        };
+                        const dbId = mapping[m.characterId] || m.characterId;
+                        const teammate = characters.find(c => c.id === dbId);
+                        return (
+                          <Link href={`/characters/${dbId}`} key={mIdx} className="group flex flex-col items-center gap-1">
+                            <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-gray-900 group-hover:border-white/20 transition-all duration-300 bg-[#050508] p-0.5">
+                              {teammate ? (
+                                <Image src={teammate.avatarUrl} alt={teammate.name} fill className="object-cover object-top rounded-lg" />
+                              ) : (
+                                <div className="w-full h-full flex items-center justify-center text-[9px] text-gray-500 font-bold uppercase text-center break-all px-1">{m.characterId}</div>
+                              )}
+                            </div>
+                            <span className="text-[8px] text-gray-500 font-black group-hover:text-gray-300 text-center uppercase tracking-widest truncate w-full mt-1">{m.role}</span>
+                            <span className="text-[11px] text-gray-300 font-bold text-center truncate w-full">
+                              {teammate ? teammate.name : m.characterId}
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+
+                    {/* Member Details */}
+                    <div className="flex flex-col gap-3">
+                      {team.members.map((m, mIdx) => {
+                        const mapping: Record<string, string> = {
+                          'kazuha': 'kaedehara-kazuha', 'ayaka': 'kamisato-ayaka',
+                          'traveler': 'traveler-dendro', 'kokomi': 'sangonomiya-kokomi',
+                          'yunjin': 'yun-jin', 'ayato': 'kamisato-ayato', 'shinobu': 'kuki-shinobu'
+                        };
+                        const dbId = mapping[m.characterId] || m.characterId;
+                        const teammate = characters.find(c => c.id === dbId);
+                        return (
+                          <div key={mIdx} className="bg-[#0d0d12]/40 border border-gray-950 rounded-xl p-4">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-white font-extrabold text-xs font-display">{teammate ? teammate.name : m.characterId}</span>
+                              <span className="text-gray-800">·</span>
+                              <span className="text-gray-500 text-[9px] font-black uppercase tracking-wider">{m.role}</span>
+                            </div>
+                            <p className="text-gray-400 text-xs leading-relaxed mb-3.5">{m.roleDesc}</p>
+                            <div className="grid grid-cols-3 gap-2.5 text-[10px]">
+                              <div className="bg-[#050508]/60 border border-gray-950 rounded-lg p-2.5">
+                                <span className="text-gray-600 font-black uppercase text-[8px] tracking-wide block mb-1">Weapons</span>
+                                <span className="text-gray-300 font-bold">{m.weapons.join(', ')}</span>
                               </div>
-                              <p className="text-gray-300 text-sm leading-relaxed">{m.roleDesc}</p>
-                              
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2 pt-2.5 border-t border-gray-800/30 text-xs text-gray-400">
-                                <div>
-                                  <span className="text-gray-500 font-bold uppercase text-[9px] tracking-wide block mb-0.5">Weapons:</span>
-                                  <span className="text-gray-250 font-semibold">{m.weapons.join(', ')}</span>
-                                </div>
-                                <div>
-                                  <span className="text-gray-500 font-bold uppercase text-[9px] tracking-wide block mb-0.5">Artifacts:</span>
-                                  <span className="text-gray-250 font-semibold">{m.artifacts.join(', ')}</span>
-                                </div>
-                                <div>
-                                  <span className="text-gray-500 font-bold uppercase text-[9px] tracking-wide block mb-0.5">Substats:</span>
-                                  <span className="text-gray-250 font-semibold">{m.substats.join(' > ')}</span>
-                                </div>
+                              <div className="bg-[#050508]/60 border border-gray-950 rounded-lg p-2.5">
+                                <span className="text-gray-600 font-black uppercase text-[8px] tracking-wide block mb-1">Artifacts</span>
+                                <span className="text-gray-300 font-bold">{m.artifacts.join(', ')}</span>
+                              </div>
+                              <div className="bg-[#050508]/60 border border-gray-950 rounded-lg p-2.5">
+                                <span className="text-gray-600 font-black uppercase text-[8px] tracking-wide block mb-1">Sub-Stats</span>
+                                <span className="text-gray-300 font-bold">{m.substats.join(' › ')}</span>
                               </div>
                             </div>
-                          );
-                        })}
-                      </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
               </div>
             </section>
           )}
+
         </div>
       </div>
     </main>

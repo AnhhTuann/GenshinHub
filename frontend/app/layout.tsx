@@ -1,24 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 
-const inter = Inter({ subsets: ["latin", "vietnamese"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
   title: "TeyvatDB - Genshin Impact Builds & Guides",
-  description: "Cơ sở dữ liệu Genshin Impact - Tra cứu thông tin, chỉ số, thánh di vật và đội hình mạnh nhất cho các nhân vật.",
+  description: "Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.",
   keywords: "Genshin Impact, TeyvatDB, Builds, Artifacts, Weapons, Characters",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" suppressHydrationWarning>
-      <body className={`${inter.className} bg-[#111115] text-white antialiased`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <Navbar />
         <div className="min-h-screen">{children}</div>
-        <footer className="border-t border-gray-800 py-8 text-center text-gray-500 text-sm bg-[#0b0b0e]">
-          <p>© 2026 TeyvatDB.</p>
+        <footer className="border-t border-gray-900 py-8 text-center text-gray-500 text-sm bg-[#050508]">
+          <p>© 2026 TeyvatDB. All rights reserved.</p>
         </footer>
       </body>
     </html>

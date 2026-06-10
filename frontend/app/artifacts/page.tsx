@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import ArtifactsClient from './ArtifactsClient';
 
 export const metadata: Metadata = {
-  title: 'Thánh Di Vật - TeyvatDB',
-  description: 'Tra cứu toàn bộ bộ Thánh Di Vật trong Genshin Impact - hiệu ứng 2 mảnh, 4 mảnh và độ hiếm.',
+  title: 'Artifacts - TeyvatDB',
+  description: 'Browse all artifact sets in Genshin Impact - 2-piece and 4-piece effects, and rarities.',
 };
 
 export default async function ArtifactsPage() {

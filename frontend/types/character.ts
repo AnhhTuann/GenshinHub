@@ -10,7 +10,7 @@ export interface WeaponBuild {
 
 export interface ArtifactBuild {
   setName: string; pieces: number; sands: string[]; goblet: string[]; circlet: string[]; subStatsPriority: string[];
-  rarity?: number; iconUrl?: string;
+  rarity?: number; iconUrl?: string; artifactSetId?: string;
 }
 
 export interface CharacterData {

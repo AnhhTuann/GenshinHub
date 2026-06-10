@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import TeamsClient from './TeamsClient';
 
 export const metadata: Metadata = {
-  title: 'Đội Hình Meta - TeyvatDB',
-  description: 'Tra cứu đội hình tối ưu cho từng nhân vật trong Genshin Impact - đội hình SS/S/A tier, vũ khí, thánh di vật và substats.',
+  title: 'Meta Teams - TeyvatDB',
+  description: 'Explore optimal team compositions for characters in Genshin Impact - SS/S/A tier teams, weapons, artifacts, and substats.',
 };
 
 export default async function TeamsPage() {

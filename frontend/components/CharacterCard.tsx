@@ -5,38 +5,55 @@ import { CharacterData } from '@/types/character';
 export default function CharacterCard({ character }: { character: CharacterData }) {
   const is5Star = character.rarity === 5;
   
-  const themeStyle = is5Star 
-    ? 'border-yellow-600/30 from-yellow-900/10 to-yellow-800/40 group-hover:border-yellow-400/80 group-hover:shadow-[0_0_20px_rgba(250,204,21,0.25)]' 
-    : 'border-purple-600/30 from-purple-900/10 to-purple-800/40 group-hover:border-purple-400/80 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.25)]';
+  const cardBg = is5Star 
+    ? 'border-amber-500/20 from-amber-950/10 via-amber-900/10 to-amber-800/30 group-hover:border-amber-400/60 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]' 
+    : 'border-purple-500/20 from-purple-950/10 via-purple-900/10 to-purple-800/30 group-hover:border-purple-400/60 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]';
+
+  const rarityTag = is5Star
+    ? 'from-amber-400 to-yellow-600'
+    : 'from-purple-400 to-fuchsia-600';
 
   return (
     <Link className="block group" href={`/characters/${character.id}`}>
-      <div className={`relative flex flex-col justify-end h-44 rounded-xl border bg-gradient-to-b ${themeStyle} transition-all duration-300 overflow-hidden`}>
+      <div className={`relative flex flex-col justify-end h-48 rounded-2xl border bg-gradient-to-b ${cardBg} transition-all duration-300 overflow-hidden`}>
         
+        {/* Character Image */}
         <div className="absolute inset-0 flex items-center justify-center -z-10 group-hover:scale-105 transition-transform duration-500">
           <Image 
             src={character.avatarUrl || 'https://placehold.co/150x150/222/FFF?text=?'} 
             alt={character.name} 
-            width={150}
-            height={176}
-            className="object-cover w-full h-full opacity-95 mask-image-bottom"
+            fill
+            className="object-cover w-full h-full opacity-90 mask-image-bottom"
           />
         </div>
         
-        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black/90 to-transparent -z-10"></div>
+        {/* Bottom Fade */}
+        <div className="absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-black/95 via-black/40 to-transparent -z-10"></div>
 
-        <div className="absolute top-2 left-2 flex flex-col gap-1">
+        {/* Element Icon Badge (Top Left) */}
+        <div className="absolute top-2.5 left-2.5 bg-black/40 backdrop-blur-md border border-white/5 w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
            <Image 
               src={`/elements/${character.element.toLowerCase()}.png`} 
               alt={character.element} 
-              width={28}
-              height={28}
-              className="w-7 h-7 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+              width={20}
+              height={20}
+              className="w-5 h-5 object-contain drop-shadow-[0_0_4px_rgba(0,0,0,0.5)]"
             />
         </div>
 
-        <div className="w-full text-center py-2 text-sm font-bold tracking-wide text-gray-100 truncate px-2 border-t border-white/5 bg-black/40 backdrop-blur-[2px]">
-          {character.name}
+        {/* Info Area */}
+        <div className="w-full text-center pb-2.5 pt-1 flex flex-col items-center bg-black/45 backdrop-blur-[1px] border-t border-white/5 z-10">
+          {/* Star Rating */}
+          <div className="flex gap-0.5 mb-1">
+            {Array(character.rarity).fill(0).map((_, i) => (
+              <span key={i} className="text-[10px] text-yellow-400">★</span>
+            ))}
+          </div>
+          
+          {/* Name */}
+          <span className="text-xs md:text-sm font-bold tracking-wide text-gray-100 truncate px-2 max-w-full">
+            {character.name}
+          </span>
         </div>
       </div>
     </Link>

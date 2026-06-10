@@ -95,10 +95,24 @@ export const resolvers = {
             subStat: dbWeapon?.subStat || w.subStat,
           };
         }),
+        bestArtifacts: await Promise.all(data.bestArtifacts.map(async (a: any) => {
+          // Match artifact set by name to get real iconUrl + English name
+          const dbArtifact = await prisma.artifactSet.findFirst({
+            where: { name: a.setName }
+          });
+          return {
+            ...a,
+            setName: dbArtifact?.name || a.setName,
+            iconUrl: dbArtifact?.iconUrl || null,
+            rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
+            artifactSetId: dbArtifact?.id || null,
+          };
+        })),
       };
       characterCache.set(args.id, enriched);
       return enriched;
     },
+
     weapons: async () => {
       const cached = weaponsCache.get('all');
       if (cached) return cached;

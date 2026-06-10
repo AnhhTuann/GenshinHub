@@ -22,25 +22,29 @@ interface CharInfo {
 }
 
 const ROLE_COLORS: Record<string, string> = {
-  'Main DPS': 'bg-red-900/40 text-red-300 border-red-700/40',
-  'Sub DPS': 'bg-orange-900/40 text-orange-300 border-orange-700/40',
-  'Support': 'bg-blue-900/40 text-blue-300 border-blue-700/40',
-  'Healer': 'bg-green-900/40 text-green-300 border-green-700/40',
-  'Shielder': 'bg-slate-700/40 text-slate-300 border-slate-600/40',
-  'Buffer': 'bg-purple-900/40 text-purple-300 border-purple-700/40',
+  'Main DPS': 'bg-red-500/10 text-red-400 border-red-500/20',
+  'Sub DPS': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+  'Support': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  'Healer': 'bg-green-500/10 text-green-450 border-green-500/20',
+  'Shielder': 'bg-slate-700/25 text-slate-400 border-slate-700/35',
+  'Buffer': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
 };
 
 const RANK_CONFIG = {
-  SS: { label: 'SS', bg: 'bg-yellow-500/20', text: 'text-yellow-300', border: 'border-yellow-500/40' },
-  S: { label: 'S', bg: 'bg-orange-500/20', text: 'text-orange-300', border: 'border-orange-500/40' },
-  A: { label: 'A', bg: 'bg-blue-500/20', text: 'text-blue-300', border: 'border-blue-500/40' },
-  B: { label: 'B', bg: 'bg-gray-500/20', text: 'text-gray-300', border: 'border-gray-500/40' },
+  SS: { label: 'SS', bg: 'bg-yellow-500/10', text: 'text-yellow-400', border: 'border-yellow-500/20 shadow-[0_0_15px_rgba(234,179,8,0.15)]' },
+  S: { label: 'S', bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20 shadow-[0_0_15px_rgba(239,68,68,0.15)]' },
+  A: { label: 'A', bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.15)]' },
+  B: { label: 'B', bg: 'bg-gray-500/10', text: 'text-gray-400', border: 'border-gray-500/20' },
 };
 
-const ELEMENT_COLORS: Record<string, string> = {
-  Pyro: 'from-red-900/50', Hydro: 'from-blue-900/50', Cryo: 'from-cyan-900/50',
-  Electro: 'from-purple-900/50', Anemo: 'from-emerald-900/50', Geo: 'from-yellow-900/50',
-  Dendro: 'from-green-900/50', Physical: 'from-gray-900/50',
+const ELEMENT_DETAILS: Record<string, { color: string; border: string; glow: string; hoverBorder: string; bg: string }> = {
+  Pyro: { color: 'text-red-500', border: 'border-red-500/30', glow: 'shadow-[0_0_15px_rgba(239,68,68,0.15)] bg-red-950/20 text-red-400', hoverBorder: 'hover:border-red-500/40', bg: 'from-red-950/20' },
+  Hydro: { color: 'text-blue-500', border: 'border-blue-500/30', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.15)] bg-blue-950/20 text-blue-400', hoverBorder: 'hover:border-blue-500/40', bg: 'from-blue-950/20' },
+  Cryo: { color: 'text-cyan-400', border: 'border-cyan-500/30', glow: 'shadow-[0_0_15px_rgba(6,182,212,0.15)] bg-cyan-950/20 text-cyan-300', hoverBorder: 'hover:border-cyan-500/40', bg: 'from-cyan-950/20' },
+  Electro: { color: 'text-purple-500', border: 'border-purple-500/30', glow: 'shadow-[0_0_15px_rgba(168,85,247,0.15)] bg-purple-950/20 text-purple-400', hoverBorder: 'hover:border-purple-500/40', bg: 'from-purple-950/20' },
+  Anemo: { color: 'text-emerald-500', border: 'border-emerald-500/30', glow: 'shadow-[0_0_15px_rgba(16,185,129,0.15)] bg-emerald-950/20 text-emerald-400', hoverBorder: 'hover:border-emerald-500/40', bg: 'from-emerald-950/20' },
+  Geo: { color: 'text-yellow-500', border: 'border-yellow-500/30', glow: 'shadow-[0_0_15px_rgba(234,179,8,0.15)] bg-yellow-950/20 text-yellow-400', hoverBorder: 'hover:border-yellow-500/40', bg: 'from-yellow-950/20' },
+  Dendro: { color: 'text-green-500', border: 'border-green-500/30', glow: 'shadow-[0_0_15px_rgba(34,197,94,0.15)] bg-green-950/20 text-green-450', hoverBorder: 'hover:border-green-500/40', bg: 'from-green-950/20' },
 };
 
 const ELEMENTS = ['Pyro', 'Hydro', 'Cryo', 'Electro', 'Anemo', 'Geo', 'Dendro'];
@@ -89,66 +93,73 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
   }, [allTeams, search, filterElement, filterRank]);
 
   return (
-    <main className="min-h-screen bg-[#0b0b0e] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#07070a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
-        <Link className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-fit mb-6" href="/">
+        <Link className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 text-xs font-black uppercase tracking-wider w-fit mb-6" href="/">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Trang chủ
+          Home
         </Link>
-        <h1 className="text-4xl font-black text-white mb-1">👥 Đội Hình Meta</h1>
-        <p className="text-gray-400 text-sm">{allTeams.length} đội hình tối ưu cho {Object.keys(detailedTeamsData).length} nhân vật</p>
+        <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">👥 Meta Teams</h1>
+        <p className="text-gray-455 text-sm font-medium">{allTeams.length} optimal teams for {Object.keys(detailedTeamsData).length} characters</p>
       </div>
 
       {/* Filters */}
       <div className="max-w-7xl mx-auto px-6 mb-6">
-        <div className="bg-[#15151a] border border-gray-800/60 rounded-2xl p-4 flex flex-wrap gap-4 items-center">
+        <div className="bg-[#0d0d12]/75 border border-gray-900 rounded-2xl p-4 flex flex-wrap gap-4 items-center shadow-xl backdrop-blur-md">
           {/* Search */}
           <div className="relative flex-1 min-w-48">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-550" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
               type="text"
-              placeholder="Tìm nhân vật hoặc tên đội..."
+              placeholder="Search characters or team names..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-[#0b0b0e] border border-gray-700/60 rounded-xl pl-9 pr-3 py-2 text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:border-blue-500/60 transition-colors"
+              className="w-full bg-[#050508] border border-gray-950 rounded-xl pl-10 pr-3 py-2 text-xs text-gray-200 placeholder-gray-655 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all font-medium"
             />
           </div>
 
           {/* Element filter */}
-          <div className="flex flex-wrap gap-1.5">
-            {ELEMENTS.map(el => (
-              <button
-                key={el}
-                onClick={() => setFilterElement(filterElement === el ? null : el)}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
-                  filterElement === el
-                    ? 'bg-white/15 border-white/30 text-white scale-105'
-                    : 'border-gray-700/50 text-gray-400 hover:border-gray-500'
-                }`}
-              >
-                <Image src={`/elements/${el.toLowerCase()}.png`} alt={el} width={16} height={16} className="w-4 h-4" />
-                {el}
-              </button>
-            ))}
+          <div className="flex flex-wrap gap-1.5 bg-[#050508] p-1 rounded-xl border border-gray-950">
+            {ELEMENTS.map(el => {
+              const isSelected = filterElement === el;
+              const details = ELEMENT_DETAILS[el];
+              return (
+                <button
+                  key={el}
+                  onClick={() => setFilterElement(filterElement === el ? null : el)}
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold border transition-all duration-300 ${details.hoverBorder} ${
+                    isSelected
+                      ? `${details.glow} ${details.border}`
+                      : 'border-transparent text-gray-500 hover:bg-white/5'
+                  }`}
+                >
+                  <div className="relative w-4 h-4">
+                    <Image src={`/elements/${el.toLowerCase()}.png`} alt={el} fill className="object-contain" />
+                  </div>
+                  {el}
+                </button>
+              );
+            })}
           </div>
 
           {/* Rank filter */}
-          <div className="flex gap-1.5">
+          <div className="flex gap-1.5 bg-[#050508] p-1 rounded-xl border border-gray-950">
             {(['SS', 'S', 'A', 'B'] as const).map(rank => {
               const cfg = RANK_CONFIG[rank];
+              const isSelected = filterRank === rank;
               return (
                 <button
                   key={rank}
                   onClick={() => setFilterRank(filterRank === rank ? null : rank)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-black border transition-all ${
-                    filterRank === rank
-                      ? `${cfg.bg} ${cfg.text} ${cfg.border} scale-105`
-                      : 'border-gray-700/50 text-gray-500 hover:border-gray-500'
+                  className={`px-3 py-1.5 rounded-lg text-xs font-black border transition-all duration-300 ${
+                    isSelected
+                      ? `${cfg.bg} ${cfg.text} ${cfg.border} scale-102`
+                      : 'border-transparent text-gray-500 hover:text-gray-300 hover:bg-white/5'
                   }`}
                 >
                   {rank}
@@ -157,8 +168,8 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             })}
           </div>
 
-          <p className="text-gray-500 text-xs ml-auto whitespace-nowrap">
-            <span className="text-gray-300 font-bold">{filtered.length}</span> đội hình
+          <p className="text-gray-550 text-[10px] font-black uppercase tracking-wider ml-auto whitespace-nowrap leading-none select-none">
+            <span className="text-white font-extrabold">{filtered.length}</span> teams found
           </p>
         </div>
       </div>
@@ -166,62 +177,67 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
       {/* Teams List */}
       <div className="max-w-7xl mx-auto px-6">
         {filtered.length === 0 ? (
-          <div className="flex items-center justify-center h-48 text-gray-500">Không tìm thấy đội hình phù hợp</div>
+          <div className="flex flex-col items-center justify-center h-56 text-gray-500 bg-[#0d0d12]/30 rounded-2xl border border-gray-900/60 shadow-inner">
+            <span className="text-4xl mb-3">👻</span>
+            <p className="text-sm font-semibold">No meta team comps matched your filters.</p>
+          </div>
         ) : (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4.5">
             {filtered.map((team, idx) => {
               const teamKey = `${team.focusCharId}-${idx}`;
               const isExpanded = expandedTeam === teamKey;
               const rankCfg = RANK_CONFIG[team.rank];
-              const elemGrad = ELEMENT_COLORS[team.focusElement] || 'from-gray-900/50';
+              const elemDetails = ELEMENT_DETAILS[team.focusElement] || { bg: 'from-gray-900/10', color: 'text-gray-400' };
 
               return (
                 <div
                   key={teamKey}
-                  className={`bg-[#15151a] border border-gray-800/60 rounded-2xl overflow-hidden hover:border-gray-700/80 transition-all duration-200`}
+                  className={`bg-[#0d0d12]/50 border border-gray-900 rounded-2xl overflow-hidden hover:border-gray-800 transition-all duration-300 shadow-md ${
+                    isExpanded ? 'ring-1 ring-white/5 border-gray-800' : ''
+                  }`}
                 >
-                  {/* Card Header */}
+                  {/* Card Header (Clickable Accordion Trigger) */}
                   <button
                     className="w-full text-left"
                     onClick={() => setExpandedTeam(isExpanded ? null : teamKey)}
                   >
-                    <div className={`relative flex items-center gap-4 p-4 bg-gradient-to-r ${elemGrad} to-transparent`}>
+                    <div className={`relative flex items-center gap-4 p-4 bg-gradient-to-r ${elemDetails.bg} to-transparent`}>
                       {/* Focus character avatar */}
                       <Link
                         href={`/characters/${team.focusCharId}`}
                         onClick={e => e.stopPropagation()}
-                        className="relative w-14 h-14 flex-shrink-0 rounded-xl overflow-hidden border border-white/10 hover:border-white/30 transition-colors"
+                        className="relative w-14 h-14 flex-shrink-0 rounded-xl overflow-hidden border border-white/10 hover:border-white/30 transition-colors shadow-md p-0.5 bg-[#050508]"
                       >
                         {team.focusAvatarUrl && (
                           <Image
                             src={team.focusAvatarUrl}
                             alt={team.focusCharName}
                             fill
-                            className="object-cover object-top"
+                            className="object-cover object-top rounded-lg"
                           />
                         )}
                       </Link>
 
-                      {/* Title & desc */}
+                      {/* Title & description */}
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-                          <span className={`text-[10px] font-black px-2 py-0.5 rounded border ${rankCfg.bg} ${rankCfg.text} ${rankCfg.border}`}>
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          <span className={`text-[9px] font-black px-2 py-0.5 rounded border uppercase tracking-wider ${rankCfg.bg} ${rankCfg.text} ${rankCfg.border}`}>
                             {rankCfg.label}
                           </span>
-                          <h3 className="text-white font-bold text-base leading-tight">{team.name}</h3>
+                          <h3 className="text-white font-extrabold text-base leading-tight font-display uppercase tracking-tight">{team.name}</h3>
                         </div>
-                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{team.description}</p>
+                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-2 max-w-3xl">{team.description}</p>
                       </div>
 
                       {/* Member avatars preview */}
-                      <div className="hidden sm:flex items-center gap-1.5 flex-shrink-0">
+                      <div className="hidden sm:flex items-center gap-1.5 flex-shrink-0 bg-black/30 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/5">
                         {team.members.map((m, mi) => {
                           const char = charMap[m.characterId];
                           if (!char) return null;
                           return (
                             <div
                               key={mi}
-                              className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-gray-700/60"
+                              className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-800/80 shadow-md"
                               title={char.name}
                             >
                               <Image src={char.avatarUrl} alt={char.name} fill className="object-cover object-top" />
@@ -231,81 +247,87 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                       </div>
 
                       {/* Expand arrow */}
-                      <svg
-                        className={`w-4 h-4 text-gray-500 transition-transform flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <div className="w-8 h-8 rounded-lg bg-[#07070a] border border-gray-900 flex items-center justify-center text-gray-500 shrink-0">
+                        <svg
+                          className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-white' : ''}`}
+                          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                     </div>
                   </button>
 
                   {/* Expanded Members */}
                   {isExpanded && (
-                    <div className="border-t border-gray-800/60 p-4">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="border-t border-gray-950 p-4.5 bg-[#07070a]/30">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
                         {team.members.map((member, mi) => {
                           const char = charMap[member.characterId];
                           if (!char) return (
-                            <div key={mi} className="bg-[#0b0b0e]/50 rounded-xl p-3 border border-gray-800/50">
+                            <div key={mi} className="bg-[#050508] rounded-xl p-3 border border-gray-950">
                               <p className="text-gray-500 text-xs">{member.characterId}</p>
                             </div>
                           );
 
                           const roleStyle = Object.entries(ROLE_COLORS).find(([key]) =>
                             member.role.toLowerCase().includes(key.toLowerCase())
-                          )?.[1] || 'bg-gray-800/40 text-gray-400 border-gray-700/40';
+                          )?.[1] || 'bg-gray-850/45 text-gray-400 border-gray-800/50';
 
                           return (
                             <Link
                               key={mi}
                               href={`/characters/${member.characterId}`}
-                              className="group bg-[#0b0b0e]/60 border border-gray-800/50 hover:border-gray-600/70 rounded-xl p-3 transition-all hover:scale-[1.02]"
+                              className="group bg-[#050508]/70 border border-gray-955 hover:border-gray-800 rounded-2xl p-4.5 transition-all duration-300 hover:scale-[1.02] hover:bg-[#101015]/60 hover:shadow-lg flex flex-col justify-between"
                             >
-                              {/* Char header */}
-                              <div className="flex items-center gap-2.5 mb-2.5">
-                                <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-gray-700/50 flex-shrink-0">
-                                  <Image src={char.avatarUrl} alt={char.name} fill className="object-cover object-top" />
-                                  <div className="absolute bottom-0 right-0 w-3 h-3">
-                                    <Image src={`/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" />
+                              <div>
+                                {/* Char header */}
+                                <div className="flex items-center gap-3 mb-3 border-b border-gray-950 pb-2.5">
+                                  <div className="relative w-11 h-11 rounded-xl overflow-hidden border border-gray-900 flex-shrink-0 p-0.5 bg-[#07070a]">
+                                    <Image src={char.avatarUrl} alt={char.name} fill className="object-cover object-top rounded-lg" />
+                                    <div className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 bg-black/45 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/5">
+                                      <Image src={`/elements/${char.element.toLowerCase()}.png`} alt={char.element} width={10} height={10} className="object-contain" />
+                                    </div>
+                                  </div>
+                                  <div className="min-w-0">
+                                    <p className="text-white font-extrabold text-sm leading-tight truncate group-hover:text-yellow-400 transition-colors font-display">
+                                      {char.name}
+                                    </p>
+                                    <span className={`inline-block text-[8px] font-black px-1.5 py-0.5 rounded border mt-1 uppercase tracking-widest leading-none ${roleStyle}`}>
+                                      {member.role}
+                                    </span>
                                   </div>
                                 </div>
-                                <div className="min-w-0">
-                                  <p className="text-white font-bold text-sm leading-tight truncate group-hover:text-blue-300 transition-colors">
-                                    {char.name}
-                                  </p>
-                                  <span className={`inline-block text-[9px] font-bold px-1.5 py-0.5 rounded border mt-0.5 ${roleStyle}`}>
-                                    {member.role}
-                                  </span>
-                                </div>
+
+                                {/* Role description */}
+                                <p className="text-gray-405 text-xs leading-relaxed mb-4 italic opacity-95">{member.roleDesc}</p>
                               </div>
 
-                              {/* Role description */}
-                              <p className="text-gray-400 text-[10px] leading-relaxed mb-2">{member.roleDesc}</p>
+                              <div className="space-y-2 border-t border-gray-950 pt-3">
+                                {/* Weapons */}
+                                {member.weapons.length > 0 && (
+                                  <div>
+                                    <p className="text-gray-600 text-[8px] font-black uppercase tracking-widest mb-0.5 font-display">Weapons</p>
+                                    <p className="text-gray-300 text-[10px] font-semibold leading-relaxed">{member.weapons.join(', ')}</p>
+                                  </div>
+                                )}
 
-                              {/* Weapons */}
-                              {member.weapons.length > 0 && (
-                                <div className="mb-1.5">
-                                  <p className="text-gray-600 text-[9px] font-bold uppercase tracking-wider mb-0.5">Vũ khí</p>
-                                  <p className="text-gray-300 text-[10px]">{member.weapons.join(', ')}</p>
-                                </div>
-                              )}
+                                {/* Artifacts */}
+                                {member.artifacts.length > 0 && (
+                                  <div>
+                                    <p className="text-gray-600 text-[8px] font-black uppercase tracking-widest mb-0.5 font-display">Artifacts</p>
+                                    <p className="text-gray-300 text-[10px] font-semibold leading-relaxed">{member.artifacts.join(', ')}</p>
+                                  </div>
+                                )}
 
-                              {/* Artifacts */}
-                              {member.artifacts.length > 0 && (
-                                <div className="mb-1.5">
-                                  <p className="text-gray-600 text-[9px] font-bold uppercase tracking-wider mb-0.5">Thánh di vật</p>
-                                  <p className="text-gray-300 text-[10px]">{member.artifacts.join(', ')}</p>
-                                </div>
-                              )}
-
-                              {/* Substats */}
-                              {member.substats.length > 0 && (
-                                <div>
-                                  <p className="text-gray-600 text-[9px] font-bold uppercase tracking-wider mb-0.5">Substats</p>
-                                  <p className="text-gray-400 text-[10px]">{member.substats.join(' > ')}</p>
-                                </div>
-                              )}
+                                {/* Substats */}
+                                {member.substats.length > 0 && (
+                                  <div>
+                                    <p className="text-gray-600 text-[8px] font-black uppercase tracking-widest mb-0.5 font-display">Sub-Stats</p>
+                                    <p className="text-gray-405 text-[10px] font-semibold leading-relaxed">{member.substats.join(' › ')}</p>
+                                  </div>
+                                )}
+                              </div>
                             </Link>
                           );
                         })}

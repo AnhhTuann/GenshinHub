@@ -35,7 +35,7 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
   "sangonomiya kokomi": { name: "Everlasting Moonglow", icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" },
   "nilou": { name: "Key of Khaj-Nisut", icon: "/images/weapons/UI_EquipIcon_Sword_Deshret.png" },
   "neuvillette": { name: "Tome of the Eternal Flow", icon: "/images/weapons/UI_EquipIcon_Catalyst_Iudex.png" },
-  "furina": { name: "Splendor of Tranquil Waters", icon: "/images/weapons/UI_EquipIcon_Sword_Magnum.png" },
+  "furina": { name: "Splendor of Tranquil Waters", icon: "/images/weapons/UI_EquipIcon_Sword_Regalis.png" },
   "sigewinne": { name: "Silvershower Heartstring", icon: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png" },
   "venti": { 
     name: "Elegy for the End", icon: "/images/weapons/UI_EquipIcon_Bow_Widsith.png", 
@@ -76,7 +76,10 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
   "arataki itto": { name: "Redhorn Stonethresher", icon: "/images/weapons/UI_EquipIcon_Claymore_Itadorimaru.png" },
   "navia": { name: "Verdict", icon: "/images/weapons/UI_EquipIcon_Claymore_Champion.png" },
   "chiori": { name: "Uraku Misugiri", icon: "/images/weapons/UI_EquipIcon_Sword_Mitsurugi.png" },
-  "xilonen": { name: "Peak Patrol Song", icon: "/images/weapons/UI_EquipIcon_Sword_XochitlsTube.png" }
+  "xilonen": { name: "Peak Patrol Song", icon: "/images/weapons/UI_EquipIcon_Sword_XochitlsTube.png" },
+  "mavuika": { name: "A Thousand Blazing Suns", icon: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png" },
+  "durin": { name: "Athame Artis", icon: "/images/weapons/UI_EquipIcon_Sword_Motsognir.png" },
+  "nicole": { name: "Trần Quang Thất Dụ", icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" }
 };
 
 function getSignatureWeapon(characterName: string) {

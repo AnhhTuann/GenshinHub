@@ -34,11 +34,24 @@ npm run dev          # Chạy server ở http://localhost:4000
 ```
 
 ### 3. Nạp dữ liệu mẫu (Seeding)
-Để trang web có dữ liệu ban đầu, bạn cần chạy script seed:
-```bash
-cd backend
-npm run prisma:seed
-```
+Dự án hỗ trợ 2 chế độ nạp dữ liệu:
+- **Nạp toàn bộ dữ liệu (Full Seed):**
+  ```bash
+  cd backend
+  npm run prisma:seed
+  ```
+- **Nạp nhanh cho một nhân vật (Single Character Seed):**
+  Hữu ích khi bạn chỉ muốn cập nhật hoặc thêm một nhân vật cụ thể mà không muốn xoá toàn bộ cơ sở dữ liệu.
+  ```bash
+  # Trên CMD (Windows):
+  cd backend
+  set SEED_CHARACTER=traveler-pyro && npm run prisma:seed
+
+  # Trên Powershell (Windows):
+  cd backend
+  $env:SEED_CHARACTER="traveler-pyro"; npm run prisma:seed
+  ```
+  *(Thay `traveler-pyro` bằng `id` nhân vật tương ứng như `durin`, `hu-tao`, ...)*
 
 ### 4. Khởi động Frontend (Next.js UI)
 Mở một terminal khác và chạy:

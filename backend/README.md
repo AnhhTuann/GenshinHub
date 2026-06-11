@@ -21,6 +21,7 @@
 - **`prisma/`**: 
   - `schema.prisma`: Nơi định nghĩa toàn bộ cấu trúc bảng của database.
   - `seeds/`: Thư mục chứa các module cào dữ liệu được chia nhỏ (Nhân vật, Vũ khí, Thánh di vật, Nguyên liệu).
+    - `characters/`: Chứa các file cấu hình build chi tiết của từng nhân vật riêng biệt (ví dụ: `durin.ts`, `hu-tao.ts`, ...).
   - `seed.ts`: File orchestrator tự động chạy tất cả các module seeder.
 - **`src/`**: Chứa mã nguồn chính của GraphQL Server.
   - `index.ts`: Điểm khởi chạy của Apollo Server (tích hợp Express), khai báo Schema và Resolvers.
@@ -33,4 +34,6 @@
 2. **GraphQL Endpoint:** 
    Apollo Server (chạy trên nền Express) phơi bày một endpoint duy nhất tại `http://localhost:4000/graphql`.
 3. **Seed Data (Thu thập dữ liệu):** 
-   Hệ thống có các tập lệnh chạy ngoài luồng (seeder). Khi kích hoạt lệnh `npm run prisma:seed`, các file trong `prisma/seeds/` sẽ dùng `axios` kết nối API bên ngoài và chèn vào Database.
+   Hệ thống có các tập lệnh chạy ngoài luồng (seeder).
+   - **Chế độ Full Seed (`npm run prisma:seed`):** Xoá sạch database cũ, tải danh sách từ API `gi.yatta.moe` và chèn lại toàn bộ vũ khí, thánh di vật, nguyên liệu, và nhân vật.
+   - **Chế độ Single Character Seed (`SEED_CHARACTER=char_id`):** Chỉ xoá và chèn lại đúng dữ liệu của nhân vật được chỉ định. Bỏ qua việc seed vũ khí, thánh di vật, nguyên liệu để tiết kiệm thời gian và tài nguyên mạng.

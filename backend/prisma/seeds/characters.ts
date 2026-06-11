@@ -36,6 +36,7 @@ import { chevreuse } from './characters/chevreuse';
 import { columbina } from './characters/columbina';
 import { mualani } from './characters/mualani';
 import { sigewinne } from './characters/sigewinne';
+import { travelerHydro } from './characters/traveler-hydro';
 
 const metaBuilds = [
   travelerPyro,
@@ -66,7 +67,8 @@ const metaBuilds = [
   chevreuse,
   columbina,
   mualani,
-  sigewinne
+  sigewinne,
+  travelerHydro
 ];
 
 const charactersData = [

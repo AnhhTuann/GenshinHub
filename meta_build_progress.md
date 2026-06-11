@@ -147,3 +147,4 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 ---
 
 > 📌 _Danh sách này sẽ được cập nhật liên tục khi có nhân vật mới. Các nhân vật đã hoàn thiện 100% sẽ được đánh dấu tích (✅)._
+> $env:SEED_CHARACTER="columbina"; npm run seed

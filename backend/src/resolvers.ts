@@ -85,6 +85,12 @@ const mixSetsMap: { [key: string]: string[] } = {
     "Lễ Bế Mạc Của Giác Đấu Sĩ",
     "Đoàn Hát Lang Thang Đại Lục",
     "Dấu Ấn Ngăn Cách"
+  ],
+  "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp": [
+    "Diệm Liệt Ma Nữ Cháy Rực",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Đoàn Hát Lang Thang Đại Lục",
+    "Dấu Ấn Ngăn Cách"
   ]
 };
 

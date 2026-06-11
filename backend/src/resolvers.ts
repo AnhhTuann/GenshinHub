@@ -91,6 +91,11 @@ const mixSetsMap: { [key: string]: string[] } = {
     "Lễ Bế Mạc Của Giác Đấu Sĩ",
     "Đoàn Hát Lang Thang Đại Lục",
     "Dấu Ấn Ngăn Cách"
+  ],
+  "Mix 2 bộ Hiệu Quả Nạp +20%": [
+    "Dấu Ấn Ngăn Cách",
+    "Kẻ Lưu Đày",
+    "Học Sĩ"
   ]
 };
 

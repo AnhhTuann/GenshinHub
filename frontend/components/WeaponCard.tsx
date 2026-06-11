@@ -3,7 +3,7 @@ import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { WeaponBuild } from '@/types/character';
 
-const translateSubStat = (stat: string | null, locale: string) => {
+const translateSubStat = (stat: string | null | undefined, locale: string) => {
   if (!stat) return null;
   if (locale === 'vi') return stat;
   const map: Record<string, string> = {

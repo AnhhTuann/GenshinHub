@@ -29,7 +29,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Neuvillette** (`neuvillette`) — ✅ _Hoàn thiện (11 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Furina** (`furina`) — ✅ _Hoàn thiện (14 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Yelan** (`yelan`) — ✅ _Hoàn thiện (4 Vũ khí, TDV, Substats, Talents, Teams)_
-- [ ] **Columbina** (`columbina`) — ❌ _Chưa làm_
+- [x] **Columbina** (`columbina`) — ✅ _Hoàn thiện (4 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Aino** (`aino`) — ❌ _Chưa làm_
 - [ ] **Dahlia** (`dahlia`) — ❌ _Chưa làm_
 - [ ] **Mualani** (`mualani`) — ❌ _Chưa làm_

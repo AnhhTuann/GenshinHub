@@ -79,7 +79,8 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
   "xilonen": { name: "Peak Patrol Song", icon: "/images/weapons/UI_EquipIcon_Sword_XochitlsTube.png" },
   "mavuika": { name: "A Thousand Blazing Suns", icon: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png" },
   "durin": { name: "Athame Artis", icon: "/images/weapons/UI_EquipIcon_Sword_Motsognir.png" },
-  "nicole": { name: "Trần Quang Thất Dụ", icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" }
+  "nicole": { name: "Trần Quang Thất Dụ", icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" },
+  "columbina": { name: "Nocturne's Curtain Call", icon: "/images/weapons/UI_EquipIcon_Catalyst_Brisingamen.png" }
 };
 
 function getSignatureWeapon(characterName: string) {

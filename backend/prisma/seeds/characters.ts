@@ -33,6 +33,7 @@ import { arlecchino } from './characters/arlecchino';
 import { gaming } from './characters/gaming';
 import { lyney } from './characters/lyney';
 import { chevreuse } from './characters/chevreuse';
+import { columbina } from './characters/columbina';
 
 const metaBuilds = [
   travelerPyro,
@@ -60,7 +61,8 @@ const metaBuilds = [
   arlecchino,
   gaming,
   lyney,
-  chevreuse
+  chevreuse,
+  columbina
 ];
 
 const charactersData = [

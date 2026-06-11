@@ -36,7 +36,7 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
   "nilou": { name: "Key of Khaj-Nisut", icon: "/images/weapons/UI_EquipIcon_Sword_Deshret.png" },
   "neuvillette": { name: "Tome of the Eternal Flow", icon: "/images/weapons/UI_EquipIcon_Catalyst_Iudex.png" },
   "furina": { name: "Splendor of Tranquil Waters", icon: "/images/weapons/UI_EquipIcon_Sword_Regalis.png" },
-  "sigewinne": { name: "Silvershower Heartstring", icon: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png" },
+  "sigewinne": { name: "Silvershower Heartstrings", icon: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png" },
   "venti": { 
     name: "Elegy for the End", icon: "/images/weapons/UI_EquipIcon_Bow_Widsith.png", 
     name2: "Skyward Harp", icon2: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png" 
@@ -80,7 +80,8 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
   "mavuika": { name: "A Thousand Blazing Suns", icon: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png" },
   "durin": { name: "Athame Artis", icon: "/images/weapons/UI_EquipIcon_Sword_Motsognir.png" },
   "nicole": { name: "Trần Quang Thất Dụ", icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" },
-  "columbina": { name: "Nocturne's Curtain Call", icon: "/images/weapons/UI_EquipIcon_Catalyst_Brisingamen.png" }
+  "columbina": { name: "Nocturne's Curtain Call", icon: "/images/weapons/UI_EquipIcon_Catalyst_Brisingamen.png" },
+  "mualani": { name: "Surf's Up", icon: "/images/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png" }
 };
 
 function getSignatureWeapon(characterName: string) {

@@ -32,8 +32,8 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Columbina** (`columbina`) — ✅ _Hoàn thiện (4 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Aino** (`aino`) — ❌ _Chưa làm_
 - [ ] **Dahlia** (`dahlia`) — ❌ _Chưa làm_
-- [ ] **Mualani** (`mualani`) — ❌ _Chưa làm_
-- [ ] **Sigewinne** (`sigewinne`) — ❌ _Chưa làm_
+- [x] **Mualani** (`mualani`) — ✅ _Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)_
+- [x] **Sigewinne** (`sigewinne`) — ✅ _Hoàn thiện (6 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Traveler-Hydro** (`traveler`) — ❌ _Chưa làm_
 - [ ] **Nilou** (`nilou`) — ❌ _Chưa làm_
 - [ ] **Candace** (`candace`) — ❌ _Chưa làm_

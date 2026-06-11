@@ -34,6 +34,8 @@ import { gaming } from './characters/gaming';
 import { lyney } from './characters/lyney';
 import { chevreuse } from './characters/chevreuse';
 import { columbina } from './characters/columbina';
+import { mualani } from './characters/mualani';
+import { sigewinne } from './characters/sigewinne';
 
 const metaBuilds = [
   travelerPyro,
@@ -62,7 +64,9 @@ const metaBuilds = [
   gaming,
   lyney,
   chevreuse,
-  columbina
+  columbina,
+  mualani,
+  sigewinne
 ];
 
 const charactersData = [

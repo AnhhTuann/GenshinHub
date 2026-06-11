@@ -34,7 +34,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [ ] **Dahlia** (`dahlia`) — ❌ _Chưa làm_
 - [x] **Mualani** (`mualani`) — ✅ _Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Sigewinne** (`sigewinne`) — ✅ _Hoàn thiện (6 Vũ khí, TDV, Substats, Talents, Teams)_
-- [ ] **Traveler-Hydro** (`traveler`) — ❌ _Chưa làm_
+- [x] **Traveler-Hydro** (`traveler-hydro`) — ✅ _Hoàn thiện (5 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Nilou** (`nilou`) — ❌ _Chưa làm_
 - [ ] **Candace** (`candace`) — ❌ _Chưa làm_
 - [ ] **Kamisato Ayato** (`ayato`) — ❌ _Chưa làm_

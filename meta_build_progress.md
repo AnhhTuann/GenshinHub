@@ -21,7 +21,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Mavuika** (`mavuika`) — ✅ _Hoàn thiện (11 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Arlecchino** (`arlecchino`) — ✅ _Hoàn thiện (10 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Gaming** (`gaming`) — ✅ _Hoàn thiện (15 Vũ khí, TDV, Substats, Talents, Teams)_
-- [ ] **Chevreuse** (`chevreuse`) — ❌ _Chưa làm_
+- [x] **Chevreuse** (`chevreuse`) — ✅ _Hoàn thiện (6 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Lyney** (`lyney`) — ✅ _Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)_
 
 ### 💧 Thủy (Hydro)

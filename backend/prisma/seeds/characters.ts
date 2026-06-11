@@ -32,6 +32,7 @@ import { mavuika } from './characters/mavuika';
 import { arlecchino } from './characters/arlecchino';
 import { gaming } from './characters/gaming';
 import { lyney } from './characters/lyney';
+import { chevreuse } from './characters/chevreuse';
 
 const metaBuilds = [
   travelerPyro,
@@ -58,7 +59,8 @@ const metaBuilds = [
   mavuika,
   arlecchino,
   gaming,
-  lyney
+  lyney,
+  chevreuse
 ];
 
 const charactersData = [

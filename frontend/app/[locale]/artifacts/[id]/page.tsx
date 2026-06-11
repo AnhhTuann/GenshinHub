@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const set = data.artifactSet as ArtifactSet | null;
   if (!set) return { title: 'Artifact Set Not Found' };
   return {
-    title: `${set.name} - TeyvatDB`,
+    title: `${set.name} - GenshinHub`,
     description: `Artifact Set: ${set.name}. 2-Piece: ${set.piece2Desc || 'None'}. 4-Piece: ${set.piece4Desc || 'None'}`,
   };
 }

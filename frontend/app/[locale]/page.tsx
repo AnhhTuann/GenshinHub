@@ -19,7 +19,7 @@ export default async function Home() {
         <div className="mb-10 border-b border-gray-900 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <h1 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 mb-2 drop-shadow-sm font-display tracking-tight uppercase">
-              Teyvat Database
+              GenshinHub Database
             </h1>
             <p className="text-gray-400 text-sm md:text-base font-medium">
               Your ultimate companion for Genshin Impact. Discover character builds, weapons, artifacts, and team comps.

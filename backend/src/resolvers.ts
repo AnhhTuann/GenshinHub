@@ -94,6 +94,8 @@ export const resolvers = {
             iconUrl: dbWeapon?.iconUrl || w.iconUrl,
             rarity: dbWeapon?.rarity ?? w.rarity,
             subStat: dbWeapon?.subStat || w.subStat,
+            nameEn: dbWeapon?.nameEn || w.nameEn || w.nameVi,
+            nameVi: dbWeapon?.nameVi || w.nameVi,
           };
         }),
         bestArtifacts: await Promise.all(data.bestArtifacts.map(async (a: any) => {

@@ -2,6 +2,18 @@ import Image from 'next/image';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 
+const getElementColorClass = (element: string) => {
+  const el = element.toLowerCase();
+  if (el === 'pyro') return 'text-red-500';
+  if (el === 'hydro') return 'text-blue-400';
+  if (el === 'anemo') return 'text-teal-400';
+  if (el === 'electro') return 'text-purple-400';
+  if (el === 'dendro') return 'text-green-400';
+  if (el === 'cryo') return 'text-cyan-400';
+  if (el === 'geo') return 'text-amber-500';
+  return 'text-white';
+};
+
 const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: string; icon2?: string }> = {
   "hu tao": { name: "Staff of Homa", icon: "/images/weapons/UI_EquipIcon_Pole_Homa.png" },
   "diluc": { name: "Wolf's Gravestone", icon: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png" },
@@ -110,7 +122,7 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
             </div>
             <span className="text-yellow-500 font-extrabold text-[10px] uppercase tracking-widest">{character.element}</span>
           </div>
-          <h1 className="text-3xl font-black text-white leading-none font-display uppercase tracking-tight drop-shadow-md">{name}</h1>
+          <h1 className={`text-3xl font-black leading-none font-display uppercase tracking-tight drop-shadow-md ${getElementColorClass(character.element)}`}>{name}</h1>
           <p className="text-gray-300 font-bold text-sm leading-tight italic opacity-90 drop-shadow-sm">{title}</p>
           
           <div className="flex text-yellow-400 text-xs mt-2 select-none">

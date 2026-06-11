@@ -26,36 +26,47 @@ const translateType = (type: string) => {
   return map[type] || type;
 };
 
+const stripColorTags = (s: string | null) => {
+  if (!s) return s;
+  return s.replace(/<color=[^>]*>/g, '').replace(/<\/color>/g, '');
+};
+
 export async function seedWeapons(prisma: PrismaClient) {
   console.log('Bắt đầu tải danh sách Weapons...');
   try {
-    const { data: wData } = await axios.get('https://gi.yatta.moe/api/v2/vi/weapon');
-    const wItems = Object.values(wData?.data?.items || {}) as any[];
-    console.log(`Đã tìm thấy ${wItems.length} vũ khí. Bắt đầu tải chi tiết từng vũ khí...`);
+    const { data: wDataVi } = await axios.get('https://gi.yatta.moe/api/v2/vi/weapon');
+    const { data: wDataEn } = await axios.get('https://gi.yatta.moe/api/v2/en/weapon');
+    
+    const wItemsVi = Object.values(wDataVi?.data?.items || {}) as any[];
+    const wItemsEn = wDataEn?.data?.items || {};
+    
+    console.log(`Đã tìm thấy ${wItemsVi.length} vũ khí. Bắt đầu tải chi tiết từng vũ khí...`);
 
     const weaponData = [];
 
-    for (const item of wItems) {
+    for (const item of wItemsVi) {
       const id = String(item.id);
-      const name = item.name || 'Unknown';
+      const nameVi = item.name || 'Unknown';
+      const nameEn = wItemsEn[item.id]?.name || nameVi;
       const rarity = item.rank || 1;
       const type = translateType(item.type || 'Unknown');
       
       let baseAtk = 400;
       let subStat = item.specialProp !== 'NONE' ? translateProp(item.specialProp) : null;
       let subStatValue = null;
-      let passiveName = null;
-      let passiveDesc = null;
+      let passiveNameVi = null;
+      let passiveDescVi = null;
+      let passiveNameEn = null;
+      let passiveDescEn = null;
 
       try {
-        // Fetch detail
-        await new Promise(r => setTimeout(r, 100)); // Small delay to avoid rate limiting
-        const { data: wDetail } = await axios.get(`https://gi.yatta.moe/api/v2/vi/weapon/${id}`);
-        const detail = wDetail?.data;
+        await new Promise(r => setTimeout(r, 50)); // Small delay to avoid rate limiting
+        const { data: wDetailVi } = await axios.get(`https://gi.yatta.moe/api/v2/vi/weapon/${id}`);
+        const detailVi = wDetailVi?.data;
 
-        if (detail) {
+        if (detailVi) {
           // Calculate level 90 Base ATK
-          const props = detail.upgrade?.prop || [];
+          const props = detailVi.upgrade?.prop || [];
           const initAtkProp = props.find((p: any) => p.propType === 'FIGHT_PROP_BASE_ATTACK');
           const initAtk = initAtkProp?.initValue || 0;
           const curveType = initAtkProp?.type;
@@ -69,7 +80,7 @@ export async function seedWeapons(prisma: PrismaClient) {
           else if (rarity === 3) curveMult = 7.34685;
           else curveMult = 5.0;
 
-          const lastPromote = detail.upgrade?.promote?.[detail.upgrade.promote.length - 1];
+          const lastPromote = detailVi.upgrade?.promote?.[detailVi.upgrade.promote.length - 1];
           const addAtk = lastPromote?.addProps?.FIGHT_PROP_BASE_ATTACK || 0;
           baseAtk = Math.round(initAtk * curveMult + addAtk) || 400;
 
@@ -89,31 +100,45 @@ export async function seedWeapons(prisma: PrismaClient) {
             }
           }
 
-          // Passive info
-          const affixVal = detail.affix ? Object.values(detail.affix)[0] as any : null;
-          if (affixVal) {
-            passiveName = affixVal.name || null;
-            passiveDesc = affixVal.upgrade?.['0'] || null;
+          // Passive info Vi
+          const affixValVi = detailVi.affix ? Object.values(detailVi.affix)[0] as any : null;
+          if (affixValVi) {
+            passiveNameVi = affixValVi.name || null;
+            passiveDescVi = affixValVi.upgrade?.['0'] || null;
           }
         }
-        console.log(`Đã tải chi tiết thành công: ${name} (ATK: ${baseAtk}, SubStat: ${subStat} ${subStatValue || ''})`);
+
+        // Fetch English details for rarity >= 3
+        if (rarity >= 3) {
+          const { data: wDetailEn } = await axios.get(`https://gi.yatta.moe/api/v2/en/weapon/${id}`);
+          const detailEn = wDetailEn?.data;
+          if (detailEn) {
+            const affixValEn = detailEn.affix ? Object.values(detailEn.affix)[0] as any : null;
+            if (affixValEn) {
+              passiveNameEn = affixValEn.name || null;
+              passiveDescEn = stripColorTags(affixValEn.upgrade?.['0'] || null);
+            }
+          }
+        }
+
+        console.log(`Đã tải chi tiết thành công: ${nameVi} (ATK: ${baseAtk}, SubStat: ${subStat} ${subStatValue || ''})`);
       } catch (e: any) {
-        console.log(`Bỏ qua chi tiết cho ${name}: ${e.message}`);
+        console.log(`Bỏ qua chi tiết cho ${nameVi}: ${e.message}`);
       }
 
       weaponData.push({
         id,
-        nameEn: name,
-        nameVi: name,
+        nameEn,
+        nameVi,
         rarity,
         type,
         baseAtk,
         subStat,
         subStatValue,
-        passiveNameEn: passiveName,
-        passiveNameVi: passiveName,
-        passiveDescEn: passiveDesc,
-        passiveDescVi: passiveDesc,
+        passiveNameEn,
+        passiveNameVi,
+        passiveDescEn,
+        passiveDescVi,
         iconUrl: item.icon ? `/images/weapons/${item.icon}.png` : null,
       });
     }

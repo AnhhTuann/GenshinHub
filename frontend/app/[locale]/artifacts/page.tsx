@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import ArtifactsClient from './ArtifactsClient';
 
 export const metadata: Metadata = {
-  title: 'Artifacts - TeyvatDB',
+  title: 'Artifacts - GenshinHub',
   description: 'Browse all artifact sets in Genshin Impact - 2-piece and 4-piece effects, and rarities.',
 };
 

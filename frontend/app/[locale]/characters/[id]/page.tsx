@@ -3,6 +3,18 @@ import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Metadata } from 'next';
+
+const getElementColorClass = (element: string) => {
+  const el = element.toLowerCase();
+  if (el === 'pyro') return 'text-red-500';
+  if (el === 'hydro') return 'text-blue-400';
+  if (el === 'anemo') return 'text-teal-400';
+  if (el === 'electro') return 'text-purple-400';
+  if (el === 'dendro') return 'text-green-400';
+  if (el === 'cryo') return 'text-cyan-400';
+  if (el === 'geo') return 'text-amber-500';
+  return 'text-white';
+};
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import WeaponCard from '@/components/WeaponCard';
@@ -21,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const character = data.character;
   if (!character) return { title: 'Character Not Found' };
   return {
-    title: `${resolvedParams.locale === 'en' ? character.nameEn : character.nameVi} - TeyvatDB`,
+    title: `${resolvedParams.locale === 'en' ? character.nameEn : character.nameVi} - GenshinHub`,
     description: resolvedParams.locale === 'en' ? character.titleEn : character.titleVi,
     openGraph: { images: [character.avatarUrl] }
   };
@@ -322,8 +334,8 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                                 <div className="w-full h-full flex items-center justify-center text-[9px] text-gray-500 font-bold uppercase text-center break-all px-1">{m.characterId}</div>
                               )}
                             </div>
-                            <span className="text-[8px] text-gray-500 font-black group-hover:text-gray-300 text-center uppercase tracking-widest truncate w-full mt-1">{m.role}</span>
-                            <span className="text-[11px] text-gray-300 font-bold text-center truncate w-full">
+                            <span className="text-[8px] text-gray-550 font-black group-hover:text-gray-300 text-center uppercase tracking-widest truncate w-full mt-1">{m.role}</span>
+                            <span className={`text-[11px] font-bold text-center truncate w-full ${teammate ? getElementColorClass(teammate.element) : 'text-gray-300'}`}>
                               {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
                             </span>
                           </Link>
@@ -342,9 +354,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                         const dbId = mapping[m.characterId] || m.characterId;
                         const teammate = characters.find(c => c.id === dbId);
                         return (
-                          <div key={mIdx} className="bg-[#0d0d12]/40 border border-gray-950 rounded-xl p-4">
+                          <div key={mIdx} className="bg-[#0d0d12]/40 border border-gray-955 rounded-xl p-4">
                             <div className="flex items-center gap-2 mb-2">
-                              <span className="text-white font-extrabold text-xs font-display">{teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}</span>
+                              <span className={`font-extrabold text-xs font-display ${teammate ? getElementColorClass(teammate.element) : 'text-white'}`}>{teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}</span>
                               <span className="text-gray-800">·</span>
                               <span className="text-gray-500 text-[9px] font-black uppercase tracking-wider">{m.role}</span>
                             </div>

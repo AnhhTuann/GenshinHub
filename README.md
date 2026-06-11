@@ -1,6 +1,6 @@
-# TeyvatDB - Genshin Impact Wiki & Tracker 🌟
+# GenshinHub - Genshin Impact Wiki & Tracker 🌟
 
-**TeyvatDB** là một nền tảng cơ sở dữ liệu và bách khoa toàn thư toàn diện dành cho game Genshin Impact. Dự án cung cấp thông tin chi tiết về hệ thống nhân vật, vũ khí, thánh di vật, và nguyên liệu nâng cấp, đồng thời hỗ trợ tra cứu các đội hình (teams) và hướng dẫn build (artifacts & weapons) tối ưu nhất cho từng nhân vật.
+**GenshinHub** là một nền tảng cơ sở dữ liệu và bách khoa toàn thư toàn diện dành cho game Genshin Impact. Dự án cung cấp thông tin chi tiết về hệ thống nhân vật, vũ khí, thánh di vật, và nguyên liệu nâng cấp, đồng thời hỗ trợ tra cứu các đội hình (teams) và hướng dẫn build (artifacts & weapons) tối ưu nhất cho từng nhân vật.
 
 ## 🎯 Mục đích và Công dụng
 - **Tra cứu Bách Khoa Toàn Thư:** Xem chi tiết về cốt truyện, hình ảnh, thông số (level 90) và kỹ năng của mọi nhân vật trong Genshin Impact.

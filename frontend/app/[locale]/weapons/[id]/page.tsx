@@ -29,9 +29,19 @@ const STAR_COLOR: Record<number, string> = {
 };
 
 interface Weapon {
-  id: string; name: string; rarity: number; type: string;
-  baseAtk: number; subStat: string | null; subStatValue: number | null;
-  passiveName: string | null; passiveDesc: string | null; iconUrl: string | null;
+  id: string;
+  nameEn: string;
+  nameVi: string;
+  rarity: number;
+  type: string;
+  baseAtk: number;
+  subStat: string | null;
+  subStatValue: number | null;
+  passiveNameEn: string | null;
+  passiveNameVi: string | null;
+  passiveDescEn: string | null;
+  passiveDescVi: string | null;
+  iconUrl: string | null;
 }
 
 interface CharBasic {
@@ -40,22 +50,23 @@ interface CharBasic {
 
 export async function generateStaticParams() {
   const data = await fetchGraphQL(GET_WEAPONS);
-  return (data.weapons || []).map((w: Weapon) => ({ id: w.id }));
+  return (data.weapons || []).map((w: any) => ({ id: w.id }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
+  const { id, locale } = await params;
   const data = await fetchGraphQL(GET_WEAPON_BY_ID, { id });
   const weapon = data.weapon as Weapon | null;
   if (!weapon) return { title: 'Weapon Not Found' };
+  const name = locale === 'en' ? weapon.nameEn : weapon.nameVi;
   return {
-    title: `${weapon.name} - TeyvatDB`,
+    title: `${name} - GenshinHub`,
     description: `${weapon.type} | ${weapon.rarity}★ | Base ATK: ${weapon.baseAtk}`,
   };
 }
 
-export default async function WeaponDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export default async function WeaponDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+  const { id, locale } = await params;
 
   const weaponData = await fetchGraphQL(GET_WEAPON_BY_ID, { id });
   const weapon = weaponData.weapon as Weapon | null;
@@ -66,6 +77,27 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
 
   const rarity = weapon.rarity ?? 5;
   const stars = '★'.repeat(rarity);
+
+  const name = locale === 'en' ? weapon.nameEn : weapon.nameVi;
+  const passiveName = locale === 'en' ? weapon.passiveNameEn : weapon.passiveNameVi;
+  const passiveDesc = locale === 'en' ? weapon.passiveDescEn : weapon.passiveDescVi;
+
+  const translateSubStat = (stat: string | null) => {
+    if (!stat) return null;
+    if (locale === 'vi') return stat;
+    const map: Record<string, string> = {
+      'Tỷ Lệ Bạo Kích': 'CRIT Rate',
+      'Sát Thương Bạo Kích': 'CRIT DMG',
+      'Tấn Công%': 'ATK%',
+      'Phòng Ngự%': 'DEF%',
+      'HP%': 'HP%',
+      'Hiệu Quả Nạp': 'Energy Recharge',
+      'Tinh Thông Nguyên Tố': 'Elemental Mastery',
+      'Sát Thương Vật Lý%': 'Physical DMG Bonus'
+    };
+    return map[stat] || stat;
+  };
+  const subStat = translateSubStat(weapon.subStat);
 
   return (
     <main className="min-h-screen bg-[#07070a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
@@ -87,7 +119,7 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
             <div className={`w-40 h-40 flex-shrink-0 rounded-2xl bg-gradient-to-br ${RARITY_BG[rarity]} p-[1px] shadow-xl self-center`}>
               <div className="relative w-full h-full rounded-2xl bg-[#07070a]/90 flex items-center justify-center overflow-hidden p-2">
                 {weapon.iconUrl ? (
-                  <Image src={weapon.iconUrl} alt={weapon.name} fill className="object-contain p-2" />
+                  <Image src={weapon.iconUrl} alt={name} fill className="object-contain p-2" />
                 ) : (
                   <span className="text-5xl select-none">⚔️</span>
                 )}
@@ -96,25 +128,25 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
 
             {/* Weapon Info */}
             <div className="flex-1 flex flex-col justify-center">
-              <p className="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-1 font-display">{weapon.type}</p>
-              <h1 className="text-3xl md:text-4xl font-black text-white mb-2 leading-tight font-display uppercase tracking-tight">{weapon.name}</h1>
+              <p className="text-gray-550 text-[10px] font-black uppercase tracking-widest mb-1 font-display">{weapon.type}</p>
+              <h1 className="text-3xl md:text-4xl font-black text-white mb-2 leading-tight font-display uppercase tracking-tight">{name}</h1>
               <p className={`text-xl font-bold mb-5 ${STAR_COLOR[rarity]}`}>{stars}</p>
 
               {/* Stats Row */}
               <div className="flex flex-wrap gap-3">
-                <div className="bg-[#050508]/65 border border-gray-950 rounded-xl px-5 py-3 shadow-inner">
-                  <p className="text-gray-500 text-[9px] font-black uppercase tracking-widest mb-1">Base ATK</p>
+                <div className="bg-[#050508]/65 border border-gray-955 rounded-xl px-5 py-3 shadow-inner">
+                  <p className="text-gray-550 text-[9px] font-black uppercase tracking-widest mb-1">Base ATK</p>
                   <p className="text-red-405 font-black text-2xl font-display">{weapon.baseAtk}</p>
                 </div>
-                {weapon.subStat && (
-                  <div className="bg-[#050508]/65 border border-gray-950 rounded-xl px-5 py-3 shadow-inner">
-                    <p className="text-gray-500 text-[9px] font-black uppercase tracking-widest mb-1">{weapon.subStat}</p>
-                    <p className="text-blue-405 font-black text-2xl font-display">
+                {subStat && (
+                  <div className="bg-[#050508]/65 border border-gray-955 rounded-xl px-5 py-3 shadow-inner">
+                    <p className="text-gray-550 text-[9px] font-black uppercase tracking-widest mb-1">{subStat}</p>
+                    <p className="text-blue-400 font-black text-2xl font-display">
                       {weapon.subStatValue ?? '—'}
                       {weapon.subStatValue && (
-                        weapon.subStat.includes('%') || weapon.subStat.includes('Rate') ||
-                        weapon.subStat.includes('DMG') || weapon.subStat.includes('Recharge') ||
-                        weapon.subStat.includes('Mastery') || weapon.subStat.includes('Bonus') ? '%' : ''
+                        subStat.includes('%') || subStat.includes('Rate') ||
+                        subStat.includes('DMG') || subStat.includes('Recharge') ||
+                        subStat.includes('Mastery') || subStat.includes('Bonus') ? '%' : ''
                       )}
                     </p>
                   </div>
@@ -124,17 +156,17 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
           </div>
 
           {/* Passive Description */}
-          {weapon.passiveName && (
-            <div className="relative mx-8 mb-8 bg-[#050508]/65 border border-gray-950 rounded-2xl p-5 shadow-inner">
+          {passiveName && (
+            <div className="relative mx-8 mb-8 bg-[#050508]/65 border border-gray-955 rounded-2xl p-5 shadow-inner">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-yellow-500 text-sm">⚡</span>
-                <p className="text-yellow-500 font-extrabold text-sm uppercase tracking-wider font-display">{weapon.passiveName}</p>
+                <p className="text-yellow-500 font-extrabold text-sm uppercase tracking-wider font-display">{passiveName}</p>
               </div>
-              {weapon.passiveDesc && (
+              {passiveDesc && (
                 <p
                   className="text-gray-300 text-sm leading-relaxed"
                   dangerouslySetInnerHTML={{
-                    __html: weapon.passiveDesc
+                    __html: passiveDesc
                       .replace(/<color=#99FFFFFF>/g, '<span style="color:#f59e0b; font-weight:bold">')
                       .replace(/<\/color>/g, '</span>')
                   }}

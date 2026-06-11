@@ -3,6 +3,18 @@ import Image from 'next/image';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 
+const getElementColorClass = (element: string) => {
+  const el = element.toLowerCase();
+  if (el === 'pyro') return 'text-red-500';
+  if (el === 'hydro') return 'text-blue-400';
+  if (el === 'anemo') return 'text-teal-400';
+  if (el === 'electro') return 'text-purple-400';
+  if (el === 'dendro') return 'text-green-400';
+  if (el === 'cryo') return 'text-cyan-400';
+  if (el === 'geo') return 'text-amber-500';
+  return 'text-white';
+};
+
 export default function CharacterCard({ character }: { character: CharacterData }) {
   const locale = useLocale();
   const is5Star = character.rarity === 5;
@@ -54,7 +66,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           </div>
           
           {/* Name */}
-          <span className="text-xs md:text-sm font-bold tracking-wide text-gray-100 truncate px-2 max-w-full">
+          <span className={`text-xs md:text-sm font-bold tracking-wide truncate px-2 max-w-full ${getElementColorClass(character.element)}`}>
             {name}
           </span>
         </div>

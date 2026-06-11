@@ -3,6 +3,22 @@ import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { WeaponBuild } from '@/types/character';
 
+const translateSubStat = (stat: string | null, locale: string) => {
+  if (!stat) return null;
+  if (locale === 'vi') return stat;
+  const map: Record<string, string> = {
+    'Tỷ Lệ Bạo Kích': 'CRIT Rate',
+    'Sát Thương Bạo Kích': 'CRIT DMG',
+    'Tấn Công%': 'ATK%',
+    'Phòng Ngự%': 'DEF%',
+    'HP%': 'HP%',
+    'Hiệu Quả Nạp': 'Energy Recharge',
+    'Tinh Thông Nguyên Tố': 'Elemental Mastery',
+    'Sát Thương Vật Lý%': 'Physical DMG Bonus'
+  };
+  return map[stat] || stat;
+};
+
 export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; index: number }) {
   const locale = useLocale();
   const name = locale === 'en' ? weapon.nameEn : weapon.nameVi;
@@ -65,7 +81,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
             </span>
           )}
         </div>
-        <span className="text-gray-400 text-xs font-medium">{weapon.subStat || 'Unknown Stat'}</span>
+        <span className="text-gray-400 text-xs font-medium">{translateSubStat(weapon.subStat, locale) || 'Unknown Stat'}</span>
       </div>
 
       {/* Arrow indicator */}

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import TeamsClient from './TeamsClient';
 
 export const metadata: Metadata = {
-  title: 'Meta Teams - TeyvatDB',
+  title: 'Meta Teams - GenshinHub',
   description: 'Explore optimal team compositions for characters in Genshin Impact - SS/S/A tier teams, weapons, artifacts, and substats.',
 };
 

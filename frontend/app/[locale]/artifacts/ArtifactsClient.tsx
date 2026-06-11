@@ -19,7 +19,7 @@ interface ArtifactSet {
 
 function RarityStars({ rarityList }: { rarityList: number[] }) {
   const max = Math.max(...rarityList);
-  const color = max === 5 ? 'text-yellow-405' : max === 4 ? 'text-purple-405' : 'text-blue-405';
+  const color = max === 5 ? 'text-yellow-400' : max === 4 ? 'text-purple-400' : 'text-blue-400';
   return <span className={`${color} text-[10px] font-bold`}>{'★'.repeat(max)}</span>;
 }
 
@@ -105,7 +105,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
                         : 'text-gray-500 hover:text-white hover:bg-white/5 border-transparent'
                     }`}
                   >
-                    <span className={r === 5 ? 'text-yellow-400' : r === 4 ? 'text-purple-400' : 'text-blue-405'}>
+                    <span className={r === 5 ? 'text-yellow-400' : r === 4 ? 'text-purple-400' : 'text-blue-400'}>
                       {'★'.repeat(r)}
                     </span>
                   </button>

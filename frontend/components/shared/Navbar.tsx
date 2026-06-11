@@ -30,9 +30,18 @@ export default function Navbar() {
           href="/"
           onClick={handleLogoClick}
         >
-          <span className="text-2xl group-hover:rotate-12 transition-transform duration-300">🌟</span>
+          <svg className="w-7 h-7 drop-shadow-[0_0_8px_rgba(56,189,248,0.4)] group-hover:scale-110 group-hover:rotate-90 transition-all duration-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#50e4ff" />
+                <stop offset="50%" stopColor="#c084fc" />
+                <stop offset="100%" stopColor="#ffb03a" />
+              </linearGradient>
+            </defs>
+            <path d="M50 0 C50 35, 65 50, 100 50 C65 50, 50 65, 50 100 C50 65, 35 50, 0 50 C35 50, 50 35, 50 0 Z" fill="url(#logo-grad)" />
+          </svg>
           <span className="text-xl font-black text-white tracking-wider font-display">
-            TEYVAT<span className="text-yellow-500 font-extrabold">DB</span>
+            GENSHIN<span className="text-yellow-500 font-extrabold">HUB</span>
           </span>
         </Link>
         

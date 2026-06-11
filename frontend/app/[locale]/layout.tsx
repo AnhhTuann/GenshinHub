@@ -16,9 +16,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "TeyvatDB - Genshin Impact Builds & Guides",
+  title: "GenshinHub - Genshin Impact Builds & Guides",
   description: "Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.",
-  keywords: "Genshin Impact, TeyvatDB, Builds, Artifacts, Weapons, Characters",
+  keywords: "Genshin Impact, GenshinHub, Builds, Artifacts, Weapons, Characters",
 };
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
@@ -32,7 +32,7 @@ export default async function RootLayout({ children, params }: { children: React
           <Navbar />
           <div className="min-h-screen">{children}</div>
           <footer className="border-t border-gray-900 py-8 text-center text-gray-500 text-sm bg-[#050508]">
-            <p>© 2026 TeyvatDB. All rights reserved.</p>
+            <p>© 2026 GenshinHub. All rights reserved.</p>
           </footer>
         </NextIntlClientProvider>
       </body>

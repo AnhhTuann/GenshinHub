@@ -293,7 +293,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                                     </div>
                                   </div>
                                   <div className="min-w-0">
-                                    <p className="text-white font-extrabold text-sm leading-tight truncate group-hover:text-yellow-400 transition-colors font-display">
+                                    <p className={`font-extrabold text-sm leading-tight truncate font-display ${ELEMENT_DETAILS[char.element]?.color || 'text-white'}`}>
                                       {locale === 'en' ? char.nameEn : char.nameVi}
                                     </p>
                                     <span className={`inline-block text-[8px] font-black px-1.5 py-0.5 rounded border mt-1 uppercase tracking-widest leading-none ${roleStyle}`}>

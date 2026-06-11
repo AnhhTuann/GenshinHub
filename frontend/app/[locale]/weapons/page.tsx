@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import WeaponsClient from './WeaponsClient';
 
 export const metadata: Metadata = {
-  title: 'Weapons - TeyvatDB',
+  title: 'Weapons - GenshinHub',
   description: 'Explore all weapons in Genshin Impact - ATK, substats, passives, and more.',
 };
 

@@ -4,16 +4,24 @@ import axios from 'axios';
 export async function seedMaterials(prisma: PrismaClient) {
   console.log('Bắt đầu tải danh sách Material...');
   try {
-    const { data: mData } = await axios.get('https://gi.yatta.moe/api/v2/vi/material');
-    const mItems = Object.values(mData?.data?.items || {});
+    const { data: mDataVi } = await axios.get('https://gi.yatta.moe/api/v2/vi/material');
+    const { data: mDataEn } = await axios.get('https://gi.yatta.moe/api/v2/en/material');
     
-    const materialData = mItems.map((item: any) => ({
-      id: String(item.id),
-      nameVi: item.name || 'Unknown', nameEn: item.name || 'Unknown',
-      type: item.type || 'Unknown',
-      rarity: item.rank || 1,
-      iconUrl: item.icon ? `https://enka.network/ui/${item.icon}.png` : null,
-    }));
+    const mItemsVi = Object.values(mDataVi?.data?.items || {});
+    const mItemsEn = mDataEn?.data?.items || {};
+    
+    const materialData = mItemsVi.map((item: any) => {
+      const id = String(item.id);
+      const itemEn = mItemsEn[item.id] || {};
+      return {
+        id,
+        nameVi: item.name || 'Unknown',
+        nameEn: itemEn.name || item.name || 'Unknown',
+        type: item.type || 'Unknown',
+        rarity: item.rank || 1,
+        iconUrl: item.icon ? `https://enka.network/ui/${item.icon}.png` : null,
+      };
+    });
 
     await prisma.material.deleteMany({});
     await prisma.material.createMany({ data: materialData });
@@ -22,3 +30,4 @@ export async function seedMaterials(prisma: PrismaClient) {
     console.log('Lỗi seed Material:', e.message);
   }
 }
+

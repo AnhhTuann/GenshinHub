@@ -28,6 +28,7 @@ import { yoimiya } from './characters/yoimiya';
 import { thoma } from './characters/thoma';
 import { dehya } from './characters/dehya';
 import { nicole } from './characters/nicole';
+import { mavuika } from './characters/mavuika';
 
 const metaBuilds = [
   travelerPyro,
@@ -50,7 +51,8 @@ const metaBuilds = [
   yoimiya,
   thoma,
   dehya,
-  nicole
+  nicole,
+  mavuika
 ];
 
 const charactersData = [

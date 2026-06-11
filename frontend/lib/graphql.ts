@@ -16,7 +16,7 @@ export async function fetchGraphQL(query: string, variables = {}) {
 }
 
 export const GET_CHARACTERS = `query GetCharacters { characters { id nameEn nameVi element rarity avatarUrl weapon } }`;
-export const GET_CHARACTER_BY_ID = `query GetCharacterById($id: String!) { character(id: $id) { id nameEn nameVi titleEn titleVi rarity element weapon region birthday avatarUrl splashArtUrl descriptionEn descriptionVi baseHp baseAtk baseDef fandomUrl talentPriority bestTeams bestWeapons { id nameEn nameVi rank isF2P iconUrl subStat passiveDescEn passiveDescVi refinement rarity } bestArtifacts { setNameEn setNameVi pieces sands goblet circlet subStatsPriority rarity iconUrl artifactSetId } } }`;
+export const GET_CHARACTER_BY_ID = `query GetCharacterById($id: String!) { character(id: $id) { id nameEn nameVi titleEn titleVi rarity element weapon region birthday avatarUrl splashArtUrl descriptionEn descriptionVi baseHp baseAtk baseDef fandomUrl talentPriority bestTeams bestWeapons { id nameEn nameVi rank isF2P iconUrl subStat passiveDescEn passiveDescVi refinement rarity } bestArtifacts { setNameEn setNameVi pieces sands goblet circlet subStatsPriority rarity iconUrl artifactSetId mixSets { nameEn nameVi iconUrl artifactSetId } } } }`;
 export const GET_SHOWCASE = `query GetShowcase($uid: String!) { showcase(uid: $uid) { uid nickname level avatarUrl characters } }`;
 export const GET_WEAPONS = `query GetWeapons { weapons { id nameEn nameVi rarity type baseAtk subStat subStatValue passiveNameEn passiveNameVi passiveDescEn passiveDescVi iconUrl } }`;
 export const GET_WEAPON_BY_ID = `query GetWeapon($id: String!) { weapon(id: $id) { id nameEn nameVi rarity type baseAtk subStat subStatValue passiveNameEn passiveNameVi passiveDescEn passiveDescVi iconUrl } }`;

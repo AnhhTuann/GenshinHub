@@ -11,6 +11,7 @@ export interface WeaponBuild {
 export interface ArtifactBuild {
   setNameEn: string; setNameVi: string; pieces: number; sands: string[]; goblet: string[]; circlet: string[]; subStatsPriority: string[];
   rarity?: number; iconUrl?: string; artifactSetId?: string;
+  mixSets?: { nameEn: string; nameVi: string; iconUrl?: string; artifactSetId?: string; }[];
 }
 
 export interface CharacterData {

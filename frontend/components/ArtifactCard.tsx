@@ -72,10 +72,67 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
     </div>
   );
 
+  const isMix = artifact.mixSets && artifact.mixSets.length > 0;
+
   return (
     <div className={`border rounded-2xl p-5 mb-4 transition-all duration-300 hover:border-white/10 hover:bg-[#151520]/50 hover:shadow-lg ${cardBg} group`}>
-      {/* Header — clickable if we have artifactSetId */}
-      {artifact.artifactSetId ? (
+      {/* Header */}
+      {isMix ? (
+        <div className="flex gap-4 border-b border-gray-900 pb-4 mb-4">
+          {/* Left Part: Choose 2 badge */}
+          <div className="flex items-center justify-center px-3 py-2 bg-[#050508]/80 border border-gray-850 rounded-xl select-none shrink-0 self-stretch min-w-[70px]">
+            <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest text-center leading-normal">
+              {locale === 'en' ? 'Choose 2' : 'Lựa chọn 2'}
+            </span>
+          </div>
+
+          {/* Right Part: List of sets */}
+          <div className="flex-1 flex flex-col gap-2">
+            {artifact.mixSets!.map((set, idx) => {
+              const sName = locale === 'en' ? set.nameEn : set.nameVi;
+              const itemContent = (
+                <div className="flex items-center gap-3 bg-[#050508]/40 border border-gray-905 rounded-xl px-3 py-1.5 hover:border-gray-700 hover:bg-[#050508]/80 transition-all duration-200">
+                  {/* Set Icon */}
+                  <div className={`relative w-8 h-8 shrink-0 rounded-lg overflow-hidden ${imgBg} p-[1px]`}>
+                    <div className="relative w-full h-full rounded-lg bg-[#07070a]/90 flex items-center justify-center p-0.5">
+                      {set.iconUrl ? (
+                        <Image
+                          src={set.iconUrl}
+                          alt={sName}
+                          width={28}
+                          height={28}
+                          className="object-contain"
+                        />
+                      ) : (
+                        <span className="text-sm">💎</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Set Name */}
+                  <span className="text-xs font-bold text-gray-200 truncate flex-1">
+                    {sName}
+                  </span>
+
+                  {/* 2-Piece Badge */}
+                  <span className="text-[9px] font-black px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/25 shrink-0">
+                    2
+                  </span>
+                </div>
+              );
+
+              if (set.artifactSetId) {
+                return (
+                  <Link key={idx} href={`/artifacts/${set.artifactSetId}`} className="block">
+                    {itemContent}
+                  </Link>
+                );
+              }
+              return <div key={idx}>{itemContent}</div>;
+            })}
+          </div>
+        </div>
+      ) : artifact.artifactSetId ? (
         <Link href={`/artifacts/${artifact.artifactSetId}`} className="block">
           {headerContent}
         </Link>

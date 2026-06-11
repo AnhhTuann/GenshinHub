@@ -5,6 +5,89 @@ import { LRUCache } from 'lru-cache';
 // Forced restart to flush caches after db seed - final v22
 const prisma = new PrismaClient();
 
+const mixSetsMap: { [key: string]: string[] } = {
+  "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP": [
+    "Diệm Liệt Ma Nữ Cháy Rực",
+    "Đoàn Hát Lang Thang Đại Lục",
+    "Thiên Nham Vững Chắc"
+  ],
+  "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn": [
+    "Như Sấm Thịnh Nộ",
+    "Nghi Thức Tông Thất Cổ",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Dấu Ấn Ngăn Cách"
+  ],
+  "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc": [
+    "Vầng Sáng Vourukasha",
+    "Thiên Nham Vững Chắc"
+  ],
+  "Mix 2 bộ Thủy / HP / Thợ Săn": [
+    "Trái Tim Trầm Luân",
+    "Thiên Nham Vững Chắc",
+    "Thợ Săn Marechaussee"
+  ],
+  "Mix 2 bộ Thủy / Đoàn Kịch / HP / Dấu Ấn": [
+    "Trái Tim Trầm Luân",
+    "Đoàn Kịch Hoàng Kim",
+    "Thiên Nham Vững Chắc",
+    "Dấu Ấn Ngăn Cách"
+  ],
+  "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu": [
+    "Lửa Trắng Xám",
+    "Kỵ Sĩ Đạo Nhuốm Máu"
+  ],
+  "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ": [
+    "Dấu Ấn Ngăn Cách",
+    "Physical DMG +25% set"
+  ],
+  "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp": [
+    "Lửa Trắng Xám",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Nghi Thức Tông Thất Cổ",
+    "Thiên Nham Vững Chắc"
+  ],
+  "Mix 2 bộ Dấu Ấn / HP / Thủy / Tông Thất": [
+    "Dấu Ấn Ngăn Cách",
+    "Thiên Nham Vững Chắc",
+    "Trái Tim Trầm Luân",
+    "Nghi Thức Tông Thất Cổ"
+  ],
+  "Mix 2 bộ Tinh Thông & 2 bộ Ký Ức Rừng Sâu": [
+    "Đoàn Hát Lang Thang Đại Lục",
+    "Ký Ức Rừng Sâu"
+  ],
+  "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn": [
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Diệm Liệt Ma Nữ Cháy Rực",
+    "Thợ Săn Marechaussee"
+  ],
+  "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công": [
+    "Diệm Liệt Ma Nữ Cháy Rực",
+    "Đoàn Hát Lang Thang Đại Lục",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ"
+  ],
+  "Mix 2 bộ Tinh Thông / Dấu Ấn": [
+    "Đoàn Hát Lang Thang Đại Lục",
+    "Dấu Ấn Ngăn Cách"
+  ],
+  "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công": [
+    "Diệm Liệt Ma Nữ Cháy Rực",
+    "Nghi Thức Tông Thất Cổ",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ"
+  ],
+  "Mix 2 bộ Tấn Công / Hiệu Quả Nạp": [
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Dấu Ấn Ngăn Cách"
+  ],
+  "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn": [
+    "Diệm Liệt Ma Nữ Cháy Rực",
+    "Nghi Thức Tông Thất Cổ",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Đoàn Hát Lang Thang Đại Lục",
+    "Dấu Ấn Ngăn Cách"
+  ]
+};
+
 const charactersCache = new LRUCache<string, any>({ max: 10, ttl: 1000 * 60 * 60 });
 const characterCache = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 60 });
 const weaponsCache = new LRUCache<string, any>({ max: 10, ttl: 1000 * 60 * 60 });
@@ -103,6 +186,31 @@ export const resolvers = {
           const dbArtifact = await prisma.artifactSet.findFirst({
             where: { nameVi: a.setNameVi }
           });
+          
+          let mixSets: any[] = [];
+          const matchedComponents = mixSetsMap[a.setNameVi];
+          if (matchedComponents) {
+            mixSets = await Promise.all(matchedComponents.map(async (cName: string) => {
+              if (cName === "Physical DMG +25% set") {
+                return {
+                  nameEn: "Physical DMG +25% set",
+                  nameVi: "Bộ Sát Thương Vật Lý +25%",
+                  iconUrl: "/images/artifacts/UI_RelicIcon_15008_4.png",
+                  artifactSetId: "15008",
+                };
+              }
+              const compDb = await prisma.artifactSet.findFirst({
+                where: { nameVi: cName }
+              });
+              return {
+                nameEn: compDb?.nameEn || cName,
+                nameVi: compDb?.nameVi || cName,
+                iconUrl: compDb?.iconUrl || null,
+                artifactSetId: compDb?.id || "",
+              };
+            }));
+          }
+
           return {
             ...a,
             setNameEn: dbArtifact?.nameEn || a.setNameEn,
@@ -110,6 +218,7 @@ export const resolvers = {
             iconUrl: dbArtifact?.iconUrl || null,
             rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
             artifactSetId: dbArtifact?.id || null,
+            mixSets,
           };
         })),
       };

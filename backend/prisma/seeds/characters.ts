@@ -30,6 +30,7 @@ import { dehya } from './characters/dehya';
 import { nicole } from './characters/nicole';
 import { mavuika } from './characters/mavuika';
 import { arlecchino } from './characters/arlecchino';
+import { gaming } from './characters/gaming';
 
 const metaBuilds = [
   travelerPyro,
@@ -54,7 +55,8 @@ const metaBuilds = [
   dehya,
   nicole,
   mavuika,
-  arlecchino
+  arlecchino,
+  gaming
 ];
 
 const charactersData = [

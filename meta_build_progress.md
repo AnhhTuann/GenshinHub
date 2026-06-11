@@ -20,7 +20,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Traveler-Pyro** (`traveler-pyro`) — ✅ _Hoàn thiện (5 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Mavuika** (`mavuika`) — ✅ _Hoàn thiện (11 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Arlecchino** (`arlecchino`) — ✅ _Hoàn thiện (10 Vũ khí, TDV, Substats, Talents, Teams)_
-- [ ] **Gaming** (`gaming`) — ❌ _Chưa làm_
+- [x] **Gaming** (`gaming`) — ✅ _Hoàn thiện (15 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Chevreuse** (`chevreuse`) — ❌ _Chưa làm_
 - [ ] **Lyney** (`lyney`) — ❌ _Chưa làm_
 

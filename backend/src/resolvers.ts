@@ -191,7 +191,7 @@ export const resolvers = {
             nameEn: dbWeapon?.nameEn || w.nameEn || w.nameVi,
             nameVi: dbWeapon?.nameVi || w.nameVi,
           };
-        }),
+        }).sort((a: any, b: any) => a.rank - b.rank),
         bestArtifacts: await Promise.all(data.bestArtifacts.map(async (a: any) => {
           // Match artifact set by name to get real iconUrl + English name
           const dbArtifact = await prisma.artifactSet.findFirst({

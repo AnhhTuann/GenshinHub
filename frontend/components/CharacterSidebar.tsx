@@ -73,6 +73,47 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
   "mavuika":         { name: "A Thousand Blazing Suns",          icon: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png" },
   "columbina":       { name: "Nocturne's Curtain Call",          icon: "/images/weapons/UI_EquipIcon_Catalyst_Brisingamen.png" },
   "mualani":         { name: "Surf's Up",                        icon: "/images/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png" },
+  // 4-star characters
+  "fischl":          { name: "Mitternachts Waltz",               icon: "/images/weapons/UI_EquipIcon_Bow_Fallen.png" },
+  "ningguang":       { name: "Solar Pearl",                      icon: "/images/weapons/UI_EquipIcon_Catalyst_Resentment.png", name2: "Memory of Dust", icon2: "/images/weapons/UI_EquipIcon_Catalyst_Kunwu.png" },
+  "beidou":          { name: "Blackcliff Slasher",               icon: "/images/weapons/UI_EquipIcon_Claymore_Blackrock.png" },
+  "chongyun":        { name: "Lithic Blade",                     icon: "/images/weapons/UI_EquipIcon_Claymore_Lapis.png" },
+  "xingqiu":         { name: "Sacrificial Sword",                icon: "/images/weapons/UI_EquipIcon_Sword_Fossil.png" },
+  "xiangling":       { name: "Dragon's Bane",                    icon: "/images/weapons/UI_EquipIcon_Pole_Stardust.png" },
+  "bennett":         { name: "Traveler's Handy Sword",           icon: "/images/weapons/UI_EquipIcon_Sword_Traveler.png" },
+  "razor":           { name: "Wolf's Gravestone",                icon: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png" },
+  "barbara":         { name: "Magic Guide",                      icon: "/images/weapons/UI_EquipIcon_Catalyst_Intro.png" },
+  "amber":           { name: "Hunter's Bow",                     icon: "/images/weapons/UI_EquipIcon_Bow_Hunters.png" },
+  "kaeya":           { name: "Cool Steel",                       icon: "/images/weapons/UI_EquipIcon_Sword_Steel.png" },
+  "lisa":            { name: "Magic Guide",                      icon: "/images/weapons/UI_EquipIcon_Catalyst_Intro.png" },
+  "noelle":          { name: "Whiteblind",                       icon: "/images/weapons/UI_EquipIcon_Claymore_Exotic.png" },
+  "diona":           { name: "The Stringless",                   icon: "/images/weapons/UI_EquipIcon_Bow_Troupe.png" },
+  "xinyan":          { name: "Whiteblind",                       icon: "/images/weapons/UI_EquipIcon_Claymore_Exotic.png" },
+  "rosaria":         { name: "Dragonspine Spear",                icon: "/images/weapons/UI_EquipIcon_Pole_Everfrost.png" },
+  "yanfei":          { name: "Dodoco Tales",                     icon: "/images/weapons/UI_EquipIcon_Catalyst_Ludiharpastum.png" },
+  "sayu":            { name: "Katsuragikiri Nagamasa",           icon: "/images/weapons/UI_EquipIcon_Claymore_Bakufu.png" },
+  "kujou sara":      { name: "Mouun's Moon",                     icon: "/images/weapons/UI_EquipIcon_Bow_Bakufu.png" },
+  "thoma":           { name: "Kitain Cross Spear",               icon: "/images/weapons/UI_EquipIcon_Pole_Bakufu.png" },
+  "gorou":           { name: "Favonius Warbow",                  icon: "/images/weapons/UI_EquipIcon_Bow_Zephyrus.png" },
+  "yun jin":         { name: "Dragon's Bane",                    icon: "/images/weapons/UI_EquipIcon_Pole_Stardust.png" },
+  "kuki shinobu":    { name: "Iron Sting",                       icon: "/images/weapons/UI_EquipIcon_Sword_Exotic.png" },
+  "shikanoin heizou":{ name: "Kagotsurube Isshin",               icon: "/images/weapons/UI_EquipIcon_Sword_Youtou.png" },
+  "collei":          { name: "King's Squire",                    icon: "/images/weapons/UI_EquipIcon_Bow_Arakalari.png" },
+  "dori":            { name: "Forest Regalia",                   icon: "/images/weapons/UI_EquipIcon_Claymore_Arakalari.png" },
+  "candace":         { name: "Staff of the Scarlet Sands",       icon: "/images/weapons/UI_EquipIcon_Pole_Deshret.png" },
+  "layla":           { name: "Key of Khaj-Nisut",                icon: "/images/weapons/UI_EquipIcon_Sword_Deshret.png" },
+  "faruzan":         { name: "Favonius Warbow",                  icon: "/images/weapons/UI_EquipIcon_Bow_Zephyrus.png" },
+  "yaoyao":          { name: "Black Tassel",                     icon: "/images/weapons/UI_EquipIcon_Pole_Noire.png" },
+  "mika":            { name: "Favonius Lance",                   icon: "/images/weapons/UI_EquipIcon_Pole_Zephyrus.png" },
+  "kaveh":           { name: "Mailed Flower",                    icon: "/images/weapons/UI_EquipIcon_Claymore_FleurFair.png" },
+  "kirara":          { name: "Sapwood Blade",                    icon: "/images/weapons/UI_EquipIcon_Sword_Arakalari.png" },
+  "lynette":         { name: "Fleuve Cendre Ferryman",           icon: "/images/weapons/UI_EquipIcon_Sword_Machination.png" },
+  "freminet":        { name: "The Bell",                         icon: "/images/weapons/UI_EquipIcon_Claymore_Troupe.png" },
+  "charlotte":       { name: "Oathsworn Eye",                    icon: "/images/weapons/UI_EquipIcon_Catalyst_Jyanome.png" },
+  "chevreuse":       { name: "Rightful Reward",                  icon: "/images/weapons/UI_EquipIcon_Pole_Mechanic.png" },
+  "gaming":          { name: "Ultimate Overlord's Mega Magic Sword", icon: "/images/weapons/UI_EquipIcon_Claymore_Ruler.png" },
+  "sethos":          { name: "Cloudforged",                      icon: "/images/weapons/UI_EquipIcon_Bow_Bulpud.png" },
+  "kachina":         { name: "Footprint of the Rainbow",         icon: "/images/weapons/UI_EquipIcon_Pole_Umpakati.png" }
 };
 
 function getSignatureWeapon(nameEn: string) {
@@ -86,15 +127,15 @@ function getSignatureWeapon(nameEn: string) {
 
 function WeaponBadge({ name, icon, label }: { name: string; icon: string; label: string }) {
   return (
-    <div className="flex items-center gap-3 bg-[#06060a]/70 border border-white/[0.06] p-2.5 rounded-xl hover:border-amber-500/20 transition-all duration-300 group/w">
-      <div className="w-10 h-10 shrink-0 bg-gradient-to-br from-[#ffe082] via-[#ffb300] to-[#e65100] p-[1px] rounded-lg shadow-[0_2px_12px_rgba(230,81,0,0.2)] overflow-hidden">
-        <div className="w-full h-full bg-[#0d0d14]/90 rounded-lg p-0.5">
-          <Image src={icon} alt={name} width={36} height={36} className="w-full h-full object-contain" />
-        </div>
+    <div className="flex flex-col items-center gap-3 w-full group/w text-center mt-2">
+      <div className="relative w-24 h-24 shrink-0 shadow-[0_10px_30px_rgba(0,0,0,0.5)] rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/10 group-hover/w:ring-amber-500/50">
+        {/* Soft glow behind the image */}
+        <div className="absolute inset-0 bg-amber-500/20 blur-xl opacity-0 group-hover/w:opacity-100 transition-opacity duration-500" />
+        <Image src={icon} alt={name} fill className="object-cover" />
       </div>
-      <div className="flex flex-col min-w-0">
-        <span className="text-white/85 font-bold text-sm leading-tight truncate">{name}</span>
-        <span className="text-amber-400/60 text-[9px] font-black uppercase tracking-widest mt-0.5">{label}</span>
+      <div className="flex flex-col w-full">
+        <span className="text-white font-bold text-[14px] leading-snug break-words drop-shadow-md">{name}</span>
+        <span className="text-amber-400/80 text-[10px] font-black uppercase tracking-[0.2em] mt-1.5">{label}</span>
       </div>
     </div>
   );
@@ -141,7 +182,7 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
       </div>
 
       {/* ── Signature Weapon ── */}
-      {is5Star && sig && (
+      {sig && (
         <div className="bg-[#0d0d14]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/[0.05] rounded-full blur-3xl pointer-events-none" />
           <span className="text-amber-400/70 text-[9px] font-black uppercase tracking-[0.2em] mb-2.5 block">Signature Weapon</span>

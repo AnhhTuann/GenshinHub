@@ -1,3 +1,4 @@
+// Nodemon trigger
 import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
 import { LRUCache } from 'lru-cache';
@@ -44,10 +45,10 @@ function getAllMixComponentNames(): string[] {
   return Array.from(names);
 }
 
-// LRU Caches
-const charactersCache = new LRUCache<string, any>({ max: 5, ttl: 1000 * 60 * 60 });
-const characterCache  = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 60 });
-const weaponsCache    = new LRUCache<string, any>({ max: 5, ttl: 1000 * 60 * 60 });
+// LRU Caches (Reduced TTL to 5 minutes to prevent stale data issues during updates)
+const charactersCache = new LRUCache<string, any>({ max: 5, ttl: 1000 * 60 * 5 });
+const characterCache  = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 5 });
+const weaponsCache    = new LRUCache<string, any>({ max: 5, ttl: 1000 * 60 * 5 });
 const showcaseCache   = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 5 });
 
 // Pre-warm artifact set lookup cache (all sets + mix components in 1 query)

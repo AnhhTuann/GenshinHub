@@ -159,7 +159,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
         {/* Splash art background */}
         {character.splashArtUrl && (
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+            className="absolute inset-0 bg-cover bg-[center_15%] bg-no-repeat"
             style={{ backgroundImage: `url(${character.splashArtUrl})`, filter: 'brightness(0.5) saturate(1.1)' }}
           />
         )}

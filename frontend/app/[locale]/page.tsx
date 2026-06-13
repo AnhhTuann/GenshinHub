@@ -4,6 +4,8 @@ import { CharacterData } from '@/types/character';
 import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 
+export const revalidate = 300;
+
 export default async function Home() {
   const t = await getTranslations('Common');
   const data = await fetchGraphQL(GET_CHARACTERS);

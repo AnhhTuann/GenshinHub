@@ -6,6 +6,7 @@
     "loading": "Loading...",
     "error": "Error",
     "back": "Back",
+    "tierlist": "Tier List",
     "characters": "Characters",
     "weapons": "Weapons",
     "artifacts": "Artifacts",
@@ -13,6 +14,18 @@
     "language": "Language",
     "english": "English",
     "vietnamese": "Vietnamese"
+  },
+  "TierList": {
+    "title": "TIER LIST",
+    "description": "Rankings of all characters and weapons in the current meta.",
+    "characterTab": "Characters",
+    "weaponTab": "Weapons",
+    "tierSS": "Overpowered",
+    "tierS": "Excellent",
+    "tierA": "Good",
+    "tierB": "Average",
+    "tierC": "Below Average",
+    "unranked": "Unranked"
   },
   "Character": {
     "rarity": "Rarity",

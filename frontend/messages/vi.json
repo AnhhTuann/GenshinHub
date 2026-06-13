@@ -6,6 +6,7 @@
     "loading": "Đang tải...",
     "error": "Lỗi",
     "back": "Quay lại",
+    "tierlist": "Bảng Xếp Hạng",
     "characters": "Nhân Vật",
     "weapons": "Vũ Khí",
     "artifacts": "Thánh Di Vật",
@@ -13,6 +14,18 @@
     "language": "Ngôn ngữ",
     "english": "Tiếng Anh",
     "vietnamese": "Tiếng Việt"
+  },
+  "TierList": {
+    "title": "BẢNG XẾP HẠNG",
+    "description": "Bảng xếp hạng sức mạnh các nhân vật và vũ khí trong meta hiện tại.",
+    "characterTab": "Nhân Vật",
+    "weaponTab": "Vũ Khí",
+    "tierSS": "Siêu Việt",
+    "tierS": "Xuất Sắc",
+    "tierA": "Tốt",
+    "tierB": "Trung Bình",
+    "tierC": "Dưới Trung Bình",
+    "unranked": "Chưa Xếp Hạng"
   },
   "Character": {
     "rarity": "Độ hiếm",

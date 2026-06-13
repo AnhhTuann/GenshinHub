@@ -106,9 +106,7 @@ async function run() {
               success++;
               resolve();
             });
-          });
-
-          req.on('error', (err) => {
+          }).on('error', (err: Error) => {
             fs.unlink(item.dest, () => {});
             reject(err);
           });

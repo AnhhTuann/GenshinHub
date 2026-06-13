@@ -32,7 +32,9 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const el      = character.element;
   const glow    = ELEMENT_GLOW[el] ?? 'group-hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] group-hover:border-white/20';
   const textCol = ELEMENT_TEXT[el] ?? 'text-white';
-  const baseBorder = is5Star ? 'border-amber-500/20' : 'border-purple-500/15';
+  // Card base style based on rarity
+  const baseBorder = is5Star ? 'border-amber-500/30' : 'border-purple-500/30';
+  const bgGradient = is5Star ? 'from-[#ffb300]/10 to-transparent' : 'from-[#ab47bc]/10 to-transparent';
 
   return (
     <Link
@@ -43,10 +45,10 @@ export default function CharacterCard({ character }: { character: CharacterData 
         whileHover={{ y: -4, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        className={`relative flex flex-col justify-end h-40 sm:h-48 md:h-52 rounded-2xl border ${baseBorder} ${glow} transition-all duration-300 overflow-hidden cursor-pointer bg-[#0d0d14]`}
+        className={`relative flex flex-col justify-end h-44 sm:h-52 md:h-56 rounded-2xl border ${baseBorder} ${glow} transition-all duration-300 overflow-hidden cursor-pointer bg-gradient-to-t ${bgGradient} bg-[#0d0d14]`}
       >
-        {/* ── Avatar image — NO negative z-index ── */}
-        <div className="absolute inset-0 group-hover:scale-[1.12] transition-transform duration-500 ease-out">
+        {/* ── Avatar image ── */}
+        <div className="absolute inset-0 group-hover:scale-[1.1] transition-transform duration-500 ease-out">
           <Image
             src={character.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'}
             alt={name}
@@ -57,34 +59,32 @@ export default function CharacterCard({ character }: { character: CharacterData 
           />
         </div>
 
-        {/* ── Gradient overlay (DOM order = above image) ── */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+        {/* ── Gradient overlay for readability ── */}
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-        {/* ── Rarity badge top-right ── */}
-        <div className={`absolute top-0 right-0 z-10 px-1.5 py-0.5 text-[8px] font-black tracking-widest rounded-bl-xl ${
-          is5Star
-            ? 'bg-amber-500/25 text-amber-300 border-l border-b border-amber-500/25'
-            : 'bg-purple-500/20 text-purple-300 border-l border-b border-purple-500/20'
-        }`}>
-          {is5Star ? '5★' : '4★'}
-        </div>
-
-        {/* ── Element badge top-left ── */}
-        <div className="absolute top-1.5 left-1.5 z-10 w-6 h-6 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 flex items-center justify-center shadow-md">
+        {/* ── Element badge top-left (BIGGER & CLEANER) ── */}
+        <div className="absolute top-2 left-2 z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           <Image
             src={`/elements/${el.toLowerCase()}.png`}
             alt={el}
-            width={14}
-            height={14}
-            className="w-3.5 h-3.5 object-contain"
+            width={32}
+            height={32}
+            className="w-7 h-7 sm:w-8 sm:h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
           />
         </div>
 
-        {/* ── Name bar ── */}
-        <div className="relative z-10 flex flex-col items-center pb-2 pt-1 bg-black/60 backdrop-blur-[3px] border-t border-white/[0.06]">
-          <span className={`text-[10px] sm:text-[11px] font-extrabold tracking-wide truncate px-1.5 max-w-full font-display ${textCol}`}>
+        {/* ── Info Container (Name + Stars) ── */}
+        <div className="relative z-10 flex flex-col items-center pb-3 pt-4">
+          <span className={`text-[12px] sm:text-[14px] font-extrabold tracking-wide truncate px-2 w-full text-center font-display drop-shadow-md ${textCol}`}>
             {name}
           </span>
+          <div className="flex gap-[1px] mt-1 drop-shadow-md">
+            {Array.from({ length: character.rarity }).map((_, i) => (
+              <svg key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
         </div>
       </motion.div>
     </Link>

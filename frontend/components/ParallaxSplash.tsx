@@ -9,11 +9,21 @@ export default function ParallaxSplash({ imageUrl }: { imageUrl: string }) {
   return (
     <motion.div
       style={{ y, opacity }}
-      className="absolute inset-0 w-full h-[120%]"
+      className="absolute inset-0 w-full h-[120%] overflow-hidden"
     >
+      {/* Blurred background to fill the wide screen */}
       <div
-        className="w-full h-full bg-cover bg-[center_15%] bg-no-repeat"
-        style={{ backgroundImage: `url(${imageUrl})`, filter: 'brightness(0.5) saturate(1.1)' }}
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url(${imageUrl})`, 
+          filter: 'blur(20px) brightness(0.4) saturate(1.2)',
+          transform: 'scale(1.1)' // Prevent blurred edges from bleeding
+        }}
+      />
+      {/* Full character image in the center */}
+      <div
+        className="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${imageUrl})` }}
       />
     </motion.div>
   );

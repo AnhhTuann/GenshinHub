@@ -12,6 +12,7 @@ import ScrollEntrance from '@/components/ScrollEntrance';
 import ParallaxSplash from '@/components/ParallaxSplash';
 import AdminEditableSplash from '@/components/AdminEditableSplash';
 import AdminEditableBuild from '@/components/AdminEditableBuild';
+import WishIntro from '@/components/WishIntro';
 import { detailedTeamsData } from '@/data/teams';
 
 const EL_COLOR: Record<string, string> = {
@@ -146,6 +147,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
   return (
     <main className="min-h-screen bg-[#06060a] text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden">
+      {/* ── CINEMATIC BANNER PULL INTRO ── */}
+      {character.splashArtUrl && <WishIntro imageUrl={character.splashArtUrl} element={character.element} />}
+
       {/* ── Ambient element glow ── */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div

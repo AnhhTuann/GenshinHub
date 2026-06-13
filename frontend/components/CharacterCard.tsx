@@ -1,72 +1,85 @@
+"use client";
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 
-const getElementColorClass = (element: string) => {
-  const el = element.toLowerCase();
-  if (el === 'pyro') return 'text-red-500';
-  if (el === 'hydro') return 'text-blue-400';
-  if (el === 'anemo') return 'text-teal-400';
-  if (el === 'electro') return 'text-purple-400';
-  if (el === 'dendro') return 'text-green-400';
-  if (el === 'cryo') return 'text-cyan-400';
-  if (el === 'geo') return 'text-amber-500';
-  return 'text-white';
+const ELEMENT_GLOW: Record<string, string> = {
+  Pyro:    'group-hover:shadow-[0_0_24px_rgba(255,107,74,0.40)] group-hover:border-[#ff6b4a]/35',
+  Hydro:   'group-hover:shadow-[0_0_24px_rgba(79,195,247,0.40)]  group-hover:border-[#4fc3f7]/35',
+  Cryo:    'group-hover:shadow-[0_0_24px_rgba(128,222,234,0.40)] group-hover:border-[#80deea]/35',
+  Electro: 'group-hover:shadow-[0_0_24px_rgba(206,147,216,0.40)] group-hover:border-[#ce93d8]/35',
+  Anemo:   'group-hover:shadow-[0_0_24px_rgba(77,182,172,0.40)]  group-hover:border-[#4db6ac]/35',
+  Geo:     'group-hover:shadow-[0_0_24px_rgba(255,213,79,0.40)]  group-hover:border-[#ffd54f]/35',
+  Dendro:  'group-hover:shadow-[0_0_24px_rgba(174,213,129,0.40)] group-hover:border-[#aed581]/35',
+};
+
+const ELEMENT_TEXT: Record<string, string> = {
+  Pyro:    'text-[#ff6b4a]',
+  Hydro:   'text-[#4fc3f7]',
+  Cryo:    'text-[#80deea]',
+  Electro: 'text-[#ce93d8]',
+  Anemo:   'text-[#4db6ac]',
+  Geo:     'text-[#ffd54f]',
+  Dendro:  'text-[#aed581]',
 };
 
 export default function CharacterCard({ character }: { character: CharacterData }) {
-  const locale = useLocale();
+  const locale  = useLocale();
   const is5Star = character.rarity === 5;
-  const name = locale === 'en' ? character.nameEn : character.nameVi;
-  
-  const cardBg = is5Star 
-    ? 'border-amber-500/20 from-amber-950/10 via-amber-900/10 to-amber-800/30 group-hover:border-amber-400/60 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.2)]' 
-    : 'border-purple-500/20 from-purple-950/10 via-purple-900/10 to-purple-800/30 group-hover:border-purple-400/60 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]';
+  const name    = locale === 'en' ? character.nameEn : character.nameVi;
+  const el      = character.element;
+  const glow    = ELEMENT_GLOW[el] ?? 'group-hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] group-hover:border-white/20';
+  const textCol = ELEMENT_TEXT[el] ?? 'text-white';
 
-  const rarityTag = is5Star
-    ? 'from-amber-400 to-yellow-600'
-    : 'from-purple-400 to-fuchsia-600';
+  const baseBorder = is5Star ? 'border-amber-500/15' : 'border-purple-500/10';
+  const bgGrad     = is5Star
+    ? 'from-[#1a1100] via-[#150e00] to-[#0d0900]'
+    : 'from-[#130a1f] via-[#0e0717] to-[#08050f]';
 
   return (
-    <Link className="block group" href={`/characters/${character.id}`}>
-      <div className={`relative flex flex-col justify-end h-48 rounded-2xl border bg-gradient-to-b ${cardBg} transition-all duration-300 overflow-hidden`}>
-        
-        {/* Character Image */}
-        <div className="absolute inset-0 flex items-center justify-center -z-10 group-hover:scale-105 transition-transform duration-500">
-          <Image 
-            src={character.avatarUrl || 'https://placehold.co/150x150/222/FFF?text=?'} 
-            alt={name} 
+    <Link className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/50 rounded-2xl" href={`/characters/${character.id}`}>
+      <div
+        className={`relative flex flex-col justify-end h-40 sm:h-48 md:h-52 rounded-2xl border bg-gradient-to-b ${bgGrad} ${baseBorder} ${glow} transition-all duration-300 overflow-hidden cursor-pointer`}
+      >
+        {/* Rarity ribbon top-right */}
+        <div className={`absolute top-0 right-0 px-1.5 py-0.5 text-[8px] font-black tracking-widest rounded-bl-xl ${
+          is5Star
+            ? 'bg-amber-500/20 text-amber-300 border-l border-b border-amber-500/20'
+            : 'bg-purple-500/20 text-purple-300 border-l border-b border-purple-500/20'
+        }`}>
+          {is5Star ? '5★' : '4★'}
+        </div>
+
+        {/* Avatar image */}
+        <div className="absolute inset-0 -z-10 group-hover:scale-[1.07] transition-transform duration-500 ease-out">
+          <Image
+            src={character.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'}
+            alt={name}
             fill
-            className="object-cover w-full h-full opacity-90 mask-image-bottom"
+            sizes="(max-width: 640px) 33vw, (max-width: 1024px) 16vw, 160px"
+            className="object-cover object-top"
+            priority={false}
           />
         </div>
-        
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-black/95 via-black/40 to-transparent -z-10"></div>
 
-        {/* Element Icon Badge (Top Left) */}
-        <div className="absolute top-2.5 left-2.5 bg-black/40 backdrop-blur-md border border-white/5 w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
-           <Image 
-              src={`/elements/${character.element.toLowerCase()}.png`} 
-              alt={character.element} 
-              width={20}
-              height={20}
-              className="w-5 h-5 object-contain drop-shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-            />
+        {/* Bottom gradient fade */}
+        <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/40 to-transparent -z-10" />
+
+        {/* Element badge top-left */}
+        <div className="absolute top-1.5 left-1.5 w-6 h-6 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center shadow-md">
+          <Image
+            src={`/elements/${el.toLowerCase()}.png`}
+            alt={el}
+            width={14}
+            height={14}
+            className="w-3.5 h-3.5 object-contain"
+          />
         </div>
 
-        {/* Info Area */}
-        <div className="w-full text-center pb-2.5 pt-1 flex flex-col items-center bg-black/45 backdrop-blur-[1px] border-t border-white/5 z-10">
-          {/* Star Rating */}
-          <div className="flex gap-0.5 mb-1">
-            {Array(character.rarity).fill(0).map((_, i) => (
-              <span key={i} className="text-[10px] text-yellow-400">★</span>
-            ))}
-          </div>
-          
-          {/* Name */}
-          <span className={`text-xs md:text-sm font-bold tracking-wide truncate px-2 max-w-full ${getElementColorClass(character.element)}`}>
+        {/* Name bar */}
+        <div className="relative z-10 flex flex-col items-center pb-2 pt-1 bg-black/55 backdrop-blur-[2px] border-t border-white/[0.05]">
+          <span className={`text-[10px] sm:text-[11px] font-extrabold tracking-wide truncate px-1.5 max-w-full font-display ${textCol}`}>
             {name}
           </span>
         </div>

@@ -7,21 +7,21 @@ import { useLocale, useTranslations } from 'next-intl';
 import { CHARACTER_MAP } from '@/lib/characterMap';
 
 export default function ShowcasePage() {
-  const [uid, setUid] = useState('');
+  const [uid,      setUid]      = useState('');
   const [showcase, setShowcase] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [loading,  setLoading]  = useState(false);
+  const [error,    setError]    = useState('');
   const locale = useLocale();
-  const t = useTranslations('Showcase');
+  const t      = useTranslations('Showcase');
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!uid) return;
+    if (!uid.trim()) return;
     setLoading(true);
     setError('');
     setShowcase(null);
     try {
-      const data = await fetchGraphQL(GET_SHOWCASE, { uid });
+      const data = await fetchGraphQL(GET_SHOWCASE, { uid: uid.trim() });
       if (data.showcase) {
         setShowcase(data.showcase);
       } else {
@@ -33,50 +33,67 @@ export default function ShowcasePage() {
     setLoading(false);
   };
 
-  return (
-    <div className="min-h-screen bg-[#07070a] text-zinc-100 py-12 px-4 md:px-8 font-sans">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+  const EL_TEXT: Record<string, string> = {
+    Pyro:    'text-[#ff6b4a]',
+    Hydro:   'text-[#4fc3f7]',
+    Cryo:    'text-[#80deea]',
+    Electro: 'text-[#ce93d8]',
+    Anemo:   'text-[#4db6ac]',
+    Geo:     'text-[#ffd54f]',
+    Dendro:  'text-[#aed581]',
+  };
 
-      <div className="max-w-5xl mx-auto">
-        {/* Breadcrumb Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+  return (
+    <div className="min-h-screen bg-[#06060a] text-white font-sans">
+      {/* Ambient glows */}
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-5%] left-[25%] w-[500px] h-[500px] bg-amber-500/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[15%]  w-[400px] h-[400px] bg-purple-500/[0.03] rounded-full blur-[100px]" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 mb-10">
           <div>
-            <h1 className="text-4xl md:text-5xl font-display font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-yellow-500 mb-3">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-5 h-[2px] bg-yellow-400 rounded-full" />
+              <span className="text-yellow-400/60 text-[10px] font-black uppercase tracking-[0.25em]">Enka.Network</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-black font-display tracking-tighter text-gradient-gold mb-2">
               {t('title')}
             </h1>
-            <p className="text-sm md:text-base text-zinc-400 max-w-2xl font-light">
-              {t('description')}
-            </p>
+            <p className="text-white/35 text-sm max-w-lg leading-relaxed">{t('description')}</p>
           </div>
-          <Link 
-            href="/" 
-            className="px-5 py-2.5 bg-zinc-900/40 hover:bg-zinc-800/40 border border-white/5 hover:border-amber-500/30 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-zinc-300 hover:text-white"
+          <Link
+            href="/"
+            className="shrink-0 flex items-center gap-2 px-4 py-2.5 bg-white/[0.03] border border-white/[0.06] hover:border-white/10 rounded-xl text-sm font-semibold text-white/40 hover:text-white/70 transition-all duration-200"
           >
-            ← {t('backToHome')}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            {t('backToHome')}
           </Link>
         </div>
 
-        {/* Search Form */}
-        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 mb-12">
-          <input 
-            type="text" 
+        {/* Search form */}
+        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 mb-8">
+          <input
+            type="text"
             value={uid}
             onChange={(e) => setUid(e.target.value)}
             placeholder={t('placeholder')}
-            className="flex-1 bg-[#0f0f15]/80 text-white px-5 py-4 rounded-xl border border-white/5 focus:border-amber-500/50 outline-none text-lg transition duration-300 placeholder:text-zinc-600 backdrop-blur-md"
+            className="flex-1 bg-[#0d0d14]/70 text-white/90 px-5 py-4 rounded-xl border border-white/[0.06] focus:border-yellow-400/30 focus:ring-1 focus:ring-yellow-400/10 outline-none text-sm transition-all placeholder:text-white/20 backdrop-blur-md"
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={loading}
-            className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-bold rounded-xl hover:brightness-110 active:brightness-95 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 font-display text-sm tracking-wider uppercase"
+            className="btn-primary px-8 py-4 text-sm flex items-center justify-center gap-2 rounded-xl shrink-0"
           >
             {loading ? (
               <>
-                <svg className="animate-spin h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
                 {t('searching')}
               </>
@@ -84,137 +101,110 @@ export default function ShowcasePage() {
           </button>
         </form>
 
-        {/* Error message */}
+        {/* Error */}
         {error && (
-          <div className="p-5 mb-10 bg-red-500/5 border border-red-500/20 rounded-2xl text-red-400 font-medium flex items-center gap-3 backdrop-blur-md animate-fade-in">
-            <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex items-center gap-3 p-4 mb-6 bg-red-500/[0.06] border border-red-500/20 rounded-xl text-red-400 text-sm font-medium animate-fade-in">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
-            <span>{error}</span>
+            {error}
           </div>
         )}
 
-        {/* Showcase Results */}
+        {/* Results */}
         {showcase && (
-          <div className="backdrop-blur-md bg-white/[0.02] border border-white/[0.05] rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
-            {/* Glowing inner orbs */}
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-            
-            {/* Player Info Banner */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 relative z-10 mb-10 pb-8 border-b border-white/5">
+          <div className="bg-[#0d0d14]/60 border border-white/[0.06] rounded-2xl overflow-hidden animate-scale-in backdrop-blur-md shadow-2xl">
+            {/* Player banner */}
+            <div className="flex flex-col sm:flex-row items-center gap-5 p-6 border-b border-white/[0.05]">
               {showcase.avatarUrl ? (
-                <div className="relative w-24 h-24 rounded-full border-2 border-amber-500/30 overflow-hidden bg-[#0d0d12] shadow-lg flex-shrink-0">
-                  <Image 
-                    src={showcase.avatarUrl} 
-                    alt="Player Avatar" 
-                    fill 
-                    className="object-cover scale-105"
-                    sizes="96px"
-                  />
+                <div className="relative w-20 h-20 rounded-full border-2 border-amber-400/20 overflow-hidden bg-[#0d0d14] shrink-0 shadow-lg">
+                  <Image src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="80px" />
                 </div>
               ) : (
-                <div className="w-24 h-24 rounded-full bg-zinc-900 border-2 border-white/5 shadow-lg flex-shrink-0 flex items-center justify-center">
-                  <span className="text-zinc-500 text-xs">No Avatar</span>
+                <div className="w-20 h-20 rounded-full bg-[#0d0d14] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
+                  No Avatar
                 </div>
               )}
-              
               <div className="text-center sm:text-left">
-                <h2 className="text-3xl font-display font-black tracking-tight text-white mb-2">{showcase.nickname}</h2>
-                <div className="flex flex-wrap justify-center sm:justify-start gap-2.5 items-center">
-                  <span className="text-xs font-semibold text-zinc-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+                <h2 className="text-2xl font-black font-display text-white mb-2">{showcase.nickname}</h2>
+                <div className="flex flex-wrap justify-center sm:justify-start gap-2">
+                  <span className="text-xs font-bold text-white/40 bg-white/[0.05] border border-white/[0.06] px-3 py-1 rounded-full">
                     AR {showcase.level}
                   </span>
-                  <span className="text-xs font-semibold text-zinc-500 bg-black/40 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold text-white/25 bg-black/30 px-3 py-1 rounded-full">
                     UID: {showcase.uid}
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Showcase Characters */}
-            <div className="relative z-10">
-              <h3 className="text-xs font-bold font-display uppercase tracking-[0.25em] mb-6 text-zinc-400/80 flex items-center gap-2">
-                {t('showcaseCharacters')}
-                <span className="text-[10px] bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full font-mono font-normal text-zinc-300">
+            {/* Characters */}
+            <div className="p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-white/30 text-[10px] font-black uppercase tracking-[0.2em]">{t('showcaseCharacters')}</span>
+                <span className="text-[9px] bg-white/[0.05] border border-white/[0.06] px-2 py-0.5 rounded-full font-mono text-white/40">
                   {showcase.characters.length}
                 </span>
-              </h3>
-              
+              </div>
+
               {showcase.characters.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                   {showcase.characters.map((charId: string) => {
                     const mapped = CHARACTER_MAP[charId];
                     if (mapped) {
-                      const is5Star = mapped.rarity === 5;
-                      const cardBg = is5Star 
-                        ? 'border-amber-500/20 from-amber-950/10 via-amber-900/10 to-amber-800/30 hover:border-amber-400/60 hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]' 
-                        : 'border-purple-500/20 from-purple-950/10 via-purple-900/10 to-purple-800/30 hover:border-purple-400/60 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]';
-                      const avatarUrl = `/images/avatars/${mapped.id}.png`;
-
+                      const is5 = mapped.rarity === 5;
                       return (
-                        <Link 
-                          key={charId} 
+                        <Link
+                          key={charId}
                           href={`/characters/${mapped.id}`}
-                          className={`relative flex flex-col justify-end h-44 rounded-2xl border bg-gradient-to-b ${cardBg} transition-all duration-300 overflow-hidden group`}
+                          className={`relative flex flex-col justify-end h-44 rounded-2xl border overflow-hidden group transition-all duration-300 ${
+                            is5
+                              ? 'border-amber-500/20 hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.12)]'
+                              : 'border-purple-500/15 hover:border-purple-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.10)]'
+                          } bg-gradient-to-b ${is5 ? 'from-[#1a1100] to-[#0d0900]' : 'from-[#110a1e] to-[#08050f]'}`}
                         >
-                          {/* Character Image */}
-                          <div className="absolute inset-0 flex items-center justify-center -z-10 group-hover:scale-105 transition-transform duration-500">
-                            <Image 
-                              src={avatarUrl} 
-                              alt={mapped.name} 
+                          {/* Avatar */}
+                          <div className="absolute inset-0 -z-10 group-hover:scale-[1.06] transition-transform duration-500">
+                            <Image
+                              src={`/images/avatars/UI_AvatarIcon_${mapped.icon}.png`}
+                              alt={mapped.name}
                               fill
-                              sizes="(max-width: 768px) 100px, 150px"
-                              className="object-cover w-full h-full opacity-90 mask-image-bottom"
+                              sizes="150px"
+                              className="object-cover object-top opacity-90"
                             />
                           </div>
-                          
-                          {/* Bottom Fade */}
-                          <div className="absolute bottom-0 w-full h-2/3 bg-gradient-to-t from-black/95 via-black/40 to-transparent -z-10"></div>
+                          <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/50 to-transparent -z-10" />
 
-                          {/* Element Icon Badge (Top Left) */}
-                          <div className="absolute top-2 left-2 bg-black/40 backdrop-blur-md border border-white/5 w-6 h-6 rounded-full flex items-center justify-center shadow-lg">
-                            <Image 
-                              src={`/elements/${mapped.element.toLowerCase()}.png`} 
-                              alt={mapped.element} 
-                              width={16}
-                              height={16}
-                              className="w-4 h-4 object-contain drop-shadow-[0_0_4px_rgba(0,0,0,0.5)]"
-                            />
+                          {/* Element badge */}
+                          <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                            <Image src={`/elements/${mapped.element.toLowerCase()}.png`} alt={mapped.element} width={14} height={14} className="object-contain" />
                           </div>
 
-                          {/* Info Area */}
-                          <div className="w-full text-center pb-2 pt-0.5 flex flex-col items-center bg-black/45 backdrop-blur-[1px] border-t border-white/5 z-10">
-                            {/* Star Rating */}
+                          {/* Name area */}
+                          <div className="text-center pb-2 flex flex-col items-center bg-black/50 border-t border-white/[0.06] backdrop-blur-[2px]">
                             <div className="flex gap-0.5 mb-0.5">
                               {Array(mapped.rarity).fill(0).map((_, i) => (
-                                <span key={i} className="text-[8px] text-yellow-400">★</span>
+                                <span key={i} className="text-[7px] text-yellow-400">★</span>
                               ))}
                             </div>
-                            
-                            {/* Name */}
-                            <span className="text-[11px] font-bold tracking-wide text-gray-100 truncate px-1.5 max-w-full">
+                            <span className={`text-[10px] font-bold truncate px-1.5 max-w-full ${EL_TEXT[mapped.element] ?? 'text-white/80'}`}>
                               {mapped.name}
                             </span>
                           </div>
                         </Link>
                       );
                     }
-
-                    // Fallback display if not mapped
+                    // Fallback
                     return (
-                      <div key={charId} className="bg-white/[0.01] border border-white/[0.03] p-4 rounded-2xl flex flex-col items-center justify-center aspect-square text-center">
-                        <div className="text-zinc-500 text-[10px] font-mono mb-1">Avatar ID</div>
-                        <div className="text-base font-bold text-white mb-2">{charId}</div>
-                        <div className="text-[10px] text-zinc-400 italic">Unknown character</div>
+                      <div key={charId} className="bg-white/[0.01] border border-white/[0.03] p-3 rounded-2xl flex flex-col items-center justify-center aspect-square text-center">
+                        <div className="text-white/20 text-[9px] font-mono mb-1">ID</div>
+                        <div className="text-sm font-bold text-white/50">{charId}</div>
                       </div>
                     );
                   })}
                 </div>
               ) : (
-                <div className="text-zinc-500 italic text-center py-8">
-                  {t('noCharacters')}
-                </div>
+                <div className="text-white/25 italic text-center py-8 text-sm">{t('noCharacters')}</div>
               )}
             </div>
           </div>

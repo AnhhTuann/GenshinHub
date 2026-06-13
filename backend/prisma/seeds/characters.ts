@@ -1,11 +1,51 @@
 import axios from 'axios';
 import { PrismaClient } from '@prisma/client';
 
+import fs from 'fs';
+import path from 'path';
+
 // Hàm chuẩn hóa ID
 const toId = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-// Hàm chuẩn hóa avatar url Enka
-const toAvatar = (name: string) => `/images/avatars/${toId(name)}.png`;
-const toSplash = (name: string) => `/images/splash/${toId(name)}.png`;
+
+const enkaNameMap: Record<string, string> = {
+  "Raiden Shogun": "Shougun", "Kamisato Ayaka": "Ayaka", "Kamisato Ayato": "Ayato", "Sangonomiya Kokomi": "Kokomi",
+  "Kaedehara Kazuha": "Kazuha", "Yae Miko": "Yae", "Kuki Shinobu": "Shinobu", "Arataki Itto": "Itto",
+  "Shikanoin Heizou": "Heizo", "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy",
+  "Hu Tao": "Hutao", "Lan Yan": "Lanyan", "Skirk": "SkirkNew", "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel",
+  "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Alhaitham": "Alhatham", "Kirara": "Momoka",
+  "Lyney": "Liney", "Lynette": "Linette", "Ororon": "Olorun"
+};
+
+const getAvatarUrl = (name: string) => {
+  let cleanName = name;
+  if (name.startsWith("Traveler")) {
+    cleanName = "Traveler";
+  }
+  const mapped = enkaNameMap[cleanName] || cleanName;
+  const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
+  const relativePath = `/images/avatars/UI_AvatarIcon_${urlSafe}.png`;
+  const absolutePath = path.join(__dirname, '../../../frontend/public', relativePath);
+  if (fs.existsSync(absolutePath)) {
+    return relativePath;
+  }
+  return relativePath;
+};
+
+const getSplashUrl = (name: string) => {
+  let cleanName = name;
+  if (name.startsWith("Traveler")) {
+    cleanName = "Traveler";
+  }
+  const mapped = enkaNameMap[cleanName] || cleanName;
+  const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
+  const relativePath = `/images/splash/UI_Gacha_AvatarImg_${urlSafe}.png`;
+  const absolutePath = path.join(__dirname, '../../../frontend/public', relativePath);
+  if (fs.existsSync(absolutePath)) {
+    return relativePath;
+  }
+  return "";
+};
+
 
 import { travelerPyro } from './characters/traveler-pyro';
 import { durin } from './characters/durin';
@@ -207,11 +247,6 @@ const charactersData = [
 
 function parseChar(dataStr: string) {
   const [name, element, weapon, rarity] = dataStr.split('|');
-  const enkaNameMap: any = {
-    "Raiden Shogun": "Shougun", "Ayato": "Ayato", "Heizou": "Heizo", "Itto": "Itto", "Kokomi": "Kokomi", "Shinobu": "Shinobu", "Yae Miko": "Yae", "Wanderer": "Wanderer", "Tartaglia": "Tartaglia",
-    "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel", "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Alhaitham": "Alhatham", "Kirara": "Momoka", "Lyney": "Liney", "Lynette": "Linette",
-    "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy", "Hu Tao": "Hutao", "Lan Yan": "Lanyan", "Skirk": "SkirkNew"
-  };
   const avatarKey = enkaNameMap[name] || name;
 
   const charId = toId(name);
@@ -259,8 +294,8 @@ function parseChar(dataStr: string) {
     rarity: parseInt(rarity) || 5,
     element: element,
     weapon: weapon,
-    avatarUrl: toAvatar(name),
-    splashArtUrl: toSplash(name),
+    avatarUrl: getAvatarUrl(name),
+    splashArtUrl: getSplashUrl(name),
     talentPriority: (metaInfo && metaInfo.talentPriority) ? metaInfo.talentPriority : ["Normal Attack", "Elemental Skill", "Elemental Burst"],
     bestTeams: (metaInfo && metaInfo.bestTeams) ? metaInfo.bestTeams : ["bennett", "xingqiu", "zhongli"],
     description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,

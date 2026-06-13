@@ -125,13 +125,12 @@ function enrichWeapons(weapons: any[], weaponByName: Record<string, any>) {
 export const resolvers = {
   Query: {
     characters: async () => {
-      const cached = charactersCache.get('all');
+      const cached = charactersCache.get('all_basic');
       if (cached) return cached;
       const data = await prisma.character.findMany({
-        include: { bestWeapons: true, bestArtifacts: true },
         orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
       });
-      charactersCache.set('all', data);
+      charactersCache.set('all_basic', data);
       return data;
     },
 
@@ -208,26 +207,31 @@ export const resolvers = {
       const cached = showcaseCache.get(args.uid);
       if (cached) return cached;
       try {
-        const { data } = await axios.get(`https://enka.network/api/uid/${args.uid}`, {
-          timeout: 8000,
-          headers: { 'User-Agent': 'GenshinHub/1.0' },
-        });
-        if (!data?.playerInfo) return null;
+        const response = await axios.get(`https://enka.network/api/uid/${args.uid}`);
+        const data = response.data;
         const result = {
           uid: args.uid,
-          nickname: data.playerInfo.nickname,
-          level: data.playerInfo.level,
-          avatarUrl: data.playerInfo.profilePicture?.avatarId
-            ? `https://enka.network/ui/${data.playerInfo.profilePicture.avatarId}.png`
-            : null,
-          characters: data.avatarInfoList ? data.avatarInfoList.map((a: any) => String(a.avatarId)) : [],
+          nickname: data.playerInfo?.nickname || 'Unknown',
+          level: data.playerInfo?.level || 1,
+          avatarUrl: data.playerInfo?.profilePicture?.avatarId ? `/images/avatars/UI_AvatarIcon_${data.playerInfo.profilePicture.avatarId}.png` : null,
+          characters: data.avatarInfoList?.map((a: any) => a.avatarId.toString()) || [],
         };
         showcaseCache.set(args.uid, result);
         return result;
-      } catch (e: any) {
-        console.error("Enka fetch error:", e?.message || e);
+      } catch (error) {
+        console.error("Lỗi fetch Enka:", error);
         return null;
       }
-    },
+    }
   },
+  Character: {
+    bestWeapons: async (parent: any) => {
+      if (parent.bestWeapons) return parent.bestWeapons;
+      return prisma.characterWeapon.findMany({ where: { characterId: parent.id } });
+    },
+    bestArtifacts: async (parent: any) => {
+      if (parent.bestArtifacts) return parent.bestArtifacts;
+      return prisma.characterArtifact.findMany({ where: { characterId: parent.id } });
+    }
+  }
 };

@@ -51,7 +51,10 @@ scanDirectory('./frontend');
 const nameMapping = {
   "Raiden Shogun": "Shougun", "Kamisato Ayaka": "Ayaka", "Kamisato Ayato": "Ayato", "Sangonomiya Kokomi": "Kokomi",
   "Kaedehara Kazuha": "Kazuha", "Yae Miko": "Yae", "Kuki Shinobu": "Shinobu", "Arataki Itto": "Itto",
-  "Shikanoin Heizou": "Heizou", "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy", "Hu Tao": "Hutao", "Lan Yan": "Lanyan", "Skirk": "SkirkNew"
+  "Shikanoin Heizou": "Heizo", "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy",
+  "Hu Tao": "Hutao", "Lan Yan": "Lanyan", "Skirk": "SkirkNew", "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel",
+  "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Alhaitham": "Alhatham", "Kirara": "Momoka",
+  "Lyney": "Liney", "Lynette": "Linette", "Ororon": "Olorun"
 };
 
 // Regex to capture the big arrays like: ...["Albedo|Geo|Sword|5", ...
@@ -60,6 +63,9 @@ const charListRegex = /"([^"]+)\|[^"]+\|[^"]+\|[^"]+"/g;
 let cMatch;
 while ((cMatch = charListRegex.exec(charactersFile)) !== null) {
   let name = cMatch[1];
+  if (name.startsWith("Traveler")) {
+    name = "Traveler";
+  }
   let mappedName = nameMapping[name] || name;
   let cleanName = mappedName.replace(/[^a-zA-Z]/g, '');
   imageUrls.add(`https://enka.network/ui/UI_AvatarIcon_${cleanName}.png`);

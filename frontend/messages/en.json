@@ -25,7 +25,10 @@
     "tierA": "Good",
     "tierB": "Average",
     "tierC": "Below Average",
-    "unranked": "Unranked"
+    "unranked": "Unranked",
+    "notesTab": "Notes",
+    "notesTitle": "Character Notes & Explanations",
+    "notesDesc": "Updated tier rankings and character notes from 5.0 to 5.2. Find role-specific advice, constellation tips, and recommended weapons and artifacts."
   },
   "Character": {
     "rarity": "Rarity",

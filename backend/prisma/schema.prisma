@@ -27,6 +27,13 @@ model Character {
   baseDef        Int
   fandomUrl      String?
   birthday       String?
+  
+  // Tier List Data
+  tier           String?   // "SS", "S", "A", "B", "C", "D"
+  role           String?   // "Main DPS", "Sub DPS", "Support"
+  recommendedC   String?   // "C0", "C1", etc
+  tierNoteEn     String[]
+  tierNoteVi     String[]
 
   bestWeapons    CharacterWeapon[]
   bestArtifacts  CharacterArtifact[]
@@ -87,6 +94,9 @@ model Weapon {
   passiveDescEn String?
   passiveDescVi String?
   iconUrl       String?
+  
+  // Tier List Data
+  tier          String?
 }
 
 model ArtifactSet {

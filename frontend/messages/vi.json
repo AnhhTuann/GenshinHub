@@ -24,8 +24,11 @@
     "tierS": "Xuất Sắc",
     "tierA": "Tốt",
     "tierB": "Trung Bình",
-    "tierC": "Dưới Trung Bình",
-    "unranked": "Chưa Xếp Hạng"
+    "tierC": "Dưới trung bình",
+    "unranked": "Chưa xếp hạng",
+    "notesTab": "Ghi chú",
+    "notesTitle": "Ghi Chú & Giải Thích Nhân Vật",
+    "notesDesc": "Cập nhật bảng xếp hạng và ghi chú nhân vật từ 5.0 đến 5.2. Bao gồm lời khuyên về vai trò, cung mệnh, cũng như vũ khí và thánh di vật khuyên dùng."
   },
   "Character": {
     "rarity": "Độ hiếm",

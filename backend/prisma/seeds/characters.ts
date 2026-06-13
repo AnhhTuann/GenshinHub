@@ -324,7 +324,12 @@ function parseChar(dataStr: string) {
     })) : defaultWeapons,
     bestArtifacts: (metaInfo && metaInfo.bestArtifacts) ? metaInfo.bestArtifacts : [
       { setNameVi: "Thánh Di Vật Đề Cử", setNameEn: "Thánh Di Vật Đề Cử", pieces: 4, sands: ["ATK%"], goblet: ["Elemental DMG Bonus"], circlet: ["CRIT Rate"], subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%"] }
-    ]
+    ],
+    tier: metaInfo?.tier || null,
+    role: metaInfo?.role || null,
+    recommendedC: metaInfo?.recommendedC || null,
+    tierNoteEn: metaInfo?.tierNoteEn || [],
+    tierNoteVi: metaInfo?.tierNoteVi || []
   };
 }
 
@@ -689,6 +694,7 @@ export async function seedCharacters(prisma: PrismaClient) {
           descriptionEn: char.description, descriptionVi: description, 
           baseHp: baseHp, baseAtk: baseAtk, baseDef: baseDef, 
           fandomUrl: char.fandomUrl,
+          tier: char.tier, role: char.role, recommendedC: char.recommendedC, tierNoteEn: char.tierNoteEn, tierNoteVi: char.tierNoteVi,
           bestWeapons: { create: char.bestWeapons },
           bestArtifacts: { create: char.bestArtifacts }
         }

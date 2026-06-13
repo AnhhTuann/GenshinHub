@@ -27,6 +27,11 @@ export async function exportDatabaseToSeeds() {
 
     const fileContent = `export const ${camelCaseName} = {
   characterId: ${JSON.stringify(char.id)},
+  tier: ${JSON.stringify(char.tier)},
+  role: ${JSON.stringify(char.role)},
+  recommendedC: ${JSON.stringify(char.recommendedC)},
+  tierNoteEn: ${JSON.stringify(char.tierNoteEn)},
+  tierNoteVi: ${JSON.stringify(char.tierNoteVi)},
   talentPriority: ${JSON.stringify(char.talentPriority, null, 2)},
   bestTeams: ${JSON.stringify(char.bestTeams, null, 2)},
   bestWeapons: ${JSON.stringify(char.bestWeapons.map(w => ({

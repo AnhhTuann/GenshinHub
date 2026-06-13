@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
+import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS } from '@/lib/graphql';
 import TierListClient from './TierListClient';
 
 // Revalidate periodically (5 minutes instead of 1 hour to prevent stale data)
@@ -12,21 +12,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('description')
   };
 }
-
-// We need a query to get weapons. Since the frontend might not have GET_WEAPONS in graphql.ts,
-// I will just define it here or we can fetch them via GraphQL.
-const GET_WEAPONS = `
-  query GetWeapons {
-    weapons {
-      id
-      nameEn
-      nameVi
-      iconUrl
-      rarity
-      type
-    }
-  }
-`;
 
 export default async function TierListPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

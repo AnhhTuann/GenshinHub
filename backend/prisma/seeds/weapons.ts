@@ -40,6 +40,9 @@ export async function seedWeapons(prisma: PrismaClient) {
     const wItemsVi = Object.values(wDataVi?.data?.items || {}) as any[];
     const wItemsEn = wDataEn?.data?.items || {};
     
+    const existingWeapons = await prisma.weapon.findMany({ select: { id: true, tier: true } });
+    const tierMap = new Map(existingWeapons.map(w => [w.id, w.tier]));
+
     console.log(`Đã tìm thấy ${wItemsVi.length} vũ khí. Bắt đầu tải chi tiết từng vũ khí...`);
 
     const weaponData = [];
@@ -140,6 +143,7 @@ export async function seedWeapons(prisma: PrismaClient) {
         passiveDescEn,
         passiveDescVi,
         iconUrl: item.icon ? `/images/weapons/${item.icon}.png` : null,
+        tier: tierMap.get(id) || null,
       });
     }
 

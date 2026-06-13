@@ -67,3 +67,24 @@ export const TIER_STYLES: Record<Tier, { bg: string; text: string; border: strin
 };
 
 export const TIERS_ORDER: Tier[] = ['SS', 'S', 'A', 'B', 'C', 'Unranked'];
+
+export type Role = 'Main DPS' | 'Sub DPS' | 'Support';
+
+const characterRoles: Record<Role, string[]> = {
+  'Main DPS': [
+    'Hu Tao', 'Neuvillette', 'Arlecchino', 'Kamisato Ayaka', 'Xiao', 'Ganyu', 'Arataki Itto', 'Cyno', 'Wanderer', 'Keqing', 'Diluc', 'Yoimiya', 'Klee', 'Eula', 'Lyney', 'Wriothesley', 'Navia', 'Clorinde', 'Kinich', 'Chasca', 'Mavuika', 'Tartaglia', 'Razor', 'Ningguang', 'Yanfei', 'Freminet', 'Gaming', 'Sethos', 'Tighnari', 'Kamisato Ayato', 'Alhaitham'
+  ],
+  'Sub DPS': [
+    'Furina', 'Yelan', 'Albedo', 'Yae Miko', 'Fischl', 'Xingqiu', 'Xiangling', 'Beidou', 'Chiori', 'Emilie', 'Rosaria', 'Kaeya', 'Lisa', 'Aloy', 'Collei'
+  ],
+  'Support': [
+    'Kaedehara Kazuha', 'Nahida', 'Zhongli', 'Sangonomiya Kokomi', 'Baizhu', 'Shenhe', 'Venti', 'Jean', 'Mona', 'Qiqi', 'Diona', 'Bennett', 'Sucrose', 'Barbara', 'Noelle', 'Dori', 'Layla', 'Faruzan', 'Yaoyao', 'Mika', 'Kirara', 'Lynette', 'Charlotte', 'Chevreuse', 'Kachina', 'Kuki Shinobu', 'Gorou', 'Kujou Sara', 'Thoma', 'Xinyan', 'Sayu', 'Yun Jin', 'Candace', 'Nilou', 'Xilonen', 'Sigewinne', 'Ororon', 'Raiden Shogun'
+  ]
+};
+
+export function getCharacterRole(nameEn: string): Role {
+  for (const [role, names] of Object.entries(characterRoles)) {
+    if (names.includes(nameEn)) return role as Role;
+  }
+  return 'Support'; // Default
+}

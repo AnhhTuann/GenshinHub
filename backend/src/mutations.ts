@@ -10,29 +10,35 @@ function requireAdmin(context: any) {
 export const Mutation = {
   upsertWeapon: async (_: any, { input }: any, context: any) => {
     requireAdmin(context);
-    return await prisma.weapon.upsert({
+    const w = await prisma.weapon.upsert({
       where: { id: input.id },
       update: input,
       create: input,
     });
+    exportDatabaseToSeeds().catch(console.error);
+    return w;
   },
   deleteWeapon: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.weapon.delete({ where: { id } });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
   upsertArtifactSet: async (_: any, { input }: any, context: any) => {
     requireAdmin(context);
-    return await prisma.artifactSet.upsert({
+    const a = await prisma.artifactSet.upsert({
       where: { id: input.id },
       update: input,
       create: input,
     });
+    exportDatabaseToSeeds().catch(console.error);
+    return a;
   },
   deleteArtifactSet: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.artifactSet.delete({ where: { id } });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
@@ -43,11 +49,13 @@ export const Mutation = {
       update: input,
       create: input,
     });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
   deleteMaterial: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.material.delete({ where: { id } });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
@@ -119,6 +127,7 @@ export const Mutation = {
       }
     }
 
+    exportDatabaseToSeeds().catch(console.error);
     return updatedChar;
   },
   deleteCharacter: async (_: any, { id }: any, context: any) => {
@@ -127,24 +136,49 @@ export const Mutation = {
     await prisma.characterWeapon.deleteMany({ where: { characterId: id } });
     await prisma.characterArtifact.deleteMany({ where: { characterId: id } });
     await prisma.character.delete({ where: { id } });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
   // Character Detail Inline Edits
   updateCharacterSplashArt: async (_: any, { id, splashArtUrl }: any, context: any) => {
     requireAdmin(context);
-    return await prisma.character.update({
+    const c = await prisma.character.update({
       where: { id },
       data: { splashArtUrl },
     });
+    exportDatabaseToSeeds().catch(console.error);
+    return c;
   },
   
   updateCharacterTeams: async (_: any, { id, teams }: any, context: any) => {
     requireAdmin(context);
-    return await prisma.character.update({
+    const c = await prisma.character.update({
       where: { id },
       data: { bestTeams: teams },
     });
+    exportDatabaseToSeeds().catch(console.error);
+    return c;
+  },
+  
+  updateCharacterTierList: async (_: any, { id, tier, role, recommendedC, tierNoteEn, tierNoteVi }: any, context: any) => {
+    requireAdmin(context);
+    const c = await prisma.character.update({
+      where: { id },
+      data: { tier, role, recommendedC, tierNoteEn, tierNoteVi },
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return c;
+  },
+  
+  updateWeaponTierList: async (_: any, { id, tier }: any, context: any) => {
+    requireAdmin(context);
+    const w = await prisma.weapon.update({
+      where: { id },
+      data: { tier },
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return w;
   },
 
   addCharacterWeapon: async (_: any, { characterId, weaponId, rank, isF2P }: any, context: any) => {
@@ -162,12 +196,14 @@ export const Mutation = {
         iconUrl: weapon.iconUrl,
       }
     });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
   removeCharacterWeapon: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.characterWeapon.delete({ where: { id } });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
@@ -186,12 +222,14 @@ export const Mutation = {
         subStatsPriority
       }
     });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 
   removeCharacterArtifact: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.characterArtifact.delete({ where: { id } });
+    exportDatabaseToSeeds().catch(console.error);
     return true;
   },
 

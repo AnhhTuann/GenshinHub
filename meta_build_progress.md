@@ -35,10 +35,10 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 - [x] **Mualani** (`mualani`) — ✅ _Hoàn thiện (9 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Sigewinne** (`sigewinne`) — ✅ _Hoàn thiện (6 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Traveler-Hydro** (`traveler-hydro`) — ✅ _Hoàn thiện (5 Vũ khí, TDV, Substats, Talents, Teams)_
-- [ ] **Nilou** (`nilou`) — ❌ _Chưa làm_
+- [x] **Nilou** (`nilou`) — ✅ _Hoàn thiện (5 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Candace** (`candace`) — ❌ _Chưa làm_
-- [ ] **Kamisato Ayato** (`ayato`) — ❌ _Chưa làm_
-- [ ] **Sangonomiya Kokomi** (`kokomi`) — ❌ _Chưa làm_
+- [x] **Kamisato Ayato** (`ayato`) — ✅ _Hoàn thiện (15 Vũ khí, Tinh chỉnh giao diện TDV Mix, Substats, Talents, Teams)_
+- [x] **Sangonomiya Kokomi** (`kokomi`) — ✅ _Hoàn thiện (7 Vũ khí, TDV, Substats, Talents, Teams)_
 - [ ] **Tartaglia** (`tartaglia`) — ❌ _Chưa làm_
 - [ ] **Barbara** (`barbara`) — ❌ _Chưa làm_
 - [ ] **Mona** (`mona`) — ❌ _Chưa làm_
@@ -147,4 +147,4 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 ---
 
 > 📌 _Danh sách này sẽ được cập nhật liên tục khi có nhân vật mới. Các nhân vật đã hoàn thiện 100% sẽ được đánh dấu tích (✅)._
-> $env:SEED_CHARACTER="columbina"; npm run seed
+> $env:SEED_CHARACTER="name"; npm run seed

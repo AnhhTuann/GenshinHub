@@ -2,10 +2,22 @@ import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
 import { LRUCache } from 'lru-cache';
 
-// Forced restart to flush caches after db seed - final v29
+// Forced restart to flush caches after db seed - final v30
 const prisma = new PrismaClient();
 
 const mixSetsMap: { [key: string]: string[] } = {
+  "Mix 2 bộ Trái Tim Trầm Luân & 2 bộ Thiên Nham Vững Chắc": [
+    "Trái Tim Trầm Luân",
+    "Thiên Nham Vững Chắc"
+  ],
+  "Mix 2 bộ Nghi Thức Tông Thất Cổ & 2 bộ Thiên Nham Vững Chắc": [
+    "Nghi Thức Tông Thất Cổ",
+    "Thiên Nham Vững Chắc"
+  ],
+  "Mix 2 bộ Giấc Mộng Hoàng Kim & 2 bộ Thiên Nham Vững Chắc": [
+    "Giấc Mộng Hoàng Kim",
+    "Thiên Nham Vững Chắc"
+  ],
   "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP": [
     "Diệm Liệt Ma Nữ Cháy Rực",
     "Đoàn Hát Lang Thang Đại Lục",
@@ -20,6 +32,14 @@ const mixSetsMap: { [key: string]: string[] } = {
   "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc": [
     "Vầng Sáng Vourukasha",
     "Thiên Nham Vững Chắc"
+  ],
+  "Mix 2 bộ Thiên Nham Vững Chắc & 2 bộ Giấc Mộng Hoàng Kim": [
+    "Thiên Nham Vững Chắc",
+    "Giấc Mộng Hoàng Kim"
+  ],
+  "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Giấc Mộng Hoàng Kim": [
+    "Vầng Sáng Vourukasha",
+    "Giấc Mộng Hoàng Kim"
   ],
   "Mix 2 bộ Thủy / HP / Thợ Săn": [
     "Trái Tim Trầm Luân",
@@ -96,6 +116,22 @@ const mixSetsMap: { [key: string]: string[] } = {
     "Dấu Ấn Ngăn Cách",
     "Kẻ Lưu Đày",
     "Học Sĩ"
+  ],
+  "Mix 2 bộ Thủy & 2 bộ Tấn Công": [
+    "Trái Tim Trầm Luân",
+    "Giấc Mộng Thủy Tiên",
+    "Lễ Bế Mạc Của Giác Đấu Sĩ",
+    "Dòng Hồi Ức Bất Tận",
+    "Dư Âm Tế Lễ",
+    "Thần Sa Vãng Sinh Lục"
+  ],
+  "Mix 2 bộ Trị Liệu / Thủy / HP": [
+    "Thiếu Nữ Đáng Yêu",
+    "Xà Cừ Đại Dương",
+    "Trái Tim Trầm Luân",
+    "Giấc Mộng Thủy Tiên",
+    "Thiên Nham Vững Chắc",
+    "Vầng Sáng Vourukasha"
   ]
 };
 

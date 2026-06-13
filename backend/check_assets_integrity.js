@@ -53,21 +53,21 @@ async function main() {
 
     // 4. Check best artifacts
     for (const art of char.bestArtifacts) {
-      if (art.setName === "Thánh Di Vật Đề Cử" || art.setName.startsWith("Mix")) {
+      if (art.setNameVi === "Thánh Di Vật Đề Cử" || art.setNameVi.startsWith("Mix")) {
         const p = path.join(PUBLIC_DIR, "/images/artifacts/UI_RelicIcon_15001_4.png");
         if (!fs.existsSync(p)) {
-          missingArtifacts.push({ character: char.name, artifact: art.setName, url: "/images/artifacts/UI_RelicIcon_15001_4.png" });
+          missingArtifacts.push({ character: char.name, artifact: art.setNameVi, url: "/images/artifacts/UI_RelicIcon_15001_4.png" });
         }
         continue;
       }
-      const set = await prisma.artifactSet.findFirst({ where: { name: art.setName } });
+      const set = await prisma.artifactSet.findFirst({ where: { nameVi: art.setNameVi } });
       if (set && set.iconUrl) {
         const p = path.join(PUBLIC_DIR, set.iconUrl);
         if (!fs.existsSync(p)) {
-          missingArtifacts.push({ character: char.name, artifact: art.setName, url: set.iconUrl });
+          missingArtifacts.push({ character: char.name, artifact: art.setNameVi, url: set.iconUrl });
         }
       } else {
-        missingArtifacts.push({ character: char.name, artifact: art.setName, url: null });
+        missingArtifacts.push({ character: char.name, artifact: art.setNameVi, url: null });
       }
     }
   }

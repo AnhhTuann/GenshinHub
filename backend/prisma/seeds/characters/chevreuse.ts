@@ -55,7 +55,7 @@ export const chevreuse = {
       refinement: "R5",
       passiveDescVi: "Cung cấp HP% và khả năng hồi năng lượng từ nội tại khi được trị liệu.",
       passiveDescEn: "Provides HP% and energy regeneration when healed. Good for burst uptime.",
-      iconUrl: "/images/weapons/UI_EquipIcon_Pole_Sumeru.png"
+      iconUrl: "/images/weapons/UI_EquipIcon_Pole_Vorpal.png"
     },
     {
       rank: 6,

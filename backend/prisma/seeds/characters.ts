@@ -37,6 +37,9 @@ import { columbina } from './characters/columbina';
 import { mualani } from './characters/mualani';
 import { sigewinne } from './characters/sigewinne';
 import { travelerHydro } from './characters/traveler-hydro';
+import { nilou } from './characters/nilou';
+import { kamisatoAyato } from './characters/kamisato-ayato';
+import { sangonomiyaKokomi } from './characters/sangonomiya-kokomi';
 
 const metaBuilds = [
   travelerPyro,
@@ -68,7 +71,10 @@ const metaBuilds = [
   columbina,
   mualani,
   sigewinne,
-  travelerHydro
+  travelerHydro,
+  nilou,
+  kamisatoAyato,
+  sangonomiyaKokomi
 ];
 
 const charactersData = [

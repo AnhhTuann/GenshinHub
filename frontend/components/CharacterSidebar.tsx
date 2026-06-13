@@ -30,7 +30,7 @@ const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: st
     name: "Skyward Atlas", icon: "/images/weapons/UI_EquipIcon_Catalyst_Dvalin.png", 
     name2: "Lost Prayer to the Sacred Winds", icon2: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png" 
   },
-  "kamisato ayato": { name: "Haran Geppaku Futsu", icon: "/images/weapons/UI_EquipIcon_Sword_Narukami.png" },
+  "kamisato ayato": { name: "Haran Geppaku Futsu", icon: "/images/weapons/UI_EquipIcon_Sword_Amenoma.png" },
   "yelan": { name: "Aqua Simulacra", icon: "/images/weapons/UI_EquipIcon_Bow_Kirin.png" },
   "sangonomiya kokomi": { name: "Everlasting Moonglow", icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" },
   "nilou": { name: "Key of Khaj-Nisut", icon: "/images/weapons/UI_EquipIcon_Sword_Deshret.png" },

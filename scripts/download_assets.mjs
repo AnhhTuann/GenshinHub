@@ -14,20 +14,38 @@ ensureDir(path.join(FRONTEND_DIR, 'splash'));
 ensureDir(path.join(FRONTEND_DIR, 'weapons'));
 ensureDir(path.join(FRONTEND_DIR, 'artifacts'));
 
-const charactersFile = fs.readFileSync('./backend/prisma/seeds/characters.ts', 'utf8');
-const artifactsFile = fs.readFileSync('./frontend/components/ArtifactCard.tsx', 'utf8');
-
 const imageUrls = new Set();
 
-// 1. Get all static URLs from characters.ts and ArtifactCard.tsx
-const urlRegex = /https:\/\/enka\.network\/ui\/([^"'\s]+)\.png/g;
-let match;
-while ((match = urlRegex.exec(charactersFile)) !== null) {
-  imageUrls.add(match[0]);
-}
-while ((match = urlRegex.exec(artifactsFile)) !== null) {
-  imageUrls.add(match[0]);
-}
+const scanDirectory = (dir) => {
+  if (!fs.existsSync(dir)) return;
+  const files = fs.readdirSync(dir);
+  for (const file of files) {
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      scanDirectory(fullPath);
+    } else if (file.endsWith('.ts') || file.endsWith('.tsx') || file.endsWith('.json') || file.endsWith('.js')) {
+      const content = fs.readFileSync(fullPath, 'utf8');
+      
+      // Match full enka URLs
+      let match;
+      const urlRegex = /https:\/\/enka\.network\/ui\/([^"'\s]+)\.png/g;
+      while ((match = urlRegex.exec(content)) !== null) {
+        imageUrls.add(match[0]);
+      }
+      
+      // Match UI_... filenames in paths or text
+      const uiRegex = /UI_[A-Za-z0-9_]+/g;
+      while ((match = uiRegex.exec(content)) !== null) {
+        imageUrls.add(`https://enka.network/ui/${match[0]}.png`);
+      }
+    }
+  }
+};
+
+scanDirectory('./backend/prisma/seeds');
+scanDirectory('./frontend');
+
 
 // 2. Extract character names to build Avatar and Splash URLs
 const nameMapping = {
@@ -37,6 +55,7 @@ const nameMapping = {
 };
 
 // Regex to capture the big arrays like: ...["Albedo|Geo|Sword|5", ...
+const charactersFile = fs.readFileSync('./backend/prisma/seeds/characters.ts', 'utf8');
 const charListRegex = /"([^"]+)\|[^"]+\|[^"]+\|[^"]+"/g;
 let cMatch;
 while ((cMatch = charListRegex.exec(charactersFile)) !== null) {

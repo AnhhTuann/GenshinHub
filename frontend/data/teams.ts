@@ -15,6 +15,1026 @@ export interface DetailedTeam {
 }
 
 export const detailedTeamsData: Record<string, DetailedTeam[]> = {
+  "nilou": [
+    {
+      name: "Nilou's Bountiful Bloom",
+      rank: "A",
+      description: "A Hydro-Dendro team built around Nilou's passive, which turns Bloom cores into Bountiful Cores that explode faster and deal large AoE Dendro damage. Barbara drives on-field, applying Hydro and healing, while Collei and Traveler (Dendro) provide off-field Dendro application.\n\nNilou's passive transforms Bloom cores into Bountiful Cores when the team consists only of Hydro and Dendro characters, resulting in faster explosions and larger AoE damage.\n\nTeam composition: Barbara (Hydro Main DPS), Nilou (Hydro Sub DPS), Collei (Dendro Sub DPS), Traveler (Dendro) (Dendro Support)",
+      members: [
+        {
+          characterId: "barbara",
+          role: "Main DPS",
+          roleDesc: "Acts as the on-field driver. Elemental Skill applies Hydro to nearby enemies and heals the party continuously.",
+          weapons: ["Sacrificial Fragments"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Elemental Mastery", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "nilou",
+          role: "Sub DPS",
+          roleDesc: "Provides Hydro for Bloom reactions. Her passive enables Bountiful Cores, which explode faster and deal larger AoE Dendro damage.",
+          weapons: ["Key of Khaj-Nisut", "The Dockhand's Assistant"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP", "Elemental Mastery"]
+        },
+        {
+          characterId: "collei",
+          role: "Sub DPS",
+          roleDesc: "Provides off-field Dendro application for triggering Bloom.",
+          weapons: ["Elegy for the End", "Sacrificial Bow"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "traveler-dendro",
+          role: "Support",
+          roleDesc: "Provides off-field Dendro application for triggering Bloom.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Nilou Bloom Team #2",
+      rank: "S",
+      description: "A Bloom team utilizing Nilou's Bountiful Cores with Hydro and Dendro only. Kokomi on-field, Nahida and Collei off-field Dendro application.\n\nUtilize Nilou's passive to create Bountiful Cores from Bloom reactions, which explode faster and deal larger area damage. Kokomi provides sustained Hydro application while on-field, and Nahida and Collei apply Dendro off-field.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Nilou (Hydro Sub DPS), Nahida (Dendro Sub DPS), Collei (Dendro Sub DPS)",
+      members: [
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Main DPS",
+          roleDesc: "Kokomi is the Main DPS in this team, her continuous Hydro attacks react with Dendro to trigger Bloom.",
+          weapons: ["Everlasting Moonglow", "Sacrificial Fragments"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Elemental Mastery", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "nilou",
+          role: "Sub DPS",
+          roleDesc: "Nilou is the Sub DPS in this team. She provides Hydro for triggering Bloom. Through her passive, if the team only consists of Dendro and Hydro characters, the cores become Bountiful Cores, which burst quicker and deal larger AoE DMG.",
+          weapons: ["Key of Khaj-Nisut", "The Dockhand's Assistant"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP", "Elemental Mastery"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Nahida mainly deals DMG with her Elemental Skill, which connects up to 8 enemies and deals Dendro DMG while triggering reactions. Her Elemental Burst buffs her Skill based on teammates' elements. With two Hydro characters, the duration of her Burst is increased.",
+          weapons: ["A Thousand Floating Dreams", "Wandering Evenstar"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "collei",
+          role: "Sub DPS",
+          roleDesc: "Collei provides Dendro off-field for triggering Bloom.",
+          weapons: ["Elegy for the End", "Sacrificial Bow"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Bountiful Bloom Overload",
+      rank: "S",
+      description: "A Nilou Bloom team that maximizes Bountiful Core damage with off-field Hydro and Dendro.\n\nNilou's passive creates Bountiful Cores that burst quickly and deal AoE Bloom damage when the team consists only of <element type='dendro'>Dendro</element> and <element type='hydro'>Hydro</element> characters. Xingqiu provides consistent off-field <element type='hydro'>Hydro</element> application via his Burst, while Nahida applies <element type='dendro'>Dendro</element> with her Skill and boosts EM. Yaoyao heals and provides <element type='dendro'>Dendro</element> resonance.\n\nTeam composition: Nahida (Dendro Main DPS), Xingqiu (Hydro Sub DPS), Nilou (Hydro Sub DPS), Yaoyao (Dendro Support)",
+      members: [
+        {
+          characterId: "nahida",
+          role: "Main DPS",
+          roleDesc: "Main damage dealer via Skill that marks up to 8 enemies and triggers reactions. Burst extends duration and buffs Skill based on teammates' elements.",
+          weapons: ["A Thousand Floating Dreams", "Wandering Evenstar"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Off-field <element type='hydro'>Hydro</element> application via Burst. Skill provides interruption resistance and damage reduction.",
+          weapons: ["Xiphos' Moonlight"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "nilou",
+          role: "Sub DPS",
+          roleDesc: "Enables Bountiful Cores via passive when team has only <element type='dendro'>Dendro</element> and <element type='hydro'>Hydro</element>. Provides <element type='hydro'>Hydro</element> application for Bloom.",
+          weapons: ["Key of Khaj-Nisut", "The Dockhand's Assistant"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP", "Elemental Mastery"]
+        },
+        {
+          characterId: "yaoyao",
+          role: "Support",
+          roleDesc: "Healer and <element type='dendro'>Dendro</element> resonance. Uses Tenacity of the Millelith to boost team ATK and provide a safe environment.",
+          weapons: ["Staff of Homa", "Dialogues of the Desert Sages"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["CRIT Rate", "HP%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Nilou Bloom Team #4",
+      rank: "S",
+      description: "A powerful Bloom team that leverages Nilou's Bountiful Cores for devastating AoE damage. Nahida applies Dendro while Yelan and Nilou provide Hydro to trigger Bloom. Baizhu keeps the team alive with healing and shielding, also boosting Bloom damage.\n\nNilou's passive transforms normal Bloom cores into Bountiful Cores that explode faster and deal massive AoE damage when only Dendro and Hydro characters are in the party. Nahida applies Dendro off-field, while Yelan and Nilou apply Hydro to continuously generate cores.\n\nTeam composition: Nahida (Dendro Main DPS), Yelan (Hydro Sub DPS), Nilou (Hydro Sub DPS), Baizhu (Dendro Support)",
+      members: [
+        {
+          characterId: "nahida",
+          role: "Main DPS",
+          roleDesc: "Nahida mainly deals DMG via her Elemental Skill, which connects up to 8 enemies and deals Dendro DMG while triggering reactions. Her Elemental Burst buffs her Skill based on teammates' elements. With two Hydro characters, Burst duration is increased.",
+          weapons: ["A Thousand Floating Dreams", "Wandering Evenstar"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "yelan",
+          role: "Sub DPS",
+          roleDesc: "Yelan continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
+          weapons: ["Aqua Simulacra", "The Stringless"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge", "Elemental Mastery"]
+        },
+        {
+          characterId: "nilou",
+          role: "Sub DPS",
+          roleDesc: "Nilou provides Hydro for triggering Bloom. Her passive transforms normal cores into Bountiful Cores that burst quicker and deal larger AoE damage.",
+          weapons: ["Key of Khaj-Nisut", "The Dockhand's Assistant"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP", "Elemental Mastery"]
+        },
+        {
+          characterId: "baizhu",
+          role: "Support",
+          roleDesc: "Baizhu provides both Shield and Healing to protect the team. The DMG of Bloom is increased based on his Max HP via his passive talent.",
+          weapons: ["Jadefall's Splendor", "Prototype Amber", "Favonius Codex"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["CRIT Rate", "HP%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Nilou Lunar Bloom",
+      rank: "SS",
+      description: "A Nilou Bloom team that transforms cores into Bountiful Cores with Lauma's Lunar Bloom for increased damage and crit capability.\n\nNilou enables Bountiful Cores with only Dendro and Hydro characters. Lauma's Lunar Bloom allows cores to crit and deal higher damage, while Kokomi provides consistent Hydro application and Nahida applies Dendro and buffs.\n\nTeam composition: Nilou (Hydro Main DPS), Sangonomiya Kokomi (Hydro Support), Nahida (Dendro Sub DPS), Lauma (Dendro Support)",
+      members: [
+        {
+          characterId: "nilou",
+          role: "Main DPS",
+          roleDesc: "Provides Hydro for Bloom. Through her passive, if team only has Dendro and Hydro, cores become Bountiful Cores, which burst quicker and deal larger AoE DMG.",
+          weapons: ["Key of Khaj-Nisut", "The Dockhand's Assistant"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "Elemental Mastery"]
+        },
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Support",
+          roleDesc: "Her Elemental Skill's attacks trigger Hydro every two seconds for triggering elemental reactions.",
+          weapons: ["Everlasting Moonglow", "Sacrificial Fragments"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Elemental Mastery", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Mainly deals DMG via Elemental Skill, connecting 8 enemies and dealing Dendro DMG while triggering reactions. Elemental Burst buffs Elemental Skill based on teammates' elements.",
+          weapons: ["A Thousand Floating Dreams", "Wandering Evenstar"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "ATK%"]
+        },
+        {
+          characterId: "lauma",
+          role: "Support",
+          roleDesc: "Transforms Bloom into Lunar Bloom, which deals higher damage and can crit. Elemental Skill accumulates stacks to boost Lunar Bloom DMG. Reduces enemies' Dendro and Hydro RES, and increases team's Lunar Bloom damage based on her Elemental Mastery.",
+          weapons: ["Nightweaver's Glass", "Wandering Evenstar"],
+          artifacts: ["4pc Silken Moon's Serenade"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "ATK%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Lunar Bloom Nilou",
+      rank: "SS",
+      description: "A team that leverages Nilou's passive to create Bountiful Cores and Lauma's transformation into Lunar Bloom for massive AoE DMG.\n\nUse only Hydro and Dendro characters to trigger Bountiful Cores from Nilou's passive, which are then enhanced by Lauma into Lunar Bloom that can crit and deal higher damage.\n\nTeam composition: Nilou (Hydro Main DPS), Xingqiu (Hydro Sub DPS), Nahida (Dendro Sub DPS), Lauma (Dendro Support)",
+      members: [
+        {
+          characterId: "nilou",
+          role: "Main DPS",
+          roleDesc: "Provides Hydro for Bloom. Passive creates Bountiful Cores that explode faster and deal larger AoE DMG.",
+          weapons: ["Key of Khaj-Nisut", "The Dockhand's Assistant"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "His Burst continuously applies Hydro to enemies.",
+          weapons: ["Xiphos' Moonlight"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Her Skill marks up to 8 enemies with Dendro and triggers reactions. Burst enhances her Skill based on team elements.",
+          weapons: ["A Thousand Floating Dreams", "Wandering Evenstar"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "ATK%"]
+        },
+        {
+          characterId: "lauma",
+          role: "Support",
+          roleDesc: "Converts Bloom into Lunar Bloom that can crit. Her Skill stacks boost Lunar Bloom DMG. Also reduces enemies' Dendro and Hydro RES and gains Lunar Bloom bonus from Elemental Mastery.",
+          weapons: ["Nightweaver's Glass", "Wandering Evenstar"],
+          artifacts: ["4pc Silken Moon's Serenade"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "ATK%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Nilou Hydro Team #2",
+      rank: "S",
+      description: "Nilou as on-field hydro DPS with double off-field hydro from Yelan and Furina, supported by Jean for healing and <element type='anemo'>Anemo</element> resistance shred.\n\nThis team focuses on continuous <element type='hydro'>Hydro</element> application from multiple sources, allowing Nilou to deal damage with her high HP scaling, while Jean provides healing and resistance shred via <set>Viridescent Venerer</set>.\n\nTeam composition: Nilou (Hydro Main DPS), Yelan (Hydro Sub DPS), Furina (Hydro Sub DPS), Jean (Anemo Support)",
+      members: [
+        {
+          characterId: "nilou",
+          role: "Main DPS",
+          roleDesc: "Hydro main DPS using HP stacking for damage.",
+          weapons: ["Splendor of Tranquil Waters", "Wolf-Fang"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP", "Elemental Mastery"]
+        },
+        {
+          characterId: "yelan",
+          role: "Sub DPS",
+          roleDesc: "Attacks <element type='hydro'>Hydro</element> to enemies continuously with her Skill and Burst.",
+          weapons: ["Aqua Simulacra", "The Stringless"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge", "Elemental Mastery"]
+        },
+        {
+          characterId: "furina",
+          role: "Sub DPS",
+          roleDesc: "Provides off-field <element type='hydro'>Hydro</element> application and DMG increase via Burst based on HP changes.",
+          weapons: ["Splendor of Tranquil Waters", "Favonius Sword"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "jean",
+          role: "Support",
+          roleDesc: "Heals and <element type='anemo'>Anemo</element> support that reduces enemy RES with <set>Viridescent Venerer</set> and heals the team.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Energy Recharge", "CRIT Rate", "ATK%"]
+        }
+      ]
+    },
+    {
+      name: "Nilou Permafrost Team",
+      rank: "S",
+      description: "A Freeze team using Nilou as the on-field driver with Furina's off-field Hydro and Citlali's shield and resistance shred, while Escoffier provides healing and further RES reduction.\n\nFreeze enemies with constant Hydro from Nilou and Furina combined with Cryo from Citlali and Escoffier. Citlali reduces Pyro and Hydro RES when Frozen is triggered, while Escoffier lowers Cryo and Hydro RES. Furina buffs damage via HP fluctuation.\n\nTeam composition: Nilou (Hydro Main DPS), Citlali (Cryo Support), Furina (Hydro Sub DPS), Escoffier (Cryo Support)",
+      members: [
+        {
+          characterId: "nilou",
+          role: "Main DPS",
+          roleDesc: "Provides Hydro application to trigger Freeze. Uses Marechaussee Hunter to boost CRIT Rate with HP fluctuations from Furina.",
+          weapons: ["Key of Khaj-Nisut", "Wolf-Fang"],
+          artifacts: ["4pc Marechaussee Hunter"],
+          substats: ["CRIT Rate", "CRIT DMG", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "citlali",
+          role: "Support",
+          roleDesc: "Provides a shield based on Elemental Mastery. Her skill summons a creature that deals AoE Cryo damage and reduces enemies' Pyro and Hydro RES when Frozen or Melt is triggered.",
+          weapons: ["Starcaller's Watch", "Sacrificial Fragments"],
+          artifacts: ["4pc Scroll of the Hero of Cinder City"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate", "CRIT DMG"]
+        },
+        {
+          characterId: "furina",
+          role: "Sub DPS",
+          roleDesc: "Provides continuous Hydro application via Skill. Her Burst grants DMG increase based on HP changes of allies, which is triggered by her skill's HP drain and healing from Escoffier.",
+          weapons: ["Splendor of Tranquil Waters", "Favonius Sword"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "escoffier",
+          role: "Support",
+          roleDesc: "Summons a Cooking Mek that deals Cryo damage. Burst heals the team and lowers enemies' Cryo and Hydro RES, scaling with number of Cryo and Hydro characters.",
+          weapons: ["Symphonist of Scents", "Favonius Lance"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Nilou Vaporize",
+      rank: "S",
+      description: "Focus on triggering Vaporize reactions by applying Hydro with Nilou and Furina, then using Xiangling's Burst for massive off-field damage. Kazuha provides crowd control and elemental damage buffs.\n\nApply Hydro with Nilou and Furina, then use Xiangling's Pyro off-field Burst to trigger Vaporize. Kazuha groups enemies and res shreds to amplify damage.\n\nTeam composition: Nilou (Hydro Main DPS), Furina (Hydro Sub DPS), Kaedehara Kazuha (Anemo Support), Xiangling (Pyro Sub DPS)",
+      members: [
+        {
+          characterId: "nilou",
+          role: "Main DPS",
+          roleDesc: "Nilou provides Hydro to trigger Vaporize. Build full HP to maximize her skill and Burst damage.",
+          weapons: ["Key of Khaj-Nisut", "Wolf-Fang"],
+          artifacts: ["2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"],
+          substats: ["HP%", "HP", "Elemental Mastery"]
+        },
+        {
+          characterId: "furina",
+          role: "Sub DPS",
+          roleDesc: "Furina's Skill applies continuous Hydro off-field. Her Burst increases DMG based on HP changes of allies, which is fueled by her skill draining HP and a healer restoring it.",
+          weapons: ["Splendor of Tranquil Waters", "Wolf-Fang"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Kazuha groups enemies, applies crowd control, provides DMG buffs to teammates, and reduces elemental resistance of enemies.",
+          weapons: ["Freedom-Sworn", "Xiphos' Moonlight"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "Energy Recharge", "CRIT Rate"]
+        },
+        {
+          characterId: "xiangling",
+          role: "Sub DPS",
+          roleDesc: "Xiangling's Burst provides massive off-field Pyro damage to trigger Vaporize.",
+          weapons: ["Engulfing Lightning", "Favonius Lance"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["Energy Recharge", "CRIT Rate"]
+        }
+      ]
+    }
+  ],
+  "kamisato-ayato": [
+    {
+      name: "Ayato Hyperbloom",
+      rank: "SS",
+      description: "A high-damage Hyperbloom team leveraging Ayato's continuous Hydro application, Nahida's Dendro, and Kuki's Electro to trigger Hyperbloom, with Kazuha providing grouping and buffs.\n\nAyato's Skill applies Hydro to enemies, which reacts with Dendro from Nahida to create Bloom cores. Kuki's Electro Skill then triggers Hyperbloom for massive damage. Kazuha groups enemies and reduces Anemo resistance with <set>Viridescent Venerer</set>.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Nahida (Dendro Sub DPS), Kaedehara Kazuha (Anemo Support), Kuki Shinobu (Electro Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Ayato is the Main DPS, his continuous Hydro attacks trigger reactions.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Nahida deals DMG via Skill connecting up to 8 enemies and triggering reactions. Her Burst buffs the Skill based on teammates' elements.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Kazuha groups enemies, applies crowd control, provides DMG buffs, and reduces Anemo resistance.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "kuki-shinobu",
+          role: "Support",
+          roleDesc: "Kuki heals the team and triggers Hyperbloom with her Electro Skill. Maximize Elemental Mastery for high Hyperbloom damage.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Gilded Dreams"],
+          substats: ["Elemental Mastery", "HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Burgeon",
+      rank: "SS",
+      description: "A team that uses Hydro and Dendro to generate Bloom cores, then triggers Burgeon with Thoma's Burst.\n\nApply Dendro with Nahida and Hydro with Ayato and Yelan to create Bloom cores. Thoma's Burst triggers Burgeon on active character normal attacks.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Yelan (Hydro Sub DPS), Nahida (Dendro Sub DPS), Thoma (Pyro Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Main DPS using normal attacks to trigger Burgeon via Thoma's Burst.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "yelan",
+          role: "Sub DPS",
+          roleDesc: "Off-field Hydro application to generate Bloom cores.",
+          weapons: ["Aqua Simulacra", "Favonius Warbow"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["HP%", "Energy Recharge", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Applies Dendro with Skill and buffs Burst duration via teammate elements.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "thoma",
+          role: "Support",
+          roleDesc: "Provides shield and triggers Burgeon via Burst. C6 boosts Ayato normal attack DMG.",
+          weapons: ["Kitain Cross Spear", "Black Tassel"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Energy Recharge", "Elemental Mastery", "HP%"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Pure Hydro Team",
+      rank: "SS",
+      description: "Ayato is a Main DPS in the team. His DMG is maximized by Support's Artifacts and ATK SPD buff from Yun Jin.\n\nKazuha reduces Hydro resistance with Swirl, while Zhongli and Yun Jin provide shields and ATK SPD buffs, allowing Ayato to deal continuous Hydro damage.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Kaedehara Kazuha (Anemo Support), Yun Jin (Geo Support), Zhongli (Geo Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Continuous Hydro DPS relying on Normal Attacks after supports set up.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, reduces Hydro resistance, and provides DMG buff.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "yun-jin",
+          role: "Support",
+          roleDesc: "Provides Normal ATK Bonus and ATK SPD buff to Ayato via Burst.",
+          weapons: ["Kitain Cross Spear", "Favonius Lance"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["DEF%", "DEF", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "zhongli",
+          role: "Support",
+          roleDesc: "Provides a strong shield and increases team ATK with Tenacity of the Millelith.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Vaporize #1",
+      rank: "SS",
+      description: "Ayato and Hu Tao maximize Normal ATK DMG through Vaporize and ATK SPD buff from Yun Jin.\n\nAyato's continuous <element type='hydro'>Hydro</element> attacks enable Vaporize for Hu Tao, while Yun Jin boosts Normal ATK DMG and SPD. Zhongli provides shield and ATK buff.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Hu Tao (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Continuous <element type='hydro'>Hydro</element> attacks apply <element type='hydro'>Hydro</element> for Vaporize. Burst increases Hu Tao's ATK SPD.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "hu-tao",
+          role: "Main DPS",
+          roleDesc: "Triggers Vaporize with <element type='pyro'>Pyro</element> application from Ayato. Switches to Ayato when Skill is on cooldown.",
+          weapons: ["Staff of Homa", "Deathmatch"],
+          artifacts: ["4pc Crimson Witch of Flames"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Elemental Mastery", "ATK%"]
+        },
+        {
+          characterId: "yun-jin",
+          role: "Support",
+          roleDesc: "Provides Normal ATK Bonus and ATK SPD (C6) to both Ayato and Hu Tao.",
+          weapons: ["Kitain Cross Spear", "Favonius Lance"],
+          artifacts: ["4pc Husk of Opulent Dreams"],
+          substats: ["DEF%", "DEF", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "zhongli",
+          role: "Support",
+          roleDesc: "Shield provides safe environment and ATK boost via Tenacity of the Millelith.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Vaporize Team #2",
+      rank: "SS",
+      description: "The Normal ATK DMG Output of Ayato and Yoimiya is maximized by Vaporization and ATK SPD buff from Yun Jin.\n\nAyato and Yoimiya alternate as on-field DPS, triggering Vaporize reactions. Yun Jin boosts their Normal ATK DMG and ATK SPD, while Zhongli provides shielding and ATK buff via Tenacity of the Millelith.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Yoimiya (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Applies Hydro continuously with Normal Attacks to enable Vaporize. Elemental Burst increases Yoimiya's ATK SPD.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "yoimiya",
+          role: "Main DPS",
+          roleDesc: "Deals Pyro DMG with Normal Attacks after Elemental Skill enabling Vaporize reactions.",
+          weapons: ["Thundering Pulse", "Rust"],
+          artifacts: ["4pc Shimenawa's Reminiscence"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "yun-jin",
+          role: "Support",
+          roleDesc: "Provides Normal ATK Bonus and ATK SPD bonus (C6) to Ayato and Yoimiya.",
+          weapons: ["Kitain Cross Spear", "Favonius Lance"],
+          artifacts: ["4pc Husk of Opulent Dreams"],
+          substats: ["DEF%", "DEF", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "zhongli",
+          role: "Support",
+          roleDesc: "Provides a strong shield for safe field time and ATK buff to the team via Tenacity of the Millelith.",
+          weapons: ["Staff of Homa", "Black Tassel"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Permafrost",
+      rank: "SS",
+      description: "Ayato and Ayaka trigger Freeze with Hydro and Cryo while Kazuha groups enemies and Kokomi provides healing.\n\nAyaka applies Cryo off-field while Ayato and Kokomi provide consistent Hydro application to trigger Freeze. Kazuha groups enemies and buffs Cryo damage.\n\nTeam composition: Kamisato Ayaka (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Kaedehara Kazuha (Anemo Support), Sangonomiya Kokomi (Hydro Support)",
+      members: [
+        {
+          characterId: "kamisato-ayaka",
+          role: "Sub DPS",
+          roleDesc: "Deals high DMG with Burst and Skill, providing Cryo application to trigger Freeze.",
+          weapons: ["Mistsplitter Reforged", "Amenoma Kageuchi"],
+          artifacts: ["4pc Blizzard Strayer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Primary on-field DPS. Continuous Hydro attacks react with Cryo to Freeze. Burst increases Attack SPD of Ayaka.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies with Skill and Burst, provides Elemental DMG Bonus to team and reduces enemy resistance with Viridescent Venerer.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Support",
+          roleDesc: "Healer and Hydro applicator. Skill triggers Tenacity of the Millelith to buff team ATK and sustain Freeze.",
+          weapons: ["Everlasting Moonglow", "Thrilling Tales of Dragon Slayers"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Permafrost Team #2",
+      rank: "SS",
+      description: "A Freeze team where Ayato's <hydro>Hydro</hydro> attacks and Ganyu's <cryo>Cryo</cryo> Burst lock enemies in ice, while Venti groups them and Diona provides shield and energy.\n\nFreeze enemies using Ayato's Hydro application and Ganyu's Cryo Burst, grouped by Venti and protected by Diona.\n\nTeam composition: Ganyu (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Venti (Anemo Support), Diona (Cryo Support)",
+      members: [
+        {
+          characterId: "ganyu",
+          role: "Sub DPS",
+          roleDesc: "Deals <cryo>Cryo</cryo> via Burst and Charged Attack. Provides <cryo>Cryo</cryo> for Freeze.",
+          weapons: ["Hunter's Path", "Hamayumi"],
+          artifacts: ["2pc Noblesse Oblige + 2pc Blizzard Strayer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Continuous <hydro>Hydro</hydro> attacks trigger Freeze with <cryo>Cryo</cryo>. Burst boosts team Attack SPD.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "venti",
+          role: "Support",
+          roleDesc: "Groups enemies with Burst and spreads <hydro>Hydro</hydro> for wider Freeze.",
+          weapons: ["Elegy for the End", "Rust"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "diona",
+          role: "Support",
+          roleDesc: "Shield provides safety and <cryo>Cryo</cryo> battery for Ganyu.",
+          weapons: ["Sacrificial Bow", "Favonius Warbow"],
+          artifacts: ["4pc Maiden Beloved"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Electro-Charged Team #2",
+      rank: "S",
+      description: "Ayato drives Electro-Charged reactions with continuous Hydro application, while Fischl and Beidou provide off-field Electro. Jean (C2) heals, shreds resistance with Viridescent Venerer, and boosts attack speed.\n\nAyato's Hydro attacks react with Electro from Fischl and Beidou to trigger Electro-Charged, while Jean provides healing, Anemo RES shred, and attack speed buff at C2.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Fischl (Electro Sub DPS), Beidou (Electro Sub DPS), Jean (Anemo Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "Continuous Hydro attacks trigger Electro-Charged with off-field Electro.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "fischl",
+          role: "Sub DPS",
+          roleDesc: "Off-field Electro application via Skill to enable Electro-Charged. C6 is a significant upgrade.",
+          weapons: ["Skyward Harp", "The Stringless"],
+          artifacts: ["4pc Thundering Fury"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "beidou",
+          role: "Sub DPS",
+          roleDesc: "Off-field Electro via Burst for consistent Electro-Charged.",
+          weapons: ["Skyward Pride", "Serpent Spine"],
+          artifacts: ["2pc Noblesse Oblige + 2pc Thundering Fury"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "jean",
+          role: "Support",
+          roleDesc: "Heals, shreds Electro and Hydro RES with Viridescent Venerer, and provides 15% attack speed at C2.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Ayato Pure Hydro Team #2",
+      rank: "SS",
+      description: "Ayato is a Main DPS. His damage is maximized by ATK SPD buff from Yun Jin and Jean.\n\nMaximize Ayato's damage using Yun Jin's Normal ATK buff and ATK SPD from C6 Yun Jin and C2 Jean. Jean also provides Viridescent Venerer shred for Hydro resistance.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Furina (Hydro Sub DPS), Yun Jin (Geo Support), Jean (Anemo Support)",
+      members: [
+        {
+          characterId: "kamisato-ayato",
+          role: "Main DPS",
+          roleDesc: "DMG maximized by ATK SPD buff from Yun Jin and Jean.",
+          weapons: ["Haran Geppaku Futsu", "The Black Sword"],
+          artifacts: ["4pc Nymph's Dream"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "HP%"]
+        },
+        {
+          characterId: "furina",
+          role: "Sub DPS",
+          roleDesc: "Elemental Burst provides DMG increase based on HP changes. Elemental Skill burns allies HP.",
+          weapons: ["Splendor of Tranquil Waters", "Fleuve Cendre Ferryman"],
+          artifacts: ["4pc Golden Troupe"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "yun-jin",
+          role: "Support",
+          roleDesc: "Provides Normal ATK Bonus and Normal ATK SPD Bonus (C6) to Ayato.",
+          weapons: ["Kitain Cross Spear", "Favonius Lance"],
+          artifacts: ["4pc Husk of Opulent Dreams"],
+          substats: ["DEF%", "DEF", "CRIT DMG", "CRIT Rate", "Energy Recharge"]
+        },
+        {
+          characterId: "jean",
+          role: "Support",
+          roleDesc: "Healer, spreads element, reduces enemy RES. C2 gives 15% ATK SPD to all characters.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        }
+      ]
+    }
+  ],
+  "sangonomiya-kokomi": [
+    {
+      name: "Kokomi Hyperbloom Team",
+      rank: "SS",
+      description: "A powerful Hyperbloom team with Kokomi on the on-field driver, Nahida for Dendro application, Raiden Shogun for triggering reactions, and Kazuha for grouping and buffs.\n\nKokomi drives the team with her Normal Attacks and Elemental Skill to create Dendro Cores, which are then triggered by Raiden Shogun's Elemental Skill to produce Hyperblooms. Nahida applies Dendro and boosts reactions, while Kazuha groups enemies and provides DMG buffs.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Nahida (Dendro Sub DPS), Raiden Shogun (Electro Sub DPS), Kaedehara Kazuha (Anemo Support)",
+      members: [
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Main DPS",
+          roleDesc: "Main DPS and driver. continuous Hydro attacks react with Dendro to create Dendro Cores via Skill and Normal Attacks to trigger Hyperbloom.",
+          weapons: ["Everlasting Moonglow", "Prototype Amber"],
+          artifacts: ["4pc Ocean-Hued Clam"],
+          substats: ["HP%", "Energy Recharge", "HP", "Elemental Mastery", "ATK%"]
+        },
+        {
+          characterId: "nahida",
+          role: "Sub DPS",
+          roleDesc: "Deals DMG via Elemental Skill which connects up to 8 enemies and deals Dendro DMG. Burst buffs Skill based on teammates' elements. With two Hydro characters, the duration of her Burst is increased.",
+          weapons: ["A Thousand Floating Dreams", "Solar Pearl"],
+          artifacts: ["4pc Deepwood Memories"],
+          substats: ["CRIT DMG", "CRIT Rate", "Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "raiden-shogun",
+          role: "Sub DPS",
+          roleDesc: "Sub DPS. Elemental Skill triggers Electro-Charged and activates Cores for Hyperbloom.",
+          weapons: ["Dragon's Bane", "Kitain Cross Spear"],
+          artifacts: ["4pc Flower of Paradise Lost"],
+          substats: ["Elemental Mastery", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies with Skill and Burst, spreads elements, provides DMG buff. Reduces elemental RES with Viridescent Venerer.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Vaporize Team #1",
+      rank: "SS",
+      description: "Kokomi acts as a Sub DPS, applying Hydro to enable Vaporize for Hu Tao. Kazuha (C2) provides DMG bonus and resistance shred. Bennett offers ATK buff and healing.\n\nMaximizes Vaporize damage by using Kokomi's consistent Hydro application and Kazuha's DMG bonus and resistance shred, while Bennett provides ATK buff and healing to sustain the team.\n\nTeam composition: Hu Tao (Pyro Main DPS), Sangonomiya Kokomi (Hydro Sub DPS), Kaedehara Kazuha (Anemo Support), Bennett (Pyro Support)",
+      members: [
+        {
+          characterId: "hu-tao",
+          role: "Main DPS",
+          roleDesc: "Main DPS. HP changes amplify Vaporize damage. Uses Skill to convert HP to ATK.",
+          weapons: ["Staff of Homa", "Deathmatch"],
+          artifacts: ["4pc Crimson Witch of Flames"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Elemental Mastery", "ATK%"]
+        },
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Sub DPS",
+          roleDesc: "Sub DPS. Deals DMG, reacts with Pyro. Applies Hydro status with Skill and Burst as normal.",
+          weapons: ["Everlasting Moonglow", "Prototype Amber"],
+          artifacts: ["4pc Ocean-Hued Clam"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides Element DMG, reduces enemy resistance with Viridescent Venerer.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Provides massive ATK buff and healing through Burst.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Pure Hydro Team",
+      rank: "S",
+      description: "A powerful Hydro focused team leveraging Kokomi's on-field presence and Kazuha's Hydro DMG bonus.\n\nMaximizes Hydro DMG with consistent Hydro application from Yelan and Xingqiu, amplified by Kazuha's DMG bonus and resistance shred.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Yelan (Hydro Sub DPS), Xingqiu (Hydro Sub DPS), Kaedehara Kazuha (Anemo Support)",
+      members: [
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Main DPS",
+          roleDesc: "Kokomi's Burst DMG scales with Max HP. Heals the team.",
+          weapons: ["Everlasting Moonglow", "Prototype Amber"],
+          artifacts: ["4pc Ocean-Hued Clam"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "yelan",
+          role: "Sub DPS",
+          roleDesc: "Provides continuous off-field Hydro application.",
+          weapons: ["Aqua Simulacra", "Favonius Warbow"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "HP%", "Energy Recharge"]
+        },
+        {
+          characterId: "xingqiu",
+          role: "Sub DPS",
+          roleDesc: "Deals DMG, continuously applies Hydro to enemies.",
+          weapons: ["Primordial Jade Cutter", "Sacrificial Sword"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides DMG buff, reduces enemy Hydro RES with Viridescent Venerer.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Vaporize Team #2",
+      rank: "SS",
+      description: "A powerful team centered on Kokomi as Main DPS, maximizing Vaporize damage with Kazuha (C2) bonus, Xiangling and Kokomi enable consistent Vaporize triggers.\n\nKokomi's Hydro application, combined with Xiangling's Pyro, triggers consistent Vaporize. Kazuha boosts damage and shreds resistance, while Bennett provides ATK buff and healing.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Xiangling (Pyro Sub DPS), Kaedehara Kazuha (Anemo Support), Bennett (Pyro Support)",
+      members: [
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Main DPS",
+          roleDesc: "Triggers Vaporize with Normal Attacks and Elemental Skill damage scales off Max HP.",
+          weapons: ["Everlasting Moonglow", "Prototype Amber"],
+          artifacts: ["4pc Ocean-Hued Clam"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "xiangling",
+          role: "Sub DPS",
+          roleDesc: "Provides continuous Pyro application via Pyronado and Guoba, enabling Vaporize for Kokomi.",
+          weapons: ["Engulfing Lightning", "The Catch"],
+          artifacts: ["4pc Emblem of Severed Fate"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides Anemo resonance, buffs team damage, and reduces enemy resistance.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Provides massive ATK buff and healing with Bennett Burst.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Permafrost Team #1",
+      rank: "S",
+      description: "Ayaka and Shenhe apply Cryo, Kokomi applies Hydro to Freeze, Kazuha groups and buffs.\n\nUse Cryo from Ayaka and Shenhe with Kokomi's Hydro to trigger Freeze, while Kazuha provides crowd control, DMG buff, and resistance shred.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Shenhe (Cryo Sub DPS), Kaedehara Kazuha (Anemo Support), Sangonomiya Kokomi (Hydro Support)",
+      members: [
+        {
+          characterId: "kamisato-ayaka",
+          role: "Main DPS",
+          roleDesc: "Deals high Burst and Normal Attack DMG.",
+          weapons: ["Mistsplitter Reforged", "Amenoma Kageuchi"],
+          artifacts: ["4pc Blizzard Strayer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "shenhe",
+          role: "Sub DPS",
+          roleDesc: "Provides Cryo bonus to Ayaka and increases DMG of attacks.",
+          weapons: ["Calamity Queller", "Favonius Lance"],
+          artifacts: ["2pc Gladiator's Finale + 2pc Shimenawa's Reminiscence"],
+          substats: ["ATK%", "Energy Recharge", "HP%", "CRIT Rate"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides DMG buff, reduces enemy resistance.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Support",
+          roleDesc: "Healer. Skill applies Hydro every 2s, triggers Tenacity of the Millelith.",
+          weapons: ["Everlasting Moonglow", "Thrilling Tales of Dragon Slayers"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Permafrost Team #2",
+      rank: "A",
+      description: "A permafrost team with Kokomi providing consistent Hydro application via her Skill enabling Ayaka and Rosaria to trigger Freeze, constantly. Kazuha groups enemies, applies crowd control, provides DMG buffs, and reduces enemy Anemo RES with Viridescent Venerer.\n\nKokomi's Skill applies Hydro every 2 seconds, which reacts with Cryo from Ayaka and Rosaria to trigger Freeze, locking down enemies. Kazuha amplifies damage and groups them.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Rosaria (Cryo Sub DPS), Sangonomiya Kokomi (Hydro Support), Kaedehara Kazuha (Anemo Support)",
+      members: [
+        {
+          characterId: "kamisato-ayaka",
+          role: "Main DPS",
+          roleDesc: "Ayaka's high DMG attacks are key, providing Cryo and reacting with Hydro.",
+          weapons: ["Mistsplitter Reforged", "Amenoma Kageuchi"],
+          artifacts: ["4pc Blizzard Strayer"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "rosaria",
+          role: "Sub DPS",
+          roleDesc: "Rosaria provides consistent particles with short cooldown Skill and generates Cryo application for Freeze.",
+          weapons: ["Skyward Spine", "Favonius Lance"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Support",
+          roleDesc: "Healer. Skill provides off-field Hydro application via Skill triggering Tenacity of the Millelith to buff the team.",
+          weapons: ["Everlasting Moonglow", "Thrilling Tales of Dragon Slayers"],
+          artifacts: ["4pc Tenacity of the Millelith"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides DMG buff, and reduces enemy resistance with Viridescent Venerer.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Electro-Charged Team",
+      rank: "A",
+      description: "Kokomi drives Electro-Charged reactions with Fischl and Beidou, while Kazuha provides elemental damage bonus, crowd control, VV shred and damage bonus.\n\nMaximize Electro-Charged damage using Kazuha's C2 bonus and consistent off-field Electro application from Fischl and Beidou.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Fischl (Electro Sub DPS), Beidou (Electro Sub DPS), Kaedehara Kazuha (Anemo Support)",
+      members: [
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Main DPS",
+          roleDesc: "Main DPS and driver. Max HP Hydro damage triggers Electro-Charged with Electro.",
+          weapons: ["Everlasting Moonglow", "Prototype Amber"],
+          artifacts: ["4pc Ocean-Hued Clam"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "fischl",
+          role: "Sub DPS",
+          roleDesc: "Oz provides continuous off-field Electro application to trigger Electro-Charged.",
+          weapons: ["Skyward Harp", "The Stringless"],
+          artifacts: ["4pc Thundering Fury"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "beidou",
+          role: "Sub DPS",
+          roleDesc: "Burst provides off-field Electro application to constantly trigger Electro-Charged.",
+          weapons: ["Skyward Pride", "Serpent Spine"],
+          artifacts: ["2pc Noblesse Oblige + 2pc Thundering Fury"],
+          substats: ["CRIT DMG", "CRIT Rate", "Energy Recharge", "ATK%"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, applies crowd control, provides DMG buff, reduces enemy resistance with Viridescent Venerer.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        }
+      ]
+    },
+    {
+      name: "Kokomi Vaporize Team #3",
+      rank: "A",
+      description: "Kokomi is a Sub DPS in the team. The Vaporize DMG of the whole team is maximized by Kazuha (C2)'s bonus, Yoimiya and Bennett allow the team to trigger Vaporize all the time.\n\nThis team maximizes Vaporize damage by combining Yoimiya's consistent Pyro application with Kokomi's Hydro application, while Kazuha provides DMG buffs and resistance shred, and Bennett provides ATK buff and healing.\n\nTeam composition: Yoimiya (Pyro Main DPS), Sangonomiya Kokomi (Hydro Sub DPS), Kaedehara Kazuha (Anemo Support), Bennett (Pyro Support)",
+      members: [
+        {
+          characterId: "yoimiya",
+          role: "Main DPS",
+          roleDesc: "Main DPS whose attacks trigger Vaporize consistently.",
+          weapons: ["Thundering Pulse", "Rust"],
+          artifacts: ["4pc Shimenawa's Reminiscence"],
+          substats: ["CRIT DMG", "CRIT Rate", "ATK%", "Energy Recharge"]
+        },
+        {
+          characterId: "sangonomiya-kokomi",
+          role: "Sub DPS",
+          roleDesc: "Applies Hydro with Skill to enable Vaporize for Yoimiya, also heals based on HP.",
+          weapons: ["Everlasting Moonglow", "Prototype Amber"],
+          artifacts: ["4pc Ocean-Hued Clam"],
+          substats: ["HP%", "Energy Recharge", "HP", "ATK%", "Elemental Mastery"]
+        },
+        {
+          characterId: "kaedehara-kazuha",
+          role: "Support",
+          roleDesc: "Groups enemies, provides Anemo buff, reduces enemy resistance.",
+          weapons: ["Freedom-Sworn", "Iron Sting"],
+          artifacts: ["4pc Viridescent Venerer"],
+          substats: ["Elemental Mastery", "CRIT DMG", "CRIT Rate", "ATK%"]
+        },
+        {
+          characterId: "bennett",
+          role: "Support",
+          roleDesc: "Provides massive ATK buff and healing with Bennett.",
+          weapons: ["Skyward Blade", "Favonius Sword"],
+          artifacts: ["4pc Noblesse Oblige"],
+          substats: ["HP%", "HP", "Energy Recharge"]
+        }
+      ]
+    }
+  ],
   "sigewinne": [
     {
       name: "Sigewinne Pure Hydro",

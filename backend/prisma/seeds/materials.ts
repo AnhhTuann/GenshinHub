@@ -23,6 +23,17 @@ export async function seedMaterials(prisma: PrismaClient) {
       };
     });
 
+    const manualMaterials = [
+      { id: "112001", nameVi: "Tinh Chất Slime", nameEn: "Slime Condensate", type: "MATERIAL", rarity: 1, iconUrl: "https://enka.network/ui/UI_ItemIcon_112001.png" },
+      { id: "100019", nameVi: "Nấm Phila", nameEn: "Philanemo Mushroom", type: "MATERIAL", rarity: 1, iconUrl: "https://enka.network/ui/UI_ItemIcon_100019.png" }
+    ];
+
+    for (const m of manualMaterials) {
+      if (!materialData.find((x: any) => x.id === m.id)) {
+        materialData.push(m);
+      }
+    }
+
     await prisma.material.deleteMany({});
     await prisma.material.createMany({ data: materialData });
     console.log(`Đã seed thành công ${materialData.length} Materials.`);

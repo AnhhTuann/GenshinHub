@@ -289,7 +289,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
             {/* ── 3. ARTIFACTS + MAIN STATS ── */}
             {character.bestArtifacts?.length > 0 && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div className="flex flex-col gap-5">
                 {/* Artifacts list */}
                 <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
                   <SectionHeader label={t('artifacts')} accent="bg-purple-400" />

@@ -16,6 +16,15 @@ const enkaNameMap: Record<string, string> = {
   "Lyney": "Liney", "Lynette": "Linette", "Ororon": "Olorun"
 };
 
+const forcedIdMap: Record<string, string> = {
+  "lan-yan": "lanyan",
+  "yumemizuki-mizuki": "yumemizu",
+  "kirara": "momoka",
+  "manekin": "traveler-boy",
+  "manekina": "traveler-girl",
+  "traveler": "traveler"
+};
+
 const getAvatarUrl = (name: string) => {
   let cleanName = name;
   if (name.startsWith("Traveler")) {
@@ -241,7 +250,8 @@ const charactersData = [
       "Traveler (Electro)|Electro|Sword|5",
       "Traveler (Dendro)|Dendro|Sword|5",
       "Traveler (Hydro)|Hydro|Sword|5",
-      "Traveler (Pyro)|Pyro|Sword|5"
+      "Traveler (Pyro)|Pyro|Sword|5",
+      "Traveler|None|Sword|5"
     ].map(c => ({ ...parseChar(c), region: "Other" }))
   ];
 
@@ -249,7 +259,8 @@ function parseChar(dataStr: string) {
   const [name, element, weapon, rarity] = dataStr.split('|');
   const avatarKey = enkaNameMap[name] || name;
 
-  const charId = toId(name);
+  let charId = toId(name);
+  if (forcedIdMap[charId]) charId = forcedIdMap[charId];
   const metaInfo: any = metaBuilds.find(m => m.characterId === charId);
 
   let defaultWeapons: any[] = [];

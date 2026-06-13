@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
+import AdminModeToggle from "@/components/AdminModeToggle";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 
@@ -49,6 +50,7 @@ export default async function RootLayout({ children, params }: { children: React
               <p className="text-white/15 text-[11px] font-semibold">© 2026 GenshinHub. All rights reserved.</p>
             </div>
           </footer>
+          <AdminModeToggle />
         </NextIntlClientProvider>
       </body>
     </html>

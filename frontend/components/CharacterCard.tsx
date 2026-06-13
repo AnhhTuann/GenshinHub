@@ -1,6 +1,7 @@
 "use client";
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 
@@ -38,11 +39,14 @@ export default function CharacterCard({ character }: { character: CharacterData 
       className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/50 rounded-2xl"
       href={`/characters/${character.id}`}
     >
-      <div
+      <motion.div
+        whileHover={{ y: -4, scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
         className={`relative flex flex-col justify-end h-40 sm:h-48 md:h-52 rounded-2xl border ${baseBorder} ${glow} transition-all duration-300 overflow-hidden cursor-pointer bg-[#0d0d14]`}
       >
         {/* ── Avatar image — NO negative z-index ── */}
-        <div className="absolute inset-0 group-hover:scale-[1.08] transition-transform duration-500 ease-out">
+        <div className="absolute inset-0 group-hover:scale-[1.12] transition-transform duration-500 ease-out">
           <Image
             src={character.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'}
             alt={name}
@@ -82,7 +86,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
             {name}
           </span>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

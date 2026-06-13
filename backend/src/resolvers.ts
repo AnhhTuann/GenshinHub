@@ -2,6 +2,7 @@
 import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
 import { LRUCache } from 'lru-cache';
+import { Mutation } from './mutations';
 
 const prisma = new PrismaClient();
 
@@ -234,5 +235,6 @@ export const resolvers = {
       if (parent.bestArtifacts) return parent.bestArtifacts;
       return prisma.characterArtifact.findMany({ where: { characterId: parent.id } });
     }
-  }
+  },
+  Mutation
 };

@@ -1,4 +1,6 @@
+"use client";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { WeaponBuild } from '@/types/character';
@@ -48,7 +50,12 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
     : 'bg-gradient-to-br from-[#a256e8] to-[#6f38a6]';
 
   const cardContent = (
-    <div className={`flex items-center gap-4 p-4 rounded-2xl border bg-[#0d0d14]/50 ${cardBorder} transition-all duration-300 cursor-pointer group/w`}>
+    <motion.div
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`flex items-center gap-4 p-4 rounded-2xl border bg-[#0d0d14]/50 ${cardBorder} transition-all duration-300 cursor-pointer group/w`}
+    >
       {/* Rank badge */}
       <span className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-[10px] font-black border ${rankStyle}`}>
         {index + 1}
@@ -88,7 +95,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
           </svg>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 
   return (

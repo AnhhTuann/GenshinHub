@@ -1,9 +1,18 @@
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
 
 export async function fetchGraphQL(query: string, variables = {}) {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  
+  if (typeof window !== 'undefined') {
+    const adminKey = localStorage.getItem('admin_key');
+    if (adminKey) {
+      headers['x-admin-key'] = adminKey;
+    }
+  }
+
   const res = await fetch(GRAPHQL_ENDPOINT, { 
     method: 'POST', 
-    headers: { 'Content-Type': 'application/json' }, 
+    headers, 
     body: JSON.stringify({ query, variables }), 
     next: { revalidate: 0 } // No cache in development
   });

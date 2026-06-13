@@ -1,4 +1,6 @@
+"use client";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArtifactBuild } from '@/types/character';
@@ -145,9 +147,13 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
   );
 
   const cardWrapper = (children: React.ReactNode) => (
-    <div className={`border rounded-2xl p-4 transition-all duration-250 bg-[#0d0d14]/50 ${border} hover:bg-[#13131e]/60 group`}>
+    <motion.div
+      whileHover={{ scale: 1.02, y: -2 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`border rounded-2xl p-4 transition-all duration-250 bg-[#0d0d14]/50 ${border} hover:bg-[#13131e]/60 group`}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 
   return cardWrapper(

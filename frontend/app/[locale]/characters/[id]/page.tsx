@@ -8,6 +8,10 @@ import { CharacterData } from '@/types/character';
 import WeaponCard from '@/components/WeaponCard';
 import ArtifactCard from '@/components/ArtifactCard';
 import CharacterSidebar from '@/components/CharacterSidebar';
+import ScrollEntrance from '@/components/ScrollEntrance';
+import ParallaxSplash from '@/components/ParallaxSplash';
+import AdminEditableSplash from '@/components/AdminEditableSplash';
+import AdminEditableBuild from '@/components/AdminEditableBuild';
 import { detailedTeamsData } from '@/data/teams';
 
 const EL_COLOR: Record<string, string> = {
@@ -155,14 +159,12 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
       </div>
 
       {/* ── HERO BANNER ── */}
-      <div className="relative w-full overflow-hidden" style={{ minHeight: 'clamp(320px, 55vw, 520px)' }}>
-        {/* Splash art background */}
-        {character.splashArtUrl && (
-          <div
-            className="absolute inset-0 bg-cover bg-[center_15%] bg-no-repeat"
-            style={{ backgroundImage: `url(${character.splashArtUrl})`, filter: 'brightness(0.5) saturate(1.1)' }}
-          />
-        )}
+      <AdminEditableSplash characterId={character.id}>
+        <div className="relative w-full overflow-hidden" style={{ minHeight: 'clamp(320px, 55vw, 520px)' }}>
+          {/* Splash art background */}
+          {character.splashArtUrl && (
+            <ParallaxSplash imageUrl={character.splashArtUrl} />
+          )}
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#06060a] via-[#06060a]/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#06060a]/70 via-transparent to-transparent" />
@@ -244,23 +246,26 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
           className="absolute bottom-0 left-0 right-0 h-[2px]"
           style={{ background: `linear-gradient(90deg, transparent, ${elColor}60, transparent)` }}
         />
-      </div>
+        </div>
+      </AdminEditableSplash>
 
       {/* ── MAIN CONTENT ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-6 sm:mt-8 pb-16 sm:pb-24">
         <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 items-start">
 
           {/* ─── LEFT SIDEBAR ─── */}
-          <div className="w-full xl:w-[300px] xl:sticky xl:top-20 xl:self-start shrink-0">
+          <div className="w-full xl:w-[300px] xl:sticky xl:top-20 xl:self-start shrink-0 flex flex-col gap-4">
             <CharacterSidebar character={character} />
+            <AdminEditableBuild character={character} />
           </div>
 
           {/* ─── RIGHT CONTENT ─── */}
           <div className="flex-1 min-w-0 flex flex-col gap-5">
 
             {/* ── 1. OVERVIEW ── */}
-            <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl overflow-hidden">
-              <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, transparent, ${elColor}60, transparent)` }} />
+            <ScrollEntrance>
+              <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl overflow-hidden">
+                <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, transparent, ${elColor}60, transparent)` }} />
               <div className="p-5 sm:p-6">
                 <SectionHeader label="Overview" accent={accentCls} />
                 {desc && (
@@ -271,25 +276,29 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                   <StatCard label={t('hp')}  value={character.baseHp  || 0} color="text-emerald-400" />
                   <StatCard label={t('atk')} value={character.baseAtk || 0} color="text-red-400" />
                   <StatCard label={t('def')} value={character.baseDef || 0} color="text-blue-400" />
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </ScrollEntrance>
 
             {/* ── 2. BEST WEAPONS ── */}
             {character.bestWeapons?.length > 0 && (
-              <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
+              <ScrollEntrance delay={0.1}>
+                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
                 <SectionHeader label={t('weapons')} accent="bg-amber-400" />
                 <div className="flex flex-col gap-3">
                   {character.bestWeapons.map((weapon, idx) => (
                     <WeaponCard key={idx} weapon={weapon} index={idx} />
                   ))}
-                </div>
-              </section>
+                  </div>
+                </section>
+              </ScrollEntrance>
             )}
 
             {/* ── 3. ARTIFACTS + MAIN STATS ── */}
             {character.bestArtifacts?.length > 0 && (
-              <div className="flex flex-col gap-5">
+              <ScrollEntrance delay={0.2}>
+                <div className="flex flex-col gap-5">
                 {/* Artifacts list */}
                 <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
                   <SectionHeader label={t('artifacts')} accent="bg-purple-400" />
@@ -356,23 +365,27 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                   )}
                 </div>
               </div>
+              </ScrollEntrance>
             )}
 
             {/* ── 4. FALLBACK when no artifacts ── */}
             {(!character.bestArtifacts || character.bestArtifacts.length === 0) && character.talentPriority?.length > 0 && (
-              <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
+              <ScrollEntrance delay={0.2}>
+                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
                 <SectionHeader label="Talent Priority" accent="bg-red-400" />
                 <div className="flex flex-col gap-2">
                   {character.talentPriority.map((talent, idx) => (
                     <TalentRow key={idx} talent={talent} index={idx} />
                   ))}
-                </div>
-              </section>
+                  </div>
+                </section>
+              </ScrollEntrance>
             )}
 
             {/* ── 5. DETAILED TEAM COMPS ── */}
             {hasDetailedTeams && (
-              <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
+              <ScrollEntrance delay={0.3}>
+                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
                 <SectionHeader label="Meta Team Comps" accent="bg-blue-400" />
                 <div className="flex flex-col gap-4">
                   {detailedTeams.map((team, tIdx) => (
@@ -464,13 +477,15 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                       </div>
                     </div>
                   ))}
-                </div>
-              </section>
+                  </div>
+                </section>
+              </ScrollEntrance>
             )}
 
             {/* ── 6. SIMPLE TEAMS (no detailed data) ── */}
             {!hasDetailedTeams && character.bestTeams?.length > 0 && (
-              <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
+              <ScrollEntrance delay={0.3}>
+                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
                 <SectionHeader label="Recommended Teammates" accent="bg-blue-400" />
                 <div className="flex flex-wrap gap-3">
                   {character.bestTeams.map((tid) => {
@@ -492,6 +507,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                   })}
                 </div>
               </section>
+            </ScrollEntrance>
             )}
 
           </div>

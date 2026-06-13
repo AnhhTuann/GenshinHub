@@ -2,6 +2,7 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import CharacterCard from './CharacterCard';
 import { CharacterData, Element } from '@/types/character';
 
@@ -179,17 +180,27 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
 
       {/* ── Grid ── */}
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 sm:gap-3">
-          {filtered.map((char, i) => (
-            <div
-              key={char.id}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${Math.min(i * 0.015, 0.35)}s`, animationFillMode: 'backwards' }}
-            >
-              <CharacterCard character={char} />
-            </div>
-          ))}
-        </div>
+        <motion.div layout className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 sm:gap-3">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((char, i) => (
+              <motion.div
+                key={char.id}
+                layout
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.15 } }}
+                transition={{
+                  duration: 0.4,
+                  type: 'spring',
+                  bounce: 0.25,
+                  delay: Math.min(i * 0.02, 0.2) // cap delay so it doesn't take forever
+                }}
+              >
+                <CharacterCard character={char} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       ) : (
         <div className="flex flex-col items-center justify-center py-24 text-white/25 bg-[#0d0d14]/30 rounded-2xl border border-white/[0.04]">
           <span className="text-5xl mb-4 opacity-30">🔍</span>

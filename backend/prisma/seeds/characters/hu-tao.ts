@@ -10,6 +10,7 @@ export const huTao = {
   "Skill",
   "Burst"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Hu Tao Vaporize Team #2",

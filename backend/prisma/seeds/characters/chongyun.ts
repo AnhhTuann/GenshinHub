@@ -10,6 +10,7 @@ export const chongyun = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

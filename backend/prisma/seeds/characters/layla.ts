@@ -10,6 +10,7 @@ export const layla = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

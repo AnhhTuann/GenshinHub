@@ -10,6 +10,7 @@ export const jahoda = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

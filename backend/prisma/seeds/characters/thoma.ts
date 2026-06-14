@@ -10,6 +10,7 @@ export const thoma = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Thoma Burgeon Team #1",

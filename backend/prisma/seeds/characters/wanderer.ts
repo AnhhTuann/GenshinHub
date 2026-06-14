@@ -10,6 +10,7 @@ export const wanderer = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

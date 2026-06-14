@@ -10,6 +10,7 @@ export const varesa = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

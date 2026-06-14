@@ -30,6 +30,14 @@ const ELEMENT_TEXT: Record<string, string> = {
   Dendro:  'text-[#aed581]',
 };
 
+const WEAPON_TYPE_MAP: Record<string, string> = {
+  'Sword': 'Kiếm Đơn',
+  'Claymore': 'Trọng Kiếm',
+  'Polearm': 'Vũ Khí Cán Dài',
+  'Catalyst': 'Pháp Khí',
+  'Bow': 'Cung',
+};
+
 
 function WeaponBadge({ name, icon, label }: { name: string; icon: string; label: string }) {
   return (
@@ -87,6 +95,29 @@ export default function CharacterSidebar({ character, allWeapons = [] }: { chara
       // Remove deep fields not meant for Upsert input
       delete fullInput.teams;
       delete fullInput.signatureWeapons; // We will pass it at root
+      delete fullInput.birthday;
+      delete fullInput.fandomUrl;
+      
+      // Remove 'id' from nested arrays that don't need it in Input types
+      if (fullInput.bestWeapons) {
+        fullInput.bestWeapons = fullInput.bestWeapons.map((w: any) => {
+          const { id, ...rest } = w;
+          return rest;
+        });
+      }
+      if (fullInput.bestArtifacts) {
+        fullInput.bestArtifacts = fullInput.bestArtifacts.map((a: any) => {
+          const { id, artifactSetId, mixSets, rarity, iconUrl, ...rest } = a;
+          // mixSets also have ids that might cause problems, let's strip them
+          if (rest.mixSets) {
+             rest.mixSets = rest.mixSets.map((m: any) => {
+                const { id, artifactSetId, ...mRest } = m;
+                return mRest;
+             });
+          }
+          return rest;
+        });
+      }
 
       fullInput.signatureWeapons = weaponNames;
 
@@ -183,7 +214,7 @@ export default function CharacterSidebar({ character, allWeapons = [] }: { chara
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSave={handleSaveSignatureWeapons}
-        allWeapons={allWeapons}
+        allWeapons={allWeapons.filter(w => w.type === WEAPON_TYPE_MAP[character.weapon] || w.type === character.weapon)}
         initialWeapons={sigWeapons.map(w => w.id)}
       />
     </>

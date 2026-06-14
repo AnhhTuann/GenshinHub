@@ -10,6 +10,7 @@ export const mualani = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Mualani Vaporization Team #1",

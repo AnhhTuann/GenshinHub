@@ -10,6 +10,7 @@ export const bennett = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Bennett Vaporize Team #1",

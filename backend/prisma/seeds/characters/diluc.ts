@@ -10,6 +10,7 @@ export const diluc = {
   "Skill",
   "Burst"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Diluc Vaporize Team #1",

@@ -10,6 +10,7 @@ export const kaedeharaKazuha = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

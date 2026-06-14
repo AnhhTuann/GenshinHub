@@ -10,6 +10,7 @@ export const chevreuse = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Chevreuse Overload Team #1",

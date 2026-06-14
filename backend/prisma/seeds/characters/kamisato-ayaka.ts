@@ -10,6 +10,7 @@ export const kamisatoAyaka = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

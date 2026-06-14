@@ -10,6 +10,7 @@ export const raidenShogun = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Raiden Shogun Electro Team",

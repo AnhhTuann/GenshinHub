@@ -10,6 +10,7 @@ export const dehya = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Dehya Melting Team #1",

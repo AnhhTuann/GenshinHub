@@ -10,6 +10,7 @@ export const furina = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Furina Aggravate-Hyperbloom Team",

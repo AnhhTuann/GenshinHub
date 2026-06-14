@@ -10,6 +10,7 @@ export const klee = {
   "Burst",
   "Skill"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Klee Vaporize Team",

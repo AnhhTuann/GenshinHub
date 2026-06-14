@@ -10,6 +10,7 @@ export const gaming = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Gaming Melting Team #1",

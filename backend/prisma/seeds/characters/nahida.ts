@@ -10,6 +10,7 @@ export const nahida = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Nahida Overload-Catalyze Team",

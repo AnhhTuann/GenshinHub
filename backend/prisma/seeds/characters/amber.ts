@@ -10,6 +10,7 @@ export const amber = {
   "Skill",
   "Burst"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Amber Vaporize Team",

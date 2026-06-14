@@ -112,6 +112,8 @@ import { sangonomiyaKokomi } from './characters/sangonomiya-kokomi';
 
 
 
+
+
 import { xiangling } from './characters/xiangling';
 import { beidou } from './characters/beidou';
 import { xingqiu } from './characters/xingqiu';
@@ -123,7 +125,6 @@ import { fischl } from './characters/fischl';
 import { bennett } from './characters/bennett';
 import { tartaglia } from './characters/tartaglia';
 import { noelle } from './characters/noelle';
-import { qiqi } from './characters/qiqi';
 import { chongyun } from './characters/chongyun';
 import { ganyu } from './characters/ganyu';
 import { albedo } from './characters/albedo';
@@ -133,7 +134,7 @@ import { keqing } from './characters/keqing';
 import { sucrose } from './characters/sucrose';
 import { xinyan } from './characters/xinyan';
 import { rosaria } from './characters/rosaria';
-import { huTao } from './characters/hu-tao';
+import { qiqi } from './characters/qiqi';
 import { kaedeharaKazuha } from './characters/kaedehara-kazuha';
 import { yanfei } from './characters/yanfei';
 import { yoimiya } from './characters/yoimiya';
@@ -236,6 +237,7 @@ import { travelerDendro } from './characters/traveler-dendro';
 import { travelerHydro } from './characters/traveler-hydro';
 import { travelerPyro } from './characters/traveler-pyro';
 import { traveler } from './characters/traveler';
+import { huTao } from './characters/hu-tao';
 
 const metaBuilds = [
   xiangling,
@@ -249,7 +251,6 @@ const metaBuilds = [
   bennett,
   tartaglia,
   noelle,
-  qiqi,
   chongyun,
   ganyu,
   albedo,
@@ -259,7 +260,7 @@ const metaBuilds = [
   sucrose,
   xinyan,
   rosaria,
-  huTao,
+  qiqi,
   kaedeharaKazuha,
   yanfei,
   yoimiya,
@@ -361,7 +362,8 @@ const metaBuilds = [
   travelerDendro,
   travelerHydro,
   travelerPyro,
-  traveler
+  traveler,
+  huTao
 ];
 
 const charactersData = [

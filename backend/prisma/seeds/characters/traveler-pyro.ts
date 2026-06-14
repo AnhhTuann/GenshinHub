@@ -10,6 +10,7 @@ export const travelerPyro = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Traveler Pyro Burning Team",

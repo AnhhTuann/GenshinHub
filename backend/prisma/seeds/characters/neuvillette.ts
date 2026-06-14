@@ -10,6 +10,7 @@ export const neuvillette = {
   "Burst",
   "Skill"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Neuvillette Hyperbloom",

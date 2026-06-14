@@ -10,6 +10,7 @@ export const durin = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Durin Anemo Team",

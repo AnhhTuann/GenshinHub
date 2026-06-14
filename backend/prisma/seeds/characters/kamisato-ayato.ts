@@ -10,6 +10,7 @@ export const kamisatoAyato = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Ayato Hyperbloom",

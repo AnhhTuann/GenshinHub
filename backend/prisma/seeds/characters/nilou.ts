@@ -10,6 +10,7 @@ export const nilou = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Nilou's Bountiful Bloom",

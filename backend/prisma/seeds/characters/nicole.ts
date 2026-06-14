@@ -10,6 +10,7 @@ export const nicole = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Nicole Pyro Team #1",

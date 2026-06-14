@@ -10,6 +10,7 @@ export const sangonomiyaKokomi = {
   "Normal Attack",
   "Skill"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Kokomi Hyperbloom Team",

@@ -77,7 +77,6 @@ export const Mutation = {
       baseDef: charData.baseDef || 700,
       talentPriority: charData.talentPriority || [],
       signatureWeapons: signatureWeapons || [],
-      bestTeams: charData.bestTeams || [],
     };
     
     // Upsert base character

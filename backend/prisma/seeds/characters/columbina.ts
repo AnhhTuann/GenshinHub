@@ -10,6 +10,7 @@ export const columbina = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Columbina Lunar Bloom Team #1",

@@ -10,6 +10,7 @@ export const travelerHydro = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Traveler Hydro Bloom Team",

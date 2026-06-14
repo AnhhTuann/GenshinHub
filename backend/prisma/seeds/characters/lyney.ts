@@ -10,6 +10,7 @@ export const lyney = {
   "Skill",
   "Burst"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Lyney Pure Pyro Team #1",

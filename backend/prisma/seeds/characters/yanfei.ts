@@ -10,6 +10,7 @@ export const yanfei = {
   "Burst",
   "Skill"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Yanfei Vaporize & Burgeon",

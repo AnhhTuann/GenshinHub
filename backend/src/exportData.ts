@@ -82,6 +82,7 @@ ${artifactEntries.join(',\n')}
   tierNoteEn: ${JSON.stringify(char.tierNoteEn)},
   tierNoteVi: ${JSON.stringify(char.tierNoteVi)},
   talentPriority: ${JSON.stringify(char.talentPriority, null, 2)},
+  signatureWeapons: ${JSON.stringify(char.signatureWeapons, null, 2)},
   teams: ${JSON.stringify(char.teams.map(t => ({
     name: t.name,
     rank: t.rank,

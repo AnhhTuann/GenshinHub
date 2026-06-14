@@ -10,6 +10,7 @@ export const zhongli = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Zhongli Catalyze Team",

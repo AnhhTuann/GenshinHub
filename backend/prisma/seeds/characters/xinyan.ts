@@ -10,6 +10,7 @@ export const xinyan = {
   "Burst",
   "Skill"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Xinyan Physical Team #1",

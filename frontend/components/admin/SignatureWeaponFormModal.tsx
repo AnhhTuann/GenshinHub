@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 
 interface Weapon {
@@ -28,8 +29,13 @@ export default function SignatureWeaponFormModal({
 }: SignatureWeaponFormModalProps) {
   const [selectedIds, setSelectedIds] = useState<string[]>(initialWeapons);
   const [search, setSearch] = useState('');
+  const [mounted, setMounted] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isOpen || !mounted) return null;
 
   const toggleWeapon = (id: string) => {
     setSelectedIds(prev => 
@@ -52,8 +58,8 @@ export default function SignatureWeaponFormModal({
     w.nameVi.toLowerCase().includes(search.toLowerCase())
   );
 
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
       <div className="bg-[#1a1a24] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl">
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex justify-between items-center bg-white/[0.02]">
@@ -115,6 +121,7 @@ export default function SignatureWeaponFormModal({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

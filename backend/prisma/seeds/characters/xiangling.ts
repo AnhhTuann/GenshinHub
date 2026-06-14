@@ -10,6 +10,7 @@ export const xiangling = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Xiangling Vaporize Team #1",

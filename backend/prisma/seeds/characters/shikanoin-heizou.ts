@@ -10,6 +10,7 @@ export const shikanoinHeizou = {
   "Elemental Skill",
   "Elemental Burst"
 ],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

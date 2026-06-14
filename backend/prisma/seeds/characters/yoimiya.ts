@@ -10,6 +10,7 @@ export const yoimiya = {
   "Skill",
   "Burst"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Yoimiya Vaporize Team #1",

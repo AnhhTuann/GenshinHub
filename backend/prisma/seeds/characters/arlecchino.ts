@@ -10,6 +10,7 @@ export const arlecchino = {
   "Skill",
   "Burst"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Arlecchino Pure Pyro Team #2",

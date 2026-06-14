@@ -10,6 +10,7 @@ export const mavuika = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Mavuika Overload Team #1",

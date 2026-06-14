@@ -10,6 +10,7 @@ export const sigewinne = {
   "Burst",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Sigewinne Pure Hydro",

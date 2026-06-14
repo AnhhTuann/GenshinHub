@@ -10,6 +10,7 @@ export const yelan = {
   "Skill",
   "Normal Attack"
 ],
+  signatureWeapons: [],
   teams: [
     {
         name: "Yelan Vaporization Team #1",

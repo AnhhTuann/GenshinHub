@@ -167,83 +167,6 @@ export const arlecchino = {
         ]
     },
     {
-        name: "Arlecchino Melting Team #2",
-        rank: "SS",
-        description: "A high-damage Melt team centered on Arlecchino's Pyro attacks, supported by Citlali's shield and Cryo application, Xilonen's RES shred and healing, and Kazuha's grouping and damage buffs.",
-        members: [
-            {
-                characterId: "arlecchino",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
-                weapons: [
-                    "Crimson Moon's Semblance",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Fragment of Harmonic Whimsy"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "citlali",
-                role: "Support",
-                roleDesc: "Cryo Shield & Support. Provides shield and Cryo application for Melt reactions.",
-                weapons: [
-                    "Starcaller's Watch",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Instructor"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Arlecchino Vaporize Team #1",
         rank: "SS",
         description: "A top-tier team centered on element pyro + hydro = Vaporize reactions, leveraging Arlecchino's high Bond of Life scaling damage. Arlecchino triggers Vaporize with Yelan's off-field hydro/hydro application, while Xilonen shreds RES and Bennett provides massive ATK buffs and healing.",
@@ -619,6 +542,83 @@ export const arlecchino = {
                 ],
                 substats: [
                     "HP%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Arlecchino Melting Team #2",
+        rank: "SS",
+        description: "A high-damage Melt team centered on Arlecchino's Pyro attacks, supported by Citlali's shield and Cryo application, Xilonen's RES shred and healing, and Kazuha's grouping and damage buffs.",
+        members: [
+            {
+                characterId: "arlecchino",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
+                weapons: [
+                    "Crimson Moon's Semblance",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "Fragment of Harmonic Whimsy"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "Cryo Shield & Support. Provides shield and Cryo application for Melt reactions.",
+                weapons: [
+                    "Starcaller's Watch",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "Instructor"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
                     "Energy Recharge"
                 ]
             }

@@ -323,7 +323,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             <ScrollEntrance delay={0.4}>
               <div className="mb-24">
                 <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
-                  Stats
+                  {t('stats')}
                 </h2>
                 <CharacterStatsSection stats={character.stats} baseHp={character.baseHp} baseAtk={character.baseAtk} baseDef={character.baseDef} />
               </div>
@@ -333,7 +333,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             <ScrollEntrance delay={0.5}>
               <div className="mb-24">
                 <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
-                  Ascension Materials
+                  {t('ascensionMaterials')}
                 </h2>
                 <CharacterAscensionMatsSection ascensionMats={character.ascensionMats} allMaterials={materials} />
               </div>

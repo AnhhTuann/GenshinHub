@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import InlineStatsEditor from '@/components/admin/InlineStatsEditor';
 import InlineTalentEditor from '@/components/admin/InlineTalentEditor';
 
@@ -88,6 +88,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 export default function EditableStatsSection({ characterId, firstArtifact, talentPriority }: Props) {
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations('Character');
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditingStats, setIsEditingStats] = useState(false);
   const [isEditingTalents, setIsEditingTalents] = useState(false);
@@ -102,7 +103,7 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
       {firstArtifact && (
         <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
           <div className="flex items-center justify-between">
-            <SectionHeader label="Main Stats" accent="bg-cyan-400" />
+            <SectionHeader label={t('mainStats')} accent="bg-cyan-400" />
             {isAdmin && (
               <button 
                 onClick={() => setIsEditingStats(true)}
@@ -114,14 +115,14 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
           </div>
           <div className="flex flex-col gap-2">
             {[
-              { slot: 'Sands', emoji: '⏳', values: firstArtifact.sands || [] },
-              { slot: 'Goblet', emoji: '🏆', values: firstArtifact.goblet || [] },
-              { slot: 'Circlet', emoji: '👑', values: firstArtifact.circlet || [] },
+              { slot: locale === 'en' ? 'Sands' : 'Đồng Hồ', emoji: '⏳', values: firstArtifact.sands || [] },
+              { slot: locale === 'en' ? 'Goblet' : 'Ly', emoji: '🏆', values: firstArtifact.goblet || [] },
+              { slot: locale === 'en' ? 'Circlet' : 'Nón', emoji: '👑', values: firstArtifact.circlet || [] },
             ].map(({ slot, emoji, values }) => (
               <div key={slot} className="flex items-center gap-3 bg-[#06060a]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
                 <span className="text-base shrink-0">{emoji}</span>
-                <span className="text-white/25 text-[9px] font-black uppercase tracking-wider w-14 shrink-0">{slot}</span>
-                <span className="text-white/70 text-sm font-semibold">
+                <span className="text-white/50 text-[9px] font-black uppercase tracking-wider w-14 shrink-0">{slot}</span>
+                <span className="text-white/90 text-sm font-semibold">
                   {values.length > 0 ? cleanAndTranslate(values, locale).join(' / ') : '—'}
                 </span>
               </div>
@@ -146,7 +147,7 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
       {firstArtifact && (
         <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
           <div className="flex items-center justify-between">
-            <SectionHeader label="Sub-Stats Priority" accent="bg-orange-400" />
+            <SectionHeader label={t('subStatsPriority')} accent="bg-orange-400" />
             {isAdmin && (
               <button 
                 onClick={() => setIsEditingStats(true)}
@@ -160,13 +161,13 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
             {firstArtifact.subStatsPriority?.length > 0 ? (
               cleanAndTranslate(firstArtifact.subStatsPriority, locale).map((stat: string, idx: number, arr: string[]) => (
                 <div key={idx} className="flex items-center gap-1.5">
-                  <span className={`text-[10px] font-bold px-3 py-1.5 rounded-lg border ${
+                  <span className={`text-[11px] font-bold px-3 py-1.5 rounded-lg border ${
                     idx === 0
                       ? 'bg-yellow-400/10 border-yellow-400/20 text-yellow-300'
-                      : 'bg-[#06060a] border-white/[0.05] text-white/35'
+                      : 'bg-white/5 border-white/10 text-white/75'
                   }`}>{stat}</span>
                   {idx < arr.length - 1 && (
-                    <span className="text-white/20 text-xs">›</span>
+                    <span className="text-white/40 text-xs">›</span>
                   )}
                 </div>
               ))
@@ -180,7 +181,7 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
       {/* Talent priority */}
       <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
         <div className="flex items-center justify-between">
-          <SectionHeader label="Talent Priority" accent="bg-red-400" />
+          <SectionHeader label={t('talentPriority')} accent="bg-red-400" />
           {isAdmin && (
             <button 
               onClick={() => setIsEditingTalents(true)}

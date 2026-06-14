@@ -26,6 +26,37 @@ interface EditableMetaTeamsSectionProps {
   allArtifacts: any[];
 }
 
+const STAT_VI: Record<string, string> = {
+  'Energy Recharge': 'Hiệu Quả Nạp Nguyên Tố',
+  'Elemental Mastery': 'Tinh Thông Nguyên Tố',
+  'CRIT Rate': 'Tỷ Lệ Bạo Kích',
+  'CRIT DMG': 'Sát Thương Bạo Kích',
+  'Healing Bonus': 'Tăng Trị Liệu',
+  'Physical DMG Bonus': 'Sát Thương Vật Lý',
+  'Pyro DMG Bonus': 'Sát Thương Nguyên Tố Hỏa',
+  'Hydro DMG Bonus': 'Sát Thương Nguyên Tố Thủy',
+  'Cryo DMG Bonus': 'Sát Thương Nguyên Tố Băng',
+  'Electro DMG Bonus': 'Sát Thương Nguyên Tố Lôi',
+  'Anemo DMG Bonus': 'Sát Thương Nguyên Tố Phong',
+  'Geo DMG Bonus': 'Sát Thương Nguyên Tố Nham',
+  'Dendro DMG Bonus': 'Sát Thương Nguyên Tố Thảo',
+  'ATK%': 'Tấn Công%',
+  'HP%': 'HP%',
+  'DEF%': 'Phòng Ngự%',
+  'ATK': 'Tấn Công',
+  'HP': 'HP',
+  'DEF': 'Phòng Ngự',
+};
+
+const translateStat = (stat: string, locale: string) => {
+  if (!stat) return stat;
+  let enStat = stat;
+  const viToEn = Object.entries(STAT_VI).find(([en, vi]) => vi === stat);
+  if (viToEn) enStat = viToEn[0];
+  if (locale === 'vi') return STAT_VI[enStat] || enStat;
+  return enStat;
+};
+
 export default function EditableMetaTeamsSection({ characterId, teams, allCharacters, allWeapons, allArtifacts }: EditableMetaTeamsSectionProps) {
   const { isAdmin } = useAdmin();
   const locale = useLocale();
@@ -130,14 +161,14 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                 const tmText   = EL_TEXT[teammate?.element ?? ''] ?? 'text-white/60';
                 return (
                   <Link href={`/characters/${m.characterId}`} key={mIdx} className="group/tm flex flex-col items-center gap-1">
-                    <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/15 transition-all duration-250 bg-[#0d0d14] p-0.5">
+                    <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/25 transition-all duration-250 bg-[#0d0d14] p-0.5">
                       {teammate ? (
                         <Image src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-[8px] text-white/25 font-bold uppercase break-all px-1">{m.characterId}</div>
+                        <div className="w-full h-full flex items-center justify-center text-[8px] text-white/40 font-bold uppercase break-all px-1">{m.characterId}</div>
                       )}
                     </div>
-                    <span className="text-[8px] text-white/30 font-black group-hover/tm:text-white/55 text-center uppercase tracking-widest truncate w-full">{m.role}</span>
+                    <span className="text-[9px] text-white/50 font-black group-hover/tm:text-white/90 text-center uppercase tracking-widest truncate w-full">{m.role}</span>
                     <span className={`text-[10px] font-bold text-center truncate w-full ${tmText}`}>
                       {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
                     </span>
@@ -157,10 +188,10 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                       <span className={`font-black text-[15px] font-display ${tmText}`}>
                         {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
                       </span>
-                      <span className="text-white/20">·</span>
-                      <span className="text-white/30 text-[10px] font-black uppercase tracking-widest">{m.role}</span>
+                      <span className="text-white/40">·</span>
+                      <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">{m.role}</span>
                     </div>
-                    <p className="text-white/50 text-[13px] leading-relaxed mb-4">{m.roleDesc}</p>
+                    <p className="text-white/70 text-[13px] leading-relaxed mb-4">{m.roleDesc}</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1.2fr] gap-3">
                       <div className="border border-white/5 rounded-xl p-3.5 bg-transparent">
@@ -172,7 +203,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                             return (
                               <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-full" title={wName}>
                                 {src && <div className="relative w-8 h-8 rounded shrink-0"><Image src={src} alt={weapon.nameEn} fill className="object-contain drop-shadow-md" /></div>}
-                                <span className="text-white/90 font-semibold text-[13px]">{wName}</span>
+                                <span className="text-white/90 font-semibold text-[13px]">{locale === 'en' ? (weapon?.nameEn || wName) : (weapon?.nameVi || weapon?.nameEn || wName)}</span>
                               </div>
                             );
                           })}
@@ -192,7 +223,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                               <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-full" title={aName}>
                                 {src && <div className="relative w-8 h-8 rounded shrink-0"><Image src={src} alt={artifact.nameEn} fill className="object-contain drop-shadow-md" /></div>}
                                 <span className="text-white/90 font-semibold text-[13px]">
-                                  {qty && <span className="text-blue-400 mr-1.5">{qty}</span>}{name}
+                                  {qty && <span className="text-blue-400 mr-1.5">{qty}</span>}{locale === 'en' ? (artifact?.nameEn || name) : (artifact?.nameVi || artifact?.nameEn || name)}
                                 </span>
                               </div>
                             );
@@ -201,12 +232,12 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                       </div>
 
                       <div className="border border-white/5 rounded-xl p-3.5 bg-transparent">
-                        <span className="text-white/20 font-black uppercase text-[9px] tracking-widest block mb-3">Sub-Stats</span>
+                        <span className="text-white/40 font-black uppercase text-[9px] tracking-widest block mb-3">Sub-Stats</span>
                         <div className="flex flex-wrap gap-1.5 items-center">
                           {m.substats?.map((stat: string, i: number) => (
                             <div key={i} className="flex items-center gap-1.5">
-                              <span className="text-white/80 font-semibold text-[13px] bg-transparent px-2.5 py-1.5 rounded-md border border-white/10">{stat}</span>
-                              {i < m.substats.length - 1 && <span className="text-white/20 text-xs mt-0.5">›</span>}
+                              <span className="text-white/90 font-semibold text-[13px] bg-white/5 px-2.5 py-1.5 rounded-md border border-white/10">{translateStat(stat, locale)}</span>
+                              {i < m.substats.length - 1 && <span className="text-white/40 text-xs mt-0.5">›</span>}
                             </div>
                           ))}
                         </div>

@@ -44,9 +44,13 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
   });
 
   const getMatInfo = (id: string) => {
-    const found = allMaterials.find(m => m.id === id || m.nameEn.toLowerCase().replace(/ /g, '_') === id);
+    const normalizedId = id.toLowerCase().replace(/ /g, '_');
+    const found = allMaterials.find(m => 
+      m.id === id || 
+      m.nameEn === id || 
+      m.nameEn.toLowerCase().replace(/ /g, '_') === normalizedId
+    );
     if (found) return found;
-    // Fallback if not found in db
     return { nameEn: id.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), iconUrl: null };
   };
 

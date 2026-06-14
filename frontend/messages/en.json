@@ -45,7 +45,16 @@
     "baseStats": "Base Stats",
     "hp": "HP",
     "atk": "ATK",
-    "def": "DEF"
+    "def": "DEF",
+    "mainStats": "Main Stats",
+    "subStatsPriority": "Sub-Stats Priority",
+    "talentPriority": "Talent Priority",
+    "stats": "Stats",
+    "ascensionMaterials": "Ascension Materials",
+    "bestInSlot": "Best-in-Slot",
+    "f2pAlternative": "F2P Alternative",
+    "alternative": "Alternative",
+    "secondary": "Secondary"
   },
   "Weapon": {
     "baseAtk": "Base ATK",

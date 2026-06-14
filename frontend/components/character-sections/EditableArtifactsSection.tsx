@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import InlineArtifactEditor from '@/components/admin/InlineArtifactEditor';
 import { fetchGraphQL } from '@/lib/graphql';
 
@@ -22,6 +23,7 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
 
 export default function EditableArtifactsSection({ characterId, bestArtifacts, tArtifacts }: Props) {
   const router = useRouter();
+  const locale = useLocale();
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   
@@ -84,10 +86,10 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
                       {mix.iconUrl && <img src={mix.iconUrl} alt={mix.nameEn} className="w-10 h-10 object-contain drop-shadow-md" />}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-white/90 text-sm leading-tight">{mix.nameEn}</h4>
+                      <h4 className="font-bold text-white/90 text-sm leading-tight">{locale === 'en' ? mix.nameEn : (mix.nameVi || mix.nameEn)}</h4>
                       <p className="text-[10px] sm:text-xs text-purple-300 mt-1 font-semibold flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
-                        2-Piece Set
+                        {locale === 'en' ? '2-Piece Set' : 'Bộ 2 món'}
                       </p>
                     </div>
                   </div>
@@ -106,10 +108,10 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
                   )}
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-bold text-white/90 text-sm">{artifact.setNameEn}</h4>
+                  <h4 className="font-bold text-white/90 text-sm">{locale === 'en' ? artifact.setNameEn : (artifact.setNameVi || artifact.setNameEn)}</h4>
                   <p className="text-[10px] sm:text-xs text-purple-300 mt-1 font-semibold flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
-                    {artifact.pieces}-Piece Set
+                    {artifact.pieces}{locale === 'en' ? '-Piece Set' : ' Món'}
                   </p>
                 </div>
               </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 import InlineWeaponEditor from '@/components/admin/InlineWeaponEditor';
 import { fetchGraphQL } from '@/lib/graphql';
 
@@ -11,6 +12,37 @@ interface Props {
   bestWeapons: any[];
   tWeapons: string;
 }
+
+const STAT_VI: Record<string, string> = {
+  'Energy Recharge': 'Hiệu Quả Nạp Nguyên Tố',
+  'Elemental Mastery': 'Tinh Thông Nguyên Tố',
+  'CRIT Rate': 'Tỷ Lệ Bạo Kích',
+  'CRIT DMG': 'Sát Thương Bạo Kích',
+  'Healing Bonus': 'Tăng Trị Liệu',
+  'Physical DMG Bonus': 'Sát Thương Vật Lý',
+  'Pyro DMG Bonus': 'Sát Thương Nguyên Tố Hỏa',
+  'Hydro DMG Bonus': 'Sát Thương Nguyên Tố Thủy',
+  'Cryo DMG Bonus': 'Sát Thương Nguyên Tố Băng',
+  'Electro DMG Bonus': 'Sát Thương Nguyên Tố Lôi',
+  'Anemo DMG Bonus': 'Sát Thương Nguyên Tố Phong',
+  'Geo DMG Bonus': 'Sát Thương Nguyên Tố Nham',
+  'Dendro DMG Bonus': 'Sát Thương Nguyên Tố Thảo',
+  'ATK%': 'Tấn Công%',
+  'HP%': 'HP%',
+  'DEF%': 'Phòng Ngự%',
+  'ATK': 'Tấn Công',
+  'HP': 'HP',
+  'DEF': 'Phòng Ngự',
+};
+
+const translateStat = (stat: string, locale: string) => {
+  if (!stat) return stat;
+  let enStat = stat;
+  const viToEn = Object.entries(STAT_VI).find(([en, vi]) => vi === stat);
+  if (viToEn) enStat = viToEn[0];
+  if (locale === 'vi') return STAT_VI[enStat] || enStat;
+  return enStat;
+};
 
 function SectionHeader({ label, accent }: { label: string; accent: string }) {
   return (
@@ -23,6 +55,8 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
 
 export default function EditableWeaponsSection({ characterId, weaponType, bestWeapons, tWeapons }: Props) {
   const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations('Character');
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   
@@ -68,7 +102,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <h4 className="text-white/80 font-bold text-sm truncate">{weapon.nameEn}</h4>
+                  <h4 className="text-white/80 font-bold text-sm truncate">{locale === 'en' ? weapon.nameEn : weapon.nameVi}</h4>
                   <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider ${
                     idx === 0 
                       ? 'bg-amber-400/10 text-amber-400 border border-amber-400/20' 
@@ -76,11 +110,11 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
                         ? 'bg-emerald-400/10 text-emerald-400 border border-emerald-400/20'
                         : 'bg-white/5 text-white/40 border border-white/10'
                   }`}>
-                    {idx === 0 ? 'Best-in-Slot' : weapon.isF2P ? 'F2P Alternative' : 'Alternative'}
+                    {idx === 0 ? t('bestInSlot') : weapon.isF2P ? t('f2pAlternative') : t('alternative')}
                   </span>
                 </div>
                 {weapon.subStat && (
-                  <p className="text-xs text-white/40 font-medium">Secondary: <span className="text-white/70">{weapon.subStat}</span></p>
+                  <p className="text-xs text-white/40 font-medium">{t('secondary')}: <span className="text-white/70">{translateStat(weapon.subStat, locale)}</span></p>
                 )}
               </div>
               {isAdmin && (

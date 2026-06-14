@@ -45,7 +45,16 @@
     "baseStats": "Chỉ Số Cơ Bản",
     "hp": "HP",
     "atk": "Tấn Công",
-    "def": "Phòng Ngự"
+    "def": "Phòng Ngự",
+    "mainStats": "Chỉ Số Chính",
+    "subStatsPriority": "Ưu Tiên Chỉ Số Phụ",
+    "talentPriority": "Ưu Tiên Thiên Phú",
+    "stats": "Chỉ Số",
+    "ascensionMaterials": "Nguyên Liệu Đột Phá",
+    "bestInSlot": "Trấn Phái",
+    "f2pAlternative": "Thay Thế F2P",
+    "alternative": "Thay Thế",
+    "secondary": "Chỉ số phụ"
   },
   "Weapon": {
     "baseAtk": "Tấn Công Căn Bản",

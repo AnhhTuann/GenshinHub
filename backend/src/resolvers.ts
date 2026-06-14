@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
 import { charactersCache, characterCache, weaponsCache, showcaseCache } from './cache';
 import { Mutation } from './mutations';
+import GraphQLJSON from 'graphql-type-json';
 
 const prisma = new PrismaClient();
 
@@ -134,6 +135,7 @@ function enrichWeapons(weapons: any[], weaponByName: Record<string, any>) {
 }
 
 export const resolvers = {
+  JSON: GraphQLJSON,
   Query: {
     characters: async () => {
       const cached = charactersCache.get('all_basic');
@@ -212,6 +214,10 @@ export const resolvers = {
 
     artifactSet: async (_: any, args: { id: string }) => {
       return await prisma.artifactSet.findUnique({ where: { id: args.id } });
+    },
+
+    materials: async () => {
+      return await prisma.material.findMany({ orderBy: { nameEn: 'asc' } });
     },
 
     showcase: async (_: any, args: { uid: string }) => {

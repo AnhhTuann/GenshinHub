@@ -1,4 +1,6 @@
 export const typeDefs = `#graphql
+  scalar JSON
+  
   type WeaponBuild { id: String!, nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int }
   type MixSetOption { nameEn: String!, nameVi: String!, iconUrl: String, artifactSetId: String }
   type ArtifactBuild { id: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String, mixSets: [MixSetOption!] }
@@ -9,12 +11,14 @@ export const typeDefs = `#graphql
     avatarUrl: String!, splashArtUrl: String!, 
     descriptionEn: String!, descriptionVi: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
     bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, teams: [TeamBuild!]!, tier: String,
-    role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]
+    role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
+    stats: JSON, ascensionMats: JSON
   }
   
   type CharacterBasic { id: String!, nameEn: String!, nameVi: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
   type Weapon { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String, tier: String }
   type ArtifactSet { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
+  type Material { id: String!, nameEn: String!, nameVi: String!, type: String!, rarity: Int!, iconUrl: String }
   type EnkaShowcase { uid: String!, nickname: String!, level: Int!, avatarUrl: String, characters: [String!] }
   
   type Query { 
@@ -25,6 +29,7 @@ export const typeDefs = `#graphql
     charactersByWeaponType(weaponType: String!): [CharacterBasic!]!,
     artifacts: [ArtifactSet!]!,
     artifactSet(id: String!): ArtifactSet,
+    materials: [Material!]!,
     showcase(uid: String!): EnkaShowcase
   }
   
@@ -47,7 +52,8 @@ export const typeDefs = `#graphql
     bestWeapons: [WeaponBuildInput!],
     bestArtifacts: [ArtifactBuildInput!],
     teams: [TeamInput!],
-    tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]
+    tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
+    stats: JSON, ascensionMats: JSON
   }
 
   type Mutation {

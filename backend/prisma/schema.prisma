@@ -39,6 +39,9 @@ model Character {
   bestArtifacts  CharacterArtifact[]
   talentPriority String[]
   teams          CharacterTeam[]
+  
+  stats          Json?
+  ascensionMats  Json?
 
   @@index([element])
   @@index([rarity])

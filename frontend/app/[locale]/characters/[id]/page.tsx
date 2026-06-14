@@ -3,7 +3,7 @@ import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS, GET_WEAPONS, GET_ARTIFACTS } from '@/lib/graphql';
+import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS, GET_WEAPONS, GET_ARTIFACTS, GET_MATERIALS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import WeaponCard from '@/components/WeaponCard';
 import ArtifactCard from '@/components/ArtifactCard';
@@ -17,6 +17,8 @@ import EditableWeaponsSection from '@/components/character-sections/EditableWeap
 import EditableArtifactsSection from '@/components/character-sections/EditableArtifactsSection';
 import EditableStatsSection from '@/components/character-sections/EditableStatsSection';
 import EditableMetaTeamsSection from '@/components/character-sections/EditableMetaTeamsSection';
+import CharacterStatsSection from '@/components/character-sections/CharacterStatsSection';
+import CharacterAscensionMatsSection from '@/components/character-sections/CharacterAscensionMatsSection';
 
 const EL_COLOR: Record<string, string> = {
   Pyro:    '#ff6b4a',
@@ -116,16 +118,15 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const p = await params;
-  const [{ character }, { characters }, { weapons }, { artifacts }] = await Promise.all([
+  const results = await Promise.all([
     fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }),
     fetchGraphQL(GET_CHARACTERS),
     fetchGraphQL(GET_WEAPONS),
-    fetchGraphQL(GET_ARTIFACTS)
+    fetchGraphQL(GET_ARTIFACTS),
+    fetchGraphQL(GET_MATERIALS)
   ]);
-
-  if (!character) notFound();
-
-  const t       = await getTranslations('Character');
+  const [{ character }, { characters }, { weapons }, { artifacts }, { materials }] = results;
+  const t = await getTranslations('Character');
   const tCommon = await getTranslations('Common');
   const locale  = p.locale;
   const name    = locale === 'en' ? character.nameEn : character.nameVi;
@@ -304,7 +305,38 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
             {/* ── 5. META TEAM COMPS ── */}
             <ScrollEntrance delay={0.3}>
-              <EditableMetaTeamsSection characterId={character.id} teams={character.teams || []} allCharacters={characters} allWeapons={weapons} allArtifacts={artifacts} />
+              <div className="mb-24">
+                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
+                  {t('metaTeams')}
+                </h2>
+                <EditableMetaTeamsSection 
+                  characterId={character.id}
+                  teams={character.teams || []} 
+                  allCharacters={characters}
+                  allWeapons={weapons}
+                  allArtifacts={artifacts}
+                />
+              </div>
+            </ScrollEntrance>
+
+            {/* Stats Section */}
+            <ScrollEntrance delay={0.4}>
+              <div className="mb-24">
+                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
+                  Stats
+                </h2>
+                <CharacterStatsSection stats={character.stats} baseHp={character.baseHp} baseAtk={character.baseAtk} baseDef={character.baseDef} />
+              </div>
+            </ScrollEntrance>
+
+            {/* Ascension Materials Section */}
+            <ScrollEntrance delay={0.5}>
+              <div className="mb-24">
+                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
+                  Ascension Materials
+                </h2>
+                <CharacterAscensionMatsSection ascensionMats={character.ascensionMats} allMaterials={materials} />
+              </div>
             </ScrollEntrance>
 
 

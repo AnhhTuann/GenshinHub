@@ -146,7 +146,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
     : 'bg-purple-400/10 text-purple-300 border-purple-400/20';
 
   const firstArtifact = character.bestArtifacts?.find(
-    a => a.setNameVi && !a.setNameVi.includes('Thánh Di Vật') && !a.setNameVi.toLowerCase().includes('mix')
+    (a: any) => a.setNameVi && !a.setNameVi.includes('Thánh Di Vật') && !a.setNameVi.toLowerCase().includes('mix')
   ) ?? character.bestArtifacts?.[0];
 
   return (
@@ -263,7 +263,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
           {/* ─── LEFT SIDEBAR ─── */}
           <div className="w-full xl:w-[300px] xl:sticky xl:top-20 xl:self-start shrink-0 flex flex-col gap-4">
-            <CharacterSidebar character={character} />
+            <CharacterSidebar character={character} allWeapons={weapons} />
           </div>
 
           {/* ─── RIGHT CONTENT ─── */}

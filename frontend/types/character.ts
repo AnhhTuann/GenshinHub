@@ -17,10 +17,19 @@ export interface ArtifactBuild {
 export interface CharacterData {
   id: string; nameEn: string; nameVi: string; titleEn: string; titleVi: string; rarity: Rarity; element: Element; weapon: WeaponType; region: Region; birthday?: string;
   avatarUrl: string; splashArtUrl: string; bestWeapons: WeaponBuild[]; bestArtifacts: ArtifactBuild[];
+  signatureWeapons?: { id: string; nameEn: string; nameVi: string; iconUrl?: string }[];
   talentPriority: string[]; bestTeams: string[];
   descriptionEn: string; descriptionVi: string;
   baseHp: number;
   baseAtk: number;
   baseDef: number;
   fandomUrl?: string;
+  teams?: any[];
+  tier?: string;
+  role?: string;
+  recommendedC?: string;
+  tierNoteEn?: string[];
+  tierNoteVi?: string[];
+  stats?: any;
+  ascensionMats?: any;
 }

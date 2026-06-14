@@ -1,7 +1,14 @@
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { useAdmin } from '@/hooks/useAdmin';
+import SignatureWeaponFormModal from './admin/SignatureWeaponFormModal';
+import { fetchGraphQL } from '@/lib/graphql';
+import { useRouter } from 'next/navigation';
 
 const ELEMENT_COLOR: Record<string, string> = {
   Pyro:    '#ff6b4a',
@@ -23,107 +30,6 @@ const ELEMENT_TEXT: Record<string, string> = {
   Dendro:  'text-[#aed581]',
 };
 
-const SIGNATURE_WEAPONS: Record<string, { name: string; icon: string; name2?: string; icon2?: string }> = {
-  "hu tao":          { name: "Staff of Homa",                    icon: "/images/weapons/UI_EquipIcon_Pole_Homa.png" },
-  "diluc":           { name: "Wolf's Gravestone",                icon: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png" },
-  "klee":            { name: "Lost Prayer to the Sacred Winds",  icon: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png" },
-  "yoimiya":         { name: "Thundering Pulse",                 icon: "/images/weapons/UI_EquipIcon_Bow_Narukami.png" },
-  "dehya":           { name: "Beacon of the Reed Sea",           icon: "/images/weapons/UI_EquipIcon_Claymore_Deshret.png" },
-  "lyney":           { name: "The First Great Magic",            icon: "/images/weapons/UI_EquipIcon_Bow_Pledge.png" },
-  "arlecchino":      { name: "Crimson Moon's Semblance",         icon: "/images/weapons/UI_EquipIcon_Pole_BloodMoon.png" },
-  "tartaglia":       { name: "Polar Star",                       icon: "/images/weapons/UI_EquipIcon_Bow_Worldbane.png",   name2: "Skyward Harp", icon2: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png" },
-  "mona":            { name: "Skyward Atlas",                    icon: "/images/weapons/UI_EquipIcon_Catalyst_Dvalin.png", name2: "Lost Prayer to the Sacred Winds", icon2: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png" },
-  "kamisato ayato":  { name: "Haran Geppaku Futsu",             icon: "/images/weapons/UI_EquipIcon_Sword_Amenoma.png" },
-  "yelan":           { name: "Aqua Simulacra",                   icon: "/images/weapons/UI_EquipIcon_Bow_Kirin.png" },
-  "sangonomiya kokomi": { name: "Everlasting Moonglow",         icon: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png" },
-  "nilou":           { name: "Key of Khaj-Nisut",                icon: "/images/weapons/UI_EquipIcon_Sword_Deshret.png" },
-  "neuvillette":     { name: "Tome of the Eternal Flow",         icon: "/images/weapons/UI_EquipIcon_Catalyst_Iudex.png" },
-  "furina":          { name: "Splendor of Tranquil Waters",      icon: "/images/weapons/UI_EquipIcon_Sword_Regalis.png" },
-  "sigewinne":       { name: "Silvershower Heartstrings",        icon: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png" },
-  "venti":           { name: "Elegy for the End",                icon: "/images/weapons/UI_EquipIcon_Bow_Widsith.png",     name2: "Skyward Harp", icon2: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png" },
-  "jean":            { name: "Aquila Favonia",                   icon: "/images/weapons/UI_EquipIcon_Sword_Falcon.png" },
-  "xiao":            { name: "Primordial Jade Winged-Spear",     icon: "/images/weapons/UI_EquipIcon_Pole_Gladiator.png" },
-  "kaedehara kazuha":{ name: "Freedom-Sworn",                    icon: "/images/weapons/UI_EquipIcon_Sword_Widsith.png" },
-  "wanderer":        { name: "Tulaytullah's Remembrance",        icon: "/images/weapons/UI_EquipIcon_Catalyst_Alaya.png" },
-  "xianyun":         { name: "Crane's Echoing Call",             icon: "/images/weapons/UI_EquipIcon_Catalyst_MountainGale.png" },
-  "chasca":          { name: "Astral Vulture's Crimson Plumage", icon: "/images/weapons/UI_EquipIcon_Bow_Qoyllorsnova.png" },
-  "keqing":          { name: "Primordial Jade Cutter",           icon: "/images/weapons/UI_EquipIcon_Sword_Morax.png" },
-  "raiden shogun":   { name: "Engulfing Lightning",              icon: "/images/weapons/UI_EquipIcon_Pole_Shanty.png" },
-  "yae miko":        { name: "Kagura's Verity",                  icon: "/images/weapons/UI_EquipIcon_Catalyst_SakuraFan.png" },
-  "cyno":            { name: "Staff of the Scarlet Sands",       icon: "/images/weapons/UI_EquipIcon_Pole_Deshret.png" },
-  "clorinde":        { name: "Absolution",                       icon: "/images/weapons/UI_EquipIcon_Sword_Pleroma.png" },
-  "tighnari":        { name: "Hunter's Path",                    icon: "/images/weapons/UI_EquipIcon_Bow_Ayus.png" },
-  "nahida":          { name: "A Thousand Floating Dreams",       icon: "/images/weapons/UI_EquipIcon_Catalyst_Ayus.png" },
-  "alhaitham":       { name: "Light of Foliar Incision",         icon: "/images/weapons/UI_EquipIcon_Sword_Ayus.png" },
-  "baizhu":          { name: "Jadefall's Splendor",              icon: "/images/weapons/UI_EquipIcon_Catalyst_Morax.png" },
-  "emilie":          { name: "Lumidouce Elegy",                  icon: "/images/weapons/UI_EquipIcon_Pole_Muguet.png" },
-  "kinich":          { name: "Fang of the Mountain King",        icon: "/images/weapons/UI_EquipIcon_Claymore_GoldenVerdict.png" },
-  "qiqi":            { name: "Skyward Blade",                    icon: "/images/weapons/UI_EquipIcon_Sword_Dvalin.png",   name2: "Aquila Favonia", icon2: "/images/weapons/UI_EquipIcon_Sword_Falcon.png" },
-  "ganyu":           { name: "Amos' Bow",                        icon: "/images/weapons/UI_EquipIcon_Bow_Amos.png" },
-  "eula":            { name: "Song of Broken Pines",             icon: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png" },
-  "kamisato ayaka":  { name: "Mistsplitter Reforged",            icon: "/images/weapons/UI_EquipIcon_Sword_Narukami.png" },
-  "shenhe":          { name: "Calamity Queller",                 icon: "/images/weapons/UI_EquipIcon_Pole_Santika.png" },
-  "wriothesley":     { name: "Cashflow Supervision",             icon: "/images/weapons/UI_EquipIcon_Catalyst_Wheatley.png" },
-  "aloy":            { name: "Predator",                         icon: "/images/weapons/UI_EquipIcon_Bow_Predator.png" },
-  "zhongli":         { name: "Vortex Vanquisher",                icon: "/images/weapons/UI_EquipIcon_Pole_Morax.png" },
-  "arataki itto":    { name: "Redhorn Stonethresher",            icon: "/images/weapons/UI_EquipIcon_Claymore_Itadorimaru.png" },
-  "navia":           { name: "Verdict",                          icon: "/images/weapons/UI_EquipIcon_Claymore_Champion.png" },
-  "chiori":          { name: "Uraku Misugiri",                   icon: "/images/weapons/UI_EquipIcon_Sword_Mitsurugi.png" },
-  "xilonen":         { name: "Peak Patrol Song",                 icon: "/images/weapons/UI_EquipIcon_Sword_XochitlsTube.png" },
-  "mavuika":         { name: "A Thousand Blazing Suns",          icon: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png" },
-  "columbina":       { name: "Nocturne's Curtain Call",          icon: "/images/weapons/UI_EquipIcon_Catalyst_Brisingamen.png" },
-  "mualani":         { name: "Surf's Up",                        icon: "/images/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png" },
-  // 4-star characters
-  "fischl":          { name: "Mitternachts Waltz",               icon: "/images/weapons/UI_EquipIcon_Bow_Fallen.png" },
-  "ningguang":       { name: "Solar Pearl",                      icon: "/images/weapons/UI_EquipIcon_Catalyst_Resentment.png", name2: "Memory of Dust", icon2: "/images/weapons/UI_EquipIcon_Catalyst_Kunwu.png" },
-  "beidou":          { name: "Blackcliff Slasher",               icon: "/images/weapons/UI_EquipIcon_Claymore_Blackrock.png" },
-  "chongyun":        { name: "Lithic Blade",                     icon: "/images/weapons/UI_EquipIcon_Claymore_Lapis.png" },
-  "xingqiu":         { name: "Sacrificial Sword",                icon: "/images/weapons/UI_EquipIcon_Sword_Fossil.png" },
-  "xiangling":       { name: "Dragon's Bane",                    icon: "/images/weapons/UI_EquipIcon_Pole_Stardust.png" },
-  "bennett":         { name: "Traveler's Handy Sword",           icon: "/images/weapons/UI_EquipIcon_Sword_Traveler.png" },
-  "razor":           { name: "Wolf's Gravestone",                icon: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png" },
-  "barbara":         { name: "Magic Guide",                      icon: "/images/weapons/UI_EquipIcon_Catalyst_Intro.png" },
-  "amber":           { name: "Hunter's Bow",                     icon: "/images/weapons/UI_EquipIcon_Bow_Hunters.png" },
-  "kaeya":           { name: "Cool Steel",                       icon: "/images/weapons/UI_EquipIcon_Sword_Steel.png" },
-  "lisa":            { name: "Magic Guide",                      icon: "/images/weapons/UI_EquipIcon_Catalyst_Intro.png" },
-  "noelle":          { name: "Whiteblind",                       icon: "/images/weapons/UI_EquipIcon_Claymore_Exotic.png" },
-  "diona":           { name: "The Stringless",                   icon: "/images/weapons/UI_EquipIcon_Bow_Troupe.png" },
-  "xinyan":          { name: "Whiteblind",                       icon: "/images/weapons/UI_EquipIcon_Claymore_Exotic.png" },
-  "rosaria":         { name: "Dragonspine Spear",                icon: "/images/weapons/UI_EquipIcon_Pole_Everfrost.png" },
-  "yanfei":          { name: "Dodoco Tales",                     icon: "/images/weapons/UI_EquipIcon_Catalyst_Ludiharpastum.png" },
-  "sayu":            { name: "Katsuragikiri Nagamasa",           icon: "/images/weapons/UI_EquipIcon_Claymore_Bakufu.png" },
-  "kujou sara":      { name: "Mouun's Moon",                     icon: "/images/weapons/UI_EquipIcon_Bow_Bakufu.png" },
-  "thoma":           { name: "Kitain Cross Spear",               icon: "/images/weapons/UI_EquipIcon_Pole_Bakufu.png" },
-  "gorou":           { name: "Favonius Warbow",                  icon: "/images/weapons/UI_EquipIcon_Bow_Zephyrus.png" },
-  "yun jin":         { name: "Dragon's Bane",                    icon: "/images/weapons/UI_EquipIcon_Pole_Stardust.png" },
-  "kuki shinobu":    { name: "Iron Sting",                       icon: "/images/weapons/UI_EquipIcon_Sword_Exotic.png" },
-  "shikanoin heizou":{ name: "Kagotsurube Isshin",               icon: "/images/weapons/UI_EquipIcon_Sword_Youtou.png" },
-  "collei":          { name: "King's Squire",                    icon: "/images/weapons/UI_EquipIcon_Bow_Arakalari.png" },
-  "dori":            { name: "Forest Regalia",                   icon: "/images/weapons/UI_EquipIcon_Claymore_Arakalari.png" },
-  "candace":         { name: "Staff of the Scarlet Sands",       icon: "/images/weapons/UI_EquipIcon_Pole_Deshret.png" },
-  "layla":           { name: "Key of Khaj-Nisut",                icon: "/images/weapons/UI_EquipIcon_Sword_Deshret.png" },
-  "faruzan":         { name: "Favonius Warbow",                  icon: "/images/weapons/UI_EquipIcon_Bow_Zephyrus.png" },
-  "yaoyao":          { name: "Black Tassel",                     icon: "/images/weapons/UI_EquipIcon_Pole_Noire.png" },
-  "mika":            { name: "Favonius Lance",                   icon: "/images/weapons/UI_EquipIcon_Pole_Zephyrus.png" },
-  "kaveh":           { name: "Mailed Flower",                    icon: "/images/weapons/UI_EquipIcon_Claymore_FleurFair.png" },
-  "kirara":          { name: "Sapwood Blade",                    icon: "/images/weapons/UI_EquipIcon_Sword_Arakalari.png" },
-  "lynette":         { name: "Fleuve Cendre Ferryman",           icon: "/images/weapons/UI_EquipIcon_Sword_Machination.png" },
-  "freminet":        { name: "The Bell",                         icon: "/images/weapons/UI_EquipIcon_Claymore_Troupe.png" },
-  "charlotte":       { name: "Oathsworn Eye",                    icon: "/images/weapons/UI_EquipIcon_Catalyst_Jyanome.png" },
-  "chevreuse":       { name: "Rightful Reward",                  icon: "/images/weapons/UI_EquipIcon_Pole_Mechanic.png" },
-  "gaming":          { name: "Ultimate Overlord's Mega Magic Sword", icon: "/images/weapons/UI_EquipIcon_Claymore_Ruler.png" },
-  "sethos":          { name: "Cloudforged",                      icon: "/images/weapons/UI_EquipIcon_Bow_Bulpud.png" },
-  "kachina":         { name: "Footprint of the Rainbow",         icon: "/images/weapons/UI_EquipIcon_Pole_Umpakati.png" }
-};
-
-function getSignatureWeapon(nameEn: string) {
-  const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
-  const key = clean(nameEn);
-  for (const [k, v] of Object.entries(SIGNATURE_WEAPONS)) {
-    if (clean(k) === key) return v;
-  }
-  return null;
-}
 
 function WeaponBadge({ name, icon, label }: { name: string; icon: string; label: string }) {
   return (
@@ -150,17 +56,55 @@ function InfoRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-export default function CharacterSidebar({ character }: { character: CharacterData }) {
+export default function CharacterSidebar({ character, allWeapons = [] }: { character: CharacterData, allWeapons?: any[] }) {
   const locale   = useLocale();
+  const router   = useRouter();
   const name     = locale === 'en' ? character.nameEn : character.nameVi;
   const is5Star  = character.rarity === 5;
-  const sig      = getSignatureWeapon(character.nameEn);
+  const { isAdmin } = useAdmin();
+  
+  const sigWeapons = character.signatureWeapons || [];
   const elColor  = ELEMENT_COLOR[character.element] ?? '#ffffff';
-
   const borderColor = is5Star ? 'border-amber-500/20' : 'border-purple-500/20';
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSaveSignatureWeapons = async (weaponNames: string[]) => {
+    try {
+      // Strip typename from character
+      const stripTypename = (obj: any): any => {
+        if (Array.isArray(obj)) return obj.map(stripTypename);
+        if (obj !== null && typeof obj === 'object') {
+          const { __typename, ...rest } = obj;
+          const newObj: any = {};
+          for (const key in rest) newObj[key] = stripTypename(rest[key]);
+          return newObj;
+        }
+        return obj;
+      };
+
+      const fullInput = stripTypename(character);
+      // Remove deep fields not meant for Upsert input
+      delete fullInput.teams;
+      delete fullInput.signatureWeapons; // We will pass it at root
+
+      fullInput.signatureWeapons = weaponNames;
+
+      await fetchGraphQL(`
+        mutation Upsert($input: CharacterInput!) {
+          upsertCharacter(input: $input) { id }
+        }
+      `, { input: fullInput });
+      
+      router.refresh();
+    } catch (err: any) {
+      alert("Error saving signature weapons: " + err.message);
+    }
+  };
+
   return (
-    <div className="flex flex-col gap-3">
+    <>
+      <div className="flex flex-col gap-3">
 
       {/* ── Info Panel (replaces portrait on sidebar) ── */}
       <div className={`relative bg-[#0d0d14]/80 border ${borderColor} rounded-2xl overflow-hidden`}
@@ -182,14 +126,37 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
       </div>
 
       {/* ── Signature Weapon ── */}
-      {sig && (
-        <div className="bg-[#0d0d14]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden">
+      {(sigWeapons.length > 0 || isAdmin) && (
+        <div className="bg-[#0d0d14]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/[0.05] rounded-full blur-3xl pointer-events-none" />
-          <span className="text-amber-400/70 text-[9px] font-black uppercase tracking-[0.2em] mb-2.5 block">Signature Weapon</span>
+          
+          <div className="flex justify-between items-center mb-2.5">
+            <span className="text-amber-400/70 text-[9px] font-black uppercase tracking-[0.2em]">Signature Weapon</span>
+            {isAdmin && (
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="opacity-0 group-hover:opacity-100 transition-opacity bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 p-1 rounded border border-amber-500/20"
+                title="Edit Signature Weapons"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
+              </button>
+            )}
+          </div>
+
           <div className="flex flex-col gap-2">
-            <WeaponBadge name={sig.name} icon={sig.icon} label="★★★★★ Signature" />
-            {sig.name2 && sig.icon2 && (
-              <WeaponBadge name={sig.name2} icon={sig.icon2} label="★★★★★ Alt. Signature" />
+            {sigWeapons.length === 0 && isAdmin ? (
+              <div className="text-xs text-white/30 italic text-center py-2">No signature weapon set</div>
+            ) : (
+              sigWeapons.map((sig, idx) => (
+                <WeaponBadge 
+                  key={sig.id || idx} 
+                  name={sig.nameEn} 
+                  icon={sig.iconUrl} 
+                  label={idx === 0 ? "★★★★★ Signature" : "★★★★★ Alt. Signature"} 
+                />
+              ))
             )}
           </div>
         </div>
@@ -211,5 +178,14 @@ export default function CharacterSidebar({ character }: { character: CharacterDa
         </a>
       )}
     </div>
+
+      <SignatureWeaponFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSave={handleSaveSignatureWeapons}
+        allWeapons={allWeapons}
+        initialWeapons={sigWeapons.map(w => w.id)}
+      />
+    </>
   );
 }

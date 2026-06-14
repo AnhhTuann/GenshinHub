@@ -63,7 +63,7 @@ export const Mutation = {
     requireAdmin(context);
     
     // Extract relations
-    const { bestWeapons, bestArtifacts, ...charData } = input;
+    const { bestWeapons, bestArtifacts, signatureWeapons, ...charData } = input;
     
     const data = {
       ...charData,
@@ -76,6 +76,7 @@ export const Mutation = {
       baseAtk: charData.baseAtk || 300,
       baseDef: charData.baseDef || 700,
       talentPriority: charData.talentPriority || [],
+      signatureWeapons: signatureWeapons || [],
       bestTeams: charData.bestTeams || [],
     };
     

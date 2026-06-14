@@ -10,7 +10,7 @@ export const typeDefs = `#graphql
     id: String!, nameEn: String!, nameVi: String!, titleEn: String!, titleVi: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
     avatarUrl: String!, splashArtUrl: String!, 
     descriptionEn: String!, descriptionVi: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
-    bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, teams: [TeamBuild!]!, tier: String,
+    bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, signatureWeapons: [Weapon!], teams: [TeamBuild!]!, tier: String,
     role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
     stats: JSON, ascensionMats: JSON
   }
@@ -51,6 +51,7 @@ export const typeDefs = `#graphql
     talentPriority: [String!],
     bestWeapons: [WeaponBuildInput!],
     bestArtifacts: [ArtifactBuildInput!],
+    signatureWeapons: [String!],
     teams: [TeamInput!],
     tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
     stats: JSON, ascensionMats: JSON

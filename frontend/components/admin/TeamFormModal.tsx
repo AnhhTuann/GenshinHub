@@ -205,7 +205,7 @@ export default function TeamFormModal({ isOpen, onClose, onSave, characterId, al
 
   if (!isOpen) return null;
 
-  const updateMember = (index: number, field: string, value: string) => {
+  const updateMember = (index: number, field: string, value: any) => {
     const newMembers = [...members];
     newMembers[index][field] = value;
     setMembers(newMembers);

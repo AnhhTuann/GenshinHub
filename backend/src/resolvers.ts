@@ -242,6 +242,10 @@ export const resolvers = {
     }
   },
   Character: {
+    signatureWeapons: async (parent: any) => {
+      if (!parent.signatureWeapons || parent.signatureWeapons.length === 0) return [];
+      return prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
+    },
     bestWeapons: async (parent: any) => {
       if (parent.bestWeapons) return parent.bestWeapons;
       return prisma.characterWeapon.findMany({ where: { characterId: parent.id } });

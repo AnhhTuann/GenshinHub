@@ -38,6 +38,7 @@ model Character {
   bestWeapons    CharacterWeapon[]
   bestArtifacts  CharacterArtifact[]
   talentPriority String[]
+  signatureWeapons String[]
   teams          CharacterTeam[]
   
   stats          Json?

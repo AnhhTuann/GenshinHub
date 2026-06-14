@@ -162,7 +162,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                     </div>
                     <p className="text-white/50 text-[13px] leading-relaxed mb-4">{m.roleDesc}</p>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1.2fr] gap-3">
                       <div className="border border-white/5 rounded-xl p-3.5 bg-transparent">
                         <span className="text-white/20 font-black uppercase text-[9px] tracking-widest block mb-3">Weapons</span>
                         <div className="flex flex-col gap-2.5">
@@ -170,8 +170,8 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                             const weapon = allWeapons.find(w => w.nameEn === wName);
                             const src = weapon?.iconUrl;
                             return (
-                              <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-fit" title={wName}>
-                                {src && <div className="relative w-8 h-8 rounded"><Image src={src} alt={weapon.nameEn} fill className="object-contain drop-shadow-md" /></div>}
+                              <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-full" title={wName}>
+                                {src && <div className="relative w-8 h-8 rounded shrink-0"><Image src={src} alt={weapon.nameEn} fill className="object-contain drop-shadow-md" /></div>}
                                 <span className="text-white/90 font-semibold text-[13px]">{wName}</span>
                               </div>
                             );
@@ -189,8 +189,8 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                             const artifact = allArtifacts.find(a => a.nameEn === name);
                             const src = artifact?.iconUrl;
                             return (
-                              <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-fit" title={aName}>
-                                {src && <div className="relative w-8 h-8 rounded"><Image src={src} alt={artifact.nameEn} fill className="object-contain drop-shadow-md" /></div>}
+                              <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-full" title={aName}>
+                                {src && <div className="relative w-8 h-8 rounded shrink-0"><Image src={src} alt={artifact.nameEn} fill className="object-contain drop-shadow-md" /></div>}
                                 <span className="text-white/90 font-semibold text-[13px]">
                                   {qty && <span className="text-blue-400 mr-1.5">{qty}</span>}{name}
                                 </span>

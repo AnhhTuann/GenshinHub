@@ -2,8 +2,46 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import InlineStatsEditor from '@/components/admin/InlineStatsEditor';
 import InlineTalentEditor from '@/components/admin/InlineTalentEditor';
+
+const STAT_VI: Record<string, string> = {
+  'Energy Recharge': 'Hiệu Quả Nạp Nguyên Tố',
+  'Elemental Mastery': 'Tinh Thông Nguyên Tố',
+  'CRIT Rate': 'Tỷ Lệ Bạo Kích',
+  'CRIT DMG': 'Sát Thương Bạo Kích',
+  'Healing Bonus': 'Tăng Trị Liệu',
+  'Physical DMG Bonus': 'Sát Thương Vật Lý',
+  'Pyro DMG Bonus': 'Sát Thương Nguyên Tố Hỏa',
+  'Hydro DMG Bonus': 'Sát Thương Nguyên Tố Thủy',
+  'Cryo DMG Bonus': 'Sát Thương Nguyên Tố Băng',
+  'Electro DMG Bonus': 'Sát Thương Nguyên Tố Lôi',
+  'Anemo DMG Bonus': 'Sát Thương Nguyên Tố Phong',
+  'Geo DMG Bonus': 'Sát Thương Nguyên Tố Nham',
+  'Dendro DMG Bonus': 'Sát Thương Nguyên Tố Thảo',
+  'ATK%': 'Tấn Công%',
+  'HP%': 'HP%',
+  'DEF%': 'Phòng Ngự%',
+};
+
+const translateStat = (stat: string, locale: string) => {
+  let enStat = stat;
+  // If it's a known legacy Vietnamese string, map it back to English first
+  const viToEn = Object.entries(STAT_VI).find(([en, vi]) => vi === stat);
+  if (viToEn) enStat = viToEn[0];
+
+  if (locale === 'vi') {
+    return STAT_VI[enStat] || enStat;
+  }
+  return enStat;
+};
+
+const cleanAndTranslate = (arr: string[], locale: string) => {
+  if (!arr) return [];
+  const translated = arr.map(s => translateStat(s, locale));
+  return Array.from(new Set(translated));
+};
 
 interface Props {
   characterId: string;
@@ -49,6 +87,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 
 export default function EditableStatsSection({ characterId, firstArtifact, talentPriority }: Props) {
   const router = useRouter();
+  const locale = useLocale();
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditingStats, setIsEditingStats] = useState(false);
   const [isEditingTalents, setIsEditingTalents] = useState(false);
@@ -82,7 +121,9 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
               <div key={slot} className="flex items-center gap-3 bg-[#06060a]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
                 <span className="text-base shrink-0">{emoji}</span>
                 <span className="text-white/25 text-[9px] font-black uppercase tracking-wider w-14 shrink-0">{slot}</span>
-                <span className="text-white/70 text-sm font-semibold">{values.length > 0 ? values.join(' / ') : '—'}</span>
+                <span className="text-white/70 text-sm font-semibold">
+                  {values.length > 0 ? cleanAndTranslate(values, locale).join(' / ') : '—'}
+                </span>
               </div>
             ))}
           </div>
@@ -117,14 +158,14 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
             {firstArtifact.subStatsPriority?.length > 0 ? (
-              firstArtifact.subStatsPriority.map((stat: string, idx: number) => (
+              cleanAndTranslate(firstArtifact.subStatsPriority, locale).map((stat: string, idx: number, arr: string[]) => (
                 <div key={idx} className="flex items-center gap-1.5">
                   <span className={`text-[10px] font-bold px-3 py-1.5 rounded-lg border ${
                     idx === 0
                       ? 'bg-yellow-400/10 border-yellow-400/20 text-yellow-300'
                       : 'bg-[#06060a] border-white/[0.05] text-white/35'
                   }`}>{stat}</span>
-                  {idx < firstArtifact.subStatsPriority.length - 1 && (
+                  {idx < arr.length - 1 && (
                     <span className="text-white/20 text-xs">›</span>
                   )}
                 </div>

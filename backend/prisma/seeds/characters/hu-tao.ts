@@ -10,7 +10,9 @@ export const huTao = {
   "Skill",
   "Burst"
 ],
-  signatureWeapons: [],
+  signatureWeapons: [
+  "Staff of Homa"
+],
   teams: [
     {
         name: "Hu Tao Vaporize Team #2",
@@ -647,7 +649,7 @@ export const huTao = {
     {
         rank: 1,
         nameVi: "Trượng Hộ Ma",
-        nameEn: "Trượng Hộ Ma",
+        nameEn: "Staff of Homa",
         subStat: "Sát Thương Bạo Kích",
         isF2P: false,
         refinement: "R1",
@@ -658,7 +660,7 @@ export const huTao = {
     {
         rank: 2,
         nameVi: "Quyền Trượng Cát Đỏ",
-        nameEn: "Quyền Trượng Cát Đỏ",
+        nameEn: "Staff of the Scarlet Sands",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: false,
         refinement: "R1",
@@ -669,7 +671,7 @@ export const huTao = {
     {
         rank: 3,
         nameVi: "Khúc Ca Vịnh Hẹp",
-        nameEn: "Khúc Ca Vịnh Hẹp",
+        nameEn: "Ballad of the Fjords",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: false,
         refinement: "R5",
@@ -680,7 +682,7 @@ export const huTao = {
     {
         rank: 4,
         nameVi: "Bi Ca Lumidouce",
-        nameEn: "Bi Ca Lumidouce",
+        nameEn: "Lumidouce Elegy",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: false,
         refinement: "R1",
@@ -691,7 +693,7 @@ export const huTao = {
     {
         rank: 5,
         nameVi: "Tai Ương Của Rồng",
-        nameEn: "Tai Ương Của Rồng",
+        nameEn: "Dragon's Bane",
         subStat: "Tinh Thông Nguyên Tố",
         isF2P: false,
         refinement: "R5",
@@ -702,7 +704,7 @@ export const huTao = {
     {
         rank: 6,
         nameVi: "Thương Quyết Chiến",
-        nameEn: "Thương Quyết Chiến",
+        nameEn: "Deathmatch",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: false,
         refinement: "R1",
@@ -713,7 +715,7 @@ export const huTao = {
     {
         rank: 7,
         nameVi: "Hòa Phác Diên",
-        nameEn: "Hòa Phác Diên",
+        nameEn: "Primordial Jade Winged-Spear",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: false,
         refinement: "R1",
@@ -724,7 +726,7 @@ export const huTao = {
     {
         rank: 8,
         nameVi: "Thương Thiên Nham",
-        nameEn: "Thương Thiên Nham",
+        nameEn: "Lithic Spear",
         subStat: "Tấn Công%",
         isF2P: false,
         refinement: "R5",
@@ -735,7 +737,7 @@ export const huTao = {
     {
         rank: 9,
         nameVi: "Mũi Nhọn Của Gió",
-        nameEn: "Mũi Nhọn Của Gió",
+        nameEn: "Missive Windspear",
         subStat: "Tấn Công%",
         isF2P: true,
         refinement: "R5",
@@ -746,7 +748,7 @@ export const huTao = {
     {
         rank: 10,
         nameVi: "Thương Bạch Anh",
-        nameEn: "Thương Bạch Anh",
+        nameEn: "White Tassel",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: true,
         refinement: "R5",
@@ -757,7 +759,7 @@ export const huTao = {
     {
         rank: 11,
         nameVi: "Thương Hắc Nham",
-        nameEn: "Thương Hắc Nham",
+        nameEn: "Blackcliff Pole",
         subStat: "Sát Thương Bạo Kích",
         isF2P: false,
         refinement: "R1",
@@ -768,7 +770,7 @@ export const huTao = {
     {
         rank: 12,
         nameVi: "Giáo Thập Tự Kitain",
-        nameEn: "Giáo Thập Tự Kitain",
+        nameEn: "Kitain Cross Spear",
         subStat: "Tinh Thông Nguyên Tố",
         isF2P: true,
         refinement: "R5",
@@ -779,7 +781,7 @@ export const huTao = {
     {
         rank: 13,
         nameVi: "Thù Lao Của Chính Nghĩa",
-        nameEn: "Thù Lao Của Chính Nghĩa",
+        nameEn: "Rightful Reward",
         subStat: "HP%",
         isF2P: true,
         refinement: "R5",
@@ -791,18 +793,22 @@ export const huTao = {
   bestArtifacts: [
     {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Crimson Witch of Flames",
         pieces: 4,
         sands: [
             "HP%",
-            "Tinh Thông Nguyên Tố"
+            "Tinh Thông Nguyên Tố",
+            "Elemental Mastery"
         ],
         goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
+            "Sát Thương Nguyên Tố Hỏa",
+            "Pyro DMG Bonus"
         ],
         circlet: [
             "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
+            "Sát Thương Bạo Kích",
+            "CRIT Rate",
+            "CRIT DMG"
         ],
         subStatsPriority: [
             "CRIT Rate",
@@ -814,7 +820,7 @@ export const huTao = {
     },
     {
         setNameVi: "Dòng Hồi Ức Bất Tận",
-        setNameEn: "Dòng Hồi Ức Bất Tận",
+        setNameEn: "Shimenawa's Reminiscence",
         pieces: 4,
         sands: [
             "HP%",
@@ -837,7 +843,7 @@ export const huTao = {
     },
     {
         setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Gilded Dreams",
         pieces: 4,
         sands: [
             "HP%",
@@ -859,50 +865,22 @@ export const huTao = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP",
-        setNameEn: "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP",
+        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Giấc Mộng Hoàng Kim",
+        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Gilded Dreams",
         pieces: 2,
-        sands: [
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "Elemental Mastery",
-            "HP%",
-            "ATK%"
-        ]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "Elemental Mastery",
-            "HP%",
-            "ATK%"
-        ]
+        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Thiên Nham Vững Chắc",
+        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Tenacity of the Millelith",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

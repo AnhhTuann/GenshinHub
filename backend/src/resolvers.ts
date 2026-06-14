@@ -1,7 +1,7 @@
 // Nodemon trigger
 import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
-import { LRUCache } from 'lru-cache';
+import { charactersCache, characterCache, weaponsCache, showcaseCache } from './cache';
 import { Mutation } from './mutations';
 
 const prisma = new PrismaClient();
@@ -46,11 +46,7 @@ function getAllMixComponentNames(): string[] {
   return Array.from(names);
 }
 
-// LRU Caches (Reduced TTL to 5 minutes to prevent stale data issues during updates)
-const charactersCache = new LRUCache<string, any>({ max: 5, ttl: 1000 * 60 * 5 });
-const characterCache  = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 5 });
-const weaponsCache    = new LRUCache<string, any>({ max: 5, ttl: 1000 * 60 * 5 });
-const showcaseCache   = new LRUCache<string, any>({ max: 500, ttl: 1000 * 60 * 5 });
+// LRU Caches are now imported from ./cache
 
 // Pre-warm artifact set lookup cache (all sets + mix components in 1 query)
 let artifactSetLookup: Record<string, any> | null = null;
@@ -73,7 +69,20 @@ async function enrichArtifacts(artifacts: any[], setLookup: Record<string, any>)
     const dbArtifact = setLookup[a.setNameVi] || setLookup[a.setNameEn];
 
     let mixSets: any[] = [];
-    const matchedComponents = mixSetsMap[a.setNameVi];
+    let matchedComponents = mixSetsMap[a.setNameVi];
+    
+    // Dynamic mix parsing for newly created mixes
+    if (isMix && !matchedComponents) {
+      const cleanedEn = a.setNameEn.replace("Mix 2-Piece ", "").replace("Mix 2 bộ ", "");
+      const cleanedVi = a.setNameVi.replace("Mix 2 bộ ", "").replace("Mix 2-Piece ", "");
+      
+      const partsEn = cleanedEn.split(/ & 2-Piece | & 2 bộ /);
+      const partsVi = cleanedVi.split(/ & 2 bộ | & 2-Piece /);
+      
+      // Prefer Vi names for internal lookup matching, but fallback to En
+      matchedComponents = partsVi.length >= 2 ? partsVi : partsEn;
+    }
+
     if (matchedComponents) {
       mixSets = matchedComponents.map((cName: string) => {
         if (cName === "Physical DMG +25% set") {
@@ -113,7 +122,7 @@ function enrichWeapons(weapons: any[], weaponByName: Record<string, any>) {
       const dbWeapon = weaponByName[w.nameVi] || weaponByName[w.nameEn];
       return {
         ...w,
-        id: dbWeapon?.id || w.weaponId || w.id,
+        id: w.id || w.weaponId || dbWeapon?.id,
         iconUrl: dbWeapon?.iconUrl || w.iconUrl,
         rarity: dbWeapon?.rarity ?? w.rarity,
         subStat: dbWeapon?.subStat || w.subStat,

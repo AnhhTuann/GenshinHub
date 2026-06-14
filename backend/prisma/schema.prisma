@@ -38,7 +38,7 @@ model Character {
   bestWeapons    CharacterWeapon[]
   bestArtifacts  CharacterArtifact[]
   talentPriority String[]
-  bestTeams      String[]
+  teams          CharacterTeam[]
 
   @@index([element])
   @@index([rarity])
@@ -77,6 +77,32 @@ model CharacterArtifact {
   characterId      String
 
   @@index([characterId])
+}
+
+model CharacterTeam {
+  id          String   @id @default(uuid())
+  name        String
+  rank        String
+  description String
+  character   Character @relation(fields: [characterId], references: [id])
+  characterId String
+  members     TeamMember[]
+  
+  @@index([characterId])
+}
+
+model TeamMember {
+  id          String   @id @default(uuid())
+  characterId String
+  role        String
+  roleDesc    String
+  weapons     String[]
+  artifacts   String[]
+  substats    String[]
+  team        CharacterTeam @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId      String
+
+  @@index([teamId])
 }
 
 // Encyclopedia

@@ -1,7 +1,7 @@
 export const typeDefs = `#graphql
   type WeaponBuild { id: String!, nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int }
   type MixSetOption { nameEn: String!, nameVi: String!, iconUrl: String, artifactSetId: String }
-  type ArtifactBuild { setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String, mixSets: [MixSetOption!] }
+  type ArtifactBuild { id: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String, mixSets: [MixSetOption!] }
   type Character { 
     id: String!, nameEn: String!, nameVi: String!, titleEn: String!, titleVi: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
     avatarUrl: String!, splashArtUrl: String!, 
@@ -29,8 +29,8 @@ export const typeDefs = `#graphql
   input WeaponBuildInput { nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int }
   input ArtifactBuildInput { setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]! }
   
-  input WeaponInput { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, iconUrl: String, tier: String }
-  input ArtifactSetInput { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, iconUrl: String }
+  input WeaponInput { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String, tier: String }
+  input ArtifactSetInput { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
   input MaterialInput { id: String!, nameEn: String!, nameVi: String!, type: String!, rarity: Int!, iconUrl: String }
   
   input CharacterInput { 
@@ -69,6 +69,9 @@ export const typeDefs = `#graphql
     
     addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!): Boolean
     removeCharacterArtifact(id: String!): Boolean
+    
+    updateCharacterTalents(id: String!, talentPriority: [String!]!): Character
+    updateCharacterArtifactStats(id: String!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!): Boolean
     
     # Export DB state back to TS seeds
     exportDatabaseToSeeds: Boolean

@@ -14,6 +14,10 @@ import AdminEditableSplash from '@/components/AdminEditableSplash';
 import AdminEditableBuild from '@/components/AdminEditableBuild';
 import WishIntro from '@/components/WishIntro';
 import { detailedTeamsData } from '@/data/teams';
+import EditableWeaponsSection from '@/components/character-sections/EditableWeaponsSection';
+import EditableArtifactsSection from '@/components/character-sections/EditableArtifactsSection';
+import EditableStatsSection from '@/components/character-sections/EditableStatsSection';
+import EditableTeammatesSection from '@/components/character-sections/EditableTeammatesSection';
 
 const EL_COLOR: Record<string, string> = {
   Pyro:    '#ff6b4a',
@@ -260,7 +264,6 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
           {/* ─── LEFT SIDEBAR ─── */}
           <div className="w-full xl:w-[300px] xl:sticky xl:top-20 xl:self-start shrink-0 flex flex-col gap-4">
             <CharacterSidebar character={character} />
-            <AdminEditableBuild character={character} />
           </div>
 
           {/* ─── RIGHT CONTENT ─── */}
@@ -286,105 +289,24 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             </ScrollEntrance>
 
             {/* ── 2. BEST WEAPONS ── */}
-            {character.bestWeapons?.length > 0 && (
-              <ScrollEntrance delay={0.1}>
-                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                <SectionHeader label={t('weapons')} accent="bg-amber-400" />
-                <div className="flex flex-col gap-3">
-                  {character.bestWeapons.map((weapon, idx) => (
-                    <WeaponCard key={idx} weapon={weapon} index={idx} />
-                  ))}
-                  </div>
-                </section>
-              </ScrollEntrance>
-            )}
+            <ScrollEntrance delay={0.1}>
+              <EditableWeaponsSection characterId={character.id} weaponType={character.weapon} bestWeapons={character.bestWeapons || []} tWeapons={t('weapons')} />
+            </ScrollEntrance>
 
-            {/* ── 3. ARTIFACTS + MAIN STATS ── */}
-            {character.bestArtifacts?.length > 0 && (
-              <ScrollEntrance delay={0.2}>
-                <div className="flex flex-col gap-5">
-                {/* Artifacts list */}
-                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                  <SectionHeader label={t('artifacts')} accent="bg-purple-400" />
-                  <div className="flex flex-col gap-3">
-                    {character.bestArtifacts.map((artifact, idx) => (
-                      <ArtifactCard key={idx} artifact={artifact} />
-                    ))}
-                  </div>
-                </section>
-
-                {/* Main stats + substats + talents */}
-                <div className="flex flex-col gap-5">
-                  {/* Main Stats */}
-                  {firstArtifact && (
-                    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                      <SectionHeader label="Main Stats" accent="bg-cyan-400" />
-                      <div className="flex flex-col gap-2">
-                        {[
-                          { slot: 'Sands', emoji: '⏳', values: firstArtifact.sands },
-                          { slot: 'Goblet', emoji: '🏆', values: firstArtifact.goblet },
-                          { slot: 'Circlet', emoji: '👑', values: firstArtifact.circlet },
-                        ].map(({ slot, emoji, values }) => (
-                          <div key={slot} className="flex items-center gap-3 bg-[#06060a]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
-                            <span className="text-base shrink-0">{emoji}</span>
-                            <span className="text-white/25 text-[9px] font-black uppercase tracking-wider w-14 shrink-0">{slot}</span>
-                            <span className="text-white/70 text-sm font-semibold">{values.join(' / ')}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </section>
-                  )}
-
-                  {/* Sub-stat priority */}
-                  {firstArtifact?.subStatsPriority?.length > 0 && (
-                    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                      <SectionHeader label="Sub-Stats Priority" accent="bg-orange-400" />
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        {firstArtifact.subStatsPriority.map((stat, idx) => (
-                          <div key={idx} className="flex items-center gap-1.5">
-                            <span className={`text-[10px] font-bold px-3 py-1.5 rounded-lg border ${
-                              idx === 0
-                                ? 'bg-yellow-400/10 border-yellow-400/20 text-yellow-300'
-                                : 'bg-[#06060a] border-white/[0.05] text-white/35'
-                            }`}>{stat}</span>
-                            {idx < firstArtifact.subStatsPriority.length - 1 && (
-                              <span className="text-white/20 text-xs">›</span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </section>
-                  )}
-
-                  {/* Talent priority */}
-                  {character.talentPriority?.length > 0 && (
-                    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                      <SectionHeader label="Talent Priority" accent="bg-red-400" />
-                      <div className="flex flex-col gap-2">
-                        {character.talentPriority.map((talent, idx) => (
-                          <TalentRow key={idx} talent={talent} index={idx} />
-                        ))}
-                      </div>
-                    </section>
-                  )}
-                </div>
+            {/* ── 3. ARTIFACTS ── */}
+            <ScrollEntrance delay={0.2}>
+              <div className="flex flex-col gap-5">
+                <EditableArtifactsSection characterId={character.id} bestArtifacts={character.bestArtifacts || []} tArtifacts={t('artifacts')} />
+                
+                {/* ── 4. STATS & TALENTS ── */}
+                <EditableStatsSection characterId={character.id} firstArtifact={firstArtifact} talentPriority={character.talentPriority || []} />
               </div>
-              </ScrollEntrance>
-            )}
+            </ScrollEntrance>
 
-            {/* ── 4. FALLBACK when no artifacts ── */}
-            {(!character.bestArtifacts || character.bestArtifacts.length === 0) && character.talentPriority?.length > 0 && (
-              <ScrollEntrance delay={0.2}>
-                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                <SectionHeader label="Talent Priority" accent="bg-red-400" />
-                <div className="flex flex-col gap-2">
-                  {character.talentPriority.map((talent, idx) => (
-                    <TalentRow key={idx} talent={talent} index={idx} />
-                  ))}
-                  </div>
-                </section>
-              </ScrollEntrance>
-            )}
+            {/* ── 5. RECOMMENDED TEAMMATES (SIMPLE) ── */}
+            <ScrollEntrance delay={0.25}>
+              <EditableTeammatesSection characterId={character.id} bestTeams={character.bestTeams || []} allCharacters={characters} />
+            </ScrollEntrance>
 
             {/* ── 5. DETAILED TEAM COMPS ── */}
             {hasDetailedTeams && (

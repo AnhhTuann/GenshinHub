@@ -233,6 +233,26 @@ export const Mutation = {
     return true;
   },
 
+  updateCharacterTalents: async (_: any, { id, talentPriority }: any, context: any) => {
+    requireAdmin(context);
+    const c = await prisma.character.update({
+      where: { id },
+      data: { talentPriority },
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return c;
+  },
+
+  updateCharacterArtifactStats: async (_: any, { id, sands, goblet, circlet, subStatsPriority }: any, context: any) => {
+    requireAdmin(context);
+    await prisma.characterArtifact.update({
+      where: { id },
+      data: { sands, goblet, circlet, subStatsPriority },
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return true;
+  },
+
   exportDatabaseToSeeds: async (_: any, __: any, context: any) => {
     requireAdmin(context);
     return await exportDatabaseToSeeds();

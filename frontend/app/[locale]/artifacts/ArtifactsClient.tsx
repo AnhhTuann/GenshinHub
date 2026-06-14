@@ -4,6 +4,8 @@ import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import { useAdmin } from '@/hooks/useAdmin';
+import ArtifactFormModal from '@/components/admin/ArtifactFormModal';
 
 interface ArtifactSet {
   id: string;
@@ -33,7 +35,9 @@ function rarityBorder(rarityList: number[]) {
 export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[] }) {
   const [search, setSearch] = useState('');
   const [selectedRarity, setSelectedRarity] = useState<number | null>(null);
+  const [showAddModal, setShowAddModal] = useState(false);
   const locale = useLocale();
+  const { isAdmin } = useAdmin();
 
   const filtered = useMemo(() => {
     return artifacts.filter(a => {
@@ -55,7 +59,17 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
           Home
         </Link>
         <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">💎 Artifact Sets</h1>
-        <p className="text-gray-455 text-sm font-medium">All {artifacts.length} artifact sets in Genshin Impact</p>
+        <div className="flex items-center gap-4">
+          <p className="text-gray-455 text-sm font-medium">All {artifacts.length} artifact sets in Genshin Impact</p>
+          {isAdmin && (
+            <button
+              onClick={() => setShowAddModal(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black bg-violet-500/10 text-violet-400 border border-violet-500/20 hover:bg-violet-500/20 transition-all"
+            >
+              💎 Add New Artifact Set
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-6">
@@ -194,6 +208,13 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
           )}
         </div>
       </div>
+      {/* Admin Add Modal */}
+      {showAddModal && (
+        <ArtifactFormModal
+          onClose={() => setShowAddModal(false)}
+          onSaved={() => window.location.reload()}
+        />
+      )}
     </main>
   );
 }

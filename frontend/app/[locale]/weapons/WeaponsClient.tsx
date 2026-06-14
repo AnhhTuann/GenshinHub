@@ -4,6 +4,8 @@ import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
+import { useAdmin } from '@/hooks/useAdmin';
+import WeaponFormModal from '@/components/admin/WeaponFormModal';
 
 interface Weapon {
   id: string;
@@ -45,8 +47,10 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const [selectedRarities, setSelectedRarities] = useState<number[]>([5, 4, 3]);
   const [sortBy, setSortBy] = useState<'rarity' | 'name' | 'atk'>('rarity');
   const [sortAsc, setSortAsc] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
   const locale = useLocale();
   const t = useTranslations('Common');
+  const { isAdmin } = useAdmin();
 
   const toggleRarity = (r: number) => {
     setSelectedRarities(prev =>
@@ -107,7 +111,17 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           Home
         </Link>
         <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">⚔️ Weapons</h1>
-        <p className="text-gray-450 text-sm font-medium">Explore all {weapons.length} weapons in Genshin Impact</p>
+        <div className="flex items-center gap-4">
+          <p className="text-gray-450 text-sm font-medium">Explore all {weapons.length} weapons in Genshin Impact</p>
+          {isAdmin && (
+            <button
+              onClick={() => setShowAddModal(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 transition-all"
+            >
+              ➕ Add New Weapon
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-6">
@@ -256,6 +270,13 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           )}
         </div>
       </div>
+      {/* Admin Add Modal */}
+      {showAddModal && (
+        <WeaponFormModal
+          onClose={() => setShowAddModal(false)}
+          onSaved={() => window.location.reload()}
+        />
+      )}
     </main>
   );
 }

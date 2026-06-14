@@ -3,7 +3,7 @@ import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS } from '@/lib/graphql';
+import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS, GET_WEAPONS, GET_ARTIFACTS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import WeaponCard from '@/components/WeaponCard';
 import ArtifactCard from '@/components/ArtifactCard';
@@ -12,7 +12,9 @@ import ScrollEntrance from '@/components/ScrollEntrance';
 import ParallaxSplash from '@/components/ParallaxSplash';
 import AdminEditableSplash from '@/components/AdminEditableSplash';
 import AdminEditableBuild from '@/components/AdminEditableBuild';
+import WishIntro from '@/components/WishIntro';
 import EditableWeaponsSection from '@/components/character-sections/EditableWeaponsSection';
+import EditableArtifactsSection from '@/components/character-sections/EditableArtifactsSection';
 import EditableStatsSection from '@/components/character-sections/EditableStatsSection';
 import EditableMetaTeamsSection from '@/components/character-sections/EditableMetaTeamsSection';
 
@@ -114,13 +116,13 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const p = await params;
-  const [charData, allData] = await Promise.all([
+  const [{ character }, { characters }, { weapons }, { artifacts }] = await Promise.all([
     fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }),
     fetchGraphQL(GET_CHARACTERS),
+    fetchGraphQL(GET_WEAPONS),
+    fetchGraphQL(GET_ARTIFACTS)
   ]);
 
-  const character: CharacterData = charData.character;
-  const characters: CharacterData[] = allData.characters;
   if (!character) notFound();
 
   const t       = await getTranslations('Character');
@@ -302,108 +304,10 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
             {/* ── 5. META TEAM COMPS ── */}
             <ScrollEntrance delay={0.3}>
-              <EditableMetaTeamsSection characterId={character.id} teams={character.teams || []} allCharacters={characters} />
+              <EditableMetaTeamsSection characterId={character.id} teams={character.teams || []} allCharacters={characters} allWeapons={weapons} allArtifacts={artifacts} />
             </ScrollEntrance>
 
-            {/* ── 5. DETAILED TEAM COMPS ── */}
-            {hasDetailedTeams && (
-              <ScrollEntrance delay={0.3}>
-                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                <SectionHeader label="Meta Team Comps" accent="bg-blue-400" />
-                <div className="flex flex-col gap-4">
-                  {detailedTeams.map((team, tIdx) => (
-                    <div key={tIdx} className="bg-[#06060a]/50 border border-white/[0.04] hover:border-blue-500/15 rounded-xl p-4 transition-colors duration-200">
-                      {/* Team header */}
-                      <div className="flex items-center justify-between mb-3 pb-3 border-b border-white/[0.04]">
-                        <div className="flex items-center gap-3">
-                          <span className="w-6 h-6 rounded-full bg-blue-500/10 text-blue-400/80 flex items-center justify-center text-xs font-black border border-blue-500/15">
-                            {tIdx + 1}
-                          </span>
-                          <h4 className="font-extrabold text-white/85 text-sm font-display">{team.name}</h4>
-                        </div>
-                        <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider border ${
-                          team.rank === 'SS' ? 'bg-yellow-400/10 text-yellow-400 border-yellow-400/20'
-                          : team.rank === 'S' ? 'bg-red-400/10 text-red-400 border-red-400/20'
-                          : 'bg-blue-400/10 text-blue-400 border-blue-400/20'
-                        }`}>
-                          {team.rank} Tier
-                        </span>
-                      </div>
 
-                      <p className="text-white/30 text-xs mb-4 leading-relaxed italic">{team.description}</p>
-
-                      {/* Character avatars */}
-                      <div className="grid grid-cols-4 gap-2 sm:gap-2.5 mb-4 bg-[#06060a]/50 p-2.5 rounded-xl border border-white/[0.03]">
-                        {team.members.map((m, mIdx) => {
-                          const mapping: Record<string, string> = {
-                            kazuha: 'kaedehara-kazuha', ayaka: 'kamisato-ayaka',
-                            traveler: 'traveler-dendro', kokomi: 'sangonomiya-kokomi',
-                            yunjin: 'yun-jin', ayato: 'kamisato-ayato', shinobu: 'kuki-shinobu',
-                          };
-                          const dbId    = mapping[m.characterId] || m.characterId;
-                          const teammate = characters.find(c => c.id === dbId);
-                          const tmText   = EL_TEXT[teammate?.element ?? ''] ?? 'text-white/60';
-                          return (
-                            <Link href={`/characters/${dbId}`} key={mIdx} className="group/tm flex flex-col items-center gap-1">
-                              <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/15 transition-all duration-250 bg-[#0d0d14] p-0.5">
-                                {teammate ? (
-                                  <Image src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
-                                ) : (
-                                  <div className="w-full h-full flex items-center justify-center text-[8px] text-white/25 font-bold uppercase break-all px-1">{m.characterId}</div>
-                                )}
-                              </div>
-                              <span className="text-[8px] text-white/30 font-black group-hover/tm:text-white/55 text-center uppercase tracking-widest truncate w-full">{m.role}</span>
-                              <span className={`text-[10px] font-bold text-center truncate w-full ${tmText}`}>
-                                {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
-                              </span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-
-                      {/* Member details */}
-                      <div className="flex flex-col gap-2.5">
-                        {team.members.map((m, mIdx) => {
-                          const mapping: Record<string, string> = {
-                            kazuha: 'kaedehara-kazuha', ayaka: 'kamisato-ayaka',
-                            traveler: 'traveler-dendro', kokomi: 'sangonomiya-kokomi',
-                            yunjin: 'yun-jin', ayato: 'kamisato-ayato', shinobu: 'kuki-shinobu',
-                          };
-                          const dbId     = mapping[m.characterId] || m.characterId;
-                          const teammate = characters.find(c => c.id === dbId);
-                          const tmText   = EL_TEXT[teammate?.element ?? ''] ?? 'text-white/80';
-                          return (
-                            <div key={mIdx} className="bg-[#0d0d14]/50 border border-white/[0.04] rounded-xl p-3.5">
-                              <div className="flex items-center gap-2 mb-1.5">
-                                <span className={`font-extrabold text-xs font-display ${tmText}`}>
-                                  {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
-                                </span>
-                                <span className="text-white/20">·</span>
-                                <span className="text-white/30 text-[9px] font-black uppercase tracking-wider">{m.role}</span>
-                              </div>
-                              <p className="text-white/35 text-xs leading-relaxed mb-3">{m.roleDesc}</p>
-                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                                {[
-                                  { label: 'Weapons',   val: m.weapons.join(', ') },
-                                  { label: 'Artifacts', val: m.artifacts.join(', ') },
-                                  { label: 'Sub-Stats', val: m.substats.join(' › ') },
-                                ].map(({ label, val }) => (
-                                  <div key={label} className="bg-[#06060a]/60 border border-white/[0.04] rounded-lg p-2">
-                                    <span className="text-white/25 font-black uppercase text-[8px] tracking-wide block mb-0.5">{label}</span>
-                                    <span className="text-white/55 font-semibold text-[10px]">{val}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                  </div>
-                </section>
-              </ScrollEntrance>
-            )}
 
           </div>
         </div>

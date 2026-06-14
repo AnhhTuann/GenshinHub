@@ -73,10 +73,18 @@ export const aloy = {
         setNameVi: "Đoàn Hát Lang Thang Đại Lục",
         setNameEn: "Wanderer's Troupe",
         pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: [
+            "ATK%"
+        ],
+        goblet: [
+            "Cryo DMG Bonus"
+        ],
+        circlet: [
+            "Healing Bonus"
+        ],
+        subStatsPriority: [
+            "DEF%"
+        ]
     },
     {
         setNameVi: "Mix 2 bộ Trái Tim Thủ Hộ & 2 bộ Giáo Quan",

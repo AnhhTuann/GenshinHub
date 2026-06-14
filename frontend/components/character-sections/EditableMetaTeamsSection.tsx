@@ -7,7 +7,6 @@ import { Link } from '@/i18n/routing';
 import { useAdmin } from '@/hooks/useAdmin';
 import TeamFormModal from '../admin/TeamFormModal';
 import { fetchGraphQL } from '@/lib/graphql';
-import { toast } from 'react-hot-toast';
 
 const EL_TEXT: Record<string, string> = {
   Pyro:    'text-[#ff6b4a]',
@@ -23,9 +22,11 @@ interface EditableMetaTeamsSectionProps {
   characterId: string;
   teams: any[];
   allCharacters: any[];
+  allWeapons: any[];
+  allArtifacts: any[];
 }
 
-export default function EditableMetaTeamsSection({ characterId, teams, allCharacters }: EditableMetaTeamsSectionProps) {
+export default function EditableMetaTeamsSection({ characterId, teams, allCharacters, allWeapons, allArtifacts }: EditableMetaTeamsSectionProps) {
   const { isAdmin } = useAdmin();
   const locale = useLocale();
   const [localTeams, setLocalTeams] = useState(teams);
@@ -46,10 +47,10 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
     if (!window.confirm("Are you sure you want to delete this team?")) return;
     try {
       await fetchGraphQL(`mutation RemoveTeam($id: String!) { removeCharacterTeam(teamId: $id) }`, { id: teamId });
-      toast.success("Team removed");
+      alert("Team removed");
       setLocalTeams(prev => prev.filter(t => t.id !== teamId));
     } catch (e: any) {
-      toast.error(e.message);
+      alert("Error: " + e.message);
     }
   };
 
@@ -151,26 +152,65 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                 const teammate = allCharacters.find(c => c.id === m.characterId);
                 const tmText   = EL_TEXT[teammate?.element ?? ''] ?? 'text-white/80';
                 return (
-                  <div key={mIdx} className="bg-[#0d0d14]/50 border border-white/[0.04] rounded-xl p-3.5">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className={`font-extrabold text-xs font-display ${tmText}`}>
+                  <div key={mIdx} className="bg-transparent border border-white/5 rounded-2xl p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={`font-black text-[15px] font-display ${tmText}`}>
                         {teammate ? (locale === 'en' ? teammate.nameEn : teammate.nameVi) : m.characterId}
                       </span>
                       <span className="text-white/20">·</span>
-                      <span className="text-white/30 text-[9px] font-black uppercase tracking-wider">{m.role}</span>
+                      <span className="text-white/30 text-[10px] font-black uppercase tracking-widest">{m.role}</span>
                     </div>
-                    <p className="text-white/35 text-xs leading-relaxed mb-3">{m.roleDesc}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                      {[
-                        { label: 'Weapons',   val: m.weapons?.join(', ') || '' },
-                        { label: 'Artifacts', val: m.artifacts?.join(', ') || '' },
-                        { label: 'Sub-Stats', val: m.substats?.join(' › ') || '' },
-                      ].map(({ label, val }) => (
-                        <div key={label} className="bg-[#06060a]/60 border border-white/[0.04] rounded-lg p-2">
-                          <span className="text-white/25 font-black uppercase text-[8px] tracking-wide block mb-0.5">{label}</span>
-                          <span className="text-white/55 font-semibold text-[10px]">{val}</span>
+                    <p className="text-white/50 text-[13px] leading-relaxed mb-4">{m.roleDesc}</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      <div className="border border-white/5 rounded-xl p-3.5 bg-transparent">
+                        <span className="text-white/20 font-black uppercase text-[9px] tracking-widest block mb-3">Weapons</span>
+                        <div className="flex flex-col gap-2.5">
+                          {m.weapons?.map((wName: string, i: number) => {
+                            const weapon = allWeapons.find(w => w.nameEn === wName);
+                            const src = weapon?.iconUrl;
+                            return (
+                              <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-fit" title={wName}>
+                                {src && <div className="relative w-8 h-8 rounded"><Image src={src} alt={weapon.nameEn} fill className="object-contain drop-shadow-md" /></div>}
+                                <span className="text-white/90 font-semibold text-[13px]">{wName}</span>
+                              </div>
+                            );
+                          })}
                         </div>
-                      ))}
+                      </div>
+
+                      <div className="border border-white/5 rounded-xl p-3.5 bg-transparent">
+                        <span className="text-white/20 font-black uppercase text-[9px] tracking-widest block mb-3">Artifacts</span>
+                        <div className="flex flex-col gap-2.5">
+                          {m.artifacts?.map((aName: string, i: number) => {
+                            const match = aName.match(/^(\d+pc)\s+(.*)$/);
+                            let qty = '', name = aName;
+                            if (match) { qty = match[1]; name = match[2]; }
+                            const artifact = allArtifacts.find(a => a.nameEn === name);
+                            const src = artifact?.iconUrl;
+                            return (
+                              <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-fit" title={aName}>
+                                {src && <div className="relative w-8 h-8 rounded"><Image src={src} alt={artifact.nameEn} fill className="object-contain drop-shadow-md" /></div>}
+                                <span className="text-white/90 font-semibold text-[13px]">
+                                  {qty && <span className="text-blue-400 mr-1.5">{qty}</span>}{name}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      <div className="border border-white/5 rounded-xl p-3.5 bg-transparent">
+                        <span className="text-white/20 font-black uppercase text-[9px] tracking-widest block mb-3">Sub-Stats</span>
+                        <div className="flex flex-wrap gap-1.5 items-center">
+                          {m.substats?.map((stat: string, i: number) => (
+                            <div key={i} className="flex items-center gap-1.5">
+                              <span className="text-white/80 font-semibold text-[13px] bg-transparent px-2.5 py-1.5 rounded-md border border-white/10">{stat}</span>
+                              {i < m.substats.length - 1 && <span className="text-white/20 text-xs mt-0.5">›</span>}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );
@@ -186,6 +226,8 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
         onSave={handleSave}
         characterId={characterId}
         allCharacters={allCharacters}
+        allWeapons={allWeapons}
+        allArtifacts={allArtifacts}
         initialData={editingTeam}
       />
     </section>

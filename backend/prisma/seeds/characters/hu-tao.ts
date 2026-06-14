@@ -12,85 +12,6 @@ export const huTao = {
 ],
   teams: [
     {
-        name: "Hu Tao Vaporize",
-        rank: "SS",
-        description: "Hu Tao is the Pyro main DPS, with damage amplified by Vaporize reactions. Hu Tao triggers Vaporize on enemies affected by Xingqiu's Burst. Kazuha groups enemies and buffs Pyro DMG, while Zhongli provides a shield and ATK boost with Tenacity of the Millelith.",
-        members: [
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Main DPS, DMG amplified by Vaporize.",
-                weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Elemental Burst applies Hydro continuously to enable Vaporize.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, provides Anemo Swirl to reduce resistance and buff Pyro DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides a shield and ATK buff with Tenacity of the Millelith set.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Hu Tao Vaporize Team #2",
         rank: "SS",
         description: "Hu Tao is the main DPS, relying on Vaporize reactions. Yelan and Xingqiu apply Hydro off-field, while Zhongli provides shielding and ATK buffs. Continuously apply Hydro with Yelan and Xingqiu to enable Hu Tao's Vaporize, while Zhongli shields and buffs ATK via Tenacity of the Millelith.",
@@ -632,6 +553,85 @@ export const huTao = {
                 ],
                 artifacts: [
                     "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Hu Tao Vaporize",
+        rank: "SS",
+        description: "Hu Tao is the Pyro main DPS, with damage amplified by Vaporize reactions. Hu Tao triggers Vaporize on enemies affected by Xingqiu's Burst. Kazuha groups enemies and buffs Pyro DMG, while Zhongli provides a shield and ATK boost with Tenacity of the Millelith.",
+        members: [
+            {
+                characterId: "hu-tao",
+                role: "Main DPS",
+                roleDesc: "Main DPS, DMG amplified by Vaporize.",
+                weapons: [
+                    "Staff of Homa",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Elemental Mastery",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Elemental Burst applies Hydro continuously to enable Vaporize.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, provides Anemo Swirl to reduce resistance and buff Pyro DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides a shield and ATK buff with Tenacity of the Millelith set.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "Tenacity of the Millelith"
                 ],
                 substats: [
                     "HP%",

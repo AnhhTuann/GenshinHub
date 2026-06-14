@@ -10,11 +10,7 @@ export const kinich = {
   "Elemental Skill",
   "Elemental Burst"
 ],
-  bestTeams: [
-  "bennett",
-  "xingqiu",
-  "zhongli"
-],
+  teams: [],
   bestWeapons: [
     {
         rank: 4,

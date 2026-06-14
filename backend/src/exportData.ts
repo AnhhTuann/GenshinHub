@@ -57,6 +57,9 @@ ${artifactEntries.join(',\n')}
     include: {
       bestWeapons: true,
       bestArtifacts: true,
+      teams: {
+        include: { members: true }
+      }
     }
   });
 
@@ -79,7 +82,19 @@ ${artifactEntries.join(',\n')}
   tierNoteEn: ${JSON.stringify(char.tierNoteEn)},
   tierNoteVi: ${JSON.stringify(char.tierNoteVi)},
   talentPriority: ${JSON.stringify(char.talentPriority, null, 2)},
-  bestTeams: ${JSON.stringify(char.bestTeams, null, 2)},
+  teams: ${JSON.stringify(char.teams.map(t => ({
+    name: t.name,
+    rank: t.rank,
+    description: t.description,
+    members: t.members.map(m => ({
+      characterId: m.characterId,
+      role: m.role,
+      roleDesc: m.roleDesc,
+      weapons: m.weapons,
+      artifacts: m.artifacts,
+      substats: m.substats
+    }))
+  })), null, 4).replace(/"([^"]+)":/g, '$1:')},
   bestWeapons: ${JSON.stringify(char.bestWeapons.map(w => ({
     rank: w.rank,
     nameVi: w.nameVi,

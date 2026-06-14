@@ -10,20 +10,7 @@ export const kaedeharaKazuha = {
   "Skill",
   "Normal Attack"
 ],
-  bestTeams: [
-  "yelan",
-  "furina",
-  "sigewinne",
-  "clorinde",
-  "fischl",
-  "nahida",
-  "tartaglia",
-  "xiangling",
-  "bennett",
-  "arlecchino",
-  "kachina",
-  "klee"
-],
+  teams: [],
   bestWeapons: [
     {
         rank: 1,

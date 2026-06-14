@@ -10,11 +10,7 @@ export const yumemizu = {
   "Elemental Skill",
   "Elemental Burst"
 ],
-  bestTeams: [
-  "bennett",
-  "xingqiu",
-  "zhongli"
-],
+  teams: [],
   bestWeapons: [
     {
         rank: 5,

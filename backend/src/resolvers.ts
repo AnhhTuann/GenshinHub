@@ -151,7 +151,7 @@ export const resolvers = {
 
       const data = await prisma.character.findUnique({
         where: { id: args.id },
-        include: { bestWeapons: true, bestArtifacts: true },
+        include: { bestWeapons: true, bestArtifacts: true, teams: { include: { members: true } } },
       });
       if (!data) return null;
 

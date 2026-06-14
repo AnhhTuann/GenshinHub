@@ -151,14 +151,63 @@ export const Mutation = {
     return c;
   },
   
-  updateCharacterTeams: async (_: any, { id, teams }: any, context: any) => {
+  addCharacterTeam: async (_: any, { characterId, name, rank, description, members }: any, context: any) => {
     requireAdmin(context);
-    const c = await prisma.character.update({
-      where: { id },
-      data: { bestTeams: teams },
+    await prisma.characterTeam.create({
+      data: {
+        characterId,
+        name,
+        rank,
+        description,
+        members: {
+          create: members.map((m: any) => ({
+            characterId: m.characterId,
+            role: m.role,
+            roleDesc: m.roleDesc,
+            weapons: m.weapons,
+            artifacts: m.artifacts,
+            substats: m.substats
+          }))
+        }
+      }
     });
     exportDatabaseToSeeds().catch(console.error);
-    return c;
+    return true;
+  },
+
+  updateCharacterTeam: async (_: any, { teamId, name, rank, description, members }: any, context: any) => {
+    requireAdmin(context);
+    const team = await prisma.characterTeam.findUnique({ where: { id: teamId } });
+    if (!team) throw new Error("Team not found");
+
+    await prisma.characterTeam.update({
+      where: { id: teamId },
+      data: {
+        name,
+        rank,
+        description,
+        members: {
+          deleteMany: {},
+          create: members.map((m: any) => ({
+            characterId: m.characterId,
+            role: m.role,
+            roleDesc: m.roleDesc,
+            weapons: m.weapons,
+            artifacts: m.artifacts,
+            substats: m.substats
+          }))
+        }
+      }
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return true;
+  },
+
+  removeCharacterTeam: async (_: any, { teamId }: any, context: any) => {
+    requireAdmin(context);
+    await prisma.characterTeam.delete({ where: { id: teamId } });
+    exportDatabaseToSeeds().catch(console.error);
+    return true;
   },
   
   updateCharacterTierList: async (_: any, { id, tier, role, recommendedC, tierNoteEn, tierNoteVi }: any, context: any) => {

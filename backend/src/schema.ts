@@ -2,11 +2,13 @@ export const typeDefs = `#graphql
   type WeaponBuild { id: String!, nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int }
   type MixSetOption { nameEn: String!, nameVi: String!, iconUrl: String, artifactSetId: String }
   type ArtifactBuild { id: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String, mixSets: [MixSetOption!] }
+  type TeamMemberBuild { id: String!, characterId: String!, role: String!, roleDesc: String!, weapons: [String!]!, artifacts: [String!]!, substats: [String!]! }
+  type TeamBuild { id: String!, name: String!, rank: String!, description: String!, members: [TeamMemberBuild!]! }
   type Character { 
     id: String!, nameEn: String!, nameVi: String!, titleEn: String!, titleVi: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
     avatarUrl: String!, splashArtUrl: String!, 
     descriptionEn: String!, descriptionVi: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
-    bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, bestTeams: [String!]!, tier: String,
+    bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, teams: [TeamBuild!]!, tier: String,
     role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]
   }
   
@@ -33,14 +35,18 @@ export const typeDefs = `#graphql
   input ArtifactSetInput { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
   input MaterialInput { id: String!, nameEn: String!, nameVi: String!, type: String!, rarity: Int!, iconUrl: String }
   
+  input TeamMemberInput { characterId: String!, role: String!, roleDesc: String!, weapons: [String!]!, artifacts: [String!]!, substats: [String!]! }
+  input TeamInput { name: String!, rank: String!, description: String!, members: [TeamMemberInput!]! }
+  
   input CharacterInput { 
     id: String!, nameEn: String!, nameVi: String!, titleEn: String, titleVi: String,
     element: String!, rarity: Int!, weapon: String!, region: String, 
     avatarUrl: String!, splashArtUrl: String!, descriptionEn: String, descriptionVi: String,
     baseHp: Int, baseAtk: Int, baseDef: Int,
-    talentPriority: [String!], bestTeams: [String!],
+    talentPriority: [String!],
     bestWeapons: [WeaponBuildInput!],
     bestArtifacts: [ArtifactBuildInput!],
+    teams: [TeamInput!],
     tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]
   }
 
@@ -60,7 +66,9 @@ export const typeDefs = `#graphql
 
     # Character Detail Inline Edits
     updateCharacterSplashArt(id: String!, splashArtUrl: String!): Character
-    updateCharacterTeams(id: String!, teams: [String!]!): Character
+    addCharacterTeam(characterId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): Boolean
+    updateCharacterTeam(teamId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): Boolean
+    removeCharacterTeam(teamId: String!): Boolean
     updateCharacterTierList(id: String!, tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]): Character
     updateWeaponTierList(id: String!, tier: String): Weapon
     

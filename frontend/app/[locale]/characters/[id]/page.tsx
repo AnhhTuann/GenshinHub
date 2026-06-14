@@ -12,12 +12,9 @@ import ScrollEntrance from '@/components/ScrollEntrance';
 import ParallaxSplash from '@/components/ParallaxSplash';
 import AdminEditableSplash from '@/components/AdminEditableSplash';
 import AdminEditableBuild from '@/components/AdminEditableBuild';
-import WishIntro from '@/components/WishIntro';
-import { detailedTeamsData } from '@/data/teams';
 import EditableWeaponsSection from '@/components/character-sections/EditableWeaponsSection';
-import EditableArtifactsSection from '@/components/character-sections/EditableArtifactsSection';
 import EditableStatsSection from '@/components/character-sections/EditableStatsSection';
-import EditableTeammatesSection from '@/components/character-sections/EditableTeammatesSection';
+import EditableMetaTeamsSection from '@/components/character-sections/EditableMetaTeamsSection';
 
 const EL_COLOR: Record<string, string> = {
   Pyro:    '#ff6b4a',
@@ -133,7 +130,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   const title   = locale === 'en' ? character.titleEn : character.titleVi;
   const desc    = locale === 'en' ? character.descriptionEn : character.descriptionVi;
 
-  const detailedTeams  = detailedTeamsData[character.id] || [];
+  const detailedTeams  = character.teams || [];
   const hasDetailedTeams = detailedTeams.length > 0;
   const is5Star        = character.rarity === 5;
   const elColor        = EL_COLOR[character.element] ?? '#ffffff';
@@ -303,9 +300,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               </div>
             </ScrollEntrance>
 
-            {/* ── 5. RECOMMENDED TEAMMATES (SIMPLE) ── */}
-            <ScrollEntrance delay={0.25}>
-              <EditableTeammatesSection characterId={character.id} bestTeams={character.bestTeams || []} allCharacters={characters} />
+            {/* ── 5. META TEAM COMPS ── */}
+            <ScrollEntrance delay={0.3}>
+              <EditableMetaTeamsSection characterId={character.id} teams={character.teams || []} allCharacters={characters} />
             </ScrollEntrance>
 
             {/* ── 5. DETAILED TEAM COMPS ── */}
@@ -406,34 +403,6 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                   </div>
                 </section>
               </ScrollEntrance>
-            )}
-
-            {/* ── 6. SIMPLE TEAMS (no detailed data) ── */}
-            {!hasDetailedTeams && character.bestTeams?.length > 0 && (
-              <ScrollEntrance delay={0.3}>
-                <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6">
-                <SectionHeader label="Recommended Teammates" accent="bg-blue-400" />
-                <div className="flex flex-wrap gap-3">
-                  {character.bestTeams.map((tid) => {
-                    const tm = characters.find(c => c.id === tid);
-                    return (
-                      <Link href={`/characters/${tid}`} key={tid} className="group/tm relative">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/15 transition-colors bg-[#0d0d14] p-0.5">
-                          {tm ? (
-                            <div className="w-full h-full bg-cover bg-top rounded-lg" style={{ backgroundImage: `url(${tm.avatarUrl})` }} />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center text-[8px] text-white/25 font-black uppercase text-center">{tid}</div>
-                          )}
-                        </div>
-                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover/tm:opacity-100 transition-opacity bg-black/95 text-white text-[9px] font-bold px-2 py-0.5 rounded whitespace-nowrap z-10 border border-white/10">
-                          {tm ? (locale === 'en' ? tm.nameEn : tm.nameVi) : tid}
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </section>
-            </ScrollEntrance>
             )}
 
           </div>

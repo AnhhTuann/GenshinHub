@@ -10,14 +10,14 @@
    ===================================================== */
 :root {
   /* Background layers */
-  --bg-base:       #252236; /* Yatta style */
-  --bg-surface:    #312c45;
-  --bg-elevated:   #3b3652;
+  --bg-base:       #2a263c; /* Exact Amber style */
+  --bg-surface:    #35304c;
+  --bg-elevated:   #3e3957;
   --bg-overlay:    #1a1a28;
 
   /* Border colors */
   --border-subtle:  rgba(255,255,255,0.04);
-  --border-default: #463f64;
+  --border-default: #4f4675;
   --border-strong:  rgba(255,255,255,0.13);
 
   /* Primary accent — Gold */
@@ -77,27 +77,27 @@ body {
 
 /* Yatta Style Components */
 .yatta-container {
-  @apply bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-xl overflow-hidden;
+  @apply bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-xl overflow-hidden shadow-lg;
 }
 
 .yatta-header {
-  @apply bg-[#2d2940] px-4 py-2 border-b border-[var(--border-default)] flex items-center justify-between text-sm font-bold text-white;
+  @apply bg-[#3e3957] px-4 py-2.5 border-b border-[var(--border-default)] flex items-center justify-between text-sm font-bold text-white;
 }
 
 .yatta-item {
-  @apply relative w-12 h-12 rounded bg-[#d2c69e] border border-[#a2865e] overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-105;
+  @apply relative w-12 h-12 rounded-md bg-[#d2c69e] border border-transparent overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-105 shadow-sm;
 }
 .yatta-item-5star {
-  @apply bg-gradient-to-br from-[#c9905c] to-[#e6b668] border-[#c08d58];
+  @apply bg-gradient-to-br from-[#d4a06a] via-[#e5b76b] to-[#d4a06a] border-[#b07b46];
 }
 .yatta-item-4star {
-  @apply bg-gradient-to-br from-[#8a72a1] to-[#b794d4] border-[#8f74a8];
+  @apply bg-gradient-to-br from-[#9b80b7] via-[#ba9fd3] to-[#9b80b7] border-[#7d609a];
 }
 .yatta-item-3star {
-  @apply bg-gradient-to-br from-[#688aab] to-[#79a6d4] border-[#6b8eaa];
+  @apply bg-gradient-to-br from-[#688aab] to-[#79a6d4] border-[#4c6a85];
 }
 .yatta-item-element {
-  @apply absolute top-0 left-0 w-4 h-4 z-10 drop-shadow-md;
+  @apply absolute top-0 left-0 w-[18px] h-[18px] z-10 drop-shadow-md bg-black/20 rounded-br-md p-0.5;
 }
 
 /* Fix default select and option styles on Windows for Dark Mode */

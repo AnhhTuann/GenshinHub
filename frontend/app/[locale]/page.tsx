@@ -21,16 +21,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* ── LEFT COLUMN ── */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="lg:col-span-5 flex flex-col gap-5">
             
             {/* Branding */}
-            <div>
-              <h1 className="text-4xl font-black font-display text-white">GenshinHub</h1>
-              <p className="text-white/60 font-bold">Your best Teyvat guide!</p>
+            <div className="mb-2">
+              <h1 className="text-4xl font-bold text-white tracking-tight">GenshinHub</h1>
+              <p className="text-white font-bold text-[15px]">Your best Teyvat guide!</p>
             </div>
 
             {/* Welcome Box */}
-            <div className="border border-purple-500/30 rounded-xl p-4 bg-purple-500/5 text-sm text-blue-100">
+            <div className="border border-[#7264a8] rounded-xl p-4 bg-transparent text-[13px] text-white/90 leading-relaxed shadow-sm">
               Welcome, traveler! Here you can find the latest game news and various useful information, including info about characters, weapons, materials, and various other things, including tools for making your journey the best!
             </div>
 
@@ -38,9 +38,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <ServerReset />
 
             {/* Shortcuts */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mt-2">
               <h2 className="text-white font-bold text-lg">Shortcuts</h2>
-              <div className="flex flex-wrap gap-2 text-sm font-bold text-white/70">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-bold text-white">
                 {[
                   { href: '/characters', label: t('characters'), icon: '⚔️' },
                   { href: '/weapons', label: t('weapons'), icon: '🗡️' },
@@ -51,24 +51,26 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   { href: '/showcase', label: t('showcase'), icon: '🔍' },
                   { href: '/banners', label: 'Banners', icon: '📜' },
                 ].map(s => (
-                  <Link key={s.href} href={s.href} className="hover:text-white transition-colors flex items-center gap-1">
-                    <span>{s.icon}</span> <span>{s.label}</span>
+                  <Link key={s.href} href={s.href} className="hover:text-blue-300 transition-colors flex items-center gap-1.5">
+                    <span className="text-white/70">{s.icon}</span> <span>{s.label}</span>
                   </Link>
                 ))}
               </div>
             </div>
 
             {/* Coming Birthdays */}
-            <UpcomingBirthdays characters={characters} locale={locale} />
+            <div className="mt-2">
+              <UpcomingBirthdays characters={characters} locale={locale} />
+            </div>
           </div>
 
           {/* ── RIGHT COLUMN ── */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
+          <div className="lg:col-span-7 flex flex-col gap-5">
             {/* Notices */}
             <Notices />
 
             {/* Daily Farming */}
-            <div className="h-[600px]">
+            <div className="h-[650px]">
               <DailyFarming locale={locale} />
             </div>
           </div>

@@ -3,11 +3,14 @@ import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
+import UpcomingBirthdays from '@/components/home/UpcomingBirthdays';
+import DailyFarming from '@/components/home/DailyFarming';
 
 export const revalidate = 300;
 
-export default async function Home() {
-  const t = await getTranslations('Common');
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Common' });
   const data = await fetchGraphQL(GET_CHARACTERS);
   const characters: CharacterData[] = data.characters;
 
@@ -72,6 +75,16 @@ export default async function Home() {
                 <span>{label}</span>
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* ── Today in Teyvat Widgets ── */}
+        <div className="mb-10 grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[350px]">
+          <div className="md:col-span-4 lg:col-span-3 h-full">
+            <UpcomingBirthdays characters={characters} locale={locale} />
+          </div>
+          <div className="md:col-span-8 lg:col-span-9 h-full">
+            <DailyFarming locale={locale} />
           </div>
         </div>
 

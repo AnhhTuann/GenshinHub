@@ -32,6 +32,7 @@ export default function Navbar() {
     { href: '/banners',   label: t('banners'),    icon: '📜' },
     { href: '/teams',     label: 'Teams',          icon: '👥' },
     { href: '/showcase',  label: t('showcase'),   icon: '🔍' },
+    { href: '/tcg',       label: t('tcg'),        icon: '🃏' },
   ];
 
   return (

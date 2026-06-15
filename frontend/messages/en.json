@@ -14,7 +14,8 @@
     "banners": "Banner History",
     "language": "Language",
     "english": "English",
-    "vietnamese": "Vietnamese"
+    "vietnamese": "Vietnamese",
+    "tcg": "Genius Invokation TCG"
   },
   "TierList": {
     "title": "TIER LIST",

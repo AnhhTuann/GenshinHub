@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { fetchGraphQL, GET_ARTIFACT_SET, GET_ARTIFACTS } from '@/lib/graphql';
 import ArtifactDetailClient from './ArtifactDetailClient';
 
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 export default async function ArtifactDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
-  const { id } = await params;
+  const { id, locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const data = await fetchGraphQL(GET_ARTIFACT_SET, { id });
   const artifactSet = data.artifactSet;

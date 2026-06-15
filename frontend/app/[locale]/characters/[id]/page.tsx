@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS, GET_WEAPONS, GET_ARTIFACTS, GET_MATERIALS } from '@/lib/graphql';
@@ -118,6 +118,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const p = await params;
+  unstable_setRequestLocale(p.locale);
   const results = await Promise.all([
     fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }),
     fetchGraphQL(GET_CHARACTERS),
@@ -131,8 +132,8 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
     return <div className="p-8 text-center text-white/50 flex flex-col items-center justify-center min-h-screen"><h2 className="text-2xl font-bold mb-4">Character Not Found</h2><p>This character does not exist or has not been added yet.</p></div>;
   }
 
-  const t = await getTranslations('Character');
-  const tCommon = await getTranslations('Common');
+  const t = await getTranslations({ locale: p.locale, namespace: 'Character' });
+  const tCommon = await getTranslations({ locale: p.locale, namespace: 'Common' });
   const locale  = p.locale;
   const name    = locale === 'en' ? character.nameEn : character.nameVi;
   const title   = locale === 'en' ? character.titleEn : character.titleVi;

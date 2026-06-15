@@ -25,7 +25,6 @@
   - `seed.ts`: File orchestrator tự động chạy tất cả các module seeder.
 - **`src/`**: Chứa mã nguồn chính của GraphQL Server.
   - `index.ts`: Điểm khởi chạy của Apollo Server (tích hợp Express), khai báo Schema và Resolvers.
-  - `migrateTeams.ts`: File hỗ trợ migrate schema đội hình.
 - **`docker-compose.yml`**: Khởi chạy nhanh một container PostgreSQL cục bộ.
 
 ## ⚙️ Cách thức hoạt động

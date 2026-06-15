@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { fetchGraphQL, GET_WEAPON_BY_ID, GET_CHARACTERS_BY_WEAPON_TYPE, GET_WEAPONS } from '@/lib/graphql';
 import WeaponDetailClient from './WeaponDetailClient';
 
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 export default async function WeaponDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
-  const { id } = await params;
+  const { id, locale } = await params;
+  unstable_setRequestLocale(locale);
 
   const weaponData = await fetchGraphQL(GET_WEAPON_BY_ID, { id });
   const weapon = weaponData.weapon;

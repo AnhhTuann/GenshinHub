@@ -1,0 +1,92 @@
+{
+  "data": {
+    "character": {
+      "id": "arataki-itto",
+      "nameEn": "Arataki Itto",
+      "nameVi": "Arataki Itto",
+      "titleEn": "Hanamizaka Heroics",
+      "titleVi": "Quái Kiệt Hanamizaka",
+      "rarity": 5,
+      "element": "Geo",
+      "weapon": "Claymore",
+      "region": "Inazuma",
+      "birthday": "01/06",
+      "avatarUrl": "/images/avatars/UI_AvatarIcon_Itto.png",
+      "splashArtUrl": "/images/splash/UI_Gacha_AvatarImg_Itto.png",
+      "descriptionEn": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
+      "descriptionVi": "Thủ lĩnh đời đầu của \"Bang Arataki\" địa bàn Hanamizaka. Sao, chưa nghe qua Bang Arataki à, đùa ta sao?",
+      "baseHp": 4111,
+      "baseAtk": 73,
+      "baseDef": 307,
+      "fandomUrl": "https://genshin-impact.fandom.com/wiki/Arataki_Itto",
+      "talentPriority": [
+        "Normal Attack",
+        "Elemental Skill",
+        "Elemental Burst"
+      ],
+      "signatureWeapons": [],
+      "teams": [],
+      "tier": null,
+      "role": null,
+      "recommendedC": null,
+      "tierNoteEn": [],
+      "tierNoteVi": [],
+      "bestWeapons": [
+        {
+          "id": "18c5a22e-6471-4d70-8f1a-baf3ce7db46f",
+          "nameEn": "Prototype Archaic",
+          "nameVi": "Mẫu Cổ Hoa",
+          "rank": 4,
+          "isF2P": true,
+          "iconUrl": "/images/weapons/UI_EquipIcon_Claymore_Proto.png",
+          "subStat": "Tấn Công%",
+          "passiveDescEn": "Có xác suất gây sát thương AoE.",
+          "passiveDescVi": "Có xác suất gây sát thương AoE.",
+          "refinement": 5,
+          "rarity": 4
+        },
+        {
+          "id": "6727c29a-c15d-4c6b-92c8-706e2284fe6e",
+          "nameEn": "Wolf's Gravestone",
+          "nameVi": "Đường Cùng Của Sói",
+          "rank": 5,
+          "isF2P": false,
+          "iconUrl": "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png",
+          "subStat": "Tấn Công%",
+          "passiveDescEn": "Tăng mạnh Tấn Công.",
+          "passiveDescVi": "Tăng mạnh Tấn Công.",
+          "refinement": 1,
+          "rarity": 5
+        }
+      ],
+      "bestArtifacts": [
+        {
+          "id": "7e247ccb-05c2-4e27-8b66-c2ca5a876da1",
+          "setNameEn": "Thánh Di Vật Đề Cử",
+          "setNameVi": "Thánh Di Vật Đề Cử",
+          "pieces": 4,
+          "sands": [
+            "ATK%"
+          ],
+          "goblet": [
+            "Elemental DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate"
+          ],
+          "subStatsPriority": [
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%"
+          ],
+          "rarity": 5,
+          "iconUrl": null,
+          "artifactSetId": null,
+          "mixSets": []
+        }
+      ],
+      "stats": null,
+      "ascensionMats": null
+    }
+  }
+}

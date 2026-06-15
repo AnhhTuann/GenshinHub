@@ -11,6 +11,5 @@
     "resolveJsonModule": true,
     "types": ["node"]
   },
-  "include": ["src/**/*", "prisma/**/*.ts"],
-  "exclude": ["src/migrateTeams.ts"]
+  "include": ["src/**/*", "prisma/**/*.ts"]
 }

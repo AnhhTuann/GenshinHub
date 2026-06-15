@@ -1,6 +1,6 @@
-# TeyvatDB - Backend ⚙️
+# GenshinHub - Backend ⚙️
 
-Đây là máy chủ API của **TeyvatDB**. Backend đóng vai trò làm trung tâm xử lý dữ liệu, giao tiếp với cơ sở dữ liệu PostgreSQL và cung cấp endpoint GraphQL duy nhất cho Frontend. Nó cũng chịu trách nhiệm cào dữ liệu (seeding) từ các nguồn bên ngoài.
+Đây là máy chủ API của **GenshinHub**. Backend đóng vai trò làm trung tâm xử lý dữ liệu, giao tiếp với cơ sở dữ liệu PostgreSQL và cung cấp endpoint GraphQL duy nhất cho Frontend. Nó cũng chịu trách nhiệm cào dữ liệu (seeding) từ các nguồn bên ngoài và thiết lập dữ liệu Meta.
 
 ## 📦 Các Packages đã sử dụng và Công dụng
 
@@ -19,12 +19,13 @@
 ## 📂 Cấu trúc thư mục (Directory Structure)
 
 - **`prisma/`**: 
-  - `schema.prisma`: Nơi định nghĩa toàn bộ cấu trúc bảng của database.
-  - `seeds/`: Thư mục chứa các module cào dữ liệu được chia nhỏ (Nhân vật, Vũ khí, Thánh di vật, Nguyên liệu).
-    - `characters/`: Chứa các file cấu hình build chi tiết của từng nhân vật riêng biệt (ví dụ: `durin.ts`, `hu-tao.ts`, ...).
+  - `schema.prisma`: Nơi định nghĩa toàn bộ cấu trúc bảng của database. Quản lý cả Character, Weapon, Team, TeamMember.
+  - `seeds/`: Thư mục chứa các module cào dữ liệu được chia nhỏ (Nhân vật, Vũ khí, Thánh di vật, Nguyên liệu, Đội hình).
+    - `characters/`: Chứa các file cấu hình build meta chi tiết của từng nhân vật riêng biệt (ví dụ: `durin.ts`, `hu-tao.ts`, ...).
   - `seed.ts`: File orchestrator tự động chạy tất cả các module seeder.
 - **`src/`**: Chứa mã nguồn chính của GraphQL Server.
   - `index.ts`: Điểm khởi chạy của Apollo Server (tích hợp Express), khai báo Schema và Resolvers.
+  - `migrateTeams.ts`: File hỗ trợ migrate schema đội hình.
 - **`docker-compose.yml`**: Khởi chạy nhanh một container PostgreSQL cục bộ.
 
 ## ⚙️ Cách thức hoạt động
@@ -35,5 +36,5 @@
    Apollo Server (chạy trên nền Express) phơi bày một endpoint duy nhất tại `http://localhost:4000/graphql`.
 3. **Seed Data (Thu thập dữ liệu):** 
    Hệ thống có các tập lệnh chạy ngoài luồng (seeder).
-   - **Chế độ Full Seed (`npm run prisma:seed`):** Xoá sạch database cũ, tải danh sách từ API `gi.yatta.moe` và chèn lại toàn bộ vũ khí, thánh di vật, nguyên liệu, và nhân vật.
+   - **Chế độ Full Seed (`npm run prisma:seed`):** Xoá sạch database cũ, tải danh sách từ API `gi.yatta.moe`, đối chiếu với dữ liệu Meta nội bộ tại thư mục `seeds/characters` để chèn lại toàn bộ nhân vật với chỉ số chuẩn xác.
    - **Chế độ Single Character Seed (`SEED_CHARACTER=char_id`):** Chỉ xoá và chèn lại đúng dữ liệu của nhân vật được chỉ định. Bỏ qua việc seed vũ khí, thánh di vật, nguyên liệu để tiết kiệm thời gian và tài nguyên mạng.

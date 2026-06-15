@@ -11,6 +11,7 @@
     "weapons": "Vũ Khí",
     "artifacts": "Thánh Di Vật",
     "showcase": "Trang Khoe",
+    "banners": "Lịch Sử Banner",
     "language": "Ngôn ngữ",
     "english": "Tiếng Anh",
     "vietnamese": "Tiếng Việt"
@@ -80,5 +81,13 @@
     "fetchProfile": "Tìm Hồ Sơ",
     "showcaseCharacters": "NHÂN VẬT TRƯNG BÀY",
     "noCharacters": "Không có nhân vật nào được trưng bày. Hãy đảm bảo bạn đã thêm nhân vật vào hồ sơ trong game."
+  },
+  "Banners": {
+    "title": "LỊCH SỬ BANNER",
+    "description": "Dòng thời gian tổng hợp các Banner Nhân Vật và Vũ Khí từ phiên bản 1.0 đến nay.",
+    "version": "Phiên Bản",
+    "phase": "Giai Đoạn",
+    "characters": "Nhân Vật",
+    "weapons": "Vũ Khí"
   }
 }

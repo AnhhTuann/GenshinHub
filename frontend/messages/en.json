@@ -11,6 +11,7 @@
     "weapons": "Weapons",
     "artifacts": "Artifacts",
     "showcase": "Player Showcase",
+    "banners": "Banner History",
     "language": "Language",
     "english": "English",
     "vietnamese": "Vietnamese"
@@ -80,5 +81,13 @@
     "fetchProfile": "Fetch Profile",
     "showcaseCharacters": "SHOWCASE CHARACTERS",
     "noCharacters": "No characters on display for this player profile. Make sure characters are added to your in-game showcase."
+  },
+  "Banners": {
+    "title": "BANNER HISTORY",
+    "description": "A comprehensive timeline of all historical Character and Weapon Event Wishes from version 1.0 to the present.",
+    "version": "Version",
+    "phase": "Phase",
+    "characters": "Characters",
+    "weapons": "Weapons"
   }
 }

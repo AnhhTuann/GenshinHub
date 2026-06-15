@@ -29,6 +29,7 @@ export default function Navbar() {
     { href: '/weapons',   label: t('weapons'),    icon: '🗡️' },
     { href: '/artifacts', label: t('artifacts'),  icon: '💎' },
     { href: '/tierlist',  label: t('tierlist'),   icon: '🏆' },
+    { href: '/banners',   label: t('banners'),    icon: '📜' },
     { href: '/teams',     label: 'Teams',          icon: '👥' },
     { href: '/showcase',  label: t('showcase'),   icon: '🔍' },
   ];

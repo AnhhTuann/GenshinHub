@@ -1,0 +1,251 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.resolvers = void 0;
+// Nodemon trigger
+const client_1 = require("@prisma/client");
+const axios_1 = __importDefault(require("axios"));
+const cache_1 = require("./cache");
+const mutations_1 = require("./mutations");
+const graphql_type_json_1 = __importDefault(require("graphql-type-json"));
+const prisma = new client_1.PrismaClient();
+// Map mix set name → component set Vietnamese names
+const mixSetsMap = {
+    "Mix 2 bộ Trái Tim Trầm Luân & 2 bộ Thiên Nham Vững Chắc": ["Trái Tim Trầm Luân", "Thiên Nham Vững Chắc"],
+    "Mix 2 bộ Nghi Thức Tông Thất Cổ & 2 bộ Thiên Nham Vững Chắc": ["Nghi Thức Tông Thất Cổ", "Thiên Nham Vững Chắc"],
+    "Mix 2 bộ Giấc Mộng Hoàng Kim & 2 bộ Thiên Nham Vững Chắc": ["Giấc Mộng Hoàng Kim", "Thiên Nham Vững Chắc"],
+    "Mix 2 bộ Sát Thương Hỏa & 2 bộ Tinh Thông / HP": ["Diệm Liệt Ma Nữ Cháy Rực", "Đoàn Hát Lang Thang Đại Lục", "Thiên Nham Vững Chắc"],
+    "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn": ["Như Sấm Thịnh Nộ", "Nghi Thức Tông Thất Cổ", "Lễ Bế Mạc Của Giác Đấu Sĩ", "Dấu Ấn Ngăn Cách"],
+    "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc": ["Vầng Sáng Vourukasha", "Thiên Nham Vững Chắc"],
+    "Mix 2 bộ Thiên Nham Vững Chắc & 2 bộ Giấc Mộng Hoàng Kim": ["Thiên Nham Vững Chắc", "Giấc Mộng Hoàng Kim"],
+    "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Giấc Mộng Hoàng Kim": ["Vầng Sáng Vourukasha", "Giấc Mộng Hoàng Kim"],
+    "Mix 2 bộ Thủy / HP / Thợ Săn": ["Trái Tim Trầm Luân", "Thiên Nham Vững Chắc", "Thợ Săn Marechaussee"],
+    "Mix 2 bộ Thủy / Đoàn Kịch / HP / Dấu Ấn": ["Trái Tim Trầm Luân", "Đoàn Kịch Hoàng Kim", "Thiên Nham Vững Chắc", "Dấu Ấn Ngăn Cách"],
+    "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu": ["Lửa Trắng Xám", "Kỵ Sĩ Đạo Nhuốm Máu"],
+    "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ": ["Dấu Ấn Ngăn Cách", "Physical DMG +25% set"],
+    "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp": ["Lửa Trắng Xám", "Lễ Bế Mạc Của Giác Đấu Sĩ", "Nghi Thức Tông Thất Cổ", "Thiên Nham Vững Chắc"],
+    "Mix 2 bộ Dấu Ấn / HP / Thủy / Tông Thất": ["Dấu Ấn Ngăn Cách", "Thiên Nham Vững Chắc", "Trái Tim Trầm Luân", "Nghi Thức Tông Thất Cổ"],
+    "Mix 2 bộ Tinh Thông & 2 bộ Ký Ức Rừng Sâu": ["Đoàn Hát Lang Thang Đại Lục", "Ký Ức Rừng Sâu"],
+    "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn": ["Lễ Bế Mạc Của Giác Đấu Sĩ", "Diệm Liệt Ma Nữ Cháy Rực", "Thợ Săn Marechaussee"],
+    "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công": ["Diệm Liệt Ma Nữ Cháy Rực", "Đoàn Hát Lang Thang Đại Lục", "Lễ Bế Mạc Của Giác Đấu Sĩ"],
+    "Mix 2 bộ Tinh Thông / Dấu Ấn": ["Đoàn Hát Lang Thang Đại Lục", "Dấu Ấn Ngăn Cách"],
+    "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công": ["Diệm Liệt Ma Nữ Cháy Rực", "Nghi Thức Tông Thất Cổ", "Lễ Bế Mạc Của Giác Đấu Sĩ"],
+    "Mix 2 bộ Tấn Công / Hiệu Quả Nạp": ["Lễ Bế Mạc Của Giác Đấu Sĩ", "Dấu Ấn Ngăn Cách"],
+    "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn": ["Diệm Liệt Ma Nữ Cháy Rực", "Nghi Thức Tông Thất Cổ", "Lễ Bế Mạc Của Giác Đấu Sĩ", "Đoàn Hát Lang Thang Đại Lục", "Dấu Ấn Ngăn Cách"],
+    "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp": ["Diệm Liệt Ma Nữ Cháy Rực", "Lễ Bế Mạc Của Giác Đấu Sĩ", "Đoàn Hát Lang Thang Đại Lục", "Dấu Ấn Ngăn Cách"],
+    "Mix 2 bộ Hiệu Quả Nạp +20%": ["Dấu Ấn Ngăn Cách", "Kẻ Lưu Đày", "Học Sĩ"],
+    "Mix 2 bộ Thủy & 2 bộ Tấn Công": ["Trái Tim Trầm Luân", "Giấc Mộng Thủy Tiên", "Lễ Bế Mạc Của Giác Đấu Sĩ", "Dòng Hồi Ức Bất Tận", "Dư Âm Tế Lễ", "Thần Sa Vãng Sinh Lục"],
+    "Mix 2 bộ Trị Liệu / Thủy / HP": ["Thiếu Nữ Đáng Yêu", "Xà Cừ Đại Dương", "Trái Tim Trầm Luân", "Giấc Mộng Thủy Tiên", "Thiên Nham Vững Chắc", "Vầng Sáng Vourukasha"],
+};
+// Collect all unique artifact set names from a mix map key
+function getAllMixComponentNames() {
+    const names = new Set();
+    for (const components of Object.values(mixSetsMap)) {
+        for (const name of components) {
+            if (name !== "Physical DMG +25% set")
+                names.add(name);
+        }
+    }
+    return Array.from(names);
+}
+// LRU Caches are now imported from ./cache
+// Pre-warm artifact set lookup cache (all sets + mix components in 1 query)
+let artifactSetLookup = null;
+async function getArtifactSetLookup() {
+    if (artifactSetLookup)
+        return artifactSetLookup;
+    const sets = await prisma.artifactSet.findMany();
+    const lookup = {};
+    for (const s of sets) {
+        lookup[s.nameVi] = s;
+        lookup[s.nameEn] = s;
+    }
+    artifactSetLookup = lookup;
+    return lookup;
+}
+// Enrich a character's bestArtifacts using a pre-loaded artifact lookup (no extra DB calls)
+async function enrichArtifacts(artifacts, setLookup) {
+    return artifacts.map((a) => {
+        const isMix = a.setNameVi?.startsWith("Mix") || a.setNameEn?.startsWith("Mix");
+        const dbArtifact = setLookup[a.setNameVi] || setLookup[a.setNameEn];
+        let mixSets = [];
+        let matchedComponents = mixSetsMap[a.setNameVi];
+        // Dynamic mix parsing for newly created mixes
+        if (isMix && !matchedComponents) {
+            const cleanedEn = a.setNameEn.replace("Mix 2-Piece ", "").replace("Mix 2 bộ ", "");
+            const cleanedVi = a.setNameVi.replace("Mix 2 bộ ", "").replace("Mix 2-Piece ", "");
+            const partsEn = cleanedEn.split(/ & 2-Piece | & 2 bộ /);
+            const partsVi = cleanedVi.split(/ & 2 bộ | & 2-Piece /);
+            // Prefer Vi names for internal lookup matching, but fallback to En
+            matchedComponents = partsVi.length >= 2 ? partsVi : partsEn;
+        }
+        if (matchedComponents) {
+            mixSets = matchedComponents.map((cName) => {
+                if (cName === "Physical DMG +25% set") {
+                    return {
+                        nameEn: "Physical DMG +25% set",
+                        nameVi: "Bộ Sát Thương Vật Lý +25%",
+                        iconUrl: "/images/artifacts/UI_RelicIcon_15008_4.png",
+                        artifactSetId: "15008",
+                    };
+                }
+                const compDb = setLookup[cName];
+                return {
+                    nameEn: compDb?.nameEn || cName,
+                    nameVi: compDb?.nameVi || cName,
+                    iconUrl: compDb?.iconUrl || null,
+                    artifactSetId: compDb?.id || "",
+                };
+            });
+        }
+        return {
+            ...a,
+            setNameEn: dbArtifact?.nameEn || a.setNameEn,
+            setNameVi: dbArtifact?.nameVi || a.setNameVi,
+            iconUrl: isMix ? "/images/artifacts/UI_RelicIcon_15001_4.png" : (dbArtifact?.iconUrl || null),
+            rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
+            artifactSetId: dbArtifact?.id || null,
+            mixSets,
+        };
+    });
+}
+// Enrich bestWeapons using a pre-loaded weapon lookup (no extra DB calls)
+function enrichWeapons(weapons, weaponByName) {
+    return weapons
+        .map((w) => {
+        const dbWeapon = weaponByName[w.nameVi] || weaponByName[w.nameEn];
+        return {
+            ...w,
+            id: w.id || w.weaponId || dbWeapon?.id,
+            iconUrl: dbWeapon?.iconUrl || w.iconUrl,
+            rarity: dbWeapon?.rarity ?? w.rarity,
+            subStat: dbWeapon?.subStat || w.subStat,
+            nameEn: dbWeapon?.nameEn || w.nameEn || w.nameVi,
+            nameVi: dbWeapon?.nameVi || w.nameVi,
+        };
+    })
+        .sort((a, b) => a.rank - b.rank);
+}
+exports.resolvers = {
+    JSON: graphql_type_json_1.default,
+    Query: {
+        characters: async () => {
+            const cached = cache_1.charactersCache.get('all_basic');
+            if (cached)
+                return cached;
+            const data = await prisma.character.findMany({
+                orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
+            });
+            cache_1.charactersCache.set('all_basic', data);
+            return data;
+        },
+        character: async (_, args) => {
+            const cached = cache_1.characterCache.get(args.id);
+            if (cached)
+                return cached;
+            const data = await prisma.character.findUnique({
+                where: { id: args.id },
+                include: { bestWeapons: true, bestArtifacts: true, teams: { include: { members: true } } },
+            });
+            if (!data)
+                return null;
+            // --- BATCH: Load all needed weapons in 1 query ---
+            const weaponNames = data.bestWeapons
+                .map((w) => [w.nameVi, w.nameEn])
+                .flat()
+                .filter(Boolean);
+            const weaponRecords = weaponNames.length > 0
+                ? await prisma.weapon.findMany({
+                    where: { OR: [{ nameVi: { in: weaponNames } }, { nameEn: { in: weaponNames } }] },
+                })
+                : [];
+            const weaponByName = {};
+            for (const w of weaponRecords) {
+                if (w.nameVi)
+                    weaponByName[w.nameVi] = w;
+                if (w.nameEn)
+                    weaponByName[w.nameEn] = w;
+            }
+            // --- BATCH: Use pre-warmed artifact set lookup (1 global query, cached) ---
+            const setLookup = await getArtifactSetLookup();
+            const enriched = {
+                ...data,
+                bestWeapons: enrichWeapons(data.bestWeapons, weaponByName),
+                bestArtifacts: await enrichArtifacts(data.bestArtifacts, setLookup),
+            };
+            cache_1.characterCache.set(args.id, enriched);
+            return enriched;
+        },
+        weapons: async () => {
+            const cached = cache_1.weaponsCache.get('all');
+            if (cached)
+                return cached;
+            const data = await prisma.weapon.findMany({
+                orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
+            });
+            cache_1.weaponsCache.set('all', data);
+            return data;
+        },
+        weapon: async (_, args) => {
+            return await prisma.weapon.findUnique({ where: { id: args.id } });
+        },
+        charactersByWeaponType: async (_, args) => {
+            return await prisma.character.findMany({
+                where: { weapon: args.weaponType },
+                select: { id: true, nameEn: true, nameVi: true, element: true, rarity: true, avatarUrl: true, weapon: true },
+                orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
+            });
+        },
+        artifacts: async () => {
+            return await prisma.artifactSet.findMany({ orderBy: [{ id: 'asc' }] });
+        },
+        artifactSet: async (_, args) => {
+            return await prisma.artifactSet.findUnique({ where: { id: args.id } });
+        },
+        materials: async () => {
+            return await prisma.material.findMany({ orderBy: { nameEn: 'asc' } });
+        },
+        showcase: async (_, args) => {
+            const cached = cache_1.showcaseCache.get(args.uid);
+            if (cached)
+                return cached;
+            try {
+                const response = await axios_1.default.get(`https://enka.network/api/uid/${args.uid}`);
+                const data = response.data;
+                const result = {
+                    uid: args.uid,
+                    nickname: data.playerInfo?.nickname || 'Unknown',
+                    level: data.playerInfo?.level || 1,
+                    avatarUrl: data.playerInfo?.profilePicture?.avatarId ? `/images/avatars/UI_AvatarIcon_${data.playerInfo.profilePicture.avatarId}.png` : null,
+                    characters: data.avatarInfoList?.map((a) => a.avatarId.toString()) || [],
+                };
+                cache_1.showcaseCache.set(args.uid, result);
+                return result;
+            }
+            catch (error) {
+                console.error("Lỗi fetch Enka:", error);
+                return null;
+            }
+        }
+    },
+    Character: {
+        signatureWeapons: async (parent) => {
+            if (!parent.signatureWeapons || parent.signatureWeapons.length === 0)
+                return [];
+            return prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
+        },
+        bestWeapons: async (parent) => {
+            if (parent.bestWeapons)
+                return parent.bestWeapons;
+            return prisma.characterWeapon.findMany({ where: { characterId: parent.id } });
+        },
+        bestArtifacts: async (parent) => {
+            if (parent.bestArtifacts)
+                return parent.bestArtifacts;
+            return prisma.characterArtifact.findMany({ where: { characterId: parent.id } });
+        }
+    },
+    Mutation: mutations_1.Mutation
+};

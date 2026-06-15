@@ -11,6 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
   const { id, locale } = await params;
+  setRequestLocale(locale);
   const data = await fetchGraphQL(GET_ARTIFACT_SET, { id });
   const set = data.artifactSet;
   if (!set) return { title: 'Artifact Set Not Found' };

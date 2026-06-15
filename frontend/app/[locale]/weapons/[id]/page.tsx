@@ -11,6 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
   const { id, locale } = await params;
+  setRequestLocale(locale);
   const data = await fetchGraphQL(GET_WEAPON_BY_ID, { id });
   const weapon = data.weapon;
   if (!weapon) return { title: 'Weapon Not Found' };

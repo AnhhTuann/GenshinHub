@@ -57,6 +57,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {
   const p = await params;
+  setRequestLocale(p.locale);
   const data = await fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id });
   const ch = data.character;
   if (!ch) return { title: 'Character Not Found' };

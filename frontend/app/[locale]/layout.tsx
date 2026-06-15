@@ -17,11 +17,17 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
+import { routing } from '@/i18n/routing';
+
 export const metadata: Metadata = {
   title: "GenshinHub - Genshin Impact Builds & Guides",
   description: "Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.",
   keywords: "Genshin Impact, GenshinHub, Builds, Artifacts, Weapons, Characters",
 };
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -31,7 +37,7 @@ export default async function RootLayout({ children, params }: { children: React
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Toaster 
             position="bottom-center"
             toastOptions={{

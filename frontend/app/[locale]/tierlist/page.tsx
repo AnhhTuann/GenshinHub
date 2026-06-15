@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS } from '@/lib/graphql';
 import TierListClient from './TierListClient';
 
@@ -6,7 +6,9 @@ import TierListClient from './TierListClient';
 export const revalidate = 300;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const t = await getTranslations({ locale: (await params).locale, namespace: 'TierList' });
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'TierList' });
   return {
     title: `${t('title')} - GenshinHub`,
     description: t('description')
@@ -15,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function TierListPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   
   // Fetch from the backend via GraphQL instead of Prisma directly
   const [charData, weaponData] = await Promise.all([

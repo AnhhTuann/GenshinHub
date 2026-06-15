@@ -17,6 +17,14 @@ Dự án được phát triển theo mô hình Client-Server (Monorepo), bao g�
 
 ---
 
+## 🌍 Live Demo & Triển khai (Deployment)
+Dự án đã được triển khai (deploy) hoàn chỉnh lên các dịch vụ đám mây tốt nhất hiện nay để đảm bảo hiệu suất và khả năng mở rộng:
+- **Trang web (Frontend):** [GenshinHub trên Vercel](https://genshin-hub-rho.vercel.app) *(Sử dụng tính năng Next.js Static Site Generation cực nhanh)*
+- **Máy chủ (Backend API):** [GenshinHub GraphQL API trên Render](https://genshinhub.onrender.com/graphql)
+- **Cơ sở dữ liệu (Database):** Triển khai PostgreSQL trên nền tảng **Neon Serverless Postgres** đám mây.
+
+---
+
 ## 🚀 Hướng dẫn Cài đặt & Chạy Dự án
 
 ### 1. Khởi động Cơ sở dữ liệu (PostgreSQL)

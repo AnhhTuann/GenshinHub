@@ -1,4 +1,4 @@
-import CharacterGallery from '@/components/CharacterGallery';
+
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import { Link } from '@/i18n/routing';
@@ -88,11 +88,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </div>
 
-        {/* ── Divider ── */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-8" />
-
-        {/* ── Character Gallery ── */}
-        <CharacterGallery initialCharacters={characters} />
       </div>
     </main>
   );

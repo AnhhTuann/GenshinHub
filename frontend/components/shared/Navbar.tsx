@@ -25,7 +25,8 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: '/',          label: t('characters'), icon: '⚔️' },
+    { href: '/',          label: t('home'),       icon: '🏠' },
+    { href: '/characters',label: t('characters'), icon: '⚔️' },
     { href: '/weapons',   label: t('weapons'),    icon: '🗡️' },
     { href: '/artifacts', label: t('artifacts'),  icon: '💎' },
     { href: '/tierlist',  label: t('tierlist'),   icon: '🏆' },

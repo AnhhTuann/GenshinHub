@@ -15,7 +15,8 @@
     "language": "Language",
     "english": "English",
     "vietnamese": "Vietnamese",
-    "tcg": "Genius Invokation TCG"
+    "tcg": "Genius Invokation TCG",
+    "home": "Home"
   },
   "TierList": {
     "title": "TIER LIST",

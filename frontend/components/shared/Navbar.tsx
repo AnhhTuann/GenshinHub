@@ -68,7 +68,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-0.5 bg-[#0d0d14]/60 p-1 rounded-2xl border border-white/[0.05]">
+          <div className="hidden md:flex items-center gap-0.5 bg-[#0d0d14]/60 p-1 rounded-2xl border border-white/[0.05] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {navLinks.map((link) => {
               const isActive = link.href === '/'
                 ? pathname === '/'
@@ -78,7 +78,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={link.href === '/' ? handleLogoClick : undefined}
-                  className={`relative px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  className={`relative px-3 py-2 rounded-xl text-xs font-bold uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-200 ${
                     isActive
                       ? 'bg-yellow-400/10 text-yellow-400 shadow-[inset_0_0_12px_rgba(251,191,36,0.06)]'
                       : 'text-white/40 hover:text-white/80 hover:bg-white/[0.04]'

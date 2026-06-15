@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS, GET_WEAPONS, GET_ARTIFACTS, GET_MATERIALS } from '@/lib/graphql';
@@ -118,7 +118,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const p = await params;
-  unstable_setRequestLocale(p.locale);
+  setRequestLocale(p.locale);
   const results = await Promise.all([
     fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }),
     fetchGraphQL(GET_CHARACTERS),

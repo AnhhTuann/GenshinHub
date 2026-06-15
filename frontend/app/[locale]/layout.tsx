@@ -4,7 +4,7 @@ import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
 import AdminModeToggle from "@/components/AdminModeToggle";
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
+import {getMessages, setRequestLocale} from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode, params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

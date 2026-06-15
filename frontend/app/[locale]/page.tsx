@@ -1,7 +1,7 @@
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import { Link } from '@/i18n/routing';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import UpcomingBirthdays from '@/components/home/UpcomingBirthdays';
 import DailyFarming from '@/components/home/DailyFarming';
 import Notices from '@/components/home/Notices';
@@ -11,7 +11,7 @@ export const revalidate = 300;
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'Common' });
   const data = await fetchGraphQL(GET_CHARACTERS);
   const characters: CharacterData[] = data.characters;

@@ -27,42 +27,39 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
   }, [selectedDay]);
 
   return (
-    <div className="flex flex-col gap-2 h-full">
-      <div className="flex items-center gap-2">
-        <h2 className="text-white font-bold text-lg flex items-center gap-2">
-          <span className="text-xl">⚙️</span> Daily Farming
+    <div className="flex flex-col gap-4 w-full">
+      <div className="flex items-center gap-4 justify-between border-b border-white/10 pb-3">
+        <h2 className="text-white font-bold text-xl flex items-center gap-2 text-gradient-gold">
+          <span className="text-2xl">⚙️</span> Daily Farming
         </h2>
-        <div className="ml-auto">
-          <select 
-            value={selectedDay} 
-            onChange={e => setSelectedDay(Number(e.target.value))}
-            className="bg-[#312c45] text-white border border-[#463f64] rounded px-3 py-1 text-sm outline-none cursor-pointer focus:border-purple-500"
-          >
-            {days.map((day, idx) => (
-              <option key={idx} value={idx}>{day}</option>
-            ))}
-          </select>
-        </div>
+        <select 
+          value={selectedDay} 
+          onChange={e => setSelectedDay(Number(e.target.value))}
+          className="bg-black/40 text-white border border-white/20 rounded px-4 py-1.5 text-sm outline-none cursor-pointer hover:border-white/40 focus:border-yellow-500 transition-colors"
+        >
+          {days.map((day, idx) => (
+            <option key={idx} value={idx}>{day}</option>
+          ))}
+        </select>
       </div>
-      <p className="text-xs text-white/50 mb-1">You can click on the icon above to highlight items you want to farm</p>
 
-      <div className="yatta-container flex-1 overflow-y-auto custom-scrollbar flex flex-col">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         {selectedDay === 0 ? (
-          <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
-            <span className="text-4xl mb-3">✨</span>
-            <p className="text-white font-bold mb-1">Sunday All-Access</p>
-            <p className="text-sm text-white/50">All Domains are open. Farm any material you need!</p>
+          <div className="lg:col-span-2 xl:col-span-3 flex flex-col items-center justify-center p-12 text-center glass-strong rounded-xl">
+            <span className="text-5xl mb-4">✨</span>
+            <p className="text-white font-bold text-xl mb-2 text-gradient-gold">Sunday All-Access</p>
+            <p className="text-white/70">All Domains are open. Farm any material you need!</p>
           </div>
         ) : data ? (
           data.map((domain, idx) => (
-            <div key={idx} className="flex flex-col border-b border-[#463f64] last:border-b-0">
-              <div className="yatta-header gap-2 justify-start">
-                <div className="relative w-6 h-6">
+            <div key={idx} className="glass-strong rounded-xl flex flex-col h-full">
+              <div className="bg-black/20 px-4 py-3 border-b border-white/10 flex items-center gap-3">
+                <div className="relative w-8 h-8 shrink-0">
                   <Image src={domain.itemIcon} alt="domain item" fill className="object-contain drop-shadow-md" unoptimized />
                 </div>
-                <span>{domain.domainName}</span>
+                <span className="font-bold text-[15px]">{domain.domainName}</span>
               </div>
-              <div className="p-3 bg-[#252236] flex flex-wrap gap-2">
+              <div className="p-4 flex flex-wrap gap-3 flex-1 content-start">
                 {domain.characters.map((char) => (
                   <div key={char.id} className={`yatta-item yatta-item-${char.rarity}star`} title={char.name}>
                     <Image src={char.avatarUrl} alt={char.name} fill className="object-cover" unoptimized />
@@ -81,13 +78,6 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
           ))
         ) : null}
       </div>
-
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #252236; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #463f64; border-radius: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #5c5382; }
-      `}</style>
     </div>
   );
 }

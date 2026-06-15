@@ -10,14 +10,14 @@
    ===================================================== */
 :root {
   /* Background layers */
-  --bg-base:       #2a263c; /* Exact Amber style */
-  --bg-surface:    #35304c;
-  --bg-elevated:   #3e3957;
+  --bg-base:       #06060a;
+  --bg-surface:    #0d0d14;
+  --bg-elevated:   #13131e;
   --bg-overlay:    #1a1a28;
 
   /* Border colors */
   --border-subtle:  rgba(255,255,255,0.04);
-  --border-default: #4f4675;
+  --border-default: rgba(255,255,255,0.07);
   --border-strong:  rgba(255,255,255,0.13);
 
   /* Primary accent — Gold */
@@ -75,17 +75,9 @@ body {
   @apply relative overflow-hidden;
 }
 
-/* Yatta Style Components */
-.yatta-container {
-  @apply bg-[var(--bg-surface)] border border-[var(--border-default)] rounded-xl overflow-hidden shadow-lg;
-}
-
-.yatta-header {
-  @apply bg-[#3e3957] px-4 py-2.5 border-b border-[var(--border-default)] flex items-center justify-between text-sm font-bold text-white;
-}
-
+/* Standard Item Style */
 .yatta-item {
-  @apply relative w-12 h-12 rounded-md bg-[#d2c69e] border border-transparent overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-105 shadow-sm;
+  @apply relative w-12 h-12 rounded-md bg-[#d2c69e] border border-transparent overflow-hidden shrink-0 cursor-pointer transition-transform hover:scale-105 shadow-[0_4px_12px_rgba(0,0,0,0.5)];
 }
 .yatta-item-5star {
   @apply bg-gradient-to-br from-[#d4a06a] via-[#e5b76b] to-[#d4a06a] border-[#b07b46];

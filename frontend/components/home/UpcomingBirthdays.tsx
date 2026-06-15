@@ -40,19 +40,19 @@ export default function UpcomingBirthdays({ characters }: UpcomingBirthdaysProps
 
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="text-white font-bold text-lg">Coming Birthdays</h2>
+      <h2 className="text-white font-bold text-lg text-gradient-gold">Coming Birthdays</h2>
       
-      <div className="yatta-container p-3">
+      <div className="glass-strong rounded-xl p-3">
         <div className="flex gap-3 overflow-x-auto custom-scrollbar pb-2">
           {upcoming.map(char => (
-            <div key={char.id} className="flex flex-col items-center gap-1 shrink-0">
+            <div key={char.id} className="flex flex-col items-center gap-1.5 shrink-0">
               <div className={`yatta-item yatta-item-${char.rarity}star`}>
                 <Image src={char.avatarUrl} alt={char.nameEn} fill className="object-cover" unoptimized />
                 <div className="yatta-item-element">
                   <Image src={`/images/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" unoptimized />
                 </div>
               </div>
-              <div className="bg-white text-[#252236] text-[11px] font-bold px-3 py-0.5 rounded-sm shadow-sm w-full text-center">
+              <div className="bg-white/10 text-white border border-white/20 text-[11px] font-bold px-3 py-0.5 rounded shadow-sm w-full text-center">
                 {char.bMonth}/{char.bDay}
               </div>
             </div>
@@ -61,10 +61,10 @@ export default function UpcomingBirthdays({ characters }: UpcomingBirthdaysProps
       </div>
 
       <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar { height: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #252236; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #463f64; border-radius: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #5c5382; }
+        .custom-scrollbar::-webkit-scrollbar { height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
       `}</style>
     </div>
   );

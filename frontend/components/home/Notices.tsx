@@ -14,9 +14,9 @@ export default function Notices() {
 
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="text-white font-bold text-lg">Notices</h2>
-      <div className="yatta-container">
-        <div className="flex items-center gap-6 px-4 pt-3 border-b border-[var(--border-default)]">
+      <h2 className="text-white font-bold text-lg text-gradient-gold">Notices</h2>
+      <div className="glass-strong rounded-xl">
+        <div className="flex items-center gap-6 px-4 pt-3 border-b border-white/10">
           {['Banners', 'Events', 'Other'].map(tab => (
             <button
               key={tab}
@@ -31,7 +31,7 @@ export default function Notices() {
         </div>
         <div className="p-4 flex flex-col gap-3 min-h-[120px]">
           {activeTab === 'Banners' && banners.map((text, idx) => (
-            <div key={idx} className="text-sm text-blue-200 hover:text-blue-100 hover:underline cursor-pointer">
+            <div key={idx} className="text-sm text-yellow-500 hover:text-yellow-400 hover:underline cursor-pointer transition-colors">
               {text}
             </div>
           ))}

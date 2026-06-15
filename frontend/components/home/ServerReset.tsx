@@ -36,22 +36,22 @@ export default function ServerReset() {
 
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="text-white font-bold text-lg">Server Reset</h2>
-      <div className="yatta-container flex flex-col border-[#463f64]">
+      <h2 className="text-white font-bold text-lg text-gradient-gold">Server Reset</h2>
+      <div className="glass-strong rounded-xl overflow-hidden flex flex-col">
         <div className="flex">
           {['Asia', 'Europe', 'America'].map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 py-1.5 text-sm font-bold border-b border-r last:border-r-0 border-[#463f64] transition-colors ${
-                activeTab === tab ? 'bg-[#463f64] text-white' : 'bg-[#312c45] text-white/50 hover:bg-[#3b3552]'
+              className={`flex-1 py-1.5 text-sm font-bold border-b border-r last:border-r-0 border-white/10 transition-colors ${
+                activeTab === tab ? 'bg-white/10 text-white' : 'text-white/50 hover:bg-white/5'
               }`}
             >
               {tab}
             </button>
           ))}
         </div>
-        <div className="py-2 text-center text-lg font-bold text-white bg-[#3b3552]">
+        <div className="py-3 text-center text-xl font-display font-bold text-white bg-black/20">
           {timeLeft}
         </div>
       </div>

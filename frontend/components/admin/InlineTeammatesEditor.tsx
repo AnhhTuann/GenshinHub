@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 interface CharacterData {
   id: string;
@@ -57,7 +58,7 @@ export default function InlineTeammatesEditor({ characterId, initialTeams, onClo
       onSaved();
       onClose();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
       setLoading(false);
     }
   };

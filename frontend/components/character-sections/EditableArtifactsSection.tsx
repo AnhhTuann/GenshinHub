@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import InlineArtifactEditor from '@/components/admin/InlineArtifactEditor';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 interface Props {
   characterId: string;
@@ -32,12 +34,12 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
   }, []);
 
   const handleRemove = async (id: string) => {
-    if (!confirm('Are you sure you want to remove this artifact set?')) return;
+    if (!await confirmDialog('Are you sure you want to remove this artifact set?')) return;
     try {
       await fetchGraphQL(`mutation { removeCharacterArtifact(id: "${id}") }`);
       router.refresh();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
     }
   };
 

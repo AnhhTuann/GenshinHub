@@ -8,6 +8,8 @@ import { useRouter } from 'next/navigation';
 import { useAdmin } from '@/hooks/useAdmin';
 import WeaponFormModal from '@/components/admin/WeaponFormModal';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 const RARITY_BG: Record<number, string> = {
   5: 'from-[#FFE082] via-[#FFB300] to-[#E65100]',
@@ -97,13 +99,13 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
   const subStat = translateSubStat(weapon.subStat);
 
   const handleDelete = async () => {
-    if (!confirm('Are you sure you want to delete this weapon?')) return;
+    if (!await confirmDialog('Are you sure you want to delete this weapon?')) return;
     setDeleting(true);
     try {
       await fetchGraphQL(`mutation { deleteWeapon(id: "${weapon.id}") }`);
       router.push(`/${locale}/weapons`);
     } catch (err: any) {
-      alert('Error deleting: ' + err.message);
+      toast.error('Error deleting: ' + err.message);
       setDeleting(false);
     }
   };

@@ -131,7 +131,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             <div>
               <label className={labelClass}>Type</label>
               <select value={form.type} onChange={e => updateField('type', e.target.value)} className={selectClass}>
-                {WEAPON_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
+                {WEAPON_TYPES.map(t => <option className="bg-[#0d0d14] text-white" key={t} value={t}>{t}</option>)}
               </select>
             </div>
 
@@ -180,7 +180,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             <div>
               <label className={labelClass}>Sub Stat</label>
               <select value={form.subStat} onChange={e => updateField('subStat', e.target.value)} className={selectClass}>
-                {SUB_STATS.map(s => <option key={s} value={s}>{s || '— None —'}</option>)}
+                {SUB_STATS.map(s => <option className="bg-[#0d0d14] text-white" key={s} value={s}>{s || '— None —'}</option>)}
               </select>
             </div>
 
@@ -194,7 +194,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             <div>
               <label className={labelClass}>Tier</label>
               <select value={form.tier} onChange={e => updateField('tier', e.target.value)} className={selectClass}>
-                {['', 'SS', 'S', 'A', 'B', 'C', 'D'].map(t => <option key={t} value={t}>{t || '— None —'}</option>)}
+                {['', 'SS', 'S', 'A', 'B', 'C', 'D'].map(t => <option className="bg-[#0d0d14] text-white" key={t} value={t}>{t || '— None —'}</option>)}
               </select>
             </div>
 

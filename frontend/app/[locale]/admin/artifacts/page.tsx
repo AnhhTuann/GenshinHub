@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 export default function ArtifactsAdmin() {
   const [artifacts, setArtifacts] = useState<any[]>([]);
@@ -25,7 +27,7 @@ export default function ArtifactsAdmin() {
       setEditingArtifact(data.artifactSet);
       setJsonStr(JSON.stringify(data.artifactSet, null, 2));
     } catch(err) {
-      alert("Error loading artifact");
+      toast.error("Error loading artifact");
     }
   };
 
@@ -53,18 +55,18 @@ export default function ArtifactsAdmin() {
       };
       const parsed = stripTypename(JSON.parse(jsonStr));
       await fetchGraphQL(`mutation Upsert($input: ArtifactSetInput!) { upsertArtifactSet(input: $input) { id } }`, { input: parsed });
-      alert("Saved successfully!");
+      toast.success("Saved successfully!");
       setEditingArtifact(null);
       loadData();
-    } catch (err: any) { alert("Error: " + err.message); } finally { setLoading(false); }
+    } catch (err: any) { toast.error("Error: " + err.message); } finally { setLoading(false); }
   };
 
   const handleDelete = async (id: string) => {
-    if(!confirm("Are you sure?")) return;
+    if(!await confirmDialog("Are you sure?")) return;
     try {
       await fetchGraphQL(`mutation { deleteArtifactSet(id: "${id}") }`);
       loadData();
-    } catch (err: any) { alert("Error: " + err.message); }
+    } catch (err: any) { toast.error("Error: " + err.message); }
   };
 
   return (

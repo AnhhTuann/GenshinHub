@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/Navbar";
 import AdminModeToggle from "@/components/AdminModeToggle";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default async function RootLayout({ children, params }: { children: React
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
+          <Toaster />
           <Navbar />
           <div className="min-h-screen overflow-x-hidden">{children}</div>
           <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">

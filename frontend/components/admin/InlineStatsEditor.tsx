@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
 
 interface Props {
   artifactId: string;
@@ -53,7 +54,7 @@ export default function InlineStatsEditor({
       onSaved();
       onClose();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
       setLoading(false);
     }
   };

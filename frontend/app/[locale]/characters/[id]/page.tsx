@@ -126,6 +126,11 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
     fetchGraphQL(GET_MATERIALS)
   ]);
   const [{ character }, { characters }, { weapons }, { artifacts }, { materials }] = results;
+  
+  if (!character) {
+    return <div className="p-8 text-center text-white/50 flex flex-col items-center justify-center min-h-screen"><h2 className="text-2xl font-bold mb-4">Character Not Found</h2><p>This character does not exist or has not been added yet.</p></div>;
+  }
+
   const t = await getTranslations('Character');
   const tCommon = await getTranslations('Common');
   const locale  = p.locale;

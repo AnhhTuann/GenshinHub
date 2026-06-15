@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import InlineWeaponEditor from '@/components/admin/InlineWeaponEditor';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 interface Props {
   characterId: string;
@@ -65,12 +67,12 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
   }, []);
 
   const handleRemove = async (id: string) => {
-    if (!confirm('Are you sure you want to remove this weapon?')) return;
+    if (!await confirmDialog('Are you sure you want to remove this weapon?')) return;
     try {
       await fetchGraphQL(`mutation { removeCharacterWeapon(id: "${id}") }`);
       router.refresh();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
     }
   };
 

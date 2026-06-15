@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
 
 export default function AdminEditableBuild({ character }: { character: any }) {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -70,7 +71,7 @@ export default function AdminEditableBuild({ character }: { character: any }) {
       setIsEditing(false);
       router.refresh();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
     } finally {
       setLoading(false);
     }

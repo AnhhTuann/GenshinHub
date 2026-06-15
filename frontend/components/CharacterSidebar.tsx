@@ -9,6 +9,7 @@ import { useAdmin } from "@/hooks/useAdmin";
 import SignatureWeaponFormModal from "./admin/SignatureWeaponFormModal";
 import { fetchGraphQL } from "@/lib/graphql";
 import { useRouter } from "next/navigation";
+import toast from 'react-hot-toast';
 
 const ELEMENT_COLOR: Record<string, string> = {
   Pyro: "#ff6b4a",
@@ -159,7 +160,7 @@ export default function CharacterSidebar({
 
       router.refresh();
     } catch (err: any) {
-      alert("Error saving signature weapons: " + err.message);
+      toast.error("Error saving signature weapons: " + err.message);
     }
   };
 

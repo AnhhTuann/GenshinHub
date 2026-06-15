@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, UPDATE_WEAPON_TIER_LIST } from "@/lib/graphql";
 import Image from "next/image";
+import toast from 'react-hot-toast';
 
 export default function AdminTierListPage() {
   const [characters, setCharacters] = useState<any[]>([]);
@@ -33,7 +34,7 @@ export default function AdminTierListPage() {
       await fetchGraphQL(UPDATE_CHARACTER_TIER_LIST, { id, ...updates });
       setCharacters(chars => chars.map(c => c.id === id ? { ...c, ...updates } : c));
     } catch (e) {
-      alert("Error updating: " + e);
+      toast.error("Error updating: " + e);
     } finally {
       setSavingId(null);
     }
@@ -45,7 +46,7 @@ export default function AdminTierListPage() {
       await fetchGraphQL(UPDATE_WEAPON_TIER_LIST, { id, ...updates });
       setWeapons(weaps => weaps.map(w => w.id === id ? { ...w, ...updates } : w));
     } catch (e) {
-      alert("Error updating: " + e);
+      toast.error("Error updating: " + e);
     } finally {
       setSavingId(null);
     }
@@ -80,12 +81,12 @@ export default function AdminTierListPage() {
                       })}
                       disabled={savingId === char.id}
                     >
-                      <option value="">- None -</option>
-                      <option value="SS">SS</option>
-                      <option value="S">S</option>
-                      <option value="A">A</option>
-                      <option value="B">B</option>
-                      <option value="C">C</option>
+                      <option className="bg-[#0d0d14] text-white" value="">- None -</option>
+                      <option className="bg-[#0d0d14] text-white" value="SS">SS</option>
+                      <option className="bg-[#0d0d14] text-white" value="S">S</option>
+                      <option className="bg-[#0d0d14] text-white" value="A">A</option>
+                      <option className="bg-[#0d0d14] text-white" value="B">B</option>
+                      <option className="bg-[#0d0d14] text-white" value="C">C</option>
                     </select>
                   </div>
                   <div>
@@ -99,10 +100,10 @@ export default function AdminTierListPage() {
                       })}
                       disabled={savingId === char.id}
                     >
-                      <option value="">- None -</option>
-                      <option value="Main DPS">Main DPS</option>
-                      <option value="Sub DPS">Sub DPS</option>
-                      <option value="Support">Support</option>
+                      <option className="bg-[#0d0d14] text-white" value="">- None -</option>
+                      <option className="bg-[#0d0d14] text-white" value="Main DPS">Main DPS</option>
+                      <option className="bg-[#0d0d14] text-white" value="Sub DPS">Sub DPS</option>
+                      <option className="bg-[#0d0d14] text-white" value="Support">Support</option>
                     </select>
                   </div>
                 </div>
@@ -141,7 +142,7 @@ export default function AdminTierListPage() {
                             tierNoteEn: arr, tierNoteVi: char.tierNoteVi
                           });
                         } catch (err) {
-                          alert("Invalid JSON for English Notes");
+                          toast.error("Invalid JSON for English Notes");
                         }
                       }}
                     />
@@ -160,7 +161,7 @@ export default function AdminTierListPage() {
                             tierNoteEn: char.tierNoteEn, tierNoteVi: arr
                           });
                         } catch (err) {
-                          alert("Invalid JSON for Vietnamese Notes");
+                          toast.error("Invalid JSON for Vietnamese Notes");
                         }
                       }}
                     />
@@ -188,12 +189,12 @@ export default function AdminTierListPage() {
                 onChange={(e) => handleUpdateWeapon(weapon.id, { tier: e.target.value || null })}
                 disabled={savingId === weapon.id}
               >
-                <option value="">- None -</option>
-                <option value="SS">SS</option>
-                <option value="S">S</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
+                <option className="bg-[#0d0d14] text-white" value="">- None -</option>
+                <option className="bg-[#0d0d14] text-white" value="SS">SS</option>
+                <option className="bg-[#0d0d14] text-white" value="S">S</option>
+                <option className="bg-[#0d0d14] text-white" value="A">A</option>
+                <option className="bg-[#0d0d14] text-white" value="B">B</option>
+                <option className="bg-[#0d0d14] text-white" value="C">C</option>
               </select>
             </div>
           ))}

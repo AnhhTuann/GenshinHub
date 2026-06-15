@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
 
 interface Props {
   characterId: string;
@@ -57,7 +58,7 @@ export default function InlineTalentEditor({ characterId, initialPriority, onClo
       onSaved();
       onClose();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
       setLoading(false);
     }
   };

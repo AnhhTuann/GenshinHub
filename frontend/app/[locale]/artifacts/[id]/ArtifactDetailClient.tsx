@@ -8,6 +8,8 @@ import { useRouter } from 'next/navigation';
 import { useAdmin } from '@/hooks/useAdmin';
 import ArtifactFormModal from '@/components/admin/ArtifactFormModal';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 const RARITY_BG: Record<number, string> = {
   5: 'from-[#FFE082] via-[#FFB300] to-[#E65100]',
@@ -74,13 +76,13 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
   const piece4Desc = locale === 'en' ? artifactSet.piece4DescEn : artifactSet.piece4DescVi;
 
   const handleDelete = async () => {
-    if (!confirm('Are you sure you want to delete this artifact set?')) return;
+    if (!await confirmDialog('Are you sure you want to delete this artifact set?')) return;
     setDeleting(true);
     try {
       await fetchGraphQL(`mutation { deleteArtifactSet(id: "${artifactSet.id}") }`);
       router.push(`/${locale}/artifacts`);
     } catch (err: any) {
-      alert('Error deleting: ' + err.message);
+      toast.error('Error deleting: ' + err.message);
       setDeleting(false);
     }
   };

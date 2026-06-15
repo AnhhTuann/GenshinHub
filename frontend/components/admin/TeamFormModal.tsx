@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
 
 const COMMON_STATS = [
   'HP%', 'ATK%', 'DEF%', 'Energy Recharge', 'Elemental Mastery',
@@ -243,20 +244,20 @@ export default function TeamFormModal({ isOpen, onClose, onSave, characterId, al
           updateCharacterTeam(teamId: $teamId, name: $name, rank: $rank, description: $description, members: $members)
         }`, { teamId: initialData.id, ...input });
         
-        alert("Team updated!");
+        toast.success("Team updated!");
         onSave({ id: initialData.id, ...input });
       } else {
         await fetchGraphQL(`mutation AddTeam($characterId: String!, $name: String!, $rank: String!, $description: String!, $members: [TeamMemberInput!]!) {
           addCharacterTeam(characterId: $characterId, name: $name, rank: $rank, description: $description, members: $members)
         }`, { characterId, ...input });
         
-        alert("Team added!");
+        toast.success("Team added!");
         // Generate a fake ID for local state until page reload
         onSave({ id: Math.random().toString(), ...input });
       }
       onClose();
     } catch (e: any) {
-      alert("Error: " + e.message);
+      toast.error("Error: " + e.message);
     } finally {
       setIsLoading(false);
     }
@@ -278,11 +279,11 @@ export default function TeamFormModal({ isOpen, onClose, onSave, characterId, al
             </div>
             <div>
               <label className="block text-xs font-bold text-white/50 mb-1.5 uppercase tracking-wider">Rank</label>
-              <select value={rank} onChange={e => setRank(e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-blue-500/50 outline-none">
-                <option value="SS">SS Tier</option>
-                <option value="S">S Tier</option>
-                <option value="A">A Tier</option>
-                <option value="B">B Tier</option>
+              <select value={rank} onChange={e => setRank(e.target.value)} className="w-full bg-[#0d0d14] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-blue-500/50 outline-none">
+                <option className="bg-[#0d0d14] text-white" value="SS">SS Tier</option>
+                <option className="bg-[#0d0d14] text-white" value="S">S Tier</option>
+                <option className="bg-[#0d0d14] text-white" value="A">A Tier</option>
+                <option className="bg-[#0d0d14] text-white" value="B">B Tier</option>
               </select>
             </div>
             <div className="col-span-2">

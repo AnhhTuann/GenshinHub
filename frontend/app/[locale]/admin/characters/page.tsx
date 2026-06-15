@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 export default function CharactersAdmin() {
   const [characters, setCharacters] = useState<any[]>([]);
@@ -41,7 +43,7 @@ export default function CharactersAdmin() {
       setEditingChar(data.character);
       setJsonStr(JSON.stringify(data.character, null, 2));
     } catch(err) {
-      alert("Error loading character");
+      toast.error("Error loading character");
     }
   };
 
@@ -83,23 +85,23 @@ export default function CharactersAdmin() {
         }
       `, { input: cleanInput });
       
-      alert("Saved successfully!");
+      toast.success("Saved successfully!");
       setEditingChar(null);
       loadData();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
     } finally {
       setLoading(false);
     }
   };
 
   const handleDelete = async (id: string) => {
-    if(!confirm("Are you sure?")) return;
+    if(!await confirmDialog("Are you sure?")) return;
     try {
       await fetchGraphQL(`mutation { deleteCharacter(id: "${id}") }`);
       loadData();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
     }
   };
 

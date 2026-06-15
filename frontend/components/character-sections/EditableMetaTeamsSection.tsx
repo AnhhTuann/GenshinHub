@@ -7,6 +7,8 @@ import { Link } from '@/i18n/routing';
 import { useAdmin } from '@/hooks/useAdmin';
 import TeamFormModal from '../admin/TeamFormModal';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
+import { confirmDialog } from '@/utils/confirm';
 
 const EL_TEXT: Record<string, string> = {
   Pyro:    'text-[#ff6b4a]',
@@ -75,13 +77,13 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
   };
 
   const handleDelete = async (teamId: string) => {
-    if (!window.confirm("Are you sure you want to delete this team?")) return;
+    if (!await confirmDialog("Are you sure you want to delete this team?")) return;
     try {
       await fetchGraphQL(`mutation RemoveTeam($id: String!) { removeCharacterTeam(teamId: $id) }`, { id: teamId });
-      alert("Team removed");
+      toast.success("Team removed");
       setLocalTeams(prev => prev.filter(t => t.id !== teamId));
     } catch (e: any) {
-      alert("Error: " + e.message);
+      toast.error("Error: " + e.message);
     }
   };
 

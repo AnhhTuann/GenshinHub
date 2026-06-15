@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchGraphQL, GET_WEAPONS } from '@/lib/graphql';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 const WEAPON_TYPE_MAP: Record<string, string> = {
   'sword': 'Kiếm Đơn',
@@ -70,7 +71,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, onClose, o
       onSaved();
       onClose();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
       setLoading(false);
     }
   };

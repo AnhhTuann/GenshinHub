@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { fetchGraphQL } from '@/lib/graphql';
+import toast from 'react-hot-toast';
 
 export default function AdminEditableSplash({ characterId, children }: { characterId: string, children: React.ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -34,7 +35,7 @@ export default function AdminEditableSplash({ characterId, children }: { charact
       }
 
       if (!finalUrl) {
-        alert("Please provide a URL or upload a file.");
+        toast.error("Please provide a URL or upload a file.");
         setLoading(false);
         return;
       }
@@ -48,7 +49,7 @@ export default function AdminEditableSplash({ characterId, children }: { charact
       setIsEditing(false);
       router.refresh();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
     } finally {
       setLoading(false);
     }

@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchGraphQL, GET_ARTIFACTS } from '@/lib/graphql';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 interface ArtifactData {
   id: string;
@@ -57,7 +58,7 @@ export default function InlineArtifactEditor({ characterId, onClose, onSaved }: 
   const handleSave = async () => {
     if (selectedArtifacts.length === 0) return;
     if (isMixMode && selectedArtifacts.length !== 2) {
-      alert("Vui lòng chọn đúng 2 bộ Thánh Di Vật để Mix!");
+      toast.error("Vui lòng chọn đúng 2 bộ Thánh Di Vật để Mix!");
       return;
     }
 
@@ -91,7 +92,7 @@ export default function InlineArtifactEditor({ characterId, onClose, onSaved }: 
       onSaved();
       onClose();
     } catch (err: any) {
-      alert("Error: " + err.message);
+      toast.error("Error: " + err.message);
       setLoading(false);
     }
   };

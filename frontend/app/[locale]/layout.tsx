@@ -31,7 +31,30 @@ export default async function RootLayout({ children, params }: { children: React
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
-          <Toaster />
+          <Toaster 
+            position="bottom-center"
+            toastOptions={{
+              className: 'bg-[#0a0a0f]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
+              style: {
+                background: 'rgba(10, 10, 15, 0.8)',
+                backdropFilter: 'blur(12px)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '16px',
+                padding: '12px 16px',
+                fontSize: '14px',
+                fontWeight: 600,
+              },
+              success: {
+                iconTheme: { primary: '#10b981', secondary: '#fff' },
+                style: { borderColor: 'rgba(16, 185, 129, 0.3)' }
+              },
+              error: {
+                iconTheme: { primary: '#ef4444', secondary: '#fff' },
+                style: { borderColor: 'rgba(239, 68, 68, 0.3)' }
+              }
+            }}
+          />
           <Navbar />
           <div className="min-h-screen overflow-x-hidden">{children}</div>
           <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">

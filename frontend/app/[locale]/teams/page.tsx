@@ -16,6 +16,7 @@ export default async function TeamsPage() {
     element: c.element,
     rarity: c.rarity,
     avatarUrl: c.avatarUrl,
+    teams: c.teams || [],
   }));
   return <TeamsClient characters={characters} />;
 }

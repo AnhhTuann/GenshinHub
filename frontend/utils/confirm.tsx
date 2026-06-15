@@ -30,9 +30,13 @@ export const confirmDialog = (message: string): Promise<boolean> => {
       duration: Infinity,
       position: 'top-center',
       style: {
-        background: '#1a1a24',
+        background: 'rgba(10, 10, 15, 0.8)',
+        backdropFilter: 'blur(12px)',
         color: '#fff',
         border: '1px solid rgba(255,255,255,0.1)',
+        borderRadius: '16px',
+        padding: '12px 16px',
+        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5)',
       }
     });
   });

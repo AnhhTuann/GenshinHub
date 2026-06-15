@@ -71,6 +71,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Fix default select and option styles on Windows for Dark Mode */
+select {
+  color-scheme: dark;
+}
+select option {
+  background-color: var(--bg-surface);
+  color: #e5e7eb;
+}
+
 /* =====================================================
    SCROLLBAR
    ===================================================== */

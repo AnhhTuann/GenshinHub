@@ -4,7 +4,22 @@ import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
-import { detailedTeamsData, DetailedTeam } from '@/data/teams';
+export interface TeamMember {
+  characterId: string;
+  role: string;
+  roleDesc: string;
+  weapons: string[];
+  artifacts: string[];
+  substats: string[];
+}
+
+export interface DetailedTeam {
+  id: string;
+  name: string;
+  rank: string;
+  description: string;
+  members: TeamMember[];
+}
 
 // Flatten all teams with their "focus character" info
 interface FlatTeam extends DetailedTeam {
@@ -21,6 +36,7 @@ interface CharInfo {
   element: string;
   rarity: number;
   avatarUrl: string;
+  teams: DetailedTeam[];
 }
 
 const ROLE_COLORS: Record<string, string> = {
@@ -67,21 +83,20 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
   // Build flat list of all teams
   const allTeams: FlatTeam[] = useMemo(() => {
     const result: FlatTeam[] = [];
-    for (const [charId, teams] of Object.entries(detailedTeamsData)) {
-      const focusChar = charMap[charId];
-      if (!focusChar) continue;
-      for (const team of teams) {
+    for (const char of characters) {
+      if (!char.teams) continue;
+      for (const team of char.teams) {
         result.push({
           ...team,
-          focusCharId: charId,
-          focusCharName: locale === 'en' ? focusChar.nameEn : focusChar.nameVi,
-          focusElement: focusChar.element,
-          focusAvatarUrl: focusChar.avatarUrl,
+          focusCharId: char.id,
+          focusCharName: locale === 'en' ? char.nameEn : char.nameVi,
+          focusElement: char.element,
+          focusAvatarUrl: char.avatarUrl,
         });
       }
     }
     return result;
-  }, [charMap]);
+  }, [characters, locale]);
 
   const filtered = useMemo(() => {
     return allTeams.filter(t => {
@@ -106,7 +121,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
           Home
         </Link>
         <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">👥 Meta Teams</h1>
-        <p className="text-gray-455 text-sm font-medium">{allTeams.length} optimal teams for {Object.keys(detailedTeamsData).length} characters</p>
+        <p className="text-gray-455 text-sm font-medium">{allTeams.length} optimal teams for {characters.length} characters</p>
       </div>
 
       {/* Filters */}
@@ -189,7 +204,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             {filtered.map((team, idx) => {
               const teamKey = `${team.focusCharId}-${idx}`;
               const isExpanded = expandedTeam === teamKey;
-              const rankCfg = RANK_CONFIG[team.rank];
+              const rankCfg = RANK_CONFIG[team.rank as keyof typeof RANK_CONFIG] || RANK_CONFIG.A;
               const elemDetails = ELEMENT_DETAILS[team.focusElement] || { bg: 'from-gray-900/10', color: 'text-gray-400' };
 
               return (

@@ -24,7 +24,8 @@ export default function AdminEditableSplash({ characterId, children }: { charact
       if (file) {
         const formData = new FormData();
         formData.append('image', file);
-        const res = await fetch('http://localhost:4000/upload', {
+        const uploadUrl = process.env.NEXT_PUBLIC_UPLOAD_URL || 'http://localhost:4000/upload';
+        const res = await fetch(uploadUrl, {
           method: 'POST',
           headers: { 'x-admin-key': localStorage.getItem('admin_key') || '' },
           body: formData

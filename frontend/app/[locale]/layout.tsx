@@ -19,8 +19,33 @@ const outfit = Outfit({
 
 import { routing } from '@/i18n/routing';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'GenshinHub',
+      url: siteUrl,
+      logo: `${siteUrl}/icon.png`,
+      sameAs: [],
+    },
+    {
+      '@type': 'WebSite',
+      url: siteUrl,
+      name: 'GenshinHub',
+      description: 'Genshin Impact Database for characters, weapons, artifacts, team comps, banners, and more.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'GenshinHub',
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(siteUrl),
   title: "GenshinHub - Genshin Impact Builds & Guides",
   description: "Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.",
   keywords: "Genshin Impact, GenshinHub, Builds, Artifacts, Weapons, Characters",
@@ -63,6 +88,12 @@ export default async function RootLayout({ children, params }: { children: React
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Toaster 

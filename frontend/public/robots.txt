@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /vi/admin
+Disallow: /en/admin
+Disallow: /vi/api
+Disallow: /en/api
 Sitemap: /sitemap.xml
 
 # Prevent crawling of admin interface and API routes
-Disallow: /admin
-Disallow: /api

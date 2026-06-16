@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import { Link } from '@/i18n/routing';
@@ -6,6 +7,23 @@ import UpcomingBirthdays from '@/components/home/UpcomingBirthdays';
 import DailyFarming from '@/components/home/DailyFarming';
 import Notices from '@/components/home/Notices';
 import ServerReset from '@/components/home/ServerReset';
+
+export const metadata: Metadata = {
+  title: 'GenshinHub - Genshin Impact Database',
+  description: 'Explore characters, weapons, artifacts, banners, team builds, and utility tools for Genshin Impact.',
+  openGraph: {
+    title: 'GenshinHub - Genshin Impact Database',
+    description: 'Explore characters, weapons, artifacts, banners, team builds, and utility tools for Genshin Impact.',
+    images: ['/icon.png'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenshinHub - Genshin Impact Database',
+    description: 'Explore characters, weapons, artifacts, banners, team builds, and utility tools for Genshin Impact.',
+    images: ['/icon.png'],
+  },
+};
 
 export const revalidate = 300;
 

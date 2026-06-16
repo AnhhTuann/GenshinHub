@@ -20,9 +20,36 @@ const outfit = Outfit({
 import { routing } from '@/i18n/routing';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: "GenshinHub - Genshin Impact Builds & Guides",
   description: "Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.",
   keywords: "Genshin Impact, GenshinHub, Builds, Artifacts, Weapons, Characters",
+  openGraph: {
+    type: 'website',
+    title: 'GenshinHub - Genshin Impact Builds & Guides',
+    description: 'Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.',
+    images: [
+      {
+        url: '/icon.png',
+        width: 512,
+        height: 512,
+        alt: 'GenshinHub logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenshinHub - Genshin Impact Builds & Guides',
+    description: 'Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.',
+    images: ['/icon.png'],
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en',
+      vi: '/vi',
+    },
+  },
 };
 
 export function generateStaticParams() {

@@ -13,6 +13,83 @@ export const durin = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Durin Overload Team",
+        rank: "S",
+        description: "An overload team that maximizes Varka's plunge attacks through Chevreuse's RES shred and ATK buff, Durin's off-field Pyro support, and Ororon's Electro support.",
+        members: [
+            {
+                characterId: "varka",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Performs plunge attacks to trigger swirl and deal damage.",
+                weapons: [
+                    "Unbreakable: Durandarte",
+                    "The Bell"
+                ],
+                artifacts: [
+                    "4pc A Day Carved From Rising Winds"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Pyro Support. Provides off-field Pyro application for Overload.",
+                weapons: [
+                    "Athame Artis",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "chevreuse",
+                role: "Support",
+                roleDesc: "Pyro Support. Reduces enemy Pyro/Electro resistance and buffs ATK.",
+                weapons: [
+                    "Staff of Homa",
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "ororon",
+                role: "Support",
+                roleDesc: "Electro Support. Triggers Scroll set buff and provides Electro support.",
+                weapons: [
+                    "Astral Vulture's Crimson Plumage",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Durin Anemo Team",
         rank: "SS",
         description: "An Anemo-Anemo-Pyro-Pyro team leveraging Venti's grouping, Faruzan's Anemo buffs, Durin's Pyro support and RES shred, and Bennett's ATK buff and healing.",
@@ -315,83 +392,6 @@ export const durin = {
                 substats: [
                     "Energy Recharge",
                     "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Durin Overload Team",
-        rank: "S",
-        description: "An overload team that maximizes Varka's plunge attacks through Chevreuse's RES shred and ATK buff, Durin's off-field Pyro support, and Ororon's Electro support.",
-        members: [
-            {
-                characterId: "varka",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Performs plunge attacks to trigger swirl and deal damage.",
-                weapons: [
-                    "Unbreakable: Durandarte",
-                    "The Bell"
-                ],
-                artifacts: [
-                    "4pc A Day Carved From Rising Winds"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Pyro Support. Provides off-field Pyro application for Overload.",
-                weapons: [
-                    "Athame Artis",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "chevreuse",
-                role: "Support",
-                roleDesc: "Pyro Support. Reduces enemy Pyro/Electro resistance and buffs ATK.",
-                weapons: [
-                    "Staff of Homa",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "ororon",
-                role: "Support",
-                roleDesc: "Electro Support. Triggers Scroll set buff and provides Electro support.",
-                weapons: [
-                    "Astral Vulture's Crimson Plumage",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]

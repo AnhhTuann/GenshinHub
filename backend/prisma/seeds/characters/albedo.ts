@@ -10,30 +10,54 @@ export const albedo = {
   "Elemental Skill",
   "Elemental Burst"
 ],
-  signatureWeapons: [],
+  signatureWeapons: [
+  "Primordial Jade Cutter"
+],
   teams: [],
   bestWeapons: [
     {
-        rank: 5,
-        nameVi: "Bàn Nham Kết Lục",
-        nameEn: "Bàn Nham Kết Lục",
+        rank: 1,
+        nameVi: "Xá Tội",
+        nameEn: "Absolution",
+        subStat: "Sát Thương Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Estoc.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Thương Diệu",
+        nameEn: "Azurelight",
         subStat: "Tỷ Lệ Bạo Kích",
         isF2P: false,
         refinement: "R1",
-        passiveDescVi: "Tăng HP và Tấn Công.",
-        passiveDescEn: "Tăng HP và Tấn Công.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Sword_OuterSword.png"
     },
     {
         rank: 4,
         nameVi: "Đoản Đao Amenoma",
-        nameEn: "Đoản Đao Amenoma",
+        nameEn: "Amenoma Kageuchi",
         subStat: "Tấn Công%",
         isF2P: true,
         refinement: "R5",
         passiveDescVi: "Hồi năng lượng sau khi dùng Nộ.",
         passiveDescEn: "Hồi năng lượng sau khi dùng Nộ.",
         iconUrl: "/images/weapons/UI_EquipIcon_Sword_Bakufu.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Bàn Nham Kết Lục",
+        nameEn: "Primordial Jade Cutter",
+        subStat: "Tỷ Lệ Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: "Tăng HP và Tấn Công.",
+        passiveDescEn: "Tăng HP và Tấn Công.",
+        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
     }
 ],
   bestArtifacts: [

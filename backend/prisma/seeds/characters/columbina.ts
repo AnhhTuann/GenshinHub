@@ -18,6 +18,21 @@ export const columbina = {
         description: "A team focused on Lunar-Bloom reactions, with Nefer as main DPS, Lauma as support, Yaoyao as healer, and Columbina as sub DPS/Support.",
         members: [
             {
+                characterId: "yaoyao",
+                role: "Support",
+                roleDesc: "Yaoyao provides healing and shield. At C1, increases Dendro DMG of teammates.",
+                weapons: [
+                    "Dialogues of the Desert Sages"
+                ],
+                artifacts: [
+                    "4pc Silken Moon's Serenade"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "nefer",
                 role: "Main DPS",
                 roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
@@ -51,21 +66,6 @@ export const columbina = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "yaoyao",
-                role: "Support",
-                roleDesc: "Yaoyao provides healing and shield. At C1, increases Dendro DMG of teammates.",
-                weapons: [
-                    "Dialogues of the Desert Sages"
-                ],
-                artifacts: [
-                    "4pc Silken Moon's Serenade"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
                 ]
             },
             {

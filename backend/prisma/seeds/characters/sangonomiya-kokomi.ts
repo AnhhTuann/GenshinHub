@@ -497,6 +497,24 @@ export const sangonomiyaKokomi = {
         description: "Kokomi drives Electro-Charged reactions with Fischl and Beidou, while Kazuha provides elemental damage bonus, crowd control, VV shred and damage bonus.\n\nMaximize Electro-Charged damage using Kazuha's C2 bonus and consistent off-field Electro application from Fischl and Beidou.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Fischl (Electro Sub DPS), Beidou (Electro Sub DPS), Kaedehara Kazuha (Anemo Support)",
         members: [
             {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Oz provides continuous off-field Electro application to trigger Electro-Charged.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "sangonomiya-kokomi",
                 role: "Main DPS",
                 roleDesc: "Main DPS and driver. Max HP Hydro damage triggers Electro-Charged with Electro.",
@@ -513,24 +531,6 @@ export const sangonomiyaKokomi = {
                     "HP",
                     "ATK%",
                     "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Oz provides continuous off-field Electro application to trigger Electro-Charged.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
                 ]
             },
             {

@@ -82,7 +82,7 @@ exports.Mutation = {
         requireAdmin(context);
         const sanitizedInput = sanitize(input);
         // Extract relations
-        const { bestWeapons, bestArtifacts, signatureWeapons, ...charData } = sanitizedInput;
+        const { bestWeapons, bestArtifacts, signatureWeapons, teams, ...charData } = sanitizedInput;
         const data = {
             ...charData,
             titleEn: charData.titleEn || "",

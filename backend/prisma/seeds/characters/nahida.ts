@@ -13,6 +13,85 @@ export const nahida = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Nahida Hyperbloom Team #1",
+        rank: "SS",
+        description: "Hyperbloom team with Nahida applying Dendro, Kokomi creating Dendro cores, Raiden Shogun triggering Hyperbloom, and Kazuha providing support and Elemental RES shred. Raiden Shogun's Elemental Skill triggers Hyperbloom on Dendro Cores created by Nahida and Kokomi. Kazuha groups enemies and buffs team DMG.",
+        members: [
+            {
+                characterId: "kokomi",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Applies Hydro on-field, triggers Bloom, and heals the team.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Ocean-Hued Clam"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Applies off-field Dendro to create Bloom cores.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "raiden-shogun",
+                role: "Sub DPS",
+                roleDesc: "Electro trigger. Triggers Hyperbloom on Dendro cores off-field.",
+                weapons: [
+                    "Dragon's Bane"
+                ],
+                artifacts: [
+                    "4pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
         name: "Nahida Overload-Catalyze Team",
         rank: "S",
         description: "Nahida is the Main DPS. Raiden Shogun and Thoma provide continuous Electro and Pyro attachment. Nahida's Normal Attacks trigger Overload, Spread, and Aggravate. Use Nahida's Skill to apply Dendro, then Electro/Pyro from Raiden and Thoma trigger Overload, Spread, and Aggravate. Kuki triggers Hyperbloom from Dendro cores, maximizing reaction damage.",
@@ -94,6 +173,23 @@ export const nahida = {
         description: "Nahida maximizes Elemental Mastery for personal DMG and Catalyze. Two Electro characters provide off-field Electro for Aggravate reactions, and two Dendro units reduce Tri-Karma Purification interval.",
         members: [
             {
+                characterId: "yae-miko",
+                role: "Sub DPS",
+                roleDesc: "Electro Sub DPS. Provides off-field Electro damage for Aggravate.",
+                weapons: [
+                    "Kagura's Verity",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "2pc Golden Troupe + 2pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "nahida",
                 role: "Main DPS",
                 roleDesc: "Dendro Main DPS. Maximizes EM for personal damage and Catalyze reactions.",
@@ -110,23 +206,6 @@ export const nahida = {
                     "Elemental Mastery",
                     "ATK%",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yae-miko",
-                role: "Sub DPS",
-                roleDesc: "Electro Sub DPS. Provides off-field Electro damage for Aggravate.",
-                weapons: [
-                    "Kagura's Verity",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "2pc Golden Troupe + 2pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
                 ]
             },
             {
@@ -162,85 +241,6 @@ export const nahida = {
                     "HP%",
                     "HP",
                     "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Nahida Hyperbloom Team #1",
-        rank: "SS",
-        description: "Hyperbloom team with Nahida applying Dendro, Kokomi creating Dendro cores, Raiden Shogun triggering Hyperbloom, and Kazuha providing support and Elemental RES shred. Raiden Shogun's Elemental Skill triggers Hyperbloom on Dendro Cores created by Nahida and Kokomi. Kazuha groups enemies and buffs team DMG.",
-        members: [
-            {
-                characterId: "kokomi",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Applies Hydro on-field, triggers Bloom, and heals the team.",
-                weapons: [
-                    "Everlasting Moonglow",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Ocean-Hued Clam"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Applies off-field Dendro to create Bloom cores.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Sub DPS",
-                roleDesc: "Electro trigger. Triggers Hyperbloom on Dendro cores off-field.",
-                weapons: [
-                    "Dragon's Bane"
-                ],
-                artifacts: [
-                    "4pc Flower of Paradise Lost"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
                 ]
             }
         ]

@@ -14,6 +14,17 @@ export const aratakiItto = {
   teams: [],
   bestWeapons: [
     {
+        rank: 1,
+        nameVi: "Thiên Không Kiêu Ngạo",
+        nameEn: "Skyward Pride",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Dvalin.png"
+    },
+    {
         rank: 5,
         nameVi: "Đường Cùng Của Sói",
         nameEn: "Đường Cùng Của Sói",

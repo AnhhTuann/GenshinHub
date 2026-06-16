@@ -503,7 +503,8 @@ function parseChar(dataStr) {
         role: metaInfo?.role || null,
         recommendedC: metaInfo?.recommendedC || null,
         tierNoteEn: metaInfo?.tierNoteEn || [],
-        tierNoteVi: metaInfo?.tierNoteVi || []
+        tierNoteVi: metaInfo?.tierNoteVi || [],
+        teams: metaInfo?.teams || []
     };
 }
 // Lọc trùng ID (ưu tiên bản đã có trong seed cũ)
@@ -870,7 +871,24 @@ async function seedCharacters(prisma) {
                     fandomUrl: char.fandomUrl,
                     tier: char.tier, role: char.role, recommendedC: char.recommendedC, tierNoteEn: char.tierNoteEn, tierNoteVi: char.tierNoteVi,
                     bestWeapons: { create: char.bestWeapons },
-                    bestArtifacts: { create: char.bestArtifacts }
+                    bestArtifacts: { create: char.bestArtifacts },
+                    teams: {
+                        create: char.teams.map((t) => ({
+                            name: t.name,
+                            rank: t.rank,
+                            description: t.description,
+                            members: {
+                                create: t.members.map((m) => ({
+                                    characterId: m.characterId,
+                                    role: m.role,
+                                    roleDesc: m.roleDesc,
+                                    weapons: m.weapons,
+                                    artifacts: m.artifacts,
+                                    substats: m.substats
+                                }))
+                            }
+                        }))
+                    }
                 }
             });
         }

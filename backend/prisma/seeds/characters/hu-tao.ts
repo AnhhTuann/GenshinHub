@@ -10,9 +10,7 @@ export const huTao = {
   "Skill",
   "Burst"
 ],
-  signatureWeapons: [
-  "Staff of Homa"
-],
+  signatureWeapons: [],
   teams: [
     {
         name: "Hu Tao Melt Team #1",

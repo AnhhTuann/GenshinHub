@@ -10,9 +10,7 @@ export const qiqi = {
   "Elemental Skill",
   "Elemental Burst"
 ],
-  signatureWeapons: [
-  "Key of Khaj-Nisut"
-],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
     {

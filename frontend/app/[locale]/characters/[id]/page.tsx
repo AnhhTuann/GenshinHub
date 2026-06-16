@@ -19,6 +19,7 @@ import EditableStatsSection from '@/components/character-sections/EditableStatsS
 import EditableMetaTeamsSection from '@/components/character-sections/EditableMetaTeamsSection';
 import CharacterStatsSection from '@/components/character-sections/CharacterStatsSection';
 import CharacterAscensionMatsSection from '@/components/character-sections/CharacterAscensionMatsSection';
+import ShareButton from '@/components/ShareButton';
 
 const EL_COLOR: Record<string, string> = {
   Pyro:    '#ff6b4a',
@@ -61,10 +62,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const data = await fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id });
   const ch = data.character;
   if (!ch) return { title: 'Character Not Found' };
+  
+  const name = p.locale === 'en' ? ch.nameEn : ch.nameVi;
+  const title = p.locale === 'en' ? ch.titleEn : ch.titleVi;
+  const desc = p.locale === 'en' 
+    ? `Genshin Impact ${name} Build Guide: Best weapons, artifacts, teams, and stats for ${title}. Discover the optimal way to play ${name} in the current meta.`
+    : `Hướng dẫn Build ${name} Genshin Impact: Vũ khí, thánh di vật, đội hình và chỉ số tốt nhất cho ${title}. Khám phá cách chơi ${name} tối ưu nhất trong meta hiện tại.`;
+
   return {
-    title: `${p.locale === 'en' ? ch.nameEn : ch.nameVi} — GenshinHub`,
-    description: p.locale === 'en' ? ch.titleEn : ch.titleVi,
-    openGraph: { images: [ch.avatarUrl] },
+    title: `${name} Build & Guide — GenshinHub`,
+    description: desc,
+    keywords: `Genshin Impact, ${name}, ${title}, Build, Guide, Weapons, Artifacts, Teams`,
+    openGraph: { 
+      title: `${name} Build & Guide`,
+      description: desc,
+      images: [ch.avatarUrl] 
+    },
   };
 }
 
@@ -156,8 +169,25 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
     (a: any) => a.setNameVi && !a.setNameVi.includes('Thánh Di Vật') && !a.setNameVi.toLowerCase().includes('mix')
   ) ?? character.bestArtifacts?.[0];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      name: name,
+      alternateName: title,
+      description: desc,
+      image: character.splashArtUrl || character.avatarUrl,
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#06060a] text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden">
+      {/* ── JSON-LD Schema ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── CINEMATIC BANNER PULL INTRO ── */}
       {character.splashArtUrl && <WishIntro imageUrl={character.splashArtUrl} element={character.element} />}
 
@@ -188,8 +218,8 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
           style={{ background: `linear-gradient(135deg, ${elGlow} 0%, transparent 60%)` }}
         />
 
-        {/* Back button */}
-        <div className="absolute top-4 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Top actions (Back & Share) */}
+        <div className="absolute top-4 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-xs font-black uppercase tracking-wider group bg-black/20 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/[0.06] hover:border-white/[0.12]"
@@ -199,6 +229,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             </svg>
             {tCommon('back')}
           </Link>
+          <ShareButton title={`${name} Build - GenshinHub`} />
         </div>
 
         {/* Hero content */}

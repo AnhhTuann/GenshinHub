@@ -21,6 +21,10 @@ export async function fetchGraphQL(query: string, variables = {}) {
     console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
     throw new Error('Lỗi fetch GraphQL: ' + json.errors[0].message);
   }
+  if (!json.data) {
+    console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
+    return {};
+  }
   return json.data;
 }
 

@@ -1,9 +1,27 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Mutation = void 0;
 const client_1 = require("@prisma/client");
 const exportData_1 = require("./exportData");
+const xss_1 = __importDefault(require("xss"));
 const prisma = new client_1.PrismaClient();
+function sanitize(input) {
+    if (typeof input === 'string')
+        return (0, xss_1.default)(input);
+    if (Array.isArray(input))
+        return input.map(sanitize);
+    if (typeof input === 'object' && input !== null) {
+        const sanitizedObj = {};
+        for (const key in input) {
+            sanitizedObj[key] = sanitize(input[key]);
+        }
+        return sanitizedObj;
+    }
+    return input;
+}
 function requireAdmin(context) {
     if (!context.isAdmin)
         throw new Error("Unauthorized: Admin access required.");
@@ -11,10 +29,11 @@ function requireAdmin(context) {
 exports.Mutation = {
     upsertWeapon: async (_, { input }, context) => {
         requireAdmin(context);
+        const sanitizedInput = sanitize(input);
         const w = await prisma.weapon.upsert({
-            where: { id: input.id },
-            update: input,
-            create: input,
+            where: { id: sanitizedInput.id },
+            update: sanitizedInput,
+            create: sanitizedInput,
         });
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return w;
@@ -27,10 +46,11 @@ exports.Mutation = {
     },
     upsertArtifactSet: async (_, { input }, context) => {
         requireAdmin(context);
+        const sanitizedInput = sanitize(input);
         const a = await prisma.artifactSet.upsert({
-            where: { id: input.id },
-            update: input,
-            create: input,
+            where: { id: sanitizedInput.id },
+            update: sanitizedInput,
+            create: sanitizedInput,
         });
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return a;
@@ -43,10 +63,11 @@ exports.Mutation = {
     },
     upsertMaterial: async (_, { input }, context) => {
         requireAdmin(context);
+        const sanitizedInput = sanitize(input);
         await prisma.material.upsert({
-            where: { id: input.id },
-            update: input,
-            create: input,
+            where: { id: sanitizedInput.id },
+            update: sanitizedInput,
+            create: sanitizedInput,
         });
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return true;
@@ -59,8 +80,9 @@ exports.Mutation = {
     },
     upsertCharacter: async (_, { input }, context) => {
         requireAdmin(context);
+        const sanitizedInput = sanitize(input);
         // Extract relations
-        const { bestWeapons, bestArtifacts, signatureWeapons, ...charData } = input;
+        const { bestWeapons, bestArtifacts, signatureWeapons, ...charData } = sanitizedInput;
         const data = {
             ...charData,
             titleEn: charData.titleEn || "",
@@ -141,8 +163,9 @@ exports.Mutation = {
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return c;
     },
-    addCharacterTeam: async (_, { characterId, name, rank, description, members }, context) => {
+    addCharacterTeam: async (_, args, context) => {
         requireAdmin(context);
+        const { characterId, name, rank, description, members } = sanitize(args);
         await prisma.characterTeam.create({
             data: {
                 characterId,
@@ -164,8 +187,9 @@ exports.Mutation = {
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return true;
     },
-    updateCharacterTeam: async (_, { teamId, name, rank, description, members }, context) => {
+    updateCharacterTeam: async (_, args, context) => {
         requireAdmin(context);
+        const { teamId, name, rank, description, members } = sanitize(args);
         const team = await prisma.characterTeam.findUnique({ where: { id: teamId } });
         if (!team)
             throw new Error("Team not found");
@@ -197,8 +221,9 @@ exports.Mutation = {
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return true;
     },
-    updateCharacterTierList: async (_, { id, tier, role, recommendedC, tierNoteEn, tierNoteVi }, context) => {
+    updateCharacterTierList: async (_, args, context) => {
         requireAdmin(context);
+        const { id, tier, role, recommendedC, tierNoteEn, tierNoteVi } = sanitize(args);
         const c = await prisma.character.update({
             where: { id },
             data: { tier, role, recommendedC, tierNoteEn, tierNoteVi },
@@ -206,8 +231,9 @@ exports.Mutation = {
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return c;
     },
-    updateWeaponTierList: async (_, { id, tier }, context) => {
+    updateWeaponTierList: async (_, args, context) => {
         requireAdmin(context);
+        const { id, tier } = sanitize(args);
         const w = await prisma.weapon.update({
             where: { id },
             data: { tier },
@@ -215,8 +241,9 @@ exports.Mutation = {
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return w;
     },
-    addCharacterWeapon: async (_, { characterId, weaponId, rank, isF2P }, context) => {
+    addCharacterWeapon: async (_, args, context) => {
         requireAdmin(context);
+        const { characterId, weaponId, rank, isF2P } = sanitize(args);
         const weapon = await prisma.weapon.findUnique({ where: { id: weaponId } });
         if (!weapon)
             throw new Error("Weapon not found");
@@ -242,7 +269,7 @@ exports.Mutation = {
     },
     addCharacterArtifact: async (_, args, context) => {
         requireAdmin(context);
-        const { characterId, setNameEn, setNameVi, pieces, sands, goblet, circlet, subStatsPriority } = args;
+        const { characterId, setNameEn, setNameVi, pieces, sands, goblet, circlet, subStatsPriority } = sanitize(args);
         await prisma.characterArtifact.create({
             data: {
                 characterId,
@@ -273,8 +300,9 @@ exports.Mutation = {
         (0, exportData_1.exportDatabaseToSeeds)().catch(console.error);
         return c;
     },
-    updateCharacterArtifactStats: async (_, { id, sands, goblet, circlet, subStatsPriority }, context) => {
+    updateCharacterArtifactStats: async (_, args, context) => {
         requireAdmin(context);
+        const { id, sands, goblet, circlet, subStatsPriority } = sanitize(args);
         await prisma.characterArtifact.update({
             where: { id },
             data: { sands, goblet, circlet, subStatsPriority },

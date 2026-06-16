@@ -3,6 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const server_1 = require("@apollo/server");
 const express5_1 = require("@as-integrations/express5");
 const express_1 = __importDefault(require("express"));
@@ -12,6 +14,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const multer_1 = __importDefault(require("multer"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
+const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
 const schema_1 = require("./schema");
 const resolvers_1 = require("./resolvers");
 async function startServer() {
@@ -21,7 +24,15 @@ async function startServer() {
         contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
     }));
     app.use((0, compression_1.default)());
-    app.use((0, cors_1.default)({ origin: '*', methods: ['GET', 'POST'] }));
+    const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://genshinhub.onrender.com'];
+    app.use((0, cors_1.default)({ origin: allowedOrigins, methods: ['GET', 'POST'] }));
+    const limiter = (0, express_rate_limit_1.default)({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 1000, // limit each IP to 1000 requests per windowMs
+        skip: (req) => req.ip === '127.0.0.1' || req.ip === '::1' || (req.ip ? req.ip.includes('127.0.0.1') : false),
+        message: { error: 'Too many requests, please try again later.' }
+    });
+    app.use(limiter);
     app.use(express_1.default.json({ limit: '1mb' }));
     // Health check endpoint
     app.get('/health', (_req, res) => {

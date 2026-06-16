@@ -10,6 +10,7 @@ import helmet from 'helmet';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
+import rateLimit from 'express-rate-limit';
 import { typeDefs } from './schema';
 import { resolvers } from './resolvers';
 
@@ -21,7 +22,18 @@ async function startServer() {
     contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
   }));
   app.use(compression());
-  app.use(cors({ origin: '*', methods: ['GET', 'POST'] }));
+  
+  const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://genshinhub.onrender.com'];
+  app.use(cors({ origin: allowedOrigins, methods: ['GET', 'POST'] }));
+  
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 1000, // limit each IP to 1000 requests per windowMs
+    skip: (req) => req.ip === '127.0.0.1' || req.ip === '::1' || (req.ip ? req.ip.includes('127.0.0.1') : false),
+    message: { error: 'Too many requests, please try again later.' }
+  });
+  app.use(limiter);
+
   app.use(express.json({ limit: '1mb' }));
 
   // Health check endpoint

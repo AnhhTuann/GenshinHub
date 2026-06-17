@@ -5,6 +5,8 @@ export const sangonomiyaKokomi = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Burst",
   "Normal Attack",

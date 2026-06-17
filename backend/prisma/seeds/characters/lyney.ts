@@ -5,6 +5,8 @@ export const lyney = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Normal Attack",
   "Skill",

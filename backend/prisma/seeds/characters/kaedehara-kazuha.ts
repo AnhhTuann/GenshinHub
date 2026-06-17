@@ -5,6 +5,8 @@ export const kaedeharaKazuha = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Burst",
   "Skill",

@@ -5,6 +5,8 @@ export const nahida = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Skill",
   "Burst",

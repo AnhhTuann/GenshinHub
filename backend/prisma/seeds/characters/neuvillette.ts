@@ -5,6 +5,8 @@ export const neuvillette = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Normal Attack",
   "Burst",

@@ -5,6 +5,8 @@ export const mualani = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Skill",
   "Burst",

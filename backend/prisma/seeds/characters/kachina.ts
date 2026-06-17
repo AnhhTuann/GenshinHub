@@ -5,6 +5,8 @@ export const kachina = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Normal Attack",
   "Elemental Skill",

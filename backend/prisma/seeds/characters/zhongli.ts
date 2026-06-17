@@ -5,6 +5,8 @@ export const zhongli = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Skill",
   "Burst",

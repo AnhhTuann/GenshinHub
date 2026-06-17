@@ -5,6 +5,8 @@ export const durin = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Burst",
   "Skill",

@@ -5,6 +5,8 @@ export const xiangling = {
   recommendedC: null,
   tierNoteEn: [],
   tierNoteVi: [],
+  stats: null,
+  ascensionMats: null,
   talentPriority: [
   "Burst",
   "Skill",
@@ -651,6 +653,28 @@ export const xiangling = {
     },
     {
         rank: 1,
+        nameVi: "Đoạn Thảo Trường Đao",
+        nameEn: "Engulfing Lightning",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Hòa Phác Diên",
+        nameEn: "Primordial Jade Winged-Spear",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
+    },
+    {
+        rank: 1,
         nameVi: "Bi Ca Lumidouce",
         nameEn: "Bi Ca Lumidouce",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -681,28 +705,6 @@ export const xiangling = {
         passiveDescVi: "Sát Thương Bạo Kích cao và nội tại tăng Tấn Công dựa trên HP. Sát thương đầu ra rất lớn nhưng yêu cầu tự bù đắp Hiệu Quả Nạp.",
         passiveDescEn: "Sát Thương Bạo Kích cao và nội tại tăng Tấn Công dựa trên HP. Sát thương đầu ra rất lớn nhưng yêu cầu tự bù đắp Hiệu Quả Nạp.",
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Homa.png"
-    },
-    {
-        rank: 4,
-        nameVi: "Đoạn Thảo Kính Phạt",
-        nameEn: "Đoạn Thảo Kính Phạt",
-        subStat: "Hiệu Quả Nạp Nguyên Tố",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: "Vũ khí tuyệt vời cung cấp lượng lớn Hiệu Quả Nạp và tự động chuyển hóa dòng Nạp thành Tấn Công%, giúp spam Nộ cực mượt.",
-        passiveDescEn: "Vũ khí tuyệt vời cung cấp lượng lớn Hiệu Quả Nạp và tự động chuyển hóa dòng Nạp thành Tấn Công%, giúp spam Nộ cực mượt.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
-    },
-    {
-        rank: 5,
-        nameVi: "Hòa Phát Diên",
-        nameEn: "Hòa Phát Diên",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: "Tỷ Lệ Bạo Kích cao và nội tại tăng Tấn Công khi đánh trúng kẻ địch. Sát thương ổn định nhưng cần đứng sân một chút để tích tầng.",
-        passiveDescEn: "Tỷ Lệ Bạo Kích cao và nội tại tăng Tấn Công khi đánh trúng kẻ địch. Sát thương ổn định nhưng cần đứng sân một chút để tích tầng.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
     },
     {
         rank: 6,

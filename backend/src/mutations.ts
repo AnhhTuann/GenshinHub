@@ -139,7 +139,8 @@ export const Mutation = {
             sands: a.sands,
             goblet: a.goblet,
             circlet: a.circlet,
-            subStatsPriority: a.subStatsPriority
+            subStatsPriority: a.subStatsPriority,
+            order: a.order || 0
           }
         });
       }

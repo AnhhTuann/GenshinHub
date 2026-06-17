@@ -795,16 +795,12 @@ export const huTao = {
         pieces: 4,
         sands: [
             "HP%",
-            "Tinh Thông Nguyên Tố",
             "Elemental Mastery"
         ],
         goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
             "Pyro DMG Bonus"
         ],
         circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
             "CRIT Rate",
             "CRIT DMG"
         ],

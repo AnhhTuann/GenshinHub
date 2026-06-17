@@ -13,20 +13,37 @@ export const amber = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Amber Vaporize Team",
+        name: "Vaporize Amber",
         rank: "S",
-        description: "The DMG of Amber is maximized by Vaporization. Maximize Amber's damage through Vaporize reactions by using Xingqiu's Hydro application, Kazuha's buffing and resistance shred, and Bennett's ATK buff and healing.",
+        description: "Amber's damage is maximized by Vaporize, utilizing Xingqiu's consistent Hydro application and Kazuha's support, with Bennett providing ATK buff and healing. Amber's charged attacks trigger Vaporize with Xingqiu's Hydro application, while Kazuha provides grouping and damage buffs, and Bennett heals and boosts ATK.",
         members: [
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Xingqiu's Elemental Burst applies Hydro continuously to enable Vaporize.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
+                roleDesc: "Bennett's Elemental Burst provides ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "Noblesse Oblige"
                 ],
                 substats: [
                     "HP%",
@@ -35,15 +52,15 @@ export const amber = {
                 ]
             },
             {
-                characterId: "kazuha",
+                characterId: "kaedehara-kazuha",
                 role: "Support",
-                roleDesc: "Kazuha can assist the team by grouping enemies together, applying Swirl control, provide DMG buff to teammates, and reduce Elemental Resistance of enemies.",
+                roleDesc: "Kazuha groups enemies and provides Elemental Mastery buff and Anemo RES shred.",
                 weapons: [
                     "Freedom-Sworn",
                     "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "Viridescent Venerer"
                 ],
                 substats: [
                     "Elemental Mastery",
@@ -55,267 +72,18 @@ export const amber = {
             {
                 characterId: "amber",
                 role: "Main DPS",
-                roleDesc: "Amber is the main DPS, her DMG is amplified by Vaporization in this team.",
+                roleDesc: "Amber deals damage with Charged Attack to trigger Vaporize.",
                 weapons: [
                     "Thundering Pulse",
                     "Rust"
                 ],
                 artifacts: [
-                    "4pc Crimson Witch of Flames"
+                    "Crimson Witch of Flames"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Xingqiu's Elemental Burst can attach Hydro element to enemies continuously, and so react with Amber's Pyro DMG to trigger Vaporization.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Amber's Reaction Overload",
-        rank: "S",
-        description: "Amber's Pyro triggers Overload with Fischl's Electro and Vaporization with Xingqiu's Hydro. Combines Pyro reactions: Overload from Amber and Fischl, and Vaporization from Amber and Xingqiu, supported by Bennett.",
-        members: [
-            {
-                characterId: "amber",
-                role: "Main DPS",
-                roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous Hydro application via Burst to enable Vaporization.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Off-field Electro via Skill for Overload. Oz provides a significant upgrade.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides ATK buff and healing via Burst.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Amber Overload Team #1",
-        rank: "S",
-        description: "Amber's Pyro attachment reacts with Electro attachment from Raiden Shogun to trigger frequent Overload.",
-        members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha can assist the team by grouping enemies together, applying Swirl control, provide DMG buff to teammates, and reduce Elemental Resistance of enemies.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Main DPS",
-                roleDesc: "Raiden Shogun is the main DPS. The DMG of Elemental Burst depends on the energy consumed by team members using their Elemental Burst.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Sub DPS",
-                roleDesc: "Amber is the Sub DPS, which works with Raiden Shogun to trigger Overload.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Ayaka Melt",
-        rank: "S",
-        description: "The DMG of Ayaka is maximized by Melting. Ayaka's Cryo DMG reacts with Pyro from Amber's Skill to trigger Melt, while Zhongli provides shield and ATK buff, and Bennett provides ATK buff and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Burst provides huge ATK buff and healing to other members.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Main DPS",
-                roleDesc: "Ayaka deals DMG by her Burst, and her Cryo DMG reacts with Pyro attachment from Amber's Skill to trigger Melting.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Sub DPS",
-                roleDesc: "Amber is the Sub DPS, which works with Ayaka to trigger Melting.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Zhongli's shield provides safe environment for team members, and increases ATK of whole team by using full set of Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -335,11 +103,29 @@ export const amber = {
                     "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "Noblesse Oblige"
                 ],
                 substats: [
                     "HP%",
                     "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
+                roleDesc: "Deals DMG by her Burst, and her Cryo DMG reacts with Pyro attachment from Amber's Skill to trigger Melt.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
+                ],
+                artifacts: [
+                    "Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -352,7 +138,7 @@ export const amber = {
                     "Rust"
                 ],
                 artifacts: [
-                    "4pc Crimson Witch of Flames"
+                    "Crimson Witch of Flames"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -370,102 +156,7 @@ export const amber = {
                     "Black Tassel"
                 ],
                 artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Main DPS",
-                roleDesc: "Deals DMG by her Burst, and her Cryo DMG reacts with Pyro attachment from Amber's Skill to trigger Melt.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Vaporize Amber",
-        rank: "S",
-        description: "Amber's damage is maximized by Vaporize, utilizing Xingqiu's consistent Hydro application and Kazuha's support, with Bennett providing ATK buff and healing. Amber's charged attacks trigger Vaporize with Xingqiu's Hydro application, while Kazuha provides grouping and damage buffs, and Bennett heals and boosts ATK.",
-        members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies and provides Elemental Mastery buff and Anemo RES shred.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Main DPS",
-                roleDesc: "Amber deals damage with Charged Attack to trigger Vaporize.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Xingqiu's Elemental Burst applies Hydro continuously to enable Vaporize.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Elemental Burst provides ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
+                    "Tenacity of the Millelith"
                 ],
                 substats: [
                     "HP%",
@@ -489,7 +180,7 @@ export const amber = {
                     "Rust"
                 ],
                 artifacts: [
-                    "4pc Crimson Witch of Flames"
+                    "Crimson Witch of Flames"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -499,9 +190,69 @@ export const amber = {
                 ]
             },
             {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies, applies swirled control, buffs team DMG, and reduces enemy Elemental Resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Bennett provides huge ATK and healing via Burst.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "raiden-shogun",
+                role: "Main DPS",
+                roleDesc: "Raiden Shogun deals Burst damage scaling with team's energy consumption.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Amber's Reaction Overload",
+        rank: "S",
+        description: "Amber's Pyro triggers Overload with Fischl's Electro and Vaporization with Xingqiu's Hydro. Combines Pyro reactions: Overload from Amber and Fischl, and Vaporization from Amber and Xingqiu, supported by Bennett.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides ATK buff and healing via Burst.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
@@ -516,33 +267,50 @@ export const amber = {
                 ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies, applies swirled control, buffs team DMG, and reduces enemy Elemental Resistance.",
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous Hydro application via Burst to enable Vaporization.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "Sacrificial Sword"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
-                characterId: "raiden-shogun",
+                characterId: "amber",
                 role: "Main DPS",
-                roleDesc: "Raiden Shogun deals Burst damage scaling with team's energy consumption.",
+                roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Thundering Pulse",
+                    "Rust"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Off-field Electro via Skill for Overload. Oz provides a significant upgrade.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -756,28 +524,8 @@ export const amber = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
-        pieces: 4,
-        sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery"
-        ]
-    },
-    {
-        setNameVi: "Đoàn Hát Lang Thang Đại Lục",
-        setNameEn: "Đoàn Hát Lang Thang Đại Lục",
+        setNameVi: "Dòng Hồi Ức Bất Tận",
+        setNameEn: "Dòng Hồi Ức Bất Tận",
         pieces: 4,
         sands: [
             "Tấn Công%",
@@ -816,9 +564,9 @@ export const amber = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
-        setNameEn: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
-        pieces: 2,
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
+        pieces: 4,
         sands: [
             "Tấn Công%",
             "Tinh Thông Nguyên Tố"
@@ -836,8 +584,17 @@ export const amber = {
         ]
     },
     {
-        setNameVi: "Dòng Hồi Ức Bất Tận",
-        setNameEn: "Dòng Hồi Ức Bất Tận",
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Đoàn Hát Lang Thang Đại Lục",
+        setNameEn: "Đoàn Hát Lang Thang Đại Lục",
         pieces: 4,
         sands: [
             "Tấn Công%",
@@ -854,6 +611,15 @@ export const amber = {
             "ATK%",
             "Elemental Mastery"
         ]
+    },
+    {
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

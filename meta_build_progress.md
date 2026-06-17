@@ -4,7 +4,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 
 ### 🔥 Hỏa (Pyro)
 
-- [x] **Hu Tao** (`hu-tao`) — ✅ _Hoàn thiện (13 Vũ khí, Tinh chỉnh giao diện TDV Mix, Substats, Talents)_
+- [x] **Hu Tao** (`hu-tao`) — ✅ _Hoàn thiện (13 Vũ khí, Tinh chỉnh giao diện TDV Mix, Substats, Talents, Teams)_
 - [x] **Xiangling** (`xiangling`) — ✅ _Hoàn thiện (19 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Amber** (`amber`) — ✅ _Hoàn thiện (18 Vũ khí, TDV, Substats, Talents, Teams)_
 - [x] **Diluc** (`diluc`) — ✅ _Hoàn thiện (15 Vũ khí, TDV, Substats, Talents, Teams)_

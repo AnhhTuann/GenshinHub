@@ -233,7 +233,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
         </div>
 
         {/* Hero content */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-6 sm:pb-8">
+        <div className="absolute bottom-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-6 sm:pb-8 flex flex-col md:flex-row justify-between items-end gap-6">
           <div className="flex flex-col gap-2">
             {/* Element + rarity badges */}
             <div className="flex items-center gap-2 flex-wrap">
@@ -297,15 +297,13 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
       {/* ── MAIN CONTENT ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-6 sm:mt-8 pb-16 sm:pb-24">
-        <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 items-start">
+        
+        {/* CHARACTER INFO STRIP */}
+        <div className="w-full mb-8">
+          <CharacterSidebar character={character} allWeapons={weapons} />
+        </div>
 
-          {/* ─── LEFT SIDEBAR ─── */}
-          <div className="w-full xl:w-[300px] xl:sticky xl:top-20 xl:self-start shrink-0 flex flex-col gap-4">
-            <CharacterSidebar character={character} allWeapons={weapons} />
-          </div>
-
-          {/* ─── RIGHT CONTENT ─── */}
-          <div className="flex-1 min-w-0 flex flex-col gap-5">
+        <div className="w-full flex flex-col gap-5">
 
             {/* ── 1. OVERVIEW ── */}
             <ScrollEntrance>
@@ -326,20 +324,23 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
               </section>
             </ScrollEntrance>
 
-            {/* ── 2. BEST WEAPONS ── */}
-            <ScrollEntrance delay={0.1}>
-              <EditableWeaponsSection characterId={character.id} weaponType={character.weapon} bestWeapons={character.bestWeapons || []} tWeapons={t('weapons')} />
-            </ScrollEntrance>
+            {/* ── 2. BEST WEAPONS & ARTIFACTS (2 COLUMNS) ── */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-start">
+              {/* ── BEST WEAPONS ── */}
+              <ScrollEntrance delay={0.1}>
+                <EditableWeaponsSection characterId={character.id} weaponType={character.weapon} bestWeapons={character.bestWeapons || []} tWeapons={t('weapons')} />
+              </ScrollEntrance>
 
-            {/* ── 3. ARTIFACTS ── */}
-            <ScrollEntrance delay={0.2}>
-              <div className="flex flex-col gap-5">
-                <EditableArtifactsSection characterId={character.id} bestArtifacts={character.bestArtifacts || []} tArtifacts={t('artifacts')} />
-                
-                {/* ── 4. STATS & TALENTS ── */}
-                <EditableStatsSection characterId={character.id} firstArtifact={firstArtifact} talentPriority={character.talentPriority || []} />
-              </div>
-            </ScrollEntrance>
+              {/* ── ARTIFACTS & STATS ── */}
+              <ScrollEntrance delay={0.2}>
+                <div className="flex flex-col gap-5">
+                  <EditableArtifactsSection characterId={character.id} bestArtifacts={character.bestArtifacts || []} tArtifacts={t('artifacts')} />
+                  
+                  {/* ── STATS & TALENTS ── */}
+                  <EditableStatsSection characterId={character.id} firstArtifact={firstArtifact} talentPriority={character.talentPriority || []} />
+                </div>
+              </ScrollEntrance>
+            </div>
 
             {/* ── 5. META TEAM COMPS ── */}
             <ScrollEntrance delay={0.3}>
@@ -380,7 +381,6 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
 
           </div>
-        </div>
       </div>
     </main>
   );

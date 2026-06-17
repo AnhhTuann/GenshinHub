@@ -708,6 +708,56 @@ export const dehya = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Ảo Mộng Chưa Hoàn Thành",
+        setNameEn: "Ảo Mộng Chưa Hoàn Thành",
+        pieces: 4,
+        sands: [
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố",
+            "Hiệu Quả Nạp"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "HP%",
+            "Tinh Thông Nguyên Tố"
+        ]
+    },
+    {
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: [
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố",
+            "Hiệu Quả Nạp"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "HP%",
+            "Tinh Thông Nguyên Tố"
+        ]
+    },
+    {
         setNameVi: "Dấu Ấn Ngăn Cách",
         setNameEn: "Dấu Ấn Ngăn Cách",
         pieces: 4,
@@ -761,56 +811,6 @@ export const dehya = {
         setNameVi: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
         setNameEn: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
         pieces: 2,
-        sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Ảo Mộng Chưa Hoàn Thành",
-        setNameEn: "Ảo Mộng Chưa Hoàn Thành",
-        pieces: 4,
-        sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
-        pieces: 4,
         sands: [
             "Tấn Công%",
             "Tinh Thông Nguyên Tố",

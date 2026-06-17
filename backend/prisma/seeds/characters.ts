@@ -116,6 +116,26 @@ const getSplashUrl = (name: string) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { baizhu } from './characters/baizhu';
 import { lynette } from './characters/lynette';
 import { lyney } from './characters/lyney';
@@ -818,6 +838,7 @@ export async function seedCharacters(prisma: PrismaClient) {
     console.log(`Bắt đầu xoá dữ liệu cũ...`);
     await prisma.characterWeapon.deleteMany({});
     await prisma.characterArtifact.deleteMany({});
+    await prisma.characterTeam.deleteMany({});
     await prisma.character.deleteMany({});
   }
   
@@ -929,6 +950,7 @@ export async function seedCharacters(prisma: PrismaClient) {
     try {
       await prisma.characterWeapon.deleteMany({ where: { characterId: char.id } });
       await prisma.characterArtifact.deleteMany({ where: { characterId: char.id } });
+      await prisma.characterTeam.deleteMany({ where: { characterId: char.id } });
       await prisma.character.delete({ where: { id: char.id } }).catch(() => {});
       
       await prisma.character.create({

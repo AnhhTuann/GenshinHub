@@ -212,6 +212,20 @@ export default function TeamFormModal({ isOpen, onClose, onSave, characterId, al
     setMembers(newMembers);
   };
 
+  const handleMoveMemberUp = (idx: number) => {
+    if (idx === 0) return;
+    const newMembers = [...members];
+    [newMembers[idx - 1], newMembers[idx]] = [newMembers[idx], newMembers[idx - 1]];
+    setMembers(newMembers);
+  };
+
+  const handleMoveMemberDown = (idx: number) => {
+    if (idx === members.length - 1) return;
+    const newMembers = [...members];
+    [newMembers[idx + 1], newMembers[idx]] = [newMembers[idx], newMembers[idx + 1]];
+    setMembers(newMembers);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -298,9 +312,31 @@ export default function TeamFormModal({ isOpen, onClose, onSave, characterId, al
             
             {members.map((member, idx) => (
               <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-4 flex flex-col gap-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold">{idx + 1}</span>
-                  <span className="text-xs font-bold text-white/50 uppercase tracking-widest">Member {idx + 1}</span>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold">{idx + 1}</span>
+                    <span className="text-xs font-bold text-white/50 uppercase tracking-widest">Member {idx + 1}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => handleMoveMemberUp(idx)}
+                      disabled={idx === 0}
+                      className="w-6 h-6 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                      title="Move Up"
+                    >
+                      ↑
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleMoveMemberDown(idx)}
+                      disabled={idx === members.length - 1}
+                      className="w-6 h-6 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                      title="Move Down"
+                    >
+                      ↓
+                    </button>
+                  </div>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-3">

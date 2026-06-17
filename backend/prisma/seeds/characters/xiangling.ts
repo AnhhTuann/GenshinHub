@@ -13,163 +13,6 @@ export const xiangling = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Xiangling Vaporize Team #1",
-        rank: "S",
-        description: "Xiangling is a Sub DPS. The Vaporize DMG of the team is maintained by Kazuha's bonus, Xiangling and Bennett allow consistent Vaporize triggers. Minimize Vaporize damage using Bennett/C6 bonus, with Xiangling and Bennett enabling consistent Pyro application.",
-        members: [
-            {
-                characterId: "tartaglia",
-                role: "Main DPS",
-                roleDesc: "Tartaglia is the main DPS, his DMG is amplified by Vaporize.",
-                weapons: [
-                    "Polar Star",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Heart of Depth",
-                    "2pc Heart of Depth + 2pc Gladiator's Finale"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Xiangling's Burst provides huge DMG and continuous Pyro application to trigger vaporize.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies, applies Swirl reaction, provides DMG buff, and reduces enemy Pyro resistance.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Burst provides huge ATK buff and healing to the team.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Xiangling Vaporize Team #2",
-        rank: "S",
-        description: "The Vaporization DMG of whole team is maintained by Kazuha's bonus. Xiangling and Bennett allow triggers for bigger Vaporize all the time. Kokomi on-field triggers Vaporize with Xiangling's Pyro, buffed by Kazuha's DMG bonus and Pyro shield, and Bennett's ATK buff.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Support, Burst provides huge ATK buff and healing to other members.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kokomi",
-                role: "Main DPS",
-                roleDesc: "Main DPS, her DMG reacts with Pyro to trigger Vaporize.",
-                weapons: [
-                    "Everlasting Moonglow",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Ocean-Hued Clam"
-                ],
-                substats: [
-                    "HP%",
-                    "Healing Bonus",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS, Burst provides massive Pyro DMG and continuous aura for Vaporize.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Support, groups enemies, provides Elemental Mastery / DMG buff, reduces enemy Pyro/Hydro resistance.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
         name: "Xiangling Vaporize Team #3",
         rank: "S",
         description: "Xiangling is the Main DPS. The team maximizes Vaporization DMG using Bennett's C6 bonus, Xiangling and Bennett enable consistent Vaporize triggers.",
@@ -403,84 +246,6 @@ export const xiangling = {
         ]
     },
     {
-        name: "Xiangling Pure Pyro Team",
-        rank: "S",
-        description: "Xiangling is a Sub DPS in the team. The team only plays Pyro DMG. Main focus is on pure Pyro damage, using Klee's raw damage against Pyro affected enemies, with Xiangling providing off-field Pyro application, Kazuha providing Anemo grouping and Pyro damage bonus, and Bennett providing ATK buff and healing.",
-        members: [
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Main DPS, deals massive Pyro damage on-field.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Lavawalker"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS, Burst provides huge amount of DMG.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Support, can swirl the team by grouping enemies together, applying Swirl reaction, reduces enemies' resistance and buffs Pyro DMG of members.",
-                weapons: [
-                    "Favonius Sword",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Healer/Support, has Elemental Burst provides massive ATK buff and healing to other members.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Xiangling Melting Team #1",
         rank: "S",
         description: "Xiangling is a Sub DPS in the team. Ganyu provides elemental Cryo damage. Cryo element attachments to trigger Melt which maximizes Ganyu's damage.",
@@ -627,6 +392,241 @@ export const xiangling = {
                 ],
                 artifacts: [
                     "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Xiangling Vaporize Team #2",
+        rank: "S",
+        description: "The Vaporization DMG of whole team is maintained by Kazuha's bonus. Xiangling and Bennett allow triggers for bigger Vaporize all the time. Kokomi on-field triggers Vaporize with Xiangling's Pyro, buffed by Kazuha's DMG bonus and Pyro shield, and Bennett's ATK buff.",
+        members: [
+            {
+                characterId: "sangonomiya-kokomi",
+                role: "Main DPS",
+                roleDesc: "Main DPS, her DMG reacts with Pyro to trigger Vaporize.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "Ocean-Hued Clam"
+                ],
+                substats: [
+                    "HP%",
+                    "Healing Bonus",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS, Burst provides massive Pyro DMG and continuous aura for Vaporize.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Support, groups enemies, provides Elemental Mastery / DMG buff, reduces enemy Pyro/Hydro resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Support, Burst provides huge ATK buff and healing to other members.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Xiangling Pure Pyro Team",
+        rank: "S",
+        description: "Xiangling is a Sub DPS in the team. The team only plays Pyro DMG. Main focus is on pure Pyro damage, using Klee's raw damage against Pyro affected enemies, with Xiangling providing off-field Pyro application, Kazuha providing Anemo grouping and Pyro damage bonus, and Bennett providing ATK buff and healing.",
+        members: [
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Main DPS, deals massive Pyro damage on-field.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "Lavawalker"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS, Burst provides huge amount of DMG.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Support, can swirl the team by grouping enemies together, applying Swirl reaction, reduces enemies' resistance and buffs Pyro DMG of members.",
+                weapons: [
+                    "Favonius Sword",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Healer/Support, has Elemental Burst provides massive ATK buff and healing to other members.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Xiangling Vaporize Team #1",
+        rank: "S",
+        description: "Xiangling is a Sub DPS. The Vaporize DMG of the team is maintained by Kazuha's bonus, Xiangling and Bennett allow consistent Vaporize triggers. Minimize Vaporize damage using Bennett/C6 bonus, with Xiangling and Bennett enabling consistent Pyro application.",
+        members: [
+            {
+                characterId: "tartaglia",
+                role: "Main DPS",
+                roleDesc: "Tartaglia is the main DPS, his DMG is amplified by Vaporize.",
+                weapons: [
+                    "Polar Star",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Heart of Depth",
+                    "Heart of Depth + 2pc Gladiator's Finale"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Xiangling's Burst provides huge DMG and continuous Pyro application to trigger vaporize.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies, applies Swirl reaction, provides DMG buff, and reduces enemy Pyro resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Burst provides huge ATK buff and healing to the team.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
                 ],
                 substats: [
                     "HP%",
@@ -850,29 +850,26 @@ export const xiangling = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Dấu Ấn Ngăn Cách",
-        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Emblem of Severed Fate",
-        pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
-    },
-    {
         setNameVi: "Dấu Ấn Ngăn Cách",
         setNameEn: "Dấu Ấn Ngăn Cách",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
             "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
+            "Tinh Thông Nguyên Tố",
+            "Energy Recharge",
+            "ATK%",
+            "Elemental Mastery"
         ],
         goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
+            "Sát Thương Nguyên Tố Hỏa",
+            "Pyro DMG Bonus"
         ],
         circlet: [
             "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
+            "Sát Thương Bạo Kích",
+            "CRIT Rate",
+            "CRIT DMG"
         ],
         subStatsPriority: [
             "Energy Recharge",
@@ -905,6 +902,33 @@ export const xiangling = {
             "ATK%",
             "Elemental Mastery"
         ]
+    },
+    {
+        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Dấu Ấn Ngăn Cách",
+        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Emblem of Severed Fate",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Dấu Ấn Ngăn Cách & 2 bộ Nghi Thức Tông Thất Cổ",
+        setNameEn: "Mix 2-Piece Emblem of Severed Fate & 2-Piece Noblesse Oblige",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Nghi Thức Tông Thất Cổ",
+        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Noblesse Oblige",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

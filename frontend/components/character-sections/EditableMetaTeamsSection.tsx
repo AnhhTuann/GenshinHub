@@ -67,6 +67,11 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
   const [editingTeam, setEditingTeam] = useState<any | null>(null);
   const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
   const [dragOverItemIdx, setDragOverItemIdx] = useState<number | null>(null);
+  const [expandedTeams, setExpandedTeams] = useState<Record<string, boolean>>({});
+
+  const toggleTeam = (teamId: string) => {
+    setExpandedTeams(prev => ({ ...prev, [teamId]: !prev[teamId] }));
+  };
 
   const handleDragStart = (idx: number) => {
     setDraggedItemIdx(idx);
@@ -254,7 +259,20 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
               })}
             </div>
 
+            {/* Member details toggle */}
+            <div className="flex justify-center mb-4">
+              <button 
+                onClick={() => toggleTeam(team.id || tIdx.toString())}
+                className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-white/80 transition-colors bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-full border border-white/5"
+              >
+                {expandedTeams[team.id || tIdx.toString()] 
+                  ? (locale === 'vi' ? 'Ẩn chi tiết ▴' : 'Hide Details ▴') 
+                  : (locale === 'vi' ? 'Hiện chi tiết ▾' : 'Show Details ▾')}
+              </button>
+            </div>
+
             {/* Member details */}
+            {expandedTeams[team.id || tIdx.toString()] && (
             <div className="flex flex-col gap-2.5">
               {team.members.map((m: any, mIdx: number) => {
                 const teammate = allCharacters.find(c => c.id === m.characterId);
@@ -324,6 +342,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                 );
               })}
             </div>
+            )}
           </div>
         ))}
       </div>

@@ -14,17 +14,6 @@ export const travelerDendro = {
   teams: [],
   bestWeapons: [
     {
-        rank: 5,
-        nameVi: "Bàn Nham Kết Lục",
-        nameEn: "Bàn Nham Kết Lục",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: "Tăng HP và Tấn Công.",
-        passiveDescEn: "Tăng HP và Tấn Công.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
-    },
-    {
         rank: 4,
         nameVi: "Đoản Đao Amenoma",
         nameEn: "Đoản Đao Amenoma",
@@ -34,6 +23,17 @@ export const travelerDendro = {
         passiveDescVi: "Hồi năng lượng sau khi dùng Nộ.",
         passiveDescEn: "Hồi năng lượng sau khi dùng Nộ.",
         iconUrl: "/images/weapons/UI_EquipIcon_Sword_Bakufu.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Bàn Nham Kết Lục",
+        nameEn: "Bàn Nham Kết Lục",
+        subStat: "Tỷ Lệ Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: "Tăng HP và Tấn Công.",
+        passiveDescEn: "Tăng HP và Tấn Công.",
+        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
     }
 ],
   bestArtifacts: [

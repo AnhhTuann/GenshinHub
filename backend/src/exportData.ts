@@ -55,10 +55,11 @@ ${artifactEntries.join(',\n')}
   
   const characters = await prisma.character.findMany({
     include: {
-      bestWeapons: true,
-      bestArtifacts: true,
+      bestWeapons: { orderBy: { rank: 'asc' } },
+      bestArtifacts: { orderBy: { order: 'asc' } },
       teams: {
-        include: { members: true }
+        include: { members: true },
+        orderBy: { order: 'asc' }
       }
     }
   });

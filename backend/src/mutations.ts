@@ -232,6 +232,36 @@ export const Mutation = {
     exportDatabaseToSeeds().catch(console.error);
     return true;
   },
+
+  reorderCharacterTeams: async (_: any, { teamIds }: any, context: any) => {
+    requireAdmin(context);
+    const updates = teamIds.map((id: string, index: number) => 
+      prisma.characterTeam.update({ where: { id }, data: { order: index } })
+    );
+    await prisma.$transaction(updates);
+    exportDatabaseToSeeds().catch(console.error);
+    return true;
+  },
+
+  reorderCharacterWeapons: async (_: any, { weaponIds }: any, context: any) => {
+    requireAdmin(context);
+    const updates = weaponIds.map((id: string, index: number) => 
+      prisma.characterWeapon.update({ where: { id }, data: { rank: index } })
+    );
+    await prisma.$transaction(updates);
+    exportDatabaseToSeeds().catch(console.error);
+    return true;
+  },
+
+  reorderCharacterArtifacts: async (_: any, { artifactIds }: any, context: any) => {
+    requireAdmin(context);
+    const updates = artifactIds.map((id: string, index: number) => 
+      prisma.characterArtifact.update({ where: { id }, data: { order: index } })
+    );
+    await prisma.$transaction(updates);
+    exportDatabaseToSeeds().catch(console.error);
+    return true;
+  },
   
   updateCharacterTierList: async (_: any, args: any, context: any) => {
     requireAdmin(context);

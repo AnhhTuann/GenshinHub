@@ -17,17 +17,6 @@ export const albedo = {
   bestWeapons: [
     {
         rank: 1,
-        nameVi: "Xá Tội",
-        nameEn: "Absolution",
-        subStat: "Sát Thương Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Estoc.png"
-    },
-    {
-        rank: 1,
         nameVi: "Thương Diệu",
         nameEn: "Azurelight",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -36,6 +25,17 @@ export const albedo = {
         passiveDescVi: null,
         passiveDescEn: null,
         iconUrl: "/images/weapons/UI_EquipIcon_Sword_OuterSword.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Xá Tội",
+        nameEn: "Absolution",
+        subStat: "Sát Thương Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Estoc.png"
     },
     {
         rank: 4,

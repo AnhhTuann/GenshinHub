@@ -65,6 +65,54 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
   const [localTeams, setLocalTeams] = useState(teams);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTeam, setEditingTeam] = useState<any | null>(null);
+  const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
+  const [dragOverItemIdx, setDragOverItemIdx] = useState<number | null>(null);
+
+  const handleDragStart = (idx: number) => {
+    setDraggedItemIdx(idx);
+  };
+
+  const handleDragEnter = (idx: number) => {
+    setDragOverItemIdx(idx);
+  };
+
+  const saveNewOrder = async (newTeams: any[]) => {
+    setLocalTeams(newTeams);
+    try {
+      const teamIds = newTeams.map(t => t.id);
+      await fetchGraphQL(`mutation ReorderTeams($teamIds: [String!]!) { reorderCharacterTeams(teamIds: $teamIds) }`, { teamIds });
+      toast.success("Team order updated");
+    } catch (e: any) {
+      toast.error("Failed to reorder: " + e.message);
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (draggedItemIdx !== null && dragOverItemIdx !== null && draggedItemIdx !== dragOverItemIdx) {
+      const newTeams = [...localTeams];
+      const [draggedTeam] = newTeams.splice(draggedItemIdx, 1);
+      newTeams.splice(dragOverItemIdx, 0, draggedTeam);
+      saveNewOrder(newTeams);
+    }
+    setDraggedItemIdx(null);
+    setDragOverItemIdx(null);
+  };
+
+  const handleMoveUp = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx === 0) return;
+    const newTeams = [...localTeams];
+    [newTeams[idx - 1], newTeams[idx]] = [newTeams[idx], newTeams[idx - 1]];
+    saveNewOrder(newTeams);
+  };
+
+  const handleMoveDown = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx === localTeams.length - 1) return;
+    const newTeams = [...localTeams];
+    [newTeams[idx + 1], newTeams[idx]] = [newTeams[idx], newTeams[idx + 1]];
+    saveNewOrder(newTeams);
+  };
 
   const handleAddClick = () => {
     setEditingTeam(null);
@@ -116,13 +164,40 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
 
       <div className="flex flex-col gap-4">
         {localTeams.map((team, tIdx) => (
-          <div key={team.id || tIdx} className="bg-[#06060a]/50 border border-white/[0.04] hover:border-blue-500/15 rounded-xl p-4 transition-colors duration-200 relative group/team">
+          <div 
+            key={team.id || tIdx} 
+            draggable={isAdmin}
+            onDragStart={() => isAdmin && handleDragStart(tIdx)}
+            onDragEnter={() => isAdmin && handleDragEnter(tIdx)}
+            onDragEnd={isAdmin ? handleDragEnd : undefined}
+            onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
+            className={`bg-[#06060a]/50 border hover:border-blue-500/15 rounded-xl p-4 transition-all duration-200 relative group/team ${isAdmin ? 'cursor-move' : ''} ${
+              dragOverItemIdx === tIdx ? 'border-blue-500/50 scale-[1.01] shadow-[0_0_15px_rgba(59,130,246,0.15)] z-10' : 'border-white/[0.04]'
+            } ${draggedItemIdx === tIdx ? 'opacity-40' : 'opacity-100'}`}
+          >
             
             {isAdmin && (
-              <div className="absolute top-3 right-3 opacity-0 group-hover/team:opacity-100 transition-opacity flex gap-2 z-10">
+              <div className="absolute top-3 right-3 opacity-0 group-hover/team:opacity-100 transition-opacity flex gap-1.5 z-10 bg-[#0d0d14] p-1.5 rounded-xl border border-white/5 shadow-xl">
+                <button
+                  onClick={(e) => handleMoveUp(e, tIdx)}
+                  disabled={tIdx === 0}
+                  className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                  title="Move Up"
+                >
+                  ↑
+                </button>
+                <button
+                  onClick={(e) => handleMoveDown(e, tIdx)}
+                  disabled={tIdx === localTeams.length - 1}
+                  className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                  title="Move Down"
+                >
+                  ↓
+                </button>
+                <div className="w-[1px] h-4 bg-white/10 self-center mx-0.5" />
                 <button
                   onClick={() => handleEditClick(team)}
-                  className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white"
+                  className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-blue-400/80 hover:text-blue-300"
                   title="Edit Team"
                 >
                   ✎

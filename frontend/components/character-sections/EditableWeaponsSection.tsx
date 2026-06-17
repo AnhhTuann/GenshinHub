@@ -61,7 +61,63 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
   const t = useTranslations('Character');
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  
+  const [localWeapons, setLocalWeapons] = useState(bestWeapons);
+  const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
+  const [dragOverItemIdx, setDragOverItemIdx] = useState<number | null>(null);
+
+  useEffect(() => {
+    setLocalWeapons(bestWeapons);
+  }, [bestWeapons]);
+
+  useEffect(() => {
+    setIsAdmin(!!localStorage.getItem('admin_key'));
+  }, []);
+
+  const handleDragStart = (idx: number) => {
+    setDraggedItemIdx(idx);
+  };
+
+  const handleDragEnter = (idx: number) => {
+    setDragOverItemIdx(idx);
+  };
+
+  const saveNewOrder = async (newWeapons: any[]) => {
+    setLocalWeapons(newWeapons);
+    try {
+      const weaponIds = newWeapons.map(w => w.id);
+      await fetchGraphQL(`mutation ReorderWeapons($weaponIds: [String!]!) { reorderCharacterWeapons(weaponIds: $weaponIds) }`, { weaponIds });
+      toast.success("Weapon order updated");
+    } catch (e: any) {
+      toast.error("Failed to reorder: " + e.message);
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (draggedItemIdx !== null && dragOverItemIdx !== null && draggedItemIdx !== dragOverItemIdx) {
+      const newWeapons = [...localWeapons];
+      const [draggedWeapon] = newWeapons.splice(draggedItemIdx, 1);
+      newWeapons.splice(dragOverItemIdx, 0, draggedWeapon);
+      saveNewOrder(newWeapons);
+    }
+    setDraggedItemIdx(null);
+    setDragOverItemIdx(null);
+  };
+
+  const handleMoveUp = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx === 0) return;
+    const newWeapons = [...localWeapons];
+    [newWeapons[idx - 1], newWeapons[idx]] = [newWeapons[idx], newWeapons[idx - 1]];
+    saveNewOrder(newWeapons);
+  };
+
+  const handleMoveDown = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx === localWeapons.length - 1) return;
+    const newWeapons = [...localWeapons];
+    [newWeapons[idx + 1], newWeapons[idx]] = [newWeapons[idx], newWeapons[idx + 1]];
+    saveNewOrder(newWeapons);
+  };
   useEffect(() => {
     setIsAdmin(!!localStorage.getItem('admin_key'));
   }, []);
@@ -91,9 +147,21 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
       </div>
 
       <div className="flex flex-col gap-3">
-        {bestWeapons.map((weapon: any, idx: number) => (
-          <div key={weapon.id} className="relative group/wcard">
-            <div className="bg-[#06060a]/50 border border-white/[0.04] hover:border-amber-500/15 rounded-xl p-3 sm:p-4 flex gap-4 items-center transition-colors duration-200">
+        {localWeapons.map((weapon: any, idx: number) => (
+          <div 
+            key={weapon.id || idx} 
+            draggable={isAdmin}
+            onDragStart={() => isAdmin && handleDragStart(idx)}
+            onDragEnter={() => isAdmin && handleDragEnter(idx)}
+            onDragEnd={isAdmin ? handleDragEnd : undefined}
+            onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
+            className={`relative group/wcard transition-all duration-200 ${isAdmin ? 'cursor-move' : ''} ${
+              dragOverItemIdx === idx ? 'scale-[1.01] shadow-[0_0_15px_rgba(251,191,36,0.15)] z-10' : ''
+            } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
+          >
+            <div className={`bg-[#06060a]/50 border hover:border-amber-500/15 rounded-xl p-3 sm:p-4 flex gap-4 items-center transition-colors duration-200 ${
+              dragOverItemIdx === idx ? 'border-amber-500/50' : 'border-white/[0.04]'
+            }`}>
               <div className={`relative w-16 h-16 shrink-0 rounded-lg border border-white/[0.05] flex items-center justify-center overflow-hidden ${
                 weapon.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
                 weapon.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#5b4d75]' :
@@ -120,13 +188,32 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
                 )}
               </div>
               {isAdmin && (
-                <button
-                  onClick={() => handleRemove(weapon.id)}
-                  className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center shrink-0 opacity-0 group-hover/wcard:opacity-100"
-                  title="Remove Weapon"
-                >
-                  ✕
-                </button>
+                <div className="opacity-0 group-hover/wcard:opacity-100 transition-opacity flex items-center gap-1.5 shrink-0 ml-2">
+                  <button
+                    onClick={(e) => handleMoveUp(e, idx)}
+                    disabled={idx === 0}
+                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Move Up"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    onClick={(e) => handleMoveDown(e, idx)}
+                    disabled={idx === localWeapons.length - 1}
+                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Move Down"
+                  >
+                    ↓
+                  </button>
+                  <div className="w-[1px] h-4 bg-white/10 self-center mx-1" />
+                  <button
+                    onClick={() => handleRemove(weapon.id)}
+                    className="w-7 h-7 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center"
+                    title="Remove Weapon"
+                  >
+                    ✕
+                  </button>
+                </div>
               )}
             </div>
           </div>

@@ -14,17 +14,6 @@ export const citlali = {
   teams: [],
   bestWeapons: [
     {
-        rank: 5,
-        nameVi: "Điển Tích Tây Phong",
-        nameEn: "Điển Tích Tây Phong",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-        passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
-    },
-    {
         rank: 4,
         nameVi: "Chương Nhạc Lang Thang",
         nameEn: "Chương Nhạc Lang Thang",
@@ -34,6 +23,17 @@ export const citlali = {
         passiveDescVi: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
         passiveDescEn: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
         iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Điển Tích Tây Phong",
+        nameEn: "Điển Tích Tây Phong",
+        subStat: "Tỷ Lệ Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
+        passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
     }
 ],
   bestArtifacts: [

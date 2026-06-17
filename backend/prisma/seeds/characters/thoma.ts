@@ -635,17 +635,6 @@ export const thoma = {
 ],
   bestWeapons: [
     {
-        rank: 5,
-        nameVi: "Hắc Anh Thương",
-        nameEn: "Hắc Anh Thương",
-        subStat: "HP%",
-        isF2P: true,
-        refinement: "R5",
-        passiveDescVi: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.",
-        passiveDescEn: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Noire.png"
-    },
-    {
         rank: 1,
         nameVi: "Giáo Thập Tự Kitain",
         nameEn: "Giáo Thập Tự Kitain",
@@ -688,6 +677,17 @@ export const thoma = {
         passiveDescVi: "Offers Elemental Mastery and creates a leaf that boosts ATK for the team, useful for driving reactions.",
         passiveDescEn: "Offers Elemental Mastery and creates a leaf that boosts ATK for the team, useful for driving reactions.",
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Arakalari.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Hắc Anh Thương",
+        nameEn: "Hắc Anh Thương",
+        subStat: "HP%",
+        isF2P: true,
+        refinement: "R5",
+        passiveDescVi: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.",
+        passiveDescEn: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.",
+        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Noire.png"
     },
     {
         rank: 6,

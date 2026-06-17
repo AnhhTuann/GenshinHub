@@ -40,4 +40,7 @@ export const GET_MATERIALS = `query GetMaterials { materials { id nameEn nameVi 
 
 export const UPDATE_CHARACTER_TIER_LIST = `mutation UpdateCharacterTierList($id: String!, $tier: String, $role: String, $recommendedC: String, $tierNoteEn: [String!], $tierNoteVi: [String!]) { updateCharacterTierList(id: $id, tier: $tier, role: $role, recommendedC: $recommendedC, tierNoteEn: $tierNoteEn, tierNoteVi: $tierNoteVi) { id tier role recommendedC tierNoteEn tierNoteVi } }`;
 export const UPDATE_WEAPON_TIER_LIST = `mutation UpdateWeaponTierList($id: String!, $tier: String) { updateWeaponTierList(id: $id, tier: $tier) { id tier } }`;
+export const REORDER_TEAMS = `mutation ReorderTeams($teamIds: [String!]!) { reorderCharacterTeams(teamIds: $teamIds) }`;
+export const REORDER_WEAPONS = `mutation ReorderWeapons($weaponIds: [String!]!) { reorderCharacterWeapons(weaponIds: $weaponIds) }`;
+export const REORDER_ARTIFACTS = `mutation ReorderArtifacts($artifactIds: [String!]!) { reorderCharacterArtifacts(artifactIds: $artifactIds) }`;
 

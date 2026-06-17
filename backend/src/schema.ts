@@ -5,7 +5,7 @@ export const typeDefs = `#graphql
   type MixSetOption { nameEn: String!, nameVi: String!, iconUrl: String, artifactSetId: String }
   type ArtifactBuild { id: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, rarity: Int, iconUrl: String, artifactSetId: String, mixSets: [MixSetOption!] }
   type TeamMemberBuild { id: String!, characterId: String!, role: String!, roleDesc: String!, weapons: [String!]!, artifacts: [String!]!, substats: [String!]! }
-  type TeamBuild { id: String!, name: String!, rank: String!, description: String!, members: [TeamMemberBuild!]! }
+  type TeamBuild { id: String!, name: String!, rank: String!, description: String!, order: Int!, members: [TeamMemberBuild!]! }
   type Character { 
     id: String!, nameEn: String!, nameVi: String!, titleEn: String!, titleVi: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
     avatarUrl: String!, splashArtUrl: String!, 
@@ -76,6 +76,9 @@ export const typeDefs = `#graphql
     addCharacterTeam(characterId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): TeamBuild
     updateCharacterTeam(teamId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): Boolean
     removeCharacterTeam(teamId: String!): Boolean
+    reorderCharacterTeams(teamIds: [String!]!): Boolean
+    reorderCharacterWeapons(weaponIds: [String!]!): Boolean
+    reorderCharacterArtifacts(artifactIds: [String!]!): Boolean
     updateCharacterTierList(id: String!, tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]): Character
     updateWeaponTierList(id: String!, tier: String): Weapon
     

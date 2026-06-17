@@ -14,33 +14,11 @@ export const aloy = {
   teams: [],
   bestWeapons: [
     {
-        rank: 5,
-        nameVi: "Cánh Thiên Không",
-        nameEn: "Cánh Thiên Không",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
-        passiveDescEn: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
-    },
-    {
-        rank: 4,
-        nameVi: "Tuyệt Huyền",
-        nameEn: "Tuyệt Huyền",
-        subStat: "Tinh Thông Nguyên Tố",
-        isF2P: false,
-        refinement: "R5",
-        passiveDescVi: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
-        passiveDescEn: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png"
-    },
-    {
         rank: 1,
         nameVi: "Màn Mưa Tơ Lòng",
         nameEn: "Silvershower Heartstrings",
         subStat: null,
-        isF2P: false,
+        isF2P: true,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
@@ -62,11 +40,33 @@ export const aloy = {
         nameVi: "Màn Mưa Tơ Lòng",
         nameEn: "Silvershower Heartstrings",
         subStat: null,
-        isF2P: true,
+        isF2P: false,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
         iconUrl: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png"
+    },
+    {
+        rank: 4,
+        nameVi: "Tuyệt Huyền",
+        nameEn: "Tuyệt Huyền",
+        subStat: "Tinh Thông Nguyên Tố",
+        isF2P: false,
+        refinement: "R5",
+        passiveDescVi: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
+        passiveDescEn: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
+        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Cánh Thiên Không",
+        nameEn: "Cánh Thiên Không",
+        subStat: "Tỷ Lệ Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
+        passiveDescEn: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
+        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
     }
 ],
   bestArtifacts: [

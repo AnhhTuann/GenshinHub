@@ -28,10 +28,63 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
   const locale = useLocale();
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  
+  const [localArtifacts, setLocalArtifacts] = useState(bestArtifacts);
+  const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
+  const [dragOverItemIdx, setDragOverItemIdx] = useState<number | null>(null);
+
+  useEffect(() => {
+    setLocalArtifacts(bestArtifacts);
+  }, [bestArtifacts]);
+
   useEffect(() => {
     setIsAdmin(!!localStorage.getItem('admin_key'));
   }, []);
+
+  const handleDragStart = (idx: number) => {
+    setDraggedItemIdx(idx);
+  };
+
+  const handleDragEnter = (idx: number) => {
+    setDragOverItemIdx(idx);
+  };
+
+  const saveNewOrder = async (newArtifacts: any[]) => {
+    setLocalArtifacts(newArtifacts);
+    try {
+      const artifactIds = newArtifacts.map(a => a.id);
+      await fetchGraphQL(`mutation ReorderArtifacts($artifactIds: [String!]!) { reorderCharacterArtifacts(artifactIds: $artifactIds) }`, { artifactIds });
+      toast.success("Artifact order updated");
+    } catch (e: any) {
+      toast.error("Failed to reorder: " + e.message);
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (draggedItemIdx !== null && dragOverItemIdx !== null && draggedItemIdx !== dragOverItemIdx) {
+      const newArtifacts = [...localArtifacts];
+      const [draggedArtifact] = newArtifacts.splice(draggedItemIdx, 1);
+      newArtifacts.splice(dragOverItemIdx, 0, draggedArtifact);
+      saveNewOrder(newArtifacts);
+    }
+    setDraggedItemIdx(null);
+    setDragOverItemIdx(null);
+  };
+
+  const handleMoveUp = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx === 0) return;
+    const newArtifacts = [...localArtifacts];
+    [newArtifacts[idx - 1], newArtifacts[idx]] = [newArtifacts[idx], newArtifacts[idx - 1]];
+    saveNewOrder(newArtifacts);
+  };
+
+  const handleMoveDown = (e: React.MouseEvent, idx: number) => {
+    e.stopPropagation();
+    if (idx === localArtifacts.length - 1) return;
+    const newArtifacts = [...localArtifacts];
+    [newArtifacts[idx + 1], newArtifacts[idx]] = [newArtifacts[idx], newArtifacts[idx + 1]];
+    saveNewOrder(newArtifacts);
+  };
 
   const handleRemove = async (id: string) => {
     if (!await confirmDialog('Are you sure you want to remove this artifact set?')) return;
@@ -58,8 +111,18 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
       </div>
 
       <div className="flex flex-col gap-3">
-        {bestArtifacts.map((artifact: any, idx: number) => (
-          <div key={artifact.id} className="relative group/acard bg-[#06060a]/50 border border-white/[0.04] hover:border-purple-500/15 rounded-xl p-3 sm:p-4 flex flex-col gap-3 transition-colors duration-200">
+        {localArtifacts.map((artifact: any, idx: number) => (
+          <div 
+            key={artifact.id || idx} 
+            draggable={isAdmin}
+            onDragStart={() => isAdmin && handleDragStart(idx)}
+            onDragEnter={() => isAdmin && handleDragEnter(idx)}
+            onDragEnd={isAdmin ? handleDragEnd : undefined}
+            onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
+            className={`relative group/acard bg-[#06060a]/50 border hover:border-purple-500/15 rounded-xl p-3 sm:p-4 flex flex-col gap-3 transition-all duration-200 ${isAdmin ? 'cursor-move' : ''} ${
+              dragOverItemIdx === idx ? 'border-purple-500/50 scale-[1.01] shadow-[0_0_15px_rgba(168,85,247,0.15)] z-10' : 'border-white/[0.04]'
+            } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
+          >
             <div className="flex items-center gap-3">
               <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider shrink-0 ${
                 idx === 0 
@@ -70,13 +133,32 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
               </span>
               <div className="h-[1px] flex-1 bg-white/[0.03]" />
               {isAdmin && (
-                <button
-                  onClick={() => handleRemove(artifact.id)}
-                  className="w-6 h-6 rounded bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center shrink-0 opacity-0 group-hover/acard:opacity-100"
-                  title="Remove Artifact"
-                >
-                  ✕
-                </button>
+                <div className="opacity-0 group-hover/acard:opacity-100 transition-opacity flex items-center gap-1.5 shrink-0 ml-2">
+                  <button
+                    onClick={(e) => handleMoveUp(e, idx)}
+                    disabled={idx === 0}
+                    className="w-6 h-6 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Move Up"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    onClick={(e) => handleMoveDown(e, idx)}
+                    disabled={idx === localArtifacts.length - 1}
+                    className="w-6 h-6 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Move Down"
+                  >
+                    ↓
+                  </button>
+                  <div className="w-[1px] h-4 bg-white/10 self-center mx-0.5" />
+                  <button
+                    onClick={() => handleRemove(artifact.id)}
+                    className="w-6 h-6 rounded bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center"
+                    title="Remove Artifact"
+                  >
+                    ✕
+                  </button>
+                </div>
               )}
             </div>
 

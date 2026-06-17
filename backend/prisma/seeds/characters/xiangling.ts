@@ -639,7 +639,7 @@ export const xiangling = {
 ],
   bestWeapons: [
     {
-        rank: 1,
+        rank: 0,
         nameVi: "Quyền Trượng Cát Đỏ",
         nameEn: "Quyền Trượng Cát Đỏ",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -650,7 +650,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Deshret.png"
     },
     {
-        rank: 2,
+        rank: 1,
         nameVi: "Bi Ca Lumidouce",
         nameEn: "Bi Ca Lumidouce",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -661,7 +661,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Muguet.png"
     },
     {
-        rank: 3,
+        rank: 2,
         nameVi: "Hào Quang Tách Rời",
         nameEn: "Hào Quang Tách Rời",
         subStat: "Sát Thương Bạo Kích",
@@ -672,7 +672,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Perdix.png"
     },
     {
-        rank: 4,
+        rank: 3,
         nameVi: "Trượng Hộ Ma",
         nameEn: "Trượng Hộ Ma",
         subStat: "Sát Thương Bạo Kích",
@@ -683,7 +683,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Homa.png"
     },
     {
-        rank: 5,
+        rank: 4,
         nameVi: "Đoạn Thảo Kính Phạt",
         nameEn: "Đoạn Thảo Kính Phạt",
         subStat: "Hiệu Quả Nạp Nguyên Tố",
@@ -694,7 +694,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
     },
     {
-        rank: 6,
+        rank: 5,
         nameVi: "Hòa Phát Diên",
         nameEn: "Hòa Phát Diên",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -705,7 +705,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
     },
     {
-        rank: 7,
+        rank: 6,
         nameVi: "Tai Họa Và Hối Hận",
         nameEn: "Tai Họa Và Hối Hận",
         subStat: "Sát Thương Bạo Kích",
@@ -716,7 +716,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Carbine.png"
     },
     {
-        rank: 8,
+        rank: 7,
         nameVi: "Lao Xiên Cá",
         nameEn: "Lao Xiên Cá",
         subStat: "Hiệu Quả Nạp Nguyên Tố",
@@ -727,7 +727,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Mori.png"
     },
     {
-        rank: 9,
+        rank: 8,
         nameVi: "Thương Quyết Chiến",
         nameEn: "Thương Quyết Chiến",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -738,7 +738,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Gladiator.png"
     },
     {
-        rank: 10,
+        rank: 9,
         nameVi: "Khúc Ca Vịnh Hẹp",
         nameEn: "Khúc Ca Vịnh Hẹp",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -749,7 +749,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Shanty.png"
     },
     {
-        rank: 11,
+        rank: 10,
         nameVi: "Hủy Diệt",
         nameEn: "Hủy Diệt",
         subStat: "Tấn Công%",
@@ -760,7 +760,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Santika.png"
     },
     {
-        rank: 12,
+        rank: 11,
         nameVi: "Giáo Nịnh Thần",
         nameEn: "Giáo Nịnh Thần",
         subStat: "Tấn Công%",
@@ -771,7 +771,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Kunwu.png"
     },
     {
-        rank: 13,
+        rank: 12,
         nameVi: "Hình Thái Xích Nguyệt",
         nameEn: "Hình Thái Xích Nguyệt",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -793,7 +793,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_TummaLyhty.png"
     },
     {
-        rank: 15,
+        rank: 14,
         nameVi: "Vây Cá Chẻ Sóng",
         nameEn: "Vây Cá Chẻ Sóng",
         subStat: "Tấn Công%",
@@ -804,7 +804,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Maria.png"
     },
     {
-        rank: 16,
+        rank: 15,
         nameVi: "Mũi Nhọn Của Gió",
         nameEn: "Mũi Nhọn Của Gió",
         subStat: "Tấn Công%",
@@ -815,7 +815,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Windvane.png"
     },
     {
-        rank: 17,
+        rank: 16,
         nameVi: "Giáo Thập Tự Kitain",
         nameEn: "Giáo Thập Tự Kitain",
         subStat: "Tinh Thông Nguyên Tố",
@@ -826,7 +826,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Bakufu.png"
     },
     {
-        rank: 18,
+        rank: 17,
         nameVi: "Thương Thiên Nham",
         nameEn: "Thương Thiên Nham",
         subStat: "Tấn Công%",
@@ -837,7 +837,7 @@ export const xiangling = {
         iconUrl: "/images/weapons/UI_EquipIcon_Pole_Lapis.png"
     },
     {
-        rank: 19,
+        rank: 18,
         nameVi: "Thương Tây Phong",
         nameEn: "Thương Tây Phong",
         subStat: "Hiệu Quả Nạp Nguyên Tố",
@@ -849,6 +849,15 @@ export const xiangling = {
     }
 ],
   bestArtifacts: [
+    {
+        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Dấu Ấn Ngăn Cách",
+        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Emblem of Severed Fate",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
     {
         setNameVi: "Dấu Ấn Ngăn Cách",
         setNameEn: "Dấu Ấn Ngăn Cách",
@@ -876,102 +885,6 @@ export const xiangling = {
     {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
         setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery"
-        ]
-    },
-    {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery"
-        ]
-    },
-    {
-        setNameVi: "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn",
-        setNameEn: "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn",
-        pieces: 2,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery"
-        ]
-    },
-    {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Nghi Thức Tông Thất Cổ",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery"
-        ]
-    },
-    {
-        setNameVi: "Ký Ức Rừng Sâu",
-        setNameEn: "Ký Ức Rừng Sâu",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

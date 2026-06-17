@@ -13,10 +13,105 @@ export const sigewinne = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Sigewinne For Fun",
+        rank: "S",
+        description: "A for-fun team where Traveler (Geo) and Zhongli's Geo construct resonance is the main DMG source, speeding up Sigewinne's passive. Sigewinne heals and boosts Skill DMG. Geo construct resonance between Traveler (Geo) and Zhongli triggers Sigewinne's passive talent for additional damage, while Furina provides off-field Hydro and DMG buffs.",
+        members: [
+            {
+                characterId: "traveler-geo",
+                role: "Main DPS",
+                roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "2pc Gladiator's Finale",
+                    "2pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
+                weapons: [
+                    "Staff of Homa"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Supplies off-field Hydro attacks and massive damage buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "sigewinne",
+                role: "Support",
+                roleDesc: "Hydro Support. Restores team HP and buffs off-field Elemental Skill DMG.",
+                weapons: [
+                    "Silvershower Heartstrings",
+                    "Recurve Bow"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP"
+                ]
+            }
+        ]
+    },
+    {
         name: "Sigewinne Pure Hydro",
         rank: "SS",
         description: "The team focuses on dealing Hydro damage, with Sigewinne providing healing and Elemental Skill damage buffs, while Yelan and Furina output damage and Kazuha provides grouping and resistance shred.",
         members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "yelan",
                 role: "Main DPS",
@@ -54,24 +149,6 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "sigewinne",
                 role: "Support",
                 roleDesc: "Hydro Support. Provides team-wide healing via her Skill and buffs teammates' off-field Elemental Skill DMG.",
@@ -91,33 +168,17 @@ export const sigewinne = {
         ]
     },
     {
-        name: "Sigewinne For Fun",
-        rank: "S",
-        description: "A for-fun team where Traveler (Geo) and Zhongli's Geo construct resonance is the main DMG source, speeding up Sigewinne's passive. Sigewinne heals and boosts Skill DMG. Geo construct resonance between Traveler (Geo) and Zhongli triggers Sigewinne's passive talent for additional damage, while Furina provides off-field Hydro and DMG buffs.",
+        name: "Sigewinne Bloom Team",
+        rank: "SS",
+        description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
         members: [
-            {
-                characterId: "sigewinne",
-                role: "Support",
-                roleDesc: "Hydro Support. Restores team HP and buffs off-field Elemental Skill DMG.",
-                weapons: [
-                    "Silvershower Heartstrings",
-                    "Recurve Bow"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP"
-                ]
-            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Supplies off-field Hydro attacks and massive damage buffs.",
+                roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
                 weapons: [
                     "Splendor of Tranquil Waters",
-                    "Favonius Sword"
+                    "Wolf-Fang"
                 ],
                 artifacts: [
                     "4pc Golden Troupe"
@@ -129,49 +190,6 @@ export const sigewinne = {
                     "Energy Recharge"
                 ]
             },
-            {
-                characterId: "traveler-geo",
-                role: "Main DPS",
-                roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "2pc Gladiator's Finale",
-                    "2pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
-                weapons: [
-                    "Staff of Homa"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Sigewinne Bloom Team",
-        rank: "SS",
-        description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
-        members: [
             {
                 characterId: "alhaitham",
                 role: "Main DPS",
@@ -189,24 +207,6 @@ export const sigewinne = {
                     "Elemental Mastery",
                     "Energy Recharge",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -316,27 +316,6 @@ export const sigewinne = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Xà Cừ Đại Dương",
-        setNameEn: "Ocean-Hued Clam",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
-    },
-    {
         setNameVi: "Khúc Ca Ngày Cũ",
         setNameEn: "Song of Days Past",
         pieces: 4,
@@ -360,6 +339,27 @@ export const sigewinne = {
     {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Scroll of the Hero of Cinder City",
+        pieces: 4,
+        sands: [
+            "HP%"
+        ],
+        goblet: [
+            "HP%"
+        ],
+        circlet: [
+            "HP%",
+            "Tỷ Lệ Bạo Kích",
+            "Tăng Trị Liệu"
+        ],
+        subStatsPriority: [
+            "HP%",
+            "HP",
+            "CRIT Rate"
+        ]
+    },
+    {
+        setNameVi: "Xà Cừ Đại Dương",
+        setNameEn: "Ocean-Hued Clam",
         pieces: 4,
         sands: [
             "HP%"

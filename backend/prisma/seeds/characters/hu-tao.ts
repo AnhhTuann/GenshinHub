@@ -36,6 +36,22 @@ export const huTao = {
                 ]
             },
             {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides a shield and ATK buff with &lt;artifact&gt;Tenacity of the Millelith&lt;/artifact&gt; set.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "xingqiu",
                 role: "Sub DPS",
                 roleDesc: "Elemental Burst applies Hydro continuously to enable Vaporize.",
@@ -69,22 +85,6 @@ export const huTao = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides a shield and ATK buff with &lt;artifact&gt;Tenacity of the Millelith&lt;/artifact&gt; set.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -287,6 +287,15 @@ export const huTao = {
         ]
     },
     {
+        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Thiên Nham Vững Chắc",
+        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Tenacity of the Millelith",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
         setNameVi: "Giấc Mộng Hoàng Kim",
         setNameEn: "Gilded Dreams",
         pieces: 4,
@@ -312,15 +321,6 @@ export const huTao = {
     {
         setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Giấc Mộng Hoàng Kim",
         setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Gilded Dreams",
-        pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
-    },
-    {
-        setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Thiên Nham Vững Chắc",
-        setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Tenacity of the Millelith",
         pieces: 2,
         sands: [],
         goblet: [],

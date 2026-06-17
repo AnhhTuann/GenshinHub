@@ -36,6 +36,23 @@ export const thoma = {
                 ]
             },
             {
+                characterId: "thoma",
+                role: "Support",
+                roleDesc: "Provides shield for safety, triggers Burgeon with his Burst.",
+                weapons: [
+                    "Calamity Queller",
+                    "Kitain Cross Spear"
+                ],
+                artifacts: [
+                    "4pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "Elemental Mastery",
+                    "HP%"
+                ]
+            },
+            {
                 characterId: "yelan",
                 role: "Sub DPS",
                 roleDesc: "Provides continuous off-field Hydro attacks that react with Dendro to create Cores.",
@@ -71,22 +88,160 @@ export const thoma = {
                     "CRIT Rate",
                     "Energy Recharge"
                 ]
+            }
+        ]
+    },
+    {
+        name: "Thoma Superconduct Team #2",
+        rank: "A",
+        description: "A team centered around Eula's physical damage, boosted by Superconduct, Thoma's shield and Tenacity of the Millelith buff. Trigger Superconduct to reduce Physical RES, amplifying Eula's Physical Burst. Thoma provides shields and ATK buff via Tenacity of the Millelith.",
+        members: [
+            {
+                characterId: "chongyun",
+                role: "Sub DPS",
+                roleDesc: "Acts as Cryo battery and speed buff support.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Provides off-field Electro application to trigger Superconduct.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
             },
             {
                 characterId: "thoma",
                 role: "Support",
-                roleDesc: "Provides shield for safety, triggers Burgeon with his Burst.",
+                roleDesc: "Shield support.",
                 weapons: [
-                    "Calamity Queller",
-                    "Kitain Cross Spear"
+                    "Staff of Homa",
+                    "Black Tassel"
                 ],
                 artifacts: [
-                    "4pc Flower of Paradise Lost"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "Energy Recharge",
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "eula",
+                role: "Main DPS",
+                roleDesc: "Eula is the main physical DPS.",
+                weapons: [
+                    "Song of Broken Pines",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Pale Flame"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Crimson Vaporize Shield",
+        rank: "S",
+        description: "A Vaporize team featuring Yanfei as main DPS, Xingqiu applying Hydro, Sucrose boosting Elemental Mastery, and Thoma providing shields. Yanfei triggers Vaporize on enemies affected by Hydro from Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Thoma provides a shield for protection.",
+        members: [
+            {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
                     "Elemental Mastery",
-                    "HP%"
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Applies Hydro off-field to trigger Vaporize.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "thoma",
+                role: "Support",
+                roleDesc: "Provides shields to protect the team.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Main Pyro DPS.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
                 ]
             }
         ]
@@ -96,6 +251,23 @@ export const thoma = {
         rank: "S",
         description: "Thoma is the Support, Dendro from Nahida reacts with Hydro from Xingqiu and Yelan to trigger Bloom, then Thoma's Pyro triggers Burgeon. Generate Dendro cores with Nahida's Dendro and Hydro from Xingqiu/Yelan, then trigger Burgeon with Thoma's Pyro.",
         members: [
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Raincutter continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
+                weapons: [
+                    "Sapwood Blade"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "nahida",
                 role: "Main DPS",
@@ -112,23 +284,6 @@ export const thoma = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Raincutter continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
-                weapons: [
-                    "Sapwood Blade"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
                 ]
             },
             {
@@ -169,34 +324,35 @@ export const thoma = {
         ]
     },
     {
-        name: "Thoma Vaporize Team",
-        rank: "S",
-        description: "Thoma's shield provides survivability for Hu Tao, while Xingqiu applies Hydro for Hu Tao's Vaporize. Kazuha provides grouping, DMG buff, and resistance shred. Thoma's shield provides survivability for Hu Tao to trigger Vaporize.",
+        name: "Thoma Superconduct Team #1",
+        rank: "A",
+        description: "Eula's Burst is the main damage source, boosted by Superconduct, Raiden Shogun's Skill, and Tenacity of the Millelith. Thoma's shield ensures safe execution. Trigger Superconduct to reduce Physical RES for Eula's physical damage. Raiden provides energy and Burst DMG boost. Thoma shields the team.",
         members: [
             {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Hu Tao is the main DPS, her DMG is amplified by Vaporize.",
+                characterId: "raiden-shogun",
+                role: "Sub DPS",
+                roleDesc: "Provides Electro for Superconduct, boosts energy and Burst DMG.",
                 weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
+                    "Engulfing Lightning",
+                    "The Catch"
                 ],
                 artifacts: [
-                    "4pc Crimson Witch of Flames"
+                    "4pc Emblem of Severed Fate"
                 ],
                 substats: [
-                    "CRIT DMG",
+                    "Energy Recharge",
                     "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery"
+                    "CRIT DMG",
+                    "ATK%"
                 ]
             },
             {
-                characterId: "xingqiu",
+                characterId: "rosaria",
                 role: "Sub DPS",
-                roleDesc: "Raincutter applies Hydro continuously.",
+                roleDesc: "Cryo Sub DPS, acts as battery and buffs CRIT Rate.",
                 weapons: [
-                    "Sacrificial Sword"
+                    "Skyward Spine",
+                    "Favonius Lance"
                 ],
                 artifacts: [
                     "4pc Noblesse Oblige"
@@ -209,27 +365,27 @@ export const thoma = {
                 ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Provides crowd control, groups enemies, and buffs DMG.",
+                characterId: "eula",
+                role: "Main DPS",
+                roleDesc: "Eula's physical damage is boosted by Superconduct.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "Song of Broken Pines",
+                    "Serpent Spine"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Pale Flame"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
                 characterId: "thoma",
                 role: "Support",
-                roleDesc: "Provides shield for safety, HP scaling shield strength.",
+                roleDesc: "Shield support.",
                 weapons: [
                     "Staff of Homa",
                     "Black Tassel"
@@ -269,23 +425,6 @@ export const thoma = {
                 ]
             },
             {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Hydro sub DPS.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "chongyun",
                 role: "Sub DPS",
                 roleDesc: "Provides occasional Melt opportunities via Cryo fields.",
@@ -320,6 +459,23 @@ export const thoma = {
                     "HP",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Hydro sub DPS.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -344,6 +500,23 @@ export const thoma = {
                     "CRIT Rate",
                     "HP%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "thoma",
+                role: "Support",
+                roleDesc: "Shield support.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -379,209 +552,53 @@ export const thoma = {
                     "HP",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "thoma",
-                role: "Support",
-                roleDesc: "Shield support.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
     {
-        name: "Thoma Superconduct Team #1",
-        rank: "A",
-        description: "Eula's Burst is the main damage source, boosted by Superconduct, Raiden Shogun's Skill, and Tenacity of the Millelith. Thoma's shield ensures safe execution. Trigger Superconduct to reduce Physical RES for Eula's physical damage. Raiden provides energy and Burst DMG boost. Thoma shields the team.",
-        members: [
-            {
-                characterId: "eula",
-                role: "Main DPS",
-                roleDesc: "Eula's physical damage is boosted by Superconduct.",
-                weapons: [
-                    "Song of Broken Pines",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Pale Flame"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Sub DPS",
-                roleDesc: "Provides Electro for Superconduct, boosts energy and Burst DMG.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "rosaria",
-                role: "Sub DPS",
-                roleDesc: "Cryo Sub DPS, acts as battery and buffs CRIT Rate.",
-                weapons: [
-                    "Skyward Spine",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "thoma",
-                role: "Support",
-                roleDesc: "Shield support.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Thoma Superconduct Team #2",
-        rank: "A",
-        description: "A team centered around Eula's physical damage, boosted by Superconduct, Thoma's shield and Tenacity of the Millelith buff. Trigger Superconduct to reduce Physical RES, amplifying Eula's Physical Burst. Thoma provides shields and ATK buff via Tenacity of the Millelith.",
-        members: [
-            {
-                characterId: "eula",
-                role: "Main DPS",
-                roleDesc: "Eula is the main physical DPS.",
-                weapons: [
-                    "Song of Broken Pines",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Pale Flame"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Provides off-field Electro application to trigger Superconduct.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "chongyun",
-                role: "Sub DPS",
-                roleDesc: "Acts as Cryo battery and speed buff support.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "thoma",
-                role: "Support",
-                roleDesc: "Shield support.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Crimson Vaporize Shield",
+        name: "Thoma Vaporize Team",
         rank: "S",
-        description: "A Vaporize team featuring Yanfei as main DPS, Xingqiu applying Hydro, Sucrose boosting Elemental Mastery, and Thoma providing shields. Yanfei triggers Vaporize on enemies affected by Hydro from Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Thoma provides a shield for protection.",
+        description: "Thoma's shield provides survivability for Hu Tao, while Xingqiu applies Hydro for Hu Tao's Vaporize. Kazuha provides grouping, DMG buff, and resistance shred. Thoma's shield provides survivability for Hu Tao to trigger Vaporize.",
         members: [
             {
-                characterId: "yanfei",
+                characterId: "hu-tao",
                 role: "Main DPS",
-                roleDesc: "Main Pyro DPS.",
+                roleDesc: "Hu Tao is the main DPS, her DMG is amplified by Vaporize.",
                 weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
+                    "Staff of Homa",
+                    "Deathmatch"
                 ],
                 artifacts: [
-                    "4pc Wanderer's Troupe"
+                    "4pc Crimson Witch of Flames"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%",
+                    "HP%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "thoma",
+                role: "Support",
+                roleDesc: "Provides shield for safety, HP scaling shield strength.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             },
             {
                 characterId: "xingqiu",
                 role: "Sub DPS",
-                roleDesc: "Applies Hydro off-field to trigger Vaporize.",
+                roleDesc: "Raincutter applies Hydro continuously.",
                 weapons: [
                     "Sacrificial Sword"
                 ],
@@ -596,12 +613,12 @@ export const thoma = {
                 ]
             },
             {
-                characterId: "sucrose",
+                characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
+                roleDesc: "Provides crowd control, groups enemies, and buffs DMG.",
                 weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
                     "4pc Viridescent Venerer"
@@ -611,23 +628,6 @@ export const thoma = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "thoma",
-                role: "Support",
-                roleDesc: "Provides shields to protect the team.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -703,8 +703,30 @@ export const thoma = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
-        setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
+        setNameVi: "Mix 2 bộ Tinh Thông / Dấu Ấn",
+        setNameEn: "Mix 2 bộ Tinh Thông / Dấu Ấn",
+        pieces: 2,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tinh Thông Nguyên Tố"
+        ],
+        goblet: [
+            "Tinh Thông Nguyên Tố"
+        ],
+        circlet: [
+            "Tinh Thông Nguyên Tố"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tinh Thông Nguyên Tố",
+            "HP%",
+            "HP",
+            "Tỷ Lệ Bạo Kích"
+        ]
+    },
+    {
+        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
@@ -747,30 +769,8 @@ export const thoma = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Tinh Thông / Dấu Ấn",
-        setNameEn: "Mix 2 bộ Tinh Thông / Dấu Ấn",
-        pieces: 2,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Tinh Thông Nguyên Tố"
-        ],
-        circlet: [
-            "Tinh Thông Nguyên Tố"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tinh Thông Nguyên Tố",
-            "HP%",
-            "HP",
-            "Tỷ Lệ Bạo Kích"
-        ]
-    },
-    {
-        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
+        setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

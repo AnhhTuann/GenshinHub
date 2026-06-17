@@ -64,29 +64,34 @@ export default function InlineStatsEditor({
     else setList([...list, stat]);
   };
 
-  const renderStatPicker = (label: string, list: string[], setList: (l: string[]) => void) => (
-    <div className="mb-4">
-      <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2 block">{label}</label>
-      <div className="flex flex-wrap gap-2">
-        {COMMON_STATS.map(stat => {
-          const active = list.includes(stat);
-          return (
-            <button
-              key={stat}
-              onClick={() => toggleStat(list, setList, stat)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
-                active 
-                  ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' 
-                  : 'bg-white/[0.02] text-gray-500 border-white/5 hover:bg-white/10'
-              }`}
-            >
-              {stat}
-            </button>
-          );
-        })}
+  const renderStatPicker = (label: string, list: string[], setList: (l: string[]) => void) => {
+    // Include any currently selected stats that might not be in COMMON_STATS (e.g. legacy translated strings)
+    const allOptions = Array.from(new Set([...COMMON_STATS, ...list]));
+    
+    return (
+      <div className="mb-4">
+        <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2 block">{label}</label>
+        <div className="flex flex-wrap gap-2">
+          {allOptions.map(stat => {
+            const active = list.includes(stat);
+            return (
+              <button
+                key={stat}
+                onClick={() => toggleStat(list, setList, stat)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
+                  active 
+                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30' 
+                    : 'bg-white/[0.02] text-gray-500 border-white/5 hover:bg-white/10'
+                }`}
+              >
+                {stat}
+              </button>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">

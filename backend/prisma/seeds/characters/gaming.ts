@@ -18,24 +18,6 @@ export const gaming = {
         description: "A high-damage Melt team centered on Gaming's plunging attacks, supported by Ganyu's off-field Cryo application, Layla's shield and Cryo application, and Xianyun's plunge buffs and healing.",
         members: [
             {
-                characterId: "gaming",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. His Plunging Attack provides continuous high-multiplier Pyro DMG.",
-                weapons: [
-                    "Serpent Spine",
-                    "Redhorn Stonethresher"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
                 characterId: "ganyu",
                 role: "Sub DPS",
                 roleDesc: "Cryo Sub DPS. Her Burst provides continuous off-field Cryo application to trigger Melt.",
@@ -51,6 +33,24 @@ export const gaming = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. His Plunging Attack provides continuous high-multiplier Pyro DMG.",
+                weapons: [
+                    "Serpent Spine",
+                    "Redhorn Stonethresher"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
                 ]
             },
             {
@@ -91,46 +91,10 @@ export const gaming = {
         ]
     },
     {
-        name: "Gaming Pure Pyro Team",
-        rank: "S",
-        description: "A pure Pyro team centered on Gaming's plunging attacks, boosted by Xianyun, with Bennett and Xiangling providing buffs and off-field damage.",
+        name: "Gaming Vaporize Team",
+        rank: "SS",
+        description: "Gaming is a Main DPS. His DMG is amplified by Vaporize with off-field Hydro and support buffs from Furina, Kazuha, and Xianyun.",
         members: [
-            {
-                characterId: "gaming",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Plunging Attacks deal high consistent Pyro DMG.",
-                weapons: [
-                    "Redhorn Stonethresher",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG via Pyronado and Gouba.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "xianyun",
                 role: "Support",
@@ -149,28 +113,23 @@ export const gaming = {
                 ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Golden Troupe"
                 ],
                 substats: [
-                    "Energy Recharge",
-                    "HP%"
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Gaming Vaporize Team",
-        rank: "SS",
-        description: "Gaming is a Main DPS. His DMG is amplified by Vaporize with off-field Hydro and support buffs from Furina, Kazuha, and Xianyun.",
-        members: [
+            },
             {
                 characterId: "gaming",
                 role: "Main DPS",
@@ -204,23 +163,46 @@ export const gaming = {
                     "Elemental Mastery",
                     "Energy Recharge"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Gaming Pure Pyro Team",
+        rank: "S",
+        description: "A pure Pyro team centered on Gaming's plunging attacks, boosted by Xianyun, with Bennett and Xiangling providing buffs and off-field damage.",
+        members: [
             {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Golden Troupe"
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Plunging Attacks deal high consistent Pyro DMG.",
+                weapons: [
+                    "Redhorn Stonethresher",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
+                    "ATK%",
+                    "Elemental Mastery"
                 ]
             },
             {
@@ -237,6 +219,24 @@ export const gaming = {
                 substats: [
                     "ATK%",
                     "ATK",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG via Pyronado and Gouba.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             }
@@ -412,6 +412,30 @@ export const gaming = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Gilded Dreams",
+        pieces: 4,
+        sands: [
+            "Tinh Thông Nguyên Tố",
+            "Tấn Công%",
+            "Hiệu Quả Nạp"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tinh Thông Nguyên Tố",
+            "Tấn Công%"
+        ]
+    },
+    {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
         setNameEn: "Crimson Witch of Flames",
         pieces: 4,
@@ -462,30 +486,6 @@ export const gaming = {
     {
         setNameVi: "Lời Thề Đêm Dài",
         setNameEn: "Long Night's Oath",
-        pieces: 4,
-        sands: [
-            "Tinh Thông Nguyên Tố",
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tinh Thông Nguyên Tố",
-            "Tấn Công%"
-        ]
-    },
-    {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Gilded Dreams",
         pieces: 4,
         sands: [
             "Tinh Thông Nguyên Tố",

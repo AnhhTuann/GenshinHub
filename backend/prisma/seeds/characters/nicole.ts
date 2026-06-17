@@ -13,48 +13,32 @@ export const nicole = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Nicole Pyro Team #1",
-        rank: "SS",
-        description: "A team built around Varka as a mixed damage main DPS, with Anemo and converted elemental attacks, supported by Prune's buffs and ADC buffs, Nicole's shielding and ADC boosts, and Bennett's ATK buff and healing.",
+        name: "Nicole Burning Team #1",
+        rank: "S",
+        description: "Burning team with Kinich as on-field Clorindo DPS. Durin and Nicole apply Pyro off-field, reducing enemy Pyro and Dendro RES via Burning. Iansan provides mobile ADC buff.",
         members: [
             {
-                characterId: "varka",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Enters mixed damage mode after using Skill, dealing Anemo and converted elemental damage.",
-                weapons: [
-                    "Game of the Mighty Wolf",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Gladiator's Destiny"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%",
-                    "ATK"
-                ]
-            },
-            {
-                characterId: "prune",
+                characterId: "iansan",
                 role: "Support",
-                roleDesc: "Anemo Support. Provides Pyro stand and ADC buffs via Pyro attacks.",
+                roleDesc: "Electro Support. Buffs active character's ATK.",
                 weapons: [
-                    "Angelos' Heptades",
-                    "Oathsworn Eye"
+                    "Symphony of Signets",
+                    "Favonius Lance"
                 ],
                 artifacts: [
                     "4pc Noblesse Oblige"
                 ],
                 substats: [
-                    "ATK%",
-                    "Energy Recharge"
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
                 ]
             },
             {
                 characterId: "nicole",
                 role: "Support",
-                roleDesc: "Pyro Support. Provides shields and teamwide ATK% buffs, synergizing with Celestial Gift set.",
+                roleDesc: "Pyro Support. Shield and teamwide ATK% buff via Skill.",
                 weapons: [
                     "Angelos' Heptades",
                     "Flowing Purity"
@@ -68,18 +52,39 @@ export const nicole = {
                 ]
             },
             {
-                characterId: "bennett",
+                characterId: "durin",
                 role: "Support",
-                roleDesc: "Pyro Support. Restores health, provides huge ATK buff and healing.",
+                roleDesc: "Pyro Support. Off-field Pyro support.",
                 weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
+                    "Mints-Arts",
+                    "Wolf-Fang"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Deepwood Memories"
                 ],
                 substats: [
-                    "Energy Recharge"
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kinich",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Deals high Dendro damage.",
+                weapons: [
+                    "Fang of the Mountain King",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%",
+                    "ATK"
                 ]
             }
         ]
@@ -90,19 +95,35 @@ export const nicole = {
         description: "A high-tier team featuring Varka as main DPS with Anemo and converted elemental damage, supported by Prune's buffs, Nicole's shield, and Durin's off-field Pyro and RES shred.",
         members: [
             {
-                characterId: "varka",
-                role: "Main DPS",
-                roleDesc: "Main DPS. After Skill, enters mixed damage mode with normal/charged attacks.",
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Pyro Support. Off-field Pyro support (Pyro RES shred) or damage dealer.",
                 weapons: [
-                    "Game of the Mighty Wolf",
-                    "Serpent Spine"
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Gladiator's Destiny"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
                     "CRIT Rate",
                     "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "nicole",
+                role: "Support",
+                roleDesc: "Pyro Support. Shields and buffs team ATK based on maximum stats.",
+                weapons: [
+                    "Angelos' Heptades",
+                    "Flowing Purity"
+                ],
+                artifacts: [
+                    "4pc Celestial Gift"
+                ],
+                substats: [
                     "ATK%",
                     "ATK"
                 ]
@@ -124,9 +145,34 @@ export const nicole = {
                 ]
             },
             {
+                characterId: "varka",
+                role: "Main DPS",
+                roleDesc: "Main DPS. After Skill, enters mixed damage mode with normal/charged attacks.",
+                weapons: [
+                    "Game of the Mighty Wolf",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Gladiator's Destiny"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%",
+                    "ATK"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Nicole Anemo Team #1",
+        rank: "S",
+        description: "A high-tier team centered around Venti's Anemo damage and Nicole's support for Heaven characters. This team leverages element-synergies.",
+        members: [
+            {
                 characterId: "nicole",
                 role: "Support",
-                roleDesc: "Pyro Support. Shields and buffs team ATK based on maximum stats.",
+                roleDesc: "Pyro Support. Shields and buffs team ADC via Skill.",
                 weapons: [
                     "Angelos' Heptades",
                     "Flowing Purity"
@@ -139,31 +185,6 @@ export const nicole = {
                     "ATK"
                 ]
             },
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Pyro Support. Off-field Pyro support (Pyro RES shred) or damage dealer.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Nicole Anemo Team #1",
-        rank: "S",
-        description: "A high-tier team centered around Venti's Anemo damage and Nicole's support for Heaven characters. This team leverages element-synergies.",
-        members: [
             {
                 characterId: "venti",
                 role: "Main DPS",
@@ -215,22 +236,6 @@ export const nicole = {
                     "Energy Recharge",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "nicole",
-                role: "Support",
-                roleDesc: "Pyro Support. Shields and buffs team ADC via Skill.",
-                weapons: [
-                    "Angelos' Heptades",
-                    "Flowing Purity"
-                ],
-                artifacts: [
-                    "4pc Celestial Gift"
-                ],
-                substats: [
-                    "ATK%",
-                    "ATK"
-                ]
             }
         ]
     },
@@ -239,24 +244,6 @@ export const nicole = {
         rank: "S",
         description: "Anemo team centered around Venti's Stormeye and Swirl reactions. Faruzan boosts Anemo DMG, Durin applies off-field Pyro and reduces RES, and Nicole provides shields and ADC buffs.",
         members: [
-            {
-                characterId: "venti",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Summons a stormeye with Burst that pulls enemies and deals continuous Anemo damage.",
-                weapons: [
-                    "The Daybreak Chronicles",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Desert Pavilion Chronicle"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "faruzan",
                 role: "Support",
@@ -267,24 +254,6 @@ export const nicole = {
                 ],
                 artifacts: [
                     "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Pyro Support. Off-field Pyro support.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT Rate",
@@ -308,42 +277,35 @@ export const nicole = {
                     "ATK%",
                     "ATK"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Nicole Burning Team #1",
-        rank: "S",
-        description: "Burning team with Kinich as on-field Clorindo DPS. Durin and Nicole apply Pyro off-field, reducing enemy Pyro and Dendro RES via Burning. Iansan provides mobile ADC buff.",
-        members: [
+            },
             {
-                characterId: "kinich",
+                characterId: "venti",
                 role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Deals high Dendro damage.",
+                roleDesc: "Anemo Main DPS. Summons a stormeye with Burst that pulls enemies and deals continuous Anemo damage.",
                 weapons: [
-                    "Fang of the Mountain King",
-                    "Serpent Spine"
+                    "The Daybreak Chronicles",
+                    "Rust"
                 ],
                 artifacts: [
-                    "4pc Obsidian Codex"
+                    "4pc Desert Pavilion Chronicle"
                 ],
                 substats: [
-                    "CRIT Rate",
                     "CRIT DMG",
+                    "CRIT Rate",
                     "ATK%",
-                    "ATK"
+                    "Energy Recharge"
                 ]
             },
             {
-                characterId: "iansan",
+                characterId: "durin",
                 role: "Support",
-                roleDesc: "Electro Support. Buffs active character's ATK.",
+                roleDesc: "Pyro Support. Off-field Pyro support.",
                 weapons: [
-                    "Symphony of Signets",
-                    "Favonius Lance"
+                    "Mistsplitter Reforged",
+                    "Wolf-Fang"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT Rate",
@@ -351,11 +313,49 @@ export const nicole = {
                     "Energy Recharge",
                     "ATK%"
                 ]
+            }
+        ]
+    },
+    {
+        name: "Nicole Pyro Team #1",
+        rank: "SS",
+        description: "A team built around Varka as a mixed damage main DPS, with Anemo and converted elemental attacks, supported by Prune's buffs and ADC buffs, Nicole's shielding and ADC boosts, and Bennett's ATK buff and healing.",
+        members: [
+            {
+                characterId: "prune",
+                role: "Support",
+                roleDesc: "Anemo Support. Provides Pyro stand and ADC buffs via Pyro attacks.",
+                weapons: [
+                    "Angelos' Heptades",
+                    "Oathsworn Eye"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Restores health, provides huge ATK buff and healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge"
+                ]
             },
             {
                 characterId: "nicole",
                 role: "Support",
-                roleDesc: "Pyro Support. Shield and teamwide ATK% buff via Skill.",
+                roleDesc: "Pyro Support. Provides shields and teamwide ATK% buffs, synergizing with Celestial Gift set.",
                 weapons: [
                     "Angelos' Heptades",
                     "Flowing Purity"
@@ -369,21 +369,21 @@ export const nicole = {
                 ]
             },
             {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Pyro Support. Off-field Pyro support.",
+                characterId: "varka",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Enters mixed damage mode after using Skill, dealing Anemo and converted elemental damage.",
                 weapons: [
-                    "Mints-Arts",
-                    "Wolf-Fang"
+                    "Game of the Mighty Wolf",
+                    "Serpent Spine"
                 ],
                 artifacts: [
-                    "4pc Deepwood Memories"
+                    "4pc Gladiator's Destiny"
                 ],
                 substats: [
                     "CRIT Rate",
                     "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
+                    "ATK%",
+                    "ATK"
                 ]
             }
         ]
@@ -503,30 +503,9 @@ export const nicole = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Phước Lành Trời Cao",
-        setNameEn: "Phước Lành Trời Cao",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Tấn Công%"
-        ],
-        circlet: [
-            "Tấn Công%",
-            "Tỷ Lệ Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%",
-            "Tỷ Lệ Bạo Kích"
-        ]
-    },
-    {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        pieces: 4,
+        setNameVi: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
+        setNameEn: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
+        pieces: 2,
         sands: [
             "Hiệu Quả Nạp",
             "Tấn Công%"
@@ -566,9 +545,30 @@ export const nicole = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
-        setNameEn: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
-        pieces: 2,
+        setNameVi: "Phước Lành Trời Cao",
+        setNameEn: "Phước Lành Trời Cao",
+        pieces: 4,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Tấn Công%"
+        ],
+        circlet: [
+            "Tấn Công%",
+            "Tỷ Lệ Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%",
+            "Tỷ Lệ Bạo Kích"
+        ]
+    },
+    {
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
             "Tấn Công%"

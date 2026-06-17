@@ -136,6 +136,28 @@ const getSplashUrl = (name: string) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { baizhu } from './characters/baizhu';
 import { lynette } from './characters/lynette';
 import { lyney } from './characters/lyney';
@@ -195,6 +217,7 @@ import { travelerHydro } from './characters/traveler-hydro';
 import { travelerPyro } from './characters/traveler-pyro';
 import { traveler } from './characters/traveler';
 import { albedo } from './characters/albedo';
+import { xiangling } from './characters/xiangling';
 import { kamisatoAyaka } from './characters/kamisato-ayaka';
 import { jean } from './characters/jean';
 import { lisa } from './characters/lisa';
@@ -204,7 +227,6 @@ import { diluc } from './characters/diluc';
 import { razor } from './characters/razor';
 import { amber } from './characters/amber';
 import { venti } from './characters/venti';
-import { xiangling } from './characters/xiangling';
 import { beidou } from './characters/beidou';
 import { xingqiu } from './characters/xingqiu';
 import { xiao } from './characters/xiao';
@@ -321,6 +343,7 @@ const metaBuilds = [
   travelerPyro,
   traveler,
   albedo,
+  xiangling,
   kamisatoAyaka,
   jean,
   lisa,
@@ -330,7 +353,6 @@ const metaBuilds = [
   razor,
   amber,
   venti,
-  xiangling,
   beidou,
   xingqiu,
   xiao,

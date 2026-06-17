@@ -55,11 +55,11 @@ ${artifactEntries.join(',\n')}
   
   const characters = await prisma.character.findMany({
     include: {
-      bestWeapons: { orderBy: { rank: 'asc' } },
-      bestArtifacts: { orderBy: { order: 'asc' } },
+      bestWeapons: { orderBy: [{ rank: 'asc' }, { id: 'asc' }] },
+      bestArtifacts: { orderBy: [{ order: 'asc' }, { id: 'asc' }] },
       teams: {
-        include: { members: true },
-        orderBy: { order: 'asc' }
+        include: { members: { orderBy: { id: 'asc' } } },
+        orderBy: [{ order: 'asc' }, { id: 'asc' }]
       }
     }
   });
@@ -136,7 +136,7 @@ ${artifactEntries.join(',\n')}
 
   // We find the place to replace. This is a bit tricky with Regex.
   const modifiedContent = content
-    .replace(/import \{.*\} from '.\/characters\/.*';\n/g, '')
+    .replace(/import\s+\{[^}]+\}\s+from\s+['"]\.\/characters\/[^'"]+['"];\r?\n?/g, '')
     .replace(/const metaBuilds = \[[\s\S]*?\];/, `${importsStr}\n\n${arrayStr}`);
 
   // In case the replace failed (no match), append

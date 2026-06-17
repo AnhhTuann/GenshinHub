@@ -18,39 +18,21 @@ export const travelerPyro = {
         description: "A Burning-focused team where Kinich deals high Dendro damage on-field, Emilie acts as an off-field Dendro Sub DPS, Bennett provides massive ATK buffs and healing, and Pyro Traveler applies consistent off-field Pyro.",
         members: [
             {
-                characterId: "kinich",
-                role: "Main DPS",
-                roleDesc: "On-field Dendro DPS. Uses his Elemental Skill to trigger loop shots and deals massive damage.",
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Healer/Buffer. Provides massive ATK buff and consistent healing via Elemental Burst.",
                 weapons: [
-                    "Fang of the Mountain King",
-                    "Earth Shaker"
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Obsidian Codex"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "emilie",
-                role: "Sub DPS",
-                roleDesc: "Off-field Dendro DPS. Amplifies Burning reaction damage and deals high consistent damage.",
-                weapons: [
-                    "Lumidouce Elegy",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Unfinished Reverie"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%"
                 ]
             },
             {
@@ -72,36 +54,29 @@ export const travelerPyro = {
                 ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Healer/Buffer. Provides massive ATK buff and consistent healing via Elemental Burst.",
+                characterId: "emilie",
+                role: "Sub DPS",
+                roleDesc: "Off-field Dendro DPS. Amplifies Burning reaction damage and deals high consistent damage.",
                 weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
+                    "Lumidouce Elegy",
+                    "Deathmatch"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Unfinished Reverie"
                 ],
                 substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%"
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Traveler Pyro Vaporize Team",
-        rank: "S",
-        description: "A premium Vaporize team featuring Mavuika as the primary on-field Pyro DPS, Furina for off-field Hydro application and DMG buffs, Xilonen for healing and RES shred, and Pyro Traveler for Pyro resonance and off-field support.",
-        members: [
+            },
             {
-                characterId: "mavuika",
+                characterId: "kinich",
                 role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Deals high on-field Pyro damage and coordinates attacks during her Burst.",
+                roleDesc: "On-field Dendro DPS. Uses his Elemental Skill to trigger loop shots and deals massive damage.",
                 weapons: [
-                    "Arianrhod",
+                    "Fang of the Mountain King",
                     "Earth Shaker"
                 ],
                 artifacts: [
@@ -112,6 +87,31 @@ export const travelerPyro = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Traveler Pyro Vaporize Team",
+        rank: "S",
+        description: "A premium Vaporize team featuring Mavuika as the primary on-field Pyro DPS, Furina for off-field Hydro application and DMG buffs, Xilonen for healing and RES shred, and Pyro Traveler for Pyro resonance and off-field support.",
+        members: [
+            {
+                characterId: "xilonen",
+                role: "Support / Healer",
+                roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "Energy Recharge",
+                    "DEF",
+                    "CRIT Rate"
                 ]
             },
             {
@@ -133,6 +133,24 @@ export const travelerPyro = {
                 ]
             },
             {
+                characterId: "mavuika",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Deals high on-field Pyro damage and coordinates attacks during her Burst.",
+                weapons: [
+                    "Arianrhod",
+                    "Earth Shaker"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "traveler-pyro",
                 role: "Support",
                 roleDesc: "Pyro Support. Enables Pyro resonance, helps keep Pyro/Hydro aura, and buffs the team with Instructor/Scroll.",
@@ -148,24 +166,6 @@ export const travelerPyro = {
                     "CRIT Rate",
                     "CRIT DMG",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support / Healer",
-                roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "Energy Recharge",
-                    "DEF",
-                    "CRIT Rate"
                 ]
             }
         ]
@@ -230,8 +230,54 @@ export const travelerPyro = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Scroll of the Hero of Cinder City",
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
+        pieces: 4,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "DEF%"
+        ]
+    },
+    {
+        setNameVi: "Mix 2 bộ Hiệu Quả Nạp +20%",
+        setNameEn: "Mix 2 bộ Hiệu Quả Nạp +20%",
+        pieces: 2,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "DEF%"
+        ]
+    },
+    {
+        setNameVi: "Giáo Quan",
+        setNameEn: "Instructor",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
@@ -276,55 +322,9 @@ export const travelerPyro = {
         ]
     },
     {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Noblesse Oblige",
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "DEF%"
-        ]
-    },
-    {
-        setNameVi: "Giáo Quan",
-        setNameEn: "Instructor",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "DEF%"
-        ]
-    },
-    {
-        setNameVi: "Mix 2 bộ Hiệu Quả Nạp +20%",
-        setNameEn: "Mix 2 bộ Hiệu Quả Nạp +20%",
-        pieces: 2,
         sands: [
             "Hiệu Quả Nạp",
             "Tấn Công%"

@@ -18,7 +18,7 @@ export const aloy = {
         nameVi: "Màn Mưa Tơ Lòng",
         nameEn: "Silvershower Heartstrings",
         subStat: null,
-        isF2P: true,
+        isF2P: false,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
@@ -40,7 +40,7 @@ export const aloy = {
         nameVi: "Màn Mưa Tơ Lòng",
         nameEn: "Silvershower Heartstrings",
         subStat: null,
-        isF2P: false,
+        isF2P: true,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
@@ -71,6 +71,15 @@ export const aloy = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Trái Tim Dũng Sĩ",
+        setNameEn: "Brave Heart",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
         setNameVi: "Đoàn Hát Lang Thang Đại Lục",
         setNameEn: "Wanderer's Troupe",
         pieces: 4,
@@ -99,15 +108,6 @@ export const aloy = {
     {
         setNameVi: "Trái Tim Hành Giả",
         setNameEn: "Resolution of Sojourner",
-        pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
-    },
-    {
-        setNameVi: "Trái Tim Dũng Sĩ",
-        setNameEn: "Brave Heart",
         pieces: 4,
         sands: [],
         goblet: [],

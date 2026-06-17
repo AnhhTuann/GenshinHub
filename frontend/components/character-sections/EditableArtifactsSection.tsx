@@ -124,6 +124,9 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
             } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
           >
             <div className="flex items-center gap-3">
+              <span className="w-6 h-6 shrink-0 rounded-full bg-purple-500/10 text-purple-400/80 flex items-center justify-center text-xs font-black border border-purple-500/15">
+                {idx + 1}
+              </span>
               <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider shrink-0 ${
                 idx === 0 
                   ? 'bg-purple-400/10 text-purple-400 border border-purple-400/20'

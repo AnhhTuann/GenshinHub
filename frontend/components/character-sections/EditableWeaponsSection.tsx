@@ -162,6 +162,9 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
             <div className={`bg-[#06060a]/50 border hover:border-amber-500/15 rounded-xl p-3 sm:p-4 flex gap-4 items-center transition-colors duration-200 ${
               dragOverItemIdx === idx ? 'border-amber-500/50' : 'border-white/[0.04]'
             }`}>
+              <span className="w-6 h-6 shrink-0 rounded-full bg-amber-500/10 text-amber-400/80 flex items-center justify-center text-xs font-black border border-amber-500/15">
+                {idx + 1}
+              </span>
               <div className={`relative w-16 h-16 shrink-0 rounded-lg border border-white/[0.05] flex items-center justify-center overflow-hidden ${
                 weapon.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
                 weapon.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#5b4d75]' :

@@ -247,13 +247,14 @@ export default function TeamFormModal({ isOpen, onClose, onSave, characterId, al
         toast.success("Team updated!");
         onSave({ id: initialData.id, ...input });
       } else {
-        await fetchGraphQL(`mutation AddTeam($characterId: String!, $name: String!, $rank: String!, $description: String!, $members: [TeamMemberInput!]!) {
-          addCharacterTeam(characterId: $characterId, name: $name, rank: $rank, description: $description, members: $members)
+        const data = await fetchGraphQL(`mutation AddTeam($characterId: String!, $name: String!, $rank: String!, $description: String!, $members: [TeamMemberInput!]!) {
+          addCharacterTeam(characterId: $characterId, name: $name, rank: $rank, description: $description, members: $members) {
+            id
+          }
         }`, { characterId, ...input });
         
         toast.success("Team added!");
-        // Generate a fake ID for local state until page reload
-        onSave({ id: Math.random().toString(), ...input });
+        onSave({ id: data.addCharacterTeam.id, ...input });
       }
       onClose();
     } catch (e: any) {

@@ -73,7 +73,7 @@ export const typeDefs = `#graphql
 
     # Character Detail Inline Edits
     updateCharacterSplashArt(id: String!, splashArtUrl: String!): Character
-    addCharacterTeam(characterId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): Boolean
+    addCharacterTeam(characterId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): TeamBuild
     updateCharacterTeam(teamId: String!, name: String!, rank: String!, description: String!, members: [TeamMemberInput!]!): Boolean
     removeCharacterTeam(teamId: String!): Boolean
     updateCharacterTierList(id: String!, tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]): Character

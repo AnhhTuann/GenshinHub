@@ -172,7 +172,7 @@ export const Mutation = {
   addCharacterTeam: async (_: any, args: any, context: any) => {
     requireAdmin(context);
     const { characterId, name, rank, description, members } = sanitize(args);
-    await prisma.characterTeam.create({
+    const newTeam = await prisma.characterTeam.create({
       data: {
         characterId,
         name,
@@ -188,10 +188,13 @@ export const Mutation = {
             substats: m.substats
           }))
         }
+      },
+      include: {
+        members: true
       }
     });
     exportDatabaseToSeeds().catch(console.error);
-    return true;
+    return newTeam;
   },
 
   updateCharacterTeam: async (_: any, args: any, context: any) => {

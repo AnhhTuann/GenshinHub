@@ -13,181 +13,23 @@ export const huTao = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Hu Tao Melt Team #1",
-        rank: "SS",
-        description: "Hu Tao is the main DPS, her DMG is amplified by Melt. Two Cryo characters provide resonance, increasing CRIT Rate against enemies affected by Cryo or Frozen. Hu Tao's Pyro attacks trigger Melt reactions against Cryo-applied enemies, boosted by Cryo resonance for extra CRIT Rate.",
-        members: [
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Hu Tao's DMG is amplified by Melt.",
-                weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Xingqiu's Burst continuously applies Hydro to trigger Vaporize with Hu Tao and Freeze with Rosaria.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "2pc Heart of Depth + 2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "rosaria",
-                role: "Sub DPS",
-                roleDesc: "Rosaria's Burst deals Cryo DMG and provides CRIT Rate share to party. Melt with Hu Tao and Freeze with Xingqiu.",
-                weapons: [
-                    "Skyward Spine",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona provides shield and healing. At C6 with Instructor, she boosts party Elemental Mastery by 320 (including Instructor bonus).",
-                weapons: [
-                    "Elegy for the End",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Instructor"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Hu Tao Melt Team #2",
-        rank: "S",
-        description: "Hu Tao triggers Melt on Cryo-affected enemies for massive damage. Ayaka provides off-field Cryo application, Kazuha shreds resistance and buffs, Bennett heals and boosts ATK. Hu Tao triggers Melt on Cryo-affected enemies for massive single-target damage.",
-        members: [
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Main DPS whose damage is amplified by Melt.",
-                weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS applying Cryo via Burst for Hu Tao to Melt.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "2pc Blizzard Strayer + 2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "VV shred, crowd control, and elemental damage buffs.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Healing and massive ATK buff from Burst.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Hu Tao Vaporize",
         rank: "SS",
-        description: "Hu Tao is the Pyro main DPS, with damage amplified by Vaporize reactions. Hu Tao triggers Vaporize on enemies affected by Xingqiu's Burst. Kazuha groups enemies and buffs Pyro DMG, while Zhongli provides a shield and ATK boost with Tenacity of the Millelith.",
+        description: "Hu Tao is the Pyro main DPS, with damage amplified by Vaporize reactions.\n\nHu Tao triggers Vaporize on enemies affected by Xingqiu's Burst. Kazuha groups enemies and buffs Pyro DMG, while Zhongli provides a shield and ATK boost with Tenacity of the Millelith",
         members: [
             {
                 characterId: "hu-tao",
                 role: "Main DPS",
                 roleDesc: "Main DPS, DMG amplified by Vaporize.",
                 weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
+                    "Staff of Homa"
                 ],
                 artifacts: [
                     "Shimenawa's Reminiscence"
                 ],
                 substats: [
-                    "CRIT DMG",
                     "CRIT Rate",
+                    "CRIT DMG",
                     "HP%",
                     "Elemental Mastery",
                     "ATK%"
@@ -232,7 +74,7 @@ export const huTao = {
             {
                 characterId: "zhongli",
                 role: "Support",
-                roleDesc: "Provides a shield and ATK buff with Tenacity of the Millelith set.",
+                roleDesc: "Provides a shield and ATK buff with &lt;artifact&gt;Tenacity of the Millelith&lt;/artifact&gt; set.",
                 weapons: [
                     "Staff of Homa",
                     "Black Tassel"
@@ -242,53 +84,8 @@ export const huTao = {
                 ],
                 substats: [
                     "HP%",
-                    "HP",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Hu Tao Vaporize",
-        rank: "SS",
-        description: "Hu Tao triggers Vaporize on enemies affected by Xingqiu's Burst. Kazuha groups enemies and buffs Pyro DMG, while Zhongli provides a shield and ATK boost with Tenacity of the Millelith",
-        members: [
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Main DPS, DMG amplified by Vaporize.",
-                weapons: [
-                    "Staff of Homa"
-                ],
-                artifacts: [
-                    "Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "adsadsd",
-        rank: "SS",
-        description: "ádadsda",
-        members: [
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "",
-                weapons: [
-                    "A Thousand Blazing Suns"
-                ],
-                artifacts: [
-                    "Resolution of Sojourner"
-                ],
-                substats: []
             }
         ]
     }

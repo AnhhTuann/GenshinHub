@@ -91,5 +91,14 @@
     "phase": "Phase",
     "characters": "Characters",
     "weapons": "Weapons"
+  },
+  "Materials": {
+    "title": "MATERIALS DATABASE",
+    "description": "Browse all items, ascension materials, and resources.",
+    "searchPlaceholder": "Search materials...",
+    "addMaterial": "Add Material",
+    "noMaterials": "No materials found.",
+    "editMaterials": "Edit Materials",
+    "moraCost": "Mora Cost"
   }
 }

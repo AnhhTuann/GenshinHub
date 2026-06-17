@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 interface MatItem {
@@ -17,9 +17,21 @@ interface AscensionLevelCost {
 interface CharacterAscensionMatsSectionProps {
   ascensionMats?: AscensionLevelCost[] | null;
   allMaterials: any[];
+  characterId: string;
 }
 
-export default function CharacterAscensionMatsSection({ ascensionMats, allMaterials }: CharacterAscensionMatsSectionProps) {
+import { useRouter } from 'next/navigation';
+import AscensionMatsFormModal from '../admin/AscensionMatsFormModal';
+
+export default function CharacterAscensionMatsSection({ ascensionMats, allMaterials, characterId }: CharacterAscensionMatsSectionProps) {
+  const router = useRouter();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+
+  React.useEffect(() => {
+    setIsAdmin(!!localStorage.getItem('admin_key'));
+  }, []);
+
   // Mock data if none provided
   const displayMats: AscensionLevelCost[] = ascensionMats && ascensionMats.length > 0 
     ? ascensionMats 
@@ -54,8 +66,32 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
     return { nameEn: id.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), iconUrl: null };
   };
 
+  const getValidIconUrl = (url: string | undefined): string => {
+    if (!url) return '';
+    let finalUrl = url;
+    if (!finalUrl.startsWith('http') && !finalUrl.startsWith('/')) {
+      finalUrl = `https://gi.yatta.moe/assets/UI/${finalUrl}`;
+    }
+    if (finalUrl.includes('enka.network/ui/')) {
+      finalUrl = finalUrl.replace('https://enka.network/ui/', 'https://gi.yatta.moe/assets/UI/');
+    }
+    if (!finalUrl.match(/\.(png|jpg|jpeg|webp|svg)$/)) {
+      finalUrl += '.png';
+    }
+    return finalUrl;
+  };
+
   return (
-    <div className="bg-transparent border border-white/5 rounded-2xl p-5 mb-8">
+    <div className="bg-transparent border border-white/5 rounded-2xl p-5 mb-8 relative group/section">
+      {isAdmin && (
+        <button
+          onClick={() => setIsEditing(true)}
+          className="absolute top-5 right-5 z-10 opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded hover:bg-amber-500/30 transition-all border border-amber-500/30"
+        >
+          ✏️ Edit Materials
+        </button>
+      )}
+
       {/* Top Total Grid */}
       <div className="flex flex-wrap gap-2.5 mb-6">
         {/* Mora Card */}
@@ -113,7 +149,7 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
                       return (
                         <div key={i} className="relative group/mat flex flex-col items-center">
                           <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-white/[0.08] to-transparent border border-white/[0.06] p-1 mb-1">
-                            {mat.iconUrl ? <Image src={mat.iconUrl} alt={mat.nameEn} fill className="object-contain drop-shadow" /> : <div className="text-white/20 text-[8px] text-center w-full h-full flex items-center justify-center">NO ICON</div>}
+                            {mat.iconUrl ? <Image src={getValidIconUrl(mat.iconUrl)} alt={mat.nameEn} fill className="object-contain drop-shadow" unoptimized /> : <div className="text-white/20 text-[8px] text-center w-full h-full flex items-center justify-center">NO ICON</div>}
                             <span className="absolute -bottom-1.5 -right-1.5 bg-[#1a1a24] border border-white/10 rounded px-1.5 py-0.5 min-w-[18px] text-center text-[9px] font-black text-white z-10 shadow-lg">
                               {item.count}
                             </span>
@@ -128,6 +164,16 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
           </tbody>
         </table>
       </div>
+
+      {isEditing && (
+        <AscensionMatsFormModal
+          characterId={characterId}
+          initialMats={displayMats}
+          allMaterials={allMaterials}
+          onClose={() => setIsEditing(false)}
+          onSaved={() => router.refresh()}
+        />
+      )}
     </div>
   );
 }

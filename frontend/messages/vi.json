@@ -91,5 +91,14 @@
     "phase": "Giai Đoạn",
     "characters": "Nhân Vật",
     "weapons": "Vũ Khí"
+  },
+  "Materials": {
+    "title": "NGUYÊN LIỆU",
+    "description": "Tra cứu thông tin, vật phẩm và nguyên liệu nâng cấp.",
+    "searchPlaceholder": "Tìm kiếm nguyên liệu...",
+    "addMaterial": "Thêm Vật Liệu",
+    "noMaterials": "Không tìm thấy nguyên liệu.",
+    "editMaterials": "Sửa Vật Liệu",
+    "moraCost": "Mora"
   }
 }

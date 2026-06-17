@@ -76,6 +76,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   { href: '/artifacts', label: t('artifacts'), icon: '💎' },
                   { href: '/tcg', label: t('tcg'), icon: '🃏' },
                   { href: '/tierlist', label: t('tierlist'), icon: '🏆' },
+                  { href: '/materials', label: 'Materials', icon: '📦' },
                   { href: '/teams', label: 'Teams', icon: '👥' },
                   { href: '/showcase', label: t('showcase'), icon: '🔍' },
                   { href: '/banners', label: 'Banners', icon: '📜' },

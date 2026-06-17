@@ -90,6 +90,8 @@ export const typeDefs = `#graphql
     
     updateCharacterTalents(id: String!, talentPriority: [String!]!): Character
     updateCharacterArtifactStats(id: String!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!): Boolean
+    updateCharacterStats(id: String!, stats: JSON!): Character
+    updateCharacterAscensionMats(id: String!, ascensionMats: JSON!): Character
     
     # Export DB state back to TS seeds
     exportDatabaseToSeeds: Boolean

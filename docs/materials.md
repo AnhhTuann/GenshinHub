@@ -195,3 +195,29 @@ UI_FlycloakIcon_[Key].png    → Cánh (Glider)
 > ```
 > 
 > Chỉ khi có sự cố mạng hoặc cần offline mới cần download về `frontend/public/images/materials/`
+# 📦 Materials Image Filename Mapping
+# Format: Tên File → ID Vật liệu | Tên EN | Tên VN
+
+> Dùng để tra cứu hình ảnh nguyên liệu, vật liệu nâng cấp.  
+> Đặt vào: `frontend/public/images/materials/`  
+> ID vật liệu thường là tên tiếng Anh chuyển thành chữ thường và dùng gạch dưới (snake_case).
+
+## 💡 Quy tắc đặt tên và cấu trúc ID
+
+- **Prefix**: `UI_ItemIcon_` (thường dùng cho nguyên liệu, một số có thể khác tùy theo asset game gốc)
+- **ID (Database)**: Sử dụng tên tiếng Anh, chuyển thành chữ thường, dấu cách thay bằng dấu gạch dưới `_`.
+  - *Ví dụ:* `Prithiva Topaz Sliver` → `prithiva_topaz_sliver`
+  - *Ví dụ:* `Silk Flower` → `silk_flower`
+
+## 📊 Các loại vật liệu phổ biến
+1. **Đá đột phá (Ascension Gems)**
+   - `prithiva_topaz_sliver` (Mảnh)
+   - `prithiva_topaz_fragment` (Mảnh vỡ)
+   - `prithiva_topaz_chunk` (Miếng)
+   - `prithiva_topaz_gemstone` (Khối)
+2. **Đặc sản địa phương (Local Specialties)**
+   - `silk_flower`, `juvenile_jade`, v.v.
+3. **Vật liệu quái vật (Monster Drops)**
+   - `whopperflower_nectar`, `shimmering_nectar`, `energy_nectar`, v.v.
+
+Khi thêm một vật liệu mới vào Database qua trang `/materials`, bạn hãy copy tên file ảnh tương ứng bỏ vào mục `Icon URL` (vd: `/images/materials/UI_ItemIcon_202.png`).

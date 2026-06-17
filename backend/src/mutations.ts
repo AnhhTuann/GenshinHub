@@ -360,6 +360,26 @@ export const Mutation = {
     return true;
   },
 
+  updateCharacterStats: async (_: any, { id, stats }: any, context: any) => {
+    requireAdmin(context);
+    const c = await prisma.character.update({
+      where: { id },
+      data: { stats }
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return c;
+  },
+
+  updateCharacterAscensionMats: async (_: any, { id, ascensionMats }: any, context: any) => {
+    requireAdmin(context);
+    const c = await prisma.character.update({
+      where: { id },
+      data: { ascensionMats }
+    });
+    exportDatabaseToSeeds().catch(console.error);
+    return c;
+  },
+  
   exportDatabaseToSeeds: async (_: any, __: any, context: any) => {
     requireAdmin(context);
     return await exportDatabaseToSeeds();

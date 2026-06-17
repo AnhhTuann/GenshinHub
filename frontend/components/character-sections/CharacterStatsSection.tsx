@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface StatEntry {
   level: string; // e.g., "Lv.1", "Lv.20", "Lv.40"
@@ -19,7 +19,18 @@ interface CharacterStatsSectionProps {
   baseDef?: number;
 }
 
-export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef }: CharacterStatsSectionProps) {
+import { useRouter } from 'next/navigation';
+import CharacterStatsFormModal from '../admin/CharacterStatsFormModal';
+
+export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef, characterId }: CharacterStatsSectionProps & { characterId: string }) {
+  const router = useRouter();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(!!localStorage.getItem('admin_key'));
+  }, []);
+
   // Extract unique levels for the tabs
   const levels = stats ? Array.from(new Set(stats.map(s => s.level))) : ['Lv.1', 'Lv.20', 'Lv.40', 'Lv.50', 'Lv.60', 'Lv.70', 'Lv.80', 'Lv.90'];
   const [activeLevel, setActiveLevel] = useState(levels[levels.length - 1]);
@@ -64,7 +75,16 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef 
   const specialName = before?.specialStatName || 'Special Stat';
 
   return (
-    <div className="bg-transparent border border-white/5 rounded-2xl p-5 mb-8">
+    <div className="bg-transparent border border-white/5 rounded-2xl p-5 mb-8 relative group/section">
+      {isAdmin && (
+        <button
+          onClick={() => setIsEditing(true)}
+          className="absolute top-5 right-5 z-10 opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-bold rounded hover:bg-cyan-500/30 transition-all border border-cyan-500/30"
+        >
+          ✏️ Edit Stats
+        </button>
+      )}
+
       {/* Tabs */}
       <div className="flex flex-wrap gap-1.5 mb-6">
         {levels.map(lv => (
@@ -121,6 +141,15 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef 
           </tbody>
         </table>
       </div>
+
+      {isEditing && (
+        <CharacterStatsFormModal
+          characterId={characterId}
+          initialStats={stats || mockStats}
+          onClose={() => setIsEditing(false)}
+          onSaved={() => router.refresh()}
+        />
+      )}
     </div>
   );
 }

@@ -6,13 +6,30 @@ export const mavuika = {
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
-  ascensionMats: null,
+  ascensionMats: [
+  {
+    "mora": 0,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104113"
+      },
+      {
+        "count": 1,
+        "materialId": "104112"
+      }
+    ],
+    "level": "Lv."
+  }
+],
   talentPriority: [
   "Burst",
   "Skill",
   "Normal Attack"
 ],
-  signatureWeapons: [],
+  signatureWeapons: [
+  "A Thousand Blazing Suns"
+],
   teams: [
     {
         name: "Mavuika Overload Vanguard",

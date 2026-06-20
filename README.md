@@ -72,6 +72,25 @@ npm install
 npm run dev          # Chạy frontend ở http://localhost:3000
 ```
 
+### 5. Khởi động bằng Docker (Dành cho Production/Deployment)
+Cả Backend và Frontend đều đã được cấu hình sẵn `Dockerfile` để triển khai thực tế.
+- **Backend Docker:**
+  ```bash
+  cd backend
+  docker build -t genshinhub-backend .
+  docker run -p 4000:4000 -e DATABASE_URL="postgresql://postgres:postgrespassword@host.docker.internal:5433/genshinhub" genshinhub-backend
+  ```
+  *(Lưu ý: Bạn cần chạy `docker-compose up -d` trước để có database, và dùng `host.docker.internal` để backend kết nối được tới database trên máy chủ)*
+
+- **Frontend Docker:**
+  ```bash
+  cd frontend
+  # Lưu ý: Khi build Frontend, Next.js sẽ cần gọi API để tạo trang tĩnh (SSG). 
+  # Hãy đảm bảo Backend đang chạy hoặc truyền biến môi trường API thực tế vào:
+  docker build --build-arg NEXT_PUBLIC_GRAPHQL_URL="http://host.docker.internal:4000/graphql" -t genshinhub-frontend .
+  docker run -p 3000:3000 genshinhub-frontend
+  ```
+
 ---
 
 ## 🗄️ Quản lý Cơ sở dữ liệu (Prisma Studio)

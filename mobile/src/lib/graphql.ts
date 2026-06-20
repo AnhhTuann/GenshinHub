@@ -47,4 +47,4 @@ export const REORDER_TEAMS = `mutation ReorderTeams($teamIds: [String!]!) { reor
 export const REORDER_WEAPONS = `mutation ReorderWeapons($weaponIds: [String!]!) { reorderCharacterWeapons(weaponIds: $weaponIds) }`;
 export const REORDER_ARTIFACTS = `mutation ReorderArtifacts($artifactIds: [String!]!) { reorderCharacterArtifacts(artifactIds: $artifactIds) }`;
 
-export const GET_TEAMS_DATA = `query GetTeamsData { characters { id nameEn nameVi avatarUrl teams { id name rank description members { id characterId role roleDesc weapons artifacts substats } } } }`;
+export const GET_TEAMS_DATA = `query GetTeamsData { characters { id nameEn avatarUrl teams { id name rank } } }`;

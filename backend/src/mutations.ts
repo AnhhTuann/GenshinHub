@@ -1,9 +1,16 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from './prisma';
 import { exportDatabaseToSeeds } from './exportData';
 import xss from 'xss';
+import { clearAllCaches } from './cache';
+import { resetArtifactSetLookup } from './resolvers';
 
-const prisma = new PrismaClient();
-
+let exportTimeout: NodeJS.Timeout | null = null;
+function debouncedExport() {
+  if (exportTimeout) clearTimeout(exportTimeout);
+  exportTimeout = setTimeout(() => {
+    exportDatabaseToSeeds().catch(console.error);
+  }, 2000);
+}
 function sanitize(input: any): any {
   if (typeof input === 'string') return xss(input);
   if (Array.isArray(input)) return input.map(sanitize);
@@ -30,13 +37,17 @@ export const Mutation = {
       update: sanitizedInput,
       create: sanitizedInput,
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return w;
   },
   deleteWeapon: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.weapon.delete({ where: { id } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -48,13 +59,17 @@ export const Mutation = {
       update: sanitizedInput,
       create: sanitizedInput,
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return a;
   },
   deleteArtifactSet: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.artifactSet.delete({ where: { id } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -66,13 +81,17 @@ export const Mutation = {
       update: sanitizedInput,
       create: sanitizedInput,
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
   deleteMaterial: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.material.delete({ where: { id } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -146,7 +165,9 @@ export const Mutation = {
       }
     }
 
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return updatedChar;
   },
   deleteCharacter: async (_: any, { id }: any, context: any) => {
@@ -155,7 +176,9 @@ export const Mutation = {
     await prisma.characterWeapon.deleteMany({ where: { characterId: id } });
     await prisma.characterArtifact.deleteMany({ where: { characterId: id } });
     await prisma.character.delete({ where: { id } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -166,7 +189,9 @@ export const Mutation = {
       where: { id },
       data: { splashArtUrl },
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return c;
   },
   
@@ -194,7 +219,9 @@ export const Mutation = {
         members: true
       }
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return newTeam;
   },
 
@@ -223,14 +250,18 @@ export const Mutation = {
         }
       }
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
   removeCharacterTeam: async (_: any, { teamId }: any, context: any) => {
     requireAdmin(context);
     await prisma.characterTeam.delete({ where: { id: teamId } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -240,7 +271,9 @@ export const Mutation = {
       prisma.characterTeam.update({ where: { id }, data: { order: index } })
     );
     await prisma.$transaction(updates);
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -250,7 +283,9 @@ export const Mutation = {
       prisma.characterWeapon.update({ where: { id }, data: { rank: index } })
     );
     await prisma.$transaction(updates);
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -260,7 +295,9 @@ export const Mutation = {
       prisma.characterArtifact.update({ where: { id }, data: { order: index } })
     );
     await prisma.$transaction(updates);
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
   
@@ -271,7 +308,9 @@ export const Mutation = {
       where: { id },
       data: { tier, role, recommendedC, tierNoteEn, tierNoteVi },
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return c;
   },
   
@@ -282,7 +321,9 @@ export const Mutation = {
       where: { id },
       data: { tier },
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return w;
   },
 
@@ -302,14 +343,18 @@ export const Mutation = {
         iconUrl: weapon.iconUrl,
       }
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
   removeCharacterWeapon: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.characterWeapon.delete({ where: { id } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -328,14 +373,18 @@ export const Mutation = {
         subStatsPriority
       }
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
   removeCharacterArtifact: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.characterArtifact.delete({ where: { id } });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -345,7 +394,9 @@ export const Mutation = {
       where: { id },
       data: { talentPriority },
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return c;
   },
 
@@ -356,7 +407,9 @@ export const Mutation = {
       where: { id },
       data: { sands, goblet, circlet, subStatsPriority },
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return true;
   },
 
@@ -366,7 +419,9 @@ export const Mutation = {
       where: { id },
       data: { stats }
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
     return c;
   },
 
@@ -376,7 +431,7 @@ export const Mutation = {
       where: { id },
       data: { ascensionMats }
     });
-    exportDatabaseToSeeds().catch(console.error);
+    clearAllCaches(); resetArtifactSetLookup(); debouncedExport();
     return c;
   },
   

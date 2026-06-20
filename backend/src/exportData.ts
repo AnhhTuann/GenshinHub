@@ -1,19 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { PrismaClient } from '@prisma/client';
-import { charactersCache, characterCache, weaponsCache, showcaseCache } from './cache';
-
-const prisma = new PrismaClient();
+import { prisma } from './prisma';
 
 export async function exportDatabaseToSeeds() {
   console.log("Exporting database to TS files...");
-  
-  // Clear all caches so subsequent fetches get fresh data
-  charactersCache.clear();
-  characterCache.clear();
-  weaponsCache.clear();
-  showcaseCache.clear();
-  console.log("Caches cleared.");
 
   // ===== Export Weapons =====
   try {

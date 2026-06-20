@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, ActivityIndicator, Image } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL, GET_TEAMS_DATA } from '@/lib/graphql';
 

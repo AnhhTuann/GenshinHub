@@ -1,4 +1,5 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { Image } from 'expo-image';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { ChevronLeft } from 'lucide-react-native';
@@ -46,7 +47,7 @@ export default function BannersScreen() {
                     <View className="mb-4">
                       <Text className="text-white/50 text-xs font-bold uppercase mb-2">Characters</Text>
                       {versionBlock.phases[0].characterBanners.map((img, i) => (
-                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" resizeMode="cover" />
+                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" contentFit="cover" />
                       ))}
                     </View>
                   )}
@@ -54,7 +55,7 @@ export default function BannersScreen() {
                     <View>
                       <Text className="text-white/50 text-xs font-bold uppercase mb-2">Weapons</Text>
                       {versionBlock.phases[0].weaponBanners.map((img, i) => (
-                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" resizeMode="cover" />
+                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" contentFit="cover" />
                       ))}
                     </View>
                   )}
@@ -73,7 +74,7 @@ export default function BannersScreen() {
                     <View className="mb-4">
                       <Text className="text-white/50 text-xs font-bold uppercase mb-2">Characters</Text>
                       {versionBlock.phases[1].characterBanners.map((img, i) => (
-                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" resizeMode="cover" />
+                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" contentFit="cover" />
                       ))}
                     </View>
                   )}
@@ -81,7 +82,7 @@ export default function BannersScreen() {
                     <View>
                       <Text className="text-white/50 text-xs font-bold uppercase mb-2">Weapons</Text>
                       {versionBlock.phases[1].weaponBanners.map((img, i) => (
-                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" resizeMode="cover" />
+                        <Image key={i} source={{ uri: img }} className="w-full h-32 rounded-lg mb-2" contentFit="cover" />
                       ))}
                     </View>
                   )}

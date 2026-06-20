@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { fetchGraphQL, GET_WEAPONS } from '@/lib/graphql';
@@ -72,7 +73,7 @@ export default function WeaponsScreen() {
               >
                 <View className={`h-24 w-full items-center justify-center border-b ${getRarityColor(w.rarity)}`}>
                   {w.iconUrl ? (
-                    <Image source={{ uri: w.iconUrl }} className="w-20 h-20" resizeMode="contain" />
+                    <Image source={{ uri: w.iconUrl }} className="w-20 h-20" contentFit="contain" />
                   ) : (
                     <Text className="text-white/30 text-xs">No Icon</Text>
                   )}

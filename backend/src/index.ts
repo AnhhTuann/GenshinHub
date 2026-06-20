@@ -55,14 +55,34 @@ async function startServer() {
       cb(null, uniqueSuffix + path.extname(file.originalname));
     }
   });
-  const upload = multer({ storage });
+  const upload = multer({ 
+    storage,
+    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max
+    fileFilter: (_req, file, cb) => {
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+      if (allowedTypes.includes(file.mimetype)) {
+        cb(null, true);
+      } else {
+        cb(new Error('Only image files (JPEG, PNG, GIF, WebP) are allowed'));
+      }
+    }
+  });
 
-  // Upload endpoint (requires admin key)
-  app.post('/upload', upload.single('image'), (req, res) => {
+  // Auth middleware
+  const requireAdminMiddleware = (req: any, res: any, next: any) => {
     const adminKey = req.headers['x-admin-key'];
-    if (adminKey !== (process.env.ADMIN_PASSWORD || 'admin123')) {
+    if (!process.env.ADMIN_PASSWORD) {
+      console.warn("Upload rejected: ADMIN_PASSWORD not configured");
+      return res.status(500).json({ error: 'ADMIN_PASSWORD not configured' });
+    }
+    if (adminKey !== process.env.ADMIN_PASSWORD) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
+    next();
+  };
+
+  // Upload endpoint (requires admin key)
+  app.post('/upload', requireAdminMiddleware, upload.single('image'), (req, res) => {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded' });
     }
@@ -84,10 +104,17 @@ async function startServer() {
   app.use('/graphql', expressMiddleware(server, {
     context: async ({ req }) => {
       const adminKey = req.headers['x-admin-key'];
-      const isAdmin = adminKey === (process.env.ADMIN_PASSWORD || 'admin123');
+      const isAdmin = !!process.env.ADMIN_PASSWORD && adminKey === process.env.ADMIN_PASSWORD;
+      if (!process.env.ADMIN_PASSWORD) {
+        console.warn("GraphQL admin access denied: ADMIN_PASSWORD not configured");
+      }
       return { isAdmin };
     },
   }));
+
+  if (!process.env.ADMIN_PASSWORD) {
+    console.warn('⚠️  WARNING: ADMIN_PASSWORD environment variable is not set. All admin requests will be rejected.');
+  }
 
   const PORT = Number(process.env.PORT || 4000);
   app.listen(PORT, () => {

@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL, GET_MATERIALS } from '@/lib/graphql';
 
@@ -50,7 +51,7 @@ export default function MaterialsScreen() {
               <View key={m.id} className="w-[30%] bg-white/5 rounded-xl border border-white/10 overflow-hidden mb-2 items-center p-2">
                 <View className="w-16 h-16 mb-2 items-center justify-center">
                   {m.iconUrl ? (
-                    <Image source={{ uri: m.iconUrl }} className="w-14 h-14" resizeMode="contain" />
+                    <Image source={{ uri: m.iconUrl }} className="w-14 h-14" contentFit="contain" />
                   ) : (
                     <Text className="text-white/30 text-[10px]">No Icon</Text>
                   )}

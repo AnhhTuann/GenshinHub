@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { fetchGraphQL, GET_ARTIFACTS } from '@/lib/graphql';
@@ -56,7 +57,7 @@ export default function ArtifactsScreen() {
               >
                 <View className="w-20 h-20 bg-yellow-500/20 border border-yellow-500 rounded-xl items-center justify-center">
                   {a.iconUrl ? (
-                    <Image source={{ uri: a.iconUrl }} className="w-16 h-16" resizeMode="contain" />
+                    <Image source={{ uri: a.iconUrl }} className="w-16 h-16" contentFit="contain" />
                   ) : (
                     <Text className="text-white/30 text-xs">No Icon</Text>
                   )}

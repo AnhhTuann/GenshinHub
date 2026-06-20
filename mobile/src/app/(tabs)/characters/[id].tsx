@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL, GET_CHARACTER_BY_ID } from '@/lib/graphql';
@@ -48,7 +49,7 @@ export default function CharacterDetailScreen() {
       {/* Splash Art Header */}
       <View className="h-96 w-full relative">
         {character.splashArtUrl && (
-          <Image source={{ uri: character.splashArtUrl }} className="w-full h-full absolute" resizeMode="cover" />
+          <Image source={{ uri: character.splashArtUrl }} className="w-full h-full absolute" contentFit="cover" />
         )}
         {/* Gradient Overlay */}
         <View className="absolute inset-0 bg-black/40" />
@@ -106,7 +107,7 @@ export default function CharacterDetailScreen() {
             {character.bestWeapons?.map((w: any, idx: number) => (
               <View key={idx} className="bg-white/5 border border-white/10 rounded-xl p-3 flex-row items-center gap-3">
                 <View className="w-12 h-12 bg-black/50 rounded-lg border border-white/10 overflow-hidden">
-                  {w.iconUrl && <Image source={{ uri: w.iconUrl }} className="w-full h-full" resizeMode="contain" />}
+                  {w.iconUrl && <Image source={{ uri: w.iconUrl }} className="w-full h-full" contentFit="contain" />}
                 </View>
                 <View className="flex-1">
                   <Text className="text-white font-bold text-sm">{w.nameEn}</Text>
@@ -124,7 +125,7 @@ export default function CharacterDetailScreen() {
             {character.bestArtifacts?.map((a: any, idx: number) => (
               <View key={idx} className="bg-white/5 border border-white/10 rounded-xl p-3 flex-row items-center gap-3">
                 <View className="w-12 h-12 bg-yellow-500/20 rounded-lg border border-yellow-500/50 overflow-hidden items-center justify-center">
-                  {a.iconUrl ? <Image source={{ uri: a.iconUrl }} className="w-10 h-10" resizeMode="contain" /> : <Text className="text-white/30 text-[10px]">No Icon</Text>}
+                  {a.iconUrl ? <Image source={{ uri: a.iconUrl }} className="w-10 h-10" contentFit="contain" /> : <Text className="text-white/30 text-[10px]">No Icon</Text>}
                 </View>
                 <View className="flex-1">
                   <Text className="text-white font-bold text-sm">{a.setNameEn}</Text>

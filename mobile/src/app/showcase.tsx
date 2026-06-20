@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState } from 'react';
-import { View, Text, ScrollView, Image, ActivityIndicator, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, TextInput, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL, GET_SHOWCASE } from '@/lib/graphql';
 import { Search } from 'lucide-react-native';
@@ -67,7 +68,7 @@ export default function ShowcaseScreen() {
           <View className="bg-white/5 rounded-xl border border-white/10 overflow-hidden p-6 items-center">
             <View className="w-24 h-24 rounded-full border-2 border-[#cfa858] overflow-hidden mb-4">
               {data.avatarUrl ? (
-                <Image source={{ uri: data.avatarUrl }} className="w-full h-full" resizeMode="cover" />
+                <Image source={{ uri: data.avatarUrl }} className="w-full h-full" contentFit="cover" />
               ) : (
                 <View className="flex-1 bg-black/50 items-center justify-center">
                   <Text className="text-white/50 text-xs">No Avatar</Text>

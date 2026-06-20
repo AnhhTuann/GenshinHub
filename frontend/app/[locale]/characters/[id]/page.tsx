@@ -133,14 +133,14 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const p = await params;
   setRequestLocale(p.locale);
-  const results = await Promise.all([
+  // Only fetch what's needed: character detail + materials for ascension section
+  // Admin-only data (all characters/weapons/artifacts for team editor) is fetched client-side
+  const [characterData, materialsData] = await Promise.all([
     fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }),
-    fetchGraphQL(GET_CHARACTERS),
-    fetchGraphQL(GET_WEAPONS),
-    fetchGraphQL(GET_ARTIFACTS),
-    fetchGraphQL(GET_MATERIALS)
+    fetchGraphQL(GET_MATERIALS),
   ]);
-  const [{ character }, { characters }, { weapons }, { artifacts }, { materials }] = results;
+  const character = characterData.character;
+  const materials = materialsData.materials;
   
   if (!character) {
     return <div className="p-8 text-center text-white/50 flex flex-col items-center justify-center min-h-screen"><h2 className="text-2xl font-bold mb-4">Character Not Found</h2><p>This character does not exist or has not been added yet.</p></div>;
@@ -300,7 +300,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
         
         {/* CHARACTER INFO STRIP */}
         <div className="w-full mb-8">
-          <CharacterSidebar character={character} allWeapons={weapons} />
+          <CharacterSidebar character={character} allWeapons={[]} />
         </div>
 
         <div className="w-full flex flex-col gap-5">
@@ -351,9 +351,9 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                 <EditableMetaTeamsSection 
                   characterId={character.id}
                   teams={character.teams || []} 
-                  allCharacters={characters}
-                  allWeapons={weapons}
-                  allArtifacts={artifacts}
+                  allCharacters={[]}
+                  allWeapons={[]}
+                  allArtifacts={[]}
                 />
               </div>
             </ScrollEntrance>

@@ -1,5 +1,6 @@
+import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL, GET_ARTIFACT_SET } from '@/lib/graphql';
@@ -57,7 +58,7 @@ export default function ArtifactDetailScreen() {
       <ScrollView className="flex-1 px-4 pt-6" contentContainerStyle={{ paddingBottom: 40 }}>
         <View className="w-full h-48 rounded-xl border items-center justify-center mb-6 bg-yellow-500/20 border-yellow-500">
           {artifact.iconUrl && (
-            <Image source={{ uri: artifact.iconUrl }} className="w-32 h-32" resizeMode="contain" />
+            <Image source={{ uri: artifact.iconUrl }} className="w-32 h-32" contentFit="contain" />
           )}
         </View>
 

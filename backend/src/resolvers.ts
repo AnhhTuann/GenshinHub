@@ -1,11 +1,9 @@
 // Nodemon trigger
-import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
-import { charactersCache, characterCache, weaponsCache, showcaseCache } from './cache';
+import { charactersCache, characterCache, weaponsCache, showcaseCache, artifactsCache, materialsCache } from './cache';
 import { Mutation } from './mutations';
 import GraphQLJSON from 'graphql-type-json';
-
-const prisma = new PrismaClient();
+import { prisma } from './prisma';
 
 // Map mix set name → component set Vietnamese names
 const mixSetsMap: Record<string, string[]> = {
@@ -51,6 +49,7 @@ function getAllMixComponentNames(): string[] {
 
 // Pre-warm artifact set lookup cache (all sets + mix components in 1 query)
 let artifactSetLookup: Record<string, any> | null = null;
+export function resetArtifactSetLookup() { artifactSetLookup = null; }
 async function getArtifactSetLookup(): Promise<Record<string, any>> {
   if (artifactSetLookup) return artifactSetLookup;
   const sets = await prisma.artifactSet.findMany();
@@ -209,7 +208,11 @@ export const resolvers = {
     },
 
     artifacts: async () => {
-      return await prisma.artifactSet.findMany({ orderBy: [{ id: 'asc' }] });
+      const cached = artifactsCache.get('all');
+      if (cached) return cached;
+      const data = await prisma.artifactSet.findMany({ orderBy: [{ id: 'asc' }] });
+      artifactsCache.set('all', data);
+      return data;
     },
 
     artifactSet: async (_: any, args: { id: string }) => {
@@ -217,7 +220,11 @@ export const resolvers = {
     },
 
     materials: async () => {
-      return await prisma.material.findMany({ orderBy: { nameEn: 'asc' } });
+      const cached = materialsCache.get('all');
+      if (cached) return cached;
+      const data = await prisma.material.findMany({ orderBy: { nameEn: 'asc' } });
+      materialsCache.set('all', data);
+      return data;
     },
 
     showcase: async (_: any, args: { uid: string }) => {

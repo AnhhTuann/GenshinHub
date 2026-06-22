@@ -12,22 +12,9 @@ export const albedo = {
   "Elemental Skill",
   "Elemental Burst"
 ],
-  signatureWeapons: [
-  "Primordial Jade Cutter"
-],
+  signatureWeapons: [],
   teams: [],
   bestWeapons: [
-    {
-        rank: 1,
-        nameVi: "Thương Diệu",
-        nameEn: "Azurelight",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_OuterSword.png"
-    },
     {
         rank: 1,
         nameVi: "Xá Tội",
@@ -38,6 +25,17 @@ export const albedo = {
         passiveDescVi: null,
         passiveDescEn: null,
         iconUrl: "/images/weapons/UI_EquipIcon_Sword_Estoc.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Thương Diệu",
+        nameEn: "Azurelight",
+        subStat: "Tỷ Lệ Bạo Kích",
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Sword_OuterSword.png"
     },
     {
         rank: 4,

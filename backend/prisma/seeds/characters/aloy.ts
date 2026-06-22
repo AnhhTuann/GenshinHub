@@ -73,6 +73,24 @@ export const aloy = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Trái Tim Hành Giả",
+        setNameEn: "Resolution of Sojourner",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Trái Tim Thủ Hộ & 2 bộ Giáo Quan",
+        setNameEn: "Mix 2-Piece Defender's Will & 2-Piece Instructor",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
         setNameVi: "Trái Tim Dũng Sĩ",
         setNameEn: "Brave Heart",
         pieces: 4,
@@ -97,24 +115,6 @@ export const aloy = {
         subStatsPriority: [
             "DEF%"
         ]
-    },
-    {
-        setNameVi: "Mix 2 bộ Trái Tim Thủ Hộ & 2 bộ Giáo Quan",
-        setNameEn: "Mix 2-Piece Defender's Will & 2-Piece Instructor",
-        pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
-    },
-    {
-        setNameVi: "Trái Tim Hành Giả",
-        setNameEn: "Resolution of Sojourner",
-        pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
     }
 ]
 };

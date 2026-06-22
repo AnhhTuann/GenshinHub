@@ -20,35 +20,6 @@ export const mualani = {
         description: "A powerful Vaporize team centered around Mualani's enhanced attacks. Utilizes Mualani's Nightsoul Blessing state to trigger Vaporize reactions with off-field Hydro and Pyro application from Mona and Traveler (Pyro), while Sucrose provides resistance shred and EM share.",
         members: [
             {
-                characterId: "traveler-pyro",
-                role: "Support",
-                roleDesc: "Pyro Support. Applies off-field Pyro and triggers Pyro resonance.",
-                weapons: [
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Anemo Support. Swirls elements to reduce RES and shares Elemental Mastery with the team.",
-                weapons: [
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "mualani",
                 role: "Main DPS",
                 roleDesc: "Hydro Main DPS. Triggers powerful Vaporize reactions under Nightsoul's Blessing.",
@@ -68,6 +39,20 @@ export const mualani = {
                 ]
             },
             {
+                characterId: "traveler-pyro",
+                role: "Support",
+                roleDesc: "Pyro Support. Applies off-field Pyro and triggers Pyro resonance.",
+                weapons: [
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "mona",
                 role: "Support",
                 roleDesc: "Hydro Support. Boosts Mualani's damage via Omen and provides Hydro resonance.",
@@ -80,240 +65,18 @@ export const mualani = {
                 substats: [
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Mualani Vaporization Team #7",
-        rank: "S",
-        description: "Mualani triggers Vaporize with Xiangling's Pyro off-field, while Yelan provides additional Hydro and Citlali shields and reduces enemy resistance via Freeze or Melt reactions.",
-        members: [
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Applies consistent Pyro off-field.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             },
             {
-                characterId: "citlali",
+                characterId: "sucrose",
                 role: "Support",
-                roleDesc: "Cryo Support. Provides a shield and reduces resistance via Melt reactions.",
+                roleDesc: "Anemo Support. Swirls elements to reduce RES and shares Elemental Mastery with the team.",
                 weapons: [
-                    "Starcaller's Watch",
-                    "Favonius Codex"
+                    "Thrilling Tales of Dragon Slayers"
                 ],
                 artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "mualani",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Vaporizes her on-field normal attacks.",
-                weapons: [
-                    "Surf's Up",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "HP%",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and damage buffs.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Mualani Burning/Vaporize",
-        rank: "S",
-        description: "A Vaporize team using Burning to maintain Pyro aura for Hydro. Mualani triggers Vaporize for high damage Shark Bites. Emilie increases Burning damage, while Xiangling and Collei provide consistent off-field Pyro.",
-        members: [
-            {
-                characterId: "emilie",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Amplifies Burning reactions and deals consistent off-field Dendro damage.",
-                weapons: [
-                    "Lumidouce Elegy",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Unfinished Reverie"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Supplies off-field Pyro to maintain Burning aura with Dendro.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "dehya",
-                role: "Support",
-                roleDesc: "Pyro Support. Provides damage reduction, interruption resistance, and off-field Pyro.",
-                weapons: [
-                    "Favonius Greatsword"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mualani",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Vaporizes her on-field hits against enemies affected by Burning.",
-                weapons: [
-                    "Surf's Up",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "HP%",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Mualani Vaporization Team #6",
-        rank: "S",
-        description: "A team focused on Mualani's enhanced Normal Attack in Nightsoul's Blessing, triggering Vaporize with Xiangling's off-field Pyro. Furina provides damage buff and additional Hydro, while Xilonen shreds enemy RES and sustains the team.",
-        members: [
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage to enable Vaporize.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Support. Shreds enemy elemental resistance and provides healing.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mualani",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high on-field Vaporize damage.",
-                weapons: [
-                    "Surf's Up",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "HP%",
-                    "CRIT DMG",
-                    "CRIT Rate",
                     "Elemental Mastery",
                     "Energy Recharge"
                 ]
@@ -402,50 +165,32 @@ export const mualani = {
         ]
     },
     {
-        name: "Mualani Vaporize #3",
+        name: "Mualani Burning/Vaporize",
         rank: "S",
-        description: "A high-damage Vaporize team centered on Mualani's enhanced attacks, supported by Xilonen's RES shred and Mavuika's off-field Pyro. Mualani stacks Silver Momentum from her enhanced state to unleash powerful Shark Bites, triggering Vaporize with Mavuika's off-field Pyro. Xilonen shreds enemy RES and heals, while Sucrose shreds enemy RES and provides EM.",
+        description: "A Vaporize team using Burning to maintain Pyro aura for Hydro. Mualani triggers Vaporize for high damage Shark Bites. Emilie increases Burning damage, while Xiangling and Collei provide consistent off-field Pyro.",
         members: [
             {
-                characterId: "sucrose",
+                characterId: "xiangling",
                 role: "Sub DPS",
-                roleDesc: "Anemo Sub DPS. Shreds RES, groups enemies, and shares Elemental Mastery.",
+                roleDesc: "Pyro Sub DPS. Supplies off-field Pyro to maintain Burning aura with Dendro.",
                 weapons: [
-                    "A Thousand Floating Dreams",
-                    "Sacrificial Fragments"
+                    "Engulfing Lightning",
+                    "The Catch"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Emblem of Severed Fate"
                 ],
                 substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
                     "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
                     "CRIT Rate",
-                    "HP%",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
             {
                 characterId: "mualani",
                 role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Stacks Silver Momentum to unleash high-multiplier Sharky Bites.",
+                roleDesc: "Hydro Main DPS. Vaporizes her on-field hits against enemies affected by Burning.",
                 weapons: [
                     "Surf's Up",
                     "Sacrificial Jade"
@@ -462,22 +207,36 @@ export const mualani = {
                 ]
             },
             {
-                characterId: "mavuika",
+                characterId: "emilie",
                 role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals consistent off-field Pyro damage to enable constant Vaporize.",
+                roleDesc: "Dendro Sub DPS. Amplifies Burning reactions and deals consistent off-field Dendro damage.",
                 weapons: [
-                    "A Thousand Blazing Suns",
-                    "Sacrificial Greatsword"
+                    "Lumidouce Elegy",
+                    "Deathmatch"
                 ],
                 artifacts: [
-                    "4pc Obsidian Codex"
+                    "4pc Unfinished Reverie"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "dehya",
+                role: "Support",
+                roleDesc: "Pyro Support. Provides damage reduction, interruption resistance, and off-field Pyro.",
+                weapons: [
+                    "Favonius Greatsword"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -487,24 +246,6 @@ export const mualani = {
         rank: "SS",
         description: "Mualani uses Skill to enter Nightsoul's Blessing, enhancing Normal Attack to Sharky Bite. Stacking Silver Momentum from Shark Bites at marked enemies. Xilonen provides element type<GeoElement> RES shred and healing. Xiangling applies element type<PyroElement> off-field for Vaporize. Zhongli offers strong shield for safe gameplay.",
         members: [
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "xiangling",
                 role: "Sub DPS",
@@ -520,6 +261,24 @@ export const mualani = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
                     "Energy Recharge"
                 ]
             },
@@ -561,86 +320,6 @@ export const mualani = {
         ]
     },
     {
-        name: "Mualani Vaporize Surf",
-        rank: "S",
-        description: "A high damage team focusing on Mualani's Vaporize reactions, with off-field Pyro from Xiangling, supported by Xilonen's RES shred and healing, and Chiori's Geo sub DPS.",
-        members: [
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Support. Shreds RES and provides team healing.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "chiori",
-                role: "Sub DPS",
-                roleDesc: "Geo Sub DPS. Deals high off-field Geo damage via her dolls.",
-                weapons: [
-                    "Uraku Misugiri",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Applies off-field Pyro for Vaporize reactions.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mualani",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Vaporizes her hits against enemies affected by Pyro.",
-                weapons: [
-                    "Surf's Up",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "HP%",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Mualani Permafrost",
         rank: "S",
         description: "A permafrost team focusing on Cryo/Hydro reactions, with dual DPS Citlali and Mualani supported by Charlotte and Furina for healing and damage amplification.",
@@ -660,25 +339,6 @@ export const mualani = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mualani",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Triggers Freeze and deals high single-target Hydro damage.",
-                weapons: [
-                    "Surf's Up",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "HP%",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
                     "Energy Recharge"
                 ]
             },
@@ -712,6 +372,346 @@ export const mualani = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "mualani",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Triggers Freeze and deals high single-target Hydro damage.",
+                weapons: [
+                    "Surf's Up",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "HP%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Mualani Vaporization Team #7",
+        rank: "S",
+        description: "Mualani triggers Vaporize with Xiangling's Pyro off-field, while Yelan provides additional Hydro and Citlali shields and reduces enemy resistance via Freeze or Melt reactions.",
+        members: [
+            {
+                characterId: "mualani",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Vaporizes her on-field normal attacks.",
+                weapons: [
+                    "Surf's Up",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "HP%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Applies consistent Pyro off-field.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "Cryo Support. Provides a shield and reduces resistance via Melt reactions.",
+                weapons: [
+                    "Starcaller's Watch",
+                    "Favonius Codex"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and damage buffs.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Mualani Vaporize #3",
+        rank: "S",
+        description: "A high-damage Vaporize team centered on Mualani's enhanced attacks, supported by Xilonen's RES shred and Mavuika's off-field Pyro. Mualani stacks Silver Momentum from her enhanced state to unleash powerful Shark Bites, triggering Vaporize with Mavuika's off-field Pyro. Xilonen shreds enemy RES and heals, while Sucrose shreds enemy RES and provides EM.",
+        members: [
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "mavuika",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals consistent off-field Pyro damage to enable constant Vaporize.",
+                weapons: [
+                    "A Thousand Blazing Suns",
+                    "Sacrificial Greatsword"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "mualani",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Stacks Silver Momentum to unleash high-multiplier Sharky Bites.",
+                weapons: [
+                    "Surf's Up",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "HP%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "sucrose",
+                role: "Sub DPS",
+                roleDesc: "Anemo Sub DPS. Shreds RES, groups enemies, and shares Elemental Mastery.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Sacrificial Fragments"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Mualani Vaporize Surf",
+        rank: "S",
+        description: "A high damage team focusing on Mualani's Vaporize reactions, with off-field Pyro from Xiangling, supported by Xilonen's RES shred and healing, and Chiori's Geo sub DPS.",
+        members: [
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Applies off-field Pyro for Vaporize reactions.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "chiori",
+                role: "Sub DPS",
+                roleDesc: "Geo Sub DPS. Deals high off-field Geo damage via her dolls.",
+                weapons: [
+                    "Uraku Misugiri",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Support. Shreds RES and provides team healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "mualani",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Vaporizes her hits against enemies affected by Pyro.",
+                weapons: [
+                    "Surf's Up",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "HP%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Mualani Vaporization Team #6",
+        rank: "S",
+        description: "A team focused on Mualani's enhanced Normal Attack in Nightsoul's Blessing, triggering Vaporize with Xiangling's off-field Pyro. Furina provides damage buff and additional Hydro, while Xilonen shreds enemy RES and sustains the team.",
+        members: [
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage to enable Vaporize.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "mualani",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals high on-field Vaporize damage.",
+                weapons: [
+                    "Surf's Up",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "HP%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Support. Shreds enemy elemental resistance and provides healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
                     "Energy Recharge"
                 ]
             }
@@ -821,9 +821,34 @@ export const mualani = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Bí Điển Obsidian",
-        setNameEn: "Obsidian Codex",
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Marechaussee Hunter",
         pieces: 4,
+        sands: [
+            "HP%",
+            "Tinh Thông Nguyên Tố"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "HP%",
+            "Tinh Thông Nguyên Tố"
+        ],
+        subStatsPriority: [
+            "CRIT Rate",
+            "CRIT DMG",
+            "Elemental Mastery",
+            "HP%",
+            "HP"
+        ]
+    },
+    {
+        setNameVi: "Mix 2 bộ (HP% / Sát Thương Thủy / Tinh Thông / Thợ Săn)",
+        setNameEn: "2-piece Mix (HP% / Hydro DMG / EM / Marechaussee)",
+        pieces: 2,
         sands: [
             "HP%",
             "Tinh Thông Nguyên Tố"
@@ -871,34 +896,9 @@ export const mualani = {
         ]
     },
     {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Marechaussee Hunter",
+        setNameVi: "Bí Điển Obsidian",
+        setNameEn: "Obsidian Codex",
         pieces: 4,
-        sands: [
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "Elemental Mastery",
-            "HP%",
-            "HP"
-        ]
-    },
-    {
-        setNameVi: "Mix 2 bộ (HP% / Sát Thương Thủy / Tinh Thông / Thợ Săn)",
-        setNameEn: "2-piece Mix (HP% / Hydro DMG / EM / Marechaussee)",
-        pieces: 2,
         sands: [
             "HP%",
             "Tinh Thông Nguyên Tố"

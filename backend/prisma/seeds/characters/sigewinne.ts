@@ -20,22 +20,19 @@ export const sigewinne = {
         description: "A for-fun team where Traveler (Geo) and Zhongli's Geo construct resonance is the main DMG source, speeding up Sigewinne's passive. Sigewinne heals and boosts Skill DMG. Geo construct resonance between Traveler (Geo) and Zhongli triggers Sigewinne's passive talent for additional damage, while Furina provides off-field Hydro and DMG buffs.",
         members: [
             {
-                characterId: "traveler-geo",
-                role: "Main DPS",
-                roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
+                characterId: "sigewinne",
+                role: "Support",
+                roleDesc: "Hydro Support. Restores team HP and buffs off-field Elemental Skill DMG.",
                 weapons: [
-                    "Primordial Jade Cutter",
-                    "Wolf-Fang"
+                    "Silvershower Heartstrings",
+                    "Recurve Bow"
                 ],
                 artifacts: [
-                    "2pc Gladiator's Finale",
-                    "2pc Shimenawa's Reminiscence"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
+                    "HP%",
+                    "HP"
                 ]
             },
             {
@@ -74,12 +71,38 @@ export const sigewinne = {
                 ]
             },
             {
+                characterId: "traveler-geo",
+                role: "Main DPS",
+                roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "2pc Gladiator's Finale",
+                    "2pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Sigewinne Bloom Team",
+        rank: "SS",
+        description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
+        members: [
+            {
                 characterId: "sigewinne",
                 role: "Support",
-                roleDesc: "Hydro Support. Restores team HP and buffs off-field Elemental Skill DMG.",
+                roleDesc: "Hydro Support. Provides continuous healing to sustain the team from Bloom and Furina's drain, and buffs Skill DMG.",
                 weapons: [
-                    "Silvershower Heartstrings",
-                    "Recurve Bow"
+                    "Elegy for the End",
+                    "Favonius Warbow"
                 ],
                 artifacts: [
                     "4pc Tenacity of the Millelith"
@@ -87,6 +110,61 @@ export const sigewinne = {
                 substats: [
                     "HP%",
                     "HP"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "nilou",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Enables Bountiful Cores with her passive, dealing high AoE Bloom damage.",
+                weapons: [
+                    "Key of Khaj-Nisut",
+                    "The Dockhand's Assistant"
+                ],
+                artifacts: [
+                    "2pc Tenacity of the Millelith",
+                    "2pc Vourukasha's Glow"
+                ],
+                substats: [
+                    "HP%",
+                    "Elemental Mastery",
+                    "HP"
+                ]
+            },
+            {
+                characterId: "alhaitham",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
+                weapons: [
+                    "Light of Foliar Incision",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
                 ]
             }
         ]
@@ -96,6 +174,24 @@ export const sigewinne = {
         rank: "SS",
         description: "The team focuses on dealing Hydro damage, with Sigewinne providing healing and Elemental Skill damage buffs, while Yelan and Furina output damage and Kazuha provides grouping and resistance shred.",
         members: [
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Hydro DMG.",
+                weapons: [
+                    "Xiphos' Moonlight",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate"
+                ]
+            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
@@ -133,24 +229,6 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Hydro DMG.",
-                weapons: [
-                    "Xiphos' Moonlight",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            },
-            {
                 characterId: "sigewinne",
                 role: "Support",
                 roleDesc: "Hydro Support. Provides team-wide healing via her Skill and buffs teammates' off-field Elemental Skill DMG.",
@@ -161,84 +239,6 @@ export const sigewinne = {
                 artifacts: [
                     "2pc Tenacity of the Millelith",
                     "2pc Vourukasha's Glow"
-                ],
-                substats: [
-                    "HP%",
-                    "HP"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Sigewinne Bloom Team",
-        rank: "SS",
-        description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
-        members: [
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "alhaitham",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
-                weapons: [
-                    "Light of Foliar Incision",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "nilou",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Enables Bountiful Cores with her passive, dealing high AoE Bloom damage.",
-                weapons: [
-                    "Key of Khaj-Nisut",
-                    "The Dockhand's Assistant"
-                ],
-                artifacts: [
-                    "2pc Tenacity of the Millelith",
-                    "2pc Vourukasha's Glow"
-                ],
-                substats: [
-                    "HP%",
-                    "Elemental Mastery",
-                    "HP"
-                ]
-            },
-            {
-                characterId: "sigewinne",
-                role: "Support",
-                roleDesc: "Hydro Support. Provides continuous healing to sustain the team from Bloom and Furina's drain, and buffs Skill DMG.",
-                weapons: [
-                    "Elegy for the End",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
                     "HP%",
@@ -318,27 +318,6 @@ export const sigewinne = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Khúc Ca Ngày Cũ",
-        setNameEn: "Song of Days Past",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
-    },
-    {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
@@ -360,8 +339,29 @@ export const sigewinne = {
         ]
     },
     {
-        setNameVi: "Xà Cừ Đại Dương",
-        setNameEn: "Ocean-Hued Clam",
+        setNameVi: "Khúc Ca Ngày Cũ",
+        setNameEn: "Song of Days Past",
+        pieces: 4,
+        sands: [
+            "HP%"
+        ],
+        goblet: [
+            "HP%"
+        ],
+        circlet: [
+            "HP%",
+            "Tỷ Lệ Bạo Kích",
+            "Tăng Trị Liệu"
+        ],
+        subStatsPriority: [
+            "HP%",
+            "HP",
+            "CRIT Rate"
+        ]
+    },
+    {
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Tenacity of the Millelith",
         pieces: 4,
         sands: [
             "HP%"
@@ -402,8 +402,8 @@ export const sigewinne = {
         ]
     },
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Tenacity of the Millelith",
+        setNameVi: "Xà Cừ Đại Dương",
+        setNameEn: "Ocean-Hued Clam",
         pieces: 4,
         sands: [
             "HP%"

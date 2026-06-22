@@ -1,8 +1,8 @@
 export const aratakiItto = {
   characterId: "arataki-itto",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

@@ -1,8 +1,8 @@
 export const travelerHydro = {
   characterId: "traveler-hydro",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "D",
+  role: "Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -39,7 +39,7 @@ export const travelerHydro = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Dendro Support/Healer. Provides shielding, continuous healing, and boosts Bloom reaction damage.",
                 weapons: [
                     "Jadefall's Splendor",
@@ -56,7 +56,7 @@ export const travelerHydro = {
             },
             {
                 characterId: "nilou",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Hydro Support. Boosts Bloom reaction damage via Bountiful Cores based on her max HP.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -100,7 +100,7 @@ export const travelerHydro = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -118,7 +118,7 @@ export const travelerHydro = {
             },
             {
                 characterId: "sucrose",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Anemo Support. Swirls Hydro/Pyro to shred enemy resistances and shares Elemental Mastery with the team.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -134,7 +134,7 @@ export const travelerHydro = {
             },
             {
                 characterId: "traveler-hydro",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Main DPS. Triggers Vaporize reactions on their Skill and Burst hits on-field.",
                 weapons: [
                     "Favonius Sword",

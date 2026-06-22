@@ -1,8 +1,8 @@
 export const dori = {
   characterId: "dori",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Support",
+  recommendedC: "C4",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

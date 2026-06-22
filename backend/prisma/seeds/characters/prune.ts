@@ -1,8 +1,8 @@
 export const prune = {
   characterId: "prune",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Support, Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

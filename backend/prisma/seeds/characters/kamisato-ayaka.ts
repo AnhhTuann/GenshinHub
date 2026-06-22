@@ -1,8 +1,8 @@
 export const kamisatoAyaka = {
   characterId: "kamisato-ayaka",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

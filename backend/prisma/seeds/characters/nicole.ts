@@ -1,8 +1,8 @@
 export const nicole = {
   characterId: "nicole",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -71,7 +71,7 @@ export const nicole = {
             },
             {
                 characterId: "varka",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Main DPS. After Skill, enters mixed damage mode with normal/charged attacks.",
                 weapons: [
                     "Game of the Mighty Wolf",
@@ -96,7 +96,7 @@ export const nicole = {
         members: [
             {
                 characterId: "venti",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Main DPS. Summons a stormeye with Burst that pulls enemies and deals continuous Anemo damage.",
                 weapons: [
                     "The Daybreak Chronicles",
@@ -220,7 +220,7 @@ export const nicole = {
             },
             {
                 characterId: "varka",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Main DPS. Enters mixed damage mode after using Skill, dealing Anemo and converted elemental damage.",
                 weapons: [
                     "Game of the Mighty Wolf",
@@ -297,7 +297,7 @@ export const nicole = {
             },
             {
                 characterId: "kinich",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Dendro Main DPS. Deals high Dendro damage.",
                 weapons: [
                     "Fang of the Mountain King",
@@ -322,7 +322,7 @@ export const nicole = {
         members: [
             {
                 characterId: "venti",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Main DPS. Summons a Stormeye with Burst that pulls enemies and deals continuous Anemo DMG.",
                 weapons: [
                     "The First Great Magic",

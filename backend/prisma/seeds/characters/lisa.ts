@@ -1,8 +1,8 @@
 export const lisa = {
   characterId: "lisa",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Sub DPS, Support",
+  recommendedC: "C4",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

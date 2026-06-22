@@ -1,8 +1,8 @@
 export const venti = {
   characterId: "venti",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Main DPS, Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

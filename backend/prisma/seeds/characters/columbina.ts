@@ -1,8 +1,8 @@
 export const columbina = {
   characterId: "columbina",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Sub DPS, Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const columbina = {
         members: [
             {
                 characterId: "lauma",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Lauma transforms the traditional 'Bloom' reaction into 'Lunar Bloom', which has higher damage and can crit. Her elemental skill can accumulate layers of 'Hymn of Eternal Rest' in order to further boost the Lunar Bloom damage triggered by all teammates. She can also reduce enemies' Dendro and Hydro RES, and increase her own and the team's Lunar Bloom damage based on her EM.",
                 weapons: [
                     "Nightweaver's Looking Glass",
@@ -40,7 +40,7 @@ export const columbina = {
             },
             {
                 characterId: "nefer",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
                 weapons: [
                     "Reliquary of Truth",
@@ -57,7 +57,7 @@ export const columbina = {
             },
             {
                 characterId: "columbina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Columbina uses her Elemental Skill to provide continuous off-field, AoE Hydro application or triggering Lunar reactions. At the same time, based on which Lunar reaction type occurs most frequently in the team, she deals the corresponding type of direct Lunar damage. Her Elemental Burst deploys an aura, with her talent, she can grant buffs to all three Lunar reactions: Lunar-Charged, Lunar Crystallize, and Lunar-Bloom.",
                 weapons: [
                     "Nocturne's Curtain Call",
@@ -75,7 +75,7 @@ export const columbina = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Nahida mainly deals DMG by her Elemental Skill, which connects 8 enemies at maximum and deals Dendro DMG to them while triggering elemental reactions. The Elemental Burst of Nahida buffs her Elemental Skill depends on the Element of her teammates.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -100,7 +100,7 @@ export const columbina = {
         members: [
             {
                 characterId: "chasca",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Anemo Sub DPS. Swirls elements, groups enemies, and shreds elemental RES.",
                 weapons: [
                     "Astral Vulture's Crimson Plumage",
@@ -116,7 +116,7 @@ export const columbina = {
             },
             {
                 characterId: "jahoda",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Anemo Support/Healer. Provides continuous healing, swirls elements, and increases team EM.",
                 weapons: [
                     "Elegy for the End",
@@ -134,7 +134,7 @@ export const columbina = {
             },
             {
                 characterId: "ineffa",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Support. Converts standard Electro-Charged to Lunar-Charged, boosting its damage.",
                 weapons: [
                     "Fruitful Hook",
@@ -152,7 +152,7 @@ export const columbina = {
             },
             {
                 characterId: "columbina",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Main DPS. Deals high on-field Hydro damage and triggers frequent Lunar Charged reactions.",
                 weapons: [
                     "Nocturne's Curtain Call",
@@ -178,7 +178,7 @@ export const columbina = {
         members: [
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Applies high off-field Dendro and buffs team Elemental Mastery.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -195,7 +195,7 @@ export const columbina = {
             },
             {
                 characterId: "columbina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs Dendro cores.",
                 weapons: [
                     "Nocturne's Curtain Call",
@@ -214,7 +214,7 @@ export const columbina = {
             },
             {
                 characterId: "lauma",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Converts normal Blooms into Lunar Blooms to maximize reaction damage.",
                 weapons: [
                     "Nightcaster's Lasting Gaze",
@@ -233,7 +233,7 @@ export const columbina = {
             },
             {
                 characterId: "nilou",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Main DPS. Triggers Bountiful Cores with her passive, dealing rapid Bloom damage.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -257,7 +257,7 @@ export const columbina = {
         members: [
             {
                 characterId: "yaoyao",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Yaoyao provides healing and shield. At C1, increases Dendro DMG of teammates.",
                 weapons: [
                     "Dialogues of the Desert Sages"
@@ -272,7 +272,7 @@ export const columbina = {
             },
             {
                 characterId: "nefer",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
                 weapons: [
                     "Reliquary of Truth",
@@ -289,7 +289,7 @@ export const columbina = {
             },
             {
                 characterId: "columbina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Columbina uses her Skill to provide continuous off-field AoE Hydro application or triggering Lunar reactions. Based on which Lunar reaction type occurs most frequently, she deals corresponding Lunar damage. Her Burst deploys an aura that buffs Lunar-Charged, Lunar Crystallize, and Lunar-Bloom.",
                 weapons: [
                     "Nocturne's Curtain Call",
@@ -307,7 +307,7 @@ export const columbina = {
             },
             {
                 characterId: "lauma",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Lauma transforms Bloom into Lunar-Bloom, which has higher damage and can crit. Her Skill accumulates Hymn of Eternal Rest to boost Lunar-Bloom damage. She reduces enemies' Dendro and Hydro RES, and increases team's Lunar-Bloom damage based on EM.",
                 weapons: [
                     "Nightweaver's Looking Glass",
@@ -333,7 +333,7 @@ export const columbina = {
         members: [
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides high off-field single-target Hydro damage and ramping damage buff.",
                 weapons: [
                     "Aqua Simulacra",
@@ -351,7 +351,7 @@ export const columbina = {
             },
             {
                 characterId: "lauma",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Supplies Dendro from off-field and converts blooms to Lunar Blooms.",
                 weapons: [
                     "Nightcaster's Lasting Gaze",
@@ -369,7 +369,7 @@ export const columbina = {
             },
             {
                 characterId: "columbina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Coordinates off-field Hydro attacks and triggers initial Dendro cores.",
                 weapons: [
                     "Nocturne's Curtain Call",
@@ -388,7 +388,7 @@ export const columbina = {
             },
             {
                 characterId: "kuki-shinobu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Trigger & Healer. Activates Hyperbloom on Dendro cores with Electro pulses.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -411,7 +411,7 @@ export const columbina = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
                 weapons: [
                     "Peak Patrol Song",
@@ -429,7 +429,7 @@ export const columbina = {
             },
             {
                 characterId: "ineffa",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Support. Enhances Electro-related reactions and boosts elemental damage of the party.",
                 weapons: [
                     "Fruitful Hook",
@@ -447,7 +447,7 @@ export const columbina = {
             },
             {
                 characterId: "flins",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Main DPS. Triggers Electro-Charged and infuses normal attacks with Electro.",
                 weapons: [
                     "Tome of the Eternal Flow",
@@ -466,7 +466,7 @@ export const columbina = {
             },
             {
                 characterId: "columbina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides consistent off-field Hydro to enable reaction and buffs team energy.",
                 weapons: [
                     "Nocturne's Curtain Call",

@@ -1,8 +1,8 @@
 export const yumemizu = {
   characterId: "yumemizu",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Support, Main DPS",
+  recommendedC: "C2",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

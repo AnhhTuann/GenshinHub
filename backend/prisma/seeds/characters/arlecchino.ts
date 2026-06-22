@@ -1,8 +1,8 @@
 export const arlecchino = {
   characterId: "arlecchino",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -37,7 +37,7 @@ export const arlecchino = {
             },
             {
                 characterId: "chiori",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Geo Sub DPS. Deals high off-field Geo damage via her dolls.",
                 weapons: [
                     "Uraku Misugiri",
@@ -73,7 +73,7 @@ export const arlecchino = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -98,7 +98,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Cryo Shield & Support. Provides shield and Cryo application for Melt reactions.",
                 weapons: [
                     "Starcaller's Watch",
@@ -116,7 +116,7 @@ export const arlecchino = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -150,7 +150,7 @@ export const arlecchino = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -193,7 +193,7 @@ export const arlecchino = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -211,7 +211,7 @@ export const arlecchino = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -227,7 +227,7 @@ export const arlecchino = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Cryo Shield & Support. Provides shield and Cryo application for Melt reactions.",
                 weapons: [
                     "Starcaller's Watch",
@@ -252,7 +252,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -270,7 +270,7 @@ export const arlecchino = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -304,7 +304,7 @@ export const arlecchino = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -329,7 +329,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -363,7 +363,7 @@ export const arlecchino = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -381,7 +381,7 @@ export const arlecchino = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and enables Vaporize reactions.",
                 weapons: [
                     "Aqua Simulacra",
@@ -406,7 +406,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Pyro/Electro RES Shred & Healing. Buffs team ATK% after triggering Overload.",
                 weapons: [
                     "Staff of Homa",
@@ -422,7 +422,7 @@ export const arlecchino = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Electro Sub DPS. Provides continuous Electro application off-field, triggering reactions.",
                 weapons: [
                     "Aqua Simulacra",
@@ -458,7 +458,7 @@ export const arlecchino = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -481,7 +481,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Pyro/Electro RES Shred & Healing. Buffs team ATK% after triggering Overload.",
                 weapons: [
                     "Staff of Homa",
@@ -497,7 +497,7 @@ export const arlecchino = {
             },
             {
                 characterId: "mavuika",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Pyro Sub DPS. Deals coordinated attacks via Burst to trigger Overload.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -515,7 +515,7 @@ export const arlecchino = {
             },
             {
                 characterId: "ororon",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Electro Support. Triggers Electro-related reactions and off-field attacks. Solves Energy needs.",
                 weapons: [
                     "Elegy for the End",
@@ -558,7 +558,7 @@ export const arlecchino = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -594,7 +594,7 @@ export const arlecchino = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -610,7 +610,7 @@ export const arlecchino = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
                 weapons: [
                     "Freedom-Sworn",

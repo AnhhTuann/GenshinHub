@@ -1,8 +1,8 @@
 export const razor = {
   characterId: "razor",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Main DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

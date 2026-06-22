@@ -1,8 +1,8 @@
 export const chiori = {
   characterId: "chiori",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Sub DPS",
+  recommendedC: "C1",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

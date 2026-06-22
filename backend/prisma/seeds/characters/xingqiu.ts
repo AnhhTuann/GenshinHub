@@ -1,8 +1,8 @@
 export const xingqiu = {
   characterId: "xingqiu",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

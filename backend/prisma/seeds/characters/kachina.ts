@@ -1,8 +1,8 @@
 export const kachina = {
   characterId: "kachina",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

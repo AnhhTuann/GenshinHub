@@ -1,8 +1,8 @@
 export const yunJin = {
   characterId: "yun-jin",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Support",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

@@ -1,8 +1,8 @@
 export const klee = {
   characterId: "klee",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -39,7 +39,7 @@ export const klee = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides healing and buffs team ATK and Electro/Pyro shred when Overload is triggered.",
                 weapons: [
                     "Sumpwood of Songs",
@@ -56,7 +56,7 @@ export const klee = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Electro damage via Oz.",
                 weapons: [
                     "Aqua Simulacra",
@@ -73,7 +73,7 @@ export const klee = {
             },
             {
                 characterId: "durin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
                 weapons: [
                     "Alatus Alva",
@@ -99,7 +99,7 @@ export const klee = {
         members: [
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Cryo application and shield.",
                 weapons: [
                     "Starcaller's Watch",
@@ -117,7 +117,7 @@ export const klee = {
             },
             {
                 characterId: "xianyun",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides healing and enables plunging attacks.",
                 weapons: [
                     "Crane's Echoing Call",
@@ -152,7 +152,7 @@ export const klee = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides elemental resistance shred and healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -177,7 +177,7 @@ export const klee = {
         members: [
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides continuous off-field Hydro application and buffs the entire team's DMG through HP fluctuation.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -213,7 +213,7 @@ export const klee = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides elemental resistance shred and heals allies, while triggering Crystallize for Scroll set buffs.",
                 weapons: [
                     "Peak Patrol Song",
@@ -231,7 +231,7 @@ export const klee = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a massive ATK buff and healing, and triggers Pyro resonance.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -254,7 +254,7 @@ export const klee = {
         members: [
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -272,7 +272,7 @@ export const klee = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides shield and off-field Cryo application.",
                 weapons: [
                     "Starcaller's Watch",
@@ -290,7 +290,7 @@ export const klee = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides ATK buff and healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -331,7 +331,7 @@ export const klee = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a large ATK buff and healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -347,7 +347,7 @@ export const klee = {
             },
             {
                 characterId: "durin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
                 weapons: [
                     "Alatus Alva",
@@ -384,7 +384,7 @@ export const klee = {
             },
             {
                 characterId: "albedo",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Geo damage and Geo resonance, while boosting team's Elemental Mastery.",
                 weapons: [
                     "Uraku Misugiri",
@@ -409,7 +409,7 @@ export const klee = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides elemental resistance shred and heals teammates.",
                 weapons: [
                     "Peak Patrol Song",
@@ -427,7 +427,7 @@ export const klee = {
             },
             {
                 characterId: "durin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Durin gains [Confirmation of Purity] or [Beacon of Rustication] via Skill and triggering Burn. The former provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
                 weapons: [
                     "Alatus Alva",
@@ -464,7 +464,7 @@ export const klee = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a large ATK buff and healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -487,7 +487,7 @@ export const klee = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides ATK buff and healing, triggering Pyro resonance.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -503,7 +503,7 @@ export const klee = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies, swirls Pyro and Hydro for resistance shred and damage buffs.",
                 weapons: [
                     "Freedom-Sworn",
@@ -520,7 +520,7 @@ export const klee = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -563,7 +563,7 @@ export const klee = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides elemental resistance shred and healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -581,7 +581,7 @@ export const klee = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides ATK buff and healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -597,7 +597,7 @@ export const klee = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Cryo application and shield.",
                 weapons: [
                     "Starcaller's Watch",
@@ -640,7 +640,7 @@ export const klee = {
         members: [
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -658,7 +658,7 @@ export const klee = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Cryo application and shield.",
                 weapons: [
                     "Starcaller's Watch",
@@ -676,7 +676,7 @@ export const klee = {
             },
             {
                 characterId: "xianyun",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides healing to team members and enables plunging attacks.",
                 weapons: [
                     "Crane's Echoing Call",
@@ -718,7 +718,7 @@ export const klee = {
         members: [
             {
                 characterId: "durin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
                 weapons: [
                     "Alatus Alva",
@@ -737,7 +737,7 @@ export const klee = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Electro damage via Oz to trigger Overload.",
                 weapons: [
                     "Aqua Simulacra",
@@ -772,7 +772,7 @@ export const klee = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides ATK buff and healing.",
                 weapons: [
                     "Mistsplitter Reforged",

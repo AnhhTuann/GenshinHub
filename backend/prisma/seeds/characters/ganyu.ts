@@ -1,8 +1,8 @@
 export const ganyu = {
   characterId: "ganyu",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Main DPS, Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

@@ -1,8 +1,8 @@
 export const mavuika = {
   characterId: "mavuika",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Main DPS, Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -39,7 +39,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Main DPS. Deals high on-field Pyro damage and coordinates attacks during her Burst.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -57,7 +57,7 @@ export const mavuika = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -73,7 +73,7 @@ export const mavuika = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -98,7 +98,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "mavuika",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Main DPS. Nightsoul state normal attacks and coordinated attacks via Elemental Burst.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -115,7 +115,7 @@ export const mavuika = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro/Electro RES Shred & Healing. Buffs team ATK% after triggering Overload.",
                 weapons: [
                     "Staff of Homa",
@@ -131,7 +131,7 @@ export const mavuika = {
             },
             {
                 characterId: "ororon",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Support. Triggers Electro-related reactions and off-field attacks. Solves Energy needs.",
                 weapons: [
                     "Elegy for the End",
@@ -149,7 +149,7 @@ export const mavuika = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -172,7 +172,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "mavuika",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Main DPS. Deals high on-field Pyro damage and coordinates attacks during her Burst.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -189,7 +189,7 @@ export const mavuika = {
             },
             {
                 characterId: "ororon",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Support. Triggers Electro-related reactions and off-field attacks. Solves Energy needs.",
                 weapons: [
                     "Elegy for the End",
@@ -207,7 +207,7 @@ export const mavuika = {
             },
             {
                 characterId: "iansan",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support/Healer. Buffs teammates' ATK based on her max HP. Provides healing.",
                 weapons: [
                     "Calamity Queller",
@@ -224,7 +224,7 @@ export const mavuika = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro/Electro RES Shred & Healing. Buffs team ATK% after triggering Overload.",
                 weapons: [
                     "Staff of Homa",
@@ -247,7 +247,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "ororon",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Support. Triggers Electro-related reactions and off-field attacks. Solves Energy needs.",
                 weapons: [
                     "Elegy for the End",
@@ -265,7 +265,7 @@ export const mavuika = {
             },
             {
                 characterId: "clorinde",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Main DPS. Infuses normal attacks with Electro and triggers reactions.",
                 weapons: [
                     "Absolution",
@@ -283,7 +283,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals coordinated attacks via Burst to trigger Overload.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -301,7 +301,7 @@ export const mavuika = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro/Electro RES Shred & Healing. Buffs team ATK% after triggering Overload.",
                 weapons: [
                     "Staff of Homa",
@@ -324,7 +324,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -340,7 +340,7 @@ export const mavuika = {
             },
             {
                 characterId: "chasca",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Anemo Main DPS. Adapts her damage based on teammates' elements to trigger reactions.",
                 weapons: [
                     "Astral Vulture's Crimson Plumage",
@@ -358,7 +358,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Enables Pyro element infusion and triggers Vaporize reactions.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -376,7 +376,7 @@ export const mavuika = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -401,7 +401,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "varesa",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Main DPS. Deals continuous Electro damage to trigger Overload reactions.",
                 weapons: [
                     "Tulaytullah's Remembrance",
@@ -419,7 +419,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals coordinated attacks via Burst to trigger Overload.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -437,7 +437,7 @@ export const mavuika = {
             },
             {
                 characterId: "iansan",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support/Healer. Buffs teammates' ATK based on her max HP. Provides healing.",
                 weapons: [
                     "Calamity Queller",
@@ -454,7 +454,7 @@ export const mavuika = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro/Electro RES Shred & Healing. Buffs team ATK% after triggering Overload.",
                 weapons: [
                     "Staff of Homa",
@@ -477,7 +477,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "mualani",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Hydro Main DPS. Deals high on-field Vaporize damage.",
                 weapons: [
                     "Surf's Up",
@@ -495,7 +495,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Provides consistent off-field Pyro application to enable Vaporize.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -513,7 +513,7 @@ export const mavuika = {
             },
             {
                 characterId: "xilonen",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -531,7 +531,7 @@ export const mavuika = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Cryo Shield & Support. Provides shield and reduces resistance via Melt reactions.",
                 weapons: [
                     "Starcaller's Watch",
@@ -556,7 +556,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -574,7 +574,7 @@ export const mavuika = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Cryo Shield & Support. Provides shield and reduces resistance via Melt reactions.",
                 weapons: [
                     "Starcaller's Watch",
@@ -592,7 +592,7 @@ export const mavuika = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -608,7 +608,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Main DPS. Deals high on-field Melt damage with Citlali's Cryo application.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -633,7 +633,7 @@ export const mavuika = {
         members: [
             {
                 characterId: "emilie",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Off-field Dendro DPS. Amplifies Burning reaction damage and deals high consistent damage.",
                 weapons: [
                     "Lumidouce Elegy",
@@ -651,7 +651,7 @@ export const mavuika = {
             },
             {
                 characterId: "mavuika",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Applies consistent off-field Pyro and triggers Burning to enable Kinich.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -669,7 +669,7 @@ export const mavuika = {
             },
             {
                 characterId: "kinich",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "On-field Dendro DPS. Uses his Elemental Skill to trigger loop shots and deals massive damage.",
                 weapons: [
                     "Fang of the Mountain King",
@@ -686,7 +686,7 @@ export const mavuika = {
             },
             {
                 characterId: "iansan",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support/Healer. Buffs teammates' ATK based on her max HP. Provides healing.",
                 weapons: [
                     "Calamity Queller",

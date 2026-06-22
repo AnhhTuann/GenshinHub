@@ -1,8 +1,8 @@
 export const yoimiya = {
   characterId: "yoimiya",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -39,7 +39,7 @@ export const yoimiya = {
             },
             {
                 characterId: "yunjin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides significant Normal Attack DMG and Speed buffs.",
                 weapons: [
                     "Favonius Lance"
@@ -57,7 +57,7 @@ export const yoimiya = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a safe environment with shield and team ATK buff.",
                 weapons: [
                     "Staff of Homa",
@@ -74,7 +74,7 @@ export const yoimiya = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Hydro application to enable Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -98,7 +98,7 @@ export const yoimiya = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies, decreases resistances, and buffs DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -116,7 +116,7 @@ export const yoimiya = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Electro application and burst support.",
                 weapons: [
                     "Engulfing Lightning",
@@ -134,7 +134,7 @@ export const yoimiya = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buff and healing support.",
                 weapons: [
                     "Skyward Blade",
@@ -176,7 +176,7 @@ export const yoimiya = {
         members: [
             {
                 characterId: "venti",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies and spreads Cryo.",
                 weapons: [
                     "Skyward Harp",
@@ -212,7 +212,7 @@ export const yoimiya = {
             },
             {
                 characterId: "ganyu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Constant off-field Cryo application with Burst.",
                 weapons: [
                     "Amos' Bow",
@@ -230,7 +230,7 @@ export const yoimiya = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -272,7 +272,7 @@ export const yoimiya = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shield and team ATK buff support.",
                 weapons: [
                     "Staff of Homa",
@@ -289,7 +289,7 @@ export const yoimiya = {
             },
             {
                 characterId: "yunjin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Buffs Normal Attack speed and damage.",
                 weapons: [
                     "Favonius Lance"
@@ -307,7 +307,7 @@ export const yoimiya = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Hydro application and active character damage buff.",
                 weapons: [
                     "Aqua Simulacra",
@@ -333,7 +333,7 @@ export const yoimiya = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Reduces Cryo and Pyro resistance, buffs Elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -351,7 +351,7 @@ export const yoimiya = {
             },
             {
                 characterId: "ganyu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Applies Cryo consistently off-field via Burst.",
                 weapons: [
                     "Amos' Bow",
@@ -387,7 +387,7 @@ export const yoimiya = {
             },
             {
                 characterId: "diona",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shielding, healing, and battery support for Ganyu.",
                 weapons: [
                     "Sacrificial Bow",
@@ -411,7 +411,7 @@ export const yoimiya = {
         members: [
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Constant off-field Electro application with her Skill.",
                 weapons: [
                     "Engulfing Lightning",
@@ -428,7 +428,7 @@ export const yoimiya = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK buff and healing support.",
                 weapons: [
                     "Aquila Favonia",
@@ -463,7 +463,7 @@ export const yoimiya = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shreds Pyro/Electro resistance and buffs team ATK upon Overload.",
                 weapons: [
                     "Favonius Lance",
@@ -505,7 +505,7 @@ export const yoimiya = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides shields and buffs team ATK.",
                 weapons: [
                     "Staff of Homa",
@@ -540,7 +540,7 @@ export const yoimiya = {
             },
             {
                 characterId: "yunjin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Buffs Normal Attack DMG for both Ayato and Yoimiya.",
                 weapons: [
                     "Favonius Lance"
@@ -565,7 +565,7 @@ export const yoimiya = {
         members: [
             {
                 characterId: "yunjin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Normal Attack DMG and Speed buffs.",
                 weapons: [
                     "Favonius Lance"
@@ -583,7 +583,7 @@ export const yoimiya = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Electro application via Oz.",
                 weapons: [
                     "Skyward Harp",
@@ -619,7 +619,7 @@ export const yoimiya = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Strong shield and ATK buffs.",
                 weapons: [
                     "Staff of Homa",

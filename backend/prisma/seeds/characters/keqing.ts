@@ -1,8 +1,8 @@
 export const keqing = {
   characterId: "keqing",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Main DPS",
+  recommendedC: "C4",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

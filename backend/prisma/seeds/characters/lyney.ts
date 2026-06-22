@@ -1,8 +1,8 @@
 export const lyney = {
   characterId: "lyney",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const lyney = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Support. Swirls Pyro to shred resistance, groups enemies, and provides elemental damage bonus.",
                 weapons: [
                     "Freedom-Sworn",
@@ -55,7 +55,7 @@ export const lyney = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing to sustain Lyney's HP manipulation.",
                 weapons: [
                     "Aquila Favonia",
@@ -71,7 +71,7 @@ export const lyney = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage with Pyronado and Pyronado's Pyro application.",
                 weapons: [
                     "Engulfing Lightning",
@@ -96,7 +96,7 @@ export const lyney = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing.",
                 weapons: [
                     "Aquila Favonia",
@@ -130,7 +130,7 @@ export const lyney = {
             },
             {
                 characterId: "dehya",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Pyro Sub DPS & Tank. Provides off-field Pyro application, damage reduction, and interruption resistance.",
                 weapons: [
                     "Favonius Greatsword",
@@ -147,7 +147,7 @@ export const lyney = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Support. Swirls Pyro to shred resistance, groups enemies, and provides elemental damage bonus.",
                 weapons: [
                     "Freedom-Sworn",
@@ -170,7 +170,7 @@ export const lyney = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG and benefits from Pyro RES shred.",
                 weapons: [
                     "Engulfing Lightning",
@@ -206,7 +206,7 @@ export const lyney = {
             },
             {
                 characterId: "lynette",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Support. Taunts enemies, swirls Pyro to reduce enemy resistance, and boosts team ATK after using Burst.",
                 weapons: [
                     "Freedom-Sworn",
@@ -223,7 +223,7 @@ export const lyney = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing.",
                 weapons: [
                     "Aquila Favonia",

@@ -1,8 +1,8 @@
 export const nahida = {
   characterId: "nahida",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Sub DPS, Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const nahida = {
         members: [
             {
                 characterId: "traveler",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Provides Dendro Resonance and off-field Dendro application.",
                 weapons: [
                     "Freedom-Sworn",
@@ -38,7 +38,7 @@ export const nahida = {
             },
             {
                 characterId: "nilou",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Replaces Bloom cores with Bountiful Cores for instant massive damage.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -56,7 +56,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Main DPS. Continuous Dendro application on-field.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -75,7 +75,7 @@ export const nahida = {
             },
             {
                 characterId: "kokomi",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Support. Heals the team and applies Hydro off-field.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -100,7 +100,7 @@ export const nahida = {
         members: [
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
                 weapons: [
                     "Aqua Simulacra",
@@ -118,7 +118,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Main DPS. Maximizes EM for personal damage and Catalyze reactions.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -137,7 +137,7 @@ export const nahida = {
             },
             {
                 characterId: "yae-miko",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Provides off-field Electro damage for Aggravate.",
                 weapons: [
                     "Kagura's Verity",
@@ -154,7 +154,7 @@ export const nahida = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Shield Support. Provides shield and Geo Resonance.",
                 weapons: [
                     "Staff of Homa",
@@ -178,7 +178,7 @@ export const nahida = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Support. Applies Pyro to trigger Burning, heals, and buffs ATK.",
                 weapons: [
                     "Aquila Favonia",
@@ -195,7 +195,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Maintains Burning status on enemies via Tri-Karma Purification.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -214,7 +214,7 @@ export const nahida = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Shield Support. Protects Ganyu during Charged Attacks.",
                 weapons: [
                     "Staff of Homa",
@@ -231,7 +231,7 @@ export const nahida = {
             },
             {
                 characterId: "ganyu",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Cryo Main DPS. Triggers Melt on burning targets.",
                 weapons: [
                     "Hunter's Path",
@@ -256,7 +256,7 @@ export const nahida = {
         members: [
             {
                 characterId: "thoma",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Support. Triggers Burgeon reactions on Dendro cores.",
                 weapons: [
                     "Kitain Cross Spear"
@@ -272,7 +272,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Main DPS. Applies Dendro and triggers reactions on-field.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -291,7 +291,7 @@ export const nahida = {
             },
             {
                 characterId: "kuki-shinobu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Support. Heals the team and triggers Hyperbloom.",
                 weapons: [
                     "Freedom-Sworn",
@@ -309,7 +309,7 @@ export const nahida = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro and increases active character damage.",
                 weapons: [
                     "Aqua Simulacra",
@@ -335,7 +335,7 @@ export const nahida = {
         members: [
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Deals off-field Electro damage for Catalyze.",
                 weapons: [
                     "Aqua Simulacra",
@@ -353,7 +353,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM with the active character.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -372,7 +372,7 @@ export const nahida = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Shield Support. Provides shield and RES shred.",
                 weapons: [
                     "Staff of Homa",
@@ -389,7 +389,7 @@ export const nahida = {
             },
             {
                 characterId: "cyno",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Main DPS. Drives Aggravate reactions on-field during Burst.",
                 weapons: [
                     "Staff of the Scarlet Sands",
@@ -415,7 +415,7 @@ export const nahida = {
         members: [
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Shield Support. Strong shield protection, can buff Geo/Electro with Archaic Petra.",
                 weapons: [
                     "Staff of Homa",
@@ -432,7 +432,7 @@ export const nahida = {
             },
             {
                 characterId: "beidou",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Provides off-field Electro damage and damage reduction via Burst.",
                 weapons: [
                     "Skyward Pride",
@@ -450,7 +450,7 @@ export const nahida = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
                 weapons: [
                     "Aqua Simulacra",
@@ -468,7 +468,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Main DPS. Deals high on-field Dendro damage and drives Catalyze.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -494,7 +494,7 @@ export const nahida = {
         members: [
             {
                 characterId: "kokomi",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Main DPS. Applies Hydro on-field, triggers Bloom, and heals the team.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -513,7 +513,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Applies off-field Dendro to create Bloom cores.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -532,7 +532,7 @@ export const nahida = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
                 weapons: [
                     "Freedom-Sworn",
@@ -550,7 +550,7 @@ export const nahida = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro trigger. Triggers Hyperbloom on Dendro cores off-field.",
                 weapons: [
                     "Dragon's Bane"
@@ -573,7 +573,7 @@ export const nahida = {
         members: [
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Triggers Quicken and Aggravate reactions.",
                 weapons: [
                     "Dragon's Bane"
@@ -589,7 +589,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Main DPS. Applies Dendro with Skill and drives reactions using Normal Attacks.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -608,7 +608,7 @@ export const nahida = {
             },
             {
                 characterId: "kuki-shinobu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Support. Heals and triggers Hyperbloom from Dendro cores.",
                 weapons: [
                     "Freedom-Sworn",
@@ -626,7 +626,7 @@ export const nahida = {
             },
             {
                 characterId: "thoma",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Support. Provides shield and triggers Burning/Burgeon/Overload reactions.",
                 weapons: [
                     "Kitain Cross Spear"
@@ -649,7 +649,7 @@ export const nahida = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Support. Provides ATK buff, healing, and Pyro application for Overload/Burgeon.",
                 weapons: [
                     "Skyward Blade",
@@ -666,7 +666,7 @@ export const nahida = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field to create Bloom cores.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -685,7 +685,7 @@ export const nahida = {
             },
             {
                 characterId: "razor",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Main DPS. Drives multiple reactions on-field using Burst.",
                 weapons: [
                     "Serpent Spine",
@@ -702,7 +702,7 @@ export const nahida = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to create Bloom cores.",
                 weapons: [
                     "Sacrificial Sword"

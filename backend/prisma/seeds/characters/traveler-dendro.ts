@@ -1,8 +1,8 @@
 export const travelerDendro = {
   characterId: "traveler-dendro",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

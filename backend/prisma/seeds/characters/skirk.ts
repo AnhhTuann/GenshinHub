@@ -1,8 +1,8 @@
 export const skirk = {
   characterId: "skirk",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Main DPS",
+  recommendedC: "C1",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

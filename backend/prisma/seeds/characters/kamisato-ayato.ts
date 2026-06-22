@@ -1,8 +1,8 @@
 export const kamisatoAyato = {
   characterId: "kamisato-ayato",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -40,7 +40,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "beidou",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Electro via Burst for consistent Electro-Charged.",
                 weapons: [
                     "Skyward Pride",
@@ -58,7 +58,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Electro application via Skill to enable Electro-Charged. C6 is a significant upgrade.",
                 weapons: [
                     "Skyward Harp",
@@ -76,7 +76,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "jean",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Heals, shreds Electro and Hydro RES with Viridescent Venerer, and provides 15% attack speed at C2.",
                 weapons: [
                     "Skyward Blade",
@@ -120,7 +120,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Applies Dendro with Skill and buffs Burst duration via teammate elements.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -139,7 +139,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Hydro application to generate Bloom cores.",
                 weapons: [
                     "Aqua Simulacra",
@@ -158,7 +158,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "thoma",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides shield and triggers Burgeon via Burst. C6 boosts Ayato normal attack DMG.",
                 weapons: [
                     "Kitain Cross Spear",
@@ -219,7 +219,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a strong shield for safe field time and ATK buff to the team via Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -236,7 +236,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "yun-jin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides Normal ATK Bonus and ATK SPD bonus (C6) to Ayato and Yoimiya.",
                 weapons: [
                     "Kitain Cross Spear",
@@ -262,7 +262,7 @@ export const kamisatoAyato = {
         members: [
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shield provides safe environment and ATK boost via Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -279,7 +279,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "yun-jin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides Normal ATK Bonus and ATK SPD (C6) to both Ayato and Hu Tao.",
                 weapons: [
                     "Kitain Cross Spear",
@@ -343,7 +343,7 @@ export const kamisatoAyato = {
         members: [
             {
                 characterId: "kuki-shinobu",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Kuki heals the team and triggers Hyperbloom with her Electro Skill. Maximize Elemental Mastery for high Hyperbloom damage.",
                 weapons: [
                     "Freedom-Sworn",
@@ -380,7 +380,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Nahida deals DMG via Skill connecting up to 8 enemies and triggering reactions. Her Burst buffs the Skill based on teammates' elements.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -399,7 +399,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Kazuha groups enemies, applies crowd control, provides DMG buffs, and reduces Anemo resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -424,7 +424,7 @@ export const kamisatoAyato = {
         members: [
             {
                 characterId: "yun-jin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides Normal ATK Bonus and ATK SPD buff to Ayato via Burst.",
                 weapons: [
                     "Kitain Cross Spear",
@@ -462,7 +462,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a strong shield and increases team ATK with Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -479,7 +479,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies, reduces Hydro resistance, and provides DMG buff.",
                 weapons: [
                     "Freedom-Sworn",
@@ -504,7 +504,7 @@ export const kamisatoAyato = {
         members: [
             {
                 characterId: "yun-jin",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides Normal ATK Bonus and Normal ATK SPD Bonus (C6) to Ayato.",
                 weapons: [
                     "Kitain Cross Spear",
@@ -541,7 +541,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "jean",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Healer, spreads element, reduces enemy RES. C2 gives 15% ATK SPD to all characters.",
                 weapons: [
                     "Skyward Blade",
@@ -559,7 +559,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Elemental Burst provides DMG increase based on HP changes. Elemental Skill burns allies HP.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -584,7 +584,7 @@ export const kamisatoAyato = {
         members: [
             {
                 characterId: "venti",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies with Burst and spreads <hydro>Hydro</hydro> for wider Freeze.",
                 weapons: [
                     "Elegy for the End",
@@ -620,7 +620,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "ganyu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Deals <cryo>Cryo</cryo> via Burst and Charged Attack. Provides <cryo>Cryo</cryo> for Freeze.",
                 weapons: [
                     "Hunter's Path",
@@ -638,7 +638,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "diona",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shield provides safety and <cryo>Cryo</cryo> battery for Ganyu.",
                 weapons: [
                     "Sacrificial Bow",
@@ -662,7 +662,7 @@ export const kamisatoAyato = {
         members: [
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Healer and Hydro applicator. Skill triggers Tenacity of the Millelith to buff team ATK and sustain Freeze.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -700,7 +700,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies with Skill and Burst, provides Elemental DMG Bonus to team and reduces enemy resistance with Viridescent Venerer.",
                 weapons: [
                     "Freedom-Sworn",
@@ -718,7 +718,7 @@ export const kamisatoAyato = {
             },
             {
                 characterId: "kamisato-ayaka",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Deals high DMG with Burst and Skill, providing Cryo application to trigger Freeze.",
                 weapons: [
                     "Mistsplitter Reforged",

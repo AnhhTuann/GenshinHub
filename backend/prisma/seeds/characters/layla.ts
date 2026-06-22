@@ -1,8 +1,8 @@
 export const layla = {
   characterId: "layla",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Support",
+  recommendedC: "C1",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

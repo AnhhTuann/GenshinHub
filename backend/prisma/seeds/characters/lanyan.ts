@@ -1,8 +1,8 @@
 export const lanyan = {
   characterId: "lanyan",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Support",
+  recommendedC: "C2",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

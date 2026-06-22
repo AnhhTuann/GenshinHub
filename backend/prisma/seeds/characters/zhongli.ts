@@ -1,8 +1,8 @@
 export const zhongli = {
   characterId: "zhongli",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -38,7 +38,7 @@ export const zhongli = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Electro Sub DPS. Provides continuous off-field Electro damage to trigger Aggravate.",
                 weapons: [
                     "Skyward Harp",
@@ -56,7 +56,7 @@ export const zhongli = {
             },
             {
                 characterId: "keqing",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Electro Main DPS. Multi-stage attacks trigger Aggravate reactions to trigger extra damage.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -75,7 +75,7 @@ export const zhongli = {
             },
             {
                 characterId: "traveler",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field via Burst to maintain Quicken status.",
                 weapons: [
                     "Favonius Sword"
@@ -99,7 +99,7 @@ export const zhongli = {
         members: [
             {
                 characterId: "eula",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Physical Main DPS. Unleashes massive physical damage via Burst.",
                 weapons: [
                     "Song of Broken Pines",
@@ -134,7 +134,7 @@ export const zhongli = {
             },
             {
                 characterId: "chongyun",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Cryo Sub DPS. Provides Cryo application, reduces cooldowns, and increases ATK speed.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -152,7 +152,7 @@ export const zhongli = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Electro Sub DPS. Applies off-field Electro to enable Superconduct.",
                 weapons: [
                     "Skyward Harp",
@@ -195,7 +195,7 @@ export const zhongli = {
             },
             {
                 characterId: "albedo",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Geo Sub DPS. Pairs with Zhongli for Geo Resonance and deals off-field Geo damage.",
                 weapons: [
                     "Cinnabar Spindle",
@@ -231,7 +231,7 @@ export const zhongli = {
             },
             {
                 characterId: "xiao",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Main DPS. Unleashes continuous plunging attacks during Burst.",
                 weapons: [
                     "Primordial Jade Winged-Spear",
@@ -273,7 +273,7 @@ export const zhongli = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Sub DPS. Deals massive Pyro damage off-field with Pyronado.",
                 weapons: [
                     "Engulfing Lightning",
@@ -290,7 +290,7 @@ export const zhongli = {
             },
             {
                 characterId: "ganyu",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Main DPS. Triggers Melt on Pyro-affected enemies.",
                 weapons: [
                     "Amos' Bow",
@@ -368,7 +368,7 @@ export const zhongli = {
             },
             {
                 characterId: "ganyu",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Main DPS. Deals massive AoE Cryo damage via Charged Attacks.",
                 weapons: [
                     "Amos' Bow",
@@ -444,7 +444,7 @@ export const zhongli = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to enable Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -461,7 +461,7 @@ export const zhongli = {
             },
             {
                 characterId: "hu-tao",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Pyro Main DPS. Vaporizes attacks on enemies affected by Hydro.",
                 weapons: [
                     "Staff of Homa",
@@ -522,7 +522,7 @@ export const zhongli = {
             },
             {
                 characterId: "ayaka",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Main DPS. Deals massive Cryo damage with Burst.",
                 weapons: [
                     "Mistsplitter Reforged",

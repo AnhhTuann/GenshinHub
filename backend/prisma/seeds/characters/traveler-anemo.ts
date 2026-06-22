@@ -1,8 +1,8 @@
 export const travelerAnemo = {
   characterId: "traveler-anemo",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "D",
+  role: "Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

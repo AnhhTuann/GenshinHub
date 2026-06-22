@@ -1,8 +1,8 @@
 export const rosaria = {
   characterId: "rosaria",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Sub DPS, Support",
+  recommendedC: "C2",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

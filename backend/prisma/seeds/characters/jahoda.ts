@@ -1,8 +1,8 @@
 export const jahoda = {
   characterId: "jahoda",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Sub DPS, Support",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

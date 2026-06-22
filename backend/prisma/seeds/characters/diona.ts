@@ -1,8 +1,8 @@
 export const diona = {
   characterId: "diona",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Support",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

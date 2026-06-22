@@ -1,8 +1,8 @@
 export const illuga = {
   characterId: "illuga",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Support",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

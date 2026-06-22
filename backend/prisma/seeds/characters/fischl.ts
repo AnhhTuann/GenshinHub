@@ -1,8 +1,8 @@
 export const fischl = {
   characterId: "fischl",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

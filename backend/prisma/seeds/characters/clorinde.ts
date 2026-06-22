@@ -1,8 +1,8 @@
 export const clorinde = {
   characterId: "clorinde",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

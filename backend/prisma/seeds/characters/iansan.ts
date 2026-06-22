@@ -1,8 +1,8 @@
 export const iansan = {
   characterId: "iansan",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Support",
+  recommendedC: "C2",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

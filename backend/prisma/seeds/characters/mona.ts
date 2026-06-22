@@ -1,8 +1,8 @@
 export const mona = {
   characterId: "mona",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Support, Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

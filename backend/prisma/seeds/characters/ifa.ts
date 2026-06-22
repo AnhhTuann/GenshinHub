@@ -1,8 +1,8 @@
 export const ifa = {
   characterId: "ifa",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Main DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

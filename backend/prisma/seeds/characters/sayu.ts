@@ -1,8 +1,8 @@
 export const sayu = {
   characterId: "sayu",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Sub DPS, Support",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

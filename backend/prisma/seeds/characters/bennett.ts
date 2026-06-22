@@ -1,8 +1,8 @@
 export const bennett = {
   characterId: "bennett",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Support",
+  recommendedC: "C1",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -56,7 +56,7 @@ export const bennett = {
             },
             {
                 characterId: "yoimiya",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Vaporization in this team.",
                 weapons: [
                     "Thundering Pulse",
@@ -74,7 +74,7 @@ export const bennett = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Xingqiu's Elemental Burst attaches Hydro element to enemies continuously, reacting with Yoimiya's Pyro DMG to trigger Vaporization.",
                 weapons: [
                     "Sacrificial Sword"
@@ -98,7 +98,7 @@ export const bennett = {
         members: [
             {
                 characterId: "klee",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Klee is the main DPS, her DMG is amplified by Pyro in this team.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
@@ -132,7 +132,7 @@ export const bennett = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides a large amount of off-field Pyro DMG.",
                 weapons: [
                     "Engulfing Lightning",
@@ -175,7 +175,7 @@ export const bennett = {
         members: [
             {
                 characterId: "kujou-sara",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides ATK buff to teammates. Her Burst boosts damage and Elemental Mastery.",
                 weapons: [
                     "Skyward Harp",
@@ -228,7 +228,7 @@ export const bennett = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "The main DPS. Boosts teammates' Energy Recharge with Burst and triggers Overload with Bennett.",
                 weapons: [
                     "Engulfing Lightning",
@@ -270,7 +270,7 @@ export const bennett = {
             },
             {
                 characterId: "hu-tao",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Hu Tao is the main DPS, her DMG is amplified by Vaporization in this team.",
                 weapons: [
                     "Staff of Homa",
@@ -306,7 +306,7 @@ export const bennett = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -331,7 +331,7 @@ export const bennett = {
         members: [
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides continuous off-field Electro damage via Oz.",
                 weapons: [
                     "Skyward Harp",
@@ -366,7 +366,7 @@ export const bennett = {
             },
             {
                 characterId: "eula",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Eula is the main DPS, her physical DMG is amplified by Superconduct.",
                 weapons: [
                     "Song of Broken Pines",
@@ -408,7 +408,7 @@ export const bennett = {
         members: [
             {
                 characterId: "tartaglia",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Main DPS, DMG amplified by Vaporize.",
                 weapons: [
                     "Polar Star",
@@ -426,7 +426,7 @@ export const bennett = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Elemental Burst provides huge DMG and continuous Pyro for Vaporize.",
                 weapons: [
                     "Engulfing Lightning",
@@ -486,7 +486,7 @@ export const bennett = {
         members: [
             {
                 characterId: "yanfei",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Yanfei is the main DPS, her DMG is amplified by Vaporization in this team.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
@@ -522,7 +522,7 @@ export const bennett = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -581,7 +581,7 @@ export const bennett = {
             },
             {
                 characterId: "klee",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Klee is the main DPS, her DMG is amplified by Vaporization in this team.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
@@ -616,7 +616,7 @@ export const bennett = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporize with Klee.",
                 weapons: [
                     "Sacrificial Sword"

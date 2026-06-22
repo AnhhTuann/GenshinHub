@@ -1,8 +1,8 @@
 export const candace = {
   characterId: "candace",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Support",
+  recommendedC: "C2",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

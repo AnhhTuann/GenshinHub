@@ -1,8 +1,8 @@
 export const varesa = {
   characterId: "varesa",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

@@ -1,8 +1,8 @@
 export const qiqi = {
   characterId: "qiqi",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

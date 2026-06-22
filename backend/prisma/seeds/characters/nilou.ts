@@ -1,8 +1,8 @@
 export const nilou = {
   characterId: "nilou",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const nilou = {
         members: [
             {
                 characterId: "jean",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Heals and <element type='anemo'>Anemo</element> support that reduces enemy RES with <set>Viridescent Venerer</set> and heals the team.",
                 weapons: [
                     "Skyward Blade",
@@ -38,7 +38,7 @@ export const nilou = {
             },
             {
                 characterId: "nilou",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro main DPS using HP stacking for damage.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -117,7 +117,7 @@ export const nilou = {
             },
             {
                 characterId: "nilou",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Nilou provides Hydro to trigger Vaporize. Build full HP to maximize her skill and Burst damage.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -150,7 +150,7 @@ export const nilou = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Kazuha groups enemies, applies crowd control, provides DMG buffs to teammates, and reduces elemental resistance of enemies.",
                 weapons: [
                     "Freedom-Sworn",
@@ -192,7 +192,7 @@ export const nilou = {
             },
             {
                 characterId: "citlali",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Provides a shield based on Elemental Mastery. Her skill summons a creature that deals AoE Cryo damage and reduces enemies' Pyro and Hydro RES when Frozen or Melt is triggered.",
                 weapons: [
                     "Starcaller's Watch",
@@ -210,7 +210,7 @@ export const nilou = {
             },
             {
                 characterId: "escoffier",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Summons a Cooking Mek that deals Cryo damage. Burst heals the team and lowers enemies' Cryo and Hydro RES, scaling with number of Cryo and Hydro characters.",
                 weapons: [
                     "Symphonist of Scents",
@@ -228,7 +228,7 @@ export const nilou = {
             },
             {
                 characterId: "nilou",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Provides Hydro application to trigger Freeze. Uses Marechaussee Hunter to boost CRIT Rate with HP fluctuations from Furina.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -253,7 +253,7 @@ export const nilou = {
         members: [
             {
                 characterId: "lauma",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Converts Bloom into Lunar Bloom that can crit. Her Skill stacks boost Lunar Bloom DMG. Also reduces enemies' Dendro and Hydro RES and gains Lunar Bloom bonus from Elemental Mastery.",
                 weapons: [
                     "Nightweaver's Glass",
@@ -272,7 +272,7 @@ export const nilou = {
             },
             {
                 characterId: "nilou",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Provides Hydro for Bloom. Passive creates Bountiful Cores that explode faster and deal larger AoE DMG.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -367,7 +367,7 @@ export const nilou = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Kokomi is the Main DPS in this team, her continuous Hydro attacks react with Dendro to trigger Bloom.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -427,7 +427,7 @@ export const nilou = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Baizhu provides both Shield and Healing to protect the team. The DMG of Bloom is increased based on his Max HP via his passive talent.",
                 weapons: [
                     "Jadefall's Splendor",
@@ -462,7 +462,7 @@ export const nilou = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Nahida mainly deals DMG via her Elemental Skill, which connects up to 8 enemies and deals Dendro DMG while triggering reactions. Her Elemental Burst buffs her Skill based on teammates' elements. With two Hydro characters, Burst duration is increased.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -505,7 +505,7 @@ export const nilou = {
             },
             {
                 characterId: "traveler-dendro",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Provides off-field Dendro application for triggering Bloom.",
                 weapons: [
                     "Skyward Blade",
@@ -523,7 +523,7 @@ export const nilou = {
             },
             {
                 characterId: "barbara",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Acts as the on-field driver. Elemental Skill applies Hydro to nearby enemies and heals the party continuously.",
                 weapons: [
                     "Sacrificial Fragments"
@@ -581,7 +581,7 @@ export const nilou = {
             },
             {
                 characterId: "yaoyao",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Healer and <element type='dendro'>Dendro</element> resonance. Uses Tenacity of the Millelith to boost team ATK and provide a safe environment.",
                 weapons: [
                     "Staff of Homa",
@@ -614,7 +614,7 @@ export const nilou = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Main damage dealer via Skill that marks up to 8 enemies and triggers reactions. Burst extends duration and buffs Skill based on teammates' elements.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -640,7 +640,7 @@ export const nilou = {
         members: [
             {
                 characterId: "lauma",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Transforms Bloom into Lunar Bloom, which deals higher damage and can crit. Elemental Skill accumulates stacks to boost Lunar Bloom DMG. Reduces enemies' Dendro and Hydro RES, and increases team's Lunar Bloom damage based on her Elemental Mastery.",
                 weapons: [
                     "Nightweaver's Glass",
@@ -659,7 +659,7 @@ export const nilou = {
             },
             {
                 characterId: "nilou",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Provides Hydro for Bloom. Through her passive, if team only has Dendro and Hydro, cores become Bountiful Cores, which burst quicker and deal larger AoE DMG.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -675,7 +675,7 @@ export const nilou = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Her Elemental Skill's attacks trigger Hydro every two seconds for triggering elemental reactions.",
                 weapons: [
                     "Everlasting Moonglow",

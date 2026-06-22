@@ -1,8 +1,8 @@
 export const travelerElectro = {
   characterId: "traveler-electro",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Support",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

@@ -1,8 +1,8 @@
 export const raidenShogun = {
   characterId: "raiden-shogun",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Main DPS, Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support. Heals and buffs ATK.",
                 weapons: [
                     "Aquila Favonia",
@@ -37,7 +37,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "chevreuse",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support. Shreds Pyro/Electro resistance and buffs team ATK%.",
                 weapons: [
                     "Staff of Homa",
@@ -54,7 +54,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "kujou-sara",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Sub DPS. Provides ATK and Electro CRIT DMG buffs.",
                 weapons: [
                     "Elegy for the End",
@@ -72,7 +72,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Main DPS. Deals massive Electro damage with Burst.",
                 weapons: [
                     "Engulfing Lightning",
@@ -97,7 +97,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "kujou-sara",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Sub DPS. Buffs Electro CRIT DMG and ATK.",
                 weapons: [
                     "Elegy for the End",
@@ -115,7 +115,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Main DPS. Triggers Aggravate reactions for enhanced Electro damage.",
                 weapons: [
                     "Engulfing Lightning",
@@ -133,7 +133,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Anemo Support. Groups enemies and shreds resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -150,7 +150,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares Elemental Mastery.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -176,7 +176,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "eula",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Physical Main DPS. Deals massive physical Burst damage.",
                 weapons: [
                     "Song of Broken Pines",
@@ -194,7 +194,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Main DPS. Triggers Superconduct and refills team energy.",
                 weapons: [
                     "Engulfing Lightning",
@@ -212,7 +212,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "rosaria",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Cryo Sub DPS. Batteries Eula and shares CRIT Rate.",
                 weapons: [
                     "Favonius Lance"
@@ -228,7 +228,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support. Heals and buffs ATK.",
                 weapons: [
                     "Aquila Favonia",
@@ -251,7 +251,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support. Provides massive ATK buff and healing for the team.",
                 weapons: [
                     "Aquila Favonia",
@@ -267,7 +267,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Anemo Support. Groups enemies, triggers Viridescent Venerer resistance shred, and buffs Electro DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -284,7 +284,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Main DPS. Drives the team with high energy cost bursts, maximizing damage and energy refund.",
                 weapons: [
                     "Engulfing Lightning",
@@ -302,7 +302,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "kujou-sara",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Sub DPS. Provides Electro CRIT DMG buff and ATK bonus for Raiden.",
                 weapons: [
                     "Elegy for the End",
@@ -327,7 +327,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals massive Pyro damage off-field with her Pyronado.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -346,7 +346,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Main DPS. Scales damage with team energy consumption and refills team energy.",
                 weapons: [
                     "Engulfing Lightning",
@@ -364,7 +364,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides constant off-field Hydro application to enable Vaporize/Electro-Charged reactions.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -382,7 +382,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support. Heals and buffs ATK.",
                 weapons: [
                     "Aquila Favonia",
@@ -405,7 +405,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Sub DPS. Continuously applies Pyro off-field.",
                 weapons: [
                     "Engulfing Lightning",
@@ -424,7 +424,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "kujou-sara",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro Sub DPS. Buffs Electro CRIT DMG and ATK.",
                 weapons: [
                     "Elegy for the End",
@@ -442,7 +442,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Main DPS. Drives the team with high energy cost bursts.",
                 weapons: [
                     "Engulfing Lightning",
@@ -460,7 +460,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Pyro Support. Heals and buffs ATK.",
                 weapons: [
                     "Aquila Favonia",
@@ -483,7 +483,7 @@ export const raidenShogun = {
         members: [
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field and increases team Elemental Mastery.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -502,7 +502,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Hydro Sub DPS. Applies Hydro off-field and boosts active character damage.",
                 weapons: [
                     "Aqua Simulacra",
@@ -520,7 +520,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Dendro Support. Provides shields, healing, and Hyperbloom reaction damage bonus.",
                 weapons: [
                     "Prototype Amber"
@@ -535,7 +535,7 @@ export const raidenShogun = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Main DPS, Sub DPS",
                 roleDesc: "Electro trigger. Triggers Hyperbloom reactions on Dendro Cores with Elemental Skill.",
                 weapons: [
                     "Engulfing Lightning",

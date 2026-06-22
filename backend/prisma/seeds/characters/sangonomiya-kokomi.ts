@@ -1,8 +1,8 @@
 export const sangonomiyaKokomi = {
   characterId: "sangonomiya-kokomi",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "A",
+  role: "Support, Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Main DPS and driver. Max HP Hydro damage triggers Electro-Charged with Electro.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -40,7 +40,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, applies crowd control, provides DMG buff, reduces enemy resistance with Viridescent Venerer.",
                 weapons: [
                     "Freedom-Sworn",
@@ -58,7 +58,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Oz provides continuous off-field Electro application to trigger Electro-Charged.",
                 weapons: [
                     "Skyward Harp",
@@ -76,7 +76,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "beidou",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Burst provides off-field Electro application to constantly trigger Electro-Charged.",
                 weapons: [
                     "Skyward Pride",
@@ -101,7 +101,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Deals DMG, continuously applies Hydro to enemies.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -119,7 +119,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Provides continuous off-field Hydro application.",
                 weapons: [
                     "Aqua Simulacra",
@@ -137,7 +137,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, provides DMG buff, reduces enemy Hydro RES with Viridescent Venerer.",
                 weapons: [
                     "Freedom-Sworn",
@@ -155,7 +155,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Kokomi's Burst DMG scales with Max HP. Heals the team.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -181,7 +181,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, provides Anemo buff, reduces enemy resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -199,7 +199,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Provides massive ATK buff and healing with Bennett.",
                 weapons: [
                     "Skyward Blade",
@@ -216,7 +216,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Applies Hydro with Skill to enable Vaporize for Yoimiya, also heals based on HP.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -235,7 +235,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "yoimiya",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Main DPS whose attacks trigger Vaporize consistently.",
                 weapons: [
                     "Thundering Pulse",
@@ -260,7 +260,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Triggers Vaporize with Normal Attacks and Elemental Skill damage scales off Max HP.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -279,7 +279,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Provides massive ATK buff and healing with Bennett Burst.",
                 weapons: [
                     "Skyward Blade",
@@ -296,7 +296,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, provides Anemo resonance, buffs team damage, and reduces enemy resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -314,7 +314,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Provides continuous Pyro application via Pyronado and Guoba, enabling Vaporize for Kokomi.",
                 weapons: [
                     "Engulfing Lightning",
@@ -339,7 +339,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies with Skill and Burst, spreads elements, provides DMG buff. Reduces elemental RES with Viridescent Venerer.",
                 weapons: [
                     "Freedom-Sworn",
@@ -357,7 +357,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Sub DPS. Elemental Skill triggers Electro-Charged and activates Cores for Hyperbloom.",
                 weapons: [
                     "Dragon's Bane",
@@ -374,7 +374,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Deals DMG via Elemental Skill which connects up to 8 enemies and deals Dendro DMG. Burst buffs Skill based on teammates' elements. With two Hydro characters, the duration of her Burst is increased.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -393,7 +393,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Main DPS and driver. continuous Hydro attacks react with Dendro to create Dendro Cores via Skill and Normal Attacks to trigger Hyperbloom.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -419,7 +419,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "kamisato-ayaka",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Ayaka's high DMG attacks are key, providing Cryo and reacting with Hydro.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -437,7 +437,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, provides DMG buff, and reduces enemy resistance with Viridescent Venerer.",
                 weapons: [
                     "Freedom-Sworn",
@@ -455,7 +455,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Healer. Skill provides off-field Hydro application via Skill triggering Tenacity of the Millelith to buff the team.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -474,7 +474,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "rosaria",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Rosaria provides consistent particles with short cooldown Skill and generates Cryo application for Freeze.",
                 weapons: [
                     "Skyward Spine",
@@ -499,7 +499,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "kamisato-ayaka",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Deals high Burst and Normal Attack DMG.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -517,7 +517,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, provides DMG buff, reduces enemy resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -535,7 +535,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Healer. Skill applies Hydro every 2s, triggers Tenacity of the Millelith.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -554,7 +554,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "shenhe",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Provides Cryo bonus to Ayaka and increases DMG of attacks.",
                 weapons: [
                     "Calamity Queller",
@@ -579,7 +579,7 @@ export const sangonomiyaKokomi = {
         members: [
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Sub DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Sub DPS. Deals DMG, reacts with Pyro. Applies Hydro status with Skill and Burst as normal.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -598,7 +598,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "hu-tao",
-                role: "Main DPS",
+                role: "Support, Sub DPS",
                 roleDesc: "Main DPS. HP changes amplify Vaporize damage. Uses Skill to convert HP to ATK.",
                 weapons: [
                     "Staff of Homa",
@@ -617,7 +617,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Groups enemies, provides Element DMG, reduces enemy resistance with Viridescent Venerer.",
                 weapons: [
                     "Freedom-Sworn",
@@ -635,7 +635,7 @@ export const sangonomiyaKokomi = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Support, Sub DPS",
                 roleDesc: "Provides massive ATK buff and healing through Burst.",
                 weapons: [
                     "Skyward Blade",

@@ -1,8 +1,8 @@
 export const sucrose = {
   characterId: "sucrose",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Support, Sub DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

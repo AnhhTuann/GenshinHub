@@ -1,8 +1,8 @@
 export const collei = {
   characterId: "collei",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Sub DPS",
+  recommendedC: "C2",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

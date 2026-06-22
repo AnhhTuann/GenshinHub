@@ -1,8 +1,8 @@
 export const ningguang = {
   characterId: "ningguang",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "D",
+  role: "Main DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

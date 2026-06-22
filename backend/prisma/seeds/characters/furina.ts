@@ -1,8 +1,8 @@
 export const furina = {
   characterId: "furina",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "SS",
+  role: "Sub DPS, Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const furina = {
         members: [
             {
                 characterId: "emilie",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Deals high Dendro damage and supports Burning reactions.",
                 weapons: [
                     "Lumidouce Elegy",
@@ -39,7 +39,7 @@ export const furina = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Triggers Hyperbloom reactions with Elemental Skill.",
                 weapons: [
                     "Dragon's Bane"
@@ -55,7 +55,7 @@ export const furina = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Provides healing, shields, and buffs team damage.",
                 weapons: [
                     "Jadefall's Splendor",
@@ -71,7 +71,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -96,7 +96,7 @@ export const furina = {
         members: [
             {
                 characterId: "albedo",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Geo Sub DPS. Provides consistent off-field Geo damage.",
                 weapons: [
                     "Cinnabar Spindle",
@@ -114,7 +114,7 @@ export const furina = {
             },
             {
                 characterId: "noelle",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Geo Main DPS. Deals massive Geo damage on-field and heals the team.",
                 weapons: [
                     "Redhorn Stonethresher",
@@ -133,7 +133,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Support. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -151,7 +151,7 @@ export const furina = {
             },
             {
                 characterId: "gorou",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Geo Support. Buffs team DEF, Geo DMG, and Geo CRIT DMG.",
                 weapons: [
                     "Favonius Warbow"
@@ -174,7 +174,7 @@ export const furina = {
         members: [
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Provides healing, shields, and buffs Dendro reaction damage.",
                 weapons: [
                     "Jadefall's Splendor",
@@ -193,7 +193,7 @@ export const furina = {
             },
             {
                 characterId: "yae-miko",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Sub DPS. Provides off-field Electro application and high turret damage.",
                 weapons: [
                     "Kagura's Verity",
@@ -211,7 +211,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -229,7 +229,7 @@ export const furina = {
             },
             {
                 characterId: "alhaitham",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Main DPS. Deals high Dendro damage on-field and triggers reactions.",
                 weapons: [
                     "Light of Foliar Incision",
@@ -254,7 +254,7 @@ export const furina = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
                 weapons: [
                     "Skyward Blade",
@@ -271,7 +271,7 @@ export const furina = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage with Pyronado.",
                 weapons: [
                     "Engulfing Lightning",
@@ -289,7 +289,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Main DPS. Triggers massive Vaporize damage with Elemental Skill.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -307,7 +307,7 @@ export const furina = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -332,7 +332,7 @@ export const furina = {
         members: [
             {
                 characterId: "jean",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Anemo Support. Instantly heals the entire party and shreds resistances.",
                 weapons: [
                     "Skyward Blade",
@@ -349,7 +349,7 @@ export const furina = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Main DPS. Deals high Electro damage and restores energy for the team.",
                 weapons: [
                     "Engulfing Lightning",
@@ -367,7 +367,7 @@ export const furina = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
                 weapons: [
                     "Aqua Simulacra",
@@ -385,7 +385,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -410,7 +410,7 @@ export const furina = {
         members: [
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
                 weapons: [
                     "Aqua Simulacra",
@@ -428,7 +428,7 @@ export const furina = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
                 weapons: [
                     "Staff of Homa",
@@ -445,7 +445,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -463,7 +463,7 @@ export const furina = {
             },
             {
                 characterId: "hu-tao",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Pyro Main DPS. Deals massive Vaporize damage using Charged Attacks.",
                 weapons: [
                     "Staff of Homa",
@@ -488,7 +488,7 @@ export const furina = {
         members: [
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Main DPS. Drives reactions on-field with Hydro-infused attacks.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -506,7 +506,7 @@ export const furina = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field, marks enemies, and shares EM.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -524,7 +524,7 @@ export const furina = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Provides healing and shields, and buffs Bloom reaction damage.",
                 weapons: [
                     "Prototype Amber",
@@ -541,7 +541,7 @@ export const furina = {
             },
             {
                 characterId: "nilou",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Enables Bountiful Cores and provides off-field Hydro application.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -566,7 +566,7 @@ export const furina = {
         members: [
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Provides healing and shields, and buffs Dendro reactions.",
                 weapons: [
                     "Prototype Amber",
@@ -583,7 +583,7 @@ export const furina = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -601,7 +601,7 @@ export const furina = {
             },
             {
                 characterId: "clorinde",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Electro Main DPS. Infuses Electro on Normal Attacks and deals fast damage.",
                 weapons: [
                     "Absolution",
@@ -619,7 +619,7 @@ export const furina = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -645,7 +645,7 @@ export const furina = {
         members: [
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -663,7 +663,7 @@ export const furina = {
             },
             {
                 characterId: "neuvillette",
-                role: "Main DPS",
+                role: "Sub DPS, Support",
                 roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
                 weapons: [
                     "Tome of the Eternal Flow",
@@ -681,7 +681,7 @@ export const furina = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -699,7 +699,7 @@ export const furina = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS, Support",
                 roleDesc: "Dendro Support. Provides healing, shields, and buffs Bloom reaction damage.",
                 weapons: [
                     "Jadefall's Splendor",

@@ -1,8 +1,8 @@
 export const yelan = {
   characterId: "yelan",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Sub DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const yelan = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -37,7 +37,7 @@ export const yelan = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Electro Main DPS. Deals high Electro damage and restores energy for the team.",
                 weapons: [
                     "Engulfing Lightning",
@@ -116,7 +116,7 @@ export const yelan = {
             },
             {
                 characterId: "cyno",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Electro Main DPS. Deals high Electro damage during his Burst and triggers reactions.",
                 weapons: [
                     "Staff of the Scarlet Sands",
@@ -152,7 +152,7 @@ export const yelan = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Dendro Support. Provides healing, shields, and buffs Dendro reaction damage.",
                 weapons: [
                     "Jadefall's Splendor",
@@ -193,7 +193,7 @@ export const yelan = {
             },
             {
                 characterId: "thoma",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Pyro Support. Provides stackable shield and off-field Pyro application.",
                 weapons: [
                     "Staff of Homa",
@@ -209,7 +209,7 @@ export const yelan = {
             },
             {
                 characterId: "faruzan",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Anemo Support. Shreds Anemo resistance, groups enemies, and buffs Anemo DMG.",
                 weapons: [
                     "Elegy for the End",
@@ -227,7 +227,7 @@ export const yelan = {
             },
             {
                 characterId: "wanderer",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Anemo Main DPS. Deals high on-field wind damage and infuses elements.",
                 weapons: [
                     "Tulaytullah's Remembrance",
@@ -269,7 +269,7 @@ export const yelan = {
             },
             {
                 characterId: "yelan",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Main DPS. Deals high Hydro damage on-field.",
                 weapons: [
                     "Aqua Simulacra",
@@ -287,7 +287,7 @@ export const yelan = {
             },
             {
                 characterId: "jean",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Anemo Support. Instantly heals the entire party and shreds resistances.",
                 weapons: [
                     "Skyward Blade",
@@ -304,7 +304,7 @@ export const yelan = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -328,7 +328,7 @@ export const yelan = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -362,7 +362,7 @@ export const yelan = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
                 weapons: [
                     "Staff of Homa",
@@ -379,7 +379,7 @@ export const yelan = {
             },
             {
                 characterId: "arlecchino",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Main DPS. Deals massive Pyro damage using Bond of Life mechanics.",
                 weapons: [
                     "Crimson Moon's Semblance",
@@ -403,7 +403,7 @@ export const yelan = {
         members: [
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -436,7 +436,7 @@ export const yelan = {
             },
             {
                 characterId: "yelan",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Main DPS. Triggers massive Vaporize damage using Charged Attacks.",
                 weapons: [
                     "Aqua Simulacra",
@@ -454,7 +454,7 @@ export const yelan = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -478,7 +478,7 @@ export const yelan = {
         members: [
             {
                 characterId: "hu-tao",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Main DPS. Deals massive Vaporize damage using Charged Attacks.",
                 weapons: [
                     "Staff of Homa",
@@ -496,7 +496,7 @@ export const yelan = {
             },
             {
                 characterId: "xingqiu",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Hydro Support. Provides continuous off-field Hydro, damage reduction, and minor healing.",
                 weapons: [
                     "Staff of Homa",
@@ -513,7 +513,7 @@ export const yelan = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
                 weapons: [
                     "Black Tassel"
@@ -573,7 +573,7 @@ export const yelan = {
             },
             {
                 characterId: "yelan",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Main DPS. Drives reactions on-field with Hydro-infused attacks.",
                 weapons: [
                     "Aqua Simulacra",
@@ -591,7 +591,7 @@ export const yelan = {
             },
             {
                 characterId: "baizhu",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Dendro Support. Provides healing and shields, and buffs team damage.",
                 weapons: [
                     "Jadefall's Splendor",

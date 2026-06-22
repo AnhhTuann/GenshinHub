@@ -1,8 +1,8 @@
 export const yanfei = {
   characterId: "yanfei",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Main DPS",
+  recommendedC: "C1",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Off-field Hydro support.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -39,7 +39,7 @@ export const yanfei = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shield and Geo resonance support.",
                 weapons: [
                     "Staff of Homa",
@@ -56,7 +56,7 @@ export const yanfei = {
             },
             {
                 characterId: "albedo",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Geo resonance and off-field DMG support.",
                 weapons: [
                     "Cinnabar Spindle",
@@ -100,7 +100,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a strong shield, shred resistance, and buffs ATK via Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -135,7 +135,7 @@ export const yanfei = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Applies Hydro off-field and increases on-field character's damage.",
                 weapons: [
                     "Aqua Simulacra",
@@ -154,7 +154,7 @@ export const yanfei = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Applies Dendro continuously and shares Elemental Mastery.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -180,7 +180,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "ganyu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Applies Cryo consistently off-field via Burst.",
                 weapons: [
                     "Skyward Harp",
@@ -198,7 +198,7 @@ export const yanfei = {
             },
             {
                 characterId: "diona",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides shields, healing, and acts as a battery for Ganyu.",
                 weapons: [
                     "Sacrificial Bow",
@@ -233,7 +233,7 @@ export const yanfei = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies, provides Anemo Swirl to reduce Cryo resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -258,7 +258,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Applies Hydro continuously with his Raincutter Burst.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -276,7 +276,7 @@ export const yanfei = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides shield and buffs team ATK with Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -293,7 +293,7 @@ export const yanfei = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies, decreases Pyro resistance, and buffs Elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -336,7 +336,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -371,7 +371,7 @@ export const yanfei = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a large ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -388,7 +388,7 @@ export const yanfei = {
             },
             {
                 characterId: "sucrose",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -413,7 +413,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides off-field Pyro damage and resonance.",
                 weapons: [
                     "Engulfing Lightning",
@@ -449,7 +449,7 @@ export const yanfei = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies and boosts Elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -467,7 +467,7 @@ export const yanfei = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "ATK buff and healing support.",
                 weapons: [
                     "Skyward Blade",
@@ -491,7 +491,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Enables Vaporize with off-field Hydro attacks.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -509,7 +509,7 @@ export const yanfei = {
             },
             {
                 characterId: "venti",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides crowd control, groups enemies, and shreds elemental resistance.",
                 weapons: [
                     "Elegy for the End",
@@ -527,7 +527,7 @@ export const yanfei = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shields and buffs team ATK.",
                 weapons: [
                     "Staff of Homa",
@@ -569,7 +569,7 @@ export const yanfei = {
         members: [
             {
                 characterId: "sucrose",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -605,7 +605,7 @@ export const yanfei = {
             },
             {
                 characterId: "ayaka",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides powerful off-field Cryo application via Burst.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -623,7 +623,7 @@ export const yanfei = {
             },
             {
                 characterId: "diona",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shield and healing support.",
                 weapons: [
                     "Sacrificial Bow",

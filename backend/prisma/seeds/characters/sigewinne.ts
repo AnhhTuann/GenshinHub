@@ -1,8 +1,8 @@
 export const sigewinne = {
   characterId: "sigewinne",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -54,7 +54,7 @@ export const sigewinne = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Hydro Sub DPS. Supplies off-field Hydro attacks and massive damage buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -72,7 +72,7 @@ export const sigewinne = {
             },
             {
                 characterId: "traveler-geo",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -114,7 +114,7 @@ export const sigewinne = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -132,7 +132,7 @@ export const sigewinne = {
             },
             {
                 characterId: "nilou",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Hydro Sub DPS. Enables Bountiful Cores with her passive, dealing high AoE Bloom damage.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -150,7 +150,7 @@ export const sigewinne = {
             },
             {
                 characterId: "alhaitham",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
                 weapons: [
                     "Light of Foliar Incision",
@@ -194,7 +194,7 @@ export const sigewinne = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -212,7 +212,7 @@ export const sigewinne = {
             },
             {
                 characterId: "yelan",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Hydro Main DPS. Deals high on-field single-target Hydro damage with coordinated attacks from Burst.",
                 weapons: [
                     "Aqua Simulacra",

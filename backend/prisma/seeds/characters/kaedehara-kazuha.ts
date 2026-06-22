@@ -1,8 +1,8 @@
 export const kaedeharaKazuha = {
   characterId: "kaedehara-kazuha",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "S",
+  role: "Support",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

@@ -1,8 +1,8 @@
 export const shikanoinHeizou = {
   characterId: "shikanoin-heizou",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "C",
+  role: "Main DPS",
+  recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,

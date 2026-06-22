@@ -1,8 +1,8 @@
 export const diluc = {
   characterId: "diluc",
-  tier: null,
-  role: null,
-  recommendedC: null,
+  tier: "B",
+  role: "Main DPS",
+  recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
@@ -21,7 +21,7 @@ export const diluc = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporization with Diluc.",
                 weapons: [
                     "Sacrificial Sword"
@@ -56,7 +56,7 @@ export const diluc = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Shield provides safety and ATK buff via Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -73,7 +73,7 @@ export const diluc = {
             },
             {
                 characterId: "venti",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Elemental Burst groups enemies and spreads Hydro from Xingqiu.",
                 weapons: [
                     "Elegy for the End",
@@ -97,7 +97,7 @@ export const diluc = {
         members: [
             {
                 characterId: "diona",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Diona's shield provides a safe environment for team members and helps boost the recharge of Ayaka's Elemental Burst.",
                 weapons: [
                     "Sacrificial Bow",
@@ -114,7 +114,7 @@ export const diluc = {
             },
             {
                 characterId: "ayaka",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Ayaka deals DMG mainly by Elemental Burst at backstage. Her Cryo attachment reacts with Pyro from Diluc to trigger Melt.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -151,7 +151,7 @@ export const diluc = {
             },
             {
                 characterId: "sucrose",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Sucrose provides Elemental Mastery bonus to team members, increasing the DMG of Melt.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -176,7 +176,7 @@ export const diluc = {
         members: [
             {
                 characterId: "albedo",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Albedo pairs with Zhongli for Geo resonance. With Archaic Petra, picking up a crystallize shard boosts team's Pyro DMG.",
                 weapons: [
                     "Cinnabar Spindle",
@@ -195,7 +195,7 @@ export const diluc = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Zhongli's shield provides a safe environment and, with Tenacity of the Millelith, increases team ATK.",
                 weapons: [
                     "Staff of Homa",
@@ -230,7 +230,7 @@ export const diluc = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Xingqiu's Elemental Burst continuously applies Hydro to trigger Vaporization with Diluc.",
                 weapons: [
                     "Sacrificial Sword"
@@ -254,7 +254,7 @@ export const diluc = {
         members: [
             {
                 characterId: "ganyu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Ganyu deals DMG mainly by Elemental Burst at backstage. Ganyu Cryo attachment reacts with Pyro attachment from Diluc to trigger Melt.",
                 weapons: [
                     "Skyward Harp",
@@ -291,7 +291,7 @@ export const diluc = {
             },
             {
                 characterId: "diona",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Diona's shield provides safe environment for team members, and helps boost the recharge of Ganyu's Elemental Burst.",
                 weapons: [
                     "Sacrificial Bow",
@@ -308,7 +308,7 @@ export const diluc = {
             },
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Kazuha can assist the team by grouping enemies together, applying crowd control, provide DMG buff to teammates and reduce Elemental Resistance of enemies.",
                 weapons: [
                     "Freedom-Sworn",
@@ -333,7 +333,7 @@ export const diluc = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -351,7 +351,7 @@ export const diluc = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Xingqiu's Elemental Burst attaches Hydro continuously, enabling Vaporization with Diluc's Pyro.",
                 weapons: [
                     "Sacrificial Sword"
@@ -386,7 +386,7 @@ export const diluc = {
             },
             {
                 characterId: "zhongli",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Provides a strong shield and increases team ATK with Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -428,7 +428,7 @@ export const diluc = {
             },
             {
                 characterId: "xianyun",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Xianyun provides healing to team members and boosts Diluc's Plunging Attack damage.",
                 weapons: [
                     "Crane's Echoing Call",
@@ -445,7 +445,7 @@ export const diluc = {
             },
             {
                 characterId: "furina",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Furina's Burst provides DMG increase based on HP changes of allies. Her Skill drains allies' HP, which is restored by the healer.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -463,7 +463,7 @@ export const diluc = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Bennett's Burst provides huge ATK buff and healing to other members.",
                 weapons: [
                     "Skyward Blade",
@@ -487,7 +487,7 @@ export const diluc = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -504,7 +504,7 @@ export const diluc = {
             },
             {
                 characterId: "sucrose",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Provides Elemental Mastery bonus to increase Vaporize DMG.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -522,7 +522,7 @@ export const diluc = {
             },
             {
                 characterId: "bennett",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Elemental Burst provides huge ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",

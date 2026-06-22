@@ -21,7 +21,7 @@ export const amber = {
         members: [
             {
                 characterId: "zhongli",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides shield for safe environment and increases ATK of whole team using full set of Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -38,7 +38,7 @@ export const amber = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "His Burst provides huge ATK buff and healing to other members.",
                 weapons: [
                     "Skyward Blade",
@@ -55,7 +55,7 @@ export const amber = {
             },
             {
                 characterId: "kamisato-ayaka",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Deals DMG by her Burst, and her Cryo DMG reacts with Pyro attachment from Amber's Skill to trigger Melt.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -116,7 +116,7 @@ export const amber = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Provides ATK buff and healing via Burst.",
                 weapons: [
                     "Skyward Blade",
@@ -133,7 +133,7 @@ export const amber = {
             },
             {
                 characterId: "amber",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
                 weapons: [
                     "Thundering Pulse",
@@ -192,7 +192,7 @@ export const amber = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Bennett's Elemental Burst provides ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -209,7 +209,7 @@ export const amber = {
             },
             {
                 characterId: "amber",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Amber deals damage with Charged Attack to trigger Vaporize.",
                 weapons: [
                     "Thundering Pulse",
@@ -227,7 +227,7 @@ export const amber = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Kazuha groups enemies and provides Elemental Mastery buff and Anemo RES shred.",
                 weapons: [
                     "Freedom-Sworn",
@@ -252,7 +252,7 @@ export const amber = {
         members: [
             {
                 characterId: "kaedehara-kazuha",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Kazuha groups enemies, applies swirled control, buffs team DMG, and reduces enemy Elemental Resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -288,7 +288,7 @@ export const amber = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Raiden Shogun deals Burst damage scaling with team's energy consumption.",
                 weapons: [
                     "Engulfing Lightning",
@@ -306,7 +306,7 @@ export const amber = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Bennett provides huge ATK and healing via Burst.",
                 weapons: [
                     "Skyward Blade",

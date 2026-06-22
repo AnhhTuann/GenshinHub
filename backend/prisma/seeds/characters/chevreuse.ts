@@ -37,7 +37,7 @@ export const chevreuse = {
             },
             {
                 characterId: "yoimiya",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Chevreuse in this team.",
                 weapons: [
                     "Thundering Pulse",
@@ -55,7 +55,7 @@ export const chevreuse = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Sub DPS. Triggers Electro attacks to enable Overload.",
                 weapons: [
                     "Engulfing Lightning",
@@ -96,7 +96,7 @@ export const chevreuse = {
         members: [
             {
                 characterId: "cyno",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Main DPS. Runs standard normal ATK with Electro DMG. Maximize stats for continuous combat.",
                 weapons: [
                     "Staff of the Scarlet Sands",
@@ -147,7 +147,7 @@ export const chevreuse = {
             },
             {
                 characterId: "xiangling",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
                 weapons: [
                     "Engulfing Lightning",
@@ -173,7 +173,7 @@ export const chevreuse = {
         members: [
             {
                 characterId: "raiden-shogun",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Main DPS. Runs on-field Electro attacks, fills team's energy with energy restoration. Triggers Overload with coordinated Pyro.",
                 weapons: [
                     "Engulfing Lightning",
@@ -223,7 +223,7 @@ export const chevreuse = {
             },
             {
                 characterId: "xiangling",
-                role: "Support",
+                role: "Sub DPS",
                 roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
                 weapons: [
                     "Engulfing Lightning",

@@ -21,7 +21,7 @@ export const gaming = {
         members: [
             {
                 characterId: "xianyun",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
                 weapons: [
                     "Crane's Echoing Call",
@@ -38,7 +38,7 @@ export const gaming = {
             },
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG via Pyronado and Gouba.",
                 weapons: [
                     "Engulfing Lightning",
@@ -56,7 +56,7 @@ export const gaming = {
             },
             {
                 characterId: "bennett",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -115,7 +115,7 @@ export const gaming = {
             },
             {
                 characterId: "xianyun",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
                 weapons: [
                     "Crane's Echoing Call",
@@ -132,7 +132,7 @@ export const gaming = {
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -150,7 +150,7 @@ export const gaming = {
             },
             {
                 characterId: "kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -173,7 +173,7 @@ export const gaming = {
         members: [
             {
                 characterId: "ganyu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Cryo Sub DPS. Her Burst provides continuous off-field Cryo application to trigger Melt.",
                 weapons: [
                     "Hunter's Path",
@@ -191,7 +191,7 @@ export const gaming = {
             },
             {
                 characterId: "layla",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Shield & Support. Provides a strong shield and additional Cryo application.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -227,7 +227,7 @@ export const gaming = {
             },
             {
                 characterId: "xianyun",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
                 weapons: [
                     "Crane's Echoing Call",

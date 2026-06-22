@@ -21,7 +21,7 @@ export const xiangling = {
         members: [
             {
                 characterId: "kaedehara-kazuha",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Support, can swirl the team by grouping enemies together, applying Swirl reaction, reduces enemies' resistance and buffs Pyro DMG of members.",
                 weapons: [
                     "Favonius Sword",
@@ -39,7 +39,7 @@ export const xiangling = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Healer/Support, has Elemental Burst provides massive ATK buff and healing to other members.",
                 weapons: [
                     "Skyward Blade",
@@ -56,7 +56,7 @@ export const xiangling = {
             },
             {
                 characterId: "klee",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Main DPS, deals massive Pyro damage on-field.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
@@ -99,7 +99,7 @@ export const xiangling = {
         members: [
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Healer/Support, Burst provides massive ATK buff and healing to the team.",
                 weapons: [
                     "Skyward Blade",
@@ -134,7 +134,7 @@ export const xiangling = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Main DPS, deals massive Electro DMG and restores energy.",
                 weapons: [
                     "Engulfing Lightning",
@@ -177,7 +177,7 @@ export const xiangling = {
         members: [
             {
                 characterId: "tartaglia",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Tartaglia is the main DPS, his DMG is amplified by Vaporize.",
                 weapons: [
                     "Polar Star",
@@ -214,7 +214,7 @@ export const xiangling = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Kazuha groups enemies, applies Swirl reaction, provides DMG buff, and reduces enemy Pyro resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -232,7 +232,7 @@ export const xiangling = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides huge ATK buff and healing to the team.",
                 weapons: [
                     "Skyward Blade",
@@ -256,7 +256,7 @@ export const xiangling = {
         members: [
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Support, Burst provides massive ATK buff and healing to the team.",
                 weapons: [
                     "Skyward Blade",
@@ -310,7 +310,7 @@ export const xiangling = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Main DPS, deals massive Electro DMG and restores energy.",
                 weapons: [
                     "Engulfing Lightning",
@@ -335,7 +335,7 @@ export const xiangling = {
         members: [
             {
                 characterId: "zhongli",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Zhongli's shield provides safe environment for team members, and decrease 20% of whole enemy's resistance.",
                 weapons: [
                     "Staff of Homa",
@@ -370,7 +370,7 @@ export const xiangling = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides massive ATK buff and healing to other members.",
                 weapons: [
                     "Skyward Blade",
@@ -387,7 +387,7 @@ export const xiangling = {
             },
             {
                 characterId: "ganyu",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Ganyu's Charged Attack can trigger the Melt reaction.",
                 weapons: [
                     "Amos' Bow",
@@ -447,7 +447,7 @@ export const xiangling = {
             },
             {
                 characterId: "keqing",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Keqing mainly uses Heavy Attack to deal DMG. Keqing provides Electro attachment to trigger Overload.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -465,7 +465,7 @@ export const xiangling = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides massive ATK buff and healing to other members.",
                 weapons: [
                     "Skyward Blade",
@@ -507,7 +507,7 @@ export const xiangling = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides huge ATK buff and healing to the team.",
                 weapons: [
                     "Skyward Blade",
@@ -524,7 +524,7 @@ export const xiangling = {
             },
             {
                 characterId: "xiangling",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Xiangling's Burst provides huge DMG, and continuous Pyro application to trigger Vaporize.",
                 weapons: [
                     "Engulfing Lightning",
@@ -542,7 +542,7 @@ export const xiangling = {
             },
             {
                 characterId: "sucrose",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Sucrose groups enemies, applies Swirl reaction, provides DMG buff, reduces enemy Pyro resistance.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -567,7 +567,7 @@ export const xiangling = {
         members: [
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Support, Burst provides huge ATK buff and healing to other members.",
                 weapons: [
                     "Skyward Blade",
@@ -584,7 +584,7 @@ export const xiangling = {
             },
             {
                 characterId: "sangonomiya-kokomi",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Main DPS, her DMG reacts with Pyro to trigger Vaporize.",
                 weapons: [
                     "Everlasting Moonglow",
@@ -620,7 +620,7 @@ export const xiangling = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Support, groups enemies, provides Elemental Mastery / DMG buff, reduces enemy Pyro/Hydro resistance.",
                 weapons: [
                     "Freedom-Sworn",

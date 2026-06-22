@@ -21,7 +21,7 @@ export const thoma = {
         members: [
             {
                 characterId: "eula",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Eula is the main physical DPS.",
                 weapons: [
                     "Song of Broken Pines",
@@ -39,7 +39,7 @@ export const thoma = {
             },
             {
                 characterId: "fischl",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Provides off-field Electro application to trigger Superconduct.",
                 weapons: [
                     "Skyward Harp",
@@ -57,7 +57,7 @@ export const thoma = {
             },
             {
                 characterId: "chongyun",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Acts as Cryo battery and speed buff support.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -75,7 +75,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Shield support.",
                 weapons: [
                     "Staff of Homa",
@@ -99,7 +99,7 @@ export const thoma = {
         members: [
             {
                 characterId: "hu-tao",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Pyro main DPS, triggers reactions.",
                 weapons: [
                     "Staff of Homa",
@@ -117,7 +117,7 @@ export const thoma = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Hydro sub DPS.",
                 weapons: [
                     "Sacrificial Sword"
@@ -134,7 +134,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Shield support.",
                 weapons: [
                     "Staff of Homa",
@@ -151,7 +151,7 @@ export const thoma = {
             },
             {
                 characterId: "chongyun",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Provides occasional Melt opportunities via Cryo fields.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -177,7 +177,7 @@ export const thoma = {
         members: [
             {
                 characterId: "rosaria",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Cryo Sub DPS, acts as battery and buffs CRIT Rate.",
                 weapons: [
                     "Skyward Spine",
@@ -195,7 +195,7 @@ export const thoma = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Provides Electro for Superconduct, boosts energy and Burst DMG.",
                 weapons: [
                     "Engulfing Lightning",
@@ -213,7 +213,7 @@ export const thoma = {
             },
             {
                 characterId: "eula",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Eula's physical damage is boosted by Superconduct.",
                 weapons: [
                     "Song of Broken Pines",
@@ -231,7 +231,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Shield support.",
                 weapons: [
                     "Staff of Homa",
@@ -255,7 +255,7 @@ export const thoma = {
         members: [
             {
                 characterId: "bennett",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -272,7 +272,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Shield support.",
                 weapons: [
                     "Staff of Homa",
@@ -289,7 +289,7 @@ export const thoma = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Hydro sub DPS.",
                 weapons: [
                     "Sacrificial Sword"
@@ -306,7 +306,7 @@ export const thoma = {
             },
             {
                 characterId: "hu-tao",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Pyro main DPS.",
                 weapons: [
                     "Staff of Homa",
@@ -331,7 +331,7 @@ export const thoma = {
         members: [
             {
                 characterId: "nahida",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Sustains off-field Dendro DMG on targets up to 8 enemies and triggers reactions. Burst buffers EM based on team diversity.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -349,7 +349,7 @@ export const thoma = {
             },
             {
                 characterId: "ayato",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "With Thoma's shield in place, Ayato's Normal Attacks deal off-field Hydro/Pyro DMG and activate cores to trigger Burgeon.",
                 weapons: [
                     "Haran Geppaku Futsu",
@@ -367,7 +367,7 @@ export const thoma = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Provides continuous off-field Hydro attacks that react with Dendro to create Cores.",
                 weapons: [
                     "Aqua Simulacra",
@@ -386,7 +386,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides shield for safety, triggers Burgeon with his Burst.",
                 weapons: [
                     "Calamity Queller",
@@ -410,7 +410,7 @@ export const thoma = {
         members: [
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides shield for safety, HP scaling shield strength.",
                 weapons: [
                     "Staff of Homa",
@@ -427,7 +427,7 @@ export const thoma = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Raincutter applies Hydro continuously.",
                 weapons: [
                     "Sacrificial Sword"
@@ -444,7 +444,7 @@ export const thoma = {
             },
             {
                 characterId: "hu-tao",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Hu Tao is the main DPS, her DMG is amplified by Vaporize.",
                 weapons: [
                     "Staff of Homa",
@@ -462,7 +462,7 @@ export const thoma = {
             },
             {
                 characterId: "kazuha",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides crowd control, groups enemies, and buffs DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -487,7 +487,7 @@ export const thoma = {
         members: [
             {
                 characterId: "sucrose",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
                 weapons: [
                     "Sacrificial Fragments",
@@ -505,7 +505,7 @@ export const thoma = {
             },
             {
                 characterId: "xingqiu",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Applies Hydro off-field to trigger Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -522,7 +522,7 @@ export const thoma = {
             },
             {
                 characterId: "yanfei",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Main Pyro DPS.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
@@ -540,7 +540,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides shields to protect the team.",
                 weapons: [
                     "Staff of Homa",
@@ -564,7 +564,7 @@ export const thoma = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Raincutter continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
                 weapons: [
                     "Sapwood Blade"
@@ -581,7 +581,7 @@ export const thoma = {
             },
             {
                 characterId: "nahida",
-                role: "Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Nahida mainly drives DMG, uses Elemental Skill linking up to 8 enemies, sharing EM under triggering reactions. Shares EM and infuses Dendro.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -599,7 +599,7 @@ export const thoma = {
             },
             {
                 characterId: "thoma",
-                role: "Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Triggers Burgeon safety via Burst, EM scaling Burgeon DMG. Shield durability scales with HP.",
                 weapons: [
                     "Favonius Lance"
@@ -615,7 +615,7 @@ export const thoma = {
             },
             {
                 characterId: "yelan",
-                role: "Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Yelan provides continuous off-field Hydro attacks.",
                 weapons: [
                     "Aqua Simulacra",

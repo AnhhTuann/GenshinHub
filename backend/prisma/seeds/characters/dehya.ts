@@ -21,7 +21,7 @@ export const dehya = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Groups enemies, applies swirled elements, provides DMG buff and reduces resistances.",
                 weapons: [
                     "Freedom-Sworn",
@@ -39,7 +39,7 @@ export const dehya = {
             },
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Dehya's Elemental Skill creates a field that triggers coordinated attacks, providing Pyro for Melting.",
                 weapons: [
                     "Favonius Greatsword"
@@ -55,7 +55,7 @@ export const dehya = {
             },
             {
                 characterId: "ayaka",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Ayaka's Elemental Burst deals high Cryo DMG which is maximized by Melting.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -74,7 +74,7 @@ export const dehya = {
             },
             {
                 characterId: "bennett",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Elemental Burst provides huge ATK buff and healing.",
                 weapons: [
                     "Aquila Favonia",
@@ -97,7 +97,7 @@ export const dehya = {
         members: [
             {
                 characterId: "shinobu",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Provides healing and triggers Hyperbloom by using Skill on Dendro Cores. Maximizing Elemental Mastery increases Hyperbloom DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -115,7 +115,7 @@ export const dehya = {
             },
             {
                 characterId: "nahida",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Mainly deals DMG via Skill connecting up to 8 enemies, and dealing Dendro DMG while triggering reactions. Her Burst buffs her skill based on teammates' elements.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -133,7 +133,7 @@ export const dehya = {
             },
             {
                 characterId: "xingqiu",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Sub DPS",
                 roleDesc: "His Burst continuously applies Hydro to enemies, reacting with Dendro from Nahida to produce Bloom cores.",
                 weapons: [
                     "Sapwood Blade"
@@ -150,7 +150,7 @@ export const dehya = {
             },
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
                 weapons: [
                     "Rainslasher"
@@ -172,7 +172,7 @@ export const dehya = {
         members: [
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Skill creates a field that unleashes coordinated Pyro damage when allies attack, enabling Melt for Ganyu.",
                 weapons: [
                     "Favonius Greatsword"
@@ -188,7 +188,7 @@ export const dehya = {
             },
             {
                 characterId: "ganyu",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Deals DMG via Burst and Charged Attack. Her attacks trigger Melt with Pyro from Dehya.",
                 weapons: [
                     "Hunter's Path",
@@ -206,7 +206,7 @@ export const dehya = {
             },
             {
                 characterId: "bennett",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Burst provides a large ATK buff and healing to teammates.",
                 weapons: [
                     "Aquila Favonia",
@@ -222,7 +222,7 @@ export const dehya = {
             },
             {
                 characterId: "kazuha",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Groups enemies, provides DMG buff, and reduces elemental resistance with Swirl.",
                 weapons: [
                     "Freedom-Sworn",
@@ -247,7 +247,7 @@ export const dehya = {
         members: [
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Elemental Skill creates a field that unleashes coordinated Pyro attacks.",
                 weapons: [
                     "Favonius Greatsword"
@@ -262,7 +262,7 @@ export const dehya = {
             },
             {
                 characterId: "ganyu",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
                 weapons: [
                     "Hunter's Path",
@@ -280,7 +280,7 @@ export const dehya = {
             },
             {
                 characterId: "nahida",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Elemental Skill connects up to 8 enemies, dealing Dendro DMG and triggering reactions. Elemental Burst provides stable EM based on teammates' elements. Burning provides stable Pyro source.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -297,7 +297,7 @@ export const dehya = {
             },
             {
                 characterId: "bennett",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Elemental Burst provides huge ATK buff and healing.",
                 weapons: [
                     "Aquila Favonia",
@@ -320,7 +320,7 @@ export const dehya = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
                 weapons: [
                     "Freedom-Sworn",
@@ -338,7 +338,7 @@ export const dehya = {
             },
             {
                 characterId: "bennett",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
                 weapons: [
                     "Aquila Favonia",
@@ -354,7 +354,7 @@ export const dehya = {
             },
             {
                 characterId: "xiangling",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Xiangling's Elemental Burst provides huge amount of DMG off-field.",
                 weapons: [
                     "Engulfing Lightning",
@@ -372,7 +372,7 @@ export const dehya = {
             },
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
                 weapons: [
                     "Beacon of the Reed Sea"
@@ -396,7 +396,7 @@ export const dehya = {
         members: [
             {
                 characterId: "mona",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
                 weapons: [
                     "Thrilling Tales of Dragon Slayers"
@@ -412,7 +412,7 @@ export const dehya = {
             },
             {
                 characterId: "bennett",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Bennett's Elemental Burst provides a huge ATK buff and healing to the team.",
                 weapons: [
                     "Aquila Favonia",
@@ -428,7 +428,7 @@ export const dehya = {
             },
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
                 weapons: [
                     "Beacon of the Reed Sea"
@@ -445,7 +445,7 @@ export const dehya = {
             },
             {
                 characterId: "kazuha",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Kazuha groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
                 weapons: [
                     "Freedom-Sworn",
@@ -470,7 +470,7 @@ export const dehya = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Off-field Burst provides massive Pyro damage and consistent Pyro application.",
                 weapons: [
                     "Engulfing Lightning",
@@ -488,7 +488,7 @@ export const dehya = {
             },
             {
                 characterId: "mualani",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Main DPS",
                 roleDesc: "Uses Skill to enter Nightmind's Blessing, enhancing Normal Attacks to 'Shark Bite'. Gains 'Wave Momentum' on contact, firing 'Shark Missiles' at 3 stacks.",
                 weapons: [
                     "Surf's Up",
@@ -507,7 +507,7 @@ export const dehya = {
             },
             {
                 characterId: "dehya",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Support",
                 roleDesc: "Creates a field via Skill that unleashes coordinated AoE Pyro attacks when enemies take damage.",
                 weapons: [
                     "Favonius Greatsword"
@@ -522,7 +522,7 @@ export const dehya = {
             },
             {
                 characterId: "emilie",
-                role: "Support, Sub DPS, Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Summons 'Lumidouce Case' for intermittent Dendro damage. Burning state generates 'Scents' increasing range and damage. Burst further boosts scent damage.",
                 weapons: [
                     "Lumidouce Elegy",

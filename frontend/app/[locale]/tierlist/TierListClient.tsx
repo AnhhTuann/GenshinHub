@@ -100,8 +100,8 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
 
 export default function TierListClient({ locale, characters, weapons }: { locale: string, characters: TierCharacter[], weapons: TierWeapon[] }) {
   const t = useTranslations('TierList');
-  const [tab, setTab] = useState<'character' | 'weapon' | 'notes'>('character');
-  const [weaponType, setWeaponType] = useState<string>('Sword');
+  const [tab, setTab] = useState<'character' | 'weapon'>('character');
+  const [weaponType, setWeaponType] = useState<string>('Kiếm Đơn');
 
   const groupedCharacters = useMemo(() => {
     const group: Record<Tier, TierCharacter[]> = { SS: [], S: [], A: [], B: [], C: [], D: [], Unranked: [] };
@@ -124,8 +124,15 @@ export default function TierListClient({ locale, characters, weapons }: { locale
 
   const tabs = [
     { id: 'character', label: t('characterTab') },
-    { id: 'weapon', label: t('weaponTab') },
-    { id: 'notes', label: t('notesTab') }
+    { id: 'weapon', label: t('weaponTab') }
+  ];
+
+  const WEAPON_TYPES = [
+    { id: 'Kiếm Đơn', label: 'Sword' },
+    { id: 'Trọng Kiếm', label: 'Claymore' },
+    { id: 'Vũ Khí Cán Dài', label: 'Polearm' },
+    { id: 'Cung', label: 'Bow' },
+    { id: 'Pháp Khí', label: 'Catalyst' }
   ];
 
   return (
@@ -190,13 +197,13 @@ export default function TierListClient({ locale, characters, weapons }: { locale
 
         {tab === 'weapon' && (
           <div className="flex justify-center flex-wrap gap-3 sm:gap-4 mb-10">
-            {['Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'].map(wType => (
+            {WEAPON_TYPES.map(wType => (
               <button
-                key={wType}
-                onClick={() => setWeaponType(wType)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType ? 'bg-[#1a1a24] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
+                key={wType.id}
+                onClick={() => setWeaponType(wType.id)}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType.id ? 'bg-[#1a1a24] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
               >
-                {wType}
+                {wType.label}
               </button>
             ))}
           </div>
@@ -212,76 +219,6 @@ export default function TierListClient({ locale, characters, weapons }: { locale
             transition={{ duration: 0.4 }}
             className="w-full"
           >
-            {tab === 'notes' ? (
-              
-              // ── NOTES TAB ──
-              <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8 max-w-5xl mx-auto">
-                <div className="mb-4 text-center">
-                  <h2 className="text-3xl font-black font-display text-white mb-3 drop-shadow-lg tracking-wide">{t('notesTitle')}</h2>
-                  <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">{t('notesDesc')}</p>
-                </div>
-                
-                {TIERS_ORDER.map(tier => {
-                  if (tier === 'Unranked') return null;
-                  
-                  const charsInTier = groupedCharacters[tier];
-                  const charsWithNotes = charsInTier.filter(c => (c.tierNoteEn && c.tierNoteEn.length > 0) || (c.tierNoteVi && c.tierNoteVi.length > 0));
-                  
-                  if (charsWithNotes.length === 0) return null;
-                  
-                  return (
-                    <motion.div variants={itemVariants} key={tier} className="flex flex-col gap-5 relative">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-14 h-14 flex items-center justify-center rounded-2xl font-black text-3xl font-display ${TIER_STYLES[tier].bg} ${TIER_STYLES[tier].text} shadow-lg border ${TIER_STYLES[tier].border}`}>
-                          {tier}
-                        </div>
-                        <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
-                      </div>
-                      
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pl-4 sm:pl-16">
-                        {charsWithNotes.map((char) => {
-                          const name = locale === 'en' ? char.nameEn : char.nameVi;
-                          const notesList = locale === 'en' ? (char.tierNoteEn || []) : (char.tierNoteVi || []);
-                          
-                          return (
-                            <div key={char.id} className="flex bg-[#0d0d14] border border-white/[0.05] hover:border-white/20 hover:bg-[#12121a] transition-all rounded-[1.5rem] p-5 gap-5 shadow-xl group">
-                              {/* Avatar */}
-                              <div className="flex flex-col items-center w-[84px] shrink-0">
-                                <div className="relative w-[84px] h-[84px] rounded-[1.25rem] overflow-hidden border border-white/10 group-hover:border-white/30 transition-colors shadow-lg bg-[#050508]">
-                                  <Image src={char.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} alt={name} fill className="object-cover scale-110" />
-                                  <div className="absolute top-1.5 left-1.5 w-5 h-5 rounded-full bg-black/80 p-[3px] backdrop-blur-md">
-                                    <Image src={`/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" />
-                                  </div>
-                                  <div className="absolute bottom-0 inset-x-0 bg-black/80 py-1 text-[10px] font-black text-amber-400 text-center uppercase tracking-widest border-t border-white/10">
-                                    {char.recommendedC || 'C0'}
-                                  </div>
-                                </div>
-                                <span className="mt-3 text-xs font-bold text-white/80 group-hover:text-white transition-colors text-center leading-tight truncate w-full px-1">{name}</span>
-                              </div>
-                              
-                              {/* Notes List */}
-                              <div className="flex-1 flex flex-col justify-center border-l border-white/5 pl-5">
-                                <ul className="flex flex-col gap-3">
-                                  {notesList.map((n: string, i: number) => (
-                                    <li key={i} className="flex gap-3 text-sm text-gray-300 leading-relaxed group-hover:text-gray-100 transition-colors">
-                                      <span className="text-amber-500/50 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-amber-500" />
-                                      <span>{n}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-
-            ) : (
-              
-              // ── CHARACTERS / WEAPONS TAB ──
               <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8">
                 {TIERS_ORDER.map(tier => {
                   const items = tab === 'character' ? groupedCharacters[tier] : groupedWeapons[tier];
@@ -343,7 +280,6 @@ export default function TierListClient({ locale, characters, weapons }: { locale
                   );
                 })}
               </motion.div>
-            )}
           </motion.div>
         </AnimatePresence>
       </div>

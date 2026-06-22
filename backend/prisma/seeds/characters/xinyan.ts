@@ -21,7 +21,7 @@ export const xinyan = {
         members: [
             {
                 characterId: "razor",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Main physical DPS, C4 reduces enemy DEF with Elemental Skill.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -39,7 +39,7 @@ export const xinyan = {
             },
             {
                 characterId: "xinyan",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Provides a shield for safe play.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -58,7 +58,7 @@ export const xinyan = {
             },
             {
                 characterId: "qiqi",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Elemental Skill applies Cryo continuously and heals the team.",
                 weapons: [
                     "Skyward Blade",
@@ -75,7 +75,7 @@ export const xinyan = {
             },
             {
                 characterId: "bennett",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Elemental Burst provides a large ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -99,7 +99,7 @@ export const xinyan = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Kazuha groups enemies, provides Anemo crowd control, DMG buffs, and reduces enemy Pyro and Electro resistance with Swirl.",
                 weapons: [
                     "Freedom-Sworn",
@@ -117,7 +117,7 @@ export const xinyan = {
             },
             {
                 characterId: "xinyan",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Xinyan's Skill reduces enemy DEF and provides a shield to boost DPS. Build with DEF% or ATK% to maximize shield strength and damage.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -135,7 +135,7 @@ export const xinyan = {
             },
             {
                 characterId: "fischl",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Fischl's Skill provides continuous off-field Electro application to trigger Overload, significantly boosts damage.",
                 weapons: [
                     "Skyward Harp",
@@ -153,7 +153,7 @@ export const xinyan = {
             },
             {
                 characterId: "bennett",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
                 weapons: [
                     "Skyward Blade",
@@ -177,7 +177,7 @@ export const xinyan = {
         members: [
             {
                 characterId: "eula",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Main DPS",
                 roleDesc: "Eula's physical damage is boosted by Superconduct.",
                 weapons: [
                     "Skyward Pride",
@@ -195,7 +195,7 @@ export const xinyan = {
             },
             {
                 characterId: "xinyan",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Xinyan's shield provides a safe environment for team members.",
                 weapons: [
                     "Wolf's Gravestone",
@@ -214,7 +214,7 @@ export const xinyan = {
             },
             {
                 characterId: "bennett",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides huge ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -231,7 +231,7 @@ export const xinyan = {
             },
             {
                 characterId: "beidou",
-                role: "Main DPS, Sub DPS, Support",
+                role: "Sub DPS",
                 roleDesc: "Beidou's Burst provides continuous Electro DMG off-field to trigger Superconduct.",
                 weapons: [
                     "Skyward Pride",

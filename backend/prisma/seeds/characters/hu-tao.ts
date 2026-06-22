@@ -21,7 +21,7 @@ export const huTao = {
         members: [
             {
                 characterId: "zhongli",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Zhongli's shield provides a safe environment and increases ATK of the whole team with Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -38,7 +38,7 @@ export const huTao = {
             },
             {
                 characterId: "yelan",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Yelan provides continuous Hydro off-field attacks that react with Pyro on enemies. Her Burst also increases Hu Tao's DMG via her passive talent.",
                 weapons: [
                     "Aqua Simulacra",
@@ -57,7 +57,7 @@ export const huTao = {
             },
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Xingqiu's Burst continuously applies Hydro to enemies.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -119,7 +119,7 @@ export const huTao = {
             },
             {
                 characterId: "zhongli",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Strong shield protects the team. Tenacity of the Millelith boosts ATK when Skill hits enemies.",
                 weapons: [
                     "Staff of Homa",
@@ -155,7 +155,7 @@ export const huTao = {
             },
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Burst applies Hydro continuously to enable Vaporize for both Hu Tao and Yoimiya.",
                 weapons: [
                     "Sacrificial Sword"
@@ -179,7 +179,7 @@ export const huTao = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Xingqiu's Elemental Burst can attach Hydro element to enemies continuously, and so react with Hu Tao's Pyro DMG to trigger Vaporization.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -216,7 +216,7 @@ export const huTao = {
             },
             {
                 characterId: "zhongli",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Zhongli's shield provides safe environment for team members, and increase ATK of whole team by using full set of Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
@@ -233,7 +233,7 @@ export const huTao = {
             },
             {
                 characterId: "albedo",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Albedo pairs with Zhongli to trigger resonance, and by using full set of Archaic Petra, picking up crystal can increase corresponding DMG of team members.",
                 weapons: [
                     "Cinnabar Spindle",
@@ -259,7 +259,7 @@ export const huTao = {
         members: [
             {
                 characterId: "sucrose",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Sucrose provides Elemental Mastery bonus to increase Vaporize DMG.",
                 weapons: [
                     "Prototype Amber"
@@ -276,7 +276,7 @@ export const huTao = {
             },
             {
                 characterId: "thoma",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Thoma's shield provides a safe environment for team members.",
                 weapons: [
                     "Staff of Homa",
@@ -293,7 +293,7 @@ export const huTao = {
             },
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Xingqiu's Elemental Burst applies Hydro continuously to trigger Vaporize.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -337,7 +337,7 @@ export const huTao = {
         members: [
             {
                 characterId: "kaedehara-kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "VV shred, crowd control, and elemental damage buffs.",
                 weapons: [
                     "Freedom-Sworn",
@@ -374,7 +374,7 @@ export const huTao = {
             },
             {
                 characterId: "bennett",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Healing and massive ATK buff from Burst.",
                 weapons: [
                     "Skyward Blade",
@@ -391,7 +391,7 @@ export const huTao = {
             },
             {
                 characterId: "kamisato-ayaka",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Sub DPS applying Cryo via Burst for Hu Tao to Melt.",
                 weapons: [
                     "Mistsplitter Reforged",
@@ -416,7 +416,7 @@ export const huTao = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Xingqiu's Burst continuously applies Hydro to trigger Vaporize with Hu Tao and Freeze with Rosaria.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -453,7 +453,7 @@ export const huTao = {
             },
             {
                 characterId: "rosaria",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Rosaria's Burst deals Cryo DMG and provides CRIT Rate share to party. Melt with Hu Tao and Freeze with Xingqiu.",
                 weapons: [
                     "Skyward Spine",
@@ -470,7 +470,7 @@ export const huTao = {
             },
             {
                 characterId: "diona",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Diona provides shield and healing. At C6 with Instructor, she boosts party Elemental Mastery by 320 (including Instructor bonus).",
                 weapons: [
                     "Elegy for the End",
@@ -494,7 +494,7 @@ export const huTao = {
         members: [
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Elemental Burst applies Hydro continuously to enable Vaporize.",
                 weapons: [
                     "Primordial Jade Cutter",
@@ -512,7 +512,7 @@ export const huTao = {
             },
             {
                 characterId: "zhongli",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Provides a shield and ATK buff with Tenacity of the Millelith set.",
                 weapons: [
                     "Staff of Homa",
@@ -529,7 +529,7 @@ export const huTao = {
             },
             {
                 characterId: "kaedehara-kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Groups enemies, provides Anemo Swirl to reduce resistance and buff Pyro DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -573,7 +573,7 @@ export const huTao = {
         members: [
             {
                 characterId: "bennett",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Bennett's Burst provides huge ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
@@ -590,7 +590,7 @@ export const huTao = {
             },
             {
                 characterId: "xingqiu",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Applies Hydro continuously via Burst to enable Vaporize.",
                 weapons: [
                     "Sacrificial Sword"
@@ -626,7 +626,7 @@ export const huTao = {
             },
             {
                 characterId: "sucrose",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Provides Elemental Mastery bonus to increase Vaporize DMG.",
                 weapons: [
                     "Sacrificial Fragments",

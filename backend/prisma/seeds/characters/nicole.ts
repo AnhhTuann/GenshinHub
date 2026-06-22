@@ -71,7 +71,7 @@ export const nicole = {
             },
             {
                 characterId: "varka",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Main DPS. After Skill, enters mixed damage mode with normal/charged attacks.",
                 weapons: [
                     "Game of the Mighty Wolf",
@@ -96,7 +96,7 @@ export const nicole = {
         members: [
             {
                 characterId: "venti",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Main DPS. Summons a stormeye with Burst that pulls enemies and deals continuous Anemo damage.",
                 weapons: [
                     "The Daybreak Chronicles",
@@ -220,7 +220,7 @@ export const nicole = {
             },
             {
                 characterId: "varka",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Main DPS. Enters mixed damage mode after using Skill, dealing Anemo and converted elemental damage.",
                 weapons: [
                     "Game of the Mighty Wolf",
@@ -297,7 +297,7 @@ export const nicole = {
             },
             {
                 characterId: "kinich",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Dendro Main DPS. Deals high Dendro damage.",
                 weapons: [
                     "Fang of the Mountain King",
@@ -322,7 +322,7 @@ export const nicole = {
         members: [
             {
                 characterId: "venti",
-                role: "Support",
+                role: "Main DPS",
                 roleDesc: "Anemo Main DPS. Summons a Stormeye with Burst that pulls enemies and deals continuous Anemo DMG.",
                 weapons: [
                     "The First Great Magic",

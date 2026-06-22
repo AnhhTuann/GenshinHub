@@ -39,7 +39,7 @@ export const durin = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
                 weapons: [
                     "Aquila Favonia",
@@ -55,7 +55,7 @@ export const durin = {
             },
             {
                 characterId: "kinich",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Dendro Main DPS. Deals massive Dendro damage through Nightsoul Burst.",
                 weapons: [
                     "Fang of the Mountain King",
@@ -72,7 +72,7 @@ export const durin = {
             },
             {
                 characterId: "durin",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Applies Pyro off-field to maintain Burning and holds Deepwood Memories.",
                 weapons: [
                     "Athame Artis",
@@ -97,7 +97,7 @@ export const durin = {
         members: [
             {
                 characterId: "durin",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Applies Pyro off-field and triggers Burning.",
                 weapons: [
                     "Athame Artis",
@@ -133,7 +133,7 @@ export const durin = {
             },
             {
                 characterId: "kinich",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Dendro Main DPS. Deals massive Dendro damage.",
                 weapons: [
                     "Fang of the Mountain King",
@@ -150,7 +150,7 @@ export const durin = {
             },
             {
                 characterId: "xilonen",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Reduces enemy elemental resistance and triggers Scroll buff.",
                 weapons: [
                     "Peak Patrol Song",
@@ -174,7 +174,7 @@ export const durin = {
         members: [
             {
                 characterId: "chevreuse",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Reduces enemy Pyro/Electro resistance and buffs ATK.",
                 weapons: [
                     "Staff of Homa",
@@ -191,7 +191,7 @@ export const durin = {
             },
             {
                 characterId: "durin",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Provides off-field Pyro application for Overload.",
                 weapons: [
                     "Athame Artis",
@@ -209,7 +209,7 @@ export const durin = {
             },
             {
                 characterId: "varka",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Anemo Main DPS. Performs plunge attacks to trigger swirl and deal damage.",
                 weapons: [
                     "Unbreakable: Durandarte",
@@ -227,7 +227,7 @@ export const durin = {
             },
             {
                 characterId: "ororon",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Electro Support. Triggers Scroll set buff and provides Electro support.",
                 weapons: [
                     "Astral Vulture's Crimson Plumage",
@@ -251,7 +251,7 @@ export const durin = {
         members: [
             {
                 characterId: "venti",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Anemo Main DPS. Provides crowd control and gather enemies.",
                 weapons: [
                     "The Stringless",
@@ -270,7 +270,7 @@ export const durin = {
             },
             {
                 characterId: "durin",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Provides off-field Pyro DMG and reduces enemy RES.",
                 weapons: [
                     "Athame Artis",
@@ -288,7 +288,7 @@ export const durin = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Buffs ATK and provides healing.",
                 weapons: [
                     "Aquila Favonia",
@@ -304,7 +304,7 @@ export const durin = {
             },
             {
                 characterId: "faruzan",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Buffs Anemo DMG and reduces resistance.",
                 weapons: [
                     "Elegy for the End",
@@ -328,7 +328,7 @@ export const durin = {
         members: [
             {
                 characterId: "durin",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Applies Pyro off-field and triggers crystallize.",
                 weapons: [
                     "Athame Artis",
@@ -364,7 +364,7 @@ export const durin = {
             },
             {
                 characterId: "bennett",
-                role: "Sub DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
                 weapons: [
                     "Aquila Favonia",
@@ -380,7 +380,7 @@ export const durin = {
             },
             {
                 characterId: "navia",
-                role: "Sub DPS",
+                role: "Main DPS",
                 roleDesc: "Geo Main DPS. Deals explosive damage with Gunbrella.",
                 weapons: [
                     "Verdict",

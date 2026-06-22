@@ -39,7 +39,7 @@ export const neuvillette = {
             },
             {
                 characterId: "baizhu",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Dendro Support. Provides healing, shields, and buffs Bloom reaction damage.",
                 weapons: [
                     "Jadefall's Splendor",
@@ -58,7 +58,7 @@ export const neuvillette = {
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -76,7 +76,7 @@ export const neuvillette = {
             },
             {
                 characterId: "kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -119,7 +119,7 @@ export const neuvillette = {
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -137,7 +137,7 @@ export const neuvillette = {
             },
             {
                 characterId: "nahida",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -156,7 +156,7 @@ export const neuvillette = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Triggers Hyperbloom reactions with Elemental Skill.",
                 weapons: [
                     "Dragon's Bane"
@@ -179,7 +179,7 @@ export const neuvillette = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -197,7 +197,7 @@ export const neuvillette = {
             },
             {
                 characterId: "raiden-shogun",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Buffs Burst DMG and triggers off-field Electro attacks.",
                 weapons: [
                     "Dragon's Bane"
@@ -213,7 +213,7 @@ export const neuvillette = {
             },
             {
                 characterId: "yae-miko",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Deals continuous off-field Electro damage with turrets.",
                 weapons: [
                     "Kagura's Verity",
@@ -256,7 +256,7 @@ export const neuvillette = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds Pyro and Hydro resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -292,7 +292,7 @@ export const neuvillette = {
             },
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals high Pyro damage off-field with Pyronado.",
                 weapons: [
                     "Engulfing Lightning",
@@ -310,7 +310,7 @@ export const neuvillette = {
             },
             {
                 characterId: "bennett",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
                 weapons: [
                     "Skyward Blade",
@@ -334,7 +334,7 @@ export const neuvillette = {
         members: [
             {
                 characterId: "kazuha",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
@@ -370,7 +370,7 @@ export const neuvillette = {
             },
             {
                 characterId: "kuki-shinobu",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Electro Support. Provides healing and triggers Electro-Charged reactions.",
                 weapons: [
                     "Key of Khaj-Nisut",
@@ -388,7 +388,7 @@ export const neuvillette = {
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",

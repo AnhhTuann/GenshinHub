@@ -40,7 +40,7 @@ export const mualani = {
             },
             {
                 characterId: "traveler-pyro",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Applies off-field Pyro and triggers Pyro resonance.",
                 weapons: [
                     "Favonius Sword"
@@ -54,7 +54,7 @@ export const mualani = {
             },
             {
                 characterId: "mona",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Hydro Support. Boosts Mualani's damage via Omen and provides Hydro resonance.",
                 weapons: [
                     "Prototype Amber"
@@ -68,7 +68,7 @@ export const mualani = {
             },
             {
                 characterId: "sucrose",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Anemo Support. Swirls elements to reduce RES and shares Elemental Mastery with the team.",
                 weapons: [
                     "Thrilling Tales of Dragon Slayers"
@@ -90,7 +90,7 @@ export const mualani = {
         members: [
             {
                 characterId: "mavuika",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Infuses Pyro and triggers coordinated off-field Pyro attacks.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -128,7 +128,7 @@ export const mualani = {
             },
             {
                 characterId: "xilonen",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Reduces enemy elemental resistance and provides reliable healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -146,7 +146,7 @@ export const mualani = {
             },
             {
                 characterId: "citlali",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Support. Generates a shield and applies off-field Cryo for additional reaction potential.",
                 weapons: [
                     "Starcaller's Watch",
@@ -171,7 +171,7 @@ export const mualani = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Supplies off-field Pyro to maintain Burning aura with Dendro.",
                 weapons: [
                     "Engulfing Lightning",
@@ -208,7 +208,7 @@ export const mualani = {
             },
             {
                 characterId: "emilie",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Amplifies Burning reactions and deals consistent off-field Dendro damage.",
                 weapons: [
                     "Lumidouce Elegy",
@@ -226,7 +226,7 @@ export const mualani = {
             },
             {
                 characterId: "dehya",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Pyro Support. Provides damage reduction, interruption resistance, and off-field Pyro.",
                 weapons: [
                     "Favonius Greatsword"
@@ -248,7 +248,7 @@ export const mualani = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage and triggers Vaporize reactions.",
                 weapons: [
                     "Engulfing Lightning",
@@ -266,7 +266,7 @@ export const mualani = {
             },
             {
                 characterId: "xilonen",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
                 weapons: [
                     "Peak Patrol Song",
@@ -303,7 +303,7 @@ export const mualani = {
             },
             {
                 characterId: "zhongli",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Provides a near-unbreakable shield and shreds enemy resistances.",
                 weapons: [
                     "Favonius Lance"
@@ -326,7 +326,7 @@ export const mualani = {
         members: [
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and massive team-wide damage buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -344,7 +344,7 @@ export const mualani = {
             },
             {
                 characterId: "charlotte",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Support. Provides team-wide burst healing and additional off-field Cryo.",
                 weapons: [
                     "Favonius Codex"
@@ -422,7 +422,7 @@ export const mualani = {
             },
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Applies consistent Pyro off-field.",
                 weapons: [
                     "Engulfing Lightning",
@@ -440,7 +440,7 @@ export const mualani = {
             },
             {
                 characterId: "citlali",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Cryo Support. Provides a shield and reduces resistance via Melt reactions.",
                 weapons: [
                     "Starcaller's Watch",
@@ -458,7 +458,7 @@ export const mualani = {
             },
             {
                 characterId: "yelan",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and damage buffs.",
                 weapons: [
                     "Aqua Simulacra",
@@ -483,7 +483,7 @@ export const mualani = {
         members: [
             {
                 characterId: "xilonen",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
                 weapons: [
                     "Peak Patrol Song",
@@ -501,7 +501,7 @@ export const mualani = {
             },
             {
                 characterId: "mavuika",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals consistent off-field Pyro damage to enable constant Vaporize.",
                 weapons: [
                     "A Thousand Blazing Suns",
@@ -539,7 +539,7 @@ export const mualani = {
             },
             {
                 characterId: "sucrose",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Anemo Sub DPS. Shreds RES, groups enemies, and shares Elemental Mastery.",
                 weapons: [
                     "A Thousand Floating Dreams",
@@ -564,7 +564,7 @@ export const mualani = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Applies off-field Pyro for Vaporize reactions.",
                 weapons: [
                     "Engulfing Lightning",
@@ -582,7 +582,7 @@ export const mualani = {
             },
             {
                 characterId: "chiori",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Geo Sub DPS. Deals high off-field Geo damage via her dolls.",
                 weapons: [
                     "Uraku Misugiri",
@@ -600,7 +600,7 @@ export const mualani = {
             },
             {
                 characterId: "xilonen",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Shreds RES and provides team healing.",
                 weapons: [
                     "Peak Patrol Song",
@@ -644,7 +644,7 @@ export const mualani = {
         members: [
             {
                 characterId: "xiangling",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage to enable Vaporize.",
                 weapons: [
                     "Engulfing Lightning",
@@ -662,7 +662,7 @@ export const mualani = {
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
+                role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
                 weapons: [
                     "Splendor of Tranquil Waters",
@@ -699,7 +699,7 @@ export const mualani = {
             },
             {
                 characterId: "xilonen",
-                role: "Main DPS",
+                role: "Support",
                 roleDesc: "Geo Support. Shreds enemy elemental resistance and provides healing.",
                 weapons: [
                     "Peak Patrol Song",

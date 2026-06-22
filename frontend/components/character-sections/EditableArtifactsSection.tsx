@@ -88,10 +88,14 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
 
   const handleRemove = async (id: string) => {
     if (!await confirmDialog('Are you sure you want to remove this artifact set?')) return;
+    // Optimistic update: remove immediately
+    const prev = localArtifacts;
+    setLocalArtifacts(localArtifacts.filter(a => a.id !== id));
     try {
       await fetchGraphQL(`mutation { removeCharacterArtifact(id: "${id}") }`);
-      router.refresh();
+      toast.success('Artifact removed');
     } catch (err: any) {
+      setLocalArtifacts(prev); // rollback
       toast.error("Error: " + err.message);
     }
   };

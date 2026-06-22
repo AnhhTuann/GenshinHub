@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import InlineWeaponEditor from '@/components/admin/InlineWeaponEditor';
 import { fetchGraphQL } from '@/lib/graphql';
@@ -56,7 +55,6 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
 }
 
 export default function EditableWeaponsSection({ characterId, weaponType, bestWeapons, tWeapons }: Props) {
-  const router = useRouter();
   const locale = useLocale();
   const t = useTranslations('Character');
   const [isAdmin, setIsAdmin] = useState(false);
@@ -118,16 +116,16 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
     [newWeapons[idx + 1], newWeapons[idx]] = [newWeapons[idx], newWeapons[idx + 1]];
     saveNewOrder(newWeapons);
   };
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
-
   const handleRemove = async (id: string) => {
     if (!await confirmDialog('Are you sure you want to remove this weapon?')) return;
+    // Optimistic update: remove immediately
+    const prev = localWeapons;
+    setLocalWeapons(localWeapons.filter(w => w.id !== id));
     try {
       await fetchGraphQL(`mutation { removeCharacterWeapon(id: "${id}") }`);
-      router.refresh();
+      toast.success('Weapon removed');
     } catch (err: any) {
+      setLocalWeapons(prev); // rollback
       toast.error("Error: " + err.message);
     }
   };
@@ -231,7 +229,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
           characterId={characterId} 
           weaponType={weaponType}
           onClose={() => setIsEditing(false)} 
-          onSaved={() => router.refresh()} 
+          onSaved={() => window.location.reload()} 
         />
       )}
     </section>

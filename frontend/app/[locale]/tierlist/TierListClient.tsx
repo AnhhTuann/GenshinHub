@@ -8,7 +8,7 @@ import { Tier, TIERS_ORDER, TIER_STYLES, Role } from '@/data/tierlist';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 type TierCharacter = { id: string, nameEn: string, nameVi: string, avatarUrl: string, rarity: number, element: string, tier: string | null, role: string | null, recommendedC: string | null, tierNoteEn: string[], tierNoteVi: string[] };
-type TierWeapon    = { id: string, nameEn: string, nameVi: string, iconUrl: string | null, rarity: number, type: string, tier: string | null };
+type TierWeapon    = { id: string, nameEn: string, nameVi: string, iconUrl: string | null, rarity: number, type: string, tier: string | null, role: string | null };
 
 const ELEMENT_COLORS: Record<string, string> = {
   Pyro: 'bg-[#ff6b4a]', Hydro: 'bg-[#4fc3f7]', Cryo: 'bg-[#80deea]', Electro: 'bg-[#ce93d8]', Anemo: 'bg-[#4db6ac]', Geo: 'bg-[#ffd54f]', Dendro: 'bg-[#aed581]'
@@ -101,9 +101,10 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
 export default function TierListClient({ locale, characters, weapons }: { locale: string, characters: TierCharacter[], weapons: TierWeapon[] }) {
   const t = useTranslations('TierList');
   const [tab, setTab] = useState<'character' | 'weapon' | 'notes'>('character');
+  const [weaponType, setWeaponType] = useState<string>('Sword');
 
   const groupedCharacters = useMemo(() => {
-    const group: Record<Tier, TierCharacter[]> = { SS: [], S: [], A: [], B: [], C: [], Unranked: [] };
+    const group: Record<Tier, TierCharacter[]> = { SS: [], S: [], A: [], B: [], C: [], D: [], Unranked: [] };
     characters.forEach(c => {
       const tier = (c.tier as Tier) || 'Unranked';
       if (group[tier]) group[tier].push(c);
@@ -112,13 +113,14 @@ export default function TierListClient({ locale, characters, weapons }: { locale
   }, [characters]);
 
   const groupedWeapons = useMemo(() => {
-    const group: Record<Tier, TierWeapon[]> = { SS: [], S: [], A: [], B: [], C: [], Unranked: [] };
+    const group: Record<Tier, TierWeapon[]> = { SS: [], S: [], A: [], B: [], C: [], D: [], Unranked: [] };
     weapons.forEach(w => {
+      if (w.type !== weaponType) return;
       const tier = (w.tier as Tier) || 'Unranked';
       if (group[tier]) group[tier].push(w);
     });
     return group;
-  }, [weapons]);
+  }, [weapons, weaponType]);
 
   const tabs = [
     { id: 'character', label: t('characterTab') },
@@ -185,6 +187,20 @@ export default function TierListClient({ locale, characters, weapons }: { locale
             </button>
           ))}
         </div>
+
+        {tab === 'weapon' && (
+          <div className="flex justify-center flex-wrap gap-3 sm:gap-4 mb-10">
+            {['Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'].map(wType => (
+              <button
+                key={wType}
+                onClick={() => setWeaponType(wType)}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType ? 'bg-[#1a1a24] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
+              >
+                {wType}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* ── Tab Content ─────────────────────────────────────── */}
         <AnimatePresence mode="wait">
@@ -279,6 +295,8 @@ export default function TierListClient({ locale, characters, weapons }: { locale
                     tier === 'S'  ? 'bg-gradient-to-br from-red-500 to-rose-600 text-white border-red-400 shadow-[0_0_30px_rgba(239,68,68,0.3)]' :
                     tier === 'A'  ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.3)]' :
                     tier === 'B'  ? 'bg-gradient-to-br from-gray-500 to-slate-600 text-white border-gray-400 shadow-[0_0_20px_rgba(156,163,175,0.2)]' :
+                    tier === 'C'  ? 'bg-gradient-to-br from-emerald-500 to-green-600 text-white border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]' :
+                    tier === 'D'  ? 'bg-gradient-to-br from-orange-400 to-amber-700 text-white border-orange-400 shadow-[0_0_20px_rgba(251,146,60,0.2)]' :
                     'bg-gradient-to-br from-[#1a1a24] to-[#0d0d14] text-gray-500 border-gray-800';
 
                   const rowGlow = 
@@ -286,6 +304,8 @@ export default function TierListClient({ locale, characters, weapons }: { locale
                     tier === 'S'  ? 'group-hover:bg-red-500/[0.02] border-red-500/20' :
                     tier === 'A'  ? 'group-hover:bg-blue-500/[0.02] border-blue-500/20' :
                     tier === 'B'  ? 'group-hover:bg-gray-500/[0.02] border-gray-500/20' :
+                    tier === 'C'  ? 'group-hover:bg-emerald-500/[0.02] border-emerald-500/20' :
+                    tier === 'D'  ? 'group-hover:bg-orange-500/[0.02] border-orange-500/20' :
                     'group-hover:bg-white/[0.02] border-white/[0.05]';
 
                   return (
@@ -300,33 +320,25 @@ export default function TierListClient({ locale, characters, weapons }: { locale
                       </div>
                       
                       {/* Grid */}
-                      {tab === 'character' ? (
-                        <div className="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 bg-transparent relative z-10">
-                          {(['Main DPS', 'Sub DPS', 'Support'] as Role[]).map(role => {
-                            const charsInRole = (items as TierCharacter[]).filter(c => c.role === role);
-                            return (
-                              <div key={role} className="flex flex-col bg-transparent">
-                                <div className="py-3.5 px-5 flex items-center gap-3 border-b border-white/5 bg-black/20">
-                                  <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]'}`} />
-                                  <span className="text-xs font-black text-gray-300 uppercase tracking-[0.2em]">{role}</span>
-                                  <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#06060a] border border-white/10 px-2.5 py-0.5 rounded-full">{charsInRole.length}</span>
-                                </div>
-                                <div className="p-5 flex flex-wrap gap-4 sm:gap-5 content-start">
-                                  {charsInRole.map((char: any) => (
-                                    <TierItemCard key={char.id} item={char} isChar={true} locale={locale} />
-                                  ))}
-                                </div>
+                      <div className="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 bg-transparent relative z-10">
+                        {(['Main DPS', 'Sub DPS', 'Support'] as Role[]).map(role => {
+                          const itemsInRole = items.filter((c: any) => c.role?.includes(role));
+                          return (
+                            <div key={role} className="flex flex-col bg-transparent">
+                              <div className="py-3.5 px-5 flex items-center gap-3 border-b border-white/5 bg-black/20">
+                                <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]'}`} />
+                                <span className="text-xs font-black text-gray-300 uppercase tracking-[0.2em]">{role}</span>
+                                <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#06060a] border border-white/10 px-2.5 py-0.5 rounded-full">{itemsInRole.length}</span>
                               </div>
-                            );
-                          })}
-                        </div>
-                      ) : (
-                        <div className="p-6 sm:p-8 flex-1 flex flex-wrap gap-5 content-start bg-transparent relative z-10">
-                          {items.map((weapon: any) => (
-                            <TierItemCard key={weapon.id} item={weapon} isChar={false} locale={locale} />
-                          ))}
-                        </div>
-                      )}
+                              <div className="p-5 flex flex-wrap gap-4 sm:gap-5 content-start">
+                                {itemsInRole.map((item: any) => (
+                                  <TierItemCard key={item.id} item={item} isChar={tab === 'character'} locale={locale} />
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </motion.div>
                   );
                 })}

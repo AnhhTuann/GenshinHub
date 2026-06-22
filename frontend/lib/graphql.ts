@@ -126,7 +126,7 @@ export const GET_WEAPONS = `
   query GetWeapons {
     weapons {
       id nameEn nameVi rarity type baseAtk subStat subStatValue
-      passiveNameEn passiveNameVi passiveDescEn passiveDescVi iconUrl tier
+      passiveNameEn passiveNameVi passiveDescEn passiveDescVi iconUrl tier role
     }
   }
 `;
@@ -189,8 +189,8 @@ export const UPDATE_CHARACTER_TIER_LIST = `
 `;
 
 export const UPDATE_WEAPON_TIER_LIST = `
-  mutation UpdateWeaponTierList($id: String!, $tier: String) {
-    updateWeaponTierList(id: $id, tier: $tier) { id tier }
+  mutation UpdateWeaponTierList($id: String!, $tier: String, $role: String) {
+    updateWeaponTierList(id: $id, tier: $tier, role: $role) { id tier role }
   }
 `;
 

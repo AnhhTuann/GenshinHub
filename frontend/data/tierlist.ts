@@ -1,4 +1,4 @@
-export type Tier = 'SS' | 'S' | 'A' | 'B' | 'C' | 'Unranked';
+export type Tier = 'SS' | 'S' | 'A' | 'B' | 'C' | 'D' | 'Unranked';
 
 // Define tiers by English Names for better matching
 const characterTiers: Record<Tier, string[]> = {
@@ -19,6 +19,7 @@ const characterTiers: Record<Tier, string[]> = {
   'C': [
     'Amber', 'Lisa', 'Kaeya'
   ],
+  'D': [],
   'Unranked': [] // Fallback for others (4-stars mostly)
 };
 
@@ -38,6 +39,7 @@ const weaponTiers: Record<Tier, string[]> = {
   'C': [
     'The Bell', 'Eye of Perception', 'Rainslasher'
   ],
+  'D': [],
   'Unranked': []
 };
 
@@ -63,10 +65,11 @@ export const TIER_STYLES: Record<Tier, { bg: string; text: string; border: strin
   'A':  { bg: 'bg-[#c084fc]/20', text: 'text-[#c084fc]', border: 'border-[#c084fc]/30' },
   'B':  { bg: 'bg-[#4fc3f7]/20', text: 'text-[#4fc3f7]', border: 'border-[#4fc3f7]/30' },
   'C':  { bg: 'bg-[#aed581]/20', text: 'text-[#aed581]', border: 'border-[#aed581]/30' },
+  'D':  { bg: 'bg-[#ffcc80]/20', text: 'text-[#ffcc80]', border: 'border-[#ffcc80]/30' },
   'Unranked': { bg: 'bg-white/5', text: 'text-white/40', border: 'border-white/10' }
 };
 
-export const TIERS_ORDER: Tier[] = ['SS', 'S', 'A', 'B', 'C', 'Unranked'];
+export const TIERS_ORDER: Tier[] = ['SS', 'S', 'A', 'B', 'C', 'D', 'Unranked'];
 
 export type Role = 'Main DPS' | 'Sub DPS' | 'Support';
 

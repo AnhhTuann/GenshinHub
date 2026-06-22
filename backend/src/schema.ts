@@ -16,7 +16,7 @@ export const typeDefs = `#graphql
   }
   
   type CharacterBasic { id: String!, nameEn: String!, nameVi: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
-  type Weapon { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String, tier: String }
+  type Weapon { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String, tier: String, role: String }
   type ArtifactSet { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
   type Material { id: String!, nameEn: String!, nameVi: String!, type: String!, rarity: Int!, iconUrl: String }
   type EnkaShowcase { uid: String!, nickname: String!, level: Int!, avatarUrl: String, characters: [String!] }
@@ -80,7 +80,7 @@ export const typeDefs = `#graphql
     reorderCharacterWeapons(weaponIds: [String!]!): Boolean
     reorderCharacterArtifacts(artifactIds: [String!]!): Boolean
     updateCharacterTierList(id: String!, tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]): Character
-    updateWeaponTierList(id: String!, tier: String): Weapon
+    updateWeaponTierList(id: String!, tier: String, role: String): Weapon
     
     addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!): Boolean
     removeCharacterWeapon(id: String!): Boolean

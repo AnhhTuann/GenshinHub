@@ -129,6 +129,7 @@ model Weapon {
   
   // Tier List Data
   tier          String?
+  role          String?
 }
 
 model ArtifactSet {

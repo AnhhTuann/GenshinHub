@@ -316,10 +316,10 @@ export const Mutation = {
   
   updateWeaponTierList: async (_: any, args: any, context: any) => {
     requireAdmin(context);
-    const { id, tier } = sanitize(args);
+    const { id, tier, role } = sanitize(args);
     const w = await prisma.weapon.update({
       where: { id },
-      data: { tier },
+      data: { tier, role },
     });
     clearAllCaches();
     resetArtifactSetLookup();

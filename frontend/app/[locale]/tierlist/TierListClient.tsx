@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -22,9 +23,13 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
 };
+
+// ────────────────────────────────────────────────────────────────────────
+// Card Component
+// ────────────────────────────────────────────────────────────────────────
 
 function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, locale: string }) {
   const name = locale === 'en' ? item.nameEn : item.nameVi;
@@ -35,39 +40,63 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
       <motion.div
         whileHover={{ scale: 1.05, y: -4 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative w-[70px] sm:w-[84px] h-[86px] sm:h-[102px] flex flex-col rounded-xl overflow-hidden border border-white/10 hover:border-white/50 transition-colors shadow-xl z-0 hover:z-20 cursor-pointer"
+        className="group relative w-[90px] sm:w-[104px] h-[110px] sm:h-[126px] flex flex-col rounded-[1rem] overflow-hidden border border-white/10 hover:border-white/40 transition-colors shadow-2xl z-0 hover:z-20 cursor-pointer bg-[#050508]"
       >
         {/* Glow effect on hover */}
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl ${is5Star ? 'bg-amber-500/40' : 'bg-purple-500/40'}`} />
         
-        {/* Rarity Background */}
-        <div className={`absolute inset-0 bg-gradient-to-b ${is5Star ? 'from-amber-500/30 via-amber-700/20 to-amber-900/50' : 'from-purple-500/30 via-purple-700/20 to-purple-900/50'} z-0`} />
+        {/* Rarity Background Gradient */}
+        <div className={`absolute inset-0 bg-gradient-to-b ${is5Star ? 'from-amber-500/30 via-amber-700/20 to-[#0d0d14]' : 'from-purple-500/30 via-purple-700/20 to-[#0d0d14]'} z-0`} />
         
-        {/* Image */}
-        <div className="relative z-10 flex-1 w-full flex justify-center items-end bg-black/30">
+        {/* Image Container */}
+        <div className="relative z-10 flex-1 w-full flex justify-center items-end bg-transparent pt-2">
           {isChar ? (
-            <Image src={item.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} alt={name} fill className="object-cover object-top scale-110 drop-shadow-2xl" sizes="84px" />
+            <div className="relative w-[110%] h-[110%]">
+              <Image 
+                src={item.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} 
+                alt={name} 
+                fill 
+                className="object-cover object-top drop-shadow-2xl translate-y-2 group-hover:-translate-y-1 transition-transform duration-500" 
+                sizes="104px" 
+              />
+            </div>
           ) : (
-            <Image src={item.iconUrl || '/placeholder.png'} alt={name} width={64} height={64} className="object-contain mb-2 drop-shadow-lg" />
+            <div className="relative w-[80%] h-[80%] mb-2">
+              <Image 
+                src={item.iconUrl || '/placeholder.png'} 
+                alt={name} 
+                fill 
+                className="object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500" 
+              />
+            </div>
           )}
-          {/* Element overlay for characters */}
+
+          {/* Element overlay for characters (Top Left) */}
           {isChar && (
-            <div className="absolute top-1 left-1 w-5 h-5 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center p-[3px] border border-white/20 shadow-md">
-              <Image src={`/elements/${item.element.toLowerCase()}.png`} alt={item.element} width={14} height={14} className="object-contain" />
+            <div className="absolute top-1 left-1 w-6 h-6 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center p-[4px] border border-white/20 shadow-lg">
+              <Image src={`/elements/${item.element.toLowerCase()}.png`} alt={item.element} fill className="object-contain" />
             </div>
           )}
         </div>
         
         {/* Name Bar */}
-        <div className="relative z-20 w-full bg-black/90 py-1.5 px-0.5 border-t border-white/10 flex items-center justify-center backdrop-blur-md">
-          <span className="text-[9px] sm:text-[10px] font-bold text-white/80 group-hover:text-white text-center truncate w-full px-1 drop-shadow-md transition-colors">
+        <div className={`relative z-20 w-full bg-[#06060a]/95 py-2 px-1 border-t ${is5Star ? 'border-amber-500/20 group-hover:border-amber-400/50' : 'border-purple-500/20 group-hover:border-purple-400/50'} flex flex-col items-center justify-center backdrop-blur-md transition-colors`}>
+          <span className="text-[10px] sm:text-[11px] font-bold text-white/90 group-hover:text-white text-center truncate w-full px-1 drop-shadow-md transition-colors font-display">
             {name}
+          </span>
+          {/* Subtle star row */}
+          <span className={`text-[7px] tracking-widest leading-none mt-0.5 ${is5Star ? 'text-amber-400' : 'text-purple-400'}`}>
+            {'★'.repeat(item.rarity)}
           </span>
         </div>
       </motion.div>
     </Link>
   );
 }
+
+// ────────────────────────────────────────────────────────────────────────
+// Main Component
+// ────────────────────────────────────────────────────────────────────────
 
 export default function TierListClient({ locale, characters, weapons }: { locale: string, characters: TierCharacter[], weapons: TierWeapon[] }) {
   const t = useTranslations('TierList');
@@ -98,173 +127,214 @@ export default function TierListClient({ locale, characters, weapons }: { locale
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-8">
-      {/* Header */}
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-16"
-      >
-        <h1 className="text-4xl md:text-6xl font-black font-display tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-500 mb-6 drop-shadow-[0_0_30px_rgba(250,204,21,0.3)]">
-          {t('title')}
-        </h1>
-        <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-          {t('description')}
-        </p>
-      </motion.div>
+    <main className="min-h-screen bg-[#06060a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+      
+      {/* ── Hero Header ──────────────────────────────────────── */}
+      <div className="relative overflow-hidden border-b border-white/[0.04]">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-500/10 blur-[120px] rounded-[100%]" />
+        </div>
 
-      {/* Tabs */}
-      <div className="flex justify-center gap-2 mb-12 bg-white/[0.02] p-1.5 rounded-full border border-white/5 w-fit mx-auto backdrop-blur-md shadow-2xl">
-        {tabs.map((tItem) => (
-          <button
-            key={tItem.id}
-            onClick={() => setTab(tItem.id as any)}
-            className={`relative px-8 py-3 rounded-full font-bold text-sm transition-colors duration-300 ${tab === tItem.id ? 'text-black' : 'text-white/50 hover:text-white'}`}
+        <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 relative z-10 text-center flex flex-col items-center">
+          <Link
+            className="inline-flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors text-xs font-black uppercase tracking-wider mb-8 group bg-white/5 px-3 py-1.5 rounded-full border border-white/10"
+            href="/"
           >
-            {tab === tItem.id && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full shadow-[0_0_20px_rgba(250,204,21,0.4)]"
-                initial={false}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-            )}
-            <span className="relative z-10 tracking-wide uppercase">{tItem.label}</span>
-          </button>
-        ))}
+            <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+            Home
+          </Link>
+
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[10px] font-black uppercase tracking-widest mb-6 shadow-[0_0_20px_rgba(234,179,8,0.15)]">
+            <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+            Regularly Updated for Spiral Abyss
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black font-display uppercase tracking-tight leading-none mb-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 drop-shadow-[0_2px_20px_rgba(245,158,11,0.3)]">
+              {t('title')}
+            </span>
+          </h1>
+
+          <p className="text-gray-400 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
+            {t('description')}
+          </p>
+        </div>
       </div>
 
-      {/* Tab Content */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={tab}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4 }}
-          className="w-full"
-        >
-          {tab === 'notes' ? (
-            <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8 max-w-5xl mx-auto">
-              <div className="mb-4 text-center">
-                <h2 className="text-3xl font-black font-display text-white mb-3 drop-shadow-lg tracking-wide">{t('notesTitle')}</h2>
-                <p className="text-white/50 text-sm md:text-base max-w-xl mx-auto">{t('notesDesc')}</p>
-              </div>
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-8">
+        
+        {/* ── Tabs ────────────────────────────────────────────── */}
+        <div className="flex justify-center gap-2 mb-12 bg-[#0d0d14]/80 p-2 rounded-full border border-white/10 w-fit mx-auto backdrop-blur-xl shadow-2xl">
+          {tabs.map((tItem) => (
+            <button
+              key={tItem.id}
+              onClick={() => setTab(tItem.id as any)}
+              className={`relative px-8 py-3 rounded-full font-black text-[13px] transition-colors duration-300 ${tab === tItem.id ? 'text-black' : 'text-gray-400 hover:text-white'}`}
+            >
+              {tab === tItem.id && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full shadow-[0_0_24px_rgba(245,158,11,0.5)]"
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 tracking-widest uppercase">{tItem.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* ── Tab Content ─────────────────────────────────────── */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="w-full"
+          >
+            {tab === 'notes' ? (
               
-              {TIERS_ORDER.map(tier => {
-                if (tier === 'Unranked') return null;
+              // ── NOTES TAB ──
+              <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8 max-w-5xl mx-auto">
+                <div className="mb-4 text-center">
+                  <h2 className="text-3xl font-black font-display text-white mb-3 drop-shadow-lg tracking-wide">{t('notesTitle')}</h2>
+                  <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto">{t('notesDesc')}</p>
+                </div>
                 
-                const charsInTier = groupedCharacters[tier];
-                const charsWithNotes = charsInTier.filter(c => (c.tierNoteEn && c.tierNoteEn.length > 0) || (c.tierNoteVi && c.tierNoteVi.length > 0));
-                
-                if (charsWithNotes.length === 0) return null;
-                
-                return (
-                  <motion.div variants={itemVariants} key={tier} className="flex flex-col gap-5 relative">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-xl font-black text-2xl font-display ${TIER_STYLES[tier].bg} ${TIER_STYLES[tier].text} shadow-lg border ${TIER_STYLES[tier].border}`}>
-                        {tier}
+                {TIERS_ORDER.map(tier => {
+                  if (tier === 'Unranked') return null;
+                  
+                  const charsInTier = groupedCharacters[tier];
+                  const charsWithNotes = charsInTier.filter(c => (c.tierNoteEn && c.tierNoteEn.length > 0) || (c.tierNoteVi && c.tierNoteVi.length > 0));
+                  
+                  if (charsWithNotes.length === 0) return null;
+                  
+                  return (
+                    <motion.div variants={itemVariants} key={tier} className="flex flex-col gap-5 relative">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-14 h-14 flex items-center justify-center rounded-2xl font-black text-3xl font-display ${TIER_STYLES[tier].bg} ${TIER_STYLES[tier].text} shadow-lg border ${TIER_STYLES[tier].border}`}>
+                          {tier}
+                        </div>
+                        <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
                       </div>
-                      <div className="h-[1px] flex-1 bg-gradient-to-r from-white/20 to-transparent" />
-                    </div>
-                    
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pl-4 sm:pl-16">
-                      {charsWithNotes.map((char) => {
-                        const name = locale === 'en' ? char.nameEn : char.nameVi;
-                        const notesList = locale === 'en' ? (char.tierNoteEn || []) : (char.tierNoteVi || []);
-                        
-                        return (
-                          <div key={char.id} className="flex bg-white/[0.02] border border-white/[0.05] hover:border-white/20 hover:bg-white/[0.04] transition-all rounded-2xl p-4 gap-5 shadow-lg backdrop-blur-sm group">
-                            {/* Avatar */}
-                            <div className="flex flex-col items-center w-[76px] shrink-0 pt-1">
-                              <div className="relative w-16 h-16 rounded-xl overflow-hidden border border-white/10 group-hover:border-white/30 transition-colors shadow-md bg-black/40">
-                                <Image src={char.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} alt={name} fill className="object-cover scale-110" />
-                                <div className="absolute top-1 left-1 w-4 h-4 rounded-full bg-black/60 p-[2px] backdrop-blur-md">
-                                  <Image src={`/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" />
-                                </div>
-                                <div className="absolute bottom-0 inset-x-0 bg-black/80 py-0.5 text-[9px] font-black text-amber-400 text-center uppercase tracking-widest border-t border-white/10">
-                                  {char.recommendedC || 'C0'}
-                                </div>
-                              </div>
-                              <span className="mt-3 text-[11px] font-bold text-white/80 group-hover:text-white transition-colors text-center leading-tight truncate w-full px-1">{name}</span>
-                            </div>
-                            
-                            {/* Notes List */}
-                            <div className="flex-1 flex flex-col justify-center border-l border-white/[0.05] pl-5">
-                              <ul className="flex flex-col gap-3">
-                                {notesList.map((n: string, i: number) => (
-                                  <li key={i} className="flex gap-3 text-[13px] text-white/70 leading-relaxed group-hover:text-white/90 transition-colors">
-                                    <span className="text-amber-500/50 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-amber-500" />
-                                    <span>{n}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          ) : (
-            <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8">
-              {TIERS_ORDER.map(tier => {
-                const items = tab === 'character' ? groupedCharacters[tier] : groupedWeapons[tier];
-                if (items.length === 0) return null;
-
-                const styles = TIER_STYLES[tier];
-                
-                return (
-                  <motion.div variants={itemVariants} key={tier} className="relative flex flex-col md:flex-row bg-white/[0.01] border border-white/[0.04] rounded-[2rem] overflow-hidden shadow-2xl backdrop-blur-xl group hover:border-white/10 transition-colors">
-                    {/* Subtle glow behind the row */}
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 ${styles.bg}`} />
-
-                    {/* Badge */}
-                    <div className={`w-16 sm:w-24 shrink-0 flex flex-col justify-center items-center py-6 px-2 border-b md:border-b-0 md:border-r relative overflow-hidden ${styles.bg} ${styles.border}`}>
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
-                      <span className={`text-3xl sm:text-4xl font-black font-display drop-shadow-[0_0_15px_currentColor] ${styles.text} relative z-10`}>
-                        {tier !== 'Unranked' ? tier : '?'}
-                      </span>
-                    </div>
-                    
-                    {/* Grid */}
-                    {tab === 'character' ? (
-                      <div className="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.04] bg-transparent relative z-10">
-                        {(['Main DPS', 'Sub DPS', 'Support'] as Role[]).map(role => {
-                          const charsInRole = (items as TierCharacter[]).filter(c => c.role === role);
+                      
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pl-4 sm:pl-16">
+                        {charsWithNotes.map((char) => {
+                          const name = locale === 'en' ? char.nameEn : char.nameVi;
+                          const notesList = locale === 'en' ? (char.tierNoteEn || []) : (char.tierNoteVi || []);
+                          
                           return (
-                            <div key={role} className="flex flex-col hover:bg-white/[0.01] transition-colors">
-                              <div className="py-3 px-4 flex items-center gap-3 border-b border-white/[0.04] bg-white/[0.01]">
-                                <div className={`w-1.5 h-1.5 rounded-full ${role === 'Main DPS' ? 'bg-red-500' : role === 'Sub DPS' ? 'bg-purple-500' : 'bg-blue-500'} shadow-[0_0_10px_currentColor]`} />
-                                <span className="text-[10px] sm:text-[11px] font-black text-white/60 uppercase tracking-[0.2em]">{role}</span>
-                                <span className="ml-auto text-[10px] font-bold text-white/30 bg-white/5 px-2 py-0.5 rounded-full">{charsInRole.length}</span>
+                            <div key={char.id} className="flex bg-[#0d0d14] border border-white/[0.05] hover:border-white/20 hover:bg-[#12121a] transition-all rounded-[1.5rem] p-5 gap-5 shadow-xl group">
+                              {/* Avatar */}
+                              <div className="flex flex-col items-center w-[84px] shrink-0">
+                                <div className="relative w-[84px] h-[84px] rounded-[1.25rem] overflow-hidden border border-white/10 group-hover:border-white/30 transition-colors shadow-lg bg-[#050508]">
+                                  <Image src={char.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} alt={name} fill className="object-cover scale-110" />
+                                  <div className="absolute top-1.5 left-1.5 w-5 h-5 rounded-full bg-black/80 p-[3px] backdrop-blur-md">
+                                    <Image src={`/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" />
+                                  </div>
+                                  <div className="absolute bottom-0 inset-x-0 bg-black/80 py-1 text-[10px] font-black text-amber-400 text-center uppercase tracking-widest border-t border-white/10">
+                                    {char.recommendedC || 'C0'}
+                                  </div>
+                                </div>
+                                <span className="mt-3 text-xs font-bold text-white/80 group-hover:text-white transition-colors text-center leading-tight truncate w-full px-1">{name}</span>
                               </div>
-                              <div className="p-4 sm:p-5 flex flex-wrap gap-3 sm:gap-4 content-start">
-                                {charsInRole.map((char: any) => (
-                                  <TierItemCard key={char.id} item={char} isChar={true} locale={locale} />
-                                ))}
+                              
+                              {/* Notes List */}
+                              <div className="flex-1 flex flex-col justify-center border-l border-white/5 pl-5">
+                                <ul className="flex flex-col gap-3">
+                                  {notesList.map((n: string, i: number) => (
+                                    <li key={i} className="flex gap-3 text-sm text-gray-300 leading-relaxed group-hover:text-gray-100 transition-colors">
+                                      <span className="text-amber-500/50 mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-amber-500" />
+                                      <span>{n}</span>
+                                    </li>
+                                  ))}
+                                </ul>
                               </div>
                             </div>
                           );
                         })}
                       </div>
-                    ) : (
-                      <div className="p-5 md:p-8 flex-1 flex flex-wrap gap-4 content-start bg-transparent relative z-10">
-                        {items.map((weapon: any) => (
-                          <TierItemCard key={weapon.id} item={weapon} isChar={false} locale={locale} />
-                        ))}
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+
+            ) : (
+              
+              // ── CHARACTERS / WEAPONS TAB ──
+              <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8">
+                {TIERS_ORDER.map(tier => {
+                  const items = tab === 'character' ? groupedCharacters[tier] : groupedWeapons[tier];
+                  if (items.length === 0) return null;
+
+                  const styles = TIER_STYLES[tier];
+                  
+                  // Enhanced glow and gradient for badges based on tier
+                  const enhancedBadgeStyle = 
+                    tier === 'SS' ? 'bg-gradient-to-br from-amber-500 to-orange-600 text-black border-amber-400 shadow-[0_0_40px_rgba(245,158,11,0.4)]' :
+                    tier === 'S'  ? 'bg-gradient-to-br from-red-500 to-rose-600 text-white border-red-400 shadow-[0_0_30px_rgba(239,68,68,0.3)]' :
+                    tier === 'A'  ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.3)]' :
+                    tier === 'B'  ? 'bg-gradient-to-br from-gray-500 to-slate-600 text-white border-gray-400 shadow-[0_0_20px_rgba(156,163,175,0.2)]' :
+                    'bg-gradient-to-br from-[#1a1a24] to-[#0d0d14] text-gray-500 border-gray-800';
+
+                  const rowGlow = 
+                    tier === 'SS' ? 'group-hover:bg-amber-500/[0.03] border-amber-500/20' :
+                    tier === 'S'  ? 'group-hover:bg-red-500/[0.02] border-red-500/20' :
+                    tier === 'A'  ? 'group-hover:bg-blue-500/[0.02] border-blue-500/20' :
+                    tier === 'B'  ? 'group-hover:bg-gray-500/[0.02] border-gray-500/20' :
+                    'group-hover:bg-white/[0.02] border-white/[0.05]';
+
+                  return (
+                    <motion.div variants={itemVariants} key={tier} className={`relative flex flex-col md:flex-row bg-[#0d0d14] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
+                      
+                      {/* Thicker, more impactful Tier Badge */}
+                      <div className={`w-20 sm:w-28 shrink-0 flex flex-col justify-center items-center py-6 border-b md:border-b-0 md:border-r border-white/10 relative overflow-hidden ${enhancedBadgeStyle}`}>
+                        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
+                        <span className="text-4xl sm:text-5xl font-black font-display relative z-10 drop-shadow-md">
+                          {tier !== 'Unranked' ? tier : '?'}
+                        </span>
                       </div>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          )}
-        </motion.div>
-      </AnimatePresence>
-    </div>
+                      
+                      {/* Grid */}
+                      {tab === 'character' ? (
+                        <div className="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 bg-transparent relative z-10">
+                          {(['Main DPS', 'Sub DPS', 'Support'] as Role[]).map(role => {
+                            const charsInRole = (items as TierCharacter[]).filter(c => c.role === role);
+                            return (
+                              <div key={role} className="flex flex-col bg-transparent">
+                                <div className="py-3.5 px-5 flex items-center gap-3 border-b border-white/5 bg-black/20">
+                                  <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]'}`} />
+                                  <span className="text-xs font-black text-gray-300 uppercase tracking-[0.2em]">{role}</span>
+                                  <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#06060a] border border-white/10 px-2.5 py-0.5 rounded-full">{charsInRole.length}</span>
+                                </div>
+                                <div className="p-5 flex flex-wrap gap-4 sm:gap-5 content-start">
+                                  {charsInRole.map((char: any) => (
+                                    <TierItemCard key={char.id} item={char} isChar={true} locale={locale} />
+                                  ))}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="p-6 sm:p-8 flex-1 flex flex-wrap gap-5 content-start bg-transparent relative z-10">
+                          {items.map((weapon: any) => (
+                            <TierItemCard key={weapon.id} item={weapon} isChar={false} locale={locale} />
+                          ))}
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </main>
   );
 }

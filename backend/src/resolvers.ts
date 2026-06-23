@@ -1,5 +1,8 @@
 // Nodemon trigger
 import axios from 'axios';
+import { EnkaClient } from 'enka-network-api';
+
+const enka = new EnkaClient({ defaultLanguage: 'en' });
 import { charactersCache, characterCache, weaponsCache, showcaseCache, artifactsCache, materialsCache } from './cache';
 import { Mutation } from './mutations';
 import GraphQLJSON from 'graphql-type-json';
@@ -231,14 +234,63 @@ export const resolvers = {
       const cached = showcaseCache.get(args.uid);
       if (cached) return cached;
       try {
-        const response = await axios.get(`https://enka.network/api/uid/${args.uid}`);
-        const data = response.data;
+        const user = await enka.fetchUser(args.uid);
+        if (!user) return null;
+
+        const detailedCharacters = user.characters ? user.characters.map((c: any) => {
+          let maxDmg = 0;
+          try {
+            const elements = ['pyroDamage', 'hydroDamage', 'cryoDamage', 'electroDamage', 'anemoDamage', 'geoDamage', 'dendroDamage', 'physicalDamage'];
+            for (const el of elements) {
+              if (c.stats[el] && c.stats[el].value > maxDmg) maxDmg = c.stats[el].value;
+            }
+          } catch(e) {}
+
+          return {
+            id: c.characterData.id.toString(),
+            name: c.characterData.name.get("en"),
+            element: c.characterData.element?.id || 'Unknown',
+            level: c.level,
+            friendship: c.friendship,
+            constellation: c.unlockedConstellations ? c.unlockedConstellations.length : 0,
+            weapon: c.weapon ? {
+              name: c.weapon.weaponData.name.get("en"),
+              level: c.weapon.level,
+              refinement: c.weapon.refinement ? c.weapon.refinement.level : 1,
+            } : null,
+            artifacts: c.artifacts ? c.artifacts.map((a: any) => ({
+              setName: a.artifactData.set.name.get("en"),
+              type: a.artifactData.equipType,
+              level: a.level,
+              mainStat: a.mainstat ? {
+                type: a.mainstat.type.get("en"),
+                value: a.mainstat.value
+              } : null,
+              subStats: a.substats ? a.substats.map((s: any) => ({
+                type: s.type.get("en"),
+                value: s.value
+              })) : []
+            })) : [],
+            stats: c.stats ? {
+              maxHp: c.stats.maxHp?.value || 0,
+              attack: c.stats.attack?.value || 0,
+              defense: c.stats.defense?.value || 0,
+              critRate: c.stats.critRate?.value || 0,
+              critDamage: c.stats.critDamage?.value || 0,
+              energyRecharge: c.stats.energyRecharge?.value || 0,
+              elementalMastery: c.stats.elementalMastery?.value || 0,
+              highestDamageBonus: maxDmg
+            } : {}
+          };
+        }) : [];
+
         const result = {
           uid: args.uid,
-          nickname: data.playerInfo?.nickname || 'Unknown',
-          level: data.playerInfo?.level || 1,
-          avatarUrl: data.playerInfo?.profilePicture?.avatarId ? `/images/avatars/UI_AvatarIcon_${data.playerInfo.profilePicture.avatarId}.png` : null,
-          characters: data.avatarInfoList?.map((a: any) => a.avatarId.toString()) || [],
+          nickname: user.nickname || 'Unknown',
+          level: user.level || 1,
+          avatarUrl: user.profilePicture?.icon?.url || null,
+          characters: user.characters ? user.characters.map((c: any) => c.characterData.id.toString()) : [],
+          detailedCharacters
         };
         showcaseCache.set(args.uid, result);
         return result;

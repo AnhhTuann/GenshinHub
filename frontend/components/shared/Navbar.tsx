@@ -68,7 +68,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-0.5 bg-[#0d0d14]/60 p-1 rounded-2xl border border-white/[0.05] overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="hidden md:flex items-center gap-0.5 bg-[#0d0d14]/60 p-1 rounded-2xl border border-white/[0.05] overflow-x-auto scrollbar-none">
             {navLinks.map((link) => {
               const isActive = link.href === '/'
                 ? pathname === '/'

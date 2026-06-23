@@ -124,7 +124,6 @@ export default function CharactersScreen() {
           data={ELEMENTS}
           horizontal
           showsHorizontalScrollIndicator={false}
-          estimatedItemSize={60}
           contentContainerStyle={{ paddingHorizontal: 16 }}
           renderItem={({ item: el }) => {
             const active = filterEl === el;
@@ -151,13 +150,11 @@ export default function CharactersScreen() {
           <FlashList
             data={flattenedData}
             renderItem={renderItem}
-            estimatedItemSize={90}
             numColumns={numColumns}
             getItemType={item => item.type === 'header' ? 'header' : 'character'}
             overrideItemLayout={(layout, item) => {
               if (item.type === 'header') {
                 layout.span = numColumns;
-                layout.size = 44;
               }
             }}
           />

@@ -24,6 +24,7 @@
     "compression": "^1.8.1",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
+    "enka-network-api": "^5.0.15",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
     "graphql": "^16.14.1",

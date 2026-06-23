@@ -11,9 +11,7 @@ type TierCharacter = { id: string, nameEn: string, nameVi: string, avatarUrl: st
 type TierWeapon    = { id: string, nameEn: string, nameVi: string, iconUrl: string | null, rarity: number, type: string, tier: string | null, role: string | null };
 
 const getImageUrl = (url: string | null) => {
-  if (!url) return null;
-  if (url.startsWith('http')) return url;
-  return `https://genshinhub.onrender.com${url}`;
+  return url;
 };
 
 const ELEMENT_COLORS: Record<string, string> = {
@@ -256,7 +254,7 @@ export default function TierListClient({ locale, characters, weapons }: { locale
                       
                       {/* Thicker, more impactful Tier Badge */}
                       <div className={`w-20 sm:w-28 shrink-0 flex flex-col justify-center items-center py-6 border-b md:border-b-0 md:border-r border-white/10 relative overflow-hidden ${enhancedBadgeStyle}`}>
-                        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
+
                         <span className="text-4xl sm:text-5xl font-black font-display relative z-10 drop-shadow-md">
                           {tier !== 'Unranked' ? tier : '?'}
                         </span>

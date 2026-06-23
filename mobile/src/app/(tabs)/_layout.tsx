@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 import '../../lib/i18n';
 
-function TabIcon({ Icon, color, focused }: { Icon: any; color: string; focused: boolean }) {
+function TabIcon({ Icon, focused }: { Icon: any; focused: boolean }) {
   return (
     <View style={[styles.iconWrap, focused && styles.iconWrapActive]}>
       <Icon size={22} color={focused ? '#cfa858' : 'rgba(255,255,255,0.4)'} />
@@ -30,28 +30,28 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color, focused }) => <TabIcon Icon={Home} color={color} focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabIcon Icon={Home} focused={focused} />,
         }}
       />
       <Tabs.Screen
         name="characters"
         options={{
           title: 'Characters',
-          tabBarIcon: ({ color, focused }) => <TabIcon Icon={Users} color={color} focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabIcon Icon={Users} focused={focused} />,
         }}
       />
       <Tabs.Screen
         name="weapons"
         options={{
           title: 'Weapons',
-          tabBarIcon: ({ color, focused }) => <TabIcon Icon={Sword} color={color} focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabIcon Icon={Sword} focused={focused} />,
         }}
       />
       <Tabs.Screen
         name="tierlist"
         options={{
           title: 'Tier List',
-          tabBarIcon: ({ color, focused }) => <TabIcon Icon={Star} color={color} focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabIcon Icon={Star} focused={focused} />,
         }}
       />
       <Tabs.Screen
@@ -64,7 +64,7 @@ export default function TabLayout() {
         name="more"
         options={{
           title: 'More',
-          tabBarIcon: ({ color, focused }) => <TabIcon Icon={Menu} color={color} focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabIcon Icon={Menu} focused={focused} />,
         }}
       />
     </Tabs>

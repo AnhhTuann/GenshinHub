@@ -117,7 +117,12 @@ export const GET_CHARACTER_BY_ID = `
 export const GET_SHOWCASE = `
   query GetShowcase($uid: String!) {
     showcase(uid: $uid) {
-      uid nickname level avatarUrl characters
+      uid
+      nickname
+      level
+      avatarUrl
+      characters
+      detailedCharacters
     }
   }
 `;

@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "03929b6a-07cf-45e4-a3c4-c15d3083f006"
+      }
+    },
+    "android": {
+      "package": "com.anhhtuann.genshinhub"
+    }
+  }
+}

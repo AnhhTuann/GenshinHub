@@ -43,6 +43,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'genshinhub.onrender.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'genshin-impact.fandom.com',
         port: '',
         pathname: '/**',

@@ -10,6 +10,12 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 type TierCharacter = { id: string, nameEn: string, nameVi: string, avatarUrl: string, rarity: number, element: string, tier: string | null, role: string | null, recommendedC: string | null, tierNoteEn: string[], tierNoteVi: string[] };
 type TierWeapon    = { id: string, nameEn: string, nameVi: string, iconUrl: string | null, rarity: number, type: string, tier: string | null, role: string | null };
 
+const getImageUrl = (url: string | null) => {
+  if (!url) return null;
+  if (url.startsWith('http')) return url;
+  return `https://genshinhub.onrender.com${url}`;
+};
+
 const ELEMENT_COLORS: Record<string, string> = {
   Pyro: 'bg-[#ff6b4a]', Hydro: 'bg-[#4fc3f7]', Cryo: 'bg-[#80deea]', Electro: 'bg-[#ce93d8]', Anemo: 'bg-[#4db6ac]', Geo: 'bg-[#ffd54f]', Dendro: 'bg-[#aed581]'
 };
@@ -53,7 +59,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
           {isChar ? (
             <div className="relative w-[110%] h-[110%]">
               <Image 
-                src={item.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} 
+                src={getImageUrl(item.avatarUrl) || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} 
                 alt={name} 
                 fill 
                 className="object-cover object-top drop-shadow-2xl translate-y-2 group-hover:-translate-y-1 transition-transform duration-500" 
@@ -63,7 +69,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
           ) : (
             <div className="relative w-[80%] h-[80%] mb-2">
               <Image 
-                src={item.iconUrl || '/placeholder.png'} 
+                src={getImageUrl(item.iconUrl) || '/placeholder.png'} 
                 alt={name} 
                 fill 
                 className="object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500" 

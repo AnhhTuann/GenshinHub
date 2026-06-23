@@ -1,9 +1,24 @@
 import { Image } from 'expo-image';
-import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { useState, useEffect, useMemo } from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  ActivityIndicator,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  Dimensions,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import { FlashList } from '@shopify/flash-list';
+import { Search } from 'lucide-react-native';
 import { fetchGraphQL, GET_WEAPONS } from '@/lib/graphql';
+import { RARITY_CONFIG } from '@/constants/design';
+import { RarityStars } from '@/components/ui/RarityStars';
+
+const { width } = Dimensions.get('window');
 
 interface Weapon {
   id: string;
@@ -14,17 +29,24 @@ interface Weapon {
   baseAtk: number;
   subStat: string;
   subStatValue: string;
+  tier?: string;
 }
+
+const WEAPON_TYPES = ['All', 'Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'];
+const WEAPON_EMOJIS: Record<string, string> = {
+  All: '✦', Sword: '🗡️', Claymore: '⚔️', Polearm: '🔱', Bow: '🏹', Catalyst: '📖',
+};
 
 export default function WeaponsScreen() {
   const router = useRouter();
   const [weapons, setWeapons] = useState<Weapon[]>([]);
   const [loading, setLoading] = useState(true);
+  const [filterType, setFilterType] = useState('All');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const data = await fetchGraphQL(GET_WEAPONS);
+    fetchGraphQL(GET_WEAPONS)
+      .then(data => {
         if (data.weapons) {
           const sorted = [...data.weapons].sort((a, b) => {
             if (a.rarity !== b.rarity) return b.rarity - a.rarity;
@@ -32,65 +54,196 @@ export default function WeaponsScreen() {
           });
           setWeapons(sorted);
         }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadData();
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, []);
 
-  const getRarityColor = (rarity: number) => {
-    switch (rarity) {
-      case 5: return 'border-yellow-500 bg-yellow-500/20';
-      case 4: return 'border-purple-500 bg-purple-500/20';
-      case 3: return 'border-blue-500 bg-blue-500/20';
-      case 2: return 'border-green-500 bg-green-500/20';
-      default: return 'border-gray-500 bg-gray-500/20';
-    }
-  };
+  const filtered = useMemo(() => {
+    return weapons.filter(w => {
+      const typeOk = filterType === 'All' || w.type === filterType;
+      const srchOk = !search || w.nameEn.toLowerCase().includes(search.toLowerCase());
+      return typeOk && srchOk;
+    });
+  }, [weapons, filterType, search]);
+
+  const CARD_W = (width - 44) / 2;
 
   return (
-    <SafeAreaView className="flex-1 bg-[#050508]">
-      <View className="px-4 pt-4 pb-2 border-b border-white/10">
-        <Text className="text-2xl font-black text-white text-gradient-gold">WEAPONS</Text>
-        <Text className="text-white/50 text-xs mt-1 mb-2">Database of all weapons</Text>
+    <SafeAreaView style={styles.container}>
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>WEAPONS</Text>
+        <Text style={styles.headerSub}>All weapon rankings</Text>
+      </View>
+
+      {/* Search */}
+      <View style={styles.searchWrap}>
+        <Search size={14} color="rgba(255,255,255,0.35)" style={{ marginRight: 8 }} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Search weapon..."
+          placeholderTextColor="rgba(255,255,255,0.3)"
+          value={search}
+          onChangeText={setSearch}
+        />
+      </View>
+
+      {/* Type Filter */}
+      <View style={styles.filterRow}>
+        <FlashList
+          data={WEAPON_TYPES}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          estimatedItemSize={70}
+          contentContainerStyle={{ paddingHorizontal: 16 }}
+          renderItem={({ item: type }) => {
+            const active = filterType === type;
+            return (
+              <TouchableOpacity
+                onPress={() => setFilterType(type)}
+                style={[styles.filterChip, active && styles.filterChipActive]}
+              >
+                <Text style={styles.filterEmoji}>{WEAPON_EMOJIS[type]}</Text>
+                <Text style={[styles.filterLabel, active && styles.filterLabelActive]}>{type}</Text>
+              </TouchableOpacity>
+            );
+          }}
+        />
       </View>
 
       {loading ? (
-        <View className="flex-1 items-center justify-center">
+        <View style={styles.loader}>
           <ActivityIndicator size="large" color="#cfa858" />
+          <Text style={styles.loaderText}>Loading weapons...</Text>
         </View>
       ) : (
-        <ScrollView className="flex-1 px-4 pt-4" contentContainerStyle={{ paddingBottom: 40 }}>
-          <View className="flex-row flex-wrap gap-4 justify-between">
-            {weapons.map(w => (
-              <TouchableOpacity 
-                key={w.id} 
-                className="w-[47%] bg-white/5 rounded-xl border border-white/10 overflow-hidden mb-2"
+        <ScrollView
+          style={styles.scroll}
+          contentContainerStyle={styles.grid}
+          showsVerticalScrollIndicator={false}
+        >
+          {filtered.map(w => {
+            const cfg = RARITY_CONFIG[w.rarity] || RARITY_CONFIG[3];
+            return (
+              <TouchableOpacity
+                key={w.id}
+                style={[styles.card, { width: CARD_W, borderColor: cfg.border }]}
                 onPress={() => router.push(`/weapons/${w.id}` as any)}
+                activeOpacity={0.75}
               >
-                <View className={`h-24 w-full items-center justify-center border-b ${getRarityColor(w.rarity)}`}>
+                <View style={[styles.cardImg, { backgroundColor: cfg.bg }]}>
                   {w.iconUrl ? (
-                    <Image source={{ uri: w.iconUrl }} className="w-20 h-20" contentFit="contain" />
+                    <Image source={{ uri: w.iconUrl }} style={styles.weaponImg} contentFit="contain" />
                   ) : (
-                    <Text className="text-white/30 text-xs">No Icon</Text>
+                    <Text style={styles.noImg}>?</Text>
                   )}
                 </View>
-                <View className="p-3">
-                  <Text className="text-white font-bold text-sm line-clamp-1" numberOfLines={1}>{w.nameEn}</Text>
-                  <Text className="text-white/50 text-xs mt-1">{w.type}</Text>
-                  <View className="flex-row items-center justify-between mt-2">
-                    <Text className="text-gray-400 text-xs text-center w-1/2 border-r border-white/10">ATK {w.baseAtk}</Text>
-                    <Text className="text-gray-400 text-xs text-center w-1/2">{w.subStatValue}</Text>
+                <View style={styles.cardBody}>
+                  <RarityStars rarity={w.rarity} size={10} />
+                  <Text style={styles.weaponName} numberOfLines={1}>{w.nameEn}</Text>
+                  <Text style={styles.weaponType}>{w.type}</Text>
+                  <View style={styles.statsRow}>
+                    <Text style={styles.statText}>ATK {w.baseAtk}</Text>
+                    {w.subStatValue ? <Text style={styles.statText}>{w.subStatValue}</Text> : null}
                   </View>
                 </View>
               </TouchableOpacity>
-            ))}
-          </View>
+            );
+          })}
         </ScrollView>
       )}
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#080810' },
+  header: {
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255,255,255,0.07)',
+  },
+  headerTitle: {
+    fontSize: 22,
+    fontWeight: '900',
+    color: '#ffffff',
+    letterSpacing: 1,
+    textShadowColor: 'rgba(207,168,88,0.4)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 10,
+  },
+  headerSub: { color: 'rgba(255,255,255,0.4)', fontSize: 11, marginTop: 2 },
+
+  searchWrap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.08)',
+    marginHorizontal: 16,
+    marginVertical: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  searchInput: { flex: 1, color: '#ffffff', fontSize: 13 },
+
+  filterRow: { marginBottom: 12 },
+  filterChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    marginRight: 8,
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.08)',
+  },
+  filterChipActive: {
+    backgroundColor: 'rgba(207,168,88,0.15)',
+    borderColor: 'rgba(207,168,88,0.5)',
+  },
+  filterEmoji: { fontSize: 12, marginRight: 4 },
+  filterLabel: { color: 'rgba(255,255,255,0.5)', fontSize: 11, fontWeight: '600' },
+  filterLabelActive: { color: '#cfa858' },
+
+  scroll: { flex: 1 },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: 16,
+    gap: 12,
+    paddingBottom: 40,
+  },
+  card: {
+    borderRadius: 14,
+    borderWidth: 1,
+    overflow: 'hidden',
+    backgroundColor: 'rgba(255,255,255,0.03)',
+  },
+  cardImg: {
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  weaponImg: { width: 80, height: 80 },
+  noImg: { color: 'rgba(255,255,255,0.2)', fontSize: 24 },
+  cardBody: { padding: 10, gap: 3 },
+  weaponName: { color: '#ffffff', fontSize: 12, fontWeight: '700', marginTop: 2 },
+  weaponType: { color: 'rgba(255,255,255,0.4)', fontSize: 10 },
+  statsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255,255,255,0.06)',
+    paddingTop: 6,
+    marginTop: 4,
+  },
+  statText: { color: 'rgba(255,255,255,0.5)', fontSize: 10 },
+  loader: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
+  loaderText: { color: 'rgba(255,255,255,0.4)', fontSize: 13 },
+});

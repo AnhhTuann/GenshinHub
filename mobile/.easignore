@@ -1,0 +1,27 @@
+# EAS Build ignore file
+# Exclude large unnecessary directories
+
+# Node modules (EAS will install these)
+node_modules/
+
+# Expo generated folders
+.expo/
+dist/
+android/
+ios/
+
+# Development files
+.vscode/
+.claude/
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Docs / non-essential
+README.md
+AGENTS.md
+CLAUDE.md
+LICENSE
+scripts/

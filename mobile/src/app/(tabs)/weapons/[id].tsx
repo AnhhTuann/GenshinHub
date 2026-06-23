@@ -1,10 +1,19 @@
 import { Image } from 'expo-image';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  ActivityIndicator,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { fetchGraphQL, GET_WEAPON_BY_ID } from '@/lib/graphql';
-import { ChevronLeft, Star } from 'lucide-react-native';
+import { ChevronLeft } from 'lucide-react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { RARITY_CONFIG } from '@/constants/design';
+import { RarityStars } from '@/components/ui/RarityStars';
 
 export default function WeaponDetailScreen() {
   const { id } = useLocalSearchParams();
@@ -13,93 +22,177 @@ export default function WeaponDetailScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const data = await fetchGraphQL(GET_WEAPON_BY_ID, { id });
-        if (data.weapon) {
-          setWeapon(data.weapon);
-        }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    if (id) loadData();
+    if (!id) return;
+    fetchGraphQL(GET_WEAPON_BY_ID, { id })
+      .then(data => { if (data.weapon) setWeapon(data.weapon); })
+      .catch(console.error)
+      .finally(() => setLoading(false));
   }, [id]);
 
   if (loading) {
     return (
-      <View className="flex-1 bg-[#050508] items-center justify-center">
+      <View style={styles.center}>
         <ActivityIndicator size="large" color="#cfa858" />
+        <Text style={styles.loaderText}>Loading...</Text>
       </View>
     );
   }
 
   if (!weapon) {
     return (
-      <View className="flex-1 bg-[#050508] items-center justify-center">
-        <Text className="text-white">Weapon not found</Text>
+      <View style={styles.center}>
+        <Text style={styles.notFound}>Weapon not found</Text>
       </View>
     );
   }
 
-  const getRarityColor = (rarity: number) => {
-    switch (rarity) {
-      case 5: return 'bg-yellow-500/20 border-yellow-500';
-      case 4: return 'bg-purple-500/20 border-purple-500';
-      case 3: return 'bg-blue-500/20 border-blue-500';
-      case 2: return 'bg-green-500/20 border-green-500';
-      default: return 'bg-gray-500/20 border-gray-500';
-    }
-  };
+  const cfg = RARITY_CONFIG[weapon.rarity] || RARITY_CONFIG[3];
 
   return (
-    <SafeAreaView className="flex-1 bg-[#050508]">
-      <View className="px-4 py-3 flex-row items-center gap-4 border-b border-white/10">
-        <TouchableOpacity onPress={() => router.back()} className="w-10 h-10 bg-white/5 rounded-full items-center justify-center">
-          <ChevronLeft color="white" size={24} />
+    <View style={styles.root}>
+      <SafeAreaView style={styles.topBar}>
+        <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
+          <ChevronLeft color="white" size={22} />
         </TouchableOpacity>
-        <Text className="text-xl font-bold text-white">Weapon Details</Text>
-      </View>
+        <Text style={styles.topTitle}>Weapon Details</Text>
+        <View style={{ width: 40 }} />
+      </SafeAreaView>
 
-      <ScrollView className="flex-1 px-4 pt-6" contentContainerStyle={{ paddingBottom: 40 }}>
-        <View className={`w-full h-48 rounded-xl border items-center justify-center mb-6 ${getRarityColor(weapon.rarity)}`}>
-          {weapon.iconUrl && (
-            <Image source={{ uri: weapon.iconUrl }} className="w-32 h-32" contentFit="contain" />
-          )}
+      <ScrollView style={styles.scroll} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        {/* Weapon Icon Hero */}
+        <View style={[styles.iconHero, { backgroundColor: cfg.bg, borderColor: cfg.border }]}>
+          <View style={[styles.iconGlow, { backgroundColor: cfg.glow }]} />
+          {weapon.iconUrl ? (
+            <Image source={{ uri: weapon.iconUrl }} style={styles.weapIcon} contentFit="contain" />
+          ) : null}
         </View>
 
-        <View className="mb-6">
-          <View className="flex-row items-center gap-2 mb-1">
-            <View className="flex-row">
-              {Array.from({ length: weapon.rarity }).map((_, i) => (
-                <Star key={i} size={16} color="#cfa858" fill="#cfa858" />
-              ))}
+        {/* Name & Rarity */}
+        <View style={styles.nameSection}>
+          <RarityStars rarity={weapon.rarity} size={16} />
+          <Text style={styles.weaponName}>{weapon.nameEn}</Text>
+          <Text style={styles.weaponType}>{weapon.type}</Text>
+        </View>
+
+        {/* Stats */}
+        <View style={[styles.statsCard, { borderColor: cfg.border }]}>
+          <View style={styles.statRow}>
+            <View style={styles.statItem}>
+              <Text style={styles.statLabel}>Base ATK</Text>
+              <Text style={styles.statValue}>{weapon.baseAtk}</Text>
+              <Text style={styles.statSub}>(Lv. 90)</Text>
             </View>
-            <Text className="text-white/50 text-sm">{weapon.type}</Text>
-          </View>
-          <Text className="text-3xl font-black text-white text-gradient-gold">{weapon.nameEn}</Text>
-        </View>
-
-        <View className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 flex-row">
-          <View className="flex-1 border-r border-white/10">
-            <Text className="text-white/50 text-xs mb-1">Base ATK (Lv. 90)</Text>
-            <Text className="text-white font-bold text-lg">{weapon.baseAtk}</Text>
-          </View>
-          <View className="flex-1 pl-4">
-            <Text className="text-white/50 text-xs mb-1">{weapon.subStat || 'Substat'} (Lv. 90)</Text>
-            <Text className="text-white font-bold text-lg">{weapon.subStatValue || 'N/A'}</Text>
+            <View style={styles.divider} />
+            <View style={styles.statItem}>
+              <Text style={styles.statLabel}>{weapon.subStat || 'Substat'}</Text>
+              <Text style={styles.statValue}>{weapon.subStatValue || 'N/A'}</Text>
+              <Text style={styles.statSub}>(Lv. 90)</Text>
+            </View>
           </View>
         </View>
 
+        {/* Passive */}
         {weapon.passiveNameEn && (
-          <View className="bg-white/5 border border-white/10 rounded-xl p-4">
-            <Text className="text-[#cfa858] font-bold text-base mb-2">{weapon.passiveNameEn}</Text>
-            <Text className="text-white/80 text-sm leading-relaxed">{weapon.passiveDescEn}</Text>
+          <View style={styles.passiveCard}>
+            <View style={styles.passiveHeader}>
+              <Text style={styles.passiveName}>{weapon.passiveNameEn}</Text>
+              {weapon.refinement && (
+                <View style={styles.refineBadge}>
+                  <Text style={styles.refineText}>R{weapon.refinement}</Text>
+                </View>
+              )}
+            </View>
+            <Text style={styles.passiveDesc}>{weapon.passiveDescEn}</Text>
           </View>
         )}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  root: { flex: 1, backgroundColor: '#080810' },
+  center: { flex: 1, backgroundColor: '#080810', alignItems: 'center', justifyContent: 'center' },
+  loaderText: { color: 'rgba(255,255,255,0.4)', marginTop: 12 },
+  notFound: { color: '#ffffff', fontSize: 16 },
+
+  topBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255,255,255,0.07)',
+  },
+  backBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255,255,255,0.06)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.1)',
+  },
+  topTitle: { color: '#ffffff', fontSize: 16, fontWeight: '700' },
+
+  scroll: { flex: 1 },
+  content: { padding: 20, gap: 20, paddingBottom: 60 },
+
+  iconHero: {
+    height: 200,
+    borderRadius: 20,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  iconGlow: {
+    position: 'absolute',
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    opacity: 0.6,
+  },
+  weapIcon: { width: 150, height: 150 },
+
+  nameSection: { gap: 6 },
+  weaponName: { color: '#ffffff', fontSize: 28, fontWeight: '900' },
+  weaponType: { color: 'rgba(255,255,255,0.4)', fontSize: 13 },
+
+  statsCard: {
+    borderRadius: 16,
+    borderWidth: 1,
+    backgroundColor: 'rgba(255,255,255,0.04)',
+    padding: 16,
+  },
+  statRow: { flexDirection: 'row', alignItems: 'center' },
+  statItem: { flex: 1, alignItems: 'center', gap: 2 },
+  statLabel: { color: 'rgba(255,255,255,0.45)', fontSize: 11, fontWeight: '600' },
+  statValue: { color: '#ffffff', fontSize: 24, fontWeight: '900' },
+  statSub: { color: 'rgba(255,255,255,0.3)', fontSize: 10 },
+  divider: { width: 1, height: 50, backgroundColor: 'rgba(255,255,255,0.08)' },
+
+  passiveCard: {
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(207,168,88,0.25)',
+    backgroundColor: 'rgba(207,168,88,0.05)',
+    padding: 16,
+    gap: 10,
+  },
+  passiveHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  passiveName: { color: '#cfa858', fontSize: 15, fontWeight: '800', flex: 1 },
+  refineBadge: {
+    backgroundColor: 'rgba(207,168,88,0.15)',
+    borderRadius: 6,
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    borderWidth: 1,
+    borderColor: 'rgba(207,168,88,0.4)',
+  },
+  refineText: { color: '#cfa858', fontSize: 10, fontWeight: '700' },
+  passiveDesc: { color: 'rgba(255,255,255,0.65)', fontSize: 13, lineHeight: 20 },
+});

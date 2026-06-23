@@ -1,15 +1,63 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Box, Users, Search, ChevronRight, Globe, Layers, Map } from 'lucide-react-native';
+import {
+  Box,
+  Users,
+  Search,
+  Layers,
+  Map,
+  ChevronRight,
+  Globe,
+} from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 
 const menuItems = [
-  { href: '/materials', label: 'Materials Database', icon: Box, description: 'Browse all ascension materials and resources.' },
-  { href: '/teams', label: 'Meta Teams', icon: Users, description: 'View the most popular and powerful team compositions.' },
-  { href: '/showcase', label: 'Player Showcase', icon: Search, description: 'Enter a UID to fetch live player stats and builds.' },
-  { href: '/banners', label: 'Banners History', icon: Layers, description: 'View the history of past and current wishes.' },
-  { href: '/tcg', label: 'Genius Invokation TCG', icon: Map, description: 'Explore cards and meta decks in Teyvat.' },
+  {
+    href: '/materials',
+    label: 'Materials Database',
+    desc: 'Browse all ascension materials',
+    icon: Box,
+    color: '#4ade80',
+    bg: 'rgba(74,222,128,0.15)',
+    border: 'rgba(74,222,128,0.3)',
+  },
+  {
+    href: '/teams',
+    label: 'Meta Teams',
+    desc: 'Most powerful team compositions',
+    icon: Users,
+    color: '#4db8ff',
+    bg: 'rgba(77,184,255,0.15)',
+    border: 'rgba(77,184,255,0.3)',
+  },
+  {
+    href: '/showcase',
+    label: 'Player Showcase',
+    desc: 'Enter UID to fetch live player stats',
+    icon: Search,
+    color: '#a855f7',
+    bg: 'rgba(168,85,247,0.15)',
+    border: 'rgba(168,85,247,0.3)',
+  },
+  {
+    href: '/banners',
+    label: 'Banners History',
+    desc: 'History of past and current wishes',
+    icon: Layers,
+    color: '#cfa858',
+    bg: 'rgba(207,168,88,0.15)',
+    border: 'rgba(207,168,88,0.3)',
+  },
+  {
+    href: '/tcg',
+    label: 'Genius Invokation TCG',
+    desc: 'Explore cards and meta decks',
+    icon: Map,
+    color: '#f87171',
+    bg: 'rgba(248,113,113,0.15)',
+    border: 'rgba(248,113,113,0.3)',
+  },
 ];
 
 export default function MoreScreen() {
@@ -17,46 +65,131 @@ export default function MoreScreen() {
   const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const nextLang = i18n.language === 'en' ? 'vi' : 'en';
-    i18n.changeLanguage(nextLang);
+    i18n.changeLanguage(i18n.language === 'en' ? 'vi' : 'en');
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-[#050508]">
-      <View className="px-4 pt-4 pb-2 border-b border-white/10 flex-row justify-between items-center">
+    <SafeAreaView style={styles.container}>
+      {/* Header */}
+      <View style={styles.header}>
         <View>
-          <Text className="text-2xl font-black text-white text-gradient-gold">MORE</Text>
-          <Text className="text-white/50 text-xs mt-1 mb-2">Explore more databases and tools</Text>
+          <Text style={styles.headerTitle}>MORE</Text>
+          <Text style={styles.headerSub}>Explore tools & databases</Text>
         </View>
-        <TouchableOpacity onPress={toggleLanguage} className="bg-white/10 px-3 py-2 rounded-lg flex-row items-center gap-2">
-          <Globe color="white" size={16} />
-          <Text className="text-white font-bold text-xs uppercase">{i18n.language}</Text>
+        <TouchableOpacity onPress={toggleLanguage} style={styles.langBtn}>
+          <Globe size={14} color="#cfa858" />
+          <Text style={styles.langText}>{i18n.language.toUpperCase()}</Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView className="flex-1 px-4 pt-6" contentContainerStyle={{ paddingBottom: 40 }}>
-        <View className="flex-col gap-3">
-          {menuItems.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <TouchableOpacity
-                key={idx}
-                onPress={() => router.push(item.href as any)}
-                className="bg-white/5 border border-white/10 rounded-xl p-4 flex-row items-center gap-4"
-              >
-                <View className="w-12 h-12 rounded-full bg-black/50 border border-white/5 items-center justify-center">
-                  <Icon color="#cfa858" size={24} />
-                </View>
-                <View className="flex-1">
-                  <Text className="text-white font-bold text-base mb-1">{item.label}</Text>
-                  <Text className="text-white/50 text-xs leading-tight">{item.description}</Text>
-                </View>
-                <ChevronRight color="rgba(255,255,255,0.3)" size={20} />
-              </TouchableOpacity>
-            );
-          })}
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={styles.list}
+        showsVerticalScrollIndicator={false}
+      >
+        {menuItems.map((item, idx) => {
+          const Icon = item.icon;
+          return (
+            <TouchableOpacity
+              key={idx}
+              style={styles.card}
+              onPress={() => router.push(item.href as any)}
+              activeOpacity={0.75}
+            >
+              <View style={[styles.iconCircle, { backgroundColor: item.bg, borderColor: item.border }]}>
+                <Icon size={22} color={item.color} />
+              </View>
+              <View style={styles.cardInfo}>
+                <Text style={styles.cardLabel}>{item.label}</Text>
+                <Text style={styles.cardDesc}>{item.desc}</Text>
+              </View>
+              <ChevronRight size={18} color="rgba(255,255,255,0.2)" />
+            </TouchableOpacity>
+          );
+        })}
+
+        {/* Version info */}
+        <View style={styles.versionCard}>
+          <Text style={styles.versionTitle}>GenshinHub</Text>
+          <Text style={styles.versionText}>Your complete Teyvat companion</Text>
+          <Text style={styles.versionNum}>v1.0.0</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#080810' },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255,255,255,0.07)',
+  },
+  headerTitle: {
+    fontSize: 22,
+    fontWeight: '900',
+    color: '#ffffff',
+    letterSpacing: 1,
+    textShadowColor: 'rgba(207,168,88,0.4)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 10,
+  },
+  headerSub: { color: 'rgba(255,255,255,0.4)', fontSize: 11, marginTop: 2 },
+  langBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: 'rgba(207,168,88,0.1)',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(207,168,88,0.3)',
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+  },
+  langText: { color: '#cfa858', fontSize: 11, fontWeight: '700' },
+
+  scroll: { flex: 1 },
+  list: { padding: 16, gap: 10, paddingBottom: 40 },
+
+  card: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 14,
+    backgroundColor: 'rgba(255,255,255,0.04)',
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.07)',
+    padding: 14,
+  },
+  iconCircle: {
+    width: 48,
+    height: 48,
+    borderRadius: 14,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cardInfo: { flex: 1 },
+  cardLabel: { color: '#ffffff', fontSize: 14, fontWeight: '700', marginBottom: 3 },
+  cardDesc: { color: 'rgba(255,255,255,0.4)', fontSize: 11, lineHeight: 15 },
+
+  versionCard: {
+    marginTop: 8,
+    backgroundColor: 'rgba(207,168,88,0.05)',
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(207,168,88,0.15)',
+    padding: 20,
+    alignItems: 'center',
+    gap: 4,
+  },
+  versionTitle: { color: '#cfa858', fontSize: 18, fontWeight: '900' },
+  versionText: { color: 'rgba(255,255,255,0.4)', fontSize: 12 },
+  versionNum: { color: 'rgba(255,255,255,0.25)', fontSize: 11, marginTop: 4 },
+});

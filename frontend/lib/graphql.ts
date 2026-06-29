@@ -92,6 +92,12 @@ export const GET_CHARACTERS = `
       id nameEn nameVi element rarity avatarUrl splashArtUrl
       weapon region birthday tier role recommendedC
       tierNoteEn tierNoteVi
+      teams {
+        id name rank description order
+        members {
+          characterId role roleDesc weapons artifacts substats
+        }
+      }
     }
   }
 `;

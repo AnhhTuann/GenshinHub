@@ -5,8 +5,264 @@ export const diluc = {
   recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 1011,
+    "baseAtk": 26,
+    "baseDef": 61,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2621,
+    "baseAtk": 68,
+    "baseDef": 158,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 3488,
+    "baseAtk": 90,
+    "baseDef": 211,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 5219,
+    "baseAtk": 135,
+    "baseDef": 315,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 5834,
+    "baseAtk": 151,
+    "baseDef": 352,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "9.8%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 6712,
+    "baseAtk": 173,
+    "baseDef": 405,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "9.8%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 7533,
+    "baseAtk": 194,
+    "baseDef": 455,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 8421,
+    "baseAtk": 217,
+    "baseDef": 509,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 9036,
+    "baseAtk": 233,
+    "baseDef": 546,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 9932,
+    "baseAtk": 256,
+    "baseDef": 600,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 10547,
+    "baseAtk": 272,
+    "baseDef": 637,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "19.4%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 11453,
+    "baseAtk": 295,
+    "baseDef": 692,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "19.4%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 12068,
+    "baseAtk": 311,
+    "baseDef": 729,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "24.2%"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 12981,
+    "baseAtk": 335,
+    "baseDef": 784,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "24.2%"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "small_lamp_grass"
+      },
+      {
+        "count": 1,
+        "materialId": "agnidus_agate_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "recruit_s_insignia"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "small_lamp_grass"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "recruit_s_insignia"
+      },
+      {
+        "count": 2,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "small_lamp_grass"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "sergeant_s_insignia"
+      },
+      {
+        "count": 4,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "small_lamp_grass"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "sergeant_s_insignia"
+      },
+      {
+        "count": 8,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "small_lamp_grass"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "lieutenant_s_insignia"
+      },
+      {
+        "count": 12,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "small_lamp_grass"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "lieutenant_s_insignia"
+      },
+      {
+        "count": 20,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Normal Attack",
   "Skill",

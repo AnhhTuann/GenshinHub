@@ -5,8 +5,264 @@ export const yelan = {
   recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 1125,
+    "baseAtk": 19,
+    "baseDef": 43,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2918,
+    "baseAtk": 49,
+    "baseDef": 111,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 3883,
+    "baseAtk": 66,
+    "baseDef": 147,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 5810,
+    "baseAtk": 98,
+    "baseDef": 220,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "5.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 6495,
+    "baseAtk": 110,
+    "baseDef": 246,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "9.8%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 7472,
+    "baseAtk": 126,
+    "baseDef": 283,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "9.8%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 8386,
+    "baseAtk": 142,
+    "baseDef": 318,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 9374,
+    "baseAtk": 158,
+    "baseDef": 355,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 10059,
+    "baseAtk": 170,
+    "baseDef": 381,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 11056,
+    "baseAtk": 187,
+    "baseDef": 419,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "14.6%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 11741,
+    "baseAtk": 198,
+    "baseDef": 445,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "19.4%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 12749,
+    "baseAtk": 215,
+    "baseDef": 483,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "19.4%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 13434,
+    "baseAtk": 227,
+    "baseDef": 509,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "24.2%"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 14450,
+    "baseAtk": 244,
+    "baseDef": 548,
+    "specialStatName": "CRIT Rate",
+    "specialStatValue": "24.2%"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "starconch"
+      },
+      {
+        "count": 1,
+        "materialId": "varunada_lazurite_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "recruit_s_insignia"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "starconch"
+      },
+      {
+        "count": 3,
+        "materialId": "varunada_lazurite_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "recruit_s_insignia"
+      },
+      {
+        "count": 2,
+        "materialId": "runic_fang"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "starconch"
+      },
+      {
+        "count": 6,
+        "materialId": "varunada_lazurite_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "sergeant_s_insignia"
+      },
+      {
+        "count": 4,
+        "materialId": "runic_fang"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "starconch"
+      },
+      {
+        "count": 3,
+        "materialId": "varunada_lazurite_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "sergeant_s_insignia"
+      },
+      {
+        "count": 8,
+        "materialId": "runic_fang"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "starconch"
+      },
+      {
+        "count": 6,
+        "materialId": "varunada_lazurite_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "lieutenant_s_insignia"
+      },
+      {
+        "count": 12,
+        "materialId": "runic_fang"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "starconch"
+      },
+      {
+        "count": 6,
+        "materialId": "varunada_lazurite_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "lieutenant_s_insignia"
+      },
+      {
+        "count": 20,
+        "materialId": "runic_fang"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Burst",
   "Skill",

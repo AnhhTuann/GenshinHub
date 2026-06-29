@@ -5,8 +5,264 @@ export const illuga = {
   recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 1003,
+    "baseAtk": 16,
+    "baseDef": 68,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2577,
+    "baseAtk": 41,
+    "baseDef": 175,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 3326,
+    "baseAtk": 53,
+    "baseDef": 226,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 4982,
+    "baseAtk": 80,
+    "baseDef": 339,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 5514,
+    "baseAtk": 88,
+    "baseDef": 375,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "24"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 6343,
+    "baseAtk": 101,
+    "baseDef": 431,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "24"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 7052,
+    "baseAtk": 113,
+    "baseDef": 480,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "48"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 7881,
+    "baseAtk": 126,
+    "baseDef": 536,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "48"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 8413,
+    "baseAtk": 134,
+    "baseDef": 572,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "48"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 9241,
+    "baseAtk": 148,
+    "baseDef": 628,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "48"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 9773,
+    "baseAtk": 156,
+    "baseDef": 665,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "72"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 10602,
+    "baseAtk": 169,
+    "baseDef": 721,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "72"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 11134,
+    "baseAtk": 178,
+    "baseDef": 757,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "96"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 11962,
+    "baseAtk": 191,
+    "baseDef": 814,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "96"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "pine_amber"
+      },
+      {
+        "count": 1,
+        "materialId": "prithiva_topaz_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "broken_drive_shaft"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "pine_amber"
+      },
+      {
+        "count": 3,
+        "materialId": "prithiva_topaz_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "broken_drive_shaft"
+      },
+      {
+        "count": 2,
+        "materialId": "cyclic_military_kuuvahki_core"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "pine_amber"
+      },
+      {
+        "count": 6,
+        "materialId": "prithiva_topaz_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "reinforced_drive_shaft"
+      },
+      {
+        "count": 4,
+        "materialId": "cyclic_military_kuuvahki_core"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "pine_amber"
+      },
+      {
+        "count": 3,
+        "materialId": "prithiva_topaz_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "reinforced_drive_shaft"
+      },
+      {
+        "count": 8,
+        "materialId": "cyclic_military_kuuvahki_core"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "pine_amber"
+      },
+      {
+        "count": 6,
+        "materialId": "prithiva_topaz_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "precision_drive_shaft"
+      },
+      {
+        "count": 12,
+        "materialId": "cyclic_military_kuuvahki_core"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "pine_amber"
+      },
+      {
+        "count": 6,
+        "materialId": "prithiva_topaz_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "precision_drive_shaft"
+      },
+      {
+        "count": 20,
+        "materialId": "cyclic_military_kuuvahki_core"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Normal Attack",
   "Elemental Skill",

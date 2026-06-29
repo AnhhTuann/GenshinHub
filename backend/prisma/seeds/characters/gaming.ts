@@ -5,8 +5,264 @@ export const gaming = {
   recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 957,
+    "baseAtk": 25,
+    "baseDef": 59,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2460,
+    "baseAtk": 65,
+    "baseDef": 151,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 3175,
+    "baseAtk": 84,
+    "baseDef": 195,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 4755,
+    "baseAtk": 126,
+    "baseDef": 293,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 5264,
+    "baseAtk": 139,
+    "baseDef": 324,
+    "specialStatName": "ATK",
+    "specialStatValue": "6.0%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 6054,
+    "baseAtk": 160,
+    "baseDef": 373,
+    "specialStatName": "ATK",
+    "specialStatValue": "6.0%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 6732,
+    "baseAtk": 178,
+    "baseDef": 414,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 7523,
+    "baseAtk": 199,
+    "baseDef": 463,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 8031,
+    "baseAtk": 212,
+    "baseDef": 494,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 8821,
+    "baseAtk": 233,
+    "baseDef": 543,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 9329,
+    "baseAtk": 246,
+    "baseDef": 574,
+    "specialStatName": "ATK",
+    "specialStatValue": "18.0%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 10120,
+    "baseAtk": 267,
+    "baseDef": 623,
+    "specialStatName": "ATK",
+    "specialStatValue": "18.0%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 10628,
+    "baseAtk": 281,
+    "baseDef": 654,
+    "specialStatName": "ATK",
+    "specialStatValue": "24.0%"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 11419,
+    "baseAtk": 302,
+    "baseDef": 703,
+    "specialStatName": "ATK",
+    "specialStatValue": "24.0%"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "starconch"
+      },
+      {
+        "count": 1,
+        "materialId": "agnidus_agate_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "slime_condensate"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "starconch"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "slime_condensate"
+      },
+      {
+        "count": 2,
+        "materialId": "emperor_s_resolution"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "starconch"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "slime_secretions"
+      },
+      {
+        "count": 4,
+        "materialId": "emperor_s_resolution"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "starconch"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "slime_secretions"
+      },
+      {
+        "count": 8,
+        "materialId": "emperor_s_resolution"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "starconch"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "slime_concentrate"
+      },
+      {
+        "count": 12,
+        "materialId": "emperor_s_resolution"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "starconch"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "slime_concentrate"
+      },
+      {
+        "count": 20,
+        "materialId": "emperor_s_resolution"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Skill",
   "Burst",

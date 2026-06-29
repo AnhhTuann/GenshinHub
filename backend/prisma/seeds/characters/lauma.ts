@@ -5,8 +5,264 @@ export const lauma = {
   recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 829,
+    "baseAtk": 20,
+    "baseDef": 52,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2151,
+    "baseAtk": 51,
+    "baseDef": 135,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 2863,
+    "baseAtk": 69,
+    "baseDef": 180,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 4283,
+    "baseAtk": 103,
+    "baseDef": 269,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 4789,
+    "baseAtk": 115,
+    "baseDef": 301,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "29"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 5509,
+    "baseAtk": 132,
+    "baseDef": 346,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "29"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 6183,
+    "baseAtk": 148,
+    "baseDef": 388,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 6911,
+    "baseAtk": 165,
+    "baseDef": 434,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 7416,
+    "baseAtk": 177,
+    "baseDef": 465,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 8151,
+    "baseAtk": 195,
+    "baseDef": 512,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 8657,
+    "baseAtk": 207,
+    "baseDef": 543,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "86"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 9400,
+    "baseAtk": 225,
+    "baseDef": 590,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "86"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 9905,
+    "baseAtk": 237,
+    "baseDef": 622,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "115"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 10654,
+    "baseAtk": 255,
+    "baseDef": 669,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "115"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "moonfall_silver"
+      },
+      {
+        "count": 1,
+        "materialId": "nagadus_emerald_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "tattered_warrant"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "moonfall_silver"
+      },
+      {
+        "count": 3,
+        "materialId": "nagadus_emerald_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "tattered_warrant"
+      },
+      {
+        "count": 2,
+        "materialId": "lightbearing_scale_feather"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "moonfall_silver"
+      },
+      {
+        "count": 6,
+        "materialId": "nagadus_emerald_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "immaculate_warrant"
+      },
+      {
+        "count": 4,
+        "materialId": "lightbearing_scale_feather"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "moonfall_silver"
+      },
+      {
+        "count": 3,
+        "materialId": "nagadus_emerald_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "immaculate_warrant"
+      },
+      {
+        "count": 8,
+        "materialId": "lightbearing_scale_feather"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "moonfall_silver"
+      },
+      {
+        "count": 6,
+        "materialId": "nagadus_emerald_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "frost_etched_warrant"
+      },
+      {
+        "count": 12,
+        "materialId": "lightbearing_scale_feather"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "moonfall_silver"
+      },
+      {
+        "count": 6,
+        "materialId": "nagadus_emerald_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "frost_etched_warrant"
+      },
+      {
+        "count": 20,
+        "materialId": "lightbearing_scale_feather"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Normal Attack",
   "Elemental Skill",

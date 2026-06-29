@@ -6,7 +6,116 @@ export const travelerElectro = {
   tierNoteEn: [],
   tierNoteVi: [],
   stats: null,
-  ascensionMats: null,
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 1,
+        "materialId": "brilliant_diamond_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "damaged_mask"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 3,
+        "materialId": "brilliant_diamond_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "damaged_mask"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 6,
+        "materialId": "brilliant_diamond_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "stained_mask"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 3,
+        "materialId": "brilliant_diamond_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "stained_mask"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 6,
+        "materialId": "brilliant_diamond_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "ominous_mask"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 6,
+        "materialId": "brilliant_diamond_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "ominous_mask"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Normal Attack",
   "Elemental Skill",

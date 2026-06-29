@@ -5,8 +5,264 @@ export const thoma = {
   recommendedC: "C6",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 866,
+    "baseAtk": 17,
+    "baseDef": 63,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2225,
+    "baseAtk": 43,
+    "baseDef": 162,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 2872,
+    "baseAtk": 56,
+    "baseDef": 209,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 4302,
+    "baseAtk": 84,
+    "baseDef": 313,
+    "specialStatName": "ATK",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 4762,
+    "baseAtk": 93,
+    "baseDef": 346,
+    "specialStatName": "ATK",
+    "specialStatValue": "6.0%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 5478,
+    "baseAtk": 107,
+    "baseDef": 398,
+    "specialStatName": "ATK",
+    "specialStatValue": "6.0%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 6091,
+    "baseAtk": 119,
+    "baseDef": 443,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 6806,
+    "baseAtk": 133,
+    "baseDef": 495,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 7266,
+    "baseAtk": 142,
+    "baseDef": 528,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 7981,
+    "baseAtk": 156,
+    "baseDef": 580,
+    "specialStatName": "ATK",
+    "specialStatValue": "12.0%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 8440,
+    "baseAtk": 165,
+    "baseDef": 613,
+    "specialStatName": "ATK",
+    "specialStatValue": "18.0%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 9156,
+    "baseAtk": 179,
+    "baseDef": 665,
+    "specialStatName": "ATK",
+    "specialStatValue": "18.0%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 9616,
+    "baseAtk": 188,
+    "baseDef": 699,
+    "specialStatName": "ATK",
+    "specialStatValue": "24.0%"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 10331,
+    "baseAtk": 202,
+    "baseDef": 751,
+    "specialStatName": "ATK",
+    "specialStatValue": "24.0%"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "fluorescent_fungus"
+      },
+      {
+        "count": 1,
+        "materialId": "agnidus_agate_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "treasure_hoarder_insignia"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "fluorescent_fungus"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "treasure_hoarder_insignia"
+      },
+      {
+        "count": 2,
+        "materialId": "smoldering_pearl"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "fluorescent_fungus"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "silver_raven_insignia"
+      },
+      {
+        "count": 4,
+        "materialId": "smoldering_pearl"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "fluorescent_fungus"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "silver_raven_insignia"
+      },
+      {
+        "count": 8,
+        "materialId": "smoldering_pearl"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "fluorescent_fungus"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "golden_raven_insignia"
+      },
+      {
+        "count": 12,
+        "materialId": "smoldering_pearl"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "fluorescent_fungus"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "golden_raven_insignia"
+      },
+      {
+        "count": 20,
+        "materialId": "smoldering_pearl"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Skill",
   "Burst",

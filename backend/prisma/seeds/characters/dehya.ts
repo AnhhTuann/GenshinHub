@@ -5,8 +5,264 @@ export const dehya = {
   recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 1220,
+    "baseAtk": 21,
+    "baseDef": 49,
+    "specialStatName": "HP",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 3165,
+    "baseAtk": 54,
+    "baseDef": 127,
+    "specialStatName": "HP",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 4212,
+    "baseAtk": 71,
+    "baseDef": 169,
+    "specialStatName": "HP",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 6302,
+    "baseAtk": 107,
+    "baseDef": 252,
+    "specialStatName": "HP",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 7045,
+    "baseAtk": 119,
+    "baseDef": 282,
+    "specialStatName": "HP",
+    "specialStatValue": "7.2%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 8106,
+    "baseAtk": 137,
+    "baseDef": 325,
+    "specialStatName": "HP",
+    "specialStatValue": "7.2%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 9097,
+    "baseAtk": 154,
+    "baseDef": 364,
+    "specialStatName": "HP",
+    "specialStatValue": "14.4%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 10168,
+    "baseAtk": 172,
+    "baseDef": 407,
+    "specialStatName": "HP",
+    "specialStatValue": "14.4%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 10912,
+    "baseAtk": 185,
+    "baseDef": 437,
+    "specialStatName": "HP",
+    "specialStatValue": "14.4%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 11993,
+    "baseAtk": 203,
+    "baseDef": 480,
+    "specialStatName": "HP",
+    "specialStatValue": "14.4%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 12736,
+    "baseAtk": 216,
+    "baseDef": 510,
+    "specialStatName": "HP",
+    "specialStatValue": "21.6%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 13829,
+    "baseAtk": 234,
+    "baseDef": 554,
+    "specialStatName": "HP",
+    "specialStatValue": "21.6%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 14573,
+    "baseAtk": 247,
+    "baseDef": 584,
+    "specialStatName": "HP",
+    "specialStatValue": "28.8%"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 15675,
+    "baseAtk": 265,
+    "baseDef": 628,
+    "specialStatName": "HP",
+    "specialStatValue": "28.8%"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "sand_grease_pupa"
+      },
+      {
+        "count": 1,
+        "materialId": "agnidus_agate_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "faded_red_satin"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "sand_grease_pupa"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "faded_red_satin"
+      },
+      {
+        "count": 2,
+        "materialId": "light_guiding_tetrahedron"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "sand_grease_pupa"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "trimmed_red_silk"
+      },
+      {
+        "count": 4,
+        "materialId": "light_guiding_tetrahedron"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "sand_grease_pupa"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "trimmed_red_silk"
+      },
+      {
+        "count": 8,
+        "materialId": "light_guiding_tetrahedron"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "sand_grease_pupa"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "rich_red_brocade"
+      },
+      {
+        "count": 12,
+        "materialId": "light_guiding_tetrahedron"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "sand_grease_pupa"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "rich_red_brocade"
+      },
+      {
+        "count": 20,
+        "materialId": "light_guiding_tetrahedron"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Burst",
   "Skill",

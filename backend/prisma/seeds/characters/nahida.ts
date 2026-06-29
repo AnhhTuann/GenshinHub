@@ -5,8 +5,264 @@ export const nahida = {
   recommendedC: "C0",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 807,
+    "baseAtk": 23,
+    "baseDef": 49,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2092,
+    "baseAtk": 60,
+    "baseDef": 127,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 2784,
+    "baseAtk": 80,
+    "baseDef": 169,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 4165,
+    "baseAtk": 120,
+    "baseDef": 253,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "0"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 4656,
+    "baseAtk": 134,
+    "baseDef": 283,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "29"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 5357,
+    "baseAtk": 155,
+    "baseDef": 326,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "29"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 6012,
+    "baseAtk": 174,
+    "baseDef": 366,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 6721,
+    "baseAtk": 194,
+    "baseDef": 409,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 7212,
+    "baseAtk": 208,
+    "baseDef": 439,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 7926,
+    "baseAtk": 229,
+    "baseDef": 482,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "58"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 8418,
+    "baseAtk": 243,
+    "baseDef": 512,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "86"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 9140,
+    "baseAtk": 264,
+    "baseDef": 556,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "86"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 9632,
+    "baseAtk": 278,
+    "baseDef": 586,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "115"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 10360,
+    "baseAtk": 299,
+    "baseDef": 630,
+    "specialStatName": "Elemental Mastery",
+    "specialStatValue": "115"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "kalpalata_lotus"
+      },
+      {
+        "count": 1,
+        "materialId": "nagadus_emerald_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "fungal_spores"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "kalpalata_lotus"
+      },
+      {
+        "count": 3,
+        "materialId": "nagadus_emerald_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "fungal_spores"
+      },
+      {
+        "count": 2,
+        "materialId": "quelled_creeper"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "kalpalata_lotus"
+      },
+      {
+        "count": 6,
+        "materialId": "nagadus_emerald_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "luminescent_pollen"
+      },
+      {
+        "count": 4,
+        "materialId": "quelled_creeper"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "kalpalata_lotus"
+      },
+      {
+        "count": 3,
+        "materialId": "nagadus_emerald_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "luminescent_pollen"
+      },
+      {
+        "count": 8,
+        "materialId": "quelled_creeper"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "kalpalata_lotus"
+      },
+      {
+        "count": 6,
+        "materialId": "nagadus_emerald_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "crystalline_cyst_dust"
+      },
+      {
+        "count": 12,
+        "materialId": "quelled_creeper"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "kalpalata_lotus"
+      },
+      {
+        "count": 6,
+        "materialId": "nagadus_emerald_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "crystalline_cyst_dust"
+      },
+      {
+        "count": 20,
+        "materialId": "quelled_creeper"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Skill",
   "Burst",

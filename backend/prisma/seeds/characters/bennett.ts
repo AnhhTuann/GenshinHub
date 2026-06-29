@@ -5,8 +5,264 @@ export const bennett = {
   recommendedC: "C1",
   tierNoteEn: [],
   tierNoteVi: [],
-  stats: null,
-  ascensionMats: null,
+  stats: [
+  {
+    "level": "Lv.1",
+    "ascend": 0,
+    "baseHp": 1039,
+    "baseAtk": 16,
+    "baseDef": 65,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 0,
+    "baseHp": 2670,
+    "baseAtk": 41,
+    "baseDef": 166,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.20",
+    "ascend": 1,
+    "baseHp": 3447,
+    "baseAtk": 53,
+    "baseDef": 214,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 1,
+    "baseHp": 5163,
+    "baseAtk": 80,
+    "baseDef": 321,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "0.0%"
+  },
+  {
+    "level": "Lv.40",
+    "ascend": 2,
+    "baseHp": 5715,
+    "baseAtk": 88,
+    "baseDef": 356,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "6.7%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 2,
+    "baseHp": 6573,
+    "baseAtk": 101,
+    "baseDef": 409,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "6.7%"
+  },
+  {
+    "level": "Lv.50",
+    "ascend": 3,
+    "baseHp": 7309,
+    "baseAtk": 113,
+    "baseDef": 455,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "13.3%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 3,
+    "baseHp": 8168,
+    "baseAtk": 126,
+    "baseDef": 508,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "13.3%"
+  },
+  {
+    "level": "Lv.60",
+    "ascend": 4,
+    "baseHp": 8719,
+    "baseAtk": 134,
+    "baseDef": 542,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "13.3%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 4,
+    "baseHp": 9577,
+    "baseAtk": 148,
+    "baseDef": 596,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "13.3%"
+  },
+  {
+    "level": "Lv.70",
+    "ascend": 5,
+    "baseHp": 10129,
+    "baseAtk": 156,
+    "baseDef": 630,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "20.0%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 5,
+    "baseHp": 10987,
+    "baseAtk": 169,
+    "baseDef": 684,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "20.0%"
+  },
+  {
+    "level": "Lv.80",
+    "ascend": 6,
+    "baseHp": 11539,
+    "baseAtk": 178,
+    "baseDef": 718,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "26.7%"
+  },
+  {
+    "level": "Lv.90",
+    "ascend": 6,
+    "baseHp": 12397,
+    "baseAtk": 191,
+    "baseDef": 771,
+    "specialStatName": "Energy Recharge",
+    "specialStatValue": "26.7%"
+  }
+],
+  ascensionMats: [
+  {
+    "mora": 20000,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 1,
+        "materialId": "agnidus_agate_sliver"
+      },
+      {
+        "count": 3,
+        "materialId": "treasure_hoarder_insignia"
+      }
+    ],
+    "level": "Lv.40"
+  },
+  {
+    "mora": 40000,
+    "items": [
+      {
+        "count": 10,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 15,
+        "materialId": "treasure_hoarder_insignia"
+      },
+      {
+        "count": 2,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.50"
+  },
+  {
+    "mora": 60000,
+    "items": [
+      {
+        "count": 20,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_fragment"
+      },
+      {
+        "count": 12,
+        "materialId": "silver_raven_insignia"
+      },
+      {
+        "count": 4,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.60"
+  },
+  {
+    "mora": 80000,
+    "items": [
+      {
+        "count": 30,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 3,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 18,
+        "materialId": "silver_raven_insignia"
+      },
+      {
+        "count": 8,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.70"
+  },
+  {
+    "mora": 100000,
+    "items": [
+      {
+        "count": 45,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_chunk"
+      },
+      {
+        "count": 12,
+        "materialId": "golden_raven_insignia"
+      },
+      {
+        "count": 12,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.80"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 60,
+        "materialId": "windwheel_aster"
+      },
+      {
+        "count": 6,
+        "materialId": "agnidus_agate_gemstone"
+      },
+      {
+        "count": 24,
+        "materialId": "golden_raven_insignia"
+      },
+      {
+        "count": 20,
+        "materialId": "everflame_seed"
+      }
+    ],
+    "level": "Lv.90"
+  }
+],
   talentPriority: [
   "Burst",
   "Skill",

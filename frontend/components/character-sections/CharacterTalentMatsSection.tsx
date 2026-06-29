@@ -57,11 +57,12 @@ export default function CharacterTalentMatsSection({ talentMats, allMaterials, c
 
   const getMatInfo = (id: string) => {
     const normalizedId = id.toLowerCase().replace(/ /g, '_');
-    const found = allMaterials.find(m => 
-      m.id === id || 
-      m.nameEn === id || 
-      m.nameEn.toLowerCase().replace(/ /g, '_') === normalizedId
-    );
+    const found = allMaterials.find(m => {
+      const cleanName = m.nameEn.replace(/["']/g, '');
+      return m.id === id || 
+             cleanName === id || 
+             cleanName.toLowerCase().replace(/ /g, '_') === normalizedId;
+    });
     if (found) return found;
     return { nameEn: id.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), iconUrl: null };
   };

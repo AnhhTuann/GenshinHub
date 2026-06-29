@@ -860,28 +860,28 @@ export const aloy = {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Giấc Mộng Hoàng Kim",
         setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Gilded Dreams",
         pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: ["ATK%"],
+        goblet: ["Cryo DMG Bonus"],
+        circlet: ["CRIT Rate","CRIT DMG"],
+        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Energy Recharge","Elemental Mastery"]
     },
     {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
         setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Noblesse Oblige",
         pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: ["ATK%"],
+        goblet: ["Cryo DMG Bonus"],
+        circlet: ["CRIT Rate","CRIT DMG"],
+        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Energy Recharge","Elemental Mastery"]
     },
     {
         setNameVi: "Giấc Mộng Hoàng Kim",
         setNameEn: "Gilded Dreams",
         pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: ["ATK%"],
+        goblet: ["Cryo DMG Bonus"],
+        circlet: ["CRIT Rate","CRIT DMG"],
+        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Energy Recharge","Elemental Mastery"]
     },
     {
         setNameVi: "Nghi Thức Tông Thất Cổ",

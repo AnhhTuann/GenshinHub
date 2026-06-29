@@ -264,55 +264,111 @@ export const citlali = {
   }
 ],
   talentPriority: [
+  "Skill",
+  "Burst",
   "Normal Attack",
   "Elemental Skill",
   "Elemental Burst"
 ],
-  signatureWeapons: [],
+  signatureWeapons: [
+  "Starcaller's Watch"
+],
   teams: [],
   bestWeapons: [
     {
-        rank: 4,
-        nameVi: "Chương Nhạc Lang Thang",
-        nameEn: "Chương Nhạc Lang Thang",
-        subStat: "Sát Thương Bạo Kích",
+        rank: 1,
+        nameVi: "Câu Chuyện Diệt Rồng",
+        nameEn: "Thrilling Tales of Dragon Slayers",
+        subStat: null,
+        isF2P: true,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Sao Đêm Rong Ruổi",
+        nameEn: "Wandering Evenstar",
+        subStat: null,
         isF2P: false,
-        refinement: "R5",
-        passiveDescVi: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
-        passiveDescEn: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pleroma.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Tây Phong Mật Điển",
+        nameEn: "Favonius Codex",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Mảnh Chương Tế Lễ",
+        nameEn: "Sacrificial Fragments",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fossil.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Ánh Nhìn Tư Tế",
+        nameEn: "Starcaller's Watch",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Figurines.png"
     },
     {
         rank: 5,
-        nameVi: "Điển Tích Tây Phong",
-        nameEn: "Điển Tích Tây Phong",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
+        nameVi: "Đàn Thiên Quang",
+        nameEn: "Etherlight Spindlelute",
+        subStat: null,
+        isF2P: true,
         refinement: "R1",
-        passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-        passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_SeeliesLute.png"
     }
 ],
   bestArtifacts: [
     {
-        setNameVi: "Thánh Di Vật Đề Cử",
-        setNameEn: "Thánh Di Vật Đề Cử",
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
-        sands: [
-            "ATK%"
-        ],
-        goblet: [
-            "Elemental DMG Bonus"
-        ],
-        circlet: [
-            "CRIT Rate"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Giáo Quan",
+        setNameEn: "Instructor",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Tenacity of the Millelith",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import toast from 'react-hot-toast';
 import InlineStatsEditor from '@/components/admin/InlineStatsEditor';
 import InlineTalentEditor from '@/components/admin/InlineTalentEditor';
 
@@ -86,12 +86,31 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 }
 
 export default function EditableStatsSection({ characterId, firstArtifact, talentPriority }: Props) {
-  const router = useRouter();
   const locale = useLocale();
   const t = useTranslations('Character');
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditingStats, setIsEditingStats] = useState(false);
   const [isEditingTalents, setIsEditingTalents] = useState(false);
+
+  // Local state for optimistic updates
+  const [localSands, setLocalSands] = useState<string[]>(firstArtifact?.sands || []);
+  const [localGoblet, setLocalGoblet] = useState<string[]>(firstArtifact?.goblet || []);
+  const [localCirclet, setLocalCirclet] = useState<string[]>(firstArtifact?.circlet || []);
+  const [localSubStats, setLocalSubStats] = useState<string[]>(firstArtifact?.subStatsPriority || []);
+  const [localTalents, setLocalTalents] = useState<string[]>(talentPriority || []);
+
+  useEffect(() => {
+    if (firstArtifact) {
+      setLocalSands(firstArtifact.sands || []);
+      setLocalGoblet(firstArtifact.goblet || []);
+      setLocalCirclet(firstArtifact.circlet || []);
+      setLocalSubStats(firstArtifact.subStatsPriority || []);
+    }
+  }, [firstArtifact]);
+
+  useEffect(() => {
+    setLocalTalents(talentPriority || []);
+  }, [talentPriority]);
 
   useEffect(() => {
     setIsAdmin(!!localStorage.getItem('admin_key'));
@@ -115,9 +134,9 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
           </div>
           <div className="flex flex-col gap-2">
             {[
-              { slot: locale === 'en' ? 'Sands' : 'Đồng Hồ', emoji: '⏳', values: firstArtifact.sands || [] },
-              { slot: locale === 'en' ? 'Goblet' : 'Ly', emoji: '🏆', values: firstArtifact.goblet || [] },
-              { slot: locale === 'en' ? 'Circlet' : 'Nón', emoji: '👑', values: firstArtifact.circlet || [] },
+              { slot: locale === 'en' ? 'Sands' : 'Đồng Hồ', emoji: '⏳', values: localSands },
+              { slot: locale === 'en' ? 'Goblet' : 'Ly', emoji: '🏆', values: localGoblet },
+              { slot: locale === 'en' ? 'Circlet' : 'Nón', emoji: '👑', values: localCirclet },
             ].map(({ slot, emoji, values }) => (
               <div key={slot} className="flex items-center gap-3 bg-[#06060a]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
                 <span className="text-base shrink-0">{emoji}</span>
@@ -132,12 +151,18 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
           {isEditingStats && (
             <InlineStatsEditor 
               artifactId={firstArtifact.id}
-              initialSands={firstArtifact.sands}
-              initialGoblet={firstArtifact.goblet}
-              initialCirclet={firstArtifact.circlet}
-              initialSubStats={firstArtifact.subStatsPriority}
+              initialSands={localSands}
+              initialGoblet={localGoblet}
+              initialCirclet={localCirclet}
+              initialSubStats={localSubStats}
               onClose={() => setIsEditingStats(false)}
-              onSaved={() => router.refresh()}
+              onSaved={(newStats) => {
+                setLocalSands(newStats.sands);
+                setLocalGoblet(newStats.goblet);
+                setLocalCirclet(newStats.circlet);
+                setLocalSubStats(newStats.subStatsPriority);
+                toast.success('Stats updated');
+              }}
             />
           )}
         </section>
@@ -158,8 +183,8 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
             )}
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
-            {firstArtifact.subStatsPriority?.length > 0 ? (
-              cleanAndTranslate(firstArtifact.subStatsPriority, locale).map((stat: string, idx: number, arr: string[]) => (
+            {localSubStats.length > 0 ? (
+              cleanAndTranslate(localSubStats, locale).map((stat: string, idx: number, arr: string[]) => (
                 <div key={idx} className="flex items-center gap-1.5">
                   <span className={`text-[11px] font-bold px-3 py-1.5 rounded-lg border ${
                     idx === 0
@@ -192,8 +217,8 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
           )}
         </div>
         <div className="flex flex-col gap-2">
-          {talentPriority && talentPriority.length > 0 ? (
-            talentPriority.map((talent, idx) => (
+          {localTalents.length > 0 ? (
+            localTalents.map((talent, idx) => (
               <TalentRow key={idx} talent={talent} index={idx} />
             ))
           ) : (
@@ -204,9 +229,12 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
         {isEditingTalents && (
           <InlineTalentEditor 
             characterId={characterId}
-            initialPriority={talentPriority}
+            initialPriority={localTalents}
             onClose={() => setIsEditingTalents(false)}
-            onSaved={() => router.refresh()}
+            onSaved={(newPriority) => {
+              setLocalTalents(newPriority);
+              toast.success('Talents updated');
+            }}
           />
         )}
       </section>

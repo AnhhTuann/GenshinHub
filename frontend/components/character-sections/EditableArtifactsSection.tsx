@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import InlineArtifactEditor from '@/components/admin/InlineArtifactEditor';
 import { fetchGraphQL } from '@/lib/graphql';
@@ -24,7 +23,6 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
 }
 
 export default function EditableArtifactsSection({ characterId, bestArtifacts, tArtifacts }: Props) {
-  const router = useRouter();
   const locale = useLocale();
   const [isAdmin, setIsAdmin] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -218,7 +216,10 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
         <InlineArtifactEditor 
           characterId={characterId} 
           onClose={() => setIsEditing(false)} 
-          onSaved={() => router.refresh()} 
+          onSaved={(newArtifact: any) => {
+            setLocalArtifacts(prev => [...prev, newArtifact]);
+            toast.success('Artifact added');
+          }} 
         />
       )}
     </section>

@@ -229,7 +229,10 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
           characterId={characterId} 
           weaponType={weaponType}
           onClose={() => setIsEditing(false)} 
-          onSaved={() => window.location.reload()} 
+          onSaved={(newWeapon: any) => {
+            setLocalWeapons(prev => [...prev, newWeapon]);
+            toast.success('Weapon added');
+          }} 
         />
       )}
     </section>

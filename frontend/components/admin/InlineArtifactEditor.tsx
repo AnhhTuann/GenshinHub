@@ -15,7 +15,7 @@ interface ArtifactData {
 interface Props {
   characterId: string;
   onClose: () => void;
-  onSaved: () => void;
+  onSaved: (newArtifact: any) => void;
 }
 
 const COMMON_STATS = [
@@ -89,7 +89,29 @@ export default function InlineArtifactEditor({ characterId, onClose, onSaved }: 
         circlet,
         subStatsPriority: subStats
       });
-      onSaved();
+
+      // Build optimistic artifact entry matching bestArtifacts shape
+      const newArtifactEntry: any = {
+        id: `temp-${Date.now()}`,
+        setNameEn,
+        setNameVi,
+        pieces,
+        sands,
+        goblet,
+        circlet,
+        subStatsPriority: subStats,
+        rarity: 5,
+        iconUrl: isMixMode ? '/images/artifacts/UI_RelicIcon_15001_4.png' : selectedArtifacts[0]?.iconUrl || null,
+        artifactSetId: isMixMode ? null : selectedArtifacts[0]?.id || null,
+        mixSets: isMixMode ? selectedArtifacts.map(sa => ({
+          nameEn: sa.nameEn,
+          nameVi: sa.nameVi || sa.nameEn,
+          iconUrl: sa.iconUrl,
+          artifactSetId: sa.id,
+        })) : [],
+      };
+
+      onSaved(newArtifactEntry);
       onClose();
     } catch (err: any) {
       toast.error("Error: " + err.message);

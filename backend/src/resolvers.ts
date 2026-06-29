@@ -3,10 +3,11 @@ import axios from 'axios';
 import { EnkaClient } from 'enka-network-api';
 
 const enka = new EnkaClient({ defaultLanguage: 'en' });
-import { charactersCache, characterCache, weaponsCache, showcaseCache, artifactsCache, materialsCache } from './cache';
+import { charactersCache, characterCache, weaponsCache, showcaseCache, artifactsCache, materialsCache, clearAllCaches } from './cache';
 import { Mutation } from './mutations';
 import GraphQLJSON from 'graphql-type-json';
 import { prisma } from './prisma';
+import { createJsonBackup, listBackups, getBackupById, deleteBackup, restoreFromBackup, cleanupOldBackups } from './backupService';
 
 // Map mix set name → component set Vietnamese names
 const mixSetsMap: Record<string, string[]> = {
@@ -298,7 +299,20 @@ export const resolvers = {
         console.error("Lỗi fetch Enka:", error);
         return null;
       }
-    }
+    },
+
+    // === Backup Queries ===
+    listBackups: async (_: any, __: any, context: any) => {
+      if (!context.isAdmin) throw new Error("Unauthorized: Admin access required.");
+      return listBackups();
+    },
+
+    getBackup: async (_: any, { id }: { id: string }, context: any) => {
+      if (!context.isAdmin) throw new Error("Unauthorized: Admin access required.");
+      const backup = getBackupById(id);
+      if (!backup) throw new Error(`Backup not found: ${id}`);
+      return backup;
+    },
   },
   Character: {
     signatureWeapons: async (parent: any) => {
@@ -314,5 +328,30 @@ export const resolvers = {
       return prisma.characterArtifact.findMany({ where: { characterId: parent.id } });
     }
   },
-  Mutation
+  Mutation: {
+    ...Mutation,
+
+    // === Backup Mutations ===
+    createBackup: async (_: any, __: any, context: any) => {
+      if (!context.isAdmin) throw new Error("Unauthorized: Admin access required.");
+      return await createJsonBackup();
+    },
+
+    deleteBackup: async (_: any, { id }: { id: string }, context: any) => {
+      if (!context.isAdmin) throw new Error("Unauthorized: Admin access required.");
+      return deleteBackup(id);
+    },
+
+    restoreFromBackup: async (_: any, { id }: { id: string }, context: any) => {
+      if (!context.isAdmin) throw new Error("Unauthorized: Admin access required.");
+      const result = await restoreFromBackup(id);
+      clearAllCaches();
+      return result;
+    },
+
+    cleanupBackups: async (_: any, { keepCount }: { keepCount?: number }, context: any) => {
+      if (!context.isAdmin) throw new Error("Unauthorized: Admin access required.");
+      return await cleanupOldBackups(keepCount || 10);
+    },
+  }
 };

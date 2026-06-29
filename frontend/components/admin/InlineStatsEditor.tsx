@@ -11,7 +11,7 @@ interface Props {
   initialCirclet: string[];
   initialSubStats: string[];
   onClose: () => void;
-  onSaved: () => void;
+  onSaved: (newStats: { sands: string[], goblet: string[], circlet: string[], subStatsPriority: string[] }) => void;
 }
 
 const COMMON_STATS = [
@@ -51,7 +51,7 @@ export default function InlineStatsEditor({
         circlet,
         subStatsPriority: subStats
       });
-      onSaved();
+      onSaved({ sands, goblet, circlet, subStatsPriority: subStats });
       onClose();
     } catch (err: any) {
       toast.error("Error: " + err.message);

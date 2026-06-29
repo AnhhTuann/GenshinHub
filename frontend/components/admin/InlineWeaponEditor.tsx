@@ -23,7 +23,7 @@ interface Props {
   characterId: string;
   weaponType: string;
   onClose: () => void;
-  onSaved: () => void;
+  onSaved: (newWeapon: any) => void;
 }
 
 export default function InlineWeaponEditor({ characterId, weaponType, onClose, onSaved }: Props) {
@@ -58,7 +58,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, onClose, o
     if (!selectedWeapon) return;
     setLoading(true);
     try {
-      await fetchGraphQL(`
+      const result = await fetchGraphQL(`
         mutation AddCharacterWeapon($characterId: String!, $weaponId: String!, $rank: Int!, $isF2P: Boolean!) {
           addCharacterWeapon(characterId: $characterId, weaponId: $weaponId, rank: $rank, isF2P: $isF2P)
         }
@@ -68,7 +68,31 @@ export default function InlineWeaponEditor({ characterId, weaponType, onClose, o
         rank,
         isF2P
       });
-      onSaved();
+
+      // Fetch the full weapon record to build the optimistic UI data
+      const weaponData = await fetchGraphQL(`
+        query GetWeapon($id: String!) {
+          weapon(id: $id) { id nameEn nameVi rarity iconUrl subStat }
+        }
+      `, { id: selectedWeapon.id });
+      const w = weaponData.weapon;
+
+      // Build the new weapon entry matching the bestWeapons shape
+      const newWeaponEntry = {
+        id: `temp-${Date.now()}`, // Temporary ID until next server fetch
+        nameEn: w?.nameEn || selectedWeapon.nameEn,
+        nameVi: w?.nameVi || selectedWeapon.nameEn,
+        rank,
+        isF2P,
+        iconUrl: w?.iconUrl || selectedWeapon.iconUrl,
+        subStat: w?.subStat || null,
+        rarity: w?.rarity || 4,
+        passiveDescEn: null,
+        passiveDescVi: null,
+        refinement: null,
+      };
+
+      onSaved(newWeaponEntry);
       onClose();
     } catch (err: any) {
       toast.error("Error: " + err.message);

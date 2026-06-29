@@ -1,15 +1,27 @@
 import { prisma } from './prisma';
 import { exportDatabaseToSeeds } from './exportData';
+import { createJsonBackup } from './backupService';
 import xss from 'xss';
 import { clearAllCaches } from './cache';
 import { resetArtifactSetLookup } from './resolvers';
 
+// === Cơ chế cũ: Export .ts seed files (chỉ chạy ở dev) ===
 let exportTimeout: NodeJS.Timeout | null = null;
 function debouncedExport() {
+  if (process.env.NODE_ENV === 'production') return; // Tắt trên production
   if (exportTimeout) clearTimeout(exportTimeout);
   exportTimeout = setTimeout(() => {
     exportDatabaseToSeeds().catch(console.error);
   }, 2000);
+}
+
+// === Cơ chế mới: JSON backup (chạy ở mọi môi trường) ===
+let backupTimeout: NodeJS.Timeout | null = null;
+function debouncedBackup() {
+  if (backupTimeout) clearTimeout(backupTimeout);
+  backupTimeout = setTimeout(() => {
+    createJsonBackup().catch(console.error);
+  }, 5000); // Debounce 5s để gom nhiều thay đổi
 }
 function sanitize(input: any): any {
   if (typeof input === 'string') return xss(input);
@@ -40,6 +52,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return w;
   },
   deleteWeapon: async (_: any, { id }: any, context: any) => {
@@ -48,6 +61,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -62,6 +76,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return a;
   },
   deleteArtifactSet: async (_: any, { id }: any, context: any) => {
@@ -70,6 +85,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -84,6 +100,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
   deleteMaterial: async (_: any, { id }: any, context: any) => {
@@ -92,6 +109,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -168,6 +186,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return updatedChar;
   },
   deleteCharacter: async (_: any, { id }: any, context: any) => {
@@ -179,6 +198,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -192,6 +212,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return c;
   },
   
@@ -222,6 +243,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return newTeam;
   },
 
@@ -253,6 +275,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -262,6 +285,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -274,6 +298,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -286,6 +311,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -298,6 +324,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
   
@@ -311,6 +338,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return c;
   },
   
@@ -324,6 +352,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return w;
   },
 
@@ -346,6 +375,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -355,6 +385,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -376,6 +407,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -385,6 +417,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -397,6 +430,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return c;
   },
 
@@ -410,6 +444,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return true;
   },
 
@@ -422,6 +457,7 @@ export const Mutation = {
     clearAllCaches();
     resetArtifactSetLookup();
     debouncedExport();
+    debouncedBackup();
     return c;
   },
 
@@ -431,7 +467,7 @@ export const Mutation = {
       where: { id },
       data: { ascensionMats }
     });
-    clearAllCaches(); resetArtifactSetLookup(); debouncedExport();
+    clearAllCaches(); resetArtifactSetLookup(); debouncedExport(); debouncedBackup();
     return c;
   },
   

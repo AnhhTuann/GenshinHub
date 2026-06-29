@@ -21,6 +21,11 @@ export const typeDefs = `#graphql
   type Material { id: String!, nameEn: String!, nameVi: String!, type: String!, rarity: Int!, iconUrl: String }
   type EnkaShowcase { uid: String!, nickname: String!, level: Int!, avatarUrl: String, characters: [String!], detailedCharacters: JSON }
   
+  # Backup types
+  type BackupStats { characters: Int!, weapons: Int!, artifacts: Int!, materials: Int! }
+  type BackupInfo { id: String!, filename: String!, createdAt: String!, sizeBytes: Int!, stats: BackupStats! }
+  type BackupData { info: BackupInfo!, data: JSON! }
+
   type Query { 
     characters: [Character!]!, 
     character(id: String!): Character,
@@ -30,7 +35,10 @@ export const typeDefs = `#graphql
     artifacts: [ArtifactSet!]!,
     artifactSet(id: String!): ArtifactSet,
     materials: [Material!]!,
-    showcase(uid: String!): EnkaShowcase
+    showcase(uid: String!): EnkaShowcase,
+    # Backup queries
+    listBackups: [BackupInfo!]!,
+    getBackup(id: String!): BackupData
   }
   
   input WeaponBuildInput { nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int }
@@ -95,5 +103,12 @@ export const typeDefs = `#graphql
     
     # Export DB state back to TS seeds
     exportDatabaseToSeeds: Boolean
+
+    # Backup management (admin only)
+    createBackup: BackupInfo!
+    deleteBackup(id: String!): Boolean
+    restoreFromBackup(id: String!): Boolean
+    cleanupBackups(keepCount: Int): Int
   }
 `;
+

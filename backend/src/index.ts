@@ -13,6 +13,7 @@ import fs from 'fs';
 import rateLimit from 'express-rate-limit';
 import { typeDefs } from './schema';
 import { resolvers } from './resolvers';
+import { getBackupFilePath, listBackups as listBackupFiles } from './backupService';
 
 async function startServer() {
   const app = express();
@@ -89,6 +90,23 @@ async function startServer() {
     // Return the relative URL to the frontend
     const fileUrl = `/images/uploads/${req.file.filename}`;
     res.json({ url: fileUrl });
+  });
+
+  // === Backup REST endpoints ===
+  
+  // Download a backup file
+  app.get('/backups/:id/download', requireAdminMiddleware, (req, res) => {
+    const filePath = getBackupFilePath(req.params.id);
+    if (!filePath) {
+      return res.status(404).json({ error: 'Backup not found' });
+    }
+    res.download(filePath);
+  });
+
+  // List all backups (lightweight REST alternative to GraphQL)
+  app.get('/backups', requireAdminMiddleware, (_req, res) => {
+    const backups = listBackupFiles();
+    res.json({ backups });
   });
 
   const server = new ApolloServer({

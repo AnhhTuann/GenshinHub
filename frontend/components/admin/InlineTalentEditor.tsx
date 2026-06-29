@@ -8,7 +8,7 @@ interface Props {
   characterId: string;
   initialPriority: string[];
   onClose: () => void;
-  onSaved: () => void;
+  onSaved: (newPriority: string[]) => void;
 }
 
 const ALL_TALENTS = ['Normal Attack', 'Skill', 'Burst'];
@@ -55,7 +55,7 @@ export default function InlineTalentEditor({ characterId, initialPriority, onClo
         id: characterId,
         talentPriority: priority
       });
-      onSaved();
+      onSaved(priority);
       onClose();
     } catch (err: any) {
       toast.error("Error: " + err.message);

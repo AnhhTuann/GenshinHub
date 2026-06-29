@@ -30,25 +30,25 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 
 | Nhân vật | ID | Trạng thái | Tiến độ chi tiết |
 | :--- | :---: | :---: | :--- |
-| **Amber** | `amber` | ✅ Hoàn thành | 18 Vũ khí, TDV, Substats, Talents, Teams |
-| **Arlecchino** | `arlecchino` | ✅ Hoàn thành | 10 Vũ khí, TDV, Substats, Talents, Teams |
-| **Bennett** | `bennett` | ✅ Hoàn thành | 12 Vũ khí, TDV, Substats, Talents, Teams |
-| **Chevreuse** | `chevreuse` | ✅ Hoàn thành | 6 Vũ khí, TDV, Substats, Talents, Teams |
-| **Dehya** | `dehya` | ✅ Hoàn thành | 15 Vũ khí, TDV, Substats, Talents, Teams |
-| **Diluc** | `diluc` | ✅ Hoàn thành | 15 Vũ khí, TDV, Substats, Talents, Teams |
-| **Durin** | `durin` | ✅ Hoàn thành | 15 Vũ khí, TDV, Substats, Talents, Teams |
-| **Gaming** | `gaming` | ✅ Hoàn thành | 15 Vũ khí, TDV, Substats, Talents, Teams |
-| **Hu Tao** | `hu-tao` | ✅ Hoàn thành | 13 Vũ khí, Tinh chỉnh giao diện TDV Mix, Substats, Talents, Teams |
-| **Klee** | `klee` | ✅ Hoàn thành | 13 Vũ khí, TDV, Substats, Talents, Teams |
-| **Lyney** | `lyney` | ✅ Hoàn thành | 9 Vũ khí, TDV, Substats, Talents, Teams |
-| **Mavuika** | `mavuika` | ✅ Hoàn thành | 11 Vũ khí, TDV, Substats, Talents, Teams |
-| **Nicole** | `nicole` | ✅ Hoàn thành | 10 Vũ khí, TDV, Substats, Talents, Teams |
-| **Thoma** | `thoma` | ✅ Hoàn thành | 6 Vũ khí, TDV, Substats, Talents, Teams |
-| **Traveler-Pyro** | `traveler-pyro` | ✅ Hoàn thành | 5 Vũ khí, TDV, Substats, Talents, Teams |
-| **Xiangling** | `xiangling` | ✅ Hoàn thành | 19 Vũ khí, TDV, Substats, Talents, Teams |
-| **Xinyan** | `xinyan` | ✅ Hoàn thành | 9 Vũ khí, TDV, Substats, Talents, Teams |
-| **Yanfei** | `yanfei` | ✅ Hoàn thành | 10 Vũ khí, TDV, Substats, Talents, Teams |
-| **Yoimiya** | `yoimiya` | ✅ Hoàn thành | 9 Vũ khí, TDV, Substats, Talents, Teams |
+| **Amber** | `amber` | ❌ Chưa làm | - |
+| **Arlecchino** | `arlecchino` | ❌ Chưa làm | - |
+| **Bennett** | `bennett` | ❌ Chưa làm | - |
+| **Chevreuse** | `chevreuse` | ❌ Chưa làm | - |
+| **Dehya** | `dehya` | ❌ Chưa làm | - |
+| **Diluc** | `diluc` | ❌ Chưa làm | - |
+| **Durin** | `durin` | ❌ Chưa làm | - |
+| **Gaming** | `gaming` | ❌ Chưa làm | - |
+| **Hu Tao** | `hu-tao` | ❌ Chưa làm | - |
+| **Klee** | `klee` | ❌ Chưa làm | - |
+| **Lyney** | `lyney` | ❌ Chưa làm | - |
+| **Mavuika** | `mavuika` | ❌ Chưa làm | - |
+| **Nicole** | `nicole` | ❌ Chưa làm | - |
+| **Thoma** | `thoma` | ❌ Chưa làm | - |
+| **Traveler-Pyro** | `traveler-pyro` | ❌ Chưa làm | - |
+| **Xiangling** | `xiangling` | ❌ Chưa làm | - |
+| **Xinyan** | `xinyan` | ❌ Chưa làm | - |
+| **Yanfei** | `yanfei` | ❌ Chưa làm | - |
+| **Yoimiya** | `yoimiya` | ❌ Chưa làm | - |
 
 ### ⚡ Lôi (Electro)
 
@@ -67,7 +67,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | **Kuki Shinobu** | `kuki-shinobu` | ❌ Chưa làm | - |
 | **Lisa** | `lisa` | ❌ Chưa làm | - |
 | **Ororon** | `ororon` | ❌ Chưa làm | - |
-| **Raiden Shogun** | `raiden-shogun` | ✅ Hoàn thành | 14 Vũ khí, TDV, Substats, Talents, Teams |
+| **Raiden Shogun** | `raiden-shogun` | ❌ Chưa làm | - |
 | **Razor** | `razor` | ❌ Chưa làm | - |
 | **Sethos** | `sethos` | ❌ Chưa làm | - |
 | **Traveler-Electro** | `traveler` | ❌ Chưa làm | - |
@@ -91,7 +91,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | **Traveler-Geo** | `traveler` | ❌ Chưa làm | - |
 | **Xilonen** | `xilonen` | ❌ Chưa làm | - |
 | **Yun Jin** | `yunjin` | ❌ Chưa làm | - |
-| **Zhongli** | `zhongli` | ✅ Hoàn thành | 13 Vũ khí, TDV, Substats, Talents, Teams |
+| **Zhongli** | `zhongli` | ❌ Chưa làm | - |
 | **Zibai** | `zibai` | ❌ Chưa làm | - |
 
 ### 🌪️ Phong (Anemo)
@@ -103,7 +103,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | **Ifa** | `ifa` | ❌ Chưa làm | - |
 | **Jahoda** | `jahoda` | ❌ Chưa làm | - |
 | **Jean** | `jean` | ❌ Chưa làm | - |
-| **Kazuha** | `kazuha` | ✅ Hoàn thành | 9 Vũ khí, TDV, Substats, Talents, Teams |
+| **Kazuha** | `kazuha` | ❌ Chưa làm | - |
 | **Lan Yan** | `lanyan` | ❌ Chưa làm | - |
 | **Lynette** | `lynette` | ❌ Chưa làm | - |
 | **Prune** | `prune` | ❌ Chưa làm | - |
@@ -130,7 +130,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | **Kinich** | `kinich` | ❌ Chưa làm | - |
 | **Kirara** | `kirara` | ❌ Chưa làm | - |
 | **Lauma** | `lauma` | ❌ Chưa làm | - |
-| **Nahida** | `nahida` | ✅ Hoàn thành | 18 Vũ khí, TDV, Substats, Talents, Teams |
+| **Nahida** | `nahida` | ❌ Chưa làm | - |
 | **Nefer** | `nefer` | ❌ Chưa làm | - |
 | **Tighnari** | `tighnari` | ❌ Chưa làm | - |
 | **Traveler-Dendro** | `traveler` | ❌ Chưa làm | - |
@@ -143,20 +143,20 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | **Aino** | `aino` | ❌ Chưa làm | - |
 | **Barbara** | `barbara` | ❌ Chưa làm | - |
 | **Candace** | `candace` | ❌ Chưa làm | - |
-| **Columbina** | `columbina` | ✅ Hoàn thành | 4 Vũ khí, TDV, Substats, Talents, Teams |
+| **Columbina** | `columbina` | ❌ Chưa làm | - |
 | **Dahlia** | `dahlia` | ❌ Chưa làm | - |
-| **Furina** | `furina` | ✅ Hoàn thành | 14 Vũ khí, TDV, Substats, Talents, Teams |
-| **Kamisato Ayato** | `ayato` | ✅ Hoàn thành | 15 Vũ khí, Tinh chỉnh giao diện TDV Mix, Substats, Talents, Teams |
+| **Furina** | `furina` | ❌ Chưa làm | - |
+| **Kamisato Ayato** | `ayato` | ❌ Chưa làm | - |
 | **Mona** | `mona` | ❌ Chưa làm | - |
-| **Mualani** | `mualani` | ✅ Hoàn thành | 9 Vũ khí, TDV, Substats, Talents, Teams |
-| **Neuvillette** | `neuvillette` | ✅ Hoàn thành | 11 Vũ khí, TDV, Substats, Talents, Teams |
-| **Nilou** | `nilou` | ✅ Hoàn thành | 5 Vũ khí, TDV, Substats, Talents, Teams |
-| **Sangonomiya Kokomi** | `kokomi` | ✅ Hoàn thành | 7 Vũ khí, TDV, Substats, Talents, Teams |
-| **Sigewinne** | `sigewinne` | ✅ Hoàn thành | 6 Vũ khí, TDV, Substats, Talents, Teams |
+| **Mualani** | `mualani` | ❌ Chưa làm | - |
+| **Neuvillette** | `neuvillette` | ❌ Chưa làm | - |
+| **Nilou** | `nilou` | ❌ Chưa làm | - |
+| **Sangonomiya Kokomi** | `kokomi` | ❌ Chưa làm | - |
+| **Sigewinne** | `sigewinne` | ❌ Chưa làm | - |
 | **Tartaglia** | `tartaglia` | ❌ Chưa làm | - |
-| **Traveler-Hydro** | `traveler-hydro` | ✅ Hoàn thành | 5 Vũ khí, TDV, Substats, Talents, Teams |
+| **Traveler-Hydro** | `traveler-hydro` | ❌ Chưa làm | - |
 | **Xingqiu** | `xingqiu` | ❌ Chưa làm | - |
-| **Yelan** | `yelan` | ✅ Hoàn thành | 4 Vũ khí, TDV, Substats, Talents, Teams |
+| **Yelan** | `yelan` | ❌ Chưa làm | - |
 
 ---
 

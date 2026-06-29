@@ -189,7 +189,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   };
 
   return (
-    <main className="min-h-screen bg-[#06060a] text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden">
+    <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #04040a)' }}>
       {/* ── JSON-LD Schema ── */}
       <script
         type="application/ld+json"
@@ -264,7 +264,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
             {/* Name */}
             <div>
-              <h1 className={`text-4xl sm:text-5xl md:text-6xl font-black leading-none font-display uppercase tracking-tight drop-shadow-2xl ${elText}`}>
+              <h1 className={`text-4xl sm:text-5xl md:text-[80px] font-black leading-none uppercase tracking-tight drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] ${elText}`} style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}>
                 {name}
               </h1>
               {title && (

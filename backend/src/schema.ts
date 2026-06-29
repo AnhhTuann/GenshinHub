@@ -12,7 +12,7 @@ export const typeDefs = `#graphql
     descriptionEn: String!, descriptionVi: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
     bestWeapons: [WeaponBuild!]!, bestArtifacts: [ArtifactBuild!]!, talentPriority: [String!]!, signatureWeapons: [Weapon!], teams: [TeamBuild!]!, tier: String,
     role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
-    stats: JSON, ascensionMats: JSON
+    stats: JSON, ascensionMats: JSON, talentMats: JSON
   }
   
   type CharacterBasic { id: String!, nameEn: String!, nameVi: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
@@ -79,7 +79,7 @@ export const typeDefs = `#graphql
     signatureWeapons: [String!],
     teams: [TeamInput!],
     tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
-    stats: JSON, ascensionMats: JSON
+    stats: JSON, ascensionMats: JSON, talentMats: JSON
   }
 
   type Mutation {

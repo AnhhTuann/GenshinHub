@@ -15,6 +15,160 @@ export const gaming = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Gaming Melting Team #1",
+        rank: "SS",
+        description: "A high-damage Melt team centered on Gaming's plunging attacks, supported by Ganyu's off-field Cryo application, Layla's shield and Cryo application, and Xianyun's plunge buffs and healing.",
+        members: [
+            {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. His Plunging Attack provides continuous high-multiplier Pyro DMG.",
+                weapons: [
+                    "Serpent Spine",
+                    "Redhorn Stonethresher"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "ganyu",
+                role: "Sub DPS",
+                roleDesc: "Cryo Sub DPS. Her Burst provides continuous off-field Cryo application to trigger Melt.",
+                weapons: [
+                    "Hunter's Path",
+                    "Harp"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "layla",
+                role: "Support",
+                roleDesc: "Cryo Shield & Support. Provides a strong shield and additional Cryo application.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Harbinger of Dawn"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
+                weapons: [
+                    "Crane's Echoing Call",
+                    "Oathsworn Eye"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "ATK%",
+                    "ATK",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Gaming Vaporize Team",
+        rank: "SS",
+        description: "Gaming is a Main DPS. His DMG is amplified by Vaporize with off-field Hydro and support buffs from Furina, Kazuha, and Xianyun.",
+        members: [
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
+                weapons: [
+                    "Crane's Echoing Call",
+                    "Oathsworn Eye"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "ATK%",
+                    "ATK",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Plunging Attacks trigger Vaporize reactions to deal massive DMG.",
+                weapons: [
+                    "Redhorn Stonethresher",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Gaming Pure Pyro Team",
         rank: "S",
         description: "A pure Pyro team centered on Gaming's plunging attacks, boosted by Xianyun, with Bennett and Xiangling providing buffs and off-field damage.",
@@ -86,160 +240,6 @@ export const gaming = {
                     "CRIT Rate",
                     "ATK%",
                     "Elemental Mastery"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Gaming Vaporize Team",
-        rank: "SS",
-        description: "Gaming is a Main DPS. His DMG is amplified by Vaporize with off-field Hydro and support buffs from Furina, Kazuha, and Xianyun.",
-        members: [
-            {
-                characterId: "gaming",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Plunging Attacks trigger Vaporize reactions to deal massive DMG.",
-                weapons: [
-                    "Redhorn Stonethresher",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "xianyun",
-                role: "Support",
-                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
-                weapons: [
-                    "Crane's Echoing Call",
-                    "Oathsworn Eye"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "ATK%",
-                    "ATK",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Gaming Melting Team #1",
-        rank: "SS",
-        description: "A high-damage Melt team centered on Gaming's plunging attacks, supported by Ganyu's off-field Cryo application, Layla's shield and Cryo application, and Xianyun's plunge buffs and healing.",
-        members: [
-            {
-                characterId: "ganyu",
-                role: "Sub DPS",
-                roleDesc: "Cryo Sub DPS. Her Burst provides continuous off-field Cryo application to trigger Melt.",
-                weapons: [
-                    "Hunter's Path",
-                    "Harp"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "layla",
-                role: "Support",
-                roleDesc: "Cryo Shield & Support. Provides a strong shield and additional Cryo application.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Harbinger of Dawn"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "gaming",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. His Plunging Attack provides continuous high-multiplier Pyro DMG.",
-                weapons: [
-                    "Serpent Spine",
-                    "Redhorn Stonethresher"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "xianyun",
-                role: "Support",
-                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
-                weapons: [
-                    "Crane's Echoing Call",
-                    "Oathsworn Eye"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "ATK%",
-                    "ATK",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -414,54 +414,6 @@ export const gaming = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Lời Thề Đêm Dài",
-        setNameEn: "Long Night's Oath",
-        pieces: 4,
-        sands: [
-            "Tinh Thông Nguyên Tố",
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tinh Thông Nguyên Tố",
-            "Tấn Công%"
-        ]
-    },
-    {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Marechaussee Hunter",
-        pieces: 4,
-        sands: [
-            "Tinh Thông Nguyên Tố",
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tinh Thông Nguyên Tố",
-            "Tấn Công%"
-        ]
-    },
-    {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
         setNameEn: "Crimson Witch of Flames",
         pieces: 4,
@@ -486,8 +438,56 @@ export const gaming = {
         ]
     },
     {
+        setNameVi: "Lời Thề Đêm Dài",
+        setNameEn: "Long Night's Oath",
+        pieces: 4,
+        sands: [
+            "Tinh Thông Nguyên Tố",
+            "Tấn Công%",
+            "Hiệu Quả Nạp"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tinh Thông Nguyên Tố",
+            "Tấn Công%"
+        ]
+    },
+    {
         setNameVi: "Giấc Mộng Hoàng Kim",
         setNameEn: "Gilded Dreams",
+        pieces: 4,
+        sands: [
+            "Tinh Thông Nguyên Tố",
+            "Tấn Công%",
+            "Hiệu Quả Nạp"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tinh Thông Nguyên Tố",
+            "Tấn Công%"
+        ]
+    },
+    {
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Marechaussee Hunter",
         pieces: 4,
         sands: [
             "Tinh Thông Nguyên Tố",

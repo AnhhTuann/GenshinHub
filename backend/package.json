@@ -28,6 +28,7 @@
     "enka-network-api": "^5.0.15",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
+    "genshin-db": "^5.2.11",
     "graphql": "^16.14.1",
     "graphql-type-json": "^0.3.2",
     "helmet": "^8.2.0",

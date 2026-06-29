@@ -99,6 +99,24 @@ export const travelerHydro = {
         description: "A budget/F2P Vaporize team where Hydro Traveler triggers Vaporize reactions on their Elemental Skill and Burst, supported by Xiangling's Pyro application, Bennett's ATK buffs, and Sucrose's Elemental Mastery sharing.",
         members: [
             {
+                characterId: "traveler-hydro",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Triggers Vaporize reactions on their Skill and Burst hits on-field.",
+                weapons: [
+                    "Favonius Sword",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
@@ -130,24 +148,6 @@ export const travelerHydro = {
                 substats: [
                     "Elemental Mastery",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "traveler-hydro",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Triggers Vaporize reactions on their Skill and Burst hits on-field.",
-                weapons: [
-                    "Favonius Sword",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
                 ]
             },
             {
@@ -241,52 +241,6 @@ export const travelerHydro = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Tenacity of the Millelith",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
-    },
-    {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Noblesse Oblige",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
-    },
-    {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
@@ -310,8 +264,54 @@ export const travelerHydro = {
         ]
     },
     {
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Tenacity of the Millelith",
+        pieces: 4,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tăng Trị Liệu"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%"
+        ]
+    },
+    {
         setNameVi: "Giáo Quan",
         setNameEn: "Instructor",
+        pieces: 4,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tăng Trị Liệu"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%"
+        ]
+    },
+    {
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

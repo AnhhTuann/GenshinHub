@@ -19,6 +19,7 @@ import EditableStatsSection from '@/components/character-sections/EditableStatsS
 import EditableMetaTeamsSection from '@/components/character-sections/EditableMetaTeamsSection';
 import CharacterStatsSection from '@/components/character-sections/CharacterStatsSection';
 import CharacterAscensionMatsSection from '@/components/character-sections/CharacterAscensionMatsSection';
+import CharacterTalentMatsSection from '@/components/character-sections/CharacterTalentMatsSection';
 import ShareButton from '@/components/ShareButton';
 
 const EL_COLOR: Record<string, string> = {
@@ -381,6 +382,16 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                   {t('ascensionMaterials')}
                 </h2>
                 <CharacterAscensionMatsSection characterId={character.id} ascensionMats={character.ascensionMats} allMaterials={materials} />
+              </div>
+            </ScrollEntrance>
+
+            {/* Talent Materials Section */}
+            <ScrollEntrance delay={0.6}>
+              <div className="mb-24">
+                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
+                  {t('talentMaterials') || 'Talent Materials'}
+                </h2>
+                <CharacterTalentMatsSection characterId={character.id} talentMats={character.talentMats} allMaterials={materials} />
               </div>
             </ScrollEntrance>
 

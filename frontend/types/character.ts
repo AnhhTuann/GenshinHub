@@ -32,4 +32,5 @@ export interface CharacterData {
   tierNoteVi?: string[];
   stats?: any;
   ascensionMats?: any;
+  talentMats?: any;
 }

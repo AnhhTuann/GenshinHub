@@ -15,14 +15,47 @@ export const dehya = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Dehya Melt Team #3",
+        name: "Dehya Pure Pyro Team #1",
         rank: "S",
-        description: "Ayaka's high Elemental Burst damage is maximized by triggering Melt with Pyro from Dehya. Kazuha groups and buffs, while Bennett provides ATK buff and healing. Ayaka's high Burst damage is maximized by triggering Melt with Pyro applied by Dehya's coordinated attacks.",
+        description: "A mono-pyro team that focuses on maximizing Dehya's Elemental Burst damage with the support of Kazuha and Bennett. Maximize Dehya's Elemental Burst damage with Kazuha's Pyro DMG buff and resistance shred, and Bennett's ATK buff and healing.",
         members: [
+            {
+                characterId: "dehya",
+                role: "Main DPS",
+                roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
+                weapons: [
+                    "Beacon of the Reed Sea"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
             {
                 characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Groups enemies, applies swirled elements, provides DMG buff and reduces resistances.",
+                roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
                 weapons: [
                     "Freedom-Sworn",
                     "Iron Sting"
@@ -38,40 +71,30 @@ export const dehya = {
                 ]
             },
             {
-                characterId: "dehya",
+                characterId: "xiangling",
                 role: "Sub DPS",
-                roleDesc: "Dehya's Elemental Skill creates a field that triggers coordinated attacks, providing Pyro for Melting.",
+                roleDesc: "Xiangling's Elemental Burst provides huge amount of DMG off-field.",
                 weapons: [
-                    "Favonius Greatsword"
+                    "Engulfing Lightning",
+                    "The Catch"
                 ],
                 artifacts: [
-                    "4pc Tenacity of the Millelith"
+                    "4pc Emblem of Severed Fate"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
+                    "Energy Recharge",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Main DPS",
-                roleDesc: "Ayaka's Elemental Burst deals high Cryo DMG which is maximized by Melting.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Dehya Melting Team #1",
+        rank: "S",
+        description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
+        members: [
             {
                 characterId: "bennett",
                 role: "Support",
@@ -87,80 +110,129 @@ export const dehya = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Dehya Burgeon Team",
-        rank: "A",
-        description: "A Burgeon team where Dehya triggers cores with her Skill. Nahida applies Dendro, Xingqiu applies Hydro, and Kuki Shinobu provides healing and triggers Hyperbloom/Burgeon. Dehya triggers Burgeon using her Skill on Bloom cores created by Nahida and Xingqiu. Kuki Shinobu provides healing and triggers Hyperbloom.",
-        members: [
+            },
             {
-                characterId: "shinobu",
+                characterId: "nahida",
                 role: "Support",
-                roleDesc: "Provides healing and triggers Hyperbloom by using Skill on Dendro Cores. Maximizing Elemental Mastery increases Hyperbloom DMG.",
+                roleDesc: "Elemental Skill connects up to 8 enemies, dealing Dendro DMG and triggering reactions. Elemental Burst provides stable EM based on teammates' elements. Burning provides stable Pyro source.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
                 ],
                 artifacts: [
                     "4pc Gilded Dreams"
                 ],
                 substats: [
                     "Elemental Mastery",
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Main DPS",
-                roleDesc: "Mainly deals DMG via Skill connecting up to 8 enemies, and dealing Dendro DMG while triggering reactions. Her Burst buffs her skill based on teammates' elements.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "His Burst continuously applies Hydro to enemies, reacting with Dendro from Nahida to produce Bloom cores.",
-                weapons: [
-                    "Sapwood Blade"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
                     "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate",
                     "ATK%"
                 ]
             },
             {
                 characterId: "dehya",
                 role: "Support",
-                roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
+                roleDesc: "Elemental Skill creates a field that unleashes coordinated Pyro attacks.",
                 weapons: [
-                    "Rainslasher"
+                    "Favonius Greatsword"
                 ],
                 artifacts: [
                     "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "HP%",
-                    "Elemental Mastery"
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "ganyu",
+                role: "Main DPS",
+                roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
+                weapons: [
+                    "Hunter's Path",
+                    "Hamayumi"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Dehya Pure Pyro Team #2",
+        rank: "S",
+        description: "A team focused on maximizing Dehya's Elemental Burst damage with support from Kazuha, Mona, and Bennett. Maximize Dehya's Elemental Burst damage using Kazuha's DMG buff and resistance shred, Mona's Omen and DMG increase, and Bennett's ATK buff.",
+        members: [
+            {
+                characterId: "dehya",
+                role: "Main DPS",
+                roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
+                weapons: [
+                    "Beacon of the Reed Sea"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "mona",
+                role: "Support",
+                roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
+                weapons: [
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Instructor"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Elemental Burst provides a huge ATK buff and healing to the team.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
                 ]
             }
         ]
@@ -170,22 +242,6 @@ export const dehya = {
         rank: "S",
         description: "Ganyu's DMG is maximized by triggering Melt with Pyro from Dehya. Kazuha groups enemies and provides DMG buff, and Bennett provides ATK buff and healing. Ganyu triggers Melt with Pyro from Dehya's coordinated attacks, while Kazuha groups enemies and provides DMG buff, and Bennett boosts ATK and heals.",
         members: [
-            {
-                characterId: "dehya",
-                role: "Sub DPS",
-                roleDesc: "Skill creates a field that unleashes coordinated Pyro damage when allies attack, enabling Melt for Ganyu.",
-                weapons: [
-                    "Favonius Greatsword"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
             {
                 characterId: "ganyu",
                 role: "Main DPS",
@@ -202,6 +258,22 @@ export const dehya = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "dehya",
+                role: "Sub DPS",
+                roleDesc: "Skill creates a field that unleashes coordinated Pyro damage when allies attack, enabling Melt for Ganyu.",
+                weapons: [
+                    "Favonius Greatsword"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "ATK%"
                 ]
             },
             {
@@ -241,57 +313,25 @@ export const dehya = {
         ]
     },
     {
-        name: "Dehya Melting Team #1",
+        name: "Dehya Melt Team #3",
         rank: "S",
-        description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
+        description: "Ayaka's high Elemental Burst damage is maximized by triggering Melt with Pyro from Dehya. Kazuha groups and buffs, while Bennett provides ATK buff and healing. Ayaka's high Burst damage is maximized by triggering Melt with Pyro applied by Dehya's coordinated attacks.",
         members: [
             {
-                characterId: "dehya",
+                characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Elemental Skill creates a field that unleashes coordinated Pyro attacks.",
+                roleDesc: "Groups enemies, applies swirled elements, provides DMG buff and reduces resistances.",
                 weapons: [
-                    "Favonius Greatsword"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Main DPS",
-                roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
-                weapons: [
-                    "Hunter's Path",
-                    "Hamayumi"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Support",
-                roleDesc: "Elemental Skill connects up to 8 enemies, dealing Dendro DMG and triggering reactions. Elemental Burst provides stable EM based on teammates' elements. Burning provides stable Pyro source.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Gilded Dreams"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
                     "Elemental Mastery",
-                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "ATK%"
                 ]
             },
@@ -310,155 +350,40 @@ export const dehya = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Dehya Pure Pyro Team #1",
-        rank: "S",
-        description: "A mono-pyro team that focuses on maximizing Dehya's Elemental Burst damage with the support of Kazuha and Bennett. Maximize Dehya's Elemental Burst damage with Kazuha's Pyro DMG buff and resistance shred, and Bennett's ATK buff and healing.",
-        members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "xiangling",
+                characterId: "dehya",
                 role: "Sub DPS",
-                roleDesc: "Xiangling's Elemental Burst provides huge amount of DMG off-field.",
+                roleDesc: "Dehya's Elemental Skill creates a field that triggers coordinated attacks, providing Pyro for Melting.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Favonius Greatsword"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "Energy Recharge",
                     "ATK%"
                 ]
             },
             {
-                characterId: "dehya",
+                characterId: "ayaka",
                 role: "Main DPS",
-                roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
+                roleDesc: "Ayaka's Elemental Burst deals high Cryo DMG which is maximized by Melting.",
                 weapons: [
-                    "Beacon of the Reed Sea"
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "2pc Noblesse Oblige",
+                    "2pc Blizzard Strayer"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Dehya Pure Pyro Team #2",
-        rank: "S",
-        description: "A team focused on maximizing Dehya's Elemental Burst damage with support from Kazuha, Mona, and Bennett. Maximize Dehya's Elemental Burst damage using Kazuha's DMG buff and resistance shred, Mona's Omen and DMG increase, and Bennett's ATK buff.",
-        members: [
-            {
-                characterId: "mona",
-                role: "Support",
-                roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
-                weapons: [
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Instructor"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Elemental Burst provides a huge ATK buff and healing to the team.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "dehya",
-                role: "Main DPS",
-                roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
-                weapons: [
-                    "Beacon of the Reed Sea"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -484,6 +409,24 @@ export const dehya = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "emilie",
+                role: "Sub DPS",
+                roleDesc: "Summons 'Lumidouce Case' for intermittent Dendro damage. Burning state generates 'Scents' increasing range and damage. Burst further boosts scent damage.",
+                weapons: [
+                    "Lumidouce Elegy",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Unfinished Reverie"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -519,22 +462,79 @@ export const dehya = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Dehya Burgeon Team",
+        rank: "A",
+        description: "A Burgeon team where Dehya triggers cores with her Skill. Nahida applies Dendro, Xingqiu applies Hydro, and Kuki Shinobu provides healing and triggers Hyperbloom/Burgeon. Dehya triggers Burgeon using her Skill on Bloom cores created by Nahida and Xingqiu. Kuki Shinobu provides healing and triggers Hyperbloom.",
+        members: [
             {
-                characterId: "emilie",
-                role: "Sub DPS",
-                roleDesc: "Summons 'Lumidouce Case' for intermittent Dendro damage. Burning state generates 'Scents' increasing range and damage. Burst further boosts scent damage.",
+                characterId: "dehya",
+                role: "Support",
+                roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
                 weapons: [
-                    "Lumidouce Elegy",
-                    "Deathmatch"
+                    "Rainslasher"
                 ],
                 artifacts: [
-                    "4pc Unfinished Reverie"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
+                    "HP%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "nahida",
+                role: "Main DPS",
+                roleDesc: "Mainly deals DMG via Skill connecting up to 8 enemies, and dealing Dendro DMG while triggering reactions. Her Burst buffs her skill based on teammates' elements.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "His Burst continuously applies Hydro to enemies, reacting with Dendro from Nahida to produce Bloom cores.",
+                weapons: [
+                    "Sapwood Blade"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "shinobu",
+                role: "Support",
+                roleDesc: "Provides healing and triggers Hyperbloom by using Skill on Dendro Cores. Maximizing Elemental Mastery increases Hyperbloom DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -710,9 +710,9 @@ export const dehya = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Vầng Sáng Vourukasha",
-        setNameEn: "Vầng Sáng Vourukasha",
-        pieces: 4,
+        setNameVi: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
+        setNameEn: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
+        pieces: 2,
         sands: [
             "Tấn Công%",
             "Tinh Thông Nguyên Tố",
@@ -760,9 +760,34 @@ export const dehya = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
-        setNameEn: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
-        pieces: 2,
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: [
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố",
+            "Hiệu Quả Nạp"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Hiệu Quả Nạp",
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "HP%",
+            "Tinh Thông Nguyên Tố"
+        ]
+    },
+    {
+        setNameVi: "Vầng Sáng Vourukasha",
+        setNameEn: "Vầng Sáng Vourukasha",
+        pieces: 4,
         sands: [
             "Tấn Công%",
             "Tinh Thông Nguyên Tố",
@@ -787,31 +812,6 @@ export const dehya = {
     {
         setNameVi: "Dấu Ấn Ngăn Cách",
         setNameEn: "Dấu Ấn Ngăn Cách",
-        pieces: 4,
-        sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
         pieces: 4,
         sands: [
             "Tấn Công%",

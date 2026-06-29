@@ -34,7 +34,11 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
 
   if (json.errors) {
     console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
-    throw new Error('GraphQL Error: ' + json.errors[0].message);
+    const errorMessage = json.errors[0].message;
+    if (errorMessage.includes('Unauthorized')) {
+      throw new Error('Bạn chưa đăng nhập Admin! Hãy click nút "⚙️ Admin" ở góc phải bên dưới và nhập mật khẩu.');
+    }
+    throw new Error('GraphQL Error: ' + errorMessage);
   }
   if (!json.data) {
     console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
@@ -67,7 +71,11 @@ export async function fetchGraphQLClient(query: string, variables = {}) {
 
   if (json.errors) {
     console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
-    throw new Error('GraphQL Error: ' + json.errors[0].message);
+    const errorMessage = json.errors[0].message;
+    if (errorMessage.includes('Unauthorized')) {
+      throw new Error('Bạn chưa đăng nhập Admin! Hãy click nút "⚙️ Admin" ở góc phải bên dưới và nhập mật khẩu.');
+    }
+    throw new Error('GraphQL Error: ' + errorMessage);
   }
   if (!json.data) {
     console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
@@ -109,7 +117,7 @@ export const GET_CHARACTER_BY_ID = `
         subStatsPriority rarity iconUrl artifactSetId
         mixSets { nameEn nameVi iconUrl artifactSetId }
       }
-      stats ascensionMats
+      stats ascensionMats talentMats
     }
   }
 `;

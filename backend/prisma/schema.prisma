@@ -43,6 +43,7 @@ model Character {
   
   stats          Json?
   ascensionMats  Json?
+  talentMats     Json?
 
   @@index([element])
   @@index([rarity])

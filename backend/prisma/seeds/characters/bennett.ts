@@ -15,14 +15,32 @@ export const bennett = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Bennett Vaporize Team #2",
+        name: "Bennett Vaporize Team",
         rank: "S",
-        description: "Bennett provides huge ATK buff and healing, while Yoimiya triggers Vaporize with Xingqiu's Hydro application, and Kazuha groups enemies and buffs damage.",
+        description: "Yanfei triggers Vaporize reactions with Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Bennett provides ATK buff and healing.",
         members: [
+            {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "Bennett's Burst provides a huge ATK buff and heals team members.",
+                roleDesc: "Provides a large ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
@@ -36,6 +54,126 @@ export const bennett = {
                     "Energy Recharge"
                 ]
             },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Yanfei is the main DPS, her DMG is amplified by Vaporization in this team.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Heart of Depth"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Bennett Superconduct Team",
+        rank: "S",
+        description: "A team focused on maximizing Eula's Burst damage via Superconduct, ATK buff from Bennett, and Diona's Cryo battery.",
+        members: [
+            {
+                characterId: "eula",
+                role: "Main DPS",
+                roleDesc: "Eula is the main DPS, her physical DMG is amplified by Superconduct.",
+                weapons: [
+                    "Song of Broken Pines",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Pale Flame"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous off-field Electro damage via Oz.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides a large ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Diona's shield provides safe environment for team members, and acts as a battery for Eula.",
+                weapons: [
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Maiden Beloved"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Bennett Vaporize Team #2",
+        rank: "S",
+        description: "Bennett provides huge ATK buff and healing, while Yoimiya triggers Vaporize with Xingqiu's Hydro application, and Kazuha groups enemies and buffs damage.",
+        members: [
             {
                 characterId: "kazuha",
                 role: "Support",
@@ -73,6 +211,23 @@ export const bennett = {
                 ]
             },
             {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Burst provides a huge ATK buff and heals team members.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "xingqiu",
                 role: "Sub DPS",
                 roleDesc: "Xingqiu's Elemental Burst attaches Hydro element to enemies continuously, reacting with Yoimiya's Pyro DMG to trigger Vaporization.",
@@ -92,14 +247,32 @@ export const bennett = {
         ]
     },
     {
-        name: "Bennett Pure Pyro",
+        name: "Bennett Vaporize Team #3",
         rank: "S",
-        description: "A powerful mono-element Pyro team that maximizes Klee and Xiangling's damage with Kazuha's crowd control support and Bennett's ATK buff and healing.",
+        description: "Klee team focusing on Vaporize between Klee and Xingqiu, with Sucrose boosting Elemental Mastery and Bennett providing ATK buffs and healing.",
         members: [
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporize with Klee.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Heart of Depth"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "klee",
                 role: "Main DPS",
-                roleDesc: "Klee is the main DPS, her DMG is amplified by Pyro in this team.",
+                roleDesc: "Klee is the main DPS, her DMG is amplified by Vaporization in this team.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
                     "The Widsith"
@@ -116,7 +289,7 @@ export const bennett = {
             {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "Provides huge ATK buff and healing.",
+                roleDesc: "Provides a large ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
@@ -131,9 +304,69 @@ export const bennett = {
                 ]
             },
             {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Provides Elemental Mastery bonus to increase Vaporize DMG.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Bennett Vaporize Team #1",
+        rank: "S",
+        description: "Bennett provides huge ATK buff and healing, while Tartaglia's DMG is amplified by Vaporize. Tartaglia triggers Vaporize with Xiangling's Burst, while Kazuha provides crowd control and elemental damage bonus, and Bennett provides ATK buff and healing.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, reduces enemy Element RES, buffs team DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "xiangling",
                 role: "Sub DPS",
-                roleDesc: "Provides a large amount of off-field Pyro DMG.",
+                roleDesc: "Elemental Burst provides huge DMG and continuous Pyro for Vaporize.",
                 weapons: [
                     "Engulfing Lightning",
                     "The Catch"
@@ -149,21 +382,21 @@ export const bennett = {
                 ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+                characterId: "tartaglia",
+                role: "Main DPS",
+                roleDesc: "Main DPS, DMG amplified by Vaporize.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "Polar Star",
+                    "Rust"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Heart of Depth"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -192,6 +425,23 @@ export const bennett = {
                 ]
             },
             {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides a massive ATK buff and healing to allies.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Groups enemies, applies crowd control, provides DMG buff, and reduces enemy Elemental Resistance.",
@@ -210,23 +460,6 @@ export const bennett = {
                 ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a massive ATK buff and healing to allies.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "raiden-shogun",
                 role: "Main DPS",
                 roleDesc: "The main DPS. Boosts teammates' Energy Recharge with Burst and triggers Overload with Bennett.",
@@ -242,6 +475,83 @@ export const bennett = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Bennett Pure Pyro",
+        rank: "S",
+        description: "A powerful mono-element Pyro team that maximizes Klee and Xiangling's damage with Kazuha's crowd control support and Bennett's ATK buff and healing.",
+        members: [
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Provides a large amount of off-field Pyro DMG.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Klee is the main DPS, her DMG is amplified by Pyro in this team.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Lavawalker"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides huge ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -308,316 +618,6 @@ export const bennett = {
                 characterId: "xingqiu",
                 role: "Sub DPS",
                 roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Heart of Depth"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Bennett Superconduct Team",
-        rank: "S",
-        description: "A team focused on maximizing Eula's Burst damage via Superconduct, ATK buff from Bennett, and Diona's Cryo battery.",
-        members: [
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous off-field Electro damage via Oz.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona's shield provides safe environment for team members, and acts as a battery for Eula.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "eula",
-                role: "Main DPS",
-                roleDesc: "Eula is the main DPS, her physical DMG is amplified by Superconduct.",
-                weapons: [
-                    "Song of Broken Pines",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Pale Flame"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a large ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Bennett Vaporize Team #1",
-        rank: "S",
-        description: "Bennett provides huge ATK buff and healing, while Tartaglia's DMG is amplified by Vaporize. Tartaglia triggers Vaporize with Xiangling's Burst, while Kazuha provides crowd control and elemental damage bonus, and Bennett provides ATK buff and healing.",
-        members: [
-            {
-                characterId: "tartaglia",
-                role: "Main DPS",
-                roleDesc: "Main DPS, DMG amplified by Vaporize.",
-                weapons: [
-                    "Polar Star",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Heart of Depth"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Elemental Burst provides huge DMG and continuous Pyro for Vaporize.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, reduces enemy Element RES, buffs team DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Bennett Vaporize Team",
-        rank: "S",
-        description: "Yanfei triggers Vaporize reactions with Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Bennett provides ATK buff and healing.",
-        members: [
-            {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "Yanfei is the main DPS, her DMG is amplified by Vaporization in this team.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Heart of Depth"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a large ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Bennett Vaporize Team #3",
-        rank: "S",
-        description: "Klee team focusing on Vaporize between Klee and Xingqiu, with Sucrose boosting Elemental Mastery and Bennett providing ATK buffs and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a large ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee is the main DPS, her DMG is amplified by Vaporization in this team.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Lavawalker"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Provides Elemental Mastery bonus to increase Vaporize DMG.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporize with Klee.",
                 weapons: [
                     "Sacrificial Sword"
                 ],
@@ -771,8 +771,35 @@ export const bennett = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Giáo Quan",
-        setNameEn: "Giáo Quan",
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        pieces: 4,
+        sands: [
+            "Hiệu Quả Nạp",
+            "Tấn Công%",
+            "HP%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa",
+            "HP%"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "HP%",
+            "Tăng Trị Liệu"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "HP%",
+            "ATK%",
+            "HP"
+        ]
+    },
+    {
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Nghi Thức Tông Thất Cổ",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
@@ -825,35 +852,8 @@ export const bennett = {
         ]
     },
     {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%",
-            "HP%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "ATK%",
-            "HP"
-        ]
-    },
-    {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Nghi Thức Tông Thất Cổ",
+        setNameVi: "Giáo Quan",
+        setNameEn: "Giáo Quan",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

@@ -15,10 +15,261 @@ export const klee = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Klee Pyro-Overload",
+        rank: "S",
+        description: "A high damage Pyro team revolving around Klee's explosion attacks, supported by Xilonen's RES shred, Durin's off-field Pyro and RES reduction, and Bennett's ATK buff and healing.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides a large ATK buff and healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Durin gains [Confirmation of Purity] or [Beacon of Rustication] via Skill and triggering Burn. The former provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
+                weapons: [
+                    "Alatus Alva",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Klee's normal attacks, charged attacks, and Elemental Skill apply Pyro, which triggers Pyro reactions.",
+                weapons: [
+                    "Cashflow Supervision",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Lavawalker"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Provides elemental resistance shred and heals teammates.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Klee Overload Team #1",
+        rank: "S",
+        description: "An explosive Overload team featuring Klee as the primary damage dealer, Fischl providing consistent Electro application, Durin for off-field Pyro and shred, and Bennett for ATK buffs and healing.",
+        members: [
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
+                weapons: [
+                    "Alatus Alva",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Deals Pyro damage to trigger Overload with Fischl's Electro.",
+                weapons: [
+                    "Cashflow Supervision",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Lavawalker"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides ATK buff and healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Provides off-field Electro damage via Oz to trigger Overload.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Sacrificial Bow"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Klee Vaporize Team",
+        rank: "S",
+        description: "A powerful Vaporize team built around Klee as the on-field Pyro Main DPS, with Xilonen providing consistent Hydro application and damage buffs, Furina applying off-field Hydro, and Bennett reducing enemy RES and sustaining the team.",
+        members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous off-field Hydro application and buffs the entire team's DMG through HP fluctuation.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Provides elemental resistance shred and heals allies, while triggering Crystallize for Scroll set buffs.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides a massive ATK buff and healing, and triggers Pyro resonance.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Klee's Normal Attacks, Charged Attacks, and Elemental Skill can apply Pyro, which triggers Vaporize with Furina's Hydro.",
+                weapons: [
+                    "Cashflow Supervision",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Klee Overload #2",
         rank: "S",
         description: "An overload team that maximizes Klee's Pyro damage with Chevreuse's RES shred and ATK buff, Fischl's off-field Electro, and Durin's support.",
         members: [
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
+                weapons: [
+                    "Alatus Alva",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "klee",
                 role: "Main DPS",
@@ -70,413 +321,6 @@ export const klee = {
                     "CRIT Rate",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
-                weapons: [
-                    "Alatus Alva",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Flower of Paradise Lost"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Klee Plunge Attack Team #2",
-        rank: "S",
-        description: "A plunge attack team centered on Klee's enhanced plunges with support from Citlali, Xilonen, and Xianyun.",
-        members: [
-            {
-                characterId: "citlali",
-                role: "Support",
-                roleDesc: "Provides off-field Cryo application and shield.",
-                weapons: [
-                    "Starcaller's Watch",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "xianyun",
-                role: "Support",
-                roleDesc: "Provides healing and enables plunging attacks.",
-                weapons: [
-                    "Crane's Echoing Call",
-                    "Favonius Codex"
-                ],
-                artifacts: [
-                    "2pc Gladiator's Finale",
-                    "2pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee's plunging attacks trigger Melt with Citlali's Cryo.",
-                weapons: [
-                    "Cashflow Supervision",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Provides elemental resistance shred and healing.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Klee Vaporize Team",
-        rank: "S",
-        description: "A powerful Vaporize team built around Klee as the on-field Pyro Main DPS, with Xilonen providing consistent Hydro application and damage buffs, Furina applying off-field Hydro, and Bennett reducing enemy RES and sustaining the team.",
-        members: [
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous off-field Hydro application and buffs the entire team's DMG through HP fluctuation.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee's Normal Attacks, Charged Attacks, and Elemental Skill can apply Pyro, which triggers Vaporize with Furina's Hydro.",
-                weapons: [
-                    "Cashflow Supervision",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Provides elemental resistance shred and heals allies, while triggering Crystallize for Scroll set buffs.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a massive ATK buff and healing, and triggers Pyro resonance.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Klee Vaporization Team #3",
-        rank: "S",
-        description: "Klee Vaporization team with Citlali shield and Furina Hydro. Klee triggers Vaporize with Furina's off-field Hydro application, while Citlali shields and applies Cryo, and Bennett buffs ATK and heals.",
-        members: [
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "citlali",
-                role: "Support",
-                roleDesc: "Provides shield and off-field Cryo application.",
-                weapons: [
-                    "Starcaller's Watch",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides ATK buff and healing.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee's Pyro attacks trigger Vaporize with Furina's Hydro.",
-                weapons: [
-                    "Cashflow Supervision",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Klee Hazard Team",
-        rank: "S",
-        description: "A team leveraging the powerful synergy between Klee, Albedo, and Durin for enhanced damage and support. Bennett provides ATK buffs and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a large ATK buff and healing.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
-                weapons: [
-                    "Alatus Alva",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Flower of Paradise Lost"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee's Normal Attacks, Charged Attacks, and Elemental Skill apply Pyro, triggering Pyro reactions.",
-                weapons: [
-                    "Cashflow Supervision",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Lavawalker"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "albedo",
-                role: "Sub DPS",
-                roleDesc: "Provides off-field Geo damage and Geo resonance, while boosting team's Elemental Mastery.",
-                weapons: [
-                    "Uraku Misugiri",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "DEF"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Klee Pyro-Overload",
-        rank: "S",
-        description: "A high damage Pyro team revolving around Klee's explosion attacks, supported by Xilonen's RES shred, Durin's off-field Pyro and RES reduction, and Bennett's ATK buff and healing.",
-        members: [
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Provides elemental resistance shred and heals teammates.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Durin gains [Confirmation of Purity] or [Beacon of Rustication] via Skill and triggering Burn. The former provides off-field Pyro damage and Pyro resistance shred, while boosting teammates' ATK.",
-                weapons: [
-                    "Alatus Alva",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Flower of Paradise Lost"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee's normal attacks, charged attacks, and Elemental Skill apply Pyro, which triggers Pyro reactions.",
-                weapons: [
-                    "Cashflow Supervision",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Lavawalker"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a large ATK buff and healing.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
             }
         ]
     },
@@ -485,22 +329,6 @@ export const klee = {
         rank: "S",
         description: "Klee is a Main DPS in the team. Klee applies Pyro while Furina provides continuous Hydro application for Vaporize reactions. Kazuha enhances damage with swirled control, while Bennett provides healing and ATK buffs.",
         members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides ATK buff and healing, triggering Pyro resonance.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
             {
                 characterId: "kazuha",
                 role: "Support",
@@ -516,24 +344,6 @@ export const klee = {
                     "Elemental Mastery",
                     "Energy Recharge",
                     "CRIT Rate"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -553,36 +363,29 @@ export const klee = {
                     "ATK%",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Klee Vaporization Team #4",
-        rank: "S",
-        description: "This team features Melt reactions with Klee's Pyro and Citlali's Cryo, while Xilonen provides RES shred and Bennett provides ATK buff.",
-        members: [
+            },
             {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Provides elemental resistance shred and healing.",
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
                 weapons: [
-                    "Peak Patrol Song",
+                    "Splendor of Tranquil Waters",
                     "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
+                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "DEF%",
+                    "HP%",
                     "Energy Recharge"
                 ]
             },
             {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "Provides ATK buff and healing.",
+                roleDesc: "Provides ATK buff and healing, triggering Pyro resonance.",
                 weapons: [
                     "Mistsplitter Reforged",
                     "The Alley Flash"
@@ -593,42 +396,6 @@ export const klee = {
                 substats: [
                     "Energy Recharge",
                     "HP%"
-                ]
-            },
-            {
-                characterId: "citlali",
-                role: "Support",
-                roleDesc: "Provides off-field Cryo application and shield.",
-                weapons: [
-                    "Starcaller's Watch",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Deals Pyro damage to trigger Melt with Citlali's Cryo.",
-                weapons: [
-                    "Cashflow Supervision",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -712,10 +479,276 @@ export const klee = {
         ]
     },
     {
-        name: "Klee Overload Team #1",
+        name: "Klee Plunge Attack Team #2",
         rank: "S",
-        description: "An explosive Overload team featuring Klee as the primary damage dealer, Fischl providing consistent Electro application, Durin for off-field Pyro and shred, and Bennett for ATK buffs and healing.",
+        description: "A plunge attack team centered on Klee's enhanced plunges with support from Citlali, Xilonen, and Xianyun.",
         members: [
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Klee's plunging attacks trigger Melt with Citlali's Cryo.",
+                weapons: [
+                    "Cashflow Supervision",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Provides elemental resistance shred and healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "Provides healing and enables plunging attacks.",
+                weapons: [
+                    "Crane's Echoing Call",
+                    "Favonius Codex"
+                ],
+                artifacts: [
+                    "2pc Gladiator's Finale",
+                    "2pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "Provides off-field Cryo application and shield.",
+                weapons: [
+                    "Starcaller's Watch",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Klee Vaporization Team #4",
+        rank: "S",
+        description: "This team features Melt reactions with Klee's Pyro and Citlali's Cryo, while Xilonen provides RES shred and Bennett provides ATK buff.",
+        members: [
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Provides elemental resistance shred and healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides ATK buff and healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Deals Pyro damage to trigger Melt with Citlali's Cryo.",
+                weapons: [
+                    "Cashflow Supervision",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "Provides off-field Cryo application and shield.",
+                weapons: [
+                    "Starcaller's Watch",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Klee Vaporization Team #3",
+        rank: "S",
+        description: "Klee Vaporization team with Citlali shield and Furina Hydro. Klee triggers Vaporize with Furina's off-field Hydro application, while Citlali shields and applies Cryo, and Bennett buffs ATK and heals.",
+        members: [
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Klee's Pyro attacks trigger Vaporize with Furina's Hydro.",
+                weapons: [
+                    "Cashflow Supervision",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Provides off-field Hydro application and team-wide DMG buff.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides ATK buff and healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "Provides shield and off-field Cryo application.",
+                weapons: [
+                    "Starcaller's Watch",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Klee Hazard Team",
+        rank: "S",
+        description: "A team leveraging the powerful synergy between Klee, Albedo, and Durin for enhanced damage and support. Bennett provides ATK buffs and healing.",
+        members: [
+            {
+                characterId: "albedo",
+                role: "Sub DPS",
+                roleDesc: "Provides off-field Geo damage and Geo resonance, while boosting team's Elemental Mastery.",
+                weapons: [
+                    "Uraku Misugiri",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "DEF"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides a large ATK buff and healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
             {
                 characterId: "durin",
                 role: "Support",
@@ -736,26 +769,9 @@ export const klee = {
                 ]
             },
             {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Provides off-field Electro damage via Oz to trigger Overload.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Sacrificial Bow"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "klee",
                 role: "Main DPS",
-                roleDesc: "Deals Pyro damage to trigger Overload with Fischl's Electro.",
+                roleDesc: "Klee's Normal Attacks, Charged Attacks, and Elemental Skill apply Pyro, triggering Pyro reactions.",
                 weapons: [
                     "Cashflow Supervision",
                     "The Widsith"
@@ -768,22 +784,6 @@ export const klee = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides ATK buff and healing.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
                 ]
             }
         ]
@@ -936,29 +936,8 @@ export const klee = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Ngày Nổi Gió",
-        setNameEn: "Ngày Nổi Gió",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Energy Recharge"
-        ]
-    },
-    {
-        setNameVi: "Sử Ký Đình Đài Cát",
-        setNameEn: "Sử Ký Đình Đài Cát",
+        setNameVi: "Hiền Nhân Bốc Lửa",
+        setNameEn: "Hiền Nhân Bốc Lửa",
         pieces: 4,
         sands: [
             "Tấn Công%"
@@ -999,8 +978,50 @@ export const klee = {
         ]
     },
     {
+        setNameVi: "Sử Ký Đình Đài Cát",
+        setNameEn: "Sử Ký Đình Đài Cát",
+        pieces: 4,
+        sands: [
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Energy Recharge"
+        ]
+    },
+    {
         setNameVi: "Mảnh Hài Hòa Bất Thường",
         setNameEn: "Mảnh Hài Hòa Bất Thường",
+        pieces: 4,
+        sands: [
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Energy Recharge"
+        ]
+    },
+    {
+        setNameVi: "Ngày Nổi Gió",
+        setNameEn: "Ngày Nổi Gió",
         pieces: 4,
         sands: [
             "Tấn Công%"
@@ -1043,27 +1064,6 @@ export const klee = {
     {
         setNameVi: "Dư Âm Tế Lễ",
         setNameEn: "Dư Âm Tế Lễ",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Energy Recharge"
-        ]
-    },
-    {
-        setNameVi: "Hiền Nhân Bốc Lửa",
-        setNameEn: "Hiền Nhân Bốc Lửa",
         pieces: 4,
         sands: [
             "Tấn Công%"

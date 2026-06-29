@@ -588,6 +588,17 @@ export const chongyun = {
   bestWeapons: [
     {
         rank: 1,
+        nameVi: "Sắc Nước Makhaira",
+        nameEn: "Makhaira Aquamarine",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Pleroma.png"
+    },
+    {
+        rank: 1,
         nameVi: "Thiên Không Kiêu Ngạo",
         nameEn: "Skyward Pride",
         subStat: null,
@@ -629,6 +640,17 @@ export const chongyun = {
         passiveDescVi: null,
         passiveDescEn: null,
         iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Deshret.png"
+    },
+    {
+        rank: 1,
+        nameVi: "Hắc Nham Trảm Đao",
+        nameEn: "Blackcliff Slasher",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Blackrock.png"
     },
     {
         rank: 1,
@@ -675,6 +697,17 @@ export const chongyun = {
         iconUrl: "/images/weapons/UI_EquipIcon_Claymore_EmeraldSword.png"
     },
     {
+        rank: 1,
+        nameVi: "Đại Kiếm Tây Phong",
+        nameEn: "Favonius Greatsword",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Zephyrus.png"
+    },
+    {
         rank: 5,
         nameVi: "Đóa Hoa Tôn Màu Thép",
         nameEn: "Mailed Flower",
@@ -706,7 +739,90 @@ export const chongyun = {
         passiveDescVi: null,
         passiveDescEn: null,
         iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Fossil.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Akuoumaru",
+        nameEn: "Akuoumaru",
+        subStat: null,
+        isF2P: true,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Maria.png"
+    },
+    {
+        rank: 5,
+        nameVi: "Bóng Tối Thủy Triều",
+        nameEn: "Tidal Shadow",
+        subStat: null,
+        isF2P: true,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Vorpal.png"
     }
 ],
-  bestArtifacts: []
+  bestArtifacts: [
+    {
+        setNameVi: "Mix 2 bộ Nghi Thức Tông Thất Cổ & 2 bộ Dòng Hồi Ức Bất Tận",
+        setNameEn: "Mix 2-Piece Noblesse Oblige & 2-Piece Shimenawa's Reminiscence",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dấu Ấn Ngăn Cách",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Emblem of Severed Fate",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dòng Hồi Ức Bất Tận",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Shimenawa's Reminiscence",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Noblesse Oblige",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4,
+        sands: [
+            "ATK%",
+            "Energy Recharge",
+            "Elemental Mastery"
+        ],
+        goblet: [
+            "Cryo DMG Bonus"
+        ],
+        circlet: [
+            "CRIT Rate",
+            "CRIT DMG"
+        ],
+        subStatsPriority: [
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Elemental Mastery",
+            "Energy Recharge"
+        ]
+    }
+]
 };

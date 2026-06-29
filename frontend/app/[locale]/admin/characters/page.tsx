@@ -65,9 +65,7 @@ export default function CharactersAdmin() {
       const stripTypename = (obj: any): any => {
         if (Array.isArray(obj)) return obj.map(stripTypename);
         if (obj !== null && typeof obj === 'object') {
-          const { __typename, id: childId, ...rest } = obj; 
-          // Note: we remove id from nested weapons/artifacts because it's a relation ID, not needed for input.
-          // Wait, 'id' is used in the main character obj, but the nested ones shouldn't have 'id' if the input doesn't define it.
+          const { __typename, id: childId, rarity, iconUrl, artifactSetId, ...rest } = obj; 
           const newObj: any = {};
           for (const key in rest) newObj[key] = stripTypename(rest[key]);
           return newObj;
@@ -76,6 +74,20 @@ export default function CharactersAdmin() {
       };
 
       const parsed = JSON.parse(jsonStr);
+      // Clean up artifacts explicitly because they might contain read-only fields
+      if (parsed.bestArtifacts) {
+        parsed.bestArtifacts = parsed.bestArtifacts.map((a: any) => {
+          const { rarity, iconUrl, artifactSetId, __typename, ...rest } = a;
+          return rest;
+        });
+      }
+      if (parsed.bestWeapons) {
+        parsed.bestWeapons = parsed.bestWeapons.map((w: any) => {
+          const { __typename, id, ...rest } = w;
+          return rest;
+        });
+      }
+      
       const cleanInput = stripTypename(parsed);
       cleanInput.id = parsed.id; // Keep main ID
 

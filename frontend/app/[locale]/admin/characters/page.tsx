@@ -34,7 +34,7 @@ export default function CharactersAdmin() {
       const data = await fetchGraphQL(`
         query { 
           character(id: "${id}") { 
-            id nameEn nameVi titleEn titleVi rarity element weapon region avatarUrl splashArtUrl descriptionEn descriptionVi baseHp baseAtk baseDef talentPriority bestTeams
+            id nameEn nameVi titleEn titleVi rarity element weapon region avatarUrl splashArtUrl descriptionEn descriptionVi baseHp baseAtk baseDef talentPriority
             bestWeapons { id nameEn nameVi rank isF2P iconUrl subStat passiveDescEn passiveDescVi refinement rarity }
             bestArtifacts { setNameEn setNameVi pieces sands goblet circlet subStatsPriority rarity iconUrl artifactSetId }
           } 
@@ -62,10 +62,11 @@ export default function CharactersAdmin() {
     try {
       setLoading(true);
       
+      // Only strip __typename and nested IDs - do NOT strip rarity/iconUrl generically
       const stripTypename = (obj: any): any => {
         if (Array.isArray(obj)) return obj.map(stripTypename);
         if (obj !== null && typeof obj === 'object') {
-          const { __typename, id: childId, rarity, iconUrl, artifactSetId, ...rest } = obj; 
+          const { __typename, ...rest } = obj;
           const newObj: any = {};
           for (const key in rest) newObj[key] = stripTypename(rest[key]);
           return newObj;

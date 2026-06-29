@@ -284,12 +284,16 @@ export const Mutation = {
     const team = await prisma.characterTeam.findUnique({ where: { id: teamId } });
     if (!team) return false;
     await prisma.characterTeam.delete({ where: { id: teamId } });
-    createJsonBackup();
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
+    debouncedBackup();
     return true;
   },
 
   // === Dynamic Tiers ===
-  addTierRank: async (_: any, args: { name: string, colorBase: string }) => {
+  addTierRank: async (_: any, args: { name: string, colorBase: string }, context: any) => {
+    requireAdmin(context);
     const count = await prisma.tierRank.count();
     const newTier = await prisma.tierRank.create({
       data: {
@@ -298,11 +302,13 @@ export const Mutation = {
         order: count,
       }
     });
-    createJsonBackup();
+    debouncedBackup();
+    clearAllCaches();
     return newTier;
   },
   
-  updateTierRank: async (_: any, args: { id: string, name?: string, colorBase?: string }) => {
+  updateTierRank: async (_: any, args: { id: string, name?: string, colorBase?: string }, context: any) => {
+    requireAdmin(context);
     const updated = await prisma.tierRank.update({
       where: { id: args.id },
       data: {
@@ -310,11 +316,13 @@ export const Mutation = {
         ...(args.colorBase && { colorBase: args.colorBase })
       }
     });
-    createJsonBackup();
+    debouncedBackup();
+    clearAllCaches();
     return updated;
   },
 
-  deleteTierRank: async (_: any, args: { id: string }) => {
+  deleteTierRank: async (_: any, args: { id: string }, context: any) => {
+    requireAdmin(context);
     const tier = await prisma.tierRank.findUnique({ where: { id: args.id } });
     if (!tier) return false;
     
@@ -329,17 +337,20 @@ export const Mutation = {
     });
     
     await prisma.tierRank.delete({ where: { id: args.id } });
-    createJsonBackup();
+    debouncedBackup();
+    clearAllCaches();
     return true;
   },
 
-  reorderTierRanks: async (_: any, args: { tierIds: string[] }) => {
+  reorderTierRanks: async (_: any, args: { tierIds: string[] }, context: any) => {
+    requireAdmin(context);
     const { tierIds } = args;
     const transactions = tierIds.map((id, index) => 
       prisma.tierRank.update({ where: { id }, data: { order: index } })
     );
     await prisma.$transaction(transactions);
-    createJsonBackup();
+    debouncedBackup();
+    clearAllCaches();
     return true;
   },
 

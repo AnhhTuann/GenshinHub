@@ -145,6 +145,7 @@ export const resolvers = {
       if (cached) return cached;
       const data = await prisma.character.findMany({
         orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
+        include: { teams: { include: { members: true }, orderBy: { order: 'asc' } } },
       });
       charactersCache.set('all_basic', data);
       return data;

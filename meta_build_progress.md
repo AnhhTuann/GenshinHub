@@ -6,7 +6,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 
 | Nhân vật | ID | Trạng thái | Tiến độ chi tiết |
 | :--- | :---: | :---: | :--- |
-| **Aloy** | `aloy` | ❌ Chưa làm | - |
+| **Aloy** | `aloy` | ✅ Hoàn thành | 5 Vũ khí, TDV, Substats, Talents, Teams |
 | **Charlotte** | `charlotte` | ❌ Chưa làm | - |
 | **Chongyun** | `chongyun` | ❌ Chưa làm | - |
 | **Citlali** | `citlali` | ❌ Chưa làm | - |

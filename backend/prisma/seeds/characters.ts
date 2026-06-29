@@ -97,6 +97,18 @@ const getSplashUrl = (name: string) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 import { xiangling } from './characters/xiangling';
 import { gaming } from './characters/gaming';
 import { jahoda } from './characters/jahoda';
@@ -118,9 +130,9 @@ import { freminet } from './characters/freminet';
 import { columbina } from './characters/columbina';
 import { chasca } from './characters/chasca';
 import { dahlia } from './characters/dahlia';
-import { citlali } from './characters/citlali';
 import { iansan } from './characters/iansan';
 import { razor } from './characters/razor';
+import { citlali } from './characters/citlali';
 import { mona } from './characters/mona';
 import { kinich } from './characters/kinich';
 import { travelerDendro } from './characters/traveler-dendro';
@@ -244,9 +256,9 @@ const metaBuilds = [
   columbina,
   chasca,
   dahlia,
-  citlali,
   iansan,
   razor,
+  citlali,
   mona,
   kinich,
   travelerDendro,

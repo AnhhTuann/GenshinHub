@@ -18,5 +18,34 @@ export default async function TeamsPage() {
     avatarUrl: c.avatarUrl,
     teams: c.teams || [],
   }));
-  return <TeamsClient characters={characters} />;
+
+  return (
+    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04040a)' }}>
+      {/* Aurora ambient */}
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[500px] rounded-full blur-[160px]"
+          style={{ background: 'radial-gradient(ellipse, rgba(79,195,247,0.05) 0%, transparent 70%)' }} />
+        <div className="absolute top-[40%] left-[-10%] w-[600px] h-[400px] rounded-full blur-[140px]"
+          style={{ background: 'radial-gradient(ellipse, rgba(168,85,247,0.04) 0%, transparent 70%)' }} />
+      </div>
+
+      {/* Page header */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-4">
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-[3px] h-7 rounded-full" style={{ background: 'linear-gradient(to bottom, #4fc3f7, #0284c7)' }} />
+            <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight"
+              style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)', background: 'linear-gradient(135deg, #e0f2fe 0%, #4fc3f7 60%, #0284c7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              Meta Teams
+            </h1>
+          </div>
+          <p className="text-white/35 text-sm font-medium pl-6">Best team compositions and synergy builds</p>
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pb-24">
+        <TeamsClient characters={characters} />
+      </div>
+    </main>
+  );
 }

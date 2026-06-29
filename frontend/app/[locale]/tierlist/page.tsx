@@ -2,7 +2,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, GET_TIER_RANKS } from '@/lib/graphql';
 import TierListClient from './TierListClient';
 
-// Revalidate periodically (5 minutes instead of 1 hour to prevent stale data)
 export const revalidate = 300;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -18,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function TierListPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  
-  // Fetch from the backend via GraphQL instead of Prisma directly
+  const t = await getTranslations({ locale, namespace: 'TierList' });
+
   const [charData, weaponData, tierData] = await Promise.all([
     fetchGraphQL(GET_CHARACTERS),
     fetchGraphQL(GET_WEAPONS),
@@ -27,11 +26,33 @@ export default async function TierListPage({ params }: { params: Promise<{ local
   ]);
 
   const characters = charData.characters || [];
-  const weapons = weaponData.weapons || [];
-  const tierRanks = tierData.tierRanks || [];
+  const weapons    = weaponData.weapons   || [];
+  const tierRanks  = tierData.tierRanks   || [];
 
   return (
-    <main className="min-h-screen bg-[#07070a] pt-12 pb-24">
+    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04040a)' }}>
+      {/* Aurora ambient */}
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-10%] left-[-5%] w-[700px] h-[500px] rounded-full blur-[160px]"
+          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.05) 0%, transparent 70%)' }} />
+        <div className="absolute top-[30%] right-[-8%] w-[500px] h-[400px] rounded-full blur-[140px]"
+          style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.04) 0%, transparent 70%)' }} />
+      </div>
+
+      {/* Page header */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-4">
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-[3px] h-7 rounded-full" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+            <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight"
+              style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)', background: 'linear-gradient(135deg, #f0d080 0%, #c8a84b 60%, #8a6820 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              {t('title')}
+            </h1>
+          </div>
+          <p className="text-white/35 text-sm font-medium pl-6">{t('description')}</p>
+        </div>
+      </div>
+
       <TierListClient locale={locale} characters={characters} weapons={weapons} tierRanks={tierRanks} />
     </main>
   );

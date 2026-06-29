@@ -231,6 +231,10 @@ export const resolvers = {
       return data;
     },
 
+    tierRanks: async () => {
+      return await prisma.tierRank.findMany({ orderBy: { order: 'asc' } });
+    },
+
     showcase: async (_: any, args: { uid: string }) => {
       const cached = showcaseCache.get(args.uid);
       if (cached) return cached;

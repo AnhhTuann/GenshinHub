@@ -153,3 +153,10 @@ model Material {
   iconUrl     String?
 }
 
+// Dynamic Tier Ranks Configuration
+model TierRank {
+  id        String @id @default(uuid())
+  name      String @unique
+  order     Int      @default(0)
+  colorBase String   @default("amber") // e.g. amber, red, blue, emerald, gray, orange, purple
+}

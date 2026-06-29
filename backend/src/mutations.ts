@@ -281,17 +281,71 @@ export const Mutation = {
 
   removeCharacterTeam: async (_: any, { teamId }: any, context: any) => {
     requireAdmin(context);
+    const team = await prisma.characterTeam.findUnique({ where: { id: teamId } });
+    if (!team) return false;
     await prisma.characterTeam.delete({ where: { id: teamId } });
-    clearAllCaches();
-    resetArtifactSetLookup();
-    debouncedExport();
-    debouncedBackup();
+    createJsonBackup();
     return true;
   },
 
-  reorderCharacterTeams: async (_: any, { teamIds }: any, context: any) => {
+  // === Dynamic Tiers ===
+  addTierRank: async (_: any, args: { name: string, colorBase: string }) => {
+    const count = await prisma.tierRank.count();
+    const newTier = await prisma.tierRank.create({
+      data: {
+        name: args.name,
+        colorBase: args.colorBase,
+        order: count,
+      }
+    });
+    createJsonBackup();
+    return newTier;
+  },
+  
+  updateTierRank: async (_: any, args: { id: string, name?: string, colorBase?: string }) => {
+    const updated = await prisma.tierRank.update({
+      where: { id: args.id },
+      data: {
+        ...(args.name && { name: args.name }),
+        ...(args.colorBase && { colorBase: args.colorBase })
+      }
+    });
+    createJsonBackup();
+    return updated;
+  },
+
+  deleteTierRank: async (_: any, args: { id: string }) => {
+    const tier = await prisma.tierRank.findUnique({ where: { id: args.id } });
+    if (!tier) return false;
+    
+    // Unassign tier from characters and weapons
+    await prisma.character.updateMany({
+      where: { tier: tier.name },
+      data: { tier: null }
+    });
+    await prisma.weapon.updateMany({
+      where: { tier: tier.name },
+      data: { tier: null }
+    });
+    
+    await prisma.tierRank.delete({ where: { id: args.id } });
+    createJsonBackup();
+    return true;
+  },
+
+  reorderTierRanks: async (_: any, args: { tierIds: string[] }) => {
+    const { tierIds } = args;
+    const transactions = tierIds.map((id, index) => 
+      prisma.tierRank.update({ where: { id }, data: { order: index } })
+    );
+    await prisma.$transaction(transactions);
+    createJsonBackup();
+    return true;
+  },
+
+  reorderCharacterTeams: async (_: any, args: { teamIds: string[] }, context: any) => {
     requireAdmin(context);
-    const updates = teamIds.map((id: string, index: number) => 
+    const updates = args.teamIds.map((id: string, index: number) => 
       prisma.characterTeam.update({ where: { id }, data: { order: index } })
     );
     await prisma.$transaction(updates);

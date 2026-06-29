@@ -18,7 +18,22 @@ export const typeDefs = `#graphql
   type CharacterBasic { id: String!, nameEn: String!, nameVi: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
   type Weapon { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String, tier: String, role: String }
   type ArtifactSet { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
-  type Material { id: String!, nameEn: String!, nameVi: String!, type: String!, rarity: Int!, iconUrl: String }
+  type Material {
+    id: String!
+    nameEn: String!
+    nameVi: String!
+    type: String!
+    rarity: Int!
+    iconUrl: String
+  }
+
+  type TierRank {
+    id: String!
+    name: String!
+    order: Int!
+    colorBase: String!
+  }
+
   type EnkaShowcase { uid: String!, nickname: String!, level: Int!, avatarUrl: String, characters: [String!], detailedCharacters: JSON }
   
   # Backup types
@@ -32,12 +47,14 @@ export const typeDefs = `#graphql
     weapons: [Weapon!]!,
     weapon(id: String!): Weapon,
     charactersByWeaponType(weaponType: String!): [CharacterBasic!]!,
-    artifacts: [ArtifactSet!]!,
-    artifactSet(id: String!): ArtifactSet,
-    materials: [Material!]!,
-    showcase(uid: String!): EnkaShowcase,
-    # Backup queries
-    listBackups: [BackupInfo!]!,
+    artifacts: [ArtifactSet!]!
+    artifactSet(id: String!): ArtifactSet
+    materials: [Material!]!
+    showcase(uid: String!): EnkaShowcase
+    tierRanks: [TierRank!]!
+
+    # Backup Queries
+    listBackups: [BackupInfo!]!
     getBackup(id: String!): BackupData
   }
   
@@ -89,6 +106,12 @@ export const typeDefs = `#graphql
     reorderCharacterArtifacts(artifactIds: [String!]!): Boolean
     updateCharacterTierList(id: String!, tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]): Character
     updateWeaponTierList(id: String!, tier: String, role: String): Weapon
+
+    # Dynamic Tiers
+    addTierRank(name: String!, colorBase: String!): TierRank!
+    updateTierRank(id: String!, name: String, colorBase: String): TierRank!
+    deleteTierRank(id: String!): Boolean!
+    reorderTierRanks(tierIds: [String!]!): Boolean!
     
     addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!): Boolean
     removeCharacterWeapon(id: String!): Boolean

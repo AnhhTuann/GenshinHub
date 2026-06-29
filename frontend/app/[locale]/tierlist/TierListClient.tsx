@@ -4,8 +4,16 @@ import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { Tier, TIERS_ORDER, TIER_STYLES, Role } from '@/data/tierlist';
+import { Link } from '@/i18n/routing';
+import { Role } from '@/data/tierlist';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
+
+type TierRank = {
+  id: string;
+  name: string;
+  order: number;
+  colorBase: string;
+};
 
 type TierCharacter = { id: string, nameEn: string, nameVi: string, avatarUrl: string, rarity: number, element: string, tier: string | null, role: string | null, recommendedC: string | null, tierNoteEn: string[], tierNoteVi: string[] };
 type TierWeapon    = { id: string, nameEn: string, nameVi: string, iconUrl: string | null, rarity: number, type: string, tier: string | null, role: string | null };
@@ -31,9 +39,60 @@ const itemVariants: Variants = {
   show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
 };
 
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
+};
+
+// ────────────────────────────────────────────────────────────────────────
+// Dynamic Tier Styles
+// ────────────────────────────────────────────────────────────────────────
+
+const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
+  amber: {
+    badge: 'bg-gradient-to-br from-amber-500 to-orange-600 text-black border-amber-400 shadow-[0_0_40px_rgba(245,158,11,0.4)]',
+    rowGlow: 'group-hover:bg-amber-500/[0.03] border-amber-500/20'
+  },
+  red: {
+    badge: 'bg-gradient-to-br from-red-500 to-rose-600 text-white border-red-400 shadow-[0_0_30px_rgba(239,68,68,0.3)]',
+    rowGlow: 'group-hover:bg-red-500/[0.02] border-red-500/20'
+  },
+  blue: {
+    badge: 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.3)]',
+    rowGlow: 'group-hover:bg-blue-500/[0.02] border-blue-500/20'
+  },
+  gray: {
+    badge: 'bg-gradient-to-br from-gray-500 to-slate-600 text-white border-gray-400 shadow-[0_0_20px_rgba(156,163,175,0.2)]',
+    rowGlow: 'group-hover:bg-gray-500/[0.02] border-gray-500/20'
+  },
+  emerald: {
+    badge: 'bg-gradient-to-br from-emerald-500 to-green-600 text-white border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]',
+    rowGlow: 'group-hover:bg-emerald-500/[0.02] border-emerald-500/20'
+  },
+  orange: {
+    badge: 'bg-gradient-to-br from-orange-400 to-amber-700 text-white border-orange-400 shadow-[0_0_20px_rgba(251,146,60,0.2)]',
+    rowGlow: 'group-hover:bg-orange-500/[0.02] border-orange-500/20'
+  },
+  purple: {
+    badge: 'bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white border-purple-400 shadow-[0_0_30px_rgba(168,85,247,0.3)]',
+    rowGlow: 'group-hover:bg-purple-500/[0.02] border-purple-500/20'
+  },
+  cyan: {
+    badge: 'bg-gradient-to-br from-cyan-400 to-blue-500 text-black border-cyan-300 shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+    rowGlow: 'group-hover:bg-cyan-500/[0.02] border-cyan-500/20'
+  },
+  pink: {
+    badge: 'bg-gradient-to-br from-pink-500 to-rose-500 text-white border-pink-400 shadow-[0_0_30px_rgba(236,72,153,0.3)]',
+    rowGlow: 'group-hover:bg-pink-500/[0.02] border-pink-500/20'
+  },
+  default: {
+    badge: 'bg-gradient-to-br from-[#1a1a24] to-[#0d0d14] text-gray-500 border-gray-800',
+    rowGlow: 'group-hover:bg-white/[0.02] border-white/[0.05]'
+  }
+};
+
 // ────────────────────────────────────────────────────────────────────────
 // Card Component
-// ────────────────────────────────────────────────────────────────────────
 
 function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, locale: string }) {
   const name = locale === 'en' ? item.nameEn : item.nameVi;
@@ -102,29 +161,37 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
 // Main Component
 // ────────────────────────────────────────────────────────────────────────
 
-export default function TierListClient({ locale, characters, weapons }: { locale: string, characters: TierCharacter[], weapons: TierWeapon[] }) {
+export default function TierListClient({ locale, characters, weapons, tierRanks }: { locale: string, characters: TierCharacter[], weapons: TierWeapon[], tierRanks: TierRank[] }) {
   const t = useTranslations('TierList');
   const [tab, setTab] = useState<'character' | 'weapon'>('character');
   const [weaponType, setWeaponType] = useState<string>('Kiếm Đơn');
 
   const groupedCharacters = useMemo(() => {
-    const group: Record<Tier, TierCharacter[]> = { SS: [], S: [], A: [], B: [], C: [], D: [], Unranked: [] };
+    const group: Record<string, TierCharacter[]> = {};
+    tierRanks.forEach(tr => group[tr.name] = []);
+    group['Unranked'] = [];
+    
     characters.forEach(c => {
-      const tier = (c.tier as Tier) || 'Unranked';
-      if (group[tier]) group[tier].push(c);
+      const tier = c.tier || 'Unranked';
+      if (!group[tier]) group[tier] = [];
+      group[tier].push(c);
     });
     return group;
-  }, [characters]);
+  }, [characters, tierRanks]);
 
   const groupedWeapons = useMemo(() => {
-    const group: Record<Tier, TierWeapon[]> = { SS: [], S: [], A: [], B: [], C: [], D: [], Unranked: [] };
+    const group: Record<string, TierWeapon[]> = {};
+    tierRanks.forEach(tr => group[tr.name] = []);
+    group['Unranked'] = [];
+
     weapons.forEach(w => {
       if (w.type !== weaponType) return;
-      const tier = (w.tier as Tier) || 'Unranked';
-      if (group[tier]) group[tier].push(w);
+      const tier = w.tier || 'Unranked';
+      if (!group[tier]) group[tier] = [];
+      group[tier].push(w);
     });
     return group;
-  }, [weapons, weaponType]);
+  }, [weapons, weaponType, tierRanks]);
 
   const tabs = [
     { id: 'character', label: t('characterTab') },
@@ -224,39 +291,22 @@ export default function TierListClient({ locale, characters, weapons }: { locale
             className="w-full"
           >
               <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8">
-                {TIERS_ORDER.map(tier => {
-                  const items = tab === 'character' ? groupedCharacters[tier] : groupedWeapons[tier];
+                {[...tierRanks, { id: 'unranked', name: 'Unranked', order: 999, colorBase: 'default' }].map(tier => {
+                  const items = tab === 'character' ? (groupedCharacters[tier.name] || []) : (groupedWeapons[tier.name] || []);
                   if (items.length === 0) return null;
 
-                  const styles = TIER_STYLES[tier];
-                  
-                  // Enhanced glow and gradient for badges based on tier
-                  const enhancedBadgeStyle = 
-                    tier === 'SS' ? 'bg-gradient-to-br from-amber-500 to-orange-600 text-black border-amber-400 shadow-[0_0_40px_rgba(245,158,11,0.4)]' :
-                    tier === 'S'  ? 'bg-gradient-to-br from-red-500 to-rose-600 text-white border-red-400 shadow-[0_0_30px_rgba(239,68,68,0.3)]' :
-                    tier === 'A'  ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.3)]' :
-                    tier === 'B'  ? 'bg-gradient-to-br from-gray-500 to-slate-600 text-white border-gray-400 shadow-[0_0_20px_rgba(156,163,175,0.2)]' :
-                    tier === 'C'  ? 'bg-gradient-to-br from-emerald-500 to-green-600 text-white border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]' :
-                    tier === 'D'  ? 'bg-gradient-to-br from-orange-400 to-amber-700 text-white border-orange-400 shadow-[0_0_20px_rgba(251,146,60,0.2)]' :
-                    'bg-gradient-to-br from-[#1a1a24] to-[#0d0d14] text-gray-500 border-gray-800';
-
-                  const rowGlow = 
-                    tier === 'SS' ? 'group-hover:bg-amber-500/[0.03] border-amber-500/20' :
-                    tier === 'S'  ? 'group-hover:bg-red-500/[0.02] border-red-500/20' :
-                    tier === 'A'  ? 'group-hover:bg-blue-500/[0.02] border-blue-500/20' :
-                    tier === 'B'  ? 'group-hover:bg-gray-500/[0.02] border-gray-500/20' :
-                    tier === 'C'  ? 'group-hover:bg-emerald-500/[0.02] border-emerald-500/20' :
-                    tier === 'D'  ? 'group-hover:bg-orange-500/[0.02] border-orange-500/20' :
-                    'group-hover:bg-white/[0.02] border-white/[0.05]';
+                  const colorStyle = COLOR_MAP[tier.colorBase] || COLOR_MAP.default;
+                  const enhancedBadgeStyle = colorStyle.badge;
+                  const rowGlow = colorStyle.rowGlow;
 
                   return (
-                    <motion.div variants={itemVariants} key={tier} className={`relative flex flex-col md:flex-row bg-[#0d0d14] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
+                    <motion.div variants={itemVariants} key={tier.id} className={`relative flex flex-col md:flex-row bg-[#0d0d14] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
                       
                       {/* Thicker, more impactful Tier Badge */}
                       <div className={`w-20 sm:w-28 shrink-0 flex flex-col justify-center items-center py-6 border-b md:border-b-0 md:border-r border-white/10 relative overflow-hidden ${enhancedBadgeStyle}`}>
 
                         <span className="text-4xl sm:text-5xl font-black font-display relative z-10 drop-shadow-md">
-                          {tier !== 'Unranked' ? tier : '?'}
+                          {tier.name !== 'Unranked' ? tier.name : '?'}
                         </span>
                       </div>
                       

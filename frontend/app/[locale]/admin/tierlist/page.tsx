@@ -1,24 +1,28 @@
 "use client";
 import { useState, useEffect } from "react";
-import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, UPDATE_WEAPON_TIER_LIST } from "@/lib/graphql";
+import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, UPDATE_WEAPON_TIER_LIST, GET_TIER_RANKS } from "@/lib/graphql";
 import Image from "next/image";
 import toast from 'react-hot-toast';
+import ManageTiersSection from "@/components/admin/ManageTiersSection";
 
 export default function AdminTierListPage() {
   const [characters, setCharacters] = useState<any[]>([]);
   const [weapons, setWeapons] = useState<any[]>([]);
+  const [tierRanks, setTierRanks] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [savingId, setSavingId] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadData() {
       try {
-        const [charData, weaponData] = await Promise.all([
+        const [charData, weaponData, tierData] = await Promise.all([
           fetchGraphQL(GET_CHARACTERS),
-          fetchGraphQL(GET_WEAPONS)
+          fetchGraphQL(GET_WEAPONS),
+          fetchGraphQL(GET_TIER_RANKS)
         ]);
         setCharacters(charData.characters);
         setWeapons(weaponData.weapons);
+        setTierRanks(tierData.tierRanks || []);
       } catch (err) {
         console.error(err);
       } finally {
@@ -58,6 +62,8 @@ export default function AdminTierListPage() {
     <div className="p-8 text-white max-w-7xl mx-auto space-y-12">
       <h1 className="text-3xl font-bold border-b border-white/10 pb-4">Tier List Management</h1>
 
+      <ManageTiersSection tierRanks={tierRanks} setTierRanks={setTierRanks} />
+
       <section>
         <h2 className="text-2xl font-semibold text-amber-400 mb-6">Characters</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -82,11 +88,9 @@ export default function AdminTierListPage() {
                       disabled={savingId === char.id}
                     >
                       <option className="bg-[#0d0d14] text-white" value="">- None -</option>
-                      <option className="bg-[#0d0d14] text-white" value="SS">SS</option>
-                      <option className="bg-[#0d0d14] text-white" value="S">S</option>
-                      <option className="bg-[#0d0d14] text-white" value="A">A</option>
-                      <option className="bg-[#0d0d14] text-white" value="B">B</option>
-                      <option className="bg-[#0d0d14] text-white" value="C">C</option>
+                      {tierRanks.map(t => (
+                        <option key={t.id} className="bg-[#0d0d14] text-white" value={t.name}>{t.name}</option>
+                      ))}
                     </select>
                   </div>
                   <div>
@@ -190,11 +194,9 @@ export default function AdminTierListPage() {
                 disabled={savingId === weapon.id}
               >
                 <option className="bg-[#0d0d14] text-white" value="">- None -</option>
-                <option className="bg-[#0d0d14] text-white" value="SS">SS</option>
-                <option className="bg-[#0d0d14] text-white" value="S">S</option>
-                <option className="bg-[#0d0d14] text-white" value="A">A</option>
-                <option className="bg-[#0d0d14] text-white" value="B">B</option>
-                <option className="bg-[#0d0d14] text-white" value="C">C</option>
+                {tierRanks.map(t => (
+                  <option key={t.id} className="bg-[#0d0d14] text-white" value={t.name}>{t.name}</option>
+                ))}
               </select>
             </div>
           ))}

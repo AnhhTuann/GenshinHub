@@ -525,6 +525,147 @@ export const Mutation = {
     return c;
   },
   
+  generateCharacterAI: async (_: any, { nameEn }: any, context: any) => {
+    requireAdmin(context);
+    const { generateCharacterBuild } = require('./aiService');
+    const axios = require('axios');
+    const { data: enData } = await axios.get('https://gi.yatta.moe/api/v2/en/avatar');
+    const items = enData?.data?.items || {};
+    let ambrId = null;
+    let basicData = null;
+    for (const key in items) {
+      if (items[key].name.toLowerCase() === nameEn.toLowerCase()) {
+        ambrId = key;
+        basicData = items[key];
+        break;
+      }
+    }
+    
+    if (!ambrId) throw new Error('Character not found in Yatta API');
+    
+    const { data: detailData } = await axios.get(`https://gi.yatta.moe/api/v2/en/avatar/${ambrId}`);
+    const detail = detailData.data;
+    
+    const aiResult = await generateCharacterBuild(basicData.name, basicData.element, basicData.weaponType);
+    
+    const charId = basicData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const avatarUrl = `/images/avatars/UI_AvatarIcon_${basicData.icon.replace('UI_AvatarIcon_', '')}.png`;
+    const splashArtUrl = `/images/splash/UI_Gacha_AvatarImg_${basicData.icon.replace('UI_AvatarIcon_', '')}.png`;
+    
+    const charData = {
+      id: charId,
+      nameEn: basicData.name,
+      nameVi: basicData.name,
+      titleEn: basicData.route || basicData.name,
+      titleVi: basicData.route || basicData.name,
+      element: basicData.element,
+      rarity: basicData.rank || 5,
+      weapon: basicData.weaponType.replace('WEAPON_', '').replace('_ONE_HAND', '').replace('_TWO_HAND', ''),
+      region: basicData.region || 'Other',
+      avatarUrl,
+      splashArtUrl,
+      descriptionEn: detail.description || '',
+      descriptionVi: detail.description || '',
+      baseHp: Math.round(detail.upgrade.prop.find((p:any)=>p.propType==='FIGHT_PROP_BASE_HP')?.initValue * 12) || 10000,
+      baseAtk: Math.round(detail.upgrade.prop.find((p:any)=>p.propType==='FIGHT_PROP_BASE_ATTACK')?.initValue * 12) || 300,
+      baseDef: Math.round(detail.upgrade.prop.find((p:any)=>p.propType==='FIGHT_PROP_BASE_DEFENSE')?.initValue * 12) || 700,
+      talentPriority: aiResult.talentPriority || [],
+      tier: aiResult.tier,
+      role: aiResult.role,
+      recommendedC: aiResult.recommendedC,
+      tierNoteEn: aiResult.tierNoteEn,
+      tierNoteVi: aiResult.tierNoteVi,
+    };
+    
+    const updatedChar = await prisma.character.upsert({
+      where: { id: charId },
+      update: charData,
+      create: charData,
+    });
+    
+    if (aiResult.bestWeapons) {
+      await prisma.characterWeapon.deleteMany({ where: { characterId: charId } });
+      for (const w of aiResult.bestWeapons) {
+        let dbWeapon = await prisma.weapon.findFirst({ where: { OR: [{ nameEn: w.nameEn }, { nameVi: w.nameVi }] } });
+        await prisma.characterWeapon.create({
+          data: {
+            characterId: charId,
+            weaponId: dbWeapon ? dbWeapon.id : w.nameEn.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+            nameEn: w.nameEn,
+            nameVi: w.nameVi,
+            rank: Number(w.rank) || 4,
+            isF2P: w.isF2P === true,
+            iconUrl: dbWeapon?.iconUrl || '',
+            subStat: w.subStat || dbWeapon?.subStat || '',
+            passiveDescEn: w.passiveDescEn || '',
+            passiveDescVi: w.passiveDescVi || '',
+            refinement: 1
+          }
+        });
+      }
+    }
+    
+    if (aiResult.bestArtifacts) {
+      await prisma.characterArtifact.deleteMany({ where: { characterId: charId } });
+      for (let i = 0; i < aiResult.bestArtifacts.length; i++) {
+        const a = aiResult.bestArtifacts[i];
+        await prisma.characterArtifact.create({
+          data: {
+            characterId: charId,
+            setNameEn: a.setNameEn,
+            setNameVi: a.setNameVi,
+            pieces: Number(a.pieces) || 4,
+            sands: a.sands || [],
+            goblet: a.goblet || [],
+            circlet: a.circlet || [],
+            subStatsPriority: a.subStatsPriority || [],
+            order: i
+          }
+        });
+      }
+    }
+    
+    if (aiResult.teams) {
+      await prisma.characterTeam.deleteMany({ where: { characterId: charId } });
+      for (let i = 0; i < aiResult.teams.length; i++) {
+        const t = aiResult.teams[i];
+        await prisma.characterTeam.create({
+          data: {
+            characterId: charId,
+            name: t.name,
+            rank: t.rank || 'A',
+            description: t.description || '',
+            order: i,
+            members: {
+              create: t.members.map((m: any) => ({
+                characterId: m.characterId,
+                role: m.role || '',
+                roleDesc: m.roleDesc || '',
+                weapons: m.weapons || [],
+                artifacts: m.artifacts || [],
+                substats: m.substats || []
+              }))
+            }
+          }
+        });
+      }
+    }
+    
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
+    debouncedBackup();
+    
+    return await prisma.character.findUnique({ 
+      where: { id: charId },
+      include: {
+        bestWeapons: true,
+        bestArtifacts: true,
+        teams: { include: { members: true } }
+      }
+    });
+  },
+
   exportDatabaseToSeeds: async (_: any, __: any, context: any) => {
     requireAdmin(context);
     return await exportDatabaseToSeeds();

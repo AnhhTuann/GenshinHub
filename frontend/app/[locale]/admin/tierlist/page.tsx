@@ -4,6 +4,7 @@ import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, 
 import Image from "next/image";
 import toast from 'react-hot-toast';
 import ManageTiersSection from "@/components/admin/ManageTiersSection";
+import AICharacterGenerator from "@/components/admin/AICharacterGenerator";
 
 export default function AdminTierListPage() {
   const [characters, setCharacters] = useState<any[]>([]);
@@ -12,23 +13,24 @@ export default function AdminTierListPage() {
   const [loading, setLoading] = useState(true);
   const [savingId, setSavingId] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function loadData() {
-      try {
-        const [charData, weaponData, tierData] = await Promise.all([
-          fetchGraphQL(GET_CHARACTERS),
-          fetchGraphQL(GET_WEAPONS),
-          fetchGraphQL(GET_TIER_RANKS)
-        ]);
-        setCharacters(charData.characters);
-        setWeapons(weaponData.weapons);
-        setTierRanks(tierData.tierRanks || []);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+  const loadData = async () => {
+    try {
+      const [charData, weaponData, tierData] = await Promise.all([
+        fetchGraphQL(GET_CHARACTERS),
+        fetchGraphQL(GET_WEAPONS),
+        fetchGraphQL(GET_TIER_RANKS)
+      ]);
+      setCharacters(charData.characters);
+      setWeapons(weaponData.weapons);
+      setTierRanks(tierData.tierRanks || []);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  useEffect(() => {
     loadData();
   }, []);
 
@@ -61,6 +63,8 @@ export default function AdminTierListPage() {
   return (
     <div className="p-8 text-white max-w-7xl mx-auto space-y-12">
       <h1 className="text-3xl font-bold border-b border-white/10 pb-4">Tier List Management</h1>
+
+      <AICharacterGenerator onGenerated={() => loadData()} />
 
       <ManageTiersSection tierRanks={tierRanks} setTierRanks={setTierRanks} />
 

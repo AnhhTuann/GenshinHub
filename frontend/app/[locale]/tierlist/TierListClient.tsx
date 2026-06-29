@@ -4,7 +4,6 @@ import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { Link } from '@/i18n/routing';
 import { Role } from '@/data/tierlist';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 
@@ -32,11 +31,6 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: { staggerChildren: 0.1 }
   }
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
 };
 
 const itemVariants: Variants = {

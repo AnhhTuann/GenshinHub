@@ -248,3 +248,11 @@ export const REORDER_ARTIFACTS = `
     reorderCharacterArtifacts(artifactIds: $artifactIds)
   }
 `;
+
+export const GENERATE_CHARACTER_AI = `
+  mutation GenerateCharacterAI($nameEn: String!) {
+    generateCharacterAI(nameEn: $nameEn) {
+      id nameEn
+    }
+  }
+`;

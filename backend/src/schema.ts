@@ -127,6 +127,9 @@ export const typeDefs = `#graphql
     # Export DB state back to TS seeds
     exportDatabaseToSeeds: Boolean
 
+    # AI Integration
+    generateCharacterAI(nameEn: String!): Character
+
     # Backup management (admin only)
     createBackup: BackupInfo!
     deleteBackup(id: String!): Boolean

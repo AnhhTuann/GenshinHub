@@ -178,7 +178,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                   <button
                     key={el}
                     onClick={() => setFilterElement(filterElement === el ? null : el)}
-                    className={`flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 ${
+                    className={`flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 motion-safe:active:scale-95 ${
                       isSelected
                         ? `${details.glow} ${details.border}`
                         : 'border-white/10 text-gray-500 hover:bg-white/5 hover:border-white/20 hover:scale-110 bg-[#0d0d14]'
@@ -204,7 +204,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                   <button
                     key={rank}
                     onClick={() => setFilterRank(filterRank === rank ? null : rank)}
-                    className={`w-10 h-7 flex items-center justify-center rounded-full text-[10px] font-black transition-all duration-300 ${
+                    className={`w-10 h-7 flex items-center justify-center rounded-full text-[10px] font-black transition-all duration-300 motion-safe:active:scale-95 ${
                       isSelected
                         ? `${cfg.bg} ${cfg.text} ${cfg.glow} shadow-sm border ${cfg.border}`
                         : 'border-transparent text-gray-500 hover:text-gray-300 hover:bg-white/5'
@@ -234,7 +234,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             </div>
             <button
               onClick={() => { setSearch(''); setFilterElement(null); setFilterRank(null); }}
-              className="mt-2 px-5 py-2.5 rounded-xl text-xs font-black bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all shadow-md"
+              className="mt-2 px-5 py-2.5 rounded-xl text-xs font-black bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all shadow-md motion-safe:active:scale-95"
             >
               Clear all filters
             </button>
@@ -256,7 +256,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                 >
                   {/* Card Header (Clickable Accordion Trigger) */}
                   <button
-                    className="w-full text-left relative"
+                    className="w-full text-left relative motion-safe:active:scale-[0.98] transition-transform duration-300"
                     onClick={() => setExpandedTeam(isExpanded ? null : teamKey)}
                   >
                     {/* Background gradient wash based on element */}

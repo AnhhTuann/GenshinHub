@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { getFarmingDataForDay, DailyDomain } from '@/data/dailyFarming';
 import { Link } from '@/i18n/routing';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface DailyFarmingProps {
   locale: string;
@@ -23,6 +24,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
   const [selectedDay, setSelectedDay] = useState(1);
   const [data, setData] = useState<DailyDomain[] | null>(null);
   const [todayIdx, setTodayIdx] = useState(1);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const now = new Date();
@@ -38,7 +40,14 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
   }, [selectedDay]);
 
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <motion.div 
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      style={{ minHeight: '300px' }} // CLS protection
+      className="flex flex-col gap-4 w-full"
+    >
       {/* Section header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
@@ -55,7 +64,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
               <button
                 key={idx}
                 onClick={() => setSelectedDay(idx)}
-                className={`px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 relative ${
+                className={`px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 relative motion-safe:active:scale-95 ${
                   isActive
                     ? 'bg-yellow-400/15 text-yellow-400 shadow-sm'
                     : 'text-white/30 hover:text-white/60 hover:bg-white/[0.04]'
@@ -116,6 +125,6 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
           ))}
         </div>
       ) : null}
-    </div>
+    </motion.div>
   );
 }

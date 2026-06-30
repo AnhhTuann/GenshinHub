@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { WeaponBuild } from '@/types/character';
@@ -33,6 +33,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
   const passiveDesc = locale === 'en' ? weapon.passiveDescEn : weapon.passiveDescVi;
   const rarity      = weapon.rarity || 4;
   const rankStyle   = RANK_STYLE[index + 1] ?? RANK_STYLE[3];
+  const shouldReduceMotion = useReducedMotion();
 
   const is5  = rarity === 5;
   const is3  = rarity === 3;
@@ -51,8 +52,11 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
 
   const cardContent = (
     <motion.div
-      whileHover={{ scale: 1.02, y: -2 }}
-      whileTap={{ scale: 0.98 }}
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
+      whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={`flex items-center gap-4 p-4 rounded-2xl border bg-[#0d0d14]/50 ${cardBorder} transition-all duration-300 cursor-pointer group/w`}
     >

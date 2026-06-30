@@ -4,6 +4,7 @@ import React, { useMemo } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { CharacterData } from '@/types/character';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface UpcomingBirthdaysProps {
   characters: CharacterData[];
@@ -18,6 +19,7 @@ const EL_COLOR: Record<string, string> = {
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthdaysProps) {
+  const shouldReduceMotion = useReducedMotion();
   const upcoming = useMemo(() => {
     const today = new Date();
     const currentMonth = today.getMonth() + 1;
@@ -46,7 +48,14 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
   if (upcoming.length === 0) return null;
 
   return (
-    <div className="bg-[#0d0d14]/80 border border-white/[0.06] rounded-2xl p-4">
+    <motion.div 
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      style={{ minHeight: '200px' }} // CLS protection
+      className="bg-[#0d0d14]/80 border border-white/[0.06] rounded-2xl p-4"
+    >
       {/* Header */}
       <div className="flex items-center gap-2 mb-3">
         <span className="text-base">🎂</span>
@@ -61,7 +70,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
             <Link
               href={`/characters/${char.id}`}
               key={char.id}
-              className="group flex flex-col items-center gap-1.5"
+              className="group flex flex-col items-center gap-1.5 motion-safe:active:scale-95 transition-transform"
             >
               {/* Avatar */}
               <div
@@ -110,6 +119,6 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }

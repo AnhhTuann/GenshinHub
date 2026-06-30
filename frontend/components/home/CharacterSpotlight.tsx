@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface SpotlightChar {
   id: string;
@@ -19,9 +20,17 @@ const ELEM_COLOR: Record<string, string> = {
 
 export default function CharacterSpotlight({ characters }: { characters: SpotlightChar[] }) {
   const locale = useLocale();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="flex gap-2.5 overflow-x-auto pb-2 scrollbar-none">
+    <motion.div 
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      style={{ minHeight: '160px' }} // CLS protection
+      className="flex gap-2.5 overflow-x-auto pb-2 scrollbar-none"
+    >
       {characters.map((char) => {
         const name = locale === 'vi' ? (char.nameVi || char.nameEn) : char.nameEn;
         const ec = ELEM_COLOR[char.element] ?? '#c8a84b';
@@ -89,6 +98,6 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
           </Link>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArtifactBuild } from '@/types/character';
@@ -11,6 +11,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
   const rarity  = artifact.rarity || 5;
   const setName = locale === 'en' ? artifact.setNameEn : artifact.setNameVi;
   const isMix   = artifact.mixSets && artifact.mixSets.length > 0;
+  const shouldReduceMotion = useReducedMotion();
 
   const is5 = rarity === 5;
   const imgBg     = is5 ? 'bg-gradient-to-br from-[#ffe082] via-[#ffb300] to-[#e65100]' : 'bg-gradient-to-br from-[#a256e8] to-[#6f38a6]';
@@ -148,7 +149,10 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
 
   const cardWrapper = (children: React.ReactNode) => (
     <motion.div
-      whileHover={{ scale: 1.02, y: -2 }}
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
       className={`border rounded-2xl p-4 transition-all duration-250 bg-[#0d0d14]/50 ${border} hover:bg-[#13131e]/60 group`}
     >

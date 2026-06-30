@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
@@ -45,6 +45,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const [overlayReady, setOverlayReady] = useState(false); // has JS chunk loaded
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   /* ── Pre-fetch splash art image when card enters viewport ──
      This ensures the image is in browser cache before user hovers */
@@ -110,8 +111,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
         className="block group relative"
       >
         <motion.div
-          whileHover={{ y: -5, scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
+          whileHover={shouldReduceMotion ? {} : { y: -5, scale: 1.03 }}
+          whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
           transition={{ type: 'spring', stiffness: 380, damping: 22 }}
           onClick={() => router.push(href)}
           className="relative flex flex-col justify-end h-44 sm:h-52 md:h-56 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300"

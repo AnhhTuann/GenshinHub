@@ -280,7 +280,7 @@ export const kinich = {
         refinement: "R5",
         passiveDescVi: "Có xác suất gây sát thương AoE.",
         passiveDescEn: "Có xác suất gây sát thương AoE.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Proto.webp"
     },
     {
         rank: 5,
@@ -291,7 +291,7 @@ export const kinich = {
         refinement: "R1",
         passiveDescVi: "Tăng mạnh Tấn Công.",
         passiveDescEn: "Tăng mạnh Tấn Công.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.webp"
     }
 ],
   bestArtifacts: [

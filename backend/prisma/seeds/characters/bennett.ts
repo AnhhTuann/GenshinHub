@@ -901,7 +901,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cao nhất game (674) giúp gia tăng tối đa lượng buff Tấn Công của Kỹ Năng Nộ, dù dòng phụ Sát Thương Bạo Kích ít có tác dụng hỗ trợ.",
         passiveDescEn: "Tấn công cơ bản cao nhất game (674) giúp gia tăng tối đa lượng buff Tấn Công của Kỹ Năng Nộ, dù dòng phụ Sát Thương Bạo Kích ít có tác dụng hỗ trợ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Narukami.webp"
     },
     {
         rank: 2,
@@ -912,7 +912,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cực cao (674) giúp tối ưu hóa lượng buff Tấn Công. Chỉ số Sát Thương Bạo Kích tuy không quá lý tưởng cho lối chơi thuần hỗ trợ nhưng vẫn rất giá trị.",
         passiveDescEn: "Tấn công cơ bản cực cao (674) giúp tối ưu hóa lượng buff Tấn Công. Chỉ số Sát Thương Bạo Kích tuy không quá lý tưởng cho lối chơi thuần hỗ trợ nhưng vẫn rất giá trị.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Estoc.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Estoc.webp"
     },
     {
         rank: 3,
@@ -923,7 +923,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản tối đa (674) kết hợp hoàn hảo cùng dòng phụ Tỷ Lệ Bạo Kích. Hỗ trợ sạc Nộ tốt và buff sát thương hiệu quả.",
         passiveDescEn: "Tấn công cơ bản tối đa (674) kết hợp hoàn hảo cùng dòng phụ Tỷ Lệ Bạo Kích. Hỗ trợ sạc Nộ tốt và buff sát thương hiệu quả.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_OuterSword.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_OuterSword.webp"
     },
     {
         rank: 4,
@@ -934,7 +934,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cao (674) giúp cung cấp lượng buff ATK cực lớn cho đồng đội. Dòng phụ Sát Thương Vật Lý bị lãng phí nhưng nội tại tự hồi máu thỉnh thoảng giúp ích.",
         passiveDescEn: "Tấn công cơ bản cao (674) giúp cung cấp lượng buff ATK cực lớn cho đồng đội. Dòng phụ Sát Thương Vật Lý bị lãng phí nhưng nội tại tự hồi máu thỉnh thoảng giúp ích.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Falcon.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Falcon.webp"
     },
     {
         rank: 5,
@@ -945,7 +945,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Vũ khí 4 sao có Tấn Công cơ bản cao nhất (620). Tăng nhẹ sát thương cá nhân, dòng phụ Tinh Thông Nguyên Tố hỗ trợ phản ứng tốt.",
         passiveDescEn: "Vũ khí 4 sao có Tấn Công cơ bản cao nhất (620). Tăng nhẹ sát thương cá nhân, dòng phụ Tinh Thông Nguyên Tố hỗ trợ phản ứng tốt.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Outlaw.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Outlaw.webp"
     },
     {
         rank: 6,
@@ -956,7 +956,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản khá tốt (608). Nội tại tăng Tấn Công% và sát thương đánh thường cho cả đội, hỗ trợ hoàn hảo cho đội hình phản ứng bốc hơi/tan chảy.",
         passiveDescEn: "Tấn công cơ bản khá tốt (608). Nội tại tăng Tấn Công% và sát thương đánh thường cho cả đội, hỗ trợ hoàn hảo cho đội hình phản ứng bốc hơi/tan chảy.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Widsith.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Widsith.webp"
     },
     {
         rank: 7,
@@ -967,7 +967,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cực cao (674) tương tự Thương Diệu, giúp sạc Nộ tốt và gia tăng lượng buff Tấn Công khổng lồ.",
         passiveDescEn: "Tấn công cơ bản cực cao (674) tương tự Thương Diệu, giúp sạc Nộ tốt và gia tăng lượng buff Tấn Công khổng lồ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_XochitlsTube.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_XochitlsTube.webp"
     },
     {
         rank: 8,
@@ -978,7 +978,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cao (608) đi kèm dòng phụ Hiệu Quả Nạp rất lớn, giúp Bennett spam Nộ cực kỳ dễ dàng mà không lo thiếu nạp.",
         passiveDescEn: "Tấn công cơ bản cao (608) đi kèm dòng phụ Hiệu Quả Nạp rất lớn, giúp Bennett spam Nộ cực kỳ dễ dàng mà không lo thiếu nạp.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Dvalin.webp"
     },
     {
         rank: 9,
@@ -989,7 +989,7 @@ export const bennett = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn Sumeru F2P tốt nhất cho Bennett. Tấn công cơ bản ổn định (565), dòng phụ Hiệu Quả Nạp và tạo hạt buff tinh thông cho đồng đội.",
         passiveDescEn: "Vũ khí rèn Sumeru F2P tốt nhất cho Bennett. Tấn công cơ bản ổn định (565), dòng phụ Hiệu Quả Nạp và tạo hạt buff tinh thông cho đồng đội.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Arakalari.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Arakalari.webp"
     },
     {
         rank: 10,
@@ -1000,7 +1000,7 @@ export const bennett = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản tương đối tốt (565) cho vũ khí F2P dễ kiếm. Dòng phụ Vật Lý ít tác dụng, khuyên dùng khi không có lựa chọn nào khác.",
         passiveDescEn: "Tấn công cơ bản tương đối tốt (565) cho vũ khí F2P dễ kiếm. Dòng phụ Vật Lý ít tác dụng, khuyên dùng khi không có lựa chọn nào khác.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Proto.webp"
     },
     {
         rank: 11,
@@ -1011,7 +1011,7 @@ export const bennett = {
         refinement: "R5",
         passiveDescVi: "Tấn công cơ bản cao (565) nhưng không có dòng phụ Hiệu Quả Nạp. Nội tại tăng Tấn Công% sau khi được hồi máu.",
         passiveDescEn: "Tấn công cơ bản cao (565) nhưng không có dòng phụ Hiệu Quả Nạp. Nội tại tăng Tấn Công% sau khi được hồi máu.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_SacrificialNgombe.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_SacrificialNgombe.webp"
     },
     {
         rank: 12,
@@ -1022,7 +1022,7 @@ export const bennett = {
         refinement: "R5",
         passiveDescVi: "Tấn công cơ bản thấp (454) làm giảm lượng buff Tấn Công. Tuy nhiên dòng phụ Nạp rất cao và nội tại sinh hạt năng lượng giúp sạc nhanh cho cả đội.",
         passiveDescEn: "Tấn công cơ bản thấp (454) làm giảm lượng buff Tấn Công. Tuy nhiên dòng phụ Nạp rất cao và nội tại sinh hạt năng lượng giúp sạc nhanh cho cả đội.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.webp"
     }
 ],
   bestArtifacts: [

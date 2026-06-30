@@ -753,7 +753,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "High base ATK and CRIT DMG substat; passive ATK% benefits burst even if normal attack bonus is wasted.",
         passiveDescEn: "High base ATK and CRIT DMG substat; passive ATK% benefits burst even if normal attack bonus is wasted.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Narukami.webp"
     },
     {
         rank: 2,
@@ -764,7 +764,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "Provides ATK% and directly boosts Skill and Burst damage through stacks.",
         passiveDescEn: "Provides ATK% and directly boosts Skill and Burst damage through stacks.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Worldbane.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Worldbane.webp"
     },
     {
         rank: 3,
@@ -775,7 +775,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "High CRIT Rate and extra crit damage out; passive adds some physical but still solid for burst.",
         passiveDescEn: "High CRIT Rate and extra crit damage out; passive adds some physical but still solid for burst.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.webp"
     },
     {
         rank: 4,
@@ -786,7 +786,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "Increases Skill and Burst damage by 24-48%, excellent for burst support.",
         passiveDescEn: "Increases Skill and Burst damage by 24-48%, excellent for burst support.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Troupe.webp"
     },
     {
         rank: 5,
@@ -797,7 +797,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "Very high base ATK; passive is wasted on burst, but raw stats still contribute to damage.",
         passiveDescEn: "Very high base ATK; passive is wasted on burst, but raw stats still contribute to damage.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Amos.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Amos.webp"
     },
     {
         rank: 6,
@@ -808,7 +808,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "While off-field, increases her damage by up to 40%, ideal for a quick-swap burst role.",
         passiveDescEn: "While off-field, increases her damage by up to 40%, ideal for a quick-swap burst role.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Outlaw.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Outlaw.webp"
     },
     {
         rank: 7,
@@ -819,7 +819,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "Craftable; hitting weak points grants ATK%, useful if you can consistently aim.",
         passiveDescEn: "Craftable; hitting weak points grants ATK%, useful if you can consistently aim.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Proto.webp"
     },
     {
         rank: 8,
@@ -830,7 +830,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "Free weapon with ATK% substat; passive is specific to Aloy but not impactful for burst.",
         passiveDescEn: "Free weapon with ATK% substat; passive is specific to Aloy but not impactful for burst.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Predator.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Predator.webp"
     },
     {
         rank: 9,
@@ -841,7 +841,7 @@ export const aloy = {
         refinement: "R1",
         passiveDescVi: "Provides Energy Recharge; skill reset is rarely needed but helps with energy generation.",
         passiveDescEn: "Provides Energy Recharge; skill reset is rarely needed but helps with energy generation.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Fossil.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Fossil.webp"
     },
     {
         rank: 10,
@@ -852,7 +852,7 @@ export const aloy = {
         refinement: "R5",
         passiveDescVi: "3-star with high CRIT Rate; only use as a stat stick if no other bows available.",
         passiveDescEn: "3-star with high CRIT Rate; only use as a stat stick if no other bows available.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Sling.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Sling.webp"
     }
 ],
   bestArtifacts: [

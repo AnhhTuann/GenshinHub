@@ -284,7 +284,7 @@ export const citlali = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.webp"
     },
     {
         rank: 1,
@@ -295,7 +295,7 @@ export const citlali = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pleroma.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pleroma.webp"
     },
     {
         rank: 1,
@@ -306,7 +306,7 @@ export const citlali = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.webp"
     },
     {
         rank: 1,
@@ -317,7 +317,7 @@ export const citlali = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fossil.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fossil.webp"
     },
     {
         rank: 1,
@@ -328,7 +328,7 @@ export const citlali = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Figurines.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Figurines.webp"
     },
     {
         rank: 5,
@@ -339,7 +339,7 @@ export const citlali = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_SeeliesLute.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SeeliesLute.webp"
     }
 ],
   bestArtifacts: [

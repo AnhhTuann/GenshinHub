@@ -502,8 +502,10 @@ export const Mutation = {
   updateCharacterArtifactStats: async (_: any, args: any, context: any) => {
     requireAdmin(context);
     const { id, sands, goblet, circlet, subStatsPriority } = sanitize(args);
-    await prisma.characterArtifact.update({
-      where: { id },
+    console.log("updateCharacterArtifactStats called for characterId:", id, "args:", args);
+    // Update all artifacts for the given characterId
+    await prisma.characterArtifact.updateMany({
+      where: { characterId: id },
       data: { sands, goblet, circlet, subStatsPriority },
     });
     clearAllCaches();

@@ -985,7 +985,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Vũ khí trấn phái tốt nhất. Tăng mạnh sát thương Kỹ Năng Nguyên Tố và buff lượng HP tối đa khi máu đồng đội thay đổi liên tục.",
         passiveDescEn: "Vũ khí trấn phái tốt nhất. Tăng mạnh sát thương Kỹ Năng Nguyên Tố và buff lượng HP tối đa khi máu đồng đội thay đổi liên tục.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Regalis.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Regalis.webp"
     },
     {
         rank: 2,
@@ -996,7 +996,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích cực cao và lượng lớn Tấn Công dựa trên HP tối đa, giúp tăng mạnh sát thương và khả năng sinh tồn.",
         passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích cực cao và lượng lớn Tấn Công dựa trên HP tối đa, giúp tăng mạnh sát thương và khả năng sinh tồn.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.webp"
     },
     {
         rank: 3,
@@ -1007,7 +1007,7 @@ export const furina = {
         refinement: "R5",
         passiveDescVi: "Vũ khí sự kiện F2P tuyệt vời. Cung cấp Hiệu Quả Nạp lớn và gia tăng trực tiếp sát thương cũng như Tỷ Lệ Bạo Kích của Kỹ Năng Nguyên Tố.",
         passiveDescEn: "Vũ khí sự kiện F2P tuyệt vời. Cung cấp Hiệu Quả Nạp lớn và gia tăng trực tiếp sát thương cũng như Tỷ Lệ Bạo Kích của Kỹ Năng Nguyên Tố.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Magnum.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Magnum.webp"
     },
     {
         rank: 4,
@@ -1018,7 +1018,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Chỉ số HP% khổng lồ và nội tại tăng Tinh Thông Nguyên Tố cho bản thân cùng toàn đội, cực kỳ thích hợp cho các đội hình phản ứng.",
         passiveDescEn: "Chỉ số HP% khổng lồ và nội tại tăng Tinh Thông Nguyên Tố cho bản thân cùng toàn đội, cực kỳ thích hợp cho các đội hình phản ứng.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Deshret.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Deshret.webp"
     },
     {
         rank: 5,
@@ -1029,7 +1029,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Vũ khí tăng mạnh Sát Thương Bạo Kích và Kỹ Năng Nguyên Tố. Nội tại sẽ đạt hiệu quả tối đa khi trong đội có nhân vật hệ Nham.",
         passiveDescEn: "Vũ khí tăng mạnh Sát Thương Bạo Kích và Kỹ Năng Nguyên Tố. Nội tại sẽ đạt hiệu quả tối đa khi trong đội có nhân vật hệ Nham.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Needle.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Needle.webp"
     },
     {
         rank: 6,
@@ -1040,7 +1040,7 @@ export const furina = {
         refinement: "R5",
         passiveDescVi: "Vũ khí F2P từ hội Câu Cá Fontaine, giải quyết triệt để vấn đề nạp cho Furina đồng thời tăng Tỷ Lệ Bạo Kích cho Kỹ Năng Nguyên Tố.",
         passiveDescEn: "Vũ khí F2P từ hội Câu Cá Fontaine, giải quyết triệt để vấn đề nạp cho Furina đồng thời tăng Tỷ Lệ Bạo Kích cho Kỹ Năng Nguyên Tố.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Dirty.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Dirty.webp"
     },
     {
         rank: 7,
@@ -1051,7 +1051,7 @@ export const furina = {
         refinement: "R5",
         passiveDescVi: "Cung cấp Hiệu Quả Nạp cao và tạo thêm nhiều hạt nhân lượng để sạc cho bản thân cũng như hỗ trợ nạp năng lượng cho toàn đội.",
         passiveDescEn: "Cung cấp Hiệu Quả Nạp cao và tạo thêm nhiều hạt nhân lượng để sạc cho bản thân cũng như hỗ trợ nạp năng lượng cho toàn đội.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.webp"
     },
     {
         rank: 8,
@@ -1062,7 +1062,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Vũ khí từ Nhật Ký Hành Trình tăng Tỷ Lệ Bạo Kích và gia tăng sát thương Kỹ Năng Nguyên Tố/Nộ, giúp tối ưu lượng sát thương ngoài sân.",
         passiveDescEn: "Vũ khí từ Nhật Ký Hành Trình tăng Tỷ Lệ Bạo Kích và gia tăng sát thương Kỹ Năng Nguyên Tố/Nộ, giúp tối ưu lượng sát thương ngoài sân.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Boreas.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Boreas.webp"
     },
     {
         rank: 9,
@@ -1073,7 +1073,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Dòng phụ Tỷ Lệ Bạo Kích cao và tăng nhẹ Sát Thương Nguyên Tố, là lựa chọn tăng chỉ số tốt cho Furina.",
         passiveDescEn: "Dòng phụ Tỷ Lệ Bạo Kích cao và tăng nhẹ Sát Thương Nguyên Tố, là lựa chọn tăng chỉ số tốt cho Furina.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Amenoma.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Amenoma.webp"
     },
     {
         rank: 10,
@@ -1084,7 +1084,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Cung cấp lượng lớn Sát Thương Bạo Kích và một ít Tỷ Lệ Bạo Kích, thích hợp sử dụng như một vũ khí thuần tăng chỉ số bạo.",
         passiveDescEn: "Cung cấp lượng lớn Sát Thương Bạo Kích và một ít Tỷ Lệ Bạo Kích, thích hợp sử dụng như một vũ khí thuần tăng chỉ số bạo.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Ayus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Ayus.webp"
     },
     {
         rank: 11,
@@ -1095,7 +1095,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Tăng mạnh Sát Thương Bạo Kích và Sát Thương Nguyên Tố. Tuy nhiên việc tích luỹ đủ tầng đòi hỏi Furina phải đứng sân đánh thường.",
         passiveDescEn: "Tăng mạnh Sát Thương Bạo Kích và Sát Thương Nguyên Tố. Tuy nhiên việc tích luỹ đủ tầng đòi hỏi Furina phải đứng sân đánh thường.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Narukami.webp"
     },
     {
         rank: 12,
@@ -1106,7 +1106,7 @@ export const furina = {
         refinement: "R1",
         passiveDescVi: "Giải quyết tốt vấn đề nạp cho Furina và cung cấp một lượng nhỏ Tỷ Lệ Bạo Kích, giúp tối ưu chu kỳ thi triển Kỹ Năng Nộ.",
         passiveDescEn: "Giải quyết tốt vấn đề nạp cho Furina và cung cấp một lượng nhỏ Tỷ Lệ Bạo Kích, giúp tối ưu chu kỳ thi triển Kỹ Năng Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Dvalin.webp"
     },
     {
         rank: 13,
@@ -1117,7 +1117,7 @@ export const furina = {
         refinement: "R5",
         passiveDescVi: "Vũ khí 4 sao giới hạn tăng chỉ số HP% và hồi phục năng lượng cho bản thân, giúp giảm bớt áp lực nạp và tăng lượng máu tối đa.",
         passiveDescEn: "Vũ khí 4 sao giới hạn tăng chỉ số HP% và hồi phục năng lượng cho bản thân, giúp giảm bớt áp lực nạp và tăng lượng máu tối đa.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Mechanic.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Mechanic.webp"
     },
     {
         rank: 14,
@@ -1128,7 +1128,7 @@ export const furina = {
         refinement: "R5",
         passiveDescVi: "Vũ khí 3 sao F2P cực mạnh nếu duy trì được HP trên 90%. Nên đi kèm với các healer mạnh để đảm bảo nhận đầy đủ buff.",
         passiveDescEn: "Vũ khí 3 sao F2P cực mạnh nếu duy trì được HP trên 90%. Nên đi kèm với các healer mạnh để đảm bảo nhận đầy đủ buff.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Dawn.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Dawn.webp"
     }
 ],
   bestArtifacts: [

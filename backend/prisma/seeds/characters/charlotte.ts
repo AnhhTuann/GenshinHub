@@ -592,7 +592,7 @@ export const charlotte = {
         refinement: "R1",
         passiveDescVi: "Phục hồi Năng lượng và hồi máu cho đội theo thời gian, giảm yêu cầu Nạp của Charlotte và cung cấp khả năng hồi phục thụ động.",
         passiveDescEn: "Restores Energy and heals the team over time, easing Charlotte's energy requirements and providing passive healing.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.webp"
     },
     {
         rank: 2,
@@ -603,7 +603,7 @@ export const charlotte = {
         refinement: "R1",
         passiveDescVi: "Tạo hạt năng lượng trắng khi Bạo kích, tăng khả năng hồi năng lượng cho đội. Yêu cầu một số chỉ số Tỷ lệ Bạo kích.",
         passiveDescEn: "Generates clear particles on CRIT, boosting team energy regeneration. Requires some CRIT Rate investment.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.webp"
     },
     {
         rank: 3,
@@ -614,7 +614,7 @@ export const charlotte = {
         refinement: "R1",
         passiveDescVi: "Đổi sang nhân vật khác cung cấp buff %Tấn công khổng lồ trong 10s. Lý tưởng để hỗ trợ một DPS chính.",
         passiveDescEn: "Swapping to another character grants a massive ATK% buff for 10s. Ideal for supporting a main DPS.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.webp"
     },
     {
         rank: 4,
@@ -625,7 +625,7 @@ export const charlotte = {
         refinement: "R5",
         passiveDescVi: "Tăng Hiệu Quả Nạp Năng Lượng sau khi dùng Kỹ Năng, giúp sử dụng Kỹ năng nộ của cô ấy mà không cần phụ thuộc vào Bạo kích.",
         passiveDescEn: "Increases Energy Recharge after using Skill, helping fund her Burst without relying on CRIT.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Jyanome.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Jyanome.webp"
     },
     {
         rank: 5,
@@ -636,7 +636,7 @@ export const charlotte = {
         refinement: "R1",
         passiveDescVi: "Tăng Hiệu Quả Nạp và cung cấp buff %Tấn Công cho đội sau khi dùng Kỹ năng, nhưng yêu cầu kích hoạt phản ứng Khuếch Tán.",
         passiveDescEn: "Boosts Energy Recharge and provides a team ATK% buff after using a Skill, though requires triggering Swirl.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Outlaw.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Outlaw.webp"
     }
 ],
   bestArtifacts: [

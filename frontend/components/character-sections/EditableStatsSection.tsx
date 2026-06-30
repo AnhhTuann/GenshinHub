@@ -150,7 +150,7 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
 
           {isEditingStats && (
             <InlineStatsEditor 
-              artifactId={firstArtifact.id}
+              characterId={characterId}
               initialSands={localSands}
               initialGoblet={localGoblet}
               initialCirclet={localCirclet}

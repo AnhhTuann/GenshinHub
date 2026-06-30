@@ -903,7 +903,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "Best-in-slot: high base ATK and CRIT DMG, passive boosts Normal Attack damage and stacks with her Pyro infusion.",
         passiveDescEn: "Best-in-slot: high base ATK and CRIT DMG, passive boosts Normal Attack damage and stacks with her Pyro infusion.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Narukami.webp"
     },
     {
         rank: 2,
@@ -914,7 +914,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "High CRIT DMG and unconditional damage bonus. The passive condition (enemies nearby) is usually met in her attack range.",
         passiveDescEn: "High CRIT DMG and unconditional damage bonus. The passive condition (enemies nearby) is usually met in her attack range.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Kirin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Kirin.webp"
     },
     {
         rank: 3,
@@ -925,7 +925,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "Provides CRIT DMG and ATK% based on party elemental diversity, which works well in reaction teams.",
         passiveDescEn: "Provides CRIT DMG and ATK% based on party elemental diversity, which works well in reaction teams.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Pledge.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Pledge.webp"
     },
     {
         rank: 4,
@@ -936,7 +936,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "ATK% substat and passive that increases ATK and Skill/Burst damage. Requires stacking but effective.",
         passiveDescEn: "ATK% substat and passive that increases ATK and Skill/Burst damage. Requires stacking but effective.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Worldbane.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Worldbane.webp"
     },
     {
         rank: 5,
@@ -947,7 +947,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "Decent CRIT Rate stat stick; the passive boosts Charged Attacks, which are rarely used, so it's a fallback option.",
         passiveDescEn: "Decent CRIT Rate stat stick; the passive boosts Charged Attacks, which are rarely used, so it's a fallback option.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Ayus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Ayus.webp"
     },
     {
         rank: 6,
@@ -958,7 +958,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "Solid CRIT Rate and extra CRIT DMG from passive. A reliable stat stick.",
         passiveDescEn: "Solid CRIT Rate and extra CRIT DMG from passive. A reliable stat stick.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.webp"
     },
     {
         rank: 7,
@@ -969,7 +969,7 @@ export const yoimiya = {
         refinement: "R5",
         passiveDescVi: "3-star weapon with high CRIT Rate. Passive works at close range; good early game but inconsistent at longer ranges.",
         passiveDescEn: "3-star weapon with high CRIT Rate. Passive works at close range; good early game but inconsistent at longer ranges.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Sling.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Sling.webp"
     },
     {
         rank: 8,
@@ -980,7 +980,7 @@ export const yoimiya = {
         refinement: "R1",
         passiveDescVi: "High base ATK and passive that increases Normal and Charged Attack damage over time. Decent but outclassed by other options.",
         passiveDescEn: "High base ATK and passive that increases Normal and Charged Attack damage over time. Decent but outclassed by other options.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Amos.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Amos.webp"
     },
     {
         rank: 9,
@@ -991,7 +991,7 @@ export const yoimiya = {
         refinement: "R5",
         passiveDescVi: "ATK% substat and passive that boosts Normal Attack damage by up to 80% at R5 while reducing Charged Attack damage. Excellent for her playstyle.",
         passiveDescEn: "ATK% substat and passive that boosts Normal Attack damage by up to 80% at R5 while reducing Charged Attack damage. Excellent for her playstyle.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Recluse.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Recluse.webp"
     }
 ],
   bestArtifacts: [

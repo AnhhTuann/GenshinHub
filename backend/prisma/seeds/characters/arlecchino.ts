@@ -893,7 +893,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Vũ khí trấn phái; tăng mạnh Tấn Công% và Tỷ Lệ Bạo Kích dựa trên Khế Ước Sinh Mệnh, tối đa hóa sát thương của đòn Đánh Thường.",
         passiveDescEn: "Signature weapon; boosts ATK% and CRIT Rate based on Bond of Life, maximizing Normal Attack damage.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_BloodMoon.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_BloodMoon.webp"
     },
     {
         rank: 2,
@@ -904,7 +904,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Tăng Tấn Công% khi đánh trúng kẻ địch, cộng dồn tăng sát thương duy trì; đa dụng và rất đáng tin cậy.",
         passiveDescEn: "Increases ATK% on hit, stacking for sustained damage; versatile and reliable.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.webp"
     },
     {
         rank: 3,
@@ -915,7 +915,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Chuyển hóa Tinh Thông Nguyên Tố thành Tấn Công%; cực kỳ mạnh mẽ trong các đội hình phản ứng Bốc Hơi/Tan Chảy.",
         passiveDescEn: "Converts Elemental Mastery to ATK%; excellent for Vaporize/Melt teams.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Deshret.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.webp"
     },
     {
         rank: 4,
@@ -926,7 +926,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Sát Thương Bạo Kích cực cao và tăng Tấn Công% dựa trên HP; hoạt động cực tốt trong mọi đội hình.",
         passiveDescEn: "Provides high CRIT DMG and ATK% based on HP; works well in any team.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Homa.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.webp"
     },
     {
         rank: 5,
@@ -937,7 +937,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Tấn Công cơ bản cao và Hiệu Quả Nạp lớn; cung cấp các buff cho đồng đội nhưng giảm sát thương cá nhân của bản thân, phù hợp cho vai trò Sub-DPS.",
         passiveDescEn: "High base ATK and Energy Recharge; team buffs but less personal damage, suitable for sub-DPS role.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Muguet.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.webp"
     },
     {
         rank: 6,
@@ -948,7 +948,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Chỉ số Tấn Công căn bản khổng lồ; gia tăng Tấn Công% sau khi kích hoạt Kỹ Năng Nguyên Tố, giúp khuếch đại các đòn đánh ban đầu.",
         passiveDescEn: "High base ATK; grants ATK% after using Skill, boosting initial hits.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Santika.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.webp"
     },
     {
         rank: 7,
@@ -959,7 +959,7 @@ export const arlecchino = {
         refinement: "R1",
         passiveDescVi: "Đòi hỏi có khiên để nhận được đầy đủ lượng buff Tấn Công%; lựa chọn ổn khi đi kèm với các nhân vật tạo khiên mạnh như Zhongli.",
         passiveDescEn: "Requires shield for full ATK% bonus; decent with shield support like Zhongli.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Kunwu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.webp"
     },
     {
         rank: 8,
@@ -970,7 +970,7 @@ export const arlecchino = {
         refinement: "R5",
         passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích tốt và tăng Tấn Công% khi đối mặt với nhiều kẻ địch; lựa chọn giá rẻ chất lượng.",
         passiveDescEn: "CRIT Rate substat and ATK% bonus against multiple enemies; good F2P option.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Gladiator.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.webp"
     },
     {
         rank: 9,
@@ -981,7 +981,7 @@ export const arlecchino = {
         refinement: "R5",
         passiveDescVi: "Vũ khí 3 sao giúp tăng 48% sát thương của đòn Đánh Thường; phương án cực kỳ kinh tế và mạnh cho người chơi mới hoặc ngân sách hạn chế.",
         passiveDescEn: "3-star that boosts Normal Attack DMG by 48%; cheap option for early game or budget builds.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Ruby.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Ruby.webp"
     },
     {
         rank: 10,
@@ -992,7 +992,7 @@ export const arlecchino = {
         refinement: "R5",
         passiveDescVi: "Tỷ Lệ Bạo Kích tốt; gia tăng Tinh Thông Nguyên Tố nếu đội hình có từ 3 hệ nguyên tố khác nhau trở lên, giúp khuếch đại sát thương phản ứng.",
         passiveDescEn: "CRIT Rate substat; increases Elemental Mastery if team has 3 different elements, boosting reactions.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Shanty.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Shanty.webp"
     }
 ],
   bestArtifacts: [
@@ -1067,21 +1067,16 @@ export const arlecchino = {
         setNameEn: "Gladiator's Finale",
         pieces: 4,
         sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
+            "Tấn Công%"
         ],
         goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
+            "Sát Thương Hỏa%"
         ],
         circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
+            "Tỷ Lệ Bạo Kích%"
         ],
         subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "Elemental Mastery",
-            "ATK%"
+            "Tỷ Lệ Bạo Kích%"
         ]
     },
     {

@@ -826,7 +826,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Dòng phụ Sát Thương Bạo Kích cao và khả năng chuyển hóa HP thành Tấn Công giúp gia tăng đáng kể sát thương của Kỹ Năng Nộ.",
         passiveDescEn: "Dòng phụ Sát Thương Bạo Kích cao và khả năng chuyển hóa HP thành Tấn Công giúp gia tăng đáng kể sát thương của Kỹ Năng Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Homa.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.webp"
     },
     {
         rank: 2,
@@ -837,7 +837,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Cung cấp lượng lớn Hiệu Quả Nạp và buff Tinh Thông Nguyên Tố/Tấn Công cho toàn đội sau khi dùng Kỹ Năng Nguyên Tố, tuy nhiên sát thương Nộ sẽ thấp hơn.",
         passiveDescEn: "Cung cấp lượng lớn Hiệu Quả Nạp và buff Tinh Thông Nguyên Tố/Tấn Công cho toàn đội sau khi dùng Kỹ Năng Nguyên Tố, tuy nhiên sát thương Nộ sẽ thấp hơn.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Muguet.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.webp"
     },
     {
         rank: 3,
@@ -848,7 +848,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Tấn Công cơ bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công khi đánh trúng kẻ địch, giúp tích tầng trước khi thả Q.",
         passiveDescEn: "Tấn Công cơ bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công khi đánh trúng kẻ địch, giúp tích tầng trước khi thả Q.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.webp"
     },
     {
         rank: 4,
@@ -859,7 +859,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Cung cấp lượng lớn Hiệu Quả Nạp và thêm Tỷ Lệ Bạo Kích. Nội tại tạo thêm các đòn đánh AoE nhỏ sau khi dùng Kỹ Năng Nộ.",
         passiveDescEn: "Cung cấp lượng lớn Hiệu Quả Nạp và thêm Tỷ Lệ Bạo Kích. Nội tại tạo thêm các đòn đánh AoE nhỏ sau khi dùng Kỹ Năng Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Dvalin.webp"
     },
     {
         rank: 5,
@@ -870,7 +870,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Tấn Công cơ bản và Tấn Công% cao nhưng yêu cầu duy trì khiên để nhận toàn bộ nội tại. Rất phù hợp với khiên tự tạo của Zhongli.",
         passiveDescEn: "Tấn Công cơ bản và Tấn Công% cao nhưng yêu cầu duy trì khiên để nhận toàn bộ nội tại. Rất phù hợp với khiên tự tạo của Zhongli.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Kunwu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.webp"
     },
     {
         rank: 6,
@@ -881,7 +881,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Tấn Công cơ bản và Tấn Công% cực cao sau khi dùng Kỹ Năng Nguyên Tố. Tốt cho sát thương nhưng cần thời gian đứng sân để kích hoạt.",
         passiveDescEn: "Tấn Công cơ bản và Tấn Công% cực cao sau khi dùng Kỹ Năng Nguyên Tố. Tốt cho sát thương nhưng cần thời gian đứng sân để kích hoạt.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Santika.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.webp"
     },
     {
         rank: 7,
@@ -892,7 +892,7 @@ export const zhongli = {
         refinement: "R5",
         passiveDescVi: "Tăng Tỷ Lệ Bạo Kích và sát thương của Kỹ Năng Nộ cùng Hiệu Quả Nạp. Lựa chọn F2P tuyệt vời giúp tối ưu hóa chu kỳ ra chiêu.",
         passiveDescEn: "Tăng Tỷ Lệ Bạo Kích và sát thương của Kỹ Năng Nộ cùng Hiệu Quả Nạp. Lựa chọn F2P tuyệt vời giúp tối ưu hóa chu kỳ ra chiêu.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Mori.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.webp"
     },
     {
         rank: 8,
@@ -903,7 +903,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích và thêm Tấn Công khi có kẻ địch ở gần. Thích hợp để build sát thương nhưng ít hỗ trợ nạp năng lượng.",
         passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích và thêm Tấn Công khi có kẻ địch ở gần. Thích hợp để build sát thương nhưng ít hỗ trợ nạp năng lượng.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Gladiator.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.webp"
     },
     {
         rank: 9,
@@ -914,7 +914,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Hiệu Quả Nạp cực cao và chuyển hóa dòng nạp thành Tấn Công%. Rất dễ bị thừa Nạp, nên cân nhắc kết hợp với đồng hồ Nạp nếu cần.",
         passiveDescEn: "Hiệu Quả Nạp cực cao và chuyển hóa dòng nạp thành Tấn Công%. Rất dễ bị thừa Nạp, nên cân nhắc kết hợp với đồng hồ Nạp nếu cần.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.webp"
     },
     {
         rank: 10,
@@ -925,7 +925,7 @@ export const zhongli = {
         refinement: "R5",
         passiveDescVi: "Tăng Tỷ Lệ Bạo Kích và Tấn Công% dựa trên số lượng nhân vật Liyue trong đội. Đạt hiệu quả cực cao trong đội hình thuần Liyue.",
         passiveDescEn: "Tăng Tỷ Lệ Bạo Kích và Tấn Công% dựa trên số lượng nhân vật Liyue trong đội. Đạt hiệu quả cực cao trong đội hình thuần Liyue.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Lapis.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.webp"
     },
     {
         rank: 11,
@@ -936,7 +936,7 @@ export const zhongli = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Sát Thương Bạo Kích. Nội tại tăng Tấn Công sau khi hạ gục kẻ địch, nhưng không ổn định khi đối đầu với Boss đơn mục tiêu.",
         passiveDescEn: "Cung cấp Sát Thương Bạo Kích. Nội tại tăng Tấn Công sau khi hạ gục kẻ địch, nhưng không ổn định khi đối đầu với Boss đơn mục tiêu.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Blackrock.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Blackrock.webp"
     },
     {
         rank: 12,
@@ -947,7 +947,7 @@ export const zhongli = {
         refinement: "R5",
         passiveDescVi: "Vũ khí cán dài F2P cung cấp Tấn Công% và nội tại tăng Tấn Công% sau khi kích hoạt phản ứng nguyên tố. Tạm ổn cho lối chơi sát thương Nộ.",
         passiveDescEn: "Vũ khí cán dài F2P cung cấp Tấn Công% và nội tại tăng Tấn Công% sau khi kích hoạt phản ứng nguyên tố. Tạm ổn cho lối chơi sát thương Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Windvane.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Windvane.webp"
     },
     {
         rank: 13,
@@ -958,7 +958,7 @@ export const zhongli = {
         refinement: "R5",
         passiveDescVi: "Hiệu Quả Nạp cao và sinh hạt nhân lượng cho toàn đội. Cần ưu tiên chỉ số Tỷ Lệ Bạo Kích để dễ kích hoạt nội tại.",
         passiveDescEn: "Hiệu Quả Nạp cao và sinh hạt nhân lượng cho toàn đội. Cần ưu tiên chỉ số Tỷ Lệ Bạo Kích để dễ kích hoạt nội tại.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
     }
 ],
   bestArtifacts: [

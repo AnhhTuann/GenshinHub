@@ -657,7 +657,7 @@ export const nicole = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cao và dòng phụ Tấn Công% giúp việc đạt ngưỡng kích hoạt buff dễ dàng hơn.",
         passiveDescEn: "Tấn công cơ bản cao và dòng phụ Tấn Công% giúp việc đạt ngưỡng kích hoạt buff dễ dàng hơn.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_FairyGarden.webp"
     },
     {
         rank: 2,
@@ -668,7 +668,7 @@ export const nicole = {
         refinement: "R1",
         passiveDescVi: "Cung cấp lượng Tấn Công% cực lớn và tăng cường hiệu quả khiên, giúp tối ưu hóa cả khiên lẫn buff ATK.",
         passiveDescEn: "Cung cấp lượng Tấn Công% cực lớn và tăng cường hiệu quả khiên, giúp tối ưu hóa cả khiên lẫn buff ATK.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Kunwu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Kunwu.webp"
     },
     {
         rank: 3,
@@ -679,7 +679,7 @@ export const nicole = {
         refinement: "R1",
         passiveDescVi: "Tăng Tấn Công% cho toàn đội sau khi sử dụng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi hỗ trợ đồng đội.",
         passiveDescEn: "Tăng Tấn Công% cho toàn đội sau khi sử dụng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi hỗ trợ đồng đội.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_MountainGale.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_MountainGale.webp"
     },
     {
         rank: 4,
@@ -690,7 +690,7 @@ export const nicole = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cao và dòng phụ Tấn Công% lớn giúp đạt ngưỡng chỉ số cần thiết; đồng thời tăng nhẹ sát thương Phong.",
         passiveDescEn: "Tấn công cơ bản cao và dòng phụ Tấn Công% lớn giúp đạt ngưỡng chỉ số cần thiết; đồng thời tăng nhẹ sát thương Phong.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Dvalin.webp"
     },
     {
         rank: 5,
@@ -701,7 +701,7 @@ export const nicole = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Hiệu Quả Nạp và buff Tấn Công cho đội sau khi tạo khiên, tăng khả năng hồi nộ và hỗ trợ đồng đội.",
         passiveDescEn: "Cung cấp Hiệu Quả Nạp và buff Tấn Công cho đội sau khi tạo khiên, tăng khả năng hồi nộ và hỗ trợ đồng đội.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Figurines.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Figurines.webp"
     },
     {
         rank: 6,
@@ -712,7 +712,7 @@ export const nicole = {
         refinement: "R5",
         passiveDescVi: "Chỉ số Hiệu Quả Nạp Nguyên Tố cao giúp duy trì chu kỳ Nộ hồi liên tục khi cần thiết.",
         passiveDescEn: "Chỉ số Hiệu Quả Nạp Nguyên Tố cao giúp duy trì chu kỳ Nộ hồi liên tục khi cần thiết.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Jyanome.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Jyanome.webp"
     },
     {
         rank: 7,
@@ -723,7 +723,7 @@ export const nicole = {
         refinement: "R5",
         passiveDescVi: "Tăng sát thương Nguyên Tố Lôi cho đồng đội sau phản ứng, rất mạnh khi đi kèm với đội hình có Lôi.",
         passiveDescEn: "Tăng sát thương Nguyên Tố Lôi cho đồng đội sau phản ứng, rất mạnh khi đi kèm với đội hình có Lôi.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Bakufu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Bakufu.webp"
     },
     {
         rank: 8,
@@ -734,7 +734,7 @@ export const nicole = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn cung cấp Tấn Công% và cơ chế tự hồi phục, hỗ trợ đắc lực trong việc đạt ngưỡng chỉ số.",
         passiveDescEn: "Vũ khí rèn cung cấp Tấn Công% và cơ chế tự hồi phục, hỗ trợ đắc lực trong việc đạt ngưỡng chỉ số.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Vorpal.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Vorpal.webp"
     },
     {
         rank: 9,
@@ -745,7 +745,7 @@ export const nicole = {
         refinement: "R5",
         passiveDescVi: "Tạo thêm hạt nhân năng lượng khi bạo kích giúp giảm áp lực nạp cho cả đội.",
         passiveDescEn: "Tạo thêm hạt nhân năng lượng khi bạo kích giúp giảm áp lực nạp cho cả đội.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.webp"
     },
     {
         rank: 10,
@@ -756,7 +756,7 @@ export const nicole = {
         refinement: "R5",
         passiveDescVi: "Tăng 48% Tấn Công cho nhân vật tiếp theo ra sân, là một lựa chọn hỗ trợ cổ điển nhưng cực kỳ mạnh mẽ.",
         passiveDescEn: "Tăng 48% Tấn Công cho nhân vật tiếp theo ra sân, là một lựa chọn hỗ trợ cổ điển nhưng cực kỳ mạnh mẽ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.webp"
     }
 ],
   bestArtifacts: [

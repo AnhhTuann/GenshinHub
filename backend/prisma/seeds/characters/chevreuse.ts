@@ -509,7 +509,7 @@ export const chevreuse = {
         refinement: "R1",
         passiveDescVi: "Vũ khí cán dài hỗ trợ tăng HP% hoặc hiệu ứng tăng sát thương cho cả đội.",
         passiveDescEn: "Assuming a new support polearm, use for its HP% or team buffs.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Deshret.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.webp"
     },
     {
         rank: 2,
@@ -520,7 +520,7 @@ export const chevreuse = {
         refinement: "R5",
         passiveDescVi: "Tạo hạt nhân lượng khi bạo kích, giúp giảm mạnh chỉ số nạp yêu cầu cho cả đội.",
         passiveDescEn: "Generates energy particles on CRIT hits, lowering ER requirements for the team.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
     },
     {
         rank: 3,
@@ -531,7 +531,7 @@ export const chevreuse = {
         refinement: "R5",
         passiveDescVi: "Dòng phụ Tinh Thông Nguyên Tố ít hữu dụng hơn, nhưng nội tại hồi Năng Lượng rất tốt.",
         passiveDescEn: "EM substat is less useful, but the passive provides decent energy regeneration.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Bakufu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.webp"
     },
     {
         rank: 4,
@@ -542,7 +542,7 @@ export const chevreuse = {
         refinement: "R5",
         passiveDescVi: "Lựa chọn giá rẻ tăng HP% cực lớn để tối đa hóa buff Tấn Công và khả năng trị liệu.",
         passiveDescEn: "Budget HP% stat stick. Maximizes HP for stronger ATK buffs and heals.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Ruby.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Ruby.webp"
     },
     {
         rank: 5,
@@ -553,7 +553,7 @@ export const chevreuse = {
         refinement: "R5",
         passiveDescVi: "Cung cấp HP% và khả năng hồi năng lượng từ nội tại khi được trị liệu.",
         passiveDescEn: "Provides HP% and energy regeneration when healed. Good for burst uptime.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Vorpal.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Vorpal.webp"
     },
     {
         rank: 6,
@@ -564,7 +564,7 @@ export const chevreuse = {
         refinement: "R5",
         passiveDescVi: "Dòng phụ Hiệu Quả Nạp giúp nạp Nộ nhanh hơn, nội tại tăng nhẹ sát thương sau E.",
         passiveDescEn: "Energy Recharge substat helps burst uptime. Passive is not the main focus.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Proto.webp"
     }
 ],
   bestArtifacts: [

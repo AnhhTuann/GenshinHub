@@ -5,7 +5,7 @@ import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 
 interface Props {
-  artifactId: string;
+  characterId: string;
   initialSands: string[];
   initialGoblet: string[];
   initialCirclet: string[];
@@ -23,7 +23,7 @@ const COMMON_STATS = [
 ];
 
 export default function InlineStatsEditor({
-  artifactId, initialSands, initialGoblet, initialCirclet, initialSubStats, onClose, onSaved
+  characterId, initialSands, initialGoblet, initialCirclet, initialSubStats, onClose, onSaved
 }: Props) {
   const [sands, setSands] = useState<string[]>(initialSands || []);
   const [goblet, setGoblet] = useState<string[]>(initialGoblet || []);
@@ -45,7 +45,7 @@ export default function InlineStatsEditor({
           updateCharacterArtifactStats(id: $id, sands: $sands, goblet: $goblet, circlet: $circlet, subStatsPriority: $subStatsPriority)
         }
       `, {
-        id: artifactId,
+        id: characterId,
         sands,
         goblet,
         circlet,

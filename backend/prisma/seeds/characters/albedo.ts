@@ -273,17 +273,6 @@ export const albedo = {
   bestWeapons: [
     {
         rank: 1,
-        nameVi: "Xá Tội",
-        nameEn: "Absolution",
-        subStat: "Sát Thương Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Estoc.png"
-    },
-    {
-        rank: 1,
         nameVi: "Thương Diệu",
         nameEn: "Azurelight",
         subStat: "Tỷ Lệ Bạo Kích",
@@ -291,7 +280,7 @@ export const albedo = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_OuterSword.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_OuterSword.webp"
     },
     {
         rank: 4,
@@ -302,7 +291,7 @@ export const albedo = {
         refinement: "R5",
         passiveDescVi: "Hồi năng lượng sau khi dùng Nộ.",
         passiveDescEn: "Hồi năng lượng sau khi dùng Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Bakufu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Bakufu.webp"
     },
     {
         rank: 5,
@@ -313,28 +302,8 @@ export const albedo = {
         refinement: "R1",
         passiveDescVi: "Tăng HP và Tấn Công.",
         passiveDescEn: "Tăng HP và Tấn Công.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.webp"
     }
 ],
-  bestArtifacts: [
-    {
-        setNameVi: "Thánh Di Vật Đề Cử",
-        setNameEn: "Thánh Di Vật Đề Cử",
-        pieces: 4,
-        sands: [
-            "ATK%"
-        ],
-        goblet: [
-            "Elemental DMG Bonus"
-        ],
-        circlet: [
-            "CRIT Rate"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
-    }
-]
+  bestArtifacts: []
 };

@@ -919,7 +919,7 @@ export const sangonomiyaKokomi = {
         refinement: "R1",
         passiveDescVi: "Vũ khí trấn phái. Tăng HP%, tăng sát thương Tấn Công Thường dựa trên giới hạn HP, hồi năng lượng khi dùng Q và trị liệu.",
         passiveDescEn: "Best-in-slot: HP% substat and passive that boosts Normal Attack DMG based on HP, with Energy Recharge on healing.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_FairyGarden.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_FairyGarden.webp"
     },
     {
         rank: 2,
@@ -930,7 +930,7 @@ export const sangonomiyaKokomi = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn F2P giúp tăng mạnh Sát Thương Nguyên Tố Thủy sau khi dùng kỹ năng, tối ưu hóa lượng sát thương đầu ra.",
         passiveDescEn: "Craftable option: Energy Recharge substat and passive that increases Hydro DMG after using Skill, amplifying burst damage.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Vorpal.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Vorpal.webp"
     },
     {
         rank: 3,
@@ -941,7 +941,7 @@ export const sangonomiyaKokomi = {
         refinement: "R5",
         passiveDescVi: "Lựa chọn rèn F2P hoàn hảo. Cung cấp chỉ số HP% lớn, đồng thời hồi năng lượng cho bản thân và hồi phục máu cho cả đội.",
         passiveDescEn: "Budget healer weapon: HP% substat and passive restoring energy and healing team, but lower personal DPS.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.webp"
     },
     {
         rank: 4,
@@ -952,7 +952,7 @@ export const sangonomiyaKokomi = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn tại Natlan tăng nhiều HP%, nội tại gia tăng sát thương Tấn Công Thường dựa theo lượng HP tối đa.",
         passiveDescEn: "Decent stat stick: HP% substat, but passive requiring shield or off-field not fully utilized by on-field Kokomi.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Isikhulu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Isikhulu.webp"
     },
     {
         rank: 5,
@@ -963,7 +963,7 @@ export const sangonomiyaKokomi = {
         refinement: "R5",
         passiveDescVi: "Vũ khí sự kiện tăng HP% và tạo sát thương diện rộng dựa theo lượng HP tối đa khi tấn công trúng kẻ địch.",
         passiveDescEn: "Event weapon: HP% substat, passive boosts Normal Attack DMG after healing, but requires shield for full effect.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_ConchSprayer.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_ConchSprayer.webp"
     },
     {
         rank: 6,
@@ -974,7 +974,7 @@ export const sangonomiyaKokomi = {
         refinement: "R5",
         passiveDescVi: "Hỗ trợ tuyệt vời cho đội hình Điện Cảm. Nội tại tăng sát thương nguyên tố Lôi cho đồng đội sau khi kích hoạt phản ứng.",
         passiveDescEn: "Supportive option: Energy Recharge substat, passive boosts team Electro DMG after Electro-Charged, good in taser comps.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Bakufu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Bakufu.webp"
     },
     {
         rank: 7,
@@ -985,7 +985,7 @@ export const sangonomiyaKokomi = {
         refinement: "R5",
         passiveDescVi: "Vũ khí 3 sao hỗ trợ thuần túy. Tăng mạnh Tấn Công% cho nhân vật tiếp theo ra sân, lý tưởng khi Kokomi đóng vai trò Support.",
         passiveDescEn: "Full support: HP% substat, but passive buffs next character's ATK — not recommended for personal DPS.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.webp"
     }
 ],
   bestArtifacts: [

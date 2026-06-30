@@ -595,7 +595,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Pleroma.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Pleroma.webp"
     },
     {
         rank: 1,
@@ -606,7 +606,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.webp"
     },
     {
         rank: 1,
@@ -617,7 +617,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_RadianceSword.webp"
     },
     {
         rank: 1,
@@ -628,7 +628,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_GoldenVerdict.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_GoldenVerdict.webp"
     },
     {
         rank: 1,
@@ -639,7 +639,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Deshret.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Deshret.webp"
     },
     {
         rank: 1,
@@ -650,7 +650,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Blackrock.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Blackrock.webp"
     },
     {
         rank: 1,
@@ -661,7 +661,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Kunwu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.webp"
     },
     {
         rank: 1,
@@ -672,7 +672,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Kione.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.webp"
     },
     {
         rank: 1,
@@ -683,7 +683,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Itadorimaru.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.webp"
     },
     {
         rank: 1,
@@ -694,7 +694,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_EmeraldSword.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_EmeraldSword.webp"
     },
     {
         rank: 1,
@@ -705,7 +705,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Zephyrus.webp"
     },
     {
         rank: 5,
@@ -716,7 +716,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Fleurfair.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Fleurfair.webp"
     },
     {
         rank: 5,
@@ -727,7 +727,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_MillenniaTuna.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_MillenniaTuna.webp"
     },
     {
         rank: 5,
@@ -738,7 +738,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Fossil.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Fossil.webp"
     },
     {
         rank: 5,
@@ -749,7 +749,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Maria.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Maria.webp"
     },
     {
         rank: 5,
@@ -760,7 +760,7 @@ export const chongyun = {
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Vorpal.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Vorpal.webp"
     }
 ],
   bestArtifacts: [

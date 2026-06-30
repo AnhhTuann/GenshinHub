@@ -11,12 +11,18 @@ interface Props {
   onSaved: (newPriority: string[]) => void;
 }
 
-const ALL_TALENTS = ['Normal Attack', 'Skill', 'Burst'];
+const ALL_TALENTS = ['Normal Attack', 'Elemental Skill', 'Elemental Burst'];
 
 export default function InlineTalentEditor({ characterId, initialPriority, onClose, onSaved }: Props) {
   // Merge initial priority with any missing talents
   const [priority, setPriority] = useState<string[]>(() => {
-    const list = [...(initialPriority || [])];
+    let list = (initialPriority || []).map(t => {
+      if (t === 'Skill') return 'Elemental Skill';
+      if (t === 'Burst') return 'Elemental Burst';
+      return t;
+    });
+    list = Array.from(new Set(list));
+    
     ALL_TALENTS.forEach(t => {
       if (!list.includes(t)) list.push(t);
     });

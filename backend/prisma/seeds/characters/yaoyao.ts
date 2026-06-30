@@ -280,7 +280,7 @@ export const yaoyao = {
         refinement: "R5",
         passiveDescVi: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.",
         passiveDescEn: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Mori.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.webp"
     },
     {
         rank: 5,
@@ -291,7 +291,7 @@ export const yaoyao = {
         refinement: "R1",
         passiveDescVi: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.",
         passiveDescEn: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.webp"
     }
 ],
   bestArtifacts: [

@@ -590,7 +590,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Tấn công cơ bản cao và Sát Thương Bạo Kích cực lớn. Nội tại tăng sát thương Trọng Kích và tăng Tấn Công%, rất thích hợp cho lối chơi ngắm bắn của Amber.",
         passiveDescEn: "Tấn công cơ bản cao và Sát Thương Bạo Kích cực lớn. Nội tại tăng sát thương Trọng Kích và tăng Tấn Công%, rất thích hợp cho lối chơi ngắm bắn của Amber.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Pledge.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Pledge.webp"
     },
     {
         rank: 2,
@@ -601,7 +601,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Chỉ số Sát Thương Bạo Kích khổng lồ (88.2%). Nội tại tăng sát thương khi ở gần kẻ địch, giúp tối ưu hóa lượng dame phản ứng Tan Chảy.",
         passiveDescEn: "Chỉ số Sát Thương Bạo Kích khổng lồ (88.2%). Nội tại tăng sát thương khi ở gần kẻ địch, giúp tối ưu hóa lượng dame phản ứng Tan Chảy.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Kirin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Kirin.webp"
     },
     {
         rank: 3,
@@ -612,7 +612,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Cung cấp lượng lớn Sát Thương Bạo Kích và nội tại tăng Tấn Công%, thích hợp cho lối chơi ngắm bắn kết hợp xả chiêu.",
         passiveDescEn: "Cung cấp lượng lớn Sát Thương Bạo Kích và nội tại tăng Tấn Công%, thích hợp cho lối chơi ngắm bắn kết hợp xả chiêu.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Narukami.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Narukami.webp"
     },
     {
         rank: 4,
@@ -623,7 +623,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Tỷ Lệ Bạo Kích cao và nội tại tăng thêm Sát Thương Bạo Kích%. Cung cấp thêm sát thương vật lý diện rộng thỉnh thoảng, rất đa dụng.",
         passiveDescEn: "Tỷ Lệ Bạo Kích cao và nội tại tăng thêm Sát Thương Bạo Kích%. Cung cấp thêm sát thương vật lý diện rộng thỉnh thoảng, rất đa dụng.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.webp"
     },
     {
         rank: 5,
@@ -634,7 +634,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích. Nội tại tích tầng tăng Tấn Công% khi đánh trúng địch bằng Kỹ Năng Nguyên Tố, Nộ, Thường và Trọng Kích.",
         passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích. Nội tại tích tầng tăng Tấn Công% khi đánh trúng địch bằng Kỹ Năng Nguyên Tố, Nộ, Thường và Trọng Kích.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Worldbane.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Worldbane.webp"
     },
     {
         rank: 6,
@@ -645,7 +645,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Lựa chọn 3 sao F2P cực mạnh nhờ lượng Tỷ Lệ Bạo Kích dồi dào và nội tại tăng mạnh sát thương đòn ngắm bắn trong cự ly gần.",
         passiveDescEn: "Lựa chọn 3 sao F2P cực mạnh nhờ lượng Tỷ Lệ Bạo Kích dồi dào và nội tại tăng mạnh sát thương đòn ngắm bắn trong cự ly gần.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Sling.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Sling.webp"
     },
     {
         rank: 7,
@@ -656,7 +656,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Tấn Cống% cực cao. Tăng sát thương Tấn Công Thường và Ngắm Bắn, sát thương tăng thêm dựa trên thời gian bay của mũi tên.",
         passiveDescEn: "Tấn Cống% cực cao. Tăng sát thương Tấn Công Thường và Ngắm Bắn, sát thương tăng thêm dựa trên thời gian bay của mũi tên.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Amos.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Amos.webp"
     },
     {
         rank: 8,
@@ -667,7 +667,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Tỷ Lệ Bạo Kích cao. Nội tại tăng sát thương Trọng Kích dựa trên Tinh Thông Nguyên Tố, cực mạnh trong đội hình Tan Chảy.",
         passiveDescEn: "Tỷ Lệ Bạo Kích cao. Nội tại tăng sát thương Trọng Kích dựa trên Tinh Thông Nguyên Tố, cực mạnh trong đội hình Tan Chảy.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Ayus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Ayus.webp"
     },
     {
         rank: 9,
@@ -678,7 +678,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Vũ khí Event F2P tăng Tinh Thông Nguyên Tố sau khi đánh trúng địch bằng trọng kích, trực tiếp khuếch đại sát thương phản ứng.",
         passiveDescEn: "Vũ khí Event F2P tăng Tinh Thông Nguyên Tố sau khi đánh trúng địch bằng trọng kích, trực tiếp khuếch đại sát thương phản ứng.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Ibis.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Ibis.webp"
     },
     {
         rank: 10,
@@ -689,7 +689,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Dòng phụ Tỷ Lệ Bạo Kích và nội tại tạo gió lốc nhỏ gom quái, giúp Amber dễ dàng thực hiện các phát bắn chuẩn xác.",
         passiveDescEn: "Dòng phụ Tỷ Lệ Bạo Kích và nội tại tạo gió lốc nhỏ gom quái, giúp Amber dễ dàng thực hiện các phát bắn chuẩn xác.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Viridescent.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Viridescent.webp"
     },
     {
         rank: 11,
@@ -700,7 +700,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn Inazuma F2P tăng mạnh sát thương đòn ngắm bắn, hiệu quả tối đa khi giữ đầy thanh năng lượng Nộ.",
         passiveDescEn: "Vũ khí rèn Inazuma F2P tăng mạnh sát thương đòn ngắm bắn, hiệu quả tối đa khi giữ đầy thanh năng lượng Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Bakufu.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Bakufu.webp"
     },
     {
         rank: 12,
@@ -711,7 +711,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Cung cấp lượng lớn Tấn Công% sau khi bắn trúng điểm yếu của kẻ địch, lựa chọn ngắm bắn bắn tỉa rất tốt.",
         passiveDescEn: "Cung cấp lượng lớn Tấn Công% sau khi bắn trúng điểm yếu của kẻ địch, lựa chọn ngắm bắn bắn tỉa rất tốt.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Proto.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Proto.webp"
     },
     {
         rank: 13,
@@ -722,7 +722,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn Fontaine tăng mạnh sát thương đòn đánh sau khi nhận trị liệu, dễ kích hoạt khi đi cùng Healer.",
         passiveDescEn: "Vũ khí rèn Fontaine tăng mạnh sát thương đòn đánh sau khi nhận trị liệu, dễ kích hoạt khi đi cùng Healer.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Vorpal.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Vorpal.webp"
     },
     {
         rank: 14,
@@ -733,7 +733,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Tăng Tinh Thông Nguyên Tố và nhận thêm Tấn Công% sau khi dùng Kỹ Năng Nguyên Tố, hữu ích cho các pha phản ứng.",
         passiveDescEn: "Tăng Tinh Thông Nguyên Tố và nhận thêm Tấn Công% sau khi dùng Kỹ Năng Nguyên Tố, hữu ích cho các pha phản ứng.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Fleurfair.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Fleurfair.webp"
     },
     {
         rank: 15,
@@ -744,7 +744,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Tăng mạnh sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ, thích hợp cho lối chơi quickswap ném bù nhìn rối và xả Nộ.",
         passiveDescEn: "Tăng mạnh sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ, thích hợp cho lối chơi quickswap ném bù nhìn rối và xả Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Troupe.webp"
     },
     {
         rank: 16,
@@ -755,7 +755,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Vũ khí 3 sao F2P hoàn hảo cho lối chơi bắn điểm yếu nhờ lượng lớn Sát Thương Bạo Kích và nội tại tăng 48% dame điểm yếu.",
         passiveDescEn: "Vũ khí 3 sao F2P hoàn hảo cho lối chơi bắn điểm yếu nhờ lượng lớn Sát Thương Bạo Kích và nội tại tăng 48% dame điểm yếu.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Arjuna.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Arjuna.webp"
     },
     {
         rank: 17,
@@ -766,7 +766,7 @@ export const amber = {
         refinement: "R5",
         passiveDescVi: "Vũ khí rèn Sumeru tăng Tinh Thông Nguyên Tố sau khi dùng kỹ năng, bổ trợ tốt cho các phản ứng nguyên tố.",
         passiveDescEn: "Vũ khí rèn Sumeru tăng Tinh Thông Nguyên Tố sau khi dùng kỹ năng, bổ trợ tốt cho các phản ứng nguyên tố.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Arakalari.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Arakalari.webp"
     },
     {
         rank: 18,
@@ -777,7 +777,7 @@ export const amber = {
         refinement: "R1",
         passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích. Đòn trọng kích trúng địch gây thêm sát thương Hỏa và tăng sát thương trọng kích tiếp theo lên mục tiêu đó.",
         passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích. Đòn trọng kích trúng địch gây thêm sát thương Hỏa và tăng sát thương trọng kích tiếp theo lên mục tiêu đó.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Gurabad.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Gurabad.webp"
     }
 ],
   bestArtifacts: [

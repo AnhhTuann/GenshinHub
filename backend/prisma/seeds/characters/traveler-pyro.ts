@@ -292,7 +292,7 @@ export const travelerPyro = {
         refinement: "R5",
         passiveDescVi: "Kích hoạt bạo kích có tỷ lệ sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, hồi năng lượng cho toàn đội.",
         passiveDescEn: "CRIT hits generate Energy particles, accelerating team Burst uptime.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Zephyrus.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.webp"
     },
     {
         rank: 2,
@@ -303,7 +303,7 @@ export const travelerPyro = {
         refinement: "R1",
         passiveDescVi: "Sau khi dùng Kỹ Năng Nguyên Tố hoặc Nộ, tăng sát thương cho toàn đội 24% trong 15s.",
         passiveDescEn: "After using Skill or Burst, increases party damage by 24% for 15s.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_XochitlsTube.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_XochitlsTube.webp"
     },
     {
         rank: 3,
@@ -314,7 +314,7 @@ export const travelerPyro = {
         refinement: "R1",
         passiveDescVi: "Kích hoạt phản ứng nguyên tố tăng Tấn Công đánh thường/trọng kích/tấn công khi đáp thêm 16% và Tấn Công 20% cho cả đội.",
         passiveDescEn: "Triggering reactions builds stacks; at max, boosts team's Normal/Charged/Plunging ATK by 16% and ATK by 20%.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Widsith.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Widsith.webp"
     },
     {
         rank: 4,
@@ -325,7 +325,7 @@ export const travelerPyro = {
         refinement: "R1",
         passiveDescVi: "Gia tăng HP và chuyển hóa HP thành Tinh Thông Nguyên Tố cho toàn đội từ 100-200 điểm, tối ưu hóa phản ứng.",
         passiveDescEn: "HP% substat and passive grant team 100-200 Elemental Mastery, perfect for Vaporize/Melt.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Deshret.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Deshret.webp"
     },
     {
         rank: 5,
@@ -336,7 +336,7 @@ export const travelerPyro = {
         refinement: "R5",
         passiveDescVi: "Khi Kỹ Năng Nguyên Tố gây sát thương có tỷ lệ làm mới thời gian chờ kỹ năng đó, cho phép kích hoạt kỹ năng liên tiếp.",
         passiveDescEn: "Resets Skill cooldown on hit, allowing double Tap Ring or Hold Coordinated attacks.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Sword_Fossil.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Fossil.webp"
     }
 ],
   bestArtifacts: [

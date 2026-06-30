@@ -280,7 +280,7 @@ export const faruzan = {
         refinement: "R5",
         passiveDescVi: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
         passiveDescEn: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Troupe.webp"
     },
     {
         rank: 5,
@@ -291,7 +291,7 @@ export const faruzan = {
         refinement: "R1",
         passiveDescVi: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
         passiveDescEn: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
-        iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.webp"
     }
 ],
   bestArtifacts: [

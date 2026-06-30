@@ -62,47 +62,132 @@ export default function Navbar() {
 
           {/* ── Logo ── */}
           <Link
-            className="flex items-center gap-2.5 shrink-0 group"
+            className="flex items-center gap-3 shrink-0 group"
             href="/"
             onClick={handleLogoClick}
           >
-            <div className="relative w-8 h-8 flex items-center justify-center">
+            {/* Premium multi-layered SVG emblem */}
+            <div
+              className="relative w-10 h-10 flex items-center justify-center rounded-xl overflow-visible"
+              style={{
+                background: 'linear-gradient(135deg, rgba(200,168,75,0.12) 0%, rgba(8,8,18,0.9) 100%)',
+                border: '1px solid rgba(200,168,75,0.25)',
+                boxShadow: '0 0 20px rgba(200,168,75,0.15), inset 0 1px 0 rgba(255,255,255,0.06)',
+                transition: 'box-shadow 0.3s ease',
+              }}
+            >
               <svg
-                className="w-7 h-7"
-                viewBox="0 0 100 100"
+                viewBox="0 0 80 80"
                 fill="none"
+                className="w-7 h-7"
                 style={{
-                  filter: 'drop-shadow(0 0 10px rgba(200,168,75,0.55))',
+                  filter: 'drop-shadow(0 0 8px rgba(200,168,75,0.5))',
                   transition: 'transform 0.6s cubic-bezier(0.34,1.56,0.64,1)',
                 }}
               >
                 <defs>
-                  <linearGradient id="logo-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"   stopColor="#f0d080" />
-                    <stop offset="40%"  stopColor="#c8a84b" />
-                    <stop offset="100%" stopColor="#8a6820" />
+                  <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"   stopColor="#fff8e1" />
+                    <stop offset="45%"  stopColor="#f0c84b" />
+                    <stop offset="100%" stopColor="#7a5a10" />
                   </linearGradient>
+                  <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"   stopColor="rgba(255,248,225,0.7)" />
+                    <stop offset="100%" stopColor="rgba(200,168,75,0.15)" />
+                  </linearGradient>
+                  <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%"   stopColor="rgba(255,248,225,0.9)" />
+                    <stop offset="60%"  stopColor="rgba(240,200,75,0.5)" />
+                    <stop offset="100%" stopColor="rgba(200,168,75,0)" />
+                  </radialGradient>
                 </defs>
-                <path d="M50 2 L60 40 L98 50 L60 60 L50 98 L40 60 L2 50 L40 40 Z" fill="url(#logo-gold)" />
-                <path d="M50 18 L56 44 L82 50 L56 56 L50 82 L44 56 L18 50 L44 44 Z" fill="rgba(255,255,255,0.12)" />
+
+                {/* Outer ring with tick marks */}
+                <circle cx="40" cy="40" r="37" stroke="url(#g1)" strokeWidth="0.8" strokeOpacity="0.45" fill="none" />
+                {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => {
+                  const rad = (deg * Math.PI) / 180;
+                  const x1 = 40 + 35 * Math.sin(rad);
+                  const y1 = 40 - 35 * Math.cos(rad);
+                  const isMajor = deg % 90 === 0;
+                  const x2 = 40 + (isMajor ? 30 : 32) * Math.sin(rad);
+                  const y2 = 40 - (isMajor ? 30 : 32) * Math.cos(rad);
+                  return (
+                    <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2}
+                      stroke="url(#g1)"
+                      strokeWidth={isMajor ? 1.2 : 0.6}
+                      strokeOpacity={isMajor ? 0.85 : 0.4}
+                    />
+                  );
+                })}
+
+                {/* 4-pointed outer diamond (big) */}
+                <path
+                  d="M40 6 L46 34 L74 40 L46 46 L40 74 L34 46 L6 40 L34 34 Z"
+                  fill="url(#g2)"
+                  stroke="url(#g1)"
+                  strokeWidth="0.7"
+                  strokeOpacity="0.7"
+                />
+
+                {/* 4-pointed inner diamond (small, rotated 45°) */}
+                <path
+                  d="M40 20 L43.5 36.5 L57 40 L43.5 43.5 L40 57 L36.5 43.5 L23 40 L36.5 36.5 Z"
+                  fill="url(#g1)"
+                  fillOpacity="0.85"
+                />
+
+                {/* Center hexagon gem facets */}
+                <polygon
+                  points="40,30 46.9,35 46.9,45 40,50 33.1,45 33.1,35"
+                  fill="url(#g1)"
+                  fillOpacity="0.4"
+                  stroke="url(#g1)"
+                  strokeWidth="0.5"
+                  strokeOpacity="0.8"
+                />
+
+                {/* Diagonal cross lines */}
+                <line x1="26" y1="26" x2="54" y2="54" stroke="url(#g1)" strokeWidth="0.5" strokeOpacity="0.3" />
+                <line x1="54" y1="26" x2="26" y2="54" stroke="url(#g1)" strokeWidth="0.5" strokeOpacity="0.3" />
+
+                {/* Center bright dot */}
+                <circle cx="40" cy="40" r="3.5" fill="url(#centerGlow)" />
+                <circle cx="40" cy="40" r="1.8" fill="white" fillOpacity="0.95" />
               </svg>
             </div>
-            <div className="hidden sm:flex flex-col leading-none">
+
+            {/* Text */}
+            <div className="hidden sm:flex flex-col leading-none gap-[2px]">
               <span
-                className="text-[1rem] font-black tracking-[0.12em] uppercase"
+                className="text-[15px] font-black tracking-[0.14em] uppercase leading-none"
                 style={{
                   fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                  background: 'linear-gradient(135deg, #f0d080 0%, #c8a84b 50%, #f0d080 100%)',
+                  background: 'linear-gradient(135deg, #fff8e1 0%, #f0c84b 40%, #c8a84b 70%, #f0d080 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
+                  textShadow: 'none',
                 }}
               >
                 Genshin
               </span>
-              <span className="text-[9px] font-bold tracking-[0.32em] uppercase text-white/35 -mt-0.5">
-                Hub · Wiki
-              </span>
+              <div className="flex items-center gap-1.5">
+                <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(200,168,75,0.6), transparent)' }} />
+                <span
+                  className="text-[8px] font-bold tracking-[0.35em] uppercase"
+                  style={{ color: 'rgba(200,168,75,0.55)' }}
+                >
+                  Hub
+                </span>
+                <div className="w-0.5 h-0.5 rounded-full" style={{ background: 'rgba(200,168,75,0.4)' }} />
+                <span
+                  className="text-[8px] font-bold tracking-[0.35em] uppercase"
+                  style={{ color: 'rgba(255,255,255,0.22)' }}
+                >
+                  Wiki
+                </span>
+                <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.2))' }} />
+              </div>
             </div>
           </Link>
 

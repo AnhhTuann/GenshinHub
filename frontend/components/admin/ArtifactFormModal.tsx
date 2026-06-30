@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { fetchGraphQL } from '@/lib/graphql';
 
 interface ArtifactFormData {
@@ -165,8 +166,8 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
               <div className="flex gap-3">
                 <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/images/artifacts/..." className={inputClass} />
                 {form.iconUrl && (
-                  <div className="w-11 h-11 flex-shrink-0 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
-                    <img src={form.iconUrl} alt="preview" className="w-9 h-9 object-contain" onError={e => (e.currentTarget.style.display = 'none')} />
+                  <div className="relative w-11 h-11 flex-shrink-0 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
+                    <Image src={form.iconUrl} alt="preview" fill sizes="36px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
                   </div>
                 )}
               </div>

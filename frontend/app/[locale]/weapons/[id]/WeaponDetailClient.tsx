@@ -6,7 +6,9 @@ import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useAdmin } from '@/hooks/useAdmin';
-import WeaponFormModal from '@/components/admin/WeaponFormModal';
+import dynamic from 'next/dynamic';
+
+const WeaponFormModal = dynamic(() => import('@/components/admin/WeaponFormModal'), { ssr: false });
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';

@@ -58,6 +58,15 @@ interface SplashArtOverlayProps {
 
 export default function SplashArtOverlay({ open, onClose, character, href, locale }: SplashArtOverlayProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const el = character.element;
   const particleConfig = ELEMENT_PARTICLES[el] ?? ELEMENT_PARTICLES.Pyro;
   const glowColor = ELEMENT_GLOW[el] ?? 'rgba(255,255,255,0.2)';
@@ -123,48 +132,40 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
           />
 
           {/* ── Particle System ── */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {Array.from({ length: particleConfig.count }).map((_, i) => {
-              const pseudoRandom = (seed: number) => {
-                const x = Math.sin(seed) * 10000;
-                return x - Math.floor(x);
-              };
-              const left = 30 + pseudoRandom(i) * 45;
-              const delay = pseudoRandom(i + 100) * 3;
-              const dur = 2.5 + pseudoRandom(i + 200) * 3;
-              const size = 8 + pseudoRandom(i + 300) * 14;
-              const driftX = (pseudoRandom(i + 400) - 0.5) * 60;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 150, x: 0 }}
-                  animate={{ 
-                    opacity: [0, 0.8, 0], 
-                    y: -50,
-                    x: driftX 
-                  }}
-                  transition={{
-                    duration: dur,
-                    delay: delay,
-                    repeat: Infinity,
-                    repeatDelay: pseudoRandom(i + 500) * 2,
-                    ease: 'easeOut'
-                  }}
-                  style={{
-                    position: 'absolute',
-                    left: `${left}%`,
-                    bottom: '15%',
-                    color: particleConfig.color,
-                    fontSize: `${size}px`,
-                    filter: `drop-shadow(0 0 ${size / 2}px ${particleConfig.color})`,
-                    textShadow: `0 0 ${size}px ${particleConfig.color}`,
-                  }}
-                >
-                  {particleConfig.symbol}
-                </motion.div>
-              );
-            })}
-          </div>
+          {!isMobile && (
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              {Array.from({ length: particleConfig.count }).map((_, i) => {
+                const pseudoRandom = (seed: number) => {
+                  const x = Math.sin(seed) * 10000;
+                  return x - Math.floor(x);
+                };
+                const left = 30 + pseudoRandom(i) * 45;
+                const delay = pseudoRandom(i + 100) * 3;
+                const dur = 2.5 + pseudoRandom(i + 200) * 3;
+                const size = 8 + pseudoRandom(i + 300) * 14;
+                const driftX = (pseudoRandom(i + 400) - 0.5) * 60;
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      left: `${left}%`,
+                      bottom: '15%',
+                      color: particleConfig.color,
+                      fontSize: `${size}px`,
+                      filter: `drop-shadow(0 0 ${size / 2}px ${particleConfig.color})`,
+                      textShadow: `0 0 ${size}px ${particleConfig.color}`,
+                      opacity: 0,
+                      '--drift-x': `${driftX}px`,
+                      animation: `float-particle ${dur}s ease-out ${delay}s infinite`
+                    } as React.CSSProperties}
+                  >
+                    {particleConfig.symbol}
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* ── Main modal card ── */}
           <motion.div

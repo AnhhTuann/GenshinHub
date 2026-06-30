@@ -668,3 +668,9 @@ select option {
   font-weight: 600;
   letter-spacing: 0.05em;
 }
+
+@keyframes float-particle {
+  0% { transform: translateY(150px) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  100% { transform: translateY(-50px) translateX(var(--drift-x)); opacity: 0; }
+}

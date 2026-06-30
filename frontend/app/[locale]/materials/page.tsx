@@ -5,7 +5,9 @@ import { fetchGraphQL, GET_MATERIALS } from '@/lib/graphql';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import toast from 'react-hot-toast';
-import MaterialFormModal from '@/components/admin/MaterialFormModal';
+import dynamic from 'next/dynamic';
+
+const MaterialFormModal = dynamic(() => import('@/components/admin/MaterialFormModal'), { ssr: false });
 
 interface MaterialData {
   id: string;

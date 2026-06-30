@@ -4,7 +4,9 @@ import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, 
 import Image from "next/image";
 import toast from 'react-hot-toast';
 import ManageTiersSection from "@/components/admin/ManageTiersSection";
-import AICharacterGenerator from "@/components/admin/AICharacterGenerator";
+import dynamic from 'next/dynamic';
+
+const AICharacterGenerator = dynamic(() => import('@/components/admin/AICharacterGenerator'), { ssr: false });
 
 export default function AdminTierListPage() {
   const [characters, setCharacters] = useState<any[]>([]);

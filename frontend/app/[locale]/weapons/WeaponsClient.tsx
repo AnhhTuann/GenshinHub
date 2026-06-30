@@ -5,7 +5,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
-import WeaponFormModal from '@/components/admin/WeaponFormModal';
+import dynamic from 'next/dynamic';
+
+const WeaponFormModal = dynamic(() => import('@/components/admin/WeaponFormModal'), { ssr: false });
 
 interface Weapon {
   id: string;

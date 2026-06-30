@@ -5,7 +5,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
-import ArtifactFormModal from '@/components/admin/ArtifactFormModal';
+import dynamic from 'next/dynamic';
+
+const ArtifactFormModal = dynamic(() => import('@/components/admin/ArtifactFormModal'), { ssr: false });
 
 interface ArtifactSet {
   id: string;

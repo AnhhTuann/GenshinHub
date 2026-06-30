@@ -2,10 +2,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { fetchGraphQL } from '@/lib/graphql';
+import dynamic from 'next/dynamic';
 import toast from 'react-hot-toast';
 import { useConfirm } from '@/components/admin/ui/ConfirmModal';
 import Pagination from '@/components/admin/ui/Pagination';
-import CharacterFormModal from './CharacterFormModal';
+
+const CharacterFormModal = dynamic(() => import('./CharacterFormModal'), { ssr: false });
 
 const ELEM_COLOR: Record<string, string> = {
   Pyro:'#ff6b4a', Hydro:'#4fc3f7', Cryo:'#80deea',

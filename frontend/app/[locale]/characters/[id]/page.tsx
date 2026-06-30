@@ -212,7 +212,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
       {/* ── HERO BANNER ── */}
       <AdminEditableSplash characterId={character.id}>
-        <div className="relative w-full overflow-hidden" style={{ minHeight: 'clamp(320px, 55vw, 520px)' }}>
+        <div className="relative w-full overflow-hidden" style={{ minHeight: 'clamp(400px, 50vw, 650px)' }}>
           {/* Splash art background */}
           {character.splashArtUrl && (
             <ParallaxSplash imageUrl={character.splashArtUrl} />

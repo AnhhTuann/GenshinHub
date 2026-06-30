@@ -10,10 +10,10 @@ export default function ParallaxSplash({ imageUrl }: { imageUrl: string }) {
   return (
     <motion.div
       style={{ y, opacity }}
-      className="absolute inset-0 w-full h-[120%] overflow-hidden"
+      className="absolute -top-[150px] -bottom-[150px] left-0 right-0 w-full pointer-events-none"
     >
-      {/* Blurred background to fill the wide screen */}
-      <div className="absolute inset-0 w-full h-full" style={{ filter: 'blur(20px) brightness(0.4) saturate(1.2)', transform: 'scale(1.1)' }}>
+      {/* Blurred background to fill the wide screen and cover parallax offset */}
+      <div className="absolute inset-0 w-full h-full" style={{ filter: 'blur(20px) brightness(0.4) saturate(1.2)' }}>
         <Image
           src={imageUrl}
           alt="Splash Background"
@@ -25,15 +25,15 @@ export default function ParallaxSplash({ imageUrl }: { imageUrl: string }) {
         />
       </div>
       
-      {/* Full character image in the center */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Full character image in the center, constrained to the actual viewport height to avoid cut-offs */}
+      <div className="absolute top-[150px] bottom-[150px] left-0 right-0 w-full">
         <Image
           src={imageUrl}
           alt="Character Splash Art"
           fill
           sizes="100vw"
-          quality={90}
-          className="object-contain object-center"
+          quality={100}
+          className="object-contain object-bottom sm:object-center"
           priority
         />
       </div>

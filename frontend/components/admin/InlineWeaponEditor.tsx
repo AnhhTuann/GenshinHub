@@ -22,11 +22,12 @@ interface WeaponData {
 interface Props {
   characterId: string;
   weaponType: string;
+  defaultConstellation?: string;
   onClose: () => void;
   onSaved: (newWeapon: any) => void;
 }
 
-export default function InlineWeaponEditor({ characterId, weaponType, onClose, onSaved }: Props) {
+export default function InlineWeaponEditor({ characterId, weaponType, defaultConstellation, onClose, onSaved }: Props) {
   const [weapons, setWeapons] = useState<WeaponData[]>([]);
   const [search, setSearch] = useState('');
   const [selectedWeapon, setSelectedWeapon] = useState<WeaponData | null>(null);
@@ -58,15 +59,17 @@ export default function InlineWeaponEditor({ characterId, weaponType, onClose, o
     if (!selectedWeapon) return;
     setLoading(true);
     try {
-      const result = await fetchGraphQL(`
-        mutation AddCharacterWeapon($characterId: String!, $weaponId: String!, $rank: Int!, $isF2P: Boolean!) {
-          addCharacterWeapon(characterId: $characterId, weaponId: $weaponId, rank: $rank, isF2P: $isF2P)
+      const query = `
+        mutation AddCharacterWeapon($characterId: String!, $weaponId: String!, $rank: Int!, $isF2P: Boolean!, $constellation: String) {
+          addCharacterWeapon(characterId: $characterId, weaponId: $weaponId, rank: $rank, isF2P: $isF2P, constellation: $constellation)
         }
-      `, {
+      `;
+      await fetchGraphQL(query, {
         characterId,
         weaponId: selectedWeapon.id,
-        rank,
-        isF2P
+        rank: parseInt(rank.toString()),
+        isF2P,
+        constellation: defaultConstellation || 'C0',
       });
 
       // Fetch the full weapon record to build the optimistic UI data

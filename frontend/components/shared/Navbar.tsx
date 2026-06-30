@@ -29,6 +29,12 @@ export default function Navbar() {
     if (typeof window !== 'undefined') window.dispatchEvent(new Event('reset-search'));
   };
 
+  const handleSearchClick = () => {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+    }
+  };
+
   const navLinks = [
     { href: '/characters', label: t('characters'), icon: '⚔️' },
     { href: '/weapons',    label: t('weapons'),    icon: '🗡️' },
@@ -106,11 +112,11 @@ export default function Navbar() {
                 <circle cx="40" cy="40" r="37" stroke="url(#g1)" strokeWidth="0.8" strokeOpacity="0.45" fill="none" />
                 {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => {
                   const rad = (deg * Math.PI) / 180;
-                  const x1 = 40 + 35 * Math.sin(rad);
-                  const y1 = 40 - 35 * Math.cos(rad);
+                  const x1 = (40 + 35 * Math.sin(rad)).toFixed(2);
+                  const y1 = (40 - 35 * Math.cos(rad)).toFixed(2);
                   const isMajor = deg % 90 === 0;
-                  const x2 = 40 + (isMajor ? 30 : 32) * Math.sin(rad);
-                  const y2 = 40 - (isMajor ? 30 : 32) * Math.cos(rad);
+                  const x2 = (40 + (isMajor ? 30 : 32) * Math.sin(rad)).toFixed(2);
+                  const y2 = (40 - (isMajor ? 30 : 32) * Math.cos(rad)).toFixed(2);
                   return (
                     <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2}
                       stroke="url(#g1)"
@@ -222,6 +228,24 @@ export default function Navbar() {
 
           {/* ── Right Controls ── */}
           <div className="flex items-center gap-2 shrink-0">
+            {/* Search Button (Triggers Cmd+K) */}
+            <button 
+              onClick={handleSearchClick}
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold transition-colors"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              Search
+              <kbd className="ml-1 px-1.5 py-0.5 rounded bg-black/40 text-[9px] border border-white/10 font-mono">Ctrl+K</kbd>
+            </button>
+            <button 
+              onClick={handleSearchClick}
+              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-xl transition-colors"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </button>
+
             {/* Language switch */}
             <div
               className="flex items-center rounded-xl overflow-hidden"

@@ -18,7 +18,6 @@ const QUICK_ACTIONS = [
   { label: 'Manage Tiers',  href: '/admin/tierlist',   icon: '🏆',    color: '#ffd54f' },
   { label: 'Backup DB',     href: '/admin/backups',    icon: '💾',    color: '#aed581' },
   { label: 'Export Seeds',  href: '/admin/export',     icon: '📤',    color: '#ce93d8' },
-  { label: 'Settings',      href: '/admin/settings',   icon: '⚙️',    color: '#94a3b8' },
 ];
 
 export default function AdminDashboard() {

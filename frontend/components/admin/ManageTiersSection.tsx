@@ -83,84 +83,86 @@ export default function ManageTiersSection({
   };
 
   return (
-    <section className="bg-white/5 border border-white/10 rounded-xl p-6">
-      <h2 className="text-2xl font-semibold text-cyan-400 mb-6">Manage Tiers</h2>
+    <section className="mb-8">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #a78bfa, #8b5cf6)' }} />
+        <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Manage Tiers</h2>
+      </div>
       
       {/* Add New Tier */}
-      <div className="flex gap-4 mb-8 bg-black/30 p-4 rounded-lg border border-white/5 flex-wrap">
-        <input 
-          type="text" 
-          placeholder="New Tier Name (e.g. SSS)" 
-          value={newTierName}
-          onChange={e => setNewTierName(e.target.value)}
-          className="bg-black/50 border border-white/20 rounded px-3 py-2 flex-1 min-w-[200px]"
-        />
-        <select 
-          value={newTierColor}
-          onChange={e => setNewTierColor(e.target.value)}
-          className="bg-black/50 border border-white/20 rounded px-3 py-2 w-48"
-        >
-          {COLOR_OPTIONS.map(c => (
-            <option key={c.value} value={c.value} className="bg-[#0d0d14]">
-              {c.label}
-            </option>
-          ))}
-        </select>
+      <div className="flex gap-3 mb-6 p-4 rounded-2xl flex-wrap items-end" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
+        <div className="flex flex-col gap-1.5 flex-1 min-w-[200px]">
+          <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">New Tier Name</label>
+          <input 
+            type="text" placeholder="e.g. SSS" value={newTierName} onChange={e => setNewTierName(e.target.value)}
+            className="w-full px-3 py-2 rounded-xl text-sm outline-none font-bold"
+            style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
+          />
+        </div>
+        <div className="flex flex-col gap-1.5 w-48 shrink-0">
+          <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">Theme Color</label>
+          <select 
+            value={newTierColor} onChange={e => setNewTierColor(e.target.value)}
+            className="w-full px-3 py-2 rounded-xl text-sm outline-none font-bold appearance-none"
+            style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
+          >
+            {COLOR_OPTIONS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
+          </select>
+        </div>
         <button 
-          onClick={handleAddTier}
-          disabled={loading || !newTierName}
-          className="bg-cyan-600 hover:bg-cyan-500 text-white font-bold px-6 py-2 rounded disabled:opacity-50 transition-colors"
+          onClick={handleAddTier} disabled={loading || !newTierName}
+          className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-40 h-[38px] shrink-0"
+          style={{ background:'linear-gradient(135deg, #a78bfa, #8b5cf6)', color:'#fff', boxShadow:'0 4px 12px rgba(139,92,246,0.25)' }}
         >
           Add Tier
         </button>
       </div>
 
       {/* List of Tiers with Drag & Drop */}
-      <div className="space-y-2">
-        <div className="grid grid-cols-[3rem_1fr_1fr_4rem] gap-4 px-4 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider hidden sm:grid">
+      <div className="space-y-2 rounded-2xl overflow-hidden" style={{ background:'rgba(8,8,18,0.4)', border:'1px solid rgba(255,255,255,0.03)' }}>
+        <div className="grid gap-4 px-4 py-2.5 text-[10px] font-black text-white/25 uppercase tracking-widest hidden sm:grid border-b" style={{ gridTemplateColumns: '40px 1fr 1fr 60px', borderColor: 'rgba(255,255,255,0.05)' }}>
           <div>Drag</div>
           <div>Tier Name</div>
           <div>Theme Color</div>
           <div className="text-right">Actions</div>
         </div>
 
-        <Reorder.Group axis="y" values={tierRanks} onReorder={handleReorder} className="space-y-2">
+        <Reorder.Group axis="y" values={tierRanks} onReorder={handleReorder} className="w-full">
           {tierRanks.map((tier) => (
             <Reorder.Item 
               key={tier.id} 
               value={tier}
-              className="grid grid-cols-[3rem_1fr_1fr_4rem] gap-4 items-center bg-[#0d0d14] border border-white/10 p-3 rounded-lg cursor-grab active:cursor-grabbing hover:border-white/20 transition-colors"
+              className="grid gap-4 items-center px-4 py-3 cursor-grab active:cursor-grabbing hover:bg-white/5 transition-colors border-b last:border-b-0"
+              style={{ gridTemplateColumns: '40px 1fr 1fr 60px', borderColor: 'rgba(255,255,255,0.04)' }}
             >
-              <div className="text-gray-500 pl-2 cursor-grab active:cursor-grabbing">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" /></svg>
+              <div className="text-white/20 pl-2 cursor-grab active:cursor-grabbing">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" /></svg>
               </div>
-              <div className="font-black text-lg text-white">
+              <div className="font-black text-sm text-white/90">
                 {tier.name}
               </div>
               <div>
                 <select 
-                  value={tier.colorBase}
-                  onChange={e => handleUpdateColor(tier.id, e.target.value)}
-                  className="bg-black/50 border border-white/10 rounded px-2 py-1 text-sm text-gray-300 w-full"
+                  value={tier.colorBase} onChange={e => handleUpdateColor(tier.id, e.target.value)}
+                  className="px-2 py-1.5 rounded-lg text-xs font-bold outline-none appearance-none w-full"
+                  style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.7)' }}
                 >
-                  {COLOR_OPTIONS.map(c => (
-                    <option key={c.value} value={c.value} className="bg-[#0d0d14]">{c.label}</option>
-                  ))}
+                  {COLOR_OPTIONS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
                 </select>
               </div>
               <div className="text-right pr-2">
                 <button 
                   onClick={() => handleDeleteTier(tier.id)}
-                  className="text-red-400 hover:text-red-300 p-1 rounded transition-colors"
+                  className="p-1.5 rounded-lg text-red-400/50 hover:bg-red-400/10 hover:text-red-400 transition-colors"
                   title="Delete Tier"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                 </button>
               </div>
             </Reorder.Item>
           ))}
           {tierRanks.length === 0 && (
-            <div className="text-center text-gray-500 py-8 italic">No tiers created yet. Add one above.</div>
+            <div className="text-center text-white/30 text-xs py-8 italic">No tiers created yet. Add one above.</div>
           )}
         </Reorder.Group>
       </div>

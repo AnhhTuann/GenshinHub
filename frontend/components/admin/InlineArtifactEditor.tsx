@@ -14,6 +14,7 @@ interface ArtifactData {
 
 interface Props {
   characterId: string;
+  defaultConstellation?: string;
   onClose: () => void;
   onSaved: (newArtifact: any) => void;
 }
@@ -26,7 +27,7 @@ const COMMON_STATS = [
   'Dendro DMG Bonus', 'Physical DMG Bonus'
 ];
 
-export default function InlineArtifactEditor({ characterId, onClose, onSaved }: Props) {
+export default function InlineArtifactEditor({ characterId, defaultConstellation, onClose, onSaved }: Props) {
   const [artifacts, setArtifacts] = useState<ArtifactData[]>([]);
   const [search, setSearch] = useState('');
   
@@ -76,8 +77,8 @@ export default function InlineArtifactEditor({ characterId, onClose, onSaved }: 
         : nameVi1;
 
       await fetchGraphQL(`
-        mutation AddCharacterArtifact($characterId: String!, $setNameEn: String!, $setNameVi: String!, $pieces: Int!, $sands: [String!]!, $goblet: [String!]!, $circlet: [String!]!, $subStatsPriority: [String!]!) {
-          addCharacterArtifact(characterId: $characterId, setNameEn: $setNameEn, setNameVi: $setNameVi, pieces: $pieces, sands: $sands, goblet: $goblet, circlet: $circlet, subStatsPriority: $subStatsPriority)
+        mutation AddCharacterArtifact($characterId: String!, $setNameEn: String!, $setNameVi: String!, $pieces: Int!, $sands: [String!]!, $goblet: [String!]!, $circlet: [String!]!, $subStatsPriority: [String!]!, $constellation: String) {
+          addCharacterArtifact(characterId: $characterId, setNameEn: $setNameEn, setNameVi: $setNameVi, pieces: $pieces, sands: $sands, goblet: $goblet, circlet: $circlet, subStatsPriority: $subStatsPriority, constellation: $constellation)
         }
       `, {
         characterId,
@@ -87,7 +88,8 @@ export default function InlineArtifactEditor({ characterId, onClose, onSaved }: 
         sands,
         goblet,
         circlet,
-        subStatsPriority: subStats
+        subStatsPriority: subStats,
+        constellation: defaultConstellation || 'C0'
       });
 
       // Build optimistic artifact entry matching bestArtifacts shape
@@ -109,6 +111,7 @@ export default function InlineArtifactEditor({ characterId, onClose, onSaved }: 
           iconUrl: sa.iconUrl,
           artifactSetId: sa.id,
         })) : [],
+        constellation: defaultConstellation || 'C0',
       };
 
       onSaved(newArtifactEntry);

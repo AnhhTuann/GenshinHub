@@ -32,13 +32,6 @@ const NAV_GROUPS = [
       { href: '/admin/export',     label: 'Export TS',  icon: '📤' },
     ],
   },
-  {
-    label: 'System',
-    icon: '⚙️',
-    items: [
-      { href: '/admin/settings',   label: 'Settings',   icon: '⚙️' },
-    ],
-  },
 ];
 
 export default function AdminLayoutClient({ children }: { children: React.ReactNode }) {

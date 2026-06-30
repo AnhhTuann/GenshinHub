@@ -11,9 +11,10 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import rateLimit from 'express-rate-limit';
-import { typeDefs } from './schema';
-import { resolvers } from './resolvers';
+import { typeDefs, resolvers } from './graphql';
+import { createLoaders } from './graphql/dataloaders';
 import { getBackupFilePath, listBackups as listBackupFiles } from './backupService';
+import { prisma } from './prisma';
 
 async function startServer() {
   const app = express();
@@ -126,7 +127,11 @@ async function startServer() {
       if (!process.env.ADMIN_PASSWORD) {
         console.warn("GraphQL admin access denied: ADMIN_PASSWORD not configured");
       }
-      return { isAdmin };
+      return { 
+        prisma,
+        dataloaders: createLoaders(prisma),
+        user: { isAdmin } 
+      };
     },
   }));
 

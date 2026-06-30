@@ -62,6 +62,12 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
   const [localWeapons, setLocalWeapons] = useState(bestWeapons);
   const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
   const [dragOverItemIdx, setDragOverItemIdx] = useState<number | null>(null);
+  const [activeConstellation, setActiveConstellation] = useState<string>('C0');
+
+  // Derive available constellations from data, always ensuring 'C0' is present
+  const availableConstellations = Array.from(new Set(bestWeapons.map(w => w.constellation || 'C0')));
+  if (!availableConstellations.includes('C0')) availableConstellations.push('C0');
+  availableConstellations.sort();
 
   useEffect(() => {
     setLocalWeapons(bestWeapons);
@@ -132,20 +138,44 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
 
   return (
     <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
         <SectionHeader label={tWeapons} accent="bg-amber-400" />
-        {isAdmin && (
-          <button 
-            onClick={() => setIsEditing(true)}
-            className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded hover:bg-amber-500/30 transition-all border border-amber-500/30"
-          >
-            ➕ Add Weapon
-          </button>
-        )}
+        
+        <div className="flex items-center gap-4">
+          {/* Constellation Switcher */}
+          {(availableConstellations.length > 1 || isAdmin) && (
+            <div className="flex items-center bg-black/40 border border-white/10 rounded-lg p-1">
+              {['C0', 'C1', 'C2', 'C4', 'C6'].map(c => {
+                if (!isAdmin && !availableConstellations.includes(c)) return null;
+                const isActive = activeConstellation === c;
+                return (
+                  <button
+                    key={c}
+                    onClick={() => setActiveConstellation(c)}
+                    className={`px-3 py-1 text-[10px] font-black uppercase tracking-wider rounded-md transition-colors ${
+                      isActive ? 'bg-amber-400/20 text-amber-400 border border-amber-400/30 shadow-[0_0_10px_rgba(251,191,36,0.2)]' : 'text-white/40 hover:text-white/80 hover:bg-white/5 border border-transparent'
+                    }`}
+                  >
+                    {c}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {isAdmin && (
+            <button 
+              onClick={() => setIsEditing(true)}
+              className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded hover:bg-amber-500/30 transition-all border border-amber-500/30"
+            >
+              ➕ Add Weapon
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-col gap-3">
-        {localWeapons.map((weapon: any, idx: number) => (
+        {localWeapons.filter(w => (w.constellation || 'C0') === activeConstellation).map((weapon: any, idx: number) => (
           <div 
             key={weapon.id || idx} 
             draggable={isAdmin}
@@ -228,6 +258,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
         <InlineWeaponEditor 
           characterId={characterId} 
           weaponType={weaponType}
+          defaultConstellation={activeConstellation}
           onClose={() => setIsEditing(false)} 
           onSaved={(newWeapon: any) => {
             setLocalWeapons(prev => [...prev, newWeapon]);

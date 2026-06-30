@@ -6,6 +6,8 @@ import AdminModeToggle from "@/components/AdminModeToggle";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
+import CommandPalette from '@/components/shared/CommandPalette';
+import { fetchGraphQL } from '@/lib/graphql';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -97,6 +99,21 @@ export default async function RootLayout({ children, params }: { children: React
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  // Fetch search index for Command Palette
+  let searchItems: any[] = [];
+  try {
+    const data = await fetchGraphQL(`query {
+      characters { id nameEn avatarUrl rarity }
+      weapons { id nameEn iconUrl rarity }
+      artifacts { id nameEn iconUrl rarityList }
+    }`);
+    if (data.characters) searchItems.push(...data.characters.map((c: any) => ({ ...c, name: c.nameEn, type: 'character', iconUrl: c.avatarUrl })));
+    if (data.weapons) searchItems.push(...data.weapons.map((w: any) => ({ ...w, name: w.nameEn, type: 'weapon' })));
+    if (data.artifacts) searchItems.push(...data.artifacts.map((a: any) => ({ ...a, name: a.nameEn, type: 'artifact' })));
+  } catch (err) {
+    console.error("Failed to load search index:", err);
+  }
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
@@ -131,6 +148,7 @@ export default async function RootLayout({ children, params }: { children: React
               }
             }}
           />
+          <CommandPalette items={searchItems} />
           <Navbar />
           <div className="min-h-screen overflow-x-hidden">{children}</div>
           <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">

@@ -151,6 +151,29 @@ export const resolvers = {
       return data;
     },
 
+    addCharacterArtifact: async (_: any, args: { characterId: string; setNameEn: string; setNameVi: string; pieces: number; sands: string[]; goblet: string[]; circlet: string[]; subStatsPriority: string[]; constellation?: string }) => {
+      const existing = await prisma.characterArtifact.findFirst({
+        where: { characterId: args.characterId },
+        orderBy: { order: 'desc' }
+      });
+      const newOrder = existing ? existing.order + 1 : 0;
+      await prisma.characterArtifact.create({
+        data: {
+          characterId: args.characterId,
+          setNameEn: args.setNameEn,
+          setNameVi: args.setNameVi,
+          pieces: args.pieces,
+          sands: args.sands,
+          goblet: args.goblet,
+          circlet: args.circlet,
+          subStatsPriority: args.subStatsPriority,
+          order: newOrder,
+          constellation: args.constellation || "C0",
+        }
+      });
+      return true;
+    },
+
     character: async (_: any, args: { id: string }) => {
       const cached = characterCache.get(args.id);
       if (cached) return cached;
@@ -198,6 +221,27 @@ export const resolvers = {
       });
       weaponsCache.set('all', data);
       return data;
+    },
+
+    addCharacterWeapon: async (_: any, args: { characterId: string; weaponId: string; rank: number; isF2P: boolean; constellation?: string }) => {
+      const weapon = await prisma.weapon.findUnique({ where: { id: args.weaponId } });
+      if (!weapon) throw new Error("Weapon not found");
+      await prisma.characterWeapon.create({
+        data: {
+          characterId: args.characterId,
+          weaponId: args.weaponId,
+          nameEn: weapon.nameEn,
+          nameVi: weapon.nameVi,
+          rank: args.rank,
+          isF2P: args.isF2P,
+          iconUrl: weapon.iconUrl,
+          subStat: weapon.subStat,
+          passiveDescEn: weapon.passiveDescEn,
+          passiveDescVi: weapon.passiveDescVi,
+          constellation: args.constellation || "C0",
+        }
+      });
+      return true;
     },
 
     weapon: async (_: any, args: { id: string }) => {

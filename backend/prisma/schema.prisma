@@ -63,6 +63,7 @@ model CharacterWeapon {
   passiveDescEn String?
   passiveDescVi String?
   refinement    Int?      @default(1)
+  constellation String?   @default("C0")
   character     Character @relation(fields: [characterId], references: [id])
   characterId   String
 
@@ -79,6 +80,7 @@ model CharacterArtifact {
   circlet          String[]
   subStatsPriority String[]
   order            Int       @default(0)
+  constellation    String?   @default("C0")
   character        Character @relation(fields: [characterId], references: [id])
   characterId      String
 

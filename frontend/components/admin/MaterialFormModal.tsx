@@ -139,7 +139,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
               value={formData.iconUrl} 
               onChange={e => updateField('iconUrl', e.target.value)} 
               className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
-              placeholder="/images/materials/UI_ItemIcon_xxx.png" 
+              placeholder="/assets/items/UI_ItemIcon_xxx.webp" 
             />
           </div>
         </div>

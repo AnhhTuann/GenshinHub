@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from "next/image";
 import { CharacterData } from "@/types/character";
 import { useLocale } from "next-intl";
@@ -54,7 +55,7 @@ function WeaponBadge({
         {/* Soft glow behind the image */}
         <div className="absolute inset-0 bg-amber-500/20 blur-xl opacity-0 group-hover/w:opacity-100 transition-opacity duration-500" />
         {icon ? (
-          <Image src={icon} alt={name} fill className="object-cover" />
+          <FallbackImage src={icon} alt={name} fill className="object-cover" />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-white/5 text-[10px] text-white/30">
             No Icon

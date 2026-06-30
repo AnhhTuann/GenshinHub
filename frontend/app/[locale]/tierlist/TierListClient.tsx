@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
@@ -109,8 +110,8 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
         <div className="relative z-10 flex-1 w-full flex justify-center items-end bg-transparent pt-2">
           {isChar ? (
             <div className="relative w-[110%] h-[110%]">
-              <Image 
-                src={getImageUrl(item.avatarUrl) || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'} 
+              <FallbackImage 
+                src={getImageUrl(item.avatarUrl) || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'} 
                 alt={name} 
                 fill 
                 className="object-cover object-top drop-shadow-2xl translate-y-2 group-hover:-translate-y-1 transition-transform duration-500" 
@@ -119,7 +120,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
             </div>
           ) : (
             <div className="relative w-[80%] h-[80%] mb-2">
-              <Image 
+              <FallbackImage 
                 src={getImageUrl(item.iconUrl) || '/placeholder.png'} 
                 alt={name} 
                 fill 
@@ -131,7 +132,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
           {/* Element overlay for characters (Top Left) */}
           {isChar && (
             <div className="absolute top-1 left-1 w-6 h-6 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center p-[4px] border border-white/20 shadow-lg">
-              <Image src={`/images/elements/${item.element.toLowerCase()}.png`} alt={item.element} fill className="object-contain" />
+              <FallbackImage src={`/images/elements/${item.element.toLowerCase()}.png`} alt={item.element} fill className="object-contain" />
             </div>
           )}
         </div>

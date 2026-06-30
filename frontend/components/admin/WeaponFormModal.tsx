@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL } from '@/lib/graphql';
 import Image from 'next/image';
 
@@ -210,7 +211,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
           {form.iconUrl && (
             <div className="mt-4 flex items-center gap-3">
               <div className="relative w-14 h-14 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
-                <Image src={form.iconUrl} alt="preview" fill sizes="48px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
+                <FallbackImage src={form.iconUrl} alt="preview" fill sizes="48px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
               </div>
               <span className="text-gray-500 text-xs">Icon Preview</span>
             </div>

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { Link } from '@/i18n/routing';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
@@ -246,7 +247,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
             <div className="flex items-center gap-2 flex-wrap">
               <div className="flex items-center gap-1.5 bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-white/[0.08]">
                 <div className="relative w-4 h-4">
-                  <Image src={`/images/elements/${character.element.toLowerCase()}.png`} alt={character.element} fill className="object-contain" />
+                  <FallbackImage src={`/images/elements/${character.element.toLowerCase()}.png`} alt={character.element} fill className="object-contain" />
                 </div>
                 <span className="text-[10px] font-black uppercase tracking-widest" style={{ color: elColor }}>
                   {character.element}

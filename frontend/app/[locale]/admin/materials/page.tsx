@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -147,7 +148,7 @@ export default function MaterialsAdmin() {
           {items.map(m => (
             <div key={m.id} className="flex gap-3 p-3 rounded-2xl group transition-colors" style={{ background:'rgba(8,8,18,0.70)', border:'1px solid rgba(255,255,255,0.05)' }} onMouseEnter={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'} onMouseLeave={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'}>
               <div className="relative w-12 h-12 rounded-xl shrink-0 overflow-hidden" style={{ background: RARITY_BG[m.rarity] || 'rgba(255,255,255,0.05)', border: `1px solid ${RARITY_COLOR[m.rarity]||'#fff'}30` }}>
-                {m.iconUrl && <Image src={m.iconUrl} alt={m.nameEn} fill className="object-contain p-1" sizes="48px" unoptimized/>}
+                {m.iconUrl && <FallbackImage src={m.iconUrl} alt={m.nameEn} fill className="object-contain p-1" sizes="48px" unoptimized/>}
               </div>
               <div className="flex flex-col justify-center flex-1 min-w-0">
                 <div className="text-sm font-bold text-white/90 truncate">{m.nameEn}</div>

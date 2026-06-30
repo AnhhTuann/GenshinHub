@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_MATERIALS } from '@/lib/graphql';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
@@ -145,7 +146,7 @@ export default function MaterialsPage() {
                 mat.rarity === 2 ? 'border-green-500/30' : 'border-white/10'
               }`}>
                 {mat.iconUrl ? (
-                  <Image src={getValidIconUrl(mat.iconUrl)} alt={displayName} fill className="object-contain drop-shadow-md" unoptimized />
+                  <FallbackImage src={getValidIconUrl(mat.iconUrl)} alt={displayName} fill className="object-contain drop-shadow-md" unoptimized />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-[9px] text-white/30">NO IMG</div>
                 )}

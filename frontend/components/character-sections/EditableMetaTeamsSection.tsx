@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
@@ -245,7 +246,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                   <Link href={`/characters/${m.characterId}`} key={mIdx} className="group/tm flex flex-col items-center gap-1">
                     <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/25 transition-all duration-250 bg-[#0d0d14] p-0.5">
                       {teammate ? (
-                        <Image src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
+                        <FallbackImage src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-[8px] text-white/40 font-bold uppercase break-all px-1">{m.characterId}</div>
                       )}
@@ -297,7 +298,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                             const src = weapon?.iconUrl;
                             return (
                               <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-full" title={wName}>
-                                {src && <div className="relative w-8 h-8 rounded shrink-0"><Image src={src} alt={weapon.nameEn} fill className="object-contain drop-shadow-md" /></div>}
+                                {src && <div className="relative w-8 h-8 rounded shrink-0"><FallbackImage src={src} alt={weapon.nameEn} fill className="object-contain drop-shadow-md" /></div>}
                                 <span className="text-white/90 font-semibold text-[13px]">{locale === 'en' ? (weapon?.nameEn || wName) : (weapon?.nameVi || weapon?.nameEn || wName)}</span>
                               </div>
                             );
@@ -316,7 +317,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                             const src = artifact?.iconUrl;
                             return (
                               <div key={i} className="flex items-center gap-3 bg-transparent border border-white/10 rounded-lg p-1.5 pr-3.5 w-full" title={aName}>
-                                {src && <div className="relative w-8 h-8 rounded shrink-0"><Image src={src} alt={artifact.nameEn} fill className="object-contain drop-shadow-md" /></div>}
+                                {src && <div className="relative w-8 h-8 rounded shrink-0"><FallbackImage src={src} alt={artifact.nameEn} fill className="object-contain drop-shadow-md" /></div>}
                                 <span className="text-white/90 font-semibold text-[13px]">
                                   {qty && <span className="text-blue-400 mr-1.5">{qty}</span>}{locale === 'en' ? (artifact?.nameEn || name) : (artifact?.nameVi || artifact?.nameEn || name)}
                                 </span>

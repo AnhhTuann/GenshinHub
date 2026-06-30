@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -48,8 +49,8 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
             }}
           >
             {/* Avatar */}
-            <Image
-              src={char.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'}
+            <FallbackImage
+              src={char.avatarUrl || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'}
               alt={name}
               fill
               sizes="112px"
@@ -76,7 +77,7 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
               className="absolute top-1.5 left-1.5 p-0.5 rounded-md"
               style={{ background: `${ec}22`, border: `1px solid ${ec}40` }}
             >
-              <Image
+              <FallbackImage
                 src={`/images/elements/${char.element.toLowerCase()}.png`}
                 alt={char.element}
                 width={16}

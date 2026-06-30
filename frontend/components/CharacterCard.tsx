@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -135,8 +136,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
         >
           {/* ── Avatar image ── */}
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.08]">
-            <Image
-              src={character.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'}
+            <FallbackImage
+              src={character.avatarUrl || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'}
               alt={name}
               fill
               sizes="(max-width: 640px) 33vw, (max-width: 1024px) 16vw, 160px"
@@ -157,7 +158,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
               backdropFilter: 'blur(4px)',
             }}
           >
-            <Image
+            <FallbackImage
               src={`/images/elements/${el.toLowerCase()}.png`}
               alt={el}
               width={28}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
@@ -93,7 +94,7 @@ export default function InlineTeammatesEditor({ characterId, initialTeams, onClo
                   <div key={tid} className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-xl p-1.5 pr-3">
                     <div className="relative w-6 h-6 rounded overflow-hidden">
                       {char ? (
-                        <Image src={char.avatarUrl} alt={char.nameEn} fill className="object-cover" unoptimized />
+                        <FallbackImage src={char.avatarUrl} alt={char.nameEn} fill className="object-cover" unoptimized />
                       ) : (
                         <div className="w-full h-full bg-white/10" />
                       )}
@@ -129,7 +130,7 @@ export default function InlineTeammatesEditor({ characterId, initialTeams, onClo
                   }`}
                 >
                   <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-white/10">
-                    <Image src={c.avatarUrl} alt={c.nameEn} fill className="object-cover" unoptimized />
+                    <FallbackImage src={c.avatarUrl} alt={c.nameEn} fill className="object-cover" unoptimized />
                     {isSelected && (
                       <div className="absolute inset-0 bg-blue-500/30 flex items-center justify-center">
                         <span className="text-white text-lg font-black drop-shadow-md">✓</span>

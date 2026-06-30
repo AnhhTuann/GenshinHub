@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import InlineWeaponEditor from '@/components/admin/InlineWeaponEditor';
@@ -200,7 +201,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
                 weapon.rarity === 3 ? 'bg-gradient-to-b from-[#4d86b6] to-[#3a6388]' :
                 'bg-white/[0.02]'
               }`}>
-                {weapon.iconUrl && <Image src={weapon.iconUrl} alt={weapon.nameEn || ''} fill sizes="64px" className="object-contain drop-shadow-md p-1" />}
+                {weapon.iconUrl && <FallbackImage src={weapon.iconUrl} alt={weapon.nameEn || ''} fill sizes="64px" className="object-contain drop-shadow-md p-1" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1 flex-wrap">

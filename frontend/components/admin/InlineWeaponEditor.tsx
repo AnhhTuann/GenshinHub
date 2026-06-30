@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_WEAPONS } from '@/lib/graphql';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
@@ -132,7 +133,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
                     className="flex flex-col items-center gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/5 hover:border-white/20 transition-all text-center"
                   >
                     <div className="relative w-12 h-12">
-                      <Image src={w.iconUrl} alt={w.nameEn} fill className="object-contain" unoptimized />
+                      <FallbackImage src={w.iconUrl} alt={w.nameEn} fill className="object-contain" unoptimized />
                     </div>
                     <span className="text-[10px] font-bold text-gray-300">{w.nameEn}</span>
                   </button>
@@ -143,7 +144,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/5">
                 <div className="relative w-16 h-16 shrink-0">
-                  <Image src={selectedWeapon.iconUrl} alt={selectedWeapon.nameEn} fill className="object-contain" unoptimized />
+                  <FallbackImage src={selectedWeapon.iconUrl} alt={selectedWeapon.nameEn} fill className="object-contain" unoptimized />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-base font-bold text-amber-400">{selectedWeapon.nameEn}</h3>

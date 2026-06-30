@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { fetchGraphQL } from '@/lib/graphql';
 import dynamic from 'next/dynamic';
@@ -204,7 +205,7 @@ export default function CharactersAdmin() {
                 <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0"
                   style={{ border: `1px solid ${ec}30` }}>
                   {c.avatarUrl && (
-                    <Image src={c.avatarUrl} alt={c.nameEn} fill className="object-cover object-top" sizes="32px" />
+                    <FallbackImage src={c.avatarUrl} alt={c.nameEn} fill className="object-cover object-top" sizes="32px" />
                   )}
                 </div>
 

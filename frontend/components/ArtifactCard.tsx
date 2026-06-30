@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
@@ -31,7 +32,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
       <div className={`relative w-12 h-12 shrink-0 rounded-xl overflow-hidden ${imgBg} p-[1.5px]`}>
         <div className="relative w-full h-full rounded-xl bg-[#06060a]/90 overflow-hidden flex items-center justify-center p-1">
           {artifact.iconUrl ? (
-            <Image src={artifact.iconUrl} alt={setName || 'Artifact'} width={46} height={46} className="object-contain" />
+            <FallbackImage src={artifact.iconUrl} alt={setName || 'Artifact'} width={46} height={46} className="object-contain" />
           ) : (
             <span className="text-xl">💎</span>
           )}
@@ -70,7 +71,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
         <div className={`relative w-8 h-8 shrink-0 rounded-lg overflow-hidden ${imgBg} p-[1px]`}>
           <div className="w-full h-full rounded-lg bg-[#06060a]/90 flex items-center justify-center p-0.5">
             {artifact.iconUrl
-              ? <Image src={artifact.iconUrl} alt="Mix" width={28} height={28} className="object-contain" />
+              ? <FallbackImage src={artifact.iconUrl} alt="Mix" width={28} height={28} className="object-contain" />
               : <span className="text-sm">💎</span>}
           </div>
         </div>
@@ -91,7 +92,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
               <div className={`relative w-6 h-6 shrink-0 rounded-md overflow-hidden ${imgBg} p-[1px]`}>
                 <div className="w-full h-full rounded-md bg-[#06060a]/90 flex items-center justify-center p-0.5">
                   {set.iconUrl
-                    ? <Image src={set.iconUrl} alt={sName} width={20} height={20} className="object-contain" />
+                    ? <FallbackImage src={set.iconUrl} alt={sName} width={20} height={20} className="object-contain" />
                     : <span className="text-xs">💎</span>}
                 </div>
               </div>

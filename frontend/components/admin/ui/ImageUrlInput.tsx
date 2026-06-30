@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 
 interface ImageUrlInputProps {
@@ -63,7 +64,7 @@ export default function ImageUrlInput({ label, value, onChange, error, placehold
         >
           {showPreview ? (
             <div className="relative w-full h-full">
-              <Image
+              <FallbackImage
                 src={value}
                 alt="Preview"
                 fill

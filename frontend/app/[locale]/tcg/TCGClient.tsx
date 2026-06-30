@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { tcgCards, TCGCard } from '@/data/tcgCards';
 import { metaDecks } from '@/data/tcgDecks';
@@ -91,7 +92,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                 return (
                   <div key={card.id} className="group flex flex-col items-center gap-2">
                     <div className="relative w-full aspect-[256/440] rounded-xl overflow-hidden glass-hover shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
-                      <Image
+                      <FallbackImage
                         src={`/images/tcg/${card.icon}.png`}
                         alt={name}
                         fill
@@ -134,7 +135,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                     if (!card) return null;
                     return (
                       <div key={charId} className="w-1/3 aspect-[256/440] relative rounded-lg overflow-hidden shadow-xl border border-white/10 group-hover:border-white/20 transition-colors">
-                        <Image
+                        <FallbackImage
                           src={`/images/tcg/${card.icon}.png`}
                           alt={card.nameEn}
                           fill

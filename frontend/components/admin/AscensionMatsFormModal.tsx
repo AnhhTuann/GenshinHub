@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL } from '@/lib/graphql';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
@@ -170,7 +171,7 @@ export default function AscensionMatsFormModal({ characterId, initialMats, allMa
                     {mat.items.map((item, itemIdx) => (
                       <div key={itemIdx} className="flex items-center bg-[#050508] border border-white/10 rounded-lg pr-1 overflow-hidden group">
                         <div className="relative w-8 h-8 bg-white/5 p-1 shrink-0">
-                          {getMatIcon(item.materialId) && <Image src={getValidIconUrl(getMatIcon(item.materialId))} alt="mat" fill className="object-contain" unoptimized />}
+                          {getMatIcon(item.materialId) && <FallbackImage src={getValidIconUrl(getMatIcon(item.materialId))} alt="mat" fill className="object-contain" unoptimized />}
                         </div>
                         <input 
                           type="number" 
@@ -225,7 +226,7 @@ export default function AscensionMatsFormModal({ characterId, initialMats, allMa
                   className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 transition-colors text-left"
                 >
                   <div className="relative w-10 h-10 shrink-0 bg-white/[0.02] rounded border border-white/5 p-1">
-                    {mat.iconUrl && <Image src={getValidIconUrl(mat.iconUrl)} alt={displayName} fill className="object-contain" unoptimized />}
+                    {mat.iconUrl && <FallbackImage src={getValidIconUrl(mat.iconUrl)} alt={displayName} fill className="object-contain" unoptimized />}
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs font-bold text-gray-200">{displayName}</span>

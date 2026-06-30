@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -142,7 +143,7 @@ export default function ArtifactsAdmin() {
             onMouseLeave={e=>e.currentTarget.style.background='transparent'}
           >
             <div className="relative w-8 h-8 rounded-full overflow-hidden" style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)'}}>
-              {a.iconUrl&&<Image src={a.iconUrl} alt={a.nameEn} fill className="object-cover" sizes="32px" unoptimized/>}
+              {a.iconUrl&&<FallbackImage src={a.iconUrl} alt={a.nameEn} fill className="object-cover" sizes="32px" unoptimized/>}
             </div>
             <div className="pr-2">
               <div className="text-sm font-bold text-white/85 truncate">{a.nameEn}</div>

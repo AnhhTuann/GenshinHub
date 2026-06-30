@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import FallbackImage from '@/components/ui/FallbackImage';
 import { Command } from "cmdk";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -88,7 +89,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
                 value={item.name + " " + item.id}
               >
                 <div className="w-8 h-8 rounded-full overflow-hidden bg-white/5 relative border" style={{ borderColor: item.rarity === 5 ? 'rgba(255,213,79,0.3)' : 'rgba(206,147,216,0.3)' }}>
-                  {item.iconUrl ? <Image src={item.iconUrl} alt={item.name} fill className="object-cover" sizes="32px" /> : <User className="w-4 h-4 m-auto mt-2 opacity-30" />}
+                  {item.iconUrl ? <FallbackImage src={item.iconUrl} alt={item.name} fill className="object-cover" sizes="32px" /> : <User className="w-4 h-4 m-auto mt-2 opacity-30" />}
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm font-bold">{item.name}</span>
@@ -107,7 +108,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
                 value={item.name + " " + item.id}
               >
                 <div className="w-8 h-8 rounded-lg overflow-hidden bg-white/5 relative border border-white/10 flex items-center justify-center p-1">
-                  {item.iconUrl ? <Image src={item.iconUrl} alt={item.name} fill className="object-contain" sizes="32px" /> : <Sword className="w-4 h-4 opacity-30" />}
+                  {item.iconUrl ? <FallbackImage src={item.iconUrl} alt={item.name} fill className="object-contain" sizes="32px" /> : <Sword className="w-4 h-4 opacity-30" />}
                 </div>
                 <span className="text-sm font-bold">{item.name}</span>
               </Command.Item>
@@ -123,7 +124,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
                 value={item.name + " " + item.id}
               >
                 <div className="w-8 h-8 rounded-full overflow-hidden bg-white/5 relative border border-white/10 flex items-center justify-center p-0.5">
-                  {item.iconUrl ? <Image src={item.iconUrl} alt={item.name} fill className="object-cover" sizes="32px" /> : <Sparkles className="w-4 h-4 opacity-30" />}
+                  {item.iconUrl ? <FallbackImage src={item.iconUrl} alt={item.name} fill className="object-cover" sizes="32px" /> : <Sparkles className="w-4 h-4 opacity-30" />}
                 </div>
                 <span className="text-sm font-bold">{item.name}</span>
               </Command.Item>

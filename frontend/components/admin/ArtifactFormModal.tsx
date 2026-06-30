@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { fetchGraphQL } from '@/lib/graphql';
 
@@ -167,7 +168,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
                 <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/images/artifacts/..." className={inputClass} />
                 {form.iconUrl && (
                   <div className="relative w-11 h-11 flex-shrink-0 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
-                    <Image src={form.iconUrl} alt="preview" fill sizes="36px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
+                    <FallbackImage src={form.iconUrl} alt="preview" fill sizes="36px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
                   </div>
                 )}
               </div>

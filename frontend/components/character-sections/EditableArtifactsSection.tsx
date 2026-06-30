@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import InlineArtifactEditor from '@/components/admin/InlineArtifactEditor';
@@ -203,7 +204,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
                 {artifact.mixSets.map((mix: any, mIdx: number) => (
                   <div key={mIdx} className={`flex items-center gap-3 p-2 ${mIdx !== 0 ? 'border-t border-white/[0.05]' : ''}`}>
                     <div className="relative w-12 h-12 shrink-0 bg-gradient-to-b from-[#b18361] to-[#8c6b55] rounded flex items-center justify-center overflow-hidden">
-                      {mix.iconUrl && <Image src={mix.iconUrl} alt={mix.nameEn} fill sizes="48px" className="object-contain drop-shadow-md p-1" />}
+                      {mix.iconUrl && <FallbackImage src={mix.iconUrl} alt={mix.nameEn} fill sizes="48px" className="object-contain drop-shadow-md p-1" />}
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-white/90 text-sm leading-tight">{locale === 'en' ? mix.nameEn : (mix.nameVi || mix.nameEn)}</h4>
@@ -224,7 +225,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
                   'bg-white/[0.02]'
                 }`}>
                   {artifact.iconUrl && (
-                    <Image src={artifact.iconUrl} alt={artifact.setNameEn} fill sizes="64px" className="object-contain drop-shadow-md p-1" />
+                    <FallbackImage src={artifact.iconUrl} alt={artifact.setNameEn} fill sizes="64px" className="object-contain drop-shadow-md p-1" />
                   )}
                 </div>
                 <div className="flex-1">

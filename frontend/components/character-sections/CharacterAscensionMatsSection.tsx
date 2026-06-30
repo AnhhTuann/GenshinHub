@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 
 interface MatItem {
@@ -98,7 +99,7 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
         {/* Mora Card */}
         <div className="flex items-center gap-3 bg-transparent border border-white/5 rounded-xl p-2 pr-4 w-fit hover:bg-white/5 transition-colors">
           <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-gradient-to-br from-white/10 to-transparent p-1">
-            <Image src="/images/materials/UI_ItemIcon_202.png" alt="Mora" fill className="object-contain drop-shadow-md" />
+            <FallbackImage src="/assets/items/UI_ItemIcon_202.webp" alt="Mora" fill className="object-contain drop-shadow-md" />
           </div>
           <div className="flex flex-col">
             <span className="text-white font-bold text-xs">Mora</span>
@@ -112,7 +113,7 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
           return (
             <div key={matId} className="flex items-center gap-3 bg-transparent border border-white/5 rounded-xl p-2 pr-4 w-fit hover:bg-white/5 transition-colors">
               <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-white/10 to-transparent p-1 flex items-center justify-center">
-                {mat.iconUrl ? <Image src={mat.iconUrl} alt={mat.nameEn} fill className="object-contain drop-shadow-md" /> : <div className="text-white/20 text-[8px] text-center px-1">NO ICON</div>}
+                {mat.iconUrl ? <FallbackImage src={mat.iconUrl} alt={mat.nameEn} fill className="object-contain drop-shadow-md" /> : <div className="text-white/20 text-[8px] text-center px-1">NO ICON</div>}
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-bold text-xs truncate max-w-[120px]" title={mat.nameEn}>{mat.nameEn}</span>
@@ -139,7 +140,7 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
                 <td className="p-4 font-bold text-white/80">{lvData.level}</td>
                 <td className="p-4">
                   <div className="flex items-center gap-2">
-                    <div className="relative w-6 h-6"><Image src="/images/materials/UI_ItemIcon_202.png" alt="Mora" fill className="object-contain drop-shadow-sm" /></div>
+                    <div className="relative w-6 h-6"><FallbackImage src="/assets/items/UI_ItemIcon_202.webp" alt="Mora" fill className="object-contain drop-shadow-sm" /></div>
                     <span className="font-semibold text-white/90 text-[13px]">{lvData.mora.toLocaleString()}</span>
                   </div>
                 </td>
@@ -150,7 +151,7 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
                       return (
                         <div key={i} className="relative group/mat flex flex-col items-center">
                           <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-white/[0.08] to-transparent border border-white/[0.06] p-1 mb-1">
-                            {mat.iconUrl ? <Image src={getValidIconUrl(mat.iconUrl)} alt={mat.nameEn} fill className="object-contain drop-shadow" unoptimized /> : <div className="text-white/20 text-[8px] text-center w-full h-full flex items-center justify-center">NO ICON</div>}
+                            {mat.iconUrl ? <FallbackImage src={getValidIconUrl(mat.iconUrl)} alt={mat.nameEn} fill className="object-contain drop-shadow" unoptimized /> : <div className="text-white/20 text-[8px] text-center w-full h-full flex items-center justify-center">NO ICON</div>}
                             <span className="absolute -bottom-1.5 -right-1.5 bg-[#1a1a24] border border-white/10 rounded px-1.5 py-0.5 min-w-[18px] text-center text-[9px] font-black text-white z-10 shadow-lg">
                               {item.count}
                             </span>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_ARTIFACTS } from '@/lib/graphql';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
@@ -103,7 +104,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
         circlet,
         subStatsPriority: subStats,
         rarity: 5,
-        iconUrl: isMixMode ? '/images/artifacts/UI_RelicIcon_15001_4.png' : selectedArtifacts[0]?.iconUrl || null,
+        iconUrl: isMixMode ? '/assets/items/UI_RelicIcon_15001_4.webp' : selectedArtifacts[0]?.iconUrl || null,
         artifactSetId: isMixMode ? null : selectedArtifacts[0]?.id || null,
         mixSets: isMixMode ? selectedArtifacts.map(sa => ({
           nameEn: sa.nameEn,
@@ -213,7 +214,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
                 <div className="flex gap-4 mb-4 justify-center">
                   {selectedArtifacts.map(sa => (
                     <div key={sa.id} className="flex items-center gap-3 p-3 bg-white/[0.02] rounded-xl border border-purple-500/50">
-                      <Image src={sa.iconUrl} alt={sa.nameEn} width={32} height={32} className="object-contain" unoptimized />
+                      <FallbackImage src={sa.iconUrl} alt={sa.nameEn} width={32} height={32} className="object-contain" unoptimized />
                       <span className="text-xs font-bold text-gray-300">{sa.nameEn}</span>
                       <button onClick={() => setSelectedArtifacts(selectedArtifacts.filter(s => s.id !== sa.id))} className="text-gray-500 hover:text-red-400">✕</button>
                     </div>
@@ -243,7 +244,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
                       }`}
                     >
                       <div className="relative w-12 h-12">
-                        <Image src={a.iconUrl} alt={a.nameEn} fill className="object-contain" unoptimized />
+                        <FallbackImage src={a.iconUrl} alt={a.nameEn} fill className="object-contain" unoptimized />
                       </div>
                       <span className="text-[10px] font-bold text-gray-300">{a.nameEn}</span>
                     </button>
@@ -257,7 +258,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
                 {selectedArtifacts.map((sa, idx) => (
                   <div key={sa.id} className="flex items-center gap-4">
                     <div className="relative w-12 h-12 shrink-0">
-                      <Image src={sa.iconUrl} alt={sa.nameEn} fill className="object-contain" unoptimized />
+                      <FallbackImage src={sa.iconUrl} alt={sa.nameEn} fill className="object-contain" unoptimized />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-sm font-bold text-purple-400">{sa.nameEn}</h3>

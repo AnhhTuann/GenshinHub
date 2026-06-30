@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
@@ -245,7 +246,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   <div className={`relative w-full aspect-square bg-gradient-to-br ${rarityGradient(weapon.rarity)} p-[1px]`}>
                     <div className="w-full h-full bg-[#07070a]/90 flex items-center justify-center overflow-hidden p-1.5">
                       {weapon.iconUrl ? (
-                        <Image
+                        <FallbackImage
                           src={weapon.iconUrl}
                           alt={locale === 'en' ? weapon.nameEn : weapon.nameVi}
                           fill

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
@@ -135,7 +136,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
             <div className={`w-40 h-40 flex-shrink-0 rounded-2xl bg-gradient-to-br ${RARITY_BG[rarity]} p-[1px] shadow-xl self-center`}>
               <div className="relative w-full h-full rounded-2xl bg-[#07070a]/90 flex items-center justify-center overflow-hidden p-2">
                 {artifactSet.iconUrl ? (
-                  <Image src={artifactSet.iconUrl} alt={name} fill className="object-contain p-2" />
+                  <FallbackImage src={artifactSet.iconUrl} alt={name} fill className="object-contain p-2" />
                 ) : (
                   <span className="text-5xl select-none">💎</span>
                 )}
@@ -200,7 +201,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
                 >
                   <div className={`relative w-full aspect-square rounded-xl overflow-hidden border ${char.rarity === 5 ? 'border-yellow-500/50' : 'border-purple-500/40'} bg-gradient-to-br ${char.rarity === 5 ? 'from-yellow-900/40 to-amber-950/60' : 'from-purple-900/40 to-violet-950/60'} p-0.5`}>
                     {char.avatarUrl ? (
-                      <Image
+                      <FallbackImage
                         src={char.avatarUrl}
                         alt={locale === 'en' ? char.nameEn : char.nameVi}
                         fill
@@ -210,7 +211,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
                       <div className="w-full h-full flex items-center justify-center text-2xl">👤</div>
                     )}
                     <div className="absolute bottom-1 right-1 w-4 h-4 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/5">
-                      <Image
+                      <FallbackImage
                         src={`/images/elements/${char.element.toLowerCase()}.png`}
                         alt={char.element}
                         width={12}

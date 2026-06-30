@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
@@ -69,7 +70,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
       {weapon.iconUrl ? (
         <div className={`w-14 h-14 shrink-0 rounded-xl overflow-hidden ${imgBg} p-[1.5px]`}>
           <div className="w-full h-full bg-[#06060a]/90 rounded-xl overflow-hidden p-1 flex items-center justify-center">
-            <Image src={weapon.iconUrl} alt={name} width={52} height={52} className="w-full h-full object-contain" />
+            <FallbackImage src={weapon.iconUrl} alt={name} width={52} height={52} className="w-full h-full object-contain" />
           </div>
         </div>
       ) : (

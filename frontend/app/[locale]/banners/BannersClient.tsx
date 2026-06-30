@@ -1,5 +1,6 @@
 "use client";
 import { useTranslations } from 'next-intl';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import { BANNERS_HISTORY, BannerItem } from '@/data/banners';
@@ -89,7 +90,7 @@ export default function BannersClient({ locale }: { locale: string }) {
                           <div className="flex flex-col gap-4">
                             {versionBlock.phases[0].characterBanners.map((imgUrl, idx) => (
                               <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(59,130,246,0.3)] cursor-pointer">
-                                <Image src={imgUrl} alt="Character Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
+                                <FallbackImage src={imgUrl} alt="Character Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
                               </div>
                             ))}
                           </div>
@@ -103,7 +104,7 @@ export default function BannersClient({ locale }: { locale: string }) {
                           <div className="flex flex-col gap-4">
                             {versionBlock.phases[0].weaponBanners.map((imgUrl, idx) => (
                               <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(168,85,247,0.3)] cursor-pointer">
-                                <Image src={imgUrl} alt="Weapon Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
+                                <FallbackImage src={imgUrl} alt="Weapon Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
                               </div>
                             ))}
                           </div>
@@ -138,7 +139,7 @@ export default function BannersClient({ locale }: { locale: string }) {
                           <div className="flex flex-col gap-4">
                             {versionBlock.phases[1].characterBanners.map((imgUrl, idx) => (
                               <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(59,130,246,0.3)] cursor-pointer">
-                                <Image src={imgUrl} alt="Character Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
+                                <FallbackImage src={imgUrl} alt="Character Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
                               </div>
                             ))}
                           </div>
@@ -152,7 +153,7 @@ export default function BannersClient({ locale }: { locale: string }) {
                           <div className="flex flex-col gap-4">
                             {versionBlock.phases[1].weaponBanners.map((imgUrl, idx) => (
                               <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(168,85,247,0.3)] cursor-pointer">
-                                <Image src={imgUrl} alt="Weapon Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
+                                <FallbackImage src={imgUrl} alt="Weapon Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
                               </div>
                             ))}
                           </div>

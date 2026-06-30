@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, UPDATE_WEAPON_TIER_LIST, GET_TIER_RANKS } from "@/lib/graphql";
 import Image from "next/image";
 import toast from 'react-hot-toast';
@@ -91,7 +92,7 @@ export default function AdminTierListPage() {
           {characters.map(char => (
             <div key={char.id} className="p-4 rounded-2xl flex gap-4 transition-colors" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
               <div className="w-14 h-14 relative shrink-0 rounded-xl overflow-hidden" style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.08)' }}>
-                {char.avatarUrl && <Image src={char.avatarUrl} alt={char.nameEn} fill className="object-cover" sizes="56px" />}
+                {char.avatarUrl && <FallbackImage src={char.avatarUrl} alt={char.nameEn} fill className="object-cover" sizes="56px" />}
               </div>
               <div className="flex-1 min-w-0 space-y-3">
                 <div className="flex items-center justify-between">
@@ -161,7 +162,7 @@ export default function AdminTierListPage() {
           {weapons.map(weapon => (
             <div key={weapon.id} className="p-3 rounded-2xl flex flex-col items-center gap-2 text-center" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
               <div className="w-12 h-12 relative">
-                {weapon.iconUrl && <Image src={weapon.iconUrl} alt={weapon.nameEn} fill className="object-contain" sizes="48px" unoptimized />}
+                {weapon.iconUrl && <FallbackImage src={weapon.iconUrl} alt={weapon.nameEn} fill className="object-contain" sizes="48px" unoptimized />}
               </div>
               <h3 className="font-bold text-[10px] text-white/80 truncate w-full">{weapon.nameEn}</h3>
               <select 

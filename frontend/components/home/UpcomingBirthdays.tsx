@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { CharacterData } from '@/types/character';
@@ -81,7 +82,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                 }`}
                 style={{ background: `linear-gradient(135deg, ${elColor}18, #0d0d14)` }}
               >
-                <Image
+                <FallbackImage
                   src={char.avatarUrl}
                   alt={name}
                   fill
@@ -90,7 +91,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                 />
                 {/* Element badge */}
                 <div className="absolute top-0.5 left-0.5 w-4 h-4 rounded bg-black/40 p-0.5">
-                  <Image
+                  <FallbackImage
                     src={`/images/elements/${char.element.toLowerCase()}.png`}
                     alt={char.element}
                     fill

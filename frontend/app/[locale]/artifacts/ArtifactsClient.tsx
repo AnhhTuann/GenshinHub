@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
@@ -112,7 +113,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
         >
           <div className="absolute inset-0 rounded-2xl bg-white/[0.02]" />
           {artifact.iconUrl ? (
-            <Image
+            <FallbackImage
               src={artifact.iconUrl}
               alt={name}
               width={96}

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -160,7 +161,7 @@ export default function WeaponsAdmin() {
             onMouseLeave={e=>e.currentTarget.style.background='transparent'}
           >
             <div className="relative w-8 h-8 rounded-lg overflow-hidden" style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)'}}>
-              {w.iconUrl&&<Image src={w.iconUrl} alt={w.nameEn} fill className="object-contain p-0.5" sizes="32px" unoptimized/>}
+              {w.iconUrl&&<FallbackImage src={w.iconUrl} alt={w.nameEn} fill className="object-contain p-0.5" sizes="32px" unoptimized/>}
             </div>
             <div><div className="text-sm font-bold text-white/85">{w.nameEn}</div><div className="text-[10px] text-white/25 font-mono">{w.id}</div></div>
             <div className="text-xs text-white/45 font-medium">{w.type}</div>

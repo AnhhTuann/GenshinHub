@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from 'framer-motion';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 
 export default function ParallaxSplash({ imageUrl }: { imageUrl: string }) {
@@ -14,7 +15,7 @@ export default function ParallaxSplash({ imageUrl }: { imageUrl: string }) {
     >
       {/* Blurred background to fill the wide screen and cover parallax offset */}
       <div className="absolute inset-0 w-full h-full" style={{ filter: 'blur(20px) brightness(0.4) saturate(1.2)' }}>
-        <Image
+        <FallbackImage
           src={imageUrl}
           alt="Splash Background"
           fill
@@ -27,7 +28,7 @@ export default function ParallaxSplash({ imageUrl }: { imageUrl: string }) {
       
       {/* Full character image in the center, constrained to the actual viewport height to avoid cut-offs */}
       <div className="absolute top-[150px] bottom-[150px] left-0 right-0 w-full">
-        <Image
+        <FallbackImage
           src={imageUrl}
           alt="Character Splash Art"
           fill

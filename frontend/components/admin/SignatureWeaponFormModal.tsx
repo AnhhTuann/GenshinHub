@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 
@@ -96,7 +97,7 @@ export default function SignatureWeaponFormModal({
                 >
                   <div className="w-10 h-10 relative bg-gradient-to-br from-white/10 to-transparent rounded-lg shrink-0 flex items-center justify-center overflow-hidden p-0.5">
                     {w.iconUrl ? (
-                      <Image src={w.iconUrl} alt={w.nameEn} fill className="object-contain" />
+                      <FallbackImage src={w.iconUrl} alt={w.nameEn} fill className="object-contain" />
                     ) : (
                       <span className="text-[8px] text-white/30">No Icon</span>
                     )}

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useCallback, useState } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -188,8 +189,8 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                 animate={{ scale: 1.08, x: '-2%', y: '-1.5%' }}
                 transition={{ duration: 9, ease: 'linear' }}
               >
-                <Image
-                  src={character.splashArtUrl || character.avatarUrl || '/images/avatars/UI_AvatarIcon_PlayerGirl.png'}
+                <FallbackImage
+                  src={character.splashArtUrl || character.avatarUrl || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'}
                   alt={displayName}
                   fill
                   priority
@@ -249,7 +250,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                     color: elementColor,
                   }}
                 >
-                  <Image
+                  <FallbackImage
                     src={`/images/elements/${el.toLowerCase()}.png`}
                     alt={el}
                     width={16}

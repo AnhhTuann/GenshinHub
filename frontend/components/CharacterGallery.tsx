@@ -1,5 +1,6 @@
 "use client";
 import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import CharacterCard from './CharacterCard';
@@ -162,7 +163,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
                 }}
               >
                 <div className="relative w-4 h-4 shrink-0">
-                  <Image
+                  <FallbackImage
                     src={`/images/elements/${el.toLowerCase()}.png`}
                     alt={el}
                     fill

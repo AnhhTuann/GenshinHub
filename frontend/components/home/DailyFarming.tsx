@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { getFarmingDataForDay, DailyDomain } from '@/data/dailyFarming';
 import { Link } from '@/i18n/routing';
@@ -98,7 +99,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
               {/* Domain header */}
               <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.04] bg-black/20">
                 <div className="relative w-7 h-7 shrink-0">
-                  <Image src={domain.itemIcon} alt="domain item" fill className="object-contain drop-shadow-md" unoptimized />
+                  <FallbackImage src={domain.itemIcon} alt="domain item" fill className="object-contain drop-shadow-md" unoptimized />
                 </div>
                 <span className="font-bold text-[13px] text-white/80 truncate">{domain.domainName}</span>
               </div>
@@ -108,16 +109,16 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
                 {domain.characters.map(char => (
                   <Link href={`/characters/${char.id}`} key={char.id}>
                     <div className={`yatta-item yatta-item-${char.rarity}star`} title={char.name}>
-                      <Image src={char.avatarUrl} alt={char.name} fill className="object-cover" unoptimized />
+                      <FallbackImage src={char.avatarUrl} alt={char.name} fill className="object-cover" unoptimized />
                       <div className="yatta-item-element">
-                        <Image src={`/images/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" unoptimized />
+                        <FallbackImage src={`/images/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" unoptimized />
                       </div>
                     </div>
                   </Link>
                 ))}
                 {domain.weapons.map(weapon => (
                   <div key={weapon.id} className={`yatta-item yatta-item-${weapon.rarity}star`} title={weapon.name}>
-                    <Image src={weapon.iconUrl} alt={weapon.name} fill className="object-cover" unoptimized />
+                    <FallbackImage src={weapon.iconUrl} alt={weapon.name} fill className="object-cover" unoptimized />
                   </div>
                 ))}
               </div>

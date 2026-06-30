@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_SHOWCASE } from '@/lib/graphql';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
@@ -114,7 +115,7 @@ export default function ShowcaseClient() {
             <div className="flex flex-col sm:flex-row items-center gap-5 p-6 border-b border-white/[0.05]">
               {showcase.avatarUrl ? (
                 <div className="relative w-20 h-20 rounded-full border-2 border-amber-400/20 overflow-hidden bg-[#0d0d14] shrink-0 shadow-lg">
-                  <Image src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="80px" />
+                  <FallbackImage src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="80px" />
                 </div>
               ) : (
                 <div className="w-20 h-20 rounded-full bg-[#0d0d14] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
@@ -159,7 +160,7 @@ export default function ShowcaseClient() {
                           } bg-gradient-to-b ${is5 ? 'from-[#1a1100] to-[#0d0900]' : 'from-[#110a1e] to-[#08050f]'}`}
                         >
                           <div className="absolute inset-0 -z-10 group-hover:scale-[1.06] transition-transform duration-500">
-                            <Image
+                            <FallbackImage
                               src={`/images/avatars/UI_AvatarIcon_${mapped.icon}.png`}
                               alt={mapped.name}
                               fill
@@ -170,7 +171,7 @@ export default function ShowcaseClient() {
                           <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/50 to-transparent -z-10" />
 
                           <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                            <Image src={`/images/elements/${mapped.element.toLowerCase()}.png`} alt={mapped.element} width={14} height={14} className="object-contain" />
+                            <FallbackImage src={`/images/elements/${mapped.element.toLowerCase()}.png`} alt={mapped.element} width={14} height={14} className="object-contain" />
                           </div>
 
                           <div className="text-center pb-2 flex flex-col items-center bg-black/50 border-t border-white/[0.06] backdrop-blur-[2px]">

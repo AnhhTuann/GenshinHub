@@ -31,7 +31,7 @@ export default function Navbar() {
 
   const handleSearchClick = () => {
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+      window.dispatchEvent(new Event('open-command-palette'));
     }
   };
 

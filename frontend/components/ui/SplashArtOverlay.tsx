@@ -125,21 +125,29 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
           {/* ── Particle System ── */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {Array.from({ length: particleConfig.count }).map((_, i) => {
-              const left = 30 + Math.random() * 45;
-              const delay = Math.random() * 3;
-              const dur = 2.5 + Math.random() * 3;
-              const size = 8 + Math.random() * 14;
-              const driftX = (Math.random() - 0.5) * 60;
+              const pseudoRandom = (seed: number) => {
+                const x = Math.sin(seed) * 10000;
+                return x - Math.floor(x);
+              };
+              const left = 30 + pseudoRandom(i) * 45;
+              const delay = pseudoRandom(i + 100) * 3;
+              const dur = 2.5 + pseudoRandom(i + 200) * 3;
+              const size = 8 + pseudoRandom(i + 300) * 14;
+              const driftX = (pseudoRandom(i + 400) - 0.5) * 60;
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 0, x: 0, scale: 1 }}
-                  animate={{ opacity: [0, 0.9, 0], y: -90, x: driftX, scale: 0 }}
+                  initial={{ opacity: 0, y: 150, x: 0 }}
+                  animate={{ 
+                    opacity: [0, 0.8, 0], 
+                    y: -50,
+                    x: driftX 
+                  }}
                   transition={{
                     duration: dur,
                     delay: delay,
                     repeat: Infinity,
-                    repeatDelay: Math.random() * 2,
+                    repeatDelay: pseudoRandom(i + 500) * 2,
                     ease: 'easeOut'
                   }}
                   style={{

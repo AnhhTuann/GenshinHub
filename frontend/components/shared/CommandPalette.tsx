@@ -18,7 +18,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  // Toggle the menu when ⌘K is pressed
+  // Toggle the menu when ⌘K is pressed or custom event is dispatched
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -26,9 +26,15 @@ export default function CommandPalette({ items }: { items: Item[] }) {
         setOpen((open) => !open);
       }
     };
+    const handleOpen = () => setOpen(true);
 
     document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    window.addEventListener("open-command-palette", handleOpen);
+    
+    return () => {
+      document.removeEventListener("keydown", down);
+      window.removeEventListener("open-command-palette", handleOpen);
+    };
   }, []);
 
   const handleSelect = (item: Item) => {

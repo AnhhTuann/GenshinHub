@@ -110,8 +110,10 @@ export default async function RootLayout({ children, params }: { children: React
     if (data.characters) searchItems.push(...data.characters.map((c: any) => ({ ...c, name: c.nameEn, type: 'character', iconUrl: c.avatarUrl })));
     if (data.weapons) searchItems.push(...data.weapons.map((w: any) => ({ ...w, name: w.nameEn, type: 'weapon' })));
     if (data.artifacts) searchItems.push(...data.artifacts.map((a: any) => ({ ...a, name: a.nameEn, type: 'artifact' })));
+    console.log(`[Command Palette] Loaded ${searchItems.length} items for search index.`);
   } catch (err) {
-    console.error("Failed to load search index:", err);
+    // Suppress search index failure from crashing Next.js dev server with error overlay
+    console.warn("Failed to load search index (Command Palette offline)");
   }
 
   return (

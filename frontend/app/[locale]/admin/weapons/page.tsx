@@ -105,6 +105,7 @@ export default function WeaponsAdmin() {
     } catch (e: any) { toast.error('Error: '+e.message,{id:tid}); }
   };
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const nameEnVal = watch('nameEn');
   useEffect(()=>{
     if(!editId && nameEnVal) setValue('id', nameEnVal.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,''));

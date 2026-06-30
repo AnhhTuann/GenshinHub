@@ -33,7 +33,6 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   const json = await res.json();
 
   if (json.errors) {
-    console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
     const errorMessage = json.errors[0].message;
     if (errorMessage.includes('Unauthorized')) {
       throw new Error('Bạn chưa đăng nhập Admin! Hãy click nút "⚙️ Admin" ở góc phải bên dưới và nhập mật khẩu.');
@@ -41,7 +40,6 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
     throw new Error('GraphQL Error: ' + errorMessage);
   }
   if (!json.data) {
-    console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
     return {};
   }
   return json.data;
@@ -70,7 +68,6 @@ export async function fetchGraphQLClient(query: string, variables = {}) {
   const json = await res.json();
 
   if (json.errors) {
-    console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
     const errorMessage = json.errors[0].message;
     if (errorMessage.includes('Unauthorized')) {
       throw new Error('Bạn chưa đăng nhập Admin! Hãy click nút "⚙️ Admin" ở góc phải bên dưới và nhập mật khẩu.');
@@ -78,7 +75,6 @@ export async function fetchGraphQLClient(query: string, variables = {}) {
     throw new Error('GraphQL Error: ' + errorMessage);
   }
   if (!json.data) {
-    console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
     return {};
   }
   return json.data;

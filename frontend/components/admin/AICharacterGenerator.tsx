@@ -40,7 +40,7 @@ export default function AICharacterGenerator({ onGenerated }: { onGenerated: () 
             <h2 className="text-sm font-black uppercase tracking-widest text-amber-400">AI Auto-Generate Character</h2>
           </div>
           <p className="text-xs text-white/40 leading-relaxed font-medium">
-            Enter an English character name (e.g. <span className="text-white/70">"Yae Miko"</span>) to automatically scrape the fandom wiki and structure data via AI. This will populate name, rarity, element, weapon, base stats, lore, and images.
+            Enter an English character name (e.g. <span className="text-white/70">&quot;Yae Miko&quot;</span>) to automatically scrape the fandom wiki and structure data via AI. This will populate name, rarity, element, weapon, base stats, lore, and images.
           </p>
         </div>
         

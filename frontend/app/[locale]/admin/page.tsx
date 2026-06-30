@@ -64,7 +64,7 @@ export default function AdminDashboard() {
         >
           Dashboard
         </h1>
-        <p className="text-white/30 text-sm">Welcome back, Admin. Here's an overview of your database.</p>
+        <p className="text-white/30 text-sm">Welcome back, Admin. Here&apos;s an overview of your database.</p>
       </div>
 
       {/* Stats Cards */}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 300;
+export const revalidate = 3600;
 
 const FEATURES = (t: any, locale: string) => [
   { href: '/characters', label: t('characters'), desc: locale === 'en' ? 'Builds, teams & stats'      : 'Build, đội hình & chỉ số',        color: '#ff6b4a', bg: 'rgba(255,107,74,0.07)',   icon: '⚔️' },

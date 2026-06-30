@@ -1,12 +1,11 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* Theme fonts mapped via css variables from next/font */
 :root {
   --font-sans: var(--font-inter, ui-sans-serif, system-ui, sans-serif);
   --font-display: var(--font-outfit, ui-sans-serif, system-ui, sans-serif);
-  --font-cinzel: 'Cinzel', serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-cinzel: var(--font-cinzel, 'Cinzel', serif);
+  --font-mono: var(--font-mono, 'JetBrains Mono', monospace);
 }
 
 /* =====================================================

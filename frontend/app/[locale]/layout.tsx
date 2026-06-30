@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Cinzel, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
 import AdminModeToggle from "@/components/AdminModeToggle";
@@ -17,6 +17,18 @@ const inter = Inter({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  weight: ["400", "600", "700", "900"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "700"],
 });
 
 import { routing } from '@/i18n/routing';
@@ -124,7 +136,7 @@ export default async function RootLayout({ children, params }: { children: React
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${outfit.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${outfit.variable} ${cinzel.variable} ${jetbrainsMono.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Toaster 
             position="bottom-center"

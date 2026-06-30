@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Explore optimal team compositions for Genshin Impact characters — SS/S/A tier teams and synergy builds.',
 };
 
-export const revalidate = 300;
+export const revalidate = 3600;
 
 export default async function TeamsPage() {
   const data = await fetchGraphQL(GET_CHARACTERS);

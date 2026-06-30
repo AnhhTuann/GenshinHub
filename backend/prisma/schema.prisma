@@ -49,6 +49,7 @@ model Character {
   @@index([rarity])
   @@index([weapon])
   @@index([region])
+  @@index([tier])
 }
 
 model CharacterWeapon {
@@ -133,6 +134,10 @@ model Weapon {
   // Tier List Data
   tier          String?
   role          String?
+
+  @@index([rarity])
+  @@index([type])
+  @@index([tier])
 }
 
 model ArtifactSet {
@@ -154,6 +159,9 @@ model Material {
   type        String
   rarity      Int
   iconUrl     String?
+
+  @@index([type])
+  @@index([rarity])
 }
 
 // Dynamic Tier Ranks Configuration

@@ -3,7 +3,7 @@ import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, GET_TIER_RANKS } from '@/lib
 import TierListClient from './TierListClient';
 import type { Metadata } from 'next';
 
-export const revalidate = 300;
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

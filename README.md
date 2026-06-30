@@ -6,8 +6,12 @@
 - **Tra cứu Bách Khoa Toàn Thư:** Xem chi tiết về cốt truyện, hình ảnh, thông số (level 90) và kỹ năng của mọi nhân vật trong Genshin Impact.
 - **Hướng dẫn Build & Meta:** Gợi ý cách lên đồ, ưu tiên kỹ năng, cách xếp đội hình mạnh nhất cho từng nhân vật, kèm theo Tier List các đội hình mạnh nhất hiện nay.
 - **Lịch Sử Banners:** Kho lưu trữ toàn bộ các phiên bản Banners từ 1.0 đến phiên bản mới nhất (sử dụng Wide Banners gốc) phân tách rõ ràng theo Phase 1 & 2.
-- **Đồng bộ Dữ liệu Tự động:** Tích hợp script cào dữ liệu (crawl/seed) trực tiếp từ các nguồn uy tín (như Ambr.top, Fandom Wiki) để luôn cập nhật thông tin.
-- **UI/UX Đỉnh cao:** Giao diện tối màu (Dark Mode) kết hợp hiệu ứng kính mờ (Glassmorphism), có hỗ trợ đa ngôn ngữ (i18n).
+- **Admin Dashboard (Mới):** Cung cấp giao diện quản trị trực quan, cho phép:
+  - Generate thông tin nhân vật nhanh chóng bằng AI (Gemini Flash).
+  - Kéo và thả (Drag & Drop) để điều chỉnh meta/tier list.
+  - Tự động lấy icon và nguyên liệu nâng cấp từ Yatta API (1,000+ items).
+  - Quản lý Full Backup/Restore dưới dạng file `.json`.
+- **UI/UX Đỉnh cao:** Giao diện tối màu (Dark Mode) kết hợp hiệu ứng kính mờ (Glassmorphism), Command Palette tìm kiếm nhanh chóng, hỗ trợ đa ngôn ngữ (i18n).
 
 ## 🏗️ Cấu trúc Dự án
 Dự án được phát triển theo mô hình Client-Server (Monorepo), bao gồm:

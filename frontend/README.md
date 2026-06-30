@@ -20,7 +20,9 @@
   - `/characters`: Danh sách nhân vật và trang chi tiết.
   - `/teams`: Tier list các đội hình mạnh nhất hiện tại.
   - `/banners`: Lịch sử các phiên bản Banners đầy đủ từ 1.0 với hình ảnh tĩnh độ phân giải cao.
+  - `/admin`: Trang quản trị bảo mật (Dashboard) cho phép thao tác trực tiếp với API GraphQL (tạo nhân vật AI, kéo thả tier list, sync nguyên liệu, quản lý backup JSON).
 - **`components/`**: Chứa các UI Components độc lập và có thể tái sử dụng.
+  - `admin/`: Các component đặc thù phục vụ chỉnh sửa dữ liệu nội bộ.
 - **`lib/`**: Chứa các hàm tiện ích, cấu hình kết nối API. Nổi bật là file `graphql.ts` chịu trách nhiệm gọi API GraphQL tới Backend.
 - **`data/`**: Chứa các dữ liệu tĩnh (như `banners.ts`, `teams.ts`) phục vụ cho các module ưu tiên hiệu suất cao không cần gọi GraphQL.
 - **`messages/`**: Chứa các tệp dịch thuật (JSON) cho `next-intl`.

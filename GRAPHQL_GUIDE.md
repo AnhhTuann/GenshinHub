@@ -315,9 +315,40 @@ query GetShowcase($uid: String!) {
 }
 ```
 
-**Export DB sang Seeds (Lưu thay đổi từ DB vào code `.ts`):**
+**Tạo Backup JSON mới:**
 ```graphql
-mutation ExportToSeeds {
-  exportDatabaseToSeeds
+mutation CreateBackup {
+  createBackup {
+    id
+    filename
+    createdAt
+    sizeBytes
+  }
+}
+```
+
+**Phục hồi Backup:**
+```graphql
+mutation RestoreBackup($filename: String!) {
+  restoreBackup(filename: $filename)
+}
+```
+
+**Danh sách Backup:**
+```graphql
+query ListBackups {
+  listBackups {
+    id
+    filename
+    createdAt
+    sizeBytes
+  }
+}
+```
+
+**Generate AI Character:**
+```graphql
+mutation GenerateChar($prompt: String!) {
+  generateCharacterAI(prompt: $prompt)
 }
 ```

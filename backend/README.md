@@ -24,7 +24,9 @@
     - `characters/`: Chứa các file cấu hình build meta chi tiết của từng nhân vật riêng biệt (ví dụ: `durin.ts`, `hu-tao.ts`, ...).
   - `seed.ts`: File orchestrator tự động chạy tất cả các module seeder.
 - **`src/`**: Chứa mã nguồn chính của GraphQL Server.
-  - `index.ts`: Điểm khởi chạy của Apollo Server (tích hợp Express), khai báo Schema và Resolvers.
+  - `index.ts`: Điểm khởi chạy của Apollo Server (tích hợp Express).
+  - `graphql/`: Chứa định nghĩa Schema và Resolvers được module hóa (character, weapon, artifact, material, backup, tierRank).
+  - `backupService.ts` & `exportData.ts`: Các script phục vụ sao lưu toàn bộ DB ra file JSON và xuất dữ liệu sang seed.
 - **`docker-compose.yml`**: Khởi chạy nhanh một container PostgreSQL cục bộ.
 
 ## ⚙️ Cách thức hoạt động
@@ -37,3 +39,7 @@
    Hệ thống có các tập lệnh chạy ngoài luồng (seeder).
    - **Chế độ Full Seed (`npm run prisma:seed`):** Xoá sạch database cũ, tải danh sách từ API `gi.yatta.moe`, đối chiếu với dữ liệu Meta nội bộ tại thư mục `seeds/characters` để chèn lại toàn bộ nhân vật với chỉ số chuẩn xác.
    - **Chế độ Single Character Seed (`SEED_CHARACTER=char_id`):** Chỉ xoá và chèn lại đúng dữ liệu của nhân vật được chỉ định. Bỏ qua việc seed vũ khí, thánh di vật, nguyên liệu để tiết kiệm thời gian và tài nguyên mạng.
+4. **Hệ thống Backup & Restore:** 
+   Máy chủ cho phép tạo bản sao lưu toàn bộ dữ liệu (Nhân vật, Vũ khí, TDV, Nguyên liệu) thành các file `.json` nhẹ (3-4MB) vào thư mục `backups/`, giúp bảo vệ dữ liệu Admin nhập thủ công.
+5. **AI Generator:** 
+   Tích hợp trực tiếp với `@google/genai` (Gemini) để tự động sinh dữ liệu chi tiết cho nhân vật theo prompt của Admin.

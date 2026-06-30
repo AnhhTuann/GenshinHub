@@ -132,7 +132,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
           {/* Element overlay for characters (Top Left) */}
           {isChar && (
             <div className="absolute top-1 left-1 w-6 h-6 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center p-[4px] border border-white/20 shadow-lg">
-              <FallbackImage src={`/images/elements/${item.element.toLowerCase()}.png`} alt={item.element} fill className="object-contain" />
+              <FallbackImage src={`/assets/elements/${item.element.toLowerCase()}.webp`} alt={item.element} fill className="object-contain" />
             </div>
           )}
         </div>

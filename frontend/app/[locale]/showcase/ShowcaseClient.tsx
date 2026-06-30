@@ -161,7 +161,7 @@ export default function ShowcaseClient() {
                         >
                           <div className="absolute inset-0 -z-10 group-hover:scale-[1.06] transition-transform duration-500">
                             <FallbackImage
-                              src={`/images/avatars/UI_AvatarIcon_${mapped.icon}.png`}
+                              src={`/assets/characters/UI_AvatarIcon_${mapped.icon}.webp`}
                               alt={mapped.name}
                               fill
                               sizes="150px"
@@ -171,7 +171,7 @@ export default function ShowcaseClient() {
                           <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/50 to-transparent -z-10" />
 
                           <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                            <FallbackImage src={`/images/elements/${mapped.element.toLowerCase()}.png`} alt={mapped.element} width={14} height={14} className="object-contain" />
+                            <FallbackImage src={`/assets/elements/${mapped.element.toLowerCase()}.webp`} alt={mapped.element} width={14} height={14} className="object-contain" />
                           </div>
 
                           <div className="text-center pb-2 flex flex-col items-center bg-black/50 border-t border-white/[0.06] backdrop-blur-[2px]">

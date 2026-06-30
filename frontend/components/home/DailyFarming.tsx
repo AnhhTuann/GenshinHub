@@ -111,7 +111,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
                     <div className={`yatta-item yatta-item-${char.rarity}star`} title={char.name}>
                       <FallbackImage src={char.avatarUrl} alt={char.name} fill className="object-cover" unoptimized />
                       <div className="yatta-item-element">
-                        <FallbackImage src={`/images/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" unoptimized />
+                        <FallbackImage src={`/assets/elements/${char.element.toLowerCase()}.webp`} alt={char.element} fill className="object-contain" unoptimized />
                       </div>
                     </div>
                   </Link>

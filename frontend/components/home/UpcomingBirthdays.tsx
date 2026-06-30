@@ -92,7 +92,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                 {/* Element badge */}
                 <div className="absolute top-0.5 left-0.5 w-4 h-4 rounded bg-black/40 p-0.5">
                   <FallbackImage
-                    src={`/images/elements/${char.element.toLowerCase()}.png`}
+                    src={`/assets/elements/${char.element.toLowerCase()}.webp`}
                     alt={char.element}
                     fill
                     className="object-contain"

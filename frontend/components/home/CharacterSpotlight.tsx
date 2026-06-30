@@ -78,7 +78,7 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
               style={{ background: `${ec}22`, border: `1px solid ${ec}40` }}
             >
               <FallbackImage
-                src={`/images/elements/${char.element.toLowerCase()}.png`}
+                src={`/assets/elements/${char.element.toLowerCase()}.webp`}
                 alt={char.element}
                 width={16}
                 height={16}

@@ -251,7 +251,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                   }}
                 >
                   <FallbackImage
-                    src={`/images/elements/${el.toLowerCase()}.png`}
+                    src={`/assets/elements/${el.toLowerCase()}.webp`}
                     alt={el}
                     width={16}
                     height={16}

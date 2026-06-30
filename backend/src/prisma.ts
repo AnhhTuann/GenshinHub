@@ -1,4 +1,9 @@
 import { PrismaClient } from '@prisma/client';
+import dotenv from 'dotenv';
+import path from 'path';
+
+// Force load .env and override before PrismaClient is created
+dotenv.config({ path: path.resolve(__dirname, '../.env'), override: true });
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 

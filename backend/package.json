@@ -7,7 +7,8 @@
     "dev": "nodemon --ignore prisma/seeds/ src/index.ts",
     "build": "npx prisma generate && tsc",
     "start": "node dist/src/index.js",
-    "seed": "prisma db seed"
+    "seed": "prisma db seed",
+    "sync-assets": "ts-node scripts/sync-assets.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -23,7 +24,8 @@
     "@graphql-tools/merge": "^9.1.10",
     "@graphql-tools/schema": "^10.0.34",
     "@prisma/client": "^5.10.0",
-    "axios": "^1.16.1",
+    "axios": "^1.18.1",
+    "axios-retry": "^4.5.0",
     "compression": "^1.8.1",
     "cors": "^2.8.6",
     "dataloader": "^2.2.3",

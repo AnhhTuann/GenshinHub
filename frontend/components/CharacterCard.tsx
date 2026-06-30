@@ -159,7 +159,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
             }}
           >
             <FallbackImage
-              src={`/images/elements/${el.toLowerCase()}.png`}
+              src={`/assets/elements/${el.toLowerCase()}.webp`}
               alt={el}
               width={28}
               height={28}

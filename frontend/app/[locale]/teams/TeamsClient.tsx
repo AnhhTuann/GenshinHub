@@ -187,7 +187,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                     title={el}
                   >
                     <div className="relative w-4 h-4">
-                      <FallbackImage src={`/images/elements/${el.toLowerCase()}.png`} alt={el} fill className={`object-contain ${!isSelected && 'opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all'}`} />
+                      <FallbackImage src={`/assets/elements/${el.toLowerCase()}.webp`} alt={el} fill className={`object-contain ${!isSelected && 'opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all'}`} />
                     </div>
                   </button>
                 );
@@ -291,7 +291,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#0d0d14] ring-1 ring-white/10 shadow-lg group-hover:ring-white/30 transition-all bg-[#050508]">
                                   <FallbackImage src={char.avatarUrl} alt={locale === 'en' ? char.nameEn : char.nameVi} fill className="object-cover object-top scale-110" />
                                   <div className="absolute bottom-0 right-0 w-4 h-4 bg-black/80 rounded-full flex items-center justify-center p-[2px] border border-white/20">
-                                    <FallbackImage src={`/images/elements/${char.element.toLowerCase()}.png`} alt={char.element} fill className="object-contain" />
+                                    <FallbackImage src={`/assets/elements/${char.element.toLowerCase()}.webp`} alt={char.element} fill className="object-contain" />
                                   </div>
                                 </div>
                                 <span className={`text-[9px] font-bold text-center truncate w-full ${charElem.color} leading-none`}>
@@ -335,7 +335,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                                 <div className="relative w-14 h-14 rounded-2xl overflow-hidden border border-white/10 flex-shrink-0 bg-black/50 shadow-inner group-hover/card:border-white/30 transition-colors">
                                   <FallbackImage src={char.avatarUrl} alt={locale === 'en' ? char.nameEn : char.nameVi} fill className="object-cover object-top scale-110" />
                                   <div className="absolute bottom-1 right-1 w-4 h-4 bg-black/60 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-                                    <FallbackImage src={`/images/elements/${char.element.toLowerCase()}.png`} alt={char.element} width={10} height={10} className="object-contain" />
+                                    <FallbackImage src={`/assets/elements/${char.element.toLowerCase()}.webp`} alt={char.element} width={10} height={10} className="object-contain" />
                                   </div>
                                 </div>
                                 <div className="flex-1 min-w-0 pt-1">

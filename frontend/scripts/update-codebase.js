@@ -3,7 +3,8 @@ const path = require('path');
 
 const DIRECTORIES = [
   path.join(__dirname, '../components'),
-  path.join(__dirname, '../app')
+  path.join(__dirname, '../app'),
+  path.join(__dirname, '../data')
 ];
 
 function processFile(filePath) {
@@ -27,7 +28,8 @@ function processFile(filePath) {
   }
 
   if (content.includes('/images/')) {
-    content = content.replace(/\/images\/([a-zA-Z0-9_\-\/]+)\.png/g, (match, p1) => {
+    // Sử dụng (.*?) để bắt toàn bộ nội dung động bên trong template literal kể cả dấu ngoặc đơn
+    content = content.replace(/\/images\/(.*?)\.png/g, (match, p1) => {
       let newPath = p1;
       newPath = newPath.replace(/^avatars\//, 'characters/');
       newPath = newPath.replace(/^splash\//, 'characters/');

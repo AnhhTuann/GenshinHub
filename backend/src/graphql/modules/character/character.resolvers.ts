@@ -19,6 +19,10 @@ export const characterResolvers = {
   
   // Field Resolvers (Solving N+1 Problem via DataLoader)
   Character: {
+    signatureWeapons: async (parent: any, _: any, context: GraphQLContext) => {
+      if (!parent.signatureWeapons || parent.signatureWeapons.length === 0) return [];
+      return context.prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
+    },
     bestWeapons: async (parent: any, _: any, context: GraphQLContext) => {
       return context.dataloaders.characterWeaponsLoader.load(parent.id);
     },

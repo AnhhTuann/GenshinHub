@@ -72,94 +72,9 @@ export default function Navbar() {
             href="/"
             onClick={handleLogoClick}
           >
-            {/* Premium multi-layered SVG emblem */}
-            <div
-              className="relative w-10 h-10 flex items-center justify-center rounded-xl overflow-visible"
-              style={{
-                background: 'linear-gradient(135deg, rgba(200,168,75,0.12) 0%, rgba(8,8,18,0.9) 100%)',
-                border: '1px solid rgba(200,168,75,0.25)',
-                boxShadow: '0 0 20px rgba(200,168,75,0.15), inset 0 1px 0 rgba(255,255,255,0.06)',
-                transition: 'box-shadow 0.3s ease',
-              }}
-            >
-              <svg
-                viewBox="0 0 80 80"
-                fill="none"
-                className="w-7 h-7"
-                style={{
-                  filter: 'drop-shadow(0 0 8px rgba(200,168,75,0.5))',
-                  transition: 'transform 0.6s cubic-bezier(0.34,1.56,0.64,1)',
-                }}
-              >
-                <defs>
-                  <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"   stopColor="#fff8e1" />
-                    <stop offset="45%"  stopColor="#f0c84b" />
-                    <stop offset="100%" stopColor="#7a5a10" />
-                  </linearGradient>
-                  <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"   stopColor="rgba(255,248,225,0.7)" />
-                    <stop offset="100%" stopColor="rgba(200,168,75,0.15)" />
-                  </linearGradient>
-                  <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%"   stopColor="rgba(255,248,225,0.9)" />
-                    <stop offset="60%"  stopColor="rgba(240,200,75,0.5)" />
-                    <stop offset="100%" stopColor="rgba(200,168,75,0)" />
-                  </radialGradient>
-                </defs>
-
-                {/* Outer ring with tick marks */}
-                <circle cx="40" cy="40" r="37" stroke="url(#g1)" strokeWidth="0.8" strokeOpacity="0.45" fill="none" />
-                {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => {
-                  const rad = (deg * Math.PI) / 180;
-                  const x1 = (40 + 35 * Math.sin(rad)).toFixed(2);
-                  const y1 = (40 - 35 * Math.cos(rad)).toFixed(2);
-                  const isMajor = deg % 90 === 0;
-                  const x2 = (40 + (isMajor ? 30 : 32) * Math.sin(rad)).toFixed(2);
-                  const y2 = (40 - (isMajor ? 30 : 32) * Math.cos(rad)).toFixed(2);
-                  return (
-                    <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2}
-                      stroke="url(#g1)"
-                      strokeWidth={isMajor ? 1.2 : 0.6}
-                      strokeOpacity={isMajor ? 0.85 : 0.4}
-                    />
-                  );
-                })}
-
-                {/* 4-pointed outer diamond (big) */}
-                <path
-                  d="M40 6 L46 34 L74 40 L46 46 L40 74 L34 46 L6 40 L34 34 Z"
-                  fill="url(#g2)"
-                  stroke="url(#g1)"
-                  strokeWidth="0.7"
-                  strokeOpacity="0.7"
-                />
-
-                {/* 4-pointed inner diamond (small, rotated 45°) */}
-                <path
-                  d="M40 20 L43.5 36.5 L57 40 L43.5 43.5 L40 57 L36.5 43.5 L23 40 L36.5 36.5 Z"
-                  fill="url(#g1)"
-                  fillOpacity="0.85"
-                />
-
-                {/* Center hexagon gem facets */}
-                <polygon
-                  points="40,30 46.9,35 46.9,45 40,50 33.1,45 33.1,35"
-                  fill="url(#g1)"
-                  fillOpacity="0.4"
-                  stroke="url(#g1)"
-                  strokeWidth="0.5"
-                  strokeOpacity="0.8"
-                />
-
-                {/* Diagonal cross lines */}
-                <line x1="26" y1="26" x2="54" y2="54" stroke="url(#g1)" strokeWidth="0.5" strokeOpacity="0.3" />
-                <line x1="54" y1="26" x2="26" y2="54" stroke="url(#g1)" strokeWidth="0.5" strokeOpacity="0.3" />
-
-                {/* Center bright dot */}
-                <circle cx="40" cy="40" r="3.5" fill="url(#centerGlow)" />
-                <circle cx="40" cy="40" r="1.8" fill="white" fillOpacity="0.95" />
-              </svg>
+            {/* Paimon Logo */}
+            <div className="relative w-11 h-11 flex items-center justify-center rounded-xl overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.15)] group-hover:scale-105 transition-transform duration-300 border border-white/10 bg-black/50">
+              <img src="/logo.png" alt="GenshinHub Logo" className="w-full h-full object-cover scale-[1.1]" />
             </div>
 
             {/* Text */}

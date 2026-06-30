@@ -164,7 +164,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
               >
                 <div className="relative w-4 h-4 shrink-0">
                   <FallbackImage
-                    src={`/images/elements/${el.toLowerCase()}.png`}
+                    src={`/assets/elements/${el.toLowerCase()}.webp`}
                     alt={el}
                     fill
                     className="object-contain"

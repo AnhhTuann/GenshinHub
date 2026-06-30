@@ -37,6 +37,8 @@ async function startServer() {
   app.use(limiter);
 
   app.use(express.json({ limit: '1mb' }));
+  
+  app.get('/env', (req, res) => res.json({ db: process.env.DATABASE_URL }));
 
   // Health check endpoint
   app.get('/health', (_req, res) => {
@@ -130,7 +132,8 @@ async function startServer() {
       return { 
         prisma,
         dataloaders: createLoaders(prisma),
-        user: { isAdmin } 
+        user: { isAdmin },
+        isAdmin
       };
     },
   }));
@@ -149,3 +152,4 @@ startServer().catch((err) => {
   console.error('Failed to start server:', err);
   process.exit(1);
 });
+ 

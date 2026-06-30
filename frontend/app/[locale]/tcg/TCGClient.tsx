@@ -93,7 +93,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                   <div key={card.id} className="group flex flex-col items-center gap-2">
                     <div className="relative w-full aspect-[256/440] rounded-xl overflow-hidden glass-hover shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
                       <FallbackImage
-                        src={`/images/tcg/${card.icon}.png`}
+                        src={`/assets/tcg/${card.icon}.webp`}
                         alt={name}
                         fill
                         className="object-contain"
@@ -136,7 +136,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                     return (
                       <div key={charId} className="w-1/3 aspect-[256/440] relative rounded-lg overflow-hidden shadow-xl border border-white/10 group-hover:border-white/20 transition-colors">
                         <FallbackImage
-                          src={`/images/tcg/${card.icon}.png`}
+                          src={`/assets/tcg/${card.icon}.webp`}
                           alt={card.nameEn}
                           fill
                           className="object-cover"

@@ -246,7 +246,7 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
                     {/* Element icon */}
                     <div className="absolute bottom-1 right-1 w-4 h-4 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/5">
                       <FallbackImage
-                        src={`/images/elements/${char.element.toLowerCase()}.png`}
+                        src={`/assets/elements/${char.element.toLowerCase()}.webp`}
                         alt={char.element}
                         width={12}
                         height={12}

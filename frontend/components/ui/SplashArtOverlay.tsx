@@ -250,7 +250,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                   }}
                 >
                   <Image
-                    src={`/elements/${el.toLowerCase()}.png`}
+                    src={`/images/elements/${el.toLowerCase()}.png`}
                     alt={el}
                     width={16}
                     height={16}

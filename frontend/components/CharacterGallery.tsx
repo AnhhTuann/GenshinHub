@@ -163,7 +163,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
               >
                 <div className="relative w-4 h-4 shrink-0">
                   <Image
-                    src={`/elements/${el.toLowerCase()}.png`}
+                    src={`/images/elements/${el.toLowerCase()}.png`}
                     alt={el}
                     fill
                     className="object-contain"

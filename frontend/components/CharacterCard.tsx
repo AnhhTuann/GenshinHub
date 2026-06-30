@@ -157,7 +157,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
             }}
           >
             <Image
-              src={`/elements/${el.toLowerCase()}.png`}
+              src={`/images/elements/${el.toLowerCase()}.png`}
               alt={el}
               width={28}
               height={28}

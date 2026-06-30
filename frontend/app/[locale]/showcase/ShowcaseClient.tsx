@@ -170,7 +170,7 @@ export default function ShowcaseClient() {
                           <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/50 to-transparent -z-10" />
 
                           <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                            <Image src={`/elements/${mapped.element.toLowerCase()}.png`} alt={mapped.element} width={14} height={14} className="object-contain" />
+                            <Image src={`/images/elements/${mapped.element.toLowerCase()}.png`} alt={mapped.element} width={14} height={14} className="object-contain" />
                           </div>
 
                           <div className="text-center pb-2 flex flex-col items-center bg-black/50 border-t border-white/[0.06] backdrop-blur-[2px]">

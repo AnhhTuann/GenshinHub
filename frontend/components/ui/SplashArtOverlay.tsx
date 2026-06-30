@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';

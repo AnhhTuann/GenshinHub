@@ -1,18 +1,18 @@
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
+import sharp from 'sharp';
 
 const DOWNLOAD_CONCURRENCY = 10;
-const FRONTEND_DIR = path.resolve('./frontend/public/images');
+const FRONTEND_DIR = path.resolve('./frontend/public/assets');
 
 const ensureDir = (dir) => {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 };
 
-ensureDir(path.join(FRONTEND_DIR, 'avatars'));
-ensureDir(path.join(FRONTEND_DIR, 'splash'));
+ensureDir(path.join(FRONTEND_DIR, 'characters'));
 ensureDir(path.join(FRONTEND_DIR, 'weapons'));
 ensureDir(path.join(FRONTEND_DIR, 'artifacts'));
+ensureDir(path.join(FRONTEND_DIR, 'items'));
 
 const imageUrls = new Set();
 
@@ -77,40 +77,43 @@ const urls = Array.from(imageUrls);
 console.log(`Found ${urls.length} images to download.`);
 
 async function downloadFile(url) {
-  const filename = url.split('/').pop();
-  let subfolder = 'avatars';
+  let filename = url.split('/').pop().replace('.png', '');
+  let subfolder = 'characters';
+  
   if (filename.includes('EquipIcon')) subfolder = 'weapons';
   else if (filename.includes('RelicIcon')) subfolder = 'artifacts';
-  else if (filename.includes('Gacha_AvatarImg')) subfolder = 'splash';
-
-  const destPath = path.join(FRONTEND_DIR, subfolder, filename);
-  if (fs.existsSync(destPath)) {
-    // console.log(`Skipping (already exists): ${filename}`);
-    return;
+  else if (filename.includes('ItemIcon')) subfolder = 'items';
+  else if (filename.includes('Gacha_AvatarImg')) {
+    subfolder = 'characters';
+    filename = filename + '_splash';
+  } else if (filename.includes('AvatarIcon')) {
+    subfolder = 'characters';
+    filename = filename + '_avatar';
   }
 
-  return new Promise((resolve, reject) => {
-    https.get(url, (response) => {
-      if (response.statusCode !== 200) {
-        if (response.statusCode === 404) {
-          console.warn(`[404] Not Found: ${url}`);
-          resolve(); // Resolve anyway to not break the chain
-        } else {
-          reject(new Error(`Failed to get '${url}' (${response.statusCode})`));
-        }
+  const destPath = path.join(FRONTEND_DIR, subfolder, filename + '.webp');
+  if (fs.existsSync(destPath)) {
+    // console.log(`Skipping (already exists): ${filename}.webp`);
+    return Promise.resolve();
+  }
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      if (res.status === 404) {
+        console.warn(`[404] Not Found: ${url}`);
         return;
       }
-      const file = fs.createWriteStream(destPath);
-      response.pipe(file);
-      file.on('finish', () => {
-        file.close();
-        resolve();
-      });
-    }).on('error', (err) => {
-      fs.unlink(destPath, () => {});
-      reject(err);
-    });
-  });
+      throw new Error(`Failed to get '${url}' (${res.status})`);
+    }
+    const buffer = await res.arrayBuffer();
+    
+    await sharp(Buffer.from(buffer))
+      .webp({ quality: 90 })
+      .toFile(destPath);
+  } catch (err) {
+    throw err;
+  }
 }
 
 async function run() {

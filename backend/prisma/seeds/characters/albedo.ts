@@ -305,5 +305,24 @@ export const albedo = {
         iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.webp"
     }
 ],
-  bestArtifacts: []
+  bestArtifacts: [
+    {
+      setNameVi: "Đoàn Kịch Hoàng Kim",
+      setNameEn: "Golden Troupe",
+      pieces: 4,
+      sands: ["Phòng Ngự%"],
+      goblet: ["Sát Thương Nguyên Tố Nham"],
+      circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+      subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Phòng Ngự%", "Nạp Nguyên Tố"]
+    },
+    {
+      setNameVi: "Giấc Mộng Phù Hoa",
+      setNameEn: "Husk of Opulent Dreams",
+      pieces: 4,
+      sands: ["Phòng Ngự%"],
+      goblet: ["Sát Thương Nguyên Tố Nham"],
+      circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+      subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Phòng Ngự%", "Nạp Nguyên Tố"]
+    }
+  ]
 };

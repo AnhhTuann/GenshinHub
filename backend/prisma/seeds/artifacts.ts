@@ -24,7 +24,7 @@ export async function seedArtifacts(prisma: PrismaClient) {
         piece2DescEn: affixesEn[0] as string || affixesVi[0] as string || "",
         piece4DescVi: affixesVi[1] as string || "",
         piece4DescEn: affixesEn[1] as string || affixesVi[1] as string || "",
-        iconUrl: item.icon ? `/images/artifacts/${item.icon}.png` : null,
+        iconUrl: item.icon ? `/assets/artifacts/${item.icon}.webp` : null,
       };
     });
     

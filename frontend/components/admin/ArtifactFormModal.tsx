@@ -165,7 +165,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
             <div className="sm:col-span-2">
               <label className={labelClass}>Icon URL</label>
               <div className="flex gap-3">
-                <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/images/artifacts/..." className={inputClass} />
+                <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/assets/artifacts/..." className={inputClass} />
                 {form.iconUrl && (
                   <div className="relative w-11 h-11 flex-shrink-0 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
                     <FallbackImage src={form.iconUrl} alt="preview" fill sizes="36px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />

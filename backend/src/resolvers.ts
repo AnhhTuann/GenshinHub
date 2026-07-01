@@ -93,7 +93,7 @@ async function enrichArtifacts(artifacts: any[], setLookup: Record<string, any>)
           return {
             nameEn: "Physical DMG +25% set",
             nameVi: "Bộ Sát Thương Vật Lý +25%",
-            iconUrl: "/images/artifacts/UI_RelicIcon_15008_4.png",
+            iconUrl: "/assets/artifacts/UI_RelicIcon_15008_4.webp",
             artifactSetId: "15008",
           };
         }
@@ -111,7 +111,7 @@ async function enrichArtifacts(artifacts: any[], setLookup: Record<string, any>)
       ...a,
       setNameEn: dbArtifact?.nameEn || a.setNameEn,
       setNameVi: dbArtifact?.nameVi || a.setNameVi,
-      iconUrl: isMix ? "/images/artifacts/UI_RelicIcon_15001_4.png" : (dbArtifact?.iconUrl || null),
+      iconUrl: isMix ? "/assets/artifacts/UI_RelicIcon_15001_4.webp" : (dbArtifact?.iconUrl || null),
       rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
       artifactSetId: dbArtifact?.id || null,
       mixSets,

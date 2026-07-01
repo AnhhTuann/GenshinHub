@@ -1,6 +1,6 @@
 # 🏺 Artifact Set Icon Filename Mapping
 # Format: Tên File → Tên EN | Tên VN
-# Đặt vào: `frontend/public/images/artifacts/`
+# Đặt vào: `frontend/public/assets/artifacts/`
 # Prefix: `UI_RelicIcon_[SetID]_[SlotID].png`
 
 > **Slot ID**: `4` = Hoa (Flower) — icon đại diện cho cả set  

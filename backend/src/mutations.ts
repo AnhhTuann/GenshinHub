@@ -573,8 +573,8 @@ export const Mutation = {
     const aiResult = await generateCharacterBuild(basicData.name, basicData.element, basicData.weaponType);
     
     const charId = basicData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-    const avatarUrl = `/images/avatars/UI_AvatarIcon_${basicData.icon.replace('UI_AvatarIcon_', '')}.png`;
-    const splashArtUrl = `/images/splash/UI_Gacha_AvatarImg_${basicData.icon.replace('UI_AvatarIcon_', '')}.png`;
+    const avatarUrl = `/assets/characters/UI_AvatarIcon_${basicData.icon.replace('UI_AvatarIcon_', '')}_avatar.webp`;
+    const splashArtUrl = `/assets/characters/UI_Gacha_AvatarImg_${basicData.icon.replace('UI_AvatarIcon_', '')}_splash.webp`;
     
     const charData = {
       id: charId,

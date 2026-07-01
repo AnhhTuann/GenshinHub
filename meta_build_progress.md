@@ -9,7 +9,7 @@ Dưới đây là danh sách các nhân vật đã được cập nhật dữ li
 | **Aloy**           |    `aloy`     | ✅ Hoàn thành | 5 Vũ khí, TDV, Substats, Talents, Teams |
 | **Charlotte**      |  `charlotte`  | ✅ Hoàn thành |
 | **Chongyun**       |  `chongyun`   | ✅ Hoàn thành |
-| **Citlali**        |   `citlali`   |  ❌ Chưa làm  | -                                       |
+| **Citlali**        |   `citlali`   | ✅ Hoàn thành | 6 Vũ khí, 3 bộ TDV, Talents, 9 Teams    |
 | **Diona**          |    `diona`    |  ❌ Chưa làm  | -                                       |
 | **Escoffier**      |  `escoffier`  |  ❌ Chưa làm  | -                                       |
 | **Eula**           |    `eula`     |  ❌ Chưa làm  | -                                       |

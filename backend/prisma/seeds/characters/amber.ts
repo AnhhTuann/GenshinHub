@@ -805,10 +805,10 @@ export const amber = {
         setNameVi: "Nghi Thức Tông Thất Cổ",
         setNameEn: "Noblesse Oblige",
         pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: ["ATK%","Energy Recharge"],
+        goblet: ["Pyro DMG Bonus"],
+        circlet: ["CRIT Rate","CRIT DMG"],
+        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Energy Recharge","Elemental Mastery"]
     },
     {
         setNameVi: "Dòng Hồi Ức Bất Tận",
@@ -854,10 +854,10 @@ export const amber = {
         setNameVi: "Dấu Ấn Ngăn Cách",
         setNameEn: "Emblem of Severed Fate",
         pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: ["ATK%","Energy Recharge"],
+        goblet: ["Pyro DMG Bonus"],
+        circlet: ["CRIT Rate","CRIT DMG"],
+        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Energy Recharge","Elemental Mastery"]
     },
     {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",

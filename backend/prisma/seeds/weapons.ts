@@ -142,7 +142,7 @@ export async function seedWeapons(prisma: PrismaClient) {
         passiveNameVi,
         passiveDescEn,
         passiveDescVi,
-        iconUrl: item.icon ? `/images/weapons/${item.icon}.png` : null,
+        iconUrl: item.icon ? `/assets/weapons/${item.icon}.webp` : null,
         tier: tierMap.get(id) || null,
       });
     }

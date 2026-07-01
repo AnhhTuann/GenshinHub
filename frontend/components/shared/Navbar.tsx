@@ -121,12 +121,11 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={link.href === '/' ? handleLogoClick : undefined}
-                  className="relative px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider whitespace-nowrap group"
-                  style={{
-                    color: active ? '#f0d080' : 'rgba(255,255,255,0.42)',
-                    background: active ? 'rgba(200,168,75,0.10)' : 'transparent',
-                    transition: 'color 0.2s ease, background 0.2s ease',
-                  }}
+                  className={`relative px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider whitespace-nowrap group transition-all duration-200 ${
+                    active
+                      ? 'text-[#f0d080] bg-[#c8a84b]/10'
+                      : 'text-white/40 hover:text-[#f0d080] hover:bg-white/5'
+                  }`}
                 >
                   {link.label}
                   {/* Active gold dot */}
@@ -146,8 +145,7 @@ export default function Navbar() {
             {/* Search Button (Triggers Cmd+K) */}
             <button 
               onClick={handleSearchClick}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold transition-colors"
-              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/60 hover:text-[#f0d080]"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               Search
@@ -155,8 +153,7 @@ export default function Navbar() {
             </button>
             <button 
               onClick={handleSearchClick}
-              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-xl transition-colors"
-              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}
+              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/60 hover:text-[#f0d080]"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button>
@@ -173,12 +170,11 @@ export default function Navbar() {
                 <button
                   key={l}
                   onClick={() => router.replace(pathname, { locale: l })}
-                  className="px-3 py-1.5 text-[10px] font-black uppercase tracking-widest"
-                  style={{
-                    color: locale === l ? '#f0d080' : 'rgba(255,255,255,0.28)',
-                    background: locale === l ? 'rgba(200,168,75,0.12)' : 'transparent',
-                    transition: 'color 0.2s ease, background 0.2s ease',
-                  }}
+                  className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-widest transition-all duration-200 ${
+                    locale === l
+                      ? 'text-[#f0d080] bg-[#c8a84b]/15'
+                      : 'text-white/30 hover:text-[#f0d080] hover:bg-white/5'
+                  }`}
                 >
                   {l}
                 </button>

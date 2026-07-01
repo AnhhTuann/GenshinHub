@@ -40,6 +40,16 @@ export const characterResolvers = {
     }
   },
 
+  CharacterWeapon: {
+    rarity: async (parent: any, _: any, context: GraphQLContext) => {
+      // Find the weapon in DB to get its rarity
+      const weapon = await context.prisma.weapon.findFirst({
+        where: { nameEn: parent.nameEn }
+      });
+      return weapon?.rarity || 5; // Default to 5-star if not found
+    }
+  },
+
   CharacterArtifact: {
     iconUrl: async (parent: any, _: any, context: GraphQLContext) => {
       if (parent.setNameEn && parent.setNameEn.startsWith('Mix ')) {
@@ -51,7 +61,10 @@ export const characterResolvers = {
     rarity: async (parent: any, _: any, context: GraphQLContext) => {
       if (parent.setNameEn && parent.setNameEn.startsWith('Mix ')) return 5;
       const set = await context.prisma.artifactSet.findFirst({ where: { nameEn: parent.setNameEn } });
-      return set?.rarityList?.[0] || 5;
+      if (set?.rarityList && set.rarityList.length > 0) {
+        return Math.max(...set.rarityList);
+      }
+      return 5;
     },
     artifactSetId: async (parent: any, _: any, context: GraphQLContext) => {
       if (parent.setNameEn && parent.setNameEn.startsWith('Mix ')) return null;

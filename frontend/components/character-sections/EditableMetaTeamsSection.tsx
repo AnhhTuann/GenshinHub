@@ -244,11 +244,23 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                 const tmText   = EL_TEXT[teammate?.element ?? ''] ?? 'text-white/60';
                 return (
                   <Link href={`/characters/${m.characterId}`} key={mIdx} className="group/tm flex flex-col items-center gap-1">
-                    <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/25 transition-all duration-250 bg-[#0d0d14] p-0.5">
+                    <div className={`relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/25 transition-all duration-250 p-0.5 ${
+                      teammate?.id === 'aloy' ? 'bg-gradient-to-b from-[#cc4242] to-[#8c2a2a]' :
+                      teammate?.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
+                      teammate?.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#5b4d75]' :
+                      'bg-[#0d0d14]'
+                    }`}>
                       {teammate ? (
-                        <FallbackImage src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
+                        <>
+                          <FallbackImage src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
+                          <div className="absolute top-1 left-1 w-[22px] h-[22px] bg-[#06060a]/50 backdrop-blur-md rounded-full border border-white/10 shadow-sm flex items-center justify-center p-0.5 z-10">
+                            <FallbackImage src={`/assets/elements/${teammate.element.toLowerCase()}.webp`} alt={teammate.element} fill className="object-contain p-[2px]" />
+                          </div>
+                        </>
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-[8px] text-white/40 font-bold uppercase break-all px-1">{m.characterId}</div>
+                        <div className="w-full h-full flex items-center justify-center bg-white/[0.02] rounded-lg">
+                          <span className="text-white/20 text-xs">?</span>
+                        </div>
                       )}
                     </div>
                     <span className="text-[9px] text-white/50 font-black group-hover/tm:text-white/90 text-center uppercase tracking-widest truncate w-full">{m.role}</span>

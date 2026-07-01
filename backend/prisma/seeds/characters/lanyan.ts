@@ -139,15 +139,15 @@ export const lanyan = {
     "items": [
       {
         "count": 3,
-        "materialId": "clearwater_jade"
+        "materialId": "101241"
       },
       {
         "count": 1,
-        "materialId": "vayuda_turquoise_sliver"
+        "materialId": "104151"
       },
       {
         "count": 3,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const lanyan = {
     "items": [
       {
         "count": 10,
-        "materialId": "clearwater_jade"
+        "materialId": "101241"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 15,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       },
       {
         "count": 2,
-        "materialId": "gold_inscribed_secret_source_core"
+        "materialId": "113066"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const lanyan = {
     "items": [
       {
         "count": 20,
-        "materialId": "clearwater_jade"
+        "materialId": "101241"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 12,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 4,
-        "materialId": "gold_inscribed_secret_source_core"
+        "materialId": "113066"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const lanyan = {
     "items": [
       {
         "count": 30,
-        "materialId": "clearwater_jade"
+        "materialId": "101241"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 18,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 8,
-        "materialId": "gold_inscribed_secret_source_core"
+        "materialId": "113066"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const lanyan = {
     "items": [
       {
         "count": 45,
-        "materialId": "clearwater_jade"
+        "materialId": "101241"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 12,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 12,
-        "materialId": "gold_inscribed_secret_source_core"
+        "materialId": "113066"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const lanyan = {
     "items": [
       {
         "count": 60,
-        "materialId": "clearwater_jade"
+        "materialId": "101241"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_gemstone"
+        "materialId": "104154"
       },
       {
         "count": 24,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 20,
-        "materialId": "gold_inscribed_secret_source_core"
+        "materialId": "113066"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104313"
+      },
+      {
+        "count": 6,
+        "materialId": "112038"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104314"
+      },
+      {
+        "count": 3,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104314"
+      },
+      {
+        "count": 4,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104314"
+      },
+      {
+        "count": 6,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104314"
+      },
+      {
+        "count": 9,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104315"
+      },
+      {
+        "count": 4,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113069"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104315"
+      },
+      {
+        "count": 6,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113069"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104315"
+      },
+      {
+        "count": 9,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113069"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104315"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113069"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

@@ -139,15 +139,15 @@ export const yanfei = {
     "items": [
       {
         "count": 3,
-        "materialId": "noctilucous_jade"
+        "materialId": "100028"
       },
       {
         "count": 1,
-        "materialId": "agnidus_agate_sliver"
+        "materialId": "104111"
       },
       {
         "count": 3,
-        "materialId": "treasure_hoarder_insignia"
+        "materialId": "112035"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const yanfei = {
     "items": [
       {
         "count": 10,
-        "materialId": "noctilucous_jade"
+        "materialId": "100028"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 15,
-        "materialId": "treasure_hoarder_insignia"
+        "materialId": "112035"
       },
       {
         "count": 2,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const yanfei = {
     "items": [
       {
         "count": 20,
-        "materialId": "noctilucous_jade"
+        "materialId": "100028"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 12,
-        "materialId": "silver_raven_insignia"
+        "materialId": "112036"
       },
       {
         "count": 4,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const yanfei = {
     "items": [
       {
         "count": 30,
-        "materialId": "noctilucous_jade"
+        "materialId": "100028"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 18,
-        "materialId": "silver_raven_insignia"
+        "materialId": "112036"
       },
       {
         "count": 8,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const yanfei = {
     "items": [
       {
         "count": 45,
-        "materialId": "noctilucous_jade"
+        "materialId": "100028"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 12,
-        "materialId": "golden_raven_insignia"
+        "materialId": "112037"
       },
       {
         "count": 12,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const yanfei = {
     "items": [
       {
         "count": 60,
-        "materialId": "noctilucous_jade"
+        "materialId": "100028"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_gemstone"
+        "materialId": "104114"
       },
       {
         "count": 24,
-        "materialId": "golden_raven_insignia"
+        "materialId": "112037"
       },
       {
         "count": 20,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104316"
+      },
+      {
+        "count": 6,
+        "materialId": "112035"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104317"
+      },
+      {
+        "count": 3,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104317"
+      },
+      {
+        "count": 4,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104317"
+      },
+      {
+        "count": 6,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104317"
+      },
+      {
+        "count": 9,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104318"
+      },
+      {
+        "count": 4,
+        "materialId": "112037"
+      },
+      {
+        "count": 1,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104318"
+      },
+      {
+        "count": 6,
+        "materialId": "112037"
+      },
+      {
+        "count": 1,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104318"
+      },
+      {
+        "count": 9,
+        "materialId": "112037"
+      },
+      {
+        "count": 2,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104318"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112037"
+      },
+      {
+        "count": 2,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,420 +419,10 @@ export const yanfei = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Yanfei Vaporize Team #3",
-        rank: "A",
-        description: "A Vaporize team centered on Yanfei's Pyro damage, supported by Xingqiu's Hydro application, and Geo resonance from Albedo and Zhongli. Yanfei's Pyro DMG is amplified by Vaporize triggered by Xingqiu's continuous Hydro application. Albedo and Zhongli provide Geo resonance and shield, while Albedo can boost DMG with Archaic Petra.",
-        members: [
-            {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "Main Pyro DPS.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield and Geo resonance support.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "albedo",
-                role: "Sub DPS",
-                roleDesc: "Geo resonance and off-field DMG support.",
-                weapons: [
-                    "Cinnabar Spindle",
-                    "Harbinger of Dawn"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "DEF"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Off-field Hydro support.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yanfei Vaporize & Burgeon",
-        rank: "S",
-        description: "Yanfei drives Vaporize and Burgeon reactions with Yelan's off-field Hydro and Nahida's Dendro application, while Zhongli provides shielding and ATK buff.",
-        members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides a strong shield, shred resistance, and buffs ATK via Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Applies Hydro off-field and increases on-field character's damage.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "HP%",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Applies Dendro continuously and shares Elemental Mastery.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Sacrificial Fragments"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "Main Pyro DPS driving Vaporize and Burgeon.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yanfei Vaporize",
-        rank: "S",
-        description: "Yanfei's Pyro damage is amplified by Vaporize reactions enabled by Xingqiu's consistent off-field Hydro application, while Kazuha provides crowd control and Elemental DMG buffs, and Zhongli shields and buffs ATK.",
-        members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, decreases Pyro resistance, and buffs Elemental DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "Main Pyro DPS triggering Vaporize on Hydro-affected enemies.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides shield and buffs team ATK with Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Applies Hydro continuously with his Raincutter Burst.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yanfei Vaporize Team #4",
-        rank: "A",
-        description: "Yanfei triggers Vaporize reactions with Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Bennett provides ATK buff and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides a large ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "Main DPS triggering Vaporize.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yanfei Melt Team #2",
-        rank: "A",
-        description: "A Melt team where Yanfei serves as the on-field driver, triggering Melt reactions with off-field Cryo application from Ayaka and Diona. Yanfei triggers Melt reactions by applying Pyro to enemies affected by Cryo from Ayaka's Burst and Diona's Skill/Burst. Sucrose buffs Elemental Mastery and reduces Cryo resistance with Viridescent Venerer.",
-        members: [
-            {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "On-field driver triggering Melt.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Shield and healing support.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Sub DPS",
-                roleDesc: "Provides powerful off-field Cryo application via Burst.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Yanfei Melt Team #1",
         rank: "A",
         description: "Yanfei serves as the primary DPS, with her damage amplified by Melt reactions. Trigger Melt on enemies affected by Ganyu's Burst and skill application, while Kazuha provides grouping and elemental shred, and Diona offers shielding and energy for Ganyu.",
         members: [
-            {
-                characterId: "ganyu",
-                role: "Sub DPS",
-                roleDesc: "Applies Cryo consistently off-field via Burst.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "yanfei",
                 role: "Main DPS",
@@ -701,6 +439,24 @@ export const yanfei = {
                     "CRIT Rate",
                     "ATK%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "ganyu",
+                role: "Sub DPS",
+                roleDesc: "Applies Cryo consistently off-field via Burst.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -741,17 +497,17 @@ export const yanfei = {
         ]
     },
     {
-        name: "Yanfei Vaporize Team #2",
+        name: "Yanfei Melt Team #2",
         rank: "A",
-        description: "A team focuses on triggering Vaporize with Yanfei as the main DPS, supported by Xingqiu's Hydro application, Venti's crowd control, and Zhongli's shielding. Use Xingqiu's Burst to apply Hydro, then trigger Vaporize with Yanfei's charged attacks. Venti groups enemies and spreads Hydro/Pyro, while Zhongli shields and buffs ATK.",
+        description: "A Melt team where Yanfei serves as the on-field driver, triggering Melt reactions with off-field Cryo application from Ayaka and Diona. Yanfei triggers Melt reactions by applying Pyro to enemies affected by Cryo from Ayaka's Burst and Diona's Skill/Burst. Sucrose buffs Elemental Mastery and reduces Cryo resistance with Viridescent Venerer.",
         members: [
             {
-                characterId: "venti",
+                characterId: "sucrose",
                 role: "Support",
-                roleDesc: "Provides crowd control, groups enemies, and shreds elemental resistance.",
+                roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
                 weapons: [
-                    "Elegy for the End",
-                    "The Stringless"
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
                 ],
                 artifacts: [
                     "4pc Viridescent Venerer"
@@ -764,9 +520,27 @@ export const yanfei = {
                 ]
             },
             {
+                characterId: "ayaka",
+                role: "Sub DPS",
+                roleDesc: "Provides powerful off-field Cryo application via Burst.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "yanfei",
                 role: "Main DPS",
-                roleDesc: "Triggers Vaporize with charged attacks.",
+                roleDesc: "On-field driver triggering Melt.",
                 weapons: [
                     "Lost Prayer to the Sacred Winds",
                     "The Widsith"
@@ -782,33 +556,15 @@ export const yanfei = {
                 ]
             },
             {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Enables Vaporize with off-field Hydro attacks.",
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Shield and healing support.",
                 weapons: [
-                    "Primordial Jade Cutter",
-                    "Sacrificial Sword"
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
                 ],
                 artifacts: [
                     "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shields and buffs team ATK.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
                     "HP%",
@@ -824,21 +580,21 @@ export const yanfei = {
         description: "Focuses on Yanfei as main DPS triggering Vaporize reactions, with Xiangling providing off-field Pyro application, Kazuha for grouping, elemental buff/shred, and Bennett for ATK buff and healing.",
         members: [
             {
-                characterId: "yanfei",
-                role: "Main DPS",
-                roleDesc: "Main DPS driving the Pyro attacks.",
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Provides off-field Pyro damage and resonance.",
                 weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
+                    "Engulfing Lightning",
+                    "The Catch"
                 ],
                 artifacts: [
-                    "4pc Wanderer's Troupe"
+                    "4pc Emblem of Severed Fate"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Elemental Mastery"
+                    "Energy Recharge"
                 ]
             },
             {
@@ -860,15 +616,75 @@ export const yanfei = {
                 ]
             },
             {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Provides off-field Pyro damage and resonance.",
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK buff and healing support.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Skyward Blade",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Main DPS driving the Pyro attacks.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yanfei Vaporize Team #3",
+        rank: "A",
+        description: "A Vaporize team centered on Yanfei's Pyro damage, supported by Xingqiu's Hydro application, and Geo resonance from Albedo and Zhongli. Yanfei's Pyro DMG is amplified by Vaporize triggered by Xingqiu's continuous Hydro application. Albedo and Zhongli provide Geo resonance and shield, while Albedo can boost DMG with Archaic Petra.",
+        members: [
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Main Pyro DPS.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Off-field Hydro support.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -878,9 +694,341 @@ export const yanfei = {
                 ]
             },
             {
+                characterId: "albedo",
+                role: "Sub DPS",
+                roleDesc: "Geo resonance and off-field DMG support.",
+                weapons: [
+                    "Cinnabar Spindle",
+                    "Harbinger of Dawn"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "DEF"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield and Geo resonance support.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yanfei Vaporize Team #2",
+        rank: "A",
+        description: "A team focuses on triggering Vaporize with Yanfei as the main DPS, supported by Xingqiu's Hydro application, Venti's crowd control, and Zhongli's shielding. Use Xingqiu's Burst to apply Hydro, then trigger Vaporize with Yanfei's charged attacks. Venti groups enemies and spreads Hydro/Pyro, while Zhongli shields and buffs ATK.",
+        members: [
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Enables Vaporize with off-field Hydro attacks.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Triggers Vaporize with charged attacks.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shields and buffs team ATK.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "venti",
+                role: "Support",
+                roleDesc: "Provides crowd control, groups enemies, and shreds elemental resistance.",
+                weapons: [
+                    "Elegy for the End",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yanfei Vaporize",
+        rank: "S",
+        description: "Yanfei's Pyro damage is amplified by Vaporize reactions enabled by Xingqiu's consistent off-field Hydro application, while Kazuha provides crowd control and Elemental DMG buffs, and Zhongli shields and buffs ATK.",
+        members: [
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, decreases Pyro resistance, and buffs Elemental DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides shield and buffs team ATK with Tenacity of the Millelith.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Applies Hydro continuously with his Raincutter Burst.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Main Pyro DPS triggering Vaporize on Hydro-affected enemies.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yanfei Vaporize & Burgeon",
+        rank: "S",
+        description: "Yanfei drives Vaporize and Burgeon reactions with Yelan's off-field Hydro and Nahida's Dendro application, while Zhongli provides shielding and ATK buff.",
+        members: [
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Applies Hydro off-field and increases on-field character's damage.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "HP%",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Main Pyro DPS driving Vaporize and Burgeon.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Applies Dendro continuously and shares Elemental Mastery.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Sacrificial Fragments"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides a strong shield, shred resistance, and buffs ATK via Tenacity of the Millelith.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yanfei Vaporize Team #4",
+        rank: "A",
+        description: "Yanfei triggers Vaporize reactions with Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Bennett provides ATK buff and healing.",
+        members: [
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous off-field Hydro application to trigger Vaporize.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yanfei",
+                role: "Main DPS",
+                roleDesc: "Main DPS triggering Vaporize.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "ATK buff and healing support.",
+                roleDesc: "Provides a large ATK buff and healing.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
@@ -1011,8 +1159,31 @@ export const yanfei = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: [
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố",
+            "Hiệu Quả Nạp"
+        ]
+    },
+    {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
         pieces: 4,
         sands: [
             "Tấn Công%",
@@ -1057,55 +1228,32 @@ export const yanfei = {
         ]
     },
     {
+        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4,
+        sands: [
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "Tinh Thông Nguyên Tố",
+            "Hiệu Quả Nạp"
+        ]
+    },
+    {
         setNameVi: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
         setNameEn: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
         pieces: 2,
-        sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ]
-    },
-    {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
-        pieces: 4,
-        sands: [
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ]
-    },
-    {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
-        pieces: 4,
         sands: [
             "Tấn Công%",
             "Tinh Thông Nguyên Tố"

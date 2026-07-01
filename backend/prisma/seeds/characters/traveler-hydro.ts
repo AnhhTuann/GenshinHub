@@ -116,6 +116,7 @@ export const travelerHydro = {
     "level": "Lv.90"
   }
 ],
+  talentMats: null,
   talentPriority: [
   "Skill",
   "Burst",
@@ -128,6 +129,23 @@ export const travelerHydro = {
         rank: "S",
         description: "A classic Nilou Bloom team utilizing Hydro Traveler's continuous off-field Hydro application from their Burst, enhanced by Nilou's Bountiful Cores, Nahida's high Dendro application, and Baizhu's shielding/healing.",
         members: [
+            {
+                characterId: "baizhu",
+                role: "Support",
+                roleDesc: "Dendro Support/Healer. Provides shielding, continuous healing, and boosts Bloom reaction damage.",
+                weapons: [
+                    "Jadefall's Splendor",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP"
+                ]
+            },
             {
                 characterId: "nahida",
                 role: "Sub DPS",
@@ -144,23 +162,6 @@ export const travelerHydro = {
                     "CRIT Rate",
                     "CRIT DMG",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "baizhu",
-                role: "Support",
-                roleDesc: "Dendro Support/Healer. Provides shielding, continuous healing, and boosts Bloom reaction damage.",
-                weapons: [
-                    "Jadefall's Splendor",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP"
                 ]
             },
             {
@@ -226,24 +227,6 @@ export const travelerHydro = {
                 ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "sucrose",
                 role: "Support",
                 roleDesc: "Anemo Support. Swirls Hydro/Pyro to shred enemy resistances and shares Elemental Mastery with the team.",
@@ -274,6 +257,24 @@ export const travelerHydro = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
                     "ATK%"
                 ]
             }
@@ -350,8 +351,8 @@ export const travelerHydro = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Scroll of the Hero of Cinder City",
+        setNameVi: "Giáo Quan",
+        setNameEn: "Instructor",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
@@ -396,8 +397,8 @@ export const travelerHydro = {
         ]
     },
     {
-        setNameVi: "Giáo Quan",
-        setNameEn: "Instructor",
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
@@ -419,8 +420,8 @@ export const travelerHydro = {
         ]
     },
     {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Noblesse Oblige",
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

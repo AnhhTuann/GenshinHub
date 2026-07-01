@@ -139,15 +139,15 @@ export const lynette = {
     "items": [
       {
         "count": 3,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 1,
-        "materialId": "vayuda_turquoise_sliver"
+        "materialId": "104151"
       },
       {
         "count": 3,
-        "materialId": "meshing_gear"
+        "materialId": "112083"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const lynette = {
     "items": [
       {
         "count": 10,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 15,
-        "materialId": "meshing_gear"
+        "materialId": "112083"
       },
       {
         "count": 2,
-        "materialId": "artificed_spare_clockwork_component_coppelia"
+        "materialId": "113049"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const lynette = {
     "items": [
       {
         "count": 20,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 12,
-        "materialId": "mechanical_spur_gear"
+        "materialId": "112084"
       },
       {
         "count": 4,
-        "materialId": "artificed_spare_clockwork_component_coppelia"
+        "materialId": "113049"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const lynette = {
     "items": [
       {
         "count": 30,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 18,
-        "materialId": "mechanical_spur_gear"
+        "materialId": "112084"
       },
       {
         "count": 8,
-        "materialId": "artificed_spare_clockwork_component_coppelia"
+        "materialId": "113049"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const lynette = {
     "items": [
       {
         "count": 45,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 12,
-        "materialId": "artificed_dynamic_gear"
+        "materialId": "112085"
       },
       {
         "count": 12,
-        "materialId": "artificed_spare_clockwork_component_coppelia"
+        "materialId": "113049"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const lynette = {
     "items": [
       {
         "count": 60,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_gemstone"
+        "materialId": "104154"
       },
       {
         "count": 24,
-        "materialId": "artificed_dynamic_gear"
+        "materialId": "112085"
       },
       {
         "count": 20,
-        "materialId": "artificed_spare_clockwork_component_coppelia"
+        "materialId": "113049"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104344"
+      },
+      {
+        "count": 6,
+        "materialId": "112083"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104345"
+      },
+      {
+        "count": 3,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104345"
+      },
+      {
+        "count": 4,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104345"
+      },
+      {
+        "count": 6,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104345"
+      },
+      {
+        "count": 9,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104346"
+      },
+      {
+        "count": 4,
+        "materialId": "112085"
+      },
+      {
+        "count": 1,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104346"
+      },
+      {
+        "count": 6,
+        "materialId": "112085"
+      },
+      {
+        "count": 1,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104346"
+      },
+      {
+        "count": 9,
+        "materialId": "112085"
+      },
+      {
+        "count": 2,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104346"
+      },
+      {
+        "count": 12,
+        "materialId": "112085"
+      },
+      {
+        "count": 2,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

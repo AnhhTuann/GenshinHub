@@ -139,15 +139,15 @@ export const sethos = {
     "items": [
       {
         "count": 3,
-        "materialId": "trishiraite"
+        "materialId": "101224"
       },
       {
         "count": 1,
-        "materialId": "vajrada_amethyst_sliver"
+        "materialId": "104141"
       },
       {
         "count": 3,
-        "materialId": "faded_red_satin"
+        "materialId": "112065"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const sethos = {
     "items": [
       {
         "count": 10,
-        "materialId": "trishiraite"
+        "materialId": "101224"
       },
       {
         "count": 3,
-        "materialId": "vajrada_amethyst_fragment"
+        "materialId": "104142"
       },
       {
         "count": 15,
-        "materialId": "faded_red_satin"
+        "materialId": "112065"
       },
       {
         "count": 2,
-        "materialId": "cloudseam_scale"
+        "materialId": "113058"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const sethos = {
     "items": [
       {
         "count": 20,
-        "materialId": "trishiraite"
+        "materialId": "101224"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_fragment"
+        "materialId": "104142"
       },
       {
         "count": 12,
-        "materialId": "trimmed_red_silk"
+        "materialId": "112066"
       },
       {
         "count": 4,
-        "materialId": "cloudseam_scale"
+        "materialId": "113058"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const sethos = {
     "items": [
       {
         "count": 30,
-        "materialId": "trishiraite"
+        "materialId": "101224"
       },
       {
         "count": 3,
-        "materialId": "vajrada_amethyst_chunk"
+        "materialId": "104143"
       },
       {
         "count": 18,
-        "materialId": "trimmed_red_silk"
+        "materialId": "112066"
       },
       {
         "count": 8,
-        "materialId": "cloudseam_scale"
+        "materialId": "113058"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const sethos = {
     "items": [
       {
         "count": 45,
-        "materialId": "trishiraite"
+        "materialId": "101224"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_chunk"
+        "materialId": "104143"
       },
       {
         "count": 12,
-        "materialId": "rich_red_brocade"
+        "materialId": "112067"
       },
       {
         "count": 12,
-        "materialId": "cloudseam_scale"
+        "materialId": "113058"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const sethos = {
     "items": [
       {
         "count": 60,
-        "materialId": "trishiraite"
+        "materialId": "101224"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_gemstone"
+        "materialId": "104144"
       },
       {
         "count": 24,
-        "materialId": "rich_red_brocade"
+        "materialId": "112067"
       },
       {
         "count": 20,
-        "materialId": "cloudseam_scale"
+        "materialId": "113058"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104335"
+      },
+      {
+        "count": 6,
+        "materialId": "112065"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104336"
+      },
+      {
+        "count": 3,
+        "materialId": "112066"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104336"
+      },
+      {
+        "count": 4,
+        "materialId": "112066"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104336"
+      },
+      {
+        "count": 6,
+        "materialId": "112066"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104336"
+      },
+      {
+        "count": 9,
+        "materialId": "112066"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104337"
+      },
+      {
+        "count": 4,
+        "materialId": "112067"
+      },
+      {
+        "count": 1,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104337"
+      },
+      {
+        "count": 6,
+        "materialId": "112067"
+      },
+      {
+        "count": 1,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104337"
+      },
+      {
+        "count": 9,
+        "materialId": "112067"
+      },
+      {
+        "count": 2,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104337"
+      },
+      {
+        "count": 12,
+        "materialId": "112067"
+      },
+      {
+        "count": 2,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

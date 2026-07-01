@@ -139,15 +139,15 @@ export const sigewinne = {
     "items": [
       {
         "count": 3,
-        "materialId": "romaritime_flower"
+        "materialId": "101233"
       },
       {
         "count": 1,
-        "materialId": "varunada_lazurite_sliver"
+        "materialId": "104121"
       },
       {
         "count": 3,
-        "materialId": "transoceanic_pearl"
+        "materialId": "112080"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const sigewinne = {
     "items": [
       {
         "count": 10,
-        "materialId": "romaritime_flower"
+        "materialId": "101233"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 15,
-        "materialId": "transoceanic_pearl"
+        "materialId": "112080"
       },
       {
         "count": 2,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const sigewinne = {
     "items": [
       {
         "count": 20,
-        "materialId": "romaritime_flower"
+        "materialId": "101233"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 12,
-        "materialId": "transoceanic_chunk"
+        "materialId": "112081"
       },
       {
         "count": 4,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const sigewinne = {
     "items": [
       {
         "count": 30,
-        "materialId": "romaritime_flower"
+        "materialId": "101233"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 18,
-        "materialId": "transoceanic_chunk"
+        "materialId": "112081"
       },
       {
         "count": 8,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const sigewinne = {
     "items": [
       {
         "count": 45,
-        "materialId": "romaritime_flower"
+        "materialId": "101233"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 12,
-        "materialId": "xenochromatic_crystal"
+        "materialId": "112082"
       },
       {
         "count": 12,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const sigewinne = {
     "items": [
       {
         "count": 60,
-        "materialId": "romaritime_flower"
+        "materialId": "101233"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_gemstone"
+        "materialId": "104124"
       },
       {
         "count": 24,
-        "materialId": "xenochromatic_crystal"
+        "materialId": "112082"
       },
       {
         "count": 20,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104338"
+      },
+      {
+        "count": 6,
+        "materialId": "112080"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104339"
+      },
+      {
+        "count": 3,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104339"
+      },
+      {
+        "count": 4,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104339"
+      },
+      {
+        "count": 6,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104339"
+      },
+      {
+        "count": 9,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104340"
+      },
+      {
+        "count": 4,
+        "materialId": "112082"
+      },
+      {
+        "count": 1,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104340"
+      },
+      {
+        "count": 6,
+        "materialId": "112082"
+      },
+      {
+        "count": 1,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104340"
+      },
+      {
+        "count": 9,
+        "materialId": "112082"
+      },
+      {
+        "count": 2,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104340"
+      },
+      {
+        "count": 12,
+        "materialId": "112082"
+      },
+      {
+        "count": 2,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,105 +419,10 @@ export const sigewinne = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Sigewinne Bloom Team",
-        rank: "SS",
-        description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
-        members: [
-            {
-                characterId: "sigewinne",
-                role: "Support",
-                roleDesc: "Hydro Support. Provides continuous healing to sustain the team from Bloom and Furina's drain, and buffs Skill DMG.",
-                weapons: [
-                    "Elegy for the End",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "alhaitham",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
-                weapons: [
-                    "Light of Foliar Incision",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "nilou",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Enables Bountiful Cores with her passive, dealing high AoE Bloom damage.",
-                weapons: [
-                    "Key of Khaj-Nisut",
-                    "The Dockhand's Assistant"
-                ],
-                artifacts: [
-                    "2pc Tenacity of the Millelith",
-                    "2pc Vourukasha's Glow"
-                ],
-                substats: [
-                    "HP%",
-                    "Elemental Mastery",
-                    "HP"
-                ]
-            }
-        ]
-    },
-    {
         name: "Sigewinne For Fun",
         rank: "S",
         description: "A for-fun team where Traveler (Geo) and Zhongli's Geo construct resonance is the main DMG source, speeding up Sigewinne's passive. Sigewinne heals and boosts Skill DMG. Geo construct resonance between Traveler (Geo) and Zhongli triggers Sigewinne's passive talent for additional damage, while Furina provides off-field Hydro and DMG buffs.",
         members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
-                weapons: [
-                    "Staff of Homa"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
-                ]
-            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
@@ -386,6 +439,23 @@ export const sigewinne = {
                     "CRIT Rate",
                     "HP%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
+                weapons: [
+                    "Staff of Homa"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
                 ]
             },
             {
@@ -426,14 +496,67 @@ export const sigewinne = {
         ]
     },
     {
-        name: "Sigewinne Pure Hydro",
+        name: "Sigewinne Bloom Team",
         rank: "SS",
-        description: "The team focuses on dealing Hydro damage, with Sigewinne providing healing and Elemental Skill damage buffs, while Yelan and Furina output damage and Kazuha provides grouping and resistance shred.",
+        description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
         members: [
+            {
+                characterId: "alhaitham",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
+                weapons: [
+                    "Light of Foliar Incision",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "nilou",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Enables Bountiful Cores with her passive, dealing high AoE Bloom damage.",
+                weapons: [
+                    "Key of Khaj-Nisut",
+                    "The Dockhand's Assistant"
+                ],
+                artifacts: [
+                    "2pc Tenacity of the Millelith",
+                    "2pc Vourukasha's Glow"
+                ],
+                substats: [
+                    "HP%",
+                    "Elemental Mastery",
+                    "HP"
+                ]
+            },
+            {
+                characterId: "sigewinne",
+                role: "Support",
+                roleDesc: "Hydro Support. Provides continuous healing to sustain the team from Bloom and Furina's drain, and buffs Skill DMG.",
+                weapons: [
+                    "Elegy for the End",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP"
+                ]
+            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
+                roleDesc: "Hydro Sub DPS. Applies off-field Hydro and boosts team damage.",
                 weapons: [
                     "Splendor of Tranquil Waters",
                     "Wolf-Fang"
@@ -446,6 +569,31 @@ export const sigewinne = {
                     "CRIT Rate",
                     "HP%",
                     "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Sigewinne Pure Hydro",
+        rank: "SS",
+        description: "The team focuses on dealing Hydro damage, with Sigewinne providing healing and Elemental Skill damage buffs, while Yelan and Furina output damage and Kazuha provides grouping and resistance shred.",
+        members: [
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Hydro DMG.",
+                weapons: [
+                    "Xiphos' Moonlight",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate"
                 ]
             },
             {
@@ -484,21 +632,21 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Hydro DMG.",
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
                 weapons: [
-                    "Xiphos' Moonlight",
-                    "Favonius Sword"
+                    "Splendor of Tranquil Waters",
+                    "Wolf-Fang"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Golden Troupe"
                 ],
                 substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
                     "CRIT DMG",
-                    "CRIT Rate"
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -574,8 +722,8 @@ export const sigewinne = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Scroll of the Hero of Cinder City",
+        setNameVi: "Xà Cừ Đại Dương",
+        setNameEn: "Ocean-Hued Clam",
         pieces: 4,
         sands: [
             "HP%"
@@ -616,8 +764,8 @@ export const sigewinne = {
         ]
     },
     {
-        setNameVi: "Xà Cừ Đại Dương",
-        setNameEn: "Ocean-Hued Clam",
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Tenacity of the Millelith",
         pieces: 4,
         sands: [
             "HP%"
@@ -658,8 +806,8 @@ export const sigewinne = {
         ]
     },
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Tenacity of the Millelith",
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
         sands: [
             "HP%"

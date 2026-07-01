@@ -139,15 +139,15 @@ export const shenhe = {
     "items": [
       {
         "count": 3,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 1,
-        "materialId": "shivada_jade_sliver"
+        "materialId": "104161"
       },
       {
         "count": 3,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const shenhe = {
     "items": [
       {
         "count": 10,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 15,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       },
       {
         "count": 2,
-        "materialId": "dragonheir_s_false_fin"
+        "materialId": "113031"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const shenhe = {
     "items": [
       {
         "count": 20,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 12,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 4,
-        "materialId": "dragonheir_s_false_fin"
+        "materialId": "113031"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const shenhe = {
     "items": [
       {
         "count": 30,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 18,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 8,
-        "materialId": "dragonheir_s_false_fin"
+        "materialId": "113031"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const shenhe = {
     "items": [
       {
         "count": 45,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 12,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 12,
-        "materialId": "dragonheir_s_false_fin"
+        "materialId": "113031"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const shenhe = {
     "items": [
       {
         "count": 60,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_gemstone"
+        "materialId": "104164"
       },
       {
         "count": 24,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 20,
-        "materialId": "dragonheir_s_false_fin"
+        "materialId": "113031"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104310"
+      },
+      {
+        "count": 6,
+        "materialId": "112038"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104311"
+      },
+      {
+        "count": 3,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104311"
+      },
+      {
+        "count": 4,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104311"
+      },
+      {
+        "count": 6,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104311"
+      },
+      {
+        "count": 9,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104312"
+      },
+      {
+        "count": 4,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113026"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104312"
+      },
+      {
+        "count": 6,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113026"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104312"
+      },
+      {
+        "count": 9,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113026"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104312"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113026"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

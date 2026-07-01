@@ -139,15 +139,15 @@ export const wanderer = {
     "items": [
       {
         "count": 3,
-        "materialId": "rukkhashava_mushrooms"
+        "materialId": "101213"
       },
       {
         "count": 1,
-        "materialId": "vayuda_turquoise_sliver"
+        "materialId": "104151"
       },
       {
         "count": 3,
-        "materialId": "old_handguard"
+        "materialId": "112044"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const wanderer = {
     "items": [
       {
         "count": 10,
-        "materialId": "rukkhashava_mushrooms"
+        "materialId": "101213"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 15,
-        "materialId": "old_handguard"
+        "materialId": "112044"
       },
       {
         "count": 2,
-        "materialId": "perpetual_caliber"
+        "materialId": "113038"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const wanderer = {
     "items": [
       {
         "count": 20,
-        "materialId": "rukkhashava_mushrooms"
+        "materialId": "101213"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 12,
-        "materialId": "kageuchi_handguard"
+        "materialId": "112045"
       },
       {
         "count": 4,
-        "materialId": "perpetual_caliber"
+        "materialId": "113038"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const wanderer = {
     "items": [
       {
         "count": 30,
-        "materialId": "rukkhashava_mushrooms"
+        "materialId": "101213"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 18,
-        "materialId": "kageuchi_handguard"
+        "materialId": "112045"
       },
       {
         "count": 8,
-        "materialId": "perpetual_caliber"
+        "materialId": "113038"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const wanderer = {
     "items": [
       {
         "count": 45,
-        "materialId": "rukkhashava_mushrooms"
+        "materialId": "101213"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 12,
-        "materialId": "famed_handguard"
+        "materialId": "112046"
       },
       {
         "count": 12,
-        "materialId": "perpetual_caliber"
+        "materialId": "113038"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const wanderer = {
     "items": [
       {
         "count": 60,
-        "materialId": "rukkhashava_mushrooms"
+        "materialId": "101213"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_gemstone"
+        "materialId": "104154"
       },
       {
         "count": 24,
-        "materialId": "famed_handguard"
+        "materialId": "112046"
       },
       {
         "count": 20,
-        "materialId": "perpetual_caliber"
+        "materialId": "113038"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104335"
+      },
+      {
+        "count": 6,
+        "materialId": "112044"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104336"
+      },
+      {
+        "count": 3,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104336"
+      },
+      {
+        "count": 4,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104336"
+      },
+      {
+        "count": 6,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104336"
+      },
+      {
+        "count": 9,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104337"
+      },
+      {
+        "count": 4,
+        "materialId": "112046"
+      },
+      {
+        "count": 1,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104337"
+      },
+      {
+        "count": 6,
+        "materialId": "112046"
+      },
+      {
+        "count": 1,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104337"
+      },
+      {
+        "count": 9,
+        "materialId": "112046"
+      },
+      {
+        "count": 2,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104337"
+      },
+      {
+        "count": 12,
+        "materialId": "112046"
+      },
+      {
+        "count": 2,
+        "materialId": "113043"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

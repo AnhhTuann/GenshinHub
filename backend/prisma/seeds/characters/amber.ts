@@ -139,15 +139,15 @@ export const amber = {
     "items": [
       {
         "count": 3,
-        "materialId": "small_lamp_grass"
+        "materialId": "100055"
       },
       {
         "count": 1,
-        "materialId": "agnidus_agate_sliver"
+        "materialId": "104111"
       },
       {
         "count": 3,
-        "materialId": "firm_arrowhead"
+        "materialId": "112011"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const amber = {
     "items": [
       {
         "count": 10,
-        "materialId": "small_lamp_grass"
+        "materialId": "100055"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 15,
-        "materialId": "firm_arrowhead"
+        "materialId": "112011"
       },
       {
         "count": 2,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const amber = {
     "items": [
       {
         "count": 20,
-        "materialId": "small_lamp_grass"
+        "materialId": "100055"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 12,
-        "materialId": "sharp_arrowhead"
+        "materialId": "112012"
       },
       {
         "count": 4,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const amber = {
     "items": [
       {
         "count": 30,
-        "materialId": "small_lamp_grass"
+        "materialId": "100055"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 18,
-        "materialId": "sharp_arrowhead"
+        "materialId": "112012"
       },
       {
         "count": 8,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const amber = {
     "items": [
       {
         "count": 45,
-        "materialId": "small_lamp_grass"
+        "materialId": "100055"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 12,
-        "materialId": "weathered_arrowhead"
+        "materialId": "112013"
       },
       {
         "count": 12,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const amber = {
     "items": [
       {
         "count": 60,
-        "materialId": "small_lamp_grass"
+        "materialId": "100055"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_gemstone"
+        "materialId": "104114"
       },
       {
         "count": 24,
-        "materialId": "weathered_arrowhead"
+        "materialId": "112013"
       },
       {
         "count": 20,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104301"
+      },
+      {
+        "count": 6,
+        "materialId": "112011"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104302"
+      },
+      {
+        "count": 3,
+        "materialId": "112012"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104302"
+      },
+      {
+        "count": 4,
+        "materialId": "112012"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104302"
+      },
+      {
+        "count": 6,
+        "materialId": "112012"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104302"
+      },
+      {
+        "count": 9,
+        "materialId": "112012"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104303"
+      },
+      {
+        "count": 4,
+        "materialId": "112013"
+      },
+      {
+        "count": 1,
+        "materialId": "113005"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104303"
+      },
+      {
+        "count": 6,
+        "materialId": "112013"
+      },
+      {
+        "count": 1,
+        "materialId": "113005"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104303"
+      },
+      {
+        "count": 9,
+        "materialId": "112013"
+      },
+      {
+        "count": 2,
+        "materialId": "113005"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104303"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112013"
+      },
+      {
+        "count": 2,
+        "materialId": "113005"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,26 +419,103 @@ export const amber = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Amber's Reaction Overload",
+        rank: "S",
+        description: "Amber's Pyro triggers Overload with Fischl's Electro and Vaporization with Xingqiu's Hydro. Combines Pyro reactions: Overload from Amber and Fischl, and Vaporization from Amber and Xingqiu, supported by Bennett.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides ATK buff and healing via Burst.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Off-field Electro via Skill for Overload. Oz provides a significant upgrade.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "amber",
+                role: "Main DPS",
+                roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous Hydro application via Burst to enable Vaporization.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Vaporize Amber",
         rank: "S",
         description: "Amber's damage is maximized by Vaporize, utilizing Xingqiu's consistent Hydro application and Kazuha's support, with Bennett providing ATK buff and healing. Amber's charged attacks trigger Vaporize with Xingqiu's Hydro application, while Kazuha provides grouping and damage buffs, and Bennett heals and boosts ATK.",
         members: [
             {
-                characterId: "kaedehara-kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies and provides Elemental Mastery buff and Anemo RES shred.",
+                characterId: "amber",
+                role: "Main DPS",
+                roleDesc: "Amber deals damage with Charged Attack to trigger Vaporize.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "Thundering Pulse",
+                    "Rust"
                 ],
                 artifacts: [
-                    "Viridescent Venerer"
+                    "Crimson Witch of Flames"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -311,6 +536,24 @@ export const amber = {
                 ]
             },
             {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies and provides Elemental Mastery buff and Anemo RES shred.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "xingqiu",
                 role: "Sub DPS",
                 roleDesc: "Xingqiu's Elemental Burst applies Hydro continuously to enable Vaporize.",
@@ -319,24 +562,6 @@ export const amber = {
                 ],
                 artifacts: [
                     "Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Main DPS",
-                roleDesc: "Amber deals damage with Charged Attack to trigger Vaporize.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "Crimson Witch of Flames"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -371,23 +596,6 @@ export const amber = {
                 ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett provides huge ATK and healing via Burst.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "amber",
                 role: "Sub DPS",
                 roleDesc: "Amber is the Sub DPS, works with Raiden Shogun to trigger Overload.",
@@ -402,6 +610,23 @@ export const amber = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett provides huge ATK and healing via Burst.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -431,6 +656,24 @@ export const amber = {
         description: "The DMG of Ayaka is maximized by Melt. Maximize Ayaka's Melt damage by applying Pyro with Amber and Bennett while Zhongli provides shielding and ATK buffs.",
         members: [
             {
+                characterId: "amber",
+                role: "Sub DPS",
+                roleDesc: "Works with Ayaka to trigger Melt by her Skill.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "His Burst provides huge ATK buff and healing to other members.",
@@ -440,6 +683,23 @@ export const amber = {
                 ],
                 artifacts: [
                     "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides shield for safe environment and increases ATK of whole team using full set of Tenacity of the Millelith.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "Tenacity of the Millelith"
                 ],
                 substats: [
                     "HP%",
@@ -462,118 +722,6 @@ export const amber = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides shield for safe environment and increases ATK of whole team using full set of Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Sub DPS",
-                roleDesc: "Works with Ayaka to trigger Melt by her Skill.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Amber's Reaction Overload",
-        rank: "S",
-        description: "Amber's Pyro triggers Overload with Fischl's Electro and Vaporization with Xingqiu's Hydro. Combines Pyro reactions: Overload from Amber and Fischl, and Vaporization from Amber and Xingqiu, supported by Bennett.",
-        members: [
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous Hydro application via Burst to enable Vaporization.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Main DPS",
-                roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Off-field Electro via Skill for Overload. Oz provides a significant upgrade.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides ATK buff and healing via Burst.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -782,8 +930,26 @@ export const amber = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
+        pieces: 4,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
         pieces: 4,
         sands: [
             "Tấn Công%",
@@ -800,15 +966,6 @@ export const amber = {
             "ATK%",
             "Elemental Mastery"
         ]
-    },
-    {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Noblesse Oblige",
-        pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
     },
     {
         setNameVi: "Dòng Hồi Ức Bất Tận",
@@ -851,17 +1008,8 @@ export const amber = {
         ]
     },
     {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Emblem of Severed Fate",
-        pieces: 4,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
-    },
-    {
-        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
         pieces: 4,
         sands: [
             "Tấn Công%",

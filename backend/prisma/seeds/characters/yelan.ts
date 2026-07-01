@@ -139,15 +139,15 @@ export const yelan = {
     "items": [
       {
         "count": 3,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 1,
-        "materialId": "varunada_lazurite_sliver"
+        "materialId": "104121"
       },
       {
         "count": 3,
-        "materialId": "recruit_s_insignia"
+        "materialId": "112032"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const yelan = {
     "items": [
       {
         "count": 10,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 15,
-        "materialId": "recruit_s_insignia"
+        "materialId": "112032"
       },
       {
         "count": 2,
-        "materialId": "runic_fang"
+        "materialId": "113035"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const yelan = {
     "items": [
       {
         "count": 20,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 12,
-        "materialId": "sergeant_s_insignia"
+        "materialId": "112033"
       },
       {
         "count": 4,
-        "materialId": "runic_fang"
+        "materialId": "113035"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const yelan = {
     "items": [
       {
         "count": 30,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 18,
-        "materialId": "sergeant_s_insignia"
+        "materialId": "112033"
       },
       {
         "count": 8,
-        "materialId": "runic_fang"
+        "materialId": "113035"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const yelan = {
     "items": [
       {
         "count": 45,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 12,
-        "materialId": "lieutenant_s_insignia"
+        "materialId": "112034"
       },
       {
         "count": 12,
-        "materialId": "runic_fang"
+        "materialId": "113035"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const yelan = {
     "items": [
       {
         "count": 60,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_gemstone"
+        "materialId": "104124"
       },
       {
         "count": 24,
-        "materialId": "lieutenant_s_insignia"
+        "materialId": "112034"
       },
       {
         "count": 20,
-        "materialId": "runic_fang"
+        "materialId": "113035"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104310"
+      },
+      {
+        "count": 6,
+        "materialId": "112032"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104311"
+      },
+      {
+        "count": 3,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104311"
+      },
+      {
+        "count": 4,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104311"
+      },
+      {
+        "count": 6,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104311"
+      },
+      {
+        "count": 9,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104312"
+      },
+      {
+        "count": 4,
+        "materialId": "112034"
+      },
+      {
+        "count": 1,
+        "materialId": "113019"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104312"
+      },
+      {
+        "count": 6,
+        "materialId": "112034"
+      },
+      {
+        "count": 1,
+        "materialId": "113019"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104312"
+      },
+      {
+        "count": 9,
+        "materialId": "112034"
+      },
+      {
+        "count": 2,
+        "materialId": "113019"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104312"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112034"
+      },
+      {
+        "count": 2,
+        "materialId": "113019"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,10 +419,118 @@ export const yelan = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Yelan Pure Vaporization Team #3",
+        rank: "SS",
+        description: "Yelan drives Vaporize with charged attacks, supported by Xiangling's off-field Pyro, Kazuha's Elemental DMG buff, and Bennett's ATK buff. Yelan uses charged attacks to trigger Vaporize consistently, while Xiangling provides Pyro application via her Burst, Kazuha groups enemies and increases team damage, and Bennett heals and buffs ATK.",
+        members: [
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage with Pyronado.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Xiphos' Moonlight"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate"
+                ]
+            },
+            {
+                characterId: "yelan",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Triggers massive Vaporize damage using Charged Attacks.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Yelan National Team #1",
         rank: "SS",
         description: "A powerful variation of the National Team that replaces Xingqiu with Yelan for higher personal damage, while maintaining the core synergy of Raiden Shogun enabling burst spam from Xiangling and Yelan, with Bennett providing ATK buff and healing.",
         members: [
+            {
+                characterId: "raiden-shogun",
+                role: "Main DPS",
+                roleDesc: "Electro Main DPS. Deals high Electro damage and restores energy for the team.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
             {
                 characterId: "xiangling",
                 role: "Sub DPS",
@@ -310,39 +566,6 @@ export const yelan = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Main DPS",
-                roleDesc: "Electro Main DPS. Deals high Electro damage and restores energy for the team.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
             }
         ]
     },
@@ -351,22 +574,6 @@ export const yelan = {
         rank: "SS",
         description: "This team generates powerful Bountiful Cores from Bloom reactions using Yelan's on-field driver, Nilou's passive, Nahida's Dendro, and Baizhu's healing/shields.",
         members: [
-            {
-                characterId: "nilou",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Enables Bountiful Cores and provides off-field Hydro application.",
-                weapons: [
-                    "Key of Khaj-Nisut",
-                    "The Dockhand's Assistant"
-                ],
-                artifacts: [
-                    "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"
-                ],
-                substats: [
-                    "HP%",
-                    "Elemental Mastery"
-                ]
-            },
             {
                 characterId: "baizhu",
                 role: "Support",
@@ -420,80 +627,21 @@ export const yelan = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Yelan Pure Vaporization Team #3",
-        rank: "SS",
-        description: "Yelan drives Vaporize with charged attacks, supported by Xiangling's off-field Pyro, Kazuha's Elemental DMG buff, and Bennett's ATK buff. Yelan uses charged attacks to trigger Vaporize consistently, while Xiangling provides Pyro application via her Burst, Kazuha groups enemies and increases team damage, and Bennett heals and buffs ATK.",
-        members: [
-            {
-                characterId: "yelan",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Triggers massive Vaporize damage using Charged Attacks.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Xiphos' Moonlight"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            },
-            {
-                characterId: "xiangling",
+                characterId: "nilou",
                 role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage with Pyronado.",
+                roleDesc: "Hydro Sub DPS. Enables Bountiful Cores and provides off-field Hydro application.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Key of Khaj-Nisut",
+                    "The Dockhand's Assistant"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
+                    "HP%",
+                    "Elemental Mastery"
                 ]
             }
         ]
@@ -504,20 +652,20 @@ export const yelan = {
         description: "Yelan Pure Hydro Team (Chuo). Yelan as the main DPS, supported by Furina, Kazuha, and Jean. Yelan's personal damage is amplified by Furina's DMG bonus and Kazuha's elemental damage buff and resistance shred, while Jean provides healing and Viridescent Venerer buff.",
         members: [
             {
-                characterId: "jean",
+                characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Anemo Support. Instantly heals the entire party and shreds resistances.",
+                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
-                    "Skyward Blade",
+                    "Freedom-Sworn",
                     "Favonius Sword"
                 ],
                 artifacts: [
                     "4pc Viridescent Venerer"
                 ],
                 substats: [
-                    "ATK%",
-                    "ATK",
-                    "Energy Recharge"
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate"
                 ]
             },
             {
@@ -557,20 +705,171 @@ export const yelan = {
                 ]
             },
             {
-                characterId: "kazuha",
+                characterId: "jean",
                 role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                roleDesc: "Anemo Support. Instantly heals the entire party and shreds resistances.",
                 weapons: [
-                    "Freedom-Sworn",
+                    "Skyward Blade",
                     "Favonius Sword"
                 ],
                 artifacts: [
                     "4pc Viridescent Venerer"
                 ],
                 substats: [
-                    "Elemental Mastery",
+                    "ATK%",
+                    "ATK",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yelan Wanderer Team #1",
+        rank: "SS",
+        description: "A Wanderer hypercarry team utilizing Yelan's off-field Hydro, Faruzan's Anemo support, and Thoma's shield and off-field Pyro application. Wanderer's Skill elevates his Pyro and Hydro infused NA to boost ATK and stamina. Faruzan shreds Anemo RES and gains CRIT bonus via Skill. Yelan provides off-field Hydro application. Thoma shields and applies Pyro for absorption.",
+        members: [
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
                     "CRIT DMG",
-                    "CRIT Rate"
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "thoma",
+                role: "Support",
+                roleDesc: "Pyro Support. Provides stackable shield and off-field Pyro application.",
+                weapons: [
+                    "Staff of Homa",
+                    "Kitain Cross Spear"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "faruzan",
+                role: "Support",
+                roleDesc: "Anemo Support. Shreds Anemo resistance, groups enemies, and buffs Anemo DMG.",
+                weapons: [
+                    "Elegy for the End",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "wanderer",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Deals high on-field wind damage and infuses elements.",
+                weapons: [
+                    "Tulaytullah's Remembrance",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Desert Pavilion Chronicle"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Yelan Vaporization Team #1",
+        rank: "SS",
+        description: "Arlecchino and Yelan trigger Vaporize reactions. Zhongli provides shield and ATK buff, Bennett provides ATK buff and healing. Arlecchino's infused Pyro attacks paired with Yelan's off-field Hydro enable consistent Vaporize. Zhongli's shield and Tenacity of the Millelith boost ATK, while Bennett's Burst provides further ATK and healing.",
+        members: [
+            {
+                characterId: "arlecchino",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Deals massive Pyro damage using Bond of Life mechanics.",
+                weapons: [
+                    "Crimson Moon's Semblance",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Fragment of Harmonious Whimsy"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -617,6 +916,22 @@ export const yelan = {
                 ]
             },
             {
+                characterId: "baizhu",
+                role: "Support",
+                roleDesc: "Dendro Support. Provides healing, shields, and buffs Dendro reaction damage.",
+                weapons: [
+                    "Jadefall's Splendor",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
                 characterId: "nahida",
                 role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field, marks enemies, and shares EM.",
@@ -633,173 +948,6 @@ export const yelan = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "baizhu",
-                role: "Support",
-                roleDesc: "Dendro Support. Provides healing, shields, and buffs Dendro reaction damage.",
-                weapons: [
-                    "Jadefall's Splendor",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yelan Vaporization Team #1",
-        rank: "SS",
-        description: "Arlecchino and Yelan trigger Vaporize reactions. Zhongli provides shield and ATK buff, Bennett provides ATK buff and healing. Arlecchino's infused Pyro attacks paired with Yelan's off-field Hydro enable consistent Vaporize. Zhongli's shield and Tenacity of the Millelith boost ATK, while Bennett's Burst provides further ATK and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "arlecchino",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Deals massive Pyro damage using Bond of Life mechanics.",
-                weapons: [
-                    "Crimson Moon's Semblance",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Fragment of Harmonious Whimsy"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yelan Wanderer Team #1",
-        rank: "SS",
-        description: "A Wanderer hypercarry team utilizing Yelan's off-field Hydro, Faruzan's Anemo support, and Thoma's shield and off-field Pyro application. Wanderer's Skill elevates his Pyro and Hydro infused NA to boost ATK and stamina. Faruzan shreds Anemo RES and gains CRIT bonus via Skill. Yelan provides off-field Hydro application. Thoma shields and applies Pyro for absorption.",
-        members: [
-            {
-                characterId: "faruzan",
-                role: "Support",
-                roleDesc: "Anemo Support. Shreds Anemo resistance, groups enemies, and buffs Anemo DMG.",
-                weapons: [
-                    "Elegy for the End",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "thoma",
-                role: "Support",
-                roleDesc: "Pyro Support. Provides stackable shield and off-field Pyro application.",
-                weapons: [
-                    "Staff of Homa",
-                    "Kitain Cross Spear"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "wanderer",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Deals high on-field wind damage and infuses elements.",
-                weapons: [
-                    "Tulaytullah's Remembrance",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Desert Pavilion Chronicle"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
                 ]
             }
         ]
@@ -823,6 +971,24 @@ export const yelan = {
                     "HP%",
                     "HP",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "hu-tao",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Deals massive Vaporize damage using Charged Attacks.",
+                weapons: [
+                    "Staff of Homa",
+                    "Ballad of the Fjords"
+                ],
+                artifacts: [
+                    "4pc Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Elemental Mastery"
                 ]
             },
             {
@@ -858,24 +1024,6 @@ export const yelan = {
                     "HP%",
                     "HP",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Deals massive Vaporize damage using Charged Attacks.",
-                weapons: [
-                    "Staff of Homa",
-                    "Ballad of the Fjords"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery"
                 ]
             }
         ]
@@ -929,31 +1077,6 @@ export const yelan = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Dấu Ấn Ngăn Cách",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "HP%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy",
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "HP%"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "HP%",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP"
-        ]
-    },
-    {
         setNameVi: "Mix 2 bộ Dấu Ấn / HP / Thủy / Tông Thất",
         setNameEn: "Mix 2 bộ Dấu Ấn / HP / Thủy / Tông Thất",
         pieces: 2,
@@ -981,6 +1104,31 @@ export const yelan = {
     {
         setNameVi: "Thợ Săn Marechaussee",
         setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: [
+            "Hiệu Quả Nạp",
+            "HP%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy",
+            "HP%"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "HP%"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "HP%",
+            "CRIT Rate",
+            "CRIT DMG",
+            "HP"
+        ]
+    },
+    {
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Dấu Ấn Ngăn Cách",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

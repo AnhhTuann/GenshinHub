@@ -139,15 +139,15 @@ export const citlali = {
     "items": [
       {
         "count": 3,
-        "materialId": "quenepa_berry"
+        "materialId": "101249"
       },
       {
         "count": 1,
-        "materialId": "shivada_jade_sliver"
+        "materialId": "104161"
       },
       {
         "count": 3,
-        "materialId": "juvenile_fang"
+        "materialId": "112101"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const citlali = {
     "items": [
       {
         "count": 10,
-        "materialId": "quenepa_berry"
+        "materialId": "101249"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 15,
-        "materialId": "juvenile_fang"
+        "materialId": "112101"
       },
       {
         "count": 2,
-        "materialId": "talisman_of_the_enigmatic_land"
+        "materialId": "113071"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const citlali = {
     "items": [
       {
         "count": 20,
-        "materialId": "quenepa_berry"
+        "materialId": "101249"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 12,
-        "materialId": "seasoned_fang"
+        "materialId": "112102"
       },
       {
         "count": 4,
-        "materialId": "talisman_of_the_enigmatic_land"
+        "materialId": "113071"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const citlali = {
     "items": [
       {
         "count": 30,
-        "materialId": "quenepa_berry"
+        "materialId": "101249"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 18,
-        "materialId": "seasoned_fang"
+        "materialId": "112102"
       },
       {
         "count": 8,
-        "materialId": "talisman_of_the_enigmatic_land"
+        "materialId": "113071"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const citlali = {
     "items": [
       {
         "count": 45,
-        "materialId": "quenepa_berry"
+        "materialId": "101249"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 12,
-        "materialId": "tyrant_s_fang"
+        "materialId": "112103"
       },
       {
         "count": 12,
-        "materialId": "talisman_of_the_enigmatic_land"
+        "materialId": "113071"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const citlali = {
     "items": [
       {
         "count": 60,
-        "materialId": "quenepa_berry"
+        "materialId": "101249"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_gemstone"
+        "materialId": "104164"
       },
       {
         "count": 24,
-        "materialId": "tyrant_s_fang"
+        "materialId": "112103"
       },
       {
         "count": 20,
-        "materialId": "talisman_of_the_enigmatic_land"
+        "materialId": "113071"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104350"
+      },
+      {
+        "count": 6,
+        "materialId": "112101"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104351"
+      },
+      {
+        "count": 3,
+        "materialId": "112102"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104351"
+      },
+      {
+        "count": 4,
+        "materialId": "112102"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104351"
+      },
+      {
+        "count": 6,
+        "materialId": "112102"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104351"
+      },
+      {
+        "count": 9,
+        "materialId": "112102"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104352"
+      },
+      {
+        "count": 4,
+        "materialId": "112103"
+      },
+      {
+        "count": 1,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104352"
+      },
+      {
+        "count": 6,
+        "materialId": "112103"
+      },
+      {
+        "count": 1,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104352"
+      },
+      {
+        "count": 9,
+        "materialId": "112103"
+      },
+      {
+        "count": 2,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104352"
+      },
+      {
+        "count": 12,
+        "materialId": "112103"
+      },
+      {
+        "count": 2,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -268,110 +416,360 @@ export const citlali = {
   "Elemental Burst",
   "Normal Attack"
 ],
-  signatureWeapons: [
-  "Starcaller's Watch"
-],
+  signatureWeapons: [],
   teams: [
     {
-      name: "Citlali Permafrost Freeze",
-      rank: "SS",
-      description: "Đội hình Đóng Băng tận dụng khiên và giảm kháng của Citlali, tăng sát thương của Furina, hồi máu và giảm kháng của Escoffier, cùng sát thương Băng của Skirk.",
-      members: [
-        { characterId: "skirk", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "furina", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "escoffier", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Duo-Cores Team",
+        rank: "SS",
+        description: "Đội hình hai hạt nhân mạnh mẽ tận dụng hỗ trợ Băng để khuếch đại sát thương Hỏa và Thủy.",
+        members: [
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "mavuika",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "mualani",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Melting Team #1",
-      rank: "SS",
-      description: "Đội hình Tan Chảy xoay quanh sát thương Hỏa của Arlecchino, hỗ trợ bởi khả năng cấp Băng và khiên của Citlali, giảm kháng của Xilonen, và buff tấn công của Bennett.",
-      members: [
-        { characterId: "arlecchino", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "xilonen", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "bennett", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Melt Team #3",
+        rank: "S",
+        description: "Đội hình Tan Chảy xoay quanh phản ứng nguyên tố của Chasca với cấp Băng và giảm kháng của Citlali, hỗ trợ bởi Xilonen và Bennett. Trở thành cấp SS khi Chasca C2.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "chasca",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Melt Plunge",
-      rank: "SS",
-      description: "Gaming kích hoạt Tan Chảy với cấp Băng của Citlali, được cường hóa bởi buff Tấn Công Khi Đáp của Xianyun và buff tấn công của Bennett.",
-      members: [
-        { characterId: "gaming", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "xianyun", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "bennett", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Vaporization Team #2",
+        rank: "SS",
+        description: "Đội hình xoay quanh sát thương Hỏa của Yoimiya được khuếch đại bởi phản ứng Bốc Hơi, với sát thương Thủy ngoài sân từ Furina và Yelan, cùng hỗ trợ từ Citlali cung cấp khiên và giảm kháng.",
+        members: [
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Duo-Cores Team",
-      rank: "SS",
-      description: "Đội hình hai hạt nhân mạnh mẽ tận dụng hỗ trợ Băng để khuếch đại sát thương Hỏa và Thủy.",
-      members: [
-        { characterId: "mavuika", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "mualani", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "xilonen", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Vaporization Team #1",
+        rank: "S",
+        description: "Đội hình Bốc Hơi mạnh mẽ xoay quanh Hu Tao, với hai DPS Thủy ngoài sân, cùng khiên và giảm kháng của Citlali.",
+        members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "hu-tao",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Vaporization Team #1",
-      rank: "S",
-      description: "Đội hình Bốc Hơi mạnh mẽ xoay quanh Hu Tao, với hai DPS Thủy ngoài sân, cùng khiên và giảm kháng của Citlali.",
-      members: [
-        { characterId: "hu-tao", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "furina", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "yelan", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Pure Hydro",
+        rank: "S",
+        description: "Đội hình tập trung sát thương Thủy với Neuvillette là DPS đứng sân, hỗ trợ bởi cấp Thủy và buff sát thương của Furina, khiên và giảm kháng Thủy của Citlali, cùng giảm kháng và hồi máu của Xilonen.",
+        members: [
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Vaporization Team #2",
-      rank: "SS",
-      description: "Đội hình xoay quanh sát thương Hỏa của Yoimiya được khuếch đại bởi phản ứng Bốc Hơi, với sát thương Thủy ngoài sân từ Furina và Yelan, cùng hỗ trợ từ Citlali cung cấp khiên và giảm kháng.",
-      members: [
-        { characterId: "yoimiya", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "furina", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "yelan", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Melt Plunge",
+        rank: "SS",
+        description: "Gaming kích hoạt Tan Chảy với cấp Băng của Citlali, được cường hóa bởi buff Tấn Công Khi Đáp của Xianyun và buff tấn công của Bennett.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Pure Hydro",
-      rank: "S",
-      description: "Đội hình tập trung sát thương Thủy với Neuvillette là DPS đứng sân, hỗ trợ bởi cấp Thủy và buff sát thương của Furina, khiên và giảm kháng Thủy của Citlali, cùng giảm kháng và hồi máu của Xilonen.",
-      members: [
-        { characterId: "neuvillette", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "furina", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "xilonen", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Permafrost Freeze (Ayaka)",
+        rank: "S",
+        description: "Ayaka tung Kỹ Năng Nộ để kích hoạt Đóng Băng với Thủy từ đồng đội. Citlali cung cấp khiên và giảm kháng Hỏa/Thủy, Furina cung cấp Thủy liên tục và buff sát thương, còn Escoffier hồi máu và giảm kháng Băng/Thủy.",
+        members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "escoffier",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Melt Team #3",
-      rank: "S",
-      description: "Đội hình Tan Chảy xoay quanh phản ứng nguyên tố của Chasca với cấp Băng và giảm kháng của Citlali, hỗ trợ bởi Xilonen và Bennett. Trở thành cấp SS khi Chasca C2.",
-      members: [
-        { characterId: "chasca", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "xilonen", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "bennett", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Melting Team #1",
+        rank: "SS",
+        description: "Đội hình Tan Chảy xoay quanh sát thương Hỏa của Arlecchino, hỗ trợ bởi khả năng cấp Băng và khiên của Citlali, giảm kháng của Xilonen, và buff tấn công của Bennett.",
+        members: [
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "arlecchino",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     },
     {
-      name: "Citlali Permafrost Freeze (Ayaka)",
-      rank: "S",
-      description: "Ayaka tung Kỹ Năng Nộ để kích hoạt Đóng Băng với Thủy từ đồng đội. Citlali cung cấp khiên và giảm kháng Hỏa/Thủy, Furina cung cấp Thủy liên tục và buff sát thương, còn Escoffier hồi máu và giảm kháng Băng/Thủy.",
-      members: [
-        { characterId: "kamisato-ayaka", role: "Main DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "citlali", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "furina", role: "Sub DPS", roleDesc: "", weapons: [], artifacts: [], substats: [] },
-        { characterId: "escoffier", role: "Support", roleDesc: "", weapons: [], artifacts: [], substats: [] }
-      ]
+        name: "Citlali Permafrost Freeze",
+        rank: "SS",
+        description: "Đội hình Đóng Băng tận dụng khiên và giảm kháng của Citlali, tăng sát thương của Furina, hồi máu và giảm kháng của Escoffier, cùng sát thương Băng của Skirk.",
+        members: [
+            {
+                characterId: "skirk",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "escoffier",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "citlali",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
     }
-  ],
+],
   bestWeapons: [
     {
         rank: 0,
@@ -442,27 +840,6 @@ export const citlali = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Scroll of the Hero of Cinder City",
-        pieces: 4,
-        sands: [
-            "Elemental Mastery",
-            "Energy Recharge"
-        ],
-        goblet: [
-            "Elemental Mastery"
-        ],
-        circlet: [
-            "Elemental Mastery",
-            "CRIT Rate"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "Elemental Mastery",
-            "CRIT Rate"
-        ]
-    },
-    {
         setNameVi: "Giáo Quan",
         setNameEn: "Instructor",
         pieces: 4,
@@ -486,6 +863,27 @@ export const citlali = {
     {
         setNameVi: "Thiên Nham Vững Chắc",
         setNameEn: "Tenacity of the Millelith",
+        pieces: 4,
+        sands: [
+            "Elemental Mastery",
+            "Energy Recharge"
+        ],
+        goblet: [
+            "Elemental Mastery"
+        ],
+        circlet: [
+            "Elemental Mastery",
+            "CRIT Rate"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "Elemental Mastery",
+            "CRIT Rate"
+        ]
+    },
+    {
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4,
         sands: [
             "Elemental Mastery",

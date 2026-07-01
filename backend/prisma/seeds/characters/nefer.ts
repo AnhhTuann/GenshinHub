@@ -139,15 +139,15 @@ export const nefer = {
     "items": [
       {
         "count": 3,
-        "materialId": "moonfall_silver"
+        "materialId": "101263"
       },
       {
         "count": 1,
-        "materialId": "nagadus_emerald_sliver"
+        "materialId": "104131"
       },
       {
         "count": 3,
-        "materialId": "tattered_warrant"
+        "materialId": "112125"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const nefer = {
     "items": [
       {
         "count": 10,
-        "materialId": "moonfall_silver"
+        "materialId": "101263"
       },
       {
         "count": 3,
-        "materialId": "nagadus_emerald_fragment"
+        "materialId": "104132"
       },
       {
         "count": 15,
-        "materialId": "tattered_warrant"
+        "materialId": "112125"
       },
       {
         "count": 2,
-        "materialId": "radiant_antler"
+        "materialId": "113079"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const nefer = {
     "items": [
       {
         "count": 20,
-        "materialId": "moonfall_silver"
+        "materialId": "101263"
       },
       {
         "count": 6,
-        "materialId": "nagadus_emerald_fragment"
+        "materialId": "104132"
       },
       {
         "count": 12,
-        "materialId": "immaculate_warrant"
+        "materialId": "112126"
       },
       {
         "count": 4,
-        "materialId": "radiant_antler"
+        "materialId": "113079"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const nefer = {
     "items": [
       {
         "count": 30,
-        "materialId": "moonfall_silver"
+        "materialId": "101263"
       },
       {
         "count": 3,
-        "materialId": "nagadus_emerald_chunk"
+        "materialId": "104133"
       },
       {
         "count": 18,
-        "materialId": "immaculate_warrant"
+        "materialId": "112126"
       },
       {
         "count": 8,
-        "materialId": "radiant_antler"
+        "materialId": "113079"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const nefer = {
     "items": [
       {
         "count": 45,
-        "materialId": "moonfall_silver"
+        "materialId": "101263"
       },
       {
         "count": 6,
-        "materialId": "nagadus_emerald_chunk"
+        "materialId": "104133"
       },
       {
         "count": 12,
-        "materialId": "frost_etched_warrant"
+        "materialId": "112127"
       },
       {
         "count": 12,
-        "materialId": "radiant_antler"
+        "materialId": "113079"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const nefer = {
     "items": [
       {
         "count": 60,
-        "materialId": "moonfall_silver"
+        "materialId": "101263"
       },
       {
         "count": 6,
-        "materialId": "nagadus_emerald_gemstone"
+        "materialId": "104134"
       },
       {
         "count": 24,
-        "materialId": "frost_etched_warrant"
+        "materialId": "112127"
       },
       {
         "count": 20,
-        "materialId": "radiant_antler"
+        "materialId": "113079"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104359"
+      },
+      {
+        "count": 6,
+        "materialId": "112125"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104360"
+      },
+      {
+        "count": 3,
+        "materialId": "112126"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104360"
+      },
+      {
+        "count": 4,
+        "materialId": "112126"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104360"
+      },
+      {
+        "count": 6,
+        "materialId": "112126"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104360"
+      },
+      {
+        "count": 9,
+        "materialId": "112126"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104361"
+      },
+      {
+        "count": 4,
+        "materialId": "112127"
+      },
+      {
+        "count": 1,
+        "materialId": "113074"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104361"
+      },
+      {
+        "count": 6,
+        "materialId": "112127"
+      },
+      {
+        "count": 1,
+        "materialId": "113074"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104361"
+      },
+      {
+        "count": 9,
+        "materialId": "112127"
+      },
+      {
+        "count": 2,
+        "materialId": "113074"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104361"
+      },
+      {
+        "count": 12,
+        "materialId": "112127"
+      },
+      {
+        "count": 2,
+        "materialId": "113074"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

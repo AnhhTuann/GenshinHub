@@ -139,15 +139,15 @@ export const xinyan = {
     "items": [
       {
         "count": 3,
-        "materialId": "violetgrass"
+        "materialId": "100034"
       },
       {
         "count": 1,
-        "materialId": "agnidus_agate_sliver"
+        "materialId": "104111"
       },
       {
         "count": 3,
-        "materialId": "treasure_hoarder_insignia"
+        "materialId": "112035"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const xinyan = {
     "items": [
       {
         "count": 10,
-        "materialId": "violetgrass"
+        "materialId": "100034"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 15,
-        "materialId": "treasure_hoarder_insignia"
+        "materialId": "112035"
       },
       {
         "count": 2,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const xinyan = {
     "items": [
       {
         "count": 20,
-        "materialId": "violetgrass"
+        "materialId": "100034"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 12,
-        "materialId": "silver_raven_insignia"
+        "materialId": "112036"
       },
       {
         "count": 4,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const xinyan = {
     "items": [
       {
         "count": 30,
-        "materialId": "violetgrass"
+        "materialId": "100034"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 18,
-        "materialId": "silver_raven_insignia"
+        "materialId": "112036"
       },
       {
         "count": 8,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const xinyan = {
     "items": [
       {
         "count": 45,
-        "materialId": "violetgrass"
+        "materialId": "100034"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 12,
-        "materialId": "golden_raven_insignia"
+        "materialId": "112037"
       },
       {
         "count": 12,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const xinyan = {
     "items": [
       {
         "count": 60,
-        "materialId": "violetgrass"
+        "materialId": "100034"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_gemstone"
+        "materialId": "104114"
       },
       {
         "count": 24,
-        "materialId": "golden_raven_insignia"
+        "materialId": "112037"
       },
       {
         "count": 20,
-        "materialId": "everflame_seed"
+        "materialId": "113011"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104316"
+      },
+      {
+        "count": 6,
+        "materialId": "112035"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104317"
+      },
+      {
+        "count": 3,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104317"
+      },
+      {
+        "count": 4,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104317"
+      },
+      {
+        "count": 6,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104317"
+      },
+      {
+        "count": 9,
+        "materialId": "112036"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104318"
+      },
+      {
+        "count": 4,
+        "materialId": "112037"
+      },
+      {
+        "count": 1,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104318"
+      },
+      {
+        "count": 6,
+        "materialId": "112037"
+      },
+      {
+        "count": 1,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104318"
+      },
+      {
+        "count": 9,
+        "materialId": "112037"
+      },
+      {
+        "count": 2,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104318"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112037"
+      },
+      {
+        "count": 2,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,10 +419,105 @@ export const xinyan = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Xinyan Physical Team #2",
+        rank: "A",
+        description: "A physical team centered around Razor with Electro and Cryo for Superconduct. Xinyan provides shields, Qiqi heals and applies Cryo, and Bennett buffs ATK and heals. Razor's physical damage is maximized by triggering Superconduct to reduce enemy physical resistance. Xinyan provides a shield for safety, Qiqi applies Cryo off-field, and Bennett enhances ATK and healing.",
+        members: [
+            {
+                characterId: "xinyan",
+                role: "Support",
+                roleDesc: "Provides a shield for safe play.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Whiteblind"
+                ],
+                artifacts: [
+                    "2pc Crimson Witch of Flames",
+                    "2pc Retracing Bolide"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "DEF%",
+                    "CRIT DMG",
+                    "CRIT Rate"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Elemental Burst provides a large ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "qiqi",
+                role: "Support",
+                roleDesc: "Elemental Skill applies Cryo continuously and heals the team.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Maiden Beloved"
+                ],
+                substats: [
+                    "ATK%",
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "razor",
+                role: "Main DPS",
+                roleDesc: "Main physical DPS, C4 reduces enemy DEF with Elemental Skill.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Prototype Archaic"
+                ],
+                artifacts: [
+                    "4pc Gladiator's Finale"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
         name: "Xinyan Overload",
         rank: "A",
         description: "Xinyan's Pyro attacks combine with Electro from Fischl to trigger frequent Overload reactions, dealing AoE Pyro DMG. Kazuha provides Anemo grouping and resistance shred, while Bennett offers ATK buffs and healing.",
         members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "xinyan",
                 role: "Main DPS",
@@ -328,23 +571,6 @@ export const xinyan = {
                     "Energy Recharge",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -390,25 +616,6 @@ export const xinyan = {
                 ]
             },
             {
-                characterId: "beidou",
-                role: "Sub DPS",
-                roleDesc: "Beidou's Burst provides continuous Electro DMG off-field to trigger Superconduct.",
-                weapons: [
-                    "Skyward Pride",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "2pc Thundering Fury",
-                    "2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "eula",
                 role: "Main DPS",
                 roleDesc: "Eula's physical damage is boosted by Superconduct.",
@@ -425,77 +632,18 @@ export const xinyan = {
                     "ATK%",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Xinyan Physical Team #2",
-        rank: "A",
-        description: "A physical team centered around Razor with Electro and Cryo for Superconduct. Xinyan provides shields, Qiqi heals and applies Cryo, and Bennett buffs ATK and heals. Razor's physical damage is maximized by triggering Superconduct to reduce enemy physical resistance. Xinyan provides a shield for safety, Qiqi applies Cryo off-field, and Bennett enhances ATK and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Elemental Burst provides a large ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
             },
             {
-                characterId: "xinyan",
-                role: "Support",
-                roleDesc: "Provides a shield for safe play.",
+                characterId: "beidou",
+                role: "Sub DPS",
+                roleDesc: "Beidou's Burst provides continuous Electro DMG off-field to trigger Superconduct.",
                 weapons: [
-                    "Wolf's Gravestone",
-                    "Whiteblind"
+                    "Skyward Pride",
+                    "Serpent Spine"
                 ],
                 artifacts: [
-                    "2pc Crimson Witch of Flames",
-                    "2pc Retracing Bolide"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "DEF%",
-                    "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            },
-            {
-                characterId: "qiqi",
-                role: "Support",
-                roleDesc: "Elemental Skill applies Cryo continuously and heals the team.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
-                ],
-                substats: [
-                    "ATK%",
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "razor",
-                role: "Main DPS",
-                roleDesc: "Main physical DPS, C4 reduces enemy DEF with Elemental Skill.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Prototype Archaic"
-                ],
-                artifacts: [
-                    "4pc Gladiator's Finale"
+                    "2pc Thundering Fury",
+                    "2pc Noblesse Oblige"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -610,8 +758,8 @@ export const xinyan = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
-        setNameEn: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        setNameVi: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+        setNameEn: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
         pieces: 2,
         sands: [
             "Tấn Công%",
@@ -633,9 +781,9 @@ export const xinyan = {
         ]
     },
     {
-        setNameVi: "Lửa Trắng Xám",
-        setNameEn: "Lửa Trắng Xám",
-        pieces: 4,
+        setNameVi: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        setNameEn: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        pieces: 2,
         sands: [
             "Tấn Công%",
             "Hiệu Quả Nạp"
@@ -679,9 +827,9 @@ export const xinyan = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
-        setNameEn: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
-        pieces: 2,
+        setNameVi: "Lửa Trắng Xám",
+        setNameEn: "Lửa Trắng Xám",
+        pieces: 4,
         sands: [
             "Tấn Công%",
             "Hiệu Quả Nạp"

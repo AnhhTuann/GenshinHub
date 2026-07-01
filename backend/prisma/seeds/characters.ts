@@ -128,256 +128,257 @@ const getSplashUrl = (name: string) => {
 
 
 
-import { gaming } from './characters/gaming';
-import { jahoda } from './characters/jahoda';
-import { xiangling } from './characters/xiangling';
-import { kaeya } from './characters/kaeya';
-import { albedo } from './characters/albedo';
-import { chongyun } from './characters/chongyun';
-import { xinyan } from './characters/xinyan';
-import { zhongli } from './characters/zhongli';
-import { fischl } from './characters/fischl';
-import { thoma } from './characters/thoma';
-import { nicole } from './characters/nicole';
-import { gorou } from './characters/gorou';
-import { nilou } from './characters/nilou';
-import { kamisatoAyato } from './characters/kamisato-ayato';
-import { dehya } from './characters/dehya';
-import { lynette } from './characters/lynette';
-import { furina } from './characters/furina';
-import { freminet } from './characters/freminet';
-import { columbina } from './characters/columbina';
-import { chasca } from './characters/chasca';
-import { iansan } from './characters/iansan';
-import { razor } from './characters/razor';
-import { dahlia } from './characters/dahlia';
-import { citlali } from './characters/citlali';
-import { mona } from './characters/mona';
-import { travelerPyro } from './characters/traveler-pyro';
-import { kinich } from './characters/kinich';
-import { travelerDendro } from './characters/traveler-dendro';
-import { arlecchino } from './characters/arlecchino';
-import { momoka } from './characters/momoka';
-import { varka } from './characters/varka';
-import { tartaglia } from './characters/tartaglia';
-import { bennett } from './characters/bennett';
-import { barbara } from './characters/barbara';
-import { raidenShogun } from './characters/raiden-shogun';
-import { durin } from './characters/durin';
-import { xiao } from './characters/xiao';
-import { ningguang } from './characters/ningguang';
-import { venti } from './characters/venti';
-import { zibai } from './characters/zibai';
-import { ororon } from './characters/ororon';
-import { ganyu } from './characters/ganyu';
+
+import { cyno } from './characters/cyno';
 import { nahida } from './characters/nahida';
-import { sethos } from './characters/sethos';
+import { wanderer } from './characters/wanderer';
+import { yaoyao } from './characters/yaoyao';
+import { dehya } from './characters/dehya';
+import { kaveh } from './characters/kaveh';
+import { lynette } from './characters/lynette';
+import { freminet } from './characters/freminet';
+import { charlotte } from './characters/charlotte';
+import { travelerBoy } from './characters/traveler-boy';
+import { navia } from './characters/navia';
+import { xianyun } from './characters/xianyun';
+import { arlecchino } from './characters/arlecchino';
+import { travelerGirl } from './characters/traveler-girl';
+import { kachina } from './characters/kachina';
+import { lauma } from './characters/lauma';
+import { chasca } from './characters/chasca';
+import { jahoda } from './characters/jahoda';
+import { citlali } from './characters/citlali';
+import { yumemizu } from './characters/yumemizu';
+import { varesa } from './characters/varesa';
+import { ifa } from './characters/ifa';
+import { jean } from './characters/jean';
+import { barbara } from './characters/barbara';
+import { razor } from './characters/razor';
+import { venti } from './characters/venti';
+import { beidou } from './characters/beidou';
+import { xiao } from './characters/xiao';
+import { fischl } from './characters/fischl';
+import { tartaglia } from './characters/tartaglia';
+import { chongyun } from './characters/chongyun';
+import { albedo } from './characters/albedo';
+import { mona } from './characters/mona';
+import { sucrose } from './characters/sucrose';
+import { rosaria } from './characters/rosaria';
+import { kaedeharaKazuha } from './characters/kaedehara-kazuha';
 import { yoimiya } from './characters/yoimiya';
 import { eula } from './characters/eula';
-import { cyno } from './characters/cyno';
-import { baizhu } from './characters/baizhu';
-import { rosaria } from './characters/rosaria';
-import { mika } from './characters/mika';
-import { sangonomiyaKokomi } from './characters/sangonomiya-kokomi';
-import { kukiShinobu } from './characters/kuki-shinobu';
-import { amber } from './characters/amber';
-import { faruzan } from './characters/faruzan';
-import { shikanoinHeizou } from './characters/shikanoin-heizou';
-import { navia } from './characters/navia';
-import { charlotte } from './characters/charlotte';
-import { yanfei } from './characters/yanfei';
-import { mualani } from './characters/mualani';
-import { emilie } from './characters/emilie';
-import { yumemizu } from './characters/yumemizu';
-import { travelerGirl } from './characters/traveler-girl';
-import { travelerAnemo } from './characters/traveler-anemo';
-import { travelerHydro } from './characters/traveler-hydro';
-import { ifa } from './characters/ifa';
-import { illuga } from './characters/illuga';
-import { dori } from './characters/dori';
-import { lanyan } from './characters/lanyan';
-import { skirk } from './characters/skirk';
-import { kamisatoAyaka } from './characters/kamisato-ayaka';
-import { aino } from './characters/aino';
-import { nefer } from './characters/nefer';
-import { diona } from './characters/diona';
-import { klee } from './characters/klee';
-import { sigewinne } from './characters/sigewinne';
-import { yunJin } from './characters/yun-jin';
-import { wanderer } from './characters/wanderer';
-import { xilonen } from './characters/xilonen';
-import { neuvillette } from './characters/neuvillette';
-import { yaoyao } from './characters/yaoyao';
-import { travelerBoy } from './characters/traveler-boy';
-import { keqing } from './characters/keqing';
 import { sayu } from './characters/sayu';
-import { travelerGeo } from './characters/traveler-geo';
-import { yelan } from './characters/yelan';
-import { jean } from './characters/jean';
-import { noelle } from './characters/noelle';
-import { clorinde } from './characters/clorinde';
-import { qiqi } from './characters/qiqi';
-import { prune } from './characters/prune';
-import { aratakiItto } from './characters/arataki-itto';
-import { linnea } from './characters/linnea';
-import { traveler } from './characters/traveler';
-import { layla } from './characters/layla';
-import { lisa } from './characters/lisa';
-import { beidou } from './characters/beidou';
-import { chiori } from './characters/chiori';
-import { xingqiu } from './characters/xingqiu';
-import { varesa } from './characters/varesa';
-import { kaedeharaKazuha } from './characters/kaedehara-kazuha';
-import { collei } from './characters/collei';
-import { lohen } from './characters/lohen';
-import { wriothesley } from './characters/wriothesley';
-import { kaveh } from './characters/kaveh';
-import { mavuika } from './characters/mavuika';
-import { flins } from './characters/flins';
-import { xianyun } from './characters/xianyun';
-import { candace } from './characters/candace';
-import { travelerElectro } from './characters/traveler-electro';
-import { lyney } from './characters/lyney';
-import { sucrose } from './characters/sucrose';
-import { huTao } from './characters/hu-tao';
-import { kujouSara } from './characters/kujou-sara';
-import { alhaitham } from './characters/alhaitham';
-import { lauma } from './characters/lauma';
-import { diluc } from './characters/diluc';
-import { ineffa } from './characters/ineffa';
-import { shenhe } from './characters/shenhe';
-import { kachina } from './characters/kachina';
+import { gorou } from './characters/gorou';
 import { yaeMiko } from './characters/yae-miko';
-import { aloy } from './characters/aloy';
+import { yelan } from './characters/yelan';
+import { shenhe } from './characters/shenhe';
+import { nicole } from './characters/nicole';
+import { travelerPyro } from './characters/traveler-pyro';
+import { kamisatoAyato } from './characters/kamisato-ayato';
+import { collei } from './characters/collei';
+import { traveler } from './characters/traveler';
+import { skirk } from './characters/skirk';
+import { ineffa } from './characters/ineffa';
+import { aino } from './characters/aino';
+import { durin } from './characters/durin';
+import { varka } from './characters/varka';
+import { linnea } from './characters/linnea';
+import { travelerAnemo } from './characters/traveler-anemo';
+import { travelerGeo } from './characters/traveler-geo';
+import { travelerElectro } from './characters/traveler-electro';
+import { travelerDendro } from './characters/traveler-dendro';
+import { travelerHydro } from './characters/traveler-hydro';
+import { nilou } from './characters/nilou';
+import { candace } from './characters/candace';
+import { layla } from './characters/layla';
+import { faruzan } from './characters/faruzan';
+import { alhaitham } from './characters/alhaitham';
+import { mika } from './characters/mika';
+import { baizhu } from './characters/baizhu';
+import { lyney } from './characters/lyney';
+import { wriothesley } from './characters/wriothesley';
+import { neuvillette } from './characters/neuvillette';
+import { furina } from './characters/furina';
 import { chevreuse } from './characters/chevreuse';
-import { tighnari } from './characters/tighnari';
+import { gaming } from './characters/gaming';
+import { chiori } from './characters/chiori';
+import { sigewinne } from './characters/sigewinne';
+import { sethos } from './characters/sethos';
+import { clorinde } from './characters/clorinde';
+import { emilie } from './characters/emilie';
+import { kinich } from './characters/kinich';
+import { mualani } from './characters/mualani';
+import { xilonen } from './characters/xilonen';
+import { ororon } from './characters/ororon';
+import { mavuika } from './characters/mavuika';
+import { lanyan } from './characters/lanyan';
+import { iansan } from './characters/iansan';
 import { escoffier } from './characters/escoffier';
+import { columbina } from './characters/columbina';
+import { kamisatoAyaka } from './characters/kamisato-ayaka';
+import { lisa } from './characters/lisa';
+import { kaeya } from './characters/kaeya';
+import { diluc } from './characters/diluc';
+import { amber } from './characters/amber';
+import { xiangling } from './characters/xiangling';
+import { xingqiu } from './characters/xingqiu';
+import { ningguang } from './characters/ningguang';
+import { klee } from './characters/klee';
+import { zhongli } from './characters/zhongli';
+import { bennett } from './characters/bennett';
+import { noelle } from './characters/noelle';
+import { qiqi } from './characters/qiqi';
+import { ganyu } from './characters/ganyu';
+import { diona } from './characters/diona';
+import { keqing } from './characters/keqing';
+import { xinyan } from './characters/xinyan';
+import { huTao } from './characters/hu-tao';
+import { yanfei } from './characters/yanfei';
+import { thoma } from './characters/thoma';
+import { raidenShogun } from './characters/raiden-shogun';
+import { sangonomiyaKokomi } from './characters/sangonomiya-kokomi';
+import { kujouSara } from './characters/kujou-sara';
+import { aratakiItto } from './characters/arataki-itto';
+import { shikanoinHeizou } from './characters/shikanoin-heizou';
+import { momoka } from './characters/momoka';
+import { aloy } from './characters/aloy';
+import { yunJin } from './characters/yun-jin';
+import { kukiShinobu } from './characters/kuki-shinobu';
+import { dori } from './characters/dori';
+import { tighnari } from './characters/tighnari';
+import { dahlia } from './characters/dahlia';
+import { flins } from './characters/flins';
+import { nefer } from './characters/nefer';
+import { zibai } from './characters/zibai';
+import { illuga } from './characters/illuga';
+import { lohen } from './characters/lohen';
+import { prune } from './characters/prune';
 
 const metaBuilds = [
-  gaming,
-  jahoda,
-  xiangling,
-  kaeya,
-  albedo,
-  chongyun,
-  xinyan,
-  zhongli,
-  fischl,
-  thoma,
-  nicole,
-  gorou,
-  nilou,
-  kamisatoAyato,
-  dehya,
-  lynette,
-  furina,
-  freminet,
-  columbina,
-  chasca,
-  iansan,
-  razor,
-  dahlia,
-  citlali,
-  mona,
-  travelerPyro,
-  kinich,
-  travelerDendro,
-  arlecchino,
-  momoka,
-  varka,
-  tartaglia,
-  bennett,
-  barbara,
-  raidenShogun,
-  durin,
-  xiao,
-  ningguang,
-  venti,
-  zibai,
-  ororon,
-  ganyu,
+  cyno,
   nahida,
-  sethos,
+  wanderer,
+  yaoyao,
+  dehya,
+  kaveh,
+  lynette,
+  freminet,
+  charlotte,
+  travelerBoy,
+  navia,
+  xianyun,
+  arlecchino,
+  travelerGirl,
+  kachina,
+  lauma,
+  chasca,
+  jahoda,
+  citlali,
+  yumemizu,
+  varesa,
+  ifa,
+  jean,
+  barbara,
+  razor,
+  venti,
+  beidou,
+  xiao,
+  fischl,
+  tartaglia,
+  chongyun,
+  albedo,
+  mona,
+  sucrose,
+  rosaria,
+  kaedeharaKazuha,
   yoimiya,
   eula,
-  cyno,
-  baizhu,
-  rosaria,
-  mika,
-  sangonomiyaKokomi,
-  kukiShinobu,
-  amber,
-  faruzan,
-  shikanoinHeizou,
-  navia,
-  charlotte,
-  yanfei,
-  mualani,
-  emilie,
-  yumemizu,
-  travelerGirl,
-  travelerAnemo,
-  travelerHydro,
-  ifa,
-  illuga,
-  dori,
-  lanyan,
-  skirk,
-  kamisatoAyaka,
-  aino,
-  nefer,
-  diona,
-  klee,
-  sigewinne,
-  yunJin,
-  wanderer,
-  xilonen,
-  neuvillette,
-  yaoyao,
-  travelerBoy,
-  keqing,
   sayu,
-  travelerGeo,
-  yelan,
-  jean,
-  noelle,
-  clorinde,
-  qiqi,
-  prune,
-  aratakiItto,
-  linnea,
-  traveler,
-  layla,
-  lisa,
-  beidou,
-  chiori,
-  xingqiu,
-  varesa,
-  kaedeharaKazuha,
-  collei,
-  lohen,
-  wriothesley,
-  kaveh,
-  mavuika,
-  flins,
-  xianyun,
-  candace,
-  travelerElectro,
-  lyney,
-  sucrose,
-  huTao,
-  kujouSara,
-  alhaitham,
-  lauma,
-  diluc,
-  ineffa,
-  shenhe,
-  kachina,
+  gorou,
   yaeMiko,
-  aloy,
+  yelan,
+  shenhe,
+  nicole,
+  travelerPyro,
+  kamisatoAyato,
+  collei,
+  traveler,
+  skirk,
+  ineffa,
+  aino,
+  durin,
+  varka,
+  linnea,
+  travelerAnemo,
+  travelerGeo,
+  travelerElectro,
+  travelerDendro,
+  travelerHydro,
+  nilou,
+  candace,
+  layla,
+  faruzan,
+  alhaitham,
+  mika,
+  baizhu,
+  lyney,
+  wriothesley,
+  neuvillette,
+  furina,
   chevreuse,
+  gaming,
+  chiori,
+  sigewinne,
+  sethos,
+  clorinde,
+  emilie,
+  kinich,
+  mualani,
+  xilonen,
+  ororon,
+  mavuika,
+  lanyan,
+  iansan,
+  escoffier,
+  columbina,
+  kamisatoAyaka,
+  lisa,
+  kaeya,
+  diluc,
+  amber,
+  xiangling,
+  xingqiu,
+  ningguang,
+  klee,
+  zhongli,
+  bennett,
+  noelle,
+  qiqi,
+  ganyu,
+  diona,
+  keqing,
+  xinyan,
+  huTao,
+  yanfei,
+  thoma,
+  raidenShogun,
+  sangonomiyaKokomi,
+  kujouSara,
+  aratakiItto,
+  shikanoinHeizou,
+  momoka,
+  aloy,
+  yunJin,
+  kukiShinobu,
+  dori,
   tighnari,
-  escoffier
+  dahlia,
+  flins,
+  nefer,
+  zibai,
+  illuga,
+  lohen,
+  prune
 ];
 
 const charactersData = [
@@ -584,7 +585,10 @@ function parseChar(dataStr: string) {
     recommendedC: metaInfo?.recommendedC || null,
     tierNoteEn: metaInfo?.tierNoteEn || [],
     tierNoteVi: metaInfo?.tierNoteVi || [],
-    teams: metaInfo?.teams || []
+    teams: metaInfo?.teams || [],
+    stats: metaInfo?.stats || null,
+    ascensionMats: metaInfo?.ascensionMats || null,
+    talentMats: metaInfo?.talentMats || null
   };
 }
 
@@ -952,6 +956,7 @@ export async function seedCharacters(prisma: PrismaClient) {
           baseHp: baseHp, baseAtk: baseAtk, baseDef: baseDef, 
           fandomUrl: char.fandomUrl,
           tier: char.tier, role: char.role, recommendedC: char.recommendedC, tierNoteEn: char.tierNoteEn, tierNoteVi: char.tierNoteVi,
+          stats: char.stats, ascensionMats: char.ascensionMats, talentMats: char.talentMats,
           bestWeapons: { create: char.bestWeapons },
           bestArtifacts: { create: char.bestArtifacts },
           teams: {

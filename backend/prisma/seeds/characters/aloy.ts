@@ -139,15 +139,15 @@ export const aloy = {
     "items": [
       {
         "count": 3,
-        "materialId": "crystal_marrow"
+        "materialId": "101203"
       },
       {
         "count": 1,
-        "materialId": "shivada_jade_sliver"
+        "materialId": "104161"
       },
       {
         "count": 3,
-        "materialId": "spectral_husk"
+        "materialId": "112053"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const aloy = {
     "items": [
       {
         "count": 10,
-        "materialId": "crystal_marrow"
+        "materialId": "101203"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 15,
-        "materialId": "spectral_husk"
+        "materialId": "112053"
       },
       {
         "count": 2,
-        "materialId": "crystalline_bloom"
+        "materialId": "113020"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const aloy = {
     "items": [
       {
         "count": 20,
-        "materialId": "crystal_marrow"
+        "materialId": "101203"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 12,
-        "materialId": "spectral_heart"
+        "materialId": "112054"
       },
       {
         "count": 4,
-        "materialId": "crystalline_bloom"
+        "materialId": "113020"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const aloy = {
     "items": [
       {
         "count": 30,
-        "materialId": "crystal_marrow"
+        "materialId": "101203"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 18,
-        "materialId": "spectral_heart"
+        "materialId": "112054"
       },
       {
         "count": 8,
-        "materialId": "crystalline_bloom"
+        "materialId": "113020"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const aloy = {
     "items": [
       {
         "count": 45,
-        "materialId": "crystal_marrow"
+        "materialId": "101203"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 12,
-        "materialId": "spectral_nucleus"
+        "materialId": "112055"
       },
       {
         "count": 12,
-        "materialId": "crystalline_bloom"
+        "materialId": "113020"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const aloy = {
     "items": [
       {
         "count": 60,
-        "materialId": "crystal_marrow"
+        "materialId": "101203"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_gemstone"
+        "materialId": "104164"
       },
       {
         "count": 24,
-        "materialId": "spectral_nucleus"
+        "materialId": "112055"
       },
       {
         "count": 20,
-        "materialId": "crystalline_bloom"
+        "materialId": "113020"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104301"
+      },
+      {
+        "count": 6,
+        "materialId": "112053"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104302"
+      },
+      {
+        "count": 3,
+        "materialId": "112054"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104302"
+      },
+      {
+        "count": 4,
+        "materialId": "112054"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104302"
+      },
+      {
+        "count": 6,
+        "materialId": "112054"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104302"
+      },
+      {
+        "count": 9,
+        "materialId": "112054"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104303"
+      },
+      {
+        "count": 4,
+        "materialId": "112055"
+      },
+      {
+        "count": 1,
+        "materialId": "113025"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104303"
+      },
+      {
+        "count": 6,
+        "materialId": "112055"
+      },
+      {
+        "count": 1,
+        "materialId": "113025"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104303"
+      },
+      {
+        "count": 9,
+        "materialId": "112055"
+      },
+      {
+        "count": 2,
+        "materialId": "113025"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104303"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112055"
+      },
+      {
+        "count": 2,
+        "materialId": "113025"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -270,400 +418,6 @@ export const aloy = {
 ],
   signatureWeapons: [],
   teams: [
-    {
-        name: "Aloy Melt Team #1",
-        rank: "A",
-        description: "Aloy serves as the main DPS, maximizing damage through Melt reactions enabled by Xiangling.\nAloy's Cryo attacks are melted by Pyro from Xiangling's Burst. Kazuha provides grouping, Elemental DMG Bonus, and RES shred. Diona offers shielding and Cryo battery.",
-        members: [
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Xiangling's Burst provides massive Pyro damage and continuous application for Melt.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona's shield provides safety and her Burst heals and helps battery Aloy's Burst.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kaedehara-kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies, provides Elemental DMG Bonus, and reduces enemy RES with Anemo swirls.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Uses Melt to amplify damage.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Aloy Melt Team #2",
-        rank: "A",
-        description: "Aloy's Cryo attacks trigger Melt with Xiangling's Pyro for high damage.\nAloy's Cryo attachment reacts with Pyro from Xiangling to trigger Melting, maximizing Aloy's DMG.",
-        members: [
-            {
-                characterId: "chongyun",
-                role: "Sub DPS",
-                roleDesc: "C2 reduces Aloy's Burst CD. Provides backstage Cryo DMG.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "2pc Blizzard Strayer",
-                    "2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Provides continuous Pyro via Burst for Aloy's Melt.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Burst provides ATK buff and healing to the team.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Uses Melt to amplify damage.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Aloy Permafrost Team #1",
-        rank: "BB",
-        description: "In this team, Kokomi's Skill applies Hydro every 2s, enabling Freeze with Ayaka and Aloy. Kazuha groups enemies and boosts Cryo damage. Aloy acts as a sub-DPS with her Burst.\nConstantly apply Hydro via Kokomi's Skill and Cryo via Ayaka and Aloy to maintain permanent Freeze. Kazuha groups enemies and enhances Cryo damage.",
-        members: [
-            {
-                characterId: "sangonomiya-kokomi",
-                role: "Support",
-                roleDesc: "Her Skill applies Hydro every 2s, triggering Tenacity of the Millelith. She uses Thrilling Tales to buff Ayaka.",
-                weapons: [
-                    "Everlasting Moonglow",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "kaedehara-kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, reduces Anemo RES, and boosts party Cryo damage.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "aloy",
-                role: "Sub DPS",
-                roleDesc: "Provides Cryo off-field damage and enables Freeze with Kokomi.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kamisato-ayaka",
-                role: "Main DPS",
-                roleDesc: "Her Burst deals massive damage and applies Cryo for Freeze.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Aloy Permafrost Team #2",
-        rank: "A",
-        description: "A Freeze team built around Aloy as the main Cryo DPS, supported by Xingqiu's Hydro application and Chongyun's cooldown reduction, with Jean providing healing and resistance shred via Viridescent Venerer.\nAloy's Cryo DMG reacts with Xingqiu's Hydro to trigger Freeze. Chongyun (C2+) reduces Aloy's Burst cooldown and provides off-field Cryo, while Jean uses Viridescent Venerer to lower enemy resistance and heal.",
-        members: [
-            {
-                characterId: "jean",
-                role: "Support",
-                roleDesc: "Healer/Support. Uses Viridescent Venerer to reduce enemy Anemo resistance and heal the team.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "chongyun",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. At C2, Elemental Skill reduces Aloy's Burst cooldown. Provides off-field Cryo DMG.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "2pc Blizzard Strayer",
-                    "2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Elemental Burst applies Hydro continuously to enable Freeze.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Cryo DMG reacts with Xingqiu's Hydro to trigger Freeze.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Aloy Permafrost Freeze",
-        rank: "A",
-        description: "A freeze composition featuring Aloy as the main Cryo DPS, supported by Mona for Hydro application, Venti for crowd control, and Diona for shielding and healing.\nAloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze, locking down enemies while Venti groups them and Diona provides survivability.",
-        members: [
-            {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Aloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Sub DPS",
-                roleDesc: "Venti groups enemies and spreads Hydro with his Burst.",
-                weapons: [
-                    "Elegy for the End",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona provides shield, healing, and helps battery.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mona",
-                role: "Sub DPS",
-                roleDesc: "Mona applies Hydro and boosts DMG with her Burst.",
-                weapons: [
-                    "Skyward Atlas",
-                    "Favonius Codex",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            }
-        ]
-    },
     {
         name: "Aloy Melt Team #3",
         rank: "A",
@@ -685,6 +439,23 @@ export const aloy = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -722,11 +493,134 @@ export const aloy = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            }
+        ]
+    },
+    {
+        name: "Aloy Permafrost Team #2",
+        rank: "A",
+        description: "A Freeze team built around Aloy as the main Cryo DPS, supported by Xingqiu's Hydro application and Chongyun's cooldown reduction, with Jean providing healing and resistance shred via Viridescent Venerer.\nAloy's Cryo DMG reacts with Xingqiu's Hydro to trigger Freeze. Chongyun (C2+) reduces Aloy's Burst cooldown and provides off-field Cryo, while Jean uses Viridescent Venerer to lower enemy resistance and heal.",
+        members: [
+            {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Cryo DMG reacts with Xingqiu's Hydro to trigger Freeze.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Elemental Burst applies Hydro continuously to enable Freeze.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "jean",
+                role: "Support",
+                roleDesc: "Healer/Support. Uses Viridescent Venerer to reduce enemy Anemo resistance and heal the team.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "chongyun",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. At C2, Elemental Skill reduces Aloy's Burst cooldown. Provides off-field Cryo DMG.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "2pc Blizzard Strayer",
+                    "2pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Aloy Melt Team #2",
+        rank: "A",
+        description: "Aloy's Cryo attacks trigger Melt with Xiangling's Pyro for high damage.\nAloy's Cryo attachment reacts with Pyro from Xiangling to trigger Melting, maximizing Aloy's DMG.",
+        members: [
+            {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Uses Melt to amplify damage.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "chongyun",
+                role: "Sub DPS",
+                roleDesc: "C2 reduces Aloy's Burst CD. Provides backstage Cryo DMG.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "2pc Blizzard Strayer",
+                    "2pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
             },
             {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+                roleDesc: "Burst provides ATK buff and healing to the team.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
@@ -738,6 +632,260 @@ export const aloy = {
                     "HP%",
                     "HP",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Provides continuous Pyro via Burst for Aloy's Melt.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Aloy Permafrost Team #1",
+        rank: "BB",
+        description: "In this team, Kokomi's Skill applies Hydro every 2s, enabling Freeze with Ayaka and Aloy. Kazuha groups enemies and boosts Cryo damage. Aloy acts as a sub-DPS with her Burst.\nConstantly apply Hydro via Kokomi's Skill and Cryo via Ayaka and Aloy to maintain permanent Freeze. Kazuha groups enemies and enhances Cryo damage.",
+        members: [
+            {
+                characterId: "sangonomiya-kokomi",
+                role: "Support",
+                roleDesc: "Her Skill applies Hydro every 2s, triggering Tenacity of the Millelith. She uses Thrilling Tales to buff Ayaka.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "aloy",
+                role: "Sub DPS",
+                roleDesc: "Provides Cryo off-field damage and enables Freeze with Kokomi.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
+                roleDesc: "Her Burst deals massive damage and applies Cryo for Freeze.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, reduces Anemo RES, and boosts party Cryo damage.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Aloy Melt Team #1",
+        rank: "A",
+        description: "Aloy serves as the main DPS, maximizing damage through Melt reactions enabled by Xiangling.\nAloy's Cryo attacks are melted by Pyro from Xiangling's Burst. Kazuha provides grouping, Elemental DMG Bonus, and RES shred. Diona offers shielding and Cryo battery.",
+        members: [
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Xiangling's Burst provides massive Pyro damage and continuous application for Melt.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies, provides Elemental DMG Bonus, and reduces enemy RES with Anemo swirls.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Uses Melt to amplify damage.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Diona's shield provides safety and her Burst heals and helps battery Aloy's Burst.",
+                weapons: [
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Maiden Beloved"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Aloy Permafrost Freeze",
+        rank: "A",
+        description: "A freeze composition featuring Aloy as the main Cryo DPS, supported by Mona for Hydro application, Venti for crowd control, and Diona for shielding and healing.\nAloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze, locking down enemies while Venti groups them and Diona provides survivability.",
+        members: [
+            {
+                characterId: "mona",
+                role: "Sub DPS",
+                roleDesc: "Mona applies Hydro and boosts DMG with her Burst.",
+                weapons: [
+                    "Skyward Atlas",
+                    "Favonius Codex",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Aloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Diona provides shield, healing, and helps battery.",
+                weapons: [
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Maiden Beloved"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "venti",
+                role: "Sub DPS",
+                roleDesc: "Venti groups enemies and spreads Hydro with his Burst.",
+                weapons: [
+                    "Elegy for the End",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
                 ]
             }
         ]
@@ -857,27 +1005,31 @@ export const aloy = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Giấc Mộng Hoàng Kim",
-        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Gilded Dreams",
-        pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4,
+        sands: [
+            "ATK%",
+            "ER"
+        ],
+        goblet: [
+            "Cryo DMG Bonus"
+        ],
+        circlet: [
+            "CRIT Rate",
+            "CRIT DMG"
+        ],
+        subStatsPriority: [
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "ER"
+        ]
     },
     {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
         setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Noblesse Oblige",
         pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
-    },
-    {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Gilded Dreams",
-        pieces: 4,
         sands: [],
         goblet: [],
         circlet: [],
@@ -907,26 +1059,22 @@ export const aloy = {
         ]
     },
     {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Emblem of Severed Fate",
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Gilded Dreams",
         pieces: 4,
-        sands: [
-            "ATK%",
-            "ER"
-        ],
-        goblet: [
-            "Cryo DMG Bonus"
-        ],
-        circlet: [
-            "CRIT Rate",
-            "CRIT DMG"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "ER"
-        ]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
+    },
+    {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Giấc Mộng Hoàng Kim",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Gilded Dreams",
+        pieces: 2,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

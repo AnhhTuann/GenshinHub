@@ -139,15 +139,15 @@ export const neuvillette = {
     "items": [
       {
         "count": 3,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 1,
-        "materialId": "varunada_lazurite_sliver"
+        "materialId": "104121"
       },
       {
         "count": 3,
-        "materialId": "transoceanic_pearl"
+        "materialId": "112080"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const neuvillette = {
     "items": [
       {
         "count": 10,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 15,
-        "materialId": "transoceanic_pearl"
+        "materialId": "112080"
       },
       {
         "count": 2,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const neuvillette = {
     "items": [
       {
         "count": 20,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 12,
-        "materialId": "transoceanic_chunk"
+        "materialId": "112081"
       },
       {
         "count": 4,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const neuvillette = {
     "items": [
       {
         "count": 30,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 18,
-        "materialId": "transoceanic_chunk"
+        "materialId": "112081"
       },
       {
         "count": 8,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const neuvillette = {
     "items": [
       {
         "count": 45,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 12,
-        "materialId": "xenochromatic_crystal"
+        "materialId": "112082"
       },
       {
         "count": 12,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const neuvillette = {
     "items": [
       {
         "count": 60,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_gemstone"
+        "materialId": "104124"
       },
       {
         "count": 24,
-        "materialId": "xenochromatic_crystal"
+        "materialId": "112082"
       },
       {
         "count": 20,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104338"
+      },
+      {
+        "count": 6,
+        "materialId": "112080"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104339"
+      },
+      {
+        "count": 3,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104339"
+      },
+      {
+        "count": 4,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104339"
+      },
+      {
+        "count": 6,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104339"
+      },
+      {
+        "count": 9,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104340"
+      },
+      {
+        "count": 4,
+        "materialId": "112082"
+      },
+      {
+        "count": 1,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104340"
+      },
+      {
+        "count": 6,
+        "materialId": "112082"
+      },
+      {
+        "count": 1,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104340"
+      },
+      {
+        "count": 9,
+        "materialId": "112082"
+      },
+      {
+        "count": 2,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104340"
+      },
+      {
+        "count": 12,
+        "materialId": "112082"
+      },
+      {
+        "count": 2,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,10 +419,46 @@ export const neuvillette = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Neuvillette Hypercarry Team #1",
+        name: "Neuvillette Electro-Charged Team #2",
         rank: "SS",
-        description: "Neuvillette hypercarry team utilizing Bloom reactions from Hydro and Dendro applications. Hydro application from Neuvillette and Furina reacts with Dendro from Baizhu to create Bloom cores. Kazuha provides Elemental Mastery buff and Anemo resistance shred via Viridescent Venerer.",
+        description: "An Electro-Charged team featuring Neuvillette as the main DPS, with Furina providing off-field Hydro, Kazuha grouping and buffs, and Kuki Shinobu triggering Electro-Charged reactions and healing.",
         members: [
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Xiphos' Moonlight"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals high Hydro damage and drives Electro-Charged.",
+                weapons: [
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
@@ -294,15 +478,40 @@ export const neuvillette = {
                 ]
             },
             {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
+                characterId: "kuki-shinobu",
+                role: "Support",
+                roleDesc: "Electro Support. Provides healing and triggers Electro-Charged reactions.",
                 weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
+                    "Key of Khaj-Nisut",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter"
+                    "4pc Ocean-Hued Clam"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Neuvillette Hypercarry Team #1",
+        rank: "SS",
+        description: "Neuvillette hypercarry team utilizing Bloom reactions from Hydro and Dendro applications. Hydro application from Neuvillette and Furina reacts with Dendro from Baizhu to create Bloom cores. Kazuha provides Elemental Mastery buff and Anemo resistance shred via Viridescent Venerer.",
+        members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -330,6 +539,24 @@ export const neuvillette = {
                 ]
             },
             {
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
+                weapons: [
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "baizhu",
                 role: "Support",
                 roleDesc: "Dendro Support. Provides healing, shields, and buffs Bloom reaction damage.",
@@ -346,84 +573,6 @@ export const neuvillette = {
                     "Energy Recharge",
                     "CRIT DMG",
                     "CRIT Rate"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Neuvillette Vaporize #1",
-        rank: "SS",
-        description: "A powerful Vaporize team centered around Neuvillette's charged attacks, with Xiangling providing off-field Pyro application, Kazuha offering crowd control and resistance shred, and Bennett healing and boosting ATK.",
-        members: [
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high Pyro damage off-field with Pyronado.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds Pyro and Hydro resistances, and buffs elemental DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Xiphos' Moonlight"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high continuous Hydro damage and triggers Vaporize.",
-                weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -452,22 +601,6 @@ export const neuvillette = {
                 ]
             },
             {
-                characterId: "raiden-shogun",
-                role: "Sub DPS",
-                roleDesc: "Electro Sub DPS. Buffs Burst DMG and triggers off-field Electro attacks.",
-                weapons: [
-                    "Dragon's Bane"
-                ],
-                artifacts: [
-                    "4pc Flower of Paradise Lost"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "yae-miko",
                 role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Deals continuous off-field Electro damage with turrets.",
@@ -483,6 +616,22 @@ export const neuvillette = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "raiden-shogun",
+                role: "Sub DPS",
+                roleDesc: "Electro Sub DPS. Buffs Burst DMG and triggers off-field Electro attacks.",
+                weapons: [
+                    "Dragon's Bane"
+                ],
+                artifacts: [
+                    "4pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
                 ]
             },
             {
@@ -510,24 +659,6 @@ export const neuvillette = {
         rank: "SS",
         description: "A powerful Hyperbloom team leveraging Neuvillette's continuous Hydro application with Nahida's Dendro application to create Bloom cores, then triggering Hyperbloom with Raiden Shogun's Electro. Furina provides additional off-field Hydro application and party-wide DMG buffs.",
         members: [
-            {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high continuous Hydro damage with Charged Attacks.",
-                weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
@@ -563,6 +694,24 @@ export const neuvillette = {
                 ]
             },
             {
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals high continuous Hydro damage with Charged Attacks.",
+                weapons: [
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "nahida",
                 role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM.",
@@ -584,32 +733,14 @@ export const neuvillette = {
         ]
     },
     {
-        name: "Neuvillette Electro-Charged Team #2",
+        name: "Neuvillette Vaporize #1",
         rank: "SS",
-        description: "An Electro-Charged team featuring Neuvillette as the main DPS, with Furina providing off-field Hydro, Kazuha grouping and buffs, and Kuki Shinobu triggering Electro-Charged reactions and healing.",
+        description: "A powerful Vaporize team centered around Neuvillette's charged attacks, with Xiangling providing off-field Pyro application, Kazuha offering crowd control and resistance shred, and Bennett healing and boosting ATK.",
         members: [
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "neuvillette",
                 role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high Hydro damage and drives Electro-Charged.",
+                roleDesc: "Hydro Main DPS. Deals high continuous Hydro damage and triggers Vaporize.",
                 weapons: [
                     "Tome of the Eternal Flow",
                     "Sacrificial Jade"
@@ -625,27 +756,44 @@ export const neuvillette = {
                 ]
             },
             {
-                characterId: "kuki-shinobu",
+                characterId: "bennett",
                 role: "Support",
-                roleDesc: "Electro Support. Provides healing and triggers Electro-Charged reactions.",
+                roleDesc: "Pyro Support. Provides healing and massive ATK buff.",
                 weapons: [
-                    "Key of Khaj-Nisut",
-                    "Iron Sting"
+                    "Skyward Blade",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Ocean-Hued Clam"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "HP%",
                     "HP",
                     "Energy Recharge"
                 ]
             },
             {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals high Pyro damage off-field with Pyronado.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                roleDesc: "Anemo Support. Groups enemies, shreds Pyro and Hydro resistances, and buffs elemental DMG.",
                 weapons: [
                     "Freedom-Sworn",
                     "Xiphos' Moonlight"
@@ -788,80 +936,32 @@ export const neuvillette = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Mix 2 bộ Thủy / HP / Thợ Săn",
+        setNameEn: "Mix 2 bộ Thủy / HP / Thợ Săn",
+        pieces: 2,
+        sands: [
+            "HP%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy",
+            "HP%"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "HP%"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "HP%",
+            "HP"
+        ]
+    },
+    {
         setNameVi: "Đoàn Hát Lang Thang Đại Lục",
         setNameEn: "Đoàn Hát Lang Thang Đại Lục",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy",
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "HP%"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "HP"
-        ]
-    },
-    {
-        setNameVi: "Trái Tim Trầm Luân",
-        setNameEn: "Trái Tim Trầm Luân",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy",
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "HP%"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "HP"
-        ]
-    },
-    {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy",
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "HP%"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "HP"
-        ]
-    },
-    {
-        setNameVi: "Sao Băng Bay Ngược",
-        setNameEn: "Sao Băng Bay Ngược",
         pieces: 4,
         sands: [
             "HP%"
@@ -908,9 +1008,57 @@ export const neuvillette = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Thủy / HP / Thợ Săn",
-        setNameEn: "Mix 2 bộ Thủy / HP / Thợ Săn",
-        pieces: 2,
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4,
+        sands: [
+            "HP%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy",
+            "HP%"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "HP%"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "HP%",
+            "HP"
+        ]
+    },
+    {
+        setNameVi: "Trái Tim Trầm Luân",
+        setNameEn: "Trái Tim Trầm Luân",
+        pieces: 4,
+        sands: [
+            "HP%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Thủy",
+            "HP%"
+        ],
+        circlet: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "HP%"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "HP%",
+            "HP"
+        ]
+    },
+    {
+        setNameVi: "Sao Băng Bay Ngược",
+        setNameEn: "Sao Băng Bay Ngược",
+        pieces: 4,
         sands: [
             "HP%"
         ],

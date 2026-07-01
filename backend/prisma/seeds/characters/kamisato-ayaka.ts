@@ -139,15 +139,15 @@ export const kamisatoAyaka = {
     "items": [
       {
         "count": 3,
-        "materialId": "sakura_bloom"
+        "materialId": "101202"
       },
       {
         "count": 1,
-        "materialId": "shivada_jade_sliver"
+        "materialId": "104161"
       },
       {
         "count": 3,
-        "materialId": "old_handguard"
+        "materialId": "112044"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const kamisatoAyaka = {
     "items": [
       {
         "count": 10,
-        "materialId": "sakura_bloom"
+        "materialId": "101202"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 15,
-        "materialId": "old_handguard"
+        "materialId": "112044"
       },
       {
         "count": 2,
-        "materialId": "perpetual_heart"
+        "materialId": "113023"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const kamisatoAyaka = {
     "items": [
       {
         "count": 20,
-        "materialId": "sakura_bloom"
+        "materialId": "101202"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_fragment"
+        "materialId": "104162"
       },
       {
         "count": 12,
-        "materialId": "kageuchi_handguard"
+        "materialId": "112045"
       },
       {
         "count": 4,
-        "materialId": "perpetual_heart"
+        "materialId": "113023"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const kamisatoAyaka = {
     "items": [
       {
         "count": 30,
-        "materialId": "sakura_bloom"
+        "materialId": "101202"
       },
       {
         "count": 3,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 18,
-        "materialId": "kageuchi_handguard"
+        "materialId": "112045"
       },
       {
         "count": 8,
-        "materialId": "perpetual_heart"
+        "materialId": "113023"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const kamisatoAyaka = {
     "items": [
       {
         "count": 45,
-        "materialId": "sakura_bloom"
+        "materialId": "101202"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_chunk"
+        "materialId": "104163"
       },
       {
         "count": 12,
-        "materialId": "famed_handguard"
+        "materialId": "112046"
       },
       {
         "count": 12,
-        "materialId": "perpetual_heart"
+        "materialId": "113023"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const kamisatoAyaka = {
     "items": [
       {
         "count": 60,
-        "materialId": "sakura_bloom"
+        "materialId": "101202"
       },
       {
         "count": 6,
-        "materialId": "shivada_jade_gemstone"
+        "materialId": "104164"
       },
       {
         "count": 24,
-        "materialId": "famed_handguard"
+        "materialId": "112046"
       },
       {
         "count": 20,
-        "materialId": "perpetual_heart"
+        "materialId": "113023"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104323"
+      },
+      {
+        "count": 6,
+        "materialId": "112044"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104324"
+      },
+      {
+        "count": 3,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104324"
+      },
+      {
+        "count": 4,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104324"
+      },
+      {
+        "count": 6,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104324"
+      },
+      {
+        "count": 9,
+        "materialId": "112045"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104325"
+      },
+      {
+        "count": 4,
+        "materialId": "112046"
+      },
+      {
+        "count": 1,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104325"
+      },
+      {
+        "count": 6,
+        "materialId": "112046"
+      },
+      {
+        "count": 1,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104325"
+      },
+      {
+        "count": 9,
+        "materialId": "112046"
+      },
+      {
+        "count": 2,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104325"
+      },
+      {
+        "count": 12,
+        "materialId": "112046"
+      },
+      {
+        "count": 2,
+        "materialId": "113018"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

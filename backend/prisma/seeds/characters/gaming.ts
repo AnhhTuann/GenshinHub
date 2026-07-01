@@ -139,15 +139,15 @@ export const gaming = {
     "items": [
       {
         "count": 3,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 1,
-        "materialId": "agnidus_agate_sliver"
+        "materialId": "104111"
       },
       {
         "count": 3,
-        "materialId": "slime_condensate"
+        "materialId": "112002"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const gaming = {
     "items": [
       {
         "count": 10,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 15,
-        "materialId": "slime_condensate"
+        "materialId": "112002"
       },
       {
         "count": 2,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const gaming = {
     "items": [
       {
         "count": 20,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 12,
-        "materialId": "slime_secretions"
+        "materialId": "112003"
       },
       {
         "count": 4,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const gaming = {
     "items": [
       {
         "count": 30,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 18,
-        "materialId": "slime_secretions"
+        "materialId": "112003"
       },
       {
         "count": 8,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const gaming = {
     "items": [
       {
         "count": 45,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 12,
-        "materialId": "slime_concentrate"
+        "materialId": "112004"
       },
       {
         "count": 12,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const gaming = {
     "items": [
       {
         "count": 60,
-        "materialId": "starconch"
+        "materialId": "100033"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_gemstone"
+        "materialId": "104114"
       },
       {
         "count": 24,
-        "materialId": "slime_concentrate"
+        "materialId": "112004"
       },
       {
         "count": 20,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104310"
+      },
+      {
+        "count": 6,
+        "materialId": "112002"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104311"
+      },
+      {
+        "count": 3,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104311"
+      },
+      {
+        "count": 4,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104311"
+      },
+      {
+        "count": 6,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104311"
+      },
+      {
+        "count": 9,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104312"
+      },
+      {
+        "count": 4,
+        "materialId": "112004"
+      },
+      {
+        "count": 1,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104312"
+      },
+      {
+        "count": 6,
+        "materialId": "112004"
+      },
+      {
+        "count": 1,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104312"
+      },
+      {
+        "count": 9,
+        "materialId": "112004"
+      },
+      {
+        "count": 2,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104312"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112004"
+      },
+      {
+        "count": 2,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,17 +419,34 @@ export const gaming = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Gaming Melting Team #1",
-        rank: "SS",
-        description: "A high-damage Melt team centered on Gaming's plunging attacks, supported by Ganyu's off-field Cryo application, Layla's shield and Cryo application, and Xianyun's plunge buffs and healing.",
+        name: "Gaming Pure Pyro Team",
+        rank: "S",
+        description: "A pure Pyro team centered on Gaming's plunging attacks, boosted by Xianyun, with Bennett and Xiangling providing buffs and off-field damage.",
         members: [
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
+                weapons: [
+                    "Crane's Echoing Call",
+                    "Oathsworn Eye"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "ATK%",
+                    "ATK",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "gaming",
                 role: "Main DPS",
-                roleDesc: "Pyro Main DPS. His Plunging Attack provides continuous high-multiplier Pyro DMG.",
+                roleDesc: "Pyro Main DPS. Plunging Attacks deal high consistent Pyro DMG.",
                 weapons: [
-                    "Serpent Spine",
-                    "Redhorn Stonethresher"
+                    "Redhorn Stonethresher",
+                    "Serpent Spine"
                 ],
                 artifacts: [
                     "4pc Marechaussee Hunter"
@@ -291,6 +456,65 @@ export const gaming = {
                     "CRIT Rate",
                     "ATK%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG via Pyronado and Gouba.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Gaming Melting Team #1",
+        rank: "SS",
+        description: "A high-damage Melt team centered on Gaming's plunging attacks, supported by Ganyu's off-field Cryo application, Layla's shield and Cryo application, and Xianyun's plunge buffs and healing.",
+        members: [
+            {
+                characterId: "layla",
+                role: "Support",
+                roleDesc: "Cryo Shield & Support. Provides a strong shield and additional Cryo application.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Harbinger of Dawn"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "CRIT Rate",
+                    "CRIT DMG"
                 ]
             },
             {
@@ -312,24 +536,6 @@ export const gaming = {
                 ]
             },
             {
-                characterId: "layla",
-                role: "Support",
-                roleDesc: "Cryo Shield & Support. Provides a strong shield and additional Cryo application.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Harbinger of Dawn"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
                 characterId: "xianyun",
                 role: "Support",
                 roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
@@ -345,6 +551,24 @@ export const gaming = {
                     "ATK",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. His Plunging Attack provides continuous high-multiplier Pyro DMG.",
+                weapons: [
+                    "Serpent Spine",
+                    "Redhorn Stonethresher"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
             }
         ]
     },
@@ -353,22 +577,6 @@ export const gaming = {
         rank: "SS",
         description: "Gaming is a Main DPS. His DMG is amplified by Vaporize with off-field Hydro and support buffs from Furina, Kazuha, and Xianyun.",
         members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "xianyun",
                 role: "Support",
@@ -421,81 +629,21 @@ export const gaming = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Gaming Pure Pyro Team",
-        rank: "S",
-        description: "A pure Pyro team centered on Gaming's plunging attacks, boosted by Xianyun, with Bennett and Xiangling providing buffs and off-field damage.",
-        members: [
+            },
             {
-                characterId: "xianyun",
+                characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
+                roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
                 weapons: [
-                    "Crane's Echoing Call",
-                    "Oathsworn Eye"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Song of Days Past"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
-                    "ATK%",
-                    "ATK",
+                    "Elemental Mastery",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG via Pyronado and Gouba.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "gaming",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Plunging Attacks deal high consistent Pyro DMG.",
-                weapons: [
-                    "Redhorn Stonethresher",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
                 ]
             }
         ]
@@ -694,8 +842,8 @@ export const gaming = {
         ]
     },
     {
-        setNameVi: "Lời Thề Đêm Dài",
-        setNameEn: "Long Night's Oath",
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Marechaussee Hunter",
         pieces: 4,
         sands: [
             "Tinh Thông Nguyên Tố",
@@ -742,8 +890,8 @@ export const gaming = {
         ]
     },
     {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Marechaussee Hunter",
+        setNameVi: "Lời Thề Đêm Dài",
+        setNameEn: "Long Night's Oath",
         pieces: 4,
         sands: [
             "Tinh Thông Nguyên Tố",

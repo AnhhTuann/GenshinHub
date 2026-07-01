@@ -139,15 +139,15 @@ export const emilie = {
     "items": [
       {
         "count": 3,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 1,
-        "materialId": "nagadus_emerald_sliver"
+        "materialId": "104131"
       },
       {
         "count": 3,
-        "materialId": "meshing_gear"
+        "materialId": "112083"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const emilie = {
     "items": [
       {
         "count": 10,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 3,
-        "materialId": "nagadus_emerald_fragment"
+        "materialId": "104132"
       },
       {
         "count": 15,
-        "materialId": "meshing_gear"
+        "materialId": "112083"
       },
       {
         "count": 2,
-        "materialId": "fragment_of_a_golden_melody"
+        "materialId": "113059"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const emilie = {
     "items": [
       {
         "count": 20,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 6,
-        "materialId": "nagadus_emerald_fragment"
+        "materialId": "104132"
       },
       {
         "count": 12,
-        "materialId": "mechanical_spur_gear"
+        "materialId": "112084"
       },
       {
         "count": 4,
-        "materialId": "fragment_of_a_golden_melody"
+        "materialId": "113059"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const emilie = {
     "items": [
       {
         "count": 30,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 3,
-        "materialId": "nagadus_emerald_chunk"
+        "materialId": "104133"
       },
       {
         "count": 18,
-        "materialId": "mechanical_spur_gear"
+        "materialId": "112084"
       },
       {
         "count": 8,
-        "materialId": "fragment_of_a_golden_melody"
+        "materialId": "113059"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const emilie = {
     "items": [
       {
         "count": 45,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 6,
-        "materialId": "nagadus_emerald_chunk"
+        "materialId": "104133"
       },
       {
         "count": 12,
-        "materialId": "artificed_dynamic_gear"
+        "materialId": "112085"
       },
       {
         "count": 12,
-        "materialId": "fragment_of_a_golden_melody"
+        "materialId": "113059"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const emilie = {
     "items": [
       {
         "count": 60,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 6,
-        "materialId": "nagadus_emerald_gemstone"
+        "materialId": "104134"
       },
       {
         "count": 24,
-        "materialId": "artificed_dynamic_gear"
+        "materialId": "112085"
       },
       {
         "count": 20,
-        "materialId": "fragment_of_a_golden_melody"
+        "materialId": "113059"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104344"
+      },
+      {
+        "count": 6,
+        "materialId": "112083"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104345"
+      },
+      {
+        "count": 3,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104345"
+      },
+      {
+        "count": 4,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104345"
+      },
+      {
+        "count": 6,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104345"
+      },
+      {
+        "count": 9,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104346"
+      },
+      {
+        "count": 4,
+        "materialId": "112085"
+      },
+      {
+        "count": 1,
+        "materialId": "113061"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104346"
+      },
+      {
+        "count": 6,
+        "materialId": "112085"
+      },
+      {
+        "count": 1,
+        "materialId": "113061"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104346"
+      },
+      {
+        "count": 9,
+        "materialId": "112085"
+      },
+      {
+        "count": 2,
+        "materialId": "113061"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104346"
+      },
+      {
+        "count": 12,
+        "materialId": "112085"
+      },
+      {
+        "count": 2,
+        "materialId": "113061"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

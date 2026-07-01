@@ -139,15 +139,15 @@ export const clorinde = {
     "items": [
       {
         "count": 3,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 1,
-        "materialId": "vajrada_amethyst_sliver"
+        "materialId": "104141"
       },
       {
         "count": 3,
-        "materialId": "transoceanic_pearl"
+        "materialId": "112080"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const clorinde = {
     "items": [
       {
         "count": 10,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 3,
-        "materialId": "vajrada_amethyst_fragment"
+        "materialId": "104142"
       },
       {
         "count": 15,
-        "materialId": "transoceanic_pearl"
+        "materialId": "112080"
       },
       {
         "count": 2,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const clorinde = {
     "items": [
       {
         "count": 20,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_fragment"
+        "materialId": "104142"
       },
       {
         "count": 12,
-        "materialId": "transoceanic_chunk"
+        "materialId": "112081"
       },
       {
         "count": 4,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const clorinde = {
     "items": [
       {
         "count": 30,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 3,
-        "materialId": "vajrada_amethyst_chunk"
+        "materialId": "104143"
       },
       {
         "count": 18,
-        "materialId": "transoceanic_chunk"
+        "materialId": "112081"
       },
       {
         "count": 8,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const clorinde = {
     "items": [
       {
         "count": 45,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_chunk"
+        "materialId": "104143"
       },
       {
         "count": 12,
-        "materialId": "xenochromatic_crystal"
+        "materialId": "112082"
       },
       {
         "count": 12,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const clorinde = {
     "items": [
       {
         "count": 60,
-        "materialId": "lumitoile"
+        "materialId": "101237"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_gemstone"
+        "materialId": "104144"
       },
       {
         "count": 24,
-        "materialId": "xenochromatic_crystal"
+        "materialId": "112082"
       },
       {
         "count": 20,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104341"
+      },
+      {
+        "count": 6,
+        "materialId": "112080"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104342"
+      },
+      {
+        "count": 3,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104342"
+      },
+      {
+        "count": 4,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104342"
+      },
+      {
+        "count": 6,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104342"
+      },
+      {
+        "count": 9,
+        "materialId": "112081"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104343"
+      },
+      {
+        "count": 4,
+        "materialId": "112082"
+      },
+      {
+        "count": 1,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104343"
+      },
+      {
+        "count": 6,
+        "materialId": "112082"
+      },
+      {
+        "count": 1,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104343"
+      },
+      {
+        "count": 9,
+        "materialId": "112082"
+      },
+      {
+        "count": 2,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104343"
+      },
+      {
+        "count": 12,
+        "materialId": "112082"
+      },
+      {
+        "count": 2,
+        "materialId": "113048"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

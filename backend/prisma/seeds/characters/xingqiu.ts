@@ -139,15 +139,15 @@ export const xingqiu = {
     "items": [
       {
         "count": 3,
-        "materialId": "silk_flower"
+        "materialId": "100029"
       },
       {
         "count": 1,
-        "materialId": "varunada_lazurite_sliver"
+        "materialId": "104121"
       },
       {
         "count": 3,
-        "materialId": "damaged_mask"
+        "materialId": "112005"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const xingqiu = {
     "items": [
       {
         "count": 10,
-        "materialId": "silk_flower"
+        "materialId": "100029"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 15,
-        "materialId": "damaged_mask"
+        "materialId": "112005"
       },
       {
         "count": 2,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const xingqiu = {
     "items": [
       {
         "count": 20,
-        "materialId": "silk_flower"
+        "materialId": "100029"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 12,
-        "materialId": "stained_mask"
+        "materialId": "112006"
       },
       {
         "count": 4,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const xingqiu = {
     "items": [
       {
         "count": 30,
-        "materialId": "silk_flower"
+        "materialId": "100029"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 18,
-        "materialId": "stained_mask"
+        "materialId": "112006"
       },
       {
         "count": 8,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const xingqiu = {
     "items": [
       {
         "count": 45,
-        "materialId": "silk_flower"
+        "materialId": "100029"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 12,
-        "materialId": "ominous_mask"
+        "materialId": "112007"
       },
       {
         "count": 12,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const xingqiu = {
     "items": [
       {
         "count": 60,
-        "materialId": "silk_flower"
+        "materialId": "100029"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_gemstone"
+        "materialId": "104124"
       },
       {
         "count": 24,
-        "materialId": "ominous_mask"
+        "materialId": "112007"
       },
       {
         "count": 20,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104316"
+      },
+      {
+        "count": 6,
+        "materialId": "112005"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104317"
+      },
+      {
+        "count": 3,
+        "materialId": "112006"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104317"
+      },
+      {
+        "count": 4,
+        "materialId": "112006"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104317"
+      },
+      {
+        "count": 6,
+        "materialId": "112006"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104317"
+      },
+      {
+        "count": 9,
+        "materialId": "112006"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104318"
+      },
+      {
+        "count": 4,
+        "materialId": "112007"
+      },
+      {
+        "count": 1,
+        "materialId": "113006"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104318"
+      },
+      {
+        "count": 6,
+        "materialId": "112007"
+      },
+      {
+        "count": 1,
+        "materialId": "113006"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104318"
+      },
+      {
+        "count": 9,
+        "materialId": "112007"
+      },
+      {
+        "count": 2,
+        "materialId": "113006"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104318"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112007"
+      },
+      {
+        "count": 2,
+        "materialId": "113006"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

@@ -139,15 +139,15 @@ export const xiao = {
     "items": [
       {
         "count": 3,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 1,
-        "materialId": "vayuda_turquoise_sliver"
+        "materialId": "104151"
       },
       {
         "count": 3,
-        "materialId": "slime_condensate"
+        "materialId": "112002"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const xiao = {
     "items": [
       {
         "count": 10,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 15,
-        "materialId": "slime_condensate"
+        "materialId": "112002"
       },
       {
         "count": 2,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const xiao = {
     "items": [
       {
         "count": 20,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_fragment"
+        "materialId": "104152"
       },
       {
         "count": 12,
-        "materialId": "slime_secretions"
+        "materialId": "112003"
       },
       {
         "count": 4,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const xiao = {
     "items": [
       {
         "count": 30,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 3,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 18,
-        "materialId": "slime_secretions"
+        "materialId": "112003"
       },
       {
         "count": 8,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const xiao = {
     "items": [
       {
         "count": 45,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_chunk"
+        "materialId": "104153"
       },
       {
         "count": 12,
-        "materialId": "slime_concentrate"
+        "materialId": "112004"
       },
       {
         "count": 12,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const xiao = {
     "items": [
       {
         "count": 60,
-        "materialId": "qingxin"
+        "materialId": "100031"
       },
       {
         "count": 6,
-        "materialId": "vayuda_turquoise_gemstone"
+        "materialId": "104154"
       },
       {
         "count": 24,
-        "materialId": "slime_concentrate"
+        "materialId": "112004"
       },
       {
         "count": 20,
-        "materialId": "juvenile_jade"
+        "materialId": "113016"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104310"
+      },
+      {
+        "count": 6,
+        "materialId": "112002"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104311"
+      },
+      {
+        "count": 3,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104311"
+      },
+      {
+        "count": 4,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104311"
+      },
+      {
+        "count": 6,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104311"
+      },
+      {
+        "count": 9,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104312"
+      },
+      {
+        "count": 4,
+        "materialId": "112004"
+      },
+      {
+        "count": 1,
+        "materialId": "113015"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104312"
+      },
+      {
+        "count": 6,
+        "materialId": "112004"
+      },
+      {
+        "count": 1,
+        "materialId": "113015"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104312"
+      },
+      {
+        "count": 9,
+        "materialId": "112004"
+      },
+      {
+        "count": 2,
+        "materialId": "113015"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104312"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112004"
+      },
+      {
+        "count": 2,
+        "materialId": "113015"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

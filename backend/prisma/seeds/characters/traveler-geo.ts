@@ -116,6 +116,7 @@ export const travelerGeo = {
     "level": "Lv.90"
   }
 ],
+  talentMats: null,
   talentPriority: [
   "Normal Attack",
   "Elemental Skill",

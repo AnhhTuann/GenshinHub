@@ -139,15 +139,15 @@ export const albedo = {
     "items": [
       {
         "count": 3,
-        "materialId": "cecilia"
+        "materialId": "100023"
       },
       {
         "count": 1,
-        "materialId": "prithiva_topaz_sliver"
+        "materialId": "104171"
       },
       {
         "count": 3,
-        "materialId": "divining_scroll"
+        "materialId": "112008"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const albedo = {
     "items": [
       {
         "count": 10,
-        "materialId": "cecilia"
+        "materialId": "100023"
       },
       {
         "count": 3,
-        "materialId": "prithiva_topaz_fragment"
+        "materialId": "104172"
       },
       {
         "count": 15,
-        "materialId": "divining_scroll"
+        "materialId": "112008"
       },
       {
         "count": 2,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const albedo = {
     "items": [
       {
         "count": 20,
-        "materialId": "cecilia"
+        "materialId": "100023"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_fragment"
+        "materialId": "104172"
       },
       {
         "count": 12,
-        "materialId": "sealed_scroll"
+        "materialId": "112009"
       },
       {
         "count": 4,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const albedo = {
     "items": [
       {
         "count": 30,
-        "materialId": "cecilia"
+        "materialId": "100023"
       },
       {
         "count": 3,
-        "materialId": "prithiva_topaz_chunk"
+        "materialId": "104173"
       },
       {
         "count": 18,
-        "materialId": "sealed_scroll"
+        "materialId": "112009"
       },
       {
         "count": 8,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const albedo = {
     "items": [
       {
         "count": 45,
-        "materialId": "cecilia"
+        "materialId": "100023"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_chunk"
+        "materialId": "104173"
       },
       {
         "count": 12,
-        "materialId": "forbidden_curse_scroll"
+        "materialId": "112010"
       },
       {
         "count": 12,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const albedo = {
     "items": [
       {
         "count": 60,
-        "materialId": "cecilia"
+        "materialId": "100023"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_gemstone"
+        "materialId": "104174"
       },
       {
         "count": 24,
-        "materialId": "forbidden_curse_scroll"
+        "materialId": "112010"
       },
       {
         "count": 20,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104307"
+      },
+      {
+        "count": 6,
+        "materialId": "112008"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104308"
+      },
+      {
+        "count": 3,
+        "materialId": "112009"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104308"
+      },
+      {
+        "count": 4,
+        "materialId": "112009"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104308"
+      },
+      {
+        "count": 6,
+        "materialId": "112009"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104308"
+      },
+      {
+        "count": 9,
+        "materialId": "112009"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104309"
+      },
+      {
+        "count": 4,
+        "materialId": "112010"
+      },
+      {
+        "count": 1,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104309"
+      },
+      {
+        "count": 6,
+        "materialId": "112010"
+      },
+      {
+        "count": 1,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104309"
+      },
+      {
+        "count": 9,
+        "materialId": "112010"
+      },
+      {
+        "count": 2,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104309"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112010"
+      },
+      {
+        "count": 2,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -275,6 +423,14 @@ export const albedo = {
         rank: "SS",
         description: "ádad",
         members: [
+            {
+                characterId: "alhaitham",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
             {
                 characterId: "albedo",
                 role: "Main DPS",
@@ -294,14 +450,6 @@ export const albedo = {
             {
                 characterId: "aloy",
                 role: "Healer",
-                roleDesc: "",
-                weapons: [],
-                artifacts: [],
-                substats: []
-            },
-            {
-                characterId: "alhaitham",
-                role: "Support",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],

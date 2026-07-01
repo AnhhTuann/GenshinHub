@@ -139,15 +139,15 @@ export const illuga = {
     "items": [
       {
         "count": 3,
-        "materialId": "pine_amber"
+        "materialId": "101269"
       },
       {
         "count": 1,
-        "materialId": "prithiva_topaz_sliver"
+        "materialId": "104171"
       },
       {
         "count": 3,
-        "materialId": "broken_drive_shaft"
+        "materialId": "112122"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const illuga = {
     "items": [
       {
         "count": 10,
-        "materialId": "pine_amber"
+        "materialId": "101269"
       },
       {
         "count": 3,
-        "materialId": "prithiva_topaz_fragment"
+        "materialId": "104172"
       },
       {
         "count": 15,
-        "materialId": "broken_drive_shaft"
+        "materialId": "112122"
       },
       {
         "count": 2,
-        "materialId": "cyclic_military_kuuvahki_core"
+        "materialId": "113080"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const illuga = {
     "items": [
       {
         "count": 20,
-        "materialId": "pine_amber"
+        "materialId": "101269"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_fragment"
+        "materialId": "104172"
       },
       {
         "count": 12,
-        "materialId": "reinforced_drive_shaft"
+        "materialId": "112123"
       },
       {
         "count": 4,
-        "materialId": "cyclic_military_kuuvahki_core"
+        "materialId": "113080"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const illuga = {
     "items": [
       {
         "count": 30,
-        "materialId": "pine_amber"
+        "materialId": "101269"
       },
       {
         "count": 3,
-        "materialId": "prithiva_topaz_chunk"
+        "materialId": "104173"
       },
       {
         "count": 18,
-        "materialId": "reinforced_drive_shaft"
+        "materialId": "112123"
       },
       {
         "count": 8,
-        "materialId": "cyclic_military_kuuvahki_core"
+        "materialId": "113080"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const illuga = {
     "items": [
       {
         "count": 45,
-        "materialId": "pine_amber"
+        "materialId": "101269"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_chunk"
+        "materialId": "104173"
       },
       {
         "count": 12,
-        "materialId": "precision_drive_shaft"
+        "materialId": "112124"
       },
       {
         "count": 12,
-        "materialId": "cyclic_military_kuuvahki_core"
+        "materialId": "113080"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const illuga = {
     "items": [
       {
         "count": 60,
-        "materialId": "pine_amber"
+        "materialId": "101269"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_gemstone"
+        "materialId": "104174"
       },
       {
         "count": 24,
-        "materialId": "precision_drive_shaft"
+        "materialId": "112124"
       },
       {
         "count": 20,
-        "materialId": "cyclic_military_kuuvahki_core"
+        "materialId": "113080"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104359"
+      },
+      {
+        "count": 6,
+        "materialId": "112122"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104360"
+      },
+      {
+        "count": 3,
+        "materialId": "112123"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104360"
+      },
+      {
+        "count": 4,
+        "materialId": "112123"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104360"
+      },
+      {
+        "count": 6,
+        "materialId": "112123"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104360"
+      },
+      {
+        "count": 9,
+        "materialId": "112123"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104361"
+      },
+      {
+        "count": 4,
+        "materialId": "112124"
+      },
+      {
+        "count": 1,
+        "materialId": "113068"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104361"
+      },
+      {
+        "count": 6,
+        "materialId": "112124"
+      },
+      {
+        "count": 1,
+        "materialId": "113068"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104361"
+      },
+      {
+        "count": 9,
+        "materialId": "112124"
+      },
+      {
+        "count": 2,
+        "materialId": "113068"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104361"
+      },
+      {
+        "count": 12,
+        "materialId": "112124"
+      },
+      {
+        "count": 2,
+        "materialId": "113068"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

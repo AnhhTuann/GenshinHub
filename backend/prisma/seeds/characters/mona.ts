@@ -139,15 +139,15 @@ export const mona = {
     "items": [
       {
         "count": 3,
-        "materialId": "philanemo_mushroom"
+        "materialId": "100025"
       },
       {
         "count": 1,
-        "materialId": "varunada_lazurite_sliver"
+        "materialId": "104121"
       },
       {
         "count": 3,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const mona = {
     "items": [
       {
         "count": 10,
-        "materialId": "philanemo_mushroom"
+        "materialId": "100025"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 15,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       },
       {
         "count": 2,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const mona = {
     "items": [
       {
         "count": 20,
-        "materialId": "philanemo_mushroom"
+        "materialId": "100025"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 12,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 4,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const mona = {
     "items": [
       {
         "count": 30,
-        "materialId": "philanemo_mushroom"
+        "materialId": "100025"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 18,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 8,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const mona = {
     "items": [
       {
         "count": 45,
-        "materialId": "philanemo_mushroom"
+        "materialId": "100025"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 12,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 12,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const mona = {
     "items": [
       {
         "count": 60,
-        "materialId": "philanemo_mushroom"
+        "materialId": "100025"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_gemstone"
+        "materialId": "104124"
       },
       {
         "count": 24,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 20,
-        "materialId": "cleansing_heart"
+        "materialId": "113012"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104304"
+      },
+      {
+        "count": 6,
+        "materialId": "112038"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104305"
+      },
+      {
+        "count": 3,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104305"
+      },
+      {
+        "count": 4,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104305"
+      },
+      {
+        "count": 6,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104305"
+      },
+      {
+        "count": 9,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104306"
+      },
+      {
+        "count": 4,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113007"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104306"
+      },
+      {
+        "count": 6,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113007"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104306"
+      },
+      {
+        "count": 9,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113007"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104306"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113007"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

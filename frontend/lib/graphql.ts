@@ -1,7 +1,7 @@
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
 
-// Default ISR revalidation time (5 minutes) for server-side fetches
-const DEFAULT_REVALIDATE = 300;
+// Default ISR revalidation time (set to 0 for admin to see fresh data instantly)
+const DEFAULT_REVALIDATE = 0;
 
 /**
  * Server-side GraphQL fetch with ISR revalidation.

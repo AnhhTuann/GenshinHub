@@ -139,15 +139,15 @@ export const chevreuse = {
     "items": [
       {
         "count": 3,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 1,
-        "materialId": "agnidus_agate_sliver"
+        "materialId": "104111"
       },
       {
         "count": 3,
-        "materialId": "meshing_gear"
+        "materialId": "112083"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const chevreuse = {
     "items": [
       {
         "count": 10,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 15,
-        "materialId": "meshing_gear"
+        "materialId": "112083"
       },
       {
         "count": 2,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const chevreuse = {
     "items": [
       {
         "count": 20,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 12,
-        "materialId": "mechanical_spur_gear"
+        "materialId": "112084"
       },
       {
         "count": 4,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const chevreuse = {
     "items": [
       {
         "count": 30,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 18,
-        "materialId": "mechanical_spur_gear"
+        "materialId": "112084"
       },
       {
         "count": 8,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const chevreuse = {
     "items": [
       {
         "count": 45,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 12,
-        "materialId": "artificed_dynamic_gear"
+        "materialId": "112085"
       },
       {
         "count": 12,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const chevreuse = {
     "items": [
       {
         "count": 60,
-        "materialId": "lumidouce_bell"
+        "materialId": "101235"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_gemstone"
+        "materialId": "104114"
       },
       {
         "count": 24,
-        "materialId": "artificed_dynamic_gear"
+        "materialId": "112085"
       },
       {
         "count": 20,
-        "materialId": "fontemer_unihorn"
+        "materialId": "113053"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104344"
+      },
+      {
+        "count": 6,
+        "materialId": "112083"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104345"
+      },
+      {
+        "count": 3,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104345"
+      },
+      {
+        "count": 4,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104345"
+      },
+      {
+        "count": 6,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104345"
+      },
+      {
+        "count": 9,
+        "materialId": "112084"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104346"
+      },
+      {
+        "count": 4,
+        "materialId": "112085"
+      },
+      {
+        "count": 1,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104346"
+      },
+      {
+        "count": 6,
+        "materialId": "112085"
+      },
+      {
+        "count": 1,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104346"
+      },
+      {
+        "count": 9,
+        "materialId": "112085"
+      },
+      {
+        "count": 2,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104346"
+      },
+      {
+        "count": 12,
+        "materialId": "112085"
+      },
+      {
+        "count": 2,
+        "materialId": "113055"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,197 +419,10 @@ export const chevreuse = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Chevreuse Overload Team #1",
-        rank: "SS",
-        description: "Maximize team DMG with Chevreuse's Overload RES shred and ATK buff. Cyno drives with infused Electro attacks, Xiangling provides off-field Pyro DMG, and Bennett offers ATK buff and healing.",
-        members: [
-            {
-                characterId: "cyno",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Runs standard normal ATK with Electro DMG. Maximize stats for continuous combat.",
-                weapons: [
-                    "Staff of the Scarlet Sands",
-                    "Staff of Homa"
-                ],
-                artifacts: [
-                    "4pc Gilded Dreams"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "chevreuse",
-                role: "Support",
-                roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
-                weapons: [
-                    "Favonius Lance",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Chevreuse Overload Team #2",
-        rank: "SS",
-        description: "Maximize team DMG by using Chevreuse's passive to reduce element resistance when Overload is triggered, while Bennett provides ATK buff and healing. Raiden Shogun's Elemental Skill boosts Energy Recharge and Elemental Burst DMG of teammates, and she coordinates with Xiangling's Pyro element to trigger Overload.",
-        members: [
-            {
-                characterId: "chevreuse",
-                role: "Support",
-                roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
-                weapons: [
-                    "Favonius Lance",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Runs on-field Electro attacks, fills team's energy with energy restoration. Triggers Overload with coordinated Pyro.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
         name: "Chevreuse Overload Team #3",
         rank: "SS",
         description: "Chevreuse is a Support/Healer in the team. The team's DMG is maximized by Chevreuse. Chevreuse's passive reduces Pyro and Electro RES when Overload is triggered, maximizing team DMG. Her Skill provides an ATK buff to Pyro and Electro characters based on her Max HP.",
         members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Chevreuse in this team.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "chevreuse",
                 role: "Support",
@@ -494,6 +455,193 @@ export const chevreuse = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Chevreuse in this team.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Chevreuse Overload Team #1",
+        rank: "SS",
+        description: "Maximize team DMG with Chevreuse's Overload RES shred and ATK buff. Cyno drives with infused Electro attacks, Xiangling provides off-field Pyro DMG, and Bennett offers ATK buff and healing.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "chevreuse",
+                role: "Support",
+                roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
+                weapons: [
+                    "Favonius Lance",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "cyno",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Runs standard normal ATK with Electro DMG. Maximize stats for continuous combat.",
+                weapons: [
+                    "Staff of the Scarlet Sands",
+                    "Staff of Homa"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Chevreuse Overload Team #2",
+        rank: "SS",
+        description: "Maximize team DMG by using Chevreuse's passive to reduce element resistance when Overload is triggered, while Bennett provides ATK buff and healing. Raiden Shogun's Elemental Skill boosts Energy Recharge and Elemental Burst DMG of teammates, and she coordinates with Xiangling's Pyro element to trigger Overload.",
+        members: [
+            {
+                characterId: "chevreuse",
+                role: "Support",
+                roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
+                weapons: [
+                    "Favonius Lance",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "raiden-shogun",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Runs on-field Electro attacks, fills team's energy with energy restoration. Triggers Overload with coordinated Pyro.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
                 ]
             }
         ]
@@ -592,8 +740,8 @@ export const chevreuse = {
         ]
     },
     {
-        setNameVi: "Thiếu Nữ Đáng Yêu",
-        setNameEn: "Maiden Beloved",
+        setNameVi: "Khúc Ca Ngày Cũ",
+        setNameEn: "Song of Days Past",
         pieces: 4,
         sands: [
             "HP%",
@@ -638,9 +786,9 @@ export const chevreuse = {
         ]
     },
     {
-        setNameVi: "Khúc Ca Ngày Cũ",
-        setNameEn: "Song of Days Past",
-        pieces: 4,
+        setNameVi: "Mix 2 bộ (HP% / Tăng Trị Liệu / Dấu Ấn)",
+        setNameEn: "2-piece Mix (HP% / Healing Bonus / Emblem of Severed Fate)",
+        pieces: 2,
         sands: [
             "HP%",
             "Hiệu Quả Nạp"
@@ -684,9 +832,9 @@ export const chevreuse = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ (HP% / Tăng Trị Liệu / Dấu Ấn)",
-        setNameEn: "2-piece Mix (HP% / Healing Bonus / Emblem of Severed Fate)",
-        pieces: 2,
+        setNameVi: "Thiếu Nữ Đáng Yêu",
+        setNameEn: "Maiden Beloved",
+        pieces: 4,
         sands: [
             "HP%",
             "Hiệu Quả Nạp"

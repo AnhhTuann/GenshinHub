@@ -139,15 +139,15 @@ export const lyney = {
     "items": [
       {
         "count": 3,
-        "materialId": "rainbow_rose"
+        "materialId": "101236"
       },
       {
         "count": 1,
-        "materialId": "agnidus_agate_sliver"
+        "materialId": "104111"
       },
       {
         "count": 3,
-        "materialId": "recruit_s_insignia"
+        "materialId": "112032"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const lyney = {
     "items": [
       {
         "count": 10,
-        "materialId": "rainbow_rose"
+        "materialId": "101236"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 15,
-        "materialId": "recruit_s_insignia"
+        "materialId": "112032"
       },
       {
         "count": 2,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const lyney = {
     "items": [
       {
         "count": 20,
-        "materialId": "rainbow_rose"
+        "materialId": "101236"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_fragment"
+        "materialId": "104112"
       },
       {
         "count": 12,
-        "materialId": "sergeant_s_insignia"
+        "materialId": "112033"
       },
       {
         "count": 4,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const lyney = {
     "items": [
       {
         "count": 30,
-        "materialId": "rainbow_rose"
+        "materialId": "101236"
       },
       {
         "count": 3,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 18,
-        "materialId": "sergeant_s_insignia"
+        "materialId": "112033"
       },
       {
         "count": 8,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const lyney = {
     "items": [
       {
         "count": 45,
-        "materialId": "rainbow_rose"
+        "materialId": "101236"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_chunk"
+        "materialId": "104113"
       },
       {
         "count": 12,
-        "materialId": "lieutenant_s_insignia"
+        "materialId": "112034"
       },
       {
         "count": 12,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const lyney = {
     "items": [
       {
         "count": 60,
-        "materialId": "rainbow_rose"
+        "materialId": "101236"
       },
       {
         "count": 6,
-        "materialId": "agnidus_agate_gemstone"
+        "materialId": "104114"
       },
       {
         "count": 24,
-        "materialId": "lieutenant_s_insignia"
+        "materialId": "112034"
       },
       {
         "count": 20,
-        "materialId": "emperor_s_resolution"
+        "materialId": "113051"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104338"
+      },
+      {
+        "count": 6,
+        "materialId": "112032"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104339"
+      },
+      {
+        "count": 3,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104339"
+      },
+      {
+        "count": 4,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104339"
+      },
+      {
+        "count": 6,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104339"
+      },
+      {
+        "count": 9,
+        "materialId": "112033"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104340"
+      },
+      {
+        "count": 4,
+        "materialId": "112034"
+      },
+      {
+        "count": 1,
+        "materialId": "113047"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104340"
+      },
+      {
+        "count": 6,
+        "materialId": "112034"
+      },
+      {
+        "count": 1,
+        "materialId": "113047"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104340"
+      },
+      {
+        "count": 9,
+        "materialId": "112034"
+      },
+      {
+        "count": 2,
+        "materialId": "113047"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104340"
+      },
+      {
+        "count": 12,
+        "materialId": "112034"
+      },
+      {
+        "count": 2,
+        "materialId": "113047"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,14 +419,48 @@ export const lyney = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Lyney Pure Pyro Team #2",
-        rank: "S",
-        description: "An alternative mono-pyro team maximizing Lyney's passive. Lynette replaces Kazuha, providing grouping, taunt via Boffo Cat Box, and Pyro RES shred with Swirl, while Xiangling deals off-field damage and Bennett buffs ATK and heals.",
+        name: "Lyney Pure Pyro Team #1",
+        rank: "SS",
+        description: "A pure Pyro team that maximizes Lyney's passive ATK bonus from Pyro teammates. Kaedehara Kazuha swirls Pyro to reduce enemy resistance and groups them, while Xiangling deals off-field Pyro damage and Bennett provides massive ATK buff and healing.",
         members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing to sustain Lyney's HP manipulation.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage with Pyronado and Pyronado's Pyro application.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "lyney",
                 role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Charged Attacks deal high Pyro DMG, boosted by Bennett and Xiangling.",
+                roleDesc: "Pyro Main DPS. His Charged Attacks deal high single-target and AoE Pyro DMG, boosted by his passive for each Pyro ally.",
                 weapons: [
                     "The First Great Magic",
                     "Song of Stillness"
@@ -294,15 +476,87 @@ export const lyney = {
                 ]
             },
             {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG and benefits from Pyro RES shred.",
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Swirls Pyro to shred resistance, groups enemies, and provides elemental damage bonus.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Lyney Pure Pyro Team #3",
+        rank: "SS",
+        description: "A defensive pure Pyro team featuring Dehya for damage reduction and interruption resistance. Kazuha swirls Pyro for RES shred and grouping, while Bennett provides ATK buffs and healing.",
+        members: [
+            {
+                characterId: "dehya",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS & Tank. Provides off-field Pyro application, damage reduction, and interruption resistance.",
+                weapons: [
+                    "Favonius Greatsword",
+                    "Sacrificial Greatsword"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Swirls Pyro to shred resistance, groups enemies, and provides elemental damage bonus.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "lyney",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. His Charged Attacks deal high Pyro DMG, protected from interruption by Dehya.",
+                weapons: [
+                    "The First Great Magic",
+                    "Song of Stillness"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -310,7 +564,14 @@ export const lyney = {
                     "ATK%",
                     "Energy Recharge"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Lyney Pure Pyro Team #2",
+        rank: "S",
+        description: "An alternative mono-pyro team maximizing Lyney's passive. Lynette replaces Kazuha, providing grouping, taunt via Boffo Cat Box, and Pyro RES shred with Swirl, while Xiangling deals off-field damage and Bennett buffs ATK and heals.",
+        members: [
             {
                 characterId: "bennett",
                 role: "Support",
@@ -343,92 +604,11 @@ export const lyney = {
                     "Elemental Mastery",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Lyney Pure Pyro Team #3",
-        rank: "SS",
-        description: "A defensive pure Pyro team featuring Dehya for damage reduction and interruption resistance. Kazuha swirls Pyro for RES shred and grouping, while Bennett provides ATK buffs and healing.",
-        members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Swirls Pyro to shred resistance, groups enemies, and provides elemental damage bonus.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
             },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "lyney",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. His Charged Attacks deal high Pyro DMG, protected from interruption by Dehya.",
-                weapons: [
-                    "The First Great Magic",
-                    "Song of Stillness"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "dehya",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS & Tank. Provides off-field Pyro application, damage reduction, and interruption resistance.",
-                weapons: [
-                    "Favonius Greatsword",
-                    "Sacrificial Greatsword"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Lyney Pure Pyro Team #1",
-        rank: "SS",
-        description: "A pure Pyro team that maximizes Lyney's passive ATK bonus from Pyro teammates. Kaedehara Kazuha swirls Pyro to reduce enemy resistance and groups them, while Xiangling deals off-field Pyro damage and Bennett provides massive ATK buff and healing.",
-        members: [
             {
                 characterId: "xiangling",
                 role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals substantial off-field Pyro damage with Pyronado and Pyronado's Pyro application.",
+                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG and benefits from Pyro RES shred.",
                 weapons: [
                     "Engulfing Lightning",
                     "The Catch"
@@ -444,41 +624,9 @@ export const lyney = {
                 ]
             },
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and consistent healing to sustain Lyney's HP manipulation.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Swirls Pyro to shred resistance, groups enemies, and provides elemental damage bonus.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "lyney",
                 role: "Main DPS",
-                roleDesc: "Pyro Main DPS. His Charged Attacks deal high single-target and AoE Pyro DMG, boosted by his passive for each Pyro ally.",
+                roleDesc: "Pyro Main DPS. Charged Attacks deal high Pyro DMG, boosted by Bennett and Xiangling.",
                 weapons: [
                     "The First Great Magic",
                     "Song of Stillness"
@@ -599,51 +747,30 @@ export const lyney = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Dòng Hồi Ức Bất Tận",
+        setNameEn: "Shimenawa's Reminiscence",
+        pieces: 4,
+        sands: [
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Sát Thương Bạo Kích",
+            "Tỷ Lệ Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "Hiệu Quả Nạp"
+        ]
+    },
+    {
         setNameVi: "Mix 2 bộ (Ma Nữ / Thợ Săn / Tấn Công)",
         setNameEn: "2-piece Mix (Crimson Witch / Marechaussee / ATK +18%)",
         pieces: 2,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Sát Thương Bạo Kích",
-            "Tỷ Lệ Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ]
-    },
-    {
-        setNameVi: "Hiền Nhân Bốc Lửa",
-        setNameEn: "Lavawalker",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa"
-        ],
-        circlet: [
-            "Sát Thương Bạo Kích",
-            "Tỷ Lệ Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ]
-    },
-    {
-        setNameVi: "Thần Sa Vãng Sinh Lục",
-        setNameEn: "Vermillion Hereafter",
-        pieces: 4,
         sands: [
             "Tấn Công%"
         ],
@@ -704,8 +831,8 @@ export const lyney = {
         ]
     },
     {
-        setNameVi: "Dòng Hồi Ức Bất Tận",
-        setNameEn: "Shimenawa's Reminiscence",
+        setNameVi: "Hiền Nhân Bốc Lửa",
+        setNameEn: "Lavawalker",
         pieces: 4,
         sands: [
             "Tấn Công%"
@@ -748,6 +875,27 @@ export const lyney = {
     {
         setNameVi: "Thợ Săn Marechaussee",
         setNameEn: "Marechaussee Hunter",
+        pieces: 4,
+        sands: [
+            "Tấn Công%"
+        ],
+        goblet: [
+            "Sát Thương Nguyên Tố Hỏa"
+        ],
+        circlet: [
+            "Sát Thương Bạo Kích",
+            "Tỷ Lệ Bạo Kích"
+        ],
+        subStatsPriority: [
+            "Tỷ Lệ Bạo Kích",
+            "Sát Thương Bạo Kích",
+            "Tấn Công%",
+            "Hiệu Quả Nạp"
+        ]
+    },
+    {
+        setNameVi: "Thần Sa Vãng Sinh Lục",
+        setNameEn: "Vermillion Hereafter",
         pieces: 4,
         sands: [
             "Tấn Công%"

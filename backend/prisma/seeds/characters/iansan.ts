@@ -139,15 +139,15 @@ export const iansan = {
     "items": [
       {
         "count": 3,
-        "materialId": "dracolite"
+        "materialId": "101255"
       },
       {
         "count": 1,
-        "materialId": "vajrada_amethyst_sliver"
+        "materialId": "104141"
       },
       {
         "count": 3,
-        "materialId": "sentry_s_wooden_whistle"
+        "materialId": "112104"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const iansan = {
     "items": [
       {
         "count": 10,
-        "materialId": "dracolite"
+        "materialId": "101255"
       },
       {
         "count": 3,
-        "materialId": "vajrada_amethyst_fragment"
+        "materialId": "104142"
       },
       {
         "count": 15,
-        "materialId": "sentry_s_wooden_whistle"
+        "materialId": "112104"
       },
       {
         "count": 2,
-        "materialId": "ensnaring_gaze"
+        "materialId": "113067"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const iansan = {
     "items": [
       {
         "count": 20,
-        "materialId": "dracolite"
+        "materialId": "101255"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_fragment"
+        "materialId": "104142"
       },
       {
         "count": 12,
-        "materialId": "warrior_s_metal_whistle"
+        "materialId": "112105"
       },
       {
         "count": 4,
-        "materialId": "ensnaring_gaze"
+        "materialId": "113067"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const iansan = {
     "items": [
       {
         "count": 30,
-        "materialId": "dracolite"
+        "materialId": "101255"
       },
       {
         "count": 3,
-        "materialId": "vajrada_amethyst_chunk"
+        "materialId": "104143"
       },
       {
         "count": 18,
-        "materialId": "warrior_s_metal_whistle"
+        "materialId": "112105"
       },
       {
         "count": 8,
-        "materialId": "ensnaring_gaze"
+        "materialId": "113067"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const iansan = {
     "items": [
       {
         "count": 45,
-        "materialId": "dracolite"
+        "materialId": "101255"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_chunk"
+        "materialId": "104143"
       },
       {
         "count": 12,
-        "materialId": "saurian_crowned_warrior_s_golden_whistle"
+        "materialId": "112106"
       },
       {
         "count": 12,
-        "materialId": "ensnaring_gaze"
+        "materialId": "113067"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const iansan = {
     "items": [
       {
         "count": 60,
-        "materialId": "dracolite"
+        "materialId": "101255"
       },
       {
         "count": 6,
-        "materialId": "vajrada_amethyst_gemstone"
+        "materialId": "104144"
       },
       {
         "count": 24,
-        "materialId": "saurian_crowned_warrior_s_golden_whistle"
+        "materialId": "112106"
       },
       {
         "count": 20,
-        "materialId": "ensnaring_gaze"
+        "materialId": "113067"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104347"
+      },
+      {
+        "count": 6,
+        "materialId": "112104"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104348"
+      },
+      {
+        "count": 3,
+        "materialId": "112105"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104348"
+      },
+      {
+        "count": 4,
+        "materialId": "112105"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104348"
+      },
+      {
+        "count": 6,
+        "materialId": "112105"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104348"
+      },
+      {
+        "count": 9,
+        "materialId": "112105"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104349"
+      },
+      {
+        "count": 4,
+        "materialId": "112106"
+      },
+      {
+        "count": 1,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104349"
+      },
+      {
+        "count": 6,
+        "materialId": "112106"
+      },
+      {
+        "count": 1,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104349"
+      },
+      {
+        "count": 9,
+        "materialId": "112106"
+      },
+      {
+        "count": 2,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104349"
+      },
+      {
+        "count": 12,
+        "materialId": "112106"
+      },
+      {
+        "count": 2,
+        "materialId": "113062"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [

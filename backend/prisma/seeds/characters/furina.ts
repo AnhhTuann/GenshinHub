@@ -139,15 +139,15 @@ export const furina = {
     "items": [
       {
         "count": 3,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 1,
-        "materialId": "varunada_lazurite_sliver"
+        "materialId": "104121"
       },
       {
         "count": 3,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const furina = {
     "items": [
       {
         "count": 10,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 15,
-        "materialId": "whopperflower_nectar"
+        "materialId": "112038"
       },
       {
         "count": 2,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const furina = {
     "items": [
       {
         "count": 20,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_fragment"
+        "materialId": "104122"
       },
       {
         "count": 12,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 4,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const furina = {
     "items": [
       {
         "count": 30,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 3,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 18,
-        "materialId": "shimmering_nectar"
+        "materialId": "112039"
       },
       {
         "count": 8,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const furina = {
     "items": [
       {
         "count": 45,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_chunk"
+        "materialId": "104123"
       },
       {
         "count": 12,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 12,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const furina = {
     "items": [
       {
         "count": 60,
-        "materialId": "lakelight_lily"
+        "materialId": "101238"
       },
       {
         "count": 6,
-        "materialId": "varunada_lazurite_gemstone"
+        "materialId": "104124"
       },
       {
         "count": 24,
-        "materialId": "energy_nectar"
+        "materialId": "112040"
       },
       {
         "count": 20,
-        "materialId": "water_that_failed_to_transcend"
+        "materialId": "113057"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104341"
+      },
+      {
+        "count": 6,
+        "materialId": "112038"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104342"
+      },
+      {
+        "count": 3,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104342"
+      },
+      {
+        "count": 4,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104342"
+      },
+      {
+        "count": 6,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104342"
+      },
+      {
+        "count": 9,
+        "materialId": "112039"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104343"
+      },
+      {
+        "count": 4,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104343"
+      },
+      {
+        "count": 6,
+        "materialId": "112040"
+      },
+      {
+        "count": 1,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104343"
+      },
+      {
+        "count": 9,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 16,
+        "materialId": "104343"
+      },
+      {
+        "count": 12,
+        "materialId": "112040"
+      },
+      {
+        "count": 2,
+        "materialId": "113056"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,67 +419,48 @@ export const furina = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Furina Vaporize #2",
+        name: "Furina Quickbloom Team",
         rank: "SS",
-        description: "The Vaporize DMG of whole team is maximized by Kazuha's buffs, Xiangling and Bennett allow the team to trigger Vaporize all the time. Furina acts as field DPS trigger Vaporize with Xiangling's Pyro, while Kazuha provides DMG buffs and resistance shred, and Bennett heals and buffs ATK.",
+        description: "Furina Quickbloom Team is a high damage team focusing on Hyperbloom reactions. Furina's off-field Hydro enables Bloom cores, which Raiden Shogun detonates via her Skill for Hyperbloom. Emilie enhances Burning and provides Dendro, while Baizhu heals and boosts Hyperbloom damage based on his HP.",
         members: [
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                characterId: "emilie",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Deals high Dendro damage and supports Burning reactions.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "Lumidouce Elegy",
+                    "Deathmatch"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Unfinished Reverie"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
             {
-                characterId: "xiangling",
+                characterId: "raiden-shogun",
                 role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage with Pyronado.",
+                roleDesc: "Electro Sub DPS. Triggers Hyperbloom reactions with Elemental Skill.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Dragon's Bane"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Flower of Paradise Lost"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
+                    "Elemental Mastery",
                     "Energy Recharge",
                     "ATK%"
                 ]
             },
             {
                 characterId: "furina",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Triggers massive Vaporize damage with Elemental Skill.",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
                     "Splendor of Tranquil Waters",
                     "Fleuve Cendre Ferryman"
@@ -344,6 +473,22 @@ export const furina = {
                     "CRIT Rate",
                     "HP%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "baizhu",
+                role: "Support",
+                roleDesc: "Dendro Support. Provides healing, shields, and buffs team damage.",
+                weapons: [
+                    "Jadefall's Splendor",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
                 ]
             }
         ]
@@ -372,23 +517,6 @@ export const furina = {
                 ]
             },
             {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "yelan",
                 role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
@@ -403,6 +531,23 @@ export const furina = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Geo Support. Provides unbreakable shield, shreds resistance, and buffs ATK with Tenacity set.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -427,267 +572,10 @@ export const furina = {
         ]
     },
     {
-        name: "Furina Aggravate-Hyperbloom Team",
-        rank: "SS",
-        description: "Clorinde drives Aggravate and Hyperbloom with Furina's off-field Hydro and Nahida's Dendro, while Baizhu provides healing and shields. Maximize Clorinde's Electro DMG through Aggravate and Hyperbloom, enabled by Furina's continuous Hydro application and Nahida's Dendro linking, with Baizhu sustaining the team.",
-        members: [
-            {
-                characterId: "clorinde",
-                role: "Main DPS",
-                roleDesc: "Electro Main DPS. Infuses Electro on Normal Attacks and deals fast damage.",
-                weapons: [
-                    "Absolution",
-                    "The Black Sword"
-                ],
-                artifacts: [
-                    "4pc Fragment of Harmonious Whimsy"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Wandering Evenstar"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "baizhu",
-                role: "Support",
-                roleDesc: "Dendro Support. Provides healing and shields, and buffs Dendro reactions.",
-                weapons: [
-                    "Prototype Amber",
-                    "Favonius Codex"
-                ],
-                artifacts: [
-                    "4pc Ocean-Hued Clam"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Furina Bloom #1",
-        rank: "SS",
-        description: "Furina acts as Sub DPS in the team. Dendro from Baizhu reacts with Hydro from Neuvillette and Furina to trigger Bloom, producing Dendro Cores.",
-        members: [
-            {
-                characterId: "baizhu",
-                role: "Support",
-                roleDesc: "Dendro Support. Provides healing, shields, and buffs Bloom reaction damage.",
-                weapons: [
-                    "Jadefall's Splendor",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Ocean-Hued Clam"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            },
-            {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
-                weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Furina Spread-Hyperbloom",
-        rank: "SS",
-        description: "A team utilizing Spread and Hyperbloom reactions, driven by Alhaitham, Yae Miko, and Furina. Continuous Spread and Hyperbloom reactions via Alhaitham's on-field Dendro, Yae Miko's off-field Electro, and Furina's off-field Hydro, with Baizhu providing healing and Spread DMG boost.",
-        members: [
-            {
-                characterId: "alhaitham",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Deals high Dendro damage on-field and triggers reactions.",
-                weapons: [
-                    "Light of Foliar Incision",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Gilded Dreams"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yae-miko",
-                role: "Sub DPS",
-                roleDesc: "Electro Sub DPS. Provides off-field Electro application and high turret damage.",
-                weapons: [
-                    "Kagura's Verity",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Gilded Dreams"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "baizhu",
-                role: "Support",
-                roleDesc: "Dendro Support. Provides healing, shields, and buffs Dendro reaction damage.",
-                weapons: [
-                    "Jadefall's Splendor",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            }
-        ]
-    },
-    {
         name: "Furina Bloom #2",
         rank: "SS",
         description: "Furina acts as an on-field driver, triggering Bloom with off-field Hydro from Nilou and Furina's Skill, while Nahida applies Dendro and Baizhu heals. Nilou's passive converts cores into Bountiful Cores for massive Rupture damage. Trigger Bloom to create Bountiful Cores via Nilou's passive, with Furina providing off-field Hydro and DMG buffs, Nahida enabling reactions, and Baizhu increasing Bloom DMG based on his Max HP.",
         members: [
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Applies Dendro off-field, marks enemies, and shares EM.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Sacrificial Fragments"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "baizhu",
                 role: "Support",
@@ -740,6 +628,104 @@ export const furina = {
                     "Elemental Mastery",
                     "CRIT DMG"
                 ]
+            },
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Applies Dendro off-field, marks enemies, and shares EM.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Sacrificial Fragments"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Furina Spread-Hyperbloom",
+        rank: "SS",
+        description: "A team utilizing Spread and Hyperbloom reactions, driven by Alhaitham, Yae Miko, and Furina. Continuous Spread and Hyperbloom reactions via Alhaitham's on-field Dendro, Yae Miko's off-field Electro, and Furina's off-field Hydro, with Baizhu providing healing and Spread DMG boost.",
+        members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yae-miko",
+                role: "Sub DPS",
+                roleDesc: "Electro Sub DPS. Provides off-field Electro application and high turret damage.",
+                weapons: [
+                    "Kagura's Verity",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "baizhu",
+                role: "Support",
+                roleDesc: "Dendro Support. Provides healing, shields, and buffs Dendro reaction damage.",
+                weapons: [
+                    "Jadefall's Splendor",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate"
+                ]
+            },
+            {
+                characterId: "alhaitham",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Deals high Dendro damage on-field and triggers reactions.",
+                weapons: [
+                    "Light of Foliar Incision",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -749,21 +735,20 @@ export const furina = {
         description: "Noelle's DMG is maximized by Gorou's DEF and elemental DMG/Geo CRIT DMG buffs. Furina provides DMG increase via her Burst while draining HP which is healed by the team.",
         members: [
             {
-                characterId: "noelle",
-                role: "Main DPS",
-                roleDesc: "Geo Main DPS. Deals massive Geo damage on-field and heals the team.",
+                characterId: "furina",
+                role: "Support",
+                roleDesc: "Hydro Support. Provides off-field Hydro damage and party-wide DMG buffs.",
                 weapons: [
-                    "Redhorn Stonethresher",
-                    "Whiteblind"
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter",
-                    "4pc Husk of Opulent Dreams"
+                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "DEF%",
+                    "HP%",
                     "Energy Recharge"
                 ]
             },
@@ -786,20 +771,21 @@ export const furina = {
                 ]
             },
             {
-                characterId: "furina",
-                role: "Support",
-                roleDesc: "Hydro Support. Provides off-field Hydro damage and party-wide DMG buffs.",
+                characterId: "noelle",
+                role: "Main DPS",
+                roleDesc: "Geo Main DPS. Deals massive Geo damage on-field and heals the team.",
                 weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
+                    "Redhorn Stonethresher",
+                    "Whiteblind"
                 ],
                 artifacts: [
-                    "4pc Golden Troupe"
+                    "4pc Marechaussee Hunter",
+                    "4pc Husk of Opulent Dreams"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "HP%",
+                    "DEF%",
                     "Energy Recharge"
                 ]
             },
@@ -822,20 +808,98 @@ export const furina = {
         ]
     },
     {
-        name: "Furina Raiden-Core #1",
+        name: "Furina Vaporize #2",
         rank: "SS",
-        description: "Furina and Yelan provide continuous off-field Hydro application for Electro-Charged reactions, while Jean heals and shreds RES with Viridescent Venerer. Maximize Raiden Shogun's Elemental Burst damage using Yelan and Furina's off-field Hydro application and DMG buffs, while Jean enables Furina's buff stacks and provides healing.",
+        description: "The Vaporize DMG of whole team is maximized by Kazuha's buffs, Xiangling and Bennett allow the team to trigger Vaporize all the time. Furina acts as field DPS trigger Vaporize with Xiangling's Pyro, while Kazuha provides DMG buffs and resistance shred, and Bennett heals and buffs ATK.",
         members: [
             {
-                characterId: "furina",
+                characterId: "xiangling",
                 role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage with Pyronado.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and provides a massive ATK buff.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Triggers massive Vaporize damage with Elemental Skill.",
                 weapons: [
                     "Splendor of Tranquil Waters",
                     "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
                     "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Furina Raiden-Core #1",
+        rank: "SS",
+        description: "Furina and Yelan provide continuous off-field Hydro application for Electro-Charged reactions, while Jean heals and shreds RES with Viridescent Venerer. Maximize Raiden Shogun's Elemental Burst damage using Yelan and Furina's off-field Hydro application and DMG buffs, while Jean enables Furina's buff stacks and provides healing.",
+        members: [
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -862,6 +926,24 @@ export const furina = {
                 ]
             },
             {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "raiden-shogun",
                 role: "Main DPS",
                 roleDesc: "Electro Main DPS. Deals high Electro damage and restores energy for the team.",
@@ -878,17 +960,59 @@ export const furina = {
                     "Energy Recharge",
                     "ATK%"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Furina Aggravate-Hyperbloom Team",
+        rank: "SS",
+        description: "Clorinde drives Aggravate and Hyperbloom with Furina's off-field Hydro and Nahida's Dendro, while Baizhu provides healing and shields. Maximize Clorinde's Electro DMG through Aggravate and Hyperbloom, enabled by Furina's continuous Hydro application and Nahida's Dendro linking, with Baizhu sustaining the team.",
+        members: [
             {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and buffs active character DMG.",
+                characterId: "clorinde",
+                role: "Main DPS",
+                roleDesc: "Electro Main DPS. Infuses Electro on Normal Attacks and deals fast damage.",
                 weapons: [
-                    "Aqua Simulacra",
-                    "The Stringless"
+                    "Absolution",
+                    "The Black Sword"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Fragment of Harmonious Whimsy"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "baizhu",
+                role: "Support",
+                roleDesc: "Dendro Support. Provides healing and shields, and buffs Dendro reactions.",
+                weapons: [
+                    "Prototype Amber",
+                    "Favonius Codex"
+                ],
+                artifacts: [
+                    "4pc Ocean-Hued Clam"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -896,28 +1020,49 @@ export const furina = {
                     "HP%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares EM.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Wandering Evenstar"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
     {
-        name: "Furina Quickbloom Team",
+        name: "Furina Bloom #1",
         rank: "SS",
-        description: "Furina Quickbloom Team is a high damage team focusing on Hyperbloom reactions. Furina's off-field Hydro enables Bloom cores, which Raiden Shogun detonates via her Skill for Hyperbloom. Emilie enhances Burning and provides Dendro, while Baizhu heals and boosts Hyperbloom damage based on his HP.",
+        description: "Furina acts as Sub DPS in the team. Dendro from Baizhu reacts with Hydro from Neuvillette and Furina to trigger Bloom, producing Dendro Cores.",
         members: [
             {
-                characterId: "raiden-shogun",
-                role: "Sub DPS",
-                roleDesc: "Electro Sub DPS. Triggers Hyperbloom reactions with Elemental Skill.",
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
                 weapons: [
-                    "Dragon's Bane"
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
                 ],
                 artifacts: [
-                    "4pc Flower of Paradise Lost"
+                    "4pc Marechaussee Hunter"
                 ],
                 substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -939,37 +1084,40 @@ export const furina = {
                 ]
             },
             {
-                characterId: "emilie",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Deals high Dendro damage and supports Burning reactions.",
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
-                    "Lumidouce Elegy",
-                    "Deathmatch"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Unfinished Reverie"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
+                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
+                    "ATK%"
                 ]
             },
             {
                 characterId: "baizhu",
                 role: "Support",
-                roleDesc: "Dendro Support. Provides healing, shields, and buffs team damage.",
+                roleDesc: "Dendro Support. Provides healing, shields, and buffs Bloom reaction damage.",
                 weapons: [
                     "Jadefall's Splendor",
                     "Prototype Amber"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Ocean-Hued Clam"
                 ],
                 substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge",
-                    "HP%"
+                    "CRIT DMG",
+                    "CRIT Rate"
                 ]
             }
         ]
@@ -1133,8 +1281,8 @@ export const furina = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Thiên Nham Vững Chắc",
+        setNameVi: "Đoàn Kịch Hoàng Kim",
+        setNameEn: "Đoàn Kịch Hoàng Kim",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",
@@ -1157,8 +1305,8 @@ export const furina = {
         ]
     },
     {
-        setNameVi: "Đoàn Kịch Hoàng Kim",
-        setNameEn: "Đoàn Kịch Hoàng Kim",
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Thiên Nham Vững Chắc",
         pieces: 4,
         sands: [
             "Hiệu Quả Nạp",

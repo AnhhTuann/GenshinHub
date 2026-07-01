@@ -139,15 +139,15 @@ export const zhongli = {
     "items": [
       {
         "count": 3,
-        "materialId": "cor_lapis"
+        "materialId": "100058"
       },
       {
         "count": 1,
-        "materialId": "prithiva_topaz_sliver"
+        "materialId": "104171"
       },
       {
         "count": 3,
-        "materialId": "slime_condensate"
+        "materialId": "112002"
       }
     ],
     "level": "Lv.40"
@@ -157,19 +157,19 @@ export const zhongli = {
     "items": [
       {
         "count": 10,
-        "materialId": "cor_lapis"
+        "materialId": "100058"
       },
       {
         "count": 3,
-        "materialId": "prithiva_topaz_fragment"
+        "materialId": "104172"
       },
       {
         "count": 15,
-        "materialId": "slime_condensate"
+        "materialId": "112002"
       },
       {
         "count": 2,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.50"
@@ -179,19 +179,19 @@ export const zhongli = {
     "items": [
       {
         "count": 20,
-        "materialId": "cor_lapis"
+        "materialId": "100058"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_fragment"
+        "materialId": "104172"
       },
       {
         "count": 12,
-        "materialId": "slime_secretions"
+        "materialId": "112003"
       },
       {
         "count": 4,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.60"
@@ -201,19 +201,19 @@ export const zhongli = {
     "items": [
       {
         "count": 30,
-        "materialId": "cor_lapis"
+        "materialId": "100058"
       },
       {
         "count": 3,
-        "materialId": "prithiva_topaz_chunk"
+        "materialId": "104173"
       },
       {
         "count": 18,
-        "materialId": "slime_secretions"
+        "materialId": "112003"
       },
       {
         "count": 8,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.70"
@@ -223,19 +223,19 @@ export const zhongli = {
     "items": [
       {
         "count": 45,
-        "materialId": "cor_lapis"
+        "materialId": "100058"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_chunk"
+        "materialId": "104173"
       },
       {
         "count": 12,
-        "materialId": "slime_concentrate"
+        "materialId": "112004"
       },
       {
         "count": 12,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.80"
@@ -245,22 +245,170 @@ export const zhongli = {
     "items": [
       {
         "count": 60,
-        "materialId": "cor_lapis"
+        "materialId": "100058"
       },
       {
         "count": 6,
-        "materialId": "prithiva_topaz_gemstone"
+        "materialId": "104174"
       },
       {
         "count": 24,
-        "materialId": "slime_concentrate"
+        "materialId": "112004"
       },
       {
         "count": 20,
-        "materialId": "basalt_pillar"
+        "materialId": "113009"
       }
     ],
     "level": "Lv.90"
+  }
+],
+  talentMats: [
+  {
+    "mora": 12500,
+    "items": [
+      {
+        "count": 3,
+        "materialId": "104316"
+      },
+      {
+        "count": 6,
+        "materialId": "112002"
+      }
+    ],
+    "level": "Lv.2"
+  },
+  {
+    "mora": 17500,
+    "items": [
+      {
+        "count": 2,
+        "materialId": "104317"
+      },
+      {
+        "count": 3,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.3"
+  },
+  {
+    "mora": 25000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104317"
+      },
+      {
+        "count": 4,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.4"
+  },
+  {
+    "mora": 30000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104317"
+      },
+      {
+        "count": 6,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.5"
+  },
+  {
+    "mora": 37500,
+    "items": [
+      {
+        "count": 9,
+        "materialId": "104317"
+      },
+      {
+        "count": 9,
+        "materialId": "112003"
+      }
+    ],
+    "level": "Lv.6"
+  },
+  {
+    "mora": 120000,
+    "items": [
+      {
+        "count": 4,
+        "materialId": "104318"
+      },
+      {
+        "count": 4,
+        "materialId": "112004"
+      },
+      {
+        "count": 1,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.7"
+  },
+  {
+    "mora": 260000,
+    "items": [
+      {
+        "count": 6,
+        "materialId": "104318"
+      },
+      {
+        "count": 6,
+        "materialId": "112004"
+      },
+      {
+        "count": 1,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.8"
+  },
+  {
+    "mora": 450000,
+    "items": [
+      {
+        "count": 12,
+        "materialId": "104318"
+      },
+      {
+        "count": 9,
+        "materialId": "112004"
+      },
+      {
+        "count": 2,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.9"
+  },
+  {
+    "mora": 700000,
+    "items": [
+      {
+        "count": 16,
+        "materialId": "104318"
+      },
+      {
+        "count": 1,
+        "materialId": "104319"
+      },
+      {
+        "count": 12,
+        "materialId": "112004"
+      },
+      {
+        "count": 2,
+        "materialId": "113013"
+      }
+    ],
+    "level": "Lv.10"
   }
 ],
   talentPriority: [
@@ -271,37 +419,37 @@ export const zhongli = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Zhongli Melt Team",
-        rank: "S",
-        description: "Zhongli acts as Support in the team. Ganyu provides Cryo, while Xiangling's Pyronado triggers Melt for Ganyu. Ganyu's Charge Attack applies Cryo, triggering Melt from Xiangling's Pyronado, while Zhongli's shield and Bennett's Burst provide safety and ATK buff.",
+        name: "Zhongli Vaporize Team",
+        rank: "SS",
+        description: "A powerful team that maximizes Hu Tao's damage through Vaporize reactions, supported by Zhongli's shield and Kazuha's buffs. Hu Tao's Pyro damage is amplified by Vaporize triggered by Xingqiu's continuous Hydro application. Kazuha groups enemies, reduces Pyro RES, and provides Elemental Mastery buff. Zhongli provides a safe shield and ATK boost via Tenacity of the Millelith.",
         members: [
             {
-                characterId: "bennett",
+                characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
+                roleDesc: "Anemo Support. Groups enemies, shreds Pyro RES, and buffs elemental damage.",
                 weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
                 ]
             },
             {
-                characterId: "ganyu",
-                role: "Main DPS",
-                roleDesc: "Cryo Main DPS. Triggers Melt on Pyro-affected enemies.",
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to enable Vaporize.",
                 weapons: [
-                    "Amos' Bow",
-                    "Hamayumi"
+                    "Sacrificial Sword"
                 ],
                 artifacts: [
-                    "4pc Shimenawa's Reminiscence"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -311,26 +459,9 @@ export const zhongli = {
                 ]
             },
             {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals massive Pyro damage off-field with Pyronado.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "zhongli",
                 role: "Support",
-                roleDesc: "Shield Support. Offers shield and ATK buffs.",
+                roleDesc: "Shield Support. Provides strong shield and buffs ATK via Tenacity of the Millelith.",
                 weapons: [
                     "Staff of Homa",
                     "Black Tassel"
@@ -342,6 +473,102 @@ export const zhongli = {
                     "HP%",
                     "HP",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "hu-tao",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Vaporizes attacks on enemies affected by Hydro.",
+                weapons: [
+                    "Staff of Homa",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Elemental Mastery",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Zhongli Permafrost Team #1",
+        rank: "S",
+        description: "Zhongli acts as Shield Support in the team. Ganyu's Cryo is main DPS, with constant Hydro application from Mona to trigger Freezing. Ganyu's Cryo attacks combined with Mona's Hydro application keep enemies frozen, while Venti groups them and Zhongli provides a safe shield and ATK buff.",
+        members: [
+            {
+                characterId: "ganyu",
+                role: "Main DPS",
+                roleDesc: "Cryo Main DPS. Deals massive AoE Cryo damage via Charged Attacks.",
+                weapons: [
+                    "Amos' Bow",
+                    "Prototype Crescent"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "venti",
+                role: "Support",
+                roleDesc: "Anemo Support. Gathers enemies and triggers Swirl reactions.",
+                weapons: [
+                    "Elegy for the End"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Provides shield and team buffs.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "mona",
+                role: "Support",
+                roleDesc: "Hydro Support. Triggers Freeze and increases team damage via Omen.",
+                weapons: [
+                    "Skyward Atlas",
+                    "Favonius Codex",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%"
                 ]
             }
         ]
@@ -368,6 +595,24 @@ export const zhongli = {
                     "CRIT Rate",
                     "CRIT DMG",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "ayaka",
+                role: "Main DPS",
+                roleDesc: "Cryo Main DPS. Deals massive Cryo damage with Burst.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -404,258 +649,6 @@ export const zhongli = {
                     "HP",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Main DPS",
-                roleDesc: "Cryo Main DPS. Deals massive Cryo damage with Burst.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Zhongli Permafrost Team #1",
-        rank: "S",
-        description: "Zhongli acts as Shield Support in the team. Ganyu's Cryo is main DPS, with constant Hydro application from Mona to trigger Freezing. Ganyu's Cryo attacks combined with Mona's Hydro application keep enemies frozen, while Venti groups them and Zhongli provides a safe shield and ATK buff.",
-        members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Provides shield and team buffs.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mona",
-                role: "Support",
-                roleDesc: "Hydro Support. Triggers Freeze and increases team damage via Omen.",
-                weapons: [
-                    "Skyward Atlas",
-                    "Favonius Codex",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Main DPS",
-                roleDesc: "Cryo Main DPS. Deals massive AoE Cryo damage via Charged Attacks.",
-                weapons: [
-                    "Amos' Bow",
-                    "Prototype Crescent"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Support",
-                roleDesc: "Anemo Support. Gathers enemies and triggers Swirl reactions.",
-                weapons: [
-                    "Elegy for the End"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Zhongli Vaporize Team",
-        rank: "SS",
-        description: "A powerful team that maximizes Hu Tao's damage through Vaporize reactions, supported by Zhongli's shield and Kazuha's buffs. Hu Tao's Pyro damage is amplified by Vaporize triggered by Xingqiu's continuous Hydro application. Kazuha groups enemies, reduces Pyro RES, and provides Elemental Mastery buff. Zhongli provides a safe shield and ATK boost via Tenacity of the Millelith.",
-        members: [
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to enable Vaporize.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds Pyro RES, and buffs elemental damage.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Vaporizes attacks on enemies affected by Hydro.",
-                weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Provides strong shield and buffs ATK via Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Zhongli Xiao-Jean Team",
-        rank: "SS",
-        description: "Zhongli provides a safe environment with his shield. Xiao's Elemental Burst damage is maximized by teammates. Geo resonance from Zhongli and Albedo enhances shield strength and damage. Jean acts as a battery and healer, while Zhongli's shield and Tenacity of the Millelith buff ATK.",
-        members: [
-            {
-                characterId: "jean",
-                role: "Support",
-                roleDesc: "Anemo Support. Heals the party and acts as a battery for Xiao.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiao",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Unleashes continuous plunging attacks during Burst.",
-                weapons: [
-                    "Primordial Jade Winged-Spear",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Vermillion Hereafter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Provides a strong shield and ATK buff via Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "albedo",
-                role: "Sub DPS",
-                roleDesc: "Geo Sub DPS. Pairs with Zhongli for Geo Resonance and deals off-field Geo damage.",
-                weapons: [
-                    "Cinnabar Spindle",
-                    "Harbinger of Dawn"
-                ],
-                artifacts: [
-                    "4pc Husk of Opulent Dreams"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "DEF",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -664,24 +657,6 @@ export const zhongli = {
         rank: "S",
         description: "Zhongli acts as Shield Support in the team. Eula's physical damage is maximized by Superconduct and aid of teammates. The team revolves around Eula's high damage physical Burst, amplified by Superconduct (triggered by Fischl's Skill) and RES reduction from Zhongli's Tenacity of the Millelith, while Chongyun reduces cooldown with C2.",
         members: [
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Electro Sub DPS. Applies off-field Electro to enable Superconduct.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "eula",
                 role: "Main DPS",
@@ -719,6 +694,24 @@ export const zhongli = {
                 ]
             },
             {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Electro Sub DPS. Applies off-field Electro to enable Superconduct.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "zhongli",
                 role: "Support",
                 roleDesc: "Shield Support. Provides strong shield and physical RES shred.",
@@ -738,10 +731,123 @@ export const zhongli = {
         ]
     },
     {
+        name: "Zhongli Xiao-Jean Team",
+        rank: "SS",
+        description: "Zhongli provides a safe environment with his shield. Xiao's Elemental Burst damage is maximized by teammates. Geo resonance from Zhongli and Albedo enhances shield strength and damage. Jean acts as a battery and healer, while Zhongli's shield and Tenacity of the Millelith buff ATK.",
+        members: [
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Provides a strong shield and ATK buff via Tenacity of the Millelith.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "albedo",
+                role: "Sub DPS",
+                roleDesc: "Geo Sub DPS. Pairs with Zhongli for Geo Resonance and deals off-field Geo damage.",
+                weapons: [
+                    "Cinnabar Spindle",
+                    "Harbinger of Dawn"
+                ],
+                artifacts: [
+                    "4pc Husk of Opulent Dreams"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "DEF",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "jean",
+                role: "Support",
+                roleDesc: "Anemo Support. Heals the party and acts as a battery for Xiao.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiao",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Unleashes continuous plunging attacks during Burst.",
+                weapons: [
+                    "Primordial Jade Winged-Spear",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Vermillion Hereafter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Zhongli Catalyze Team",
         rank: "S",
         description: "Zhongli is a Shield Support. The Electro DMG of Keqing is maximized by Aggravate. Keqing and Fischl apply off-field Electro, while Traveler (Dendro) applies Dendro to trigger Quicken, resulting in Aggravate reactions that boost Keqing's Electro DMG. Zhongli provides a shield and reduces enemy resistance with Shred.",
         members: [
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Provides a safe environment, shield, and decreases enemy resistance with Shred.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "traveler",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Applies Dendro off-field via Burst to maintain Quicken status.",
+                weapons: [
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "fischl",
                 role: "Sub DPS",
@@ -778,34 +884,76 @@ export const zhongli = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            }
+        ]
+    },
+    {
+        name: "Zhongli Melt Team",
+        rank: "S",
+        description: "Zhongli acts as Support in the team. Ganyu provides Cryo, while Xiangling's Pyronado triggers Melt for Ganyu. Ganyu's Charge Attack applies Cryo, triggering Melt from Xiangling's Pyronado, while Zhongli's shield and Bennett's Burst provide safety and ATK buff.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             },
             {
-                characterId: "traveler",
+                characterId: "xiangling",
                 role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Applies Dendro off-field via Burst to maintain Quicken status.",
+                roleDesc: "Pyro Sub DPS. Deals massive Pyro damage off-field with Pyronado.",
                 weapons: [
-                    "Favonius Sword"
+                    "Engulfing Lightning",
+                    "The Catch"
                 ],
                 artifacts: [
                     "4pc Emblem of Severed Fate"
                 ],
                 substats: [
-                    "Energy Recharge",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "ganyu",
+                role: "Main DPS",
+                roleDesc: "Cryo Main DPS. Triggers Melt on Pyro-affected enemies.",
+                weapons: [
+                    "Amos' Bow",
+                    "Hamayumi"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
                 characterId: "zhongli",
                 role: "Support",
-                roleDesc: "Shield Support. Provides a safe environment, shield, and decreases enemy resistance with Shred.",
+                roleDesc: "Shield Support. Offers shield and ATK buffs.",
                 weapons: [
                     "Staff of Homa",
                     "Black Tassel"
                 ],
                 artifacts: [
-                    "4pc Deepwood Memories"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
                     "HP%",
@@ -983,28 +1131,8 @@ export const zhongli = {
         ]
     },
     {
-        setNameVi: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
-        setNameEn: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
-        pieces: 2,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "Energy Recharge"
-        ]
-    },
-    {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Thiên Nham Vững Chắc",
+        setNameVi: "Giáo Quan",
+        setNameEn: "Giáo Quan",
         pieces: 4,
         sands: [
             "HP%"
@@ -1043,6 +1171,26 @@ export const zhongli = {
         ]
     },
     {
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Thiên Nham Vững Chắc",
+        pieces: 4,
+        sands: [
+            "HP%"
+        ],
+        goblet: [
+            "HP%"
+        ],
+        circlet: [
+            "HP%",
+            "Tỷ Lệ Bạo Kích"
+        ],
+        subStatsPriority: [
+            "HP%",
+            "HP",
+            "Energy Recharge"
+        ]
+    },
+    {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         pieces: 4,
@@ -1063,9 +1211,9 @@ export const zhongli = {
         ]
     },
     {
-        setNameVi: "Giáo Quan",
-        setNameEn: "Giáo Quan",
-        pieces: 4,
+        setNameVi: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
+        setNameEn: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
+        pieces: 2,
         sands: [
             "HP%"
         ],

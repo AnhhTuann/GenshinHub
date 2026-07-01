@@ -119,7 +119,6 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
   return (
     <div className="flex flex-col gap-5">
       {/* Main Stats */}
-      {firstArtifact && (
         <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
           <div className="flex items-center justify-between">
             <SectionHeader label={t('mainStats')} accent="bg-cyan-400" />
@@ -166,10 +165,8 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
             />
           )}
         </section>
-      )}
 
       {/* Sub-stat priority */}
-      {firstArtifact && (
         <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
           <div className="flex items-center justify-between">
             <SectionHeader label={t('subStatsPriority')} accent="bg-orange-400" />
@@ -201,7 +198,6 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
             )}
           </div>
         </section>
-      )}
 
       {/* Talent priority */}
       <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">

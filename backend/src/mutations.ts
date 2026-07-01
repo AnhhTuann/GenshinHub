@@ -398,7 +398,13 @@ export const Mutation = {
     const { id, tier, role, recommendedC, tierNoteEn, tierNoteVi } = sanitize(args);
     const c = await prisma.character.update({
       where: { id },
-      data: { tier, role, recommendedC, tierNoteEn, tierNoteVi },
+      data: { 
+        tier, 
+        role, 
+        recommendedC, 
+        tierNoteEn: { set: tierNoteEn || [] }, 
+        tierNoteVi: { set: tierNoteVi || [] } 
+      },
     });
     clearAllCaches();
     resetArtifactSetLookup();
@@ -490,7 +496,7 @@ export const Mutation = {
     requireAdmin(context);
     const c = await prisma.character.update({
       where: { id },
-      data: { talentPriority },
+      data: { talentPriority: { set: talentPriority } },
     });
     clearAllCaches();
     resetArtifactSetLookup();
@@ -506,7 +512,12 @@ export const Mutation = {
     // Update all artifacts for the given characterId
     await prisma.characterArtifact.updateMany({
       where: { characterId: id },
-      data: { sands, goblet, circlet, subStatsPriority },
+      data: {
+        sands: { set: sands },
+        goblet: { set: goblet },
+        circlet: { set: circlet },
+        subStatsPriority: { set: subStatsPriority }
+      },
     });
     clearAllCaches();
     resetArtifactSetLookup();

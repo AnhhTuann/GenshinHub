@@ -92,59 +92,52 @@ const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
 function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, locale: string }) {
   const name = locale === 'en' ? item.nameEn : item.nameVi;
   const is5Star = item.rarity === 5;
-  
+  const rarityBg = is5Star 
+    ? 'bg-gradient-to-br from-[#d4a06a] via-[#e5b76b] to-[#d4a06a] border-[#b07b46]' 
+    : 'bg-gradient-to-br from-[#9b80b7] via-[#ba9fd3] to-[#9b80b7] border-[#7d609a]';
+  const nameBg = is5Star ? 'bg-[#b07b46]' : 'bg-[#7d609a]';
+
   return (
     <Link href={isChar ? `/characters/${item.id}` : `/weapons`}>
       <motion.div
-        whileHover={{ scale: 1.05, y: -4 }}
+        whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative w-[90px] sm:w-[104px] h-[110px] sm:h-[126px] flex flex-col rounded-[1rem] overflow-hidden border border-white/10 hover:border-white/40 transition-colors shadow-2xl z-0 hover:z-20 cursor-pointer bg-[#050508]"
+        className="group relative w-[76px] sm:w-[86px] flex flex-col rounded-md overflow-hidden border border-transparent shadow-lg hover:shadow-2xl transition-all cursor-pointer bg-[#050508]"
       >
         {/* Glow effect on hover */}
-        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl ${is5Star ? 'bg-amber-500/40' : 'bg-purple-500/40'}`} />
+        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md ${is5Star ? 'bg-amber-400/30' : 'bg-purple-400/30'}`} />
         
-        {/* Rarity Background Gradient */}
-        <div className={`absolute inset-0 bg-gradient-to-b ${is5Star ? 'from-amber-500/30 via-amber-700/20 to-[#0d0d14]' : 'from-purple-500/30 via-purple-700/20 to-[#0d0d14]'} z-0`} />
-        
-        {/* Image Container */}
-        <div className="relative z-10 flex-1 w-full flex justify-center items-end bg-transparent pt-2">
+        {/* Image Container (Square) */}
+        <div className={`relative w-full aspect-square ${rarityBg} border-b-0 rounded-t-md p-1`}>
           {isChar ? (
-            <div className="relative w-[110%] h-[110%]">
-              <FallbackImage 
-                src={getImageUrl(item.avatarUrl) || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'} 
-                alt={name} 
-                fill 
-                className="object-cover object-top drop-shadow-2xl translate-y-2 group-hover:-translate-y-1 transition-transform duration-500" 
-                sizes="104px" 
-              />
-            </div>
+            <FallbackImage 
+              src={getImageUrl(item.avatarUrl) || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'} 
+              alt={name} 
+              fill 
+              className="object-cover rounded-sm" 
+              sizes="86px" 
+            />
           ) : (
-            <div className="relative w-[80%] h-[80%] mb-2">
-              <FallbackImage 
-                src={getImageUrl(item.iconUrl) || '/placeholder.png'} 
-                alt={name} 
-                fill 
-                className="object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500" 
-              />
-            </div>
+            <FallbackImage 
+              src={getImageUrl(item.iconUrl) || '/placeholder.png'} 
+              alt={name} 
+              fill 
+              className="object-contain drop-shadow-md scale-90 group-hover:scale-100 transition-transform duration-300" 
+            />
           )}
 
           {/* Element overlay for characters (Top Left) */}
-          {isChar && (
-            <div className="absolute top-1 left-1 w-6 h-6 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center p-[4px] border border-white/20 shadow-lg">
+          {isChar && item.element && (
+            <div className="absolute top-0 left-0 w-5 h-5 bg-black/30 rounded-br-md p-[2px] z-10 backdrop-blur-sm">
               <FallbackImage src={`/assets/elements/${item.element.toLowerCase()}.webp`} alt={item.element} fill className="object-contain" />
             </div>
           )}
         </div>
         
         {/* Name Bar */}
-        <div className={`relative z-20 w-full bg-[#06060a]/95 py-2 px-1 border-t ${is5Star ? 'border-amber-500/20 group-hover:border-amber-400/50' : 'border-purple-500/20 group-hover:border-purple-400/50'} flex flex-col items-center justify-center backdrop-blur-md transition-colors`}>
-          <span className="text-[10px] sm:text-[11px] font-bold text-white/90 group-hover:text-white text-center truncate w-full px-1 drop-shadow-md transition-colors font-display">
+        <div className={`relative z-20 w-full ${nameBg} py-1 px-1 flex flex-col items-center justify-center`}>
+          <span className="text-[10px] sm:text-[11px] font-bold text-white text-center truncate w-full px-1 drop-shadow-md leading-tight">
             {name}
-          </span>
-          {/* Subtle star row */}
-          <span className={`text-[7px] tracking-widest leading-none mt-0.5 ${is5Star ? 'text-amber-400' : 'text-purple-400'}`}>
-            {'★'.repeat(item.rarity)}
           </span>
         </div>
       </motion.div>

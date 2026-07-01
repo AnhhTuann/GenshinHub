@@ -644,10 +644,10 @@ export const charlotte = {
         setNameVi: "Xà Cừ Đại Dương",
         setNameEn: "Ocean-Hued Clam",
         pieces: 4,
-        sands: ["Energy Recharge","ATK%"],
-        goblet: ["ATK%"],
-        circlet: ["Healing Bonus","ATK%"],
-        subStatsPriority: ["Energy Recharge","ATK%","CRIT Rate"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Nghi Thức Tông Thất Cổ",
@@ -676,28 +676,28 @@ export const charlotte = {
         setNameVi: "Mix 2 bộ Dấu Ấn Ngăn Cách & 2 bộ Xà Cừ Đại Dương",
         setNameEn: "Mix 2-Piece Emblem of Severed Fate & 2-Piece Ocean-Hued Clam",
         pieces: 2,
-        sands: ["Energy Recharge","ATK%"],
-        goblet: ["ATK%"],
-        circlet: ["Healing Bonus","ATK%"],
-        subStatsPriority: ["Energy Recharge","ATK%","CRIT Rate"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Thiên Nham Vững Chắc",
         setNameEn: "Tenacity of the Millelith",
         pieces: 4,
-        sands: ["Energy Recharge","ATK%"],
-        goblet: ["ATK%"],
-        circlet: ["Healing Bonus","ATK%"],
-        subStatsPriority: ["Energy Recharge","ATK%","CRIT Rate"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Mix 2 bộ Dấu Ấn Ngăn Cách & 2 bộ Dòng Hồi Ức Bất Tận",
         setNameEn: "Mix 2-Piece Emblem of Severed Fate & 2-Piece Shimenawa's Reminiscence",
         pieces: 2,
-        sands: ["Energy Recharge","ATK%"],
-        goblet: ["ATK%"],
-        circlet: ["Healing Bonus","ATK%"],
-        subStatsPriority: ["Energy Recharge","ATK%","CRIT Rate"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

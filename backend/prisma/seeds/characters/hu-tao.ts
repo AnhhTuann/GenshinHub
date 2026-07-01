@@ -1097,10 +1097,10 @@ export const huTao = {
         setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Thiên Nham Vững Chắc",
         setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Tenacity of the Millelith",
         pieces: 2,
-        sands: ["HP%","Elemental Mastery"],
-        goblet: ["Pyro DMG Bonus"],
-        circlet: ["CRIT Rate","CRIT DMG"],
-        subStatsPriority: ["CRIT Rate","CRIT DMG","HP%","Elemental Mastery","Energy Recharge"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Dòng Hồi Ức Bất Tận",
@@ -1129,10 +1129,10 @@ export const huTao = {
         setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Giấc Mộng Hoàng Kim",
         setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Gilded Dreams",
         pieces: 2,
-        sands: ["HP%","Elemental Mastery"],
-        goblet: ["Pyro DMG Bonus"],
-        circlet: ["CRIT Rate","CRIT DMG"],
-        subStatsPriority: ["CRIT Rate","CRIT DMG","HP%","Elemental Mastery","Energy Recharge"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     }
 ]
 };

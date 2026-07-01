@@ -90,20 +90,20 @@ export default function TCGClient({ locale }: { locale: string }) {
               {filteredCards.map((card) => {
                 const name = locale === 'vi' ? card.nameVi : card.nameEn;
                 return (
-                  <div key={card.id} className="group flex flex-col items-center gap-2">
-                    <div className="relative w-full aspect-[256/440] rounded-xl overflow-hidden glass-hover shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                  <Link href={`/tcg/${card.id}`} key={card.id} className="group flex flex-col items-center gap-2 cursor-pointer">
+                    <div className="relative w-full aspect-[256/440] transition-transform duration-300 group-hover:-translate-y-2 drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]">
                       <FallbackImage
                         src={`/assets/tcg/${card.icon}.webp`}
                         alt={name}
                         fill
-                        className="object-contain"
+                        className="object-cover"
                         unoptimized
                       />
                     </div>
                     <span className="text-xs font-semibold text-center text-white/70 group-hover:text-white transition-colors line-clamp-2">
                       {name}
                     </span>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
@@ -134,7 +134,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                     const card = tcgCards.find(c => c.id === charId);
                     if (!card) return null;
                     return (
-                      <div key={charId} className="w-1/3 aspect-[256/440] relative rounded-lg overflow-hidden shadow-xl border border-white/10 group-hover:border-white/20 transition-colors">
+                      <div key={charId} className="w-1/3 aspect-[256/440] relative drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] transition-all">
                         <FallbackImage
                           src={`/assets/tcg/${card.icon}.webp`}
                           alt={card.nameEn}

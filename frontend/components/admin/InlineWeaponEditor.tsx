@@ -45,7 +45,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
         w.type?.toLowerCase() === mappedWeaponType?.toLowerCase()
       );
       setWeapons(filteredByType);
-    });
+    }).catch(err => console.error(err));
     
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };

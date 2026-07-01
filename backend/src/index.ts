@@ -143,8 +143,18 @@ async function startServer() {
   }
 
   const PORT = Number(process.env.PORT || 4000);
-  app.listen(PORT, () => {
+  const httpServer = app.listen(PORT, () => {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
+  });
+
+  httpServer.on('error', (err: any) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(`\n❌ Cổng ${PORT} đang bị sử dụng bởi một tiến trình khác!`);
+      console.error(`Vui lòng tắt tiến trình đó hoặc đổi cổng trong file .env\n`);
+    } else {
+      console.error('Lỗi server:', err);
+    }
+    process.exit(1);
   });
 }
 

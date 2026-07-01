@@ -13,11 +13,11 @@ const STAT_CARDS = (s: Stats) => [
 ];
 
 const QUICK_ACTIONS = [
-  { label: 'Add Character', href: '/admin/characters', icon: '➕⚔️', color: '#c8a84b' },
-  { label: 'Add Weapon',    href: '/admin/weapons',    icon: '➕🗡️', color: '#4fc3f7' },
-  { label: 'Manage Tiers',  href: '/admin/tierlist',   icon: '🏆',    color: '#ffd54f' },
-  { label: 'Backup DB',     href: '/admin/backups',    icon: '💾',    color: '#aed581' },
-  { label: 'Export Seeds',  href: '/admin/export',     icon: '📤',    color: '#ce93d8' },
+  { label: 'Add Character', href: '/admin/characters', icon: '👤', color: '#c8a84b' },
+  { label: 'Add Weapon',    href: '/admin/weapons',    icon: '🗡️', color: '#4fc3f7' },
+  { label: 'Manage Tiers',  href: '/admin/tierlist',   icon: '🏆', color: '#ffd54f' },
+  { label: 'Backup DB',     href: '/admin/backups',    icon: '💾', color: '#aed581' },
+  { label: 'Export Seeds',  href: '/admin/export',     icon: '📤', color: '#ce93d8' },
 ];
 
 export default function AdminDashboard() {

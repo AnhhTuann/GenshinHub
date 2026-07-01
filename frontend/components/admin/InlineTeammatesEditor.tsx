@@ -30,7 +30,7 @@ export default function InlineTeammatesEditor({ characterId, initialTeams, onClo
   useEffect(() => {
     fetchGraphQL(GET_CHARACTERS).then(data => {
       setCharacters(data.characters || []);
-    });
+    }).catch(err => console.error(err));
     
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };

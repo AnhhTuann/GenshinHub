@@ -768,37 +768,37 @@ export const chongyun = {
         setNameVi: "Mix 2 bộ Nghi Thức Tông Thất Cổ & 2 bộ Dòng Hồi Ức Bất Tận",
         setNameEn: "Mix 2-Piece Noblesse Oblige & 2-Piece Shimenawa's Reminiscence",
         pieces: 2,
-        sands: ["ATK%","Elemental Mastery"],
-        goblet: ["Cryo DMG Bonus"],
-        circlet: ["CRIT Rate","CRIT DMG"],
-        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Elemental Mastery","Energy Recharge"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dấu Ấn Ngăn Cách",
         setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Emblem of Severed Fate",
         pieces: 2,
-        sands: ["ATK%","Elemental Mastery"],
-        goblet: ["Cryo DMG Bonus"],
-        circlet: ["CRIT Rate","CRIT DMG"],
-        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Elemental Mastery","Energy Recharge"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dòng Hồi Ức Bất Tận",
         setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Shimenawa's Reminiscence",
         pieces: 2,
-        sands: ["ATK%","Elemental Mastery"],
-        goblet: ["Cryo DMG Bonus"],
-        circlet: ["CRIT Rate","CRIT DMG"],
-        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Elemental Mastery","Energy Recharge"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
         setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Noblesse Oblige",
         pieces: 2,
-        sands: ["ATK%","Elemental Mastery"],
-        goblet: ["Cryo DMG Bonus"],
-        circlet: ["CRIT Rate","CRIT DMG"],
-        subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Elemental Mastery","Energy Recharge"]
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: []
     },
     {
         setNameVi: "Dấu Ấn Ngăn Cách",

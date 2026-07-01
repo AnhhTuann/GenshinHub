@@ -68,14 +68,11 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                 key={item.href}
                 href={item.href as any}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all"
-                style={{
-                  background: active ? 'rgba(200,168,75,0.10)' : 'transparent',
-                  border: active ? '1px solid rgba(200,168,75,0.18)' : '1px solid transparent',
-                  color: active ? '#f0d080' : 'rgba(255,255,255,0.42)',
-                  boxShadow: active ? '0 0 12px rgba(200,168,75,0.08)' : 'none',
-                  transition: 'all 0.2s ease',
-                }}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all ${
+                  active 
+                    ? 'bg-[#c8a84b]/10 border border-[#c8a84b]/20 text-[#f0d080] shadow-[0_0_12px_rgba(200,168,75,0.08)]' 
+                    : 'border border-transparent text-white/40 hover:bg-white/5 hover:text-white'
+                }`}
               >
                 <span className="text-base w-5 text-center shrink-0">{item.icon}</span>
                 <span style={{ fontFamily: active ? 'var(--font-cinzel, serif)' : 'inherit', fontSize: active ? '0.68rem' : undefined, letterSpacing: active ? '0.04em' : undefined }}>

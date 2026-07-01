@@ -36,16 +36,15 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
   const [selectedArtifacts, setSelectedArtifacts] = useState<ArtifactData[]>([]);
   
   const [pieces, setPieces] = useState(4);
-  const [sands, setSands] = useState<string[]>([]);
-  const [goblet, setGoblet] = useState<string[]>([]);
-  const [circlet, setCirclet] = useState<string[]>([]);
-  const [subStats, setSubStats] = useState<string[]>([]);
   
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchGraphQL(GET_ARTIFACTS).then(data => {
       setArtifacts(data.artifacts || []);
+    }).catch(err => {
+      console.error(err);
+      toast.error('Không thể kết nối đến Backend (GraphQL). Vui lòng kiểm tra lại server!');
     });
     
     document.body.style.overflow = 'hidden';
@@ -86,10 +85,10 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
         setNameEn,
         setNameVi,
         pieces,
-        sands,
-        goblet,
-        circlet,
-        subStatsPriority: subStats,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: [],
         constellation: defaultConstellation || 'C0'
       });
 
@@ -99,10 +98,10 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
         setNameEn,
         setNameVi,
         pieces,
-        sands,
-        goblet,
-        circlet,
-        subStatsPriority: subStats,
+        sands: [],
+        goblet: [],
+        circlet: [],
+        subStatsPriority: [],
         rarity: 5,
         iconUrl: isMixMode ? '/assets/items/UI_RelicIcon_15001_4.webp' : selectedArtifacts[0]?.iconUrl || null,
         artifactSetId: isMixMode ? null : selectedArtifacts[0]?.id || null,
@@ -123,34 +122,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
     }
   };
 
-  const toggleStat = (list: string[], setList: (l: string[]) => void, stat: string) => {
-    if (list.includes(stat)) setList(list.filter(s => s !== stat));
-    else setList([...list, stat]);
-  };
 
-  const renderStatPicker = (label: string, list: string[], setList: (l: string[]) => void) => (
-    <div className="mb-4">
-      <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2 block">{label}</label>
-      <div className="flex flex-wrap gap-2">
-        {COMMON_STATS.map(stat => {
-          const active = list.includes(stat);
-          return (
-            <button
-              key={stat}
-              onClick={() => toggleStat(list, setList, stat)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
-                active 
-                  ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' 
-                  : 'bg-white/[0.02] text-gray-500 border-white/5 hover:bg-white/10'
-              }`}
-            >
-              {stat}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
 
   const handleSelectArtifact = (a: ArtifactData) => {
     if (!isMixMode) {
@@ -282,12 +254,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-white/5">
-                {renderStatPicker("Sands Options", sands, setSands)}
-                {renderStatPicker("Goblet Options", goblet, setGoblet)}
-                {renderStatPicker("Circlet Options", circlet, setCirclet)}
-                {renderStatPicker("Sub-Stats Priority", subStats, setSubStats)}
-              </div>
+
             </div>
           )}
         </div>

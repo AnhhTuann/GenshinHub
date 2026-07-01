@@ -269,7 +269,47 @@ export const albedo = {
   "Elemental Burst"
 ],
   signatureWeapons: [],
-  teams: [],
+  teams: [
+    {
+        name: "sdasd",
+        rank: "SS",
+        description: "ádad",
+        members: [
+            {
+                characterId: "albedo",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "aino",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "aloy",
+                role: "Healer",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
+                characterId: "alhaitham",
+                role: "Support",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            }
+        ]
+    }
+],
   bestWeapons: [
     {
         rank: 1,
@@ -307,22 +347,25 @@ export const albedo = {
 ],
   bestArtifacts: [
     {
-      setNameVi: "Đoàn Kịch Hoàng Kim",
-      setNameEn: "Golden Troupe",
-      pieces: 4,
-      sands: ["Phòng Ngự%"],
-      goblet: ["Sát Thương Nguyên Tố Nham"],
-      circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-      subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Phòng Ngự%", "Nạp Nguyên Tố"]
-    },
-    {
-      setNameVi: "Giấc Mộng Phù Hoa",
-      setNameEn: "Husk of Opulent Dreams",
-      pieces: 4,
-      sands: ["Phòng Ngự%"],
-      goblet: ["Sát Thương Nguyên Tố Nham"],
-      circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
-      subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Phòng Ngự%", "Nạp Nguyên Tố"]
+        setNameVi: "Phiến Đá Lâu Đời",
+        setNameEn: "Archaic Petra",
+        pieces: 4,
+        sands: [
+            "ATK%",
+            "DEF%",
+            "Elemental DMG Bonus"
+        ],
+        goblet: [
+            "Elemental DMG Bonus"
+        ],
+        circlet: [
+            "Elemental DMG Bonus"
+        ],
+        subStatsPriority: [
+            "Elemental DMG Bonus",
+            "Energy Recharge",
+            "DEF%"
+        ]
     }
-  ]
+]
 };

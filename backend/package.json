@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ignore prisma/seeds/ src/index.ts",
+    "dev": "nodemon --ignore prisma/seeds/ --ignore temp_seeds/ --ignore backups/ src/index.ts",
     "build": "npx prisma generate && tsc",
     "start": "node dist/src/index.js",
     "seed": "prisma db seed",

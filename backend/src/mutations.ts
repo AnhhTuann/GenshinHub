@@ -427,10 +427,10 @@ export const Mutation = {
 
   addCharacterWeapon: async (_: any, args: any, context: any) => {
     requireAdmin(context);
-    const { characterId, weaponId, rank, isF2P } = sanitize(args);
+    const { characterId, weaponId, rank, isF2P, refinement } = sanitize(args);
     const weapon = await prisma.weapon.findUnique({ where: { id: weaponId } });
     if (!weapon) throw new Error("Weapon not found");
-    await prisma.characterWeapon.create({
+    const newCharWep = await prisma.characterWeapon.create({
       data: {
         characterId,
         weaponId,
@@ -438,6 +438,7 @@ export const Mutation = {
         nameVi: weapon.nameVi,
         rank,
         isF2P,
+        refinement: refinement || 1,
         iconUrl: weapon.iconUrl,
       }
     });
@@ -445,7 +446,7 @@ export const Mutation = {
     resetArtifactSetLookup();
     debouncedExport();
     debouncedBackup();
-    return true;
+    return newCharWep.id;
   },
 
   removeCharacterWeapon: async (_: any, { id }: any, context: any) => {
@@ -462,7 +463,7 @@ export const Mutation = {
     requireAdmin(context);
     const { characterId, setNameEn, setNameVi, pieces, constellation } = sanitize(args);
     
-    await prisma.characterArtifact.create({
+    const newArtifact = await prisma.characterArtifact.create({
       data: {
         characterId,
         setNameEn,
@@ -475,7 +476,7 @@ export const Mutation = {
     resetArtifactSetLookup();
     debouncedExport();
     debouncedBackup();
-    return true;
+    return newArtifact.id;
   },
 
   removeCharacterArtifact: async (_: any, { id }: any, context: any) => {

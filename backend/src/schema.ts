@@ -139,9 +139,9 @@ export const typeDefs = `#graphql
     deleteTierRank(id: String!): Boolean!
     reorderTierRanks(tierIds: [String!]!): Boolean!
     
-    addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!, constellation: String): Boolean
+    addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!, constellation: String, refinement: Int): String
     removeCharacterWeapon(id: String!): Boolean
-    addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, constellation: String): Boolean
+    addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, constellation: String): String
     removeCharacterArtifact(id: String!): Boolean
     
     updateCharacterTalents(id: String!, talentPriority: [String!]!): Character

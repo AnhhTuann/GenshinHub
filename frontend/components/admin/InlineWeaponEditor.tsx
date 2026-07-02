@@ -34,6 +34,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
   const [selectedWeapon, setSelectedWeapon] = useState<WeaponData | null>(null);
   
   const [rank, setRank] = useState(1);
+  const [refinement, setRefinement] = useState(1);
   const [isF2P, setIsF2P] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -61,16 +62,17 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
     setLoading(true);
     try {
       const query = `
-        mutation AddCharacterWeapon($characterId: String!, $weaponId: String!, $rank: Int!, $isF2P: Boolean!, $constellation: String) {
-          addCharacterWeapon(characterId: $characterId, weaponId: $weaponId, rank: $rank, isF2P: $isF2P, constellation: $constellation)
+        mutation AddCharacterWeapon($characterId: String!, $weaponId: String!, $rank: Int!, $isF2P: Boolean!, $constellation: String, $refinement: Int) {
+          addCharacterWeapon(characterId: $characterId, weaponId: $weaponId, rank: $rank, isF2P: $isF2P, constellation: $constellation, refinement: $refinement)
         }
       `;
-      await fetchGraphQL(query, {
+      const res = await fetchGraphQL(query, {
         characterId,
         weaponId: selectedWeapon.id,
         rank: parseInt(rank.toString()),
         isF2P,
         constellation: defaultConstellation || 'C0',
+        refinement: parseInt(refinement.toString())
       });
 
       // Fetch the full weapon record to build the optimistic UI data
@@ -83,7 +85,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
 
       // Build the new weapon entry matching the bestWeapons shape
       const newWeaponEntry = {
-        id: `temp-${Date.now()}`, // Temporary ID until next server fetch
+        id: res.addCharacterWeapon || `temp-${Date.now()}`, // Real ID from DB
         nameEn: w?.nameEn || selectedWeapon.nameEn,
         nameVi: w?.nameVi || selectedWeapon.nameEn,
         rank,
@@ -93,7 +95,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
         rarity: w?.rarity || 4,
         passiveDescEn: null,
         passiveDescVi: null,
-        refinement: null,
+        refinement: parseInt(refinement.toString()),
       };
 
       onSaved(newWeaponEntry);
@@ -152,15 +154,28 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
                 </div>
               </div>
 
-              <div>
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2 block">Rank Priority</label>
-                <input
-                  type="number"
-                  min="1"
-                  value={rank}
-                  onChange={e => setRank(parseInt(e.target.value) || 1)}
-                  className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2 block">Display Priority (1 = Top)</label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={rank}
+                    onChange={e => setRank(parseInt(e.target.value) || 1)}
+                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
+                  />
+                </div>
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2 block">Refinement (R1 - R5)</label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="5"
+                    value={refinement}
+                    onChange={e => setRefinement(parseInt(e.target.value) || 1)}
+                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
+                  />
+                </div>
               </div>
 
               <label className="flex items-center gap-3 p-4 bg-white/[0.02] border border-white/5 rounded-xl cursor-pointer hover:bg-white/5 transition-colors">

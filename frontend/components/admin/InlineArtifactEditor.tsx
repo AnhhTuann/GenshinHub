@@ -76,7 +76,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
         ? `Mix 2 bộ ${nameVi1} & 2 bộ ${nameVi2}`
         : nameVi1;
 
-      await fetchGraphQL(`
+      const res = await fetchGraphQL(`
         mutation AddCharacterArtifact($characterId: String!, $setNameEn: String!, $setNameVi: String!, $pieces: Int!, $constellation: String) {
           addCharacterArtifact(characterId: $characterId, setNameEn: $setNameEn, setNameVi: $setNameVi, pieces: $pieces, constellation: $constellation)
         }
@@ -90,7 +90,7 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
 
       // Build optimistic artifact entry matching bestArtifacts shape
       const newArtifactEntry: any = {
-        id: `temp-${Date.now()}`,
+        id: res.addCharacterArtifact || `temp-${Date.now()}`,
         setNameEn,
         setNameVi,
         pieces,

@@ -462,7 +462,21 @@ export const Mutation = {
 
   addCharacterArtifact: async (_: any, args: any, context: any) => {
     requireAdmin(context);
-    const { characterId, setNameEn, setNameVi, pieces, sands, goblet, circlet, subStatsPriority } = sanitize(args);
+    let { characterId, setNameEn, setNameVi, pieces, sands, goblet, circlet, subStatsPriority } = sanitize(args);
+    
+    // Nếu mảng stats trống, thử copy từ các artifact khác của nhân vật này
+    if (sands.length === 0 && goblet.length === 0 && circlet.length === 0) {
+      const existing = await prisma.characterArtifact.findFirst({
+        where: { characterId, sands: { isEmpty: false } }
+      });
+      if (existing) {
+        sands = existing.sands;
+        goblet = existing.goblet;
+        circlet = existing.circlet;
+        subStatsPriority = existing.subStatsPriority;
+      }
+    }
+
     await prisma.characterArtifact.create({
       data: {
         characterId,

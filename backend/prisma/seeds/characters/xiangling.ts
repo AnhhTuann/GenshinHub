@@ -1307,28 +1307,73 @@ export const xiangling = {
         setNameVi: "Mix 2 bộ Dấu Ấn Ngăn Cách & 2 bộ Nghi Thức Tông Thất Cổ",
         setNameEn: "Mix 2-Piece Emblem of Severed Fate & 2-Piece Noblesse Oblige",
         pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: [
+            "Energy Recharge",
+            "ATK%",
+            "Elemental Mastery"
+        ],
+        goblet: [
+            "Pyro DMG Bonus"
+        ],
+        circlet: [
+            "CRIT Rate",
+            "CRIT DMG"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Elemental Mastery"
+        ]
     },
     {
         setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Dấu Ấn Ngăn Cách",
         setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Emblem of Severed Fate",
         pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: [
+            "Energy Recharge",
+            "ATK%",
+            "Elemental Mastery"
+        ],
+        goblet: [
+            "Pyro DMG Bonus"
+        ],
+        circlet: [
+            "CRIT Rate",
+            "CRIT DMG"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Elemental Mastery"
+        ]
     },
     {
         setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Nghi Thức Tông Thất Cổ",
         setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Noblesse Oblige",
         pieces: 2,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: []
+        sands: [
+            "Energy Recharge",
+            "ATK%",
+            "Elemental Mastery"
+        ],
+        goblet: [
+            "Pyro DMG Bonus"
+        ],
+        circlet: [
+            "CRIT Rate",
+            "CRIT DMG"
+        ],
+        subStatsPriority: [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Elemental Mastery"
+        ]
     }
 ]
 };

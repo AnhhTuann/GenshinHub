@@ -129,6 +129,7 @@ const getSplashUrl = (name: string) => {
 
 
 
+
 import { cyno } from './characters/cyno';
 import { nahida } from './characters/nahida';
 import { wanderer } from './characters/wanderer';

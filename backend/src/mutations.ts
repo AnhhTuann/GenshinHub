@@ -173,10 +173,6 @@ export const Mutation = {
             setNameEn: a.setNameEn,
             setNameVi: a.setNameVi,
             pieces: a.pieces,
-            sands: a.sands,
-            goblet: a.goblet,
-            circlet: a.circlet,
-            subStatsPriority: a.subStatsPriority,
             order: a.order || 0
           }
         });
@@ -599,6 +595,10 @@ export const Mutation = {
       recommendedC: aiResult.recommendedC,
       tierNoteEn: aiResult.tierNoteEn,
       tierNoteVi: aiResult.tierNoteVi,
+      sands: aiResult.sands || (aiResult.bestArtifacts && aiResult.bestArtifacts[0]?.sands) || [],
+      goblet: aiResult.goblet || (aiResult.bestArtifacts && aiResult.bestArtifacts[0]?.goblet) || [],
+      circlet: aiResult.circlet || (aiResult.bestArtifacts && aiResult.bestArtifacts[0]?.circlet) || [],
+      subStatsPriority: aiResult.subStatsPriority || (aiResult.bestArtifacts && aiResult.bestArtifacts[0]?.subStatsPriority) || [],
     };
     
     const updatedChar = await prisma.character.upsert({
@@ -639,10 +639,6 @@ export const Mutation = {
             setNameEn: a.setNameEn,
             setNameVi: a.setNameVi,
             pieces: Number(a.pieces) || 4,
-            sands: a.sands || [],
-            goblet: a.goblet || [],
-            circlet: a.circlet || [],
-            subStatsPriority: a.subStatsPriority || [],
             order: i
           }
         });

@@ -424,6 +424,42 @@ export const neuvillette = {
         description: "An Electro-Charged team featuring Neuvillette as the main DPS, with Furina providing off-field Hydro, Kazuha grouping and buffs, and Kuki Shinobu triggering Electro-Charged reactions and healing.",
         members: [
             {
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals high Hydro damage and drives Electro-Charged.",
+                weapons: [
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
@@ -458,29 +494,18 @@ export const neuvillette = {
                     "HP",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Neuvillette Vaporize #1",
+        rank: "SS",
+        description: "A powerful Vaporize team centered around Neuvillette's charged attacks, with Xiangling providing off-field Pyro application, Kazuha offering crowd control and resistance shred, and Bennett healing and boosting ATK.",
+        members: [
             {
                 characterId: "neuvillette",
                 role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high Hydro damage and drives Electro-Charged.",
+                roleDesc: "Hydro Main DPS. Deals high continuous Hydro damage and triggers Vaporize.",
                 weapons: [
                     "Tome of the Eternal Flow",
                     "Sacrificial Jade"
@@ -494,14 +519,7 @@ export const neuvillette = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Neuvillette Vaporize #1",
-        rank: "SS",
-        description: "A powerful Vaporize team centered around Neuvillette's charged attacks, with Xiangling providing off-field Pyro application, Kazuha offering crowd control and resistance shred, and Bennett healing and boosting ATK.",
-        members: [
+            },
             {
                 characterId: "xiangling",
                 role: "Sub DPS",
@@ -538,24 +556,6 @@ export const neuvillette = {
                 ]
             },
             {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high continuous Hydro damage and triggers Vaporize.",
-                weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds Pyro and Hydro resistances, and buffs elemental DMG.",
@@ -580,6 +580,42 @@ export const neuvillette = {
         rank: "SS",
         description: "Neuvillette hypercarry team utilizing Bloom reactions from Hydro and Dendro applications. Hydro application from Neuvillette and Furina reacts with Dendro from Baizhu to create Bloom cores. Kazuha provides Elemental Mastery buff and Anemo resistance shred via Viridescent Venerer.",
         members: [
+            {
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
+                weapons: [
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "kazuha",
                 role: "Support",
@@ -616,42 +652,6 @@ export const neuvillette = {
                     "CRIT DMG",
                     "CRIT Rate"
                 ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals massive Hydro damage with Charged Attacks.",
-                weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -660,24 +660,6 @@ export const neuvillette = {
         rank: "SS",
         description: "A powerful Hyperbloom team leveraging Neuvillette's continuous Hydro application with Nahida's Dendro application to create Bloom cores, then triggering Hyperbloom with Raiden Shogun's Electro. Furina provides additional off-field Hydro application and party-wide DMG buffs.",
         members: [
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "neuvillette",
                 role: "Main DPS",
@@ -688,6 +670,24 @@ export const neuvillette = {
                 ],
                 artifacts: [
                     "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and party-wide DMG buffs.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -739,21 +739,21 @@ export const neuvillette = {
         description: "An Electro-Charged team combining Neuvillette's Hydro application and off-field Electro from Yae Miko and Raiden Shogun, with Kazuha providing grouping and buffs.",
         members: [
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
+                characterId: "neuvillette",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Drives Electro-Charged reactions with Charged Attacks.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Xiphos' Moonlight"
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Marechaussee Hunter"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "ATK%"
+                    "HP%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -791,21 +791,21 @@ export const neuvillette = {
                 ]
             },
             {
-                characterId: "neuvillette",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Drives Electro-Charged reactions with Charged Attacks.",
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds resistances, and buffs elemental DMG.",
                 weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
+                    "Freedom-Sworn",
+                    "Xiphos' Moonlight"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
+                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
+                    "ATK%"
                 ]
             }
         ]
@@ -940,14 +940,24 @@ export const neuvillette = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
+        setNameVi: "Đoàn Hát Lang Thang Đại Lục",
+        setNameEn: "Đoàn Hát Lang Thang Đại Lục",
+        pieces: 4
+    },
+    {
+        setNameVi: "Trái Tim Trầm Luân",
+        setNameEn: "Trái Tim Trầm Luân",
         pieces: 4
     },
     {
         setNameVi: "Mix 2 bộ Thủy / HP / Thợ Săn",
         setNameEn: "Mix 2 bộ Thủy / HP / Thợ Săn",
         pieces: 2
+    },
+    {
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4
     },
     {
         setNameVi: "Giấc Mộng Thủy Tiên",
@@ -957,16 +967,6 @@ export const neuvillette = {
     {
         setNameVi: "Sao Băng Bay Ngược",
         setNameEn: "Sao Băng Bay Ngược",
-        pieces: 4
-    },
-    {
-        setNameVi: "Trái Tim Trầm Luân",
-        setNameEn: "Trái Tim Trầm Luân",
-        pieces: 4
-    },
-    {
-        setNameVi: "Đoàn Hát Lang Thang Đại Lục",
-        setNameEn: "Đoàn Hát Lang Thang Đại Lục",
         pieces: 4
     }
 ]

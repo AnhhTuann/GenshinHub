@@ -501,6 +501,24 @@ export const nicole = {
         description: "A high-tier team featuring Varka as main DPS with Anemo and converted elemental damage, supported by Prune's buffs, Nicole's shield, and Durin's off-field Pyro and RES shred.",
         members: [
             {
+                characterId: "varka",
+                role: "Main DPS",
+                roleDesc: "Main DPS. After Skill, enters mixed damage mode with normal/charged attacks.",
+                weapons: [
+                    "Game of the Mighty Wolf",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Gladiator's Destiny"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%",
+                    "ATK"
+                ]
+            },
+            {
                 characterId: "nicole",
                 role: "Support",
                 roleDesc: "Pyro Support. Shields and buffs team ATK based on maximum stats.",
@@ -535,24 +553,6 @@ export const nicole = {
                 ]
             },
             {
-                characterId: "varka",
-                role: "Main DPS",
-                roleDesc: "Main DPS. After Skill, enters mixed damage mode with normal/charged attacks.",
-                weapons: [
-                    "Game of the Mighty Wolf",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Gladiator's Destiny"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%",
-                    "ATK"
-                ]
-            },
-            {
                 characterId: "prune",
                 role: "Support",
                 roleDesc: "Anemo Support. Provides Anemo support and buffs.",
@@ -575,6 +575,24 @@ export const nicole = {
         rank: "S",
         description: "Anemo team centered around Venti's Stormeye and Swirl reactions. Faruzan boosts Anemo DMG, Durin applies off-field Pyro and reduces RES, and Nicole provides shields and ADC buffs.",
         members: [
+            {
+                characterId: "venti",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Summons a stormeye with Burst that pulls enemies and deals continuous Anemo damage.",
+                weapons: [
+                    "The Daybreak Chronicles",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Desert Pavilion Chronicle"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "faruzan",
                 role: "Support",
@@ -625,24 +643,6 @@ export const nicole = {
                     "CRIT DMG",
                     "Energy Recharge",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Summons a stormeye with Burst that pulls enemies and deals continuous Anemo damage.",
-                weapons: [
-                    "The Daybreak Chronicles",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Desert Pavilion Chronicle"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -725,6 +725,24 @@ export const nicole = {
         description: "A high-tier team centered around Venti's Anemo damage and Nicole's support for Heaven characters. This team leverages element-synergies.",
         members: [
             {
+                characterId: "venti",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Summons a Stormeye with Burst that pulls enemies and deals continuous Anemo DMG.",
+                weapons: [
+                    "The First Great Magic",
+                    "Fading Twilight"
+                ],
+                artifacts: [
+                    "4pc Desert Pavilion Chronicle"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "nicole",
                 role: "Support",
                 roleDesc: "Pyro Support. Shields and buffs team ADC via Skill.",
@@ -756,24 +774,6 @@ export const nicole = {
                     "CRIT DMG",
                     "Energy Recharge",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Summons a Stormeye with Burst that pulls enemies and deals continuous Anemo DMG.",
-                weapons: [
-                    "The First Great Magic",
-                    "Fading Twilight"
-                ],
-                artifacts: [
-                    "4pc Desert Pavilion Chronicle"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -913,14 +913,14 @@ export const nicole = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Nghi Thức Tông Thất Cổ",
-        pieces: 4
-    },
-    {
         setNameVi: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
         setNameEn: "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
         pieces: 2
+    },
+    {
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Nghi Thức Tông Thất Cổ",
+        pieces: 4
     },
     {
         setNameVi: "Phước Lành Trời Cao",

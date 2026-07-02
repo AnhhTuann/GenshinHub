@@ -424,19 +424,20 @@ export const xinyan = {
         description: "Xinyan's Pyro attacks combine with Electro from Fischl to trigger frequent Overload reactions, dealing AoE Pyro DMG. Kazuha provides Anemo grouping and resistance shred, while Bennett offers ATK buffs and healing.",
         members: [
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
+                characterId: "xinyan",
+                role: "Main DPS",
+                roleDesc: "Xinyan's Skill reduces enemy DEF and provides a shield to boost DPS. Build with DEF% or ATK% to maximize shield strength and damage.",
                 weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
+                    "Wolf's Gravestone",
+                    "Whiteblind"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Retracing Bolide"
                 ],
                 substats: [
-                    "HP%",
-                    "HP",
+                    "DEF%",
+                    "ATK%",
+                    "CRIT Rate",
                     "Energy Recharge"
                 ]
             },
@@ -459,6 +460,23 @@ export const xinyan = {
                 ]
             },
             {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Kazuha groups enemies, provides Anemo crowd control, DMG buffs, and reduces enemy Pyro and Electro resistance with Swirl.",
@@ -475,24 +493,6 @@ export const xinyan = {
                     "CRIT Rate",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "xinyan",
-                role: "Main DPS",
-                roleDesc: "Xinyan's Skill reduces enemy DEF and provides a shield to boost DPS. Build with DEF% or ATK% to maximize shield strength and damage.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Whiteblind"
-                ],
-                artifacts: [
-                    "4pc Retracing Bolide"
-                ],
-                substats: [
-                    "DEF%",
-                    "ATK%",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -501,6 +501,24 @@ export const xinyan = {
         rank: "A",
         description: "A physical team centered around Razor with Electro and Cryo for Superconduct. Xinyan provides shields, Qiqi heals and applies Cryo, and Bennett buffs ATK and heals. Razor's physical damage is maximized by triggering Superconduct to reduce enemy physical resistance. Xinyan provides a shield for safety, Qiqi applies Cryo off-field, and Bennett enhances ATK and healing.",
         members: [
+            {
+                characterId: "razor",
+                role: "Main DPS",
+                roleDesc: "Main physical DPS, C4 reduces enemy DEF with Elemental Skill.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Prototype Archaic"
+                ],
+                artifacts: [
+                    "4pc Gladiator's Finale"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "bennett",
                 role: "Support",
@@ -552,24 +570,6 @@ export const xinyan = {
                     "ATK%",
                     "Energy Recharge",
                     "HP%"
-                ]
-            },
-            {
-                characterId: "razor",
-                role: "Main DPS",
-                roleDesc: "Main physical DPS, C4 reduces enemy DEF with Elemental Skill.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Prototype Archaic"
-                ],
-                artifacts: [
-                    "4pc Gladiator's Finale"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
                 ]
             }
         ]
@@ -762,6 +762,11 @@ export const xinyan = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        setNameEn: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
+        pieces: 2
+    },
+    {
         setNameVi: "Lửa Trắng Xám",
         setNameEn: "Lửa Trắng Xám",
         pieces: 4
@@ -769,11 +774,6 @@ export const xinyan = {
     {
         setNameVi: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
         setNameEn: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
-        pieces: 2
-    },
-    {
-        setNameVi: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
-        setNameEn: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
         pieces: 2
     },
     {

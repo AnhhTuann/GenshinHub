@@ -424,19 +424,20 @@ export const amber = {
         description: "The DMG of Ayaka is maximized by Melt. Maximize Ayaka's Melt damage by applying Pyro with Amber and Bennett while Zhongli provides shielding and ATK buffs.",
         members: [
             {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides shield for safe environment and increases ATK of whole team using full set of Tenacity of the Millelith.",
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
+                roleDesc: "Deals DMG by her Burst, and her Cryo DMG reacts with Pyro attachment from Amber's Skill to trigger Melt.",
                 weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
                 ],
                 artifacts: [
-                    "Tenacity of the Millelith"
+                    "Blizzard Strayer"
                 ],
                 substats: [
-                    "HP%",
-                    "HP",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -459,20 +460,19 @@ export const amber = {
                 ]
             },
             {
-                characterId: "kamisato-ayaka",
-                role: "Main DPS",
-                roleDesc: "Deals DMG by her Burst, and her Cryo DMG reacts with Pyro attachment from Amber's Skill to trigger Melt.",
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides shield for safe environment and increases ATK of whole team using full set of Tenacity of the Millelith.",
                 weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
+                    "Staff of Homa",
+                    "Black Tassel"
                 ],
                 artifacts: [
-                    "Blizzard Strayer"
+                    "Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -501,19 +501,20 @@ export const amber = {
         description: "Amber's Pyro triggers Overload with Fischl's Electro and Vaporization with Xingqiu's Hydro. Combines Pyro reactions: Overload from Amber and Fischl, and Vaporization from Amber and Xingqiu, supported by Bennett.",
         members: [
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides ATK buff and healing via Burst.",
+                characterId: "amber",
+                role: "Main DPS",
+                roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
                 weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
+                    "Thundering Pulse",
+                    "Rust"
                 ],
                 artifacts: [
-                    "Noblesse Oblige"
+                    "Crimson Witch of Flames"
                 ],
                 substats: [
-                    "HP%",
-                    "HP",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -526,24 +527,6 @@ export const amber = {
                 ],
                 artifacts: [
                     "Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Main DPS",
-                roleDesc: "Main DPS triggering Overload with Fischl and Vaporization with Xingqiu.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "Crimson Witch of Flames"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -569,6 +552,23 @@ export const amber = {
                     "Energy Recharge",
                     "ATK%"
                 ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides ATK buff and healing via Burst.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -593,6 +593,24 @@ export const amber = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "amber",
+                role: "Sub DPS",
+                roleDesc: "Amber is the Sub DPS, works with Raiden Shogun to trigger Overload.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -628,24 +646,6 @@ export const amber = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "amber",
-                role: "Sub DPS",
-                roleDesc: "Amber is the Sub DPS, works with Raiden Shogun to trigger Overload.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -934,23 +934,8 @@ export const amber = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Đoàn Hát Lang Thang Đại Lục",
-        setNameEn: "Đoàn Hát Lang Thang Đại Lục",
-        pieces: 4
-    },
-    {
-        setNameVi: "Dòng Hồi Ức Bất Tận",
-        setNameEn: "Dòng Hồi Ức Bất Tận",
-        pieces: 4
-    },
-    {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Emblem of Severed Fate",
-        pieces: 4
-    },
-    {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Noblesse Oblige",
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
         pieces: 4
     },
     {
@@ -959,8 +944,23 @@ export const amber = {
         pieces: 4
     },
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
+        pieces: 4
+    },
+    {
+        setNameVi: "Đoàn Hát Lang Thang Đại Lục",
+        setNameEn: "Đoàn Hát Lang Thang Đại Lục",
+        pieces: 4
+    },
+    {
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4
+    },
+    {
+        setNameVi: "Dòng Hồi Ức Bất Tận",
+        setNameEn: "Dòng Hồi Ức Bất Tận",
         pieces: 4
     }
 ]

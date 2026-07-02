@@ -442,6 +442,24 @@ export const yoimiya = {
                 ]
             },
             {
+                characterId: "ganyu",
+                role: "Sub DPS",
+                roleDesc: "Applies Cryo consistently off-field via Burst.",
+                weapons: [
+                    "Amos' Bow",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "diona",
                 role: "Support",
                 roleDesc: "Shielding, healing, and battery support for Ganyu.",
@@ -475,24 +493,6 @@ export const yoimiya = {
                     "CRIT Rate",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Sub DPS",
-                roleDesc: "Applies Cryo consistently off-field via Burst.",
-                weapons: [
-                    "Amos' Bow",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -501,23 +501,6 @@ export const yoimiya = {
         rank: "S",
         description: "The Normal/ATK DMG Output of Ayato and Yoimiya is maximized by Vaporize and Melt, while Yun Jin + Zhongli provides a safe environment and ATK increase through Tenacity of the Millelith. Maximizes Normal/ATK DMG of both Ayato and Yoimiya through Vaporize and Melt, with Yun Jin + Zhongli providing shield and ATK buff.",
         members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides shields and buffs team ATK.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "yoimiya",
                 role: "Main DPS",
@@ -555,6 +538,23 @@ export const yoimiya = {
                 ]
             },
             {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides shields and buffs team ATK.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "yunjin",
                 role: "Support",
                 roleDesc: "Buffs Normal Attack DMG for both Ayato and Yoimiya.",
@@ -579,6 +579,24 @@ export const yoimiya = {
         rank: "S",
         description: "Frequent Overload reactions, amplified by Chevreuse's resistance shred and ATK buff, with Bennett support. Utilize Chevreuse's passive to reduce Pyro and Electro RES after Overload, while her Skill provides an ATK buff. Yoimiya's on-field Pyro attacks combine with Raiden Shogun's off-field Electro to trigger constant Overload.",
         members: [
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "On-field driver triggering Overload.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "raiden-shogun",
                 role: "Sub DPS",
@@ -614,24 +632,6 @@ export const yoimiya = {
                 ]
             },
             {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "On-field driver triggering Overload.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "chevreuse",
                 role: "Support",
                 roleDesc: "Shreds Pyro/Electro resistance and buffs team ATK upon Overload.",
@@ -656,20 +656,21 @@ export const yoimiya = {
         description: "Yoimiya is the main DPS, her DMG is amplified by Vaporization in this team. Yoimiya's Pyro damage is boosted by Vaporization reactions enabled by Xingqiu's Hydro application, while Yun Jin increases her Normal Attacks and Zhongli provides shielding and team ATK buff.",
         members: [
             {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides a safe environment with shield and team ATK buff.",
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "Main DPS driving the single-target Pyro damage.",
                 weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
+                    "Thundering Pulse",
+                    "Rust"
                 ],
                 artifacts: [
-                    "4pc Tenacity of the Millelith"
+                    "4pc Shimenawa's Reminiscence"
                 ],
                 substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
                 ]
             },
             {
@@ -690,6 +691,23 @@ export const yoimiya = {
                 ]
             },
             {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides a safe environment with shield and team ATK buff.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "yunjin",
                 role: "Support",
                 roleDesc: "Provides significant Normal Attack DMG and Speed buffs.",
@@ -706,11 +724,18 @@ export const yoimiya = {
                     "CRIT Rate",
                     "Energy Recharge"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Yoimiya Overload Team #2",
+        rank: "A",
+        description: "Yoimiya rapid-fire Pyro attacks trigger Overload with Fischl's off-field Electro application, while Yun Jin and Zhongli provide buffs and protection. Yoimiya's Pyro attacks trigger Overload with Fischl's off-field Electro, while Yun Jin and Zhongli shield and buff.",
+        members: [
             {
                 characterId: "yoimiya",
                 role: "Main DPS",
-                roleDesc: "Main DPS driving the single-target Pyro damage.",
+                roleDesc: "Main Pyro DPS triggering Overload.",
                 weapons: [
                     "Thundering Pulse",
                     "Rust"
@@ -722,30 +747,6 @@ export const yoimiya = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Elemental Mastery"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Yoimiya Overload Team #2",
-        rank: "A",
-        description: "Yoimiya rapid-fire Pyro attacks trigger Overload with Fischl's off-field Electro application, while Yun Jin and Zhongli provide buffs and protection. Yoimiya's Pyro attacks trigger Overload with Fischl's off-field Electro, while Yun Jin and Zhongli shield and buff.",
-        members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Strong shield and ATK buffs.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -768,6 +769,23 @@ export const yoimiya = {
                 ]
             },
             {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Strong shield and ATK buffs.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "yunjin",
                 role: "Support",
                 roleDesc: "Normal Attack DMG and Speed buffs.",
@@ -784,24 +802,6 @@ export const yoimiya = {
                     "CRIT Rate",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "Main Pyro DPS triggering Overload.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -810,23 +810,6 @@ export const yoimiya = {
         rank: "SS",
         description: "Yoimiya's Normal ATK DMG is maximized by Vaporization and ATK/SPD buff from Yun Jin.",
         members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield and team ATK buff support.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "yoimiya",
                 role: "Main DPS",
@@ -861,6 +844,23 @@ export const yoimiya = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield and team ATK buff support.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -908,24 +908,6 @@ export const yoimiya = {
                 ]
             },
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, decreases resistances, and buffs DMG.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "raiden-shogun",
                 role: "Sub DPS",
                 roleDesc: "Off-field Electro application and burst support.",
@@ -941,6 +923,24 @@ export const yoimiya = {
                     "Elemental Mastery",
                     "CRIT Rate",
                     "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, decreases resistances, and buffs DMG.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
                 ]
             },
             {
@@ -1153,16 +1153,6 @@ export const yoimiya = {
         pieces: 4
     },
     {
-        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
-        pieces: 4
-    },
-    {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
-        pieces: 4
-    },
-    {
         setNameVi: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
         setNameEn: "Mix 2 bộ Ma Nữ / Tinh Thông / Tấn Công",
         pieces: 2
@@ -1170,6 +1160,16 @@ export const yoimiya = {
     {
         setNameVi: "Dư Âm Tế Lễ",
         setNameEn: "Dư Âm Tế Lễ",
+        pieces: 4
+    },
+    {
+        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4
+    },
+    {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
         pieces: 4
     }
 ]

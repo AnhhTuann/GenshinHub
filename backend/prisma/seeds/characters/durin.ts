@@ -424,6 +424,25 @@ export const durin = {
         description: "An Anemo-Anemo-Pyro-Pyro team leveraging Venti's grouping, Faruzan's Anemo buffs, Durin's Pyro support and RES shred, and Bennett's ATK buff and healing.",
         members: [
             {
+                characterId: "venti",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Provides crowd control and gather enemies.",
+                weapons: [
+                    "The Stringless",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "durin",
                 role: "Support",
                 roleDesc: "Pyro Support. Provides off-field Pyro DMG and reduces enemy RES.",
@@ -455,25 +474,6 @@ export const durin = {
                 substats: [
                     "Energy Recharge",
                     "HP%"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Provides crowd control and gather enemies.",
-                weapons: [
-                    "The Stringless",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -578,6 +578,23 @@ export const durin = {
         description: "A burning-focused team leveraging Durin's off-field Pyro support and Bennett's ATK buff to empower Kinich and Emilie's Dendro damage.",
         members: [
             {
+                characterId: "kinich",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Deals massive Dendro damage through Nightsoul Burst.",
+                weapons: [
+                    "Fang of the Mountain King",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "emilie",
                 role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Deals off-field Dendro damage boosted by Burning.",
@@ -614,23 +631,6 @@ export const durin = {
                 ]
             },
             {
-                characterId: "kinich",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Deals massive Dendro damage through Nightsoul Burst.",
-                weapons: [
-                    "Fang of the Mountain King",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
@@ -654,24 +654,6 @@ export const durin = {
         description: "A team where Navia serves as the main DPS, supported by Albedo's off-field Geo damage, Durin's Pyro application, and Bennett's ATK buff.",
         members: [
             {
-                characterId: "albedo",
-                role: "Sub DPS",
-                roleDesc: "Geo Sub DPS. Pairs for Geo Resonance and deals off-field Geo damage.",
-                weapons: [
-                    "Uraku Misugiri",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "navia",
                 role: "Main DPS",
                 roleDesc: "Geo Main DPS. Deals explosive damage with Gunbrella.",
@@ -686,6 +668,24 @@ export const durin = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "albedo",
+                role: "Sub DPS",
+                roleDesc: "Geo Sub DPS. Pairs for Geo Resonance and deals off-field Geo damage.",
+                weapons: [
+                    "Uraku Misugiri",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
                     "Energy Recharge"
                 ]
             },
@@ -731,6 +731,23 @@ export const durin = {
         description: "A powerful Burning team leveraging Durin's support to boost Kinich and Emilie's damage, while Xilonen provides Geo RES shred.",
         members: [
             {
+                characterId: "kinich",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Deals massive Dendro damage.",
+                weapons: [
+                    "Fang of the Mountain King",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "emilie",
                 role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Deals off-field Dendro damage.",
@@ -763,23 +780,6 @@ export const durin = {
                     "CRIT Rate",
                     "CRIT DMG",
                     "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "kinich",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Deals massive Dendro damage.",
-                weapons: [
-                    "Fang of the Mountain King",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
                     "ATK%"
                 ]
             },
@@ -976,11 +976,6 @@ export const durin = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Crimson Witch of Flames",
-        pieces: 4
-    },
-    {
         setNameVi: "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
         setNameEn: "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
         pieces: 2
@@ -991,13 +986,18 @@ export const durin = {
         pieces: 4
     },
     {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Gilded Dreams",
+        pieces: 4
+    },
+    {
         setNameVi: "Ngày Nổi Gió",
         setNameEn: "A Day Carved From Rising Winds",
         pieces: 4
     },
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Gilded Dreams",
+        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Crimson Witch of Flames",
         pieces: 4
     }
 ]

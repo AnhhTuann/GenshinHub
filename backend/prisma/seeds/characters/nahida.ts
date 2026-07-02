@@ -461,23 +461,6 @@ export const nahida = {
                 ]
             },
             {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Strong shield protection, can buff Geo/Electro with Archaic Petra.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Archaic Petra"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "fischl",
                 role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
@@ -494,6 +477,23 @@ export const nahida = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Strong shield protection, can buff Geo/Electro with Archaic Petra.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Archaic Petra"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -503,20 +503,21 @@ export const nahida = {
         description: "Nahida is the Main DPS. Raiden Shogun and Thoma provide continuous Electro and Pyro attachment. Nahida's Normal Attacks trigger Overload, Spread, and Aggravate. Use Nahida's Skill to apply Dendro, then Electro/Pyro from Raiden and Thoma trigger Overload, Spread, and Aggravate. Kuki triggers Hyperbloom from Dendro cores, maximizing reaction damage.",
         members: [
             {
-                characterId: "kuki-shinobu",
-                role: "Support",
-                roleDesc: "Electro Support. Heals and triggers Hyperbloom from Dendro cores.",
+                characterId: "nahida",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Applies Dendro with Skill and drives reactions using Normal Attacks.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
                 ],
                 artifacts: [
-                    "4pc Gilded Dreams"
+                    "4pc Deepwood Memories"
                 ],
                 substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "Elemental Mastery",
-                    "HP%",
-                    "HP",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -537,21 +538,20 @@ export const nahida = {
                 ]
             },
             {
-                characterId: "nahida",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Applies Dendro with Skill and drives reactions using Normal Attacks.",
+                characterId: "kuki-shinobu",
+                role: "Support",
+                roleDesc: "Electro Support. Heals and triggers Hyperbloom from Dendro cores.",
                 weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
+                    "Freedom-Sworn",
+                    "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Deepwood Memories"
+                    "4pc Gilded Dreams"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
                     "Elemental Mastery",
-                    "ATK%",
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -578,6 +578,23 @@ export const nahida = {
         rank: "S",
         description: "Razor triggers multiple reactions (Overloaded, Electro-Charged, Superconduct, Aggravate, Hyperbloom) with his Burst while Nahida applies Dendro, Xingqiu applies Hydro, and Bennett provides ATK buff and healing.",
         members: [
+            {
+                characterId: "razor",
+                role: "Main DPS",
+                roleDesc: "Electro Main DPS. Drives multiple reactions on-field using Burst.",
+                weapons: [
+                    "Serpent Spine",
+                    "Wolf's Gravestone"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "Elemental Mastery",
+                    "HP%"
+                ]
+            },
             {
                 characterId: "nahida",
                 role: "Sub DPS",
@@ -612,23 +629,6 @@ export const nahida = {
                     "CRIT Rate",
                     "CRIT DMG",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "razor",
-                role: "Main DPS",
-                roleDesc: "Electro Main DPS. Drives multiple reactions on-field using Burst.",
-                weapons: [
-                    "Serpent Spine",
-                    "Wolf's Gravestone"
-                ],
-                artifacts: [
-                    "4pc Gilded Dreams"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "Elemental Mastery",
-                    "HP%"
                 ]
             },
             {
@@ -736,6 +736,43 @@ export const nahida = {
         description: "Primary Dendro applicator as Elemental Mastery. Nilou triggers bountiful blooms. Nahida's Elemental Skill applies Dendro to trigger Bloom, Yelan/Xingqiu applies Hydro, and Kokomi triggers healing.",
         members: [
             {
+                characterId: "nahida",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Continuous Dendro application on-field.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "nilou",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Replaces Bloom cores with Bountiful Cores for instant massive damage.",
+                weapons: [
+                    "Key of Khaj-Nisut",
+                    "The Dockhand's Assistant"
+                ],
+                artifacts: [
+                    "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge",
+                    "CRIT DMG"
+                ]
+            },
+            {
                 characterId: "kokomi",
                 role: "Support",
                 roleDesc: "Hydro Support. Heals the team and applies Hydro off-field.",
@@ -769,43 +806,6 @@ export const nahida = {
                     "Elemental Mastery",
                     "HP%"
                 ]
-            },
-            {
-                characterId: "nilou",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Replaces Bloom cores with Bountiful Cores for instant massive damage.",
-                weapons: [
-                    "Key of Khaj-Nisut",
-                    "The Dockhand's Assistant"
-                ],
-                artifacts: [
-                    "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Continuous Dendro application on-field.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -814,24 +814,6 @@ export const nahida = {
         rank: "SS",
         description: "Hyperbloom team with Nahida applying Dendro, Kokomi creating Dendro cores, Raiden Shogun triggering Hyperbloom, and Kazuha providing support and Elemental RES shred. Raiden Shogun's Elemental Skill triggers Hyperbloom on Dendro Cores created by Nahida and Kokomi. Kazuha groups enemies and buffs team DMG.",
         members: [
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
             {
                 characterId: "kokomi",
                 role: "Main DPS",
@@ -885,6 +867,24 @@ export const nahida = {
                     "Energy Recharge",
                     "ATK%"
                 ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
             }
         ]
     },
@@ -893,6 +893,24 @@ export const nahida = {
         rank: "S",
         description: "Nahida applies Dendro to trigger Burning with Pyro from Bennett, then Ganyu/Rosaria Melt on burning enemies for massive damage.",
         members: [
+            {
+                characterId: "ganyu",
+                role: "Main DPS",
+                roleDesc: "Cryo Main DPS. Triggers Melt on burning targets.",
+                weapons: [
+                    "Hunter's Path",
+                    "Hamayumi"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "nahida",
                 role: "Sub DPS",
@@ -930,24 +948,6 @@ export const nahida = {
                 ]
             },
             {
-                characterId: "ganyu",
-                role: "Main DPS",
-                roleDesc: "Cryo Main DPS. Triggers Melt on burning targets.",
-                weapons: [
-                    "Hunter's Path",
-                    "Hamayumi"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Pyro Support. Applies Pyro to trigger Burning, heals, and buffs ATK.",
@@ -971,23 +971,6 @@ export const nahida = {
         rank: "SS",
         description: "Nahida maximizes Elemental Mastery for personal DMG and Catalyze. Two Electro characters provide off-field Electro for Aggravate reactions, and two Dendro units reduce Tri-Karma Purification interval.",
         members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Provides shield and Geo Resonance.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Archaic Petra"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "nahida",
                 role: "Main DPS",
@@ -1041,6 +1024,23 @@ export const nahida = {
                     "CRIT Rate",
                     "ATK%"
                 ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Provides shield and Geo Resonance.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Archaic Petra"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -1050,20 +1050,21 @@ export const nahida = {
         description: "A versatile team that uses Nahida's Dendro with Yelan's Hydro to create Bloom cores, then triggers Hyperbloom with Kuki Shinobu's Electro or Burgeon with Thoma's Pyro. Nahida applies Dendro with her Skill while Yelan provides off-field Hydro to create Bloom cores. Kuki (high Elemental Mastery) or Thoma then trigger Hyperbloom or Burgeon for massive damage.",
         members: [
             {
-                characterId: "kuki-shinobu",
-                role: "Support",
-                roleDesc: "Electro Support. Heals the team and triggers Hyperbloom.",
+                characterId: "nahida",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Applies Dendro and triggers reactions on-field.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
                 ],
                 artifacts: [
-                    "4pc Gilded Dreams"
+                    "4pc Deepwood Memories"
                 ],
                 substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "Elemental Mastery",
-                    "HP%",
-                    "HP",
+                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -1087,6 +1088,24 @@ export const nahida = {
                 ]
             },
             {
+                characterId: "kuki-shinobu",
+                role: "Support",
+                roleDesc: "Electro Support. Heals the team and triggers Hyperbloom.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "thoma",
                 role: "Support",
                 roleDesc: "Pyro Support. Triggers Burgeon reactions on Dendro cores.",
@@ -1100,25 +1119,6 @@ export const nahida = {
                     "Energy Recharge",
                     "Elemental Mastery",
                     "HP%"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Applies Dendro and triggers reactions on-field.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -1330,18 +1330,8 @@ export const nahida = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
-        setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
-        pieces: 4
-    },
-    {
-        setNameVi: "Ký Ức Rừng Sâu",
-        setNameEn: "Ký Ức Rừng Sâu",
-        pieces: 4
-    },
-    {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Thiên Nham Vững Chắc",
         pieces: 4
     },
     {
@@ -1355,8 +1345,18 @@ export const nahida = {
         pieces: 2
     },
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Thiên Nham Vững Chắc",
+        setNameVi: "Ký Ức Rừng Sâu",
+        setNameEn: "Ký Ức Rừng Sâu",
+        pieces: 4
+    },
+    {
+        setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
+        setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
+        pieces: 4
+    },
+    {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
         pieces: 4
     }
 ]

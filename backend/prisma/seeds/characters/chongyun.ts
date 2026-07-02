@@ -424,24 +424,6 @@ export const chongyun = {
         description: "A Xiao hypercarry team with Chongyun's CD reduction and Cryo damage, Zhongli's shield, and Jean's battery and healing.\n\nXiao's plunge attacks with Chongyun's C2 lowering his Burst CD, Cryo sub-DPS from Chongyun, protected by Zhongli's shield and Jean's healing and battery.\n\nTeam composition: Xiao (Anemo Main DPS), Chongyun (Cryo Sub DPS), Zhongli (Geo Support), Jean (Anemo Support)",
         members: [
             {
-                characterId: "jean",
-                role: "Anemo Support",
-                roleDesc: "Healer and battery for Xiao. C4 can lower Anemo resistance.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "xiao",
                 role: "Anemo Main DPS",
                 roleDesc: "Plunge Attack deals wide AOE Anemo DMG. Elemental Burst enables consecutive plunges.",
@@ -469,6 +451,24 @@ export const chongyun = {
                 ],
                 artifacts: [
                     "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "jean",
+                role: "Anemo Support",
+                roleDesc: "Healer and battery for Xiao. C4 can lower Anemo resistance.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -581,15 +581,15 @@ export const chongyun = {
         description: "Ayaka and Chongyun trigger Freeze with Xingqiu's Hydro application. Jean heals and reduces enemy Anemo RES using Viridescent Venerer.\n\nAyaka and Chongyun apply Cryo while Xingqiu off-field Hydro application triggers Freeze, locking enemies in place. Jean provides healing and RES shred.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Chongyun (Cryo Sub DPS), Xingqiu (Hydro Sub DPS), Jean (Anemo Support)",
         members: [
             {
-                characterId: "jean",
-                role: "Anemo Support",
-                roleDesc: "Heals the team and reduces enemy Anemo RES with Viridescent Venerer.",
+                characterId: "kamisato-ayaka",
+                role: "Cryo Main DPS",
+                roleDesc: "Deals damage primarily through her Elemental Burst. Her Cryo DMG reacts with Xingqiu's Hydro to trigger Freeze.",
                 weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Blizzard Strayer"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -634,52 +634,9 @@ export const chongyun = {
                 ]
             },
             {
-                characterId: "kamisato-ayaka",
-                role: "Cryo Main DPS",
-                roleDesc: "Deals damage primarily through her Elemental Burst. Her Cryo DMG reacts with Xingqiu's Hydro to trigger Freeze.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Chongyun Superconduct Team",
-        rank: "S",
-        description: "Keqing's DMG is amplified by Superconduct in this team. Chongyun is a Sub DPS.\n\nUse Chongyun's <element type='cryo'>Cryo</element> application to trigger Superconduct, reducing enemy physical resistance and boosting Keqing's physical damage.\n\nTeam composition: Keqing (Electro Main DPS), Chongyun (Cryo Sub DPS), Diona (Cryo Support), Jean (Anemo Support)",
-        members: [
-            {
-                characterId: "chongyun",
-                role: "Cryo Sub DPS",
-                roleDesc: "Chongyun's Elemental Skill (requires C2) lowers CDs of Keqing's Elemental Burst. And He provides <element type='cryo'>Cryo</element> DMG at backstage.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "jean",
                 role: "Anemo Support",
-                roleDesc: "Jean is a Healer. Jean can assist the team by reduce <element type='anemo'>Anemo</element> Resistance of enemies.",
+                roleDesc: "Heals the team and reduces enemy Anemo RES with Viridescent Venerer.",
                 weapons: [
                     "Skyward Blade",
                     "Favonius Sword"
@@ -693,7 +650,14 @@ export const chongyun = {
                     "ATK%",
                     "Energy Recharge"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Chongyun Superconduct Team",
+        rank: "S",
+        description: "Keqing's DMG is amplified by Superconduct in this team. Chongyun is a Sub DPS.\n\nUse Chongyun's Cryo application to trigger Superconduct, reducing enemy physical resistance and boosting Keqing's physical damage.\n\nTeam composition: Keqing (Electro Main DPS), Chongyun (Cryo Sub DPS), Diona (Cryo Support), Jean (Anemo Support)",
+        members: [
             {
                 characterId: "keqing",
                 role: "Electro Main DPS",
@@ -711,6 +675,42 @@ export const chongyun = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "chongyun",
+                role: "Cryo Sub DPS",
+                roleDesc: "Chongyun's Elemental Skill (requires C2) lowers CDs of Keqing's Elemental Burst. And He provides Cryo DMG at backstage.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "jean",
+                role: "Anemo Support",
+                roleDesc: "Jean is a Healer. Jean can assist the team by reduce Anemo Resistance of enemies.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -740,28 +740,6 @@ export const chongyun = {
   bestWeapons: [
     {
         rank: 1,
-        nameVi: "Phán Quyết",
-        nameEn: "Verdict",
-        subStat: null,
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_GoldenVerdict.webp"
-    },
-    {
-        rank: 1,
-        nameVi: "Kiếm Li Cốt",
-        nameEn: "Serpent Spine",
-        subStat: null,
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.webp"
-    },
-    {
-        rank: 1,
         nameVi: "Nanh Sơn Vương",
         nameEn: "Fang of the Mountain King",
         subStat: null,
@@ -773,58 +751,14 @@ export const chongyun = {
     },
     {
         rank: 1,
-        nameVi: "Thiên Dương Rực Lửa",
-        nameEn: "A Thousand Blazing Suns",
+        nameVi: "Sắc Nước Makhaira",
+        nameEn: "Makhaira Aquamarine",
         subStat: null,
         isF2P: false,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_RadianceSword.webp"
-    },
-    {
-        rank: 1,
-        nameVi: "Hải Đăng Bờ Biển Lau",
-        nameEn: "Beacon of the Reed Sea",
-        subStat: null,
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Deshret.webp"
-    },
-    {
-        rank: 1,
-        nameVi: "Thiên Không Kiêu Ngạo",
-        nameEn: "Skyward Pride",
-        subStat: null,
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.webp"
-    },
-    {
-        rank: 1,
-        nameVi: "Xích Giác Phá Thạch Đao",
-        nameEn: "Redhorn Stonethresher",
-        subStat: null,
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.webp"
-    },
-    {
-        rank: 1,
-        nameVi: "Kiếm Vô Công",
-        nameEn: "The Unforged",
-        subStat: null,
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: null,
-        passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.webp"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Pleroma.webp"
     },
     {
         rank: 1,
@@ -850,36 +784,80 @@ export const chongyun = {
     },
     {
         rank: 1,
-        nameVi: "Sắc Nước Makhaira",
-        nameEn: "Makhaira Aquamarine",
+        nameVi: "Thiên Không Kiêu Ngạo",
+        nameEn: "Skyward Pride",
         subStat: null,
         isF2P: false,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Pleroma.webp"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.webp"
     },
     {
-        rank: 5,
-        nameVi: "Akuoumaru",
-        nameEn: "Akuoumaru",
+        rank: 1,
+        nameVi: "Thiên Dương Rực Lửa",
+        nameEn: "A Thousand Blazing Suns",
         subStat: null,
-        isF2P: true,
+        isF2P: false,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Maria.webp"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_RadianceSword.webp"
     },
     {
-        rank: 5,
-        nameVi: "Bóng Tối Thủy Triều",
-        nameEn: "Tidal Shadow",
+        rank: 1,
+        nameVi: "Phán Quyết",
+        nameEn: "Verdict",
         subStat: null,
-        isF2P: true,
+        isF2P: false,
         refinement: "R1",
         passiveDescVi: null,
         passiveDescEn: null,
-        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Vorpal.webp"
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_GoldenVerdict.webp"
+    },
+    {
+        rank: 1,
+        nameVi: "Kiếm Li Cốt",
+        nameEn: "Serpent Spine",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.webp"
+    },
+    {
+        rank: 1,
+        nameVi: "Kiếm Vô Công",
+        nameEn: "The Unforged",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.webp"
+    },
+    {
+        rank: 1,
+        nameVi: "Hải Đăng Bờ Biển Lau",
+        nameEn: "Beacon of the Reed Sea",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Deshret.webp"
+    },
+    {
+        rank: 1,
+        nameVi: "Xích Giác Phá Thạch Đao",
+        nameEn: "Redhorn Stonethresher",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.webp"
     },
     {
         rank: 5,
@@ -905,6 +883,17 @@ export const chongyun = {
     },
     {
         rank: 5,
+        nameVi: "Akuoumaru",
+        nameEn: "Akuoumaru",
+        subStat: null,
+        isF2P: true,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Maria.webp"
+    },
+    {
+        rank: 5,
         nameVi: "Đại Kiếm Tế Lễ",
         nameEn: "Sacrificial Greatsword",
         subStat: null,
@@ -913,17 +902,23 @@ export const chongyun = {
         passiveDescVi: null,
         passiveDescEn: null,
         iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Fossil.webp"
+    },
+    {
+        rank: 5,
+        nameVi: "Bóng Tối Thủy Triều",
+        nameEn: "Tidal Shadow",
+        subStat: null,
+        isF2P: true,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Vorpal.webp"
     }
 ],
   bestArtifacts: [
     {
-        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dòng Hồi Ức Bất Tận",
-        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Shimenawa's Reminiscence",
-        pieces: 2
-    },
-    {
-        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dấu Ấn Ngăn Cách",
-        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Emblem of Severed Fate",
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Noblesse Oblige",
         pieces: 2
     },
     {
@@ -932,13 +927,18 @@ export const chongyun = {
         pieces: 4
     },
     {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dòng Hồi Ức Bất Tận",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Shimenawa's Reminiscence",
+        pieces: 2
+    },
+    {
         setNameVi: "Mix 2 bộ Nghi Thức Tông Thất Cổ & 2 bộ Dòng Hồi Ức Bất Tận",
         setNameEn: "Mix 2-Piece Noblesse Oblige & 2-Piece Shimenawa's Reminiscence",
         pieces: 2
     },
     {
-        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
-        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Noblesse Oblige",
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Dấu Ấn Ngăn Cách",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Emblem of Severed Fate",
         pieces: 2
     }
 ]

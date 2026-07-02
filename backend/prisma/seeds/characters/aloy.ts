@@ -502,6 +502,24 @@ export const aloy = {
         description: "Aloy's Cryo attacks trigger Melt with Xiangling's Pyro for high damage.\nAloy's Cryo attachment reacts with Pyro from Xiangling to trigger Melting, maximizing Aloy's DMG.",
         members: [
             {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Uses Melt to amplify damage.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "xiangling",
                 role: "Sub DPS",
                 roleDesc: "Provides continuous Pyro via Burst for Aloy's Melt.",
@@ -539,24 +557,6 @@ export const aloy = {
                 ]
             },
             {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Uses Melt to amplify damage.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Burst provides ATK buff and healing to the team.",
@@ -581,22 +581,21 @@ export const aloy = {
         description: "In this team, Kokomi's Skill applies Hydro every 2s, enabling Freeze with Ayaka and Aloy. Kazuha groups enemies and boosts Cryo damage. Aloy acts as a sub-DPS with her Burst.\nConstantly apply Hydro via Kokomi's Skill and Cryo via Ayaka and Aloy to maintain permanent Freeze. Kazuha groups enemies and enhances Cryo damage.",
         members: [
             {
-                characterId: "sangonomiya-kokomi",
-                role: "Support",
-                roleDesc: "Her Skill applies Hydro every 2s, triggering Tenacity of the Millelith. She uses Thrilling Tales to buff Ayaka.",
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
+                roleDesc: "Her Burst deals massive damage and applies Cryo for Freeze.",
                 weapons: [
-                    "Everlasting Moonglow",
-                    "Thrilling Tales of Dragon Slayers"
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
                 ],
                 artifacts: [
-                    "Tenacity of the Millelith"
+                    "Blizzard Strayer"
                 ],
                 substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "ATK%",
-                    "Elemental Mastery"
+                    "Energy Recharge"
                 ]
             },
             {
@@ -618,6 +617,25 @@ export const aloy = {
                 ]
             },
             {
+                characterId: "sangonomiya-kokomi",
+                role: "Support",
+                roleDesc: "Her Skill applies Hydro every 2s, triggering Tenacity of the Millelith. She uses Thrilling Tales to buff Ayaka.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
                 characterId: "kaedehara-kazuha",
                 role: "Support",
                 roleDesc: "Groups enemies, reduces Anemo RES, and boosts party Cryo damage.",
@@ -633,24 +651,6 @@ export const aloy = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "kamisato-ayaka",
-                role: "Main DPS",
-                roleDesc: "Her Burst deals massive damage and applies Cryo for Freeze.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -670,24 +670,6 @@ export const aloy = {
                 ],
                 artifacts: [
                     "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "jean",
-                role: "Support",
-                roleDesc: "Healer/Support. Uses Viridescent Venerer to reduce enemy Anemo resistance and heal the team.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -731,6 +713,24 @@ export const aloy = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "jean",
+                role: "Support",
+                roleDesc: "Healer/Support. Uses Viridescent Venerer to reduce enemy Anemo resistance and heal the team.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -739,6 +739,24 @@ export const aloy = {
         rank: "A",
         description: "Klee serves as the main DPS, triggering Melt with Cryo applied by Aloy. Sucrose boosts Elemental Mastery, and Bennett provides ATK buff and healing.",
         members: [
+            {
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Provides continuous Pyro DMG for Melting reactions.",
+                weapons: [
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
+                ],
+                artifacts: [
+                    "Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
             {
                 characterId: "sucrose",
                 role: "Sub DPS",
@@ -755,23 +773,6 @@ export const aloy = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -793,21 +794,20 @@ export const aloy = {
                 ]
             },
             {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Provides continuous Pyro DMG for Melting reactions.",
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
                 weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
+                    "Skyward Blade",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "Crimson Witch of Flames"
+                    "Noblesse Oblige"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -817,6 +817,24 @@ export const aloy = {
         rank: "A",
         description: "A freeze composition featuring Aloy as the main Cryo DPS, supported by Mona for Hydro application, Venti for crowd control, and Diona for shielding and healing.\nAloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze, locking down enemies while Venti groups them and Diona provides survivability.",
         members: [
+            {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Aloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "mona",
                 role: "Sub DPS",
@@ -837,23 +855,6 @@ export const aloy = {
                 ]
             },
             {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona provides shield, healing, and helps battery.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "venti",
                 role: "Sub DPS",
                 roleDesc: "Venti groups enemies and spreads Hydro with his Burst.",
@@ -871,20 +872,19 @@ export const aloy = {
                 ]
             },
             {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Aloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze.",
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Diona provides shield, healing, and helps battery.",
                 weapons: [
-                    "Amos' Bow",
-                    "Rust"
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
                 ],
                 artifacts: [
-                    "4pc Blizzard Strayer"
+                    "4pc Maiden Beloved"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -1009,19 +1009,14 @@ export const aloy = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Gilded Dreams",
-        pieces: 4
-    },
-    {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Emblem of Severed Fate",
-        pieces: 4
-    },
-    {
         setNameVi: "Nghi Thức Tông Thất Cổ",
         setNameEn: "Noblesse Oblige",
         pieces: 4
+    },
+    {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Giấc Mộng Hoàng Kim",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Gilded Dreams",
+        pieces: 2
     },
     {
         setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Nghi Thức Tông Thất Cổ",
@@ -1029,9 +1024,14 @@ export const aloy = {
         pieces: 2
     },
     {
-        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Giấc Mộng Hoàng Kim",
-        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Gilded Dreams",
-        pieces: 2
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4
+    },
+    {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Gilded Dreams",
+        pieces: 4
     }
 ]
 };

@@ -441,6 +441,24 @@ export const bennett = {
                 ]
             },
             {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporize with Klee.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Heart of Depth"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "sucrose",
                 role: "Support",
                 roleDesc: "Provides Elemental Mastery bonus to increase Vaporize DMG.",
@@ -474,24 +492,6 @@ export const bennett = {
                     "HP",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Elemental Burst applies Hydro continuously to trigger Vaporize with Klee.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Heart of Depth"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -501,18 +501,17 @@ export const bennett = {
         description: "A powerful mono-element Pyro team that maximizes Klee and Xiangling's damage with Kazuha's crowd control support and Bennett's ATK buff and healing.",
         members: [
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+                characterId: "klee",
+                role: "Main DPS",
+                roleDesc: "Klee is the main DPS, her DMG is amplified by Pyro in this team.",
                 weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
+                    "Lost Prayer to the Sacred Winds",
+                    "The Widsith"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "4pc Lavawalker"
                 ],
                 substats: [
-                    "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
@@ -537,6 +536,24 @@ export const bennett = {
                 ]
             },
             {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Provides huge ATK buff and healing.",
@@ -551,23 +568,6 @@ export const bennett = {
                     "HP%",
                     "HP",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "klee",
-                role: "Main DPS",
-                roleDesc: "Klee is the main DPS, her DMG is amplified by Pyro in this team.",
-                weapons: [
-                    "Lost Prayer to the Sacred Winds",
-                    "The Widsith"
-                ],
-                artifacts: [
-                    "4pc Lavawalker"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
                 ]
             }
         ]
@@ -656,24 +656,6 @@ export const bennett = {
         description: "A powerful Vaporize team featuring Hu Tao as main DPS, with Xingqiu providing consistent Hydro application, Sucrose buffing Elemental Mastery, and Bennett providing ATK buff and healing.",
         members: [
             {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "hu-tao",
                 role: "Main DPS",
                 roleDesc: "Hu Tao is the main DPS, her DMG is amplified by Vaporization in this team.",
@@ -710,6 +692,24 @@ export const bennett = {
                 ]
             },
             {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Provides Elemental Mastery bonus to team members, increasing the DMG of Vaporization.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Provides a large ATK buff and healing.",
@@ -733,6 +733,24 @@ export const bennett = {
         rank: "S",
         description: "Bennett provides huge ATK buff and healing, while Yoimiya triggers Vaporize with Xingqiu's Hydro application, and Kazuha groups enemies and buffs damage.",
         members: [
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Vaporization in this team.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "xingqiu",
                 role: "Sub DPS",
@@ -782,24 +800,6 @@ export const bennett = {
                 substats: [
                     "HP%",
                     "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Vaporization in this team.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
                     "Energy Recharge"
                 ]
             }
@@ -888,6 +888,24 @@ export const bennett = {
         description: "Bennett provides huge ATK buff and healing, while Tartaglia's DMG is amplified by Vaporize. Tartaglia triggers Vaporize with Xiangling's Burst, while Kazuha provides crowd control and elemental damage bonus, and Bennett provides ATK buff and healing.",
         members: [
             {
+                characterId: "tartaglia",
+                role: "Main DPS",
+                roleDesc: "Main DPS, DMG amplified by Vaporize.",
+                weapons: [
+                    "Polar Star",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Heart of Depth"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "xiangling",
                 role: "Sub DPS",
                 roleDesc: "Elemental Burst provides huge DMG and continuous Pyro for Vaporize.",
@@ -938,24 +956,6 @@ export const bennett = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "tartaglia",
-                role: "Main DPS",
-                roleDesc: "Main DPS, DMG amplified by Vaporize.",
-                weapons: [
-                    "Polar Star",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Heart of Depth"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -1179,23 +1179,23 @@ export const bennett = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Giáo Quan",
-        setNameEn: "Giáo Quan",
-        pieces: 4
-    },
-    {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         pieces: 4
     },
     {
-        setNameVi: "Ký Ức Rừng Sâu",
-        setNameEn: "Ký Ức Rừng Sâu",
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Nghi Thức Tông Thất Cổ",
         pieces: 4
     },
     {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Nghi Thức Tông Thất Cổ",
+        setNameVi: "Giáo Quan",
+        setNameEn: "Giáo Quan",
+        pieces: 4
+    },
+    {
+        setNameVi: "Ký Ức Rừng Sâu",
+        setNameEn: "Ký Ức Rừng Sâu",
         pieces: 4
     }
 ]

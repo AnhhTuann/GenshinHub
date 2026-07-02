@@ -424,6 +424,25 @@ export const sigewinne = {
         description: "A for-fun team where Traveler (Geo) and Zhongli's Geo construct resonance is the main DMG source, speeding up Sigewinne's passive. Sigewinne heals and boosts Skill DMG. Geo construct resonance between Traveler (Geo) and Zhongli triggers Sigewinne's passive talent for additional damage, while Furina provides off-field Hydro and DMG buffs.",
         members: [
             {
+                characterId: "traveler-geo",
+                role: "Main DPS",
+                roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
+                weapons: [
+                    "Primordial Jade Cutter",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "2pc Gladiator's Finale",
+                    "2pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
+                ]
+            },
+            {
                 characterId: "furina",
                 role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Supplies off-field Hydro attacks and massive damage buffs.",
@@ -458,25 +477,6 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "traveler-geo",
-                role: "Main DPS",
-                roleDesc: "Geo Main DPS. Places Geo constructs that resonate with Zhongli's pillars to deal AoE Geo damage.",
-                weapons: [
-                    "Primordial Jade Cutter",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "2pc Gladiator's Finale",
-                    "2pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
-                ]
-            },
-            {
                 characterId: "zhongli",
                 role: "Support",
                 roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
@@ -501,6 +501,25 @@ export const sigewinne = {
         description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
         members: [
             {
+                characterId: "alhaitham",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
+                weapons: [
+                    "Light of Foliar Incision",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "nilou",
                 role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Enables Bountiful Cores with her passive, dealing high AoE Bloom damage.",
@@ -515,22 +534,6 @@ export const sigewinne = {
                 substats: [
                     "HP%",
                     "Elemental Mastery",
-                    "HP"
-                ]
-            },
-            {
-                characterId: "sigewinne",
-                role: "Support",
-                roleDesc: "Hydro Support. Provides continuous healing to sustain the team from Bloom and Furina's drain, and buffs Skill DMG.",
-                weapons: [
-                    "Elegy for the End",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
                     "HP"
                 ]
             },
@@ -553,22 +556,19 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "alhaitham",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
+                characterId: "sigewinne",
+                role: "Support",
+                roleDesc: "Hydro Support. Provides continuous healing to sustain the team from Bloom and Furina's drain, and buffs Skill DMG.",
                 weapons: [
-                    "Light of Foliar Incision",
-                    "Wolf-Fang"
+                    "Elegy for the End",
+                    "Favonius Warbow"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
+                    "HP%",
+                    "HP"
                 ]
             }
         ]
@@ -578,6 +578,24 @@ export const sigewinne = {
         rank: "SS",
         description: "The team focuses on dealing Hydro damage, with Sigewinne providing healing and Elemental Skill damage buffs, while Yelan and Furina output damage and Kazuha provides grouping and resistance shred.",
         members: [
+            {
+                characterId: "yelan",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals high on-field single-target Hydro damage with coordinated attacks from Burst.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "furina",
                 role: "Sub DPS",
@@ -629,24 +647,6 @@ export const sigewinne = {
                 substats: [
                     "HP%",
                     "HP"
-                ]
-            },
-            {
-                characterId: "yelan",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high on-field single-target Hydro damage with coordinated attacks from Burst.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -731,24 +731,24 @@ export const sigewinne = {
         pieces: 4
     },
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Tenacity of the Millelith",
-        pieces: 4
-    },
-    {
         setNameVi: "Khúc Ca Ngày Cũ",
         setNameEn: "Song of Days Past",
         pieces: 4
     },
     {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Scroll of the Hero of Cinder City",
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Tenacity of the Millelith",
         pieces: 4
     },
     {
         setNameVi: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
         setNameEn: "2-piece Mix (HP% / HP%)",
         pieces: 2
+    },
+    {
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
+        pieces: 4
     }
 ]
 };

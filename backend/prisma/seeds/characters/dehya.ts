@@ -424,40 +424,6 @@ export const dehya = {
         description: "A mono-pyro team that focuses on maximizing Dehya's Elemental Burst damage with the support of Kazuha and Bennett. Maximize Dehya's Elemental Burst damage with Kazuha's Pyro DMG buff and resistance shred, and Bennett's ATK buff and healing.",
         members: [
             {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
                 characterId: "dehya",
                 role: "Main DPS",
                 roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
@@ -491,18 +457,11 @@ export const dehya = {
                     "Energy Recharge",
                     "ATK%"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Dehya Melt Team #2",
-        rank: "S",
-        description: "Ganyu's DMG is maximized by triggering Melt with Pyro from Dehya. Kazuha groups enemies and provides DMG buff, and Bennett provides ATK buff and healing. Ganyu triggers Melt with Pyro from Dehya's coordinated attacks, while Kazuha groups enemies and provides DMG buff, and Bennett boosts ATK and heals.",
-        members: [
+            },
             {
                 characterId: "kazuha",
                 role: "Support",
-                roleDesc: "Groups enemies, provides DMG buff, and reduces elemental resistance with Swirl.",
+                roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
                 weapons: [
                     "Freedom-Sworn",
                     "Iron Sting"
@@ -515,6 +474,47 @@ export const dehya = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Dehya Melt Team #2",
+        rank: "S",
+        description: "Ganyu's DMG is maximized by triggering Melt with Pyro from Dehya. Kazuha groups enemies and provides DMG buff, and Bennett provides ATK buff and healing. Ganyu triggers Melt with Pyro from Dehya's coordinated attacks, while Kazuha groups enemies and provides DMG buff, and Bennett boosts ATK and heals.",
+        members: [
+            {
+                characterId: "ganyu",
+                role: "Main DPS",
+                roleDesc: "Deals DMG via Burst and Charged Attack. Her attacks trigger Melt with Pyro from Dehya.",
+                weapons: [
+                    "Hunter's Path",
+                    "Hamayumi"
+                ],
+                artifacts: [
+                    "4pc Wanderer's Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -534,6 +534,24 @@ export const dehya = {
                 ]
             },
             {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, provides DMG buff, and reduces elemental resistance with Swirl.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Burst provides a large ATK buff and healing to teammates.",
@@ -548,11 +566,18 @@ export const dehya = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Dehya Melting Team #1",
+        rank: "S",
+        description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
+        members: [
             {
                 characterId: "ganyu",
                 role: "Main DPS",
-                roleDesc: "Deals DMG via Burst and Charged Attack. Her attacks trigger Melt with Pyro from Dehya.",
+                roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
                 weapons: [
                     "Hunter's Path",
                     "Hamayumi"
@@ -566,14 +591,7 @@ export const dehya = {
                     "ATK%",
                     "Energy Recharge"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Dehya Melting Team #1",
-        rank: "S",
-        description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
-        members: [
+            },
             {
                 characterId: "dehya",
                 role: "Support",
@@ -607,24 +625,6 @@ export const dehya = {
                 ]
             },
             {
-                characterId: "ganyu",
-                role: "Main DPS",
-                roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
-                weapons: [
-                    "Hunter's Path",
-                    "Hamayumi"
-                ],
-                artifacts: [
-                    "4pc Wanderer's Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Elemental Burst provides huge ATK buff and healing.",
@@ -648,22 +648,6 @@ export const dehya = {
         description: "A team focused on maximizing Dehya's Elemental Burst damage with support from Kazuha, Mona, and Bennett. Maximize Dehya's Elemental Burst damage using Kazuha's DMG buff and resistance shred, Mona's Omen and DMG increase, and Bennett's ATK buff.",
         members: [
             {
-                characterId: "mona",
-                role: "Support",
-                roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
-                weapons: [
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Instructor"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
                 characterId: "dehya",
                 role: "Main DPS",
                 roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
@@ -678,6 +662,22 @@ export const dehya = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "mona",
+                role: "Support",
+                roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
+                weapons: [
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Instructor"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
                 ]
             },
             {
@@ -721,6 +721,25 @@ export const dehya = {
         rank: "S",
         description: "Ayaka's high Elemental Burst damage is maximized by triggering Melt with Pyro from Dehya. Kazuha groups and buffs, while Bennett provides ATK buff and healing. Ayaka's high Burst damage is maximized by triggering Melt with Pyro applied by Dehya's coordinated attacks.",
         members: [
+            {
+                characterId: "ayaka",
+                role: "Main DPS",
+                roleDesc: "Ayaka's Elemental Burst deals high Cryo DMG which is maximized by Melting.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige",
+                    "2pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "dehya",
                 role: "Sub DPS",
@@ -770,25 +789,6 @@ export const dehya = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            },
-            {
-                characterId: "ayaka",
-                role: "Main DPS",
-                roleDesc: "Ayaka's Elemental Burst deals high Cryo DMG which is maximized by Melting.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige",
-                    "2pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -797,6 +797,24 @@ export const dehya = {
         rank: "A",
         description: "A Burgeon team where Dehya triggers cores with her Skill. Nahida applies Dendro, Xingqiu applies Hydro, and Kuki Shinobu provides healing and triggers Hyperbloom/Burgeon. Dehya triggers Burgeon using her Skill on Bloom cores created by Nahida and Xingqiu. Kuki Shinobu provides healing and triggers Hyperbloom.",
         members: [
+            {
+                characterId: "nahida",
+                role: "Main DPS",
+                roleDesc: "Mainly deals DMG via Skill connecting up to 8 enemies, and dealing Dendro DMG while triggering reactions. Her Burst buffs her skill based on teammates' elements.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "xingqiu",
                 role: "Sub DPS",
@@ -833,24 +851,6 @@ export const dehya = {
                 ]
             },
             {
-                characterId: "nahida",
-                role: "Main DPS",
-                roleDesc: "Mainly deals DMG via Skill connecting up to 8 enemies, and dealing Dendro DMG while triggering reactions. Her Burst buffs her skill based on teammates' elements.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "dehya",
                 role: "Support",
                 roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
@@ -872,21 +872,6 @@ export const dehya = {
         rank: "S",
         description: "A team that leverages Burning to enable Vaporize reactions, with two off-field Pyro supports boosting Mualani's damage. Use Burning (from Dendro/Emilie and Pyro supports) to set up constant Pyro aura for Mualani's Hydro attacks to trigger Vaporize, dealing massive damage.",
         members: [
-            {
-                characterId: "dehya",
-                role: "Support",
-                roleDesc: "Creates a field via Skill that unleashes coordinated AoE Pyro attacks when enemies take damage.",
-                weapons: [
-                    "Favonius Greatsword"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
             {
                 characterId: "mualani",
                 role: "Main DPS",
@@ -940,6 +925,21 @@ export const dehya = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "dehya",
+                role: "Support",
+                roleDesc: "Creates a field via Skill that unleashes coordinated AoE Pyro attacks when enemies take damage.",
+                weapons: [
+                    "Favonius Greatsword"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
                 ]
             }
         ]
@@ -1123,23 +1123,23 @@ export const dehya = {
         pieces: 4
     },
     {
-        setNameVi: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
-        setNameEn: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
-        pieces: 2
-    },
-    {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Dấu Ấn Ngăn Cách",
-        pieces: 4
-    },
-    {
         setNameVi: "Vầng Sáng Vourukasha",
         setNameEn: "Vầng Sáng Vourukasha",
         pieces: 4
     },
     {
+        setNameVi: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
+        setNameEn: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
+        pieces: 2
+    },
+    {
         setNameVi: "Thợ Săn Marechaussee",
         setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4
+    },
+    {
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Dấu Ấn Ngăn Cách",
         pieces: 4
     }
 ]

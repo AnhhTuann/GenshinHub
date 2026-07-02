@@ -424,6 +424,24 @@ export const raidenShogun = {
         description: "Raiden Shogun drives an electro charged team with high energy cost bursts, maximizing her own damage while providing energy and buffs.",
         members: [
             {
+                characterId: "raiden-shogun",
+                role: "Main DPS",
+                roleDesc: "Electro Main DPS. Drives the team with high energy cost bursts, maximizing damage and energy refund.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "kujou-sara",
                 role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Provides Electro CRIT DMG buff and ATK bonus for Raiden.",
@@ -473,24 +491,6 @@ export const raidenShogun = {
                     "Energy Recharge",
                     "CRIT Rate"
                 ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Main DPS",
-                roleDesc: "Electro Main DPS. Drives the team with high energy cost bursts, maximizing damage and energy refund.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
             }
         ]
     },
@@ -515,23 +515,6 @@ export const raidenShogun = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Anemo Support. Groups enemies and shreds resistance.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Xiphos' Moonlight"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate"
                 ]
             },
             {
@@ -569,6 +552,23 @@ export const raidenShogun = {
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Anemo Support. Groups enemies and shreds resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Xiphos' Moonlight"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate"
                 ]
             }
         ]
@@ -657,22 +657,6 @@ export const raidenShogun = {
         description: "Electro-Pyro overload team focusing on Raiden Shogun's Burst damage. Kujou Sara C6 provides CRIT DMG for Electro, Chevreuse shreds Pyro/Electro RES when Overload is triggered, while Bennett supplies huge ATK buffs and healing.",
         members: [
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and buffs ATK.",
-                weapons: [
-                    "Aquila Favonia",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
                 characterId: "raiden-shogun",
                 role: "Main DPS",
                 roleDesc: "Main DPS. Deals massive Electro damage with Burst.",
@@ -709,6 +693,22 @@ export const raidenShogun = {
                 ]
             },
             {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and buffs ATK.",
+                weapons: [
+                    "Aquila Favonia",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
                 characterId: "chevreuse",
                 role: "Support",
                 roleDesc: "Pyro Support. Shreds Pyro/Electro resistance and buffs team ATK%.",
@@ -732,38 +732,6 @@ export const raidenShogun = {
         rank: "S",
         description: "A team built around Raiden Shogun and Eula as dual carries. Superconduct enables Eula's physical Burst damage, while Raiden provides energy and burst buffs. Rosaria batteries Eula, and Bennett heals and buffs ATK.",
         members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and buffs ATK.",
-                weapons: [
-                    "Aquila Favonia",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "rosaria",
-                role: "Sub DPS",
-                roleDesc: "Cryo Sub DPS. Batteries Eula and shares CRIT Rate.",
-                weapons: [
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "raiden-shogun",
                 role: "Main DPS",
@@ -799,6 +767,38 @@ export const raidenShogun = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "rosaria",
+                role: "Sub DPS",
+                roleDesc: "Cryo Sub DPS. Batteries Eula and shares CRIT Rate.",
+                weapons: [
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and buffs ATK.",
+                weapons: [
+                    "Aquila Favonia",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
             }
         ]
     },
@@ -807,6 +807,24 @@ export const raidenShogun = {
         rank: "SS",
         description: "Raiden Shogun is the Electro trigger in the Hyperbloom team, with Yelan providing Hydro application and DMG, Nahida applying Dendro, and Baizhu for healing and shields.",
         members: [
+            {
+                characterId: "raiden-shogun",
+                role: "Main DPS",
+                roleDesc: "Electro trigger. Triggers Hyperbloom reactions on Dendro Cores with Elemental Skill.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "nahida",
                 role: "Sub DPS",
@@ -845,24 +863,6 @@ export const raidenShogun = {
                 ]
             },
             {
-                characterId: "raiden-shogun",
-                role: "Main DPS",
-                roleDesc: "Electro trigger. Triggers Hyperbloom reactions on Dendro Cores with Elemental Skill.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "baizhu",
                 role: "Support",
                 roleDesc: "Dendro Support. Provides shields, healing, and Hyperbloom reaction damage bonus.",
@@ -885,6 +885,24 @@ export const raidenShogun = {
         description: "Raiden Shogun serves as Main DPS, with Kujou Sara providing ATK bonus and CRIT DMG boost for Electro. Xiangling offers continuous Pyro DMG, and Bennett heals and buffs ATK.",
         members: [
             {
+                characterId: "raiden-shogun",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Drives the team with high energy cost bursts.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "xiangling",
                 role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Continuously applies Pyro off-field.",
@@ -901,22 +919,6 @@ export const raidenShogun = {
                     "Elemental Mastery",
                     "Energy Recharge",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and buffs ATK.",
-                weapons: [
-                    "Aquila Favonia",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
                 ]
             },
             {
@@ -938,21 +940,19 @@ export const raidenShogun = {
                 ]
             },
             {
-                characterId: "raiden-shogun",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Drives the team with high energy cost bursts.",
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and buffs ATK.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Aquila Favonia",
+                    "The Alley Flash"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
                     "Energy Recharge",
-                    "ATK%"
+                    "HP%"
                 ]
             }
         ]
@@ -1120,14 +1120,14 @@ export const raidenShogun = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
-        setNameEn: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
-        pieces: 2
-    },
-    {
         setNameVi: "Nghi Thức Tông Thất Cổ",
         setNameEn: "Nghi Thức Tông Thất Cổ",
         pieces: 4
+    },
+    {
+        setNameVi: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
+        setNameEn: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
+        pieces: 2
     },
     {
         setNameVi: "Dấu Ấn Ngăn Cách",

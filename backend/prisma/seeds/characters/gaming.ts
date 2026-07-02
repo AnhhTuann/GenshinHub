@@ -442,23 +442,6 @@ export const gaming = {
                 ]
             },
             {
-                characterId: "xianyun",
-                role: "Support",
-                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
-                weapons: [
-                    "Crane's Echoing Call",
-                    "Oathsworn Eye"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "ATK%",
-                    "ATK",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "xiangling",
                 role: "Sub DPS",
                 roleDesc: "Pyro Sub DPS. Deals high off-field Pyro DMG via Pyronado and Gouba.",
@@ -473,6 +456,23 @@ export const gaming = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "Anemo Support. Enables Plunging Attacks, provides team-wide healing, and buffs plunging DMG.",
+                weapons: [
+                    "Crane's Echoing Call",
+                    "Oathsworn Eye"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "ATK%",
+                    "ATK",
                     "Energy Recharge"
                 ]
             },
@@ -518,6 +518,24 @@ export const gaming = {
                 ]
             },
             {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, swirls elements to reduce resistance, and buffs Pyro DMG.",
@@ -549,24 +567,6 @@ export const gaming = {
                     "ATK",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -591,6 +591,24 @@ export const gaming = {
                     "CRIT Rate",
                     "ATK%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "ganyu",
+                role: "Sub DPS",
+                roleDesc: "Cryo Sub DPS. Her Burst provides continuous off-field Cryo application to trigger Melt.",
+                weapons: [
+                    "Hunter's Path",
+                    "Harp"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -626,24 +644,6 @@ export const gaming = {
                     "HP",
                     "CRIT Rate",
                     "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Sub DPS",
-                roleDesc: "Cryo Sub DPS. Her Burst provides continuous off-field Cryo application to trigger Melt.",
-                weapons: [
-                    "Hunter's Path",
-                    "Harp"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -822,23 +822,23 @@ export const gaming = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Lời Thề Đêm Dài",
-        setNameEn: "Long Night's Oath",
-        pieces: 4
-    },
-    {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Marechaussee Hunter",
-        pieces: 4
-    },
-    {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
         setNameEn: "Crimson Witch of Flames",
         pieces: 4
     },
     {
+        setNameVi: "Lời Thề Đêm Dài",
+        setNameEn: "Long Night's Oath",
+        pieces: 4
+    },
+    {
         setNameVi: "Giấc Mộng Hoàng Kim",
         setNameEn: "Gilded Dreams",
+        pieces: 4
+    },
+    {
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Marechaussee Hunter",
         pieces: 4
     }
 ]

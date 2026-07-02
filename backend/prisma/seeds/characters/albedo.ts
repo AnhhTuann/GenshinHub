@@ -424,16 +424,16 @@ export const albedo = {
         description: "ádad",
         members: [
             {
-                characterId: "aino",
-                role: "Sub DPS",
+                characterId: "albedo",
+                role: "Main DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
                 substats: []
             },
             {
-                characterId: "albedo",
-                role: "Main DPS",
+                characterId: "aino",
+                role: "Sub DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],

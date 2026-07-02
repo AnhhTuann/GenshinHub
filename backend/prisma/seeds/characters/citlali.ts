@@ -463,8 +463,8 @@ export const citlali = {
         description: "Ayaka tung Kỹ Năng Nộ để kích hoạt Đóng Băng với Thủy từ đồng đội. Citlali cung cấp khiên và giảm kháng Hỏa/Thủy, Furina cung cấp Thủy liên tục và buff sát thương, còn Escoffier hồi máu và giảm kháng Băng/Thủy.",
         members: [
             {
-                characterId: "citlali",
-                role: "Support",
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
@@ -479,8 +479,8 @@ export const citlali = {
                 substats: []
             },
             {
-                characterId: "kamisato-ayaka",
-                role: "Main DPS",
+                characterId: "citlali",
+                role: "Support",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
@@ -580,16 +580,16 @@ export const citlali = {
         description: "Đội hình xoay quanh sát thương Hỏa của Yoimiya được khuếch đại bởi phản ứng Bốc Hơi, với sát thương Thủy ngoài sân từ Furina và Yelan, cùng hỗ trợ từ Citlali cung cấp khiên và giảm kháng.",
         members: [
             {
-                characterId: "furina",
-                role: "Sub DPS",
+                characterId: "yoimiya",
+                role: "Main DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
                 substats: []
             },
             {
-                characterId: "yoimiya",
-                role: "Main DPS",
+                characterId: "furina",
+                role: "Sub DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
@@ -619,6 +619,14 @@ export const citlali = {
         description: "Gaming kích hoạt Tan Chảy với cấp Băng của Citlali, được cường hóa bởi buff Tấn Công Khi Đáp của Xianyun và buff tấn công của Bennett.",
         members: [
             {
+                characterId: "gaming",
+                role: "Main DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
                 characterId: "citlali",
                 role: "Support",
                 roleDesc: "",
@@ -637,14 +645,6 @@ export const citlali = {
             {
                 characterId: "bennett",
                 role: "Support",
-                roleDesc: "",
-                weapons: [],
-                artifacts: [],
-                substats: []
-            },
-            {
-                characterId: "gaming",
-                role: "Main DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
@@ -705,6 +705,14 @@ export const citlali = {
                 substats: []
             },
             {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "",
+                weapons: [],
+                artifacts: [],
+                substats: []
+            },
+            {
                 characterId: "xilonen",
                 role: "Support",
                 roleDesc: "",
@@ -715,14 +723,6 @@ export const citlali = {
             {
                 characterId: "citlali",
                 role: "Support",
-                roleDesc: "",
-                weapons: [],
-                artifacts: [],
-                substats: []
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],

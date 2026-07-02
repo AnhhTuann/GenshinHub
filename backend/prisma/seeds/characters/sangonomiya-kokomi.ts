@@ -424,24 +424,6 @@ export const sangonomiyaKokomi = {
         description: "Kokomi drives Electro-Charged reactions with Fischl and Beidou, while Kazuha provides elemental damage bonus, crowd control, VV shred and damage bonus.\n\nMaximize Electro-Charged damage using Kazuha's C2 bonus and consistent off-field Electro application from Fischl and Beidou.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Fischl (Electro Sub DPS), Beidou (Electro Sub DPS), Kaedehara Kazuha (Anemo Support)",
         members: [
             {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Oz provides continuous off-field Electro application to trigger Electro-Charged.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "sangonomiya-kokomi",
                 role: "Main DPS",
                 roleDesc: "Main DPS and driver. Max HP Hydro damage triggers Electro-Charged with Electro.",
@@ -458,6 +440,24 @@ export const sangonomiyaKokomi = {
                     "HP",
                     "ATK%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Oz provides continuous off-field Electro application to trigger Electro-Charged.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
                 ]
             },
             {
@@ -504,41 +504,6 @@ export const sangonomiyaKokomi = {
         description: "Kokomi acts as a Sub DPS, applying Hydro to enable Vaporize for Hu Tao. Kazuha (C2) provides DMG bonus and resistance shred. Bennett offers ATK buff and healing.\n\nMaximizes Vaporize damage by using Kokomi's consistent Hydro application and Kazuha's DMG bonus and resistance shred, while Bennett provides ATK buff and healing to sustain the team.\n\nTeam composition: Hu Tao (Pyro Main DPS), Sangonomiya Kokomi (Hydro Sub DPS), Kaedehara Kazuha (Anemo Support), Bennett (Pyro Support)",
         members: [
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides massive ATK buff and healing through Burst.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kaedehara-kazuha",
-                role: "Support",
-                roleDesc: "Groups enemies, provides Element DMG, reduces enemy resistance with Viridescent Venerer.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "hu-tao",
                 role: "Main DPS",
                 roleDesc: "Main DPS. HP changes amplify Vaporize damage. Uses Skill to convert HP to ATK.",
@@ -575,6 +540,41 @@ export const sangonomiyaKokomi = {
                     "ATK%",
                     "Elemental Mastery"
                 ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides massive ATK buff and healing through Burst.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Groups enemies, provides Element DMG, reduces enemy resistance with Viridescent Venerer.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
             }
         ]
     },
@@ -583,6 +583,25 @@ export const sangonomiyaKokomi = {
         rank: "SS",
         description: "A powerful Hyperbloom team with Kokomi on the on-field driver, Nahida for Dendro application, Raiden Shogun for triggering reactions, and Kazuha for grouping and buffs.\n\nKokomi drives the team with her Normal Attacks and Elemental Skill to create Dendro Cores, which are then triggered by Raiden Shogun's Elemental Skill to produce Hyperblooms. Nahida applies Dendro and boosts reactions, while Kazuha groups enemies and provides DMG buffs.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Nahida (Dendro Sub DPS), Raiden Shogun (Electro Sub DPS), Kaedehara Kazuha (Anemo Support)",
         members: [
+            {
+                characterId: "sangonomiya-kokomi",
+                role: "Main DPS",
+                roleDesc: "Main DPS and driver. continuous Hydro attacks react with Dendro to create Dendro Cores via Skill and Normal Attacks to trigger Hyperbloom.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Ocean-Hued Clam"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "Elemental Mastery",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "raiden-shogun",
                 role: "Sub DPS",
@@ -595,6 +614,25 @@ export const sangonomiyaKokomi = {
                     "4pc Flower of Paradise Lost"
                 ],
                 substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Deals DMG via Elemental Skill which connects up to 8 enemies and deals Dendro DMG. Burst buffs Skill based on teammates' elements. With two Hydro characters, the duration of her Burst is increased.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "Elemental Mastery",
                     "Energy Recharge",
                     "ATK%"
@@ -617,44 +655,6 @@ export const sangonomiyaKokomi = {
                     "CRIT Rate",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
-                roleDesc: "Main DPS and driver. continuous Hydro attacks react with Dendro to create Dendro Cores via Skill and Normal Attacks to trigger Hyperbloom.",
-                weapons: [
-                    "Everlasting Moonglow",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Ocean-Hued Clam"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Deals DMG via Elemental Skill which connects up to 8 enemies and deals Dendro DMG. Burst buffs Skill based on teammates' elements. With two Hydro characters, the duration of her Burst is increased.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
             }
         ]
     },
@@ -663,24 +663,6 @@ export const sangonomiyaKokomi = {
         rank: "S",
         description: "Ayaka and Shenhe apply Cryo, Kokomi applies Hydro to Freeze, Kazuha groups and buffs.\n\nUse Cryo from Ayaka and Shenhe with Kokomi's Hydro to trigger Freeze, while Kazuha provides crowd control, DMG buff, and resistance shred.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Shenhe (Cryo Sub DPS), Kaedehara Kazuha (Anemo Support), Sangonomiya Kokomi (Hydro Support)",
         members: [
-            {
-                characterId: "shenhe",
-                role: "Sub DPS",
-                roleDesc: "Provides Cryo bonus to Ayaka and increases DMG of attacks.",
-                weapons: [
-                    "Calamity Queller",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "2pc Gladiator's Finale + 2pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "ATK%",
-                    "Energy Recharge",
-                    "HP%",
-                    "CRIT Rate"
-                ]
-            },
             {
                 characterId: "kamisato-ayaka",
                 role: "Main DPS",
@@ -697,6 +679,24 @@ export const sangonomiyaKokomi = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "shenhe",
+                role: "Sub DPS",
+                roleDesc: "Provides Cryo bonus to Ayaka and increases DMG of attacks.",
+                weapons: [
+                    "Calamity Queller",
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "2pc Gladiator's Finale + 2pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "ATK%",
+                    "Energy Recharge",
+                    "HP%",
+                    "CRIT Rate"
                 ]
             },
             {
@@ -824,20 +824,22 @@ export const sangonomiyaKokomi = {
         description: "A powerful team centered on Kokomi as Main DPS, maximizing Vaporize damage with Kazuha (C2) bonus, Xiangling and Kokomi enable consistent Vaporize triggers.\n\nKokomi's Hydro application, combined with Xiangling's Pyro, triggers consistent Vaporize. Kazuha boosts damage and shreds resistance, while Bennett provides ATK buff and healing.\n\nTeam composition: Sangonomiya Kokomi (Hydro Main DPS), Xiangling (Pyro Sub DPS), Kaedehara Kazuha (Anemo Support), Bennett (Pyro Support)",
         members: [
             {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Provides massive ATK buff and healing with Bennett Burst.",
+                characterId: "sangonomiya-kokomi",
+                role: "Main DPS",
+                roleDesc: "Triggers Vaporize with Normal Attacks and Elemental Skill damage scales off Max HP.",
                 weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
+                    "Everlasting Moonglow",
+                    "Prototype Amber"
                 ],
                 artifacts: [
-                    "4pc Noblesse Oblige"
+                    "4pc Ocean-Hued Clam"
                 ],
                 substats: [
                     "HP%",
+                    "Energy Recharge",
                     "HP",
-                    "Energy Recharge"
+                    "ATK%",
+                    "Elemental Mastery"
                 ]
             },
             {
@@ -859,22 +861,20 @@ export const sangonomiyaKokomi = {
                 ]
             },
             {
-                characterId: "sangonomiya-kokomi",
-                role: "Main DPS",
-                roleDesc: "Triggers Vaporize with Normal Attacks and Elemental Skill damage scales off Max HP.",
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Provides massive ATK buff and healing with Bennett Burst.",
                 weapons: [
-                    "Everlasting Moonglow",
-                    "Prototype Amber"
+                    "Skyward Blade",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Ocean-Hued Clam"
+                    "4pc Noblesse Oblige"
                 ],
                 substats: [
                     "HP%",
-                    "Energy Recharge",
                     "HP",
-                    "ATK%",
-                    "Elemental Mastery"
+                    "Energy Recharge"
                 ]
             },
             {
@@ -903,22 +903,21 @@ export const sangonomiyaKokomi = {
         description: "A permafrost team with Kokomi providing consistent Hydro application via her Skill enabling Ayaka and Rosaria to trigger Freeze, constantly. Kazuha groups enemies, applies crowd control, provides DMG buffs, and reduces enemy Anemo RES with Viridescent Venerer.\n\nKokomi's Skill applies Hydro every 2 seconds, which reacts with Cryo from Ayaka and Rosaria to trigger Freeze, locking down enemies. Kazuha amplifies damage and groups them.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Rosaria (Cryo Sub DPS), Sangonomiya Kokomi (Hydro Support), Kaedehara Kazuha (Anemo Support)",
         members: [
             {
-                characterId: "sangonomiya-kokomi",
-                role: "Support",
-                roleDesc: "Healer. Skill provides off-field Hydro application via Skill triggering Tenacity of the Millelith to buff the team.",
+                characterId: "kamisato-ayaka",
+                role: "Main DPS",
+                roleDesc: "Ayaka's high DMG attacks are key, providing Cryo and reacting with Hydro.",
                 weapons: [
-                    "Everlasting Moonglow",
-                    "Thrilling Tales of Dragon Slayers"
+                    "Mistsplitter Reforged",
+                    "Amenoma Kageuchi"
                 ],
                 artifacts: [
-                    "4pc Tenacity of the Millelith"
+                    "4pc Blizzard Strayer"
                 ],
                 substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "ATK%",
-                    "Elemental Mastery"
+                    "Energy Recharge"
                 ]
             },
             {
@@ -940,21 +939,22 @@ export const sangonomiyaKokomi = {
                 ]
             },
             {
-                characterId: "kamisato-ayaka",
-                role: "Main DPS",
-                roleDesc: "Ayaka's high DMG attacks are key, providing Cryo and reacting with Hydro.",
+                characterId: "sangonomiya-kokomi",
+                role: "Support",
+                roleDesc: "Healer. Skill provides off-field Hydro application via Skill triggering Tenacity of the Millelith to buff the team.",
                 weapons: [
-                    "Mistsplitter Reforged",
-                    "Amenoma Kageuchi"
+                    "Everlasting Moonglow",
+                    "Thrilling Tales of Dragon Slayers"
                 ],
                 artifacts: [
-                    "4pc Blizzard Strayer"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
                     "ATK%",
-                    "Energy Recharge"
+                    "Elemental Mastery"
                 ]
             },
             {
@@ -982,6 +982,43 @@ export const sangonomiyaKokomi = {
         rank: "A",
         description: "Kokomi is a Sub DPS in the team. The Vaporize DMG of the whole team is maximized by Kazuha (C2)'s bonus, Yoimiya and Bennett allow the team to trigger Vaporize all the time.\n\nThis team maximizes Vaporize damage by combining Yoimiya's consistent Pyro application with Kokomi's Hydro application, while Kazuha provides DMG buffs and resistance shred, and Bennett provides ATK buff and healing.\n\nTeam composition: Yoimiya (Pyro Main DPS), Sangonomiya Kokomi (Hydro Sub DPS), Kaedehara Kazuha (Anemo Support), Bennett (Pyro Support)",
         members: [
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "Main DPS whose attacks trigger Vaporize consistently.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "sangonomiya-kokomi",
+                role: "Sub DPS",
+                roleDesc: "Applies Hydro with Skill to enable Vaporize for Yoimiya, also heals based on HP.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Ocean-Hued Clam"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
             {
                 characterId: "bennett",
                 role: "Support",
@@ -1015,43 +1052,6 @@ export const sangonomiyaKokomi = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "sangonomiya-kokomi",
-                role: "Sub DPS",
-                roleDesc: "Applies Hydro with Skill to enable Vaporize for Yoimiya, also heals based on HP.",
-                weapons: [
-                    "Everlasting Moonglow",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Ocean-Hued Clam"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "Main DPS whose attacks trigger Vaporize consistently.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
                 ]
             }
         ]
@@ -1142,13 +1142,13 @@ export const sangonomiyaKokomi = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Trái Tim Trầm Luân",
-        setNameEn: "Heart of Depth",
+        setNameVi: "Xà Cừ Đại Dương",
+        setNameEn: "Ocean-Hued Clam",
         pieces: 4
     },
     {
-        setNameVi: "Xà Cừ Đại Dương",
-        setNameEn: "Ocean-Hued Clam",
+        setNameVi: "Trái Tim Trầm Luân",
+        setNameEn: "Heart of Depth",
         pieces: 4
     },
     {

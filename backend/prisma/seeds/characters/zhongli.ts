@@ -424,23 +424,6 @@ export const zhongli = {
         description: "Zhongli acts as Support in the team. Ganyu provides Cryo, while Xiangling's Pyronado triggers Melt for Ganyu. Ganyu's Charge Attack applies Cryo, triggering Melt from Xiangling's Pyronado, while Zhongli's shield and Bennett's Burst provide safety and ATK buff.",
         members: [
             {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals massive Pyro damage off-field with Pyronado.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "ganyu",
                 role: "Main DPS",
                 roleDesc: "Cryo Main DPS. Triggers Melt on Pyro-affected enemies.",
@@ -455,6 +438,23 @@ export const zhongli = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals massive Pyro damage off-field with Pyronado.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "Energy Recharge"
                 ]
             },
@@ -598,6 +598,23 @@ export const zhongli = {
                 ]
             },
             {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to enable Vaporize.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Anemo Support. Groups enemies, shreds Pyro RES, and buffs elemental damage.",
@@ -631,23 +648,6 @@ export const zhongli = {
                     "HP",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to enable Vaporize.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -656,6 +656,24 @@ export const zhongli = {
         rank: "S",
         description: "Zhongli acts as Shield Support in the team. Eula's physical damage is maximized by Superconduct and aid of teammates. The team revolves around Eula's high damage physical Burst, amplified by Superconduct (triggered by Fischl's Skill) and RES reduction from Zhongli's Tenacity of the Millelith, while Chongyun reduces cooldown with C2.",
         members: [
+            {
+                characterId: "eula",
+                role: "Main DPS",
+                roleDesc: "Physical Main DPS. Unleashes massive physical damage via Burst.",
+                weapons: [
+                    "Song of Broken Pines",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Pale Flame"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "fischl",
                 role: "Sub DPS",
@@ -671,23 +689,6 @@ export const zhongli = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Provides strong shield and physical RES shred.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -710,20 +711,19 @@ export const zhongli = {
                 ]
             },
             {
-                characterId: "eula",
-                role: "Main DPS",
-                roleDesc: "Physical Main DPS. Unleashes massive physical damage via Burst.",
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Provides strong shield and physical RES shred.",
                 weapons: [
-                    "Song of Broken Pines",
-                    "Serpent Spine"
+                    "Staff of Homa",
+                    "Black Tassel"
                 ],
                 artifacts: [
-                    "4pc Pale Flame"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -814,40 +814,6 @@ export const zhongli = {
         description: "Zhongli is a Shield Support. The Electro DMG of Keqing is maximized by Aggravate. Keqing and Fischl apply off-field Electro, while Traveler (Dendro) applies Dendro to trigger Quicken, resulting in Aggravate reactions that boost Keqing's Electro DMG. Zhongli provides a shield and reduces enemy resistance with Shred.",
         members: [
             {
-                characterId: "traveler",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Applies Dendro off-field via Burst to maintain Quicken status.",
-                weapons: [
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield Support. Provides a safe environment, shield, and decreases enemy resistance with Shred.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "keqing",
                 role: "Main DPS",
                 roleDesc: "Electro Main DPS. Multi-stage attacks trigger Aggravate reactions to trigger extra damage.",
@@ -867,6 +833,23 @@ export const zhongli = {
                 ]
             },
             {
+                characterId: "traveler",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Applies Dendro off-field via Burst to maintain Quicken status.",
+                weapons: [
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "fischl",
                 role: "Sub DPS",
                 roleDesc: "Electro Sub DPS. Provides continuous off-field Electro damage to trigger Aggravate.",
@@ -883,6 +866,23 @@ export const zhongli = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield Support. Provides a safe environment, shield, and decreases enemy resistance with Shred.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -891,6 +891,24 @@ export const zhongli = {
         rank: "S",
         description: "Zhongli acts as Shield Support in the team. Ganyu's Cryo is main DPS, with constant Hydro application from Mona to trigger Freezing. Ganyu's Cryo attacks combined with Mona's Hydro application keep enemies frozen, while Venti groups them and Zhongli provides a safe shield and ATK buff.",
         members: [
+            {
+                characterId: "ganyu",
+                role: "Main DPS",
+                roleDesc: "Cryo Main DPS. Deals massive AoE Cryo damage via Charged Attacks.",
+                weapons: [
+                    "Amos' Bow",
+                    "Prototype Crescent"
+                ],
+                artifacts: [
+                    "4pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "venti",
                 role: "Support",
@@ -921,24 +939,6 @@ export const zhongli = {
                 substats: [
                     "HP%",
                     "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Main DPS",
-                roleDesc: "Cryo Main DPS. Deals massive AoE Cryo damage via Charged Attacks.",
-                weapons: [
-                    "Amos' Bow",
-                    "Prototype Crescent"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -1115,18 +1115,23 @@ export const zhongli = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Giáo Quan",
+        setNameEn: "Giáo Quan",
+        pieces: 4
+    },
+    {
+        setNameVi: "Phiến Đá Lâu Đời",
+        setNameEn: "Phiến Đá Lâu Đời",
+        pieces: 4
+    },
+    {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         pieces: 4
     },
     {
-        setNameVi: "Ký Ức Rừng Sâu",
-        setNameEn: "Ký Ức Rừng Sâu",
-        pieces: 4
-    },
-    {
-        setNameVi: "Giáo Quan",
-        setNameEn: "Giáo Quan",
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Thiên Nham Vững Chắc",
         pieces: 4
     },
     {
@@ -1135,13 +1140,8 @@ export const zhongli = {
         pieces: 2
     },
     {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Thiên Nham Vững Chắc",
-        pieces: 4
-    },
-    {
-        setNameVi: "Phiến Đá Lâu Đời",
-        setNameEn: "Phiến Đá Lâu Đời",
+        setNameVi: "Ký Ức Rừng Sâu",
+        setNameEn: "Ký Ức Rừng Sâu",
         pieces: 4
     }
 ]

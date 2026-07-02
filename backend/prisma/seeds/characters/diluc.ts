@@ -424,24 +424,6 @@ export const diluc = {
         description: "Diluc is the main DPS, his DMG amplified by Melt. Ayaka provides off-field Cryo via Burst for consistent melts. Sucrose boosts team Elemental Mastery and shreds resistance. Diona shields, heals, and helps battery Ayaka.",
         members: [
             {
-                characterId: "sucrose",
-                role: "Sub DPS",
-                roleDesc: "Sucrose provides Elemental Mastery bonus to team members, increasing the DMG of Melt.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "diluc",
                 role: "Main DPS",
                 roleDesc: "Diluc's DMG is amplified by Melt in this team.",
@@ -460,20 +442,21 @@ export const diluc = {
                 ]
             },
             {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona's shield provides a safe environment for team members and helps boost the recharge of Ayaka's Elemental Burst.",
+                characterId: "sucrose",
+                role: "Sub DPS",
+                roleDesc: "Sucrose provides Elemental Mastery bonus to team members, increasing the DMG of Melt.",
                 weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
                 ],
                 artifacts: [
-                    "4pc Maiden Beloved"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
                 ]
             },
             {
@@ -494,6 +477,23 @@ export const diluc = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Diona's shield provides a safe environment for team members and helps boost the recharge of Ayaka's Elemental Burst.",
+                weapons: [
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Maiden Beloved"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -502,23 +502,6 @@ export const diluc = {
         rank: "S",
         description: "Diluc's Pyro DMG is amplified by Vaporization reactions triggered by Xingqiu's continuous Hydro application, supported by Kazuha's elemental damage buff and resistance shred, and Zhongli's shielding and ATK buff.",
         members: [
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Provides a strong shield and increases team ATK with Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "diluc",
                 role: "Main DPS",
@@ -551,6 +534,23 @@ export const diluc = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Provides a strong shield and increases team ATK with Tenacity of the Millelith.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -598,23 +598,6 @@ export const diluc = {
                 ]
             },
             {
-                characterId: "xianyun",
-                role: "Support",
-                roleDesc: "Xianyun provides healing to team members and boosts Diluc's Plunging Attack damage.",
-                weapons: [
-                    "Crane's Echoing Call",
-                    "Oathsworn Eye"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "furina",
                 role: "Sub DPS",
                 roleDesc: "Furina's Burst provides DMG increase based on HP changes of allies. Her Skill drains allies' HP, which is restored by the healer.",
@@ -629,6 +612,23 @@ export const diluc = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xianyun",
+                role: "Support",
+                roleDesc: "Xianyun provides healing to team members and boosts Diluc's Plunging Attack damage.",
+                weapons: [
+                    "Crane's Echoing Call",
+                    "Oathsworn Eye"
+                ],
+                artifacts: [
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             },
@@ -675,6 +675,25 @@ export const diluc = {
                 ]
             },
             {
+                characterId: "ganyu",
+                role: "Sub DPS",
+                roleDesc: "Ganyu deals DMG mainly by Elemental Burst at backstage. Ganyu Cryo attachment reacts with Pyro attachment from Diluc to trigger Melt.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "2pc Blizzard Strayer",
+                    "2pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
                 characterId: "kazuha",
                 role: "Support",
                 roleDesc: "Kazuha can assist the team by grouping enemies together, applying crowd control, provide DMG buff to teammates and reduce Elemental Resistance of enemies.",
@@ -708,25 +727,6 @@ export const diluc = {
                     "HP",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Sub DPS",
-                roleDesc: "Ganyu deals DMG mainly by Elemental Burst at backstage. Ganyu Cryo attachment reacts with Pyro attachment from Diluc to trigger Melt.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "2pc Blizzard Strayer",
-                    "2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -735,23 +735,6 @@ export const diluc = {
         rank: "S",
         description: "Diluc is a Main DPS in the team. Diluc's DMG is amplified by Vaporization. Use Hydro from Xingqiu to enable Vaporize for Diluc. Albedo and Zhongli provide Geo resonance and shielding.",
         members: [
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Xingqiu's Elemental Burst continuously applies Hydro to trigger Vaporization with Diluc.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "diluc",
                 role: "Main DPS",
@@ -768,6 +751,23 @@ export const diluc = {
                     "CRIT Rate",
                     "ATK%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Xingqiu's Elemental Burst continuously applies Hydro to trigger Vaporization with Diluc.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -814,6 +814,24 @@ export const diluc = {
         description: "Diluc's Pyro DMG is amplified by Vaporization triggered by Xingqiu's Hydro application. Venti groups enemies and spreads Hydro, while Zhongli provides shields and ATK buff via Tenacity of the Millelith.",
         members: [
             {
+                characterId: "diluc",
+                role: "Main DPS",
+                roleDesc: "Diluc's DMG is amplified by Vaporization.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
                 characterId: "venti",
                 role: "Sub DPS",
                 roleDesc: "Elemental Burst groups enemies and spreads Hydro from Xingqiu.",
@@ -828,23 +846,6 @@ export const diluc = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield provides safety and ATK buff via Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -865,21 +866,20 @@ export const diluc = {
                 ]
             },
             {
-                characterId: "diluc",
-                role: "Main DPS",
-                roleDesc: "Diluc's DMG is amplified by Vaporization.",
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield provides safety and ATK buff via Tenacity of the Millelith.",
                 weapons: [
-                    "Wolf's Gravestone",
-                    "Serpent Spine"
+                    "Staff of Homa",
+                    "Black Tassel"
                 ],
                 artifacts: [
-                    "4pc Crimson Witch of Flames"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
                 ]
             }
         ]
@@ -889,23 +889,6 @@ export const diluc = {
         rank: "S",
         description: "Diluc's DMG is amplified by Vaporization with Xingqiu's Hydro application, Sucrose provides Elemental Mastery buff, and Bennett provides ATK buff and healing.",
         members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "diluc",
                 role: "Main DPS",
@@ -956,6 +939,23 @@ export const diluc = {
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -1140,13 +1140,8 @@ export const diluc = {
         pieces: 2
     },
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Giấc Mộng Hoàng Kim",
-        pieces: 4
-    },
-    {
-        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameVi: "Lễ Bế Mạc Của Giác Đấu Sĩ",
+        setNameEn: "Lễ Bế Mạc Của Giác Đấu Sĩ",
         pieces: 4
     },
     {
@@ -1155,8 +1150,13 @@ export const diluc = {
         pieces: 4
     },
     {
-        setNameVi: "Lễ Bế Mạc Của Giác Đấu Sĩ",
-        setNameEn: "Lễ Bế Mạc Của Giác Đấu Sĩ",
+        setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+        setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+        pieces: 4
+    },
+    {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Giấc Mộng Hoàng Kim",
         pieces: 4
     }
 ]

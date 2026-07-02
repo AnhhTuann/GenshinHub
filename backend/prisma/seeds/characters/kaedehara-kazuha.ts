@@ -525,13 +525,13 @@ export const kaedeharaKazuha = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Bóng Hình Màu Xanh",
-        setNameEn: "Bóng Hình Màu Xanh",
+        setNameVi: "Như Sấm Thịnh Nộ",
+        setNameEn: "Như Sấm Thịnh Nộ",
         pieces: 4
     },
     {
-        setNameVi: "Như Sấm Thịnh Nộ",
-        setNameEn: "Như Sấm Thịnh Nộ",
+        setNameVi: "Bóng Hình Màu Xanh",
+        setNameEn: "Bóng Hình Màu Xanh",
         pieces: 4
     }
 ]

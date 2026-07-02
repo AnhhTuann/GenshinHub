@@ -424,6 +424,24 @@ export const arlecchino = {
         description: "Arlecchino is a Main DPS in the team. Leverage Arlecchino's Bond of Life to convert attacks to pyro/pyro element, enabling Vaporize reactions with Furina's element hydro/hydro application. Xilonen reduces enemy RES and heals, while Bennett provides ATK buff and additional healing.",
         members: [
             {
+                characterId: "arlecchino",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
+                weapons: [
+                    "Crimson Moon's Semblance",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Fragment of Harmonic Whimsy"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
+            {
                 characterId: "furina",
                 role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge damage buffs to the team.",
@@ -474,7 +492,14 @@ export const arlecchino = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Arlecchino Vaporize Team #1",
+        rank: "SS",
+        description: "A top-tier team centered on element pyro + hydro = Vaporize reactions, leveraging Arlecchino's high Bond of Life scaling damage. Arlecchino triggers Vaporize with Yelan's off-field hydro/hydro application, while Xilonen shreds RES and Bennett provides massive ATK buffs and healing.",
+        members: [
             {
                 characterId: "arlecchino",
                 role: "Main DPS",
@@ -492,14 +517,25 @@ export const arlecchino = {
                     "ATK%",
                     "Elemental Mastery"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Arlecchino Vaporize Team #1",
-        rank: "SS",
-        description: "A top-tier team centered on element pyro + hydro = Vaporize reactions, leveraging Arlecchino's high Bond of Life scaling damage. Arlecchino triggers Vaporize with Yelan's off-field hydro/hydro application, while Xilonen shreds RES and Bennett provides massive ATK buffs and healing.",
-        members: [
+            },
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and enables Vaporize reactions.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "xilonen",
                 role: "Support",
@@ -533,25 +569,14 @@ export const arlecchino = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            },
-            {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and enables Vaporize reactions.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Arlecchino Overload Team #2",
+        rank: "SS",
+        description: "Arlecchino Overload team with Chevreuse to reduce Pyro/Electro RES, Mavuika for off-field Pyro, and Ororon for extra damage. Leverage Overload to trigger Chevreuse's RES shred and ATK buff, while Mavuika and Ororon deal off-field damage.",
+        members: [
             {
                 characterId: "arlecchino",
                 role: "Main DPS",
@@ -569,14 +594,7 @@ export const arlecchino = {
                     "ATK%",
                     "Elemental Mastery"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Arlecchino Overload Team #2",
-        rank: "SS",
-        description: "Arlecchino Overload team with Chevreuse to reduce Pyro/Electro RES, Mavuika for off-field Pyro, and Ororon for extra damage. Leverage Overload to trigger Chevreuse's RES shred and ATK buff, while Mavuika and Ororon deal off-field damage.",
-        members: [
+            },
             {
                 characterId: "mavuika",
                 role: "Sub DPS",
@@ -628,7 +646,14 @@ export const arlecchino = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        name: "Arlecchino Melting Team #1",
+        rank: "SS",
+        description: "A high-damage Melt team centered on Arlecchino's Pyro attacks, supported by Citlali's shield and Cryo application for Melt reactions, while Xilonen shreds enemy RES and heals. Bennett offers a massive ATK buff and healing through his Burst.",
+        members: [
             {
                 characterId: "arlecchino",
                 role: "Main DPS",
@@ -646,14 +671,7 @@ export const arlecchino = {
                     "ATK%",
                     "Elemental Mastery"
                 ]
-            }
-        ]
-    },
-    {
-        name: "Arlecchino Melting Team #1",
-        rank: "SS",
-        description: "A high-damage Melt team centered on Arlecchino's Pyro attacks, supported by Citlali's shield and Cryo application for Melt reactions, while Xilonen shreds enemy RES and heals. Bennett offers a massive ATK buff and healing through his Burst.",
-        members: [
+            },
             {
                 characterId: "bennett",
                 role: "Support",
@@ -689,24 +707,6 @@ export const arlecchino = {
                 ]
             },
             {
-                characterId: "arlecchino",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
-                weapons: [
-                    "Crimson Moon's Semblance",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Fragment of Harmonic Whimsy"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
                 characterId: "xilonen",
                 role: "Support",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
@@ -731,6 +731,24 @@ export const arlecchino = {
         rank: "SS",
         description: "A pure element pyro + pyro team focused on maximizing Arlecchino's damage through buffs and resistance shred from Kazuha, Xilonen, and Bennett. Utilizes Kazuha's grouping and RES shred to further reduce enemy resistance.",
         members: [
+            {
+                characterId: "arlecchino",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
+                weapons: [
+                    "Crimson Moon's Semblance",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Fragment of Harmonic Whimsy"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
             {
                 characterId: "kazuha",
                 role: "Support",
@@ -764,24 +782,6 @@ export const arlecchino = {
                 ]
             },
             {
-                characterId: "arlecchino",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
-                weapons: [
-                    "Crimson Moon's Semblance",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Fragment of Harmonic Whimsy"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
                 characterId: "xilonen",
                 role: "Support",
                 roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
@@ -806,6 +806,24 @@ export const arlecchino = {
         rank: "SS",
         description: "Arlecchino Main DPS with Chiori sub DPS, Xilonen support, Bennett healer/buffer. Leverage Arlecchino's high Pyro damage with Bond of Life, supported by Bennett's ATK buff, Xilonen's RES shred and healing, and Chiori's off-field Geo damage.",
         members: [
+            {
+                characterId: "arlecchino",
+                role: "Main DPS",
+                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
+                weapons: [
+                    "Crimson Moon's Semblance",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Fragment of Harmonic Whimsy"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
             {
                 characterId: "chiori",
                 role: "Sub DPS",
@@ -843,24 +861,6 @@ export const arlecchino = {
                 ]
             },
             {
-                characterId: "arlecchino",
-                role: "Main DPS",
-                roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
-                weapons: [
-                    "Crimson Moon's Semblance",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Fragment of Harmonic Whimsy"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "ATK Buffer & Healer. Provides massive ATK buff and constant healing.",
@@ -884,24 +884,6 @@ export const arlecchino = {
         description: "A high-damage Melt team centered on Arlecchino's Pyro attacks, supported by Citlali's shield and Cryo application, Xilonen's RES shred and healing, and Kazuha's grouping and damage buffs.",
         members: [
             {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "arlecchino",
                 role: "Main DPS",
                 roleDesc: "Pyro Main DPS. Infuses attacks with Pyro based on Bond of Life scaling.",
@@ -917,6 +899,24 @@ export const arlecchino = {
                     "CRIT Rate",
                     "ATK%",
                     "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -1149,13 +1149,13 @@ export const arlecchino = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Dư Âm Tế Lễ",
-        setNameEn: "Echoes of an Offering",
-        pieces: 4
+        setNameVi: "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn",
+        setNameEn: "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn",
+        pieces: 2
     },
     {
-        setNameVi: "Sử Ký Đình Đài Cát",
-        setNameEn: "Desert Pavilion Chronicle",
+        setNameVi: "Dư Âm Tế Lễ",
+        setNameEn: "Echoes of an Offering",
         pieces: 4
     },
     {
@@ -1164,9 +1164,9 @@ export const arlecchino = {
         pieces: 4
     },
     {
-        setNameVi: "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn",
-        setNameEn: "Mix 2 bộ Tấn Công / Ma Nữ / Thợ Săn",
-        pieces: 2
+        setNameVi: "Sử Ký Đình Đài Cát",
+        setNameEn: "Desert Pavilion Chronicle",
+        pieces: 4
     },
     {
         setNameVi: "Mảnh Hài Hòa Bất Thường",

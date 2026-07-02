@@ -130,40 +130,6 @@ export const travelerHydro = {
         description: "A budget/F2P Vaporize team where Hydro Traveler triggers Vaporize reactions on their Elemental Skill and Burst, supported by Xiangling's Pyro application, Bennett's ATK buffs, and Sucrose's Elemental Mastery sharing.",
         members: [
             {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Anemo Support. Swirls Hydro/Pyro to shred enemy resistances and shares Elemental Mastery with the team.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "traveler-hydro",
                 role: "Main DPS",
                 roleDesc: "Hydro Main DPS. Triggers Vaporize reactions on their Skill and Burst hits on-field.",
@@ -198,6 +164,40 @@ export const travelerHydro = {
                     "Energy Recharge",
                     "ATK%"
                 ]
+            },
+            {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Anemo Support. Swirls Hydro/Pyro to shred enemy resistances and shares Elemental Mastery with the team.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%"
+                ]
             }
         ]
     },
@@ -225,23 +225,6 @@ export const travelerHydro = {
                 ]
             },
             {
-                characterId: "baizhu",
-                role: "Support",
-                roleDesc: "Dendro Support/Healer. Provides shielding, continuous healing, and boosts Bloom reaction damage.",
-                weapons: [
-                    "Jadefall's Splendor",
-                    "Prototype Amber"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP"
-                ]
-            },
-            {
                 characterId: "traveler-hydro",
                 role: "Sub DPS",
                 roleDesc: "Hydro Sub DPS. Provides off-field Hydro application from Burst to trigger Bloom reactions.",
@@ -257,6 +240,23 @@ export const travelerHydro = {
                     "CRIT Rate",
                     "CRIT DMG",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "baizhu",
+                role: "Support",
+                roleDesc: "Dendro Support/Healer. Provides shielding, continuous healing, and boosts Bloom reaction damage.",
+                weapons: [
+                    "Jadefall's Splendor",
+                    "Prototype Amber"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP"
                 ]
             },
             {
@@ -355,6 +355,11 @@ export const travelerHydro = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Thiên Nham Vững Chắc",
+        setNameEn: "Tenacity of the Millelith",
+        pieces: 4
+    },
+    {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Scroll of the Hero of Cinder City",
         pieces: 4
@@ -362,11 +367,6 @@ export const travelerHydro = {
     {
         setNameVi: "Giáo Quan",
         setNameEn: "Instructor",
-        pieces: 4
-    },
-    {
-        setNameVi: "Thiên Nham Vững Chắc",
-        setNameEn: "Tenacity of the Millelith",
         pieces: 4
     },
     {

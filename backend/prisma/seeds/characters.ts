@@ -592,7 +592,7 @@ const charactersData = [
       "Yumemizuki Mizuki|Anemo|Catalyst|5",
       "Iansan|Electro|Catalyst|4",
       "Varesa|Electro|Catalyst|5",
-      "Escoffier|Cryo|Catalyst|5",
+      "Escoffier|Cryo|Polearm|5",
       "Ifa|Anemo|Catalyst|4",
       "Skirk|Cryo|Sword|5",
       "Dahlia|Hydro|Sword|4",

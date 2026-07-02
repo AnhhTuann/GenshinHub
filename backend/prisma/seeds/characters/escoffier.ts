@@ -419,7 +419,85 @@ export const escoffier = {
   signatureWeapons: [
   "Symphonist of Scents"
 ],
-  teams: [],
+  teams: [
+    {
+      name: "Escoffier Permafrost",
+      rank: "S",
+      description: "A permafrost team that freezes enemies while Ayaka's Burst deals massive Cryo damage. Escoffier heals and shreds resistances.\n\nFreeze enemies with Cryo and Hydro reactions, then nuke with Ayaka's Burst. Shenhe boosts ATK and reduces Cryo RES. Furina provides off-field Hydro and DMG buff. Escoffier heals and shreds both Cryo and Hydro RES.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Shenhe (Cryo Sub DPS), Furina (Hydro Sub DPS), Escoffier (Cryo Support)",
+      members: [
+        { name: "Kamisato Ayaka", role: "Main DPS" },
+        { name: "Shenhe", role: "Sub DPS" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    },
+    {
+      name: "Escoffier Permafrost Team #2",
+      rank: "S",
+      description: "A permafreeze team with Ayaka as main DPS, Furina providing Hydro application and DMG buffs, Citlali shielding and shredding resistances, and Escoffier healing and further resistance shred.\n\nAyaka's Burst deals massive Cryo DMG while Furina provides continuous Hydro for Freeze. Citlali shields and reduces enemy Pyro/Hydro resistance, and Escoffier heals and reduces Cryo/Hydro resistance, enabling consistent Freeze uptime and high damage.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Citlali (Cryo Support), Furina (Hydro Sub DPS), Escoffier (Cryo Support)",
+      members: [
+        { name: "Kamisato Ayaka", role: "Main DPS" },
+        { name: "Citlali", role: "Support" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    },
+    {
+      name: "Escoffier Permafreeze Team",
+      rank: "S",
+      description: "A permafreeze team focusing on Cryo and Hydro application to freeze enemies, with Ayaka as the primary burst damage dealer. Escoffier provides resistance shred for both elements.\n\nFreeze enemies with continuous Cryo and Hydro application, then shatter them with Ayaka's burst. Escoffier enhances Cryo/Hydro damage and healing.\n\nTeam composition: Kamisato Ayaka (Cryo Main DPS), Charlotte (Cryo Support), Furina (Hydro Sub DPS), Escoffier (Cryo Support)",
+      members: [
+        { name: "Kamisato Ayaka", role: "Main DPS" },
+        { name: "Charlotte", role: "Support" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    },
+    {
+      name: "Escoffier Permafrost Team #4",
+      rank: "S",
+      description: "Freeze-focused team with Wriothesley as main DPS, Yelan and Furina providing off-field Hydro, and Escoffier healing and reducing Cryo/Hydro resistance.\n\nUse Wriothesley's Cryo damage with off-field Hydro from Yelan and Furina to trigger Freeze, while Escoffier heals and further reduces Cryo and Hydro resistance to boost damage.\n\nTeam composition: Wriothesley (Cryo Main DPS), Yelan (Hydro Sub DPS), Furina (Hydro Sub DPS), Escoffier (Cryo Support)",
+      members: [
+        { name: "Wriothesley", role: "Main DPS" },
+        { name: "Yelan", role: "Sub DPS" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    },
+    {
+      name: "Escoffier Pure Hydro Team #1",
+      rank: "SS",
+      description: "A team centered on reducing enemy Hydro and Cryo resistance while maximizing Neuvillette's Hydro damage. Escoffier and Xilonen provide healing and resistance shred, Furina boosts damage and applies Hydro.\n\nStack Hydro and Cryo characters to lower enemy resistance via Escoffier's skill and burst, while Furina's buffs and Neuvillette's high HP-scaling damage sweep the field.\n\nTeam composition: Neuvillette (Hydro Main DPS), Furina (Hydro Sub DPS), Xilonen (Geo Support), Escoffier (Cryo Support)",
+      members: [
+        { name: "Neuvillette", role: "Main DPS" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Xilonen", role: "Support" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    },
+    {
+      name: "Escoffier Pure Hydro Team #2",
+      rank: "SS",
+      description: "A team centered around Escoffier's resistance shred for Hydro and Cryo, with Furina providing DMG buffs and Neuvillette as the main damage dealer. Freeze provides crowd control.\n\nLeverage Escoffier's Skill and Burst to lower enemy Cryo and Hydro resistance, while Furina's Burst increases damage based on HP fluctuations. Neuvillette unleashes charged attacks for sustained Hydro damage.\n\nTeam composition: Neuvillette (Hydro Main DPS), Furina (Hydro Sub DPS), Charlotte (Cryo Support), Escoffier (Cryo Support)",
+      members: [
+        { name: "Neuvillette", role: "Main DPS" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Charlotte", role: "Support" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    },
+    {
+      name: "Escoffier Melting Team",
+      rank: "SS",
+      description: "A team centered around Mavuika triggering Melt reactions with Escoffier's Cryo application and resistance shred. Furina provides Hydro application and team-wide DMG buffs, while Bennett supplies ATK buffs and healing.\n\nEscoffier lowers enemies' Cryo and Hydro resistance, enabling Mavuika to deal massive Melt damage. Furina boosts damage via her Burst, and Bennett provides ATK buffs and sustain.\n\nTeam composition: Mavuika (Pyro Main DPS), Furina (Hydro Sub DPS), Bennett (Pyro Support), Escoffier (Cryo Support)",
+      members: [
+        { name: "Mavuika", role: "Main DPS" },
+        { name: "Furina", role: "Sub DPS" },
+        { name: "Bennett", role: "Support" },
+        { name: "Escoffier", role: "Support" }
+      ]
+    }
+  ],
   sands: ["ATK%","Energy Recharge"],
   goblet: ["Cryo DMG Bonus","ATK%"],
   circlet: ["CRIT Rate","CRIT DMG"],
@@ -640,6 +718,21 @@ export const escoffier = {
         setNameVi: "Đoàn Kịch Hoàng Kim",
         setNameEn: "Golden Troupe",
         pieces: 4
+    },
+    {
+        setNameVi: "Đoàn Kịch Hoàng Kim",
+        setNameEn: "Golden Troupe",
+        pieces: 4
+    },
+    {
+        setNameVi: "Dũng Sĩ Trong Băng Giá",
+        setNameEn: "Blizzard Strayer",
+        pieces: 4
+    },
+    {
+        setNameVi: "Mix 2 bộ Dũng Sĩ Trong Băng Giá & 2 bộ Đoàn Kịch Hoàng Kim",
+        setNameEn: "Mix 2-Piece Blizzard Strayer & 2-Piece Golden Troupe",
+        pieces: 2
     }
 ]
 };

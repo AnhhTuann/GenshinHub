@@ -432,7 +432,7 @@ export const charlotte = {
                     "Sacrificial Jade"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter"
+                    "Marechaussee Hunter"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -450,7 +450,7 @@ export const charlotte = {
                     "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
-                    "4pc Golden Troupe"
+                    "Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -468,7 +468,7 @@ export const charlotte = {
                     "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "Viridescent Venerer"
                 ],
                 substats: [
                     "Elemental Mastery",
@@ -485,8 +485,8 @@ export const charlotte = {
                     "Favonius Codex"
                 ],
                 artifacts: [
-                    "2pc Maiden Beloved",
-                    "2pc Gladiator's Finale"
+                    "Maiden Beloved",
+                    "Gladiator's Finale"
                 ],
                 substats: [
                     "Energy Recharge",
@@ -510,7 +510,7 @@ export const charlotte = {
                     "Sacrificial Jade"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter"
+                    "Marechaussee Hunter"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -528,7 +528,7 @@ export const charlotte = {
                     "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
-                    "4pc Golden Troupe"
+                    "Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -545,7 +545,7 @@ export const charlotte = {
                     "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "Viridescent Venerer"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -562,8 +562,8 @@ export const charlotte = {
                     "Favonius Codex"
                 ],
                 artifacts: [
-                    "2pc Maiden Beloved",
-                    "2pc Gladiator's Finale"
+                    "Maiden Beloved",
+                    "Gladiator's Finale"
                 ],
                 substats: [
                     "Energy Recharge",
@@ -587,7 +587,7 @@ export const charlotte = {
                     "The Widsith"
                 ],
                 artifacts: [
-                    "4pc Marechaussee Hunter"
+                    "Marechaussee Hunter"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -605,30 +605,13 @@ export const charlotte = {
                     "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
-                    "4pc Golden Troupe"
+                    "Golden Troupe"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "HP%",
                     "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "charlotte",
-                role: "Cryo Support",
-                roleDesc: "Elemental Burst provides healing and Cryo DMG for Freeze.",
-                weapons: [
-                    "Favonius Codex"
-                ],
-                artifacts: [
-                    "2pc Maiden Beloved",
-                    "2pc Gladiator's Finale"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "ATK%",
-                    "HP%"
                 ]
             },
             {
@@ -640,13 +623,30 @@ export const charlotte = {
                     "Iron Sting"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "Viridescent Venerer"
                 ],
                 substats: [
                     "Elemental Mastery",
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%"
+                ]
+            },
+            {
+                characterId: "charlotte",
+                role: "Cryo Support",
+                roleDesc: "Elemental Burst provides healing and Cryo DMG for Freeze.",
+                weapons: [
+                    "Favonius Codex"
+                ],
+                artifacts: [
+                    "Maiden Beloved",
+                    "Gladiator's Finale"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "ATK%",
+                    "HP%"
                 ]
             }
         ]
@@ -665,12 +665,30 @@ export const charlotte = {
                     "Serpent Spine"
                 ],
                 artifacts: [
-                    "4pc Pale Flame"
+                    "Pale Flame"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Hydro Sub DPS",
+                roleDesc: "Furina's Elemental Burst can provide DMG increase based on the change of HP of Furina's allies. This can be achieved as Furina's Elemental Skill can burn allies HP and the HP lost is restored by the Healer.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
                     "Energy Recharge"
                 ]
             },
@@ -683,31 +701,13 @@ export const charlotte = {
                     "\"The Catch\""
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "Emblem of Severed Fate"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "Energy Recharge",
                     "ATK%"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Hydro Sub DPS",
-                roleDesc: "Furina's Elemental Burst can provide DMG increase based on the change of HP of Furina's allies. This can be achieved as Furina's Elemental Skill can burn allies HP and the HP lost is restored by the Healer.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -718,8 +718,8 @@ export const charlotte = {
                     "Favonius Codex"
                 ],
                 artifacts: [
-                    "2pc Maiden Beloved",
-                    "2pc Gladiator's Finale"
+                    "Maiden Beloved",
+                    "Gladiator's Finale"
                 ],
                 substats: [
                     "Energy Recharge",

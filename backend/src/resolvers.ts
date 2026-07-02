@@ -180,7 +180,7 @@ export const resolvers = {
 
       const data = await prisma.character.findUnique({
         where: { id: args.id },
-        include: { bestWeapons: true, bestArtifacts: { orderBy: { order: 'asc' } }, teams: { include: { members: { orderBy: { order: 'asc' } } }, orderBy: { order: 'asc' } } },
+        include: { bestWeapons: { orderBy: { order: 'asc' } }, bestArtifacts: { orderBy: { order: 'asc' } }, teams: { include: { members: { orderBy: { order: 'asc' } } }, orderBy: { order: 'asc' } } },
       });
       if (!data) return null;
 

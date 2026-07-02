@@ -680,7 +680,7 @@ function parseChar(dataStr: string) {
     description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
     baseStats: { hp: 10000, atk: 300, def: 600 },
     fandomUrl: `https://genshin-impact.fandom.com/wiki/${name.replace(/ /g, '_')}`,
-    bestWeapons: metaInfo ? metaInfo.bestWeapons.map((w: any) => ({
+    bestWeapons: metaInfo ? metaInfo.bestWeapons.map((w: any, index: number) => ({
       weaponId: w.nameVi.toLowerCase().replace(/ /g, '-'),
       nameVi: w.nameVi, nameEn: w.nameEn,
       rank: w.rank,
@@ -688,10 +688,11 @@ function parseChar(dataStr: string) {
       iconUrl: w.iconUrl,
       subStat: w.subStat,
       passiveDescVi: w.passiveDescVi, passiveDescEn: w.passiveDescEn,
-      refinement: parseInt(w.refinement.replace('R', '')) || 1
-    })) : defaultWeapons,
-    bestArtifacts: (metaInfo && metaInfo.bestArtifacts) ? metaInfo.bestArtifacts : [
-      { setNameVi: "Thánh Di Vật Đề Cử", setNameEn: "Thánh Di Vật Đề Cử", pieces: 4 }
+      refinement: parseInt(w.refinement.replace('R', '')) || 1,
+      order: index
+    })) : defaultWeapons.map((w, index) => ({ ...w, order: index })),
+    bestArtifacts: (metaInfo && metaInfo.bestArtifacts) ? metaInfo.bestArtifacts.map((a: any, index: number) => ({ ...a, order: index })) : [
+      { setNameVi: "Thánh Di Vật Đồ Cổ", setNameEn: "Thánh Di Vật Đồ Cổ", pieces: 4, order: 0 }
     ],
     tier: metaInfo?.tier || null,
     role: metaInfo?.role || null,

@@ -8,6 +8,7 @@
     "build": "npx prisma generate && tsc",
     "start": "node dist/src/index.js",
     "seed": "prisma db seed",
+    "export": "ts-node src/export-cli.ts",
     "sync-assets": "ts-node scripts/sync-assets.ts"
   },
   "prisma": {

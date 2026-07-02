@@ -418,6 +418,10 @@ export const aratakiItto = {
 ],
   signatureWeapons: [],
   teams: [],
+  sands: ["ATK%"],
+  goblet: ["Elemental DMG Bonus"],
+  circlet: ["CRIT Rate"],
+  subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%"],
   bestWeapons: [
     {
         rank: 1,
@@ -457,21 +461,7 @@ export const aratakiItto = {
     {
         setNameVi: "Thánh Di Vật Đề Cử",
         setNameEn: "Thánh Di Vật Đề Cử",
-        pieces: 4,
-        sands: [
-            "ATK%"
-        ],
-        goblet: [
-            "Elemental DMG Bonus"
-        ],
-        circlet: [
-            "CRIT Rate"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
+        pieces: 4
     }
 ]
 };

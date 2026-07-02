@@ -45,7 +45,10 @@ const cleanAndTranslate = (arr: string[], locale: string) => {
 
 interface Props {
   characterId: string;
-  firstArtifact: any;
+  sands: string[];
+  goblet: string[];
+  circlet: string[];
+  subStatsPriority: string[];
   talentPriority: string[];
 }
 
@@ -85,7 +88,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
   );
 }
 
-export default function EditableStatsSection({ characterId, firstArtifact, talentPriority }: Props) {
+export default function EditableStatsSection({ characterId, sands, goblet, circlet, subStatsPriority, talentPriority }: Props) {
   const locale = useLocale();
   const t = useTranslations('Character');
   const [isAdmin, setIsAdmin] = useState(false);
@@ -93,20 +96,18 @@ export default function EditableStatsSection({ characterId, firstArtifact, talen
   const [isEditingTalents, setIsEditingTalents] = useState(false);
 
   // Local state for optimistic updates
-  const [localSands, setLocalSands] = useState<string[]>(firstArtifact?.sands || []);
-  const [localGoblet, setLocalGoblet] = useState<string[]>(firstArtifact?.goblet || []);
-  const [localCirclet, setLocalCirclet] = useState<string[]>(firstArtifact?.circlet || []);
-  const [localSubStats, setLocalSubStats] = useState<string[]>(firstArtifact?.subStatsPriority || []);
+  const [localSands, setLocalSands] = useState<string[]>(sands || []);
+  const [localGoblet, setLocalGoblet] = useState<string[]>(goblet || []);
+  const [localCirclet, setLocalCirclet] = useState<string[]>(circlet || []);
+  const [localSubStats, setLocalSubStats] = useState<string[]>(subStatsPriority || []);
   const [localTalents, setLocalTalents] = useState<string[]>(talentPriority || []);
 
   useEffect(() => {
-    if (firstArtifact) {
-      setLocalSands(firstArtifact.sands || []);
-      setLocalGoblet(firstArtifact.goblet || []);
-      setLocalCirclet(firstArtifact.circlet || []);
-      setLocalSubStats(firstArtifact.subStatsPriority || []);
-    }
-  }, [firstArtifact]);
+    setLocalSands(sands || []);
+    setLocalGoblet(goblet || []);
+    setLocalCirclet(circlet || []);
+    setLocalSubStats(subStatsPriority || []);
+  }, [sands, goblet, circlet, subStatsPriority]);
 
   useEffect(() => {
     setLocalTalents(talentPriority || []);

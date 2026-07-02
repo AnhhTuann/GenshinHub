@@ -419,14 +419,32 @@ export const kamisatoAyato = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Ayato Burgeon",
+        name: "Ayato Hyperbloom",
         rank: "SS",
-        description: "A team that uses Hydro and Dendro to generate Bloom cores, then triggers Burgeon with Thoma's Burst.\n\nApply Dendro with Nahida and Hydro with Ayato and Yelan to create Bloom cores. Thoma's Burst triggers Burgeon on active character normal attacks.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Yelan (Hydro Sub DPS), Nahida (Dendro Sub DPS), Thoma (Pyro Support)",
+        description: "A high-damage Hyperbloom team leveraging Ayato's continuous Hydro application, Nahida's Dendro, and Kuki's Electro to trigger Hyperbloom, with Kazuha providing grouping and buffs.\n\nAyato's Skill applies Hydro to enemies, which reacts with Dendro from Nahida to create Bloom cores. Kuki's Electro Skill then triggers Hyperbloom for massive damage. Kazuha groups enemies and reduces Anemo resistance with <set>Viridescent Venerer</set>.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Nahida (Dendro Sub DPS), Kaedehara Kazuha (Anemo Support), Kuki Shinobu (Electro Support)",
         members: [
+            {
+                characterId: "kaedehara-kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies, applies crowd control, provides DMG buffs, and reduces Anemo resistance.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
             {
                 characterId: "nahida",
                 role: "Sub DPS",
-                roleDesc: "Applies Dendro with Skill and buffs Burst duration via teammate elements.",
+                roleDesc: "Nahida deals DMG via Skill connecting up to 8 enemies and triggering reactions. Her Burst buffs the Skill based on teammates' elements.",
                 weapons: [
                     "A Thousand Floating Dreams",
                     "Solar Pearl"
@@ -442,6 +460,50 @@ export const kamisatoAyato = {
                     "Energy Recharge"
                 ]
             },
+            {
+                characterId: "kuki-shinobu",
+                role: "Support",
+                roleDesc: "Kuki heals the team and triggers Hyperbloom with her Electro Skill. Maximize Elemental Mastery for high Hyperbloom damage.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kamisato-ayato",
+                role: "Main DPS",
+                roleDesc: "Ayato is the Main DPS, his continuous Hydro attacks trigger reactions.",
+                weapons: [
+                    "Haran Geppaku Futsu",
+                    "The Black Sword"
+                ],
+                artifacts: [
+                    "4pc Nymph's Dream"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Ayato Burgeon",
+        rank: "SS",
+        description: "A team that uses Hydro and Dendro to generate Bloom cores, then triggers Burgeon with Thoma's Burst.\n\nApply Dendro with Nahida and Hydro with Ayato and Yelan to create Bloom cores. Thoma's Burst triggers Burgeon on active character normal attacks.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Yelan (Hydro Sub DPS), Nahida (Dendro Sub DPS), Thoma (Pyro Support)",
+        members: [
             {
                 characterId: "kamisato-ayato",
                 role: "Main DPS",
@@ -462,20 +524,22 @@ export const kamisatoAyato = {
                 ]
             },
             {
-                characterId: "thoma",
-                role: "Support",
-                roleDesc: "Provides shield and triggers Burgeon via Burst. C6 boosts Ayato normal attack DMG.",
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Applies Dendro with Skill and buffs Burst duration via teammate elements.",
                 weapons: [
-                    "Kitain Cross Spear",
-                    "Black Tassel"
+                    "A Thousand Floating Dreams",
+                    "Solar Pearl"
                 ],
                 artifacts: [
-                    "4pc Flower of Paradise Lost"
+                    "4pc Deepwood Memories"
                 ],
                 substats: [
-                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
                     "Elemental Mastery",
-                    "HP%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -496,6 +560,103 @@ export const kamisatoAyato = {
                     "CRIT Rate",
                     "ATK%"
                 ]
+            },
+            {
+                characterId: "thoma",
+                role: "Support",
+                roleDesc: "Provides shield and triggers Burgeon via Burst. C6 boosts Ayato normal attack DMG.",
+                weapons: [
+                    "Kitain Cross Spear",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Flower of Paradise Lost"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "Elemental Mastery",
+                    "HP%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Ayato Pure Hydro Team #2",
+        rank: "SS",
+        description: "Ayato is a Main DPS. His damage is maximized by ATK SPD buff from Yun Jin and Jean.\n\nMaximize Ayato's damage using Yun Jin's Normal ATK buff and ATK SPD from C6 Yun Jin and C2 Jean. Jean also provides Viridescent Venerer shred for Hydro resistance.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Furina (Hydro Sub DPS), Yun Jin (Geo Support), Jean (Anemo Support)",
+        members: [
+            {
+                characterId: "yun-jin",
+                role: "Support",
+                roleDesc: "Provides Normal ATK Bonus and Normal ATK SPD Bonus (C6) to Ayato.",
+                weapons: [
+                    "Kitain Cross Spear",
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "4pc Husk of Opulent Dreams"
+                ],
+                substats: [
+                    "DEF%",
+                    "DEF",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "kamisato-ayato",
+                role: "Main DPS",
+                roleDesc: "DMG maximized by ATK SPD buff from Yun Jin and Jean.",
+                weapons: [
+                    "Haran Geppaku Futsu",
+                    "The Black Sword"
+                ],
+                artifacts: [
+                    "4pc Nymph's Dream"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Elemental Burst provides DMG increase based on HP changes. Elemental Skill burns allies HP.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "jean",
+                role: "Support",
+                roleDesc: "Healer, spreads element, reduces enemy RES. C2 gives 15% ATK SPD to all characters.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -504,6 +665,25 @@ export const kamisatoAyato = {
         rank: "SS",
         description: "Ayato is a Main DPS in the team. His DMG is maximized by Support's Artifacts and ATK SPD buff from Yun Jin.\n\nKazuha reduces Hydro resistance with Swirl, while Zhongli and Yun Jin provide shields and ATK SPD buffs, allowing Ayato to deal continuous Hydro damage.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Kaedehara Kazuha (Anemo Support), Yun Jin (Geo Support), Zhongli (Geo Support)",
         members: [
+            {
+                characterId: "yun-jin",
+                role: "Support",
+                roleDesc: "Provides Normal ATK Bonus and ATK SPD buff to Ayato via Burst.",
+                weapons: [
+                    "Kitain Cross Spear",
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "DEF%",
+                    "DEF",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "zhongli",
                 role: "Support",
@@ -557,347 +737,6 @@ export const kamisatoAyato = {
                     "CRIT Rate",
                     "ATK%"
                 ]
-            },
-            {
-                characterId: "yun-jin",
-                role: "Support",
-                roleDesc: "Provides Normal ATK Bonus and ATK SPD buff to Ayato via Burst.",
-                weapons: [
-                    "Kitain Cross Spear",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "DEF%",
-                    "DEF",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Ayato Hyperbloom",
-        rank: "SS",
-        description: "A high-damage Hyperbloom team leveraging Ayato's continuous Hydro application, Nahida's Dendro, and Kuki's Electro to trigger Hyperbloom, with Kazuha providing grouping and buffs.\n\nAyato's Skill applies Hydro to enemies, which reacts with Dendro from Nahida to create Bloom cores. Kuki's Electro Skill then triggers Hyperbloom for massive damage. Kazuha groups enemies and reduces Anemo resistance with <set>Viridescent Venerer</set>.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Nahida (Dendro Sub DPS), Kaedehara Kazuha (Anemo Support), Kuki Shinobu (Electro Support)",
-        members: [
-            {
-                characterId: "kaedehara-kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies, applies crowd control, provides DMG buffs, and reduces Anemo resistance.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "kamisato-ayato",
-                role: "Main DPS",
-                roleDesc: "Ayato is the Main DPS, his continuous Hydro attacks trigger reactions.",
-                weapons: [
-                    "Haran Geppaku Futsu",
-                    "The Black Sword"
-                ],
-                artifacts: [
-                    "4pc Nymph's Dream"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Nahida deals DMG via Skill connecting up to 8 enemies and triggering reactions. Her Burst buffs the Skill based on teammates' elements.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Solar Pearl"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kuki-shinobu",
-                role: "Support",
-                roleDesc: "Kuki heals the team and triggers Hyperbloom with her Electro Skill. Maximize Elemental Mastery for high Hyperbloom damage.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Gilded Dreams"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Ayato Electro-Charged Team #2",
-        rank: "S",
-        description: "Ayato drives Electro-Charged reactions with continuous Hydro application, while Fischl and Beidou provide off-field Electro. Jean (C2) heals, shreds resistance with Viridescent Venerer, and boosts attack speed.\n\nAyato's Hydro attacks react with Electro from Fischl and Beidou to trigger Electro-Charged, while Jean provides healing, Anemo RES shred, and attack speed buff at C2.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Fischl (Electro Sub DPS), Beidou (Electro Sub DPS), Jean (Anemo Support)",
-        members: [
-            {
-                characterId: "kamisato-ayato",
-                role: "Main DPS",
-                roleDesc: "Continuous Hydro attacks trigger Electro-Charged with off-field Electro.",
-                weapons: [
-                    "Haran Geppaku Futsu",
-                    "The Black Sword"
-                ],
-                artifacts: [
-                    "4pc Nymph's Dream"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "jean",
-                role: "Support",
-                roleDesc: "Heals, shreds Electro and Hydro RES with Viridescent Venerer, and provides 15% attack speed at C2.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Off-field Electro application via Skill to enable Electro-Charged. C6 is a significant upgrade.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "beidou",
-                role: "Sub DPS",
-                roleDesc: "Off-field Electro via Burst for consistent Electro-Charged.",
-                weapons: [
-                    "Skyward Pride",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige + 2pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Ayato Pure Hydro Team #2",
-        rank: "SS",
-        description: "Ayato is a Main DPS. His damage is maximized by ATK SPD buff from Yun Jin and Jean.\n\nMaximize Ayato's damage using Yun Jin's Normal ATK buff and ATK SPD from C6 Yun Jin and C2 Jean. Jean also provides Viridescent Venerer shred for Hydro resistance.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Furina (Hydro Sub DPS), Yun Jin (Geo Support), Jean (Anemo Support)",
-        members: [
-            {
-                characterId: "yun-jin",
-                role: "Support",
-                roleDesc: "Provides Normal ATK Bonus and Normal ATK SPD Bonus (C6) to Ayato.",
-                weapons: [
-                    "Kitain Cross Spear",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Husk of Opulent Dreams"
-                ],
-                substats: [
-                    "DEF%",
-                    "DEF",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "jean",
-                role: "Support",
-                roleDesc: "Healer, spreads element, reduces enemy RES. C2 gives 15% ATK SPD to all characters.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Elemental Burst provides DMG increase based on HP changes. Elemental Skill burns allies HP.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kamisato-ayato",
-                role: "Main DPS",
-                roleDesc: "DMG maximized by ATK SPD buff from Yun Jin and Jean.",
-                weapons: [
-                    "Haran Geppaku Futsu",
-                    "The Black Sword"
-                ],
-                artifacts: [
-                    "4pc Nymph's Dream"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Ayato Vaporize #1",
-        rank: "SS",
-        description: "Ayato and Hu Tao maximize Normal ATK DMG through Vaporize and ATK SPD buff from Yun Jin.\n\nAyato's continuous <element type='hydro'>Hydro</element> attacks enable Vaporize for Hu Tao, while Yun Jin boosts Normal ATK DMG and SPD. Zhongli provides shield and ATK buff.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Hu Tao (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
-        members: [
-            {
-                characterId: "yun-jin",
-                role: "Support",
-                roleDesc: "Provides Normal ATK Bonus and ATK SPD (C6) to both Ayato and Hu Tao.",
-                weapons: [
-                    "Kitain Cross Spear",
-                    "Favonius Lance"
-                ],
-                artifacts: [
-                    "4pc Husk of Opulent Dreams"
-                ],
-                substats: [
-                    "DEF%",
-                    "DEF",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kamisato-ayato",
-                role: "Main DPS",
-                roleDesc: "Continuous <element type='hydro'>Hydro</element> attacks apply <element type='hydro'>Hydro</element> for Vaporize. Burst increases Hu Tao's ATK SPD.",
-                weapons: [
-                    "Haran Geppaku Futsu",
-                    "The Black Sword"
-                ],
-                artifacts: [
-                    "4pc Nymph's Dream"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "hu-tao",
-                role: "Main DPS",
-                roleDesc: "Triggers Vaporize with <element type='pyro'>Pyro</element> application from Ayato. Switches to Ayato when Skill is on cooldown.",
-                weapons: [
-                    "Staff of Homa",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Crimson Witch of Flames"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Elemental Mastery",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "zhongli",
-                role: "Support",
-                roleDesc: "Shield provides safe environment and ATK boost via Tenacity of the Millelith.",
-                weapons: [
-                    "Staff of Homa",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -906,6 +745,24 @@ export const kamisatoAyato = {
         rank: "SS",
         description: "The Normal ATK DMG Output of Ayato and Yoimiya is maximized by Vaporization and ATK SPD buff from Yun Jin.\n\nAyato and Yoimiya alternate as on-field DPS, triggering Vaporize reactions. Yun Jin boosts their Normal ATK DMG and ATK SPD, while Zhongli provides shielding and ATK buff via Tenacity of the Millelith.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Yoimiya (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
         members: [
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "Deals Pyro DMG with Normal Attacks after Elemental Skill enabling Vaporize reactions.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "kamisato-ayato",
                 role: "Main DPS",
@@ -922,24 +779,6 @@ export const kamisatoAyato = {
                     "CRIT Rate",
                     "ATK%",
                     "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "Deals Pyro DMG with Normal Attacks after Elemental Skill enabling Vaporize reactions.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
                     "Energy Recharge"
                 ]
             },
@@ -982,66 +821,14 @@ export const kamisatoAyato = {
         ]
     },
     {
-        name: "Ayato Permafrost Team #2",
-        rank: "SS",
-        description: "A Freeze team where Ayato's <hydro>Hydro</hydro> attacks and Ganyu's <cryo>Cryo</cryo> Burst lock enemies in ice, while Venti groups them and Diona provides shield and energy.\n\nFreeze enemies using Ayato's Hydro application and Ganyu's Cryo Burst, grouped by Venti and protected by Diona.\n\nTeam composition: Ganyu (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Venti (Anemo Support), Diona (Cryo Support)",
+        name: "Ayato Electro-Charged Team #2",
+        rank: "S",
+        description: "Ayato drives Electro-Charged reactions with continuous Hydro application, while Fischl and Beidou provide off-field Electro. Jean (C2) heals, shreds resistance with Viridescent Venerer, and boosts attack speed.\n\nAyato's Hydro attacks react with Electro from Fischl and Beidou to trigger Electro-Charged, while Jean provides healing, Anemo RES shred, and attack speed buff at C2.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Fischl (Electro Sub DPS), Beidou (Electro Sub DPS), Jean (Anemo Support)",
         members: [
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Shield provides safety and <cryo>Cryo</cryo> battery for Ganyu.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "ganyu",
-                role: "Sub DPS",
-                roleDesc: "Deals <cryo>Cryo</cryo> via Burst and Charged Attack. Provides <cryo>Cryo</cryo> for Freeze.",
-                weapons: [
-                    "Hunter's Path",
-                    "Hamayumi"
-                ],
-                artifacts: [
-                    "2pc Noblesse Oblige + 2pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Support",
-                roleDesc: "Groups enemies with Burst and spreads <hydro>Hydro</hydro> for wider Freeze.",
-                weapons: [
-                    "Elegy for the End",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
             {
                 characterId: "kamisato-ayato",
                 role: "Main DPS",
-                roleDesc: "Continuous <hydro>Hydro</hydro> attacks trigger Freeze with <cryo>Cryo</cryo>. Burst boosts team Attack SPD.",
+                roleDesc: "Continuous Hydro attacks trigger Electro-Charged with off-field Electro.",
                 weapons: [
                     "Haran Geppaku Futsu",
                     "The Black Sword"
@@ -1056,6 +843,141 @@ export const kamisatoAyato = {
                     "HP%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Off-field Electro application via Skill to enable Electro-Charged. C6 is a significant upgrade.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "jean",
+                role: "Support",
+                roleDesc: "Heals, shreds Electro and Hydro RES with Viridescent Venerer, and provides 15% attack speed at C2.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "beidou",
+                role: "Sub DPS",
+                roleDesc: "Off-field Electro via Burst for consistent Electro-Charged.",
+                weapons: [
+                    "Skyward Pride",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige + 2pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Ayato Vaporize #1",
+        rank: "SS",
+        description: "Ayato and Hu Tao maximize Normal ATK DMG through Vaporize and ATK SPD buff from Yun Jin.\n\nAyato's continuous <element type='hydro'>Hydro</element> attacks enable Vaporize for Hu Tao, while Yun Jin boosts Normal ATK DMG and SPD. Zhongli provides shield and ATK buff.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Hu Tao (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
+        members: [
+            {
+                characterId: "hu-tao",
+                role: "Main DPS",
+                roleDesc: "Triggers Vaporize with <element type='pyro'>Pyro</element> application from Ayato. Switches to Ayato when Skill is on cooldown.",
+                weapons: [
+                    "Staff of Homa",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Crimson Witch of Flames"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Elemental Mastery",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kamisato-ayato",
+                role: "Main DPS",
+                roleDesc: "Continuous <element type='hydro'>Hydro</element> attacks apply <element type='hydro'>Hydro</element> for Vaporize. Burst increases Hu Tao's ATK SPD.",
+                weapons: [
+                    "Haran Geppaku Futsu",
+                    "The Black Sword"
+                ],
+                artifacts: [
+                    "4pc Nymph's Dream"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "zhongli",
+                role: "Support",
+                roleDesc: "Shield provides safe environment and ATK boost via Tenacity of the Millelith.",
+                weapons: [
+                    "Staff of Homa",
+                    "Black Tassel"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yun-jin",
+                role: "Support",
+                roleDesc: "Provides Normal ATK Bonus and ATK SPD (C6) to both Ayato and Hu Tao.",
+                weapons: [
+                    "Kitain Cross Spear",
+                    "Favonius Lance"
+                ],
+                artifacts: [
+                    "4pc Husk of Opulent Dreams"
+                ],
+                substats: [
+                    "DEF%",
+                    "DEF",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
             }
         ]
     },
@@ -1064,6 +986,25 @@ export const kamisatoAyato = {
         rank: "SS",
         description: "Ayato and Ayaka trigger Freeze with Hydro and Cryo while Kazuha groups enemies and Kokomi provides healing.\n\nAyaka applies Cryo off-field while Ayato and Kokomi provide consistent Hydro application to trigger Freeze. Kazuha groups enemies and buffs Cryo damage.\n\nTeam composition: Kamisato Ayaka (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Kaedehara Kazuha (Anemo Support), Sangonomiya Kokomi (Hydro Support)",
         members: [
+            {
+                characterId: "sangonomiya-kokomi",
+                role: "Support",
+                roleDesc: "Healer and Hydro applicator. Skill triggers Tenacity of the Millelith to buff team ATK and sustain Freeze.",
+                weapons: [
+                    "Everlasting Moonglow",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%",
+                    "Elemental Mastery"
+                ]
+            },
             {
                 characterId: "kamisato-ayaka",
                 role: "Sub DPS",
@@ -1102,25 +1043,6 @@ export const kamisatoAyato = {
                 ]
             },
             {
-                characterId: "sangonomiya-kokomi",
-                role: "Support",
-                roleDesc: "Healer and Hydro applicator. Skill triggers Tenacity of the Millelith to buff team ATK and sustain Freeze.",
-                weapons: [
-                    "Everlasting Moonglow",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
                 characterId: "kaedehara-kazuha",
                 role: "Support",
                 roleDesc: "Groups enemies with Skill and Burst, provides Elemental DMG Bonus to team and reduces enemy resistance with Viridescent Venerer.",
@@ -1139,8 +1061,90 @@ export const kamisatoAyato = {
                 ]
             }
         ]
+    },
+    {
+        name: "Ayato Permafrost Team #2",
+        rank: "SS",
+        description: "A Freeze team where Ayato's <hydro>Hydro</hydro> attacks and Ganyu's <cryo>Cryo</cryo> Burst lock enemies in ice, while Venti groups them and Diona provides shield and energy.\n\nFreeze enemies using Ayato's Hydro application and Ganyu's Cryo Burst, grouped by Venti and protected by Diona.\n\nTeam composition: Ganyu (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Venti (Anemo Support), Diona (Cryo Support)",
+        members: [
+            {
+                characterId: "kamisato-ayato",
+                role: "Main DPS",
+                roleDesc: "Continuous <hydro>Hydro</hydro> attacks trigger Freeze with <cryo>Cryo</cryo>. Burst boosts team Attack SPD.",
+                weapons: [
+                    "Haran Geppaku Futsu",
+                    "The Black Sword"
+                ],
+                artifacts: [
+                    "4pc Nymph's Dream"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "venti",
+                role: "Support",
+                roleDesc: "Groups enemies with Burst and spreads <hydro>Hydro</hydro> for wider Freeze.",
+                weapons: [
+                    "Elegy for the End",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Shield provides safety and <cryo>Cryo</cryo> battery for Ganyu.",
+                weapons: [
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Maiden Beloved"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "ganyu",
+                role: "Sub DPS",
+                roleDesc: "Deals <cryo>Cryo</cryo> via Burst and Charged Attack. Provides <cryo>Cryo</cryo> for Freeze.",
+                weapons: [
+                    "Hunter's Path",
+                    "Hamayumi"
+                ],
+                artifacts: [
+                    "2pc Noblesse Oblige + 2pc Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
     }
 ],
+  sands: ["Tấn Công%"],
+  goblet: ["Sát Thương Nguyên Tố Thủy"],
+  circlet: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích"],
+  subStatsPriority: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích","Tấn Công%","Hiệu Quả Nạp Nguyên Tố","HP%","Tinh Thông Nguyên Tố"],
   bestWeapons: [
     {
         rank: 1,
@@ -1310,188 +1314,44 @@ export const kamisatoAyato = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Thợ Săn Marechaussee",
-        setNameEn: "Thợ Săn Marechaussee",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
+        setNameVi: "Như Sấm Thịnh Nộ",
+        setNameEn: "Như Sấm Thịnh Nộ",
+        pieces: 4
     },
     {
         setNameVi: "Lễ Bế Mạc Của Giác Đấu Sĩ",
         setNameEn: "Lễ Bế Mạc Của Giác Đấu Sĩ",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Dũng Sĩ Trong Băng Giá",
-        setNameEn: "Dũng Sĩ Trong Băng Giá",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Như Sấm Thịnh Nộ",
-        setNameEn: "Như Sấm Thịnh Nộ",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
-        setNameEn: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
-        pieces: 2,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Giấc Mộng Thủy Tiên",
-        setNameEn: "Giấc Mộng Thủy Tiên",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Dư Âm Tế Lễ",
         setNameEn: "Dư Âm Tế Lễ",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 4
+    },
+    {
+        setNameVi: "Dũng Sĩ Trong Băng Giá",
+        setNameEn: "Dũng Sĩ Trong Băng Giá",
+        pieces: 4
+    },
+    {
+        setNameVi: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
+        setNameEn: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
+        pieces: 2
     },
     {
         setNameVi: "Trái Tim Trầm Luân",
         setNameEn: "Trái Tim Trầm Luân",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp Nguyên Tố",
-            "HP%",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 4
+    },
+    {
+        setNameVi: "Thợ Săn Marechaussee",
+        setNameEn: "Thợ Săn Marechaussee",
+        pieces: 4
+    },
+    {
+        setNameVi: "Giấc Mộng Thủy Tiên",
+        setNameEn: "Giấc Mộng Thủy Tiên",
+        pieces: 4
     }
 ]
 };

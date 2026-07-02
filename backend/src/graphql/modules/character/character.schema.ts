@@ -29,10 +29,6 @@ export const characterTypeDefs = `#graphql
     setNameEn: String!
     setNameVi: String!
     pieces: Int!
-    sands: [String!]!
-    goblet: [String!]!
-    circlet: [String!]!
-    subStatsPriority: [String!]!
     order: Int
     constellation: String
     iconUrl: String 
@@ -49,6 +45,7 @@ export const characterTypeDefs = `#graphql
     weapons: [String!]!
     artifacts: [String!]!
     substats: [String!]! 
+    order: Int
   }
   
   type TeamBuild { 
@@ -92,6 +89,10 @@ export const characterTypeDefs = `#graphql
     stats: JSON
     ascensionMats: JSON
     talentMats: JSON
+    sands: [String!]!
+    goblet: [String!]!
+    circlet: [String!]!
+    subStatsPriority: [String!]!
   }
   
   type CharacterBasic { 
@@ -128,10 +129,6 @@ export const characterTypeDefs = `#graphql
     setNameEn: String!
     setNameVi: String!
     pieces: Int!
-    sands: [String!]!
-    goblet: [String!]!
-    circlet: [String!]!
-    subStatsPriority: [String!]!
     constellation: String 
   }
 
@@ -181,6 +178,10 @@ export const characterTypeDefs = `#graphql
     stats: JSON
     ascensionMats: JSON
     talentMats: JSON
+    sands: [String!]
+    goblet: [String!]
+    circlet: [String!]
+    subStatsPriority: [String!]
   }
 
   type Mutation {
@@ -201,7 +202,7 @@ export const characterTypeDefs = `#graphql
     addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!, constellation: String): Boolean
     removeCharacterWeapon(id: String!): Boolean
     
-    addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, constellation: String): Boolean
+    addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, constellation: String): Boolean
     removeCharacterArtifact(id: String!): Boolean
     
     updateCharacterTalents(id: String!, talentPriority: [String!]!): Character

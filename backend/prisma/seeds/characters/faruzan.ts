@@ -418,6 +418,10 @@ export const faruzan = {
 ],
   signatureWeapons: [],
   teams: [],
+  sands: ["ATK%"],
+  goblet: ["Elemental DMG Bonus"],
+  circlet: ["CRIT Rate"],
+  subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%"],
   bestWeapons: [
     {
         rank: 4,
@@ -446,21 +450,7 @@ export const faruzan = {
     {
         setNameVi: "Thánh Di Vật Đề Cử",
         setNameEn: "Thánh Di Vật Đề Cử",
-        pieces: 4,
-        sands: [
-            "ATK%"
-        ],
-        goblet: [
-            "Elemental DMG Bonus"
-        ],
-        circlet: [
-            "CRIT Rate"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
+        pieces: 4
     }
 ]
 };

@@ -418,6 +418,10 @@ export const kaedeharaKazuha = {
 ],
   signatureWeapons: [],
   teams: [],
+  sands: ["Tinh Thông Nguyên Tố","Hiệu Quả Nạp"],
+  goblet: ["Tinh Thông Nguyên Tố"],
+  circlet: ["Tinh Thông Nguyên Tố"],
+  subStatsPriority: ["Energy Recharge","Elemental Mastery","CRIT Rate"],
   bestWeapons: [
     {
         rank: 1,
@@ -521,44 +525,14 @@ export const kaedeharaKazuha = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Như Sấm Thịnh Nộ",
-        setNameEn: "Như Sấm Thịnh Nộ",
-        pieces: 4,
-        sands: [
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Tinh Thông Nguyên Tố"
-        ],
-        circlet: [
-            "Tinh Thông Nguyên Tố"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "Elemental Mastery",
-            "CRIT Rate"
-        ]
-    },
-    {
         setNameVi: "Bóng Hình Màu Xanh",
         setNameEn: "Bóng Hình Màu Xanh",
-        pieces: 4,
-        sands: [
-            "Tinh Thông Nguyên Tố",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Tinh Thông Nguyên Tố"
-        ],
-        circlet: [
-            "Tinh Thông Nguyên Tố"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "Elemental Mastery",
-            "CRIT Rate"
-        ]
+        pieces: 4
+    },
+    {
+        setNameVi: "Như Sấm Thịnh Nộ",
+        setNameEn: "Như Sấm Thịnh Nộ",
+        pieces: 4
     }
 ]
 };

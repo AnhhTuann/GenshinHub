@@ -419,81 +419,6 @@ export const chevreuse = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Chevreuse Overload Team #3",
-        rank: "SS",
-        description: "Chevreuse is a Support/Healer in the team. The team's DMG is maximized by Chevreuse. Chevreuse's passive reduces Pyro and Electro RES when Overload is triggered, maximizing team DMG. Her Skill provides an ATK buff to Pyro and Electro characters based on her Max HP.",
-        members: [
-            {
-                characterId: "chevreuse",
-                role: "Support",
-                roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
-                weapons: [
-                    "Favonius Lance",
-                    "Black Tassel"
-                ],
-                artifacts: [
-                    "4pc Song of Days Past"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "raiden-shogun",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Triggers Electro attacks to enable Overload.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "yoimiya",
-                role: "Main DPS",
-                roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Chevreuse in this team.",
-                weapons: [
-                    "Thundering Pulse",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Shimenawa's Reminiscence"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
-                weapons: [
-                    "Aquila Favonia",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
         name: "Chevreuse Overload Team #1",
         rank: "SS",
         description: "Maximize team DMG with Chevreuse's Overload RES shred and ATK buff. Cyno drives with infused Electro attacks, Xiangling provides off-field Pyro DMG, and Bennett offers ATK buff and healing.",
@@ -531,15 +456,15 @@ export const chevreuse = {
                 ]
             },
             {
-                characterId: "cyno",
-                role: "Main DPS",
-                roleDesc: "Main DPS. Runs standard normal ATK with Electro DMG. Maximize stats for continuous combat.",
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
                 weapons: [
-                    "Staff of the Scarlet Sands",
-                    "Staff of Homa"
+                    "Engulfing Lightning",
+                    "The Catch"
                 ],
                 artifacts: [
-                    "4pc Gilded Dreams"
+                    "4pc Emblem of Severed Fate"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -550,15 +475,15 @@ export const chevreuse = {
                 ]
             },
             {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
+                characterId: "cyno",
+                role: "Main DPS",
+                roleDesc: "Main DPS. Runs standard normal ATK with Electro DMG. Maximize stats for continuous combat.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Staff of the Scarlet Sands",
+                    "Staff of Homa"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Gilded Dreams"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -592,9 +517,69 @@ export const chevreuse = {
                 ]
             },
             {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Support/Healer. Bennett provides huge ATK buff and healing.",
+                weapons: [
+                    "Aquila Favonia",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
                 characterId: "raiden-shogun",
                 role: "Main DPS",
                 roleDesc: "Main DPS. Runs on-field Electro attacks, fills team's energy with energy restoration. Triggers Overload with coordinated Pyro.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Chevreuse Overload Team #3",
+        rank: "SS",
+        description: "Chevreuse is a Support/Healer in the team. The team's DMG is maximized by Chevreuse. Chevreuse's passive reduces Pyro and Electro RES when Overload is triggered, maximizing team DMG. Her Skill provides an ATK buff to Pyro and Electro characters based on her Max HP.",
+        members: [
+            {
+                characterId: "raiden-shogun",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Triggers Electro attacks to enable Overload.",
                 weapons: [
                     "Engulfing Lightning",
                     "The Catch"
@@ -626,27 +611,46 @@ export const chevreuse = {
                 ]
             },
             {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
+                characterId: "chevreuse",
+                role: "Support",
+                roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
                 weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
+                    "Favonius Lance",
+                    "Black Tassel"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc Song of Days Past"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "yoimiya",
+                role: "Main DPS",
+                roleDesc: "Yoimiya is the main DPS, her DMG is amplified by Chevreuse in this team.",
+                weapons: [
+                    "Thundering Pulse",
+                    "Rust"
+                ],
+                artifacts: [
+                    "4pc Shimenawa's Reminiscence"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
+                    "Energy Recharge"
                 ]
             }
         ]
     }
 ],
+  sands: ["HP%","Hiệu Quả Nạp"],
+  goblet: ["HP%"],
+  circlet: ["HP%","Tăng Trị Liệu"],
+  subStatsPriority: ["Hiệu Quả Nạp","HP%","Tỷ Lệ Bạo Kích","HP","Tinh Thông Nguyên Tố"],
   bestWeapons: [
     {
         rank: 1,
@@ -717,142 +721,34 @@ export const chevreuse = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Nghi Thức Tông Thất Cổ",
-        setNameEn: "Noblesse Oblige",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "HP",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
-        setNameVi: "Khúc Ca Ngày Cũ",
-        setNameEn: "Song of Days Past",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "HP",
-            "Tinh Thông Nguyên Tố"
-        ]
-    },
-    {
         setNameVi: "Xà Cừ Đại Dương",
         setNameEn: "Ocean-Hued Clam",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "HP",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Mix 2 bộ (HP% / Tăng Trị Liệu / Dấu Ấn)",
         setNameEn: "2-piece Mix (HP% / Healing Bonus / Emblem of Severed Fate)",
-        pieces: 2,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "HP",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 2
+    },
+    {
+        setNameVi: "Nghi Thức Tông Thất Cổ",
+        setNameEn: "Noblesse Oblige",
+        pieces: 4
+    },
+    {
+        setNameVi: "Khúc Ca Ngày Cũ",
+        setNameEn: "Song of Days Past",
+        pieces: 4
     },
     {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Scroll of the Hero of Cinder City",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "HP",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Thiếu Nữ Đáng Yêu",
         setNameEn: "Maiden Beloved",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Hiệu Quả Nạp",
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "HP",
-            "Tinh Thông Nguyên Tố"
-        ]
+        pieces: 4
     }
 ]
 };

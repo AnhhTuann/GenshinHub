@@ -44,6 +44,11 @@ model Character {
   stats          Json?
   ascensionMats  Json?
   talentMats     Json?
+  
+  sands          String[]
+  goblet         String[]
+  circlet        String[]
+  subStatsPriority String[]
 
   @@index([element])
   @@index([rarity])
@@ -76,10 +81,6 @@ model CharacterArtifact {
   setNameEn        String
   setNameVi        String
   pieces           Int
-  sands            String[]
-  goblet           String[]
-  circlet          String[]
-  subStatsPriority String[]
   order            Int       @default(0)
   constellation    String?   @default("C0")
   character        Character @relation(fields: [characterId], references: [id])
@@ -109,6 +110,7 @@ model TeamMember {
   weapons     String[]
   artifacts   String[]
   substats    String[]
+  order       Int      @default(0)
   team        CharacterTeam @relation(fields: [teamId], references: [id], onDelete: Cascade)
   teamId      String
 

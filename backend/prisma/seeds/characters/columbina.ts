@@ -419,106 +419,24 @@ export const columbina = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Columbina Lunar-Charged Team #1",
-        rank: "SS",
-        description: "A team that leverages the Lunar-Charged reaction, converting Electro-Charged into enhanced Lunar damage.",
-        members: [
-            {
-                characterId: "ineffa",
-                role: "Support",
-                roleDesc: "Electro Support. Enhances Electro-related reactions and boosts elemental damage of the party.",
-                weapons: [
-                    "Fruitful Hook",
-                    "Lost Prayer to the Sacred Winds"
-                ],
-                artifacts: [
-                    "4pc Silken Moon's Serenade"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "columbina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides consistent off-field Hydro to enable reaction and buffs team energy.",
-                weapons: [
-                    "Nocturne's Curtain Call",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Tenacity of the Millelith"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "flins",
-                role: "Main DPS",
-                roleDesc: "Electro Main DPS. Triggers Electro-Charged and infuses normal attacks with Electro.",
-                weapons: [
-                    "Tome of the Eternal Flow",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Flute of Ezpitzal"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
         name: "Columbina Lunar-Charged Team",
         rank: "SS",
         description: "A reaction-based team built around Columbina's Lunar reaction mechanics. Columbina triggers Lunar Charged, while Ineffa converts Electro Charged into Lunar Charged and boosts its damage. Chasca shreds resistance and Jahoda heals while increasing EM.",
         members: [
             {
-                characterId: "columbina",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Deals high on-field Hydro damage and triggers frequent Lunar Charged reactions.",
+                characterId: "jahoda",
+                role: "Support",
+                roleDesc: "Anemo Support/Healer. Provides continuous healing, swirls elements, and increases team EM.",
                 weapons: [
-                    "Nocturne's Curtain Call",
-                    "Sacrificial Jade"
+                    "Elegy for the End",
+                    "Favonius Warbow"
                 ],
                 artifacts: [
-                    "4pc Silken Moon's Serenade"
+                    "4pc Viridescent Venerer"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
-                    "HP%",
                     "Energy Recharge",
                     "Elemental Mastery"
                 ]
@@ -542,6 +460,25 @@ export const columbina = {
                 ]
             },
             {
+                characterId: "columbina",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Deals high on-field Hydro damage and triggers frequent Lunar Charged reactions.",
+                weapons: [
+                    "Nocturne's Curtain Call",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Silken Moon's Serenade"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            },
+            {
                 characterId: "chasca",
                 role: "Sub DPS",
                 roleDesc: "Anemo Sub DPS. Swirls elements, groups enemies, and shreds elemental RES.",
@@ -556,257 +493,6 @@ export const columbina = {
                     "Elemental Mastery",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "jahoda",
-                role: "Support",
-                roleDesc: "Anemo Support/Healer. Provides continuous healing, swirls elements, and increases team EM.",
-                weapons: [
-                    "Elegy for the End",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Columbina Lunar Hyperbloom Team",
-        rank: "SS",
-        description: "A team that utilizes Lauma's Lunar Bloom transformation and Kuki Shinobu's Hyperbloom triggers.",
-        members: [
-            {
-                characterId: "yelan",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides high off-field single-target Hydro damage and ramping damage buff.",
-                weapons: [
-                    "Aqua Simulacra",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "columbina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Coordinates off-field Hydro attacks and triggers initial Dendro cores.",
-                weapons: [
-                    "Nocturne's Curtain Call",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Aubade of Morningstar and Moon"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "lauma",
-                role: "Support",
-                roleDesc: "Dendro Support. Supplies Dendro from off-field and converts blooms to Lunar Blooms.",
-                weapons: [
-                    "Nightcaster's Lasting Gaze",
-                    "Wandering Evenstar"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "kuki-shinobu",
-                role: "Support",
-                roleDesc: "Electro Trigger & Healer. Activates Hyperbloom on Dendro cores with Electro pulses.",
-                weapons: [
-                    "Key of Khaj-Nisut",
-                    "Xiphos' Moonlight"
-                ],
-                artifacts: [
-                    "4pc Flower of Paradise Lost",
-                    "4pc Gilded Dreams"
-                ],
-                substats: [
-                    "Elemental Mastery"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Columbina Lunar Bloom Team #3",
-        rank: "S",
-        description: "A team built around Lunar Bloom reactions, with Nefer as the main trigger and Lauma, Nahida, and Columbina providing support and off-field applications. Utilize the Lunar Bloom reaction enhanced by Lauma and triggered by Nefer, with off-field Dendro from Nahida and Hydro from Columbina to deal high damage.",
-        members: [
-            {
-                characterId: "nahida",
-                role: "Sub DPS",
-                roleDesc: "Nahida mainly deals DMG by her Elemental Skill, which connects 8 enemies at maximum and deals Dendro DMG to them while triggering elemental reactions. The Elemental Burst of Nahida buffs her Elemental Skill depends on the Element of her teammates.",
-                weapons: [
-                    "A Thousand Floating Dreams",
-                    "Wandering Evenstar"
-                ],
-                artifacts: [
-                    "4pc Silken Moon's Serenade"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "lauma",
-                role: "Support",
-                roleDesc: "Lauma transforms the traditional 'Bloom' reaction into 'Lunar Bloom', which has higher damage and can crit. Her elemental skill can accumulate layers of 'Hymn of Eternal Rest' in order to further boost the Lunar Bloom damage triggered by all teammates. She can also reduce enemies' Dendro and Hydro RES, and increase her own and the team's Lunar Bloom damage based on her EM.",
-                weapons: [
-                    "Nightweaver's Looking Glass",
-                    "Etherlight Spindlelute"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "nefer",
-                role: "Main DPS",
-                roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
-                weapons: [
-                    "Reliquary of Truth",
-                    "Dawning Frost"
-                ],
-                artifacts: [
-                    "4pc Night of the Sky's Unveiling"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "columbina",
-                role: "Sub DPS",
-                roleDesc: "Columbina uses her Elemental Skill to provide continuous off-field, AoE Hydro application or triggering Lunar reactions. At the same time, based on which Lunar reaction type occurs most frequently in the team, she deals the corresponding type of direct Lunar damage. Her Elemental Burst deploys an aura, with her talent, she can grant buffs to all three Lunar reactions: Lunar-Charged, Lunar Crystallize, and Lunar-Bloom.",
-                weapons: [
-                    "Nocturne's Curtain Call",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Aubade of Morningstar and Moon"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Columbina Lunar Bloom Team #1",
-        rank: "SS",
-        description: "A team focused on Lunar-Bloom reactions, with Nefer as main DPS, Lauma as support, Yaoyao as healer, and Columbina as sub DPS/Support.",
-        members: [
-            {
-                characterId: "nefer",
-                role: "Main DPS",
-                roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
-                weapons: [
-                    "Reliquary of Truth",
-                    "Dawning Frost"
-                ],
-                artifacts: [
-                    "4pc Night of the Sky's Unveiling"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery"
-                ]
-            },
-            {
-                characterId: "yaoyao",
-                role: "Support",
-                roleDesc: "Yaoyao provides healing and shield. At C1, increases Dendro DMG of teammates.",
-                weapons: [
-                    "Dialogues of the Desert Sages"
-                ],
-                artifacts: [
-                    "4pc Silken Moon's Serenade"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "lauma",
-                role: "Support",
-                roleDesc: "Lauma transforms Bloom into Lunar-Bloom, which has higher damage and can crit. Her Skill accumulates Hymn of Eternal Rest to boost Lunar-Bloom damage. She reduces enemies' Dendro and Hydro RES, and increases team's Lunar-Bloom damage based on EM.",
-                weapons: [
-                    "Nightweaver's Looking Glass",
-                    "Etherlight Spindlelute"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "columbina",
-                role: "Sub DPS",
-                roleDesc: "Columbina uses her Skill to provide continuous off-field AoE Hydro application or triggering Lunar reactions. Based on which Lunar reaction type occurs most frequently, she deals corresponding Lunar damage. Her Burst deploys an aura that buffs Lunar-Charged, Lunar Crystallize, and Lunar-Bloom.",
-                weapons: [
-                    "Nocturne's Curtain Call",
-                    "Sacrificial Jade"
-                ],
-                artifacts: [
-                    "4pc Aubade of Morningstar and Moon"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "HP%"
-                ]
             }
         ]
     },
@@ -815,6 +501,23 @@ export const columbina = {
         rank: "SS",
         description: "A high-damage team focusing on Lunar Bloom reactions, utilizing Lauma's transformation and Columbina's buffs.",
         members: [
+            {
+                characterId: "nilou",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Triggers Bountiful Cores with her passive, dealing rapid Bloom damage.",
+                weapons: [
+                    "Key of Khaj-Nisut",
+                    "The Dockhand's Assistant"
+                ],
+                artifacts: [
+                    "2pc Tenacity of the Millelith",
+                    "2pc Vourukasha's Glow"
+                ],
+                substats: [
+                    "HP%",
+                    "Elemental Mastery"
+                ]
+            },
             {
                 characterId: "lauma",
                 role: "Support",
@@ -854,23 +557,6 @@ export const columbina = {
                 ]
             },
             {
-                characterId: "nilou",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Triggers Bountiful Cores with her passive, dealing rapid Bloom damage.",
-                weapons: [
-                    "Key of Khaj-Nisut",
-                    "The Dockhand's Assistant"
-                ],
-                artifacts: [
-                    "2pc Tenacity of the Millelith",
-                    "2pc Vourukasha's Glow"
-                ],
-                substats: [
-                    "HP%",
-                    "Elemental Mastery"
-                ]
-            },
-            {
                 characterId: "nahida",
                 role: "Sub DPS",
                 roleDesc: "Dendro Sub DPS. Applies high off-field Dendro and buffs team Elemental Mastery.",
@@ -888,8 +574,326 @@ export const columbina = {
                 ]
             }
         ]
+    },
+    {
+        name: "Columbina Lunar-Charged Team #1",
+        rank: "SS",
+        description: "A team that leverages the Lunar-Charged reaction, converting Electro-Charged into enhanced Lunar damage.",
+        members: [
+            {
+                characterId: "columbina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides consistent off-field Hydro to enable reaction and buffs team energy.",
+                weapons: [
+                    "Nocturne's Curtain Call",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Tenacity of the Millelith"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "xilonen",
+                role: "Support",
+                roleDesc: "Geo Support. Shreds enemy elemental resistances and heals active team members.",
+                weapons: [
+                    "Peak Patrol Song",
+                    "Flute of Ezpitzal"
+                ],
+                artifacts: [
+                    "4pc Scroll of the Hero of Cinder City"
+                ],
+                substats: [
+                    "DEF%",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "ineffa",
+                role: "Support",
+                roleDesc: "Electro Support. Enhances Electro-related reactions and boosts elemental damage of the party.",
+                weapons: [
+                    "Fruitful Hook",
+                    "Lost Prayer to the Sacred Winds"
+                ],
+                artifacts: [
+                    "4pc Silken Moon's Serenade"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "flins",
+                role: "Main DPS",
+                roleDesc: "Electro Main DPS. Triggers Electro-Charged and infuses normal attacks with Electro.",
+                weapons: [
+                    "Tome of the Eternal Flow",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Columbina Lunar Hyperbloom Team",
+        rank: "SS",
+        description: "A team that utilizes Lauma's Lunar Bloom transformation and Kuki Shinobu's Hyperbloom triggers.",
+        members: [
+            {
+                characterId: "yelan",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides high off-field single-target Hydro damage and ramping damage buff.",
+                weapons: [
+                    "Aqua Simulacra",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "lauma",
+                role: "Support",
+                roleDesc: "Dendro Support. Supplies Dendro from off-field and converts blooms to Lunar Blooms.",
+                weapons: [
+                    "Nightcaster's Lasting Gaze",
+                    "Wandering Evenstar"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "columbina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Coordinates off-field Hydro attacks and triggers initial Dendro cores.",
+                weapons: [
+                    "Nocturne's Curtain Call",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Aubade of Morningstar and Moon"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "kuki-shinobu",
+                role: "Support",
+                roleDesc: "Electro Trigger & Healer. Activates Hyperbloom on Dendro cores with Electro pulses.",
+                weapons: [
+                    "Key of Khaj-Nisut",
+                    "Xiphos' Moonlight"
+                ],
+                artifacts: [
+                    "4pc Flower of Paradise Lost",
+                    "4pc Gilded Dreams"
+                ],
+                substats: [
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Columbina Lunar Bloom Team #1",
+        rank: "SS",
+        description: "A team focused on Lunar-Bloom reactions, with Nefer as main DPS, Lauma as support, Yaoyao as healer, and Columbina as sub DPS/Support.",
+        members: [
+            {
+                characterId: "lauma",
+                role: "Support",
+                roleDesc: "Lauma transforms Bloom into Lunar-Bloom, which has higher damage and can crit. Her Skill accumulates Hymn of Eternal Rest to boost Lunar-Bloom damage. She reduces enemies' Dendro and Hydro RES, and increases team's Lunar-Bloom damage based on EM.",
+                weapons: [
+                    "Nightweaver's Looking Glass",
+                    "Etherlight Spindlelute"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "yaoyao",
+                role: "Support",
+                roleDesc: "Yaoyao provides healing and shield. At C1, increases Dendro DMG of teammates.",
+                weapons: [
+                    "Dialogues of the Desert Sages"
+                ],
+                artifacts: [
+                    "4pc Silken Moon's Serenade"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "columbina",
+                role: "Sub DPS",
+                roleDesc: "Columbina uses her Skill to provide continuous off-field AoE Hydro application or triggering Lunar reactions. Based on which Lunar reaction type occurs most frequently, she deals corresponding Lunar damage. Her Burst deploys an aura that buffs Lunar-Charged, Lunar Crystallize, and Lunar-Bloom.",
+                weapons: [
+                    "Nocturne's Curtain Call",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Aubade of Morningstar and Moon"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "nefer",
+                role: "Main DPS",
+                roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
+                weapons: [
+                    "Reliquary of Truth",
+                    "Dawning Frost"
+                ],
+                artifacts: [
+                    "4pc Night of the Sky's Unveiling"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Columbina Lunar Bloom Team #3",
+        rank: "S",
+        description: "A team built around Lunar Bloom reactions, with Nefer as the main trigger and Lauma, Nahida, and Columbina providing support and off-field applications. Utilize the Lunar Bloom reaction enhanced by Lauma and triggered by Nefer, with off-field Dendro from Nahida and Hydro from Columbina to deal high damage.",
+        members: [
+            {
+                characterId: "columbina",
+                role: "Sub DPS",
+                roleDesc: "Columbina uses her Elemental Skill to provide continuous off-field, AoE Hydro application or triggering Lunar reactions. At the same time, based on which Lunar reaction type occurs most frequently in the team, she deals the corresponding type of direct Lunar damage. Her Elemental Burst deploys an aura, with her talent, she can grant buffs to all three Lunar reactions: Lunar-Charged, Lunar Crystallize, and Lunar-Bloom.",
+                weapons: [
+                    "Nocturne's Curtain Call",
+                    "Sacrificial Jade"
+                ],
+                artifacts: [
+                    "4pc Aubade of Morningstar and Moon"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "HP%"
+                ]
+            },
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Nahida mainly deals DMG by her Elemental Skill, which connects 8 enemies at maximum and deals Dendro DMG to them while triggering elemental reactions. The Elemental Burst of Nahida buffs her Elemental Skill depends on the Element of her teammates.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Wandering Evenstar"
+                ],
+                artifacts: [
+                    "4pc Silken Moon's Serenade"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "nefer",
+                role: "Main DPS",
+                roleDesc: "Nefer's Skill allows her to enter the Shadow Dance state, replacing her Charged Attack with Phantasm Performance. All Bloom reactions triggered by Nefer are converted into Lunar-Bloom.",
+                weapons: [
+                    "Reliquary of Truth",
+                    "Dawning Frost"
+                ],
+                artifacts: [
+                    "4pc Night of the Sky's Unveiling"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery"
+                ]
+            },
+            {
+                characterId: "lauma",
+                role: "Support",
+                roleDesc: "Lauma transforms the traditional 'Bloom' reaction into 'Lunar Bloom', which has higher damage and can crit. Her elemental skill can accumulate layers of 'Hymn of Eternal Rest' in order to further boost the Lunar Bloom damage triggered by all teammates. She can also reduce enemies' Dendro and Hydro RES, and increase her own and the team's Lunar Bloom damage based on her EM.",
+                weapons: [
+                    "Nightweaver's Looking Glass",
+                    "Etherlight Spindlelute"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            }
+        ]
     }
 ],
+  sands: ["HP%","Hiệu Quả Nạp"],
+  goblet: ["HP%"],
+  circlet: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích"],
+  subStatsPriority: ["Energy Recharge","CRIT Rate","CRIT DMG","HP%","Elemental Mastery"],
   bestWeapons: [
     {
         rank: 1,
@@ -938,73 +942,19 @@ export const columbina = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Khúc Ca Trăng Lụa",
-        setNameEn: "Silken Moon's Serenade",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "Elemental Mastery"
-        ]
-    },
-    {
         setNameVi: "Khúc Ca Của Trăng Và Sao Mai",
         setNameEn: "Aubade of Morningstar and Moon",
-        pieces: 4,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "Elemental Mastery"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Mix 2 bộ (HP% / Tinh Thông / Hiệu Quả Nạp)",
         setNameEn: "2-piece Mix (HP% / EM / ER)",
-        pieces: 2,
-        sands: [
-            "HP%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "HP%",
-            "Elemental Mastery"
-        ]
+        pieces: 2
+    },
+    {
+        setNameVi: "Khúc Ca Trăng Lụa",
+        setNameEn: "Silken Moon's Serenade",
+        pieces: 4
     }
 ]
 };

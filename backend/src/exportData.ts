@@ -48,7 +48,7 @@ ${artifactEntries.join(',\n')}
       bestWeapons: { orderBy: [{ rank: 'asc' }, { id: 'asc' }] },
       bestArtifacts: { orderBy: [{ order: 'asc' }, { id: 'asc' }] },
       teams: {
-        include: { members: { orderBy: { id: 'asc' } } },
+        include: { members: { orderBy: { order: 'asc' } } },
         orderBy: [{ order: 'asc' }, { id: 'asc' }]
       }
     }
@@ -90,6 +90,10 @@ ${artifactEntries.join(',\n')}
       substats: m.substats
     }))
   })), null, 4).replace(/"([^"]+)":/g, '$1:')},
+  sands: ${JSON.stringify(char.sands || [])},
+  goblet: ${JSON.stringify(char.goblet || [])},
+  circlet: ${JSON.stringify(char.circlet || [])},
+  subStatsPriority: ${JSON.stringify(char.subStatsPriority || [])},
   bestWeapons: ${JSON.stringify(char.bestWeapons.map(w => ({
     rank: w.rank,
     nameVi: w.nameVi,
@@ -104,11 +108,7 @@ ${artifactEntries.join(',\n')}
   bestArtifacts: ${JSON.stringify(char.bestArtifacts.map(a => ({
     setNameVi: a.setNameVi,
     setNameEn: a.setNameEn,
-    pieces: a.pieces,
-    sands: a.sands,
-    goblet: a.goblet,
-    circlet: a.circlet,
-    subStatsPriority: a.subStatsPriority
+    pieces: a.pieces
   })), null, 4).replace(/"([^"]+)":/g, '$1:')}
 };
 `;

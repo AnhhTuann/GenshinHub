@@ -424,8 +424,8 @@ export const albedo = {
         description: "ádad",
         members: [
             {
-                characterId: "alhaitham",
-                role: "Support",
+                characterId: "aino",
+                role: "Sub DPS",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
@@ -440,16 +440,16 @@ export const albedo = {
                 substats: []
             },
             {
-                characterId: "aino",
-                role: "Sub DPS",
+                characterId: "aloy",
+                role: "Healer",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
                 substats: []
             },
             {
-                characterId: "aloy",
-                role: "Healer",
+                characterId: "alhaitham",
+                role: "Support",
                 roleDesc: "",
                 weapons: [],
                 artifacts: [],
@@ -458,6 +458,10 @@ export const albedo = {
         ]
     }
 ],
+  sands: ["ATK%","DEF%","Elemental DMG Bonus"],
+  goblet: ["Elemental DMG Bonus"],
+  circlet: ["Elemental DMG Bonus"],
+  subStatsPriority: ["Elemental DMG Bonus","Energy Recharge","DEF%"],
   bestWeapons: [
     {
         rank: 1,
@@ -497,23 +501,7 @@ export const albedo = {
     {
         setNameVi: "Phiến Đá Lâu Đời",
         setNameEn: "Archaic Petra",
-        pieces: 4,
-        sands: [
-            "ATK%",
-            "DEF%",
-            "Elemental DMG Bonus"
-        ],
-        goblet: [
-            "Elemental DMG Bonus"
-        ],
-        circlet: [
-            "Elemental DMG Bonus"
-        ],
-        subStatsPriority: [
-            "Elemental DMG Bonus",
-            "Energy Recharge",
-            "DEF%"
-        ]
+        pieces: 4
     }
 ]
 };

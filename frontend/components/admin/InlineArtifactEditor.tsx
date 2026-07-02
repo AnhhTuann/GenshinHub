@@ -77,18 +77,14 @@ export default function InlineArtifactEditor({ characterId, defaultConstellation
         : nameVi1;
 
       await fetchGraphQL(`
-        mutation AddCharacterArtifact($characterId: String!, $setNameEn: String!, $setNameVi: String!, $pieces: Int!, $sands: [String!]!, $goblet: [String!]!, $circlet: [String!]!, $subStatsPriority: [String!]!, $constellation: String) {
-          addCharacterArtifact(characterId: $characterId, setNameEn: $setNameEn, setNameVi: $setNameVi, pieces: $pieces, sands: $sands, goblet: $goblet, circlet: $circlet, subStatsPriority: $subStatsPriority, constellation: $constellation)
+        mutation AddCharacterArtifact($characterId: String!, $setNameEn: String!, $setNameVi: String!, $pieces: Int!, $constellation: String) {
+          addCharacterArtifact(characterId: $characterId, setNameEn: $setNameEn, setNameVi: $setNameVi, pieces: $pieces, constellation: $constellation)
         }
       `, {
         characterId,
         setNameEn,
         setNameVi,
         pieces,
-        sands: [],
-        goblet: [],
-        circlet: [],
-        subStatsPriority: [],
         constellation: defaultConstellation || 'C0'
       });
 

@@ -419,10 +419,105 @@ export const xinyan = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Xinyan Overload",
+        rank: "A",
+        description: "Xinyan's Pyro attacks combine with Electro from Fischl to trigger frequent Overload reactions, dealing AoE Pyro DMG. Kazuha provides Anemo grouping and resistance shred, while Bennett offers ATK buffs and healing.",
+        members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "fischl",
+                role: "Sub DPS",
+                roleDesc: "Fischl's Skill provides continuous off-field Electro application to trigger Overload, significantly boosts damage.",
+                weapons: [
+                    "Skyward Harp",
+                    "The Stringless"
+                ],
+                artifacts: [
+                    "4pc Thundering Fury"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kazuha",
+                role: "Support",
+                roleDesc: "Kazuha groups enemies, provides Anemo crowd control, DMG buffs, and reduces enemy Pyro and Electro resistance with Swirl.",
+                weapons: [
+                    "Freedom-Sworn",
+                    "Iron Sting"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "xinyan",
+                role: "Main DPS",
+                roleDesc: "Xinyan's Skill reduces enemy DEF and provides a shield to boost DPS. Build with DEF% or ATK% to maximize shield strength and damage.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Whiteblind"
+                ],
+                artifacts: [
+                    "4pc Retracing Bolide"
+                ],
+                substats: [
+                    "DEF%",
+                    "ATK%",
+                    "CRIT Rate",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
         name: "Xinyan Physical Team #2",
         rank: "A",
         description: "A physical team centered around Razor with Electro and Cryo for Superconduct. Xinyan provides shields, Qiqi heals and applies Cryo, and Bennett buffs ATK and heals. Razor's physical damage is maximized by triggering Superconduct to reduce enemy physical resistance. Xinyan provides a shield for safety, Qiqi applies Cryo off-field, and Bennett enhances ATK and healing.",
         members: [
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Elemental Burst provides a large ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "xinyan",
                 role: "Support",
@@ -440,23 +535,6 @@ export const xinyan = {
                     "DEF%",
                     "CRIT DMG",
                     "CRIT Rate"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Elemental Burst provides a large ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
                 ]
             },
             {
@@ -497,124 +575,10 @@ export const xinyan = {
         ]
     },
     {
-        name: "Xinyan Overload",
-        rank: "A",
-        description: "Xinyan's Pyro attacks combine with Electro from Fischl to trigger frequent Overload reactions, dealing AoE Pyro DMG. Kazuha provides Anemo grouping and resistance shred, while Bennett offers ATK buffs and healing.",
-        members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Burst provides massive ATK buff and healing, enabling the team to deal more damage and survive.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xinyan",
-                role: "Main DPS",
-                roleDesc: "Xinyan's Skill reduces enemy DEF and provides a shield to boost DPS. Build with DEF% or ATK% to maximize shield strength and damage.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Whiteblind"
-                ],
-                artifacts: [
-                    "4pc Retracing Bolide"
-                ],
-                substats: [
-                    "DEF%",
-                    "ATK%",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kazuha",
-                role: "Support",
-                roleDesc: "Kazuha groups enemies, provides Anemo crowd control, DMG buffs, and reduces enemy Pyro and Electro resistance with Swirl.",
-                weapons: [
-                    "Freedom-Sworn",
-                    "Iron Sting"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "fischl",
-                role: "Sub DPS",
-                roleDesc: "Fischl's Skill provides continuous off-field Electro application to trigger Overload, significantly boosts damage.",
-                weapons: [
-                    "Skyward Harp",
-                    "The Stringless"
-                ],
-                artifacts: [
-                    "4pc Thundering Fury"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
         name: "Xinyan Physical Team #1",
         rank: "A",
         description: "A physical team centered on Eula, with Cryo and Electro reactions to reduce physical resistance via Superconduct. Maximize Eula's physical damage by using Superconduct to reduce enemy physical resistance, while Xinyan provides shielding and Bennett provides ATK buff and healing.",
         members: [
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Bennett's Burst provides huge ATK buff and healing.",
-                weapons: [
-                    "Skyward Blade",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xinyan",
-                role: "Support",
-                roleDesc: "Xinyan's shield provides a safe environment for team members.",
-                weapons: [
-                    "Wolf's Gravestone",
-                    "Whiteblind"
-                ],
-                artifacts: [
-                    "2pc Crimson Witch of Flames",
-                    "2pc Retracing Bolide"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "DEF%",
-                    "CRIT DMG",
-                    "CRIT Rate"
-                ]
-            },
             {
                 characterId: "eula",
                 role: "Main DPS",
@@ -651,10 +615,50 @@ export const xinyan = {
                     "Energy Recharge",
                     "ATK%"
                 ]
+            },
+            {
+                characterId: "xinyan",
+                role: "Support",
+                roleDesc: "Xinyan's shield provides a safe environment for team members.",
+                weapons: [
+                    "Wolf's Gravestone",
+                    "Whiteblind"
+                ],
+                artifacts: [
+                    "2pc Crimson Witch of Flames",
+                    "2pc Retracing Bolide"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "DEF%",
+                    "CRIT DMG",
+                    "CRIT Rate"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Bennett's Burst provides huge ATK buff and healing.",
+                weapons: [
+                    "Skyward Blade",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
+                    "Energy Recharge"
+                ]
             }
         ]
     }
 ],
+  sands: ["Tấn Công%","Hiệu Quả Nạp"],
+  goblet: ["Sát Thương Vật Lý"],
+  circlet: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích"],
+  subStatsPriority: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích","Tấn Công%","Hiệu Quả Nạp","Phòng Ngự%"],
   bestWeapons: [
     {
         rank: 1,
@@ -758,96 +762,24 @@ export const xinyan = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Lửa Trắng Xám",
+        setNameEn: "Lửa Trắng Xám",
+        pieces: 4
+    },
+    {
         setNameVi: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
         setNameEn: "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
-        pieces: 2,
-        sands: [
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Vật Lý"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp",
-            "Phòng Ngự%"
-        ]
+        pieces: 2
     },
     {
         setNameVi: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
         setNameEn: "Mix 2 bộ Lửa Trắng Xám / Kỵ Sĩ Đạo Nhuốm Máu",
-        pieces: 2,
-        sands: [
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Vật Lý"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp",
-            "Phòng Ngự%"
-        ]
+        pieces: 2
     },
     {
         setNameVi: "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
         setNameEn: "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
-        pieces: 2,
-        sands: [
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Vật Lý"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp",
-            "Phòng Ngự%"
-        ]
-    },
-    {
-        setNameVi: "Lửa Trắng Xám",
-        setNameEn: "Lửa Trắng Xám",
-        pieces: 4,
-        sands: [
-            "Tấn Công%",
-            "Hiệu Quả Nạp"
-        ],
-        goblet: [
-            "Sát Thương Vật Lý"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tấn Công%",
-            "Hiệu Quả Nạp",
-            "Phòng Ngự%"
-        ]
+        pieces: 2
     }
 ]
 };

@@ -145,7 +145,7 @@ export const resolvers = {
       if (cached) return cached;
       const data = await prisma.character.findMany({
         orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
-        include: { teams: { include: { members: true }, orderBy: { order: 'asc' } } },
+        include: { teams: { include: { members: { orderBy: { order: 'asc' } } }, orderBy: { order: 'asc' } } },
       });
       charactersCache.set('all_basic', data);
       return data;
@@ -180,7 +180,7 @@ export const resolvers = {
 
       const data = await prisma.character.findUnique({
         where: { id: args.id },
-        include: { bestWeapons: true, bestArtifacts: { orderBy: { order: 'asc' } }, teams: { include: { members: true }, orderBy: { order: 'asc' } } },
+        include: { bestWeapons: true, bestArtifacts: { orderBy: { order: 'asc' } }, teams: { include: { members: { orderBy: { order: 'asc' } } }, orderBy: { order: 'asc' } } },
       });
       if (!data) return null;
 

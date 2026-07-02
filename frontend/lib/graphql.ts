@@ -115,11 +115,12 @@ export const GET_CHARACTER_BY_ID = `
         passiveDescEn passiveDescVi refinement rarity
       }
       bestArtifacts {
-        id setNameEn setNameVi pieces sands goblet circlet
-        subStatsPriority rarity iconUrl artifactSetId
+        id setNameEn setNameVi pieces
+        rarity iconUrl artifactSetId
         mixSets { nameEn nameVi iconUrl artifactSetId }
       }
       stats ascensionMats talentMats
+      sands goblet circlet subStatsPriority
     }
   }
 `;

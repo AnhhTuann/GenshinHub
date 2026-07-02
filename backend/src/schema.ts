@@ -22,17 +22,13 @@ export const typeDefs = `#graphql
     setNameEn: String!
     setNameVi: String!
     pieces: Int!
-    sands: [String!]!
-    goblet: [String!]!
-    circlet: [String!]!
-    subStatsPriority: [String!]!
     order: Int
     constellation: String
     iconUrl: String, 
     artifactSetId: String, 
     mixSets: [MixSetOption!] 
   }
-  type TeamMemberBuild { id: String!, characterId: String!, role: String!, roleDesc: String!, weapons: [String!]!, artifacts: [String!]!, substats: [String!]! }
+  type TeamMemberBuild { id: String!, characterId: String!, role: String!, roleDesc: String!, weapons: [String!]!, artifacts: [String!]!, substats: [String!]!, order: Int }
   type TeamBuild { id: String!, name: String!, rank: String!, description: String!, order: Int!, members: [TeamMemberBuild!]! }
   type Character { 
     id: String!, nameEn: String!, nameVi: String!, titleEn: String!, titleVi: String!, rarity: Int!, element: String!, weapon: String!, region: String!, birthday: String,
@@ -40,7 +36,8 @@ export const typeDefs = `#graphql
     descriptionEn: String!, descriptionVi: String!, baseHp: Int!, baseAtk: Int!, baseDef: Int!, fandomUrl: String,
     bestWeapons: [CharacterWeapon!]!, bestArtifacts: [CharacterArtifact!]!, talentPriority: [String!]!, signatureWeapons: [Weapon!], teams: [TeamBuild!]!, tier: String,
     role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
-    stats: JSON, ascensionMats: JSON, talentMats: JSON
+    stats: JSON, ascensionMats: JSON, talentMats: JSON,
+    sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!
   }
   
   type CharacterBasic { id: String!, nameEn: String!, nameVi: String!, element: String!, rarity: Int!, avatarUrl: String!, weapon: String! }
@@ -87,7 +84,7 @@ export const typeDefs = `#graphql
   }
   
   input WeaponBuildInput { nameEn: String!, nameVi: String!, rank: Int!, isF2P: Boolean!, iconUrl: String, subStat: String, passiveDescEn: String, passiveDescVi: String, refinement: Int, rarity: Int, constellation: String }
-  input ArtifactBuildInput { setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, constellation: String }
+  input ArtifactBuildInput { setNameEn: String!, setNameVi: String!, pieces: Int!, constellation: String }
   
   input WeaponInput { id: String!, nameEn: String!, nameVi: String!, rarity: Int!, type: String!, baseAtk: Int!, subStat: String, subStatValue: Float, passiveNameEn: String, passiveNameVi: String, passiveDescEn: String, passiveDescVi: String, iconUrl: String, tier: String }
   input ArtifactSetInput { id: String!, nameEn: String!, nameVi: String!, rarityList: [Int!]!, piece2DescEn: String, piece2DescVi: String, piece4DescEn: String, piece4DescVi: String, iconUrl: String }
@@ -107,7 +104,8 @@ export const typeDefs = `#graphql
     signatureWeapons: [String!],
     teams: [TeamInput!],
     tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!],
-    stats: JSON, ascensionMats: JSON, talentMats: JSON
+    stats: JSON, ascensionMats: JSON, talentMats: JSON,
+    sands: [String!], goblet: [String!], circlet: [String!], subStatsPriority: [String!]
   }
 
   type Mutation {
@@ -143,7 +141,7 @@ export const typeDefs = `#graphql
     
     addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!, constellation: String): Boolean
     removeCharacterWeapon(id: String!): Boolean
-    addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!, constellation: String): Boolean
+    addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, constellation: String): Boolean
     removeCharacterArtifact(id: String!): Boolean
     
     updateCharacterTalents(id: String!, talentPriority: [String!]!): Character

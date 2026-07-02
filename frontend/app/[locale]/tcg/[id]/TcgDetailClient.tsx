@@ -134,7 +134,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
               )}
               {card.storyDetail && (
                 <p className="text-[13px] text-gray-400 leading-relaxed italic border-l-[3px] border-gray-600 pl-3">
-                  "{card.storyDetail}"
+                  &quot;{card.storyDetail}&quot;
                 </p>
               )}
               {card.source && (

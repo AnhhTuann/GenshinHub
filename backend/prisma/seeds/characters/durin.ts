@@ -419,82 +419,6 @@ export const durin = {
   signatureWeapons: [],
   teams: [
     {
-        name: "Durin Gaming Team #1",
-        rank: "SS",
-        description: "A burning-focused team leveraging Durin's off-field Pyro support and Bennett's ATK buff to empower Kinich and Emilie's Dendro damage.",
-        members: [
-            {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Pyro Support. Applies Pyro off-field to maintain Burning and holds Deepwood Memories.",
-                weapons: [
-                    "Athame Artis",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Deepwood Memories"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
-                weapons: [
-                    "Aquila Favonia",
-                    "The Alley Flash"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "HP%"
-                ]
-            },
-            {
-                characterId: "emilie",
-                role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Deals off-field Dendro damage boosted by Burning.",
-                weapons: [
-                    "Lumidouce Elegy",
-                    "Deathmatch"
-                ],
-                artifacts: [
-                    "4pc Unfinished Reverie"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "kinich",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Deals massive Dendro damage through Nightsoul Burst.",
-                weapons: [
-                    "Fang of the Mountain King",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Obsidian Codex"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
         name: "Durin Anemo Team",
         rank: "SS",
         description: "An Anemo-Anemo-Pyro-Pyro team leveraging Venti's grouping, Faruzan's Anemo buffs, Durin's Pyro support and RES shred, and Bennett's ATK buff and healing.",
@@ -577,21 +501,21 @@ export const durin = {
         description: "An overload team that maximizes Varka's plunge attacks through Chevreuse's RES shred and ATK buff, Durin's off-field Pyro support, and Ororon's Electro support.",
         members: [
             {
-                characterId: "durin",
-                role: "Support",
-                roleDesc: "Pyro Support. Provides off-field Pyro application for Overload.",
+                characterId: "varka",
+                role: "Main DPS",
+                roleDesc: "Anemo Main DPS. Performs plunge attacks to trigger swirl and deal damage.",
                 weapons: [
-                    "Athame Artis",
-                    "Wolf-Fang"
+                    "Unbreakable: Durandarte",
+                    "The Bell"
                 ],
                 artifacts: [
-                    "4pc Emblem of Severed Fate"
+                    "4pc A Day Carved From Rising Winds"
                 ],
                 substats: [
                     "CRIT Rate",
                     "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
+                    "ATK%",
+                    "Energy Recharge"
                 ]
             },
             {
@@ -612,24 +536,6 @@ export const durin = {
                 ]
             },
             {
-                characterId: "varka",
-                role: "Main DPS",
-                roleDesc: "Anemo Main DPS. Performs plunge attacks to trigger swirl and deal damage.",
-                weapons: [
-                    "Unbreakable: Durandarte",
-                    "The Bell"
-                ],
-                artifacts: [
-                    "4pc A Day Carved From Rising Winds"
-                ],
-                substats: [
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
                 characterId: "ororon",
                 role: "Support",
                 roleDesc: "Electro Support. Triggers Scroll set buff and provides Electro support.",
@@ -645,6 +551,100 @@ export const durin = {
                     "ATK%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Pyro Support. Provides off-field Pyro application for Overload.",
+                weapons: [
+                    "Athame Artis",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Durin Gaming Team #1",
+        rank: "SS",
+        description: "A burning-focused team leveraging Durin's off-field Pyro support and Bennett's ATK buff to empower Kinich and Emilie's Dendro damage.",
+        members: [
+            {
+                characterId: "emilie",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Deals off-field Dendro damage boosted by Burning.",
+                weapons: [
+                    "Lumidouce Elegy",
+                    "Deathmatch"
+                ],
+                artifacts: [
+                    "4pc Unfinished Reverie"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Pyro Support. Applies Pyro off-field to maintain Burning and holds Deepwood Memories.",
+                weapons: [
+                    "Athame Artis",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "kinich",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Deals massive Dendro damage through Nightsoul Burst.",
+                weapons: [
+                    "Fang of the Mountain King",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Obsidian Codex"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "Pyro Support. Heals and provides massive ATK buff.",
+                weapons: [
+                    "Aquila Favonia",
+                    "The Alley Flash"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "HP%"
+                ]
             }
         ]
     },
@@ -653,6 +653,42 @@ export const durin = {
         rank: "S",
         description: "A team where Navia serves as the main DPS, supported by Albedo's off-field Geo damage, Durin's Pyro application, and Bennett's ATK buff.",
         members: [
+            {
+                characterId: "albedo",
+                role: "Sub DPS",
+                roleDesc: "Geo Sub DPS. Pairs for Geo Resonance and deals off-field Geo damage.",
+                weapons: [
+                    "Uraku Misugiri",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "DEF%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "navia",
+                role: "Main DPS",
+                roleDesc: "Geo Main DPS. Deals explosive damage with Gunbrella.",
+                weapons: [
+                    "Verdict",
+                    "Serpent Spine"
+                ],
+                artifacts: [
+                    "4pc Nighttime Whispers in the Echoing Woods"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "durin",
                 role: "Support",
@@ -686,42 +722,6 @@ export const durin = {
                     "Energy Recharge",
                     "HP%"
                 ]
-            },
-            {
-                characterId: "navia",
-                role: "Main DPS",
-                roleDesc: "Geo Main DPS. Deals explosive damage with Gunbrella.",
-                weapons: [
-                    "Verdict",
-                    "Serpent Spine"
-                ],
-                artifacts: [
-                    "4pc Nighttime Whispers in the Echoing Woods"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "albedo",
-                role: "Sub DPS",
-                roleDesc: "Geo Sub DPS. Pairs for Geo Resonance and deals off-field Geo damage.",
-                weapons: [
-                    "Uraku Misugiri",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "DEF%",
-                    "Energy Recharge"
-                ]
             }
         ]
     },
@@ -730,23 +730,6 @@ export const durin = {
         rank: "SS",
         description: "A powerful Burning team leveraging Durin's support to boost Kinich and Emilie's damage, while Xilonen provides Geo RES shred.",
         members: [
-            {
-                characterId: "xilonen",
-                role: "Support",
-                roleDesc: "Geo Support. Reduces enemy elemental resistance and triggers Scroll buff.",
-                weapons: [
-                    "Peak Patrol Song",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Scroll of the Hero of Cinder City"
-                ],
-                substats: [
-                    "DEF%",
-                    "CRIT Rate",
-                    "Energy Recharge"
-                ]
-            },
             {
                 characterId: "emilie",
                 role: "Sub DPS",
@@ -763,6 +746,24 @@ export const durin = {
                     "CRIT Rate",
                     "ATK%",
                     "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "durin",
+                role: "Support",
+                roleDesc: "Pyro Support. Applies Pyro off-field and triggers Burning.",
+                weapons: [
+                    "Athame Artis",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge",
+                    "ATK%"
                 ]
             },
             {
@@ -783,26 +784,29 @@ export const durin = {
                 ]
             },
             {
-                characterId: "durin",
+                characterId: "xilonen",
                 role: "Support",
-                roleDesc: "Pyro Support. Applies Pyro off-field and triggers Burning.",
+                roleDesc: "Geo Support. Reduces enemy elemental resistance and triggers Scroll buff.",
                 weapons: [
-                    "Athame Artis",
-                    "Wolf-Fang"
+                    "Peak Patrol Song",
+                    "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Deepwood Memories"
+                    "4pc Scroll of the Hero of Cinder City"
                 ],
                 substats: [
+                    "DEF%",
                     "CRIT Rate",
-                    "CRIT DMG",
-                    "Energy Recharge",
-                    "ATK%"
+                    "Energy Recharge"
                 ]
             }
         ]
     }
 ],
+  sands: ["Tấn Công%"],
+  goblet: ["Sát Thương Nguyên Tố Hỏa","Tấn Công%"],
+  circlet: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích"],
+  subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%","Elemental Mastery","Energy Recharge"],
   bestWeapons: [
     {
         rank: 1,
@@ -972,118 +976,29 @@ export const durin = {
 ],
   bestArtifacts: [
     {
-        setNameVi: "Giấc Mộng Hoàng Kim",
-        setNameEn: "Gilded Dreams",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
-            "Tấn Công%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery",
-            "Energy Recharge"
-        ]
-    },
-    {
         setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
         setNameEn: "Crimson Witch of Flames",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
-            "Tấn Công%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery",
-            "Energy Recharge"
-        ]
-    },
-    {
-        setNameVi: "Dấu Ấn Ngăn Cách",
-        setNameEn: "Emblem of Severed Fate",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
-            "Tấn Công%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Energy Recharge"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
         setNameEn: "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
-        pieces: 2,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
-            "Tấn Công%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery",
-            "Energy Recharge"
-        ]
+        pieces: 2
+    },
+    {
+        setNameVi: "Dấu Ấn Ngăn Cách",
+        setNameEn: "Emblem of Severed Fate",
+        pieces: 4
     },
     {
         setNameVi: "Ngày Nổi Gió",
         setNameEn: "A Day Carved From Rising Winds",
-        pieces: 4,
-        sands: [
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Hỏa",
-            "Tấn Công%"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích"
-        ],
-        subStatsPriority: [
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%",
-            "Elemental Mastery",
-            "Energy Recharge"
-        ]
+        pieces: 4
+    },
+    {
+        setNameVi: "Giấc Mộng Hoàng Kim",
+        setNameEn: "Gilded Dreams",
+        pieces: 4
     }
 ]
 };

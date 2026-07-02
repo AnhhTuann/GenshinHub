@@ -442,20 +442,19 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "zhongli",
+                characterId: "sigewinne",
                 role: "Support",
-                roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
+                roleDesc: "Hydro Support. Restores team HP and buffs off-field Elemental Skill DMG.",
                 weapons: [
-                    "Staff of Homa"
+                    "Silvershower Heartstrings",
+                    "Recurve Bow"
                 ],
                 artifacts: [
-                    "4pc Golden Troupe"
+                    "4pc Tenacity of the Millelith"
                 ],
                 substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "HP%"
+                    "HP%",
+                    "HP"
                 ]
             },
             {
@@ -478,19 +477,20 @@ export const sigewinne = {
                 ]
             },
             {
-                characterId: "sigewinne",
+                characterId: "zhongli",
                 role: "Support",
-                roleDesc: "Hydro Support. Restores team HP and buffs off-field Elemental Skill DMG.",
+                roleDesc: "Geo Support. Creates a powerful shield, shreds enemy RES, and places resonating pillars.",
                 weapons: [
-                    "Silvershower Heartstrings",
-                    "Recurve Bow"
+                    "Staff of Homa"
                 ],
                 artifacts: [
-                    "4pc Tenacity of the Millelith"
+                    "4pc Golden Troupe"
                 ],
                 substats: [
-                    "HP%",
-                    "HP"
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "HP%"
                 ]
             }
         ]
@@ -500,25 +500,6 @@ export const sigewinne = {
         rank: "SS",
         description: "Bloom team utilizing Nilou's passive to create Bountiful Cores for massive AoE Dendro damage, with Alhaitham as on-field driver, Furina providing off-field Hydro and damage buffs, and Sigewinne healing to sustain Furina's HP drain.",
         members: [
-            {
-                characterId: "alhaitham",
-                role: "Main DPS",
-                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
-                weapons: [
-                    "Light of Foliar Incision",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Marechaussee Hunter"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
             {
                 characterId: "nilou",
                 role: "Sub DPS",
@@ -570,6 +551,25 @@ export const sigewinne = {
                     "HP%",
                     "Energy Recharge"
                 ]
+            },
+            {
+                characterId: "alhaitham",
+                role: "Main DPS",
+                roleDesc: "Dendro Main DPS. Infuses attacks with Dendro and triggers rapid Bloom reactions on-field.",
+                weapons: [
+                    "Light of Foliar Incision",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Marechaussee Hunter"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
             }
         ]
     },
@@ -578,6 +578,24 @@ export const sigewinne = {
         rank: "SS",
         description: "The team focuses on dealing Hydro damage, with Sigewinne providing healing and Elemental Skill damage buffs, while Yelan and Furina output damage and Kazuha provides grouping and resistance shred.",
         members: [
+            {
+                characterId: "furina",
+                role: "Sub DPS",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
+                weapons: [
+                    "Splendor of Tranquil Waters",
+                    "Wolf-Fang"
+                ],
+                artifacts: [
+                    "4pc Golden Troupe"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "HP%",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "kazuha",
                 role: "Support",
@@ -630,28 +648,14 @@ export const sigewinne = {
                     "HP%",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "furina",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro damage and huge ramping damage buffs to the team.",
-                weapons: [
-                    "Splendor of Tranquil Waters",
-                    "Wolf-Fang"
-                ],
-                artifacts: [
-                    "4pc Golden Troupe"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "HP%",
-                    "Energy Recharge"
-                ]
             }
         ]
     }
 ],
+  sands: ["HP%"],
+  goblet: ["HP%"],
+  circlet: ["HP%","Tỷ Lệ Bạo Kích","Tăng Trị Liệu"],
+  subStatsPriority: ["HP%","HP","CRIT Rate"],
   bestWeapons: [
     {
         rank: 1,
@@ -724,107 +728,27 @@ export const sigewinne = {
     {
         setNameVi: "Xà Cừ Đại Dương",
         setNameEn: "Ocean-Hued Clam",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
-    },
-    {
-        setNameVi: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
-        setNameEn: "2-piece Mix (HP% / HP%)",
-        pieces: 2,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Thiên Nham Vững Chắc",
         setNameEn: "Tenacity of the Millelith",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Khúc Ca Ngày Cũ",
         setNameEn: "Song of Days Past",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
         setNameEn: "Scroll of the Hero of Cinder City",
-        pieces: 4,
-        sands: [
-            "HP%"
-        ],
-        goblet: [
-            "HP%"
-        ],
-        circlet: [
-            "HP%",
-            "Tỷ Lệ Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "HP%",
-            "HP",
-            "CRIT Rate"
-        ]
+        pieces: 4
+    },
+    {
+        setNameVi: "Mix 2 bộ Vầng Sáng Vourukasha & 2 bộ Thiên Nham Vững Chắc",
+        setNameEn: "2-piece Mix (HP% / HP%)",
+        pieces: 2
     }
 ]
 };

@@ -345,7 +345,14 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                   <EditableArtifactsSection characterId={character.id} bestArtifacts={character.bestArtifacts || []} tArtifacts={t('artifacts')} />
                   
                   {/* ── STATS & TALENTS ── */}
-                  <EditableStatsSection characterId={character.id} firstArtifact={firstArtifact} talentPriority={character.talentPriority || []} />
+                  <EditableStatsSection 
+                    characterId={character.id} 
+                    sands={character.sands}
+                    goblet={character.goblet}
+                    circlet={character.circlet}
+                    subStatsPriority={character.subStatsPriority}
+                    talentPriority={character.talentPriority || []} 
+                  />
                 </div>
               </ScrollEntrance>
             </div>

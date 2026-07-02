@@ -226,13 +226,14 @@ export const Mutation = {
         rank,
         description,
         members: {
-          create: members.map((m: any) => ({
+          create: members.map((m: any, index: number) => ({
             characterId: m.characterId,
             role: m.role,
             roleDesc: m.roleDesc,
             weapons: m.weapons,
             artifacts: m.artifacts,
-            substats: m.substats
+            substats: m.substats,
+            order: index
           }))
         }
       },
@@ -261,13 +262,14 @@ export const Mutation = {
         description,
         members: {
           deleteMany: {},
-          create: members.map((m: any) => ({
+          create: members.map((m: any, index: number) => ({
             characterId: m.characterId,
             role: m.role,
             roleDesc: m.roleDesc,
             weapons: m.weapons,
             artifacts: m.artifacts,
-            substats: m.substats
+            substats: m.substats,
+            order: index
           }))
         }
       }
@@ -462,31 +464,15 @@ export const Mutation = {
 
   addCharacterArtifact: async (_: any, args: any, context: any) => {
     requireAdmin(context);
-    let { characterId, setNameEn, setNameVi, pieces, sands, goblet, circlet, subStatsPriority } = sanitize(args);
+    const { characterId, setNameEn, setNameVi, pieces, constellation } = sanitize(args);
     
-    // Nếu mảng stats trống, thử copy từ các artifact khác của nhân vật này
-    if (sands.length === 0 && goblet.length === 0 && circlet.length === 0) {
-      const existing = await prisma.characterArtifact.findFirst({
-        where: { characterId, sands: { isEmpty: false } }
-      });
-      if (existing) {
-        sands = existing.sands;
-        goblet = existing.goblet;
-        circlet = existing.circlet;
-        subStatsPriority = existing.subStatsPriority;
-      }
-    }
-
     await prisma.characterArtifact.create({
       data: {
         characterId,
         setNameEn,
         setNameVi,
         pieces,
-        sands,
-        goblet,
-        circlet,
-        subStatsPriority
+        constellation: constellation || "C0"
       }
     });
     clearAllCaches();
@@ -523,9 +509,9 @@ export const Mutation = {
     requireAdmin(context);
     const { id, sands, goblet, circlet, subStatsPriority } = sanitize(args);
     console.log("updateCharacterArtifactStats called for characterId:", id, "args:", args);
-    // Update all artifacts for the given characterId
-    await prisma.characterArtifact.updateMany({
-      where: { characterId: id },
+    // Update the character directly
+    await prisma.character.update({
+      where: { id },
       data: {
         sands: { set: sands },
         goblet: { set: goblet },
@@ -675,13 +661,14 @@ export const Mutation = {
             description: t.description || '',
             order: i,
             members: {
-              create: t.members.map((m: any) => ({
+              create: t.members.map((m: any, index: number) => ({
                 characterId: m.characterId,
                 role: m.role || '',
                 roleDesc: m.roleDesc || '',
                 weapons: m.weapons || [],
                 artifacts: m.artifacts || [],
-                substats: m.substats || []
+                substats: m.substats || [],
+                order: index
               }))
             }
           }

@@ -125,10 +125,105 @@ export const travelerHydro = {
   signatureWeapons: [],
   teams: [
     {
+        name: "Traveler Hydro F2P Vaporize Team",
+        rank: "S",
+        description: "A budget/F2P Vaporize team where Hydro Traveler triggers Vaporize reactions on their Elemental Skill and Burst, supported by Xiangling's Pyro application, Bennett's ATK buffs, and Sucrose's Elemental Mastery sharing.",
+        members: [
+            {
+                characterId: "sucrose",
+                role: "Support",
+                roleDesc: "Anemo Support. Swirls Hydro/Pyro to shred enemy resistances and shares Elemental Mastery with the team.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "4pc Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "bennett",
+                role: "Support",
+                roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
+                weapons: [
+                    "Mistsplitter Reforged",
+                    "Favonius Sword"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "HP%",
+                    "Energy Recharge",
+                    "HP",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "traveler-hydro",
+                role: "Main DPS",
+                roleDesc: "Hydro Main DPS. Triggers Vaporize reactions on their Skill and Burst hits on-field.",
+                weapons: [
+                    "Favonius Sword",
+                    "Fleuve Cendre Ferryman"
+                ],
+                artifacts: [
+                    "4pc Noblesse Oblige"
+                ],
+                substats: [
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "xiangling",
+                role: "Sub DPS",
+                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage and applies Pyro to enable constant Vaporize reactions.",
+                weapons: [
+                    "Engulfing Lightning",
+                    "The Catch"
+                ],
+                artifacts: [
+                    "4pc Emblem of Severed Fate"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "Energy Recharge",
+                    "ATK%"
+                ]
+            }
+        ]
+    },
+    {
         name: "Traveler Hydro Bloom Team",
         rank: "S",
         description: "A classic Nilou Bloom team utilizing Hydro Traveler's continuous off-field Hydro application from their Burst, enhanced by Nilou's Bountiful Cores, Nahida's high Dendro application, and Baizhu's shielding/healing.",
         members: [
+            {
+                characterId: "nahida",
+                role: "Sub DPS",
+                roleDesc: "Dendro Sub DPS. Applies continuous Dendro off-field and shares Elemental Mastery with the active character.",
+                weapons: [
+                    "A Thousand Floating Dreams",
+                    "Sacrificial Fragments"
+                ],
+                artifacts: [
+                    "4pc Deepwood Memories"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT Rate",
+                    "CRIT DMG",
+                    "Energy Recharge"
+                ]
+            },
             {
                 characterId: "baizhu",
                 role: "Support",
@@ -147,21 +242,21 @@ export const travelerHydro = {
                 ]
             },
             {
-                characterId: "nahida",
+                characterId: "traveler-hydro",
                 role: "Sub DPS",
-                roleDesc: "Dendro Sub DPS. Applies continuous Dendro off-field and shares Elemental Mastery with the active character.",
+                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application from Burst to trigger Bloom reactions.",
                 weapons: [
-                    "A Thousand Floating Dreams",
-                    "Sacrificial Fragments"
+                    "Favonius Sword",
+                    "Fleuve Cendre Ferryman"
                 ],
                 artifacts: [
-                    "4pc Deepwood Memories"
+                    "4pc Instructor"
                 ],
                 substats: [
-                    "Elemental Mastery",
+                    "Energy Recharge",
                     "CRIT Rate",
                     "CRIT DMG",
-                    "Energy Recharge"
+                    "ATK%"
                 ]
             },
             {
@@ -182,105 +277,14 @@ export const travelerHydro = {
                     "Elemental Mastery",
                     "Energy Recharge"
                 ]
-            },
-            {
-                characterId: "traveler-hydro",
-                role: "Sub DPS",
-                roleDesc: "Hydro Sub DPS. Provides off-field Hydro application from Burst to trigger Bloom reactions.",
-                weapons: [
-                    "Favonius Sword",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Instructor"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Traveler Hydro F2P Vaporize Team",
-        rank: "S",
-        description: "A budget/F2P Vaporize team where Hydro Traveler triggers Vaporize reactions on their Elemental Skill and Burst, supported by Xiangling's Pyro application, Bennett's ATK buffs, and Sucrose's Elemental Mastery sharing.",
-        members: [
-            {
-                characterId: "traveler-hydro",
-                role: "Main DPS",
-                roleDesc: "Hydro Main DPS. Triggers Vaporize reactions on their Skill and Burst hits on-field.",
-                weapons: [
-                    "Favonius Sword",
-                    "Fleuve Cendre Ferryman"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "sucrose",
-                role: "Support",
-                roleDesc: "Anemo Support. Swirls Hydro/Pyro to shred enemy resistances and shares Elemental Mastery with the team.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xiangling",
-                role: "Sub DPS",
-                roleDesc: "Pyro Sub DPS. Deals high off-field Pyro damage and applies Pyro to enable constant Vaporize reactions.",
-                weapons: [
-                    "Engulfing Lightning",
-                    "The Catch"
-                ],
-                artifacts: [
-                    "4pc Emblem of Severed Fate"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "Energy Recharge",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "bennett",
-                role: "Support",
-                roleDesc: "ATK Buffer & Healer. Provides a massive ATK buff and continuous healing from his Burst.",
-                weapons: [
-                    "Mistsplitter Reforged",
-                    "Favonius Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "Energy Recharge",
-                    "HP",
-                    "ATK%"
-                ]
             }
         ]
     }
 ],
+  sands: ["Hiệu Quả Nạp","Tấn Công%"],
+  goblet: ["Sát Thương Nguyên Tố Thủy"],
+  circlet: ["Tỷ Lệ Bạo Kích","Sát Thương Bạo Kích","Tăng Trị Liệu"],
+  subStatsPriority: ["Energy Recharge","CRIT Rate","CRIT DMG","ATK%"],
   bestWeapons: [
     {
         rank: 1,
@@ -351,96 +355,24 @@ export const travelerHydro = {
 ],
   bestArtifacts: [
     {
+        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+        setNameEn: "Scroll of the Hero of Cinder City",
+        pieces: 4
+    },
+    {
         setNameVi: "Giáo Quan",
         setNameEn: "Instructor",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Thiên Nham Vững Chắc",
         setNameEn: "Tenacity of the Millelith",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
+        pieces: 4
     },
     {
         setNameVi: "Nghi Thức Tông Thất Cổ",
         setNameEn: "Noblesse Oblige",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
-    },
-    {
-        setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-        setNameEn: "Scroll of the Hero of Cinder City",
-        pieces: 4,
-        sands: [
-            "Hiệu Quả Nạp",
-            "Tấn Công%"
-        ],
-        goblet: [
-            "Sát Thương Nguyên Tố Thủy"
-        ],
-        circlet: [
-            "Tỷ Lệ Bạo Kích",
-            "Sát Thương Bạo Kích",
-            "Tăng Trị Liệu"
-        ],
-        subStatsPriority: [
-            "Energy Recharge",
-            "CRIT Rate",
-            "CRIT DMG",
-            "ATK%"
-        ]
+        pieces: 4
     }
 ]
 };

@@ -424,6 +424,139 @@ export const escoffier = {
   goblet: ["Elemental DMG Bonus"],
   circlet: ["CRIT Rate"],
   subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%"],
-  bestWeapons: [],
+  bestWeapons: [
+    {
+        rank: 0,
+        nameVi: "Nhạc Sĩ Hương Thơm",
+        nameEn: "Symphonist of Scents",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Trident.webp"
+    },
+    {
+        rank: 1,
+        nameVi: "Xương Sống Thiên Không",
+        nameEn: "Skyward Spine",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Dvalin.webp"
+    },
+    {
+        rank: 1,
+        nameVi: "Đoạn Thảo Trường Đao",
+        nameEn: "Engulfing Lightning",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.webp"
+    },
+    {
+        rank: 2,
+        nameVi: "Hủy Diệt",
+        nameEn: "Calamity Queller",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.webp"
+    },
+    {
+        rank: 3,
+        nameVi: "Trượng Hộ Ma",
+        nameEn: "Staff of Homa",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.webp"
+    },
+    {
+        rank: 4,
+        nameVi: "Hào Quang Tách Rời",
+        nameEn: "Fractured Halo",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Perdix.webp"
+    },
+    {
+        rank: 5,
+        nameVi: "Bi Ca Lumidouce",
+        nameEn: "Lumidouce Elegy",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.webp"
+    },
+    {
+        rank: 6,
+        nameVi: "Quyền Trượng Cát Đỏ",
+        nameEn: "Staff of the Scarlet Sands",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.webp"
+    },
+    {
+        rank: 7,
+        nameVi: "Giáo Nịnh Thần",
+        nameEn: "Vortex Vanquisher",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.webp"
+    },
+    {
+        rank: 8,
+        nameVi: "Giáo Thập Tự Kitain",
+        nameEn: "Kitain Cross Spear",
+        subStat: null,
+        isF2P: false,
+        refinement: "R5",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.webp"
+    },
+    {
+        rank: 9,
+        nameVi: "Thương Quyết Chiến",
+        nameEn: "Deathmatch",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.webp"
+    },
+    {
+        rank: 10,
+        nameVi: "Thương Tây Phong",
+        nameEn: "Favonius Lance",
+        subStat: null,
+        isF2P: false,
+        refinement: "R1",
+        passiveDescVi: null,
+        passiveDescEn: null,
+        iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
+    }
+],
   bestArtifacts: []
 };

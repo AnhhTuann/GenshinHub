@@ -449,6 +449,20 @@ export const Mutation = {
     return newCharWep.id;
   },
 
+  updateCharacterWeapon: async (_: any, args: any, context: any) => {
+    requireAdmin(context);
+    const { id, rank, isF2P, refinement } = sanitize(args);
+    await prisma.characterWeapon.update({
+      where: { id },
+      data: { rank, isF2P, refinement }
+    });
+    clearAllCaches();
+    resetArtifactSetLookup();
+    debouncedExport();
+    debouncedBackup();
+    return true;
+  },
+
   removeCharacterWeapon: async (_: any, { id }: any, context: any) => {
     requireAdmin(context);
     await prisma.characterWeapon.delete({ where: { id } });

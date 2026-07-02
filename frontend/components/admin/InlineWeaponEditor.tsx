@@ -24,18 +24,21 @@ interface Props {
   characterId: string;
   weaponType: string;
   defaultConstellation?: string;
+  editingWeapon?: any;
   onClose: () => void;
-  onSaved: (newWeapon: any) => void;
+  onSaved: (newWeapon: any, isEdit?: boolean) => void;
 }
 
-export default function InlineWeaponEditor({ characterId, weaponType, defaultConstellation, onClose, onSaved }: Props) {
+export default function InlineWeaponEditor({ characterId, weaponType, defaultConstellation, editingWeapon, onClose, onSaved }: Props) {
   const [weapons, setWeapons] = useState<WeaponData[]>([]);
   const [search, setSearch] = useState('');
-  const [selectedWeapon, setSelectedWeapon] = useState<WeaponData | null>(null);
+  const [selectedWeapon, setSelectedWeapon] = useState<WeaponData | null>(
+    editingWeapon ? { id: editingWeapon.weaponId || editingWeapon.id, nameEn: editingWeapon.nameEn, iconUrl: editingWeapon.iconUrl } : null
+  );
   
-  const [rank, setRank] = useState(1);
-  const [refinement, setRefinement] = useState(1);
-  const [isF2P, setIsF2P] = useState(false);
+  const [rank, setRank] = useState(editingWeapon?.rank || 1);
+  const [refinement, setRefinement] = useState(editingWeapon?.refinement || 1);
+  const [isF2P, setIsF2P] = useState(editingWeapon?.isF2P || false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -61,6 +64,28 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
     if (!selectedWeapon) return;
     setLoading(true);
     try {
+      if (editingWeapon) {
+        const query = `
+          mutation UpdateCharacterWeapon($id: String!, $rank: Int, $isF2P: Boolean, $refinement: Int) {
+            updateCharacterWeapon(id: $id, rank: $rank, isF2P: $isF2P, refinement: $refinement)
+          }
+        `;
+        await fetchGraphQL(query, {
+          id: editingWeapon.id,
+          rank: parseInt(rank.toString()),
+          isF2P,
+          refinement: parseInt(refinement.toString())
+        });
+        onSaved({
+          ...editingWeapon,
+          rank: parseInt(rank.toString()),
+          isF2P,
+          refinement: parseInt(refinement.toString())
+        }, true);
+        onClose();
+        return;
+      }
+      
       const query = `
         mutation AddCharacterWeapon($characterId: String!, $weaponId: String!, $rank: Int!, $isF2P: Boolean!, $constellation: String, $refinement: Int) {
           addCharacterWeapon(characterId: $characterId, weaponId: $weaponId, rank: $rank, isF2P: $isF2P, constellation: $constellation, refinement: $refinement)
@@ -112,7 +137,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
 
       <div className="relative bg-[#0d0d14] border border-white/10 rounded-2xl w-full max-w-xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="p-5 border-b border-white/10 flex items-center justify-between shrink-0">
-          <h2 className="text-lg font-black text-white">➕ Add Best Weapon</h2>
+          <h2 className="text-lg font-black text-white">{editingWeapon ? 'Edit' : 'Add'} Best Weapon</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors">✕</button>
         </div>
 
@@ -204,7 +229,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
               disabled={loading}
               className="px-6 py-2.5 rounded-xl text-sm font-black bg-amber-500 hover:bg-amber-400 text-black transition-colors disabled:opacity-50"
             >
-              {loading ? 'Saving...' : 'Add Weapon'}
+              {loading ? 'Saving...' : editingWeapon ? 'Save Changes' : 'Add Weapon'}
             </button>
           </div>
         )}

@@ -53,58 +53,6 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
       <span className={`w-[3px] h-5 rounded-full ${accent}`} />
       <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">{label}</span>
     </div>
-import FallbackImage from '@/components/ui/FallbackImage';
-import { useLocale, useTranslations } from 'next-intl';
-import Image from 'next/image';
-import InlineWeaponEditor from '@/components/admin/InlineWeaponEditor';
-import { fetchGraphQL } from '@/lib/graphql';
-import toast from 'react-hot-toast';
-import { confirmDialog } from '@/utils/confirm';
-
-interface Props {
-  characterId: string;
-  weaponType: string;
-  bestWeapons: any[];
-  tWeapons: string;
-}
-
-const STAT_VI: Record<string, string> = {
-  'Energy Recharge': 'Hiệu Quả Nạp Nguyên Tố',
-  'Elemental Mastery': 'Tinh Thông Nguyên Tố',
-  'CRIT Rate': 'Tỷ Lệ Bạo Kích',
-  'CRIT DMG': 'Sát Thương Bạo Kích',
-  'Healing Bonus': 'Tăng Trị Liệu',
-  'Physical DMG Bonus': 'Sát Thương Vật Lý',
-  'Pyro DMG Bonus': 'Sát Thương Nguyên Tố Hỏa',
-  'Hydro DMG Bonus': 'Sát Thương Nguyên Tố Thủy',
-  'Cryo DMG Bonus': 'Sát Thương Nguyên Tố Băng',
-  'Electro DMG Bonus': 'Sát Thương Nguyên Tố Lôi',
-  'Anemo DMG Bonus': 'Sát Thương Nguyên Tố Phong',
-  'Geo DMG Bonus': 'Sát Thương Nguyên Tố Nham',
-  'Dendro DMG Bonus': 'Sát Thương Nguyên Tố Thảo',
-  'ATK%': 'Tấn Công%',
-  'HP%': 'HP%',
-  'DEF%': 'Phòng Ngự%',
-  'ATK': 'Tấn Công',
-  'HP': 'HP',
-  'DEF': 'Phòng Ngự',
-};
-
-const translateStat = (stat: string, locale: string) => {
-  if (!stat) return stat;
-  let enStat = stat;
-  const viToEn = Object.entries(STAT_VI).find(([en, vi]) => vi === stat);
-  if (viToEn) enStat = viToEn[0];
-  if (locale === 'vi') return STAT_VI[enStat] || enStat;
-  return enStat;
-};
-
-function SectionHeader({ label, accent }: { label: string; accent: string }) {
-  return (
-    <div className="flex items-center gap-2.5 mb-5">
-      <span className={`w-[3px] h-5 rounded-full ${accent}`} />
-      <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">{label}</span>
-    </div>
   );
 }
 

@@ -11,7 +11,9 @@ function debouncedExport() {
   if (process.env.NODE_ENV === 'production') return; // Tắt trên production
   if (exportTimeout) clearTimeout(exportTimeout);
   exportTimeout = setTimeout(() => {
-    exportDatabaseToSeeds().catch(console.error);
+    // Tạm thời tắt auto-export để không ghi đè dữ liệu sửa tay của user (.ts files)
+    // exportDatabaseToSeeds().catch(console.error);
+    console.log("Auto-export disabled to prevent overriding .ts files.");
   }, 2000);
 }
 

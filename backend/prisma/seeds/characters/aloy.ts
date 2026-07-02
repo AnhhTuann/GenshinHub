@@ -669,7 +669,24 @@ export const aloy = {
                     "Rust"
                 ],
                 artifacts: [
-                    "4pc Blizzard Strayer"
+                    "Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "xingqiu",
+                role: "Sub DPS",
+                roleDesc: "Sub DPS. Elemental Burst applies Hydro continuously to enable Freeze.",
+                weapons: [
+                    "Sacrificial Sword"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -687,25 +704,8 @@ export const aloy = {
                     "Serpent Spine"
                 ],
                 artifacts: [
-                    "2pc Blizzard Strayer",
-                    "2pc Noblesse Oblige"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "xingqiu",
-                role: "Sub DPS",
-                roleDesc: "Sub DPS. Elemental Burst applies Hydro continuously to enable Freeze.",
-                weapons: [
-                    "Sacrificial Sword"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
+                    "Blizzard Strayer",
+                    "Noblesse Oblige"
                 ],
                 substats: [
                     "CRIT DMG",
@@ -723,12 +723,90 @@ export const aloy = {
                     "Favonius Sword"
                 ],
                 artifacts: [
-                    "4pc Viridescent Venerer"
+                    "Viridescent Venerer"
                 ],
                 substats: [
                     "CRIT DMG",
                     "CRIT Rate",
                     "ATK%",
+                    "Energy Recharge"
+                ]
+            }
+        ]
+    },
+    {
+        name: "Aloy Permafrost Freeze",
+        rank: "A",
+        description: "A freeze composition featuring Aloy as the main Cryo DPS, supported by Mona for Hydro application, Venti for crowd control, and Diona for shielding and healing.\nAloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze, locking down enemies while Venti groups them and Diona provides survivability.",
+        members: [
+            {
+                characterId: "aloy",
+                role: "Main DPS",
+                roleDesc: "Aloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze.",
+                weapons: [
+                    "Amos' Bow",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Blizzard Strayer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%",
+                    "Energy Recharge"
+                ]
+            },
+            {
+                characterId: "mona",
+                role: "Sub DPS",
+                roleDesc: "Mona applies Hydro and boosts DMG with her Burst.",
+                weapons: [
+                    "Skyward Atlas",
+                    "Favonius Codex",
+                    "Thrilling Tales of Dragon Slayers"
+                ],
+                artifacts: [
+                    "Noblesse Oblige"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "Energy Recharge",
+                    "CRIT Rate",
+                    "CRIT DMG"
+                ]
+            },
+            {
+                characterId: "venti",
+                role: "Sub DPS",
+                roleDesc: "Venti groups enemies and spreads Hydro with his Burst.",
+                weapons: [
+                    "Elegy for the End",
+                    "Rust"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
+                characterId: "diona",
+                role: "Support",
+                roleDesc: "Diona provides shield, healing, and helps battery.",
+                weapons: [
+                    "Sacrificial Bow",
+                    "Favonius Warbow"
+                ],
+                artifacts: [
+                    "Maiden Beloved"
+                ],
+                substats: [
+                    "HP%",
+                    "HP",
                     "Energy Recharge"
                 ]
             }
@@ -758,24 +836,6 @@ export const aloy = {
                 ]
             },
             {
-                characterId: "sucrose",
-                role: "Sub DPS",
-                roleDesc: "Provides Elemental Mastery bonus to increase Melting DMG.",
-                weapons: [
-                    "Sacrificial Fragments",
-                    "Mappa Mare"
-                ],
-                artifacts: [
-                    "Viridescent Venerer"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
                 characterId: "aloy",
                 role: "Sub DPS",
                 roleDesc: "Provides Cryo attachment for Klee to trigger Melting from off-field.",
@@ -794,6 +854,24 @@ export const aloy = {
                 ]
             },
             {
+                characterId: "sucrose",
+                role: "Sub DPS",
+                roleDesc: "Provides Elemental Mastery bonus to increase Melting DMG.",
+                weapons: [
+                    "Sacrificial Fragments",
+                    "Mappa Mare"
+                ],
+                artifacts: [
+                    "Viridescent Venerer"
+                ],
+                substats: [
+                    "Elemental Mastery",
+                    "CRIT DMG",
+                    "CRIT Rate",
+                    "ATK%"
+                ]
+            },
+            {
                 characterId: "bennett",
                 role: "Support",
                 roleDesc: "Elemental Burst provides huge ATK buff and healing.",
@@ -803,84 +881,6 @@ export const aloy = {
                 ],
                 artifacts: [
                     "Noblesse Oblige"
-                ],
-                substats: [
-                    "HP%",
-                    "HP",
-                    "Energy Recharge"
-                ]
-            }
-        ]
-    },
-    {
-        name: "Aloy Permafrost Freeze",
-        rank: "A",
-        description: "A freeze composition featuring Aloy as the main Cryo DPS, supported by Mona for Hydro application, Venti for crowd control, and Diona for shielding and healing.\nAloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze, locking down enemies while Venti groups them and Diona provides survivability.",
-        members: [
-            {
-                characterId: "aloy",
-                role: "Main DPS",
-                roleDesc: "Aloy's Cryo DMG reacts with Hydro from Mona to trigger Freeze.",
-                weapons: [
-                    "Amos' Bow",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Blizzard Strayer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%",
-                    "Energy Recharge"
-                ]
-            },
-            {
-                characterId: "mona",
-                role: "Sub DPS",
-                roleDesc: "Mona applies Hydro and boosts DMG with her Burst.",
-                weapons: [
-                    "Skyward Atlas",
-                    "Favonius Codex",
-                    "Thrilling Tales of Dragon Slayers"
-                ],
-                artifacts: [
-                    "4pc Noblesse Oblige"
-                ],
-                substats: [
-                    "Elemental Mastery",
-                    "Energy Recharge",
-                    "CRIT Rate",
-                    "CRIT DMG"
-                ]
-            },
-            {
-                characterId: "venti",
-                role: "Sub DPS",
-                roleDesc: "Venti groups enemies and spreads Hydro with his Burst.",
-                weapons: [
-                    "Elegy for the End",
-                    "Rust"
-                ],
-                artifacts: [
-                    "4pc Viridescent Venerer"
-                ],
-                substats: [
-                    "CRIT DMG",
-                    "CRIT Rate",
-                    "ATK%"
-                ]
-            },
-            {
-                characterId: "diona",
-                role: "Support",
-                roleDesc: "Diona provides shield, healing, and helps battery.",
-                weapons: [
-                    "Sacrificial Bow",
-                    "Favonius Warbow"
-                ],
-                artifacts: [
-                    "4pc Maiden Beloved"
                 ],
                 substats: [
                     "HP%",

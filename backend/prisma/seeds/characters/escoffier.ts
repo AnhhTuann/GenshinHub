@@ -422,35 +422,6 @@ export const escoffier = {
   goblet: ["Elemental DMG Bonus"],
   circlet: ["CRIT Rate"],
   subStatsPriority: ["CRIT Rate","CRIT DMG","ATK%"],
-  bestWeapons: [
-    {
-        rank: 4,
-        nameVi: "Chương Nhạc Lang Thang",
-        nameEn: "Chương Nhạc Lang Thang",
-        subStat: "Sát Thương Bạo Kích",
-        isF2P: false,
-        refinement: "R5",
-        passiveDescVi: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
-        passiveDescEn: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
-        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.webp"
-    },
-    {
-        rank: 5,
-        nameVi: "Điển Tích Tây Phong",
-        nameEn: "Điển Tích Tây Phong",
-        subStat: "Tỷ Lệ Bạo Kích",
-        isF2P: false,
-        refinement: "R1",
-        passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-        passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-        iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.webp"
-    }
-],
-  bestArtifacts: [
-    {
-        setNameVi: "Thánh Di Vật Đề Cử",
-        setNameEn: "Thánh Di Vật Đề Cử",
-        pieces: 4
-    }
-]
+  bestWeapons: [],
+  bestArtifacts: []
 };

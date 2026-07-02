@@ -199,7 +199,7 @@ export const characterTypeDefs = `#graphql
     
     updateCharacterTierList(id: String!, tier: String, role: String, recommendedC: String, tierNoteEn: [String!], tierNoteVi: [String!]): Character
     
-    addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!, constellation: String): Boolean
+    addCharacterWeapon(characterId: String!, weaponId: String!, rank: Int!, isF2P: Boolean!, constellation: String, refinement: Int): String
     removeCharacterWeapon(id: String!): Boolean
     
     addCharacterArtifact(characterId: String!, setNameEn: String!, setNameVi: String!, pieces: Int!, constellation: String): Boolean

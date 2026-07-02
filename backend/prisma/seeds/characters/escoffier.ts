@@ -416,7 +416,9 @@ export const escoffier = {
   "Elemental Skill",
   "Elemental Burst"
 ],
-  signatureWeapons: [],
+  signatureWeapons: [
+  "Symphonist of Scents"
+],
   teams: [],
   sands: ["ATK%"],
   goblet: ["Elemental DMG Bonus"],

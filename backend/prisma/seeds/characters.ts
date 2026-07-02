@@ -209,6 +209,7 @@ const getSplashUrl = (name: string) => {
 
 
 
+
 import { sayu } from './characters/sayu';
 import { sangonomiyaKokomi } from './characters/sangonomiya-kokomi';
 import { gorou } from './characters/gorou';

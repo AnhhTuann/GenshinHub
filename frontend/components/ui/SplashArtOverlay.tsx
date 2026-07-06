@@ -190,7 +190,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                 transition={{ duration: 9, ease: 'linear' }}
               >
                 <FallbackImage
-                  src={character.splashArtUrl || character.avatarUrl || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'}
+                  src={character.splashArtUrl || character.avatarUrl || '/assets/characters/avatars/UI_AvatarIcon_PlayerGirl.webp'}
                   alt={displayName}
                   fill
                   priority

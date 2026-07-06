@@ -203,7 +203,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             {/* Icon URL */}
             <div>
               <label className={labelClass}>Icon URL</label>
-              <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/images/weapons/..." className={inputClass} />
+              <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/assets/weapons/..." className={inputClass} />
             </div>
           </div>
 

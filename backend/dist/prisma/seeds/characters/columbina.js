@@ -497,7 +497,7 @@ exports.columbina = {
             refinement: "R1",
             passiveDescVi: "Vũ khí trấn phái tốt nhất. Tăng tấn công cơ bản cao, bổ sung Hiệu Quả Nạp lớn. Nội tại tăng sát thương Kỹ Năng Nộ và hồi phục năng lượng trực tiếp.",
             passiveDescEn: "High base ATK and Energy Recharge. Passive boosts Burst damage and generates energy after casting it, solving energy issues directly.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Brisingamen.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Brisingamen.png"
         },
         {
             rank: 2,
@@ -508,7 +508,7 @@ exports.columbina = {
             refinement: "R5",
             passiveDescVi: "Vũ khí chế tạo cung cấp HP%, đồng thời nội tại hồi phục năng lượng cho cả đội và trị liệu nhẹ.",
             passiveDescEn: "Craftable HP% weapon. Regenerates energy for the wielder and heals the party slightly.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Proto.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.png"
         },
         {
             rank: 3,
@@ -519,7 +519,7 @@ exports.columbina = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích và Tinh Thông Nguyên Tố. Nội tại tăng mạnh sát thương E và Q khi đứng sân ngoài.",
             passiveDescEn: "Provides CRIT Rate and EM. Passive increases Skill and Burst damage when off-field, fitting support-DPS hybrid role.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Yue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.png"
         },
         {
             rank: 4,
@@ -530,7 +530,7 @@ exports.columbina = {
             refinement: "R5",
             passiveDescVi: "Chỉ số Hiệu Quả Nạp cao và sinh hạt nhân lượng khi bạo kích để hỗ trợ nạp cho cả đội.",
             passiveDescEn: "High Energy Recharge and white particles on CRIT hits. Helps battery the team.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
         }
     ],
     bestArtifacts: [

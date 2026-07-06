@@ -12,9 +12,9 @@ describe('assetMap', () => {
   });
 
   it('should return correct paths', () => {
-    expect(getCharacterAvatar('furina')).toBe('/assets/characters/furina_avatar.webp');
-    expect(getCharacterSplash('furina')).toBe('/assets/characters/furina_splash.webp');
-    expect(getCharacterGachaSplash('furina')).toBe('/assets/characters/furina_gacha.webp');
+    expect(getCharacterAvatar('furina')).toBe('/assets/characters/avatars/furina_avatar.webp');
+    expect(getCharacterSplash('furina')).toBe('/assets/characters/splash/furina_splash.webp');
+    expect(getCharacterGachaSplash('furina')).toBe('/assets/characters/splash/furina_splash.webp');
     expect(getWeaponIcon('freedom-sworn')).toBe('/assets/weapons/freedom-sworn.webp');
     expect(getItemIcon('gladiator')).toBe('/assets/items/gladiator.webp');
     expect(getElementIcon('pyro')).toBe('/assets/elements/pyro.webp');

@@ -25,7 +25,7 @@ exports.wanderer = {
             refinement: "R1",
             passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
             passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
         },
         {
             rank: 4,
@@ -36,7 +36,7 @@ exports.wanderer = {
             refinement: "R5",
             passiveDescVi: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
             passiveDescEn: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png"
         }
     ],
     bestArtifacts: [

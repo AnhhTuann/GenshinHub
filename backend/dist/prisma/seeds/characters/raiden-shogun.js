@@ -565,7 +565,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Trấn phái hoàn hảo nhất, tăng mạnh Hiệu Quả Nạp và chuyển hóa nó thành Tấn Công%.",
             passiveDescEn: "Trấn phái hoàn hảo nhất, tăng mạnh Hiệu Quả Nạp và chuyển hóa nó thành Tấn Công%.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.png"
         },
         {
             rank: 2,
@@ -576,7 +576,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng lớn Sát Thương Bạo Kích và Tấn Công% khi máu dưới 50%, là vũ khí đa dụng rất mạnh.",
             passiveDescEn: "Cung cấp lượng lớn Sát Thương Bạo Kích và Tấn Công% khi máu dưới 50%, là vũ khí đa dụng rất mạnh.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Homa.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.png"
         },
         {
             rank: 3,
@@ -587,7 +587,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Chuyển đổi Tinh Thông Nguyên Tố thành Tấn Công%, rất hữu dụng trong các đội hình phản ứng nguyên tố.",
             passiveDescEn: "Chuyển đổi Tinh Thông Nguyên Tố thành Tấn Công%, rất hữu dụng trong các đội hình phản ứng nguyên tố.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.png"
         },
         {
             rank: 4,
@@ -598,7 +598,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Lựa chọn tình huống cung cấp Hiệu Quả Nạp và buff cho đội, tuy không tối ưu nhưng vẫn dùng tốt.",
             passiveDescEn: "Lựa chọn tình huống cung cấp Hiệu Quả Nạp và buff cho đội, tuy không tối ưu nhưng vẫn dùng tốt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Trident.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Trident.png"
         },
         {
             rank: 5,
@@ -609,7 +609,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Không quá lý tưởng cho Raiden, ưu tiên lựa chọn khác trừ khi đội hình cần hiệu quả hỗ trợ của nó.",
             passiveDescEn: "Không quá lý tưởng cho Raiden, ưu tiên lựa chọn khác trừ khi đội hình cần hiệu quả hỗ trợ của nó.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Muguet.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.png"
         },
         {
             rank: 6,
@@ -620,7 +620,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Đem lại lượng lớn Tỷ Lệ Bạo Kích và tăng dần Tấn Công%, lựa chọn DPS tổng thể rất ổn định.",
             passiveDescEn: "Đem lại lượng lớn Tỷ Lệ Bạo Kích và tăng dần Tấn Công%, lựa chọn DPS tổng thể rất ổn định.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.png"
         },
         {
             rank: 7,
@@ -631,7 +631,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Cung cấp chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố, cạnh tranh tốt ở mức tinh luyện thấp.",
             passiveDescEn: "Cung cấp chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố, cạnh tranh tốt ở mức tinh luyện thấp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Santika.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.png"
         },
         {
             rank: 8,
@@ -642,7 +642,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Vũ khí phân khúc giá rẻ giúp tăng Tỷ Lệ Bạo Kích, hiệu quả khi solo hoặc đối phó với ít kẻ địch.",
             passiveDescEn: "Vũ khí phân khúc giá rẻ giúp tăng Tỷ Lệ Bạo Kích, hiệu quả khi solo hoặc đối phó với ít kẻ địch.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Gladiator.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.png"
         },
         {
             rank: 9,
@@ -653,7 +653,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Tăng hiệu quả Khiên và Tấn Công%, yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
             passiveDescEn: "Tăng hiệu quả Khiên và Tấn Công%, yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.png"
         },
         {
             rank: 10,
@@ -664,7 +664,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Vũ khí F2P tốt nhất cho Raiden, tăng trực tiếp sát thương Nộ và Tỷ Lệ Bạo Kích của kỹ năng Nộ.",
             passiveDescEn: "Vũ khí F2P tốt nhất cho Raiden, tăng trực tiếp sát thương Nộ và Tỷ Lệ Bạo Kích của kỹ năng Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Mori.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.png"
         },
         {
             rank: 11,
@@ -675,7 +675,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp và Tỷ Lệ Bạo Kích, là vũ khí đa dụng ổn nhưng dễ bị thay thế bởi lựa chọn khác.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp và Tỷ Lệ Bạo Kích, là vũ khí đa dụng ổn nhưng dễ bị thay thế bởi lựa chọn khác.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Dvalin.png"
         },
         {
             rank: 12,
@@ -686,7 +686,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Sát thương Nộ tăng theo tổng năng lượng tiêu hao của cả đội, cực mạnh trong các đội hình tốn nhiều năng lượng.",
             passiveDescEn: "Sát thương Nộ tăng theo tổng năng lượng tiêu hao của cả đội, cực mạnh trong các đội hình tốn nhiều năng lượng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Maria.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Maria.png"
         },
         {
             rank: 13,
@@ -697,7 +697,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Tăng mạnh Tấn Công% và Tỷ Lệ Bạo Kích dựa trên số thành viên Liyue trong đội hình.",
             passiveDescEn: "Tăng mạnh Tấn Công% và Tỷ Lệ Bạo Kích dựa trên số thành viên Liyue trong đội hình.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Lapis.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.png"
         },
         {
             rank: 14,
@@ -708,7 +708,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Ưu tiên nạp năng lượng cho cả đội thay vì sát thương cá nhân, tạo nhiều hạt nhân lượng khi bạo kích.",
             passiveDescEn: "Ưu tiên nạp năng lượng cho cả đội thay vì sát thương cá nhân, tạo nhiều hạt nhân lượng khi bạo kích.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.png"
         }
     ],
     bestArtifacts: [

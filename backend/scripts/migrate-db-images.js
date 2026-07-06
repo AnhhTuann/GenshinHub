@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 function convertPath(oldPath) {
-  if (!oldPath || !oldPath.includes('/images/')) return oldPath;
+  if (!oldPath || !oldPath.includes('/assets/')) return oldPath;
   
   return oldPath.replace(/\/images\/([a-zA-Z0-9_\-\/]+)\.png/g, (match, p1) => {
     let np = p1;

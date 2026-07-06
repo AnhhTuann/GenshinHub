@@ -552,7 +552,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tấn công căn bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công% và HP% sau khi Kỹ Năng Nguyên Tố đánh trúng địch.",
             passiveDescEn: "Tấn công căn bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công% và HP% sau khi Kỹ Năng Nguyên Tố đánh trúng địch.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Deshret.png"
         },
         {
             rank: 2,
@@ -563,7 +563,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao. Tuy chỉ số Phòng Ngự không quá hữu ích nhưng lượng ST bạo cao giúp bù đắp sát thương tốt.",
             passiveDescEn: "Sát Thương Bạo Kích cao. Tuy chỉ số Phòng Ngự không quá hữu ích nhưng lượng ST bạo cao giúp bù đắp sát thương tốt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Itadorimaru.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.png"
         },
         {
             rank: 3,
@@ -574,7 +574,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tấn công căn bản cao và Tỷ Lệ Bạo Kích tốt. Nội tại tăng sát thương Kỹ Năng Nguyên Tố sau phản ứng Kết Tinh.",
             passiveDescEn: "Tấn công căn bản cao và Tỷ Lệ Bạo Kích tốt. Nội tại tăng sát thương Kỹ Năng Nguyên Tố sau phản ứng Kết Tinh.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_GoldenVerdict.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_GoldenVerdict.png"
         },
         {
             rank: 4,
@@ -585,7 +585,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng Tấn Công cực lớn cho Dehya và tăng sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.",
             passiveDescEn: "Cung cấp lượng Tấn Công cực lớn cho Dehya và tăng sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.png"
         },
         {
             rank: 5,
@@ -596,7 +596,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và tăng sát thương đòn đánh sau khi trúng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi Burning.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và tăng sát thương đòn đánh sau khi trúng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi Burning.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_EmeraldSword.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_EmeraldSword.png"
         },
         {
             rank: 6,
@@ -607,7 +607,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tăng sát thương đầu ra đáng kể khi tích đủ tầng nội tại, tuy nhiên cần duy trì khiên bảo vệ để tránh mất tầng.",
             passiveDescEn: "Tăng sát thương đầu ra đáng kể khi tích đủ tầng nội tại, tuy nhiên cần duy trì khiên bảo vệ để tránh mất tầng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Kione.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.png"
         },
         {
             rank: 7,
@@ -618,7 +618,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn F2P cung cấp Tinh Thông Nguyên Tố và Tấn Công% sau khi kích hoạt phản ứng nguyên tố, rất mạnh cho lối chơi Burgeon.",
             passiveDescEn: "Lựa chọn F2P cung cấp Tinh Thông Nguyên Tố và Tấn Công% sau khi kích hoạt phản ứng nguyên tố, rất mạnh cho lối chơi Burgeon.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Fleurfair.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Fleurfair.png"
         },
         {
             rank: 8,
@@ -629,7 +629,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Tinh Thông Nguyên Tố dồi dào và tăng mạnh sát thương lên kẻ địch bị ảnh hưởng bởi Thủy hoặc Lôi.",
             passiveDescEn: "Cung cấp Tinh Thông Nguyên Tố dồi dào và tăng mạnh sát thương lên kẻ địch bị ảnh hưởng bởi Thủy hoặc Lôi.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Perdue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Perdue.png"
         },
         {
             rank: 9,
@@ -640,7 +640,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn F2P tăng Tấn Công% đáng kể khi nhận trị liệu, dễ kích hoạt khi đi kèm Healer.",
             passiveDescEn: "Vũ khí rèn F2P tăng Tấn Công% đáng kể khi nhận trị liệu, dễ kích hoạt khi đi kèm Healer.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Vorpal.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Vorpal.png"
         },
         {
             rank: 10,
@@ -651,7 +651,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Vũ khí sự kiện F2P tuyệt vời cung cấp Hiệu Quả Nạp giúp giảm áp lực nạp nộ và tăng Tấn Công% dựa trên Melusine đã giúp đỡ.",
             passiveDescEn: "Vũ khí sự kiện F2P tuyệt vời cung cấp Hiệu Quả Nạp giúp giảm áp lực nạp nộ và tăng Tấn Công% dựa trên Melusine đã giúp đỡ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Champion.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Champion.png"
         },
         {
             rank: 11,
@@ -662,7 +662,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích và tăng sát thương sau khi chịu ảnh hưởng của các trạng thái nguyên tố.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích và tăng sát thương sau khi chịu ảnh hưởng của các trạng thái nguyên tố.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_BeastTamer.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_BeastTamer.png"
         },
         {
             rank: 12,
@@ -673,7 +673,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tấn Công% cao và gia tăng hiệu quả khiên, hoạt động tốt nhất khi đi kèm nhân vật tạo khiên.",
             passiveDescEn: "Tấn Công% cao và gia tăng hiệu quả khiên, hoạt động tốt nhất khi đi kèm nhân vật tạo khiên.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.png"
         },
         {
             rank: 13,
@@ -684,7 +684,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích tốt và tăng mạnh Tấn Công sau khi kích hoạt phản ứng Nguyên Tố Hỏa hoặc Thiêu Đốt.",
             passiveDescEn: "Tỷ Lệ Bạo Kích tốt và tăng mạnh Tấn Công sau khi kích hoạt phản ứng Nguyên Tố Hỏa hoặc Thiêu Đốt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_RadianceSword.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_RadianceSword.png"
         },
         {
             rank: 14,
@@ -695,7 +695,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp lớn giúp duy trì chu kỳ nộ nạp cho Dehya.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp lớn giúp duy trì chu kỳ nộ nạp cho Dehya.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.png"
         },
         {
             rank: 15,
@@ -706,7 +706,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Tăng sát thương Kỹ Năng Nộ dựa trên tổng năng lượng nộ của cả đội, tối ưu hóa sát thương nổ của Dehya.",
             passiveDescEn: "Tăng sát thương Kỹ Năng Nộ dựa trên tổng năng lượng nộ của cả đội, tối ưu hóa sát thương nổ của Dehya.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Maria.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Maria.png"
         }
     ],
     bestArtifacts: [

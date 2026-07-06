@@ -650,7 +650,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cực cao và Tấn Công cơ bản tốt. Nội tại chuyển hóa Tinh Thông Nguyên Tố thành Tấn Công, rất mạnh trong đội hình Bốc Hơi.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cực cao và Tấn Công cơ bản tốt. Nội tại chuyển hóa Tinh Thông Nguyên Tố thành Tấn Công, rất mạnh trong đội hình Bốc Hơi.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.png"
         },
         {
             rank: 2,
@@ -661,7 +661,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp tốt và gia tăng Tinh Thông Nguyên Tố cho toàn đội, giúp đẩy mạnh sát thương phản ứng.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp tốt và gia tăng Tinh Thông Nguyên Tố cho toàn đội, giúp đẩy mạnh sát thương phản ứng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Muguet.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.png"
         },
         {
             rank: 3,
@@ -672,7 +672,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Vũ khí thử nghiệm cung cấp Sát Thương Bạo Kích, tuy nhiên chỉ số không tối ưu bằng các lựa chọn khác.",
             passiveDescEn: "Vũ khí thử nghiệm cung cấp Sát Thương Bạo Kích, tuy nhiên chỉ số không tối ưu bằng các lựa chọn khác.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Perdix.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Perdix.png"
         },
         {
             rank: 4,
@@ -683,7 +683,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao và nội tại tăng Tấn Công dựa trên HP. Sát thương đầu ra rất lớn nhưng yêu cầu tự bù đắp Hiệu Quả Nạp.",
             passiveDescEn: "Sát Thương Bạo Kích cao và nội tại tăng Tấn Công dựa trên HP. Sát thương đầu ra rất lớn nhưng yêu cầu tự bù đắp Hiệu Quả Nạp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Homa.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.png"
         },
         {
             rank: 5,
@@ -694,7 +694,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Vũ khí tuyệt vời cung cấp lượng lớn Hiệu Quả Nạp và tự động chuyển hóa dòng Nạp thành Tấn Công%, giúp spam Nộ cực mượt.",
             passiveDescEn: "Vũ khí tuyệt vời cung cấp lượng lớn Hiệu Quả Nạp và tự động chuyển hóa dòng Nạp thành Tấn Công%, giúp spam Nộ cực mượt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.png"
         },
         {
             rank: 6,
@@ -705,7 +705,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và nội tại tăng Tấn Công khi đánh trúng kẻ địch. Sát thương ổn định nhưng cần đứng sân một chút để tích tầng.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và nội tại tăng Tấn Công khi đánh trúng kẻ địch. Sát thương ổn định nhưng cần đứng sân một chút để tích tầng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Morax.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.png"
         },
         {
             rank: 7,
@@ -716,7 +716,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Lựa chọn thay thế mang lại Sát Thương Bạo Kích cao, tuy nhiên nội tại không quá phù hợp cho Xiangling.",
             passiveDescEn: "Lựa chọn thay thế mang lại Sát Thương Bạo Kích cao, tuy nhiên nội tại không quá phù hợp cho Xiangling.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Carbine.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Carbine.png"
         },
         {
             rank: 8,
@@ -727,7 +727,7 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn F2P tốt nhất: Tăng trực tiếp Sát Thương và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ cùng chỉ số Hiệu Quả Nạp cao.",
             passiveDescEn: "Lựa chọn F2P tốt nhất: Tăng trực tiếp Sát Thương và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ cùng chỉ số Hiệu Quả Nạp cao.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Mori.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.png"
         },
         {
             rank: 9,
@@ -738,7 +738,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng lớn Tỷ Lệ Bạo Kích và thêm Tấn Công dựa trên số lượng kẻ địch. Cần bù đắp Hiệu Quả Nạp từ thánh di vật.",
             passiveDescEn: "Cung cấp lượng lớn Tỷ Lệ Bạo Kích và thêm Tấn Công dựa trên số lượng kẻ địch. Cần bù đắp Hiệu Quả Nạp từ thánh di vật.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Gladiator.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.png"
         },
         {
             rank: 10,
@@ -749,7 +749,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích và tăng mạnh Tinh Thông Nguyên Tố nếu đội hình có từ 3 nguyên tố khác nhau trở lên.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích và tăng mạnh Tinh Thông Nguyên Tố nếu đội hình có từ 3 nguyên tố khác nhau trở lên.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Shanty.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Shanty.png"
         },
         {
             rank: 11,
@@ -760,7 +760,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố. Thích hợp dùng làm vũ khí thuần tăng sát thương tấn công.",
             passiveDescEn: "Chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố. Thích hợp dùng làm vũ khí thuần tăng sát thương tấn công.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Santika.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.png"
         },
         {
             rank: 12,
@@ -771,7 +771,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Tăng hiệu quả Khiên và Tấn Công%. Yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
             passiveDescEn: "Tăng hiệu quả Khiên và Tấn Công%. Yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.png"
         },
         {
             rank: 13,
@@ -782,7 +782,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Lựa chọn thay thế tạm ổn cung cấp Tỷ Lệ Bạo Kích, tuy nhiên nội tại tăng sát thương không hoạt động tối đa với Xiangling.",
             passiveDescEn: "Lựa chọn thay thế tạm ổn cung cấp Tỷ Lệ Bạo Kích, tuy nhiên nội tại tăng sát thương không hoạt động tối đa với Xiangling.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_BloodMoon.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_BloodMoon.png"
         },
         {
             rank: 13,
@@ -793,7 +793,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Với vũ khí thử nghiệm, coi như vật giữ chỗ. Có lẽ không dùng được.",
             passiveDescEn: "Với vũ khí thử nghiệm, coi như vật giữ chỗ. Có lẽ không dùng được.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_TummaLyhty.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_TummaLyhty.png"
         },
         {
             rank: 15,
@@ -804,7 +804,7 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Gia tăng mạnh sát thương Kỹ Năng Nộ dựa trên tổng năng lượng tiêu hao của toàn đội. Đạt hiệu quả cực cao ở tinh luyện 5.",
             passiveDescEn: "Gia tăng mạnh sát thương Kỹ Năng Nộ dựa trên tổng năng lượng tiêu hao của toàn đội. Đạt hiệu quả cực cao ở tinh luyện 5.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Maria.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Maria.png"
         },
         {
             rank: 16,
@@ -815,7 +815,7 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Vũ khí Event F2P tăng Tấn Công% và Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng, lựa chọn thay thế rất tốt.",
             passiveDescEn: "Vũ khí Event F2P tăng Tấn Công% và Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng, lựa chọn thay thế rất tốt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Windvane.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Windvane.png"
         },
         {
             rank: 17,
@@ -826,7 +826,7 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Tinh Thông Nguyên Tố và khả năng hồi năng lượng khi dùng Kỹ Năng Nguyên Tố, giúp giảm nhẹ áp lực nạp.",
             passiveDescEn: "Cung cấp Tinh Thông Nguyên Tố và khả năng hồi năng lượng khi dùng Kỹ Năng Nguyên Tố, giúp giảm nhẹ áp lực nạp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.png"
         },
         {
             rank: 18,
@@ -837,7 +837,7 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Gia tăng Tỷ Lệ Bạo Kích và Tấn Công% dựa trên số lượng nhân vật Liyue trong đội. Phù hợp cho đội hình National truyền thống.",
             passiveDescEn: "Gia tăng Tỷ Lệ Bạo Kích và Tấn Công% dựa trên số lượng nhân vật Liyue trong đội. Phù hợp cho đội hình National truyền thống.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Lapis.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.png"
         },
         {
             rank: 19,
@@ -848,7 +848,7 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Hiệu Quả Nạp cao và nội tại sinh hạt năng lượng cho toàn đội khi bạo kích, giúp sạc nhanh cho bản thân và đồng đội.",
             passiveDescEn: "Hiệu Quả Nạp cao và nội tại sinh hạt năng lượng cho toàn đội khi bạo kích, giúp sạc nhanh cho bản thân và đồng đội.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.png"
         }
     ],
     bestArtifacts: [

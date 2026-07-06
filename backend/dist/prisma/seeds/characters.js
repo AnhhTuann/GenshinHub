@@ -32,7 +32,7 @@ const getAvatarUrl = (name) => {
     }
     const mapped = enkaNameMap[cleanName] || cleanName;
     const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-    const relativePath = `/images/avatars/UI_AvatarIcon_${urlSafe}.png`;
+    const relativePath = `/assets/avatars/UI_AvatarIcon_${urlSafe}.png`;
     const absolutePath = path_1.default.join(__dirname, '../../../frontend/public', relativePath);
     if (fs_1.default.existsSync(absolutePath)) {
         return relativePath;
@@ -46,7 +46,7 @@ const getSplashUrl = (name) => {
     }
     const mapped = enkaNameMap[cleanName] || cleanName;
     const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-    const relativePath = `/images/splash/UI_Gacha_AvatarImg_${urlSafe}.png`;
+    const relativePath = `/assets/splash/UI_Gacha_AvatarImg_${urlSafe}.png`;
     const absolutePath = path_1.default.join(__dirname, '../../../frontend/public', relativePath);
     if (fs_1.default.existsSync(absolutePath)) {
         return relativePath;
@@ -442,33 +442,33 @@ function parseChar(dataStr) {
     switch (weapon) {
         case 'Sword':
             defaultWeapons = [
-                { weaponId: "primordial-jade-cutter", nameVi: "Bàn Nham Kết Lục", nameEn: "Bàn Nham Kết Lục", rank: 5, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png", subStat: "Tỷ Lệ Bạo Kích", passiveDescVi: "Tăng HP và Tấn Công.", passiveDescEn: "Tăng HP và Tấn Công.", refinement: 1 },
-                { weaponId: "amenoma-kageuchi", nameVi: "Đoản Đao Amenoma", nameEn: "Đoản Đao Amenoma", rank: 4, isF2P: true, iconUrl: "/images/weapons/UI_EquipIcon_Sword_Bakufu.png", subStat: "Tấn Công%", passiveDescVi: "Hồi năng lượng sau khi dùng Nộ.", passiveDescEn: "Hồi năng lượng sau khi dùng Nộ.", refinement: 5 }
+                { weaponId: "primordial-jade-cutter", nameVi: "Bàn Nham Kết Lục", nameEn: "Bàn Nham Kết Lục", rank: 5, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.png", subStat: "Tỷ Lệ Bạo Kích", passiveDescVi: "Tăng HP và Tấn Công.", passiveDescEn: "Tăng HP và Tấn Công.", refinement: 1 },
+                { weaponId: "amenoma-kageuchi", nameVi: "Đoản Đao Amenoma", nameEn: "Đoản Đao Amenoma", rank: 4, isF2P: true, iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Bakufu.png", subStat: "Tấn Công%", passiveDescVi: "Hồi năng lượng sau khi dùng Nộ.", passiveDescEn: "Hồi năng lượng sau khi dùng Nộ.", refinement: 5 }
             ];
             break;
         case 'Claymore':
             defaultWeapons = [
-                { weaponId: "wolfs-gravestone", nameVi: "Đường Cùng Của Sói", nameEn: "Đường Cùng Của Sói", rank: 5, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png", subStat: "Tấn Công%", passiveDescVi: "Tăng mạnh Tấn Công.", passiveDescEn: "Tăng mạnh Tấn Công.", refinement: 1 },
-                { weaponId: "prototype-archaic", nameVi: "Mẫu Cổ Hoa", nameEn: "Mẫu Cổ Hoa", rank: 4, isF2P: true, iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Proto.png", subStat: "Tấn Công%", passiveDescVi: "Có xác suất gây sát thương AoE.", passiveDescEn: "Có xác suất gây sát thương AoE.", refinement: 5 }
+                { weaponId: "wolfs-gravestone", nameVi: "Đường Cùng Của Sói", nameEn: "Đường Cùng Của Sói", rank: 5, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.png", subStat: "Tấn Công%", passiveDescVi: "Tăng mạnh Tấn Công.", passiveDescEn: "Tăng mạnh Tấn Công.", refinement: 1 },
+                { weaponId: "prototype-archaic", nameVi: "Mẫu Cổ Hoa", nameEn: "Mẫu Cổ Hoa", rank: 4, isF2P: true, iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Proto.png", subStat: "Tấn Công%", passiveDescVi: "Có xác suất gây sát thương AoE.", passiveDescEn: "Có xác suất gây sát thương AoE.", refinement: 5 }
             ];
             break;
         case 'Bow':
             defaultWeapons = [
-                { weaponId: "skyward-harp", nameVi: "Cánh Thiên Không", nameEn: "Cánh Thiên Không", rank: 5, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png", subStat: "Tỷ Lệ Bạo Kích", passiveDescVi: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.", passiveDescEn: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.", refinement: 1 },
-                { weaponId: "the-stringless", nameVi: "Tuyệt Huyền", nameEn: "Tuyệt Huyền", rank: 4, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png", subStat: "Tinh Thông Nguyên Tố", passiveDescVi: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.", passiveDescEn: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.", refinement: 5 }
+                { weaponId: "skyward-harp", nameVi: "Cánh Thiên Không", nameEn: "Cánh Thiên Không", rank: 5, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.png", subStat: "Tỷ Lệ Bạo Kích", passiveDescVi: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.", passiveDescEn: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.", refinement: 1 },
+                { weaponId: "the-stringless", nameVi: "Tuyệt Huyền", nameEn: "Tuyệt Huyền", rank: 4, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Troupe.png", subStat: "Tinh Thông Nguyên Tố", passiveDescVi: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.", passiveDescEn: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.", refinement: 5 }
             ];
             break;
         case 'Catalyst':
             defaultWeapons = [
-                { weaponId: "lost-prayer-to-the-sacred-winds", nameVi: "Điển Tích Tây Phong", nameEn: "Điển Tích Tây Phong", rank: 5, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png", subStat: "Tỷ Lệ Bạo Kích", passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.", passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.", refinement: 1 },
-                { weaponId: "the-widsith", nameVi: "Chương Nhạc Lang Thang", nameEn: "Chương Nhạc Lang Thang", rank: 4, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png", subStat: "Sát Thương Bạo Kích", passiveDescVi: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.", passiveDescEn: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.", refinement: 5 }
+                { weaponId: "lost-prayer-to-the-sacred-winds", nameVi: "Điển Tích Tây Phong", nameEn: "Điển Tích Tây Phong", rank: 5, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.png", subStat: "Tỷ Lệ Bạo Kích", passiveDescVi: "Tăng tốc độ di chuyển và sát thương nguyên tố.", passiveDescEn: "Tăng tốc độ di chuyển và sát thương nguyên tố.", refinement: 1 },
+                { weaponId: "the-widsith", nameVi: "Chương Nhạc Lang Thang", nameEn: "Chương Nhạc Lang Thang", rank: 4, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png", subStat: "Sát Thương Bạo Kích", passiveDescVi: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.", passiveDescEn: "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.", refinement: 5 }
             ];
             break;
         case 'Polearm':
         default:
             defaultWeapons = [
-                { weaponId: "engulfing-lightning", nameVi: "Thương Diệu", nameEn: "Thương Diệu", rank: 5, isF2P: false, iconUrl: "/images/weapons/UI_EquipIcon_Pole_Narukami.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDescVi: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", passiveDescEn: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", refinement: 1 },
-                { weaponId: "the-catch", nameVi: "Lao Xiên Cá", nameEn: "Lao Xiên Cá", rank: 4, isF2P: true, iconUrl: "/images/weapons/UI_EquipIcon_Pole_Mori.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDescVi: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", passiveDescEn: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", refinement: 5 }
+                { weaponId: "engulfing-lightning", nameVi: "Thương Diệu", nameEn: "Thương Diệu", rank: 5, isF2P: false, iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDescVi: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", passiveDescEn: "ATK cơ bản cao và Độ Tăng Tỷ Lệ Phá Tính thuộc tính phụ tương tác với spam tấn công bình thường.", refinement: 1 },
+                { weaponId: "the-catch", nameVi: "Lao Xiên Cá", nameEn: "Lao Xiên Cá", rank: 4, isF2P: true, iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.png", subStat: "Hiệu Quả Nạp Nguyên Tố", passiveDescVi: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", passiveDescEn: "Tăng sát thương Kỹ Năng Nộ và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ.", refinement: 5 }
             ];
             break;
     }

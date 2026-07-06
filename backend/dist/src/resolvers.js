@@ -87,7 +87,7 @@ async function enrichArtifacts(artifacts, setLookup) {
                     return {
                         nameEn: "Physical DMG +25% set",
                         nameVi: "Bộ Sát Thương Vật Lý +25%",
-                        iconUrl: "/images/artifacts/UI_RelicIcon_15008_4.png",
+                        iconUrl: "/assets/artifacts/UI_RelicIcon_15008_4.png",
                         artifactSetId: "15008",
                     };
                 }
@@ -104,7 +104,7 @@ async function enrichArtifacts(artifacts, setLookup) {
             ...a,
             setNameEn: dbArtifact?.nameEn || a.setNameEn,
             setNameVi: dbArtifact?.nameVi || a.setNameVi,
-            iconUrl: isMix ? "/images/artifacts/UI_RelicIcon_15001_4.png" : (dbArtifact?.iconUrl || null),
+            iconUrl: isMix ? "/assets/artifacts/UI_RelicIcon_15001_4.png" : (dbArtifact?.iconUrl || null),
             rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
             artifactSetId: dbArtifact?.id || null,
             mixSets,
@@ -218,7 +218,7 @@ exports.resolvers = {
                     uid: args.uid,
                     nickname: data.playerInfo?.nickname || 'Unknown',
                     level: data.playerInfo?.level || 1,
-                    avatarUrl: data.playerInfo?.profilePicture?.avatarId ? `/images/avatars/UI_AvatarIcon_${data.playerInfo.profilePicture.avatarId}.png` : null,
+                    avatarUrl: data.playerInfo?.profilePicture?.avatarId ? `/assets/avatars/UI_AvatarIcon_${data.playerInfo.profilePicture.avatarId}.png` : null,
                     characters: data.avatarInfoList?.map((a) => a.avatarId.toString()) || [],
                 };
                 cache_1.showcaseCache.set(args.uid, result);

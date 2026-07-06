@@ -262,7 +262,7 @@ exports.xinyan = {
             refinement: "R1",
             passiveDescVi: "Tăng mạnh phòng ngự và sát thương đòn đánh thường/trọng kích dựa trên Phòng Ngự, rất phù hợp với khiên của Xinyan.",
             passiveDescEn: "Tăng mạnh phòng ngự và sát thương đòn đánh thường/trọng kích dựa trên Phòng Ngự, rất phù hợp với khiên của Xinyan.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Itadorimaru.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.png"
         },
         {
             rank: 2,
@@ -273,7 +273,7 @@ exports.xinyan = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp lớn giúp Xinyan dễ dàng nạp đầy Nộ và tạo thêm kiếm khí chân không gây sát thương Vật Lý.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp lớn giúp Xinyan dễ dàng nạp đầy Nộ và tạo thêm kiếm khí chân không gây sát thương Vật Lý.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.png"
         },
         {
             rank: 3,
@@ -284,7 +284,7 @@ exports.xinyan = {
             refinement: "R1",
             passiveDescVi: "Tích lũy sát thương tăng dần theo thời gian, đem lại lượng sát thương đầu ra cực kỳ ổn định nếu được bảo kê tốt.",
             passiveDescEn: "Tích lũy sát thương tăng dần theo thời gian, đem lại lượng sát thương đầu ra cực kỳ ổn định nếu được bảo kê tốt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Kione.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.png"
         },
         {
             rank: 4,
@@ -295,7 +295,7 @@ exports.xinyan = {
             refinement: "R1",
             passiveDescVi: "Tăng mạnh Tấn Công% và cường hóa hiệu quả Khiên. Hoàn hảo khi kết hợp với nhân vật tạo khiên như Xinyan.",
             passiveDescEn: "Tăng mạnh Tấn Công% và cường hóa hiệu quả Khiên. Hoàn hảo khi kết hợp với nhân vật tạo khiên như Xinyan.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.png"
         },
         {
             rank: 5,
@@ -306,7 +306,7 @@ exports.xinyan = {
             refinement: "R1",
             passiveDescVi: "Tăng cực nhiều Sát Thương Vật Lý và tốc độ đánh cho cả đội, tối ưu chuỗi combo xoay trọng kích của Xinyan.",
             passiveDescEn: "Tăng cực nhiều Sát Thương Vật Lý và tốc độ đánh cho cả đội, tối ưu chuỗi combo xoay trọng kích của Xinyan.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Widsith.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Widsith.png"
         },
         {
             rank: 6,
@@ -317,7 +317,7 @@ exports.xinyan = {
             refinement: "R1",
             passiveDescVi: "Bơm lượng Tấn Công khổng lồ và tăng mạnh sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.",
             passiveDescEn: "Bơm lượng Tấn Công khổng lồ và tăng mạnh sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Wolfmound.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.png"
         },
         {
             rank: 7,
@@ -328,7 +328,7 @@ exports.xinyan = {
             refinement: "R5",
             passiveDescVi: "Vũ khí Event F2P cực tốt, tăng chỉ số Tấn Công và gia tăng trực tiếp lượng sát thương từ Kỹ Năng Nộ.",
             passiveDescEn: "Vũ khí Event F2P cực tốt, tăng chỉ số Tấn Công và gia tăng trực tiếp lượng sát thương từ Kỹ Năng Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_MillenniaTuna.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_MillenniaTuna.png"
         },
         {
             rank: 8,
@@ -339,7 +339,7 @@ exports.xinyan = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn rèn F2P tuyệt vời cung cấp chỉ số Sát Thương Vật Lý và tạo thêm băng rơi gây sát thương diện rộng.",
             passiveDescEn: "Lựa chọn rèn F2P tuyệt vời cung cấp chỉ số Sát Thương Vật Lý và tạo thêm băng rơi gây sát thương diện rộng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Dragonfell.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dragonfell.png"
         },
         {
             rank: 9,
@@ -350,7 +350,7 @@ exports.xinyan = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn quốc dân dễ tiếp cận, tăng Tấn Công và có tỷ lệ gây thêm sát thương vật lý diện rộng mỗi 15s.",
             passiveDescEn: "Vũ khí rèn quốc dân dễ tiếp cận, tăng Tấn Công và có tỷ lệ gây thêm sát thương vật lý diện rộng mỗi 15s.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Claymore_Proto.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Proto.png"
         }
     ],
     bestArtifacts: [

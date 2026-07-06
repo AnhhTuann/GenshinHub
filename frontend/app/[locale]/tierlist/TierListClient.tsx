@@ -111,7 +111,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
         <div className={`relative w-full aspect-square ${rarityBg} border-b-0 rounded-t-md p-1`}>
           {isChar ? (
             <FallbackImage 
-              src={getImageUrl(item.avatarUrl) || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'} 
+              src={getImageUrl(item.avatarUrl) || '/assets/characters/avatars/UI_AvatarIcon_PlayerGirl.webp'} 
               alt={name} 
               fill 
               className="object-cover rounded-sm" 

@@ -800,7 +800,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Tấn công cơ bản cao và Sát Thương Bạo Kích cực lớn. Nội tại tăng Tỷ Lệ Bạo Kích và Tinh Thông Nguyên Tố sau khi dùng kỹ năng, rất thích hợp cho Klee.",
             passiveDescEn: "Tấn công cơ bản cao và Sát Thương Bạo Kích cực lớn. Nội tại tăng Tỷ Lệ Bạo Kích và Tinh Thông Nguyên Tố sau khi dùng kỹ năng, rất thích hợp cho Klee.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Sistrum.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Sistrum.png"
         },
         {
             rank: 2,
@@ -811,7 +811,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Dòng phụ Tỷ Lệ Bạo Kích và nội tại tăng Tốc Chạy. Tăng Sát Thương Nguyên Tố theo thời gian đứng sân giúp Klee dồn dame cực tốt.",
             passiveDescEn: "Dòng phụ Tỷ Lệ Bạo Kích và nội tại tăng Tốc Chạy. Tăng Sát Thương Nguyên Tố theo thời gian đứng sân giúp Klee dồn dame cực tốt.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
         },
         {
             rank: 3,
@@ -822,7 +822,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao. Nội tại tăng sát thương Kỹ Năng Nguyên Tố và tăng Sát Thương Nguyên Tố khi dùng kỹ năng liên tục.",
             passiveDescEn: "Sát Thương Bạo Kích cao. Nội tại tăng sát thương Kỹ Năng Nguyên Tố và tăng Sát Thương Nguyên Tố khi dùng kỹ năng liên tục.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Narukami.png"
         },
         {
             rank: 4,
@@ -833,7 +833,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao. Tăng Tấn Công% và Sát Thương Tấn Công Thường sau khi sử dụng Kỹ Năng Nguyên Tố, tối ưu hóa chuỗi combo của Klee.",
             passiveDescEn: "Sát Thương Bạo Kích cao. Tăng Tấn Công% và Sát Thương Tấn Công Thường sau khi sử dụng Kỹ Năng Nguyên Tố, tối ưu hóa chuỗi combo của Klee.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_VaresaTransformer.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_VaresaTransformer.png"
         },
         {
             rank: 5,
@@ -844,7 +844,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Tấn công cơ bản cao và Sát Thương Bạo Kích%. Sau khi trọng kích trúng địch sẽ tăng Tỷ Lệ Bạo Kích và Tấn Công.",
             passiveDescEn: "Tấn công cơ bản cao và Sát Thương Bạo Kích%. Sau khi trọng kích trúng địch sẽ tăng Tỷ Lệ Bạo Kích và Tấn Công.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Iudex.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Iudex.png"
         },
         {
             rank: 6,
@@ -855,7 +855,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích. Tăng sát thương Tấn Công Thường và sát thương Kỹ Năng Nguyên Tố, tương thích cao với bộ kỹ năng kép của Klee.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích. Tăng sát thương Tấn Công Thường và sát thương Kỹ Năng Nguyên Tố, tương thích cao với bộ kỹ năng kép của Klee.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Wheatley.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Wheatley.png"
         },
         {
             rank: 7,
@@ -866,7 +866,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Dòng phụ Sát Thương Bạo Kích. Sau khi dùng Kỹ Năng Nguyên Tố sẽ tăng Tốc Độ Tấn Công Thường và Sát Thương Tấn Công Thường.",
             passiveDescEn: "Dòng phụ Sát Thương Bạo Kích. Sau khi dùng Kỹ Năng Nguyên Tố sẽ tăng Tốc Độ Tấn Công Thường và Sát Thương Tấn Công Thường.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Alaya.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Alaya.png"
         },
         {
             rank: 8,
@@ -877,7 +877,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích% (hoặc Sát Thương Bạo Kích%). Tăng sát thương Trọng Kích và hồi năng lượng, hỗ trợ nạp Nộ cho Klee.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích% (hoặc Sát Thương Bạo Kích%). Tăng sát thương Trọng Kích và hồi năng lượng, hỗ trợ nạp Nộ cho Klee.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png"
         },
         {
             rank: 9,
@@ -888,7 +888,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Tấn Công% dồi dào. Nội tại tạo thêm sát thương vật lý diện rộng và tăng Sát Thương Nguyên Tố ổn định.",
             passiveDescEn: "Tấn Công% dồi dào. Nội tại tạo thêm sát thương vật lý diện rộng và tăng Sát Thương Nguyên Tố ổn định.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Dvalin.png"
         },
         {
             rank: 10,
@@ -899,7 +899,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao. Nhận ngẫu nhiên lượng lớn Tấn Công%, Sát Thương Nguyên Tố hoặc Tinh Thông Nguyên Tố, cung cấp sát thương bùng nổ cực khủng.",
             passiveDescEn: "Sát Thương Bạo Kích cao. Nhận ngẫu nhiên lượng lớn Tấn Công%, Sát Thương Nguyên Tố hoặc Tinh Thông Nguyên Tố, cung cấp sát thương bùng nổ cực khủng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png"
         },
         {
             rank: 11,
@@ -910,7 +910,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích. Đòn đánh thường trúng địch tăng sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích. Đòn đánh thường trúng địch tăng sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Resurrection.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Resurrection.png"
         },
         {
             rank: 12,
@@ -921,7 +921,7 @@ exports.klee = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích. Tăng Tinh Thông Nguyên Tố và Tấn Công sau khi dùng kỹ năng, thích hợp cho đội phản ứng.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích. Tăng Tinh Thông Nguyên Tố và Tấn Công sau khi dùng kỹ năng, thích hợp cho đội phản ứng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Yue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.png"
         },
         {
             rank: 13,
@@ -932,7 +932,7 @@ exports.klee = {
             refinement: "R5",
             passiveDescVi: "Tăng mạnh Tấn Công% và tăng Sát Thương Nguyên Tố khi dùng kỹ năng, giảm áp lực nạp Nộ.",
             passiveDescEn: "Tăng mạnh Tấn Công% và tăng Sát Thương Nguyên Tố khi dùng kỹ năng, giảm áp lực nạp Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Vorpal.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Vorpal.png"
         }
     ],
     bestArtifacts: [

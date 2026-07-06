@@ -636,7 +636,7 @@ exports.yelan = {
             refinement: "R1",
             passiveDescVi: "Dòng phụ Hiệu Quả Nạp cao và khả năng dùng Kỹ Năng Nộ kích hoạt buff Tấn Công cho đội; lý tưởng cho lối build hỗ trợ cần nhiều Nạp.",
             passiveDescEn: "Dòng phụ Hiệu Quả Nạp cao và khả năng dùng Kỹ Năng Nộ kích hoạt buff Tấn Công cho đội; lý tưởng cho lối build hỗ trợ cần nhiều Nạp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.png"
         },
         {
             rank: 2,
@@ -647,7 +647,7 @@ exports.yelan = {
             refinement: "R5",
             passiveDescVi: "Nội tại tinh luyện tạo hạt nhân lượng khi bạo kích bằng Kỹ Năng Nguyên Tố, giải quyết vấn đề nạp cho bản thân và toàn đội; Tấn Công cơ bản thấp không ảnh hưởng.",
             passiveDescEn: "Nội tại tinh luyện tạo hạt nhân lượng khi bạo kích bằng Kỹ Năng Nguyên Tố, giải quyết vấn đề nạp cho bản thân và toàn đội; Tấn Công cơ bản thấp không ảnh hưởng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Zephyrus.png"
         },
         {
             rank: 3,
@@ -658,7 +658,7 @@ exports.yelan = {
             refinement: "R1",
             passiveDescVi: "Dòng phụ Sát Thương Bạo Kích khổng lồ và nội tại tăng HP% giúp tăng mạnh sát thương, nhưng đòi hỏi Hiệu Quả Nạp cao từ thánh di vật; chỉ dùng khi có thể đạt trên 200% Nạp.",
             passiveDescEn: "Dòng phụ Sát Thương Bạo Kích khổng lồ và nội tại tăng HP% giúp tăng mạnh sát thương, nhưng đòi hỏi Hiệu Quả Nạp cao từ thánh di vật; chỉ dùng khi có thể đạt trên 200% Nạp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Kirin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Kirin.png"
         },
         {
             rank: 4,
@@ -669,7 +669,7 @@ exports.yelan = {
             refinement: "R3",
             passiveDescVi: "Nội tại tinh luyện reset hồi chiêu Kỹ Năng Nguyên Tố, tạo thêm hạt năng lượng; dòng phụ Hiệu Quả Nạp cao giúp giảm áp lực nạp.",
             passiveDescEn: "Nội tại tinh luyện reset hồi chiêu Kỹ Năng Nguyên Tố, tạo thêm hạt năng lượng; dòng phụ Hiệu Quả Nạp cao giúp giảm áp lực nạp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Fossil.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Fossil.png"
         }
     ],
     bestArtifacts: [

@@ -259,7 +259,7 @@ exports.sigewinne = {
             refinement: "R1",
             passiveDescVi: "Vũ khí trấn phái tốt nhất. Dòng phụ HP% tăng mạnh trị liệu và sát thương kỹ năng nộ.",
             passiveDescEn: "Signature bow; HP% substat directly boosts healing and Burst stack generation.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Arcdange.png"
         },
         {
             rank: 2,
@@ -270,7 +270,7 @@ exports.sigewinne = {
             refinement: "R5",
             passiveDescVi: "Cung cấp chỉ số HP% lớn từ dòng phụ, nội tại có cơ chế nổ sát thương diện rộng hữu ích.",
             passiveDescEn: "High base ATK and Energy Recharge help Burst uptime, but HP% is preferred for healing.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Stinger.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Stinger.png"
         },
         {
             rank: 3,
@@ -281,7 +281,7 @@ exports.sigewinne = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn 3 sao tốt nhất cho vai trò trị liệu thuần túy nhờ dòng phụ HP% cực cao.",
             passiveDescEn: "3-star with HP% substat; best F2P option for raw healing output.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Curve.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Curve.png"
         },
         {
             rank: 4,
@@ -292,7 +292,7 @@ exports.sigewinne = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp lớn và hạt nhân lượng cho đồng đội khi tạo bạo kích.",
             passiveDescEn: "Provides team energy via particles; good if Burst uptime is a concern.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Zephyrus.png"
         },
         {
             rank: 5,
@@ -303,7 +303,7 @@ exports.sigewinne = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp cao, hỗ trợ tăng Tinh Thông Nguyên Tố và Tấn Công% cho cả đội.",
             passiveDescEn: "Boosts team Elemental Mastery and ATK% after Skill hits; supports reaction comps.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Widsith.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Widsith.png"
         },
         {
             rank: 6,
@@ -314,7 +314,7 @@ exports.sigewinne = {
             refinement: "R5",
             passiveDescVi: "Có cơ hội làm mới hồi chiêu kỹ năng nguyên tố, giúp tăng tần suất kích hoạt trị liệu.",
             passiveDescEn: "Resets Skill cooldown, allowing more Convalescence stacks and healing triggers.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Fossil.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Fossil.png"
         }
     ],
     bestArtifacts: [

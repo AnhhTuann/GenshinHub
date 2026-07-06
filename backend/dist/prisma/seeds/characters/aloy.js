@@ -25,7 +25,7 @@ exports.aloy = {
             refinement: "R1",
             passiveDescVi: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
             passiveDescEn: "Tăng Sát Thương Bạo Kích và có xác suất gây sát thương vật lý.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Dvalin.png"
         },
         {
             rank: 4,
@@ -36,7 +36,7 @@ exports.aloy = {
             refinement: "R5",
             passiveDescVi: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
             passiveDescEn: "Tăng sát thương Kỹ năng Nguyên tố và Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Troupe.png"
         },
         {
             rank: 1,
@@ -47,7 +47,7 @@ exports.aloy = {
             refinement: "R1",
             passiveDescVi: null,
             passiveDescEn: null,
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Arcdange.png"
         },
         {
             rank: 1,
@@ -58,7 +58,7 @@ exports.aloy = {
             refinement: "R1",
             passiveDescVi: null,
             passiveDescEn: null,
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Amos.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Amos.png"
         },
         {
             rank: 1,
@@ -69,7 +69,7 @@ exports.aloy = {
             refinement: "R1",
             passiveDescVi: null,
             passiveDescEn: null,
-            iconUrl: "/images/weapons/UI_EquipIcon_Bow_Arcdange.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Bow_Arcdange.png"
         }
     ],
     bestArtifacts: [

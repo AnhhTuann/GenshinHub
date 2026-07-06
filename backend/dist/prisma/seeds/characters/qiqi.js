@@ -27,7 +27,7 @@ exports.qiqi = {
             refinement: "R5",
             passiveDescVi: "Hồi năng lượng sau khi dùng Nộ.",
             passiveDescEn: "Hồi năng lượng sau khi dùng Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Sword_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Bakufu.png"
         },
         {
             rank: 5,
@@ -38,7 +38,7 @@ exports.qiqi = {
             refinement: "R1",
             passiveDescVi: "Tăng HP và Tấn Công.",
             passiveDescEn: "Tăng HP và Tấn Công.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Sword_Morax.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.png"
         }
     ],
     bestArtifacts: [

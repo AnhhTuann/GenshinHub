@@ -26,7 +26,7 @@ async function seedArtifacts(prisma) {
                 piece2DescEn: affixesEn[0] || affixesVi[0] || "",
                 piece4DescVi: affixesVi[1] || "",
                 piece4DescEn: affixesEn[1] || affixesVi[1] || "",
-                iconUrl: item.icon ? `/images/artifacts/${item.icon}.png` : null,
+                iconUrl: item.icon ? `/assets/artifacts/${item.icon}.png` : null,
             };
         });
         await prisma.artifactSet.deleteMany({});

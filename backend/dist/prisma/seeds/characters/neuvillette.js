@@ -418,7 +418,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Vũ khí trấn phái tốt nhất. Cung cấp chỉ số Sát Thương Bạo Kích cực cao, tăng HP% và gia tăng mạnh sát thương đòn Trọng Kích. Nội tại hoàn hảo cho cơ chế tăng giảm HP của Neuvillette.",
             passiveDescEn: "Vũ khí trấn phái tốt nhất. Cung cấp chỉ số Sát Thương Bạo Kích cực cao, tăng HP% và gia tăng mạnh sát thương đòn Trọng Kích. Nội tại hoàn hảo cho cơ chế tăng giảm HP của Neuvillette.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Iudex.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Iudex.png"
         },
         {
             rank: 2,
@@ -429,7 +429,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Vũ khí từ Nhật Ký Hành Trình cực kỳ mạnh mẽ, cung cấp lượng lớn Tỷ Lệ Bạo Kích và tăng mạnh HP% khi ở trong hàng chờ, cực kỳ thích hợp cho Neuvillette.",
             passiveDescEn: "Vũ khí từ Nhật Ký Hành Trình cực kỳ mạnh mẽ, cung cấp lượng lớn Tỷ Lệ Bạo Kích và tăng mạnh HP% khi ở trong hàng chờ, cực kỳ thích hợp cho Neuvillette.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Yue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.png"
         },
         {
             rank: 3,
@@ -440,7 +440,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Pháp khí tăng chỉ số Sát Thương Bạo Kích lớn. Dù nội tại tập trung vào phản ứng Bốc Hơi của đòn đánh thường, vũ khí này vẫn là một 'stat stick' rất tốt cho Neuvillette.",
             passiveDescEn: "Pháp khí tăng chỉ số Sát Thương Bạo Kích lớn. Dù nội tại tập trung vào phản ứng Bốc Hơi của đòn đánh thường, vũ khí này vẫn là một 'stat stick' rất tốt cho Neuvillette.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png"
         },
         {
             rank: 4,
@@ -451,7 +451,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Một vũ khí tăng chỉ số Sát Thương Bạo Kích khác. Cung cấp Tỷ Lệ Bạo Kích nhỏ và gia tăng chỉ số Tinh Thông Nguyên Tố sau khi dùng Kỹ Năng Nguyên Tố.",
             passiveDescEn: "Một vũ khí tăng chỉ số Sát Thương Bạo Kích khác. Cung cấp Tỷ Lệ Bạo Kích nhỏ và gia tăng chỉ số Tinh Thông Nguyên Tố sau khi dùng Kỹ Năng Nguyên Tố.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Sistrum.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Sistrum.png"
         },
         {
             rank: 5,
@@ -462,7 +462,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Cung cấp HP% lớn và hồi năng lượng sau khi dùng Kỹ Năng Nộ. Giúp giảm bớt áp lực Hiệu Quả Nạp cho Neuvillette và tăng sát thương dựa trên HP.",
             passiveDescEn: "Cung cấp HP% lớn và hồi năng lượng sau khi dùng Kỹ Năng Nộ. Giúp giảm bớt áp lực Hiệu Quả Nạp cho Neuvillette và tăng sát thương dựa trên HP.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Morax.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Morax.png"
         },
         {
             rank: 6,
@@ -473,7 +473,7 @@ exports.neuvillette = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn rèn F2P hoàn hảo nhất. Tăng rất nhiều HP% và hỗ trợ hồi năng lượng cũng như hồi một lượng máu nhỏ cho toàn đội sau khi thi triển Nộ.",
             passiveDescEn: "Lựa chọn rèn F2P hoàn hảo nhất. Tăng rất nhiều HP% và hỗ trợ hồi năng lượng cũng như hồi một lượng máu nhỏ cho toàn đội sau khi thi triển Nộ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Proto.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.png"
         },
         {
             rank: 7,
@@ -484,7 +484,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Chỉ số chính Tăng Tấn Công không quá hữu ích, nhưng dòng phụ Tỷ Lệ Bạo Kích cao và nội tại tăng sát thương Trọng Kích khi HP thay đổi vẫn rất ổn.",
             passiveDescEn: "Chỉ số chính Tăng Tấn Công không quá hữu ích, nhưng dòng phụ Tỷ Lệ Bạo Kích cao và nội tại tăng sát thương Trọng Kích khi HP thay đổi vẫn rất ổn.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Wheatley.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Wheatley.png"
         },
         {
             rank: 8,
@@ -495,7 +495,7 @@ exports.neuvillette = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Sát Thương Bạo Kích lớn. Các hiệu ứng buff Tinh Thông Nguyên Tố hoặc Sát Thương Nguyên Tố rất tốt, nhưng buff Tấn Công% sẽ bị lãng phí.",
             passiveDescEn: "Cung cấp Sát Thương Bạo Kích lớn. Các hiệu ứng buff Tinh Thông Nguyên Tố hoặc Sát Thương Nguyên Tố rất tốt, nhưng buff Tấn Công% sẽ bị lãng phí.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png"
         },
         {
             rank: 9,
@@ -506,7 +506,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Đóng vai trò làm vũ khí tăng chỉ số Sát Thương Bạo Kích. Nội tại tăng sát thương Kỹ Năng Nguyên Tố nhưng Neuvillette không tận dụng được tối đa.",
             passiveDescEn: "Đóng vai trò làm vũ khí tăng chỉ số Sát Thương Bạo Kích. Nội tại tăng sát thương Kỹ Năng Nguyên Tố nhưng Neuvillette không tận dụng được tối đa.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Narukami.png"
         },
         {
             rank: 10,
@@ -517,7 +517,7 @@ exports.neuvillette = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích cao và tăng tốc độ di chuyển. Tăng dần Sát Thương Nguyên Tố khi đứng sân lâu, phù hợp với thời gian đứng sân của Neuvillette.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích cao và tăng tốc độ di chuyển. Tăng dần Sát Thương Nguyên Tố khi đứng sân lâu, phù hợp với thời gian đứng sân của Neuvillette.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
         },
         {
             rank: 11,
@@ -528,7 +528,7 @@ exports.neuvillette = {
             refinement: "R5",
             passiveDescVi: "Vũ khí sự kiện F2P cung cấp HP%. Chỉ nên sử dụng nếu bạn hoàn toàn không có Mẫu Kim Phách hoặc các pháp khí tăng chỉ số khác.",
             passiveDescEn: "Vũ khí sự kiện F2P cung cấp HP%. Chỉ nên sử dụng nếu bạn hoàn toàn không có Mẫu Kim Phách hoặc các pháp khí tăng chỉ số khác.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_ConchSprayer.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_ConchSprayer.png"
         }
     ],
     bestArtifacts: [

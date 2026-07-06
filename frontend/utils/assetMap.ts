@@ -5,7 +5,7 @@ export type AssetType = 'items' | 'characters' | 'weapons' | 'elements';
  */
 export const getCharacterAvatar = (charId: string) => {
   if (!charId) return '/assets/fallback-icon.png';
-  return `/assets/characters/${charId}_avatar.webp`;
+  return `/assets/characters/avatars/${charId}_avatar.webp`;
 };
 
 /**
@@ -13,7 +13,7 @@ export const getCharacterAvatar = (charId: string) => {
  */
 export const getCharacterSplash = (charId: string) => {
   if (!charId) return '/assets/fallback-icon.png';
-  return `/assets/characters/${charId}_splash.webp`;
+  return `/assets/characters/splash/${charId}_splash.webp`;
 };
 
 /**
@@ -21,7 +21,7 @@ export const getCharacterSplash = (charId: string) => {
  */
 export const getCharacterGachaSplash = (charId: string) => {
   if (!charId) return '/assets/fallback-icon.png';
-  return `/assets/characters/${charId}_gacha.webp`;
+  return `/assets/characters/splash/${charId}_splash.webp`;
 };
 
 /**

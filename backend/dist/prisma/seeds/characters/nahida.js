@@ -731,7 +731,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Vũ khí tốt nhất: cung cấp Tinh Thông Nguyên Tố cực lớn và buff thêm TTNT cho cả đội, giúp tăng mạnh sát thương phản ứng và khả năng hỗ trợ.",
             passiveDescEn: "Vũ khí tốt nhất: cung cấp Tinh Thông Nguyên Tố cực lớn và buff thêm TTNT cho cả đội, giúp tăng mạnh sát thương phản ứng và khả năng hỗ trợ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Ayus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Ayus.png"
         },
         {
             rank: 2,
@@ -742,7 +742,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tấn Công cơ bản cao và dòng phụ Tỷ Lệ Bạo Kích; nội tại cung cấp lượng lớn Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng.",
             passiveDescEn: "Tấn Công cơ bản cao và dòng phụ Tỷ Lệ Bạo Kích; nội tại cung cấp lượng lớn Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_SakuraFan.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SakuraFan.png"
         },
         {
             rank: 3,
@@ -753,7 +753,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng lớn Sát Thương Bạo Kích và tăng sát thương Kỹ Năng Nguyên Tố từ các tầng nội tại, tuy nhiên cần đứng sân để duy trì.",
             passiveDescEn: "Cung cấp lượng lớn Sát Thương Bạo Kích và tăng sát thương Kỹ Năng Nguyên Tố từ các tầng nội tại, tuy nhiên cần đứng sân để duy trì.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Narukami.png"
         },
         {
             rank: 4,
@@ -764,7 +764,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Tinh Thông Nguyên Tố cao và có tỷ lệ reset thời gian hồi chiêu E, giúp kéo dài khả năng cấp Thảo ngoài sân.",
             passiveDescEn: "Tinh Thông Nguyên Tố cao và có tỷ lệ reset thời gian hồi chiêu E, giúp kéo dài khả năng cấp Thảo ngoài sân.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fossil.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fossil.png"
         },
         {
             rank: 5,
@@ -775,7 +775,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp và tăng Tinh Thông Nguyên Tố cho toàn đội sau khi dùng Nộ, hỗ trợ đắc lực cho các phản ứng nguyên tố.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp và tăng Tinh Thông Nguyên Tố cho toàn đội sau khi dùng Nộ, hỗ trợ đắc lực cho các phản ứng nguyên tố.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_SeeliesLute.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SeeliesLute.png"
         },
         {
             rank: 6,
@@ -786,7 +786,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Dòng phụ Tinh Thông Nguyên Tố và nội tại chuyển hóa thành Tấn Công cho Nahida và toàn đội, rất tốt cho lối chơi hỗ trợ.",
             passiveDescEn: "Dòng phụ Tinh Thông Nguyên Tố và nội tại chuyển hóa thành Tấn Công cho Nahida và toàn đội, rất tốt cho lối chơi hỗ trợ.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pleroma.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pleroma.png"
         },
         {
             rank: 7,
@@ -797,7 +797,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Buff ngẫu nhiên cực mạnh (TTNT, Tấn Công, Sát Thương Nguyên Tố), tuy nhiên không ổn định cho hỗ trợ phản ứng.",
             passiveDescEn: "Buff ngẫu nhiên cực mạnh (TTNT, Tấn Công, Sát Thương Nguyên Tố), tuy nhiên không ổn định cho hỗ trợ phản ứng.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png"
         },
         {
             rank: 8,
@@ -808,7 +808,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và tăng HP/TTNT khi không đứng sân, phù hợp cho Nahida off-field sử dụng như một vũ khí tăng chỉ số.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và tăng HP/TTNT khi không đứng sân, phù hợp cho Nahida off-field sử dụng như một vũ khí tăng chỉ số.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Yue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.png"
         },
         {
             rank: 9,
@@ -819,7 +819,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tấn Công cơ bản cao và buff Sát Thương Nguyên Tố; nội tại tạo thêm sát thương vật lý nhỏ nhưng thiếu Tinh Thông Nguyên Tố.",
             passiveDescEn: "Tấn Công cơ bản cao và buff Sát Thương Nguyên Tố; nội tại tạo thêm sát thương vật lý nhỏ nhưng thiếu Tinh Thông Nguyên Tố.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Dvalin.png"
         },
         {
             rank: 10,
@@ -830,7 +830,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và tăng dần Sát Thương Nguyên Tố khi đứng sân; không tối ưu cho lối chơi quick-swap.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và tăng dần Sát Thương Nguyên Tố khi đứng sân; không tối ưu cho lối chơi quick-swap.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
         },
         {
             rank: 11,
@@ -841,7 +841,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Yêu cầu khiên để tối đa hóa cộng dồn Tấn Công%; không thực sự lý tưởng vì Nahida ưu tiên Tinh Thông Nguyên Tố hơn.",
             passiveDescEn: "Yêu cầu khiên để tối đa hóa cộng dồn Tấn Công%; không thực sự lý tưởng vì Nahida ưu tiên Tinh Thông Nguyên Tố hơn.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Kunwu.png"
         },
         {
             rank: 12,
@@ -852,7 +852,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Gia tăng sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ kèm Tỷ Lệ Bạo Kích; thiếu Tinh Thông Nguyên Tố và chỉ phù hợp khi đứng sân.",
             passiveDescEn: "Gia tăng sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ kèm Tỷ Lệ Bạo Kích; thiếu Tinh Thông Nguyên Tố và chỉ phù hợp khi đứng sân.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Resurrection.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Resurrection.png"
         },
         {
             rank: 13,
@@ -863,7 +863,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Tạo hạt năng lượng cho cả đội; sử dụng nếu đội hình thiếu Nạp trầm trọng dù lượng Tinh Thông Nguyên Tố nhận lại thấp.",
             passiveDescEn: "Tạo hạt năng lượng cho cả đội; sử dụng nếu đội hình thiếu Nạp trầm trọng dù lượng Tinh Thông Nguyên Tố nhận lại thấp.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
         },
         {
             rank: 14,
@@ -874,7 +874,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn dễ kiếm cung cấp Tinh Thông Nguyên Tố; nội tại tăng Sát Thương Nguyên Tố sau phản ứng, lựa chọn F2P ổn định.",
             passiveDescEn: "Vũ khí rèn dễ kiếm cung cấp Tinh Thông Nguyên Tố; nội tại tăng Sát Thương Nguyên Tố sau phản ứng, lựa chọn F2P ổn định.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Exotic.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Exotic.png"
         },
         {
             rank: 15,
@@ -885,7 +885,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Vũ khí 3 sao rẻ tiền cung cấp lượng Tinh Thông Nguyên Tố lớn; nội tại tăng sát thương lên kẻ địch dính ấn Thủy hoặc Lôi.",
             passiveDescEn: "Vũ khí 3 sao rẻ tiền cung cấp lượng Tinh Thông Nguyên Tố lớn; nội tại tăng sát thương lên kẻ địch dính ấn Thủy hoặc Lôi.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Intro.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Intro.png"
         },
         {
             rank: 16,
@@ -896,7 +896,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn cung cấp Hiệu Quả Nạp và buff Sát Thương Nguyên Tố liên quan đến Lôi; chỉ dùng trong đội hình phản ứng Lôi.",
             passiveDescEn: "Vũ khí rèn cung cấp Hiệu Quả Nạp và buff Sát Thương Nguyên Tố liên quan đến Lôi; chỉ dùng trong đội hình phản ứng Lôi.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Bakufu.png"
         },
         {
             rank: 17,
@@ -907,7 +907,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Cung cấp lượng lớn buff Tấn Công% cho nhân vật ra sân tiếp theo; chỉ dùng thuần hỗ trợ khi Nahida không gây sát thương.",
             passiveDescEn: "Cung cấp lượng lớn buff Tấn Công% cho nhân vật ra sân tiếp theo; chỉ dùng thuần hỗ trợ khi Nahida không gây sát thương.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
         },
         {
             rank: 18,
@@ -918,7 +918,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Hồi máu và phục hồi năng lượng cho toàn đội; sử dụng nếu cần gia tăng khả năng sinh tồn và nạp năng lượng thay vì TTNT.",
             passiveDescEn: "Hồi máu và phục hồi năng lượng cho toàn đội; sử dụng nếu cần gia tăng khả năng sinh tồn và nạp năng lượng thay vì TTNT.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Proto.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.png"
         }
     ],
     bestArtifacts: [

@@ -41,7 +41,7 @@ async function startServer() {
     // Multer config for image uploads
     const storage = multer_1.default.diskStorage({
         destination: (_req, _file, cb) => {
-            const uploadPath = path_1.default.join(__dirname, '../../../frontend/public/images/uploads');
+            const uploadPath = path_1.default.join(__dirname, '../../../frontend/public/assets/uploads');
             if (!fs_1.default.existsSync(uploadPath)) {
                 fs_1.default.mkdirSync(uploadPath, { recursive: true });
             }
@@ -63,7 +63,7 @@ async function startServer() {
             return res.status(400).json({ error: 'No file uploaded' });
         }
         // Return the relative URL to the frontend
-        const fileUrl = `/images/uploads/${req.file.filename}`;
+        const fileUrl = `/assets/uploads/${req.file.filename}`;
         res.json({ url: fileUrl });
     });
     const server = new server_1.ApolloServer({

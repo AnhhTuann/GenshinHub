@@ -137,7 +137,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           {/* ── Avatar image ── */}
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.08]">
             <FallbackImage
-              src={character.avatarUrl || '/assets/characters/UI_AvatarIcon_PlayerGirl.webp'}
+              src={character.avatarUrl || '/assets/characters/avatars/UI_AvatarIcon_PlayerGirl.webp'}
               alt={name}
               fill
               sizes="(max-width: 640px) 33vw, (max-width: 1024px) 16vw, 160px"

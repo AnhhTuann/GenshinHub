@@ -27,7 +27,7 @@ function processFile(filePath) {
     changed = true;
   }
 
-  if (content.includes('/images/')) {
+  if (content.includes('/assets/')) {
     // Sử dụng (.*?) để bắt toàn bộ nội dung động bên trong template literal kể cả dấu ngoặc đơn
     content = content.replace(/\/images\/(.*?)\.png/g, (match, p1) => {
       let newPath = p1;

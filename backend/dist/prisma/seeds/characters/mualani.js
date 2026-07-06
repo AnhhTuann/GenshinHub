@@ -729,7 +729,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Vũ khí trấn phái tốt nhất. Cung cấp Sát Thương Bạo Kích cực cao và tăng sát thương Tấn Công Thường dựa theo HP giới hạn.",
             passiveDescEn: "Signature weapon; provides massive CRIT DMG and a Hydro DMG bonus that scales with HP, perfectly syncing with Mualani's kit.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_MechaPufferfish.png"
         },
         {
             rank: 2,
@@ -740,7 +740,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Tấn công cơ bản cao, dòng phụ Sát Thương Bạo Kích. Nội tại tăng sát thương Thủy sau khi dùng kỹ năng.",
             passiveDescEn: "High base ATK and CRIT DMG substat; the passive boosts Hydro DMG after using a skill, aligning with Mualani's rotation.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Sistrum.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Sistrum.png"
         },
         {
             rank: 3,
@@ -751,7 +751,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Tăng mạnh Tinh Thông Nguyên Tố cho Mualani và đồng đội, trực tiếp nâng cao sát thương phản ứng Bốc Hơi.",
             passiveDescEn: "Boosts Elemental Mastery for both Mualani and her party, directly increasing Vaporize damage. Solid support option.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Ayus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Ayus.png"
         },
         {
             rank: 4,
@@ -762,7 +762,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Sát Thương Bạo Kích cao và nội tại tăng HP cùng sát thương tấn công thường.",
             passiveDescEn: "High CRIT DMG and HP scaling passive that boosts normal attack DMG, complementing Mualani's sharky hits.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Iudex.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Iudex.png"
         },
         {
             rank: 5,
@@ -773,7 +773,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp và buff sát thương cho cả đội sau khi nộ.",
             passiveDescEn: "Provides Energy Recharge and a team-wide damage buff after using burst, helping Mualani maintain uptime and amplify damage.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_MenulisRing.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_MenulisRing.png"
         },
         {
             rank: 6,
@@ -784,7 +784,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Tăng tỷ lệ bạo kích và HP giới hạn khi không đứng sân quá lâu.",
             passiveDescEn: "Grants CRIT Rate and extra HP when off-field, making it easier to build for consistent Vaporize crits.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Yue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.png"
         },
         {
             rank: 7,
@@ -795,7 +795,7 @@ exports.mualani = {
             refinement: "R1",
             passiveDescVi: "Tăng Tinh Thông Nguyên Tố và cung cấp buff Tinh Thông Nguyên Tố cho cả đội sau khi kích hoạt phản ứng.",
             passiveDescEn: "Increases Elemental Mastery and provides a team-wide EM buff after triggering reactions, enhancing Vaporize damage.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_SakuraFan.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SakuraFan.png"
         },
         {
             rank: 8,
@@ -806,7 +806,7 @@ exports.mualani = {
             refinement: "R5",
             passiveDescVi: "Cung cấp chỉ số HP% rất lớn, nội tại tăng sát thương đánh thường dựa trên lượng HP tối đa.",
             passiveDescEn: "Offers HP% and a passive that boosts normal attack DMG based on max HP, directly scaling Mualani's damage.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Isikhulu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Isikhulu.png"
         },
         {
             rank: 9,
@@ -817,7 +817,7 @@ exports.mualani = {
             refinement: "R5",
             passiveDescVi: "Tăng ngẫu nhiên Tấn Công, Tinh Thông Nguyên Tố hoặc Sát Thương Nguyên Tố Thủy khi chuyển nhân vật.",
             passiveDescEn: "Random buff on swap: ATK, EM, or Hydro DMG. All three benefit Vaporize setups, though it has downtime.",
-            iconUrl: "/images/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png"
         }
     ],
     bestArtifacts: [

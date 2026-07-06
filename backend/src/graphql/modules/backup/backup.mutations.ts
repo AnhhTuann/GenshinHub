@@ -1,10 +1,13 @@
 import { GraphQLContext } from '../../context';
 import { createJsonBackup, deleteBackup, restoreFromBackup, cleanupOldBackups } from '../../../backupService';
-import { Mutation as mutationsImpl } from '../../../mutations'; // For exportDatabaseToSeeds
+import { exportDatabaseToSeeds } from '../../../../scripts/exportData';
 
 export const backupMutations = {
   Mutation: {
-    exportDatabaseToSeeds: async (_: any, args: any, context: GraphQLContext) => mutationsImpl.exportDatabaseToSeeds(_, args, context),
+    exportDatabaseToSeeds: async (_: any, args: any, context: GraphQLContext) => {
+      if (!context.user.isAdmin) throw new Error("Unauthorized");
+      return await exportDatabaseToSeeds();
+    },
     createBackup: async (_: any, __: any, context: GraphQLContext) => {
       if (!context.user.isAdmin) throw new Error("Unauthorized");
       return await createJsonBackup();

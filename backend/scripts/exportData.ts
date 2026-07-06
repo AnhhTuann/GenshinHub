@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { prisma } from './prisma';
+import { prisma } from '../src/prisma';
 
 export async function exportDatabaseToSeeds() {
   console.log("Exporting database to TS files...");

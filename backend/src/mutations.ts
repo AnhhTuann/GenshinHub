@@ -1,5 +1,5 @@
 import { prisma } from './prisma';
-import { exportDatabaseToSeeds } from './exportData';
+import { exportDatabaseToSeeds } from '../scripts/exportData';
 import { createJsonBackup } from './backupService';
 import xss from 'xss';
 import { clearAllCaches } from './cache';

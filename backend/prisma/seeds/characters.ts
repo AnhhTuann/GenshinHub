@@ -620,7 +620,8 @@ const charactersData = [
       "Traveler (Dendro)|Dendro|Sword|5",
       "Traveler (Hydro)|Hydro|Sword|5",
       "Traveler (Pyro)|Pyro|Sword|5",
-      "Traveler|None|Sword|5"
+      "Traveler|None|Sword|5",
+      "Sandrone|Geo|Catalyst|5"
     ].map(c => ({ ...parseChar(c), region: "Other" }))
   ];
 

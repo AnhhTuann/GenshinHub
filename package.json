@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "download-assets": "node scripts/download_assets.mjs",
+    "sync-data": "node scripts/sync_character_data.mjs"
+  },
   "devDependencies": {
     "cheerio": "^1.2.0"
   },

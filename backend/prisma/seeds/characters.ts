@@ -13,7 +13,10 @@ const enkaNameMap: Record<string, string> = {
   "Shikanoin Heizou": "Heizo", "Kujou Sara": "Sara", "Yun Jin": "Yunjin", "Thoma": "Tohma", "Traveler": "PlayerBoy",
   "Hu Tao": "Hutao", "Lan Yan": "Lanyan", "Skirk": "SkirkNew", "Amber": "Ambor", "Jean": "Qin", "Noelle": "Noel",
   "Baizhu": "Baizhuer", "Yanfei": "Feiyan", "Xianyun": "Liuyun", "Alhaitham": "Alhatham", "Kirara": "Momoka",
-  "Lyney": "Liney", "Lynette": "Linette", "Ororon": "Olorun"
+  "Lyney": "Liney", "Lynette": "Linette", "Ororon": "Olorun",
+  // Fix: folder name is YumemizukiMizuki (no space, no hyphen)
+  "Yumemizuki Mizuki": "YumemizukiMizuki",
+  "Manekin": "PlayerBoy", "Manekina": "PlayerGirl"
 };
 
 const forcedIdMap: Record<string, string> = {
@@ -995,8 +998,8 @@ export async function seedCharacters(prisma: PrismaClient) {
       
       if (ambrId) {
         // Lấy chi tiết bằng tiếng Việt
-        await new Promise(r => setTimeout(r, 200));
-        await new Promise(r => setTimeout(r, 400)); const { data: detailData } = await axios.get(`https://gi.yatta.moe/api/v2/vi/avatar/${ambrId}`);
+        await new Promise(r => setTimeout(r, 400));
+        const { data: detailData } = await axios.get(`https://gi.yatta.moe/api/v2/vi/avatar/${ambrId}`);
         const { data: detailDataEn } = await axios.get(`https://gi.yatta.moe/api/v2/en/avatar/${ambrId}`);
         if (detailDataEn && detailDataEn.data) {
           if (detailDataEn.data.fetter && detailDataEn.data.fetter.title) {

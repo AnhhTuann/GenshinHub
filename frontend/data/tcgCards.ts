@@ -1367,6 +1367,20 @@ export const tcgCards: TCGCard[] = [
     "route": "Lauma"
   },
   {
+    "id": "1712",
+    "nameEn": "Nefer",
+    "nameVi": "Nefer",
+    "type": "characterCard",
+    "tags": [
+      "Dendro",
+      "Catalyst",
+      "Sumeru",
+      "Nod-Krai"
+    ],
+    "icon": "UI_Gcg_CardFace_Char_Avatar_Nefer",
+    "route": "Nefer"
+  },
+  {
     "id": "2101",
     "nameEn": "Fatui Cryo Cicin Mage",
     "nameVi": "Fatui - Thuật Sĩ Cicin Băng",
@@ -1417,6 +1431,19 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Char_Monster_EscadronIce",
     "route": "Frost Operative"
+  },
+  {
+    "id": "2105",
+    "nameEn": "Wayward Hermetic Spiritspeaker",
+    "nameVi": "Kẻ Ẩn Tu Ngoại Cảm Lạc Lối",
+    "type": "characterCard",
+    "tags": [
+      "Cryo",
+      "Other Weapons",
+      "Monster"
+    ],
+    "icon": "UI_Gcg_CardFace_Char_Monster_Udugan",
+    "route": "Wayward Hermetic Spiritspeaker"
   },
   {
     "id": "2201",
@@ -1708,6 +1735,19 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Char_Monster_ChrysopeleaSacred",
     "route": "Consecrated Flying Serpent"
+  },
+  {
+    "id": "2504",
+    "nameEn": "Black Serpent Knight: Windcutter",
+    "nameVi": "Kỵ Sĩ Hắc Xà - Trảm Phong Kiếm",
+    "type": "characterCard",
+    "tags": [
+      "Anemo",
+      "Other Weapons",
+      "Monster"
+    ],
+    "icon": "UI_Gcg_CardFace_Char_Monster_DarkwraithWind",
+    "route": "Black Serpent Knight: Windcutter"
   },
   {
     "id": "2601",
@@ -2690,7 +2730,7 @@ export const tcgCards: TCGCard[] = [
       "Talent",
       "Combat Action"
     ],
-    "icon": "UI_Gcg_CardFace_Modify_Talent_Wanderer",
+    "icon": "UI_Gcg_CardFace_Modify_Constellation_Linette",
     "route": "Gales of Reverie"
   },
   {
@@ -2704,18 +2744,6 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Modify_Constellation_Sayu",
     "route": "Skiving: New and Improved"
-  },
-  {
-    "id": "215081",
-    "nameEn": "A Cold Blade Like a Shadow",
-    "nameVi": "Lưỡi Kiếm Ảo Ảnh",
-    "type": "actionCard",
-    "tags": [
-      "Talent",
-      "Combat Action"
-    ],
-    "icon": "UI_Gcg_CardFace_Modify_Constellation_Linette",
-    "route": "A Cold Blade Like a Shadow"
   },
   {
     "id": "215091",
@@ -3062,6 +3090,17 @@ export const tcgCards: TCGCard[] = [
     "route": "\"O Lips, Weave Me Songs and Psalms\""
   },
   {
+    "id": "217121",
+    "nameEn": "Victory Flows from the Turning of Tides",
+    "nameVi": "Thời Khắc Nghịch Chuyển Để Chiến Thắng",
+    "type": "actionCard",
+    "tags": [
+      "Talent"
+    ],
+    "icon": "UI_Gcg_CardFace_Modify_Talent_Nefer",
+    "route": "Victory Flows from the Turning of Tides"
+  },
+  {
     "id": "221011",
     "nameEn": "Cicin's Cold Glare",
     "nameVi": "Tia Lạnh Cicin Băng",
@@ -3106,6 +3145,17 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Modify_Talent_EscadronIce",
     "route": "Rimeflow Rapier"
+  },
+  {
+    "id": "221051",
+    "nameEn": "Flow of Forms",
+    "nameVi": "Hình Ảnh Biến Hóa",
+    "type": "actionCard",
+    "tags": [
+      "Talent"
+    ],
+    "icon": "UI_Gcg_CardFace_Modify_Talent_Udugan",
+    "route": "Flow of Forms"
   },
   {
     "id": "222011",
@@ -3361,6 +3411,18 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Modify_Talent_ChrysopeleaSacred",
     "route": "Deathly Cyclone"
+  },
+  {
+    "id": "225041",
+    "nameEn": "\"Once, the Lone Wind That Kept the Dark Calamity at Bay...\"",
+    "nameVi": "\"Từng Như Ngọn Gió Cô Độc Ngăn Chặn Sự Lan Rộng Của Bóng Tối...\"",
+    "type": "actionCard",
+    "tags": [
+      "Talent",
+      "Combat Action"
+    ],
+    "icon": "UI_Gcg_CardFace_Modify_Talent_DarkwraithWind",
+    "route": "\"Once, the Lone Wind That Kept the Dark Calamity at Bay...\""
   },
   {
     "id": "226011",
@@ -5215,6 +5277,17 @@ export const tcgCards: TCGCard[] = [
     "route": "Kuuvahki Experimental Design Bureau"
   },
   {
+    "id": "321041",
+    "nameEn": "Nightmare Omen",
+    "nameVi": "Điềm Báo Ác Mộng",
+    "type": "actionCard",
+    "tags": [
+      "Location"
+    ],
+    "icon": "UI_Gcg_CardFace_Event_Event_Emeng",
+    "route": "Nightmare Omen"
+  },
+  {
     "id": "322001",
     "nameEn": "Paimon",
     "nameVi": "Paimon",
@@ -5905,6 +5978,30 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Event_Resonance_WindElec",
     "route": "Elemental Transfiguration: Stormgale Blessing"
+  },
+  {
+    "id": "331010",
+    "nameEn": "Elemental Transfiguration: Aquabreeze Blessing",
+    "nameVi": "Biến Ảo Nguyên Tố: Chúc Phúc Thủy Phong",
+    "type": "actionCard",
+    "tags": [
+      "Elemental Transfiguration",
+      "Undiscoverable"
+    ],
+    "icon": "UI_Gcg_CardFace_Event_Resonance_WaterWind",
+    "route": "Elemental Transfiguration: Aquabreeze Blessing"
+  },
+  {
+    "id": "331011",
+    "nameEn": "Elemental Transfiguration: Thunderbloom Blessing",
+    "nameVi": "Biến Ảo Nguyên Tố: Chúc Phúc Lôi Thảo",
+    "type": "actionCard",
+    "tags": [
+      "Elemental Transfiguration",
+      "Undiscoverable"
+    ],
+    "icon": "UI_Gcg_CardFace_Event_Resonance_ElecGrass",
+    "route": "Elemental Transfiguration: Thunderbloom Blessing"
   },
   {
     "id": "331101",
@@ -6660,6 +6757,24 @@ export const tcgCards: TCGCard[] = [
     "route": "Cleaning Time"
   },
   {
+    "id": "332063",
+    "nameEn": "Lil' Fungi's Fun-Tastic Fiesta",
+    "nameVi": "Đấu Nấm Chiến Thuật",
+    "type": "actionCard",
+    "tags": [],
+    "icon": "UI_Gcg_CardFace_Event_Event_Dongwu",
+    "route": "Lil' Fungi's Fun-Tastic Fiesta"
+  },
+  {
+    "id": "332064",
+    "nameEn": "The Power of Research",
+    "nameVi": "Động Lực Nghiên Cứu",
+    "type": "actionCard",
+    "tags": [],
+    "icon": "UI_Gcg_CardFace_Event_Event_Keyan",
+    "route": "The Power of Research"
+  },
+  {
     "id": "333001",
     "nameEn": "Jueyun Guoba",
     "nameVi": "Cơm Cháy Tuyệt Vân",
@@ -6922,5 +7037,16 @@ export const tcgCards: TCGCard[] = [
     ],
     "icon": "UI_Gcg_CardFace_Event_Food_Lunpan",
     "route": "Roulette Special"
+  },
+  {
+    "id": "333031",
+    "nameEn": "Lakkaberry Pie",
+    "nameVi": "Bánh Lakka",
+    "type": "actionCard",
+    "tags": [
+      "Food"
+    ],
+    "icon": "UI_Gcg_CardFace_Event_Food_BaiLing",
+    "route": "Lakkaberry Pie"
   }
 ];

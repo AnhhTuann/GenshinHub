@@ -32,10 +32,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2020-09-27",
         endDate: "2020-10-17",
         characterBanners: [
-          "/assets/banners/ballad_in_goblets_2020_09_28_1_0.webp"
+          "/images/banners/ballad_in_goblets_2020_09_28_1_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2020_09_28_1_0.webp"
+          "/images/banners/epitome_invocation_2020_09_28_1_0.png"
         ],
         characters: [
           {
@@ -91,10 +91,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2020-10-19",
         endDate: "2020-11-09",
         characterBanners: [
-          "/assets/banners/sparkling_steps_2020_10_20_1_0.webp"
+          "/images/banners/sparkling_steps_2020_10_20_1_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2020_10_20_1_0.webp"
+          "/images/banners/epitome_invocation_2020_10_20_1_0.png"
         ],
         characters: [
           {
@@ -157,10 +157,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2020-11-10",
         endDate: "2020-11-30",
         characterBanners: [
-          "/assets/banners/farewell_of_snezhnaya_2020_11_11_1_1.webp"
+          "/images/banners/farewell_of_snezhnaya_2020_11_11_1_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2020_11_11_1_1.webp"
+          "/images/banners/epitome_invocation_2020_11_11_1_1.png"
         ],
         characters: [
           {
@@ -216,10 +216,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2020-11-30",
         endDate: "2020-12-21",
         characterBanners: [
-          "/assets/banners/gentry_of_hermitage_2020_12_01_1_1.webp"
+          "/images/banners/gentry_of_hermitage_2020_12_01_1_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2020_12_01_1_1.webp"
+          "/images/banners/epitome_invocation_2020_12_01_1_1.png"
         ],
         characters: [
           {
@@ -282,10 +282,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2020-12-22",
         endDate: "2021-01-11",
         characterBanners: [
-          "/assets/banners/secretum_secretorum_2020_12_23_1_2.webp"
+          "/images/banners/secretum_secretorum_2020_12_23_1_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2020_12_23_1_2.webp"
+          "/images/banners/epitome_invocation_2020_12_23_1_2.png"
         ],
         characters: [
           {
@@ -341,10 +341,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-01-11",
         endDate: "2021-02-01",
         characterBanners: [
-          "/assets/banners/adrift_in_the_harbor_2021_01_12_1_2.webp"
+          "/images/banners/adrift_in_the_harbor_2021_01_12_1_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_01_12_1_2.webp"
+          "/images/banners/epitome_invocation_2021_01_12_1_2.png"
         ],
         characters: [
           {
@@ -407,7 +407,7 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-02-02",
         endDate: "2021-02-16",
         characterBanners: [
-          "/assets/banners/invitation_to_mundane_life_2021_02_03_1_3.webp"
+          "/images/banners/invitation_to_mundane_life_2021_02_03_1_3.png"
         ],
         weaponBanners: [],
         characters: [
@@ -436,7 +436,7 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         endDate: "2021-02-22",
         characterBanners: [],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_02_03_1_3.webp"
+          "/images/banners/epitome_invocation_2021_02_03_1_3.png"
         ],
         characters: [],
         weapons: [
@@ -475,7 +475,7 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-02-16",
         endDate: "2021-03-01",
         characterBanners: [
-          "/assets/banners/dance_of_lanterns_2021_02_17_1_3.webp"
+          "/images/banners/dance_of_lanterns_2021_02_17_1_3.png"
         ],
         weaponBanners: [],
         characters: [
@@ -504,7 +504,7 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         endDate: "2021-03-15",
         characterBanners: [],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_02_23_1_3.webp"
+          "/images/banners/epitome_invocation_2021_02_23_1_3.png"
         ],
         characters: [],
         weapons: [
@@ -543,7 +543,7 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-03-01",
         endDate: "2021-03-15",
         characterBanners: [
-          "/assets/banners/moment_of_bloom_2021_03_02_1_3.webp"
+          "/images/banners/moment_of_bloom_2021_03_02_1_3.png"
         ],
         weaponBanners: [],
         characters: [
@@ -578,10 +578,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-03-16",
         endDate: "2021-04-05",
         characterBanners: [
-          "/assets/banners/ballad_in_goblets_2021_03_17_1_4.webp"
+          "/images/banners/ballad_in_goblets_2021_03_17_1_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_03_17_1_4.webp"
+          "/images/banners/epitome_invocation_2021_03_17_1_4.png"
         ],
         characters: [
           {
@@ -637,10 +637,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-04-05",
         endDate: "2021-04-26",
         characterBanners: [
-          "/assets/banners/farewell_of_snezhnaya_2021_04_06_1_4.webp"
+          "/images/banners/farewell_of_snezhnaya_2021_04_06_1_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_04_06_1_4.webp"
+          "/images/banners/epitome_invocation_2021_04_06_1_4.png"
         ],
         characters: [
           {
@@ -703,10 +703,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-04-27",
         endDate: "2021-05-17",
         characterBanners: [
-          "/assets/banners/gentry_of_hermitage_2021_04_28_1_5.webp"
+          "/images/banners/gentry_of_hermitage_2021_04_28_1_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_04_28_1_5.webp"
+          "/images/banners/epitome_invocation_2021_04_28_1_5.png"
         ],
         characters: [
           {
@@ -762,10 +762,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-05-17",
         endDate: "2021-06-07",
         characterBanners: [
-          "/assets/banners/born_of_ocean_swell_2021_05_18_1_5.webp"
+          "/images/banners/born_of_ocean_swell_2021_05_18_1_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_05_18_1_5.webp"
+          "/images/banners/epitome_invocation_2021_05_18_1_5.png"
         ],
         characters: [
           {
@@ -828,10 +828,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-06-08",
         endDate: "2021-06-28",
         characterBanners: [
-          "/assets/banners/sparkling_steps_2021_06_09_1_6.webp"
+          "/images/banners/sparkling_steps_2021_06_09_1_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_06_09_1_6.webp"
+          "/images/banners/epitome_invocation_2021_06_09_1_6.png"
         ],
         characters: [
           {
@@ -887,10 +887,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-06-28",
         endDate: "2021-07-19",
         characterBanners: [
-          "/assets/banners/leaves_in_the_wind_2021_06_29_1_6.webp"
+          "/images/banners/leaves_in_the_wind_2021_06_29_1_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_06_29_1_6.webp"
+          "/images/banners/epitome_invocation_2021_06_29_1_6.png"
         ],
         characters: [
           {
@@ -953,10 +953,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-07-20",
         endDate: "2021-08-09",
         characterBanners: [
-          "/assets/banners/the_heron_s_court_2021_07_21_2_0.webp"
+          "/images/banners/the_heron_s_court_2021_07_21_2_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_07_21_2_0.webp"
+          "/images/banners/epitome_invocation_2021_07_21_2_0.png"
         ],
         characters: [
           {
@@ -1012,10 +1012,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-08-09",
         endDate: "2021-08-30",
         characterBanners: [
-          "/assets/banners/tapestry_of_golden_flames_2021_08_10_2_0.webp"
+          "/images/banners/tapestry_of_golden_flames_2021_08_10_2_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_08_10_2_0.webp"
+          "/images/banners/epitome_invocation_2021_08_10_2_0.png"
         ],
         characters: [
           {
@@ -1078,10 +1078,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-08-31",
         endDate: "2021-09-20",
         characterBanners: [
-          "/assets/banners/reign_of_serenity_2021_09_01_2_1.webp"
+          "/images/banners/reign_of_serenity_2021_09_01_2_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_09_01_2_1.webp"
+          "/images/banners/epitome_invocation_2021_09_01_2_1.png"
         ],
         characters: [
           {
@@ -1137,10 +1137,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-09-20",
         endDate: "2021-10-11",
         characterBanners: [
-          "/assets/banners/drifting_luminescence_2021_09_21_2_1.webp"
+          "/images/banners/drifting_luminescence_2021_09_21_2_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_09_21_2_1.webp"
+          "/images/banners/epitome_invocation_2021_09_21_2_1.png"
         ],
         characters: [
           {
@@ -1203,10 +1203,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-10-12",
         endDate: "2021-11-01",
         characterBanners: [
-          "/assets/banners/farewell_of_snezhnaya_2021_10_13_2_2.webp"
+          "/images/banners/farewell_of_snezhnaya_2021_10_13_2_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_10_13_2_2.webp"
+          "/images/banners/epitome_invocation_2021_10_13_2_2.png"
         ],
         characters: [
           {
@@ -1262,10 +1262,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-11-01",
         endDate: "2021-11-22",
         characterBanners: [
-          "/assets/banners/moment_of_bloom_2021_11_02_2_2.webp"
+          "/images/banners/moment_of_bloom_2021_11_02_2_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_11_02_2_2.webp"
+          "/images/banners/epitome_invocation_2021_11_02_2_2.png"
         ],
         characters: [
           {
@@ -1328,11 +1328,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-11-23",
         endDate: "2021-12-13",
         characterBanners: [
-          "/assets/banners/secretum_secretorum_2021_11_24_2_3.webp",
-          "/assets/banners/born_of_ocean_swell_2021_11_24_2_3.webp"
+          "/images/banners/secretum_secretorum_2021_11_24_2_3.png",
+          "/images/banners/born_of_ocean_swell_2021_11_24_2_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_11_24_2_3.webp"
+          "/images/banners/epitome_invocation_2021_11_24_2_3.png"
         ],
         characters: [
           {
@@ -1404,10 +1404,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2021-12-13",
         endDate: "2022-01-03",
         characterBanners: [
-          "/assets/banners/oni_s_royale_2021_12_14_2_3.webp"
+          "/images/banners/oni_s_royale_2021_12_14_2_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2021_12_14_2_3.webp"
+          "/images/banners/epitome_invocation_2021_12_14_2_3.png"
         ],
         characters: [
           {
@@ -1470,11 +1470,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-01-04",
         endDate: "2022-01-24",
         characterBanners: [
-          "/assets/banners/the_transcendent_one_returns_2022_01_05_2_4.webp",
-          "/assets/banners/invitation_to_mundane_life_2022_01_05_2_4.webp"
+          "/images/banners/the_transcendent_one_returns_2022_01_05_2_4.png",
+          "/images/banners/invitation_to_mundane_life_2022_01_05_2_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_01_05_2_4.webp"
+          "/images/banners/epitome_invocation_2022_01_05_2_4.png"
         ],
         characters: [
           {
@@ -1546,11 +1546,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-01-24",
         endDate: "2022-02-14",
         characterBanners: [
-          "/assets/banners/gentry_of_hermitage_2022_01_25_2_4.webp",
-          "/assets/banners/adrift_in_the_harbor_2022_01_25_2_4.webp"
+          "/images/banners/gentry_of_hermitage_2022_01_25_2_4.png",
+          "/images/banners/adrift_in_the_harbor_2022_01_25_2_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_01_25_2_4.webp"
+          "/images/banners/epitome_invocation_2022_01_25_2_4.png"
         ],
         characters: [
           {
@@ -1629,10 +1629,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-02-15",
         endDate: "2022-03-07",
         characterBanners: [
-          "/assets/banners/everbloom_violet_2022_02_16_2_5.webp"
+          "/images/banners/everbloom_violet_2022_02_16_2_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_02_16_2_5.webp"
+          "/images/banners/epitome_invocation_2022_02_16_2_5.png"
         ],
         characters: [
           {
@@ -1688,11 +1688,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-03-07",
         endDate: "2022-03-28",
         characterBanners: [
-          "/assets/banners/reign_of_serenity_2022_03_08_2_5.webp",
-          "/assets/banners/drifting_luminescence_2022_03_08_2_5.webp"
+          "/images/banners/reign_of_serenity_2022_03_08_2_5.png",
+          "/images/banners/drifting_luminescence_2022_03_08_2_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_03_08_2_5.webp"
+          "/images/banners/epitome_invocation_2022_03_08_2_5.png"
         ],
         characters: [
           {
@@ -1771,11 +1771,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-03-29",
         endDate: "2022-04-18",
         characterBanners: [
-          "/assets/banners/azure_excursion_2022_03_30_2_6.webp",
-          "/assets/banners/ballad_in_goblets_2022_03_30_2_6.webp"
+          "/images/banners/azure_excursion_2022_03_30_2_6.png",
+          "/images/banners/ballad_in_goblets_2022_03_30_2_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_03_30_2_6.webp"
+          "/images/banners/epitome_invocation_2022_03_30_2_6.png"
         ],
         characters: [
           {
@@ -1847,10 +1847,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-04-18",
         endDate: "2022-05-30",
         characterBanners: [
-          "/assets/banners/the_heron_s_court_2022_04_19_2_6.webp"
+          "/images/banners/the_heron_s_court_2022_04_19_2_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_04_19_2_6.webp"
+          "/images/banners/epitome_invocation_2022_04_19_2_6.png"
         ],
         characters: [
           {
@@ -1913,11 +1913,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-05-30",
         endDate: "2022-06-20",
         characterBanners: [
-          "/assets/banners/discerner_of_enigmas_2022_05_31_2_7.webp",
-          "/assets/banners/invitation_to_mundane_life_2022_05_31_2_7.webp"
+          "/images/banners/discerner_of_enigmas_2022_05_31_2_7.png",
+          "/images/banners/invitation_to_mundane_life_2022_05_31_2_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_05_31_2_7.webp"
+          "/images/banners/epitome_invocation_2022_05_31_2_7.png"
         ],
         characters: [
           {
@@ -1989,10 +1989,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-06-20",
         endDate: "2022-07-11",
         characterBanners: [
-          "/assets/banners/oni_s_royale_2022_06_21_2_7.webp"
+          "/images/banners/oni_s_royale_2022_06_21_2_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_06_21_2_7.webp"
+          "/images/banners/epitome_invocation_2022_06_21_2_7.png"
         ],
         characters: [
           {
@@ -2055,11 +2055,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-07-12",
         endDate: "2022-08-01",
         characterBanners: [
-          "/assets/banners/leaves_in_the_wind_2022_07_13_2_8.webp",
-          "/assets/banners/sparkling_steps_2022_07_13_2_8.webp"
+          "/images/banners/leaves_in_the_wind_2022_07_13_2_8.png",
+          "/images/banners/sparkling_steps_2022_07_13_2_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_07_13_2_8.webp"
+          "/images/banners/epitome_invocation_2022_07_13_2_8.png"
         ],
         characters: [
           {
@@ -2131,10 +2131,10 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-08-01",
         endDate: "2022-08-22",
         characterBanners: [
-          "/assets/banners/tapestry_of_golden_flames_2022_08_02_2_8.webp"
+          "/images/banners/tapestry_of_golden_flames_2022_08_02_2_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_08_02_2_8.webp"
+          "/images/banners/epitome_invocation_2022_08_02_2_8.png"
         ],
         characters: [
           {
@@ -2197,11 +2197,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-08-23",
         endDate: "2022-09-08",
         characterBanners: [
-          "/assets/banners/viridescent_vigil_2022_08_24_3_0.webp",
-          "/assets/banners/gentry_of_hermitage_2022_08_24_3_0.webp"
+          "/images/banners/viridescent_vigil_2022_08_24_3_0.png",
+          "/images/banners/gentry_of_hermitage_2022_08_24_3_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_08_24_3_0.webp"
+          "/images/banners/epitome_invocation_2022_08_24_3_0.png"
         ],
         characters: [
           {
@@ -2273,11 +2273,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-09-08",
         endDate: "2022-09-26",
         characterBanners: [
-          "/assets/banners/adrift_in_the_harbor_2022_09_09_3_0.webp",
-          "/assets/banners/drifting_luminescence_2022_09_09_3_0.webp"
+          "/images/banners/adrift_in_the_harbor_2022_09_09_3_0.png",
+          "/images/banners/drifting_luminescence_2022_09_09_3_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_09_09_3_0.webp"
+          "/images/banners/epitome_invocation_2022_09_09_3_0.png"
         ],
         characters: [
           {
@@ -2356,11 +2356,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-09-27",
         endDate: "2022-10-13",
         characterBanners: [
-          "/assets/banners/twilight_arbiter_2022_09_28_3_1.webp",
-          "/assets/banners/ballad_in_goblets_2022_09_28_3_1.webp"
+          "/images/banners/twilight_arbiter_2022_09_28_3_1.png",
+          "/images/banners/ballad_in_goblets_2022_09_28_3_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_09_28_3_1.webp"
+          "/images/banners/epitome_invocation_2022_09_28_3_1.png"
         ],
         characters: [
           {
@@ -2432,11 +2432,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-10-13",
         endDate: "2022-10-31",
         characterBanners: [
-          "/assets/banners/twirling_lotus_2022_10_14_3_1.webp",
-          "/assets/banners/secretum_secretorum_2022_10_14_3_1.webp"
+          "/images/banners/twirling_lotus_2022_10_14_3_1.png",
+          "/images/banners/secretum_secretorum_2022_10_14_3_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_10_14_3_1.webp"
+          "/images/banners/epitome_invocation_2022_10_14_3_1.png"
         ],
         characters: [
           {
@@ -2515,11 +2515,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-11-01",
         endDate: "2022-11-17",
         characterBanners: [
-          "/assets/banners/the_moongrass__enlightenment_2022_11_02_3_2.webp",
-          "/assets/banners/tapestry_of_golden_flames_2022_11_02_3_2.webp"
+          "/images/banners/the_moongrass__enlightenment_2022_11_02_3_2.png",
+          "/images/banners/tapestry_of_golden_flames_2022_11_02_3_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_11_02_3_2.webp"
+          "/images/banners/epitome_invocation_2022_11_02_3_2.png"
         ],
         characters: [
           {
@@ -2591,11 +2591,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-11-17",
         endDate: "2022-12-05",
         characterBanners: [
-          "/assets/banners/everbloom_violet_2022_11_18_3_2.webp",
-          "/assets/banners/farewell_of_snezhnaya_2022_11_18_3_2.webp"
+          "/images/banners/everbloom_violet_2022_11_18_3_2.png",
+          "/images/banners/farewell_of_snezhnaya_2022_11_18_3_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_11_18_3_2.webp"
+          "/images/banners/epitome_invocation_2022_11_18_3_2.png"
         ],
         characters: [
           {
@@ -2674,11 +2674,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-12-06",
         endDate: "2022-12-26",
         characterBanners: [
-          "/assets/banners/from_ashes_reborn_2022_12_07_3_3.webp",
-          "/assets/banners/oni_s_royale_2022_12_07_3_3.webp"
+          "/images/banners/from_ashes_reborn_2022_12_07_3_3.png",
+          "/images/banners/oni_s_royale_2022_12_07_3_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_12_07_3_3.webp"
+          "/images/banners/epitome_invocation_2022_12_07_3_3.png"
         ],
         characters: [
           {
@@ -2750,11 +2750,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2022-12-26",
         endDate: "2023-01-16",
         characterBanners: [
-          "/assets/banners/reign_of_serenity_2022_12_27_3_3.webp",
-          "/assets/banners/azure_excursion_2022_12_27_3_3.webp"
+          "/images/banners/reign_of_serenity_2022_12_27_3_3.png",
+          "/images/banners/azure_excursion_2022_12_27_3_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2022_12_27_3_3.webp"
+          "/images/banners/epitome_invocation_2022_12_27_3_3.png"
         ],
         characters: [
           {
@@ -2833,11 +2833,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-01-17",
         endDate: "2023-02-06",
         characterBanners: [
-          "/assets/banners/caution_in_confidence_2023_01_18_3_4.webp",
-          "/assets/banners/invitation_to_mundane_life_2023_01_18_3_4.webp"
+          "/images/banners/caution_in_confidence_2023_01_18_3_4.png",
+          "/images/banners/invitation_to_mundane_life_2023_01_18_3_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_01_18_3_4.webp"
+          "/images/banners/epitome_invocation_2023_01_18_3_4.png"
         ],
         characters: [
           {
@@ -2909,11 +2909,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-02-06",
         endDate: "2023-02-27",
         characterBanners: [
-          "/assets/banners/moment_of_bloom_2023_02_07_3_4.webp",
-          "/assets/banners/discerner_of_enigmas_2023_02_07_3_4.webp"
+          "/images/banners/moment_of_bloom_2023_02_07_3_4.png",
+          "/images/banners/discerner_of_enigmas_2023_02_07_3_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_02_07_3_4.webp"
+          "/images/banners/epitome_invocation_2023_02_07_3_4.png"
         ],
         characters: [
           {
@@ -2992,11 +2992,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-02-28",
         endDate: "2023-03-20",
         characterBanners: [
-          "/assets/banners/auric_blaze_2023_03_01_3_5.webp",
-          "/assets/banners/twilight_arbiter_2023_03_01_3_5.webp"
+          "/images/banners/auric_blaze_2023_03_01_3_5.png",
+          "/images/banners/twilight_arbiter_2023_03_01_3_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_03_01_3_5.webp"
+          "/images/banners/epitome_invocation_2023_03_01_3_5.png"
         ],
         characters: [
           {
@@ -3068,11 +3068,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-03-20",
         endDate: "2023-04-10",
         characterBanners: [
-          "/assets/banners/the_transcendent_one_returns_2023_03_21_3_5.webp",
-          "/assets/banners/the_heron_s_court_2023_03_21_3_5.webp"
+          "/images/banners/the_transcendent_one_returns_2023_03_21_3_5.png",
+          "/images/banners/the_heron_s_court_2023_03_21_3_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_03_21_3_5.webp"
+          "/images/banners/epitome_invocation_2023_03_21_3_5.png"
         ],
         characters: [
           {
@@ -3151,11 +3151,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-04-11",
         endDate: "2023-05-01",
         characterBanners: [
-          "/assets/banners/the_moongrass__enlightenment_2023_04_12_3_6.webp",
-          "/assets/banners/twirling_lotus_2023_04_12_3_6.webp"
+          "/images/banners/the_moongrass__enlightenment_2023_04_12_3_6.png",
+          "/images/banners/twirling_lotus_2023_04_12_3_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_04_12_3_6.webp"
+          "/images/banners/epitome_invocation_2023_04_12_3_6.png"
         ],
         characters: [
           {
@@ -3227,11 +3227,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-05-01",
         endDate: "2023-05-22",
         characterBanners: [
-          "/assets/banners/immaculate_pulse_2023_05_02_3_6.webp",
-          "/assets/banners/adrift_in_the_harbor_2023_05_02_3_6.webp"
+          "/images/banners/immaculate_pulse_2023_05_02_3_6.png",
+          "/images/banners/adrift_in_the_harbor_2023_05_02_3_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_05_02_3_6.webp"
+          "/images/banners/epitome_invocation_2023_05_02_3_6.png"
         ],
         characters: [
           {
@@ -3310,11 +3310,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-05-23",
         endDate: "2023-06-12",
         characterBanners: [
-          "/assets/banners/tapestry_of_golden_flames_2023_05_24_3_7.webp",
-          "/assets/banners/everbloom_violet_2023_05_24_3_7.webp"
+          "/images/banners/tapestry_of_golden_flames_2023_05_24_3_7.png",
+          "/images/banners/everbloom_violet_2023_05_24_3_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_05_24_3_7.webp"
+          "/images/banners/epitome_invocation_2023_05_24_3_7.png"
         ],
         characters: [
           {
@@ -3386,11 +3386,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-06-12",
         endDate: "2023-07-03",
         characterBanners: [
-          "/assets/banners/caution_in_confidence_2023_06_13_3_7.webp",
-          "/assets/banners/leaves_in_the_wind_2023_06_13_3_7.webp"
+          "/images/banners/caution_in_confidence_2023_06_13_3_7.png",
+          "/images/banners/leaves_in_the_wind_2023_06_13_3_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_06_13_3_7.webp"
+          "/images/banners/epitome_invocation_2023_06_13_3_7.png"
         ],
         characters: [
           {
@@ -3469,11 +3469,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-07-04",
         endDate: "2023-07-24",
         characterBanners: [
-          "/assets/banners/born_of_ocean_swell_2023_07_05_3_8.webp",
-          "/assets/banners/sparkling_steps_2023_07_05_3_8.webp"
+          "/images/banners/born_of_ocean_swell_2023_07_05_3_8.png",
+          "/images/banners/sparkling_steps_2023_07_05_3_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_07_05_3_8.webp"
+          "/images/banners/epitome_invocation_2023_07_05_3_8.png"
         ],
         characters: [
           {
@@ -3545,11 +3545,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-07-24",
         endDate: "2023-08-14",
         characterBanners: [
-          "/assets/banners/drifting_luminescence_2023_07_25_3_8.webp",
-          "/assets/banners/from_ashes_reborn_2023_07_25_3_8.webp"
+          "/images/banners/drifting_luminescence_2023_07_25_3_8.png",
+          "/images/banners/from_ashes_reborn_2023_07_25_3_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_07_25_3_8.webp"
+          "/images/banners/epitome_invocation_2023_07_25_3_8.png"
         ],
         characters: [
           {
@@ -3628,11 +3628,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-08-15",
         endDate: "2023-09-04",
         characterBanners: [
-          "/assets/banners/conjuring_chiaroscuro_2023_08_16_4_0.webp",
-          "/assets/banners/discerner_of_enigmas_2023_08_16_4_0.webp"
+          "/images/banners/conjuring_chiaroscuro_2023_08_16_4_0.png",
+          "/images/banners/discerner_of_enigmas_2023_08_16_4_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_08_16_4_0.webp"
+          "/images/banners/epitome_invocation_2023_08_16_4_0.png"
         ],
         characters: [
           {
@@ -3704,11 +3704,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-09-04",
         endDate: "2023-09-25",
         characterBanners: [
-          "/assets/banners/gentry_of_hermitage_2023_09_05_4_0.webp",
-          "/assets/banners/farewell_of_snezhnaya_2023_09_05_4_0.webp"
+          "/images/banners/gentry_of_hermitage_2023_09_05_4_0.png",
+          "/images/banners/farewell_of_snezhnaya_2023_09_05_4_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_09_05_4_0.webp"
+          "/images/banners/epitome_invocation_2023_09_05_4_0.png"
         ],
         characters: [
           {
@@ -3787,11 +3787,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-09-26",
         endDate: "2023-10-16",
         characterBanners: [
-          "/assets/banners/decree_of_the_deeps_2023_09_27_4_1.webp",
-          "/assets/banners/moment_of_bloom_2023_09_27_4_1.webp"
+          "/images/banners/decree_of_the_deeps_2023_09_27_4_1.png",
+          "/images/banners/moment_of_bloom_2023_09_27_4_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_09_27_4_1.webp"
+          "/images/banners/epitome_invocation_2023_09_27_4_1.png"
         ],
         characters: [
           {
@@ -3863,11 +3863,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-10-16",
         endDate: "2023-11-06",
         characterBanners: [
-          "/assets/banners/tempestuous_destiny_2023_10_17_4_1.webp",
-          "/assets/banners/ballad_in_goblets_2023_10_17_4_1.webp"
+          "/images/banners/tempestuous_destiny_2023_10_17_4_1.png",
+          "/images/banners/ballad_in_goblets_2023_10_17_4_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_10_17_4_1.webp"
+          "/images/banners/epitome_invocation_2023_10_17_4_1.png"
         ],
         characters: [
           {
@@ -3946,11 +3946,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-11-07",
         endDate: "2023-11-27",
         characterBanners: [
-          "/assets/banners/chanson_of_many_waters_2023_11_08_4_2.webp",
-          "/assets/banners/immaculate_pulse_2023_11_08_4_2.webp"
+          "/images/banners/chanson_of_many_waters_2023_11_08_4_2.png",
+          "/images/banners/immaculate_pulse_2023_11_08_4_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_11_08_4_2.webp"
+          "/images/banners/epitome_invocation_2023_11_08_4_2.png"
         ],
         characters: [
           {
@@ -4022,11 +4022,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-11-27",
         endDate: "2023-12-18",
         characterBanners: [
-          "/assets/banners/twilight_arbiter_2023_11_28_4_2.webp",
-          "/assets/banners/azure_excursion_2023_11_28_4_2.webp"
+          "/images/banners/twilight_arbiter_2023_11_28_4_2.png",
+          "/images/banners/azure_excursion_2023_11_28_4_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_11_28_4_2.webp"
+          "/images/banners/epitome_invocation_2023_11_28_4_2.png"
         ],
         characters: [
           {
@@ -4105,11 +4105,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2023-12-19",
         endDate: "2024-01-08",
         characterBanners: [
-          "/assets/banners/in_the_name_of_the_rosula_2023_12_20_4_3.webp",
-          "/assets/banners/the_heron_s_court_2023_12_20_4_3.webp"
+          "/images/banners/in_the_name_of_the_rosula_2023_12_20_4_3.png",
+          "/images/banners/the_heron_s_court_2023_12_20_4_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2023_12_20_4_3.webp"
+          "/images/banners/epitome_invocation_2023_12_20_4_3.png"
         ],
         characters: [
           {
@@ -4181,11 +4181,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-01-08",
         endDate: "2024-01-29",
         characterBanners: [
-          "/assets/banners/reign_of_serenity_2024_01_09_4_3.webp",
-          "/assets/banners/tapestry_of_golden_flames_2024_01_09_4_3.webp"
+          "/images/banners/reign_of_serenity_2024_01_09_4_3.png",
+          "/images/banners/tapestry_of_golden_flames_2024_01_09_4_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_01_09_4_3.webp"
+          "/images/banners/epitome_invocation_2024_01_09_4_3.png"
         ],
         characters: [
           {
@@ -4264,11 +4264,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-01-30",
         endDate: "2024-02-19",
         characterBanners: [
-          "/assets/banners/the_crane_soars_skyward_2024_01_31_4_4.webp",
-          "/assets/banners/the_moongrass__enlightenment_2024_01_31_4_4.webp"
+          "/images/banners/the_crane_soars_skyward_2024_01_31_4_4.png",
+          "/images/banners/the_moongrass__enlightenment_2024_01_31_4_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_01_31_4_4.webp"
+          "/images/banners/epitome_invocation_2024_01_31_4_4.png"
         ],
         characters: [
           {
@@ -4340,11 +4340,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-02-19",
         endDate: "2024-03-11",
         characterBanners: [
-          "/assets/banners/invitation_to_mundane_life_2024_02_20_4_4.webp",
-          "/assets/banners/everbloom_violet_2024_02_20_4_4.webp"
+          "/images/banners/invitation_to_mundane_life_2024_02_20_4_4.png",
+          "/images/banners/everbloom_violet_2024_02_20_4_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_02_20_4_4.webp"
+          "/images/banners/epitome_invocation_2024_02_20_4_4.png"
         ],
         characters: [
           {
@@ -4423,12 +4423,12 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-03-12",
         endDate: "2024-04-01",
         characterBanners: [
-          "/assets/banners/of_silken_clouds_woven_2024_03_13_4_5.webp",
-          "/assets/banners/oni_s_royale_2024_03_13_4_5.webp",
-          "/assets/banners/ode_to_the_dawn_breeze_2024_03_13_4_5.webp"
+          "/images/banners/of_silken_clouds_woven_2024_03_13_4_5.png",
+          "/images/banners/oni_s_royale_2024_03_13_4_5.png",
+          "/images/banners/ode_to_the_dawn_breeze_2024_03_13_4_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_03_13_4_5.webp"
+          "/images/banners/epitome_invocation_2024_03_13_4_5.png"
         ],
         characters: [
           {
@@ -4568,11 +4568,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-04-01",
         endDate: "2024-04-22",
         characterBanners: [
-          "/assets/banners/decree_of_the_deeps_2024_04_02_4_5.webp",
-          "/assets/banners/leaves_in_the_wind_2024_04_02_4_5.webp"
+          "/images/banners/decree_of_the_deeps_2024_04_02_4_5.png",
+          "/images/banners/leaves_in_the_wind_2024_04_02_4_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_04_02_4_5.webp"
+          "/images/banners/epitome_invocation_2024_04_02_4_5.png"
         ],
         characters: [
           {
@@ -4651,11 +4651,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-04-23",
         endDate: "2024-05-13",
         characterBanners: [
-          "/assets/banners/the_hearth_s_ashen_shadow_2024_04_24_4_6.webp",
-          "/assets/banners/conjuring_chiaroscuro_2024_04_24_4_6.webp"
+          "/images/banners/the_hearth_s_ashen_shadow_2024_04_24_4_6.png",
+          "/images/banners/conjuring_chiaroscuro_2024_04_24_4_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_04_24_4_6.webp"
+          "/images/banners/epitome_invocation_2024_04_24_4_6.png"
         ],
         characters: [
           {
@@ -4727,11 +4727,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-05-13",
         endDate: "2024-06-03",
         characterBanners: [
-          "/assets/banners/from_ashes_reborn_2024_05_14_4_6.webp",
-          "/assets/banners/immaculate_pulse_2024_05_14_4_6.webp"
+          "/images/banners/from_ashes_reborn_2024_05_14_4_6.png",
+          "/images/banners/immaculate_pulse_2024_05_14_4_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_05_14_4_6.webp"
+          "/images/banners/epitome_invocation_2024_05_14_4_6.png"
         ],
         characters: [
           {
@@ -4810,11 +4810,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-06-04",
         endDate: "2024-06-24",
         characterBanners: [
-          "/assets/banners/illuminating_lightning_2024_06_05_4_7.webp",
-          "/assets/banners/caution_in_confidence_2024_06_05_4_7.webp"
+          "/images/banners/illuminating_lightning_2024_06_05_4_7.png",
+          "/images/banners/caution_in_confidence_2024_06_05_4_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_06_05_4_7.webp"
+          "/images/banners/epitome_invocation_2024_06_05_4_7.png"
         ],
         characters: [
           {
@@ -4886,11 +4886,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-06-24",
         endDate: "2024-07-15",
         characterBanners: [
-          "/assets/banners/romaritime_meluserenity_2024_06_25_4_7.webp",
-          "/assets/banners/chanson_of_many_waters_2024_06_25_4_7.webp"
+          "/images/banners/romaritime_meluserenity_2024_06_25_4_7.png",
+          "/images/banners/chanson_of_many_waters_2024_06_25_4_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_06_25_4_7.webp"
+          "/images/banners/epitome_invocation_2024_06_25_4_7.png"
         ],
         characters: [
           {
@@ -4969,11 +4969,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-07-16",
         endDate: "2024-08-05",
         characterBanners: [
-          "/assets/banners/in_the_name_of_the_rosula_2024_07_17_4_8.webp",
-          "/assets/banners/twirling_lotus_2024_07_17_4_8.webp"
+          "/images/banners/in_the_name_of_the_rosula_2024_07_17_4_8.png",
+          "/images/banners/twirling_lotus_2024_07_17_4_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_07_17_4_8.webp"
+          "/images/banners/epitome_invocation_2024_07_17_4_8.png"
         ],
         characters: [
           {
@@ -5045,11 +5045,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-08-05",
         endDate: "2024-08-26",
         characterBanners: [
-          "/assets/banners/ambrosial_essence_2024_08_06_4_8.webp",
-          "/assets/banners/discerner_of_enigmas_2024_08_06_4_8.webp"
+          "/images/banners/ambrosial_essence_2024_08_06_4_8.png",
+          "/images/banners/discerner_of_enigmas_2024_08_06_4_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_08_06_4_8.webp"
+          "/images/banners/epitome_invocation_2024_08_06_4_8.png"
         ],
         characters: [
           {
@@ -5128,11 +5128,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-08-27",
         endDate: "2024-09-16",
         characterBanners: [
-          "/assets/banners/sharktacular_surfari_2024_08_28_5_0.webp",
-          "/assets/banners/leaves_in_the_wind_2024_08_28_5_0.webp"
+          "/images/banners/sharktacular_surfari_2024_08_28_5_0.png",
+          "/images/banners/leaves_in_the_wind_2024_08_28_5_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_08_28_5_0.webp"
+          "/images/banners/epitome_invocation_2024_08_28_5_0.png"
         ],
         characters: [
           {
@@ -5204,11 +5204,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-09-16",
         endDate: "2024-10-07",
         characterBanners: [
-          "/assets/banners/seeker_of_flame_wrought_secrets_2024_09_17_5_0.webp",
-          "/assets/banners/reign_of_serenity_2024_09_17_5_0.webp"
+          "/images/banners/seeker_of_flame_wrought_secrets_2024_09_17_5_0.png",
+          "/images/banners/reign_of_serenity_2024_09_17_5_0.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_09_17_5_0.webp"
+          "/images/banners/epitome_invocation_2024_09_17_5_0.png"
         ],
         characters: [
           {
@@ -5287,11 +5287,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-10-08",
         endDate: "2024-10-28",
         characterBanners: [
-          "/assets/banners/forgefire_s_blessing_2024_10_09_5_1.webp",
-          "/assets/banners/of_silken_clouds_woven_2024_10_09_5_1.webp"
+          "/images/banners/forgefire_s_blessing_2024_10_09_5_1.png",
+          "/images/banners/of_silken_clouds_woven_2024_10_09_5_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_10_09_5_1.webp"
+          "/images/banners/epitome_invocation_2024_10_09_5_1.png"
         ],
         characters: [
           {
@@ -5363,11 +5363,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-10-28",
         endDate: "2024-11-18",
         characterBanners: [
-          "/assets/banners/the_moongrass__enlightenment_2024_10_29_5_1.webp",
-          "/assets/banners/moment_of_bloom_2024_10_29_5_1.webp"
+          "/images/banners/the_moongrass__enlightenment_2024_10_29_5_1.png",
+          "/images/banners/moment_of_bloom_2024_10_29_5_1.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_10_29_5_1.webp"
+          "/images/banners/epitome_invocation_2024_10_29_5_1.png"
         ],
         characters: [
           {
@@ -5446,11 +5446,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-11-19",
         endDate: "2024-12-09",
         characterBanners: [
-          "/assets/banners/piercing_shot_s_crimson_wake_2024_11_20_5_2.webp",
-          "/assets/banners/conjuring_chiaroscuro_2024_11_20_5_2.webp"
+          "/images/banners/piercing_shot_s_crimson_wake_2024_11_20_5_2.png",
+          "/images/banners/conjuring_chiaroscuro_2024_11_20_5_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_11_20_5_2.webp"
+          "/images/banners/epitome_invocation_2024_11_20_5_2.png"
         ],
         characters: [
           {
@@ -5522,11 +5522,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-12-09",
         endDate: "2024-12-30",
         characterBanners: [
-          "/assets/banners/decree_of_the_deeps_2024_12_10_5_2.webp",
-          "/assets/banners/gentry_of_hermitage_2024_12_10_5_2.webp"
+          "/images/banners/decree_of_the_deeps_2024_12_10_5_2.png",
+          "/images/banners/gentry_of_hermitage_2024_12_10_5_2.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2024_12_10_5_2.webp"
+          "/images/banners/epitome_invocation_2024_12_10_5_2.png"
         ],
         characters: [
           {
@@ -5605,11 +5605,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2024-12-31",
         endDate: "2025-01-20",
         characterBanners: [
-          "/assets/banners/ancient_flame_ablaze_2025_01_01_5_3.webp",
-          "/assets/banners/starry_night_s_whispers_2025_01_01_5_3.webp"
+          "/images/banners/ancient_flame_ablaze_2025_01_01_5_3.png",
+          "/images/banners/starry_night_s_whispers_2025_01_01_5_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_01_01_5_3.webp"
+          "/images/banners/epitome_invocation_2025_01_01_5_3.png"
         ],
         characters: [
           {
@@ -5681,12 +5681,12 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-01-20",
         endDate: "2025-02-10",
         characterBanners: [
-          "/assets/banners/the_hearth_s_ashen_shadow_2025_01_21_5_3.webp",
-          "/assets/banners/illuminating_lightning_2025_01_21_5_3.webp",
-          "/assets/banners/remembrance_of_jade_and_stone_2025_01_21_5_3.webp"
+          "/images/banners/the_hearth_s_ashen_shadow_2025_01_21_5_3.png",
+          "/images/banners/illuminating_lightning_2025_01_21_5_3.png",
+          "/images/banners/remembrance_of_jade_and_stone_2025_01_21_5_3.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_01_21_5_3.webp"
+          "/images/banners/epitome_invocation_2025_01_21_5_3.png"
         ],
         characters: [
           {
@@ -5829,11 +5829,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-02-11",
         endDate: "2025-03-03",
         characterBanners: [
-          "/assets/banners/dawn_s_drifting_reverie_2025_02_12_5_4.webp",
-          "/assets/banners/romaritime_meluserenity_2025_02_12_5_4.webp"
+          "/images/banners/dawn_s_drifting_reverie_2025_02_12_5_4.png",
+          "/images/banners/romaritime_meluserenity_2025_02_12_5_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_02_12_5_4.webp"
+          "/images/banners/epitome_invocation_2025_02_12_5_4.png"
         ],
         characters: [
           {
@@ -5905,11 +5905,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-03-03",
         endDate: "2025-03-24",
         characterBanners: [
-          "/assets/banners/chanson_of_many_waters_2025_03_04_5_4.webp",
-          "/assets/banners/tempestuous_destiny_2025_03_04_5_4.webp"
+          "/images/banners/chanson_of_many_waters_2025_03_04_5_4.png",
+          "/images/banners/tempestuous_destiny_2025_03_04_5_4.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_03_04_5_4.webp"
+          "/images/banners/epitome_invocation_2025_03_04_5_4.png"
         ],
         characters: [
           {
@@ -5988,11 +5988,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-03-25",
         endDate: "2025-04-14",
         characterBanners: [
-          "/assets/banners/cornucopia_of_contention_2025_03_26_5_5.webp",
-          "/assets/banners/the_crane_soars_skyward_2025_03_26_5_5.webp"
+          "/images/banners/cornucopia_of_contention_2025_03_26_5_5.png",
+          "/images/banners/the_crane_soars_skyward_2025_03_26_5_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_03_26_5_5.webp"
+          "/images/banners/epitome_invocation_2025_03_26_5_5.png"
         ],
         characters: [
           {
@@ -6064,11 +6064,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-04-14",
         endDate: "2025-05-05",
         characterBanners: [
-          "/assets/banners/forgefire_s_blessing_2025_04_15_5_5.webp",
-          "/assets/banners/ballad_in_goblets_2025_04_15_5_5.webp"
+          "/images/banners/forgefire_s_blessing_2025_04_15_5_5.png",
+          "/images/banners/ballad_in_goblets_2025_04_15_5_5.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_04_15_5_5.webp"
+          "/images/banners/epitome_invocation_2025_04_15_5_5.png"
         ],
         characters: [
           {
@@ -6147,11 +6147,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-05-06",
         endDate: "2025-05-26",
         characterBanners: [
-          "/assets/banners/la_chanson_cerise_2025_05_07_5_6.webp",
-          "/assets/banners/in_the_name_of_the_rosula_2025_05_07_5_6.webp"
+          "/images/banners/la_chanson_cerise_2025_05_07_5_6.png",
+          "/images/banners/in_the_name_of_the_rosula_2025_05_07_5_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_05_07_5_6.webp"
+          "/images/banners/epitome_invocation_2025_05_07_5_6.png"
         ],
         characters: [
           {
@@ -6223,12 +6223,12 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-05-26",
         endDate: "2025-06-16",
         characterBanners: [
-          "/assets/banners/seeker_of_flame_wrought_secrets_2025_05_27_5_6.webp",
-          "/assets/banners/reign_of_serenity_2025_05_27_5_6.webp",
-          "/assets/banners/thunder_rends_the_plains_on_high_2025_05_27_5_6.webp"
+          "/images/banners/seeker_of_flame_wrought_secrets_2025_05_27_5_6.png",
+          "/images/banners/reign_of_serenity_2025_05_27_5_6.png",
+          "/images/banners/thunder_rends_the_plains_on_high_2025_05_27_5_6.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_05_27_5_6.webp"
+          "/images/banners/epitome_invocation_2025_05_27_5_6.png"
         ],
         characters: [
           {
@@ -6371,11 +6371,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-06-17",
         endDate: "2025-07-07",
         characterBanners: [
-          "/assets/banners/void_star_s_advent_2025_06_18_5_7.webp",
-          "/assets/banners/the_transcendent_one_returns_2025_06_18_5_7.webp"
+          "/images/banners/void_star_s_advent_2025_06_18_5_7.png",
+          "/images/banners/the_transcendent_one_returns_2025_06_18_5_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_06_18_5_7.webp"
+          "/images/banners/epitome_invocation_2025_06_18_5_7.png"
         ],
         characters: [
           {
@@ -6447,11 +6447,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-07-07",
         endDate: "2025-07-28",
         characterBanners: [
-          "/assets/banners/ancient_flame_ablaze_2025_07_08_5_7.webp",
-          "/assets/banners/ambrosial_essence_2025_07_08_5_7.webp"
+          "/images/banners/ancient_flame_ablaze_2025_07_08_5_7.png",
+          "/images/banners/ambrosial_essence_2025_07_08_5_7.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_07_08_5_7.webp"
+          "/images/banners/epitome_invocation_2025_07_08_5_7.png"
         ],
         characters: [
           {
@@ -6530,11 +6530,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-07-29",
         endDate: "2025-08-18",
         characterBanners: [
-          "/assets/banners/astral_actuation_2025_07_30_5_8.webp",
-          "/assets/banners/starry_night_s_whispers_2025_07_30_5_8.webp"
+          "/images/banners/astral_actuation_2025_07_30_5_8.png",
+          "/images/banners/starry_night_s_whispers_2025_07_30_5_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_07_30_5_8.webp"
+          "/images/banners/epitome_invocation_2025_07_30_5_8.png"
         ],
         characters: [
           {
@@ -6606,11 +6606,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-08-18",
         endDate: "2025-09-08",
         characterBanners: [
-          "/assets/banners/sharktacular_surfari_2025_08_19_5_8.webp",
-          "/assets/banners/piercing_shot_s_crimson_wake_2025_08_19_5_8.webp"
+          "/images/banners/sharktacular_surfari_2025_08_19_5_8.png",
+          "/images/banners/piercing_shot_s_crimson_wake_2025_08_19_5_8.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_08_19_5_8.webp"
+          "/images/banners/epitome_invocation_2025_08_19_5_8.png"
         ],
         characters: [
           {
@@ -6689,12 +6689,12 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-09-09",
         endDate: "2025-09-29",
         characterBanners: [
-          "/assets/banners/moonsong_of_the_groves_2025_09_10__luna_i_.webp",
-          "/assets/banners/the_moongrass__enlightenment_2025_09_10__luna_i_.webp",
-          "/assets/banners/roving_chalice_of_dewgrass_2025_09_10__luna_i_.webp"
+          "/images/banners/moonsong_of_the_groves_2025_09_10__luna_i_.png",
+          "/images/banners/the_moongrass__enlightenment_2025_09_10__luna_i_.png",
+          "/images/banners/roving_chalice_of_dewgrass_2025_09_10__luna_i_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_09_10__luna_i_.webp"
+          "/images/banners/epitome_invocation_2025_09_10__luna_i_.png"
         ],
         characters: [
           {
@@ -6814,11 +6814,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-09-29",
         endDate: "2025-10-20",
         characterBanners: [
-          "/assets/banners/the_lone_light_knocks_at_night_2025_09_30__luna_i_.webp",
-          "/assets/banners/discerner_of_enigmas_2025_09_30__luna_i_.webp"
+          "/images/banners/the_lone_light_knocks_at_night_2025_09_30__luna_i_.png",
+          "/images/banners/discerner_of_enigmas_2025_09_30__luna_i_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_09_30__luna_i_.webp"
+          "/images/banners/epitome_invocation_2025_09_30__luna_i_.png"
         ],
         characters: [
           {
@@ -6897,11 +6897,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-10-21",
         endDate: "2025-11-10",
         characterBanners: [
-          "/assets/banners/temptation_of_the_crimson_sands_2025_10_22__luna_ii_.webp",
-          "/assets/banners/chanson_of_many_waters_2025_10_22__luna_ii_.webp"
+          "/images/banners/temptation_of_the_crimson_sands_2025_10_22__luna_ii_.png",
+          "/images/banners/chanson_of_many_waters_2025_10_22__luna_ii_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_10_22__luna_ii_.webp"
+          "/images/banners/epitome_invocation_2025_10_22__luna_ii_.png"
         ],
         characters: [
           {
@@ -6973,11 +6973,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-11-10",
         endDate: "2025-12-01",
         characterBanners: [
-          "/assets/banners/the_hearth_s_ashen_shadow_2025_11_11__luna_ii_.webp",
-          "/assets/banners/gentry_of_hermitage_2025_11_11__luna_ii_.webp"
+          "/images/banners/the_hearth_s_ashen_shadow_2025_11_11__luna_ii_.png",
+          "/images/banners/gentry_of_hermitage_2025_11_11__luna_ii_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_11_11__luna_ii_.webp"
+          "/images/banners/epitome_invocation_2025_11_11__luna_ii_.png"
         ],
         characters: [
           {
@@ -7056,11 +7056,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-12-02",
         endDate: "2025-12-22",
         characterBanners: [
-          "/assets/banners/rubedo__of_white_stone_born_2025_12_03__luna_iii_.webp",
-          "/assets/banners/ballad_in_goblets_2025_12_03__luna_iii_.webp"
+          "/images/banners/rubedo__of_white_stone_born_2025_12_03__luna_iii_.png",
+          "/images/banners/ballad_in_goblets_2025_12_03__luna_iii_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_12_03__luna_iii_.webp"
+          "/images/banners/epitome_invocation_2025_12_03__luna_iii_.png"
         ],
         characters: [
           {
@@ -7132,11 +7132,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2025-12-22",
         endDate: "2026-01-12",
         characterBanners: [
-          "/assets/banners/cornucopia_of_contention_2025_12_23__luna_iii_.webp",
-          "/assets/banners/forgefire_s_blessing_2025_12_23__luna_iii_.webp"
+          "/images/banners/cornucopia_of_contention_2025_12_23__luna_iii_.png",
+          "/images/banners/forgefire_s_blessing_2025_12_23__luna_iii_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2025_12_23__luna_iii_.webp"
+          "/images/banners/epitome_invocation_2025_12_23__luna_iii_.png"
         ],
         characters: [
           {
@@ -7215,11 +7215,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-01-13",
         endDate: "2026-02-02",
         characterBanners: [
-          "/assets/banners/somnias_a_luna_2026_01_14__luna_iv_.webp",
-          "/assets/banners/astral_actuation_2026_01_14__luna_iv_.webp"
+          "/images/banners/somnias_a_luna_2026_01_14__luna_iv_.png",
+          "/images/banners/astral_actuation_2026_01_14__luna_iv_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_01_14__luna_iv_.webp"
+          "/images/banners/epitome_invocation_2026_01_14__luna_iv_.png"
         ],
         characters: [
           {
@@ -7291,11 +7291,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-02-02",
         endDate: "2026-02-23",
         characterBanners: [
-          "/assets/banners/harmonious_abundance_2026_02_03__luna_iv_.webp",
-          "/assets/banners/decree_of_the_deeps_2026_02_03__luna_iv_.webp"
+          "/images/banners/harmonious_abundance_2026_02_03__luna_iv_.png",
+          "/images/banners/decree_of_the_deeps_2026_02_03__luna_iv_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_02_03__luna_iv_.webp"
+          "/images/banners/epitome_invocation_2026_02_03__luna_iv_.png"
         ],
         characters: [
           {
@@ -7374,12 +7374,12 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-02-24",
         endDate: "2026-03-16",
         characterBanners: [
-          "/assets/banners/the_northerly_wind_s_song_of_triumph_2026_02_25__luna_v_.webp",
-          "/assets/banners/the_lone_light_knocks_at_night_2026_02_25__luna_v_.webp",
-          "/assets/banners/ode_to_the_dawn_breeze_2026_02_25__luna_v_.webp"
+          "/images/banners/the_northerly_wind_s_song_of_triumph_2026_02_25__luna_v_.png",
+          "/images/banners/the_lone_light_knocks_at_night_2026_02_25__luna_v_.png",
+          "/images/banners/ode_to_the_dawn_breeze_2026_02_25__luna_v_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_02_25__luna_v_.webp"
+          "/images/banners/epitome_invocation_2026_02_25__luna_v_.png"
         ],
         characters: [
           {
@@ -7515,11 +7515,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-03-16",
         endDate: "2026-04-06",
         characterBanners: [
-          "/assets/banners/void_star_s_advent_2026_03_17__luna_v_.webp",
-          "/assets/banners/la_chanson_cerise_2026_03_17__luna_v_.webp"
+          "/images/banners/void_star_s_advent_2026_03_17__luna_v_.png",
+          "/images/banners/la_chanson_cerise_2026_03_17__luna_v_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_03_17__luna_v_.webp"
+          "/images/banners/epitome_invocation_2026_03_17__luna_v_.png"
         ],
         characters: [
           {
@@ -7598,11 +7598,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-04-07",
         endDate: "2026-04-27",
         characterBanners: [
-          "/assets/banners/ya_hoho__compendium_2026_04_08__luna_vi_.webp",
-          "/assets/banners/piercing_shot_s_crimson_wake_2026_04_08__luna_vi_.webp"
+          "/images/banners/ya_hoho__compendium_2026_04_08__luna_vi_.png",
+          "/images/banners/piercing_shot_s_crimson_wake_2026_04_08__luna_vi_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_04_08__luna_vi_.webp"
+          "/images/banners/epitome_invocation_2026_04_08__luna_vi_.png"
         ],
         characters: [
           {
@@ -7674,12 +7674,12 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-04-27",
         endDate: "2026-05-18",
         characterBanners: [
-          "/assets/banners/moonsong_of_the_groves_2026_04_28__luna_vi_.webp",
-          "/assets/banners/temptation_of_the_crimson_sands_2026_04_28__luna_vi_.webp",
-          "/assets/banners/dewlit_tranquility_2026_04_28__luna_vi_.webp"
+          "/images/banners/moonsong_of_the_groves_2026_04_28__luna_vi_.png",
+          "/images/banners/temptation_of_the_crimson_sands_2026_04_28__luna_vi_.png",
+          "/images/banners/dewlit_tranquility_2026_04_28__luna_vi_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_04_28__luna_vi_.webp"
+          "/images/banners/epitome_invocation_2026_04_28__luna_vi_.png"
         ],
         characters: [
           {
@@ -7798,11 +7798,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-05-19",
         endDate: "2026-06-08",
         characterBanners: [
-          "/assets/banners/angel_s_reverie_2026_05_20__luna_vii_.webp",
-          "/assets/banners/rubedo__of_white_stone_born_2026_05_20__luna_vii_.webp"
+          "/images/banners/angel_s_reverie_2026_05_20__luna_vii_.png",
+          "/images/banners/rubedo__of_white_stone_born_2026_05_20__luna_vii_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_05_20__luna_vii_.webp"
+          "/images/banners/epitome_invocation_2026_05_20__luna_vii_.png"
         ],
         characters: [
           {
@@ -7874,11 +7874,11 @@ export const BANNERS_HISTORY: BannerVersion[] = [
         startDate: "2026-06-08",
         endDate: "2026-06-29",
         characterBanners: [
-          "/assets/banners/frostedge_nocturne_2026_06_09__luna_vii_.webp",
-          "/assets/banners/ancient_flame_ablaze_2026_06_09__luna_vii_.webp"
+          "/images/banners/frostedge_nocturne_2026_06_09__luna_vii_.png",
+          "/images/banners/ancient_flame_ablaze_2026_06_09__luna_vii_.png"
         ],
         weaponBanners: [
-          "/assets/banners/epitome_invocation_2026_06_09__luna_vii_.webp"
+          "/images/banners/epitome_invocation_2026_06_09__luna_vii_.png"
         ],
         characters: [
           {
@@ -7944,6 +7944,172 @@ export const BANNERS_HISTORY: BannerVersion[] = [
             rarity: 4
           }
         ]
+      }
+    ]
+  },
+  {
+    version: "\"Luna VIII\"",
+    versionNameEn: "",
+    versionNameVi: "",
+    phases: [
+      {
+        phase: 1,
+        startDate: "2026-06-30",
+        endDate: "2026-07-20",
+        characterBanners: [
+          "/images/banners/to_the_looking_glass_the_mademoiselle_said_2026_07_01__luna_viii_.png",
+          "/images/banners/starry_night_s_whispers_2026_07_01__luna_viii_.png",
+          "/images/banners/heavenlit_prophecy_2026_07_01__luna_viii_.png"
+        ],
+        weaponBanners: [
+          "/images/banners/epitome_invocation_2026_07_01__luna_viii_.png"
+        ],
+        characters: [
+          {
+            nameEn: "Sandrone",
+            rarity: 5
+          },
+          {
+            nameEn: "Beidou",
+            rarity: 4
+          },
+          {
+            nameEn: "Diona",
+            rarity: 4
+          },
+          {
+            nameEn: "Freminet",
+            rarity: 4
+          },
+          {
+            nameEn: "Citlali",
+            rarity: 5
+          },
+          {
+            nameEn: "Beidou",
+            rarity: 4
+          },
+          {
+            nameEn: "Diona",
+            rarity: 4
+          },
+          {
+            nameEn: "Freminet",
+            rarity: 4
+          },
+          {
+            nameEn: "Yumemizuki Mizuki",
+            rarity: 5
+          },
+          {
+            nameEn: "Wriothesley",
+            rarity: 5
+          },
+          {
+            nameEn: "Cyno",
+            rarity: 5
+          },
+          {
+            nameEn: "Yae Miko",
+            rarity: 5
+          },
+          {
+            nameEn: "Qiqi",
+            rarity: 5
+          },
+          {
+            nameEn: "Sunny Morning Sleep-In",
+            rarity: 5
+          },
+          {
+            nameEn: "Cashflow Supervision",
+            rarity: 5
+          },
+          {
+            nameEn: "Staff of the Scarlet Sands",
+            rarity: 5
+          },
+          {
+            nameEn: "Kagura's Verity",
+            rarity: 5
+          },
+          {
+            nameEn: "Skyward Blade",
+            rarity: 5
+          }
+        ],
+        weapons: [
+          {
+            nameEn: "A Teaspoon of Transcendence",
+            rarity: 5
+          },
+          {
+            nameEn: "Starcaller's Watch",
+            rarity: 5
+          },
+          {
+            nameEn: "Favonius Sword",
+            rarity: 4
+          },
+          {
+            nameEn: "Rainslasher",
+            rarity: 4
+          },
+          {
+            nameEn: "Dragon's Bane",
+            rarity: 4
+          },
+          {
+            nameEn: "Sacrificial Fragments",
+            rarity: 4
+          },
+          {
+            nameEn: "Sacrificial Bow",
+            rarity: 4
+          }
+        ]
+      },
+      {
+        phase: 2,
+        startDate: "2026-07-20",
+        endDate: "TBA",
+        characterBanners: [],
+        weaponBanners: [],
+        characters: [
+          {
+            nameEn: "Raiden Shogun",
+            rarity: 5
+          },
+          {
+            nameEn: "Unknown Character",
+            rarity: 4
+          },
+          {
+            nameEn: "Unknown Character",
+            rarity: 4
+          },
+          {
+            nameEn: "Unknown Character",
+            rarity: 4
+          },
+          {
+            nameEn: "Columbina",
+            rarity: 5
+          },
+          {
+            nameEn: "Unknown Character",
+            rarity: 4
+          },
+          {
+            nameEn: "Unknown Character",
+            rarity: 4
+          },
+          {
+            nameEn: "Unknown Character",
+            rarity: 4
+          }
+        ],
+        weapons: []
       }
     ]
   }

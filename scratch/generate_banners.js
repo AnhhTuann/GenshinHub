@@ -3,7 +3,7 @@ const path = require('path');
 const cheerio = require('cheerio');
 const https = require('https');
 
-const html = fs.readFileSync('C:\\Users\\atuan\\.gemini\\antigravity-ide\\brain\\8f006563-26ba-4261-ac17-36b24f9ebcf2\\.system_generated\\steps\\190\\content.md', 'utf8');
+const html = fs.readFileSync(path.join(__dirname, 'wish_history.html'), 'utf8');
 const $ = cheerio.load(html);
 
 const banners = [];
@@ -153,7 +153,7 @@ elements.each((i, el) => {
 });
 
 // Create dir
-const dir = 'c:/Work/GenshinHub/frontend/public/images/banners';
+const dir = path.join(__dirname, '../frontend/public/images/banners');
 if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
 async function downloadImages() {
@@ -227,7 +227,7 @@ export const BANNERS_HISTORY: BannerVersion[] = ${JSON.stringify(banners, null, 
     // Fix quotes
     tsContent = tsContent.replace(/"nameEn":/g, 'nameEn:').replace(/"rarity":/g, 'rarity:').replace(/"phase":/g, 'phase:').replace(/"startDate":/g, 'startDate:').replace(/"endDate":/g, 'endDate:').replace(/"characters":/g, 'characters:').replace(/"weapons":/g, 'weapons:').replace(/"version":/g, 'version:').replace(/"versionNameEn":/g, 'versionNameEn:').replace(/"versionNameVi":/g, 'versionNameVi:').replace(/"phases":/g, 'phases:').replace(/"characterBanners":/g, 'characterBanners:').replace(/"weaponBanners":/g, 'weaponBanners:');
     
-    fs.writeFileSync('c:/Work/GenshinHub/frontend/data/banners.ts', tsContent, 'utf8');
+    fs.writeFileSync(path.join(__dirname, '../frontend/data/banners.ts'), tsContent, 'utf8');
     console.log('Saved to frontend/data/banners.ts');
 }
 

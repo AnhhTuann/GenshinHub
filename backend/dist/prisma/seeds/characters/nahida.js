@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.nahida = void 0;
 exports.nahida = {
     characterId: "nahida",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "S",
+    role: "Sub DPS, Support",
+    recommendedC: "C0",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 807,
+            "baseAtk": 23,
+            "baseDef": 49,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 2092,
+            "baseAtk": 60,
+            "baseDef": 127,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 2784,
+            "baseAtk": 80,
+            "baseDef": 169,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 4165,
+            "baseAtk": 120,
+            "baseDef": 253,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 4656,
+            "baseAtk": 134,
+            "baseDef": 283,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "29"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 5357,
+            "baseAtk": 155,
+            "baseDef": 326,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "29"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 6012,
+            "baseAtk": 174,
+            "baseDef": 366,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "58"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 6721,
+            "baseAtk": 194,
+            "baseDef": 409,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "58"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 7212,
+            "baseAtk": 208,
+            "baseDef": 439,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "58"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 7926,
+            "baseAtk": 229,
+            "baseDef": 482,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "58"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 8418,
+            "baseAtk": 243,
+            "baseDef": 512,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "86"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 9140,
+            "baseAtk": 264,
+            "baseDef": 556,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "86"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 9632,
+            "baseAtk": 278,
+            "baseDef": 586,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "115"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 10360,
+            "baseAtk": 299,
+            "baseDef": 630,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "115"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "101217"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104131"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112059"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "101217"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104132"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112059"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113040"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "101217"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104132"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112060"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113040"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "101217"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104133"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112060"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113040"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "101217"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104133"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112061"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113040"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "101217"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104134"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112061"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113040"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104332"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112059"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104333"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112060"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104333"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112060"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104333"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112060"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104333"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112060"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104334"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112061"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104334"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112061"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104334"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112061"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 16,
+                    "materialId": "104334"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112061"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Skill",
         "Burst",
@@ -15,6 +421,85 @@ exports.nahida = {
     ],
     signatureWeapons: [],
     teams: [
+        {
+            name: "Nahida Catalyze Team #3",
+            rank: "S",
+            description: "Nahida is the Main DPS with maximized Elemental Mastery to boost her DMG and Catalyze reactions. Beidou and Fischl provide off-field Electro for Aggravate reactions. Zhongli's shield offers safety and can use Archaic Petra for bonus DMG.",
+            members: [
+                {
+                    characterId: "nahida",
+                    role: "Main DPS",
+                    roleDesc: "Dendro Main DPS. Deals high on-field Dendro damage and drives Catalyze.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Solar Pearl"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Elemental Mastery",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "beidou",
+                    role: "Sub DPS",
+                    roleDesc: "Electro Sub DPS. Provides off-field Electro damage and damage reduction via Burst.",
+                    weapons: [
+                        "Skyward Pride",
+                        "Serpent Spine"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "fischl",
+                    role: "Sub DPS",
+                    roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
+                    weapons: [
+                        "Aqua Simulacra",
+                        "The Stringless"
+                    ],
+                    artifacts: [
+                        "4pc Golden Troupe"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "zhongli",
+                    role: "Support",
+                    roleDesc: "Shield Support. Strong shield protection, can buff Geo/Electro with Archaic Petra.",
+                    weapons: [
+                        "Staff of Homa",
+                        "Black Tassel"
+                    ],
+                    artifacts: [
+                        "4pc Archaic Petra"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
+                }
+            ]
+        },
         {
             name: "Nahida Overload-Catalyze Team",
             rank: "S",
@@ -92,268 +577,31 @@ exports.nahida = {
             ]
         },
         {
-            name: "Nahida Catalyze Team #1",
-            rank: "SS",
-            description: "Nahida maximizes Elemental Mastery for personal DMG and Catalyze. Two Electro characters provide off-field Electro for Aggravate reactions, and two Dendro units reduce Tri-Karma Purification interval.",
+            name: "Nahida Hyperbloom Team #2",
+            rank: "S",
+            description: "Razor triggers multiple reactions (Overloaded, Electro-Charged, Superconduct, Aggravate, Hyperbloom) with his Burst while Nahida applies Dendro, Xingqiu applies Hydro, and Bennett provides ATK buff and healing.",
             members: [
                 {
-                    characterId: "nahida",
+                    characterId: "razor",
                     role: "Main DPS",
-                    roleDesc: "Dendro Main DPS. Maximizes EM for personal damage and Catalyze reactions.",
+                    roleDesc: "Electro Main DPS. Drives multiple reactions on-field using Burst.",
                     weapons: [
-                        "A Thousand Floating Dreams",
-                        "Solar Pearl"
-                    ],
-                    artifacts: [
-                        "4pc Deepwood Memories"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Elemental Mastery",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "yae-miko",
-                    role: "Sub DPS",
-                    roleDesc: "Electro Sub DPS. Provides off-field Electro damage for Aggravate.",
-                    weapons: [
-                        "Kagura's Verity",
-                        "The Widsith"
-                    ],
-                    artifacts: [
-                        "2pc Golden Troupe + 2pc Thundering Fury"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "fischl",
-                    role: "Sub DPS",
-                    roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
-                    weapons: [
-                        "Aqua Simulacra",
-                        "The Stringless"
-                    ],
-                    artifacts: [
-                        "4pc Golden Troupe"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "zhongli",
-                    role: "Support",
-                    roleDesc: "Shield Support. Provides shield and Geo Resonance.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Archaic Petra"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Nahida Hyperbloom Team #1",
-            rank: "SS",
-            description: "Hyperbloom team with Nahida applying Dendro, Kokomi creating Dendro cores, Raiden Shogun triggering Hyperbloom, and Kazuha providing support and Elemental RES shred. Raiden Shogun's Elemental Skill triggers Hyperbloom on Dendro Cores created by Nahida and Kokomi. Kazuha groups enemies and buffs team DMG.",
-            members: [
-                {
-                    characterId: "kokomi",
-                    role: "Main DPS",
-                    roleDesc: "Hydro Main DPS. Applies Hydro on-field, triggers Bloom, and heals the team.",
-                    weapons: [
-                        "Everlasting Moonglow",
-                        "Prototype Amber"
-                    ],
-                    artifacts: [
-                        "4pc Ocean-Hued Clam"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Elemental Mastery",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "nahida",
-                    role: "Sub DPS",
-                    roleDesc: "Dendro Sub DPS. Applies off-field Dendro to create Bloom cores.",
-                    weapons: [
-                        "A Thousand Floating Dreams",
-                        "Solar Pearl"
-                    ],
-                    artifacts: [
-                        "4pc Deepwood Memories"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Elemental Mastery",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "raiden-shogun",
-                    role: "Sub DPS",
-                    roleDesc: "Electro trigger. Triggers Hyperbloom on Dendro cores off-field.",
-                    weapons: [
-                        "Dragon's Bane"
-                    ],
-                    artifacts: [
-                        "4pc Flower of Paradise Lost"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "kazuha",
-                    role: "Support",
-                    roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Nahida Rainbow Hyperbloom Team",
-            rank: "SS",
-            description: "A versatile team that uses Nahida's Dendro with Yelan's Hydro to create Bloom cores, then triggers Hyperbloom with Kuki Shinobu's Electro or Burgeon with Thoma's Pyro. Nahida applies Dendro with her Skill while Yelan provides off-field Hydro to create Bloom cores. Kuki (high Elemental Mastery) or Thoma then trigger Hyperbloom or Burgeon for massive damage.",
-            members: [
-                {
-                    characterId: "nahida",
-                    role: "Main DPS",
-                    roleDesc: "Dendro Main DPS. Applies Dendro and triggers reactions on-field.",
-                    weapons: [
-                        "A Thousand Floating Dreams",
-                        "Solar Pearl"
-                    ],
-                    artifacts: [
-                        "4pc Deepwood Memories"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Elemental Mastery",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "yelan",
-                    role: "Sub DPS",
-                    roleDesc: "Hydro Sub DPS. Provides off-field Hydro and increases active character damage.",
-                    weapons: [
-                        "Aqua Simulacra",
-                        "Favonius Warbow"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "HP%",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "thoma",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Triggers Burgeon reactions on Dendro cores.",
-                    weapons: [
-                        "Kitain Cross Spear"
-                    ],
-                    artifacts: [
-                        "4pc Flower of Paradise Lost"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "Elemental Mastery",
-                        "HP%"
-                    ]
-                },
-                {
-                    characterId: "kuki-shinobu",
-                    role: "Support",
-                    roleDesc: "Electro Support. Heals the team and triggers Hyperbloom.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
+                        "Serpent Spine",
+                        "Wolf's Gravestone"
                     ],
                     artifacts: [
                         "4pc Gilded Dreams"
                     ],
                     substats: [
-                        "Elemental Mastery",
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Nahida Bloom Team",
-            rank: "SS",
-            description: "Primary Dendro applicator as Elemental Mastery. Nilou triggers bountiful blooms. Nahida's Elemental Skill applies Dendro to trigger Bloom, Yelan/Xingqiu applies Hydro, and Kokomi triggers healing.",
-            members: [
-                {
-                    characterId: "nilou",
-                    role: "Sub DPS",
-                    roleDesc: "Hydro Sub DPS. Replaces Bloom cores with Bountiful Cores for instant massive damage.",
-                    weapons: [
-                        "Key of Khaj-Nisut",
-                        "The Dockhand's Assistant"
-                    ],
-                    artifacts: [
-                        "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
                         "Energy Recharge",
-                        "CRIT DMG"
+                        "Elemental Mastery",
+                        "HP%"
                     ]
                 },
                 {
                     characterId: "nahida",
-                    role: "Main DPS",
-                    roleDesc: "Dendro Main DPS. Continuous Dendro application on-field.",
+                    role: "Sub DPS",
+                    roleDesc: "Dendro Sub DPS. Applies Dendro off-field to create Bloom cores.",
                     weapons: [
                         "A Thousand Floating Dreams",
                         "Solar Pearl"
@@ -370,38 +618,37 @@ exports.nahida = {
                     ]
                 },
                 {
-                    characterId: "traveler",
-                    role: "Support",
-                    roleDesc: "Dendro Support. Provides Dendro Resonance and off-field Dendro application.",
+                    characterId: "xingqiu",
+                    role: "Sub DPS",
+                    roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to create Bloom cores.",
                     weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
+                        "Sacrificial Sword"
                     ],
                     artifacts: [
-                        "4pc Deepwood Memories"
+                        "4pc Emblem of Severed Fate"
                     ],
                     substats: [
                         "Energy Recharge",
-                        "Elemental Mastery",
-                        "HP%"
+                        "CRIT Rate",
+                        "CRIT DMG",
+                        "ATK%"
                     ]
                 },
                 {
-                    characterId: "kokomi",
+                    characterId: "bennett",
                     role: "Support",
-                    roleDesc: "Hydro Support. Heals the team and applies Hydro off-field.",
+                    roleDesc: "Pyro Support. Provides ATK buff, healing, and Pyro application for Overload/Burgeon.",
                     weapons: [
-                        "Everlasting Moonglow",
-                        "Prototype Amber"
+                        "Skyward Blade",
+                        "Favonius Sword"
                     ],
                     artifacts: [
-                        "4pc Ocean-Hued Clam"
+                        "4pc Noblesse Oblige"
                     ],
                     substats: [
                         "HP%",
                         "HP",
-                        "Energy Recharge",
-                        "ATK%"
+                        "Energy Recharge"
                     ]
                 }
             ]
@@ -487,14 +734,14 @@ exports.nahida = {
             ]
         },
         {
-            name: "Nahida Catalyze Team #3",
-            rank: "S",
-            description: "Nahida is the Main DPS with maximized Elemental Mastery to boost her DMG and Catalyze reactions. Beidou and Fischl provide off-field Electro for Aggravate reactions. Zhongli's shield offers safety and can use Archaic Petra for bonus DMG.",
+            name: "Nahida Bloom Team",
+            rank: "SS",
+            description: "Primary Dendro applicator as Elemental Mastery. Nilou triggers bountiful blooms. Nahida's Elemental Skill applies Dendro to trigger Bloom, Yelan/Xingqiu applies Hydro, and Kokomi triggers healing.",
             members: [
                 {
                     characterId: "nahida",
                     role: "Main DPS",
-                    roleDesc: "Dendro Main DPS. Deals high on-field Dendro damage and drives Catalyze.",
+                    roleDesc: "Dendro Main DPS. Continuous Dendro application on-field.",
                     weapons: [
                         "A Thousand Floating Dreams",
                         "Solar Pearl"
@@ -511,56 +758,135 @@ exports.nahida = {
                     ]
                 },
                 {
-                    characterId: "beidou",
+                    characterId: "nilou",
                     role: "Sub DPS",
-                    roleDesc: "Electro Sub DPS. Provides off-field Electro damage and damage reduction via Burst.",
+                    roleDesc: "Hydro Sub DPS. Replaces Bloom cores with Bountiful Cores for instant massive damage.",
                     weapons: [
-                        "Skyward Pride",
-                        "Serpent Spine"
+                        "Key of Khaj-Nisut",
+                        "The Dockhand's Assistant"
                     ],
                     artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "fischl",
-                    role: "Sub DPS",
-                    roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
-                    weapons: [
-                        "Aqua Simulacra",
-                        "The Stringless"
-                    ],
-                    artifacts: [
-                        "4pc Golden Troupe"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "zhongli",
-                    role: "Support",
-                    roleDesc: "Shield Support. Strong shield protection, can buff Geo/Electro with Archaic Petra.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Archaic Petra"
+                        "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow"
                     ],
                     substats: [
                         "HP%",
                         "HP",
+                        "Energy Recharge",
+                        "CRIT DMG"
+                    ]
+                },
+                {
+                    characterId: "kokomi",
+                    role: "Support",
+                    roleDesc: "Hydro Support. Heals the team and applies Hydro off-field.",
+                    weapons: [
+                        "Everlasting Moonglow",
+                        "Prototype Amber"
+                    ],
+                    artifacts: [
+                        "4pc Ocean-Hued Clam"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "traveler",
+                    role: "Support",
+                    roleDesc: "Dendro Support. Provides Dendro Resonance and off-field Dendro application.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "Elemental Mastery",
+                        "HP%"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Nahida Hyperbloom Team #1",
+            rank: "SS",
+            description: "Hyperbloom team with Nahida applying Dendro, Kokomi creating Dendro cores, Raiden Shogun triggering Hyperbloom, and Kazuha providing support and Elemental RES shred. Raiden Shogun's Elemental Skill triggers Hyperbloom on Dendro Cores created by Nahida and Kokomi. Kazuha groups enemies and buffs team DMG.",
+            members: [
+                {
+                    characterId: "kokomi",
+                    role: "Main DPS",
+                    roleDesc: "Hydro Main DPS. Applies Hydro on-field, triggers Bloom, and heals the team.",
+                    weapons: [
+                        "Everlasting Moonglow",
+                        "Prototype Amber"
+                    ],
+                    artifacts: [
+                        "4pc Ocean-Hued Clam"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Elemental Mastery",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "nahida",
+                    role: "Sub DPS",
+                    roleDesc: "Dendro Sub DPS. Applies off-field Dendro to create Bloom cores.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Solar Pearl"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Elemental Mastery",
+                        "ATK%",
                         "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "raiden-shogun",
+                    role: "Sub DPS",
+                    roleDesc: "Electro trigger. Triggers Hyperbloom on Dendro cores off-field.",
+                    weapons: [
+                        "Dragon's Bane"
+                    ],
+                    artifacts: [
+                        "4pc Flower of Paradise Lost"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "kazuha",
+                    role: "Support",
+                    roleDesc: "Anemo Support. Groups enemies, shreds Hydro/Electro resistance, and buffs team damage.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
                     ]
                 }
             ]
@@ -644,48 +970,14 @@ exports.nahida = {
             ]
         },
         {
-            name: "Nahida Hyperbloom Team #2",
-            rank: "S",
-            description: "Razor triggers multiple reactions (Overloaded, Electro-Charged, Superconduct, Aggravate, Hyperbloom) with his Burst while Nahida applies Dendro, Xingqiu applies Hydro, and Bennett provides ATK buff and healing.",
+            name: "Nahida Catalyze Team #1",
+            rank: "SS",
+            description: "Nahida maximizes Elemental Mastery for personal DMG and Catalyze. Two Electro characters provide off-field Electro for Aggravate reactions, and two Dendro units reduce Tri-Karma Purification interval.",
             members: [
                 {
-                    characterId: "razor",
-                    role: "Main DPS",
-                    roleDesc: "Electro Main DPS. Drives multiple reactions on-field using Burst.",
-                    weapons: [
-                        "Serpent Spine",
-                        "Wolf's Gravestone"
-                    ],
-                    artifacts: [
-                        "4pc Gilded Dreams"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "Elemental Mastery",
-                        "HP%"
-                    ]
-                },
-                {
-                    characterId: "xingqiu",
-                    role: "Sub DPS",
-                    roleDesc: "Hydro Sub DPS. Provides off-field Hydro application to create Bloom cores.",
-                    weapons: [
-                        "Sacrificial Sword"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "CRIT Rate",
-                        "CRIT DMG",
-                        "ATK%"
-                    ]
-                },
-                {
                     characterId: "nahida",
-                    role: "Sub DPS",
-                    roleDesc: "Dendro Sub DPS. Applies Dendro off-field to create Bloom cores.",
+                    role: "Main DPS",
+                    roleDesc: "Dendro Main DPS. Maximizes EM for personal damage and Catalyze reactions.",
                     weapons: [
                         "A Thousand Floating Dreams",
                         "Solar Pearl"
@@ -702,15 +994,50 @@ exports.nahida = {
                     ]
                 },
                 {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Provides ATK buff, healing, and Pyro application for Overload/Burgeon.",
+                    characterId: "fischl",
+                    role: "Sub DPS",
+                    roleDesc: "Electro Sub DPS. Applies off-field Electro continuously.",
                     weapons: [
-                        "Skyward Blade",
-                        "Favonius Sword"
+                        "Aqua Simulacra",
+                        "The Stringless"
                     ],
                     artifacts: [
-                        "4pc Noblesse Oblige"
+                        "4pc Golden Troupe"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "yae-miko",
+                    role: "Sub DPS",
+                    roleDesc: "Electro Sub DPS. Provides off-field Electro damage for Aggravate.",
+                    weapons: [
+                        "Kagura's Verity",
+                        "The Widsith"
+                    ],
+                    artifacts: [
+                        "2pc Golden Troupe + 2pc Thundering Fury"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "zhongli",
+                    role: "Support",
+                    roleDesc: "Shield Support. Provides shield and Geo Resonance.",
+                    weapons: [
+                        "Staff of Homa",
+                        "Black Tassel"
+                    ],
+                    artifacts: [
+                        "4pc Archaic Petra"
                     ],
                     substats: [
                         "HP%",
@@ -719,8 +1046,91 @@ exports.nahida = {
                     ]
                 }
             ]
+        },
+        {
+            name: "Nahida Rainbow Hyperbloom Team",
+            rank: "SS",
+            description: "A versatile team that uses Nahida's Dendro with Yelan's Hydro to create Bloom cores, then triggers Hyperbloom with Kuki Shinobu's Electro or Burgeon with Thoma's Pyro. Nahida applies Dendro with her Skill while Yelan provides off-field Hydro to create Bloom cores. Kuki (high Elemental Mastery) or Thoma then trigger Hyperbloom or Burgeon for massive damage.",
+            members: [
+                {
+                    characterId: "nahida",
+                    role: "Main DPS",
+                    roleDesc: "Dendro Main DPS. Applies Dendro and triggers reactions on-field.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Solar Pearl"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Elemental Mastery",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "yelan",
+                    role: "Sub DPS",
+                    roleDesc: "Hydro Sub DPS. Provides off-field Hydro and increases active character damage.",
+                    weapons: [
+                        "Aqua Simulacra",
+                        "Favonius Warbow"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "HP%",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "kuki-shinobu",
+                    role: "Support",
+                    roleDesc: "Electro Support. Heals the team and triggers Hyperbloom.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "4pc Gilded Dreams"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "thoma",
+                    role: "Support",
+                    roleDesc: "Pyro Support. Triggers Burgeon reactions on Dendro cores.",
+                    weapons: [
+                        "Kitain Cross Spear"
+                    ],
+                    artifacts: [
+                        "4pc Flower of Paradise Lost"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "Elemental Mastery",
+                        "HP%"
+                    ]
+                }
+            ]
         }
     ],
+    sands: ["Tinh Thông Nguyên Tố"],
+    goblet: ["Tinh Thông Nguyên Tố", "Sát Thương Nguyên Tố Thảo"],
+    circlet: ["Tinh Thông Nguyên Tố", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+    subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "Elemental Mastery", "ATK%"],
     bestWeapons: [
         {
             rank: 1,
@@ -731,7 +1141,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Vũ khí tốt nhất: cung cấp Tinh Thông Nguyên Tố cực lớn và buff thêm TTNT cho cả đội, giúp tăng mạnh sát thương phản ứng và khả năng hỗ trợ.",
             passiveDescEn: "Vũ khí tốt nhất: cung cấp Tinh Thông Nguyên Tố cực lớn và buff thêm TTNT cho cả đội, giúp tăng mạnh sát thương phản ứng và khả năng hỗ trợ.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Ayus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Ayus.webp"
         },
         {
             rank: 2,
@@ -742,7 +1152,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tấn Công cơ bản cao và dòng phụ Tỷ Lệ Bạo Kích; nội tại cung cấp lượng lớn Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng.",
             passiveDescEn: "Tấn Công cơ bản cao và dòng phụ Tỷ Lệ Bạo Kích; nội tại cung cấp lượng lớn Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SakuraFan.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SakuraFan.webp"
         },
         {
             rank: 3,
@@ -753,7 +1163,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng lớn Sát Thương Bạo Kích và tăng sát thương Kỹ Năng Nguyên Tố từ các tầng nội tại, tuy nhiên cần đứng sân để duy trì.",
             passiveDescEn: "Cung cấp lượng lớn Sát Thương Bạo Kích và tăng sát thương Kỹ Năng Nguyên Tố từ các tầng nội tại, tuy nhiên cần đứng sân để duy trì.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Narukami.webp"
         },
         {
             rank: 4,
@@ -764,7 +1174,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Tinh Thông Nguyên Tố cao và có tỷ lệ reset thời gian hồi chiêu E, giúp kéo dài khả năng cấp Thảo ngoài sân.",
             passiveDescEn: "Tinh Thông Nguyên Tố cao và có tỷ lệ reset thời gian hồi chiêu E, giúp kéo dài khả năng cấp Thảo ngoài sân.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fossil.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fossil.webp"
         },
         {
             rank: 5,
@@ -775,7 +1185,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp và tăng Tinh Thông Nguyên Tố cho toàn đội sau khi dùng Nộ, hỗ trợ đắc lực cho các phản ứng nguyên tố.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp và tăng Tinh Thông Nguyên Tố cho toàn đội sau khi dùng Nộ, hỗ trợ đắc lực cho các phản ứng nguyên tố.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SeeliesLute.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_SeeliesLute.webp"
         },
         {
             rank: 6,
@@ -786,7 +1196,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Dòng phụ Tinh Thông Nguyên Tố và nội tại chuyển hóa thành Tấn Công cho Nahida và toàn đội, rất tốt cho lối chơi hỗ trợ.",
             passiveDescEn: "Dòng phụ Tinh Thông Nguyên Tố và nội tại chuyển hóa thành Tấn Công cho Nahida và toàn đội, rất tốt cho lối chơi hỗ trợ.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pleroma.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pleroma.webp"
         },
         {
             rank: 7,
@@ -797,7 +1207,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Buff ngẫu nhiên cực mạnh (TTNT, Tấn Công, Sát Thương Nguyên Tố), tuy nhiên không ổn định cho hỗ trợ phản ứng.",
             passiveDescEn: "Buff ngẫu nhiên cực mạnh (TTNT, Tấn Công, Sát Thương Nguyên Tố), tuy nhiên không ổn định cho hỗ trợ phản ứng.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.webp"
         },
         {
             rank: 8,
@@ -808,7 +1218,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và tăng HP/TTNT khi không đứng sân, phù hợp cho Nahida off-field sử dụng như một vũ khí tăng chỉ số.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và tăng HP/TTNT khi không đứng sân, phù hợp cho Nahida off-field sử dụng như một vũ khí tăng chỉ số.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Yue.webp"
         },
         {
             rank: 9,
@@ -819,7 +1229,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tấn Công cơ bản cao và buff Sát Thương Nguyên Tố; nội tại tạo thêm sát thương vật lý nhỏ nhưng thiếu Tinh Thông Nguyên Tố.",
             passiveDescEn: "Tấn Công cơ bản cao và buff Sát Thương Nguyên Tố; nội tại tạo thêm sát thương vật lý nhỏ nhưng thiếu Tinh Thông Nguyên Tố.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Dvalin.webp"
         },
         {
             rank: 10,
@@ -830,7 +1240,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và tăng dần Sát Thương Nguyên Tố khi đứng sân; không tối ưu cho lối chơi quick-swap.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và tăng dần Sát Thương Nguyên Tố khi đứng sân; không tối ưu cho lối chơi quick-swap.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.webp"
         },
         {
             rank: 11,
@@ -841,7 +1251,7 @@ exports.nahida = {
             refinement: "R1",
             passiveDescVi: "Yêu cầu khiên để tối đa hóa cộng dồn Tấn Công%; không thực sự lý tưởng vì Nahida ưu tiên Tinh Thông Nguyên Tố hơn.",
             passiveDescEn: "Yêu cầu khiên để tối đa hóa cộng dồn Tấn Công%; không thực sự lý tưởng vì Nahida ưu tiên Tinh Thông Nguyên Tố hơn.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Kunwu.webp"
         },
         {
             rank: 12,
@@ -852,7 +1262,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Gia tăng sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ kèm Tỷ Lệ Bạo Kích; thiếu Tinh Thông Nguyên Tố và chỉ phù hợp khi đứng sân.",
             passiveDescEn: "Gia tăng sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ kèm Tỷ Lệ Bạo Kích; thiếu Tinh Thông Nguyên Tố và chỉ phù hợp khi đứng sân.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Resurrection.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Resurrection.webp"
         },
         {
             rank: 13,
@@ -863,7 +1273,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Tạo hạt năng lượng cho cả đội; sử dụng nếu đội hình thiếu Nạp trầm trọng dù lượng Tinh Thông Nguyên Tố nhận lại thấp.",
             passiveDescEn: "Tạo hạt năng lượng cho cả đội; sử dụng nếu đội hình thiếu Nạp trầm trọng dù lượng Tinh Thông Nguyên Tố nhận lại thấp.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Zephyrus.webp"
         },
         {
             rank: 14,
@@ -874,7 +1284,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn dễ kiếm cung cấp Tinh Thông Nguyên Tố; nội tại tăng Sát Thương Nguyên Tố sau phản ứng, lựa chọn F2P ổn định.",
             passiveDescEn: "Vũ khí rèn dễ kiếm cung cấp Tinh Thông Nguyên Tố; nội tại tăng Sát Thương Nguyên Tố sau phản ứng, lựa chọn F2P ổn định.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Exotic.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Exotic.webp"
         },
         {
             rank: 15,
@@ -885,7 +1295,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Vũ khí 3 sao rẻ tiền cung cấp lượng Tinh Thông Nguyên Tố lớn; nội tại tăng sát thương lên kẻ địch dính ấn Thủy hoặc Lôi.",
             passiveDescEn: "Vũ khí 3 sao rẻ tiền cung cấp lượng Tinh Thông Nguyên Tố lớn; nội tại tăng sát thương lên kẻ địch dính ấn Thủy hoặc Lôi.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Intro.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Intro.webp"
         },
         {
             rank: 16,
@@ -896,7 +1306,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn cung cấp Hiệu Quả Nạp và buff Sát Thương Nguyên Tố liên quan đến Lôi; chỉ dùng trong đội hình phản ứng Lôi.",
             passiveDescEn: "Vũ khí rèn cung cấp Hiệu Quả Nạp và buff Sát Thương Nguyên Tố liên quan đến Lôi; chỉ dùng trong đội hình phản ứng Lôi.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Bakufu.webp"
         },
         {
             rank: 17,
@@ -907,7 +1317,7 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Cung cấp lượng lớn buff Tấn Công% cho nhân vật ra sân tiếp theo; chỉ dùng thuần hỗ trợ khi Nahida không gây sát thương.",
             passiveDescEn: "Cung cấp lượng lớn buff Tấn Công% cho nhân vật ra sân tiếp theo; chỉ dùng thuần hỗ trợ khi Nahida không gây sát thương.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Pulpfic.webp"
         },
         {
             rank: 18,
@@ -918,153 +1328,39 @@ exports.nahida = {
             refinement: "R5",
             passiveDescVi: "Hồi máu và phục hồi năng lượng cho toàn đội; sử dụng nếu cần gia tăng khả năng sinh tồn và nạp năng lượng thay vì TTNT.",
             passiveDescEn: "Hồi máu và phục hồi năng lượng cho toàn đội; sử dụng nếu cần gia tăng khả năng sinh tồn và nạp năng lượng thay vì TTNT.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Catalyst_Proto.webp"
         }
     ],
     bestArtifacts: [
         {
-            setNameVi: "Ký Ức Rừng Sâu",
-            setNameEn: "Ký Ức Rừng Sâu",
-            pieces: 4,
-            sands: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố",
-                "Sát Thương Nguyên Tố Thảo"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "Elemental Mastery",
-                "ATK%"
-            ]
-        },
-        {
-            setNameVi: "Giấc Mộng Hoàng Kim",
-            setNameEn: "Giấc Mộng Hoàng Kim",
-            pieces: 4,
-            sands: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố",
-                "Sát Thương Nguyên Tố Thảo"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "Elemental Mastery",
-                "ATK%"
-            ]
+            setNameVi: "Thiên Nham Vững Chắc",
+            setNameEn: "Thiên Nham Vững Chắc",
+            pieces: 4
         },
         {
             setNameVi: "Đoàn Kịch Hoàng Kim",
             setNameEn: "Đoàn Kịch Hoàng Kim",
-            pieces: 4,
-            sands: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố",
-                "Sát Thương Nguyên Tố Thảo"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "Elemental Mastery",
-                "ATK%"
-            ]
+            pieces: 4
         },
         {
             setNameVi: "Mix 2 bộ Tinh Thông & 2 bộ Ký Ức Rừng Sâu",
             setNameEn: "Mix 2 bộ Tinh Thông & 2 bộ Ký Ức Rừng Sâu",
-            pieces: 2,
-            sands: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố",
-                "Sát Thương Nguyên Tố Thảo"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "Elemental Mastery",
-                "ATK%"
-            ]
+            pieces: 2
         },
         {
-            setNameVi: "Thiên Nham Vững Chắc",
-            setNameEn: "Thiên Nham Vững Chắc",
-            pieces: 4,
-            sands: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố",
-                "Sát Thương Nguyên Tố Thảo"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "Elemental Mastery",
-                "ATK%"
-            ]
+            setNameVi: "Ký Ức Rừng Sâu",
+            setNameEn: "Ký Ức Rừng Sâu",
+            pieces: 4
         },
         {
             setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
             setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
-            pieces: 4,
-            sands: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố",
-                "Sát Thương Nguyên Tố Thảo"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "Elemental Mastery",
-                "ATK%"
-            ]
+            pieces: 4
+        },
+        {
+            setNameVi: "Giấc Mộng Hoàng Kim",
+            setNameEn: "Giấc Mộng Hoàng Kim",
+            pieces: 4
         }
     ]
 };

@@ -138,7 +138,7 @@ async function seedWeapons(prisma) {
                 passiveNameVi,
                 passiveDescEn,
                 passiveDescVi,
-                iconUrl: item.icon ? `/assets/weapons/${item.icon}.png` : null,
+                iconUrl: item.icon ? `/assets/weapons/${item.icon}.webp` : null,
                 tier: tierMap.get(id) || null,
             });
         }

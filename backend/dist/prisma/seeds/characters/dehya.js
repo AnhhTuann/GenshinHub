@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.dehya = void 0;
 exports.dehya = {
     characterId: "dehya",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "B",
+    role: "Support, Sub DPS, Main DPS",
+    recommendedC: "C0",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 1220,
+            "baseAtk": 21,
+            "baseDef": 49,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 3165,
+            "baseAtk": 54,
+            "baseDef": 127,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 4212,
+            "baseAtk": 71,
+            "baseDef": 169,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 6302,
+            "baseAtk": 107,
+            "baseDef": 252,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 7045,
+            "baseAtk": 119,
+            "baseDef": 282,
+            "specialStatName": "HP",
+            "specialStatValue": "7.2%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 8106,
+            "baseAtk": 137,
+            "baseDef": 325,
+            "specialStatName": "HP",
+            "specialStatValue": "7.2%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 9097,
+            "baseAtk": 154,
+            "baseDef": 364,
+            "specialStatName": "HP",
+            "specialStatValue": "14.4%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 10168,
+            "baseAtk": 172,
+            "baseDef": 407,
+            "specialStatName": "HP",
+            "specialStatValue": "14.4%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 10912,
+            "baseAtk": 185,
+            "baseDef": 437,
+            "specialStatName": "HP",
+            "specialStatValue": "14.4%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 11993,
+            "baseAtk": 203,
+            "baseDef": 480,
+            "specialStatName": "HP",
+            "specialStatValue": "14.4%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 12736,
+            "baseAtk": 216,
+            "baseDef": 510,
+            "specialStatName": "HP",
+            "specialStatValue": "21.6%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 13829,
+            "baseAtk": 234,
+            "baseDef": 554,
+            "specialStatName": "HP",
+            "specialStatValue": "21.6%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 14573,
+            "baseAtk": 247,
+            "baseDef": 584,
+            "specialStatName": "HP",
+            "specialStatValue": "28.8%"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 15675,
+            "baseAtk": 265,
+            "baseDef": 628,
+            "specialStatName": "HP",
+            "specialStatValue": "28.8%"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "101222"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104111"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112065"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "101222"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112065"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113039"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "101222"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112066"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113039"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "101222"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112066"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113039"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "101222"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112067"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113039"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "101222"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104114"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112067"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113039"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104335"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112065"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104336"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112066"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104336"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112066"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104336"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112066"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104336"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112066"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104337"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112067"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104337"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112067"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104337"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112067"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 16,
+                    "materialId": "104337"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112067"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113041"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Burst",
         "Skill",
@@ -16,64 +422,67 @@ exports.dehya = {
     signatureWeapons: [],
     teams: [
         {
-            name: "Dehya Melting Team #1",
+            name: "Dehya Pure Pyro Team #1",
             rank: "S",
-            description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
+            description: "A mono-pyro team that focuses on maximizing Dehya's Elemental Burst damage with the support of Kazuha and Bennett. Maximize Dehya's Elemental Burst damage with Kazuha's Pyro DMG buff and resistance shred, and Bennett's ATK buff and healing.",
             members: [
                 {
-                    characterId: "ganyu",
+                    characterId: "dehya",
                     role: "Main DPS",
-                    roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
+                    roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
                     weapons: [
-                        "Hunter's Path",
-                        "Hamayumi"
+                        "Beacon of the Reed Sea"
                     ],
                     artifacts: [
-                        "4pc Wanderer's Troupe"
+                        "4pc Emblem of Severed Fate"
                     ],
                     substats: [
                         "CRIT DMG",
                         "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
+                        "Energy Recharge",
+                        "ATK%"
                     ]
                 },
                 {
-                    characterId: "dehya",
-                    role: "Support",
-                    roleDesc: "Elemental Skill creates a field that unleashes coordinated Pyro attacks.",
+                    characterId: "xiangling",
+                    role: "Sub DPS",
+                    roleDesc: "Xiangling's Elemental Burst provides huge amount of DMG off-field.",
                     weapons: [
-                        "Favonius Greatsword"
+                        "Engulfing Lightning",
+                        "The Catch"
                     ],
                     artifacts: [
-                        "4pc Tenacity of the Millelith"
+                        "4pc Emblem of Severed Fate"
                     ],
                     substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
                         "Energy Recharge",
-                        "HP%"
+                        "ATK%"
                     ]
                 },
                 {
-                    characterId: "nahida",
+                    characterId: "kazuha",
                     role: "Support",
-                    roleDesc: "Elemental Skill connects up to 8 enemies, dealing Dendro DMG and triggering reactions. Elemental Burst provides stable EM based on teammates' elements. Burning provides stable Pyro source.",
+                    roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
                     weapons: [
-                        "A Thousand Floating Dreams",
-                        "Solar Pearl"
+                        "Freedom-Sworn",
+                        "Iron Sting"
                     ],
                     artifacts: [
-                        "4pc Gilded Dreams"
+                        "4pc Viridescent Venerer"
                     ],
                     substats: [
                         "Elemental Mastery",
-                        "Energy Recharge",
+                        "CRIT DMG",
+                        "CRIT Rate",
                         "ATK%"
                     ]
                 },
                 {
                     characterId: "bennett",
                     role: "Support",
-                    roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+                    roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
                     weapons: [
                         "Aquila Favonia",
                         "Favonius Sword"
@@ -164,6 +573,153 @@ exports.dehya = {
             ]
         },
         {
+            name: "Dehya Melting Team #1",
+            rank: "S",
+            description: "Dehya provides off-field Pyro to enable Burning for stable Melt. Nahida applies Dendro and boosts Melt damage, while Bennett heals and buffs ATK. Maximize Ganyu's Melt damage by using Dehya's coordinated Pyro attacks and Nahida's Dendro application to trigger Burning, providing consistent Pyro aura.",
+            members: [
+                {
+                    characterId: "ganyu",
+                    role: "Main DPS",
+                    roleDesc: "Deals DMG by Elemental Burst and Charged Attack, triggering Melt with Pyro from Dehya.",
+                    weapons: [
+                        "Hunter's Path",
+                        "Hamayumi"
+                    ],
+                    artifacts: [
+                        "4pc Wanderer's Troupe"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "dehya",
+                    role: "Support",
+                    roleDesc: "Elemental Skill creates a field that unleashes coordinated Pyro attacks.",
+                    weapons: [
+                        "Favonius Greatsword"
+                    ],
+                    artifacts: [
+                        "4pc Tenacity of the Millelith"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "HP%"
+                    ]
+                },
+                {
+                    characterId: "nahida",
+                    role: "Support",
+                    roleDesc: "Elemental Skill connects up to 8 enemies, dealing Dendro DMG and triggering reactions. Elemental Burst provides stable EM based on teammates' elements. Burning provides stable Pyro source.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Solar Pearl"
+                    ],
+                    artifacts: [
+                        "4pc Gilded Dreams"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Elemental Burst provides huge ATK buff and healing.",
+                    weapons: [
+                        "Aquila Favonia",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "HP%"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Dehya Pure Pyro Team #2",
+            rank: "S",
+            description: "A team focused on maximizing Dehya's Elemental Burst damage with support from Kazuha, Mona, and Bennett. Maximize Dehya's Elemental Burst damage using Kazuha's DMG buff and resistance shred, Mona's Omen and DMG increase, and Bennett's ATK buff.",
+            members: [
+                {
+                    characterId: "dehya",
+                    role: "Main DPS",
+                    roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
+                    weapons: [
+                        "Beacon of the Reed Sea"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "mona",
+                    role: "Support",
+                    roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
+                    weapons: [
+                        "Thrilling Tales of Dragon Slayers"
+                    ],
+                    artifacts: [
+                        "4pc Instructor"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "CRIT Rate",
+                        "CRIT DMG"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Bennett's Elemental Burst provides a huge ATK buff and healing to the team.",
+                    weapons: [
+                        "Aquila Favonia",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "HP%"
+                    ]
+                },
+                {
+                    characterId: "kazuha",
+                    role: "Support",
+                    roleDesc: "Kazuha groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                }
+            ]
+        },
+        {
             name: "Dehya Melt Team #3",
             rank: "S",
             description: "Ayaka's high Elemental Burst damage is maximized by triggering Melt with Pyro from Dehya. Kazuha groups and buffs, while Bennett provides ATK buff and healing. Ayaka's high Burst damage is maximized by triggering Melt with Pyro applied by Dehya's coordinated attacks.",
@@ -240,156 +796,6 @@ exports.dehya = {
             ]
         },
         {
-            name: "Dehya Pure Pyro Team #1",
-            rank: "S",
-            description: "A mono-pyro team that focuses on maximizing Dehya's Elemental Burst damage with the support of Kazuha and Bennett. Maximize Dehya's Elemental Burst damage with Kazuha's Pyro DMG buff and resistance shred, and Bennett's ATK buff and healing.",
-            members: [
-                {
-                    characterId: "dehya",
-                    role: "Main DPS",
-                    roleDesc: "Dehya mainly deals DMG by her Elemental Burst. Her DMG is maximized by Kazuha and Bennett.",
-                    weapons: [
-                        "Beacon of the Reed Sea"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "xiangling",
-                    role: "Sub DPS",
-                    roleDesc: "Xiangling's Elemental Burst provides huge amount of DMG off-field.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "kazuha",
-                    role: "Support",
-                    roleDesc: "Kazuha assists the team by grouping enemies, applying crowd control, providing DMG buff, and reducing Pyro resistance of enemies.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Bennett's Elemental Burst provides huge ATK buff and healing to other members.",
-                    weapons: [
-                        "Aquila Favonia",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "HP%"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Dehya Pure Pyro Team #2",
-            rank: "S",
-            description: "A team focused on maximizing Dehya's Elemental Burst damage with support from Kazuha, Mona, and Bennett. Maximize Dehya's Elemental Burst damage using Kazuha's DMG buff and resistance shred, Mona's Omen and DMG increase, and Bennett's ATK buff.",
-            members: [
-                {
-                    characterId: "dehya",
-                    role: "Main DPS",
-                    roleDesc: "Dehya deals DMG via her Elemental Burst. Her damage is amplified by Kazuha and Bennett.",
-                    weapons: [
-                        "Beacon of the Reed Sea"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "mona",
-                    role: "Support",
-                    roleDesc: "Mona's Elemental Burst increases team DMG and provides Elemental Mastery and ATK% for Dehya.",
-                    weapons: [
-                        "Thrilling Tales of Dragon Slayers"
-                    ],
-                    artifacts: [
-                        "4pc Instructor"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "CRIT Rate",
-                        "CRIT DMG"
-                    ]
-                },
-                {
-                    characterId: "kazuha",
-                    role: "Support",
-                    roleDesc: "Kazuha groups enemies, provides DMG buff, and reduces enemy Elemental Resistance.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Bennett's Elemental Burst provides a huge ATK buff and healing to the team.",
-                    weapons: [
-                        "Aquila Favonia",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "HP%"
-                    ]
-                }
-            ]
-        },
-        {
             name: "Dehya Burgeon Team",
             rank: "A",
             description: "A Burgeon team where Dehya triggers cores with her Skill. Nahida applies Dendro, Xingqiu applies Hydro, and Kuki Shinobu provides healing and triggers Hyperbloom/Burgeon. Dehya triggers Burgeon using her Skill on Bloom cores created by Nahida and Xingqiu. Kuki Shinobu provides healing and triggers Hyperbloom.",
@@ -410,21 +816,6 @@ exports.dehya = {
                         "CRIT DMG",
                         "CRIT Rate",
                         "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "dehya",
-                    role: "Support",
-                    roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
-                    weapons: [
-                        "Rainslasher"
-                    ],
-                    artifacts: [
-                        "4pc Tenacity of the Millelith"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Elemental Mastery"
                     ]
                 },
                 {
@@ -461,6 +852,21 @@ exports.dehya = {
                         "HP",
                         "Energy Recharge"
                     ]
+                },
+                {
+                    characterId: "dehya",
+                    role: "Support",
+                    roleDesc: "Triggers Burgeon by using Skill to activate cores. Also mitigates damage for teammates.",
+                    weapons: [
+                        "Rainslasher"
+                    ],
+                    artifacts: [
+                        "4pc Tenacity of the Millelith"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Elemental Mastery"
+                    ]
                 }
             ]
         },
@@ -489,24 +895,6 @@ exports.dehya = {
                     ]
                 },
                 {
-                    characterId: "emilie",
-                    role: "Sub DPS",
-                    roleDesc: "Summons 'Lumidouce Case' for intermittent Dendro damage. Burning state generates 'Scents' increasing range and damage. Burst further boosts scent damage.",
-                    weapons: [
-                        "Lumidouce Elegy",
-                        "Deathmatch"
-                    ],
-                    artifacts: [
-                        "4pc Unfinished Reverie"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "xiangling",
                     role: "Sub DPS",
                     roleDesc: "Off-field Burst provides massive Pyro damage and consistent Pyro application.",
@@ -522,6 +910,24 @@ exports.dehya = {
                         "CRIT Rate",
                         "Energy Recharge",
                         "ATK%"
+                    ]
+                },
+                {
+                    characterId: "emilie",
+                    role: "Sub DPS",
+                    roleDesc: "Summons 'Lumidouce Case' for intermittent Dendro damage. Burning state generates 'Scents' increasing range and damage. Burst further boosts scent damage.",
+                    weapons: [
+                        "Lumidouce Elegy",
+                        "Deathmatch"
+                    ],
+                    artifacts: [
+                        "4pc Unfinished Reverie"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
                     ]
                 },
                 {
@@ -542,6 +948,10 @@ exports.dehya = {
             ]
         }
     ],
+    sands: ["Tấn Công%", "Tinh Thông Nguyên Tố", "Hiệu Quả Nạp"],
+    goblet: ["Sát Thương Nguyên Tố Hỏa"],
+    circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+    subStatsPriority: ["Hiệu Quả Nạp", "Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "HP%", "Tinh Thông Nguyên Tố"],
     bestWeapons: [
         {
             rank: 1,
@@ -552,7 +962,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tấn công căn bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công% và HP% sau khi Kỹ Năng Nguyên Tố đánh trúng địch.",
             passiveDescEn: "Tấn công căn bản và Tỷ Lệ Bạo Kích cao. Nội tại tăng Tấn Công% và HP% sau khi Kỹ Năng Nguyên Tố đánh trúng địch.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Deshret.webp"
         },
         {
             rank: 2,
@@ -563,7 +973,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao. Tuy chỉ số Phòng Ngự không quá hữu ích nhưng lượng ST bạo cao giúp bù đắp sát thương tốt.",
             passiveDescEn: "Sát Thương Bạo Kích cao. Tuy chỉ số Phòng Ngự không quá hữu ích nhưng lượng ST bạo cao giúp bù đắp sát thương tốt.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Itadorimaru.webp"
         },
         {
             rank: 3,
@@ -574,7 +984,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tấn công căn bản cao và Tỷ Lệ Bạo Kích tốt. Nội tại tăng sát thương Kỹ Năng Nguyên Tố sau phản ứng Kết Tinh.",
             passiveDescEn: "Tấn công căn bản cao và Tỷ Lệ Bạo Kích tốt. Nội tại tăng sát thương Kỹ Năng Nguyên Tố sau phản ứng Kết Tinh.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_GoldenVerdict.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_GoldenVerdict.webp"
         },
         {
             rank: 4,
@@ -585,7 +995,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng Tấn Công cực lớn cho Dehya và tăng sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.",
             passiveDescEn: "Cung cấp lượng Tấn Công cực lớn cho Dehya và tăng sát thương cho toàn đội khi đánh trúng kẻ địch thấp máu.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.webp"
         },
         {
             rank: 5,
@@ -596,7 +1006,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cao và tăng sát thương đòn đánh sau khi trúng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi Burning.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cao và tăng sát thương đòn đánh sau khi trúng Kỹ Năng Nguyên Tố, rất phù hợp với lối chơi Burning.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_EmeraldSword.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_EmeraldSword.webp"
         },
         {
             rank: 6,
@@ -607,7 +1017,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tăng sát thương đầu ra đáng kể khi tích đủ tầng nội tại, tuy nhiên cần duy trì khiên bảo vệ để tránh mất tầng.",
             passiveDescEn: "Tăng sát thương đầu ra đáng kể khi tích đủ tầng nội tại, tuy nhiên cần duy trì khiên bảo vệ để tránh mất tầng.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kione.webp"
         },
         {
             rank: 7,
@@ -618,7 +1028,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn F2P cung cấp Tinh Thông Nguyên Tố và Tấn Công% sau khi kích hoạt phản ứng nguyên tố, rất mạnh cho lối chơi Burgeon.",
             passiveDescEn: "Lựa chọn F2P cung cấp Tinh Thông Nguyên Tố và Tấn Công% sau khi kích hoạt phản ứng nguyên tố, rất mạnh cho lối chơi Burgeon.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Fleurfair.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Fleurfair.webp"
         },
         {
             rank: 8,
@@ -629,7 +1039,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Tinh Thông Nguyên Tố dồi dào và tăng mạnh sát thương lên kẻ địch bị ảnh hưởng bởi Thủy hoặc Lôi.",
             passiveDescEn: "Cung cấp Tinh Thông Nguyên Tố dồi dào và tăng mạnh sát thương lên kẻ địch bị ảnh hưởng bởi Thủy hoặc Lôi.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Perdue.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Perdue.webp"
         },
         {
             rank: 9,
@@ -640,7 +1050,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Vũ khí rèn F2P tăng Tấn Công% đáng kể khi nhận trị liệu, dễ kích hoạt khi đi kèm Healer.",
             passiveDescEn: "Vũ khí rèn F2P tăng Tấn Công% đáng kể khi nhận trị liệu, dễ kích hoạt khi đi kèm Healer.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Vorpal.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Vorpal.webp"
         },
         {
             rank: 10,
@@ -651,7 +1061,7 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Vũ khí sự kiện F2P tuyệt vời cung cấp Hiệu Quả Nạp giúp giảm áp lực nạp nộ và tăng Tấn Công% dựa trên Melusine đã giúp đỡ.",
             passiveDescEn: "Vũ khí sự kiện F2P tuyệt vời cung cấp Hiệu Quả Nạp giúp giảm áp lực nạp nộ và tăng Tấn Công% dựa trên Melusine đã giúp đỡ.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Champion.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Champion.webp"
         },
         {
             rank: 11,
@@ -662,7 +1072,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích và tăng sát thương sau khi chịu ảnh hưởng của các trạng thái nguyên tố.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích và tăng sát thương sau khi chịu ảnh hưởng của các trạng thái nguyên tố.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_BeastTamer.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_BeastTamer.webp"
         },
         {
             rank: 12,
@@ -673,7 +1083,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tấn Công% cao và gia tăng hiệu quả khiên, hoạt động tốt nhất khi đi kèm nhân vật tạo khiên.",
             passiveDescEn: "Tấn Công% cao và gia tăng hiệu quả khiên, hoạt động tốt nhất khi đi kèm nhân vật tạo khiên.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Kunwu.webp"
         },
         {
             rank: 13,
@@ -684,7 +1094,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích tốt và tăng mạnh Tấn Công sau khi kích hoạt phản ứng Nguyên Tố Hỏa hoặc Thiêu Đốt.",
             passiveDescEn: "Tỷ Lệ Bạo Kích tốt và tăng mạnh Tấn Công sau khi kích hoạt phản ứng Nguyên Tố Hỏa hoặc Thiêu Đốt.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_RadianceSword.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_RadianceSword.webp"
         },
         {
             rank: 14,
@@ -695,7 +1105,7 @@ exports.dehya = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp lớn giúp duy trì chu kỳ nộ nạp cho Dehya.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp lớn giúp duy trì chu kỳ nộ nạp cho Dehya.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Dvalin.webp"
         },
         {
             rank: 15,
@@ -706,134 +1116,34 @@ exports.dehya = {
             refinement: "R5",
             passiveDescVi: "Tăng sát thương Kỹ Năng Nộ dựa trên tổng năng lượng nộ của cả đội, tối ưu hóa sát thương nổ của Dehya.",
             passiveDescEn: "Tăng sát thương Kỹ Năng Nộ dựa trên tổng năng lượng nộ của cả đội, tối ưu hóa sát thương nổ của Dehya.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Maria.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Claymore_Maria.webp"
         }
     ],
     bestArtifacts: [
         {
-            setNameVi: "Dấu Ấn Ngăn Cách",
-            setNameEn: "Dấu Ấn Ngăn Cách",
-            pieces: 4,
-            sands: [
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            setNameVi: "Ảo Mộng Chưa Hoàn Thành",
+            setNameEn: "Ảo Mộng Chưa Hoàn Thành",
+            pieces: 4
         },
         {
             setNameVi: "Vầng Sáng Vourukasha",
             setNameEn: "Vầng Sáng Vourukasha",
-            pieces: 4,
-            sands: [
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 4
         },
         {
             setNameVi: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
             setNameEn: "Mix 2 bộ Ma Nữ / Tông Thất / Tấn Công",
-            pieces: 2,
-            sands: [
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Ảo Mộng Chưa Hoàn Thành",
-            setNameEn: "Ảo Mộng Chưa Hoàn Thành",
-            pieces: 4,
-            sands: [
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 2
         },
         {
             setNameVi: "Thợ Săn Marechaussee",
             setNameEn: "Thợ Săn Marechaussee",
-            pieces: 4,
-            sands: [
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 4
+        },
+        {
+            setNameVi: "Dấu Ấn Ngăn Cách",
+            setNameEn: "Dấu Ấn Ngăn Cách",
+            pieces: 4
         }
     ]
 };

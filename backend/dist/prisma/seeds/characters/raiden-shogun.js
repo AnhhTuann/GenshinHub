@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.raidenShogun = void 0;
 exports.raidenShogun = {
     characterId: "raiden-shogun",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "A",
+    role: "Main DPS, Sub DPS",
+    recommendedC: "C0",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 1005,
+            "baseAtk": 26,
+            "baseDef": 61,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 2606,
+            "baseAtk": 68,
+            "baseDef": 159,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 3468,
+            "baseAtk": 91,
+            "baseDef": 212,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 5189,
+            "baseAtk": 136,
+            "baseDef": 317,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 5801,
+            "baseAtk": 152,
+            "baseDef": 355,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "8.0%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 6675,
+            "baseAtk": 174,
+            "baseDef": 408,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "8.0%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 7491,
+            "baseAtk": 196,
+            "baseDef": 458,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "16.0%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 8373,
+            "baseAtk": 219,
+            "baseDef": 512,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "16.0%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 8985,
+            "baseAtk": 235,
+            "baseDef": 549,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "16.0%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 9875,
+            "baseAtk": 258,
+            "baseDef": 604,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "16.0%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 10487,
+            "baseAtk": 274,
+            "baseDef": 641,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "24.0%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 11388,
+            "baseAtk": 298,
+            "baseDef": 696,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "24.0%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 12000,
+            "baseAtk": 314,
+            "baseDef": 734,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "32.0%"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 12907,
+            "baseAtk": 337,
+            "baseDef": 789,
+            "specialStatName": "Energy Recharge",
+            "specialStatValue": "32.0%"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "101208"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104141"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112044"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "101208"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104142"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112044"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113029"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "101208"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104142"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112045"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113029"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "101208"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104143"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112045"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113029"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "101208"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104143"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113029"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "101208"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104144"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113029"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104326"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112044"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104327"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104327"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104327"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104327"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104328"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113025"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104328"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113025"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104328"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113025"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 16,
+                    "materialId": "104328"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113025"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Burst",
         "Skill",
@@ -57,6 +463,22 @@ exports.raidenShogun = {
                     ]
                 },
                 {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Pyro Support. Provides massive ATK buff and healing for the team.",
+                    weapons: [
+                        "Aquila Favonia",
+                        "The Alley Flash"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "HP%"
+                    ]
+                },
+                {
                     characterId: "kazuha",
                     role: "Support",
                     roleDesc: "Anemo Support. Groups enemies, triggers Viridescent Venerer resistance shred, and buffs Electro DMG.",
@@ -72,21 +494,84 @@ exports.raidenShogun = {
                         "Energy Recharge",
                         "CRIT Rate"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            name: "Raiden Shogun Catalyze Team",
+            rank: "S",
+            description: "A variant of Raiden's team using Nahida for Aggravate reactions to boost Electro damage.",
+            members: [
                 {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Provides massive ATK buff and healing for the team.",
+                    characterId: "raiden-shogun",
+                    role: "Main DPS",
+                    roleDesc: "Main DPS. Triggers Aggravate reactions for enhanced Electro damage.",
                     weapons: [
-                        "Aquila Favonia",
-                        "The Alley Flash"
+                        "Engulfing Lightning",
+                        "The Catch"
                     ],
                     artifacts: [
-                        "4pc Noblesse Oblige"
+                        "4pc Emblem of Severed Fate"
                     ],
                     substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
                         "Energy Recharge",
-                        "HP%"
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "nahida",
+                    role: "Sub DPS",
+                    roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares Elemental Mastery.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Prototype Amber"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "kujou-sara",
+                    role: "Sub DPS",
+                    roleDesc: "Electro Sub DPS. Buffs Electro CRIT DMG and ATK.",
+                    weapons: [
+                        "Elegy for the End",
+                        "Mouun's Moon"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "kazuha",
+                    role: "Support",
+                    roleDesc: "Anemo Support. Groups enemies and shreds resistance.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Xiphos' Moonlight"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "Energy Recharge",
+                        "CRIT Rate"
                     ]
                 }
             ]
@@ -170,84 +655,6 @@ exports.raidenShogun = {
             ]
         },
         {
-            name: "Raiden Shogun Overload Team",
-            rank: "SS",
-            description: "Raiden Shogun serves as Main DPS, with Kujou Sara providing ATK bonus and CRIT DMG boost for Electro. Xiangling offers continuous Pyro DMG, and Bennett heals and buffs ATK.",
-            members: [
-                {
-                    characterId: "raiden-shogun",
-                    role: "Main DPS",
-                    roleDesc: "Main DPS. Drives the team with high energy cost bursts.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "kujou-sara",
-                    role: "Sub DPS",
-                    roleDesc: "Electro Sub DPS. Buffs Electro CRIT DMG and ATK.",
-                    weapons: [
-                        "Elegy for the End",
-                        "Mouun's Moon"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "xiangling",
-                    role: "Sub DPS",
-                    roleDesc: "Pyro Sub DPS. Continuously applies Pyro off-field.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Elemental Mastery",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Heals and buffs ATK.",
-                    weapons: [
-                        "Aquila Favonia",
-                        "The Alley Flash"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "HP%"
-                    ]
-                }
-            ]
-        },
-        {
             name: "Raiden Shogun Overload Team #2",
             rank: "SS",
             description: "Electro-Pyro overload team focusing on Raiden Shogun's Burst damage. Kujou Sara C6 provides CRIT DMG for Electro, Chevreuse shreds Pyro/Electro RES when Overload is triggered, while Bennett supplies huge ATK buffs and healing.",
@@ -289,23 +696,6 @@ exports.raidenShogun = {
                     ]
                 },
                 {
-                    characterId: "chevreuse",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Shreds Pyro/Electro resistance and buffs team ATK%.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Favonius Lance"
-                    ],
-                    artifacts: [
-                        "4pc Tenacity of the Millelith"
-                    ],
-                    substats: [
-                        "HP%",
-                        "CRIT Rate",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "bennett",
                     role: "Support",
                     roleDesc: "Pyro Support. Heals and buffs ATK.",
@@ -320,161 +710,22 @@ exports.raidenShogun = {
                         "Energy Recharge",
                         "HP%"
                     ]
-                }
-            ]
-        },
-        {
-            name: "Raiden Shogun Catalyze Team",
-            rank: "S",
-            description: "A variant of Raiden's team using Nahida for Aggravate reactions to boost Electro damage.",
-            members: [
-                {
-                    characterId: "raiden-shogun",
-                    role: "Main DPS",
-                    roleDesc: "Main DPS. Triggers Aggravate reactions for enhanced Electro damage.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
                 },
                 {
-                    characterId: "kujou-sara",
-                    role: "Sub DPS",
-                    roleDesc: "Electro Sub DPS. Buffs Electro CRIT DMG and ATK.",
-                    weapons: [
-                        "Elegy for the End",
-                        "Mouun's Moon"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "kazuha",
+                    characterId: "chevreuse",
                     role: "Support",
-                    roleDesc: "Anemo Support. Groups enemies and shreds resistance.",
+                    roleDesc: "Pyro Support. Shreds Pyro/Electro resistance and buffs team ATK%.",
                     weapons: [
-                        "Freedom-Sworn",
-                        "Xiphos' Moonlight"
+                        "Staff of Homa",
+                        "Favonius Lance"
                     ],
                     artifacts: [
-                        "4pc Viridescent Venerer"
+                        "4pc Tenacity of the Millelith"
                     ],
                     substats: [
-                        "Elemental Mastery",
-                        "Energy Recharge",
-                        "CRIT Rate"
-                    ]
-                },
-                {
-                    characterId: "nahida",
-                    role: "Sub DPS",
-                    roleDesc: "Dendro Sub DPS. Applies Dendro off-field and shares Elemental Mastery.",
-                    weapons: [
-                        "A Thousand Floating Dreams",
-                        "Prototype Amber"
-                    ],
-                    artifacts: [
-                        "4pc Deepwood Memories"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Raiden Shogun Hyperbloom",
-            rank: "SS",
-            description: "Raiden Shogun is the Electro trigger in the Hyperbloom team, with Yelan providing Hydro application and DMG, Nahida applying Dendro, and Baizhu for healing and shields.",
-            members: [
-                {
-                    characterId: "raiden-shogun",
-                    role: "Main DPS",
-                    roleDesc: "Electro trigger. Triggers Hyperbloom reactions on Dendro Cores with Elemental Skill.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "yelan",
-                    role: "Sub DPS",
-                    roleDesc: "Hydro Sub DPS. Applies Hydro off-field and boosts active character damage.",
-                    weapons: [
-                        "Aqua Simulacra",
-                        "Favonius Warbow"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
                         "HP%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "nahida",
-                    role: "Sub DPS",
-                    roleDesc: "Dendro Sub DPS. Applies Dendro off-field and increases team Elemental Mastery.",
-                    weapons: [
-                        "A Thousand Floating Dreams",
-                        "Prototype Amber"
-                    ],
-                    artifacts: [
-                        "4pc Deepwood Memories"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
                         "CRIT Rate",
-                        "ATK%",
                         "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "baizhu",
-                    role: "Support",
-                    roleDesc: "Dendro Support. Provides shields, healing, and Hyperbloom reaction damage bonus.",
-                    weapons: [
-                        "Prototype Amber"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "HP%"
                     ]
                 }
             ]
@@ -553,8 +804,167 @@ exports.raidenShogun = {
                     ]
                 }
             ]
+        },
+        {
+            name: "Raiden Shogun Hyperbloom",
+            rank: "SS",
+            description: "Raiden Shogun is the Electro trigger in the Hyperbloom team, with Yelan providing Hydro application and DMG, Nahida applying Dendro, and Baizhu for healing and shields.",
+            members: [
+                {
+                    characterId: "raiden-shogun",
+                    role: "Main DPS",
+                    roleDesc: "Electro trigger. Triggers Hyperbloom reactions on Dendro Cores with Elemental Skill.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "nahida",
+                    role: "Sub DPS",
+                    roleDesc: "Dendro Sub DPS. Applies Dendro off-field and increases team Elemental Mastery.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Prototype Amber"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "yelan",
+                    role: "Sub DPS",
+                    roleDesc: "Hydro Sub DPS. Applies Hydro off-field and boosts active character damage.",
+                    weapons: [
+                        "Aqua Simulacra",
+                        "Favonius Warbow"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "HP%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "baizhu",
+                    role: "Support",
+                    roleDesc: "Dendro Support. Provides shields, healing, and Hyperbloom reaction damage bonus.",
+                    weapons: [
+                        "Prototype Amber"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "HP%"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Raiden Shogun Overload Team",
+            rank: "SS",
+            description: "Raiden Shogun serves as Main DPS, with Kujou Sara providing ATK bonus and CRIT DMG boost for Electro. Xiangling offers continuous Pyro DMG, and Bennett heals and buffs ATK.",
+            members: [
+                {
+                    characterId: "raiden-shogun",
+                    role: "Main DPS",
+                    roleDesc: "Main DPS. Drives the team with high energy cost bursts.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "xiangling",
+                    role: "Sub DPS",
+                    roleDesc: "Pyro Sub DPS. Continuously applies Pyro off-field.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Elemental Mastery",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "kujou-sara",
+                    role: "Sub DPS",
+                    roleDesc: "Electro Sub DPS. Buffs Electro CRIT DMG and ATK.",
+                    weapons: [
+                        "Elegy for the End",
+                        "Mouun's Moon"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Pyro Support. Heals and buffs ATK.",
+                    weapons: [
+                        "Aquila Favonia",
+                        "The Alley Flash"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "HP%"
+                    ]
+                }
+            ]
         }
     ],
+    sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+    goblet: ["Sát Thương Nguyên Tố Lôi", "Tấn Công%"],
+    circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+    subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%", "Energy Recharge", "Elemental Mastery"],
     bestWeapons: [
         {
             rank: 1,
@@ -565,7 +975,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Trấn phái hoàn hảo nhất, tăng mạnh Hiệu Quả Nạp và chuyển hóa nó thành Tấn Công%.",
             passiveDescEn: "Trấn phái hoàn hảo nhất, tăng mạnh Hiệu Quả Nạp và chuyển hóa nó thành Tấn Công%.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.webp"
         },
         {
             rank: 2,
@@ -576,7 +986,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng lớn Sát Thương Bạo Kích và Tấn Công% khi máu dưới 50%, là vũ khí đa dụng rất mạnh.",
             passiveDescEn: "Cung cấp lượng lớn Sát Thương Bạo Kích và Tấn Công% khi máu dưới 50%, là vũ khí đa dụng rất mạnh.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.webp"
         },
         {
             rank: 3,
@@ -587,7 +997,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Chuyển đổi Tinh Thông Nguyên Tố thành Tấn Công%, rất hữu dụng trong các đội hình phản ứng nguyên tố.",
             passiveDescEn: "Chuyển đổi Tinh Thông Nguyên Tố thành Tấn Công%, rất hữu dụng trong các đội hình phản ứng nguyên tố.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.webp"
         },
         {
             rank: 4,
@@ -598,7 +1008,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Lựa chọn tình huống cung cấp Hiệu Quả Nạp và buff cho đội, tuy không tối ưu nhưng vẫn dùng tốt.",
             passiveDescEn: "Lựa chọn tình huống cung cấp Hiệu Quả Nạp và buff cho đội, tuy không tối ưu nhưng vẫn dùng tốt.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Trident.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Trident.webp"
         },
         {
             rank: 5,
@@ -609,7 +1019,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Không quá lý tưởng cho Raiden, ưu tiên lựa chọn khác trừ khi đội hình cần hiệu quả hỗ trợ của nó.",
             passiveDescEn: "Không quá lý tưởng cho Raiden, ưu tiên lựa chọn khác trừ khi đội hình cần hiệu quả hỗ trợ của nó.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.webp"
         },
         {
             rank: 6,
@@ -620,7 +1030,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Đem lại lượng lớn Tỷ Lệ Bạo Kích và tăng dần Tấn Công%, lựa chọn DPS tổng thể rất ổn định.",
             passiveDescEn: "Đem lại lượng lớn Tỷ Lệ Bạo Kích và tăng dần Tấn Công%, lựa chọn DPS tổng thể rất ổn định.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.webp"
         },
         {
             rank: 7,
@@ -631,7 +1041,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Cung cấp chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố, cạnh tranh tốt ở mức tinh luyện thấp.",
             passiveDescEn: "Cung cấp chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố, cạnh tranh tốt ở mức tinh luyện thấp.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.webp"
         },
         {
             rank: 8,
@@ -642,7 +1052,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Vũ khí phân khúc giá rẻ giúp tăng Tỷ Lệ Bạo Kích, hiệu quả khi solo hoặc đối phó với ít kẻ địch.",
             passiveDescEn: "Vũ khí phân khúc giá rẻ giúp tăng Tỷ Lệ Bạo Kích, hiệu quả khi solo hoặc đối phó với ít kẻ địch.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.webp"
         },
         {
             rank: 9,
@@ -653,7 +1063,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Tăng hiệu quả Khiên và Tấn Công%, yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
             passiveDescEn: "Tăng hiệu quả Khiên và Tấn Công%, yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.webp"
         },
         {
             rank: 10,
@@ -664,7 +1074,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Vũ khí F2P tốt nhất cho Raiden, tăng trực tiếp sát thương Nộ và Tỷ Lệ Bạo Kích của kỹ năng Nộ.",
             passiveDescEn: "Vũ khí F2P tốt nhất cho Raiden, tăng trực tiếp sát thương Nộ và Tỷ Lệ Bạo Kích của kỹ năng Nộ.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.webp"
         },
         {
             rank: 11,
@@ -675,7 +1085,7 @@ exports.raidenShogun = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp và Tỷ Lệ Bạo Kích, là vũ khí đa dụng ổn nhưng dễ bị thay thế bởi lựa chọn khác.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp và Tỷ Lệ Bạo Kích, là vũ khí đa dụng ổn nhưng dễ bị thay thế bởi lựa chọn khác.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Dvalin.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Dvalin.webp"
         },
         {
             rank: 12,
@@ -686,7 +1096,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Sát thương Nộ tăng theo tổng năng lượng tiêu hao của cả đội, cực mạnh trong các đội hình tốn nhiều năng lượng.",
             passiveDescEn: "Sát thương Nộ tăng theo tổng năng lượng tiêu hao của cả đội, cực mạnh trong các đội hình tốn nhiều năng lượng.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Maria.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Maria.webp"
         },
         {
             rank: 13,
@@ -697,7 +1107,7 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Tăng mạnh Tấn Công% và Tỷ Lệ Bạo Kích dựa trên số thành viên Liyue trong đội hình.",
             passiveDescEn: "Tăng mạnh Tấn Công% và Tỷ Lệ Bạo Kích dựa trên số thành viên Liyue trong đội hình.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.webp"
         },
         {
             rank: 14,
@@ -708,105 +1118,29 @@ exports.raidenShogun = {
             refinement: "R5",
             passiveDescVi: "Ưu tiên nạp năng lượng cho cả đội thay vì sát thương cá nhân, tạo nhiều hạt nhân lượng khi bạo kích.",
             passiveDescEn: "Ưu tiên nạp năng lượng cho cả đội thay vì sát thương cá nhân, tạo nhiều hạt nhân lượng khi bạo kích.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
         }
     ],
     bestArtifacts: [
         {
-            setNameVi: "Dấu Ấn Ngăn Cách",
-            setNameEn: "Dấu Ấn Ngăn Cách",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Lôi",
-                "Tấn Công%"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Energy Recharge",
-                "Elemental Mastery"
-            ]
-        },
-        {
             setNameVi: "Nghi Thức Tông Thất Cổ",
             setNameEn: "Nghi Thức Tông Thất Cổ",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Lôi",
-                "Tấn Công%"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Energy Recharge",
-                "Elemental Mastery"
-            ]
+            pieces: 4
         },
         {
             setNameVi: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
             setNameEn: "Mix 2 bộ Lôi & Tông Thất & Tấn Công & Dấu Ấn",
-            pieces: 2,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Lôi",
-                "Tấn Công%"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Energy Recharge",
-                "Elemental Mastery"
-            ]
+            pieces: 2
+        },
+        {
+            setNameVi: "Dấu Ấn Ngăn Cách",
+            setNameEn: "Dấu Ấn Ngăn Cách",
+            pieces: 4
         },
         {
             setNameVi: "Thiên Nham Vững Chắc",
             setNameEn: "Thiên Nham Vững Chắc",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Lôi",
-                "Tấn Công%"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Energy Recharge",
-                "Elemental Mastery"
-            ]
+            pieces: 4
         }
     ]
 };

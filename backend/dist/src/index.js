@@ -15,8 +15,10 @@ const multer_1 = __importDefault(require("multer"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
-const schema_1 = require("./schema");
-const resolvers_1 = require("./resolvers");
+const graphql_1 = require("./graphql");
+const dataloaders_1 = require("./graphql/dataloaders");
+const backupService_1 = require("./backupService");
+const prisma_1 = require("./prisma");
 async function startServer() {
     const app = (0, express_1.default)();
     app.use((0, helmet_1.default)({
@@ -34,6 +36,7 @@ async function startServer() {
     });
     app.use(limiter);
     app.use(express_1.default.json({ limit: '1mb' }));
+    app.get('/env', (req, res) => res.json({ db: process.env.DATABASE_URL }));
     // Health check endpoint
     app.get('/health', (_req, res) => {
         res.json({ status: 'ok', timestamp: new Date().toISOString() });
@@ -52,13 +55,33 @@ async function startServer() {
             cb(null, uniqueSuffix + path_1.default.extname(file.originalname));
         }
     });
-    const upload = (0, multer_1.default)({ storage });
-    // Upload endpoint (requires admin key)
-    app.post('/upload', upload.single('image'), (req, res) => {
+    const upload = (0, multer_1.default)({
+        storage,
+        limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max
+        fileFilter: (_req, file, cb) => {
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+            if (allowedTypes.includes(file.mimetype)) {
+                cb(null, true);
+            }
+            else {
+                cb(new Error('Only image files (JPEG, PNG, GIF, WebP) are allowed'));
+            }
+        }
+    });
+    // Auth middleware
+    const requireAdminMiddleware = (req, res, next) => {
         const adminKey = req.headers['x-admin-key'];
-        if (adminKey !== (process.env.ADMIN_PASSWORD || 'admin123')) {
+        if (!process.env.ADMIN_PASSWORD) {
+            console.warn("Upload rejected: ADMIN_PASSWORD not configured");
+            return res.status(500).json({ error: 'ADMIN_PASSWORD not configured' });
+        }
+        if (adminKey !== process.env.ADMIN_PASSWORD) {
             return res.status(401).json({ error: 'Unauthorized' });
         }
+        next();
+    };
+    // Upload endpoint (requires admin key)
+    app.post('/upload', requireAdminMiddleware, upload.single('image'), (req, res) => {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
@@ -66,9 +89,23 @@ async function startServer() {
         const fileUrl = `/assets/uploads/${req.file.filename}`;
         res.json({ url: fileUrl });
     });
+    // === Backup REST endpoints ===
+    // Download a backup file
+    app.get('/backups/:id/download', requireAdminMiddleware, (req, res) => {
+        const filePath = (0, backupService_1.getBackupFilePath)(req.params.id);
+        if (!filePath) {
+            return res.status(404).json({ error: 'Backup not found' });
+        }
+        res.download(filePath);
+    });
+    // List all backups (lightweight REST alternative to GraphQL)
+    app.get('/backups', requireAdminMiddleware, (_req, res) => {
+        const backups = (0, backupService_1.listBackups)();
+        res.json({ backups });
+    });
     const server = new server_1.ApolloServer({
-        typeDefs: schema_1.typeDefs,
-        resolvers: resolvers_1.resolvers,
+        typeDefs: graphql_1.typeDefs,
+        resolvers: graphql_1.resolvers,
         formatError: (err) => {
             console.error('[GraphQL Error]', err.message);
             return err;
@@ -78,13 +115,34 @@ async function startServer() {
     app.use('/graphql', (0, express5_1.expressMiddleware)(server, {
         context: async ({ req }) => {
             const adminKey = req.headers['x-admin-key'];
-            const isAdmin = adminKey === (process.env.ADMIN_PASSWORD || 'admin123');
-            return { isAdmin };
+            const isAdmin = !!process.env.ADMIN_PASSWORD && adminKey === process.env.ADMIN_PASSWORD;
+            if (!process.env.ADMIN_PASSWORD) {
+                console.warn("GraphQL admin access denied: ADMIN_PASSWORD not configured");
+            }
+            return {
+                prisma: prisma_1.prisma,
+                dataloaders: (0, dataloaders_1.createLoaders)(prisma_1.prisma),
+                user: { isAdmin },
+                isAdmin
+            };
         },
     }));
+    if (!process.env.ADMIN_PASSWORD) {
+        console.warn('⚠️  WARNING: ADMIN_PASSWORD environment variable is not set. All admin requests will be rejected.');
+    }
     const PORT = Number(process.env.PORT || 4000);
-    app.listen(PORT, () => {
+    const httpServer = app.listen(PORT, () => {
         console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
+    });
+    httpServer.on('error', (err) => {
+        if (err.code === 'EADDRINUSE') {
+            console.error(`\n❌ Cổng ${PORT} đang bị sử dụng bởi một tiến trình khác!`);
+            console.error(`Vui lòng tắt tiến trình đó hoặc đổi cổng trong file .env\n`);
+        }
+        else {
+            console.error('Lỗi server:', err);
+        }
+        process.exit(1);
     });
 }
 startServer().catch((err) => {

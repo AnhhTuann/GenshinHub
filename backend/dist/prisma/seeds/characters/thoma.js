@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.thoma = void 0;
 exports.thoma = {
     characterId: "thoma",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "B",
+    role: "Sub DPS, Support",
+    recommendedC: "C6",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 866,
+            "baseAtk": 17,
+            "baseDef": 63,
+            "specialStatName": "ATK",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 2225,
+            "baseAtk": 43,
+            "baseDef": 162,
+            "specialStatName": "ATK",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 2872,
+            "baseAtk": 56,
+            "baseDef": 209,
+            "specialStatName": "ATK",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 4302,
+            "baseAtk": 84,
+            "baseDef": 313,
+            "specialStatName": "ATK",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 4762,
+            "baseAtk": 93,
+            "baseDef": 346,
+            "specialStatName": "ATK",
+            "specialStatValue": "6.0%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 5478,
+            "baseAtk": 107,
+            "baseDef": 398,
+            "specialStatName": "ATK",
+            "specialStatValue": "6.0%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 6091,
+            "baseAtk": 119,
+            "baseDef": 443,
+            "specialStatName": "ATK",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 6806,
+            "baseAtk": 133,
+            "baseDef": 495,
+            "specialStatName": "ATK",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 7266,
+            "baseAtk": 142,
+            "baseDef": 528,
+            "specialStatName": "ATK",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 7981,
+            "baseAtk": 156,
+            "baseDef": 580,
+            "specialStatName": "ATK",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 8440,
+            "baseAtk": 165,
+            "baseDef": 613,
+            "specialStatName": "ATK",
+            "specialStatValue": "18.0%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 9156,
+            "baseAtk": 179,
+            "baseDef": 665,
+            "specialStatName": "ATK",
+            "specialStatValue": "18.0%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 9616,
+            "baseAtk": 188,
+            "baseDef": 699,
+            "specialStatName": "ATK",
+            "specialStatValue": "24.0%"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 10331,
+            "baseAtk": 202,
+            "baseDef": 751,
+            "specialStatName": "ATK",
+            "specialStatValue": "24.0%"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "101209"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104111"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112035"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "101209"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112035"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113024"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "101209"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112036"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113024"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "101209"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112036"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113024"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "101209"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112037"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113024"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "101209"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104114"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112037"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113024"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104320"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112035"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104321"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112036"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104321"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112036"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104321"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112036"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104321"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112036"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104322"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112037"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113026"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104322"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112037"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113026"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104322"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112037"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113026"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 16,
+                    "materialId": "104322"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112037"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113026"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Skill",
         "Burst",
@@ -15,6 +421,83 @@ exports.thoma = {
     ],
     signatureWeapons: [],
     teams: [
+        {
+            name: "Crimson Vaporize Shield",
+            rank: "S",
+            description: "A Vaporize team featuring Yanfei as main DPS, Xingqiu applying Hydro, Sucrose boosting Elemental Mastery, and Thoma providing shields. Yanfei triggers Vaporize on enemies affected by Hydro from Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Thoma provides a shield for protection.",
+            members: [
+                {
+                    characterId: "yanfei",
+                    role: "Main DPS",
+                    roleDesc: "Main Pyro DPS.",
+                    weapons: [
+                        "Lost Prayer to the Sacred Winds",
+                        "The Widsith"
+                    ],
+                    artifacts: [
+                        "4pc Wanderer's Troupe"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Elemental Mastery"
+                    ]
+                },
+                {
+                    characterId: "xingqiu",
+                    role: "Sub DPS",
+                    roleDesc: "Applies Hydro off-field to trigger Vaporize.",
+                    weapons: [
+                        "Sacrificial Sword"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "sucrose",
+                    role: "Support",
+                    roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
+                    weapons: [
+                        "Sacrificial Fragments",
+                        "Mappa Mare"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "thoma",
+                    role: "Support",
+                    roleDesc: "Provides shields to protect the team.",
+                    weapons: [
+                        "Staff of Homa",
+                        "Black Tassel"
+                    ],
+                    artifacts: [
+                        "4pc Tenacity of the Millelith"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
+                }
+            ]
+        },
         {
             name: "Thoma Burgeon Team #1",
             rank: "S",
@@ -95,83 +578,6 @@ exports.thoma = {
             ]
         },
         {
-            name: "Thoma Burgeon Team #2",
-            rank: "S",
-            description: "Thoma is the Support, Dendro from Nahida reacts with Hydro from Xingqiu and Yelan to trigger Bloom, then Thoma's Pyro triggers Burgeon. Generate Dendro cores with Nahida's Dendro and Hydro from Xingqiu/Yelan, then trigger Burgeon with Thoma's Pyro.",
-            members: [
-                {
-                    characterId: "nahida",
-                    role: "Main DPS",
-                    roleDesc: "Nahida mainly drives DMG, uses Elemental Skill linking up to 8 enemies, sharing EM under triggering reactions. Shares EM and infuses Dendro.",
-                    weapons: [
-                        "A Thousand Floating Dreams",
-                        "Solar Pearl"
-                    ],
-                    artifacts: [
-                        "4pc Deepwood Memories"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "xingqiu",
-                    role: "Sub DPS",
-                    roleDesc: "Raincutter continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
-                    weapons: [
-                        "Sapwood Blade"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "yelan",
-                    role: "Sub DPS",
-                    roleDesc: "Yelan provides continuous off-field Hydro attacks.",
-                    weapons: [
-                        "Aqua Simulacra",
-                        "Favonius Warbow"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "thoma",
-                    role: "Support",
-                    roleDesc: "Triggers Burgeon safety via Burst, EM scaling Burgeon DMG. Shield durability scales with HP.",
-                    weapons: [
-                        "Favonius Lance"
-                    ],
-                    artifacts: [
-                        "4pc Flower of Paradise Lost"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "Elemental Mastery",
-                        "HP%"
-                    ]
-                }
-            ]
-        },
-        {
             name: "Thoma Vaporize Team",
             rank: "S",
             description: "Thoma's shield provides survivability for Hu Tao, while Xingqiu applies Hydro for Hu Tao's Vaporize. Kazuha provides grouping, DMG buff, and resistance shred. Thoma's shield provides survivability for Hu Tao to trigger Vaporize.",
@@ -212,24 +618,6 @@ exports.thoma = {
                     ]
                 },
                 {
-                    characterId: "kazuha",
-                    role: "Support",
-                    roleDesc: "Provides crowd control, groups enemies, and buffs DMG.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
                     characterId: "thoma",
                     role: "Support",
                     roleDesc: "Provides shield for safety, HP scaling shield strength.",
@@ -245,83 +633,23 @@ exports.thoma = {
                         "HP",
                         "Energy Recharge"
                     ]
-                }
-            ]
-        },
-        {
-            name: "Thoma Vaporize Melt Team",
-            rank: "S",
-            description: "Thoma is the Support in the team, Thoma's Skill and Burst are maintained by stacking Max HP, helping Hu Tao maximize her survivability. Hu Tao triggers Vaporize with Xingqiu's Hydro application, while Chongyun provides occasional Melt reactions. Thoma's shield enables Hu Tao to play aggressively.",
-            members: [
-                {
-                    characterId: "hu-tao",
-                    role: "Main DPS",
-                    roleDesc: "Pyro main DPS, triggers reactions.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Deathmatch"
-                    ],
-                    artifacts: [
-                        "4pc Crimson Witch of Flames"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "HP%",
-                        "Elemental Mastery"
-                    ]
                 },
                 {
-                    characterId: "xingqiu",
-                    role: "Sub DPS",
-                    roleDesc: "Hydro sub DPS.",
-                    weapons: [
-                        "Sacrificial Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "chongyun",
-                    role: "Sub DPS",
-                    roleDesc: "Provides occasional Melt opportunities via Cryo fields.",
-                    weapons: [
-                        "Wolf's Gravestone",
-                        "Serpent Spine"
-                    ],
-                    artifacts: [
-                        "2pc Noblesse Oblige",
-                        "2pc Blizzard Strayer"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "thoma",
+                    characterId: "kazuha",
                     role: "Support",
-                    roleDesc: "Shield support.",
+                    roleDesc: "Provides crowd control, groups enemies, and buffs DMG.",
                     weapons: [
-                        "Staff of Homa",
-                        "Black Tassel"
+                        "Freedom-Sworn",
+                        "Iron Sting"
                     ],
                     artifacts: [
-                        "4pc Tenacity of the Millelith"
+                        "4pc Viridescent Venerer"
                     ],
                     substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
                     ]
                 }
             ]
@@ -367,23 +695,6 @@ exports.thoma = {
                     ]
                 },
                 {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Provides ATK buff and healing.",
-                    weapons: [
-                        "Skyward Blade",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "thoma",
                     role: "Support",
                     roleDesc: "Shield support.",
@@ -399,24 +710,60 @@ exports.thoma = {
                         "HP",
                         "Energy Recharge"
                     ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Provides ATK buff and healing.",
+                    weapons: [
+                        "Skyward Blade",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
                 }
             ]
         },
         {
-            name: "Thoma Superconduct Team #1",
-            rank: "A",
-            description: "Eula's Burst is the main damage source, boosted by Superconduct, Raiden Shogun's Skill, and Tenacity of the Millelith. Thoma's shield ensures safe execution. Trigger Superconduct to reduce Physical RES for Eula's physical damage. Raiden provides energy and Burst DMG boost. Thoma shields the team.",
+            name: "Thoma Vaporize Melt Team",
+            rank: "S",
+            description: "Thoma is the Support in the team, Thoma's Skill and Burst are maintained by stacking Max HP, helping Hu Tao maximize her survivability. Hu Tao triggers Vaporize with Xingqiu's Hydro application, while Chongyun provides occasional Melt reactions. Thoma's shield enables Hu Tao to play aggressively.",
             members: [
                 {
-                    characterId: "eula",
+                    characterId: "hu-tao",
                     role: "Main DPS",
-                    roleDesc: "Eula's physical damage is boosted by Superconduct.",
+                    roleDesc: "Pyro main DPS, triggers reactions.",
                     weapons: [
-                        "Song of Broken Pines",
+                        "Staff of Homa",
+                        "Deathmatch"
+                    ],
+                    artifacts: [
+                        "4pc Crimson Witch of Flames"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "HP%",
+                        "Elemental Mastery"
+                    ]
+                },
+                {
+                    characterId: "chongyun",
+                    role: "Sub DPS",
+                    roleDesc: "Provides occasional Melt opportunities via Cryo fields.",
+                    weapons: [
+                        "Wolf's Gravestone",
                         "Serpent Spine"
                     ],
                     artifacts: [
-                        "4pc Pale Flame"
+                        "2pc Noblesse Oblige",
+                        "2pc Blizzard Strayer"
                     ],
                     substats: [
                         "CRIT DMG",
@@ -426,30 +773,11 @@ exports.thoma = {
                     ]
                 },
                 {
-                    characterId: "raiden-shogun",
+                    characterId: "xingqiu",
                     role: "Sub DPS",
-                    roleDesc: "Provides Electro for Superconduct, boosts energy and Burst DMG.",
+                    roleDesc: "Hydro sub DPS.",
                     weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "CRIT Rate",
-                        "CRIT DMG",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "rosaria",
-                    role: "Sub DPS",
-                    roleDesc: "Cryo Sub DPS, acts as battery and buffs CRIT Rate.",
-                    weapons: [
-                        "Skyward Spine",
-                        "Favonius Lance"
+                        "Sacrificial Sword"
                     ],
                     artifacts: [
                         "4pc Noblesse Oblige"
@@ -559,34 +887,53 @@ exports.thoma = {
             ]
         },
         {
-            name: "Crimson Vaporize Shield",
-            rank: "S",
-            description: "A Vaporize team featuring Yanfei as main DPS, Xingqiu applying Hydro, Sucrose boosting Elemental Mastery, and Thoma providing shields. Yanfei triggers Vaporize on enemies affected by Hydro from Xingqiu's Burst, while Sucrose boosts Elemental Mastery and Thoma provides a shield for protection.",
+            name: "Thoma Superconduct Team #1",
+            rank: "A",
+            description: "Eula's Burst is the main damage source, boosted by Superconduct, Raiden Shogun's Skill, and Tenacity of the Millelith. Thoma's shield ensures safe execution. Trigger Superconduct to reduce Physical RES for Eula's physical damage. Raiden provides energy and Burst DMG boost. Thoma shields the team.",
             members: [
                 {
-                    characterId: "yanfei",
+                    characterId: "eula",
                     role: "Main DPS",
-                    roleDesc: "Main Pyro DPS.",
+                    roleDesc: "Eula's physical damage is boosted by Superconduct.",
                     weapons: [
-                        "Lost Prayer to the Sacred Winds",
-                        "The Widsith"
+                        "Song of Broken Pines",
+                        "Serpent Spine"
                     ],
                     artifacts: [
-                        "4pc Wanderer's Troupe"
+                        "4pc Pale Flame"
                     ],
                     substats: [
                         "CRIT DMG",
                         "CRIT Rate",
                         "ATK%",
-                        "Elemental Mastery"
+                        "Energy Recharge"
                     ]
                 },
                 {
-                    characterId: "xingqiu",
+                    characterId: "raiden-shogun",
                     role: "Sub DPS",
-                    roleDesc: "Applies Hydro off-field to trigger Vaporize.",
+                    roleDesc: "Provides Electro for Superconduct, boosts energy and Burst DMG.",
                     weapons: [
-                        "Sacrificial Sword"
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "CRIT Rate",
+                        "CRIT DMG",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "rosaria",
+                    role: "Sub DPS",
+                    roleDesc: "Cryo Sub DPS, acts as battery and buffs CRIT Rate.",
+                    weapons: [
+                        "Skyward Spine",
+                        "Favonius Lance"
                     ],
                     artifacts: [
                         "4pc Noblesse Oblige"
@@ -599,27 +946,9 @@ exports.thoma = {
                     ]
                 },
                 {
-                    characterId: "sucrose",
-                    role: "Support",
-                    roleDesc: "Provides Elemental Mastery buffs and groups enemies.",
-                    weapons: [
-                        "Sacrificial Fragments",
-                        "Mappa Mare"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
                     characterId: "thoma",
                     role: "Support",
-                    roleDesc: "Provides shields to protect the team.",
+                    roleDesc: "Shield support.",
                     weapons: [
                         "Staff of Homa",
                         "Black Tassel"
@@ -634,8 +963,89 @@ exports.thoma = {
                     ]
                 }
             ]
+        },
+        {
+            name: "Thoma Burgeon Team #2",
+            rank: "S",
+            description: "Thoma is the Support, Dendro from Nahida reacts with Hydro from Xingqiu and Yelan to trigger Bloom, then Thoma's Pyro triggers Burgeon. Generate Dendro cores with Nahida's Dendro and Hydro from Xingqiu/Yelan, then trigger Burgeon with Thoma's Pyro.",
+            members: [
+                {
+                    characterId: "nahida",
+                    role: "Main DPS",
+                    roleDesc: "Nahida mainly drives DMG, uses Elemental Skill linking up to 8 enemies, sharing EM under triggering reactions. Shares EM and infuses Dendro.",
+                    weapons: [
+                        "A Thousand Floating Dreams",
+                        "Solar Pearl"
+                    ],
+                    artifacts: [
+                        "4pc Deepwood Memories"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "yelan",
+                    role: "Sub DPS",
+                    roleDesc: "Yelan provides continuous off-field Hydro attacks.",
+                    weapons: [
+                        "Aqua Simulacra",
+                        "Favonius Warbow"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "xingqiu",
+                    role: "Sub DPS",
+                    roleDesc: "Raincutter continuously applies Hydro to enemies, reacting with Dendro to trigger Bloom.",
+                    weapons: [
+                        "Sapwood Blade"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "thoma",
+                    role: "Support",
+                    roleDesc: "Triggers Burgeon safety via Burst, EM scaling Burgeon DMG. Shield durability scales with HP.",
+                    weapons: [
+                        "Favonius Lance"
+                    ],
+                    artifacts: [
+                        "4pc Flower of Paradise Lost"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "Elemental Mastery",
+                        "HP%"
+                    ]
+                }
+            ]
         }
     ],
+    sands: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố"],
+    goblet: ["Tinh Thông Nguyên Tố"],
+    circlet: ["Tinh Thông Nguyên Tố"],
+    subStatsPriority: ["Hiệu Quả Nạp", "Tinh Thông Nguyên Tố", "HP%", "HP", "Tỷ Lệ Bạo Kích"],
     bestWeapons: [
         {
             rank: 1,
@@ -646,7 +1056,7 @@ exports.thoma = {
             refinement: "R5",
             passiveDescVi: "Provides Elemental Mastery and refunds energy after using Skill, helping sustain Burst uptime.",
             passiveDescEn: "Provides Elemental Mastery and refunds energy after using Skill, helping sustain Burst uptime.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.webp"
         },
         {
             rank: 2,
@@ -657,7 +1067,7 @@ exports.thoma = {
             refinement: "R5",
             passiveDescVi: "Generates energy particles for the team on CRIT, ensuring consistent Burst availability.",
             passiveDescEn: "Generates energy particles for the team on CRIT, ensuring consistent Burst availability.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
         },
         {
             rank: 3,
@@ -668,7 +1078,7 @@ exports.thoma = {
             refinement: "R5",
             passiveDescVi: "High Elemental Mastery substat and passive boosts damage against enemies affected by Hydro or Pyro.",
             passiveDescEn: "High Elemental Mastery substat and passive boosts damage against enemies affected by Hydro or Pyro.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Stardust.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Stardust.webp"
         },
         {
             rank: 4,
@@ -679,7 +1089,7 @@ exports.thoma = {
             refinement: "R5",
             passiveDescVi: "Offers Elemental Mastery and creates a leaf that boosts ATK for the team, useful for driving reactions.",
             passiveDescEn: "Offers Elemental Mastery and creates a leaf that boosts ATK for the team, useful for driving reactions.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Arakalari.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Arakalari.webp"
         },
         {
             rank: 5,
@@ -690,7 +1100,7 @@ exports.thoma = {
             refinement: "R5",
             passiveDescVi: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.",
             passiveDescEn: "Budget option providing HP% for stronger shields, but offers no Elemental Mastery or energy.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Noire.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Noire.webp"
         },
         {
             rank: 6,
@@ -701,97 +1111,29 @@ exports.thoma = {
             refinement: "R5",
             passiveDescVi: "F2P spear with HP% and energy regeneration when using Skill, aiding Burst uptime.",
             passiveDescEn: "F2P spear with HP% and energy regeneration when using Skill, aiding Burst uptime.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Vorpal.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Vorpal.webp"
         }
     ],
     bestArtifacts: [
         {
-            setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
-            setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố",
-                "HP%",
-                "HP",
-                "Tỷ Lệ Bạo Kích"
-            ]
+            setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
+            setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
+            pieces: 4
         },
         {
-            setNameVi: "Giấc Mộng Hoàng Kim",
-            setNameEn: "Giấc Mộng Hoàng Kim",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố",
-                "HP%",
-                "HP",
-                "Tỷ Lệ Bạo Kích"
-            ]
+            setNameVi: "Đóa Hoa Trang Viên Thất Lạc",
+            setNameEn: "Đóa Hoa Trang Viên Thất Lạc",
+            pieces: 4
         },
         {
             setNameVi: "Mix 2 bộ Tinh Thông / Dấu Ấn",
             setNameEn: "Mix 2 bộ Tinh Thông / Dấu Ấn",
-            pieces: 2,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố",
-                "HP%",
-                "HP",
-                "Tỷ Lệ Bạo Kích"
-            ]
+            pieces: 2
         },
         {
-            setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
-            setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            circlet: [
-                "Tinh Thông Nguyên Tố"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "Tinh Thông Nguyên Tố",
-                "HP%",
-                "HP",
-                "Tỷ Lệ Bạo Kích"
-            ]
+            setNameVi: "Giấc Mộng Hoàng Kim",
+            setNameEn: "Giấc Mộng Hoàng Kim",
+            pieces: 4
         }
     ]
 };

@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.kamisatoAyato = void 0;
 exports.kamisatoAyato = {
     characterId: "kamisato-ayato",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "B",
+    role: "Main DPS",
+    recommendedC: "C0",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 1068,
+            "baseAtk": 23,
+            "baseDef": 60,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "50.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 2770,
+            "baseAtk": 60,
+            "baseDef": 155,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "50.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 3685,
+            "baseAtk": 80,
+            "baseDef": 206,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "50.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 5514,
+            "baseAtk": 120,
+            "baseDef": 309,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "50.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 6165,
+            "baseAtk": 134,
+            "baseDef": 345,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "59.6%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 7092,
+            "baseAtk": 155,
+            "baseDef": 397,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "59.6%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 7960,
+            "baseAtk": 174,
+            "baseDef": 446,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "69.2%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 8897,
+            "baseAtk": 194,
+            "baseDef": 499,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "69.2%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 9548,
+            "baseAtk": 208,
+            "baseDef": 535,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "69.2%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 10494,
+            "baseAtk": 229,
+            "baseDef": 588,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "69.2%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 11144,
+            "baseAtk": 243,
+            "baseDef": 624,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "78.8%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 12101,
+            "baseAtk": 264,
+            "baseDef": 678,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "78.8%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 12751,
+            "baseAtk": 278,
+            "baseDef": 715,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "88.4%"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 13715,
+            "baseAtk": 299,
+            "baseDef": 769,
+            "specialStatName": "CRIT DMG",
+            "specialStatValue": "88.4%"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "101202"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104121"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112044"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "101202"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104122"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112044"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113028"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "101202"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104122"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112045"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113028"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "101202"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104123"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112045"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113028"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "101202"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104123"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113028"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "101202"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104124"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113028"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104323"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112044"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104324"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104324"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104324"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104324"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112045"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104325"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113032"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104325"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113032"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104325"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113032"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 16,
+                    "materialId": "104325"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112046"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113032"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Skill",
         "Burst",
@@ -18,7 +424,7 @@ exports.kamisatoAyato = {
         {
             name: "Ayato Hyperbloom",
             rank: "SS",
-            description: "A high-damage Hyperbloom team leveraging Ayato's continuous Hydro application, Nahida's Dendro, and Kuki's Electro to trigger Hyperbloom, with Kazuha providing grouping and buffs.\n\nAyato's Skill applies Hydro to enemies, which reacts with Dendro from Nahida to create Bloom cores. Kuki's Electro Skill then triggers Hyperbloom for massive damage. Kazuha groups enemies and reduces Anemo resistance with <set>Viridescent Venerer</set>.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Nahida (Dendro Sub DPS), Kaedehara Kazuha (Anemo Support), Kuki Shinobu (Electro Support)",
+            description: "A high-damage Hyperbloom team leveraging Ayato's continuous Hydro application, Nahida's Dendro, and Kuki's Electro to trigger Hyperbloom, with Kazuha providing grouping and buffs.\n\nAyato's Skill applies Hydro to enemies, which reacts with Dendro from Nahida to create Bloom cores. Kuki's Electro Skill then triggers Hyperbloom for massive damage. Kazuha groups enemies and reduces Anemo resistance with Viridescent Venerer.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Nahida (Dendro Sub DPS), Kaedehara Kazuha (Anemo Support), Kuki Shinobu (Electro Support)",
             members: [
                 {
                     characterId: "kamisato-ayato",
@@ -121,25 +527,6 @@ exports.kamisatoAyato = {
                     ]
                 },
                 {
-                    characterId: "yelan",
-                    role: "Sub DPS",
-                    roleDesc: "Off-field Hydro application to generate Bloom cores.",
-                    weapons: [
-                        "Aqua Simulacra",
-                        "Favonius Warbow"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
                     characterId: "nahida",
                     role: "Sub DPS",
                     roleDesc: "Applies Dendro with Skill and buffs Burst duration via teammate elements.",
@@ -159,6 +546,25 @@ exports.kamisatoAyato = {
                     ]
                 },
                 {
+                    characterId: "yelan",
+                    role: "Sub DPS",
+                    roleDesc: "Off-field Hydro application to generate Bloom cores.",
+                    weapons: [
+                        "Aqua Simulacra",
+                        "Favonius Warbow"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
                     characterId: "thoma",
                     role: "Support",
                     roleDesc: "Provides shield and triggers Burgeon via Burst. C6 boosts Ayato normal attack DMG.",
@@ -173,6 +579,86 @@ exports.kamisatoAyato = {
                         "Energy Recharge",
                         "Elemental Mastery",
                         "HP%"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Ayato Pure Hydro Team #2",
+            rank: "SS",
+            description: "Ayato is a Main DPS. His damage is maximized by ATK SPD buff from Yun Jin and Jean.\n\nMaximize Ayato's damage using Yun Jin's Normal ATK buff and ATK SPD from C6 Yun Jin and C2 Jean. Jean also provides Viridescent Venerer shred for Hydro resistance.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Furina (Hydro Sub DPS), Yun Jin (Geo Support), Jean (Anemo Support)",
+            members: [
+                {
+                    characterId: "kamisato-ayato",
+                    role: "Main DPS",
+                    roleDesc: "DMG maximized by ATK SPD buff from Yun Jin and Jean.",
+                    weapons: [
+                        "Haran Geppaku Futsu",
+                        "The Black Sword"
+                    ],
+                    artifacts: [
+                        "4pc Nymph's Dream"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "HP%"
+                    ]
+                },
+                {
+                    characterId: "furina",
+                    role: "Sub DPS",
+                    roleDesc: "Elemental Burst provides DMG increase based on HP changes. Elemental Skill burns allies HP.",
+                    weapons: [
+                        "Splendor of Tranquil Waters",
+                        "Fleuve Cendre Ferryman"
+                    ],
+                    artifacts: [
+                        "4pc Golden Troupe"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "HP%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "yun-jin",
+                    role: "Support",
+                    roleDesc: "Provides Normal ATK Bonus and Normal ATK SPD Bonus (C6) to Ayato.",
+                    weapons: [
+                        "Kitain Cross Spear",
+                        "Favonius Lance"
+                    ],
+                    artifacts: [
+                        "4pc Husk of Opulent Dreams"
+                    ],
+                    substats: [
+                        "DEF%",
+                        "DEF",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "jean",
+                    role: "Support",
+                    roleDesc: "Healer, spreads element, reduces enemy RES. C2 gives 15% ATK SPD to all characters.",
+                    weapons: [
+                        "Skyward Blade",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
                     ]
                 }
             ]
@@ -199,24 +685,6 @@ exports.kamisatoAyato = {
                         "ATK%",
                         "HP%",
                         "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "kaedehara-kazuha",
-                    role: "Support",
-                    roleDesc: "Groups enemies, reduces Hydro resistance, and provides DMG buff.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
                     ]
                 },
                 {
@@ -254,86 +722,23 @@ exports.kamisatoAyato = {
                         "HP",
                         "Energy Recharge"
                     ]
-                }
-            ]
-        },
-        {
-            name: "Ayato Vaporize #1",
-            rank: "SS",
-            description: "Ayato and Hu Tao maximize Normal ATK DMG through Vaporize and ATK SPD buff from Yun Jin.\n\nAyato's continuous <element type='hydro'>Hydro</element> attacks enable Vaporize for Hu Tao, while Yun Jin boosts Normal ATK DMG and SPD. Zhongli provides shield and ATK buff.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Hu Tao (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
-            members: [
-                {
-                    characterId: "kamisato-ayato",
-                    role: "Main DPS",
-                    roleDesc: "Continuous <element type='hydro'>Hydro</element> attacks apply <element type='hydro'>Hydro</element> for Vaporize. Burst increases Hu Tao's ATK SPD.",
-                    weapons: [
-                        "Haran Geppaku Futsu",
-                        "The Black Sword"
-                    ],
-                    artifacts: [
-                        "4pc Nymph's Dream"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "HP%",
-                        "Energy Recharge"
-                    ]
                 },
                 {
-                    characterId: "hu-tao",
-                    role: "Main DPS",
-                    roleDesc: "Triggers Vaporize with <element type='pyro'>Pyro</element> application from Ayato. Switches to Ayato when Skill is on cooldown.",
+                    characterId: "kaedehara-kazuha",
+                    role: "Support",
+                    roleDesc: "Groups enemies, reduces Hydro resistance, and provides DMG buff.",
                     weapons: [
-                        "Staff of Homa",
-                        "Deathmatch"
+                        "Freedom-Sworn",
+                        "Iron Sting"
                     ],
                     artifacts: [
-                        "4pc Crimson Witch of Flames"
+                        "4pc Viridescent Venerer"
                     ],
                     substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "HP%",
                         "Elemental Mastery",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "yun-jin",
-                    role: "Support",
-                    roleDesc: "Provides Normal ATK Bonus and ATK SPD (C6) to both Ayato and Hu Tao.",
-                    weapons: [
-                        "Kitain Cross Spear",
-                        "Favonius Lance"
-                    ],
-                    artifacts: [
-                        "4pc Husk of Opulent Dreams"
-                    ],
-                    substats: [
-                        "DEF%",
-                        "DEF",
                         "CRIT DMG",
                         "CRIT Rate",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "zhongli",
-                    role: "Support",
-                    roleDesc: "Shield provides safe environment and ATK boost via Tenacity of the Millelith.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Tenacity of the Millelith"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
+                        "ATK%"
                     ]
                 }
             ]
@@ -343,6 +748,24 @@ exports.kamisatoAyato = {
             rank: "SS",
             description: "The Normal ATK DMG Output of Ayato and Yoimiya is maximized by Vaporization and ATK SPD buff from Yun Jin.\n\nAyato and Yoimiya alternate as on-field DPS, triggering Vaporize reactions. Yun Jin boosts their Normal ATK DMG and ATK SPD, while Zhongli provides shielding and ATK buff via Tenacity of the Millelith.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Yoimiya (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
             members: [
+                {
+                    characterId: "yoimiya",
+                    role: "Main DPS",
+                    roleDesc: "Deals Pyro DMG with Normal Attacks after Elemental Skill enabling Vaporize reactions.",
+                    weapons: [
+                        "Thundering Pulse",
+                        "Rust"
+                    ],
+                    artifacts: [
+                        "4pc Shimenawa's Reminiscence"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
                 {
                     characterId: "kamisato-ayato",
                     role: "Main DPS",
@@ -363,20 +786,19 @@ exports.kamisatoAyato = {
                     ]
                 },
                 {
-                    characterId: "yoimiya",
-                    role: "Main DPS",
-                    roleDesc: "Deals Pyro DMG with Normal Attacks after Elemental Skill enabling Vaporize reactions.",
+                    characterId: "zhongli",
+                    role: "Support",
+                    roleDesc: "Provides a strong shield for safe field time and ATK buff to the team via Tenacity of the Millelith.",
                     weapons: [
-                        "Thundering Pulse",
-                        "Rust"
+                        "Staff of Homa",
+                        "Black Tassel"
                     ],
                     artifacts: [
-                        "4pc Shimenawa's Reminiscence"
+                        "4pc Tenacity of the Millelith"
                     ],
                     substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
+                        "HP%",
+                        "HP",
                         "Energy Recharge"
                     ]
                 },
@@ -396,182 +818,6 @@ exports.kamisatoAyato = {
                         "DEF",
                         "CRIT DMG",
                         "CRIT Rate",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "zhongli",
-                    role: "Support",
-                    roleDesc: "Provides a strong shield for safe field time and ATK buff to the team via Tenacity of the Millelith.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Tenacity of the Millelith"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Ayato Permafrost",
-            rank: "SS",
-            description: "Ayato and Ayaka trigger Freeze with Hydro and Cryo while Kazuha groups enemies and Kokomi provides healing.\n\nAyaka applies Cryo off-field while Ayato and Kokomi provide consistent Hydro application to trigger Freeze. Kazuha groups enemies and buffs Cryo damage.\n\nTeam composition: Kamisato Ayaka (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Kaedehara Kazuha (Anemo Support), Sangonomiya Kokomi (Hydro Support)",
-            members: [
-                {
-                    characterId: "kamisato-ayaka",
-                    role: "Sub DPS",
-                    roleDesc: "Deals high DMG with Burst and Skill, providing Cryo application to trigger Freeze.",
-                    weapons: [
-                        "Mistsplitter Reforged",
-                        "Amenoma Kageuchi"
-                    ],
-                    artifacts: [
-                        "4pc Blizzard Strayer"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "kamisato-ayato",
-                    role: "Main DPS",
-                    roleDesc: "Primary on-field DPS. Continuous Hydro attacks react with Cryo to Freeze. Burst increases Attack SPD of Ayaka.",
-                    weapons: [
-                        "Haran Geppaku Futsu",
-                        "The Black Sword"
-                    ],
-                    artifacts: [
-                        "4pc Nymph's Dream"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "HP%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "kaedehara-kazuha",
-                    role: "Support",
-                    roleDesc: "Groups enemies with Skill and Burst, provides Elemental DMG Bonus to team and reduces enemy resistance with Viridescent Venerer.",
-                    weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "sangonomiya-kokomi",
-                    role: "Support",
-                    roleDesc: "Healer and Hydro applicator. Skill triggers Tenacity of the Millelith to buff team ATK and sustain Freeze.",
-                    weapons: [
-                        "Everlasting Moonglow",
-                        "Thrilling Tales of Dragon Slayers"
-                    ],
-                    artifacts: [
-                        "4pc Tenacity of the Millelith"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge",
-                        "HP",
-                        "ATK%",
-                        "Elemental Mastery"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Ayato Permafrost Team #2",
-            rank: "SS",
-            description: "A Freeze team where Ayato's <hydro>Hydro</hydro> attacks and Ganyu's <cryo>Cryo</cryo> Burst lock enemies in ice, while Venti groups them and Diona provides shield and energy.\n\nFreeze enemies using Ayato's Hydro application and Ganyu's Cryo Burst, grouped by Venti and protected by Diona.\n\nTeam composition: Ganyu (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Venti (Anemo Support), Diona (Cryo Support)",
-            members: [
-                {
-                    characterId: "ganyu",
-                    role: "Sub DPS",
-                    roleDesc: "Deals <cryo>Cryo</cryo> via Burst and Charged Attack. Provides <cryo>Cryo</cryo> for Freeze.",
-                    weapons: [
-                        "Hunter's Path",
-                        "Hamayumi"
-                    ],
-                    artifacts: [
-                        "2pc Noblesse Oblige + 2pc Blizzard Strayer"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "kamisato-ayato",
-                    role: "Main DPS",
-                    roleDesc: "Continuous <hydro>Hydro</hydro> attacks trigger Freeze with <cryo>Cryo</cryo>. Burst boosts team Attack SPD.",
-                    weapons: [
-                        "Haran Geppaku Futsu",
-                        "The Black Sword"
-                    ],
-                    artifacts: [
-                        "4pc Nymph's Dream"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "HP%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "venti",
-                    role: "Support",
-                    roleDesc: "Groups enemies with Burst and spreads <hydro>Hydro</hydro> for wider Freeze.",
-                    weapons: [
-                        "Elegy for the End",
-                        "Rust"
-                    ],
-                    artifacts: [
-                        "4pc Viridescent Venerer"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "diona",
-                    role: "Support",
-                    roleDesc: "Shield provides safety and <cryo>Cryo</cryo> battery for Ganyu.",
-                    weapons: [
-                        "Sacrificial Bow",
-                        "Favonius Warbow"
-                    ],
-                    artifacts: [
-                        "4pc Maiden Beloved"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
                         "Energy Recharge"
                     ]
                 }
@@ -658,14 +904,33 @@ exports.kamisatoAyato = {
             ]
         },
         {
-            name: "Ayato Pure Hydro Team #2",
+            name: "Ayato Vaporize #1",
             rank: "SS",
-            description: "Ayato is a Main DPS. His damage is maximized by ATK SPD buff from Yun Jin and Jean.\n\nMaximize Ayato's damage using Yun Jin's Normal ATK buff and ATK SPD from C6 Yun Jin and C2 Jean. Jean also provides Viridescent Venerer shred for Hydro resistance.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Furina (Hydro Sub DPS), Yun Jin (Geo Support), Jean (Anemo Support)",
+            description: "Ayato and Hu Tao maximize Normal ATK DMG through Vaporize and ATK SPD buff from Yun Jin.\n\nAyato's continuous Hydro attacks enable Vaporize for Hu Tao, while Yun Jin boosts Normal ATK DMG and SPD. Zhongli provides shield and ATK buff.\n\nTeam composition: Kamisato Ayato (Hydro Main DPS), Hu Tao (Pyro Main DPS), Yun Jin (Geo Support), Zhongli (Geo Support)",
             members: [
+                {
+                    characterId: "hu-tao",
+                    role: "Main DPS",
+                    roleDesc: "Triggers Vaporize with Pyro application from Ayato. Switches to Ayato when Skill is on cooldown.",
+                    weapons: [
+                        "Staff of Homa",
+                        "Deathmatch"
+                    ],
+                    artifacts: [
+                        "4pc Crimson Witch of Flames"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "HP%",
+                        "Elemental Mastery",
+                        "ATK%"
+                    ]
+                },
                 {
                     characterId: "kamisato-ayato",
                     role: "Main DPS",
-                    roleDesc: "DMG maximized by ATK SPD buff from Yun Jin and Jean.",
+                    roleDesc: "Continuous Hydro attacks apply Hydro for Vaporize. Burst increases Hu Tao's ATK SPD.",
                     weapons: [
                         "Haran Geppaku Futsu",
                         "The Black Sword"
@@ -677,31 +942,31 @@ exports.kamisatoAyato = {
                         "CRIT DMG",
                         "CRIT Rate",
                         "ATK%",
-                        "HP%"
+                        "HP%",
+                        "Energy Recharge"
                     ]
                 },
                 {
-                    characterId: "furina",
-                    role: "Sub DPS",
-                    roleDesc: "Elemental Burst provides DMG increase based on HP changes. Elemental Skill burns allies HP.",
+                    characterId: "zhongli",
+                    role: "Support",
+                    roleDesc: "Shield provides safe environment and ATK boost via Tenacity of the Millelith.",
                     weapons: [
-                        "Splendor of Tranquil Waters",
-                        "Fleuve Cendre Ferryman"
+                        "Staff of Homa",
+                        "Black Tassel"
                     ],
                     artifacts: [
-                        "4pc Golden Troupe"
+                        "4pc Tenacity of the Millelith"
                     ],
                     substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
                         "HP%",
+                        "HP",
                         "Energy Recharge"
                     ]
                 },
                 {
                     characterId: "yun-jin",
                     role: "Support",
-                    roleDesc: "Provides Normal ATK Bonus and Normal ATK SPD Bonus (C6) to Ayato.",
+                    roleDesc: "Provides Normal ATK Bonus and ATK SPD (C6) to both Ayato and Hu Tao.",
                     weapons: [
                         "Kitain Cross Spear",
                         "Favonius Lance"
@@ -716,17 +981,43 @@ exports.kamisatoAyato = {
                         "CRIT Rate",
                         "Energy Recharge"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            name: "Ayato Permafrost",
+            rank: "SS",
+            description: "Ayato and Ayaka trigger Freeze with Hydro and Cryo while Kazuha groups enemies and Kokomi provides healing.\n\nAyaka applies Cryo off-field while Ayato and Kokomi provide consistent Hydro application to trigger Freeze. Kazuha groups enemies and buffs Cryo damage.\n\nTeam composition: Kamisato Ayaka (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Kaedehara Kazuha (Anemo Support), Sangonomiya Kokomi (Hydro Support)",
+            members: [
                 {
-                    characterId: "jean",
-                    role: "Support",
-                    roleDesc: "Healer, spreads element, reduces enemy RES. C2 gives 15% ATK SPD to all characters.",
+                    characterId: "kamisato-ayato",
+                    role: "Main DPS",
+                    roleDesc: "Primary on-field DPS. Continuous Hydro attacks react with Cryo to Freeze. Burst increases Attack SPD of Ayaka.",
                     weapons: [
-                        "Skyward Blade",
-                        "Favonius Sword"
+                        "Haran Geppaku Futsu",
+                        "The Black Sword"
                     ],
                     artifacts: [
-                        "4pc Viridescent Venerer"
+                        "4pc Nymph's Dream"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "HP%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "kamisato-ayaka",
+                    role: "Sub DPS",
+                    roleDesc: "Deals high DMG with Burst and Skill, providing Cryo application to trigger Freeze.",
+                    weapons: [
+                        "Mistsplitter Reforged",
+                        "Amenoma Kageuchi"
+                    ],
+                    artifacts: [
+                        "4pc Blizzard Strayer"
                     ],
                     substats: [
                         "CRIT DMG",
@@ -734,10 +1025,129 @@ exports.kamisatoAyato = {
                         "ATK%",
                         "Energy Recharge"
                     ]
+                },
+                {
+                    characterId: "sangonomiya-kokomi",
+                    role: "Support",
+                    roleDesc: "Healer and Hydro applicator. Skill triggers Tenacity of the Millelith to buff team ATK and sustain Freeze.",
+                    weapons: [
+                        "Everlasting Moonglow",
+                        "Thrilling Tales of Dragon Slayers"
+                    ],
+                    artifacts: [
+                        "4pc Tenacity of the Millelith"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge",
+                        "HP",
+                        "ATK%",
+                        "Elemental Mastery"
+                    ]
+                },
+                {
+                    characterId: "kaedehara-kazuha",
+                    role: "Support",
+                    roleDesc: "Groups enemies with Skill and Burst, provides Elemental DMG Bonus to team and reduces enemy resistance with Viridescent Venerer.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Ayato Permafrost Team #2",
+            rank: "SS",
+            description: "A Freeze team where Ayato's Hydro attacks and Ganyu's Cryo Burst lock enemies in ice, while Venti groups them and Diona provides shield and energy.\n\nFreeze enemies using Ayato's Hydro application and Ganyu's Cryo Burst, grouped by Venti and protected by Diona.\n\nTeam composition: Ganyu (Cryo Sub DPS), Kamisato Ayato (Hydro Main DPS), Venti (Anemo Support), Diona (Cryo Support)",
+            members: [
+                {
+                    characterId: "kamisato-ayato",
+                    role: "Main DPS",
+                    roleDesc: "Continuous Hydro attacks trigger Freeze with Cryo. Burst boosts team Attack SPD.",
+                    weapons: [
+                        "Haran Geppaku Futsu",
+                        "The Black Sword"
+                    ],
+                    artifacts: [
+                        "4pc Nymph's Dream"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "HP%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "ganyu",
+                    role: "Sub DPS",
+                    roleDesc: "Deals Cryo via Burst and Charged Attack. Provides Cryo for Freeze.",
+                    weapons: [
+                        "Hunter's Path",
+                        "Hamayumi"
+                    ],
+                    artifacts: [
+                        "2pc Noblesse Oblige + 2pc Blizzard Strayer"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "venti",
+                    role: "Support",
+                    roleDesc: "Groups enemies with Burst and spreads Hydro for wider Freeze.",
+                    weapons: [
+                        "Elegy for the End",
+                        "Rust"
+                    ],
+                    artifacts: [
+                        "4pc Viridescent Venerer"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "diona",
+                    role: "Support",
+                    roleDesc: "Shield provides safety and Cryo battery for Ganyu.",
+                    weapons: [
+                        "Sacrificial Bow",
+                        "Favonius Warbow"
+                    ],
+                    artifacts: [
+                        "4pc Maiden Beloved"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
                 }
             ]
         }
     ],
+    sands: ["Tấn Công%"],
+    goblet: ["Sát Thương Nguyên Tố Thủy"],
+    circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+    subStatsPriority: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích", "Tấn Công%", "Hiệu Quả Nạp Nguyên Tố", "HP%", "Tinh Thông Nguyên Tố"],
     bestWeapons: [
         {
             rank: 1,
@@ -748,7 +1158,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng tỷ lệ bạo kích và sát thương nguyên tố sau khi dùng kỹ năng nguyên tố.",
             passiveDescEn: "Provides CRIT Rate and Elemental DMG Bonus; boosts Normal Attack DMG after teammates use Skills.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Amenoma.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Amenoma.webp"
         },
         {
             rank: 2,
@@ -759,7 +1169,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng HP và nhận buff tấn công dựa trên HP tối đa.",
             passiveDescEn: "Increases HP; provides ATK bonus based on Max HP.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Morax.webp"
         },
         {
             rank: 3,
@@ -770,7 +1180,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng sát thương nguyên tố và cung cấp Sát Thương Bạo Kích.",
             passiveDescEn: "Provides Elemental DMG Bonus and CRIT DMG. Maintain stacks with Normal Attack.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Narukami.webp"
         },
         {
             rank: 4,
@@ -781,7 +1191,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng tỷ lệ bạo kích; tăng sát thương đánh thường và kỹ năng dựa trên Tinh Thông Nguyên Tố.",
             passiveDescEn: "Increases CRIT Rate; boosts Normal Attack and Elemental Skill DMG based on EM.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Ayus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Ayus.webp"
         },
         {
             rank: 5,
@@ -792,7 +1202,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng tỷ lệ bạo kích, tốc độ di chuyển và tốc độ tấn công sau khi dùng Nộ.",
             passiveDescEn: "Increases CRIT Rate, Movement SPD, and Attack SPD after using Elemental Burst.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.webp"
         },
         {
             rank: 6,
@@ -803,7 +1213,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng sát thương kỹ năng nguyên tố khi HP thay đổi.",
             passiveDescEn: "Boosts Elemental Skill DMG when HP changes; boosts Max HP when teammate's HP changes.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Regalis.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Regalis.webp"
         },
         {
             rank: 7,
@@ -814,7 +1224,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng sát thương nguyên tố khi kích hoạt kết tinh.",
             passiveDescEn: "Increases Elemental DMG Bonus after triggering Crystallize reaction.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zibai.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zibai.webp"
         },
         {
             rank: 8,
@@ -825,7 +1235,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng tấn công và hiệu quả khiên.",
             passiveDescEn: "Increases ATK and shield strength; ATK bonus is doubled when protected by a shield.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Kunwu.webp"
         },
         {
             rank: 9,
@@ -836,7 +1246,7 @@ exports.kamisatoAyato = {
             refinement: "R5",
             passiveDescVi: "Tăng tấn công khi dùng kỹ năng và kích hoạt Khế Ước Sinh Mệnh.",
             passiveDescEn: "Increases ATK when using Elemental Skill; clears Bond of Life to grant additional ATK.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Vorpal.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Vorpal.webp"
         },
         {
             rank: 10,
@@ -847,7 +1257,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Tăng sát thương đánh thường và trọng kích, hồi máu khi bạo kích.",
             passiveDescEn: "Increases Normal and Charged Attack DMG; restores HP on CRIT hit.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Bloodstained.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Bloodstained.webp"
         },
         {
             rank: 11,
@@ -858,7 +1268,7 @@ exports.kamisatoAyato = {
             refinement: "R1",
             passiveDescVi: "Gây sát thương diện rộng và tăng tấn công sau khi đánh thường/trọng kích trúng kẻ địch.",
             passiveDescEn: "Triggers AoE DMG and increases ATK when Normal, Charged, or Plunging Attacks hit.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Youtou.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Youtou.webp"
         },
         {
             rank: 12,
@@ -869,7 +1279,7 @@ exports.kamisatoAyato = {
             refinement: "R5",
             passiveDescVi: "Tăng sát thương gây ra cho kẻ địch bị ảnh hưởng bởi Hỏa hoặc Lôi.",
             passiveDescEn: "Increases DMG against enemies affected by Pyro or Electro.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Rockkiller.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Rockkiller.webp"
         },
         {
             rank: 13,
@@ -880,7 +1290,7 @@ exports.kamisatoAyato = {
             refinement: "R5",
             passiveDescVi: "Tăng mạnh tỷ lệ bạo kích khi HP trên 90%.",
             passiveDescEn: "Increases CRIT Rate when HP is above 90%.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Dawn.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Dawn.webp"
         },
         {
             rank: 14,
@@ -891,7 +1301,7 @@ exports.kamisatoAyato = {
             refinement: "R5",
             passiveDescVi: "Tích lũy âm thanh khi đánh thường/trọng kích để gây sát thương diện rộng.",
             passiveDescEn: "Normal and Charged Attacks grant Harmonics; triggers AoE DMG on 5 stacks.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Troupe.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Troupe.webp"
         },
         {
             rank: 15,
@@ -902,193 +1312,49 @@ exports.kamisatoAyato = {
             refinement: "R5",
             passiveDescVi: "Giải phóng năng lượng Pneuma hoặc Ousia khi đánh trúng kẻ địch.",
             passiveDescEn: "Releases a Pneuma or Ousia energy blast when Normal, Charged, or Plunging Attacks hit.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Psalmus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Psalmus.webp"
         }
     ],
     bestArtifacts: [
         {
-            setNameVi: "Trái Tim Trầm Luân",
-            setNameEn: "Trái Tim Trầm Luân",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Lễ Bế Mạc Của Giác Đấu Sĩ",
-            setNameEn: "Lễ Bế Mạc Của Giác Đấu Sĩ",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Giấc Mộng Thủy Tiên",
-            setNameEn: "Giấc Mộng Thủy Tiên",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
-            setNameEn: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
-            pieces: 2,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Dũng Sĩ Trong Băng Giá",
-            setNameEn: "Dũng Sĩ Trong Băng Giá",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Như Sấm Thịnh Nộ",
-            setNameEn: "Như Sấm Thịnh Nộ",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            setNameVi: "Thợ Săn Marechaussee",
+            setNameEn: "Thợ Săn Marechaussee",
+            pieces: 4
         },
         {
             setNameVi: "Dư Âm Tế Lễ",
             setNameEn: "Dư Âm Tế Lễ",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 4
         },
         {
-            setNameVi: "Thợ Săn Marechaussee",
-            setNameEn: "Thợ Săn Marechaussee",
-            pieces: 4,
-            sands: [
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Thủy"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích",
-                "Tấn Công%",
-                "Hiệu Quả Nạp Nguyên Tố",
-                "HP%",
-                "Tinh Thông Nguyên Tố"
-            ]
+            setNameVi: "Như Sấm Thịnh Nộ",
+            setNameEn: "Như Sấm Thịnh Nộ",
+            pieces: 4
+        },
+        {
+            setNameVi: "Giấc Mộng Thủy Tiên",
+            setNameEn: "Giấc Mộng Thủy Tiên",
+            pieces: 4
+        },
+        {
+            setNameVi: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
+            setNameEn: "Mix 2 bộ Thủy & 2 bộ Tấn Công",
+            pieces: 2
+        },
+        {
+            setNameVi: "Trái Tim Trầm Luân",
+            setNameEn: "Trái Tim Trầm Luân",
+            pieces: 4
+        },
+        {
+            setNameVi: "Dũng Sĩ Trong Băng Giá",
+            setNameEn: "Dũng Sĩ Trong Băng Giá",
+            pieces: 4
+        },
+        {
+            setNameVi: "Lễ Bế Mạc Của Giác Đấu Sĩ",
+            setNameEn: "Lễ Bế Mạc Của Giác Đấu Sĩ",
+            pieces: 4
         }
     ]
 };

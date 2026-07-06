@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.xiangling = void 0;
 exports.xiangling = {
     characterId: "xiangling",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "S",
+    role: "Sub DPS",
+    recommendedC: "C4",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 912,
+            "baseAtk": 19,
+            "baseDef": 56,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 2342,
+            "baseAtk": 48,
+            "baseDef": 144,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 3024,
+            "baseAtk": 63,
+            "baseDef": 186,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 4529,
+            "baseAtk": 94,
+            "baseDef": 279,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "0"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 5013,
+            "baseAtk": 104,
+            "baseDef": 308,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "24"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 5766,
+            "baseAtk": 119,
+            "baseDef": 355,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "24"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 6411,
+            "baseAtk": 133,
+            "baseDef": 394,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "48"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 7164,
+            "baseAtk": 148,
+            "baseDef": 441,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "48"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 7648,
+            "baseAtk": 158,
+            "baseDef": 470,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "48"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 8401,
+            "baseAtk": 174,
+            "baseDef": 517,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "48"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 8885,
+            "baseAtk": 184,
+            "baseDef": 546,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "72"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 9638,
+            "baseAtk": 200,
+            "baseDef": 593,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "72"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 10122,
+            "baseAtk": 210,
+            "baseDef": 623,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "96"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 10875,
+            "baseAtk": 225,
+            "baseDef": 669,
+            "specialStatName": "Elemental Mastery",
+            "specialStatValue": "96"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "100027"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104111"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112002"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "100027"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112002"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113011"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "100027"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112003"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113011"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "100027"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112003"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113011"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "100027"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112004"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113011"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "100027"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104114"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112004"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113011"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104313"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112002"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104314"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112003"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104314"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112003"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104314"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112003"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104314"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112003"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104315"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112004"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113004"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104315"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112004"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113004"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104315"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112004"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113004"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 16,
+                    "materialId": "104315"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112004"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113004"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Burst",
         "Skill",
@@ -16,21 +422,20 @@ exports.xiangling = {
     signatureWeapons: [],
     teams: [
         {
-            name: "Xiangling Vaporize Team #1",
+            name: "Xiangling Melting Team #1",
             rank: "S",
-            description: "Xiangling is a Sub DPS. The Vaporize DMG of the team is maintained by Kazuha's bonus, Xiangling and Bennett allow consistent Vaporize triggers. Minimize Vaporize damage using Bennett/C6 bonus, with Xiangling and Bennett enabling consistent Pyro application.",
+            description: "Xiangling is a Sub DPS in the team. Ganyu provides elemental Cryo damage. Cryo element attachments to trigger Melt which maximizes Ganyu's damage.",
             members: [
                 {
-                    characterId: "tartaglia",
+                    characterId: "ganyu",
                     role: "Main DPS",
-                    roleDesc: "Tartaglia is the main DPS, his DMG is amplified by Vaporize.",
+                    roleDesc: "Ganyu's Charged Attack can trigger the Melt reaction.",
                     weapons: [
-                        "Polar Star",
-                        "Rust"
+                        "Amos' Bow",
+                        "Hamayumi"
                     ],
                     artifacts: [
-                        "4pc Heart of Depth",
-                        "2pc Heart of Depth + 2pc Gladiator's Finale"
+                        "4pc Wanderer's Troupe"
                     ],
                     substats: [
                         "CRIT DMG",
@@ -42,7 +447,7 @@ exports.xiangling = {
                 {
                     characterId: "xiangling",
                     role: "Sub DPS",
-                    roleDesc: "Xiangling's Burst provides huge DMG and continuous Pyro application to trigger vaporize.",
+                    roleDesc: "Xiangling's Burst provides huge amount of DMG.",
                     weapons: [
                         "Engulfing Lightning",
                         "The Catch"
@@ -58,27 +463,26 @@ exports.xiangling = {
                     ]
                 },
                 {
-                    characterId: "kazuha",
+                    characterId: "zhongli",
                     role: "Support",
-                    roleDesc: "Kazuha groups enemies, applies Swirl reaction, provides DMG buff, and reduces enemy Pyro resistance.",
+                    roleDesc: "Zhongli's shield provides safe environment for team members, and decrease 20% of whole enemy's resistance.",
                     weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
+                        "Staff of Homa",
+                        "Black Tassel"
                     ],
                     artifacts: [
-                        "4pc Viridescent Venerer"
+                        "4pc Tenacity of the Millelith"
                     ],
                     substats: [
-                        "Elemental Mastery",
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
                     ]
                 },
                 {
                     characterId: "bennett",
                     role: "Support",
-                    roleDesc: "Bennett's Burst provides huge ATK buff and healing to the team.",
+                    roleDesc: "Bennett's Burst provides massive ATK buff and healing to other members.",
                     weapons: [
                         "Skyward Blade",
                         "Favonius Sword"
@@ -95,49 +499,32 @@ exports.xiangling = {
             ]
         },
         {
-            name: "Xiangling Vaporize Team #2",
+            name: "Xiangling Overload Team #2",
             rank: "S",
-            description: "The Vaporization DMG of whole team is maintained by Kazuha's bonus. Xiangling and Bennett allow triggers for bigger Vaporize all the time. Kokomi on-field triggers Vaporize with Xiangling's Pyro, buffed by Kazuha's DMG bonus and Pyro shield, and Bennett's ATK buff.",
+            description: "Xiangling is the Sub DPS in the team. Keqing and Beidou deals Electro DMG which reacts with Pyro attachment from Xiangling to trigger Overload. Overload reaction triggered by Keqing/Beidou's Electro and Xiangling's Pyro.",
             members: [
                 {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Support, Burst provides huge ATK buff and healing to other members.",
-                    weapons: [
-                        "Skyward Blade",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "kokomi",
+                    characterId: "keqing",
                     role: "Main DPS",
-                    roleDesc: "Main DPS, her DMG reacts with Pyro to trigger Vaporize.",
+                    roleDesc: "Keqing mainly uses Heavy Attack to deal DMG. Keqing provides Electro attachment to trigger Overload.",
                     weapons: [
-                        "Everlasting Moonglow",
-                        "Prototype Amber"
+                        "Mistsplitter Reforged",
+                        "The Flute"
                     ],
                     artifacts: [
-                        "4pc Ocean-Hued Clam"
+                        "2pc Gladiator's Finale + 2pc Shimenawa's Reminiscence"
                     ],
                     substats: [
                         "HP%",
-                        "Healing Bonus",
                         "Energy Recharge",
-                        "Elemental Mastery"
+                        "ATK%",
+                        "CRIT DMG"
                     ]
                 },
                 {
                     characterId: "xiangling",
                     role: "Sub DPS",
-                    roleDesc: "Sub DPS, Burst provides massive Pyro DMG and continuous aura for Vaporize.",
+                    roleDesc: "Xiangling's Burst provides massive Pyro DMG, and distributes Pyro application for Overload.",
                     weapons: [
                         "Engulfing Lightning",
                         "The Catch"
@@ -153,21 +540,37 @@ exports.xiangling = {
                     ]
                 },
                 {
-                    characterId: "kazuha",
-                    role: "Support",
-                    roleDesc: "Support, groups enemies, provides Elemental Mastery / DMG buff, reduces enemy Pyro/Hydro resistance.",
+                    characterId: "beidou",
+                    role: "Sub DPS",
+                    roleDesc: "Sub DPS. Deals off-field Electro damage and provides damage reduction.",
                     weapons: [
-                        "Freedom-Sworn",
-                        "Iron Sting"
+                        "Wolf's Gravestone",
+                        "Rainlasher"
                     ],
                     artifacts: [
-                        "4pc Viridescent Venerer"
+                        "4pc Emblem of Severed Fate"
                     ],
                     substats: [
-                        "Elemental Mastery",
                         "CRIT DMG",
                         "CRIT Rate",
                         "ATK%"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Bennett's Burst provides massive ATK buff and healing to other members.",
+                    weapons: [
+                        "Skyward Blade",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
                     ]
                 }
             ]
@@ -251,6 +654,85 @@ exports.xiangling = {
             ]
         },
         {
+            name: "Xiangling Vaporize Team #1",
+            rank: "S",
+            description: "Xiangling is a Sub DPS. The Vaporize DMG of the team is maintained by Kazuha's bonus, Xiangling and Bennett allow consistent Vaporize triggers. Minimize Vaporize damage using Bennett/C6 bonus, with Xiangling and Bennett enabling consistent Pyro application.",
+            members: [
+                {
+                    characterId: "tartaglia",
+                    role: "Main DPS",
+                    roleDesc: "Tartaglia is the main DPS, his DMG is amplified by Vaporize.",
+                    weapons: [
+                        "Polar Star",
+                        "Rust"
+                    ],
+                    artifacts: [
+                        "Heart of Depth",
+                        "Heart of Depth + 2pc Gladiator's Finale"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "xiangling",
+                    role: "Sub DPS",
+                    roleDesc: "Xiangling's Burst provides huge DMG and continuous Pyro application to trigger vaporize.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "kaedehara-kazuha",
+                    role: "Support",
+                    roleDesc: "Kazuha groups enemies, applies Swirl reaction, provides DMG buff, and reduces enemy Pyro resistance.",
+                    weapons: [
+                        "Freedom-Sworn",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Bennett's Burst provides huge ATK buff and healing to the team.",
+                    weapons: [
+                        "Skyward Blade",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "Noblesse Oblige"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
+                }
+            ]
+        },
+        {
             name: "Xiangling Overload Team #1",
             rank: "S",
             description: "A powerful overload team leveraging Electro DMG buffs from Kujou Sara (C6) and Pyro application from Xiangling to trigger Overload. Maintain Electro DMG with Kujou Sara's C6 CRIT DMG buff for Raiden Shogun, while Xiangling provides continuous Pyro attachment to trigger bigger Overload.",
@@ -259,6 +741,24 @@ exports.xiangling = {
                     characterId: "raiden-shogun",
                     role: "Main DPS",
                     roleDesc: "Main DPS, deals massive Electro DMG and restores energy.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "xiangling",
+                    role: "Sub DPS",
+                    roleDesc: "Sub DPS, Burst provides massive Pyro DMG, and distributes Pyro application for Overload and extra target.",
                     weapons: [
                         "Engulfing Lightning",
                         "The Catch"
@@ -292,24 +792,6 @@ exports.xiangling = {
                     ]
                 },
                 {
-                    characterId: "xiangling",
-                    role: "Sub DPS",
-                    roleDesc: "Sub DPS, Burst provides massive Pyro DMG, and distributes Pyro application for Overload and extra target.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "bennett",
                     role: "Support",
                     roleDesc: "Healer/Support, Burst provides massive ATK buff and healing to the team.",
@@ -329,55 +811,38 @@ exports.xiangling = {
             ]
         },
         {
-            name: "Xiangling Overload Team #2",
+            name: "Xiangling Vaporize Team #2",
             rank: "S",
-            description: "Xiangling is the Sub DPS in the team. Keqing and Beidou deals Electro DMG which reacts with Pyro attachment from Xiangling to trigger Overload. Overload reaction triggered by Keqing/Beidou's Electro and Xiangling's Pyro.",
+            description: "The Vaporization DMG of whole team is maintained by Kazuha's bonus. Xiangling and Bennett allow triggers for bigger Vaporize all the time. Kokomi on-field triggers Vaporize with Xiangling's Pyro, buffed by Kazuha's DMG bonus and Pyro shield, and Bennett's ATK buff.",
             members: [
                 {
-                    characterId: "keqing",
+                    characterId: "sangonomiya-kokomi",
                     role: "Main DPS",
-                    roleDesc: "Keqing mainly uses Heavy Attack to deal DMG. Keqing provides Electro attachment to trigger Overload.",
+                    roleDesc: "Main DPS, her DMG reacts with Pyro to trigger Vaporize.",
                     weapons: [
-                        "Mistsplitter Reforged",
-                        "The Flute"
+                        "Everlasting Moonglow",
+                        "Prototype Amber"
                     ],
                     artifacts: [
-                        "2pc Gladiator's Finale + 2pc Shimenawa's Reminiscence"
+                        "Ocean-Hued Clam"
                     ],
                     substats: [
                         "HP%",
+                        "Healing Bonus",
                         "Energy Recharge",
-                        "ATK%",
-                        "CRIT DMG"
-                    ]
-                },
-                {
-                    characterId: "beidou",
-                    role: "Sub DPS",
-                    roleDesc: "Sub DPS. Deals off-field Electro damage and provides damage reduction.",
-                    weapons: [
-                        "Wolf's Gravestone",
-                        "Rainlasher"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%"
+                        "Elemental Mastery"
                     ]
                 },
                 {
                     characterId: "xiangling",
                     role: "Sub DPS",
-                    roleDesc: "Xiangling's Burst provides massive Pyro DMG, and distributes Pyro application for Overload.",
+                    roleDesc: "Sub DPS, Burst provides massive Pyro DMG and continuous aura for Vaporize.",
                     weapons: [
                         "Engulfing Lightning",
                         "The Catch"
                     ],
                     artifacts: [
-                        "4pc Emblem of Severed Fate"
+                        "Emblem of Severed Fate"
                     ],
                     substats: [
                         "CRIT DMG",
@@ -389,173 +854,36 @@ exports.xiangling = {
                 {
                     characterId: "bennett",
                     role: "Support",
-                    roleDesc: "Bennett's Burst provides massive ATK buff and healing to other members.",
+                    roleDesc: "Support, Burst provides huge ATK buff and healing to other members.",
                     weapons: [
                         "Skyward Blade",
                         "Favonius Sword"
                     ],
                     artifacts: [
-                        "4pc Noblesse Oblige"
+                        "Noblesse Oblige"
                     ],
                     substats: [
                         "HP%",
                         "HP",
                         "Energy Recharge"
                     ]
-                }
-            ]
-        },
-        {
-            name: "Xiangling Pure Pyro Team",
-            rank: "S",
-            description: "Xiangling is a Sub DPS in the team. The team only plays Pyro DMG. Main focus is on pure Pyro damage, using Klee's raw damage against Pyro affected enemies, with Xiangling providing off-field Pyro application, Kazuha providing Anemo grouping and Pyro damage bonus, and Bennett providing ATK buff and healing.",
-            members: [
-                {
-                    characterId: "klee",
-                    role: "Main DPS",
-                    roleDesc: "Main DPS, deals massive Pyro damage on-field.",
-                    weapons: [
-                        "Lost Prayer to the Sacred Winds",
-                        "The Widsith"
-                    ],
-                    artifacts: [
-                        "4pc Lavawalker"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
                 },
                 {
-                    characterId: "xiangling",
-                    role: "Sub DPS",
-                    roleDesc: "Sub DPS, Burst provides huge amount of DMG.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "kazuha",
+                    characterId: "kaedehara-kazuha",
                     role: "Support",
-                    roleDesc: "Support, can swirl the team by grouping enemies together, applying Swirl reaction, reduces enemies' resistance and buffs Pyro DMG of members.",
+                    roleDesc: "Support, groups enemies, provides Elemental Mastery / DMG buff, reduces enemy Pyro/Hydro resistance.",
                     weapons: [
-                        "Favonius Sword",
+                        "Freedom-Sworn",
                         "Iron Sting"
                     ],
                     artifacts: [
-                        "4pc Viridescent Venerer"
+                        "Viridescent Venerer"
                     ],
                     substats: [
                         "Elemental Mastery",
                         "CRIT DMG",
                         "CRIT Rate",
                         "ATK%"
-                    ]
-                },
-                {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Healer/Support, has Elemental Burst provides massive ATK buff and healing to other members.",
-                    weapons: [
-                        "Skyward Blade",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Xiangling Melting Team #1",
-            rank: "S",
-            description: "Xiangling is a Sub DPS in the team. Ganyu provides elemental Cryo damage. Cryo element attachments to trigger Melt which maximizes Ganyu's damage.",
-            members: [
-                {
-                    characterId: "ganyu",
-                    role: "Main DPS",
-                    roleDesc: "Ganyu's Charged Attack can trigger the Melt reaction.",
-                    weapons: [
-                        "Amos' Bow",
-                        "Hamayumi"
-                    ],
-                    artifacts: [
-                        "4pc Wanderer's Troupe"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "xiangling",
-                    role: "Sub DPS",
-                    roleDesc: "Xiangling's Burst provides huge amount of DMG.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Bennett's Burst provides massive ATK buff and healing to other members.",
-                    weapons: [
-                        "Skyward Blade",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "zhongli",
-                    role: "Support",
-                    roleDesc: "Zhongli's shield provides safe environment for team members, and decrease 20% of whole enemy's resistance.",
-                    weapons: [
-                        "Staff of Homa",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Tenacity of the Millelith"
-                    ],
-                    substats: [
-                        "HP%",
-                        "HP",
-                        "Energy Recharge"
                     ]
                 }
             ]
@@ -569,6 +897,24 @@ exports.xiangling = {
                     characterId: "raiden-shogun",
                     role: "Main DPS",
                     roleDesc: "Main DPS, deals massive Electro DMG and restores energy.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "4pc Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "xiangling",
+                    role: "Sub DPS",
+                    roleDesc: "Sub DPS, Burst provides continuous Pyro application for Vaporize, Overload, and Electro-Charged.",
                     weapons: [
                         "Engulfing Lightning",
                         "The Catch"
@@ -603,24 +949,6 @@ exports.xiangling = {
                     ]
                 },
                 {
-                    characterId: "xiangling",
-                    role: "Sub DPS",
-                    roleDesc: "Sub DPS, Burst provides continuous Pyro application for Vaporize, Overload, and Electro-Charged.",
-                    weapons: [
-                        "Engulfing Lightning",
-                        "The Catch"
-                    ],
-                    artifacts: [
-                        "4pc Emblem of Severed Fate"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "bennett",
                     role: "Support",
                     roleDesc: "Support, Burst provides massive ATK buff and healing to the team.",
@@ -638,11 +966,93 @@ exports.xiangling = {
                     ]
                 }
             ]
+        },
+        {
+            name: "Xiangling Pure Pyro Team",
+            rank: "S",
+            description: "Xiangling is a Sub DPS in the team. The team only plays Pyro DMG. Main focus is on pure Pyro damage, using Klee's raw damage against Pyro affected enemies, with Xiangling providing off-field Pyro application, Kazuha providing Anemo grouping and Pyro damage bonus, and Bennett providing ATK buff and healing.",
+            members: [
+                {
+                    characterId: "klee",
+                    role: "Main DPS",
+                    roleDesc: "Main DPS, deals massive Pyro damage on-field.",
+                    weapons: [
+                        "Lost Prayer to the Sacred Winds",
+                        "The Widsith"
+                    ],
+                    artifacts: [
+                        "Lavawalker"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "xiangling",
+                    role: "Sub DPS",
+                    roleDesc: "Sub DPS, Burst provides huge amount of DMG.",
+                    weapons: [
+                        "Engulfing Lightning",
+                        "The Catch"
+                    ],
+                    artifacts: [
+                        "Emblem of Severed Fate"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Healer/Support, has Elemental Burst provides massive ATK buff and healing to other members.",
+                    weapons: [
+                        "Skyward Blade",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "Noblesse Oblige"
+                    ],
+                    substats: [
+                        "HP%",
+                        "HP",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "kaedehara-kazuha",
+                    role: "Support",
+                    roleDesc: "Support, can swirl the team by grouping enemies together, applying Swirl reaction, reduces enemies' resistance and buffs Pyro DMG of members.",
+                    weapons: [
+                        "Favonius Sword",
+                        "Iron Sting"
+                    ],
+                    artifacts: [
+                        "Viridescent Venerer"
+                    ],
+                    substats: [
+                        "Elemental Mastery",
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%"
+                    ]
+                }
+            ]
         }
     ],
+    sands: ["Hiệu Quả Nạp", "Tấn Công%", "Tinh Thông Nguyên Tố"],
+    goblet: ["Sát Thương Nguyên Tố Hỏa"],
+    circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+    subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "ATK%", "Elemental Mastery"],
     bestWeapons: [
         {
-            rank: 1,
+            rank: 0,
             nameVi: "Quyền Trượng Cát Đỏ",
             nameEn: "Quyền Trượng Cát Đỏ",
             subStat: "Tỷ Lệ Bạo Kích",
@@ -650,10 +1060,32 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Tỷ Lệ Bạo Kích cực cao và Tấn Công cơ bản tốt. Nội tại chuyển hóa Tinh Thông Nguyên Tố thành Tấn Công, rất mạnh trong đội hình Bốc Hơi.",
             passiveDescEn: "Tỷ Lệ Bạo Kích cực cao và Tấn Công cơ bản tốt. Nội tại chuyển hóa Tinh Thông Nguyên Tố thành Tấn Công, rất mạnh trong đội hình Bốc Hơi.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.webp"
         },
         {
-            rank: 2,
+            rank: 1,
+            nameVi: "Đoạn Thảo Trường Đao",
+            nameEn: "Engulfing Lightning",
+            subStat: null,
+            isF2P: false,
+            refinement: "R1",
+            passiveDescVi: null,
+            passiveDescEn: null,
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.webp"
+        },
+        {
+            rank: 1,
+            nameVi: "Hòa Phác Diên",
+            nameEn: "Primordial Jade Winged-Spear",
+            subStat: null,
+            isF2P: false,
+            refinement: "R1",
+            passiveDescVi: null,
+            passiveDescEn: null,
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.webp"
+        },
+        {
+            rank: 1,
             nameVi: "Bi Ca Lumidouce",
             nameEn: "Bi Ca Lumidouce",
             subStat: "Tỷ Lệ Bạo Kích",
@@ -661,10 +1093,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Hiệu Quả Nạp tốt và gia tăng Tinh Thông Nguyên Tố cho toàn đội, giúp đẩy mạnh sát thương phản ứng.",
             passiveDescEn: "Cung cấp Hiệu Quả Nạp tốt và gia tăng Tinh Thông Nguyên Tố cho toàn đội, giúp đẩy mạnh sát thương phản ứng.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Muguet.webp"
         },
         {
-            rank: 3,
+            rank: 2,
             nameVi: "Hào Quang Tách Rời",
             nameEn: "Hào Quang Tách Rời",
             subStat: "Sát Thương Bạo Kích",
@@ -672,10 +1104,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Vũ khí thử nghiệm cung cấp Sát Thương Bạo Kích, tuy nhiên chỉ số không tối ưu bằng các lựa chọn khác.",
             passiveDescEn: "Vũ khí thử nghiệm cung cấp Sát Thương Bạo Kích, tuy nhiên chỉ số không tối ưu bằng các lựa chọn khác.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Perdix.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Perdix.webp"
         },
         {
-            rank: 4,
+            rank: 3,
             nameVi: "Trượng Hộ Ma",
             nameEn: "Trượng Hộ Ma",
             subStat: "Sát Thương Bạo Kích",
@@ -683,32 +1115,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Sát Thương Bạo Kích cao và nội tại tăng Tấn Công dựa trên HP. Sát thương đầu ra rất lớn nhưng yêu cầu tự bù đắp Hiệu Quả Nạp.",
             passiveDescEn: "Sát Thương Bạo Kích cao và nội tại tăng Tấn Công dựa trên HP. Sát thương đầu ra rất lớn nhưng yêu cầu tự bù đắp Hiệu Quả Nạp.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.png"
-        },
-        {
-            rank: 5,
-            nameVi: "Đoạn Thảo Kính Phạt",
-            nameEn: "Đoạn Thảo Kính Phạt",
-            subStat: "Hiệu Quả Nạp Nguyên Tố",
-            isF2P: false,
-            refinement: "R1",
-            passiveDescVi: "Vũ khí tuyệt vời cung cấp lượng lớn Hiệu Quả Nạp và tự động chuyển hóa dòng Nạp thành Tấn Công%, giúp spam Nộ cực mượt.",
-            passiveDescEn: "Vũ khí tuyệt vời cung cấp lượng lớn Hiệu Quả Nạp và tự động chuyển hóa dòng Nạp thành Tấn Công%, giúp spam Nộ cực mượt.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Narukami.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Homa.webp"
         },
         {
             rank: 6,
-            nameVi: "Hòa Phát Diên",
-            nameEn: "Hòa Phát Diên",
-            subStat: "Tỷ Lệ Bạo Kích",
-            isF2P: false,
-            refinement: "R1",
-            passiveDescVi: "Tỷ Lệ Bạo Kích cao và nội tại tăng Tấn Công khi đánh trúng kẻ địch. Sát thương ổn định nhưng cần đứng sân một chút để tích tầng.",
-            passiveDescEn: "Tỷ Lệ Bạo Kích cao và nội tại tăng Tấn Công khi đánh trúng kẻ địch. Sát thương ổn định nhưng cần đứng sân một chút để tích tầng.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Morax.png"
-        },
-        {
-            rank: 7,
             nameVi: "Tai Họa Và Hối Hận",
             nameEn: "Tai Họa Và Hối Hận",
             subStat: "Sát Thương Bạo Kích",
@@ -716,10 +1126,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Lựa chọn thay thế mang lại Sát Thương Bạo Kích cao, tuy nhiên nội tại không quá phù hợp cho Xiangling.",
             passiveDescEn: "Lựa chọn thay thế mang lại Sát Thương Bạo Kích cao, tuy nhiên nội tại không quá phù hợp cho Xiangling.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Carbine.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Carbine.webp"
         },
         {
-            rank: 8,
+            rank: 7,
             nameVi: "Lao Xiên Cá",
             nameEn: "Lao Xiên Cá",
             subStat: "Hiệu Quả Nạp Nguyên Tố",
@@ -727,10 +1137,10 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Lựa chọn F2P tốt nhất: Tăng trực tiếp Sát Thương và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ cùng chỉ số Hiệu Quả Nạp cao.",
             passiveDescEn: "Lựa chọn F2P tốt nhất: Tăng trực tiếp Sát Thương và Tỷ Lệ Bạo Kích của Kỹ Năng Nộ cùng chỉ số Hiệu Quả Nạp cao.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Mori.webp"
         },
         {
-            rank: 9,
+            rank: 8,
             nameVi: "Thương Quyết Chiến",
             nameEn: "Thương Quyết Chiến",
             subStat: "Tỷ Lệ Bạo Kích",
@@ -738,10 +1148,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Cung cấp lượng lớn Tỷ Lệ Bạo Kích và thêm Tấn Công dựa trên số lượng kẻ địch. Cần bù đắp Hiệu Quả Nạp từ thánh di vật.",
             passiveDescEn: "Cung cấp lượng lớn Tỷ Lệ Bạo Kích và thêm Tấn Công dựa trên số lượng kẻ địch. Cần bù đắp Hiệu Quả Nạp từ thánh di vật.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Gladiator.webp"
         },
         {
-            rank: 10,
+            rank: 9,
             nameVi: "Khúc Ca Vịnh Hẹp",
             nameEn: "Khúc Ca Vịnh Hẹp",
             subStat: "Tỷ Lệ Bạo Kích",
@@ -749,10 +1159,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Cung cấp Tỷ Lệ Bạo Kích và tăng mạnh Tinh Thông Nguyên Tố nếu đội hình có từ 3 nguyên tố khác nhau trở lên.",
             passiveDescEn: "Cung cấp Tỷ Lệ Bạo Kích và tăng mạnh Tinh Thông Nguyên Tố nếu đội hình có từ 3 nguyên tố khác nhau trở lên.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Shanty.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Shanty.webp"
         },
         {
-            rank: 11,
+            rank: 10,
             nameVi: "Hủy Diệt",
             nameEn: "Hủy Diệt",
             subStat: "Tấn Công%",
@@ -760,10 +1170,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố. Thích hợp dùng làm vũ khí thuần tăng sát thương tấn công.",
             passiveDescEn: "Chỉ số Tấn Công% cực cao và buff cho Kỹ Năng Nguyên Tố. Thích hợp dùng làm vũ khí thuần tăng sát thương tấn công.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Santika.webp"
         },
         {
-            rank: 12,
+            rank: 11,
             nameVi: "Giáo Nịnh Thần",
             nameEn: "Giáo Nịnh Thần",
             subStat: "Tấn Công%",
@@ -771,10 +1181,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Tăng hiệu quả Khiên và Tấn Công%. Yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
             passiveDescEn: "Tăng hiệu quả Khiên và Tấn Công%. Yêu cầu có nhân vật tạo khiên trong đội để phát huy tối đa sức mạnh.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Kunwu.webp"
         },
         {
-            rank: 13,
+            rank: 12,
             nameVi: "Hình Thái Xích Nguyệt",
             nameEn: "Hình Thái Xích Nguyệt",
             subStat: "Tỷ Lệ Bạo Kích",
@@ -782,7 +1192,7 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Lựa chọn thay thế tạm ổn cung cấp Tỷ Lệ Bạo Kích, tuy nhiên nội tại tăng sát thương không hoạt động tối đa với Xiangling.",
             passiveDescEn: "Lựa chọn thay thế tạm ổn cung cấp Tỷ Lệ Bạo Kích, tuy nhiên nội tại tăng sát thương không hoạt động tối đa với Xiangling.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_BloodMoon.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_BloodMoon.webp"
         },
         {
             rank: 13,
@@ -793,10 +1203,10 @@ exports.xiangling = {
             refinement: "R1",
             passiveDescVi: "Với vũ khí thử nghiệm, coi như vật giữ chỗ. Có lẽ không dùng được.",
             passiveDescEn: "Với vũ khí thử nghiệm, coi như vật giữ chỗ. Có lẽ không dùng được.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_TummaLyhty.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_TummaLyhty.webp"
         },
         {
-            rank: 15,
+            rank: 14,
             nameVi: "Vây Cá Chẻ Sóng",
             nameEn: "Vây Cá Chẻ Sóng",
             subStat: "Tấn Công%",
@@ -804,10 +1214,10 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Gia tăng mạnh sát thương Kỹ Năng Nộ dựa trên tổng năng lượng tiêu hao của toàn đội. Đạt hiệu quả cực cao ở tinh luyện 5.",
             passiveDescEn: "Gia tăng mạnh sát thương Kỹ Năng Nộ dựa trên tổng năng lượng tiêu hao của toàn đội. Đạt hiệu quả cực cao ở tinh luyện 5.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Maria.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Maria.webp"
         },
         {
-            rank: 16,
+            rank: 15,
             nameVi: "Mũi Nhọn Của Gió",
             nameEn: "Mũi Nhọn Của Gió",
             subStat: "Tấn Công%",
@@ -815,10 +1225,10 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Vũ khí Event F2P tăng Tấn Công% và Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng, lựa chọn thay thế rất tốt.",
             passiveDescEn: "Vũ khí Event F2P tăng Tấn Công% và Tinh Thông Nguyên Tố sau khi kích hoạt phản ứng, lựa chọn thay thế rất tốt.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Windvane.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Windvane.webp"
         },
         {
-            rank: 17,
+            rank: 16,
             nameVi: "Giáo Thập Tự Kitain",
             nameEn: "Giáo Thập Tự Kitain",
             subStat: "Tinh Thông Nguyên Tố",
@@ -826,10 +1236,10 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Cung cấp Tinh Thông Nguyên Tố và khả năng hồi năng lượng khi dùng Kỹ Năng Nguyên Tố, giúp giảm nhẹ áp lực nạp.",
             passiveDescEn: "Cung cấp Tinh Thông Nguyên Tố và khả năng hồi năng lượng khi dùng Kỹ Năng Nguyên Tố, giúp giảm nhẹ áp lực nạp.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.webp"
         },
         {
-            rank: 18,
+            rank: 17,
             nameVi: "Thương Thiên Nham",
             nameEn: "Thương Thiên Nham",
             subStat: "Tấn Công%",
@@ -837,10 +1247,10 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Gia tăng Tỷ Lệ Bạo Kích và Tấn Công% dựa trên số lượng nhân vật Liyue trong đội. Phù hợp cho đội hình National truyền thống.",
             passiveDescEn: "Gia tăng Tỷ Lệ Bạo Kích và Tấn Công% dựa trên số lượng nhân vật Liyue trong đội. Phù hợp cho đội hình National truyền thống.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Lapis.webp"
         },
         {
-            rank: 19,
+            rank: 18,
             nameVi: "Thương Tây Phong",
             nameEn: "Thương Tây Phong",
             subStat: "Hiệu Quả Nạp Nguyên Tố",
@@ -848,153 +1258,34 @@ exports.xiangling = {
             refinement: "R5",
             passiveDescVi: "Hiệu Quả Nạp cao và nội tại sinh hạt năng lượng cho toàn đội khi bạo kích, giúp sạc nhanh cho bản thân và đồng đội.",
             passiveDescEn: "Hiệu Quả Nạp cao và nội tại sinh hạt năng lượng cho toàn đội khi bạo kích, giúp sạc nhanh cho bản thân và đồng đội.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
         }
     ],
     bestArtifacts: [
         {
+            setNameVi: "Mix 2 bộ Dấu Ấn Ngăn Cách & 2 bộ Nghi Thức Tông Thất Cổ",
+            setNameEn: "Mix 2-Piece Emblem of Severed Fate & 2-Piece Noblesse Oblige",
+            pieces: 2
+        },
+        {
+            setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Dấu Ấn Ngăn Cách",
+            setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Emblem of Severed Fate",
+            pieces: 2
+        },
+        {
+            setNameVi: "Mix 2 bộ Diệm Liệt Ma Nữ Cháy Rực & 2 bộ Nghi Thức Tông Thất Cổ",
+            setNameEn: "Mix 2-Piece Crimson Witch of Flames & 2-Piece Noblesse Oblige",
+            pieces: 2
+        },
+        {
             setNameVi: "Dấu Ấn Ngăn Cách",
             setNameEn: "Dấu Ấn Ngăn Cách",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Elemental Mastery"
-            ]
+            pieces: 4
         },
         {
             setNameVi: "Diệm Liệt Ma Nữ Cháy Rực",
             setNameEn: "Diệm Liệt Ma Nữ Cháy Rực",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Elemental Mastery"
-            ]
-        },
-        {
-            setNameVi: "Giấc Mộng Hoàng Kim",
-            setNameEn: "Giấc Mộng Hoàng Kim",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Elemental Mastery"
-            ]
-        },
-        {
-            setNameVi: "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn",
-            setNameEn: "Mix 2 món Ma Nữ / Tông Thất / Tấn Công / Tinh Thông / Dấu Ấn",
-            pieces: 2,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Elemental Mastery"
-            ]
-        },
-        {
-            setNameVi: "Nghi Thức Tông Thất Cổ",
-            setNameEn: "Nghi Thức Tông Thất Cổ",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Elemental Mastery"
-            ]
-        },
-        {
-            setNameVi: "Ký Ức Rừng Sâu",
-            setNameEn: "Ký Ức Rừng Sâu",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%",
-                "Tinh Thông Nguyên Tố"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "Elemental Mastery"
-            ]
+            pieces: 4
         }
     ]
 };

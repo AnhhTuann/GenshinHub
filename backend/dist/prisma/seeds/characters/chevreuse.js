@@ -3,11 +3,417 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.chevreuse = void 0;
 exports.chevreuse = {
     characterId: "chevreuse",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "SS",
+    role: "Support",
+    recommendedC: "C6",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: [
+        {
+            "level": "Lv.1",
+            "ascend": 0,
+            "baseHp": 1003,
+            "baseAtk": 16,
+            "baseDef": 51,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 0,
+            "baseHp": 2577,
+            "baseAtk": 42,
+            "baseDef": 130,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.20",
+            "ascend": 1,
+            "baseHp": 3326,
+            "baseAtk": 54,
+            "baseDef": 168,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 1,
+            "baseHp": 4982,
+            "baseAtk": 80,
+            "baseDef": 252,
+            "specialStatName": "HP",
+            "specialStatValue": "0.0%"
+        },
+        {
+            "level": "Lv.40",
+            "ascend": 2,
+            "baseHp": 5514,
+            "baseAtk": 89,
+            "baseDef": 279,
+            "specialStatName": "HP",
+            "specialStatValue": "6.0%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 2,
+            "baseHp": 6343,
+            "baseAtk": 102,
+            "baseDef": 321,
+            "specialStatName": "HP",
+            "specialStatValue": "6.0%"
+        },
+        {
+            "level": "Lv.50",
+            "ascend": 3,
+            "baseHp": 7052,
+            "baseAtk": 114,
+            "baseDef": 357,
+            "specialStatName": "HP",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 3,
+            "baseHp": 7881,
+            "baseAtk": 127,
+            "baseDef": 398,
+            "specialStatName": "HP",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.60",
+            "ascend": 4,
+            "baseHp": 8413,
+            "baseAtk": 136,
+            "baseDef": 425,
+            "specialStatName": "HP",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 4,
+            "baseHp": 9241,
+            "baseAtk": 149,
+            "baseDef": 467,
+            "specialStatName": "HP",
+            "specialStatValue": "12.0%"
+        },
+        {
+            "level": "Lv.70",
+            "ascend": 5,
+            "baseHp": 9773,
+            "baseAtk": 158,
+            "baseDef": 494,
+            "specialStatName": "HP",
+            "specialStatValue": "18.0%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 5,
+            "baseHp": 10602,
+            "baseAtk": 171,
+            "baseDef": 536,
+            "specialStatName": "HP",
+            "specialStatValue": "18.0%"
+        },
+        {
+            "level": "Lv.80",
+            "ascend": 6,
+            "baseHp": 11134,
+            "baseAtk": 180,
+            "baseDef": 563,
+            "specialStatName": "HP",
+            "specialStatValue": "24.0%"
+        },
+        {
+            "level": "Lv.90",
+            "ascend": 6,
+            "baseHp": 11962,
+            "baseAtk": 193,
+            "baseDef": 605,
+            "specialStatName": "HP",
+            "specialStatValue": "24.0%"
+        }
+    ],
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "101235"
+                },
+                {
+                    "count": 1,
+                    "materialId": "104111"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112083"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "101235"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 15,
+                    "materialId": "112083"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113053"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "101235"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104112"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112084"
+                },
+                {
+                    "count": 4,
+                    "materialId": "113053"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "101235"
+                },
+                {
+                    "count": 3,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 18,
+                    "materialId": "112084"
+                },
+                {
+                    "count": 8,
+                    "materialId": "113053"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "101235"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104113"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112085"
+                },
+                {
+                    "count": 12,
+                    "materialId": "113053"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "101235"
+                },
+                {
+                    "count": 6,
+                    "materialId": "104114"
+                },
+                {
+                    "count": 24,
+                    "materialId": "112085"
+                },
+                {
+                    "count": 20,
+                    "materialId": "113053"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: [
+        {
+            "mora": 12500,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "104344"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112083"
+                }
+            ],
+            "level": "Lv.2"
+        },
+        {
+            "mora": 17500,
+            "items": [
+                {
+                    "count": 2,
+                    "materialId": "104345"
+                },
+                {
+                    "count": 3,
+                    "materialId": "112084"
+                }
+            ],
+            "level": "Lv.3"
+        },
+        {
+            "mora": 25000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104345"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112084"
+                }
+            ],
+            "level": "Lv.4"
+        },
+        {
+            "mora": 30000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104345"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112084"
+                }
+            ],
+            "level": "Lv.5"
+        },
+        {
+            "mora": 37500,
+            "items": [
+                {
+                    "count": 9,
+                    "materialId": "104345"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112084"
+                }
+            ],
+            "level": "Lv.6"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 4,
+                    "materialId": "104346"
+                },
+                {
+                    "count": 4,
+                    "materialId": "112085"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113055"
+                }
+            ],
+            "level": "Lv.7"
+        },
+        {
+            "mora": 260000,
+            "items": [
+                {
+                    "count": 6,
+                    "materialId": "104346"
+                },
+                {
+                    "count": 6,
+                    "materialId": "112085"
+                },
+                {
+                    "count": 1,
+                    "materialId": "113055"
+                }
+            ],
+            "level": "Lv.8"
+        },
+        {
+            "mora": 450000,
+            "items": [
+                {
+                    "count": 12,
+                    "materialId": "104346"
+                },
+                {
+                    "count": 9,
+                    "materialId": "112085"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113055"
+                }
+            ],
+            "level": "Lv.9"
+        },
+        {
+            "mora": 700000,
+            "items": [
+                {
+                    "count": 1,
+                    "materialId": "104319"
+                },
+                {
+                    "count": 16,
+                    "materialId": "104346"
+                },
+                {
+                    "count": 12,
+                    "materialId": "112085"
+                },
+                {
+                    "count": 2,
+                    "materialId": "113055"
+                }
+            ],
+            "level": "Lv.10"
+        }
+    ],
     talentPriority: [
         "Skill",
         "Burst",
@@ -37,22 +443,6 @@ exports.chevreuse = {
                         "ATK%",
                         "Energy Recharge",
                         "Elemental Mastery"
-                    ]
-                },
-                {
-                    characterId: "chevreuse",
-                    role: "Support",
-                    roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
-                    weapons: [
-                        "Favonius Lance",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Song of Days Past"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge"
                     ]
                 },
                 {
@@ -89,6 +479,22 @@ exports.chevreuse = {
                         "Energy Recharge",
                         "HP%"
                     ]
+                },
+                {
+                    characterId: "chevreuse",
+                    role: "Support",
+                    roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
+                    weapons: [
+                        "Favonius Lance",
+                        "Black Tassel"
+                    ],
+                    artifacts: [
+                        "4pc Song of Days Past"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge"
+                    ]
                 }
             ]
         },
@@ -116,22 +522,6 @@ exports.chevreuse = {
                     ]
                 },
                 {
-                    characterId: "chevreuse",
-                    role: "Support",
-                    roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
-                    weapons: [
-                        "Favonius Lance",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Song of Days Past"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "xiangling",
                     role: "Sub DPS",
                     roleDesc: "Sub DPS. Generates huge coordinated ATK off-field Pyro DMG.",
@@ -148,6 +538,22 @@ exports.chevreuse = {
                         "ATK%",
                         "Energy Recharge",
                         "Elemental Mastery"
+                    ]
+                },
+                {
+                    characterId: "chevreuse",
+                    role: "Support",
+                    roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
+                    weapons: [
+                        "Favonius Lance",
+                        "Black Tassel"
+                    ],
+                    artifacts: [
+                        "4pc Song of Days Past"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge"
                     ]
                 },
                 {
@@ -192,22 +598,6 @@ exports.chevreuse = {
                     ]
                 },
                 {
-                    characterId: "chevreuse",
-                    role: "Support",
-                    roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
-                    weapons: [
-                        "Favonius Lance",
-                        "Black Tassel"
-                    ],
-                    artifacts: [
-                        "4pc Song of Days Past"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
                     characterId: "raiden-shogun",
                     role: "Sub DPS",
                     roleDesc: "Sub DPS. Triggers Electro attacks to enable Overload.",
@@ -240,44 +630,31 @@ exports.chevreuse = {
                         "Energy Recharge",
                         "HP%"
                     ]
+                },
+                {
+                    characterId: "chevreuse",
+                    role: "Support",
+                    roleDesc: "Support/Healer. Reduces enemy's resistance with RES shred when Overload is triggered, and her Skill grants an ATK buff based on her Max HP. Healing sustain.",
+                    weapons: [
+                        "Favonius Lance",
+                        "Black Tassel"
+                    ],
+                    artifacts: [
+                        "4pc Song of Days Past"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge"
+                    ]
                 }
             ]
         }
     ],
+    sands: ["HP%", "Hiệu Quả Nạp"],
+    goblet: ["HP%"],
+    circlet: ["HP%", "Tăng Trị Liệu"],
+    subStatsPriority: ["Hiệu Quả Nạp", "HP%", "Tỷ Lệ Bạo Kích", "HP", "Tinh Thông Nguyên Tố"],
     bestWeapons: [
-        {
-            rank: 4,
-            nameVi: "Hắc Anh Thương",
-            nameEn: "Black Tassel",
-            subStat: "HP%",
-            isF2P: true,
-            refinement: "R5",
-            passiveDescVi: "Lựa chọn giá rẻ tăng HP% cực lớn để tối đa hóa buff Tấn Công và khả năng trị liệu.",
-            passiveDescEn: "Budget HP% stat stick. Maximizes HP for stronger ATK buffs and heals.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Ruby.png"
-        },
-        {
-            rank: 5,
-            nameVi: "Thù Lao Của Chính Nghĩa",
-            nameEn: "Rightful Reward",
-            subStat: "HP%",
-            isF2P: true,
-            refinement: "R5",
-            passiveDescVi: "Cung cấp HP% và khả năng hồi năng lượng từ nội tại khi được trị liệu.",
-            passiveDescEn: "Provides HP% and energy regeneration when healed. Good for burst uptime.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Vorpal.png"
-        },
-        {
-            rank: 6,
-            nameVi: "Mẫu Tinh Liêm",
-            nameEn: "Prototype Starglitter",
-            subStat: "Hiệu Quả Nạp",
-            isF2P: true,
-            refinement: "R5",
-            passiveDescVi: "Dòng phụ Hiệu Quả Nạp giúp nạp Nộ nhanh hơn, nội tại tăng nhẹ sát thương sau E.",
-            passiveDescEn: "Energy Recharge substat helps burst uptime. Passive is not the main focus.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Proto.png"
-        },
         {
             rank: 1,
             nameVi: "Vũ Khí Cán Dài Hỗ Trợ Mới",
@@ -287,7 +664,7 @@ exports.chevreuse = {
             refinement: "R1",
             passiveDescVi: "Vũ khí cán dài hỗ trợ tăng HP% hoặc hiệu ứng tăng sát thương cho cả đội.",
             passiveDescEn: "Assuming a new support polearm, use for its HP% or team buffs.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Deshret.webp"
         },
         {
             rank: 2,
@@ -298,7 +675,7 @@ exports.chevreuse = {
             refinement: "R5",
             passiveDescVi: "Tạo hạt nhân lượng khi bạo kích, giúp giảm mạnh chỉ số nạp yêu cầu cho cả đội.",
             passiveDescEn: "Generates energy particles on CRIT hits, lowering ER requirements for the team.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Zephyrus.webp"
         },
         {
             rank: 3,
@@ -309,147 +686,72 @@ exports.chevreuse = {
             refinement: "R5",
             passiveDescVi: "Dòng phụ Tinh Thông Nguyên Tố ít hữu dụng hơn, nhưng nội tại hồi Năng Lượng rất tốt.",
             passiveDescEn: "EM substat is less useful, but the passive provides decent energy regeneration.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Bakufu.webp"
+        },
+        {
+            rank: 4,
+            nameVi: "Hắc Anh Thương",
+            nameEn: "Black Tassel",
+            subStat: "HP%",
+            isF2P: true,
+            refinement: "R5",
+            passiveDescVi: "Lựa chọn giá rẻ tăng HP% cực lớn để tối đa hóa buff Tấn Công và khả năng trị liệu.",
+            passiveDescEn: "Budget HP% stat stick. Maximizes HP for stronger ATK buffs and heals.",
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Ruby.webp"
+        },
+        {
+            rank: 5,
+            nameVi: "Thù Lao Của Chính Nghĩa",
+            nameEn: "Rightful Reward",
+            subStat: "HP%",
+            isF2P: true,
+            refinement: "R5",
+            passiveDescVi: "Cung cấp HP% và khả năng hồi năng lượng từ nội tại khi được trị liệu.",
+            passiveDescEn: "Provides HP% and energy regeneration when healed. Good for burst uptime.",
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Vorpal.webp"
+        },
+        {
+            rank: 6,
+            nameVi: "Mẫu Tinh Liêm",
+            nameEn: "Prototype Starglitter",
+            subStat: "Hiệu Quả Nạp",
+            isF2P: true,
+            refinement: "R5",
+            passiveDescVi: "Dòng phụ Hiệu Quả Nạp giúp nạp Nộ nhanh hơn, nội tại tăng nhẹ sát thương sau E.",
+            passiveDescEn: "Energy Recharge substat helps burst uptime. Passive is not the main focus.",
+            iconUrl: "/assets/weapons/UI_EquipIcon_Pole_Proto.webp"
         }
     ],
     bestArtifacts: [
         {
-            setNameVi: "Nghi Thức Tông Thất Cổ",
-            setNameEn: "Noblesse Oblige",
-            pieces: 4,
-            sands: [
-                "HP%",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "HP%"
-            ],
-            circlet: [
-                "HP%",
-                "Tăng Trị Liệu"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "HP%",
-                "Tỷ Lệ Bạo Kích",
-                "HP",
-                "Tinh Thông Nguyên Tố"
-            ]
-        },
-        {
-            setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
-            setNameEn: "Scroll of the Hero of Cinder City",
-            pieces: 4,
-            sands: [
-                "HP%",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "HP%"
-            ],
-            circlet: [
-                "HP%",
-                "Tăng Trị Liệu"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "HP%",
-                "Tỷ Lệ Bạo Kích",
-                "HP",
-                "Tinh Thông Nguyên Tố"
-            ]
+            setNameVi: "Mix 2 bộ (HP% / Tăng Trị Liệu / Dấu Ấn)",
+            setNameEn: "2-piece Mix (HP% / Healing Bonus / Emblem of Severed Fate)",
+            pieces: 2
         },
         {
             setNameVi: "Xà Cừ Đại Dương",
             setNameEn: "Ocean-Hued Clam",
-            pieces: 4,
-            sands: [
-                "HP%",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "HP%"
-            ],
-            circlet: [
-                "HP%",
-                "Tăng Trị Liệu"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "HP%",
-                "Tỷ Lệ Bạo Kích",
-                "HP",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 4
+        },
+        {
+            setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+            setNameEn: "Scroll of the Hero of Cinder City",
+            pieces: 4
         },
         {
             setNameVi: "Khúc Ca Ngày Cũ",
             setNameEn: "Song of Days Past",
-            pieces: 4,
-            sands: [
-                "HP%",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "HP%"
-            ],
-            circlet: [
-                "HP%",
-                "Tăng Trị Liệu"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "HP%",
-                "Tỷ Lệ Bạo Kích",
-                "HP",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 4
         },
         {
-            setNameVi: "Mix 2 bộ (HP% / Tăng Trị Liệu / Dấu Ấn)",
-            setNameEn: "2-piece Mix (HP% / Healing Bonus / Emblem of Severed Fate)",
-            pieces: 2,
-            sands: [
-                "HP%",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "HP%"
-            ],
-            circlet: [
-                "HP%",
-                "Tăng Trị Liệu"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "HP%",
-                "Tỷ Lệ Bạo Kích",
-                "HP",
-                "Tinh Thông Nguyên Tố"
-            ]
+            setNameVi: "Nghi Thức Tông Thất Cổ",
+            setNameEn: "Noblesse Oblige",
+            pieces: 4
         },
         {
             setNameVi: "Thiếu Nữ Đáng Yêu",
             setNameEn: "Maiden Beloved",
-            pieces: 4,
-            sands: [
-                "HP%",
-                "Hiệu Quả Nạp"
-            ],
-            goblet: [
-                "HP%"
-            ],
-            circlet: [
-                "HP%",
-                "Tăng Trị Liệu"
-            ],
-            subStatsPriority: [
-                "Hiệu Quả Nạp",
-                "HP%",
-                "Tỷ Lệ Bạo Kích",
-                "HP",
-                "Tinh Thông Nguyên Tố"
-            ]
+            pieces: 4
         }
     ]
 };

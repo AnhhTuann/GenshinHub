@@ -32,7 +32,7 @@ const getAvatarUrl = (name) => {
     }
     const mapped = enkaNameMap[cleanName] || cleanName;
     const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-    const relativePath = `/assets/avatars/UI_AvatarIcon_${urlSafe}.png`;
+    const relativePath = `/assets/characters/avatars/UI_AvatarIcon_${urlSafe}_avatar.webp`;
     const absolutePath = path_1.default.join(__dirname, '../../../frontend/public', relativePath);
     if (fs_1.default.existsSync(absolutePath)) {
         return relativePath;
@@ -46,92 +46,72 @@ const getSplashUrl = (name) => {
     }
     const mapped = enkaNameMap[cleanName] || cleanName;
     const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-    const relativePath = `/assets/splash/UI_Gacha_AvatarImg_${urlSafe}.png`;
+    const relativePath = `/assets/characters/splash/UI_Gacha_AvatarImg_${urlSafe}_splash.webp`;
     const absolutePath = path_1.default.join(__dirname, '../../../frontend/public', relativePath);
     if (fs_1.default.existsSync(absolutePath)) {
         return relativePath;
     }
     return "";
 };
-const traveler_pyro_1 = require("./characters/traveler-pyro");
-const durin_1 = require("./characters/durin");
-const hu_tao_1 = require("./characters/hu-tao");
-const raiden_shogun_1 = require("./characters/raiden-shogun");
-const zhongli_1 = require("./characters/zhongli");
-const neuvillette_1 = require("./characters/neuvillette");
-const furina_1 = require("./characters/furina");
-const xinyan_1 = require("./characters/xinyan");
-const yelan_1 = require("./characters/yelan");
-const kaedehara_kazuha_1 = require("./characters/kaedehara-kazuha");
-const nahida_1 = require("./characters/nahida");
-const xiangling_1 = require("./characters/xiangling");
-const klee_1 = require("./characters/klee");
-const diluc_1 = require("./characters/diluc");
-const bennett_1 = require("./characters/bennett");
-const amber_1 = require("./characters/amber");
-const yanfei_1 = require("./characters/yanfei");
-const yoimiya_1 = require("./characters/yoimiya");
-const thoma_1 = require("./characters/thoma");
-const dehya_1 = require("./characters/dehya");
-const nicole_1 = require("./characters/nicole");
-const mavuika_1 = require("./characters/mavuika");
-const arlecchino_1 = require("./characters/arlecchino");
-const gaming_1 = require("./characters/gaming");
-const lyney_1 = require("./characters/lyney");
-const chevreuse_1 = require("./characters/chevreuse");
-const columbina_1 = require("./characters/columbina");
-const mualani_1 = require("./characters/mualani");
-const sigewinne_1 = require("./characters/sigewinne");
-const traveler_hydro_1 = require("./characters/traveler-hydro");
-const nilou_1 = require("./characters/nilou");
-const kamisato_ayato_1 = require("./characters/kamisato-ayato");
-const sangonomiya_kokomi_1 = require("./characters/sangonomiya-kokomi");
-const beidou_1 = require("./characters/beidou");
-const xingqiu_1 = require("./characters/xingqiu");
-const xiao_1 = require("./characters/xiao");
-const ningguang_1 = require("./characters/ningguang");
-const fischl_1 = require("./characters/fischl");
-const tartaglia_1 = require("./characters/tartaglia");
-const noelle_1 = require("./characters/noelle");
-const chongyun_1 = require("./characters/chongyun");
-const ganyu_1 = require("./characters/ganyu");
-const albedo_1 = require("./characters/albedo");
-const diona_1 = require("./characters/diona");
-const mona_1 = require("./characters/mona");
-const keqing_1 = require("./characters/keqing");
-const sucrose_1 = require("./characters/sucrose");
-const rosaria_1 = require("./characters/rosaria");
-const qiqi_1 = require("./characters/qiqi");
-const eula_1 = require("./characters/eula");
 const sayu_1 = require("./characters/sayu");
+const sangonomiya_kokomi_1 = require("./characters/sangonomiya-kokomi");
 const gorou_1 = require("./characters/gorou");
 const kujou_sara_1 = require("./characters/kujou-sara");
 const arataki_itto_1 = require("./characters/arataki-itto");
 const yae_miko_1 = require("./characters/yae-miko");
 const shikanoin_heizou_1 = require("./characters/shikanoin-heizou");
+const yelan_1 = require("./characters/yelan");
 const momoka_1 = require("./characters/momoka");
 const aloy_1 = require("./characters/aloy");
 const shenhe_1 = require("./characters/shenhe");
 const yun_jin_1 = require("./characters/yun-jin");
 const kuki_shinobu_1 = require("./characters/kuki-shinobu");
+const kamisato_ayato_1 = require("./characters/kamisato-ayato");
 const collei_1 = require("./characters/collei");
 const dori_1 = require("./characters/dori");
 const tighnari_1 = require("./characters/tighnari");
+const nilou_1 = require("./characters/nilou");
 const cyno_1 = require("./characters/cyno");
 const candace_1 = require("./characters/candace");
+const nahida_1 = require("./characters/nahida");
 const layla_1 = require("./characters/layla");
 const wanderer_1 = require("./characters/wanderer");
 const faruzan_1 = require("./characters/faruzan");
 const yaoyao_1 = require("./characters/yaoyao");
 const alhaitham_1 = require("./characters/alhaitham");
+const dehya_1 = require("./characters/dehya");
 const mika_1 = require("./characters/mika");
 const kaveh_1 = require("./characters/kaveh");
 const baizhu_1 = require("./characters/baizhu");
 const lynette_1 = require("./characters/lynette");
+const lyney_1 = require("./characters/lyney");
 const freminet_1 = require("./characters/freminet");
-const varesa_1 = require("./characters/varesa");
-const escoffier_1 = require("./characters/escoffier");
 const wriothesley_1 = require("./characters/wriothesley");
+const neuvillette_1 = require("./characters/neuvillette");
+const charlotte_1 = require("./characters/charlotte");
+const furina_1 = require("./characters/furina");
+const chevreuse_1 = require("./characters/chevreuse");
+const navia_1 = require("./characters/navia");
+const gaming_1 = require("./characters/gaming");
+const xianyun_1 = require("./characters/xianyun");
+const chiori_1 = require("./characters/chiori");
+const sigewinne_1 = require("./characters/sigewinne");
+const arlecchino_1 = require("./characters/arlecchino");
+const sethos_1 = require("./characters/sethos");
+const clorinde_1 = require("./characters/clorinde");
+const emilie_1 = require("./characters/emilie");
+const kachina_1 = require("./characters/kachina");
+const kinich_1 = require("./characters/kinich");
+const mualani_1 = require("./characters/mualani");
+const xilonen_1 = require("./characters/xilonen");
+const chasca_1 = require("./characters/chasca");
+const ororon_1 = require("./characters/ororon");
+const mavuika_1 = require("./characters/mavuika");
+const citlali_1 = require("./characters/citlali");
+const lanyan_1 = require("./characters/lanyan");
+const yumemizu_1 = require("./characters/yumemizu");
+const iansan_1 = require("./characters/iansan");
+const varesa_1 = require("./characters/varesa");
 const ifa_1 = require("./characters/ifa");
 const skirk_1 = require("./characters/skirk");
 const dahlia_1 = require("./characters/dahlia");
@@ -142,69 +122,62 @@ const lauma_1 = require("./characters/lauma");
 const flins_1 = require("./characters/flins");
 const aino_1 = require("./characters/aino");
 const nefer_1 = require("./characters/nefer");
-const charlotte_1 = require("./characters/charlotte");
-const navia_1 = require("./characters/navia");
-const xianyun_1 = require("./characters/xianyun");
-const chiori_1 = require("./characters/chiori");
-const sethos_1 = require("./characters/sethos");
-const clorinde_1 = require("./characters/clorinde");
-const emilie_1 = require("./characters/emilie");
-const kachina_1 = require("./characters/kachina");
-const kinich_1 = require("./characters/kinich");
-const xilonen_1 = require("./characters/xilonen");
-const chasca_1 = require("./characters/chasca");
-const ororon_1 = require("./characters/ororon");
-const citlali_1 = require("./characters/citlali");
-const lanyan_1 = require("./characters/lanyan");
-const kamisato_ayaka_1 = require("./characters/kamisato-ayaka");
-const jean_1 = require("./characters/jean");
-const lisa_1 = require("./characters/lisa");
-const barbara_1 = require("./characters/barbara");
-const kaeya_1 = require("./characters/kaeya");
-const razor_1 = require("./characters/razor");
-const venti_1 = require("./characters/venti");
-const yumemizu_1 = require("./characters/yumemizu");
-const iansan_1 = require("./characters/iansan");
+const durin_1 = require("./characters/durin");
 const jahoda_1 = require("./characters/jahoda");
+const columbina_1 = require("./characters/columbina");
 const zibai_1 = require("./characters/zibai");
 const illuga_1 = require("./characters/illuga");
 const varka_1 = require("./characters/varka");
 const lohen_1 = require("./characters/lohen");
 const linnea_1 = require("./characters/linnea");
+const nicole_1 = require("./characters/nicole");
 const prune_1 = require("./characters/prune");
 const traveler_anemo_1 = require("./characters/traveler-anemo");
 const traveler_geo_1 = require("./characters/traveler-geo");
 const traveler_electro_1 = require("./characters/traveler-electro");
 const traveler_dendro_1 = require("./characters/traveler-dendro");
+const traveler_hydro_1 = require("./characters/traveler-hydro");
+const traveler_pyro_1 = require("./characters/traveler-pyro");
 const traveler_1 = require("./characters/traveler");
+const diona_1 = require("./characters/diona");
+const escoffier_1 = require("./characters/escoffier");
+const kamisato_ayaka_1 = require("./characters/kamisato-ayaka");
+const jean_1 = require("./characters/jean");
+const lisa_1 = require("./characters/lisa");
+const barbara_1 = require("./characters/barbara");
+const kaeya_1 = require("./characters/kaeya");
+const diluc_1 = require("./characters/diluc");
+const razor_1 = require("./characters/razor");
+const amber_1 = require("./characters/amber");
+const venti_1 = require("./characters/venti");
+const xiangling_1 = require("./characters/xiangling");
+const beidou_1 = require("./characters/beidou");
+const xingqiu_1 = require("./characters/xingqiu");
+const xiao_1 = require("./characters/xiao");
+const ningguang_1 = require("./characters/ningguang");
+const klee_1 = require("./characters/klee");
+const zhongli_1 = require("./characters/zhongli");
+const fischl_1 = require("./characters/fischl");
+const bennett_1 = require("./characters/bennett");
+const tartaglia_1 = require("./characters/tartaglia");
+const noelle_1 = require("./characters/noelle");
+const qiqi_1 = require("./characters/qiqi");
+const chongyun_1 = require("./characters/chongyun");
+const ganyu_1 = require("./characters/ganyu");
+const albedo_1 = require("./characters/albedo");
+const mona_1 = require("./characters/mona");
+const keqing_1 = require("./characters/keqing");
+const sucrose_1 = require("./characters/sucrose");
+const xinyan_1 = require("./characters/xinyan");
+const rosaria_1 = require("./characters/rosaria");
+const hu_tao_1 = require("./characters/hu-tao");
+const kaedehara_kazuha_1 = require("./characters/kaedehara-kazuha");
+const yanfei_1 = require("./characters/yanfei");
+const yoimiya_1 = require("./characters/yoimiya");
+const thoma_1 = require("./characters/thoma");
+const eula_1 = require("./characters/eula");
+const raiden_shogun_1 = require("./characters/raiden-shogun");
 const metaBuilds = [
-    xiangling_1.xiangling,
-    beidou_1.beidou,
-    xingqiu_1.xingqiu,
-    xiao_1.xiao,
-    ningguang_1.ningguang,
-    klee_1.klee,
-    zhongli_1.zhongli,
-    fischl_1.fischl,
-    bennett_1.bennett,
-    tartaglia_1.tartaglia,
-    noelle_1.noelle,
-    chongyun_1.chongyun,
-    ganyu_1.ganyu,
-    albedo_1.albedo,
-    diona_1.diona,
-    mona_1.mona,
-    keqing_1.keqing,
-    sucrose_1.sucrose,
-    xinyan_1.xinyan,
-    rosaria_1.rosaria,
-    qiqi_1.qiqi,
-    kaedehara_kazuha_1.kaedeharaKazuha,
-    yanfei_1.yanfei,
-    yoimiya_1.yoimiya,
-    thoma_1.thoma,
-    eula_1.eula,
-    raiden_shogun_1.raidenShogun,
     sayu_1.sayu,
     sangonomiya_kokomi_1.sangonomiyaKokomi,
     gorou_1.gorou,
@@ -238,19 +211,7 @@ const metaBuilds = [
     lynette_1.lynette,
     lyney_1.lyney,
     freminet_1.freminet,
-    varesa_1.varesa,
-    escoffier_1.escoffier,
     wriothesley_1.wriothesley,
-    ifa_1.ifa,
-    skirk_1.skirk,
-    dahlia_1.dahlia,
-    ineffa_1.ineffa,
-    traveler_boy_1.travelerBoy,
-    traveler_girl_1.travelerGirl,
-    lauma_1.lauma,
-    flins_1.flins,
-    aino_1.aino,
-    nefer_1.nefer,
     neuvillette_1.neuvillette,
     charlotte_1.charlotte,
     furina_1.furina,
@@ -273,17 +234,19 @@ const metaBuilds = [
     mavuika_1.mavuika,
     citlali_1.citlali,
     lanyan_1.lanyan,
-    kamisato_ayaka_1.kamisatoAyaka,
-    jean_1.jean,
-    lisa_1.lisa,
-    barbara_1.barbara,
-    kaeya_1.kaeya,
-    diluc_1.diluc,
-    razor_1.razor,
-    amber_1.amber,
-    venti_1.venti,
     yumemizu_1.yumemizu,
     iansan_1.iansan,
+    varesa_1.varesa,
+    ifa_1.ifa,
+    skirk_1.skirk,
+    dahlia_1.dahlia,
+    ineffa_1.ineffa,
+    traveler_boy_1.travelerBoy,
+    traveler_girl_1.travelerGirl,
+    lauma_1.lauma,
+    flins_1.flins,
+    aino_1.aino,
+    nefer_1.nefer,
     durin_1.durin,
     jahoda_1.jahoda,
     columbina_1.columbina,
@@ -301,7 +264,44 @@ const metaBuilds = [
     traveler_hydro_1.travelerHydro,
     traveler_pyro_1.travelerPyro,
     traveler_1.traveler,
-    hu_tao_1.huTao
+    diona_1.diona,
+    escoffier_1.escoffier,
+    kamisato_ayaka_1.kamisatoAyaka,
+    jean_1.jean,
+    lisa_1.lisa,
+    barbara_1.barbara,
+    kaeya_1.kaeya,
+    diluc_1.diluc,
+    razor_1.razor,
+    amber_1.amber,
+    venti_1.venti,
+    xiangling_1.xiangling,
+    beidou_1.beidou,
+    xingqiu_1.xingqiu,
+    xiao_1.xiao,
+    ningguang_1.ningguang,
+    klee_1.klee,
+    zhongli_1.zhongli,
+    fischl_1.fischl,
+    bennett_1.bennett,
+    tartaglia_1.tartaglia,
+    noelle_1.noelle,
+    qiqi_1.qiqi,
+    chongyun_1.chongyun,
+    ganyu_1.ganyu,
+    albedo_1.albedo,
+    mona_1.mona,
+    keqing_1.keqing,
+    sucrose_1.sucrose,
+    xinyan_1.xinyan,
+    rosaria_1.rosaria,
+    hu_tao_1.huTao,
+    kaedehara_kazuha_1.kaedeharaKazuha,
+    yanfei_1.yanfei,
+    yoimiya_1.yoimiya,
+    thoma_1.thoma,
+    eula_1.eula,
+    raiden_shogun_1.raidenShogun
 ];
 const charactersData = [
     ...[
@@ -401,7 +401,7 @@ const charactersData = [
         "Yumemizuki Mizuki|Anemo|Catalyst|5",
         "Iansan|Electro|Catalyst|4",
         "Varesa|Electro|Catalyst|5",
-        "Escoffier|Cryo|Catalyst|5",
+        "Escoffier|Cryo|Polearm|5",
         "Ifa|Anemo|Catalyst|4",
         "Skirk|Cryo|Sword|5",
         "Dahlia|Hydro|Sword|4",
@@ -428,7 +428,8 @@ const charactersData = [
         "Traveler (Dendro)|Dendro|Sword|5",
         "Traveler (Hydro)|Hydro|Sword|5",
         "Traveler (Pyro)|Pyro|Sword|5",
-        "Traveler|None|Sword|5"
+        "Traveler|None|Sword|5",
+        "Sandrone|Cryo|Catalyst|5"
     ].map(c => ({ ...parseChar(c), region: "Other" }))
 ];
 function parseChar(dataStr) {
@@ -486,7 +487,7 @@ function parseChar(dataStr) {
         description: `Đây là thông tin bách khoa của ${name}. Nhân vật này đến từ thế giới Teyvat...`,
         baseStats: { hp: 10000, atk: 300, def: 600 },
         fandomUrl: `https://genshin-impact.fandom.com/wiki/${name.replace(/ /g, '_')}`,
-        bestWeapons: metaInfo ? metaInfo.bestWeapons.map((w) => ({
+        bestWeapons: metaInfo ? metaInfo.bestWeapons.map((w, index) => ({
             weaponId: w.nameVi.toLowerCase().replace(/ /g, '-'),
             nameVi: w.nameVi, nameEn: w.nameEn,
             rank: w.rank,
@@ -494,17 +495,25 @@ function parseChar(dataStr) {
             iconUrl: w.iconUrl,
             subStat: w.subStat,
             passiveDescVi: w.passiveDescVi, passiveDescEn: w.passiveDescEn,
-            refinement: parseInt(w.refinement.replace('R', '')) || 1
-        })) : defaultWeapons,
-        bestArtifacts: (metaInfo && metaInfo.bestArtifacts) ? metaInfo.bestArtifacts : [
-            { setNameVi: "Thánh Di Vật Đề Cử", setNameEn: "Thánh Di Vật Đề Cử", pieces: 4, sands: ["ATK%"], goblet: ["Elemental DMG Bonus"], circlet: ["CRIT Rate"], subStatsPriority: ["CRIT Rate", "CRIT DMG", "ATK%"] }
+            refinement: parseInt(w.refinement.replace('R', '')) || 1,
+            order: index
+        })) : defaultWeapons.map((w, index) => ({ ...w, order: index })),
+        bestArtifacts: (metaInfo && metaInfo.bestArtifacts) ? metaInfo.bestArtifacts.map((a, index) => ({ ...a, order: index })) : [
+            { setNameVi: "Thánh Di Vật Đồ Cổ", setNameEn: "Thánh Di Vật Đồ Cổ", pieces: 4, order: 0 }
         ],
         tier: metaInfo?.tier || null,
         role: metaInfo?.role || null,
         recommendedC: metaInfo?.recommendedC || null,
         tierNoteEn: metaInfo?.tierNoteEn || [],
         tierNoteVi: metaInfo?.tierNoteVi || [],
-        teams: metaInfo?.teams || []
+        teams: metaInfo?.teams || [],
+        stats: metaInfo?.stats || null,
+        ascensionMats: metaInfo?.ascensionMats || null,
+        talentMats: metaInfo?.talentMats || null,
+        sands: metaInfo?.sands || [],
+        goblet: metaInfo?.goblet || [],
+        circlet: metaInfo?.circlet || [],
+        subStatsPriority: metaInfo?.subStatsPriority || []
     };
 }
 // Lọc trùng ID (ưu tiên bản đã có trong seed cũ)
@@ -749,6 +758,7 @@ async function seedCharacters(prisma) {
         console.log(`Bắt đầu xoá dữ liệu cũ...`);
         await prisma.characterWeapon.deleteMany({});
         await prisma.characterArtifact.deleteMany({});
+        await prisma.characterTeam.deleteMany({});
         await prisma.character.deleteMany({});
     }
     console.log(`Bắt đầu lấy dữ liệu từ api.ambr.top...`);
@@ -862,6 +872,7 @@ async function seedCharacters(prisma) {
         try {
             await prisma.characterWeapon.deleteMany({ where: { characterId: char.id } });
             await prisma.characterArtifact.deleteMany({ where: { characterId: char.id } });
+            await prisma.characterTeam.deleteMany({ where: { characterId: char.id } });
             await prisma.character.delete({ where: { id: char.id } }).catch(() => { });
             await prisma.character.create({
                 data: {
@@ -870,21 +881,25 @@ async function seedCharacters(prisma) {
                     baseHp: baseHp, baseAtk: baseAtk, baseDef: baseDef,
                     fandomUrl: char.fandomUrl,
                     tier: char.tier, role: char.role, recommendedC: char.recommendedC, tierNoteEn: char.tierNoteEn, tierNoteVi: char.tierNoteVi,
+                    stats: char.stats, ascensionMats: char.ascensionMats, talentMats: char.talentMats,
+                    sands: char.sands, goblet: char.goblet, circlet: char.circlet, subStatsPriority: char.subStatsPriority,
                     bestWeapons: { create: char.bestWeapons },
                     bestArtifacts: { create: char.bestArtifacts },
                     teams: {
-                        create: char.teams.map((t) => ({
+                        create: char.teams.map((t, teamIndex) => ({
                             name: t.name,
                             rank: t.rank,
                             description: t.description,
+                            order: teamIndex,
                             members: {
-                                create: t.members.map((m) => ({
+                                create: t.members.map((m, memberIndex) => ({
                                     characterId: m.characterId,
                                     role: m.role,
                                     roleDesc: m.roleDesc,
                                     weapons: m.weapons,
                                     artifacts: m.artifacts,
-                                    substats: m.substats
+                                    substats: m.substats,
+                                    order: memberIndex
                                 }))
                             }
                         }))

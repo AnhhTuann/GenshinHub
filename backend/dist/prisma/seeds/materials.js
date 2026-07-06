@@ -21,12 +21,12 @@ async function seedMaterials(prisma) {
                 nameEn: itemEn.name || item.name || 'Unknown',
                 type: item.type || 'Unknown',
                 rarity: item.rank || 1,
-                iconUrl: item.icon ? `https://enka.network/ui/${item.icon}.png` : null,
+                iconUrl: item.icon ? `/assets/items/${item.icon}.webp` : null,
             };
         });
         const manualMaterials = [
-            { id: "112001", nameVi: "Tinh Chất Slime", nameEn: "Slime Condensate", type: "MATERIAL", rarity: 1, iconUrl: "https://enka.network/ui/UI_ItemIcon_112001.png" },
-            { id: "100019", nameVi: "Nấm Phila", nameEn: "Philanemo Mushroom", type: "MATERIAL", rarity: 1, iconUrl: "https://enka.network/ui/UI_ItemIcon_100019.png" }
+            { id: "112001", nameVi: "Tinh Chất Slime", nameEn: "Slime Condensate", type: "MATERIAL", rarity: 1, iconUrl: "/assets/items/UI_ItemIcon_112001.webp" },
+            { id: "100019", nameVi: "Nấm Phila", nameEn: "Philanemo Mushroom", type: "MATERIAL", rarity: 1, iconUrl: "/assets/items/UI_ItemIcon_100019.webp" }
         ];
         for (const m of manualMaterials) {
             if (!materialData.find((x) => x.id === m.id)) {

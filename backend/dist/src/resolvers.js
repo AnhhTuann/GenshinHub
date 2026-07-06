@@ -4,13 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolvers = void 0;
-// Nodemon trigger
-const client_1 = require("@prisma/client");
-const axios_1 = __importDefault(require("axios"));
+exports.resetArtifactSetLookup = resetArtifactSetLookup;
+const enka_network_api_1 = require("enka-network-api");
+const enka = new enka_network_api_1.EnkaClient({ defaultLanguage: 'en' });
 const cache_1 = require("./cache");
 const mutations_1 = require("./mutations");
 const graphql_type_json_1 = __importDefault(require("graphql-type-json"));
-const prisma = new client_1.PrismaClient();
+const prisma_1 = require("./prisma");
+const backupService_1 = require("./backupService");
 // Map mix set name → component set Vietnamese names
 const mixSetsMap = {
     "Mix 2 bộ Trái Tim Trầm Luân & 2 bộ Thiên Nham Vững Chắc": ["Trái Tim Trầm Luân", "Thiên Nham Vững Chắc"],
@@ -53,10 +54,11 @@ function getAllMixComponentNames() {
 // LRU Caches are now imported from ./cache
 // Pre-warm artifact set lookup cache (all sets + mix components in 1 query)
 let artifactSetLookup = null;
+function resetArtifactSetLookup() { artifactSetLookup = null; }
 async function getArtifactSetLookup() {
     if (artifactSetLookup)
         return artifactSetLookup;
-    const sets = await prisma.artifactSet.findMany();
+    const sets = await prisma_1.prisma.artifactSet.findMany();
     const lookup = {};
     for (const s of sets) {
         lookup[s.nameVi] = s;
@@ -87,7 +89,7 @@ async function enrichArtifacts(artifacts, setLookup) {
                     return {
                         nameEn: "Physical DMG +25% set",
                         nameVi: "Bộ Sát Thương Vật Lý +25%",
-                        iconUrl: "/assets/artifacts/UI_RelicIcon_15008_4.png",
+                        iconUrl: "/assets/artifacts/UI_RelicIcon_15008_4.webp",
                         artifactSetId: "15008",
                     };
                 }
@@ -104,7 +106,7 @@ async function enrichArtifacts(artifacts, setLookup) {
             ...a,
             setNameEn: dbArtifact?.nameEn || a.setNameEn,
             setNameVi: dbArtifact?.nameVi || a.setNameVi,
-            iconUrl: isMix ? "/assets/artifacts/UI_RelicIcon_15001_4.png" : (dbArtifact?.iconUrl || null),
+            iconUrl: isMix ? "/assets/artifacts/UI_RelicIcon_15001_4.webp" : (dbArtifact?.iconUrl || null),
             rarity: dbArtifact ? Math.max(...dbArtifact.rarityList) : (a.rarity ?? 5),
             artifactSetId: dbArtifact?.id || null,
             mixSets,
@@ -135,19 +137,42 @@ exports.resolvers = {
             const cached = cache_1.charactersCache.get('all_basic');
             if (cached)
                 return cached;
-            const data = await prisma.character.findMany({
+            const data = await prisma_1.prisma.character.findMany({
                 orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
+                include: { teams: { include: { members: { orderBy: { order: 'asc' } } }, orderBy: { order: 'asc' } } },
             });
             cache_1.charactersCache.set('all_basic', data);
             return data;
+        },
+        addCharacterArtifact: async (_, args) => {
+            const existing = await prisma_1.prisma.characterArtifact.findFirst({
+                where: { characterId: args.characterId },
+                orderBy: { order: 'desc' }
+            });
+            const newOrder = existing ? existing.order + 1 : 0;
+            await prisma_1.prisma.characterArtifact.create({
+                data: {
+                    characterId: args.characterId,
+                    setNameEn: args.setNameEn,
+                    setNameVi: args.setNameVi,
+                    pieces: args.pieces,
+                    sands: args.sands,
+                    goblet: args.goblet,
+                    circlet: args.circlet,
+                    subStatsPriority: args.subStatsPriority,
+                    order: newOrder,
+                    constellation: args.constellation || "C0",
+                }
+            });
+            return true;
         },
         character: async (_, args) => {
             const cached = cache_1.characterCache.get(args.id);
             if (cached)
                 return cached;
-            const data = await prisma.character.findUnique({
+            const data = await prisma_1.prisma.character.findUnique({
                 where: { id: args.id },
-                include: { bestWeapons: true, bestArtifacts: true, teams: { include: { members: true } } },
+                include: { bestWeapons: { orderBy: { order: 'asc' } }, bestArtifacts: { orderBy: { order: 'asc' } }, teams: { include: { members: { orderBy: { order: 'asc' } } }, orderBy: { order: 'asc' } } },
             });
             if (!data)
                 return null;
@@ -157,7 +182,7 @@ exports.resolvers = {
                 .flat()
                 .filter(Boolean);
             const weaponRecords = weaponNames.length > 0
-                ? await prisma.weapon.findMany({
+                ? await prisma_1.prisma.weapon.findMany({
                     where: { OR: [{ nameVi: { in: weaponNames } }, { nameEn: { in: weaponNames } }] },
                 })
                 : [];
@@ -182,44 +207,127 @@ exports.resolvers = {
             const cached = cache_1.weaponsCache.get('all');
             if (cached)
                 return cached;
-            const data = await prisma.weapon.findMany({
+            const data = await prisma_1.prisma.weapon.findMany({
                 orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
             });
             cache_1.weaponsCache.set('all', data);
             return data;
         },
+        addCharacterWeapon: async (_, args) => {
+            const weapon = await prisma_1.prisma.weapon.findUnique({ where: { id: args.weaponId } });
+            if (!weapon)
+                throw new Error("Weapon not found");
+            await prisma_1.prisma.characterWeapon.create({
+                data: {
+                    characterId: args.characterId,
+                    weaponId: args.weaponId,
+                    nameEn: weapon.nameEn,
+                    nameVi: weapon.nameVi,
+                    rank: args.rank,
+                    isF2P: args.isF2P,
+                    iconUrl: weapon.iconUrl,
+                    subStat: weapon.subStat,
+                    passiveDescEn: weapon.passiveDescEn,
+                    passiveDescVi: weapon.passiveDescVi,
+                    constellation: args.constellation || "C0",
+                }
+            });
+            return true;
+        },
         weapon: async (_, args) => {
-            return await prisma.weapon.findUnique({ where: { id: args.id } });
+            return await prisma_1.prisma.weapon.findUnique({ where: { id: args.id } });
         },
         charactersByWeaponType: async (_, args) => {
-            return await prisma.character.findMany({
+            return await prisma_1.prisma.character.findMany({
                 where: { weapon: args.weaponType },
                 select: { id: true, nameEn: true, nameVi: true, element: true, rarity: true, avatarUrl: true, weapon: true },
                 orderBy: [{ rarity: 'desc' }, { nameEn: 'asc' }],
             });
         },
         artifacts: async () => {
-            return await prisma.artifactSet.findMany({ orderBy: [{ id: 'asc' }] });
+            const cached = cache_1.artifactsCache.get('all');
+            if (cached)
+                return cached;
+            const data = await prisma_1.prisma.artifactSet.findMany({ orderBy: [{ id: 'asc' }] });
+            cache_1.artifactsCache.set('all', data);
+            return data;
         },
         artifactSet: async (_, args) => {
-            return await prisma.artifactSet.findUnique({ where: { id: args.id } });
+            return await prisma_1.prisma.artifactSet.findUnique({ where: { id: args.id } });
         },
         materials: async () => {
-            return await prisma.material.findMany({ orderBy: { nameEn: 'asc' } });
+            const cached = cache_1.materialsCache.get('all');
+            if (cached)
+                return cached;
+            const data = await prisma_1.prisma.material.findMany({ orderBy: { nameEn: 'asc' } });
+            cache_1.materialsCache.set('all', data);
+            return data;
+        },
+        tierRanks: async () => {
+            return await prisma_1.prisma.tierRank.findMany({ orderBy: { order: 'asc' } });
         },
         showcase: async (_, args) => {
             const cached = cache_1.showcaseCache.get(args.uid);
             if (cached)
                 return cached;
             try {
-                const response = await axios_1.default.get(`https://enka.network/api/uid/${args.uid}`);
-                const data = response.data;
+                const user = await enka.fetchUser(args.uid);
+                if (!user)
+                    return null;
+                const detailedCharacters = user.characters ? user.characters.map((c) => {
+                    let maxDmg = 0;
+                    try {
+                        const elements = ['pyroDamage', 'hydroDamage', 'cryoDamage', 'electroDamage', 'anemoDamage', 'geoDamage', 'dendroDamage', 'physicalDamage'];
+                        for (const el of elements) {
+                            if (c.stats[el] && c.stats[el].value > maxDmg)
+                                maxDmg = c.stats[el].value;
+                        }
+                    }
+                    catch (e) { }
+                    return {
+                        id: c.characterData.id.toString(),
+                        name: c.characterData.name.get("en"),
+                        element: c.characterData.element?.id || 'Unknown',
+                        level: c.level,
+                        friendship: c.friendship,
+                        constellation: c.unlockedConstellations ? c.unlockedConstellations.length : 0,
+                        weapon: c.weapon ? {
+                            name: c.weapon.weaponData.name.get("en"),
+                            level: c.weapon.level,
+                            refinement: c.weapon.refinement ? c.weapon.refinement.level : 1,
+                        } : null,
+                        artifacts: c.artifacts ? c.artifacts.map((a) => ({
+                            setName: a.artifactData.set.name.get("en"),
+                            type: a.artifactData.equipType,
+                            level: a.level,
+                            mainStat: a.mainstat ? {
+                                type: a.mainstat.type.get("en"),
+                                value: a.mainstat.value
+                            } : null,
+                            subStats: a.substats ? a.substats.map((s) => ({
+                                type: s.type.get("en"),
+                                value: s.value
+                            })) : []
+                        })) : [],
+                        stats: c.stats ? {
+                            maxHp: c.stats.maxHp?.value || 0,
+                            attack: c.stats.attack?.value || 0,
+                            defense: c.stats.defense?.value || 0,
+                            critRate: c.stats.critRate?.value || 0,
+                            critDamage: c.stats.critDamage?.value || 0,
+                            energyRecharge: c.stats.energyRecharge?.value || 0,
+                            elementalMastery: c.stats.elementalMastery?.value || 0,
+                            highestDamageBonus: maxDmg
+                        } : {}
+                    };
+                }) : [];
                 const result = {
                     uid: args.uid,
-                    nickname: data.playerInfo?.nickname || 'Unknown',
-                    level: data.playerInfo?.level || 1,
-                    avatarUrl: data.playerInfo?.profilePicture?.avatarId ? `/assets/avatars/UI_AvatarIcon_${data.playerInfo.profilePicture.avatarId}.png` : null,
-                    characters: data.avatarInfoList?.map((a) => a.avatarId.toString()) || [],
+                    nickname: user.nickname || 'Unknown',
+                    level: user.level || 1,
+                    avatarUrl: user.profilePicture?.icon?.url || null,
+                    characters: user.characters ? user.characters.map((c) => c.characterData.id.toString()) : [],
+                    detailedCharacters
                 };
                 cache_1.showcaseCache.set(args.uid, result);
                 return result;
@@ -228,24 +336,63 @@ exports.resolvers = {
                 console.error("Lỗi fetch Enka:", error);
                 return null;
             }
-        }
+        },
+        // === Backup Queries ===
+        listBackups: async (_, __, context) => {
+            if (!context.isAdmin)
+                throw new Error("Unauthorized: Admin access required.");
+            return (0, backupService_1.listBackups)();
+        },
+        getBackup: async (_, { id }, context) => {
+            if (!context.isAdmin)
+                throw new Error("Unauthorized: Admin access required.");
+            const backup = (0, backupService_1.getBackupById)(id);
+            if (!backup)
+                throw new Error(`Backup not found: ${id}`);
+            return backup;
+        },
     },
     Character: {
         signatureWeapons: async (parent) => {
             if (!parent.signatureWeapons || parent.signatureWeapons.length === 0)
                 return [];
-            return prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
+            return prisma_1.prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
         },
         bestWeapons: async (parent) => {
             if (parent.bestWeapons)
                 return parent.bestWeapons;
-            return prisma.characterWeapon.findMany({ where: { characterId: parent.id } });
+            return prisma_1.prisma.characterWeapon.findMany({ where: { characterId: parent.id } });
         },
         bestArtifacts: async (parent) => {
             if (parent.bestArtifacts)
                 return parent.bestArtifacts;
-            return prisma.characterArtifact.findMany({ where: { characterId: parent.id } });
+            return prisma_1.prisma.characterArtifact.findMany({ where: { characterId: parent.id } });
         }
     },
-    Mutation: mutations_1.Mutation
+    Mutation: {
+        ...mutations_1.Mutation,
+        // === Backup Mutations ===
+        createBackup: async (_, __, context) => {
+            if (!context.isAdmin)
+                throw new Error("Unauthorized: Admin access required.");
+            return await (0, backupService_1.createJsonBackup)();
+        },
+        deleteBackup: async (_, { id }, context) => {
+            if (!context.isAdmin)
+                throw new Error("Unauthorized: Admin access required.");
+            return (0, backupService_1.deleteBackup)(id);
+        },
+        restoreFromBackup: async (_, { id }, context) => {
+            if (!context.isAdmin)
+                throw new Error("Unauthorized: Admin access required.");
+            const result = await (0, backupService_1.restoreFromBackup)(id);
+            (0, cache_1.clearAllCaches)();
+            return result;
+        },
+        cleanupBackups: async (_, { keepCount }, context) => {
+            if (!context.isAdmin)
+                throw new Error("Unauthorized: Admin access required.");
+            return await (0, backupService_1.cleanupOldBackups)(keepCount || 10);
+        },
+    }
 };

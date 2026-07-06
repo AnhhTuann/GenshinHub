@@ -3,11 +3,123 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.travelerPyro = void 0;
 exports.travelerPyro = {
     characterId: "traveler-pyro",
-    tier: null,
-    role: null,
-    recommendedC: null,
+    tier: "B",
+    role: "Sub DPS",
+    recommendedC: "C6",
     tierNoteEn: [],
     tierNoteVi: [],
+    stats: null,
+    ascensionMats: [
+        {
+            "mora": 20000,
+            "items": [
+                {
+                    "count": 3,
+                    "materialId": "windwheel_aster"
+                },
+                {
+                    "count": 1,
+                    "materialId": "brilliant_diamond_sliver"
+                },
+                {
+                    "count": 3,
+                    "materialId": "damaged_mask"
+                }
+            ],
+            "level": "Lv.40"
+        },
+        {
+            "mora": 40000,
+            "items": [
+                {
+                    "count": 10,
+                    "materialId": "windwheel_aster"
+                },
+                {
+                    "count": 3,
+                    "materialId": "brilliant_diamond_fragment"
+                },
+                {
+                    "count": 15,
+                    "materialId": "damaged_mask"
+                }
+            ],
+            "level": "Lv.50"
+        },
+        {
+            "mora": 60000,
+            "items": [
+                {
+                    "count": 20,
+                    "materialId": "windwheel_aster"
+                },
+                {
+                    "count": 6,
+                    "materialId": "brilliant_diamond_fragment"
+                },
+                {
+                    "count": 12,
+                    "materialId": "stained_mask"
+                }
+            ],
+            "level": "Lv.60"
+        },
+        {
+            "mora": 80000,
+            "items": [
+                {
+                    "count": 30,
+                    "materialId": "windwheel_aster"
+                },
+                {
+                    "count": 3,
+                    "materialId": "brilliant_diamond_chunk"
+                },
+                {
+                    "count": 18,
+                    "materialId": "stained_mask"
+                }
+            ],
+            "level": "Lv.70"
+        },
+        {
+            "mora": 100000,
+            "items": [
+                {
+                    "count": 45,
+                    "materialId": "windwheel_aster"
+                },
+                {
+                    "count": 6,
+                    "materialId": "brilliant_diamond_chunk"
+                },
+                {
+                    "count": 12,
+                    "materialId": "ominous_mask"
+                }
+            ],
+            "level": "Lv.80"
+        },
+        {
+            "mora": 120000,
+            "items": [
+                {
+                    "count": 60,
+                    "materialId": "windwheel_aster"
+                },
+                {
+                    "count": 6,
+                    "materialId": "brilliant_diamond_gemstone"
+                },
+                {
+                    "count": 24,
+                    "materialId": "ominous_mask"
+                }
+            ],
+            "level": "Lv.90"
+        }
+    ],
+    talentMats: null,
     talentPriority: [
         "Skill",
         "Burst",
@@ -15,85 +127,6 @@ exports.travelerPyro = {
     ],
     signatureWeapons: [],
     teams: [
-        {
-            name: "Traveler Pyro Burning Team",
-            rank: "S",
-            description: "A Burning-focused team where Kinich deals high Dendro damage on-field, Emilie acts as an off-field Dendro Sub DPS, Bennett provides massive ATK buffs and healing, and Pyro Traveler applies consistent off-field Pyro.",
-            members: [
-                {
-                    characterId: "kinich",
-                    role: "Main DPS",
-                    roleDesc: "On-field Dendro DPS. Uses his Elemental Skill to trigger loop shots and deals massive damage.",
-                    weapons: [
-                        "Fang of the Mountain King",
-                        "Earth Shaker"
-                    ],
-                    artifacts: [
-                        "4pc Obsidian Codex"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "emilie",
-                    role: "Sub DPS",
-                    roleDesc: "Off-field Dendro DPS. Amplifies Burning reaction damage and deals high consistent damage.",
-                    weapons: [
-                        "Lumidouce Elegy",
-                        "Deathmatch"
-                    ],
-                    artifacts: [
-                        "4pc Unfinished Reverie"
-                    ],
-                    substats: [
-                        "CRIT DMG",
-                        "CRIT Rate",
-                        "ATK%",
-                        "Energy Recharge"
-                    ]
-                },
-                {
-                    characterId: "traveler-pyro",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Provides Pyro resonance, off-field Pyro application, and team buffs via Scroll of the Hero set.",
-                    weapons: [
-                        "Favonius Sword",
-                        "Peak Patrol Song"
-                    ],
-                    artifacts: [
-                        "4pc Scroll of the Hero of Cinder City"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "CRIT Rate",
-                        "CRIT DMG",
-                        "ATK%"
-                    ]
-                },
-                {
-                    characterId: "bennett",
-                    role: "Support",
-                    roleDesc: "Healer/Buffer. Provides massive ATK buff and consistent healing via Elemental Burst.",
-                    weapons: [
-                        "Mistsplitter Reforged",
-                        "Favonius Sword"
-                    ],
-                    artifacts: [
-                        "4pc Noblesse Oblige"
-                    ],
-                    substats: [
-                        "HP%",
-                        "Energy Recharge",
-                        "HP",
-                        "ATK%"
-                    ]
-                }
-            ]
-        },
         {
             name: "Traveler Pyro Vaporize Team",
             rank: "S",
@@ -136,24 +169,6 @@ exports.travelerPyro = {
                     ]
                 },
                 {
-                    characterId: "traveler-pyro",
-                    role: "Support",
-                    roleDesc: "Pyro Support. Enables Pyro resonance, helps keep Pyro/Hydro aura, and buffs the team with Instructor/Scroll.",
-                    weapons: [
-                        "Favonius Sword",
-                        "Sacrificial Sword"
-                    ],
-                    artifacts: [
-                        "4pc Scroll of the Hero of Cinder City"
-                    ],
-                    substats: [
-                        "Energy Recharge",
-                        "CRIT Rate",
-                        "CRIT DMG",
-                        "ATK%"
-                    ]
-                },
-                {
                     characterId: "xilonen",
                     role: "Support / Healer",
                     roleDesc: "Geo Shredder & Healer. Shreds enemy Elemental resistance and provides healing.",
@@ -170,10 +185,111 @@ exports.travelerPyro = {
                         "DEF",
                         "CRIT Rate"
                     ]
+                },
+                {
+                    characterId: "traveler-pyro",
+                    role: "Support",
+                    roleDesc: "Pyro Support. Enables Pyro resonance, helps keep Pyro/Hydro aura, and buffs the team with Instructor/Scroll.",
+                    weapons: [
+                        "Favonius Sword",
+                        "Sacrificial Sword"
+                    ],
+                    artifacts: [
+                        "4pc Scroll of the Hero of Cinder City"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "CRIT Rate",
+                        "CRIT DMG",
+                        "ATK%"
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Traveler Pyro Burning Team",
+            rank: "S",
+            description: "A Burning-focused team where Kinich deals high Dendro damage on-field, Emilie acts as an off-field Dendro Sub DPS, Bennett provides massive ATK buffs and healing, and Pyro Traveler applies consistent off-field Pyro.",
+            members: [
+                {
+                    characterId: "kinich",
+                    role: "Main DPS",
+                    roleDesc: "On-field Dendro DPS. Uses his Elemental Skill to trigger loop shots and deals massive damage.",
+                    weapons: [
+                        "Fang of the Mountain King",
+                        "Earth Shaker"
+                    ],
+                    artifacts: [
+                        "4pc Obsidian Codex"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "emilie",
+                    role: "Sub DPS",
+                    roleDesc: "Off-field Dendro DPS. Amplifies Burning reaction damage and deals high consistent damage.",
+                    weapons: [
+                        "Lumidouce Elegy",
+                        "Deathmatch"
+                    ],
+                    artifacts: [
+                        "4pc Unfinished Reverie"
+                    ],
+                    substats: [
+                        "CRIT DMG",
+                        "CRIT Rate",
+                        "ATK%",
+                        "Energy Recharge"
+                    ]
+                },
+                {
+                    characterId: "bennett",
+                    role: "Support",
+                    roleDesc: "Healer/Buffer. Provides massive ATK buff and consistent healing via Elemental Burst.",
+                    weapons: [
+                        "Mistsplitter Reforged",
+                        "Favonius Sword"
+                    ],
+                    artifacts: [
+                        "4pc Noblesse Oblige"
+                    ],
+                    substats: [
+                        "HP%",
+                        "Energy Recharge",
+                        "HP",
+                        "ATK%"
+                    ]
+                },
+                {
+                    characterId: "traveler-pyro",
+                    role: "Support",
+                    roleDesc: "Pyro Support. Provides Pyro resonance, off-field Pyro application, and team buffs via Scroll of the Hero set.",
+                    weapons: [
+                        "Favonius Sword",
+                        "Peak Patrol Song"
+                    ],
+                    artifacts: [
+                        "4pc Scroll of the Hero of Cinder City"
+                    ],
+                    substats: [
+                        "Energy Recharge",
+                        "CRIT Rate",
+                        "CRIT DMG",
+                        "ATK%"
+                    ]
                 }
             ]
         }
     ],
+    sands: ["Hiệu Quả Nạp", "Tấn Công%"],
+    goblet: ["Sát Thương Nguyên Tố Hỏa"],
+    circlet: ["Tỷ Lệ Bạo Kích", "Sát Thương Bạo Kích"],
+    subStatsPriority: ["Energy Recharge", "CRIT Rate", "CRIT DMG", "ATK%", "DEF%"],
     bestWeapons: [
         {
             rank: 1,
@@ -184,7 +300,7 @@ exports.travelerPyro = {
             refinement: "R5",
             passiveDescVi: "Kích hoạt bạo kích có tỷ lệ sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, hồi năng lượng cho toàn đội.",
             passiveDescEn: "CRIT hits generate Energy particles, accelerating team Burst uptime.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Zephyrus.webp"
         },
         {
             rank: 2,
@@ -195,7 +311,7 @@ exports.travelerPyro = {
             refinement: "R1",
             passiveDescVi: "Sau khi dùng Kỹ Năng Nguyên Tố hoặc Nộ, tăng sát thương cho toàn đội 24% trong 15s.",
             passiveDescEn: "After using Skill or Burst, increases party damage by 24% for 15s.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_XochitlsTube.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_XochitlsTube.webp"
         },
         {
             rank: 3,
@@ -206,7 +322,7 @@ exports.travelerPyro = {
             refinement: "R1",
             passiveDescVi: "Kích hoạt phản ứng nguyên tố tăng Tấn Công đánh thường/trọng kích/tấn công khi đáp thêm 16% và Tấn Công 20% cho cả đội.",
             passiveDescEn: "Triggering reactions builds stacks; at max, boosts team's Normal/Charged/Plunging ATK by 16% and ATK by 20%.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Widsith.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Widsith.webp"
         },
         {
             rank: 4,
@@ -217,7 +333,7 @@ exports.travelerPyro = {
             refinement: "R1",
             passiveDescVi: "Gia tăng HP và chuyển hóa HP thành Tinh Thông Nguyên Tố cho toàn đội từ 100-200 điểm, tối ưu hóa phản ứng.",
             passiveDescEn: "HP% substat and passive grant team 100-200 Elemental Mastery, perfect for Vaporize/Melt.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Deshret.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Deshret.webp"
         },
         {
             rank: 5,
@@ -228,124 +344,34 @@ exports.travelerPyro = {
             refinement: "R5",
             passiveDescVi: "Khi Kỹ Năng Nguyên Tố gây sát thương có tỷ lệ làm mới thời gian chờ kỹ năng đó, cho phép kích hoạt kỹ năng liên tiếp.",
             passiveDescEn: "Resets Skill cooldown on hit, allowing double Tap Ring or Hold Coordinated attacks.",
-            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Fossil.png"
+            iconUrl: "/assets/weapons/UI_EquipIcon_Sword_Fossil.webp"
         }
     ],
     bestArtifacts: [
         {
             setNameVi: "Bức Tranh Dũng Sĩ Thành Tro Tàn",
             setNameEn: "Scroll of the Hero of Cinder City",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "DEF%"
-            ]
-        },
-        {
-            setNameVi: "Thiên Nham Vững Chắc",
-            setNameEn: "Tenacity of the Millelith",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "DEF%"
-            ]
-        },
-        {
-            setNameVi: "Nghi Thức Tông Thất Cổ",
-            setNameEn: "Noblesse Oblige",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "DEF%"
-            ]
-        },
-        {
-            setNameVi: "Giáo Quan",
-            setNameEn: "Instructor",
-            pieces: 4,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "DEF%"
-            ]
+            pieces: 4
         },
         {
             setNameVi: "Mix 2 bộ Hiệu Quả Nạp +20%",
             setNameEn: "Mix 2 bộ Hiệu Quả Nạp +20%",
-            pieces: 2,
-            sands: [
-                "Hiệu Quả Nạp",
-                "Tấn Công%"
-            ],
-            goblet: [
-                "Sát Thương Nguyên Tố Hỏa"
-            ],
-            circlet: [
-                "Tỷ Lệ Bạo Kích",
-                "Sát Thương Bạo Kích"
-            ],
-            subStatsPriority: [
-                "Energy Recharge",
-                "CRIT Rate",
-                "CRIT DMG",
-                "ATK%",
-                "DEF%"
-            ]
+            pieces: 2
+        },
+        {
+            setNameVi: "Thiên Nham Vững Chắc",
+            setNameEn: "Tenacity of the Millelith",
+            pieces: 4
+        },
+        {
+            setNameVi: "Nghi Thức Tông Thất Cổ",
+            setNameEn: "Noblesse Oblige",
+            pieces: 4
+        },
+        {
+            setNameVi: "Giáo Quan",
+            setNameEn: "Instructor",
+            pieces: 4
         }
     ]
 };

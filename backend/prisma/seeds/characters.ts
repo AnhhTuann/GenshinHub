@@ -47,11 +47,13 @@ const getSplashUrl = (name: string) => {
   }
   const mapped = enkaNameMap[cleanName] || cleanName;
   const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-  const relativePath = `/assets/characters/UI_Gacha_AvatarImg_${urlSafe}_splash.webp`;
-  const absolutePath = path.join(__dirname, '../../../frontend/public', relativePath);
-  if (fs.existsSync(absolutePath)) {
-    return relativePath;
-  }
+  
+  const webpPath = `/assets/characters/UI_Gacha_AvatarImg_${urlSafe}_splash.webp`;
+  const pngPath = `/assets/characters/UI_Gacha_AvatarImg_${urlSafe}_splash.png`;
+  
+  if (fs.existsSync(path.join(__dirname, '../../../frontend/public', webpPath))) return webpPath;
+  if (fs.existsSync(path.join(__dirname, '../../../frontend/public', pngPath))) return pngPath;
+  
   return "";
 };
 

@@ -250,7 +250,7 @@ export default function ArtifactsAdmin() {
           {/* Icon URL */}
           <div className="col-span-2">
             <Controller control={control} name="iconUrl" render={({field})=>(
-              <ImageUrlInput label="Icon URL" value={field.value||''} onChange={field.onChange} error={errors.iconUrl?.message} placeholder="https://cdn.../artifact-icon.png"/>
+              <ImageUrlInput label="Icon URL" value={field.value||''} onChange={field.onChange} error={errors.iconUrl?.message} placeholder="https://cdn.../artifact-icon.webp"/>
             )}/>
           </div>
         </div>

@@ -216,7 +216,7 @@ export default function MaterialsAdmin() {
           </div>
           <div className="col-span-2">
             <Controller control={control} name="iconUrl" render={({field})=>(
-              <ImageUrlInput label="Icon URL" value={field.value||''} onChange={field.onChange} error={errors.iconUrl?.message} placeholder="https://cdn.../material-icon.png"/>
+              <ImageUrlInput label="Icon URL" value={field.value||''} onChange={field.onChange} error={errors.iconUrl?.message} placeholder="https://cdn.../material-icon.webp"/>
             )}/>
           </div>
         </div>

@@ -75,7 +75,7 @@ export default function Navbar() {
           >
             {/* Paimon Logo */}
             <div className="relative w-11 h-11 flex items-center justify-center rounded-xl overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.15)] group-hover:scale-105 transition-transform duration-300 border border-white/10 bg-black/50">
-              <img src="/logo.png" alt="GenshinHub Logo" className="w-full h-full object-cover scale-[1.1]" />
+              <img src="/logo.webp" alt="GenshinHub Logo" className="w-full h-full object-cover scale-[1.1]" />
             </div>
 
             {/* Text */}

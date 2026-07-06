@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'TCG - GenshinHub',
     description: 'Discover Genshin Impact TCG cards, decks, and strategy recommendations in GenshinHub.',
-    images: ['/icon.png'],
+    images: ['/icon.webp'],
     type: 'website',
   },
 };

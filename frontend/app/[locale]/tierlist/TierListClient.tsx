@@ -119,7 +119,7 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
             />
           ) : (
             <FallbackImage 
-              src={getImageUrl(item.iconUrl) || '/placeholder.png'} 
+              src={getImageUrl(item.iconUrl) || '/placeholder.webp'} 
               alt={name} 
               fill 
               className="object-contain drop-shadow-md scale-90 group-hover:scale-100 transition-transform duration-300" 

@@ -42,7 +42,7 @@ const jsonLd = {
       '@type': 'Organization',
       name: 'GenshinHub',
       url: siteUrl,
-      logo: `${siteUrl}/icon.png`,
+      logo: `${siteUrl}/icon.webp`,
       sameAs: [],
     },
     {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     description: 'Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.',
     images: [
       {
-        url: '/icon.png',
+        url: '/icon.webp',
         width: 512,
         height: 512,
         alt: 'GenshinHub logo',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GenshinHub - Genshin Impact Builds & Guides',
     description: 'Genshin Impact Database - Look up characters, builds, artifacts, weapons, and best team comps.',
-    images: ['/icon.png'],
+    images: ['/icon.webp'],
   },
   alternates: {
     canonical: '/',

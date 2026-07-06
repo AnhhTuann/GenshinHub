@@ -395,7 +395,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
                 <ImageUrlInput
                   label="Splash Art URL" required value={field.value}
                   onChange={field.onChange} error={errors.splashArtUrl?.message}
-                  placeholder="https://cdn.../Char_..._Splash_Art.png"
+                  placeholder="https://cdn.../Char_..._Splash_Art.webp"
                 />
               )}
             />

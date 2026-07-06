@@ -76,7 +76,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                 className="relative w-full aspect-[256/440] transition-transform duration-500 group-hover:-translate-y-2 drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
               >
                 <FallbackImage 
-                  src={`https://gi.yatta.moe/assets/UI/gcg/${card.icon}.png`}
+                  src={`https://gi.yatta.moe/assets/UI/gcg/${card.icon}.webp`}
                   alt={card.name}
                   fill
                   className="object-cover"
@@ -185,7 +185,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                         <div className="flex items-center gap-3.5">
                           <div className="w-12 h-12 relative shrink-0 rounded-[10px] overflow-hidden bg-[#0d1117] border border-white/5 flex items-center justify-center p-1">
                             <FallbackImage 
-                              src={`https://gi.yatta.moe/assets/UI/${skill.icon}.png`} 
+                              src={`https://gi.yatta.moe/assets/UI/${skill.icon}.webp`} 
                               alt={skill.name} 
                               fill 
                               className="object-contain scale-125 drop-shadow-md" 
@@ -300,7 +300,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                 {card.relatedEntries.map(rel => (
                   <Link href={`/tcg/${rel.id}`} key={rel.id} className="group relative w-[110px] aspect-[256/440] rounded-xl overflow-hidden shadow-lg border border-white/5 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-pointer">
                     <FallbackImage 
-                      src={`https://gi.yatta.moe/assets/UI/gcg/${rel.icon}.png`}
+                      src={`https://gi.yatta.moe/assets/UI/gcg/${rel.icon}.webp`}
                       alt={rel.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

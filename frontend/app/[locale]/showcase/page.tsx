@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Showcase - GenshinHub',
     description: 'Search player showcases and explore character builds from the Enka.Network API in GenshinHub.',
-    images: ['/icon.png'],
+    images: ['/icon.webp'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Showcase - GenshinHub',
     description: 'Search player showcases and explore character builds from the Enka.Network API in GenshinHub.',
-    images: ['/icon.png'],
+    images: ['/icon.webp'],
   },
 };
 

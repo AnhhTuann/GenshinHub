@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 function convertPath(oldPath) {
   if (!oldPath || !oldPath.includes('/assets/')) return oldPath;
   
-  return oldPath.replace(/\/images\/([a-zA-Z0-9_\-\/]+)\.png/g, (match, p1) => {
+  return oldPath.replace(/\/images\/([a-zA-Z0-9_\-\/]+)\.webp/g, (match, p1) => {
     let np = p1;
     np = np.replace(/^avatars\//, 'characters/');
     np = np.replace(/^splash\//, 'characters/');

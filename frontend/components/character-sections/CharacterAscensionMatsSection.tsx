@@ -78,7 +78,7 @@ export default function CharacterAscensionMatsSection({ ascensionMats, allMateri
       finalUrl = finalUrl.replace('https://enka.network/ui/', 'https://gi.yatta.moe/assets/UI/');
     }
     if (!finalUrl.match(/\.(png|jpg|jpeg|webp|svg)$/)) {
-      finalUrl += '.png';
+      finalUrl += '.webp';
     }
     return finalUrl;
   };

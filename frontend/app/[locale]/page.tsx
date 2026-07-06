@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GenshinHub — Genshin Impact Database',
     description: 'Everything you need to conquer Teyvat — builds, teams, weapons, artifacts and more.',
-    images: ['/icon.png'],
+    images: ['/icon.webp'],
     type: 'website',
   },
 };

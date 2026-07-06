@@ -54,8 +54,8 @@ async function syncAvatars() {
     // Nếu chưa có file này ở local, tiến hành tải và nén
     if (!localAvatars.has(localName)) {
       console.log(`[Avatar] Phát hiện nhân vật mới: ${charId}`);
-      // Đường dẫn tĩnh của Ambr: https://api.ambr.top/assets/UI/UI_AvatarIcon_{charId}.png
-      const imgUrl = `https://api.ambr.top/assets/UI/UI_AvatarIcon_${charId}.png`;
+      // Đường dẫn tĩnh của Ambr: https://api.ambr.top/assets/UI/UI_AvatarIcon_{charId}.webp
+      const imgUrl = `https://api.ambr.top/assets/UI/UI_AvatarIcon_${charId}.webp`;
       const buffer = await fetchImageBuffer(imgUrl);
       
       if (buffer) {
@@ -80,12 +80,12 @@ async function syncWeapons() {
   let newCount = 0;
 
   for (const weaponId of Object.keys(data.data.items)) {
-    // Ambr format: weaponId.png
+    // Ambr format: weaponId.webp
     if (!localWeapons.has(weaponId)) {
       console.log(`[Weapon] Phát hiện vũ khí mới: ${weaponId}`);
       // Tùy theo cấu trúc icon vũ khí của Ambr. VD: UI_EquipIcon_Pole_Homa
       // Tuy nhiên đây là ví dụ demo logic Auto-Sync
-      const imgUrl = `https://api.ambr.top/assets/UI/${data.data.items[weaponId].icon}.png`;
+      const imgUrl = `https://api.ambr.top/assets/UI/${data.data.items[weaponId].icon}.webp`;
       const buffer = await fetchImageBuffer(imgUrl);
       
       if (buffer) {

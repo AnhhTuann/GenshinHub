@@ -7,7 +7,7 @@ import ScrollEntrance from '@/components/ScrollEntrance';
 import EditableWeaponsSection from '@/components/character-sections/EditableWeaponsSection';
 import EditableArtifactsSection from '@/components/character-sections/EditableArtifactsSection';
 import EditableStatsSection from '@/components/character-sections/EditableStatsSection';
-import EditableMetaTeamsSection from '@/components/character-sections/EditableMetaTeamsSection';
+import EditableMetaTeamsSection from '@/components/characters/client/EditableMetaTeamsSection';
 import CharacterStatsSection from '@/components/character-sections/CharacterStatsSection';
 import CharacterAscensionMatsSection from '@/components/character-sections/CharacterAscensionMatsSection';
 import CharacterTalentMatsSection from '@/components/character-sections/CharacterTalentMatsSection';

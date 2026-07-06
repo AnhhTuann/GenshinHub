@@ -9,7 +9,7 @@ import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
 
 // Lazy load the overlay — only loads JS when first triggered
-const SplashArtOverlay = dynamic(() => import('./ui/SplashArtOverlay'), { ssr: false });
+const SplashArtOverlay = dynamic(() => import('@/components/ui/SplashArtOverlay'), { ssr: false });
 
 /* ─── Element color maps ─────────────────────────────── */
 const ELEMENT_COLOR: Record<string, string> = {

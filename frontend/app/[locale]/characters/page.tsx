@@ -1,4 +1,4 @@
-import CharacterGallery from '@/components/CharacterGallery';
+import CharacterGallery from '@/components/characters/client/CharacterGallery';
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
 import { getTranslations, setRequestLocale } from 'next-intl/server';

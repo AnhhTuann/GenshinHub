@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useAdmin } from '@/hooks/useAdmin';
-import TeamFormModal from '../admin/TeamFormModal';
+import TeamFormModal from '@/components/admin/TeamFormModal';
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';

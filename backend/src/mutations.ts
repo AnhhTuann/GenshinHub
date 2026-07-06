@@ -122,7 +122,7 @@ export const Mutation = {
     // Extract relations
     const { bestWeapons, bestArtifacts, signatureWeapons, teams, ...charData } = sanitizedInput;
     
-    const data = {
+    const createData = {
       ...charData,
       titleEn: charData.titleEn || "",
       titleVi: charData.titleVi || "",
@@ -136,11 +136,25 @@ export const Mutation = {
       signatureWeapons: signatureWeapons || [],
     };
     
+    const updateData = {
+      ...charData,
+      ...(charData.titleEn !== undefined && { titleEn: charData.titleEn }),
+      ...(charData.titleVi !== undefined && { titleVi: charData.titleVi }),
+      ...(charData.descriptionEn !== undefined && { descriptionEn: charData.descriptionEn }),
+      ...(charData.descriptionVi !== undefined && { descriptionVi: charData.descriptionVi }),
+      ...(charData.region !== undefined && { region: charData.region }),
+      ...(charData.baseHp !== undefined && { baseHp: charData.baseHp }),
+      ...(charData.baseAtk !== undefined && { baseAtk: charData.baseAtk }),
+      ...(charData.baseDef !== undefined && { baseDef: charData.baseDef }),
+      ...(charData.talentPriority !== undefined && { talentPriority: charData.talentPriority }),
+      ...(signatureWeapons !== undefined && { signatureWeapons: signatureWeapons }),
+    };
+    
     // Upsert base character
     const updatedChar = await prisma.character.upsert({
       where: { id: charData.id },
-      update: data,
-      create: data,
+      update: updateData,
+      create: createData,
     });
 
     // Re-create relations if provided

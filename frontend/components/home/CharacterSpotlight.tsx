@@ -50,7 +50,7 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
           >
             {/* Avatar */}
             <FallbackImage
-              src={char.avatarUrl || '/assets/characters/avatars/UI_AvatarIcon_PlayerGirl.webp'}
+              src={char.avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
               alt={name}
               fill
               sizes="112px"

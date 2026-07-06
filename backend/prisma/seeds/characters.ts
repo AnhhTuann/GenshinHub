@@ -32,7 +32,7 @@ const getAvatarUrl = (name: string) => {
   }
   const mapped = enkaNameMap[cleanName] || cleanName;
   const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-  const relativePath = `/assets/characters/avatars/UI_AvatarIcon_${urlSafe}_avatar.webp`;
+  const relativePath = `/assets/characters/${urlSafe}/avatar.webp`;
   const absolutePath = path.join(__dirname, '../../../frontend/public', relativePath);
   if (fs.existsSync(absolutePath)) {
     return relativePath;
@@ -47,7 +47,7 @@ const getSplashUrl = (name: string) => {
   }
   const mapped = enkaNameMap[cleanName] || cleanName;
   const urlSafe = mapped.replace(/[^a-zA-Z]/g, '');
-  const relativePath = `/assets/characters/splash/UI_Gacha_AvatarImg_${urlSafe}_splash.webp`;
+  const relativePath = `/assets/characters/${urlSafe}/splash.webp`;
   const absolutePath = path.join(__dirname, '../../../frontend/public', relativePath);
   if (fs.existsSync(absolutePath)) {
     return relativePath;

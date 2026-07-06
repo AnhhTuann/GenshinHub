@@ -24,7 +24,7 @@ function getOriginalImageUrl(url) {
 }
 
 function cleanFilename(name) {
-    return name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.png';
+    return name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.webp';
 }
 
 elements.each((i, el) => {

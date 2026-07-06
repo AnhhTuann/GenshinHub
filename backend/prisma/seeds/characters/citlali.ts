@@ -416,7 +416,9 @@ export const citlali = {
   "Elemental Burst",
   "Normal Attack"
 ],
-  signatureWeapons: [],
+  signatureWeapons: [
+  "Starcaller's Watch"
+],
   teams: [
     {
         name: "Citlali Permafrost Freeze",

@@ -361,6 +361,7 @@ import { xinyan } from './characters/xinyan';
 import { rosaria } from './characters/rosaria';
 import { huTao } from './characters/hu-tao';
 import { kaedeharaKazuha } from './characters/kaedehara-kazuha';
+import { sandrone } from './characters/sandrone';
 import { yanfei } from './characters/yanfei';
 import { yoimiya } from './characters/yoimiya';
 import { thoma } from './characters/thoma';

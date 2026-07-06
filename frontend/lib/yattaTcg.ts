@@ -40,6 +40,7 @@ export interface TcgTalent {
   tags: Record<string, string>;
   icon: string;
   keywords?: Record<string, string>;
+  subSkills?: Record<string, any>;
 }
 
 /**

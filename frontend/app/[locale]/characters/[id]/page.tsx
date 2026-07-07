@@ -14,6 +14,7 @@ import CharacterTalentMatsSection from '@/components/character-sections/Characte
 import CharacterHero from '@/components/characters/server/CharacterHero';
 import CharacterOverview from '@/components/characters/server/CharacterOverview';
 import WishIntro from '@/components/WishIntro';
+import ThemeSetter from '@/context/ThemeSetter';
 
 const EL_COLOR: Record<string, string> = {
   Pyro:    '#ff6b4a',
@@ -126,6 +127,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
 
   return (
     <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #04040a)' }}>
+      <ThemeSetter element={character.element} />
       {/* ── JSON-LD Schema ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       

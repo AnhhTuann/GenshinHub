@@ -12,6 +12,7 @@ import { UserProvider } from '@/context/UserContext';
 import { UISoundProvider } from '@/context/UISoundContext';
 import CustomCursor from '@/components/shared/CustomCursor';
 import PageTransition from '@/components/shared/PageTransition';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -142,8 +143,9 @@ export default async function RootLayout({ children, params }: { children: React
       </head>
       <body className={`${inter.variable} ${outfit.variable} ${cinzel.variable} ${jetbrainsMono.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <UISoundProvider>
-            <UserProvider>
+          <ThemeProvider>
+            <UISoundProvider>
+              <UserProvider>
               <CustomCursor />
               <Toaster 
               position="bottom-center"
@@ -196,6 +198,7 @@ export default async function RootLayout({ children, params }: { children: React
             <AdminModeToggle />
             </UserProvider>
           </UISoundProvider>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

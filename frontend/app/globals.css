@@ -26,6 +26,11 @@
   --border-strong:  rgba(255,255,255,0.13);
   --border-gold:    rgba(200,168,75,0.30);
 
+  /* ── Dynamic Theme Colors ── */
+  --theme-main: #c8a84b; /* Default to Gold */
+  --theme-light: #f0d080;
+  --theme-glow: rgba(200,168,75,0.45);
+
   /* ── Primary accent — Archon Gold ── */
   --gold-100: #fff8e1;
   --gold-200: #ffefc3;
@@ -72,6 +77,51 @@
   --radius-xl:   1.25rem;
   --radius-2xl:  1.5rem;
   --radius-3xl:  2rem;
+}
+
+/* =====================================================
+   THEME CLASSES
+   ===================================================== */
+.theme-pyro {
+  --theme-main: #ff6b4a;
+  --theme-light: #ffa48a;
+  --theme-glow: rgba(255,107,74,0.45);
+}
+.theme-hydro {
+  --theme-main: #4fc3f7;
+  --theme-light: #a4e5fb;
+  --theme-glow: rgba(79,195,247,0.45);
+}
+.theme-cryo {
+  --theme-main: #80deea;
+  --theme-light: #b4f1f8;
+  --theme-glow: rgba(128,222,234,0.45);
+}
+.theme-electro {
+  --theme-main: #ce93d8;
+  --theme-light: #e5c3e9;
+  --theme-glow: rgba(206,147,216,0.45);
+}
+.theme-anemo {
+  --theme-main: #4db6ac;
+  --theme-light: #8cdcd5;
+  --theme-glow: rgba(77,182,172,0.45);
+}
+.theme-geo {
+  --theme-main: #ffd54f;
+  --theme-light: #ffeaa7;
+  --theme-glow: rgba(255,213,79,0.45);
+}
+.theme-dendro {
+  --theme-main: #aed581;
+  --theme-light: #d6eab1;
+  --theme-glow: rgba(174,213,129,0.45);
+}
+
+@theme {
+  --color-theme-main: var(--theme-main);
+  --color-theme-light: var(--theme-light);
+  --color-theme-glow: var(--theme-glow);
 }
 
 /* =====================================================
@@ -130,13 +180,13 @@ select option {
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-void); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--gold-600), var(--gold-500));
+  background: linear-gradient(to bottom, var(--theme-main), color-mix(in srgb, var(--theme-main) 60%, black));
   border-radius: 99px;
   border: 1px solid rgba(0,0,0,0.3);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--gold-light), var(--gold-600));
-  box-shadow: 0 0 6px var(--gold-glow);
+  background: linear-gradient(to bottom, var(--theme-light), var(--theme-main));
+  box-shadow: 0 0 6px var(--theme-glow);
 }
 
 /* =====================================================
@@ -331,19 +381,21 @@ select option {
 
 /* ── Gradient text ── */
 .text-gradient-gold {
-  background: linear-gradient(135deg, var(--gold-200) 0%, var(--gold-light) 30%, var(--gold-500) 65%, var(--gold-600) 100%);
+  background: linear-gradient(135deg, var(--theme-light), var(--theme-main));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
 .text-gradient-gold-animated {
-  background: linear-gradient(270deg, var(--gold-200), var(--gold-light), var(--gold-500), var(--gold-600), var(--gold-light));
-  background-size: 300% 300%;
+  background: linear-gradient(135deg, #fff8e1 0%, var(--theme-light) 40%, var(--theme-main) 70%, var(--theme-light) 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: goldShimmer 4s ease infinite;
+  background-clip: text;
+  animation: shimmer-text 5s linear infinite;
 }
+
 .text-gradient-white {
   background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.75) 100%);
   -webkit-background-clip: text;
@@ -702,7 +754,7 @@ select option {
   height: 100%;
   background: radial-gradient(
     800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-    rgba(255, 255, 255, 0.06),
+    color-mix(in srgb, var(--theme-light) 15%, transparent),
     transparent 40%
   );
   pointer-events: none;

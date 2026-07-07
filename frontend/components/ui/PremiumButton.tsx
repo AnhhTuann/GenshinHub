@@ -28,7 +28,7 @@ export default function PremiumButton({
 
   const baseStyles = "group relative inline-flex items-center justify-center gap-2.5 font-black text-sm px-8 py-3.5 rounded-2xl transition-all duration-300 overflow-hidden uppercase tracking-wider";
   
-  const primaryStyles = "text-black bg-gradient-to-r from-[#f0d080] via-[#c8a84b] to-[#f0d080] shadow-[0_6px_28px_rgba(200,168,75,0.35)]";
+  const primaryStyles = "text-black bg-gradient-to-r from-[var(--theme-light)] via-[var(--theme-main)] to-[var(--theme-light)] shadow-[0_6px_28px_var(--theme-glow)]";
   const secondaryStyles = "text-white/85 bg-white/5 border border-white/10 hover:border-white/20 hover:text-white";
 
   const content = (

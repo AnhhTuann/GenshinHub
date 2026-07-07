@@ -12,14 +12,19 @@ const intlMiddleware = createMiddleware(routing);
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  const localesPattern = '(en|vi|zh|ja|ko|es|fr|ru|th|de|id|pt|it|tr)';
+  
+  // Extract locale safely
+  const match = pathname.match(new RegExp(`^/(${localesPattern})(/|$)`));
+  const locale = match ? match[1] : 'en';
+
   // 1. Admin Authentication Check
-  const isAdminRoute = /^\/(vi|en)\/admin(\/(?!login).*)?$/.test(pathname);
+  const isAdminRoute = new RegExp(`^/${localesPattern}/admin(/(?!login).*)?$`).test(pathname);
   
   if (isAdminRoute) {
     const token = request.cookies.get('admin_token')?.value;
     
     if (!token) {
-      const locale = pathname.startsWith('/en') ? 'en' : 'vi';
       return NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
     }
     
@@ -27,7 +32,6 @@ export async function middleware(request: NextRequest) {
       await jwtVerify(token, ADMIN_SECRET);
       // Auth passed, proceed to intl middleware
     } catch {
-      const locale = pathname.startsWith('/en') ? 'en' : 'vi';
       const response = NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
       response.cookies.delete('admin_token');
       return response;
@@ -35,11 +39,10 @@ export async function middleware(request: NextRequest) {
   }
 
   // 2. User Profile Authentication Check
-  const isProfileRoute = /^\/(vi|en)\/profile(\/.*)?$/.test(pathname);
+  const isProfileRoute = new RegExp(`^/${localesPattern}/profile(/.*)?$`).test(pathname);
 
   if (isProfileRoute) {
     const token = request.cookies.get('user_token')?.value;
-    const locale = pathname.startsWith('/en') ? 'en' : 'vi';
     
     if (!token) {
       return NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));

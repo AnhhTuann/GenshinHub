@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
@@ -20,8 +20,15 @@ const EL_COLOR: Record<string, string> = {
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthdaysProps) {
+  const [isMounted, setIsMounted] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const upcoming = useMemo(() => {
+    if (!isMounted) return [];
     const today = new Date();
     const currentMonth = today.getMonth() + 1;
     const currentDay = today.getDate();
@@ -44,9 +51,9 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
       })
       .sort((a, b) => a.sortScore - b.sortScore)
       .slice(0, 8);
-  }, [characters]);
+  }, [characters, isMounted]);
 
-  if (upcoming.length === 0) return null;
+  if (!isMounted || upcoming.length === 0) return null;
 
   return (
     <motion.div 

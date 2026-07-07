@@ -26,9 +26,9 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
                 onClick={link.href === '/' ? handleLogoClick : undefined}
                 className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-bold"
                 style={{
-                  background: active ? 'rgba(200,168,75,0.10)' : 'transparent',
-                  border: active ? '1px solid rgba(200,168,75,0.20)' : '1px solid transparent',
-                  color: active ? '#f0d080' : 'rgba(255,255,255,0.55)',
+                  background: active ? 'color-mix(in srgb, var(--theme-main) 10%, transparent)' : 'transparent',
+                  border: active ? '1px solid color-mix(in srgb, var(--theme-main) 20%, transparent)' : '1px solid transparent',
+                  color: active ? 'var(--theme-light)' : 'rgba(255,255,255,0.55)',
                   transition: 'background 0.2s ease, border-color 0.2s ease, color 0.2s ease',
                 }}
               >

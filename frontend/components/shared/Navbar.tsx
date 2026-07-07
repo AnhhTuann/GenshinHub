@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { MobileMenu } from './navbar/MobileMenu';
 import { UserNav } from './navbar/UserNav';
 import UISoundToggle from './UISoundToggle';
+import LanguageDropdown from './navbar/LanguageDropdown';
 
 export default function Navbar() {
   const pathname   = usePathname();
@@ -81,37 +82,22 @@ export default function Navbar() {
             </div>
 
             {/* Text */}
-            <div className="hidden sm:flex flex-col leading-none gap-[2px]">
+            <div className="hidden sm:flex items-baseline gap-0.5">
               <span
-                className="text-[15px] font-black tracking-[0.14em] uppercase leading-none"
+                className="text-lg font-black tracking-widest uppercase"
                 style={{
                   fontFamily: 'var(--font-cinzel, Cinzel, serif)',
                   background: 'linear-gradient(135deg, #fff8e1 0%, #f0c84b 40%, #c8a84b 70%, #f0d080 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                  textShadow: 'none',
                 }}
               >
                 Genshin
               </span>
-              <div className="flex items-center gap-1.5">
-                <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, rgba(200,168,75,0.6), transparent)' }} />
-                <span
-                  className="text-[8px] font-bold tracking-[0.35em] uppercase"
-                  style={{ color: 'rgba(200,168,75,0.55)' }}
-                >
-                  Hub
-                </span>
-                <div className="w-0.5 h-0.5 rounded-full" style={{ background: 'rgba(200,168,75,0.4)' }} />
-                <span
-                  className="text-[8px] font-bold tracking-[0.35em] uppercase"
-                  style={{ color: 'rgba(255,255,255,0.22)' }}
-                >
-                  Wiki
-                </span>
-                <div className="h-px flex-1" style={{ background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.2))' }} />
-              </div>
+              <span className="text-lg font-black tracking-widest uppercase text-white/90" style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}>
+                Hub
+              </span>
             </div>
           </Link>
 
@@ -126,16 +112,16 @@ export default function Navbar() {
                   onClick={link.href === '/' ? handleLogoClick : undefined}
                   className={`relative px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider whitespace-nowrap group transition-all duration-200 ${
                     active
-                      ? 'text-[#f0d080] bg-[#c8a84b]/10'
-                      : 'text-white/40 hover:text-[#f0d080] hover:bg-white/5'
+                      ? 'text-[var(--theme-light)] bg-[var(--theme-main)]/10'
+                      : 'text-white/40 hover:text-[var(--theme-light)] hover:bg-white/5'
                   }`}
                 >
                   {link.label}
-                  {/* Active gold dot */}
+                  {/* Active dot */}
                   {active && (
                     <span
                       className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
-                      style={{ background: '#c8a84b', boxShadow: '0 0 4px rgba(200,168,75,0.8)' }}
+                      style={{ background: 'var(--theme-main)', boxShadow: '0 0 4px var(--theme-glow)' }}
                     />
                   )}
                 </Link>
@@ -168,27 +154,7 @@ export default function Navbar() {
             <UISoundToggle />
 
             {/* Language switch */}
-            <div
-              className="flex items-center rounded-xl overflow-hidden"
-              style={{
-                background: 'rgba(13,13,20,0.6)',
-                border: '1px solid rgba(255,255,255,0.06)',
-              }}
-            >
-              {(['vi', 'en'] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => router.replace(pathname, { locale: l })}
-                  className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-widest transition-all duration-200 ${
-                    locale === l
-                      ? 'text-[#f0d080] bg-[#c8a84b]/15'
-                      : 'text-white/30 hover:text-[#f0d080] hover:bg-white/5'
-                  }`}
-                >
-                  {l}
-                </button>
-              ))}
-            </div>
+            <LanguageDropdown />
 
             {/* Hamburger */}
             <button
@@ -230,7 +196,7 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 h-[2px]"
           style={{
             width: `${scrollPct}%`,
-            background: 'linear-gradient(90deg, #8a6820, #c8a84b, #f0d080)',
+            background: 'linear-gradient(90deg, transparent, var(--theme-main), var(--theme-light))',
             opacity: scrolled ? 0.75 : 0,
             transition: 'opacity 0.3s ease',
           }}

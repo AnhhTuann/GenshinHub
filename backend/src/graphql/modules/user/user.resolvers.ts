@@ -136,5 +136,28 @@ export const userResolvers = {
       await prisma.userTeam.delete({ where: { id } });
       return true;
     },
+
+    syncGachaUrl: async (_: unknown, { url }: { url: string }, { prisma, userId }: Context) => {
+      if (!userId) throw new Error('Vui lòng đăng nhập');
+      
+      // MOCK LOGIC for parsing Gacha URL and fetching data
+      // In a real app, you would parse authkey from URL and fetch hk4e-api-os.mihoyo.com
+      // For this demo, we simulate a successful fetch if URL starts with mock:// or is any string
+      
+      const mockStats = {
+        character: { pulls: Math.floor(Math.random() * 50) + 20, pity: 90, guaranteed: Math.random() > 0.5 },
+        weapon: { pulls: Math.floor(Math.random() * 30), pity: 80, guaranteed: false },
+        standard: { pulls: Math.floor(Math.random() * 70), pity: 90, guaranteed: false },
+        winRate: 50 + Math.floor(Math.random() * 30),
+        totalPulls: 1000 + Math.floor(Math.random() * 500)
+      };
+
+      await prisma.user.update({
+        where: { id: userId },
+        data: { gachaStats: mockStats }
+      });
+
+      return mockStats;
+    },
   },
 };

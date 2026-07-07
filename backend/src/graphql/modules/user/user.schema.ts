@@ -51,6 +51,20 @@ export const userSchema = `
     avatarUrl: String
   }
 
+  type GachaBannerStats {
+    pulls: Int!
+    pity: Int!
+    guaranteed: Boolean
+  }
+
+  type GachaStats {
+    character: GachaBannerStats!
+    weapon: GachaBannerStats!
+    standard: GachaBannerStats!
+    winRate: Float!
+    totalPulls: Int!
+  }
+
   type UserTeam {
     id: String!
     name: String!
@@ -70,6 +84,7 @@ export const userSchema = `
     register(input: RegisterInput!): AuthPayload!
     login(email: String!, password: String!): AuthPayload!
     updateProfile(input: UpdateProfileInput!): User!
+    syncGachaUrl(url: String!): GachaStats!
     toggleFavorite(characterId: String!): FavoriteResult!
     addToWishlist(characterId: String!, note: String): UserWishlistItem!
     removeFromWishlist(wishlistId: String!): Boolean!

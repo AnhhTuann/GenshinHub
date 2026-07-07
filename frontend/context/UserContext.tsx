@@ -14,6 +14,13 @@ export interface User {
   favoriteIds?: string[];
   wishlist?: any[];
   teams?: any[];
+  gachaStats?: {
+    character: { pulls: number, pity: number, guaranteed?: boolean };
+    weapon: { pulls: number, pity: number, guaranteed?: boolean };
+    standard: { pulls: number, pity: number, guaranteed?: boolean };
+    winRate: number;
+    totalPulls: number;
+  };
 }
 
 interface UserContextType {

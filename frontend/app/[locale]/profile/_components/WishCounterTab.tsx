@@ -1,18 +1,50 @@
 "use client";
 
-import { User } from '@/context/UserContext';
-import { PieChart, Info, History } from 'lucide-react';
+import { User, useUser } from '@/context/UserContext';
+import { PieChart, Info, History, Link, Loader2 } from 'lucide-react';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function WishCounterTab({ user }: { user: User }) {
-  // Simulated data for demo
-  const [stats] = useState({
-    character: { pulls: 74, pity: 90, guaranteed: true },
-    weapon: { pulls: 10, pity: 80, guaranteed: false },
-    standard: { pulls: 45, pity: 90 },
-    winRate: 65,
-    totalPulls: 1250,
-  });
+  const { refreshUser } = useUser();
+  const [urlInput, setUrlInput] = useState('');
+  const [syncing, setSyncing] = useState(false);
+  
+  // Use DB stats if available, otherwise default to 0
+  const stats = user.gachaStats || {
+    character: { pulls: 0, pity: 90, guaranteed: false },
+    weapon: { pulls: 0, pity: 80, guaranteed: false },
+    standard: { pulls: 0, pity: 90 },
+    winRate: 0,
+    totalPulls: 0,
+  };
+
+  const handleSync = async () => {
+    if (!urlInput.trim()) {
+      toast.error('Vui lòng nhập URL Script!');
+      return;
+    }
+    
+    setSyncing(true);
+    try {
+      const res = await fetch('/api/auth/gacha', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: urlInput }),
+      });
+      
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Sync failed');
+      
+      toast.success('Đồng bộ dữ liệu thành công!');
+      setUrlInput('');
+      await refreshUser(); // Fetch user again to get new gachaStats
+    } catch (err: any) {
+      toast.error(err.message);
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   const getProgressColor = (pulls: number, pity: number) => {
     const ratio = pulls / pity;
@@ -73,14 +105,32 @@ export default function WishCounterTab({ user }: { user: User }) {
           <PieChart className="w-48 h-48 text-[#c8a84b]" />
         </div>
 
-        <div className="flex items-center justify-between mb-8 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 relative z-10 gap-4">
           <h3 className="text-lg font-black uppercase tracking-widest text-[#f0d080] flex items-center gap-2">
             <History className="w-5 h-5" />
             Wish Statistics
           </h3>
-          <button className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-white transition-colors">
-            Import Data (Script)
-          </button>
+          
+          <div className="flex items-center gap-2 w-full md:w-auto">
+            <div className="relative flex-1 md:w-80">
+              <Link className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+              <input
+                type="text"
+                value={urlInput}
+                onChange={(e) => setUrlInput(e.target.value)}
+                placeholder="Paste Gacha URL script here..."
+                className="w-full bg-black/50 border border-white/20 rounded-xl pl-9 pr-4 py-2 text-white text-sm focus:border-[#c8a84b] outline-none transition-colors"
+                disabled={syncing}
+              />
+            </div>
+            <button
+              onClick={handleSync}
+              disabled={syncing}
+              className="px-4 py-2 rounded-xl bg-[#c8a84b] hover:bg-[#f0d080] text-black text-xs font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shrink-0"
+            >
+              {syncing ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Sync'}
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">

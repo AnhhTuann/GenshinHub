@@ -185,6 +185,7 @@ model User {
   displayName String?
   avatarUrl   String?
   bio         String?
+  gachaStats  Json?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

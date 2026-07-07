@@ -12,8 +12,11 @@ import { Heart, Star, Users, Loader2 } from 'lucide-react';
 import FavoritesTab from './_components/FavoritesTab';
 import WishlistTab from './_components/WishlistTab';
 import TeamsTab from './_components/TeamsTab';
+import CalculatorTab from './_components/CalculatorTab';
+import WishCounterTab from './_components/WishCounterTab';
+import { Calculator, PieChart } from 'lucide-react';
 
-type Tab = 'profile' | 'favorites' | 'wishlist' | 'teams';
+type Tab = 'profile' | 'favorites' | 'wishlist' | 'teams' | 'calculator' | 'wishcounter';
 
 export default function ProfilePage() {
   const { user, loading } = useUser();
@@ -25,7 +28,7 @@ export default function ProfilePage() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.replace('#', '');
-      if (['favorites', 'wishlist', 'teams'].includes(hash)) {
+      if (['favorites', 'wishlist', 'teams', 'calculator', 'wishcounter'].includes(hash)) {
         setActiveTab(hash as Tab);
       }
     }
@@ -93,6 +96,8 @@ export default function ProfilePage() {
               { id: 'favorites', label: 'Favorites', icon: <Heart className="w-4 h-4" /> },
               { id: 'wishlist', label: 'Wishlist', icon: <Star className="w-4 h-4" /> },
               { id: 'teams', label: 'My Teams', icon: <Users className="w-4 h-4" /> },
+              { id: 'calculator', label: 'Calculator', icon: <Calculator className="w-4 h-4" /> },
+              { id: 'wishcounter', label: 'Wish Counter', icon: <PieChart className="w-4 h-4" /> },
             ].map(tab => (
               <button
                 key={tab.id}
@@ -136,6 +141,8 @@ export default function ProfilePage() {
           {activeTab === 'favorites' && <FavoritesTab user={user} />}
           {activeTab === 'wishlist' && <WishlistTab user={user} />}
           {activeTab === 'teams' && <TeamsTab user={user} />}
+          {activeTab === 'calculator' && <CalculatorTab user={user} />}
+          {activeTab === 'wishcounter' && <WishCounterTab user={user} />}
         </div>
       </div>
     </main>

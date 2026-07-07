@@ -9,6 +9,9 @@ import { Toaster } from 'react-hot-toast';
 import CommandPalette from '@/components/shared/CommandPalette';
 import { fetchGraphQL } from '@/lib/graphql';
 import { UserProvider } from '@/context/UserContext';
+import { UISoundProvider } from '@/context/UISoundContext';
+import CustomCursor from '@/components/shared/CustomCursor';
+import PageTransition from '@/components/shared/PageTransition';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -139,8 +142,10 @@ export default async function RootLayout({ children, params }: { children: React
       </head>
       <body className={`${inter.variable} ${outfit.variable} ${cinzel.variable} ${jetbrainsMono.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <UserProvider>
-            <Toaster 
+          <UISoundProvider>
+            <UserProvider>
+              <CustomCursor />
+              <Toaster 
               position="bottom-center"
               toastOptions={{
                 className: 'bg-[#0a0a0f]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
@@ -164,9 +169,12 @@ export default async function RootLayout({ children, params }: { children: React
                 }
               }}
             />
+            <div className="noise-overlay" />
             <CommandPalette items={searchItems} />
             <Navbar />
-            <div className="min-h-screen overflow-x-hidden">{children}</div>
+            <div className="min-h-screen overflow-x-hidden">
+              <PageTransition>{children}</PageTransition>
+            </div>
             <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">
               <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
@@ -186,7 +194,8 @@ export default async function RootLayout({ children, params }: { children: React
               </div>
             </footer>
             <AdminModeToggle />
-          </UserProvider>
+            </UserProvider>
+          </UISoundProvider>
         </NextIntlClientProvider>
       </body>
     </html>

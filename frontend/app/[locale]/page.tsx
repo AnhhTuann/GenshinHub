@@ -8,6 +8,8 @@ import DailyFarming from '@/components/home/DailyFarming';
 import ServerReset from '@/components/home/ServerReset';
 import FeatureGrid from '@/components/home/FeatureGrid';
 import CharacterSpotlight from '@/components/home/CharacterSpotlight';
+import HeroParticles from '@/components/home/HeroParticles';
+import PremiumButton from '@/components/ui/PremiumButton';
 
 export const metadata: Metadata = {
   title: 'GenshinHub — Genshin Impact Database & Builds',
@@ -83,6 +85,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             className="absolute inset-x-0 top-0 h-[400px] -z-10 pointer-events-none"
             style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 30%, rgba(200,168,75,0.08) 0%, transparent 70%)' }}
           />
+          <HeroParticles />
 
           {/* Badge */}
           <div
@@ -97,15 +100,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
           {/* Title */}
           <h1
-            className="text-6xl sm:text-7xl md:text-[90px] font-black uppercase tracking-tight leading-none mb-5"
+            className="text-6xl sm:text-7xl md:text-[90px] font-black uppercase tracking-tight leading-none mb-5 animate-name-reveal"
             style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}
           >
-            <span style={{
-              background: 'linear-gradient(135deg, #fff8e1 0%, #f0d080 30%, #c8a84b 60%, #f0d080 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
+            <span className="text-gradient-gold-animated">
               Genshin
             </span>
             <span className="text-white/90">Hub</span>
@@ -129,32 +127,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
           {/* CTAs */}
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <Link
-              href="/characters"
-              className="group inline-flex items-center gap-2.5 text-black font-black text-sm px-8 py-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 uppercase tracking-wider"
-              style={{
-                background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
-                boxShadow: '0 6px 28px rgba(200,168,75,0.35)',
-              }}
-            >
-              <span>⚔️</span>
+            <PremiumButton href="/characters" icon="⚔️">
               {locale === 'en' ? 'Browse Characters' : 'Xem Nhân Vật'}
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </Link>
-            <Link
-              href="/tierlist"
-              className="inline-flex items-center gap-2.5 font-bold text-sm px-8 py-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 uppercase tracking-wider"
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.10)',
-                color: 'rgba(255,255,255,0.85)',
-              }}
-            >
-              <span>🏆</span>
+            </PremiumButton>
+            
+            <PremiumButton href="/tierlist" variant="secondary" icon="🏆">
               {locale === 'en' ? 'Tier List' : 'Xếp Hạng'}
-            </Link>
+            </PremiumButton>
           </div>
         </section>
 

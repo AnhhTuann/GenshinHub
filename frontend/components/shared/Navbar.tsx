@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 import { MobileMenu } from './navbar/MobileMenu';
 import { UserNav } from './navbar/UserNav';
+import UISoundToggle from './UISoundToggle';
 
 export default function Navbar() {
   const pathname   = usePathname();
@@ -162,6 +163,9 @@ export default function Navbar() {
 
             {/* Auth Component */}
             <UserNav />
+
+            {/* UI Sound Toggle */}
+            <UISoundToggle />
 
             {/* Language switch */}
             <div

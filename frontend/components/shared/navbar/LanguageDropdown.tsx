@@ -5,7 +5,24 @@ import { usePathname, useRouter } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
-const LOCALES = ['en', 'vi', 'zh', 'ja', 'ko', 'es', 'fr', 'ru', 'th', 'de', 'id', 'pt', 'it', 'tr'];
+const LOCALE_NAMES: Record<string, string> = {
+  en: "English",
+  vi: "Tiếng Việt",
+  zh: "中文",
+  ja: "日本語",
+  ko: "한국어",
+  es: "Español",
+  fr: "Français",
+  ru: "Русский",
+  th: "ภาษาไทย",
+  de: "Deutsch",
+  id: "Bahasa Indonesia",
+  pt: "Português",
+  it: "Italiano",
+  tr: "Türkçe",
+};
+
+const LOCALES = Object.keys(LOCALE_NAMES);
 
 export default function LanguageDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +58,7 @@ export default function LanguageDropdown() {
         }}
       >
         <span className="text-white/80 text-[10px] font-black uppercase tracking-widest group-hover:text-[var(--theme-light)] transition-colors">
-          {locale}
+          {locale.toUpperCase()}
         </span>
         <motion.svg
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -59,19 +76,19 @@ export default function LanguageDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full right-0 mt-2 w-24 max-h-60 overflow-y-auto custom-scrollbar rounded-xl z-50 flex flex-col p-1 glass-strong border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+            className="absolute top-full right-0 mt-2 w-max min-w-[120px] max-h-60 overflow-y-auto custom-scrollbar rounded-xl z-50 flex flex-col p-1 glass-strong border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
           >
             {LOCALES.map((l) => (
               <button
                 key={l}
                 onClick={() => handleSelect(l)}
-                className={`px-3 py-2 text-[10px] font-black uppercase tracking-widest text-left rounded-lg transition-all duration-200 ${
+                className={`px-3 py-2 text-xs font-bold text-left rounded-lg transition-all duration-200 ${
                   locale === l
                     ? 'text-[var(--theme-main)] bg-white/5'
-                    : 'text-white/50 hover:text-[var(--theme-light)] hover:bg-white/5'
+                    : 'text-white/60 hover:text-[var(--theme-light)] hover:bg-white/5'
                 }`}
               >
-                {l}
+                {LOCALE_NAMES[l]}
               </button>
             ))}
           </motion.div>

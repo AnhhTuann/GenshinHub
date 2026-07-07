@@ -10,10 +10,13 @@
 | **graphql** | `16.14.x` | Ngôn ngữ truy vấn chính để định nghĩa kiểu dữ liệu và thao tác. |
 | **@prisma/client** | `5.10.x` | ORM (Object-Relational Mapping) tương tác với PostgreSQL qua TypeScript. |
 | **express** | `5.2.x` | Web framework tích hợp cùng Apollo Server thông qua `@as-integrations/express5`. |
-| **axios** | `1.16.x` | HTTP Client để gọi API ra bên ngoài trong các script cào dữ liệu (seeder). |
+| **axios** | `1.18.x` | HTTP Client để gọi API ra bên ngoài trong các script cào dữ liệu (seeder). |
 | **cors** & **helmet** | Mới nhất | Cấu hình bảo mật HTTP headers và cấp quyền truy cập chéo (CORS). |
 | **compression** & **lru-cache** | Mới nhất | Nén dữ liệu trả về và thiết lập bộ nhớ đệm (cache) giúp tăng tốc độ API. |
 | **dotenv** | `17.4.x` | Quản lý và tải các biến môi trường từ file `.env`. |
+| **@google/generative-ai** | `0.24.x` | SDK Gemini AI để generate dữ liệu nhân vật tự động. |
+| **multer** | `2.x` | Xử lý upload file ảnh (avatar, splash art) từ Admin Panel. |
+| **sharp** | `0.35.x` | Nén và chuyển đổi ảnh sang định dạng WebP tối ưu. |
 | **nodemon & ts-node** | `3.x / 10.x` | Môi trường phát triển giúp chạy file TypeScript và tự động restart server. |
 
 ## 📂 Cấu trúc thư mục (Directory Structure)

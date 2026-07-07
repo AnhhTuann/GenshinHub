@@ -24,11 +24,11 @@
 
 ```
 GenshinHub/
-├── frontend/               # Next.js 15 + React 19 + TailwindCSS 4
+├── frontend/               # Next.js 15 + React 19 + TailwindCSS 4 + next-intl@3.25
 │   ├── public/
 │   │   └── assets/
 │   │       ├── characters/     # Ảnh nhân vật (per-folder)
-│   │       │   └── Iansan/
+│   │       │   └── iansan/
 │   │       │       ├── avatar.webp   # Icon nhân vật
 │   │       │       └── splash.webp  # Splash art
 │   │       ├── weapons/        # Icon vũ khí
@@ -569,9 +569,9 @@ npm run sync-data    # Tạo folder còn thiếu
 
 ### ❌ Ảnh không hiển thị, báo 404
 
-**Nguyên nhân 1:** Tên folder trong `enkaNameMap` sai.
+**Nguyên nhân 1:** Tên folder trong Enka name map sai.
 
-**Fix:** Kiểm tra `backend/prisma/seeds/characters.ts`, đảm bảo `enkaNameMap` có mapping đúng:
+**Fix:** Kiểm tra `backend/prisma/seeds/characters.ts`, đảm bảo có mapping đúng:
 ```typescript
 "Yumemizuki Mizuki": "YumemizukiMizuki",  // Folder: YumemizukiMizuki/
 ```

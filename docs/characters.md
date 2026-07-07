@@ -1,151 +1,168 @@
-# 📁 Character Avatar Filename Mapping
-# Format: Tên File → ID nhân vật (database id) | Tên EN | Tên VN
+# 📁 Character Folder & ID Mapping
+> Dùng để tra cứu khi download ảnh từ enka.network hoặc thêm nhân vật mới.  
+> Ảnh lưu tại: `frontend/public/assets/characters/<FolderName>/avatar.webp` & `splash.webp`
 
-> Dùng để tra cứu khi download ảnh từ enka.network.  
-> Ví dụ: `UI_AvatarIcon_Qin.png` → `jean`  
-> Đặt vào: `frontend/public/images/avatars/`
-
-| Filename | ID (DB) | Tên EN | Tên VN |
+| Enka Folder | ID (DB slug) | Tên EN | Tên VN |
 |---|---|---|---|
-| `UI_AvatarIcon_Aino.png` | `aino` | Aino | Aino |
-| `UI_AvatarIcon_Albedo.png` | `albedo` | Albedo | Albedo |
-| `UI_AvatarIcon_Alhatham.png` | `alhaitham` | Alhaitham | Alhaitham |
-| `UI_AvatarIcon_Aloy.png` | `aloy` | Aloy | Aloy |
-| `UI_AvatarIcon_Ambor.png` | `amber` | Amber | Amber |
-| `UI_AvatarIcon_Arlecchino.png` | `arlecchino` | Arlecchino | Arlecchino |
-| `UI_AvatarIcon_Ayaka.png` | `kamisato-ayaka` | Kamisato Ayaka | Kamisato Ayaka |
-| `UI_AvatarIcon_Ayato.png` | `kamisato-ayato` | Kamisato Ayato | Kamisato Ayato |
-| `UI_AvatarIcon_Baizhuer.png` | `baizhu` | Baizhu | Baizhu |
-| `UI_AvatarIcon_Barbara.png` | `barbara` | Barbara | Barbara |
-| `UI_AvatarIcon_Beidou.png` | `beidou` | Beidou | Beidou |
-| `UI_AvatarIcon_Bennett.png` | `bennett` | Bennett | Bennett |
-| `UI_AvatarIcon_Candace.png` | `candace` | Candace | Candace |
-| `UI_AvatarIcon_Charlotte.png` | `charlotte` | Charlotte | Charlotte |
-| `UI_AvatarIcon_Chasca.png` | `chasca` | Chasca | Chasca |
-| `UI_AvatarIcon_Chevreuse.png` | `chevreuse` | Chevreuse | Chevreuse |
-| `UI_AvatarIcon_Chiori.png` | `chiori` | Chiori | Chiori |
-| `UI_AvatarIcon_Chongyun.png` | `chongyun` | Chongyun | Trùng Vân |
-| `UI_AvatarIcon_Citlali.png` | `citlali` | Citlali | Citlali |
-| `UI_AvatarIcon_Clorinde.png` | `clorinde` | Clorinde | Clorinde |
-| `UI_AvatarIcon_Collei.png` | `collei` | Collei | Collei |
-| `UI_AvatarIcon_Columbina.png` | `columbina` | Columbina | Columbina |
-| `UI_AvatarIcon_Cyno.png` | `cyno` | Cyno | Cyno |
-| `UI_AvatarIcon_Dahlia.png` | `dahlia` | Dahlia | Dahlia |
-| `UI_AvatarIcon_Dehya.png` | `dehya` | Dehya | Dehya |
-| `UI_AvatarIcon_Diluc.png` | `diluc` | Diluc | Diluc |
-| `UI_AvatarIcon_Diona.png` | `diona` | Diona | Diona |
-| `UI_AvatarIcon_Dori.png` | `dori` | Dori | Dori |
-| `UI_AvatarIcon_Durin.png` | `durin` | Durin | Durin |
-| `UI_AvatarIcon_Emilie.png` | `emilie` | Emilie | Emilie |
-| `UI_AvatarIcon_Escoffier.png` | `escoffier` | Escoffier | Escoffier |
-| `UI_AvatarIcon_Eula.png` | `eula` | Eula | Eula |
-| `UI_AvatarIcon_Faruzan.png` | `faruzan` | Faruzan | Faruzan |
-| `UI_AvatarIcon_Feiyan.png` | `yanfei` | Yanfei | Diễm Phi |
-| `UI_AvatarIcon_Fischl.png` | `fischl` | Fischl | Fischl |
-| `UI_AvatarIcon_Flins.png` | `flins` | Flins | Flins |
-| `UI_AvatarIcon_Freminet.png` | `freminet` | Freminet | Freminet |
-| `UI_AvatarIcon_Furina.png` | `furina` | Furina | Furina |
-| `UI_AvatarIcon_Gaming.png` | `gaming` | Gaming | Gaming |
-| `UI_AvatarIcon_Ganyu.png` | `ganyu` | Ganyu | Cam Vũ |
-| `UI_AvatarIcon_Gorou.png` | `gorou` | Gorou | Ngô Lang |
-| `UI_AvatarIcon_Heizo.png` | `shikanoin-heizou` | Shikanoin Heizou |鹿野院平蔵 |
-| `UI_AvatarIcon_Hutao.png` | `hu-tao` | Hu Tao | Hồ Đào |
-| `UI_AvatarIcon_Iansan.png` | `iansan` | Iansan | Iansan |
-| `UI_AvatarIcon_Ifa.png` | `ifa` | Ifa | Ifa |
-| `UI_AvatarIcon_Illuga.png` | `illuga` | Illuga | Illuga |
-| `UI_AvatarIcon_Ineffa.png` | `ineffa` | Ineffa | Ineffa |
-| `UI_AvatarIcon_Itto.png` | `arataki-itto` | Arataki Itto | Arataki Itto |
-| `UI_AvatarIcon_Jahoda.png` | `jahoda` | Jahoda | Jahoda |
-| `UI_AvatarIcon_Kachina.png` | `kachina` | Kachina | Kachina |
-| `UI_AvatarIcon_Kaeya.png` | `kaeya` | Kaeya | Kaeya |
-| `UI_AvatarIcon_Kaveh.png` | `kaveh` | Kaveh | Kaveh |
-| `UI_AvatarIcon_Kazuha.png` | `kaedehara-kazuha` | Kaedehara Kazuha | Kaedehara Kazuha |
-| `UI_AvatarIcon_Keqing.png` | `keqing` | Keqing | Kế Khinh |
-| `UI_AvatarIcon_Kinich.png` | `kinich` | Kinich | Kinich |
-| `UI_AvatarIcon_Klee.png` | `klee` | Klee | Klee |
-| `UI_AvatarIcon_Kokomi.png` | `sangonomiya-kokomi` | Sangonomiya Kokomi | Sangonomiya Kokomi |
-| `UI_AvatarIcon_Lanyan.png` | `lanyan` | Lan Yan | Lan Yến |
-| `UI_AvatarIcon_Lauma.png` | `lauma` | Lauma | Lauma |
-| `UI_AvatarIcon_Layla.png` | `layla` | Layla | Layla |
-| `UI_AvatarIcon_Linette.png` | `lynette` | Lynette | Lynette |
-| `UI_AvatarIcon_Liney.png` | `lyney` | Lyney | Lyney |
-| `UI_AvatarIcon_Linnea.png` | `linnea` | Linnea | Linnea |
-| `UI_AvatarIcon_Lisa.png` | `lisa` | Lisa | Lisa |
-| `UI_AvatarIcon_Liuyun.png` | `xianyun` | Xianyun | Hàn Vân |
-| `UI_AvatarIcon_Lohen.png` | `lohen` | Lohen | Lohen |
-| `UI_AvatarIcon_MannequinBoy.png` | `traveler-boy` | Traveler (Boy) | Lữ Nhân (Nam) |
-| `UI_AvatarIcon_MannequinGirl.png` | `traveler-girl` | Traveler (Girl) | Lữ Nhân (Nữ) |
-| `UI_AvatarIcon_Mavuika.png` | `mavuika` | Mavuika | Mavuika |
-| `UI_AvatarIcon_Mika.png` | `mika` | Mika | Mika |
-| `UI_AvatarIcon_Mizuki.png` | `yumemizu` | Yumemizuki Mizuki | Mộng Kiến Thủy Kỳ |
-| `UI_AvatarIcon_Momoka.png` | `momoka` | Momoka | Momoka |
-| `UI_AvatarIcon_Mona.png` | `mona` | Mona | Mona |
-| `UI_AvatarIcon_Mualani.png` | `mualani` | Mualani | Mualani |
-| `UI_AvatarIcon_Nahida.png` | `nahida` | Nahida | Nahida |
-| `UI_AvatarIcon_Navia.png` | `navia` | Navia | Navia |
-| `UI_AvatarIcon_Nefer.png` | `nefer` | Nefer | Nefer |
-| `UI_AvatarIcon_Neuvillette.png` | `neuvillette` | Neuvillette | Neuvillette |
-| `UI_AvatarIcon_Nicole.png` | `nicole` | Nicole | Nicole |
-| `UI_AvatarIcon_Nilou.png` | `nilou` | Nilou | Nilou |
-| `UI_AvatarIcon_Ningguang.png` | `ningguang` | Ningguang | Ningguang |
-| `UI_AvatarIcon_Noel.png` | `noelle` | Noelle | Noelle |
-| `UI_AvatarIcon_Olorun.png` | `varesa` | Varesa | Varesa |
-| `UI_AvatarIcon_PlayerBoy.png` | `traveler` | Traveler | Lữ Nhân |
-| `UI_AvatarIcon_PlayerGirl.png` | `traveler` | Traveler | Lữ Nhân |
-| `UI_AvatarIcon_Prune.png` | `prune` | Prune | Prune |
-| `UI_AvatarIcon_Qin.png` | `jean` | Jean | Jean |
-| `UI_AvatarIcon_Qiqi.png` | `qiqi` | Qiqi | Thất Thất |
-| `UI_AvatarIcon_Razor.png` | `razor` | Razor | Razor |
-| `UI_AvatarIcon_Rosaria.png` | `rosaria` | Rosaria | Rosaria |
-| `UI_AvatarIcon_Sara.png` | `kujou-sara` | Kujou Sara | Kujou Sara |
-| `UI_AvatarIcon_Sayu.png` | `sayu` | Sayu | Sayu |
-| `UI_AvatarIcon_Sethos.png` | `sethos` | Sethos | Sethos |
-| `UI_AvatarIcon_Shenhe.png` | `shenhe` | Shenhe | Thần Hạc |
-| `UI_AvatarIcon_Shinobu.png` | `kuki-shinobu` | Kuki Shinobu | Kuki Shinobu |
-| `UI_AvatarIcon_Shougun.png` | `raiden-shogun` | Raiden Shogun | Thần Tướng |
-| `UI_AvatarIcon_Sigewinne.png` | `sigewinne` | Sigewinne | Sigewinne |
-| `UI_AvatarIcon_SkirkNew.png` | `skirk` | Skirk | Skirk |
-| `UI_AvatarIcon_Sucrose.png` | `sucrose` | Sucrose | Sucrose |
-| `UI_AvatarIcon_Tartaglia.png` | `tartaglia` | Tartaglia | Tartaglia |
-| `UI_AvatarIcon_Tighnari.png` | `tighnari` | Tighnari | Tighnari |
-| `UI_AvatarIcon_Tohma.png` | `thoma` | Thoma | Thoma |
-| `UI_AvatarIcon_Varesa.png` | `varesa` | Varesa | Varesa |
-| `UI_AvatarIcon_Varka.png` | `varka` | Varka | Varka |
-| `UI_AvatarIcon_Venti.png` | `venti` | Venti | Venti |
-| `UI_AvatarIcon_Wanderer.png` | `wanderer` | Wanderer | Lãng Nhân |
-| `UI_AvatarIcon_Wriothesley.png` | `wriothesley` | Wriothesley | Wriothesley |
-| `UI_AvatarIcon_Xiangling.png` | `xiangling` | Xiangling | Hương Lăng |
-| `UI_AvatarIcon_Xiao.png` | `xiao` | Xiao | Tiêu |
-| `UI_AvatarIcon_Xilonen.png` | `xilonen` | Xilonen | Xilonen |
-| `UI_AvatarIcon_Xingqiu.png` | `xingqiu` | Xingqiu | Hành Cừu |
-| `UI_AvatarIcon_Xinyan.png` | `xinyan` | Xinyan | Tâm Ngạn |
-| `UI_AvatarIcon_Yae.png` | `yae-miko` | Yae Miko | Bát Trọng Thần Tử |
-| `UI_AvatarIcon_Yaoyao.png` | `yaoyao` | Yaoyao | Dao Dao |
-| `UI_AvatarIcon_Yelan.png` | `yelan` | Yelan | Diệp Lạn |
-| `UI_AvatarIcon_Yoimiya.png` | `yoimiya` | Yoimiya | Tiêu Cung Trả |
-| `UI_AvatarIcon_Yunjin.png` | `yun-jin` | Yun Jin | Vân Cẩn |
-| `UI_AvatarIcon_Zhongli.png` | `zhongli` | Zhongli | Chung Ly |
-| `UI_AvatarIcon_Zibai.png` | `zibai` | Zibai | Tử Bách |
+| `Aino` | `aino` | Aino | Aino |
+| `Albedo` | `albedo` | Albedo | Albedo |
+| `Alhatham` | `alhaitham` | Alhaitham | Alhaitham |
+| `Aloy` | `aloy` | Aloy | Aloy |
+| `Ambor` | `amber` | Amber | Amber |
+| `Arlecchino` | `arlecchino` | Arlecchino | Arlecchino |
+| `Ayaka` | `kamisato-ayaka` | Kamisato Ayaka | Kamisato Ayaka |
+| `Ayato` | `kamisato-ayato` | Kamisato Ayato | Kamisato Ayato |
+| `Baizhuer` | `baizhu` | Baizhu | Baizhu |
+| `Barbara` | `barbara` | Barbara | Barbara |
+| `Beidou` | `beidou` | Beidou | Beidou |
+| `Bennett` | `bennett` | Bennett | Bennett |
+| `Candace` | `candace` | Candace | Candace |
+| `Charlotte` | `charlotte` | Charlotte | Charlotte |
+| `Chasca` | `chasca` | Chasca | Chasca |
+| `Chevreuse` | `chevreuse` | Chevreuse | Chevreuse |
+| `Chiori` | `chiori` | Chiori | Chiori |
+| `Chongyun` | `chongyun` | Chongyun | Trùng Vân |
+| `Citlali` | `citlali` | Citlali | Citlali |
+| `Clorinde` | `clorinde` | Clorinde | Clorinde |
+| `Collei` | `collei` | Collei | Collei |
+| `Columbina` | `columbina` | Columbina | Columbina |
+| `Cyno` | `cyno` | Cyno | Cyno |
+| `Dahlia` | `dahlia` | Dahlia | Dahlia |
+| `Dehya` | `dehya` | Dehya | Dehya |
+| `Diluc` | `diluc` | Diluc | Diluc |
+| `Diona` | `diona` | Diona | Diona |
+| `Dori` | `dori` | Dori | Dori |
+| `Durin` | `durin` | Durin | Durin |
+| `Emilie` | `emilie` | Emilie | Emilie |
+| `Escoffier` | `escoffier` | Escoffier | Escoffier |
+| `Eula` | `eula` | Eula | Eula |
+| `Faruzan` | `faruzan` | Faruzan | Faruzan |
+| `Feiyan` | `yanfei` | Yanfei | Diễm Phi |
+| `Fischl` | `fischl` | Fischl | Fischl |
+| `Flins` | `flins` | Flins | Flins |
+| `Freminet` | `freminet` | Freminet | Freminet |
+| `Furina` | `furina` | Furina | Furina |
+| `Gaming` | `gaming` | Gaming | Gaming |
+| `Ganyu` | `ganyu` | Ganyu | Cam Vũ |
+| `Gorou` | `gorou` | Gorou | Ngô Lang |
+| `Heizo` | `shikanoin-heizou` | Shikanoin Heizou | Shikanoin Heizou |
+| `Hutao` | `hu-tao` | Hu Tao | Hồ Đào |
+| `Iansan` | `iansan` | Iansan | Iansan |
+| `Ifa` | `ifa` | Ifa | Ifa |
+| `Illuga` | `illuga` | Illuga | Illuga |
+| `Ineffa` | `ineffa` | Ineffa | Ineffa |
+| `Itto` | `arataki-itto` | Arataki Itto | Arataki Itto |
+| `Jahoda` | `jahoda` | Jahoda | Jahoda |
+| `Kachina` | `kachina` | Kachina | Kachina |
+| `Kaeya` | `kaeya` | Kaeya | Kaeya |
+| `Kaveh` | `kaveh` | Kaveh | Kaveh |
+| `Kazuha` | `kaedehara-kazuha` | Kaedehara Kazuha | Kaedehara Kazuha |
+| `Keqing` | `keqing` | Keqing | Kế Khinh |
+| `Kinich` | `kinich` | Kinich | Kinich |
+| `Klee` | `klee` | Klee | Klee |
+| `Kokomi` | `sangonomiya-kokomi` | Sangonomiya Kokomi | Sangonomiya Kokomi |
+| `Lanyan` | `lanyan` | Lan Yan | Lan Yến |
+| `Lauma` | `lauma` | Lauma | Lauma |
+| `Layla` | `layla` | Layla | Layla |
+| `Linette` | `lynette` | Lynette | Lynette |
+| `Liney` | `lyney` | Lyney | Lyney |
+| `Linnea` | `linnea` | Linnea | Linnea |
+| `Lisa` | `lisa` | Lisa | Lisa |
+| `Liuyun` | `xianyun` | Xianyun | Hàn Vân |
+| `Lohen` | `lohen` | Lohen | Lohen |
+| `MannequinBoy` | `traveler-boy` | Traveler (Boy) | Lữ Nhân (Nam) |
+| `MannequinGirl` | `traveler-girl` | Traveler (Girl) | Lữ Nhân (Nữ) |
+| `Mavuika` | `mavuika` | Mavuika | Mavuika |
+| `Mika` | `mika` | Mika | Mika |
+| `YumemizukiMizuki` | `yumemizu` | Yumemizuki Mizuki | Mộng Kiến Thủy Kỳ |
+| `Momoka` | `momoka` | Momoka | Momoka |
+| `Mona` | `mona` | Mona | Mona |
+| `Mualani` | `mualani` | Mualani | Mualani |
+| `Nahida` | `nahida` | Nahida | Nahida |
+| `Navia` | `navia` | Navia | Navia |
+| `Nefer` | `nefer` | Nefer | Nefer |
+| `Neuvillette` | `neuvillette` | Neuvillette | Neuvillette |
+| `Nicole` | `nicole` | Nicole | Nicole |
+| `Nilou` | `nilou` | Nilou | Nilou |
+| `Ningguang` | `ningguang` | Ningguang | Ningguang |
+| `Noel` | `noelle` | Noelle | Noelle |
+| `Olorun` | `varesa` | Varesa | Varesa |
+| `PlayerBoy` | `traveler` | Traveler | Lữ Nhân |
+| `PlayerGirl` | `traveler` | Traveler | Lữ Nhân |
+| `Prune` | `prune` | Prune | Prune |
+| `Qin` | `jean` | Jean | Jean |
+| `Qiqi` | `qiqi` | Qiqi | Thất Thất |
+| `Razor` | `razor` | Razor | Razor |
+| `Rosaria` | `rosaria` | Rosaria | Rosaria |
+| `Sara` | `kujou-sara` | Kujou Sara | Kujou Sara |
+| `Sayu` | `sayu` | Sayu | Sayu |
+| `Sethos` | `sethos` | Sethos | Sethos |
+| `Shenhe` | `shenhe` | Shenhe | Thần Hạc |
+| `Shinobu` | `kuki-shinobu` | Kuki Shinobu | Kuki Shinobu |
+| `Shougun` | `raiden-shogun` | Raiden Shogun | Thần Tướng |
+| `Sigewinne` | `sigewinne` | Sigewinne | Sigewinne |
+| `SkirkNew` | `skirk` | Skirk | Skirk |
+| `Sucrose` | `sucrose` | Sucrose | Sucrose |
+| `Tartaglia` | `tartaglia` | Tartaglia | Tartaglia |
+| `Tighnari` | `tighnari` | Tighnari | Tighnari |
+| `Tohma` | `thoma` | Thoma | Thoma |
+| `Varesa` | `varesa` | Varesa | Varesa |
+| `Varka` | `varka` | Varka | Varka |
+| `Venti` | `venti` | Venti | Venti |
+| `Wanderer` | `wanderer` | Wanderer | Lãng Nhân |
+| `Wriothesley` | `wriothesley` | Wriothesley | Wriothesley |
+| `Xiangling` | `xiangling` | Xiangling | Hương Lăng |
+| `Xiao` | `xiao` | Xiao | Tiêu |
+| `Xilonen` | `xilonen` | Xilonen | Xilonen |
+| `Xingqiu` | `xingqiu` | Xingqiu | Hành Cừu |
+| `Xinyan` | `xinyan` | Xinyan | Tâm Ngạn |
+| `Yae` | `yae-miko` | Yae Miko | Bát Trọng Thần Tử |
+| `Yaoyao` | `yaoyao` | Yaoyao | Dao Dao |
+| `Yelan` | `yelan` | Yelan | Diệp Lạn |
+| `Yoimiya` | `yoimiya` | Yoimiya | Tiêu Cung Trả |
+| `YumemizukiMizuki` | `yumemizu` | Yumemizuki Mizuki | Mộng Kiến Thủy Kỳ |
+| `Yunjin` | `yun-jin` | Yun Jin | Vân Cẩn |
+| `Zhongli` | `zhongli` | Zhongli | Chung Ly |
+| `Zibai` | `zibai` | Zibai | Tử Bách |
 
 ---
 
 ## ⚠️ Các tên đặc biệt (dễ nhầm)
 
-| Filename | Thực ra là | Ghi chú |
+| Folder Name | Thực ra là | Ghi chú |
 |---|---|---|
-| `UI_AvatarIcon_Qin.png` | **Jean** | Tên gốc game là "Qin" |
-| `UI_AvatarIcon_Feiyan.png` | **Yanfei** | Tên gốc là "Feiyan" |
-| `UI_AvatarIcon_Ambor.png` | **Amber** | Thiếu chữ "e" |
-| `UI_AvatarIcon_Baizhuer.png` | **Baizhu** | Có thêm "er" |
-| `UI_AvatarIcon_Heizo.png` | **Shikanoin Heizou** | Chỉ dùng "Heizo" |
-| `UI_AvatarIcon_Noel.png` | **Noelle** | Thiếu chữ "le" |
-| `UI_AvatarIcon_Shougun.png` | **Raiden Shogun** | Dùng "Shougun" |
-| `UI_AvatarIcon_Liney.png` | **Lyney** | Khác chính tả |
-| `UI_AvatarIcon_Linette.png` | **Lynette** | Khác chính tả |
-| `UI_AvatarIcon_Liuyun.png` | **Xianyun** | Tên CN là Liuyun |
-| `UI_AvatarIcon_SkirkNew.png` | **Skirk** | Có thêm "New" |
-| `UI_AvatarIcon_Alhatham.png` | **Alhaitham** | Khác chính tả |
-| `UI_AvatarIcon_Itto.png` | **Arataki Itto** | Chỉ dùng "Itto" |
-| `UI_AvatarIcon_Mizuki.png` | **Yumemizuki Mizuki** | Tên rút gọn |
-| `UI_AvatarIcon_Olorun.png` | **Varesa** | Tên nội bộ "Olorun" |
-| `UI_AvatarIcon_MannequinBoy/Girl.png` | **Traveler** | Tên thử nghiệm |
+| `Qin` | **Jean** | Tên nội bộ game là "Qin" |
+| `Feiyan` | **Yanfei** | Tên nội bộ là "Feiyan" |
+| `Ambor` | **Amber** | Thiếu chữ "e" |
+| `Baizhuer` | **Baizhu** | Có thêm "er" |
+| `Heizo` | **Shikanoin Heizou** | Rút gọn |
+| `Noel` | **Noelle** | Thiếu chữ "le" |
+| `Shougun` | **Raiden Shogun** | Dùng "Shougun" |
+| `Liney` | **Lyney** | Khác chính tả |
+| `Linette` | **Lynette** | Khác chính tả |
+| `Liuyun` | **Xianyun** | Tên CN là Liuyun |
+| `SkirkNew` | **Skirk** | Có thêm "New" |
+| `Alhatham` | **Alhaitham** | Khác chính tả |
+| `Itto` | **Arataki Itto** | Chỉ dùng "Itto" |
+| `YumemizukiMizuki` | **Yumemizuki Mizuki** | Ghép liền không dấu cách |
+| `Olorun` | **Varesa** | Tên nội bộ "Olorun" |
+| `MannequinBoy/Girl` | **Traveler** | Tên thử nghiệm |
+| `Hutao` | **Hu Tao** | Ghép liền |
+| `Kazuha` | **Kaedehara Kazuha** | Chỉ lấy tên |
+| `Lanyan` | **Lan Yan** | Ghép liền |
+
+---
+
+## 💡 Cách lấy đường dẫn ảnh trong code
+
+```ts
+import { getCharacterAvatar, getCharacterSplash } from '@/utils/assetMap';
+
+// DB ID slug → folder PascalCase tự động
+getCharacterAvatar('hu-tao')          // /assets/characters/Hutao/avatar.webp
+getCharacterSplash('kaedehara-kazuha') // /assets/characters/Kazuha/splash.webp
+getCharacterAvatar('yumemizu')         // /assets/characters/Yumemizu/avatar.webp
+```
+
+> **Lưu ý:** Hàm `charIdToFolder` tự ghép các từ thành PascalCase.  
+> Với các trường hợp đặc biệt (Hutao, YumemizukiMizuki...), ID trong DB phải match đúng để hàm tạo tên folder đúng.

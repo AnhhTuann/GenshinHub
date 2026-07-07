@@ -8,11 +8,15 @@
 | :--- | :--- | :--- |
 | **Next.js** | `15.x` | Framework React chính, sử dụng App Router, Server Components để tối ưu hiệu suất và SEO. Hỗ trợ i18n routing. |
 | **React & React DOM** | `19.x` | Thư viện cốt lõi xây dựng giao diện người dùng. |
-| **TailwindCSS** | `4.x` | Utility-first CSS framework để style giao diện, hỗ trợ tích hợp sâu qua `@tailwindcss/postcss`. |
+| **TailwindCSS** | `4.x` | Utility-first CSS framework để style giao diện, tích hợp qua `@tailwindcss/postcss`. |
 | **Framer Motion** | `12.x` | Cung cấp hệ thống API animation mượt mà cho các hiệu ứng hover, danh sách và chuyển cảnh. |
-| **next-intl** | `3.x` | Xử lý đa ngôn ngữ (i18n) cho Server và Client components (hiện hỗ trợ tiếng Anh và tiếng Việt). |
-| **@heroicons/react** | `2.x` | Bộ icon SVG tối ưu và sắc nét từ Tailwind. |
+| **next-intl** | `4.x` | Xử lý đa ngôn ngữ (i18n) cho Server và Client components (hiện hỗ trợ tiếng Anh và tiếng Việt). |
+| **react-hook-form** | `7.x` | Quản lý form hiệu suất cao cho các trang Admin. |
+| **zod** | `4.x` | Schema validation, kết hợp với react-hook-form qua `@hookform/resolvers`. |
+| **lucide-react** | `1.x` | Bộ icon SVG hiện đại, thay thế heroicons. |
 | **class-variance-authority** | `0.7.x` | Tiện ích (CVA) hỗ trợ quản lý các trạng thái (variants) của UI component một cách an toàn và gọn gàng. |
+| **jose** | `6.x` | Xử lý JWT authentication cho admin session. |
+| **react-hot-toast** | `2.x` | Hiển thị thông báo (toast) đẹp và nhẹ. |
 
 ## 📂 Cấu trúc thư mục (Directory Structure)
 

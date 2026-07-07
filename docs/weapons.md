@@ -1,6 +1,6 @@
 # ⚔️ Weapon Icon Filename Mapping
 # Format: Tên File → Tên EN | Tên VN
-# Đặt vào: `frontend/public/images/weapons/`
+# Đặt vào: `frontend/public/assets/weapons/`
 # Prefix: `UI_EquipIcon_[Type]_[Key].png`
 # Types: `Sword` | `Claymore` | `Pole` | `Bow` | `Catalyst`
 

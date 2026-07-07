@@ -1,27 +1,32 @@
 export type AssetType = 'items' | 'characters' | 'weapons' | 'elements';
 
 /**
+ * Chuyển charId (slug: hu-tao, kazuha) sang tên folder PascalCase (Hutao, Kazuha)
+ * Ví dụ: "hu-tao" → "Hutao", "kazuha" → "Kazuha", "albedo" → "Albedo"
+ */
+const charIdToFolder = (charId: string): string => {
+  return charId
+    .split('-')
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('');
+};
+
+/**
  * Lấy đường dẫn ảnh Avatar của Nhân vật
+ * Cấu trúc folder: /assets/characters/{CharName}/avatar.webp
  */
 export const getCharacterAvatar = (charId: string) => {
   if (!charId) return '/assets/fallback-icon.webp';
-  return `/assets/characters/avatars/${charId}_avatar.webp`;
+  return `/assets/characters/${charIdToFolder(charId)}/avatar.webp`;
 };
 
 /**
  * Lấy đường dẫn ảnh Splash Art của Nhân vật
+ * Cấu trúc folder: /assets/characters/{CharName}/splash.webp
  */
 export const getCharacterSplash = (charId: string) => {
   if (!charId) return '/assets/fallback-icon.webp';
-  return `/assets/characters/splash/${charId}_splash.webp`;
-};
-
-/**
- * Lấy đường dẫn ảnh Gacha Splash của Nhân vật
- */
-export const getCharacterGachaSplash = (charId: string) => {
-  if (!charId) return '/assets/fallback-icon.webp';
-  return `/assets/characters/splash/${charId}_splash.webp`;
+  return `/assets/characters/${charIdToFolder(charId)}/splash.webp`;
 };
 
 /**

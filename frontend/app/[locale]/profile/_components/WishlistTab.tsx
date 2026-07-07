@@ -1,0 +1,97 @@
+"use client";
+
+import { useState } from 'react';
+import { User } from '@/context/UserContext';
+import { Star, Info } from 'lucide-react';
+
+export default function WishlistTab({ user }: { user: User }) {
+  const [currentPulls, setCurrentPulls] = useState<number>(0);
+  const targetPulls = 180; // Hard pity guarantee
+
+  const progress = Math.min((currentPulls / targetPulls) * 100, 100);
+
+  return (
+    <div className="space-y-8">
+      {/* Pity Calculator */}
+      <div className="bg-[#1a1a24] border border-[#c8a84b]/30 rounded-2xl p-6 relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-4 opacity-10">
+          <Star className="w-32 h-32 text-[#c8a84b]" />
+        </div>
+        
+        <div className="relative z-10 flex flex-col md:flex-row gap-6 items-center">
+          <div className="flex-1">
+            <h3 className="text-lg font-black uppercase tracking-widest text-[#f0d080] mb-2 flex items-center gap-2">
+              <Star className="w-5 h-5" />
+              Wish Progress Tracker
+            </h3>
+            <p className="text-white/60 text-sm mb-4">
+              Enter your current intertwined fates / equivalent primogems. (180 pulls for guaranteed featured 5★).
+            </p>
+            
+            <div className="flex items-center gap-4 mb-4">
+              <input
+                type="number"
+                min={0}
+                value={currentPulls}
+                onChange={(e) => setCurrentPulls(parseInt(e.target.value) || 0)}
+                className="bg-black/50 border border-white/20 rounded-xl px-4 py-2 text-white w-32 focus:border-[#c8a84b] outline-none transition-colors"
+                placeholder="0"
+              />
+              <span className="text-white/40 font-bold uppercase tracking-wider text-xs">Pulls saved</span>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="w-full h-3 bg-black/60 rounded-full overflow-hidden relative border border-white/5">
+              <div
+                className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#8a6820] to-[#f0d080] transition-all duration-500"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <div className="flex justify-between mt-2 text-xs font-bold uppercase tracking-wider text-white/40">
+              <span>0</span>
+              <span className="text-[#c8a84b]">{currentPulls} / {targetPulls}</span>
+              <span>180</span>
+            </div>
+          </div>
+
+          <div className="w-full md:w-auto bg-black/40 rounded-xl p-4 border border-white/5 text-center min-w-[200px]">
+            <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Status</p>
+            {currentPulls >= targetPulls ? (
+              <p className="text-emerald-400 font-black text-lg">Guaranteed!</p>
+            ) : currentPulls >= 90 ? (
+              <p className="text-[#f0d080] font-black text-lg">50/50 Chance</p>
+            ) : (
+              <p className="text-red-400 font-black text-lg">Need {targetPulls - currentPulls} more</p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Wishlist Items */}
+      <div>
+        <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Characters in Wishlist</h3>
+        {(!user.wishlist || user.wishlist.length === 0) ? (
+          <div className="text-center p-10 bg-white/5 rounded-2xl border border-dashed border-white/20">
+            <p className="text-white/40">Your wishlist is empty. Add characters from their details page.</p>
+          </div>
+        ) : (
+          <div className="grid gap-4">
+             {/* List items will go here. In a real implementation, you'd join this with CharacterData similar to FavoritesTab */}
+             {user.wishlist.map(item => (
+               <div key={item.id} className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                 <div className="w-12 h-12 rounded-full bg-black/50 border border-[#c8a84b]/50 overflow-hidden shrink-0">
+                    {/* Placeholder image since we don't fetch char data directly in this snippet yet */}
+                    <img src={`/assets/characters/${item.characterId}/avatar.webp`} className="w-full h-full object-cover" alt="" onError={(e) => e.currentTarget.src = '/assets/elements/anemo.webp'} />
+                 </div>
+                 <div className="flex-1">
+                   <h4 className="font-bold text-white capitalize">{item.characterId.replace(/-/g, ' ')}</h4>
+                   <p className="text-xs text-white/40 italic">Note: {item.note || 'No note'}</p>
+                 </div>
+               </div>
+             ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

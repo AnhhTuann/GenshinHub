@@ -23,6 +23,20 @@ export async function GET() {
           travelerCharId
           favoritesCount
         }
+        myFavorites {
+          characterId
+        }
+        myWishlist {
+          id
+          characterId
+          note
+          priority
+        }
+        myTeams {
+          id
+          name
+          characters
+        }
       }
     `, {}, 0, token);
 
@@ -32,7 +46,14 @@ export async function GET() {
       return NextResponse.json({ user: null }, { status: 401 });
     }
 
-    return NextResponse.json({ user: data.me });
+    const userWithExtras = {
+      ...data.me,
+      favoriteIds: data.myFavorites.map((f: any) => f.characterId),
+      wishlist: data.myWishlist,
+      teams: data.myTeams,
+    };
+
+    return NextResponse.json({ user: userWithExtras });
   } catch (err: any) {
     return NextResponse.json({ user: null, error: err.message }, { status: 401 });
   }

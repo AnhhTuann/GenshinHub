@@ -37,6 +37,14 @@ export const userResolvers = {
       return userService.getWishlist(prisma, userId);
     },
 
+    myTeams: async (_: unknown, __: unknown, { prisma, userId }: Context) => {
+      if (!userId) return [];
+      return prisma.userTeam.findMany({
+        where: { userId },
+        orderBy: { createdAt: 'asc' },
+      });
+    },
+
     isFavorite: async (_: unknown, { characterId }: { characterId: string }, { prisma, userId }: Context) => {
       if (!userId) return false;
       const fav = await prisma.userFavorite.findUnique({
@@ -96,6 +104,37 @@ export const userResolvers = {
     removeFromWishlist: async (_: unknown, { wishlistId }: { wishlistId: string }, { prisma, userId }: Context) => {
       if (!userId) throw new Error('Vui lòng đăng nhập');
       return userService.removeFromWishlist(prisma, userId, wishlistId);
+    },
+
+    createTeam: async (_: unknown, { name, characters }: { name: string; characters: string[] }, { prisma, userId }: Context) => {
+      if (!userId) throw new Error('Vui lòng đăng nhập');
+      return prisma.userTeam.create({
+        data: { userId, name, characters },
+      });
+    },
+
+    updateTeam: async (_: unknown, { id, name, characters }: { id: string; name?: string; characters?: string[] }, { prisma, userId }: Context) => {
+      if (!userId) throw new Error('Vui lòng đăng nhập');
+      const team = await prisma.userTeam.findUnique({ where: { id } });
+      if (!team || team.userId !== userId) throw new Error('Không tìm thấy đội hình hoặc không có quyền truy cập');
+      
+      const dataToUpdate: any = {};
+      if (name) dataToUpdate.name = name;
+      if (characters) dataToUpdate.characters = characters;
+      
+      return prisma.userTeam.update({
+        where: { id },
+        data: dataToUpdate,
+      });
+    },
+
+    deleteTeam: async (_: unknown, { id }: { id: string }, { prisma, userId }: Context) => {
+      if (!userId) throw new Error('Vui lòng đăng nhập');
+      const team = await prisma.userTeam.findUnique({ where: { id } });
+      if (!team || team.userId !== userId) throw new Error('Không tìm thấy đội hình hoặc không có quyền truy cập');
+      
+      await prisma.userTeam.delete({ where: { id } });
+      return true;
     },
   },
 };

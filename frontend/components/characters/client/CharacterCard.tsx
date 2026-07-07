@@ -9,6 +9,8 @@ import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { useUser } from '@/context/UserContext';
 import { getCharacterAvatar, getCharacterSplash } from '@/utils/assetMap';
+import { Heart } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 // Lazy load the overlay — only loads JS when first triggered
 const SplashArtOverlay = dynamic(() => import('@/components/ui/SplashArtOverlay'), { ssr: false });
@@ -60,6 +62,42 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const isTraveler = character.id.startsWith('traveler');
   const displayAvatarUrl = isTraveler ? getCharacterAvatar(character.id, user?.gender) : character.avatarUrl;
   const displaySplashUrl = isTraveler ? getCharacterSplash(character.id, user?.gender) : character.splashArtUrl;
+
+  // Optimistic UI for Favorite
+  const isFavInitially = user?.favoriteIds?.includes(character.id) ?? false;
+  const [isFavorite, setIsFavorite] = useState(isFavInitially);
+
+  // Sync state if context changes (e.g. after login)
+  useEffect(() => {
+    setIsFavorite(user?.favoriteIds?.includes(character.id) ?? false);
+  }, [user?.favoriteIds, character.id]);
+
+  const handleToggleFavorite = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!user) {
+      toast.error('Vui lòng đăng nhập để yêu thích nhân vật!');
+      return;
+    }
+
+    // Optimistic Update
+    setIsFavorite((prev) => !prev);
+    
+    try {
+      const res = await fetch('/api/auth/favorite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ characterId: character.id }),
+      });
+      if (!res.ok) throw new Error('Failed to toggle');
+      
+      // Optionally trigger context refresh if we want it fully synced across tabs
+      // userContext?.refreshUser();
+    } catch (err) {
+      // Revert on failure
+      setIsFavorite((prev) => !prev);
+      toast.error('Có lỗi xảy ra, vui lòng thử lại.');
+    }
+  };
 
   /* ── Pre-fetch splash art image when card enters viewport ──
      This ensures the image is in browser cache before user hovers */
@@ -191,6 +229,25 @@ export default function CharacterCard({ character }: { character: CharacterData 
           >
             {character.rarity}★
           </div>
+
+          {/* ── Favorite Button (top-right) ── */}
+          <button
+            onClick={handleToggleFavorite}
+            className="absolute top-2 right-12 z-20 p-1.5 rounded-full transition-all duration-300 hover:scale-110"
+            style={{
+              background: isFavorite ? 'rgba(239,68,68,0.2)' : 'rgba(0,0,0,0.4)',
+              border: `1px solid ${isFavorite ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.2)'}`,
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            <Heart
+              className="w-3.5 h-3.5 transition-colors"
+              style={{
+                fill: isFavorite ? '#ef4444' : 'transparent',
+                color: isFavorite ? '#ef4444' : 'rgba(255,255,255,0.7)'
+              }}
+            />
+          </button>
 
           {/* ── "Hold to preview" hint ── */}
           <div

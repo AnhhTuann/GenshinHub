@@ -11,6 +11,9 @@ export interface User {
   avatarUrl?: string;
   travelerCharId: string;
   favoritesCount: number;
+  favoriteIds?: string[];
+  wishlist?: any[];
+  teams?: any[];
 }
 
 interface UserContextType {

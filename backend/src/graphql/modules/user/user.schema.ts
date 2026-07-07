@@ -51,10 +51,18 @@ export const userSchema = `
     avatarUrl: String
   }
 
+  type UserTeam {
+    id: String!
+    name: String!
+    characters: [String!]!
+    createdAt: String!
+  }
+
   extend type Query {
     me: User
     myFavorites: [UserFavorite!]!
     myWishlist: [UserWishlistItem!]!
+    myTeams: [UserTeam!]!
     isFavorite(characterId: String!): Boolean!
   }
 
@@ -65,5 +73,8 @@ export const userSchema = `
     toggleFavorite(characterId: String!): FavoriteResult!
     addToWishlist(characterId: String!, note: String): UserWishlistItem!
     removeFromWishlist(wishlistId: String!): Boolean!
+    createTeam(name: String!, characters: [String!]!): UserTeam!
+    updateTeam(id: String!, name: String, characters: [String!]): UserTeam!
+    deleteTeam(id: String!): Boolean!
   }
 `;

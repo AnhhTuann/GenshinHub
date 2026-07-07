@@ -15,22 +15,37 @@ import { fetchGraphQL, GET_CHARACTER_BY_ID } from '@/lib/graphql';
 import { ChevronLeft, Star, Sword, Shield, Zap } from 'lucide-react-native';
 import { getElementBg, getElementBorder, getElementColors, TIER_CONFIG, RARITY_CONFIG } from '@/constants/design';
 import { RarityStars } from '@/components/ui/RarityStars';
+import { useTheme } from '@/context/ThemeContext';
 
 const { width } = Dimensions.get('window');
 
 export default function CharacterDetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
+  const { setElementTheme } = useTheme();
   const [character, setCharacter] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
     fetchGraphQL(GET_CHARACTER_BY_ID, { id })
-      .then(data => { if (data.character) setCharacter(data.character); })
+      .then(data => { 
+        if (data.character) {
+          setCharacter(data.character); 
+          if (data.character.element) {
+            const elTheme = data.character.element.toLowerCase();
+            setElementTheme(['pyro', 'hydro', 'anemo', 'electro', 'dendro', 'cryo', 'geo'].includes(elTheme) ? elTheme : 'default');
+          }
+        }
+      })
       .catch(console.error)
       .finally(() => setLoading(false));
   }, [id]);
+
+  // Reset theme when unmounting
+  useEffect(() => {
+    return () => setElementTheme('default');
+  }, []);
 
   if (loading) {
     return (

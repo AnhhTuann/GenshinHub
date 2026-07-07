@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -11,6 +12,7 @@ import {
   Globe,
 } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
+import { LanguageBottomSheet } from '../components/LanguageBottomSheet';
 
 const menuItems = [
   {
@@ -63,10 +65,7 @@ const menuItems = [
 export default function MoreScreen() {
   const router = useRouter();
   const { i18n } = useTranslation();
-
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'vi' : 'en');
-  };
+  const [langVisible, setLangVisible] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -76,11 +75,13 @@ export default function MoreScreen() {
           <Text style={styles.headerTitle}>MORE</Text>
           <Text style={styles.headerSub}>Explore tools & databases</Text>
         </View>
-        <TouchableOpacity onPress={toggleLanguage} style={styles.langBtn}>
+        <TouchableOpacity onPress={() => setLangVisible(true)} style={styles.langBtn}>
           <Globe size={14} color="#cfa858" />
           <Text style={styles.langText}>{i18n.language.toUpperCase()}</Text>
         </TouchableOpacity>
       </View>
+      
+      <LanguageBottomSheet visible={langVisible} onClose={() => setLangVisible(false)} />
 
       <ScrollView
         style={styles.scroll}

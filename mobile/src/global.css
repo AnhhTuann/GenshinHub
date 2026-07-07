@@ -12,6 +12,56 @@
   --font-serif: Georgia, 'Times New Roman', serif;
 }
 
+/* =====================================================
+   ELEMENT THEMES (Synchronized with Frontend)
+   ===================================================== */
+@theme {
+  --color-theme-main: var(--theme-main);
+  --color-theme-light: var(--theme-light);
+  --color-theme-glow: var(--theme-glow);
+}
+
+:root {
+  --theme-main: #cfa858;
+  --theme-light: #f5d399;
+  --theme-glow: rgba(207,168,88,0.45);
+}
+.theme-pyro {
+  --theme-main: #ef4723;
+  --theme-light: #ff7d5c;
+  --theme-glow: rgba(239,71,35,0.45);
+}
+.theme-hydro {
+  --theme-main: #1e90ff;
+  --theme-light: #6eb7ff;
+  --theme-glow: rgba(30,144,255,0.45);
+}
+.theme-cryo {
+  --theme-main: #7dd3fc;
+  --theme-light: #bdf1ff;
+  --theme-glow: rgba(125,211,252,0.45);
+}
+.theme-electro {
+  --theme-main: #a855f7;
+  --theme-light: #d896ff;
+  --theme-glow: rgba(168,85,247,0.45);
+}
+.theme-anemo {
+  --theme-main: #33ccb3;
+  --theme-light: #7df5e1;
+  --theme-glow: rgba(51,204,179,0.45);
+}
+.theme-geo {
+  --theme-main: #eab308;
+  --theme-light: #ffe366;
+  --theme-glow: rgba(234,179,8,0.45);
+}
+.theme-dendro {
+  --theme-main: #4ade80;
+  --theme-light: #8effba;
+  --theme-glow: rgba(74,222,128,0.45);
+}
+
 @layer utilities {
   .text-gradient-gold {
     background-image: linear-gradient(to bottom right, #f5d399, #cfa858);

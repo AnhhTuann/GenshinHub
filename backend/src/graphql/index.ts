@@ -26,6 +26,9 @@ import { backupMutations } from './modules/backup/backup.mutations';
 import { enkaTypeDefs } from './modules/enka/enka.schema';
 import { enkaResolvers } from './modules/enka/enka.resolvers';
 
+import { userSchema } from './modules/user/user.schema';
+import { userResolvers } from './modules/user/user.resolvers';
+
 // Combine all typeDefs
 export const typeDefs = mergeTypeDefs([
   `scalar JSON`, // Base types
@@ -36,6 +39,7 @@ export const typeDefs = mergeTypeDefs([
   tierRankTypeDefs,
   backupTypeDefs,
   enkaTypeDefs,
+  userSchema,
 ]);
 
 // Combine all resolvers
@@ -53,4 +57,6 @@ export const resolvers = mergeResolvers([
   backupResolvers,
   backupMutations,
   enkaResolvers,
+  userResolvers,
 ]);
+

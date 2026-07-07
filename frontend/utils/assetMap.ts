@@ -15,8 +15,14 @@ const charIdToFolder = (charId: string): string => {
  * Lấy đường dẫn ảnh Avatar của Nhân vật
  * Cấu trúc folder: /assets/characters/{CharName}/avatar.webp
  */
-export const getCharacterAvatar = (charId: string) => {
+export const getCharacterAvatar = (charId: string, userGender?: 'male' | 'female') => {
   if (!charId) return '/assets/fallback-icon.webp';
+  
+  if (charId.startsWith('traveler')) {
+    const folder = userGender === 'female' ? 'PlayerGirl' : 'PlayerBoy';
+    return `/assets/characters/${folder}/avatar.webp`;
+  }
+  
   return `/assets/characters/${charIdToFolder(charId)}/avatar.webp`;
 };
 
@@ -24,8 +30,14 @@ export const getCharacterAvatar = (charId: string) => {
  * Lấy đường dẫn ảnh Splash Art của Nhân vật
  * Cấu trúc folder: /assets/characters/{CharName}/splash.webp
  */
-export const getCharacterSplash = (charId: string) => {
+export const getCharacterSplash = (charId: string, userGender?: 'male' | 'female') => {
   if (!charId) return '/assets/fallback-icon.webp';
+
+  if (charId.startsWith('traveler')) {
+    const folder = userGender === 'female' ? 'PlayerGirl' : 'PlayerBoy';
+    return `/assets/characters/${folder}/splash.webp`;
+  }
+
   return `/assets/characters/${charIdToFolder(charId)}/splash.webp`;
 };
 

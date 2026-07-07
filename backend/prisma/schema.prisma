@@ -174,3 +174,48 @@ model TierRank {
   order     Int      @default(0)
   colorBase String   @default("amber") // e.g. amber, red, blue, emerald, gray, orange, purple
 }
+
+// --- User Authentication ---
+model User {
+  id          String   @id @default(uuid())
+  username    String   @unique
+  email       String   @unique
+  password    String   // bcrypt hashed
+  gender      String   // "male" | "female"
+  displayName String?
+  avatarUrl   String?
+  bio         String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  favorites   UserFavorite[]
+  wishlist    UserWishlist[]
+
+  @@index([email])
+  @@index([username])
+}
+
+model UserFavorite {
+  id          String   @id @default(uuid())
+  userId      String
+  characterId String
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, characterId])
+  @@index([userId])
+}
+
+model UserWishlist {
+  id          String   @id @default(uuid())
+  userId      String
+  characterId String
+  note        String?
+  priority    Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}

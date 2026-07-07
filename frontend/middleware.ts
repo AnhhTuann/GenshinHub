@@ -34,7 +34,31 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // 2. Run Internationalization Middleware
+  // 2. User Profile Authentication Check
+  const isProfileRoute = /^\/(vi|en)\/profile(\/.*)?$/.test(pathname);
+
+  if (isProfileRoute) {
+    const token = request.cookies.get('user_token')?.value;
+    const locale = pathname.startsWith('/en') ? 'en' : 'vi';
+    
+    if (!token) {
+      return NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));
+    }
+    
+    try {
+      const USER_SECRET = new TextEncoder().encode(
+        process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod'
+      );
+      await jwtVerify(token, USER_SECRET);
+      // Auth passed
+    } catch {
+      const response = NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));
+      response.cookies.delete('user_token');
+      return response;
+    }
+  }
+
+  // 3. Run Internationalization Middleware
   // This handles redirecting `/` to `/en` or `/vi` automatically!
   return intlMiddleware(request);
 }

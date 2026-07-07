@@ -3,6 +3,7 @@ import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 import { MobileMenu } from './navbar/MobileMenu';
+import { UserNav } from './navbar/UserNav';
 
 export default function Navbar() {
   const pathname   = usePathname();
@@ -158,6 +159,9 @@ export default function Navbar() {
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button>
+
+            {/* Auth Component */}
+            <UserNav />
 
             {/* Language switch */}
             <div

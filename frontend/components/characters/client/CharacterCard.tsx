@@ -7,6 +7,8 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
+import { useUser } from '@/context/UserContext';
+import { getCharacterAvatar, getCharacterSplash } from '@/utils/assetMap';
 
 // Lazy load the overlay — only loads JS when first triggered
 const SplashArtOverlay = dynamic(() => import('@/components/ui/SplashArtOverlay'), { ssr: false });
@@ -35,6 +37,12 @@ const ELEMENT_RARITY_BG: Record<string, { border5: string; border4: string; bg5:
 export default function CharacterCard({ character }: { character: CharacterData }) {
   const locale = useLocale();
   const router = useRouter();
+  
+  // Try to use UserContext, default to null if outside provider (e.g., some edge cases)
+  let userContext = null;
+  try { userContext = useUser(); } catch(e) {}
+  const user = userContext?.user;
+
   const is5Star = character.rarity === 5;
   const name = locale === 'en' ? character.nameEn : (character.nameVi || character.nameEn);
   const el = character.element;
@@ -48,11 +56,16 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const cardRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
 
+  // Override avatar and splash for traveler based on user gender
+  const isTraveler = character.id.startsWith('traveler');
+  const displayAvatarUrl = isTraveler ? getCharacterAvatar(character.id, user?.gender) : character.avatarUrl;
+  const displaySplashUrl = isTraveler ? getCharacterSplash(character.id, user?.gender) : character.splashArtUrl;
+
   /* ── Pre-fetch splash art image when card enters viewport ──
      This ensures the image is in browser cache before user hovers */
   useEffect(() => {
     const el = cardRef.current;
-    if (!el || !character.splashArtUrl) return;
+    if (!el || !displaySplashUrl) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -61,7 +74,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           const link = document.createElement('link');
           link.rel = 'prefetch';
           link.as = 'image';
-          link.href = character.splashArtUrl;
+          link.href = displaySplashUrl;
           document.head.appendChild(link);
           observer.disconnect();
         }
@@ -70,7 +83,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, [character.splashArtUrl]);
+  }, [displaySplashUrl]);
 
   /* ── Hover intent timer — 400ms hold to open overlay ── */
   const handleMouseEnter = useCallback(() => {
@@ -137,7 +150,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           {/* ── Avatar image ── */}
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.08]">
             <FallbackImage
-              src={character.avatarUrl || '/assets/characters/avatars/UI_AvatarIcon_PlayerGirl.webp'}
+              src={displayAvatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
               alt={name}
               fill
               sizes="(max-width: 640px) 33vw, (max-width: 1024px) 16vw, 160px"
@@ -235,8 +248,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
             nameVi: character.nameVi,
             element: character.element,
             rarity: character.rarity,
-            splashArtUrl: character.splashArtUrl || character.avatarUrl || '',
-            avatarUrl: character.avatarUrl,
+            splashArtUrl: displaySplashUrl || displayAvatarUrl || '',
+            avatarUrl: displayAvatarUrl,
             weapon: character.weapon,
             role: character.role,
             tier: character.tier,

@@ -124,16 +124,37 @@ async function startServer() {
   
   app.use('/graphql', expressMiddleware(server, {
     context: async ({ req }) => {
+      // Admin auth
       const adminKey = req.headers['x-admin-key'];
       const isAdmin = !!process.env.ADMIN_PASSWORD && adminKey === process.env.ADMIN_PASSWORD;
       if (!process.env.ADMIN_PASSWORD) {
         console.warn("GraphQL admin access denied: ADMIN_PASSWORD not configured");
       }
+
+      // User auth
+      let userId: string | undefined;
+      let userGender: string | undefined;
+      const authHeader = req.headers.authorization;
+      if (authHeader && authHeader.startsWith('Bearer ')) {
+        const token = authHeader.substring(7);
+        try {
+          const jwt = require('jsonwebtoken');
+          const USER_JWT_SECRET = process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod';
+          const decoded = jwt.verify(token, USER_JWT_SECRET) as any;
+          userId = decoded.id;
+          userGender = decoded.gender;
+        } catch (err) {
+          console.warn("Invalid user token", (err as Error).message);
+        }
+      }
+
       return { 
         prisma,
         dataloaders: createLoaders(prisma),
         user: { isAdmin },
-        isAdmin
+        isAdmin,
+        userId,
+        userGender
       };
     },
   }));

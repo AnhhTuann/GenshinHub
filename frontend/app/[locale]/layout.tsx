@@ -8,6 +8,7 @@ import {getMessages, setRequestLocale} from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
 import CommandPalette from '@/components/shared/CommandPalette';
 import { fetchGraphQL } from '@/lib/graphql';
+import { UserProvider } from '@/context/UserContext';
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -138,52 +139,54 @@ export default async function RootLayout({ children, params }: { children: React
       </head>
       <body className={`${inter.variable} ${outfit.variable} ${cinzel.variable} ${jetbrainsMono.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Toaster 
-            position="bottom-center"
-            toastOptions={{
-              className: 'bg-[#0a0a0f]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
-              style: {
-                background: 'rgba(10, 10, 15, 0.8)',
-                backdropFilter: 'blur(12px)',
-                color: '#fff',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '16px',
-                padding: '12px 16px',
-                fontSize: '14px',
-                fontWeight: 600,
-              },
-              success: {
-                iconTheme: { primary: '#10b981', secondary: '#fff' },
-                style: { borderColor: 'rgba(16, 185, 129, 0.3)' }
-              },
-              error: {
-                iconTheme: { primary: '#ef4444', secondary: '#fff' },
-                style: { borderColor: 'rgba(239, 68, 68, 0.3)' }
-              }
-            }}
-          />
-          <CommandPalette items={searchItems} />
-          <Navbar />
-          <div className="min-h-screen overflow-x-hidden">{children}</div>
-          <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 opacity-40" viewBox="0 0 100 100" fill="none">
-                  <defs>
-                    <linearGradient id="footer-logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"   stopColor="#50e4ff" />
-                      <stop offset="50%"  stopColor="#c084fc" />
-                      <stop offset="100%" stopColor="#ffb300" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M50 0 C50 35,65 50,100 50 C65 50,50 65,50 100 C50 65,35 50,0 50 C35 50,50 35,50 0 Z" fill="url(#footer-logo-g)" />
-                </svg>
-                <span className="text-white/20 font-black text-xs tracking-widest uppercase">GenshinHub</span>
+          <UserProvider>
+            <Toaster 
+              position="bottom-center"
+              toastOptions={{
+                className: 'bg-[#0a0a0f]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
+                style: {
+                  background: 'rgba(10, 10, 15, 0.8)',
+                  backdropFilter: 'blur(12px)',
+                  color: '#fff',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '16px',
+                  padding: '12px 16px',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                },
+                success: {
+                  iconTheme: { primary: '#10b981', secondary: '#fff' },
+                  style: { borderColor: 'rgba(16, 185, 129, 0.3)' }
+                },
+                error: {
+                  iconTheme: { primary: '#ef4444', secondary: '#fff' },
+                  style: { borderColor: 'rgba(239, 68, 68, 0.3)' }
+                }
+              }}
+            />
+            <CommandPalette items={searchItems} />
+            <Navbar />
+            <div className="min-h-screen overflow-x-hidden">{children}</div>
+            <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">
+              <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 opacity-40" viewBox="0 0 100 100" fill="none">
+                    <defs>
+                      <linearGradient id="footer-logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%"   stopColor="#50e4ff" />
+                        <stop offset="50%"  stopColor="#c084fc" />
+                        <stop offset="100%" stopColor="#ffb300" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M50 0 C50 35,65 50,100 50 C65 50,50 65,50 100 C50 65,35 50,0 50 C35 50,50 35,50 0 Z" fill="url(#footer-logo-g)" />
+                  </svg>
+                  <span className="text-white/20 font-black text-xs tracking-widest uppercase">GenshinHub</span>
+                </div>
+                <p className="text-white/15 text-[11px] font-semibold">© 2026 GenshinHub. All rights reserved.</p>
               </div>
-              <p className="text-white/15 text-[11px] font-semibold">© 2026 GenshinHub. All rights reserved.</p>
-            </div>
-          </footer>
-          <AdminModeToggle />
+            </footer>
+            <AdminModeToggle />
+          </UserProvider>
         </NextIntlClientProvider>
       </body>
     </html>

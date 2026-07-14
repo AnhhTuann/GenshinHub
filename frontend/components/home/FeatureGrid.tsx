@@ -16,40 +16,30 @@ interface Feature {
 export default function FeatureGrid({ features }: { features: Feature[] }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-      {features.map((card) => (
-        <FeatureCard key={card.href} card={card} />
+      {features.map((card, i) => (
+        <FeatureCard key={card.href} card={card} index={i} />
       ))}
     </div>
   );
 }
 
-function FeatureCard({ card }: { card: Feature }) {
+function FeatureCard({ card, index }: { card: Feature; index: number }) {
   const overlayRef = useRef<HTMLDivElement>(null);
-  
+
   // 3D Tilt Setup
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
   const mouseXSpring = useSpring(x, { stiffness: 300, damping: 20 });
   const mouseYSpring = useSpring(y, { stiffness: 300, damping: 20 });
-  
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
-  
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    
-    x.set(xPct);
-    y.set(yPct);
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
   };
-  
+
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
@@ -60,15 +50,15 @@ function FeatureCard({ card }: { card: Feature }) {
     if (overlayRef.current) overlayRef.current.style.opacity = '1';
   };
 
-  // Mouse Glow Setup
   const glowRef = useMouseGlow<HTMLAnchorElement>();
 
   return (
     <motion.div
-      style={{
-        perspective: 1000,
-        transformStyle: "preserve-3d"
-      }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
+      style={{ perspective: 1000, transformStyle: "preserve-3d" }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
@@ -77,37 +67,56 @@ function FeatureCard({ card }: { card: Feature }) {
         <Link
           href={card.href}
           ref={glowRef as any}
-          className="group relative rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 overflow-hidden mouse-glow-card"
+          className="group relative rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 overflow-hidden mouse-glow-card block"
           style={{
-            background: card.bg,
-            border: `1px solid ${card.color}22`,
+            background: `linear-gradient(145deg, ${card.color}0d, rgba(8,8,16,0.95))`,
+            border: `1px solid ${card.color}25`,
           }}
         >
-          {/* Hover Top glow */}
+          {/* Hover top glow */}
           <div
             className="absolute inset-0 pointer-events-none rounded-2xl transition-opacity duration-300 opacity-0"
-            style={{ background: `radial-gradient(ellipse at 50% 0%, ${card.color}20 0%, transparent 70%)` }}
+            style={{ background: `radial-gradient(ellipse at 50% 0%, ${card.color}28 0%, transparent 65%)` }}
             ref={overlayRef}
           />
           {/* Hover border overlay */}
           <div
             className="absolute inset-0 rounded-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none"
-            style={{ boxShadow: `inset 0 0 0 1px ${card.color}50` }}
+            style={{ boxShadow: `inset 0 0 0 1.5px ${card.color}55` }}
+          />
+          {/* Bottom gradient shine */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ background: `linear-gradient(90deg, transparent, ${card.color}50, transparent)` }}
           />
 
-          <div className="text-3xl leading-none relative z-10">{card.icon}</div>
+          {/* Icon — larger and with glow background */}
+          <div
+            className="relative z-10 w-11 h-11 rounded-xl flex items-center justify-center text-2xl leading-none transition-all duration-300 group-hover:scale-110"
+            style={{
+              background: `${card.color}18`,
+              border: `1px solid ${card.color}30`,
+              boxShadow: `0 0 12px ${card.color}10`,
+            }}
+          >
+            {card.icon}
+          </div>
 
           <div className="relative z-10">
-            <div className="font-black text-sm text-white/90 uppercase tracking-wide group-hover:text-white transition-colors">
+            <div
+              className="font-black text-sm uppercase tracking-wide mb-0.5 transition-colors duration-200"
+              style={{ color: 'rgba(255,255,255,0.9)' }}
+            >
               {card.label}
             </div>
-            <div className="text-[10px] text-white/35 font-medium mt-0.5 leading-snug group-hover:text-white/55 transition-colors">
+            <div className="text-[10px] text-white/35 font-medium leading-snug group-hover:text-white/55 transition-colors duration-200">
               {card.desc}
             </div>
           </div>
 
+          {/* Arrow */}
           <svg
-            className="absolute bottom-3.5 right-3.5 w-3.5 h-3.5 opacity-20 group-hover:opacity-60 group-hover:translate-x-0.5 transition-all duration-200 z-10"
+            className="absolute bottom-3.5 right-3.5 w-3.5 h-3.5 opacity-20 group-hover:opacity-70 group-hover:translate-x-0.5 transition-all duration-200 z-10"
             fill="none" stroke="currentColor" viewBox="0 0 24 24"
             style={{ color: card.color }}
           >

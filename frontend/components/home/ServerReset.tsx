@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 
 const SERVERS = [
-  { label: 'Asia', offset: 8, flag: '🌏' },
-  { label: 'Europe', offset: 1, flag: '🌍' },
-  { label: 'America', offset: -5, flag: '🌎' },
+  { label: 'Asia',    offset: 8,  flag: '🌏', color: '#4fc3f7' },
+  { label: 'Europe',  offset: 1,  flag: '🌍', color: '#aed581' },
+  { label: 'America', offset: -5, flag: '🌎', color: '#ff6b4a' },
 ];
 
 export default function ServerReset() {
@@ -44,25 +44,51 @@ export default function ServerReset() {
     return () => clearInterval(timer);
   }, [activeIdx]);
 
+  const server = SERVERS[activeIdx];
+  const urgency = parseInt(timeLeft.h) < 2;
+
   return (
-    <div className="bg-[#0d0d14]/80 border border-white/[0.06] rounded-2xl overflow-hidden">
+    <div
+      className="rounded-2xl overflow-hidden relative"
+      style={{
+        background: 'linear-gradient(145deg, rgba(13,13,22,0.90), rgba(6,6,12,0.95))',
+        border: `1px solid ${server.color}22`,
+        boxShadow: `0 0 30px -10px ${server.color}15`,
+      }}
+    >
+      {/* Ambient top glow */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[1px]"
+        style={{ background: `linear-gradient(90deg, transparent, ${server.color}60, transparent)` }}
+      />
+
       {/* Header */}
-      <div className="flex items-center justify-between px-4 pt-4 pb-3">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_rgba(52,211,153,0.6)]" />
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Server Reset</span>
+      <div className="flex items-center justify-between px-5 pt-4 pb-3">
+        <div className="flex items-center gap-2.5">
+          <span
+            className="w-2 h-2 rounded-full animate-pulse"
+            style={{
+              background: urgency ? '#f87171' : '#34d399',
+              boxShadow: `0 0 8px ${urgency ? 'rgba(248,113,113,0.7)' : 'rgba(52,211,153,0.6)'}`,
+            }}
+          />
+          <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/50">
+            Server Reset
+          </span>
         </div>
+
         {/* Server tabs */}
-        <div className="flex gap-1 bg-black/30 p-0.5 rounded-lg border border-white/[0.05]">
+        <div className="flex gap-0.5 bg-black/30 p-0.5 rounded-xl border border-white/[0.05]">
           {SERVERS.map((s, i) => (
             <button
               key={s.label}
               onClick={() => setActiveIdx(i)}
-              className={`px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider transition-all duration-200 ${
-                activeIdx === i
-                  ? 'bg-white/10 text-white shadow-sm'
-                  : 'text-white/30 hover:text-white/60'
-              }`}
+              className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200"
+              style={{
+                background: activeIdx === i ? `${s.color}18` : 'transparent',
+                color: activeIdx === i ? s.color : 'rgba(255,255,255,0.3)',
+                border: activeIdx === i ? `1px solid ${s.color}35` : '1px solid transparent',
+              }}
             >
               {s.flag} {s.label}
             </button>
@@ -71,35 +97,65 @@ export default function ServerReset() {
       </div>
 
       {/* Countdown */}
-      <div className="px-4 pb-4">
-        <div className="flex items-center justify-center gap-2 mb-3">
+      <div className="px-5 pb-5">
+        <div className="flex items-center justify-center gap-3 mb-4">
           {[
             { val: timeLeft.h, label: 'HR' },
             { val: timeLeft.m, label: 'MIN' },
             { val: timeLeft.s, label: 'SEC' },
           ].map((block, i) => (
             <React.Fragment key={block.label}>
-              {i > 0 && <span className="text-white/20 font-black text-xl mb-3">:</span>}
+              {i > 0 && (
+                <span
+                  className="font-black text-xl mb-3 animate-pulse"
+                  style={{ color: `${server.color}60` }}
+                >
+                  :
+                </span>
+              )}
               <div className="flex flex-col items-center">
-                <div className="bg-black/40 border border-white/[0.07] rounded-xl px-3 py-2 min-w-[52px] text-center">
-                  <span className="text-2xl font-black text-white font-display tabular-nums">{block.val}</span>
+                <div
+                  className="rounded-xl px-3 py-2 min-w-[56px] text-center relative overflow-hidden"
+                  style={{
+                    background: `linear-gradient(135deg, rgba(0,0,0,0.5), ${server.color}08)`,
+                    border: `1px solid ${server.color}20`,
+                  }}
+                >
+                  {/* inner glow */}
+                  <div
+                    className="absolute inset-0 rounded-xl"
+                    style={{ background: `radial-gradient(ellipse at 50% 0%, ${server.color}12, transparent 60%)` }}
+                  />
+                  <span
+                    className="relative text-2xl font-black tabular-nums"
+                    style={{ color: urgency && block.label === 'HR' ? '#f87171' : server.color }}
+                  >
+                    {block.val}
+                  </span>
                 </div>
-                <span className="text-[8px] font-black text-white/20 uppercase tracking-widest mt-1">{block.label}</span>
+                <span className="text-[8px] font-black text-white/25 uppercase tracking-widest mt-1.5">{block.label}</span>
               </div>
             </React.Fragment>
           ))}
         </div>
 
         {/* Progress bar */}
-        <div className="h-1 bg-white/[0.04] rounded-full overflow-hidden">
+        <div className="h-1.5 bg-white/[0.04] rounded-full overflow-hidden">
           <div
-            className="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-emerald-500/60 to-emerald-400"
-            style={{ width: `${progress}%` }}
-          />
+            className="h-full rounded-full transition-all duration-1000 relative overflow-hidden"
+            style={{
+              width: `${progress}%`,
+              background: `linear-gradient(90deg, ${server.color}80, ${server.color})`,
+            }}
+          >
+            <div className="absolute inset-0 bg-white/20 animate-pulse rounded-full" />
+          </div>
         </div>
-        <div className="flex justify-between mt-1">
+        <div className="flex justify-between mt-1.5">
           <span className="text-[8px] text-white/20 font-bold">04:00 Reset</span>
-          <span className="text-[8px] text-white/20 font-bold">{progress.toFixed(0)}% of day elapsed</span>
+          <span className="text-[8px] font-bold" style={{ color: `${server.color}60` }}>
+            {progress.toFixed(0)}% elapsed
+          </span>
         </div>
       </div>
     </div>

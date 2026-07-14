@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
-import Image from 'next/image';
 import { getFarmingDataForDay, DailyDomain } from '@/data/dailyFarming';
 import { Link } from '@/i18n/routing';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -41,23 +40,23 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
   }, [selectedDay]);
 
   return (
-    <motion.div 
+    <motion.div
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      style={{ minHeight: '300px' }} // CLS protection
+      style={{ minHeight: '300px' }}
       className="flex flex-col gap-4 w-full"
     >
       {/* Section header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="w-[3px] h-5 rounded-full bg-yellow-400 shrink-0" />
-          <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40">Daily Farming</span>
+          <span className="w-[3px] h-5 rounded-full shrink-0" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+          <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">Daily Farming</span>
         </div>
 
         {/* Day selector pills */}
-        <div className="flex gap-1 bg-black/30 p-0.5 rounded-xl border border-white/[0.05]">
+        <div className="flex gap-0.5 bg-black/30 p-0.5 rounded-xl border border-white/[0.05]">
           {DAYS.map((day, idx) => {
             const isToday = idx === todayIdx;
             const isActive = idx === selectedDay;
@@ -65,15 +64,19 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
               <button
                 key={idx}
                 onClick={() => setSelectedDay(idx)}
-                className={`px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 relative motion-safe:active:scale-95 ${
-                  isActive
-                    ? 'bg-yellow-400/15 text-yellow-400 shadow-sm'
-                    : 'text-white/30 hover:text-white/60 hover:bg-white/[0.04]'
-                }`}
+                className="px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 relative motion-safe:active:scale-95"
+                style={{
+                  background: isActive ? 'rgba(200,168,75,0.15)' : 'transparent',
+                  color: isActive ? '#f0d080' : 'rgba(255,255,255,0.3)',
+                  border: isActive ? '1px solid rgba(200,168,75,0.3)' : '1px solid transparent',
+                }}
               >
                 {day.label}
                 {isToday && (
-                  <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-yellow-400" />
+                  <span
+                    className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full animate-pulse"
+                    style={{ background: '#c8a84b', boxShadow: '0 0 5px rgba(200,168,75,0.7)' }}
+                  />
                 )}
               </button>
             );
@@ -84,20 +87,42 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
       {/* Content */}
       {selectedDay === 0 ? (
         /* Sunday all-access */
-        <div className="flex flex-col items-center justify-center py-10 text-center bg-gradient-to-br from-yellow-400/5 to-transparent border border-yellow-400/10 rounded-2xl">
-          <span className="text-4xl mb-3">✨</span>
-          <p className="text-white font-black text-lg text-gradient-gold mb-1">Sunday All-Access</p>
+        <div
+          className="flex flex-col items-center justify-center py-10 text-center rounded-2xl relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, rgba(200,168,75,0.07), rgba(240,208,128,0.04))',
+            border: '1px solid rgba(200,168,75,0.18)',
+          }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse at 50% 30%, rgba(200,168,75,0.08) 0%, transparent 60%)' }}
+          />
+          <span className="text-5xl mb-4 animate-bounce">✨</span>
+          <p className="text-white font-black text-lg text-gradient-gold mb-1.5">Sunday All-Access</p>
           <p className="text-white/50 text-sm max-w-xs">All domains are open today. Farm any material you need!</p>
+          <div className="flex gap-2 mt-4">
+            {['🔥','💧','🌿','⚡','🌀','❄️','🪨'].map((el, i) => (
+              <span key={i} className="text-lg animate-bounce" style={{ animationDelay: `${i * 0.1}s` }}>{el}</span>
+            ))}
+          </div>
         </div>
       ) : data ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3">
           {data.map((domain, idx) => (
             <div
               key={idx}
-              className="bg-[#0d0d14]/80 border border-white/[0.06] rounded-xl overflow-hidden hover:border-white/[0.10] transition-colors"
+              className="rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 group"
+              style={{
+                background: 'linear-gradient(145deg, rgba(13,13,22,0.85), rgba(6,6,12,0.95))',
+                border: '1px solid rgba(255,255,255,0.06)',
+              }}
             >
               {/* Domain header */}
-              <div className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.04] bg-black/20">
+              <div
+                className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.04] group-hover:border-white/[0.07] transition-colors"
+                style={{ background: 'rgba(0,0,0,0.25)' }}
+              >
                 <div className="relative w-7 h-7 shrink-0">
                   <FallbackImage src={domain.itemIcon} alt="domain item" fill className="object-contain drop-shadow-md" unoptimized />
                 </div>

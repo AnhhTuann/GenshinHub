@@ -59,19 +59,24 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       className="relative min-h-screen text-white overflow-x-hidden"
       style={{ background: 'var(--bg-void, #04040a)' }}
     >
-      {/* ── Aurora ambient glows (pure CSS, no JS needed) ── */}
+      {/* ── Aurora ambient glows ── */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
-          className="absolute -top-[20%] -left-[10%] w-[800px] h-[700px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.07) 0%, transparent 65%)', filter: 'blur(120px)' }}
+          className="absolute -top-[20%] -left-[10%] w-[900px] h-[800px] rounded-full"
+          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.09) 0%, transparent 65%)', filter: 'blur(100px)' }}
         />
         <div
           className="absolute top-[30%] -right-[15%] w-[700px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.05) 0%, transparent 65%)', filter: 'blur(120px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.07) 0%, transparent 65%)', filter: 'blur(100px)' }}
         />
         <div
-          className="absolute -bottom-[10%] left-[25%] w-[600px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(79,195,247,0.04) 0%, transparent 65%)', filter: 'blur(100px)' }}
+          className="absolute -bottom-[10%] left-[25%] w-[700px] h-[600px] rounded-full"
+          style={{ background: 'radial-gradient(ellipse, rgba(79,195,247,0.06) 0%, transparent 65%)', filter: 'blur(90px)' }}
+        />
+        {/* Extra vivid accent */}
+        <div
+          className="absolute top-[55%] left-[10%] w-[400px] h-[400px] rounded-full"
+          style={{ background: 'radial-gradient(ellipse, rgba(174,213,129,0.04) 0%, transparent 65%)', filter: 'blur(80px)' }}
         />
       </div>
 
@@ -89,12 +94,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8"
-            style={{ background: 'rgba(200,168,75,0.10)', border: '1px solid rgba(200,168,75,0.22)' }}
+            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 relative overflow-hidden"
+            style={{ background: 'rgba(200,168,75,0.10)', border: '1px solid rgba(200,168,75,0.25)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#c8a84b' }} />
-            <span className="text-[10px] font-black uppercase tracking-[0.25em]" style={{ color: '#c8a84b' }}>
-              {locale === 'en' ? 'Your Ultimate Teyvat Guide' : 'Cẩm Nang Teyvat Của Bạn'}
+            {/* Shimmer shine */}
+            <div
+              className="absolute inset-0 -translate-x-full animate-[shimmer_3s_linear_infinite] pointer-events-none"
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.15), transparent)', width: '60%' }}
+            />
+            <span className="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style={{ background: '#c8a84b', boxShadow: '0 0 8px rgba(200,168,75,0.6)' }} />
+            <span className="text-[10px] font-black uppercase tracking-[0.25em] relative z-10" style={{ color: '#e8c46b' }}>
+              ✨ {locale === 'en' ? 'Your Ultimate Teyvat Guide' : 'Cẩm Nang Teyvat Của Bạn'}
             </span>
           </div>
 
@@ -145,26 +155,35 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         ══════════════════════════════════════ */}
         <section className="mb-14">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {STATS.map((s) => (
+            {STATS.map((s, i) => (
               <div
                 key={s.label}
-                className="rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:-translate-y-0.5"
+                className="rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden"
                 style={{
-                  background: 'rgba(13,13,20,0.70)',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  backdropFilter: 'blur(12px)',
+                  background: 'linear-gradient(145deg, rgba(13,13,22,0.85), rgba(6,6,12,0.95))',
+                  border: `1px solid ${s.color}20`,
+                  boxShadow: `0 4px 20px rgba(0,0,0,0.3)`,
                 }}
               >
+                {/* Hover glow */}
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
-                  style={{ background: `${s.color}18`, border: `1px solid ${s.color}30` }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl"
+                  style={{ background: `radial-gradient(ellipse at 30% 50%, ${s.color}0d 0%, transparent 70%)` }}
+                />
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{
+                    background: `${s.color}18`,
+                    border: `1px solid ${s.color}35`,
+                    boxShadow: `0 0 14px ${s.color}18`,
+                  }}
                 >
                   {s.icon}
                 </div>
                 <div>
                   <div
                     className="text-2xl font-black leading-none"
-                    style={{ color: s.color, fontFamily: 'var(--font-mono, monospace)' }}
+                    style={{ color: s.color, fontFamily: 'var(--font-mono, monospace)', textShadow: `0 0 20px ${s.color}40` }}
                   >
                     {s.value}
                   </div>

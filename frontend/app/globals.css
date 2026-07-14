@@ -472,6 +472,56 @@ select option {
 .stagger-7  { animation-delay: 0.47s; }
 .stagger-8  { animation-delay: 0.54s; }
 
+/* ── Extra animations ── */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(2deg); }
+}
+@keyframes float-up {
+  0%   { transform: translateY(0) scale(1);    opacity: 1; }
+  100% { transform: translateY(-20px) scale(0.8); opacity: 0; }
+}
+@keyframes shimmer-badge {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+.animate-wiggle        { animation: wiggle      0.6s ease-in-out infinite; }
+.animate-shimmer-badge { animation: shimmer-badge 2.5s linear infinite; }
+
+/* ── Hide scrollbar (keep functionality) ── */
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* ── Section label — shared style ── */
+.section-label-accent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label-accent::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.25rem;
+  border-radius: 99px;
+  background: linear-gradient(to bottom, var(--theme-light), var(--theme-main));
+  flex-shrink: 0;
+}
+
+/* ── Vivid gradient backgrounds (for cards, banners) ── */
+.gradient-card-gold {
+  background: linear-gradient(145deg, rgba(200,168,75,0.08) 0%, rgba(13,13,22,0.92) 100%);
+  border: 1px solid rgba(200,168,75,0.18);
+}
+.gradient-card-purple {
+  background: linear-gradient(145deg, rgba(167,85,247,0.08) 0%, rgba(13,13,22,0.92) 100%);
+  border: 1px solid rgba(167,85,247,0.18);
+}
+.gradient-card-blue {
+  background: linear-gradient(145deg, rgba(79,195,247,0.08) 0%, rgba(13,13,22,0.92) 100%);
+  border: 1px solid rgba(79,195,247,0.18);
+}
+
 
 /* ── Element color + glow text classes ── */
 .element-pyro    { color: var(--pyro);    text-shadow: 0 0 16px rgba(255,107,74,0.50); }

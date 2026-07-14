@@ -132,6 +132,7 @@ export default function CharactersScreen() {
 
       {/* Element Filter */}
       <View style={styles.filterRow}>
+        {/* @ts-expect-error - FlashList types mismatch in React 19 */}
         <FlashList
           data={ELEMENTS}
           horizontal
@@ -168,6 +169,7 @@ export default function CharactersScreen() {
         />
       ) : (
         <View style={styles.listWrap}>
+          {/* @ts-expect-error - FlashList types mismatch in React 19 */}
           <FlashList
             data={flattenedData}
             renderItem={renderItem}

@@ -92,8 +92,14 @@ export default function MaterialsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[var(--bg-base)] text-white pt-24 pb-20 px-4 sm:px-6">
-      <div className="max-w-[1400px] mx-auto">
+    <main className="min-h-screen pt-24 pb-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: 'var(--bg-void, #04040a)' }}>
+      {/* Ambient glow blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full" />
+        <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-purple-500/5 blur-[100px] rounded-full" />
+      </div>
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
             <h1 className="text-4xl font-black font-display uppercase tracking-wider text-gradient-gold">
@@ -108,7 +114,15 @@ export default function MaterialsPage() {
               placeholder={t('searchPlaceholder')} 
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="bg-[#050508]/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 w-full md:w-64"
+              className="w-full md:w-64 bg-[#0d0d14]/80 border border-white/[0.08] text-white/90 px-4 py-3 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              onFocus={e => {
+                e.target.style.borderColor = 'rgba(200,168,75,0.4)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.1)';
+              }}
+              onBlur={e => {
+                e.target.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.target.style.boxShadow = 'none';
+              }}
             />
             {isAdmin && (
               <button 
@@ -128,7 +142,14 @@ export default function MaterialsPage() {
             <div 
               key={mat.id}
               onClick={() => isAdmin && openEdit(mat)}
-              className={`relative bg-[#0d0d14]/70 border border-white/5 rounded-2xl p-4 flex flex-col items-center text-center group transition-all ${isAdmin ? 'cursor-pointer hover:border-amber-500/50 hover:bg-amber-500/5' : ''}`}
+              className={`relative bg-[#0d0d14]/70 border border-white/5 rounded-2xl p-4 flex flex-col items-center text-center group transition-all duration-300 ${
+                isAdmin ? 'cursor-pointer hover:bg-amber-500/5' : ''
+              } ${
+                mat.rarity === 5 ? 'hover:border-amber-500/50 hover:shadow-[0_0_15px_rgba(245,158,11,0.15)]' :
+                mat.rarity === 4 ? 'hover:border-purple-500/50 hover:shadow-[0_0_15px_rgba(168,85,247,0.15)]' :
+                mat.rarity === 3 ? 'hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]' :
+                mat.rarity === 2 ? 'hover:border-green-500/50 hover:shadow-[0_0_15px_rgba(34,197,94,0.15)]' : 'hover:border-white/20'
+              }`}
             >
               {isAdmin && (
                 <button 
@@ -139,11 +160,11 @@ export default function MaterialsPage() {
                 </button>
               )}
               
-              <div className={`relative w-16 h-16 rounded-xl bg-gradient-to-br from-white/10 to-transparent p-2 mb-3 border ${
-                mat.rarity === 5 ? 'border-yellow-500/30' :
-                mat.rarity === 4 ? 'border-purple-500/30' :
-                mat.rarity === 3 ? 'border-blue-500/30' :
-                mat.rarity === 2 ? 'border-green-500/30' : 'border-white/10'
+              <div className={`relative w-16 h-16 rounded-xl bg-gradient-to-br from-white/10 to-transparent p-2 mb-3 border transition-colors ${
+                mat.rarity === 5 ? 'border-amber-500/30 group-hover:border-amber-500/60 group-hover:bg-amber-500/10' :
+                mat.rarity === 4 ? 'border-purple-500/30 group-hover:border-purple-500/60 group-hover:bg-purple-500/10' :
+                mat.rarity === 3 ? 'border-blue-500/30 group-hover:border-blue-500/60 group-hover:bg-blue-500/10' :
+                mat.rarity === 2 ? 'border-green-500/30 group-hover:border-green-500/60 group-hover:bg-green-500/10' : 'border-white/10'
               }`}>
                 {mat.iconUrl ? (
                   <FallbackImage src={getValidIconUrl(mat.iconUrl)} alt={displayName} fill className="object-contain drop-shadow-md" unoptimized />

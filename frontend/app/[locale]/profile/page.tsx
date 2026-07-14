@@ -56,8 +56,14 @@ export default function ProfilePage() {
   const avatarUrl = getCharacterAvatar(travelerCharId, user.gender);
 
   return (
-    <main className="min-h-[calc(100vh-64px)] p-4 sm:p-8">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-[calc(100vh-64px)] p-4 sm:p-8 relative overflow-hidden" style={{ background: 'var(--bg-void, #04040a)' }}>
+      {/* Ambient glow blobs */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-[0%] left-[20%] w-[500px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full" />
+        <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-purple-500/5 blur-[100px] rounded-full" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Cover */}
         <div className="bg-[#0a0a0f]/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl mb-8">
           <div className="h-48 relative bg-gradient-to-r from-[#1a1a24] to-[#2a2a35] border-b border-white/10">

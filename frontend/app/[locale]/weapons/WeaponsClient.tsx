@@ -106,7 +106,13 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#07070a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#07070a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30 relative overflow-hidden">
+      {/* Ambient glow blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[10%] left-[10%] w-[600px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full" />
+        <div className="absolute bottom-[20%] right-[5%] w-[400px] h-[400px] bg-sky-500/5 blur-[100px] rounded-full" />
+      </div>
+
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
         <Link className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 text-xs font-black uppercase tracking-wider w-fit mb-6" href="/">
@@ -141,7 +147,15 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   placeholder="Weapon name..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  className="w-full bg-[#050508] border border-gray-950 rounded-xl pl-9 pr-3 py-2 text-xs text-gray-200 placeholder-gray-650 focus:outline-none focus:border-yellow-500/40 focus:ring-1 focus:ring-yellow-500/20 transition-all font-medium"
+                  className="w-full bg-[#0d0d14]/80 border border-white/[0.08] text-white/90 pl-9 pr-3 py-2.5 rounded-xl outline-none text-xs font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+                  onFocus={e => {
+                    e.target.style.borderColor = 'rgba(200,168,75,0.4)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.1)';
+                  }}
+                  onBlur={e => {
+                    e.target.style.borderColor = 'rgba(255,255,255,0.08)';
+                    e.target.style.boxShadow = 'none';
+                  }}
                 />
               </div>
             </div>
@@ -154,10 +168,10 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   <button
                     key={type}
                     onClick={() => setSelectedType(type)}
-                    className={`text-left px-3 py-2 rounded-xl text-xs font-bold transition-all border ${
+                    className={`text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all border ${
                       selectedType === type
-                        ? 'bg-yellow-500/10 text-yellow-450 border-yellow-500/20'
-                        : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent'
+                        ? 'bg-amber-500/15 text-amber-300 border-amber-500/35 shadow-[0_0_12px_rgba(245,158,11,0.15)]'
+                        : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border-white/5'
                     }`}
                   >
                     {type !== 'All' && <span className="mr-2 select-none">{WEAPON_TYPE_ICONS[type]}</span>}

@@ -47,8 +47,14 @@ export default function ShowcaseClient() {
   return (
     <div className="min-h-screen bg-[#06060a] text-white font-sans">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-5%] left-[25%] w-[500px] h-[500px] bg-amber-500/[0.04] rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[15%]  w-[400px] h-[400px] bg-purple-500/[0.03] rounded-full blur-[100px]" />
+        <div
+          className="absolute -top-[15%] left-[10%] w-[700px] h-[600px] rounded-full"
+          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 70%)', filter: 'blur(130px)' }}
+        />
+        <div
+          className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full"
+          style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.04) 0%, transparent 70%)', filter: 'blur(110px)' }}
+        />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
@@ -74,18 +80,37 @@ export default function ShowcaseClient() {
           </Link>
         </div>
 
-        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 mb-8">
-          <input
-            type="text"
-            value={uid}
-            onChange={(e) => setUid(e.target.value)}
-            placeholder={t('placeholder')}
-            className="flex-1 bg-[#0d0d14]/70 text-white/90 px-5 py-4 rounded-xl border border-white/[0.06] focus:border-yellow-400/30 focus:ring-1 focus:ring-yellow-400/10 outline-none text-sm transition-all placeholder:text-white/20 backdrop-blur-md"
-          />
+        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 mb-10">
+          <div className="relative flex-1 group">
+            <input
+              type="text"
+              value={uid}
+              onChange={(e) => setUid(e.target.value)}
+              placeholder={t('placeholder')}
+              className="w-full bg-[#0d0d14]/80 text-white/90 px-6 py-4 rounded-2xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              style={{
+                border: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+              }}
+              onFocus={e => {
+                e.target.style.borderColor = 'rgba(200,168,75,0.4)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.1), 0 4px 20px rgba(0,0,0,0.2)';
+              }}
+              onBlur={e => {
+                e.target.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+              }}
+            />
+          </div>
           <button
             type="submit"
             disabled={loading}
-            className="btn-primary px-8 py-4 text-sm flex items-center justify-center gap-2 rounded-xl shrink-0"
+            className="px-8 py-4 text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 rounded-2xl shrink-0 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+            style={{
+              background: 'linear-gradient(135deg, #e8c46b, #c8a84b)',
+              color: '#000',
+              boxShadow: '0 8px 25px -5px rgba(200,168,75,0.3)',
+            }}
           >
             {loading ? (
               <>
@@ -96,7 +121,12 @@ export default function ShowcaseClient() {
                 {t('searching')}
               </>
             ) : (
-              t('fetchProfile')
+              <>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                {t('fetchProfile')}
+              </>
             )}
           </button>
         </form>
@@ -114,8 +144,8 @@ export default function ShowcaseClient() {
           <div className="bg-[#0d0d14]/60 border border-white/[0.06] rounded-2xl overflow-hidden animate-scale-in backdrop-blur-md shadow-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-5 p-6 border-b border-white/[0.05]">
               {showcase.avatarUrl ? (
-                <div className="relative w-20 h-20 rounded-full border-2 border-amber-400/20 overflow-hidden bg-[#0d0d14] shrink-0 shadow-lg">
-                  <FallbackImage src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="80px" />
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0" style={{ background: '#0d0d14', border: '1px solid rgba(200,168,75,0.3)', boxShadow: '0 0 20px rgba(200,168,75,0.15)' }}>
+                  <FallbackImage src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="96px" />
                 </div>
               ) : (
                 <div className="w-20 h-20 rounded-full bg-[#0d0d14] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
@@ -153,13 +183,13 @@ export default function ShowcaseClient() {
                         <Link
                           key={charId}
                           href={`/characters/${mapped.id}`}
-                          className={`relative flex flex-col justify-end h-44 rounded-2xl border overflow-hidden group transition-all duration-300 ${
-                            is5
-                              ? 'border-amber-500/20 hover:border-amber-400/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.12)]'
-                              : 'border-purple-500/15 hover:border-purple-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.10)]'
-                          } bg-gradient-to-b ${is5 ? 'from-[#1a1100] to-[#0d0900]' : 'from-[#110a1e] to-[#08050f]'}`}
+                          className="relative flex flex-col justify-end h-48 rounded-2xl border overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                          style={{
+                            border: `1px solid ${is5 ? 'rgba(245,158,11,0.25)' : 'rgba(168,85,247,0.25)'}`,
+                            background: `linear-gradient(to top, ${is5 ? 'rgba(245,158,11,0.08)' : 'rgba(168,85,247,0.08)'} 0%, rgba(8,8,16,0.9) 100%)`,
+                          }}
                         >
-                          <div className="absolute inset-0 -z-10 group-hover:scale-[1.06] transition-transform duration-500">
+                          <div className="absolute inset-0 -z-10 group-hover:scale-[1.08] transition-transform duration-500">
                             <FallbackImage
                               src={`/assets/characters/UI_AvatarIcon_${mapped.icon}.webp`}
                               alt={mapped.name}
@@ -168,19 +198,22 @@ export default function ShowcaseClient() {
                               className="object-cover object-top opacity-90"
                             />
                           </div>
-                          <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/50 to-transparent -z-10" />
+                          <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/95 via-black/40 to-transparent -z-10" />
 
-                          <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                            <FallbackImage src={`/assets/elements/${mapped.element.toLowerCase()}.webp`} alt={mapped.element} width={14} height={14} className="object-contain" />
+                          <div
+                            className="absolute top-2 left-2 p-1 rounded-lg backdrop-blur-sm"
+                            style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)' }}
+                          >
+                            <FallbackImage src={`/assets/elements/${mapped.element.toLowerCase()}.webp`} alt={mapped.element} width={20} height={20} className="object-contain" />
                           </div>
 
-                          <div className="text-center pb-2 flex flex-col items-center bg-black/50 border-t border-white/[0.06] backdrop-blur-[2px]">
-                            <div className="flex gap-0.5 mb-0.5">
+                          <div className="text-center pb-3 flex flex-col items-center bg-black/40 backdrop-blur-[2px]">
+                            <div className="flex gap-0.5 mb-1 mt-1">
                               {Array(mapped.rarity).fill(0).map((_, i) => (
-                                <span key={i} className="text-[7px] text-yellow-400">★</span>
+                                <span key={i} className="text-[8px] text-yellow-400 drop-shadow-md">★</span>
                               ))}
                             </div>
-                            <span className={`text-[10px] font-bold truncate px-1.5 max-w-full ${EL_TEXT[mapped.element] ?? 'text-white/80'}`}>
+                            <span className={`text-[11px] font-bold truncate px-2 w-full ${EL_TEXT[mapped.element] ?? 'text-white/80'}`}>
                               {mapped.name}
                             </span>
                           </div>

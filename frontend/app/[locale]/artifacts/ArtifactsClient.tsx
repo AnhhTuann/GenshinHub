@@ -187,8 +187,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
       <div className="relative overflow-hidden">
         {/* Ambient glow blobs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-48 bg-amber-500/6 blur-[80px] rounded-full" />
-          <div className="absolute top-0 right-1/4 w-80 h-40 bg-purple-500/5 blur-[70px] rounded-full" />
+          <div className="absolute top-0 left-1/4 w-[600px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full" />
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[400px] bg-purple-500/5 blur-[100px] rounded-full" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-8 pb-8 relative z-10">
@@ -255,7 +255,15 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               placeholder="Search artifact sets…"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-[#0d0d14] border border-white/7 rounded-xl pl-10 pr-9 py-2 text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:border-amber-500/40 focus:ring-1 focus:ring-amber-500/15 transition-all duration-200 font-medium"
+              className="w-full bg-[#0d0d14]/80 border border-white/[0.08] text-white/90 pl-10 pr-9 py-2.5 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              onFocus={e => {
+                e.target.style.borderColor = 'rgba(200,168,75,0.4)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.1)';
+              }}
+              onBlur={e => {
+                e.target.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.target.style.boxShadow = 'none';
+              }}
             />
             {search && (
               <button

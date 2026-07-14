@@ -8,27 +8,65 @@ const getDefaultEndpoint = () => {
 };
 
 const GRAPHQL_ENDPOINT = process.env.EXPO_PUBLIC_GRAPHQL_URL || getDefaultEndpoint();
+const REQUEST_TIMEOUT_MS = 12000; // 12 seconds
+const MAX_RETRIES = 2;
 
-export async function fetchGraphQL(query: string, variables = {}) {
+/**
+ * Fetch with a configurable timeout to prevent infinite hangs.
+ */
+function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number): Promise<Response> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+  return fetch(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(timer));
+}
+
+/**
+ * GraphQL fetch with timeout and retry logic.
+ */
+export async function fetchGraphQL(query: string, variables = {}, retries = MAX_RETRIES): Promise<any> {
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-  
-  // Note: Admin auth can be added later using expo-secure-store or AsyncStorage
-  
-  const res = await fetch(GRAPHQL_ENDPOINT, { 
-    method: 'POST', 
-    headers, 
-    body: JSON.stringify({ query, variables })
-  });
-  const json = await res.json();
-  if (json.errors) {
-    console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
-    throw new Error('Lỗi fetch GraphQL: ' + json.errors[0].message);
+
+  const options: RequestInit = {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ query, variables }),
+  };
+
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetchWithTimeout(GRAPHQL_ENDPOINT, options, REQUEST_TIMEOUT_MS);
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      }
+
+      const json = await res.json();
+
+      if (json.errors) {
+        console.error('GraphQL Errors:', JSON.stringify(json.errors, null, 2));
+        throw new Error('Lỗi fetch GraphQL: ' + json.errors[0].message);
+      }
+      if (!json.data) {
+        console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
+        return {};
+      }
+
+      return json.data;
+    } catch (err: any) {
+      const isLastAttempt = attempt === retries;
+
+      if (err.name === 'AbortError') {
+        if (isLastAttempt) throw new Error('Kết nối bị timeout. Vui lòng kiểm tra kết nối mạng.');
+      } else if (isLastAttempt) {
+        throw err;
+      }
+
+      // Exponential backoff before retry
+      const delay = Math.pow(2, attempt) * 500;
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
   }
-  if (!json.data) {
-    console.error('GraphQL Missing Data Response:', JSON.stringify(json, null, 2));
-    return {};
-  }
-  return json.data;
 }
 
 export const GET_CHARACTERS = `query GetCharacters { characters { id nameEn nameVi element rarity avatarUrl splashArtUrl weapon region birthday tier role recommendedC tierNoteEn tierNoteVi } }`;

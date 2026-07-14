@@ -5,12 +5,11 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
+  RefreshControl,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Image } from 'expo-image';
 import {
-  Users,
   Sword,
   Shield,
   Box,
@@ -18,6 +17,9 @@ import {
   Sparkles,
   Star,
 } from 'lucide-react-native';
+import { useGraphQL } from '@/hooks/useGraphQL';
+import { GET_CHARACTERS } from '@/lib/graphql';
+import { SkeletonList } from '@/components/SkeletonLoader';
 
 const { width } = Dimensions.get('window');
 
@@ -62,6 +64,14 @@ const quickItems = [
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { data, loading, refetch } = useGraphQL<{ characters: any[] }>(
+    GET_CHARACTERS,
+    {},
+    { cache: true }
+  );
+
+  const totalChars = data?.characters?.length ?? 0;
+  const total5Star = data?.characters?.filter((c: any) => c.rarity === 5).length ?? 0;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -69,6 +79,14 @@ export default function HomeScreen() {
         style={styles.scroll}
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={loading}
+            onRefresh={refetch}
+            tintColor="#cfa858"
+            colors={['#cfa858']}
+          />
+        }
       >
         {/* Hero Header */}
         <View style={styles.hero}>
@@ -80,6 +98,28 @@ export default function HomeScreen() {
           <Text style={styles.heroTitle}>GenshinHub</Text>
           <Text style={styles.heroSub}>Your complete Teyvat companion</Text>
         </View>
+
+        {/* Stats Row */}
+        {loading ? (
+          <View style={styles.statsRow}>
+            {[0, 1].map(i => (
+              <View key={i} style={[styles.statCard, { flex: 1 }]}>
+                <View style={styles.statSkeleton} />
+              </View>
+            ))}
+          </View>
+        ) : totalChars > 0 ? (
+          <View style={styles.statsRow}>
+            <View style={styles.statCard}>
+              <Text style={styles.statValue}>{totalChars}</Text>
+              <Text style={styles.statLabel}>Characters</Text>
+            </View>
+            <View style={styles.statCard}>
+              <Text style={[styles.statValue, { color: '#ffd54f' }]}>{total5Star}</Text>
+              <Text style={styles.statLabel}>5★ Legends</Text>
+            </View>
+          </View>
+        ) : null}
 
         {/* Quick Access Grid */}
         <Text style={styles.sectionLabel}>Quick Access</Text>
@@ -117,7 +157,6 @@ export default function HomeScreen() {
 }
 
 const GOLD = '#cfa858';
-const GOLD_LIGHT = '#f5d399';
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#080810' },
@@ -160,6 +199,40 @@ const styles = StyleSheet.create({
     textShadowRadius: 20,
   },
   heroSub: { color: 'rgba(255,255,255,0.5)', fontSize: 14, marginTop: 6 },
+
+  statsRow: {
+    flexDirection: 'row',
+    gap: 10,
+    marginBottom: 20,
+  },
+  statCard: {
+    flex: 1,
+    backgroundColor: 'rgba(255,255,255,0.04)',
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.07)',
+    padding: 14,
+    alignItems: 'center',
+  },
+  statValue: {
+    fontSize: 26,
+    fontWeight: '900',
+    color: GOLD,
+  },
+  statLabel: {
+    fontSize: 10,
+    fontWeight: '700',
+    color: 'rgba(255,255,255,0.35)',
+    marginTop: 2,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  statSkeleton: {
+    width: 60,
+    height: 30,
+    borderRadius: 6,
+    backgroundColor: 'rgba(255,255,255,0.06)',
+  },
 
   sectionLabel: {
     color: 'rgba(255,255,255,0.6)',

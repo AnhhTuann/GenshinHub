@@ -472,18 +472,6 @@ select option {
 .stagger-7  { animation-delay: 0.47s; }
 .stagger-8  { animation-delay: 0.54s; }
 
-/* Glow effects */
-.glow-gold {
-  box-shadow: 0 0 25px -4px var(--gold-glow), 0 0 50px -10px rgba(255,179,0,0.10);
-}
-
-.glow-rarity-5 {
-  box-shadow: 0 0 30px -5px rgba(255,140,0,0.20);
-}
-
-.glow-rarity-4 {
-  box-shadow: 0 0 30px -5px rgba(167,85,247,0.18);
-}
 
 /* ── Element color + glow text classes ── */
 .element-pyro    { color: var(--pyro);    text-shadow: 0 0 16px rgba(255,107,74,0.50); }
@@ -674,6 +662,9 @@ select option {
   border-radius: var(--radius-2xl);
   overflow: hidden;
   transition: border-color 0.25s, box-shadow 0.25s;
+  /* Defer off-screen rendering for performance */
+  content-visibility: auto;
+  contain-intrinsic-size: 0 300px;
 }
 
 .section-card:hover {

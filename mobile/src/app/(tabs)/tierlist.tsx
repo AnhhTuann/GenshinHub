@@ -1,18 +1,21 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import {
   View,
   Text,
-  ActivityIndicator,
   TouchableOpacity,
   useWindowDimensions,
   StyleSheet,
   ScrollView,
+  RefreshControl,
 } from 'react-native';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { useGraphQL } from '@/hooks/useGraphQL';
+import { GET_CHARACTERS } from '@/lib/graphql';
 import { getElementBg, getElementBorder, TIER_CONFIG } from '@/constants/design';
+import { SkeletonList } from '@/components/SkeletonLoader';
+import EmptyState from '@/components/EmptyState';
 
 interface Character {
   id: string;
@@ -27,16 +30,9 @@ const TIER_ORDER: Record<string, number> = { SS: 1, S: 2, A: 3, B: 4, C: 5, D: 6
 
 export default function TierListScreen() {
   const router = useRouter();
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data, loading, error, refetch } = useGraphQL<{ characters: Character[] }>(GET_CHARACTERS);
   const { width } = useWindowDimensions();
-
-  useEffect(() => {
-    fetchGraphQL(GET_CHARACTERS)
-      .then(data => { if (data.characters) setCharacters(data.characters); })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, []);
+  const characters = data?.characters ?? [];
 
   const grouped = useMemo(() => {
     const map: Record<string, Character[]> = {};
@@ -48,15 +44,6 @@ export default function TierListScreen() {
     return Object.entries(map).sort(([a], [b]) => TIER_ORDER[a] - TIER_ORDER[b]);
   }, [characters]);
 
-  if (loading) {
-    return (
-      <View style={styles.loader}>
-        <ActivityIndicator size="large" color="#cfa858" />
-        <Text style={styles.loaderText}>Loading Tier List...</Text>
-      </View>
-    );
-  }
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -64,44 +51,58 @@ export default function TierListScreen() {
         <Text style={styles.headerSub}>Meta rankings for all characters</Text>
       </View>
 
-      <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
-        {grouped.map(([tier, chars]) => {
-          if (tier === 'Unranked') return null;
-          const cfg = TIER_CONFIG[tier] || { bg: 'rgba(255,255,255,0.05)', border: 'rgba(255,255,255,0.1)', text: '#ffffff' };
-          
-          return (
-            <View key={tier} style={[styles.tierSection, { borderColor: cfg.border }]}>
-              {/* Tier Badge column */}
-              <View style={[styles.tierBadgeWrap, { backgroundColor: cfg.bg }]}>
-                <Text style={[styles.tierLabelText, { color: cfg.text }]}>{tier}</Text>
-              </View>
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={styles.content}
+        refreshControl={
+          <RefreshControl refreshing={loading} onRefresh={refetch} tintColor="#cfa858" />
+        }
+      >
+        {loading ? (
+          <SkeletonList count={5} />
+        ) : error ? (
+          <EmptyState icon="⚠️" title="Failed to load tier list" description={error} />
+        ) : grouped.length === 0 ? (
+          <EmptyState icon="🏆" title="No tier data available" description="Tier list data will appear here once characters are ranked." />
+        ) : (
+          grouped.map(([tier, chars]) => {
+            if (tier === 'Unranked') return null;
+            const cfg = TIER_CONFIG[tier] || { bg: 'rgba(255,255,255,0.05)', border: 'rgba(255,255,255,0.1)', text: '#ffffff' };
 
-              {/* Characters Grid */}
-              <View style={styles.tierCharsWrap}>
-                {chars.map(c => {
-                  const elBg = getElementBg(c.element);
-                  const elBorder = getElementBorder(c.element);
-                  return (
-                    <TouchableOpacity
-                      key={c.id}
-                      style={styles.charItem}
-                      onPress={() => router.push(`/characters/${c.id}` as any)}
-                    >
-                      <View style={[styles.charAvatar, { backgroundColor: elBg, borderColor: elBorder }]}>
-                        {c.avatarUrl ? (
-                          <Image source={{ uri: c.avatarUrl }} style={styles.charImage} contentFit="cover" />
-                        ) : (
-                          <Text style={styles.noImg}>?</Text>
-                        )}
-                      </View>
-                      <Text style={styles.charName} numberOfLines={1}>{c.nameEn}</Text>
-                    </TouchableOpacity>
-                  );
-                })}
+            return (
+              <View key={tier} style={[styles.tierSection, { borderColor: cfg.border }]}>
+                {/* Tier Badge column */}
+                <View style={[styles.tierBadgeWrap, { backgroundColor: cfg.bg }]}>
+                  <Text style={[styles.tierLabelText, { color: cfg.text }]}>{tier}</Text>
+                </View>
+
+                {/* Characters Grid */}
+                <View style={styles.tierCharsWrap}>
+                  {chars.map(c => {
+                    const elBg = getElementBg(c.element);
+                    const elBorder = getElementBorder(c.element);
+                    return (
+                      <TouchableOpacity
+                        key={c.id}
+                        style={styles.charItem}
+                        onPress={() => router.push(`/characters/${c.id}` as any)}
+                      >
+                        <View style={[styles.charAvatar, { backgroundColor: elBg, borderColor: elBorder }]}>
+                          {c.avatarUrl ? (
+                            <Image source={{ uri: c.avatarUrl }} style={styles.charImage} contentFit="cover" />
+                          ) : (
+                            <Text style={styles.noImg}>?</Text>
+                          )}
+                        </View>
+                        <Text style={styles.charName} numberOfLines={1}>{c.nameEn}</Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
               </View>
-            </View>
-          );
-        })}
+            );
+          })
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -109,8 +110,6 @@ export default function TierListScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#080810' },
-  loader: { flex: 1, backgroundColor: '#080810', alignItems: 'center', justifyContent: 'center', gap: 12 },
-  loaderText: { color: 'rgba(255,255,255,0.4)', fontSize: 13 },
 
   header: {
     paddingHorizontal: 16,

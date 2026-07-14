@@ -38,7 +38,7 @@ async function startServer() {
 
   app.use(express.json({ limit: '1mb' }));
   
-  app.get('/env', (req, res) => res.json({ db: process.env.DATABASE_URL }));
+  // Removed /env endpoint — was exposing DATABASE_URL publicly (security vulnerability)
 
   // Health check endpoint
   app.get('/health', (_req, res) => {
@@ -168,6 +168,10 @@ async function startServer() {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
   });
 
+  // Increase keep-alive timeout to avoid 502 errors on Render.com
+  httpServer.keepAliveTimeout = 65000;
+  httpServer.headersTimeout = 66000;
+
   httpServer.on('error', (err: any) => {
     if (err.code === 'EADDRINUSE') {
       console.error(`\n❌ Cổng ${PORT} đang bị sử dụng bởi một tiến trình khác!`);
@@ -177,6 +181,28 @@ async function startServer() {
     }
     process.exit(1);
   });
+
+  // Graceful shutdown
+  const shutdown = async (signal: string) => {
+    console.log(`\n⚠️  ${signal} received, shutting down gracefully...`);
+    httpServer.close(async () => {
+      try {
+        await prisma.$disconnect();
+        console.log('✅ Database disconnected. Goodbye!');
+      } catch (e) {
+        console.error('Error disconnecting database:', e);
+      }
+      process.exit(0);
+    });
+    // Force exit if not done in 10s
+    setTimeout(() => {
+      console.error('⛔ Force exit after timeout');
+      process.exit(1);
+    }, 10000);
+  };
+
+  process.on('SIGTERM', () => shutdown('SIGTERM'));
+  process.on('SIGINT',  () => shutdown('SIGINT'));
 }
 
 startServer().catch((err) => {

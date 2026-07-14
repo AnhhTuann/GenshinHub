@@ -1,11 +1,12 @@
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
 
-// Default ISR revalidation time (set to 0 for admin to see fresh data instantly)
-const DEFAULT_REVALIDATE = 0;
+// ISR revalidation: 1 hour for server-side fetches. Set to 0 only for admin pages that need fresh data.
+const DEFAULT_REVALIDATE = 3600;
 
 /**
  * Server-side GraphQL fetch with ISR revalidation.
  * Use this in Server Components for data that can be cached.
+ * @param revalidate - seconds to cache. Pass 0 to disable caching (admin pages).
  */
 export async function fetchGraphQL(query: string, variables = {}, revalidate: number = DEFAULT_REVALIDATE, token?: string) {
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
@@ -34,6 +35,11 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   }
 
   const res = await fetch(GRAPHQL_ENDPOINT, fetchOptions);
+
+  if (!res.ok) {
+    throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
+  }
+
   const json = await res.json();
 
   if (json.errors) {
@@ -70,6 +76,11 @@ export async function fetchGraphQLClient(query: string, variables = {}, token?: 
     body: JSON.stringify({ query, variables }),
     cache: 'no-store',
   });
+
+  if (!res.ok) {
+    throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
+  }
+
   const json = await res.json();
 
   if (json.errors) {

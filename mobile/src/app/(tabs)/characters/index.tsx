@@ -1,20 +1,24 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import {
   View,
   Text,
-  ActivityIndicator,
   TouchableOpacity,
   useWindowDimensions,
   StyleSheet,
   TextInput,
+  RefreshControl,
+  ScrollView,
 } from 'react-native';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlashList } from '@shopify/flash-list';
 import { Search } from 'lucide-react-native';
-import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
-import { getElementBg, getElementBorder, TIER_CONFIG } from '@/constants/design';
+import { useGraphQL } from '@/hooks/useGraphQL';
+import { GET_CHARACTERS } from '@/lib/graphql';
+import { getElementBg, getElementBorder } from '@/constants/design';
+import { SkeletonAvatarGrid } from '@/components/SkeletonLoader';
+import EmptyState from '@/components/EmptyState';
 
 interface Character {
   id: string;
@@ -35,29 +39,33 @@ const ELEMENT_ICONS: Record<string, string> = {
   Electro: '⚡', Dendro: '🌿', Cryo: '❄️', Geo: '🪨',
 };
 
+function useDebounce<T>(value: T, delay: number): T {
+  const [debounced, setDebounced] = useState(value);
+  useMemo(() => {
+    const timer = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+  return debounced;
+}
+
 export default function CharactersScreen() {
   const router = useRouter();
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [loading, setLoading] = useState(true);
   const [filterEl, setFilterEl] = useState('All');
   const [search, setSearch] = useState('');
+  const debouncedSearch = useDebounce(search, 200);
   const { width } = useWindowDimensions();
   const numColumns = Math.max(4, Math.floor((width - 32) / 80));
 
-  useEffect(() => {
-    fetchGraphQL(GET_CHARACTERS)
-      .then(data => { if (data.characters) setCharacters(data.characters); })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, []);
+  const { data, loading, refetch } = useGraphQL<{ characters: Character[] }>(GET_CHARACTERS);
+  const characters = data?.characters ?? [];
 
   const filtered = useMemo(() => {
     return characters.filter(c => {
       const elOk = filterEl === 'All' || c.element === filterEl;
-      const srchOk = !search || c.nameEn.toLowerCase().includes(search.toLowerCase());
+      const srchOk = !debouncedSearch || c.nameEn.toLowerCase().includes(debouncedSearch.toLowerCase());
       return elOk && srchOk;
     });
-  }, [characters, filterEl, search]);
+  }, [characters, filterEl, debouncedSearch]);
 
   const flattenedData = useMemo(() => {
     const items: ListItem[] = [];
@@ -71,7 +79,7 @@ export default function CharactersScreen() {
     return items;
   }, [filtered, numColumns]);
 
-  const renderItem = ({ item }: { item: ListItem }) => {
+  const renderItem = useCallback(({ item }: { item: ListItem }) => {
     if (item.type === 'header') return <View />;
     if (!item.data.nameEn) return <View style={{ flex: 1 }} />;
     const elBg = getElementBg(item.data.element);
@@ -94,7 +102,7 @@ export default function CharactersScreen() {
         </TouchableOpacity>
       </View>
     );
-  };
+  }, [router]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -102,7 +110,9 @@ export default function CharactersScreen() {
       <View style={styles.header}>
         <View>
           <Text style={styles.headerTitle}>CHARACTERS</Text>
-          <Text style={styles.headerSub}>All characters database</Text>
+          <Text style={styles.headerSub}>
+            {loading ? 'Loading...' : `${characters.length} characters`}
+          </Text>
         </View>
       </View>
 
@@ -115,6 +125,8 @@ export default function CharactersScreen() {
           placeholderTextColor="rgba(255,255,255,0.3)"
           value={search}
           onChangeText={setSearch}
+          returnKeyType="search"
+          clearButtonMode="while-editing"
         />
       </View>
 
@@ -124,6 +136,7 @@ export default function CharactersScreen() {
           data={ELEMENTS}
           horizontal
           showsHorizontalScrollIndicator={false}
+          estimatedItemSize={80}
           contentContainerStyle={{ paddingHorizontal: 16 }}
           renderItem={({ item: el }) => {
             const active = filterEl === el;
@@ -141,22 +154,34 @@ export default function CharactersScreen() {
       </View>
 
       {loading ? (
-        <View style={styles.loader}>
-          <ActivityIndicator size="large" color="#cfa858" />
-          <Text style={styles.loaderText}>Loading characters...</Text>
-        </View>
+        <ScrollView
+          contentContainerStyle={{ paddingHorizontal: 8, paddingBottom: 40 }}
+          refreshControl={<RefreshControl refreshing={loading} onRefresh={refetch} tintColor="#cfa858" />}
+        >
+          <SkeletonAvatarGrid count={20} />
+        </ScrollView>
+      ) : filtered.length === 0 ? (
+        <EmptyState
+          icon="🔍"
+          title="No characters found"
+          description={`No results for "${debouncedSearch || filterEl}". Try a different search.`}
+        />
       ) : (
         <View style={styles.listWrap}>
           <FlashList
             data={flattenedData}
             renderItem={renderItem}
             numColumns={numColumns}
+            estimatedItemSize={72}
             getItemType={item => item.type === 'header' ? 'header' : 'character'}
             overrideItemLayout={(layout, item) => {
               if (item.type === 'header') {
                 layout.span = numColumns;
               }
             }}
+            refreshControl={
+              <RefreshControl refreshing={false} onRefresh={refetch} tintColor="#cfa858" />
+            }
           />
         </View>
       )}
@@ -218,16 +243,6 @@ const styles = StyleSheet.create({
   filterLabel: { color: 'rgba(255,255,255,0.5)', fontSize: 11, fontWeight: '600' },
   filterLabelActive: { color: '#cfa858' },
 
-  tierHeader: { paddingHorizontal: 4, paddingTop: 12, paddingBottom: 6 },
-  tierBadge: {
-    borderRadius: 8,
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    alignSelf: 'flex-start',
-  },
-  tierText: { fontSize: 11, fontWeight: '800', letterSpacing: 1 },
-
   charCell: { flex: 1, padding: 3, alignItems: 'center' },
   charTouchable: { alignItems: 'center', width: '100%', maxWidth: 72 },
   charAvatar: {
@@ -243,6 +258,4 @@ const styles = StyleSheet.create({
   charName: { color: 'rgba(255,255,255,0.8)', fontSize: 9, textAlign: 'center', fontWeight: '600' },
 
   listWrap: { flex: 1, paddingHorizontal: 8 },
-  loader: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
-  loaderText: { color: 'rgba(255,255,255,0.4)', fontSize: 13 },
 });

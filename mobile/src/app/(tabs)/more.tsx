@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Constants from 'expo-constants';
 import {
   Box,
   Users,
@@ -113,7 +114,7 @@ export default function MoreScreen() {
         <View style={styles.versionCard}>
           <Text style={styles.versionTitle}>GenshinHub</Text>
           <Text style={styles.versionText}>Your complete Teyvat companion</Text>
-          <Text style={styles.versionNum}>v1.0.0</Text>
+          <Text style={styles.versionNum}>v{Constants.expoConfig?.version ?? '1.0.0'}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

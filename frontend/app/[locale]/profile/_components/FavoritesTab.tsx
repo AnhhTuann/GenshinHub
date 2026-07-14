@@ -50,7 +50,7 @@ export default function FavoritesTab({ user }: { user: User }) {
   if (characters.length === 0) {
     return (
       <div className="text-center p-10">
-        <p className="text-white/40 mb-4">You haven't favorited any characters yet.</p>
+        <p className="text-white/40 mb-4">You haven&apos;t favorited any characters yet.</p>
       </div>
     );
   }

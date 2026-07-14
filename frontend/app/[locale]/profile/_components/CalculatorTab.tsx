@@ -102,7 +102,7 @@ export default function CalculatorTab({ user }: { user: User }) {
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">W</div>
-                  <span className="font-bold text-white">Hero's Wit</span>
+                  <span className="font-bold text-white">Hero&apos;s Wit</span>
                 </div>
                 <span className="font-black text-white">{materials.wits}</span>
               </div>

@@ -7,7 +7,8 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
-import { useUser } from '@/context/UserContext';
+import { useUser, UserContext } from '@/context/UserContext';
+import { useContext } from 'react';
 import { getCharacterAvatar, getCharacterSplash } from '@/utils/assetMap';
 import { Heart } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -40,9 +41,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const locale = useLocale();
   const router = useRouter();
   
-  // Try to use UserContext, default to null if outside provider (e.g., some edge cases)
-  let userContext = null;
-  try { userContext = useUser(); } catch(e) {}
+  // Use UserContext directly to avoid throwing error outside provider
+  const userContext = useContext(UserContext);
   const user = userContext?.user;
 
   const is5Star = character.rarity === 5;

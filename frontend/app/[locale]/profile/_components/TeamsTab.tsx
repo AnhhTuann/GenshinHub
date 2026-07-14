@@ -178,7 +178,7 @@ export default function TeamsTab({ user }: { user: User }) {
         <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Saved Teams</h3>
         {(!user.teams || user.teams.length === 0) ? (
           <div className="text-center p-10 bg-white/5 rounded-2xl border border-dashed border-white/20">
-            <p className="text-white/40">You haven't saved any teams yet.</p>
+            <p className="text-white/40">You haven&apos;t saved any teams yet.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

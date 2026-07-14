@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
   const handleTabChange = (tab: Tab) => {
     setActiveTab(tab);
-    window.location.hash = tab === 'profile' ? '' : tab;
+    window.history.replaceState(null, '', tab === 'profile' ? window.location.pathname : '#' + tab);
   };
 
   if (loading) {

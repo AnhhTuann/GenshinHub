@@ -60,18 +60,13 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      style={{ minHeight: '200px' }}
-      className="rounded-2xl p-4 relative overflow-hidden"
-      style2={{
-        background: 'linear-gradient(145deg, rgba(13,13,22,0.90), rgba(6,6,12,0.95))',
-        border: hasToday ? '1px solid rgba(251,191,36,0.25)' : '1px solid rgba(255,255,255,0.06)',
-        boxShadow: hasToday ? '0 0 30px -10px rgba(251,191,36,0.15)' : 'none',
-      }}
       style={{
+        minHeight: '200px',
         background: 'linear-gradient(145deg, rgba(13,13,22,0.90), rgba(6,6,12,0.95))',
         border: hasToday ? '1px solid rgba(251,191,36,0.25)' : '1px solid rgba(255,255,255,0.06)',
         boxShadow: hasToday ? '0 0 30px -10px rgba(251,191,36,0.15)' : 'none',
       }}
+      className="rounded-2xl p-4 relative overflow-hidden"
     >
       {/* Top accent line */}
       <div

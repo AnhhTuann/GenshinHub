@@ -5,6 +5,58 @@ import { PieChart, Info, History, Link, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
+const getProgressColor = (pulls: number, pity: number) => {
+  const ratio = pulls / pity;
+  if (ratio > 0.8) return '#ef4444'; // Red (Soft pity/Hard pity)
+  if (ratio > 0.5) return '#f0d080'; // Yellow
+  return '#4db6ac'; // Green
+};
+
+const CircularProgress = ({ pulls, pity, label, guaranteed }: any) => {
+  const radius = 40;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (pulls / pity) * circumference;
+  const color = getProgressColor(pulls, pity);
+
+  return (
+    <div className="flex flex-col items-center p-4 bg-white/5 rounded-2xl border border-white/5">
+      <div className="relative w-24 h-24 mb-4 flex items-center justify-center">
+        <svg className="w-full h-full transform -rotate-90">
+          <circle
+            cx="48"
+            cy="48"
+            r={radius}
+            className="stroke-white/10"
+            strokeWidth="8"
+            fill="none"
+          />
+          <circle
+            cx="48"
+            cy="48"
+            r={radius}
+            stroke={color}
+            strokeWidth="8"
+            fill="none"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            className="transition-all duration-1000 ease-out"
+          />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="text-xl font-black text-white" style={{ color }}>{pulls}</span>
+          <span className="text-[9px] font-bold text-white/40 uppercase">/ {pity}</span>
+        </div>
+      </div>
+      <p className="text-xs font-bold text-white uppercase tracking-widest text-center">{label}</p>
+      {guaranteed !== undefined && (
+        <span className={`mt-2 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${guaranteed ? 'bg-[#c8a84b]/20 text-[#f0d080] border border-[#c8a84b]/30' : 'bg-white/10 text-white/60'}`}>
+          {guaranteed ? 'Guaranteed' : '50/50'}
+        </span>
+      )}
+    </div>
+  );
+};
+
 export default function WishCounterTab({ user }: { user: User }) {
   const { refreshUser } = useUser();
   const [urlInput, setUrlInput] = useState('');
@@ -44,58 +96,6 @@ export default function WishCounterTab({ user }: { user: User }) {
     } finally {
       setSyncing(false);
     }
-  };
-
-  const getProgressColor = (pulls: number, pity: number) => {
-    const ratio = pulls / pity;
-    if (ratio > 0.8) return '#ef4444'; // Red (Soft pity/Hard pity)
-    if (ratio > 0.5) return '#f0d080'; // Yellow
-    return '#4db6ac'; // Green
-  };
-
-  const CircularProgress = ({ pulls, pity, label, guaranteed }: any) => {
-    const radius = 40;
-    const circumference = 2 * Math.PI * radius;
-    const strokeDashoffset = circumference - (pulls / pity) * circumference;
-    const color = getProgressColor(pulls, pity);
-
-    return (
-      <div className="flex flex-col items-center p-4 bg-white/5 rounded-2xl border border-white/5">
-        <div className="relative w-24 h-24 mb-4 flex items-center justify-center">
-          <svg className="w-full h-full transform -rotate-90">
-            <circle
-              cx="48"
-              cy="48"
-              r={radius}
-              className="stroke-white/10"
-              strokeWidth="8"
-              fill="none"
-            />
-            <circle
-              cx="48"
-              cy="48"
-              r={radius}
-              stroke={color}
-              strokeWidth="8"
-              fill="none"
-              strokeDasharray={circumference}
-              strokeDashoffset={strokeDashoffset}
-              className="transition-all duration-1000 ease-out"
-            />
-          </svg>
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-xl font-black text-white" style={{ color }}>{pulls}</span>
-            <span className="text-[9px] font-bold text-white/40 uppercase">/ {pity}</span>
-          </div>
-        </div>
-        <p className="text-xs font-bold text-white uppercase tracking-widest text-center">{label}</p>
-        {guaranteed !== undefined && (
-          <span className={`mt-2 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${guaranteed ? 'bg-[#c8a84b]/20 text-[#f0d080] border border-[#c8a84b]/30' : 'bg-white/10 text-white/60'}`}>
-            {guaranteed ? 'Guaranteed' : '50/50'}
-          </span>
-        )}
-      </div>
-    );
   };
 
   return (

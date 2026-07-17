@@ -1,4 +1,4 @@
-\"use client\";
+"use client";
 import { useState, useRef, useEffect, useCallback, useContext } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import { useRouter } from 'next/navigation';
@@ -8,271 +8,260 @@ import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
 import { UserContext } from '@/context/UserContext';
 import { getCharacterAvatar, getCharacterSplash } from '@/utils/assetMap';
-import { Heart, Eye } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 const SplashArtOverlay = dynamic(() => import('@/components/ui/SplashArtOverlay'), { ssr: false });
 
-/* ─── Element color maps ─────────────────────────────── */
-const ELEMENT_COLOR: Record<string, string> = {
-  Pyro:    '#ff6b4a',
-  Hydro:   '#4fc3f7',
-  Cryo:    '#80deea',
-  Electro: '#ce93d8',
-  Anemo:   '#4db6ac',
-  Geo:     '#ffd54f',
-  Dendro:  '#aed581',
+/* ─── Element colors ─────────────────────────── */
+const EL_COLOR: Record<string, string> = {
+  Pyro: '#ff6b4a', Hydro: '#4fc3f7', Cryo: '#80deea',
+  Electro: '#ce93d8', Anemo: '#4db6ac', Geo: '#ffd54f', Dendro: '#aed581',
+};
+const EL_GLOW: Record<string, string> = {
+  Pyro: 'rgba(255,107,74,', Hydro: 'rgba(79,195,247,',
+  Cryo: 'rgba(128,222,234,', Electro: 'rgba(206,147,216,',
+  Anemo: 'rgba(77,182,172,', Geo: 'rgba(255,213,79,', Dendro: 'rgba(174,213,129,',
 };
 
-const ELEMENT_GLOW: Record<string, string> = {
-  Pyro:    'rgba(255,107,74,',
-  Hydro:   'rgba(79,195,247,',
-  Cryo:    'rgba(128,222,234,',
-  Electro: 'rgba(206,147,216,',
-  Anemo:   'rgba(77,182,172,',
-  Geo:     'rgba(255,213,79,',
-  Dendro:  'rgba(174,213,129,',
-};
-
-const RARITY_CONFIG = {
-  5: { stars: '#ffd54f', starsBg: 'rgba(255,179,0,0.15)', border: 'rgba(255,179,0,0.35)', badgeBg: 'rgba(255,179,0,0.18)', badgeText: '#ffd54f' },
-  4: { stars: '#ce93d8', starsBg: 'rgba(167,85,247,0.15)', border: 'rgba(167,85,247,0.35)', badgeBg: 'rgba(167,85,247,0.18)', badgeText: '#ce93d8' },
+const TIER_CFG: Record<string, { bg: string; border: string; text: string }> = {
+  SS: { bg: 'rgba(255,77,109,0.25)', border: 'rgba(255,77,109,0.55)', text: '#ff4d6d' },
+  S:  { bg: 'rgba(245,158,11,0.25)', border: 'rgba(245,158,11,0.50)', text: '#fbbf24' },
+  A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#c084fc' },
+  B:  { bg: 'rgba(34,211,238,0.20)', border: 'rgba(34,211,238,0.40)', text: '#22d3ee' },
 };
 
 export default function CharacterCard({ character }: { character: CharacterData }) {
   const locale = useLocale();
   const router = useRouter();
-  const userContext = useContext(UserContext);
-  const user = userContext?.user;
+  const userCtx = useContext(UserContext);
+  const user = userCtx?.user;
 
-  const is5Star = character.rarity === 5;
+  const is5 = character.rarity === 5;
   const name = locale === 'en' ? character.nameEn : (character.nameVi || character.nameEn);
   const el = character.element;
-  const elColor = ELEMENT_COLOR[el] ?? '#a855f7';
-  const elGlow = ELEMENT_GLOW[el] ?? 'rgba(168,85,247,';
-  const rCfg = is5Star ? RARITY_CONFIG[5] : RARITY_CONFIG[4];
+  const color = EL_COLOR[el] ?? '#a855f7';
+  const glow  = EL_GLOW[el]  ?? 'rgba(168,85,247,';
+  const tierCfg = TIER_CFG[character.tier ?? ''];
 
-  const [overlayOpen, setOverlayOpen] = useState(false);
+  const [overlayOpen, setOverlayOpen]   = useState(false);
   const [overlayReady, setOverlayReady] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered]           = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const cardRef  = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
 
-  const isTraveler = character.id.startsWith('traveler');
-  const displayAvatarUrl = isTraveler ? getCharacterAvatar(character.id, user?.gender) : character.avatarUrl;
-  const displaySplashUrl = isTraveler ? getCharacterSplash(character.id, user?.gender) : character.splashArtUrl;
+  const isTraveler       = character.id.startsWith('traveler');
+  const avatarUrl        = isTraveler ? getCharacterAvatar(character.id, user?.gender) : character.avatarUrl;
+  const splashUrl        = isTraveler ? getCharacterSplash(character.id, user?.gender) : character.splashArtUrl;
 
-  const isFavInitially = user?.favoriteIds?.includes(character.id) ?? false;
-  const [isFavorite, setIsFavorite] = useState(isFavInitially);
+  const isFavInit = user?.favoriteIds?.includes(character.id) ?? false;
+  const [isFav, setIsFav] = useState(isFavInit);
+  useEffect(() => { setIsFav(user?.favoriteIds?.includes(character.id) ?? false); }, [user?.favoriteIds, character.id]);
 
-  useEffect(() => {
-    setIsFavorite(user?.favoriteIds?.includes(character.id) ?? false);
-  }, [user?.favoriteIds, character.id]);
-
-  const handleToggleFavorite = async (e: React.MouseEvent) => {
+  const toggleFav = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!user) { toast.error('Please log in to favorite characters!'); return; }
-    setIsFavorite(prev => !prev);
+    if (!user) { toast.error('Please log in first!'); return; }
+    setIsFav(p => !p);
     try {
-      const res = await fetch('/api/auth/favorite', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ characterId: character.id }),
-      });
-      if (!res.ok) throw new Error();
-    } catch {
-      setIsFavorite(prev => !prev);
-      toast.error('An error occurred, please try again.');
-    }
+      const r = await fetch('/api/auth/favorite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ characterId: character.id }) });
+      if (!r.ok) throw new Error();
+    } catch { setIsFav(p => !p); toast.error('Error, please try again.'); }
   };
 
+  /* Prefetch splash on IntersectionObserver */
   useEffect(() => {
-    const el = cardRef.current;
-    if (!el || !displaySplashUrl) return;
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        const link = document.createElement('link');
-        link.rel = 'prefetch'; link.as = 'image'; link.href = displaySplashUrl;
-        document.head.appendChild(link);
-        observer.disconnect();
+    const node = cardRef.current; if (!node || !splashUrl) return;
+    const obs = new IntersectionObserver(e => {
+      if (e[0].isIntersecting) {
+        const l = document.createElement('link'); l.rel = 'prefetch'; l.as = 'image'; l.href = splashUrl;
+        document.head.appendChild(l); obs.disconnect();
       }
     }, { rootMargin: '200px' });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [displaySplashUrl]);
+    obs.observe(node);
+    return () => obs.disconnect();
+  }, [splashUrl]);
 
-  const handleMouseEnter = useCallback(() => {
+  const onEnter = useCallback(() => {
     setHovered(true);
-    hoverTimerRef.current = setTimeout(() => {
-      setOverlayReady(true);
-      setOverlayOpen(true);
-    }, 450);
+    timerRef.current = setTimeout(() => { setOverlayReady(true); setOverlayOpen(true); }, 450);
   }, []);
-
-  const handleMouseLeave = useCallback(() => {
+  const onLeave = useCallback(() => {
     setHovered(false);
-    if (hoverTimerRef.current) { clearTimeout(hoverTimerRef.current); hoverTimerRef.current = null; }
+    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
   }, []);
-
-  useEffect(() => () => { if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current); }, []);
+  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
 
   const href = `/${locale}/characters/${character.id}`;
 
   return (
     <>
-      <div ref={cardRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="block group relative">
+      <div ref={cardRef} onMouseEnter={onEnter} onMouseLeave={onLeave} className="group relative">
         <motion.div
-          whileHover={shouldReduceMotion ? {} : { y: -6, scale: 1.025 }}
-          whileTap={shouldReduceMotion ? {} : { scale: 0.96 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 24 }}
+          initial={shouldReduceMotion ? {} : { opacity: 0, y: 16, scale: 0.94 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.15 }}
+          whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.03 }}
+          whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
+          transition={{ type: 'spring', stiffness: 380, damping: 26 }}
           onClick={() => router.push(href)}
-          className="relative flex flex-col justify-end overflow-hidden cursor-pointer rounded-3xl"
+          className="relative cursor-pointer rounded-2xl overflow-hidden"
           style={{
-            height: 'clamp(180px, 22vw, 240px)',
-            border: `1px solid ${hovered ? elColor + '55' : elColor + '28'}`,
-            background: `linear-gradient(175deg, ${elGlow}0.04) 0%, rgba(7,7,16,0.97) 70%)`,
+            aspectRatio: '2/3',
             boxShadow: hovered
-              ? `0 12px 48px -8px ${elGlow}0.45), 0 0 0 1px ${elGlow}0.15)`
-              : `0 4px 20px rgba(0,0,0,0.45)`,
-            transition: 'box-shadow 0.35s ease, border-color 0.35s ease',
+              ? `0 20px 60px -10px ${glow}0.55), 0 0 0 1.5px ${glow}0.35)`
+              : is5
+                ? `0 6px 28px rgba(0,0,0,0.55), 0 0 0 1px ${glow}0.20)`
+                : `0 6px 28px rgba(0,0,0,0.50)`,
+            transition: 'box-shadow 0.4s ease',
           }}
         >
-          {/* ── Sheen line top ── */}
-          <div
-            className="absolute inset-x-0 top-0 h-px pointer-events-none"
-            style={{ background: `linear-gradient(90deg, transparent, ${elColor}50, transparent)` }}
-          />
-
-          {/* ── Avatar image ── */}
-          <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.07]">
+          {/* ─── Full-bleed Avatar ─────────────────── */}
+          <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.06]">
             <FallbackImage
-              src={displayAvatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
+              src={avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
               alt={name} fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 20vw, 180px"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
               className="object-cover object-top"
               priority={false}
             />
           </div>
 
-          {/* ── Multi-stop gradient overlay ── */}
+          {/* ─── Bottom vignette ───────────────────── */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: `linear-gradient(
-                to top,
-                rgba(5,5,12,0.98) 0%,
-                rgba(5,5,12,0.85) 25%,
-                rgba(5,5,12,0.30) 50%,
-                transparent 70%
+              background: `linear-gradient(to top,
+                rgba(4,4,12,0.97) 0%,
+                rgba(4,4,12,0.85) 22%,
+                rgba(4,4,12,0.40) 45%,
+                rgba(4,4,12,0.08) 65%,
+                transparent 80%
               )`,
             }}
           />
-          {/* Element color wash at bottom */}
+
+          {/* ─── Element tint at bottom ──────────── */}
           <div
-            className="absolute inset-x-0 bottom-0 h-2/5 pointer-events-none"
-            style={{ background: `linear-gradient(to top, ${elGlow}0.18) 0%, transparent 100%)` }}
+            className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+            style={{ background: `linear-gradient(to top, ${glow}0.22) 0%, transparent 100%)` }}
           />
 
-          {/* ── Top badges row ── */}
-          <div className="absolute top-0 left-0 right-0 flex items-start justify-between p-2.5 z-10">
-            {/* Element badge */}
+          {/* ─── Hover shimmer line ───────────────── */}
+          <div
+            className="absolute inset-x-0 top-0 h-[1.5px] pointer-events-none transition-opacity duration-300"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${color}, ${color}80, transparent)`,
+              opacity: hovered ? 0.85 : 0.25,
+            }}
+          />
+
+          {/* ─── 5★ corner sparkle ───────────────── */}
+          {is5 && (
             <div
-              className="p-1.5 rounded-xl backdrop-blur-md transition-transform duration-300 group-hover:scale-110"
+              className="absolute -top-8 -right-8 w-28 h-28 rounded-full pointer-events-none"
               style={{
-                background: `${elGlow}0.20)`,
-                border: `1px solid ${elGlow}0.40)`,
+                background: `radial-gradient(circle, ${glow}0.16) 0%, transparent 70%)`,
+                filter: 'blur(10px)',
+              }}
+            />
+          )}
+
+          {/* ─── TOP: Element pill + Fav ─────────── */}
+          <div className="absolute top-0 inset-x-0 flex items-start justify-between p-3 z-10">
+            {/* Element pill */}
+            <div
+              className="flex items-center gap-1.5 pl-1 pr-2.5 py-1 rounded-full backdrop-blur-md transition-all duration-300 group-hover:scale-105"
+              style={{
+                background: `${glow}0.22)`,
+                border: `1px solid ${glow}0.50)`,
               }}
             >
               <FallbackImage
                 src={`/assets/elements/${el.toLowerCase()}.webp`}
                 alt={el} width={20} height={20}
-                className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                className="w-5 h-5 object-contain"
               />
+              <span className="text-[9px] font-black uppercase tracking-wider hidden sm:block" style={{ color }}>
+                {el}
+              </span>
             </div>
 
-            {/* Right: rarity + fav */}
-            <div className="flex items-center gap-1.5">
-              {/* Favorite */}
-              <button
-                onClick={handleToggleFavorite}
-                className="p-1.5 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-115"
-                style={{
-                  background: isFavorite ? 'rgba(239,68,68,0.22)' : 'rgba(0,0,0,0.45)',
-                  border: `1px solid ${isFavorite ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.15)'}`,
-                }}
-              >
-                <Heart
-                  className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-colors"
-                  style={{ fill: isFavorite ? '#ef4444' : 'transparent', color: isFavorite ? '#ef4444' : 'rgba(255,255,255,0.7)' }}
-                />
-              </button>
-
-              {/* Rarity badge */}
-              <div
-                className="px-2 py-0.5 rounded-lg backdrop-blur-md text-[9px] font-black tracking-widest"
-                style={{ background: rCfg.badgeBg, border: `1px solid ${rCfg.border}`, color: rCfg.badgeText }}
-              >
-                {character.rarity}★
-              </div>
-            </div>
-          </div>
-
-          {/* ── Preview hint on hover ── */}
-          <div
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-10 transition-all duration-300"
-            style={{ opacity: hovered ? 1 : 0 }}
-          >
-            <div
-              className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full backdrop-blur-md"
+            {/* Fav button */}
+            <button
+              onClick={toggleFav}
+              className="p-2 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95"
               style={{
-                background: `${elGlow}0.22)`,
-                border: `1px solid ${elGlow}0.45)`,
-                color: elColor,
+                background: isFav ? 'rgba(239,68,68,0.28)' : 'rgba(0,0,0,0.50)',
+                border: `1px solid ${isFav ? 'rgba(239,68,68,0.55)' : 'rgba(255,255,255,0.15)'}`,
               }}
             >
-              <Eye className="w-3 h-3" />
-              Hold to Preview
-            </div>
+              <Heart
+                className="w-3.5 h-3.5 transition-all duration-200"
+                style={{ fill: isFav ? '#ef4444' : 'transparent', color: isFav ? '#ef4444' : 'rgba(255,255,255,0.65)' }}
+              />
+            </button>
           </div>
 
-          {/* ── Bottom info ── */}
-          <div className="relative z-10 flex flex-col items-center px-2 pb-3 pt-2">
-            {/* Tier badge (if available) */}
-            {character.tier && character.tier !== 'Unranked' && (
+          {/* ─── BOTTOM nameplate ─────────────────── */}
+          <div className="absolute inset-x-0 bottom-0 z-10 px-3 pb-3.5 pt-6">
+
+            {/* Tier badge */}
+            {tierCfg && (
               <div
-                className="mb-1.5 px-2 py-0.5 rounded-md text-[7px] font-black uppercase tracking-widest"
-                style={{
-                  background: character.tier === 'SS' ? 'rgba(255,77,109,0.22)' : character.tier === 'S' ? 'rgba(245,158,11,0.22)' : 'rgba(168,85,247,0.20)',
-                  border: character.tier === 'SS' ? '1px solid rgba(255,77,109,0.45)' : character.tier === 'S' ? '1px solid rgba(245,158,11,0.40)' : '1px solid rgba(168,85,247,0.35)',
-                  color: character.tier === 'SS' ? '#ff4d6d' : character.tier === 'S' ? '#f59e0b' : '#a855f7',
-                }}
+                className="inline-flex items-center mb-1.5 px-2 py-[2px] rounded-md text-[8px] font-black uppercase tracking-widest"
+                style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}`, color: tierCfg.text }}
               >
                 {character.tier} Tier
               </div>
             )}
 
             {/* Name */}
-            <span
-              className="text-[11px] sm:text-[13px] font-extrabold tracking-wide truncate w-full text-center"
+            <div
+              className="text-sm sm:text-[15px] font-black tracking-wide leading-tight mb-2 truncate"
               style={{
-                color: elColor,
-                textShadow: `0 0 16px ${elGlow}0.65)`,
-                filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.8))',
+                color: '#fff',
+                textShadow: `0 0 20px ${glow}0.80), 0 2px 8px rgba(0,0,0,0.95)`,
               }}
             >
               {name}
-            </span>
+            </div>
 
-            {/* Stars */}
-            <div className="flex gap-[1px] mt-1">
-              {Array.from({ length: character.rarity }).map((_, i) => (
-                <svg key={i} className="w-2.5 h-2.5" style={{ color: rCfg.stars }} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
+            {/* Rarity stars row */}
+            <div className="flex items-center gap-2">
+              <div className="flex gap-[2px]">
+                {Array.from({ length: character.rarity }).map((_, i) => (
+                  <svg
+                    key={i}
+                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 drop-shadow"
+                    style={{ color: is5 ? '#ffd54f' : '#ce93d8', filter: `drop-shadow(0 0 3px ${is5 ? 'rgba(255,213,79,0.7)' : 'rgba(206,147,216,0.7)'})` }}
+                    fill="currentColor" viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Weapon type badge */}
+              {character.weapon && (
+                <span
+                  className="text-[8px] font-bold px-1.5 py-[2px] rounded-md uppercase tracking-wider"
+                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.55)' }}
+                >
+                  {character.weapon}
+                </span>
+              )}
             </div>
           </div>
+
+          {/* ─── Hover: glowing border overlay ───── */}
+          <div
+            className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-400"
+            style={{
+              boxShadow: `inset 0 0 0 1.5px ${glow}${hovered ? '0.60)' : '0.18)'}`,
+              opacity: 1,
+            }}
+          />
         </motion.div>
       </div>
 
@@ -281,16 +270,10 @@ export default function CharacterCard({ character }: { character: CharacterData 
           open={overlayOpen}
           onClose={() => setOverlayOpen(false)}
           character={{
-            id: character.id,
-            nameEn: character.nameEn,
-            nameVi: character.nameVi,
-            element: character.element,
-            rarity: character.rarity,
-            splashArtUrl: displaySplashUrl || displayAvatarUrl || '',
-            avatarUrl: displayAvatarUrl,
-            weapon: character.weapon,
-            role: character.role,
-            tier: character.tier,
+            id: character.id, nameEn: character.nameEn, nameVi: character.nameVi,
+            element: character.element, rarity: character.rarity,
+            splashArtUrl: splashUrl || avatarUrl || '',
+            avatarUrl, weapon: character.weapon, role: character.role, tier: character.tier,
           }}
           href={href}
           locale={locale}

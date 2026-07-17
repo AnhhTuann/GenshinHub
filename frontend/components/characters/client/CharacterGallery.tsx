@@ -95,8 +95,8 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
                 transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
               }}
               onFocus={e => {
-                e.target.style.borderColor = 'rgba(200,168,75,0.38)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.08)';
+                e.target.style.borderColor = 'rgba(168,85,247,0.50)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(168,85,247,0.10)';
               }}
               onBlur={e => {
                 e.target.style.borderColor = 'rgba(255,255,255,0.07)';
@@ -200,9 +200,9 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
                 onClick={() => setSelectedWeapon(active ? null : w)}
                 className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider"
                 style={{
-                  background: active ? 'rgba(200,168,75,0.15)' : 'transparent',
-                  border: `1px solid ${active ? 'rgba(200,168,75,0.40)' : 'transparent'}`,
-                  color: active ? '#f0d080' : 'rgba(255,255,255,0.32)',
+                  background: active ? 'rgba(168,85,247,0.15)' : 'transparent',
+                  border: `1px solid ${active ? 'rgba(168,85,247,0.40)' : 'transparent'}`,
+                  color: active ? '#c084fc' : 'rgba(255,255,255,0.32)',
                   transition: 'all 0.2s ease',
                 }}
               >
@@ -229,7 +229,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
       {/* Result count */}
       <div className="flex items-center justify-between px-1">
         <span className="text-white/25 text-xs font-medium">
-          <span style={{ color: 'rgba(200,168,75,0.75)', fontFamily: 'var(--font-mono, monospace)', fontWeight: 700 }}>
+          <span style={{ color: '#a855f7', fontFamily: 'var(--font-mono, monospace)', fontWeight: 700 }}>
             {filtered.length}
           </span>
           {' '}{locale === 'en' ? 'characters' : 'nhân vật'}
@@ -244,7 +244,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
 
       {/* ── Character Grid ── */}
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 sm:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
           {filtered.map((char) => (
             <CharacterCard key={char.id} character={char} />
           ))}

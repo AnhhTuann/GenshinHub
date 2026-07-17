@@ -1,4 +1,4 @@
-\"use client\";
+"use client";
 import FallbackImage from '@/components/ui/FallbackImage';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from '@/i18n/routing';

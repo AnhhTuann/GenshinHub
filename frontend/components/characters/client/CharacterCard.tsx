@@ -113,51 +113,43 @@ export default function CharacterCard({ character }: { character: CharacterData 
           className="relative cursor-pointer rounded-2xl overflow-hidden"
           style={{
             aspectRatio: '2/3',
+            background: `radial-gradient(circle at 50% 0%, rgba(20,20,28,0.95) 0%, rgba(10,10,15,1) 100%)`,
             boxShadow: hovered
-              ? `0 20px 60px -10px ${glow}0.55), 0 0 0 1.5px ${glow}0.35)`
-              : is5
-                ? `0 6px 28px rgba(0,0,0,0.55), 0 0 0 1px ${glow}0.20)`
-                : `0 6px 28px rgba(0,0,0,0.50)`,
+              ? `0 20px 60px -10px ${glow}0.65), 0 0 0 1.5px ${glow}0.50)`
+              : `0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px ${glow}0.25)`,
             transition: 'box-shadow 0.4s ease',
           }}
         >
-          {/* ─── Full-bleed Avatar ─────────────────── */}
-          <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.06]">
+          {/* ─── Giant Element Watermark ───────────── */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none mix-blend-screen transition-transform duration-700 group-hover:scale-110 group-hover:opacity-[0.15]">
+            <FallbackImage
+              src={`/assets/elements/${el.toLowerCase()}.webp`}
+              alt={el} fill
+              className="object-contain scale-150 -rotate-12 blur-[2px]"
+            />
+          </div>
+
+          {/* ─── Avatar Image ──────────────────────── */}
+          <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.08] group-hover:-translate-y-2">
             <FallbackImage
               src={avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
               alt={name} fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
-              className="object-contain object-top p-4 group-hover:scale-105"
+              className="object-contain object-bottom pt-8 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
               priority={false}
             />
           </div>
 
-          {/* ─── Bottom vignette ───────────────────── */}
+          {/* ─── Elemental Glassmorphism Overlay ───── */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `linear-gradient(to top,
-                rgba(4,4,12,0.97) 0%,
-                rgba(4,4,12,0.85) 22%,
-                rgba(4,4,12,0.40) 45%,
-                rgba(4,4,12,0.08) 65%,
-                transparent 80%
+                rgba(5,5,10,0.98) 0%,
+                ${glow}0.4) 15%,
+                ${glow}0.1) 40%,
+                transparent 60%
               )`,
-            }}
-          />
-
-          {/* ─── Element tint at bottom ──────────── */}
-          <div
-            className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
-            style={{ background: `linear-gradient(to top, ${glow}0.22) 0%, transparent 100%)` }}
-          />
-
-          {/* ─── Hover shimmer line ───────────────── */}
-          <div
-            className="absolute inset-x-0 top-0 h-[1.5px] pointer-events-none transition-opacity duration-300"
-            style={{
-              background: `linear-gradient(90deg, transparent, ${color}, ${color}80, transparent)`,
-              opacity: hovered ? 0.85 : 0.25,
             }}
           />
 
@@ -170,6 +162,18 @@ export default function CharacterCard({ character }: { character: CharacterData 
                 filter: 'blur(10px)',
               }}
             />
+          )}
+
+          {/* ─── TOP LEFT: Tier badge ──────────── */}
+          {tierCfg && (
+            <div className="absolute top-3 left-3 z-20">
+              <div
+                className="px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest backdrop-blur-md shadow-lg"
+                style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}`, color: tierCfg.text }}
+              >
+                {tierValue === 'TBD' ? 'UNRANKED' : `${character.tier} TIER`}
+              </div>
+            </div>
           )}
 
           {/* ─── TOP RIGHT: Fav button ─────────── */}
@@ -190,73 +194,46 @@ export default function CharacterCard({ character }: { character: CharacterData 
           </div>
 
           {/* ─── BOTTOM nameplate ─────────────────── */}
-          <div className="absolute inset-x-0 bottom-0 z-10 pl-3 pr-[95px] pb-3.5 pt-8 pointer-events-none">
-
-            {/* Tier badge */}
-            {tierCfg && (
-              <div
-                className="inline-flex items-center mb-1.5 px-2 py-[2px] rounded-md text-[8px] font-black uppercase tracking-widest"
-                style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}`, color: tierCfg.text }}
-              >
-                {tierValue === 'TBD' ? 'UNRANKED' : `${character.tier} TIER`}
-              </div>
-            )}
-
+          <div className="absolute inset-x-0 bottom-0 z-10 pl-4 pr-16 pb-4 pt-10 pointer-events-none flex flex-col justify-end">
             {/* Name */}
             <div
-              className="text-sm sm:text-[15px] font-black tracking-wide leading-tight mb-2 truncate"
-              style={{
-                color: '#fff',
-                textShadow: `0 0 20px ${glow}0.80), 0 2px 8px rgba(0,0,0,0.95)`,
-              }}
+              className="text-base sm:text-lg font-black tracking-wide leading-tight mb-1 truncate drop-shadow-[0_0_12px_rgba(0,0,0,0.8)]"
+              style={{ color: '#fff', textShadow: `0 0 20px ${glow}0.6)` }}
             >
               {name}
             </div>
 
-            {/* Rarity stars row */}
-            <div className="flex flex-wrap items-center gap-1.5">
+            {/* Rarity & Weapon */}
+            <div className="flex flex-wrap items-center gap-2 mt-0.5">
               <div className="flex gap-[2px]">
                 {Array.from({ length: character.rarity }).map((_, i) => (
                   <svg
                     key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 drop-shadow"
-                    style={{ color: is5 ? '#ffd54f' : '#ce93d8', filter: `drop-shadow(0 0 3px ${is5 ? 'rgba(255,213,79,0.7)' : 'rgba(206,147,216,0.7)'})` }}
+                    className="w-3.5 h-3.5 drop-shadow-md"
+                    style={{ color: is5 ? '#ffd54f' : '#ce93d8', filter: `drop-shadow(0 0 4px ${is5 ? 'rgba(255,213,79,0.5)' : 'rgba(206,147,216,0.5)'})` }}
                     fill="currentColor" viewBox="0 0 20 20"
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-
-              {/* Weapon type badge */}
+              
               {character.weapon && (
-                <span
-                  className="text-[8px] font-bold px-1.5 py-[2px] rounded-md uppercase tracking-wider shrink-0"
-                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.55)' }}
-                >
+                <span className="text-[9px] font-bold px-1.5 py-[2px] rounded uppercase tracking-wider shrink-0 bg-white/10 border border-white/15 text-white/70">
                   {character.weapon}
                 </span>
               )}
             </div>
           </div>
 
-          {/* ─── BOTTOM RIGHT: Element pill ─────────── */}
-          <div className="absolute bottom-3 right-3 z-20">
-            <div
-              className="flex items-center gap-2 pl-1 pr-3 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 group-hover:scale-110 shadow-lg"
-              style={{
-                background: `${glow}0.25)`,
-                border: `1px solid ${glow}0.60)`,
-              }}
-            >
+          {/* ─── BOTTOM RIGHT: Element Icon ─────────── */}
+          <div className="absolute bottom-4 right-3 z-20 pointer-events-none">
+            <div className="relative w-8 h-8 group-hover:scale-110 transition-transform duration-500">
               <FallbackImage
                 src={`/assets/elements/${el.toLowerCase()}.webp`}
-                alt={el} width={28} height={28}
-                className="w-7 h-7 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+                alt={el} fill
+                className="object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
               />
-              <span className="text-[11px] font-black uppercase tracking-widest hidden sm:block drop-shadow-md" style={{ color }}>
-                {el}
-              </span>
             </div>
           </div>
 

@@ -5,7 +5,7 @@ import { cookies } from 'next/headers';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { email, password } = body;
+    const { email, password, rememberMe } = body;
 
     const data = await fetchGraphQL(`
       mutation Login($email: String!, $password: String!) {
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 30 * 24 * 60 * 60, // 30 days
+      ...(rememberMe ? { maxAge: 30 * 24 * 60 * 60 } : {}),
       path: '/',
     });
 

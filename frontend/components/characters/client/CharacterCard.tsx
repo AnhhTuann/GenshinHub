@@ -29,6 +29,9 @@ const TIER_CFG: Record<string, { bg: string; border: string; text: string }> = {
   S:  { bg: 'rgba(245,158,11,0.25)', border: 'rgba(245,158,11,0.50)', text: '#fbbf24' },
   A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#c084fc' },
   B:  { bg: 'rgba(34,211,238,0.20)', border: 'rgba(34,211,238,0.40)', text: '#22d3ee' },
+  C:  { bg: 'rgba(156,163,175,0.20)', border: 'rgba(156,163,175,0.40)', text: '#cbd5e1' },
+  D:  { bg: 'rgba(100,116,139,0.20)', border: 'rgba(100,116,139,0.40)', text: '#94a3b8' },
+  TBD:{ bg: 'rgba(156,163,175,0.10)', border: 'rgba(156,163,175,0.25)', text: '#9ca3af' },
 };
 
 export default function CharacterCard({ character }: { character: CharacterData }) {
@@ -42,7 +45,9 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const el = character.element;
   const color = EL_COLOR[el] ?? '#a855f7';
   const glow  = EL_GLOW[el]  ?? 'rgba(168,85,247,';
-  const tierCfg = TIER_CFG[character.tier ?? ''];
+  
+  const tierValue = character.tier || 'TBD';
+  const tierCfg = TIER_CFG[tierValue] || TIER_CFG['TBD'];
 
   const [overlayOpen, setOverlayOpen]   = useState(false);
   const [overlayReady, setOverlayReady] = useState(false);
@@ -193,7 +198,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
                 className="inline-flex items-center mb-1.5 px-2 py-[2px] rounded-md text-[8px] font-black uppercase tracking-widest"
                 style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}`, color: tierCfg.text }}
               >
-                {character.tier} Tier
+                {tierValue === 'TBD' ? 'UNRANKED' : `${character.tier} TIER`}
               </div>
             )}
 

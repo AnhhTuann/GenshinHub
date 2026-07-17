@@ -49,6 +49,11 @@ export default function TeamsTab({ user }: { user: User }) {
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState<string | null>(null);
 
+  // Selector Modal State
+  const [isSelectorOpen, setIsSelectorOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedElement, setSelectedElement] = useState<string | null>(null);
+
   useEffect(() => {
     async function loadCharacters() {
       try {
@@ -189,6 +194,12 @@ export default function TeamsTab({ user }: { user: User }) {
   const resonances = Object.entries(elementCounts).filter(([_, count]) => count >= 2).map(([el]) => el);
   const isDiverse = new Set(elements).size === 4;
 
+  const filteredChars = availableChars.filter(char => {
+    if (selectedElement && char.element !== selectedElement) return false;
+    if (searchQuery && !char.id.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+    return true;
+  });
+
   return (
     <div className="space-y-8">
       {/* Team Builder */}
@@ -206,10 +217,9 @@ export default function TeamsTab({ user }: { user: User }) {
           </button>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          
+        <div>
           {/* Current Team (Drag and Drop) */}
-          <div className="flex-1">
+          <div>
             <div className="mb-4">
               <label className="block text-xs font-bold text-white/40 uppercase tracking-widest mb-2 ml-1">Team Name</label>
               <input
@@ -234,7 +244,11 @@ export default function TeamsTab({ user }: { user: User }) {
                     </div>
                   ))}
                   {Array.from({ length: 4 - team.length }).map((_, i) => (
-                    <div key={`empty-${i}`} className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center text-white/20">
+                    <div 
+                      key={`empty-${i}`} 
+                      onClick={() => setIsSelectorOpen(true)}
+                      className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center text-white/20 cursor-pointer hover:border-[#c8a84b]/50 hover:text-[#c8a84b] transition-colors bg-white/5"
+                    >
                       <Plus className="w-6 h-6" />
                     </div>
                   ))}
@@ -272,32 +286,6 @@ export default function TeamsTab({ user }: { user: User }) {
               {selectedTeamId ? 'Update Team' : 'Save Team'}
             </button>
           </div>
-
-          {/* Character Selector (Simple) */}
-          <div className="w-full md:w-64">
-            <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-4">Select Characters</p>
-            <div className="grid grid-cols-4 gap-2 max-h-[400px] overflow-y-auto pr-1">
-              {loadingChars ? (
-                <div className="col-span-4 py-8 flex justify-center text-white/20">
-                  <Loader2 className="w-6 h-6 animate-spin" />
-                </div>
-              ) : (
-                availableChars.map(char => (
-                  <button
-                    key={char.id}
-                    onClick={() => addToTeam(char)}
-                    className="w-12 h-12 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 p-1 flex flex-col items-center justify-center relative overflow-hidden group"
-                  >
-                    <img src={`/assets/characters/${char.id}/avatar.webp`} alt={char.id} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                      <Plus className="w-4 h-4 text-white" />
-                    </div>
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -336,6 +324,70 @@ export default function TeamsTab({ user }: { user: User }) {
           </div>
         )}
       </div>
+
+      {/* Character Selector Modal */}
+      {isSelectorOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setIsSelectorOpen(false)}>
+          <div className="bg-[#1a1a24] border border-[#c8a84b]/30 rounded-2xl p-6 w-full max-w-3xl max-h-[80vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-lg font-black uppercase tracking-widest text-[#f0d080]">Select Character</h3>
+              <button onClick={() => setIsSelectorOpen(false)} className="text-white/50 hover:text-white transition-colors">✕</button>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <input 
+                type="text" 
+                placeholder="Search characters..." 
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                className="flex-1 bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 transition-all text-sm"
+              />
+              <div className="flex flex-wrap gap-1.5 justify-center sm:justify-start">
+                {['Anemo', 'Cryo', 'Dendro', 'Electro', 'Geo', 'Hydro', 'Pyro'].map(el => (
+                  <button 
+                    key={el}
+                    onClick={() => setSelectedElement(selectedElement === el ? null : el)}
+                    className={`w-10 h-10 rounded-xl border ${selectedElement === el ? 'border-[#c8a84b] bg-[#c8a84b]/20 shadow-[0_0_10px_rgba(200,168,75,0.3)]' : 'border-white/10 bg-white/5'} flex items-center justify-center p-1.5 transition-all hover:border-[#c8a84b]/50`}
+                    title={el}
+                  >
+                    <img src={`/assets/elements/${el.toLowerCase()}.webp`} alt={el} className="w-full h-full object-contain" />
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex-1 overflow-y-auto min-h-0 pr-2 custom-scrollbar">
+              {loadingChars ? (
+                <div className="flex justify-center items-center h-40">
+                  <Loader2 className="w-8 h-8 text-[#c8a84b] animate-spin" />
+                </div>
+              ) : filteredChars.length === 0 ? (
+                <div className="flex justify-center items-center h-40 text-white/30 text-sm">
+                  No characters found
+                </div>
+              ) : (
+                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
+                  {filteredChars.map(char => (
+                    <button
+                      key={char.id}
+                      onClick={() => {
+                        addToTeam(char);
+                        setIsSelectorOpen(false);
+                      }}
+                      className="w-full aspect-square rounded-2xl bg-black/50 hover:bg-white/10 border border-white/10 p-1 flex flex-col items-center justify-center relative overflow-hidden group transition-colors"
+                    >
+                      <img src={`/assets/characters/${char.id}/avatar.webp`} alt={char.id} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
+                      <div className="absolute top-1 left-1 w-4 h-4 rounded-full bg-black/50 border border-white/20 flex items-center justify-center p-0.5 z-10">
+                        <img src={`/assets/elements/${char.element.toLowerCase()}.webp`} alt={char.element} className="w-full h-full object-contain" />
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

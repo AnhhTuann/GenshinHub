@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
 import dynamic from 'next/dynamic';
 import { useDebounce } from '@/hooks/useDebounce';
@@ -142,6 +142,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
   const [selectedRarity, setSelectedRarity] = useState<number | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const locale = useLocale();
+  const t = useTranslations('Common');
   const { isAdmin } = useAdmin();
 
   const debouncedSearch = useDebounce(search, 200);

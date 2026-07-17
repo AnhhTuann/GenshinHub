@@ -115,10 +115,18 @@ export const userService = {
   // ─── Profile ───────────────────────────────────────────────
 
   async updateProfile(prisma: PrismaClient, userId: string, input: {
+    username?: string;
     displayName?: string;
     bio?: string;
     avatarUrl?: string;
   }) {
+    if (input.username) {
+      const existing = await prisma.user.findFirst({
+        where: { username: input.username, id: { not: userId } }
+      });
+      if (existing) throw new Error('Tên đăng nhập đã được sử dụng');
+    }
+
     return prisma.user.update({
       where: { id: userId },
       data: { ...input, updatedAt: new Date() },

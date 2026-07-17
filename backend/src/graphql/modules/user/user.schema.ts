@@ -46,6 +46,7 @@ export const userSchema = `
   }
 
   input UpdateProfileInput {
+    username: String
     displayName: String
     bio: String
     avatarUrl: String

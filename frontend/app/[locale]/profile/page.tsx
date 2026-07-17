@@ -7,6 +7,7 @@ import FallbackImage from '@/components/ui/FallbackImage';
 import { getCharacterAvatar } from '@/utils/assetMap';
 import { useState, useEffect } from 'react';
 import { Heart, Star, Users, Loader2 } from 'lucide-react';
+import EditProfileModal from './_components/EditProfileModal';
 
 // Components for tabs
 import FavoritesTab from './_components/FavoritesTab';
@@ -23,6 +24,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const t = useTranslations('Common');
   const [activeTab, setActiveTab] = useState<Tab>('profile');
+  const [showEditModal, setShowEditModal] = useState(false);
 
   // Simple hash-based routing for tabs
   useEffect(() => {
@@ -94,7 +96,10 @@ export default function ProfilePage() {
             </div>
             
             <div className="w-full sm:w-auto mt-4 sm:mt-16 flex justify-start sm:justify-end">
-               <button className="px-6 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-bold uppercase tracking-wider text-xs transition-colors">
+               <button 
+                 onClick={() => setShowEditModal(true)}
+                 className="px-6 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-bold uppercase tracking-wider text-xs transition-colors"
+               >
                  Edit Profile
                </button>
             </div>
@@ -156,6 +161,10 @@ export default function ProfilePage() {
           {activeTab === 'wishcounter' && <WishCounterTab user={user} />}
         </div>
       </div>
+
+      {showEditModal && (
+        <EditProfileModal onClose={() => setShowEditModal(false)} />
+      )}
     </main>
   );
 }

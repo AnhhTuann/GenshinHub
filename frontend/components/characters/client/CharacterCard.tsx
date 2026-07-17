@@ -112,43 +112,45 @@ export default function CharacterCard({ character }: { character: CharacterData 
           onClick={() => router.push(href)}
           className="relative cursor-pointer rounded-2xl overflow-hidden"
           style={{
-            aspectRatio: '2/3',
-            background: `radial-gradient(circle at 50% 0%, rgba(20,20,28,0.95) 0%, rgba(10,10,15,1) 100%)`,
+            aspectRatio: '4/5',
+            background: `radial-gradient(circle at 50% 30%, ${glow}0.15) 0%, rgba(10,10,15,0.95) 100%)`,
             boxShadow: hovered
-              ? `0 20px 60px -10px ${glow}0.65), 0 0 0 1.5px ${glow}0.50)`
-              : `0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px ${glow}0.25)`,
+              ? `0 20px 60px -10px ${glow}0.55), 0 0 0 1.5px ${glow}0.4)`
+              : is5
+                ? `0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px ${glow}0.25)`
+                : `0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px ${glow}0.2)`,
             transition: 'box-shadow 0.4s ease',
           }}
         >
-          {/* ─── Giant Element Watermark ───────────── */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none mix-blend-screen transition-transform duration-700 group-hover:scale-110 group-hover:opacity-[0.15]">
+          {/* ─── Element Watermark ───────────── */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.06] pointer-events-none mix-blend-screen overflow-hidden">
             <FallbackImage
               src={`/assets/elements/${el.toLowerCase()}.webp`}
               alt={el} fill
-              className="object-contain scale-150 -rotate-12 blur-[2px]"
+              className="object-contain scale-125 -rotate-12 blur-[1px]"
             />
           </div>
 
-          {/* ─── Avatar Image ──────────────────────── */}
-          <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.08] group-hover:-translate-y-2">
+          {/* ─── Avatar Image (Square fitting top) ─── */}
+          <div className="absolute inset-x-0 top-0 bottom-1/4 transition-transform duration-700 ease-out group-hover:scale-[1.08] group-hover:-translate-y-1">
             <FallbackImage
               src={avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
               alt={name} fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
-              className="object-contain object-bottom pt-8 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+              className="object-contain object-bottom pt-2 drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)]"
               priority={false}
             />
           </div>
 
-          {/* ─── Elemental Glassmorphism Overlay ───── */}
+          {/* ─── Elemental Nameplate Overlay ───── */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-x-0 bottom-0 h-1/2 pointer-events-none"
             style={{
               background: `linear-gradient(to top,
-                rgba(5,5,10,0.98) 0%,
-                ${glow}0.4) 15%,
-                ${glow}0.1) 40%,
-                transparent 60%
+                rgba(8,8,12,1) 0%,
+                rgba(12,12,18,0.9) 40%,
+                ${glow}0.3) 60%,
+                transparent 100%
               )`,
             }}
           />
@@ -164,20 +166,27 @@ export default function CharacterCard({ character }: { character: CharacterData 
             />
           )}
 
-          {/* ─── TOP LEFT: Tier badge ──────────── */}
-          {tierCfg && (
-            <div className="absolute top-3 left-3 z-20">
+          {/* ─── TOP LEFT: Element & Tier ──────────── */}
+          <div className="absolute top-2 left-2 z-20 flex flex-col gap-1.5">
+            <div className="relative w-7 h-7">
+              <FallbackImage
+                src={`/assets/elements/${el.toLowerCase()}.webp`}
+                alt={el} fill
+                className="object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+              />
+            </div>
+            {tierCfg && (
               <div
-                className="px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest backdrop-blur-md shadow-lg"
+                className="px-2 py-[2px] rounded text-[8px] font-black uppercase tracking-widest backdrop-blur-md shadow-lg"
                 style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}`, color: tierCfg.text }}
               >
-                {tierValue === 'TBD' ? 'UNRANKED' : `${character.tier} TIER`}
+                {tierValue === 'TBD' ? 'UNRANKED' : `${character.tier}`}
               </div>
-            </div>
-          )}
+            )}
+          </div>
 
           {/* ─── TOP RIGHT: Fav button ─────────── */}
-          <div className="absolute top-3 right-3 z-20">
+          <div className="absolute top-2 right-2 z-20">
             <button
               onClick={toggleFav}
               className="p-2 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95"
@@ -194,23 +203,23 @@ export default function CharacterCard({ character }: { character: CharacterData 
           </div>
 
           {/* ─── BOTTOM nameplate ─────────────────── */}
-          <div className="absolute inset-x-0 bottom-0 z-10 pl-4 pr-16 pb-4 pt-10 pointer-events-none flex flex-col justify-end">
+          <div className="absolute inset-x-0 bottom-0 z-10 p-3 pointer-events-none flex flex-col justify-end">
             {/* Name */}
             <div
-              className="text-base sm:text-lg font-black tracking-wide leading-tight mb-1 truncate drop-shadow-[0_0_12px_rgba(0,0,0,0.8)]"
-              style={{ color: '#fff', textShadow: `0 0 20px ${glow}0.6)` }}
+              className="text-[13px] sm:text-base font-black tracking-wide leading-tight mb-1 truncate drop-shadow-[0_0_12px_rgba(0,0,0,0.8)]"
+              style={{ color: '#fff', textShadow: `0 0 15px ${glow}0.8)` }}
             >
               {name}
             </div>
 
             {/* Rarity & Weapon */}
-            <div className="flex flex-wrap items-center gap-2 mt-0.5">
+            <div className="flex flex-wrap items-center gap-1.5 mt-0.5">
               <div className="flex gap-[2px]">
                 {Array.from({ length: character.rarity }).map((_, i) => (
                   <svg
                     key={i}
                     className="w-3.5 h-3.5 drop-shadow-md"
-                    style={{ color: is5 ? '#ffd54f' : '#ce93d8', filter: `drop-shadow(0 0 4px ${is5 ? 'rgba(255,213,79,0.5)' : 'rgba(206,147,216,0.5)'})` }}
+                    style={{ color: is5 ? '#ffd54f' : '#ce93d8', filter: `drop-shadow(0 0 3px ${is5 ? 'rgba(255,213,79,0.5)' : 'rgba(206,147,216,0.5)'})` }}
                     fill="currentColor" viewBox="0 0 20 20"
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -219,21 +228,10 @@ export default function CharacterCard({ character }: { character: CharacterData 
               </div>
               
               {character.weapon && (
-                <span className="text-[9px] font-bold px-1.5 py-[2px] rounded uppercase tracking-wider shrink-0 bg-white/10 border border-white/15 text-white/70">
+                <span className="text-[8px] font-bold px-1.5 py-[2px] rounded uppercase tracking-wider shrink-0 bg-white/5 border border-white/10 text-white/60">
                   {character.weapon}
                 </span>
               )}
-            </div>
-          </div>
-
-          {/* ─── BOTTOM RIGHT: Element Icon ─────────── */}
-          <div className="absolute bottom-4 right-3 z-20 pointer-events-none">
-            <div className="relative w-8 h-8 group-hover:scale-110 transition-transform duration-500">
-              <FallbackImage
-                src={`/assets/elements/${el.toLowerCase()}.webp`}
-                alt={el} fill
-                className="object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-              />
             </div>
           </div>
 

@@ -301,15 +301,17 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     {/* Bottom Info */}
                     <div className="relative z-10 p-4 flex flex-col items-center border-t border-white/5">
                       {/* Name */}
-                      <p
-                        className="text-xs sm:text-sm font-extrabold text-center leading-snug truncate transition-colors w-full tracking-wide px-1"
-                        style={{
-                          color: '#fff',
-                          textShadow: `0 0 16px ${cfg.glow}0.6)`,
-                        }}
-                      >
-                        {name}
-                      </p>
+                      <div className="h-8 sm:h-10 flex items-center justify-center w-full px-1">
+                        <p
+                          className="text-xs sm:text-sm font-extrabold text-center leading-snug line-clamp-2 transition-colors w-full tracking-wide"
+                          style={{
+                            color: '#fff',
+                            textShadow: `0 0 16px ${cfg.glow}0.6)`,
+                          }}
+                        >
+                          {name}
+                        </p>
+                      </div>
 
                       {/* Stars */}
                       <div className="flex justify-center gap-[2px] mt-2">

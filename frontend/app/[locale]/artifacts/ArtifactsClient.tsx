@@ -118,9 +118,11 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
         </div>
 
         {/* Name */}
-        <p className="text-white font-extrabold text-[13px] sm:text-sm text-center leading-snug font-display truncate w-full tracking-wide px-1" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
-          {name}
-        </p>
+        <div className="h-8 sm:h-10 flex items-center justify-center w-full px-1">
+          <p className="text-white font-extrabold text-[13px] sm:text-sm text-center leading-snug font-display line-clamp-2 tracking-wide w-full" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
+            {name}
+          </p>
+        </div>
 
         {/* Bonus descriptions */}
         {(desc2 || desc4) && (

@@ -167,27 +167,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
             />
           )}
 
-          {/* ─── TOP: Element pill + Fav ─────────── */}
-          <div className="absolute top-0 inset-x-0 flex items-start justify-between p-3 z-10">
-            {/* Element pill */}
-            <div
-              className="flex items-center gap-1.5 pl-1 pr-2.5 py-1 rounded-full backdrop-blur-md transition-all duration-300 group-hover:scale-105"
-              style={{
-                background: `${glow}0.22)`,
-                border: `1px solid ${glow}0.50)`,
-              }}
-            >
-              <FallbackImage
-                src={`/assets/elements/${el.toLowerCase()}.webp`}
-                alt={el} width={20} height={20}
-                className="w-5 h-5 object-contain"
-              />
-              <span className="text-[9px] font-black uppercase tracking-wider hidden sm:block" style={{ color }}>
-                {el}
-              </span>
-            </div>
-
-            {/* Fav button */}
+          {/* ─── TOP RIGHT: Fav button ─────────── */}
+          <div className="absolute top-3 right-3 z-20">
             <button
               onClick={toggleFav}
               className="p-2 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95"
@@ -197,14 +178,14 @@ export default function CharacterCard({ character }: { character: CharacterData 
               }}
             >
               <Heart
-                className="w-3.5 h-3.5 transition-all duration-200"
+                className="w-4 h-4 transition-all duration-200"
                 style={{ fill: isFav ? '#ef4444' : 'transparent', color: isFav ? '#ef4444' : 'rgba(255,255,255,0.65)' }}
               />
             </button>
           </div>
 
           {/* ─── BOTTOM nameplate ─────────────────── */}
-          <div className="absolute inset-x-0 bottom-0 z-10 px-3 pb-3.5 pt-6">
+          <div className="absolute inset-x-0 bottom-0 z-10 pl-3 pr-20 pb-3.5 pt-6 pointer-events-none">
 
             {/* Tier badge */}
             {tierCfg && (
@@ -251,6 +232,26 @@ export default function CharacterCard({ character }: { character: CharacterData 
                   {character.weapon}
                 </span>
               )}
+            </div>
+          </div>
+
+          {/* ─── BOTTOM RIGHT: Element pill ─────────── */}
+          <div className="absolute bottom-3 right-3 z-20">
+            <div
+              className="flex items-center gap-2 pl-1 pr-3 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 group-hover:scale-110 shadow-lg"
+              style={{
+                background: `${glow}0.25)`,
+                border: `1px solid ${glow}0.60)`,
+              }}
+            >
+              <FallbackImage
+                src={`/assets/elements/${el.toLowerCase()}.webp`}
+                alt={el} width={28} height={28}
+                className="w-7 h-7 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+              />
+              <span className="text-[11px] font-black uppercase tracking-widest hidden sm:block drop-shadow-md" style={{ color }}>
+                {el}
+              </span>
             </div>
           </div>
 

@@ -13,7 +13,7 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 export default function RegisterPage() {
   const router = useRouter();
   const t = useTranslations('Common');
-  const { refreshUser } = useUser();
+  const { refreshUser, setUser } = useUser();
   const [loading, setLoading] = useState(false);
   
   const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ export default function RegisterPage() {
         throw new Error(data.error || 'Registration failed');
       }
 
-      await refreshUser();
+      setUser(data.user);
       toast.success('Account created successfully!');
       router.push('/profile');
     } catch (err: any) {
@@ -66,7 +66,7 @@ export default function RegisterPage() {
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || 'Social login failed');
 
-      await refreshUser();
+      setUser(result.user);
       toast.success('Logged in successfully!');
       router.push('/profile');
     } catch (err: any) {

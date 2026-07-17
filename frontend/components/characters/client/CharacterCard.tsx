@@ -185,7 +185,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           </div>
 
           {/* ─── BOTTOM nameplate ─────────────────── */}
-          <div className="absolute inset-x-0 bottom-0 z-10 pl-3 pr-20 pb-3.5 pt-6 pointer-events-none">
+          <div className="absolute inset-x-0 bottom-0 z-10 pl-3 pr-[95px] pb-3.5 pt-8 pointer-events-none">
 
             {/* Tier badge */}
             {tierCfg && (
@@ -209,7 +209,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
             </div>
 
             {/* Rarity stars row */}
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-1.5">
               <div className="flex gap-[2px]">
                 {Array.from({ length: character.rarity }).map((_, i) => (
                   <svg
@@ -226,7 +226,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
               {/* Weapon type badge */}
               {character.weapon && (
                 <span
-                  className="text-[8px] font-bold px-1.5 py-[2px] rounded-md uppercase tracking-wider"
+                  className="text-[8px] font-bold px-1.5 py-[2px] rounded-md uppercase tracking-wider shrink-0"
                   style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.55)' }}
                 >
                   {character.weapon}

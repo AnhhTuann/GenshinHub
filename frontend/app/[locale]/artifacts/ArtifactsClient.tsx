@@ -25,52 +25,21 @@ interface ArtifactSet {
 /* ─── helpers ─────────────────────────────────────────────────── */
 
 function rarityConfig(max: number) {
-  if (max === 5)
-    return {
-      stars: '★★★★★',
-      starColor: 'text-amber-400',
-      gradient: 'from-amber-950/80 via-[#0d0d14] to-[#0d0d14]',
-      topBar: 'from-amber-500 via-yellow-400 to-amber-300',
-      border: 'border-amber-500/25',
-      hoverBorder: 'hover:border-amber-400/60',
-      glow: 'hover:shadow-[0_0_32px_rgba(245,158,11,0.18)]',
-      iconBg: 'from-amber-900/40 to-amber-950/60',
-      iconRing: 'ring-amber-500/30',
-    };
-  if (max === 4)
-    return {
-      stars: '★★★★',
-      starColor: 'text-purple-400',
-      gradient: 'from-purple-950/60 via-[#0d0d14] to-[#0d0d14]',
-      topBar: 'from-purple-600 via-violet-500 to-purple-400',
-      border: 'border-purple-500/25',
-      hoverBorder: 'hover:border-purple-400/60',
-      glow: 'hover:shadow-[0_0_32px_rgba(168,85,247,0.16)]',
-      iconBg: 'from-purple-900/40 to-purple-950/60',
-      iconRing: 'ring-purple-500/30',
-    };
-  return {
-    stars: '★★★',
-    starColor: 'text-sky-400',
-    gradient: 'from-sky-950/50 via-[#0d0d14] to-[#0d0d14]',
-    topBar: 'from-sky-600 via-blue-500 to-sky-400',
-    border: 'border-sky-500/25',
-    hoverBorder: 'hover:border-sky-400/60',
-    glow: 'hover:shadow-[0_0_32px_rgba(56,189,248,0.14)]',
-    iconBg: 'from-sky-900/40 to-sky-950/60',
-    iconRing: 'ring-sky-500/30',
-  };
+  if (max === 5) return { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', text: '#ffd54f', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.06)', stars: '#ffd54f' };
+  if (max === 4) return { ring: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]', glow: 'rgba(168,85,247,', text: '#c084fc', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.06)', stars: '#c084fc' };
+  if (max === 3) return { ring: 'from-[#60a5fa] via-[#3b82f6] to-[#1d4ed8]', glow: 'rgba(59,130,246,', text: '#93c5fd', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.06)', stars: '#93c5fd' };
+  return { ring: 'from-gray-400 via-gray-500 to-gray-600', glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.06)', stars: '#9ca3af' };
 }
 
 /* ─── sub-components ──────────────────────────────────────────── */
 
-function BonusBadge({ label, text }: { label: string; text: string }) {
+function BonusBadge({ label, text, glow }: { label: string; text: string; glow: string }) {
   return (
-    <div className="flex gap-2 items-start">
-      <span className="mt-0.5 shrink-0 text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/5 border border-white/8 text-gray-400 leading-none">
+    <div className="flex gap-2.5 items-start bg-white/5 rounded-lg p-2.5 border border-white/5">
+      <span className="mt-0.5 shrink-0 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-md" style={{ background: `${glow}0.15)`, color: '#fff', border: `1px solid ${glow}0.3)` }}>
         {label}
       </span>
-      <p className="text-[11px] text-gray-400 leading-relaxed line-clamp-2 flex-1">{text}</p>
+      <p className="text-[10px] text-gray-300 leading-snug line-clamp-2 flex-1 font-medium">{text}</p>
     </div>
   );
 }
@@ -85,78 +54,83 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
   return (
     <Link
       href={`/artifacts/${artifact.id}`}
-      className={`
-        group relative flex flex-col overflow-hidden rounded-2xl
-        bg-[#0d0d14] border ${cfg.border} ${cfg.hoverBorder}
-        transition-all duration-300 ease-out
-        hover:-translate-y-1 hover:scale-[1.02] ${cfg.glow}
-        shadow-[0_2px_12px_rgba(0,0,0,0.5)]
-      `}
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1"
+      style={{
+        background: `linear-gradient(145deg, rgba(12,12,24,0.95) 0%, rgba(5,5,12,0.98) 100%)`,
+        border: `1px solid ${cfg.border}`,
+        boxShadow: `0 4px 20px rgba(0,0,0,0.4)`,
+      }}
     >
-      {/* Rarity top accent bar */}
-      <div className={`h-[3px] w-full bg-gradient-to-r ${cfg.topBar} flex-shrink-0`} />
+      {/* Hover border glow */}
+      <div
+        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{ boxShadow: `inset 0 0 0 1.5px ${cfg.glow}0.5)` }}
+      />
+      
+      {/* Top sheen */}
+      <div
+        className="absolute inset-x-0 top-0 h-px pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity"
+        style={{ background: `linear-gradient(90deg, transparent, ${cfg.glow}0.8), transparent)` }}
+      />
 
-      {/* Background gradient wash */}
-      <div className={`absolute inset-0 bg-gradient-to-b ${cfg.gradient} pointer-events-none`} />
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center pt-6 pb-5 px-4 gap-3">
-
-        {/* Large artifact image — w-24 h-24 */}
+      {/* Image wrapper */}
+      <div className="relative w-full aspect-square p-[1.5px]">
         <div
-          className={`
-            relative w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0
-            bg-gradient-to-br ${cfg.iconBg}
-            ring-1 ${cfg.iconRing}
-            shadow-[0_4px_20px_rgba(0,0,0,0.6)]
-          `}
+          className="w-full h-full rounded-[22px] overflow-hidden flex items-center justify-center relative"
+          style={{ background: `linear-gradient(to top, ${cfg.bg} 0%, rgba(5,5,12,0.9) 100%)` }}
         >
-          <div className="absolute inset-0 rounded-2xl bg-white/[0.02]" />
+          {/* Glow dot behind artifact */}
+          <div
+            className="absolute w-2/3 h-2/3 rounded-full pointer-events-none opacity-50 group-hover:opacity-80 transition-opacity"
+            style={{ background: `radial-gradient(circle, ${cfg.glow}0.2), transparent 60%)`, filter: 'blur(20px)' }}
+          />
+          
           {artifact.iconUrl ? (
             <FallbackImage
               src={artifact.iconUrl}
               alt={name}
-              width={96}
-              height={96}
-              className="w-full h-full object-contain p-1.5 group-hover:scale-110 transition-transform duration-300 ease-out drop-shadow-lg"
+              fill
+              className="object-contain p-4 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="text-4xl select-none opacity-60">💎</span>
-            </div>
+            <div className="text-5xl select-none opacity-30">💎</div>
           )}
+
+          {/* Rarity List Pills */}
+          <div className="absolute top-2 left-2 flex flex-col gap-1">
+             {artifact.rarityList.sort((a,b) => b-a).map(r => (
+               <div key={r} className="px-1.5 py-0.5 rounded-md backdrop-blur-md bg-black/40 border border-white/10 text-[8px] font-black text-white/70 tracking-widest flex items-center gap-0.5">
+                  {r}<span style={{ color: r === 5 ? '#ffd54f' : r === 4 ? '#ce93d8' : '#93c5fd' }}>★</span>
+               </div>
+             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col pt-3 pb-4 px-4 gap-3 border-t border-white/5">
+        
+        {/* Stars */}
+        <div className="flex justify-center gap-[2px]">
+          {Array.from({ length: max }).map((_, i) => (
+            <svg key={i} className="w-3.5 h-3.5" style={{ color: cfg.stars, filter: `drop-shadow(0 0 4px ${cfg.glow}0.8))` }} fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
         </div>
 
-        {/* Stars */}
-        <span className={`${cfg.starColor} text-[11px] font-black tracking-[0.15em] drop-shadow-sm`}>
-          {cfg.stars}
-        </span>
-
         {/* Name */}
-        <p className="text-white font-extrabold text-sm text-center leading-snug group-hover:text-yellow-100 transition-colors duration-200 font-display line-clamp-2 px-1">
+        <p className="text-white font-extrabold text-[13px] sm:text-sm text-center leading-snug font-display line-clamp-2 tracking-wide" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
           {name}
         </p>
 
         {/* Bonus descriptions */}
         {(desc2 || desc4) && (
-          <div className="w-full border-t border-white/5 pt-3 space-y-2 mt-1">
-            {desc2 && <BonusBadge label="2PC" text={desc2} />}
-            {desc4 && <BonusBadge label="4PC" text={desc4} />}
+          <div className="w-full pt-1 space-y-1.5 mt-auto">
+            {desc2 && <BonusBadge label="2PC" text={desc2} glow={cfg.glow} />}
+            {desc4 && <BonusBadge label="4PC" text={desc4} glow={cfg.glow} />}
           </div>
         )}
-      </div>
-
-      {/* View arrow hint */}
-      <div className="relative z-10 flex items-center justify-end px-4 pb-3 mt-auto">
-        <span
-          className={`
-            text-[10px] font-black uppercase tracking-wider opacity-0 group-hover:opacity-100
-            transition-all duration-200 translate-x-1 group-hover:translate-x-0
-            ${cfg.starColor}
-          `}
-        >
-          View →
-        </span>
       </div>
     </Link>
   );
@@ -187,8 +161,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
       <div className="relative overflow-hidden">
         {/* Ambient glow blobs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full" />
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[400px] bg-purple-500/5 blur-[100px] rounded-full" />
+          <div className="absolute top-0 left-1/4 w-[600px] h-[500px] blur-[130px] rounded-full" style={{ background: 'rgba(168,85,247,0.08)' }} />
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[400px] blur-[100px] rounded-full" style={{ background: 'rgba(34,211,238,0.06)' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-8 pb-8 relative z-10">
@@ -257,8 +231,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               onChange={e => setSearch(e.target.value)}
               className="w-full bg-[#0d0d14]/80 border border-white/[0.08] text-white/90 pl-10 pr-9 py-2.5 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
               onFocus={e => {
-                e.target.style.borderColor = 'rgba(200,168,75,0.4)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.1)';
+                e.target.style.borderColor = 'rgba(168,85,247,0.50)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(168,85,247,0.12)';
               }}
               onBlur={e => {
                 e.target.style.borderColor = 'rgba(255,255,255,0.08)';
@@ -351,7 +325,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
             {filtered.map(artifact => (
               <ArtifactCard key={artifact.id} artifact={artifact} locale={locale} />
             ))}

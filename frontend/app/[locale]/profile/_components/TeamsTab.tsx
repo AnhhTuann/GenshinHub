@@ -44,7 +44,7 @@ export default function TeamsTab({ user }: { user: User }) {
   const [loadingChars, setLoadingChars] = useState(true);
   
   const [teamName, setTeamName] = useState('');
-  const [team, setTeam] = useState<{id: string, element: string}[]>([]);
+  const [team, setTeam] = useState<{id: string, element: string, avatarUrl?: string}[]>([]);
   const [selectedTeamId, setSelectedTeamId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState<string | null>(null);
@@ -92,7 +92,7 @@ export default function TeamsTab({ user }: { user: User }) {
     }
   };
 
-  const addToTeam = (char: {id: string, element: string}) => {
+  const addToTeam = (char: {id: string, element: string, avatarUrl?: string}) => {
     if (team.length >= 4) {
       toast.error('Team is full (Max 4)');
       return;

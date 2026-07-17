@@ -16,6 +16,7 @@ import { GET_CHARACTERS } from '@/lib/graphql';
 import { getElementBg, getElementBorder, TIER_CONFIG } from '@/constants/design';
 import { SkeletonList } from '@/components/SkeletonLoader';
 import EmptyState from '@/components/EmptyState';
+import { GlassCard } from '@/components/GlassCard';
 
 interface Character {
   id: string;
@@ -70,7 +71,7 @@ export default function TierListScreen() {
             const cfg = TIER_CONFIG[tier] || { bg: 'rgba(255,255,255,0.05)', border: 'rgba(255,255,255,0.1)', text: '#ffffff' };
 
             return (
-              <View key={tier} style={[styles.tierSection, { borderColor: cfg.border }]}>
+              <GlassCard key={tier} style={[styles.tierSection, { borderColor: cfg.border, padding: 0 }]} intensity={15}>
                 {/* Tier Badge column */}
                 <View style={[styles.tierBadgeWrap, { backgroundColor: cfg.bg }]}>
                   <Text style={[styles.tierLabelText, { color: cfg.text }]}>{tier}</Text>
@@ -99,7 +100,7 @@ export default function TierListScreen() {
                     );
                   })}
                 </View>
-              </View>
+              </GlassCard>
             );
           })
         )}

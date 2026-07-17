@@ -20,6 +20,7 @@ import {
 import { useGraphQL } from '@/hooks/useGraphQL';
 import { GET_CHARACTERS } from '@/lib/graphql';
 import { SkeletonList } from '@/components/SkeletonLoader';
+import { GlassCard } from '@/components/GlassCard';
 
 const { width } = Dimensions.get('window');
 
@@ -103,21 +104,21 @@ export default function HomeScreen() {
         {loading ? (
           <View style={styles.statsRow}>
             {[0, 1].map(i => (
-              <View key={i} style={[styles.statCard, { flex: 1 }]}>
+              <GlassCard key={i} style={{ flex: 1 }}>
                 <View style={styles.statSkeleton} />
-              </View>
+              </GlassCard>
             ))}
           </View>
         ) : totalChars > 0 ? (
           <View style={styles.statsRow}>
-            <View style={styles.statCard}>
+            <GlassCard style={styles.statCard}>
               <Text style={styles.statValue}>{totalChars}</Text>
               <Text style={styles.statLabel}>Characters</Text>
-            </View>
-            <View style={styles.statCard}>
+            </GlassCard>
+            <GlassCard style={styles.statCard}>
               <Text style={[styles.statValue, { color: '#ffd54f' }]}>{total5Star}</Text>
               <Text style={styles.statLabel}>5★ Legends</Text>
-            </View>
+            </GlassCard>
           </View>
         ) : null}
 
@@ -145,12 +146,12 @@ export default function HomeScreen() {
         </View>
 
         {/* Welcome Card */}
-        <View style={styles.welcomeCard}>
+        <GlassCard style={styles.welcomeCard} intensity={25}>
           <Text style={styles.welcomeTitle}>Welcome, Traveler! 🌏</Text>
           <Text style={styles.welcomeText}>
             Explore in-depth character builds, weapon rankings, artifact sets, and team compositions to master your journey through Teyvat.
           </Text>
-        </View>
+        </GlassCard>
       </ScrollView>
     </SafeAreaView>
   );

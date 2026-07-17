@@ -14,6 +14,7 @@ import {
 } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import { LanguageBottomSheet } from '../components/LanguageBottomSheet';
+import { GlassCard } from '../components/GlassCard';
 
 const menuItems = [
   {
@@ -94,28 +95,29 @@ export default function MoreScreen() {
           return (
             <TouchableOpacity
               key={idx}
-              style={styles.card}
               onPress={() => router.push(item.href as any)}
               activeOpacity={0.75}
             >
-              <View style={[styles.iconCircle, { backgroundColor: item.bg, borderColor: item.border }]}>
-                <Icon size={22} color={item.color} />
-              </View>
-              <View style={styles.cardInfo}>
-                <Text style={styles.cardLabel}>{item.label}</Text>
-                <Text style={styles.cardDesc}>{item.desc}</Text>
-              </View>
-              <ChevronRight size={18} color="rgba(255,255,255,0.2)" />
+              <GlassCard style={styles.card} intensity={15}>
+                <View style={[styles.iconCircle, { backgroundColor: item.bg, borderColor: item.border }]}>
+                  <Icon size={22} color={item.color} />
+                </View>
+                <View style={styles.cardInfo}>
+                  <Text style={styles.cardLabel}>{item.label}</Text>
+                  <Text style={styles.cardDesc}>{item.desc}</Text>
+                </View>
+                <ChevronRight size={18} color="rgba(255,255,255,0.2)" />
+              </GlassCard>
             </TouchableOpacity>
           );
         })}
 
         {/* Version info */}
-        <View style={styles.versionCard}>
+        <GlassCard style={styles.versionCard} intensity={20}>
           <Text style={styles.versionTitle}>GenshinHub</Text>
           <Text style={styles.versionText}>Your complete Teyvat companion</Text>
           <Text style={styles.versionNum}>v{Constants.expoConfig?.version ?? '1.0.0'}</Text>
-        </View>
+        </GlassCard>
       </ScrollView>
     </SafeAreaView>
   );

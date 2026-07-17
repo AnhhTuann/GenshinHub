@@ -16,6 +16,7 @@ import { ChevronLeft, Star, Sword, Shield, Zap } from 'lucide-react-native';
 import { getElementBg, getElementBorder, getElementColors, TIER_CONFIG, RARITY_CONFIG } from '@/constants/design';
 import { RarityStars } from '@/components/ui/RarityStars';
 import { useTheme } from '@/context/ThemeContext';
+import { GlassCard } from '@/components/GlassCard';
 
 const { width } = Dimensions.get('window');
 
@@ -111,7 +112,7 @@ export default function CharacterDetailScreen() {
 
         <View style={styles.body}>
           {/* Base Stats */}
-          <View style={[styles.statsCard, { borderColor: elBorder }]}>
+          <GlassCard style={[styles.statsCard, { borderColor: elBorder }]} intensity={20}>
             <Text style={styles.sectionTitle}>Base Stats (Lv. 90)</Text>
             <View style={styles.statsRow}>
               {[
@@ -126,13 +127,13 @@ export default function CharacterDetailScreen() {
                 </View>
               ))}
             </View>
-          </View>
+          </GlassCard>
 
           {/* Description */}
           {character.descriptionEn ? (
-            <View style={styles.card}>
+            <GlassCard style={styles.card} intensity={20}>
               <Text style={styles.descText}>{character.descriptionEn}</Text>
-            </View>
+            </GlassCard>
           ) : null}
 
           {/* Best Weapons */}
@@ -141,7 +142,7 @@ export default function CharacterDetailScreen() {
               <Text style={styles.sectionTitle}>⚔️ Best Weapons</Text>
               <View style={styles.weaponList}>
                 {character.bestWeapons.map((w: any, idx: number) => (
-                  <View key={idx} style={[styles.weaponCard, { borderLeftColor: RARITY_CONFIG[w.rarity]?.border || 'rgba(207,168,88,0.4)', borderLeftWidth: 3 }]}>
+                  <GlassCard key={idx} style={[styles.weaponCard, { borderLeftColor: RARITY_CONFIG[w.rarity]?.border || 'rgba(207,168,88,0.4)', borderLeftWidth: 3 }]} intensity={25}>
                     <View style={styles.weapIconWrap}>
                       {w.iconUrl ? (
                         <Image source={{ uri: w.iconUrl }} style={styles.weapIcon} contentFit="contain" />
@@ -164,7 +165,7 @@ export default function CharacterDetailScreen() {
                     <View style={styles.rankBadge}>
                       <Text style={styles.rankText}>#{idx + 1}</Text>
                     </View>
-                  </View>
+                  </GlassCard>
                 ))}
               </View>
             </View>
@@ -176,7 +177,7 @@ export default function CharacterDetailScreen() {
               <Text style={styles.sectionTitle}>🏺 Best Artifacts</Text>
               <View style={styles.weaponList}>
                 {character.bestArtifacts.map((a: any, idx: number) => (
-                  <View key={idx} style={styles.artifactCard}>
+                  <GlassCard key={idx} style={styles.artifactCard} intensity={25}>
                     <View style={styles.artifIconWrap}>
                       {a.iconUrl ? (
                         <Image source={{ uri: a.iconUrl }} style={styles.artifIcon} contentFit="contain" />
@@ -187,7 +188,7 @@ export default function CharacterDetailScreen() {
                       <Text style={styles.artifPieces}>{a.pieces}-Piece Set</Text>
                       {a.substats ? <Text style={styles.weapPassive} numberOfLines={1}>Substats: {a.substats}</Text> : null}
                     </View>
-                  </View>
+                  </GlassCard>
                 ))}
               </View>
             </View>
@@ -198,7 +199,7 @@ export default function CharacterDetailScreen() {
             <View>
               <Text style={styles.sectionTitle}>👥 Recommended Teams</Text>
               {character.teams.map((team: any, idx: number) => (
-                <View key={idx} style={styles.teamCard}>
+                <GlassCard key={idx} style={styles.teamCard} intensity={25}>
                   <View style={styles.teamHeader}>
                     <Text style={styles.teamName}>{team.name}</Text>
                     <View style={styles.rankBadge}>
@@ -216,7 +217,7 @@ export default function CharacterDetailScreen() {
                       </View>
                     ))}
                   </View>
-                </View>
+                </GlassCard>
               ))}
             </View>
           )}

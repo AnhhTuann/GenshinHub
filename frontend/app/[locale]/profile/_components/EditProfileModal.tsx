@@ -12,7 +12,7 @@ interface EditProfileModalProps {
 }
 
 export default function EditProfileModal({ onClose }: EditProfileModalProps) {
-  const { user, refreshUser } = useUser();
+  const { user, setUser } = useUser();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   
@@ -41,9 +41,8 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
       if (!res.ok) throw new Error(result.error || 'Failed to update profile');
 
       toast.success('Profile updated successfully!');
-      await refreshUser();
+      setUser(result.user);
       onClose();
-      router.refresh();
     } catch (err: any) {
       toast.error(err.message);
     } finally {

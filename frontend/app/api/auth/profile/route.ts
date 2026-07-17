@@ -18,8 +18,13 @@ export async function PUT(request: Request) {
       mutation UpdateProfile($input: UpdateProfileInput!) {
         updateProfile(input: $input) {
           id
+          email
           username
+          gender
           displayName
+          avatarUrl
+          travelerCharId
+          favoritesCount
         }
       }
     `, { input: { username, displayName } }, 0, token);

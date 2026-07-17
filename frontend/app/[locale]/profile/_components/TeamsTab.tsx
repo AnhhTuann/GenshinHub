@@ -41,7 +41,7 @@ export default function TeamsTab({ user }: { user: User }) {
   // In a real app, this would be a searchable character selector.
   const [availableChars] = useState([
     { id: 'zhongli', element: 'Geo' },
-    { id: 'raiden', element: 'Electro' },
+    { id: 'raiden-shogun', element: 'Electro' },
     { id: 'nahida', element: 'Dendro' },
     { id: 'furina', element: 'Hydro' },
     { id: 'bennett', element: 'Pyro' },
@@ -50,7 +50,7 @@ export default function TeamsTab({ user }: { user: User }) {
 
   const [team, setTeam] = useState<{id: string, element: string}[]>([
     { id: 'zhongli', element: 'Geo' },
-    { id: 'raiden', element: 'Electro' },
+    { id: 'raiden-shogun', element: 'Electro' },
   ]);
 
   const sensors = useSensors(

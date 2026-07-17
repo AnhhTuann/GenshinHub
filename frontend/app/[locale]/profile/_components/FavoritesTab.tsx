@@ -8,6 +8,7 @@ import WeaponCard from '@/components/WeaponCard';
 import ArtifactCard from '@/components/ArtifactCard';
 import { CharacterData } from '@/types/character';
 import { Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function FavoritesTab({ user }: { user: User }) {
   const [activeSubTab, setActiveSubTab] = useState<'character' | 'weapon' | 'artifact'>('character');
@@ -79,9 +80,17 @@ export default function FavoritesTab({ user }: { user: User }) {
         </div>
       ) : (
         activeSubTab === 'character' ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
-            {items.map((char) => <CharacterCard key={char.id} character={char} />)}
-          </div>
+          <motion.div 
+            initial="hidden" animate="show" 
+            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4"
+          >
+            {items.map((char) => (
+              <motion.div key={char.id} variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}>
+                <CharacterCard character={char} />
+              </motion.div>
+            ))}
+          </motion.div>
         ) : activeSubTab === 'weapon' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             {items.map((wpn, i) => <WeaponCard key={wpn.id} weapon={wpn} index={i} />)}

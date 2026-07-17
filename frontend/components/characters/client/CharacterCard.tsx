@@ -71,6 +71,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
     try {
       const r = await fetch('/api/auth/favorite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ itemId: character.id, itemType: 'CHARACTER' }) });
       if (!r.ok) throw new Error();
+      if (userCtx?.refreshUser) await userCtx.refreshUser();
     } catch { setIsFav(p => !p); toast.error('Error, please try again.'); }
   };
 

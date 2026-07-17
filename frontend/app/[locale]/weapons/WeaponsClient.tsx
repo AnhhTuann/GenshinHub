@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
 import dynamic from 'next/dynamic';
+import { useDebounce } from '@/hooks/useDebounce';
 
 const WeaponFormModal = dynamic(() => import('@/components/admin/WeaponFormModal'), { ssr: false });
 
@@ -55,6 +56,10 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const t = useTranslations('Common');
   const { isAdmin } = useAdmin();
 
+  const debouncedSearch = useDebounce(search, 200);
+  const [visibleCount, setVisibleCount] = useState(24);
+  const loaderRef = useRef<HTMLDivElement>(null);
+
   const toggleRarity = (r: number) => {
     setSelectedRarities(prev =>
       prev.includes(r) ? prev.filter(x => x !== r) : [...prev, r]
@@ -64,7 +69,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const filtered = useMemo(() => {
     let result = weapons.filter(w => {
       const name = locale === 'en' ? w.nameEn : w.nameVi;
-      const matchSearch = name.toLowerCase().includes(search.toLowerCase());
+      const matchSearch = name.toLowerCase().includes(debouncedSearch.toLowerCase());
       const matchType = selectedType === 'All' || (WEAPON_TYPE_DB[selectedType]?.includes(w.type) ?? w.type === selectedType);
       const matchRarity = selectedRarities.includes(w.rarity);
       return matchSearch && matchType && matchRarity;
@@ -81,7 +86,27 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
       return sortAsc ? -cmp : cmp;
     });
     return result;
-  }, [weapons, search, selectedType, selectedRarities, sortBy, sortAsc, locale]);
+  }, [weapons, debouncedSearch, selectedType, selectedRarities, sortBy, sortAsc, locale]);
+
+  // Reset visibleCount when filters change
+  useEffect(() => {
+    setVisibleCount(24);
+  }, [filtered]);
+
+  // Infinite Scroll Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleCount(prev => Math.min(prev + 24, filtered.length));
+      }
+    }, { rootMargin: '400px' });
+    
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [filtered.length]);
 
   const rarityCfg = (r: number) => {
     if (r === 5) return { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', text: '#ffd54f', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.12)', stars: '#ffd54f' };
@@ -236,7 +261,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
             </div>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-              {filtered.map(weapon => {
+              {filtered.slice(0, visibleCount).map(weapon => {
                 const cfg = rarityCfg(weapon.rarity);
                 const name = locale === 'en' ? weapon.nameEn : weapon.nameVi;
                 return (
@@ -330,6 +355,13 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   </Link>
                 );
               })}
+            </div>
+          )}
+          
+          {/* Infinite Scroll Loader */}
+          {visibleCount < filtered.length && (
+            <div ref={loaderRef} className="w-full h-20 flex items-center justify-center mt-8">
+              <div className="w-6 h-6 border-2 border-amber-500/30 border-t-amber-500 rounded-full animate-spin"></div>
             </div>
           )}
         </div>

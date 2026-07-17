@@ -3,6 +3,7 @@ import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import CharacterCard from './CharacterCard';
 import { CharacterData, Element } from '@/types/character';
 
@@ -20,6 +21,9 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
   const [selectedRarity,  setSelectedRarity]  = useState<5 | 4 | null>(null);
   const [selectedWeapon,  setSelectedWeapon]  = useState<string | null>(null);
   const locale = useLocale();
+
+  const [visibleCount, setVisibleCount] = useState(30);
+  const loaderRef = useRef<HTMLDivElement>(null);
 
   // Debounce search input 200ms
   useEffect(() => {
@@ -54,7 +58,35 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
     });
   }, [initialCharacters, debouncedSearch, selectedElement, selectedRarity, selectedWeapon, locale]);
 
+  // Reset visibleCount when filters change
+  useEffect(() => {
+    setVisibleCount(30);
+  }, [filtered]);
+
+  // Infinite Scroll Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleCount(prev => Math.min(prev + 30, filtered.length));
+      }
+    }, { rootMargin: '400px' });
+    
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [filtered.length]);
+
   const hasFilters = !!(search || selectedElement || selectedRarity || selectedWeapon);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05 }
+    }
+  };
 
   return (
     <div className="flex flex-col gap-5">
@@ -244,10 +276,22 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
 
       {/* ── Character Grid ── */}
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
-          {filtered.map((char) => (
-            <CharacterCard key={char.id} character={char} />
-          ))}
+        <div className="pb-20">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5"
+          >
+            {filtered.slice(0, visibleCount).map((char) => (
+              <CharacterCard key={char.id} character={char} />
+            ))}
+          </motion.div>
+          {visibleCount < filtered.length && (
+            <div ref={loaderRef} className="w-full h-20 flex items-center justify-center mt-8">
+              <div className="w-6 h-6 border-2 border-fuchsia-500/30 border-t-fuchsia-500 rounded-full animate-spin"></div>
+            </div>
+          )}
         </div>
       ) : (
         <div

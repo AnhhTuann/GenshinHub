@@ -98,12 +98,12 @@ export default function CharacterCard({ character }: { character: CharacterData 
     <>
       <div ref={cardRef} onMouseEnter={onEnter} onMouseLeave={onLeave} className="group relative">
         <motion.div
-          initial={shouldReduceMotion ? {} : { opacity: 0, y: 16, scale: 0.94 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.15 }}
+          variants={shouldReduceMotion ? undefined : {
+            hidden: { opacity: 0, y: 20 },
+            show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 350, damping: 25 } }
+          }}
           whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.03 }}
           whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
-          transition={{ type: 'spring', stiffness: 380, damping: 26 }}
           onClick={() => router.push(href)}
           className="relative cursor-pointer rounded-2xl overflow-hidden"
           style={{

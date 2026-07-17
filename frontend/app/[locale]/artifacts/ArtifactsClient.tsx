@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
 import dynamic from 'next/dynamic';
+import { useDebounce } from '@/hooks/useDebounce';
 
 const ArtifactFormModal = dynamic(() => import('@/components/admin/ArtifactFormModal'), { ssr: false });
 
@@ -143,14 +144,38 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
   const locale = useLocale();
   const { isAdmin } = useAdmin();
 
+  const debouncedSearch = useDebounce(search, 200);
+  const [visibleCount, setVisibleCount] = useState(24);
+  const loaderRef = useRef<HTMLDivElement>(null);
+
   const filtered = useMemo(() => {
     return artifacts.filter(a => {
       const name = locale === 'en' ? a.nameEn : a.nameVi;
-      const matchSearch = name.toLowerCase().includes(search.toLowerCase());
+      const matchSearch = name.toLowerCase().includes(debouncedSearch.toLowerCase());
       const matchRarity = selectedRarity === null || a.rarityList.includes(selectedRarity);
       return matchSearch && matchRarity;
     });
-  }, [artifacts, search, selectedRarity, locale]);
+  }, [artifacts, debouncedSearch, selectedRarity, locale]);
+
+  // Reset visibleCount when filters change
+  useEffect(() => {
+    setVisibleCount(24);
+  }, [filtered]);
+
+  // Infinite Scroll Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleCount(prev => Math.min(prev + 24, filtered.length));
+      }
+    }, { rootMargin: '400px' });
+    
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [filtered.length]);
 
   return (
     <main className="min-h-screen bg-[#06060a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
@@ -307,26 +332,24 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
       </div>
 
       {/* ── Card grid ─────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 pt-8">
+      <div className="max-w-7xl mx-auto px-6 py-6 pb-20">
         {filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-72 rounded-2xl border border-white/5 bg-[#0d0d14]/40 backdrop-blur-sm text-gray-500 gap-4">
-            <span className="text-5xl">👻</span>
-            <div className="text-center">
-              <p className="text-sm font-bold text-gray-400 mb-1">No artifact sets found</p>
-              <p className="text-xs text-gray-600">Try adjusting your search or filters</p>
-            </div>
-            <button
-              onClick={() => { setSearch(''); setSelectedRarity(null); }}
-              className="mt-1 px-4 py-2 rounded-xl text-xs font-black bg-white/5 border border-white/8 text-gray-400 hover:text-white hover:border-white/20 hover:bg-white/8 transition-all"
-            >
-              Clear filters
-            </button>
+          <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#0d0d12]/30 rounded-3xl border border-gray-900/60 shadow-inner">
+            <span className="text-4xl mb-3">👻</span>
+            <p className="text-sm font-semibold">No artifact sets matched your criteria.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-            {filtered.map(artifact => (
-              <ArtifactCard key={artifact.id} artifact={artifact} locale={locale} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
+            {filtered.slice(0, visibleCount).map((a) => (
+              <ArtifactCard key={a.id} artifact={a} locale={locale} />
             ))}
+          </div>
+        )}
+        
+        {/* Infinite Scroll Loader */}
+        {visibleCount < filtered.length && (
+          <div ref={loaderRef} className="w-full h-20 flex items-center justify-center mt-8">
+            <div className="w-6 h-6 border-2 border-violet-500/30 border-t-violet-500 rounded-full animate-spin"></div>
           </div>
         )}
       </div>

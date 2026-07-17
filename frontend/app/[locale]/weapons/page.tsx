@@ -2,6 +2,7 @@ import { fetchGraphQL, GET_WEAPONS } from '@/lib/graphql';
 import type { Metadata } from 'next';
 import WeaponsClient from './WeaponsClient';
 import { Suspense } from 'react';
+import { getTranslations, getLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Weapons — GenshinHub',
@@ -42,6 +43,8 @@ function WeaponsSkeleton() {
 async function WeaponsContent() {
   const data = await fetchGraphQL(GET_WEAPONS);
   const weapons = data.weapons || [];
+  const locale = await getLocale();
+  const t = await getTranslations('Common');
 
   return (
     <>
@@ -58,11 +61,11 @@ async function WeaponsContent() {
               backgroundClip: 'text',
             }}
           >
-            Weapons
+            {t('weapons')}
           </h1>
         </div>
         <p className="text-white/35 text-sm font-medium pl-6">
-          {weapons.length} weapons — swords, claymores, polearms, bows & catalysts
+          {locale === 'vi' ? `${weapons.length} vũ khí — kiếm đơn, trọng kiếm, giáo, cung & pháp khí` : `${weapons.length} weapons — swords, claymores, polearms, bows & catalysts`}
         </p>
       </div>
       <WeaponsClient weapons={weapons} />

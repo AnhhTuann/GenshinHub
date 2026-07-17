@@ -2,6 +2,7 @@ import { fetchGraphQL, GET_ARTIFACTS } from '@/lib/graphql';
 import type { Metadata } from 'next';
 import ArtifactsClient from './ArtifactsClient';
 import { Suspense } from 'react';
+import { getTranslations, getLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Artifacts — GenshinHub',
@@ -27,6 +28,8 @@ function ArtifactsSkeleton() {
 async function ArtifactsContent() {
   const data = await fetchGraphQL(GET_ARTIFACTS);
   const artifacts = data.artifacts || [];
+  const locale = await getLocale();
+  const t = await getTranslations('Common');
 
   return (
     <>
@@ -43,11 +46,11 @@ async function ArtifactsContent() {
               backgroundClip: 'text',
             }}
           >
-            Artifacts
+            {t('artifacts')}
           </h1>
         </div>
         <p className="text-white/35 text-sm font-medium pl-6">
-          {artifacts.length} artifact sets — 2-piece and 4-piece bonuses
+          {locale === 'vi' ? `${artifacts.length} bộ thánh di vật — hiệu ứng bộ 2 và 4 món` : `${artifacts.length} artifact sets — 2-piece and 4-piece bonuses`}
         </p>
       </div>
       <ArtifactsClient artifacts={artifacts} />

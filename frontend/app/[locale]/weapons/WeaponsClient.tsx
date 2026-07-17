@@ -279,7 +279,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                             src={weapon.iconUrl}
                             alt={name}
                             fill
-                            className="object-contain p-2 group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
+                            className="object-cover group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
                           />
                         ) : (
                           <div className="text-4xl select-none opacity-30">{WEAPON_TYPE_ICONS[weapon.type] || '⚔️'}</div>

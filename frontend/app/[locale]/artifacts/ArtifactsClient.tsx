@@ -90,7 +90,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
               src={artifact.iconUrl}
               alt={name}
               fill
-              className="object-contain p-4 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
+              className="object-contain p-1 scale-110 group-hover:scale-125 transition-transform duration-500 drop-shadow-2xl"
             />
           ) : (
             <div className="text-5xl select-none opacity-30">💎</div>

@@ -1,175 +1,218 @@
-"use client";
-import Image from 'next/image';
+\"use client\";
 import FallbackImage from '@/components/ui/FallbackImage';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArtifactBuild } from '@/types/character';
+import { ExternalLink, Layers } from 'lucide-react';
+
+// ── Rarity visual config ───────────────────────────────────
+const RARITY_CFG = {
+  5: {
+    iconRing: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]',
+    glow: 'rgba(245,158,11,',
+    border: 'rgba(245,158,11,0.22)',
+    borderHover: 'rgba(245,158,11,0.50)',
+    badge: { bg: 'rgba(245,158,11,0.14)', border: 'rgba(245,158,11,0.35)', text: '#ffd54f' },
+    subPriority: { bg: 'rgba(250,204,21,0.12)', border: 'rgba(250,204,21,0.28)', text: '#fde68a' },
+    slotBg: 'rgba(245,158,11,0.06)',
+    slotBorder: 'rgba(245,158,11,0.12)',
+    stars: '★★★★★',
+    starColor: '#ffd54f',
+  },
+  4: {
+    iconRing: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]',
+    glow: 'rgba(168,85,247,',
+    border: 'rgba(168,85,247,0.22)',
+    borderHover: 'rgba(168,85,247,0.50)',
+    badge: { bg: 'rgba(168,85,247,0.14)', border: 'rgba(168,85,247,0.35)', text: '#c084fc' },
+    subPriority: { bg: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.28)', text: '#e9d5ff' },
+    slotBg: 'rgba(168,85,247,0.06)',
+    slotBorder: 'rgba(168,85,247,0.12)',
+    stars: '★★★★',
+    starColor: '#c084fc',
+  },
+};
 
 export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) {
-  const locale  = useLocale();
-  const t       = useTranslations('Artifact');
-  const rarity  = artifact.rarity || 5;
+  const locale = useLocale();
+  const t = useTranslations('Artifact');
+  const rarity = artifact.rarity || 5;
   const setName = locale === 'en' ? artifact.setNameEn : artifact.setNameVi;
-  const isMix   = artifact.mixSets && artifact.mixSets.length > 0;
+  const isMix = artifact.mixSets && artifact.mixSets.length > 0;
   const shouldReduceMotion = useReducedMotion();
 
-  const is5 = rarity === 5;
-  const imgBg     = is5 ? 'bg-gradient-to-br from-[#ffe082] via-[#ffb300] to-[#e65100]' : 'bg-gradient-to-br from-[#a256e8] to-[#6f38a6]';
-  const starColor = is5 ? 'text-amber-400' : 'text-purple-400';
-  const stars     = is5 ? '★★★★★' : '★★★★';
-  const border    = is5
-    ? 'border-amber-500/15 hover:border-amber-500/30'
-    : 'border-purple-500/15 hover:border-purple-500/30';
-  const badgeBg   = is5
-    ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
-    : 'bg-purple-500/10 text-purple-400 border-purple-500/20';
+  const cfg = rarity === 5 ? RARITY_CFG[5] : RARITY_CFG[4];
 
-  // Header shared layout
-  const headerContent = (
-    <div className="flex items-center gap-3 border-b border-white/[0.05] pb-3.5 mb-3.5">
-      {/* Icon */}
-      <div className={`relative w-12 h-12 shrink-0 rounded-xl overflow-hidden ${imgBg} p-[1.5px]`}>
-        <div className="relative w-full h-full rounded-xl bg-[#06060a]/90 overflow-hidden flex items-center justify-center p-1">
-          {artifact.iconUrl ? (
-            <FallbackImage src={artifact.iconUrl} alt={setName || 'Artifact'} width={46} height={46} className="object-contain" />
-          ) : (
-            <span className="text-xl">💎</span>
+  const cardBody = (
+    <>
+      {/* ── Header ── */}
+      <div className="flex items-start gap-3 mb-4">
+        {/* Artifact icon with animated ring */}
+        <div className="relative shrink-0 mt-0.5">
+          <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cfg.iconRing} p-[1.5px]`}>
+            <div
+              className="w-full h-full rounded-2xl flex items-center justify-center overflow-hidden"
+              style={{ background: 'rgba(5,5,12,0.90)' }}
+            >
+              {artifact.iconUrl ? (
+                <FallbackImage src={artifact.iconUrl} alt={setName || 'Artifact'} width={48} height={48} className="object-contain" />
+              ) : (
+                <span className="text-2xl">💎</span>
+              )}
+            </div>
+          </div>
+          {/* Glow dot */}
+          <div
+            className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-[rgba(5,5,12,0.95)]"
+            style={{ background: cfg.badge.text, boxShadow: `0 0 8px ${cfg.glow}0.7)` }}
+          />
+        </div>
+
+        {/* Name + meta */}
+        <div className="flex-1 min-w-0">
+          <div
+            className="text-[9px] font-black uppercase tracking-[0.2em] mb-1 flex items-center gap-1.5"
+            style={{ color: cfg.starColor }}
+          >
+            <span>{cfg.stars}</span>
+            <span className="opacity-50">·</span>
+            <span style={{ color: cfg.badge.text }}>{isMix ? 'Mix 2pc' : artifact.pieces === 2 ? t('2piece') : t('4piece')}</span>
+          </div>
+          <h4 className="font-black text-white/90 text-sm leading-tight truncate">
+            {isMix
+              ? (locale === 'en' ? 'Mix 2-Piece Sets' : 'Kết hợp bộ 2 món')
+              : (setName && !setName.includes('Thánh Di Vật') && !setName.toLowerCase().includes('mix')
+                  ? setName
+                  : locale === 'en' ? 'Recommended Artifacts' : 'Đề Xuất Thánh Di Vật')}
+          </h4>
+          {!isMix && artifact.artifactSetId && (
+            <div className="flex items-center gap-1 mt-1">
+              <ExternalLink className="w-2.5 h-2.5 opacity-40" style={{ color: cfg.badge.text }} />
+              <span className="text-[9px] opacity-40 font-semibold" style={{ color: cfg.badge.text }}>
+                {locale === 'en' ? 'View Set' : 'Xem Bộ'}
+              </span>
+            </div>
           )}
         </div>
       </div>
-      {/* Info */}
-      <div className="flex-1 min-w-0">
-        <div className="flex flex-wrap items-center gap-1.5 mb-1">
-          <h4 className="font-extrabold text-white/90 text-sm leading-tight font-display truncate">
-            {setName && !setName.includes('Thánh Di Vật') && !setName.toLowerCase().includes('mix')
-              ? setName
-              : locale === 'en' ? 'Recommended Artifacts' : 'Đề Xuất'}
-          </h4>
-          <span className={`${starColor} text-[9px] font-bold tracking-widest select-none`}>{stars}</span>
-        </div>
-        <span className={`text-[9px] font-black px-2 py-0.5 rounded-md border uppercase tracking-wider ${badgeBg}`}>
-          {artifact.pieces === 2 ? t('2piece') : t('4piece')}
-        </span>
-      </div>
-      {/* Link arrow */}
-      {!isMix && artifact.artifactSetId && (
-        <div className="ml-auto shrink-0 w-7 h-7 rounded-lg bg-[#06060a] border border-white/[0.05] flex items-center justify-center text-white/20 group-hover:text-white/60 group-hover:border-white/10 transition-all">
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
+
+      {/* ── Divider ── */}
+      <div className="h-px mb-4" style={{ background: `linear-gradient(90deg, transparent, ${cfg.glow}0.20), transparent)` }} />
+
+      {/* ── Mix sets list ── */}
+      {isMix && (
+        <div className="space-y-2 mb-4">
+          {artifact.mixSets!.map((set, idx) => {
+            const sName = locale === 'en' ? set.nameEn : set.nameVi;
+            const row = (
+              <div
+                key={idx}
+                className="flex items-center gap-2.5 rounded-xl px-3 py-2 transition-all duration-200"
+                style={{ background: cfg.slotBg, border: `1px solid ${cfg.slotBorder}` }}
+              >
+                <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${cfg.iconRing} p-[1px] shrink-0`}>
+                  <div className="w-full h-full rounded-md flex items-center justify-center" style={{ background: 'rgba(5,5,12,0.85)' }}>
+                    {set.iconUrl
+                      ? <FallbackImage src={set.iconUrl} alt={sName} width={22} height={22} className="object-contain" />
+                      : <span className="text-xs">💎</span>}
+                  </div>
+                </div>
+                <span className="text-xs font-semibold text-white/75 flex-1 truncate">{sName}</span>
+                <span
+                  className="text-[8px] font-black px-1.5 py-0.5 rounded-md shrink-0"
+                  style={{ background: cfg.badge.bg, border: `1px solid ${cfg.badge.border}`, color: cfg.badge.text }}
+                >
+                  2pc
+                </span>
+              </div>
+            );
+            return set.artifactSetId
+              ? <Link key={idx} href={`/artifacts/${set.artifactSetId}`} className="block hover:opacity-80 transition-opacity">{row}</Link>
+              : <div key={idx}>{row}</div>;
+          })}
         </div>
       )}
-    </div>
-  );
 
-  // Mix sets header
-  const mixHeader = isMix && (
-    <div className="border-b border-white/[0.05] pb-3.5 mb-3.5">
-      {/* Mix label row */}
-      <div className="flex items-center gap-2 mb-2.5">
-        <div className={`relative w-8 h-8 shrink-0 rounded-lg overflow-hidden ${imgBg} p-[1px]`}>
-          <div className="w-full h-full rounded-lg bg-[#06060a]/90 flex items-center justify-center p-0.5">
-            {artifact.iconUrl
-              ? <FallbackImage src={artifact.iconUrl} alt="Mix" width={28} height={28} className="object-contain" />
-              : <span className="text-sm">💎</span>}
-          </div>
-        </div>
-        <div>
-          <span className="text-white/60 text-xs font-bold">{locale === 'en' ? 'Mix 2-piece sets' : 'Mix bộ 2 món'}</span>
-          <div className="flex gap-1 mt-0.5">
-            <span className={`${starColor} text-[9px] font-bold tracking-widest select-none`}>{stars}</span>
-            <span className={`text-[9px] font-black px-1.5 py-0.5 rounded-md border uppercase tracking-wider ${badgeBg}`}>2pc each</span>
-          </div>
-        </div>
-      </div>
-      {/* Set list */}
-      <div className="flex flex-col gap-1.5">
-        {artifact.mixSets!.map((set, idx) => {
-          const sName = locale === 'en' ? set.nameEn : set.nameVi;
-          const row = (
-            <div className="flex items-center gap-2.5 bg-[#06060a]/60 border border-white/[0.04] hover:border-white/10 rounded-xl px-3 py-1.5 transition-all duration-150">
-              <div className={`relative w-6 h-6 shrink-0 rounded-md overflow-hidden ${imgBg} p-[1px]`}>
-                <div className="w-full h-full rounded-md bg-[#06060a]/90 flex items-center justify-center p-0.5">
-                  {set.iconUrl
-                    ? <FallbackImage src={set.iconUrl} alt={sName} width={20} height={20} className="object-contain" />
-                    : <span className="text-xs">💎</span>}
-                </div>
-              </div>
-              <span className="text-xs font-semibold text-white/70 flex-1 truncate">{sName}</span>
-              <span className="text-[8px] font-black px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 shrink-0">2pc</span>
-            </div>
-          );
-          return set.artifactSetId
-            ? <Link key={idx} href={`/artifacts/${set.artifactSetId}`} className="block">{row}</Link>
-            : <div key={idx}>{row}</div>;
-        })}
-      </div>
-    </div>
-  );
-
-  // Slots grid
-  const slotsGrid = (
-    <div className="grid grid-cols-3 gap-2 mb-3.5">
-      {[
-        { label: 'Sands', emoji: '⏳', values: artifact.sands },
-        { label: 'Goblet', emoji: '🏆', values: artifact.goblet },
-        { label: 'Circlet', emoji: '👑', values: artifact.circlet },
-      ].map(({ label, emoji, values }) => (
-        <div key={label} className="bg-[#06060a]/60 border border-white/[0.04] rounded-xl p-2.5 flex flex-col items-center gap-1">
-          <span className="text-base select-none">{emoji}</span>
-          <span className="text-white/25 text-[8px] font-black uppercase tracking-wider">{label}</span>
-          <span className="text-white/75 text-[10px] font-semibold text-center leading-snug">{values.join(' / ')}</span>
-        </div>
-      ))}
-    </div>
-  );
-
-  // Sub-stats
-  const substats = (
-    <div className="border-t border-white/[0.04] pt-3">
-      <span className="text-white/25 text-[8px] font-black uppercase tracking-widest mb-2 block">{t('substats')}</span>
-      <div className="flex flex-wrap items-center gap-1">
-        {artifact.subStatsPriority.map((stat, idx) => (
-          <div key={idx} className="flex items-center gap-1">
-            <span className={`text-[10px] font-bold px-2.5 py-1 rounded-lg border ${
-              idx === 0
-                ? 'bg-yellow-400/10 border-yellow-400/20 text-yellow-300'
-                : 'bg-[#06060a] border-white/[0.05] text-white/40'
-            }`}>
-              {stat}
+      {/* ── Main Stat Slots Grid ── */}
+      <div className="grid grid-cols-3 gap-2 mb-4">
+        {[
+          { label: 'Sands', emoji: '⏳', values: artifact.sands },
+          { label: 'Goblet', emoji: '🏺', values: artifact.goblet },
+          { label: 'Circlet', emoji: '👑', values: artifact.circlet },
+        ].map(({ label, emoji, values }) => (
+          <div
+            key={label}
+            className="rounded-xl p-2.5 flex flex-col items-center gap-1.5 transition-colors duration-200 group/slot"
+            style={{ background: cfg.slotBg, border: `1px solid ${cfg.slotBorder}` }}
+          >
+            <span className="text-sm select-none">{emoji}</span>
+            <span className="text-white/30 text-[7px] font-black uppercase tracking-widest">{label}</span>
+            <span className="text-white/80 text-[9px] font-bold text-center leading-snug">
+              {values.join(' /\n')}
             </span>
-            {idx < artifact.subStatsPriority.length - 1 && (
-              <span className="text-white/20 text-xs">›</span>
-            )}
           </div>
         ))}
       </div>
-    </div>
+
+      {/* ── Substats priority ── */}
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <Layers className="w-2.5 h-2.5 opacity-40" style={{ color: cfg.badge.text }} />
+          <span className="text-white/30 text-[8px] font-black uppercase tracking-[0.2em]">{t('substats')}</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {artifact.subStatsPriority.map((stat, idx) => (
+            <div key={idx} className="flex items-center gap-1">
+              <span
+                className="text-[9px] font-bold px-2 py-0.5 rounded-lg transition-colors"
+                style={
+                  idx === 0
+                    ? { background: cfg.subPriority.bg, border: `1px solid ${cfg.subPriority.border}`, color: cfg.subPriority.text }
+                    : { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.45)' }
+                }
+              >
+                {stat}
+              </span>
+              {idx < artifact.subStatsPriority.length - 1 && (
+                <span className="text-white/15 text-[10px]">›</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 
-  const cardWrapper = (children: React.ReactNode) => (
+  const wrappedCard = (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
-      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={`border rounded-2xl p-4 transition-all duration-250 bg-[#0d0d14]/50 ${border} hover:bg-[#13131e]/60 group`}
+      whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.01 }}
+      transition={{ type: 'spring', stiffness: 380, damping: 26 }}
+      className="relative rounded-3xl p-5 group overflow-hidden"
+      style={{
+        background: `linear-gradient(145deg, rgba(12,12,24,0.96) 0%, rgba(5,5,12,0.99) 100%)`,
+        border: `1px solid ${cfg.border}`,
+        backdropFilter: 'blur(20px)',
+        boxShadow: `0 4px 24px rgba(0,0,0,0.45)`,
+        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+      }}
+      onHoverStart={() => {}}
     >
-      {children}
+      {/* Top-right corner accent glow */}
+      <div
+        className="absolute -top-8 -right-8 w-24 h-24 rounded-full pointer-events-none"
+        style={{ background: `radial-gradient(circle, ${cfg.glow}0.12), transparent 70%)`, filter: 'blur(12px)' }}
+      />
+
+      {cardBody}
     </motion.div>
   );
 
-  return cardWrapper(
-    <>
-      {isMix ? mixHeader : (
-        artifact.artifactSetId
-          ? <Link href={`/artifacts/${artifact.artifactSetId}`} className="block">{headerContent}</Link>
-          : headerContent
-      )}
-      {slotsGrid}
-      {substats}
-    </>
-  );
+  if (!isMix && artifact.artifactSetId) {
+    return <Link href={`/artifacts/${artifact.artifactSetId}`} className="block">{wrappedCard}</Link>;
+  }
+  return wrappedCard;
 }

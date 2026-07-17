@@ -63,20 +63,20 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -top-[20%] -left-[10%] w-[900px] h-[800px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.09) 0%, transparent 65%)', filter: 'blur(100px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(168,85,247,0.11) 0%, transparent 65%)', filter: 'blur(110px)' }}
         />
         <div
           className="absolute top-[30%] -right-[15%] w-[700px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.07) 0%, transparent 65%)', filter: 'blur(100px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(34,211,238,0.08) 0%, transparent 65%)', filter: 'blur(100px)' }}
         />
         <div
           className="absolute -bottom-[10%] left-[25%] w-[700px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(79,195,247,0.06) 0%, transparent 65%)', filter: 'blur(90px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(52,211,153,0.06) 0%, transparent 65%)', filter: 'blur(90px)' }}
         />
         {/* Extra vivid accent */}
         <div
           className="absolute top-[55%] left-[10%] w-[400px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(174,213,129,0.04) 0%, transparent 65%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(168,85,247,0.05) 0%, transparent 65%)', filter: 'blur(80px)' }}
         />
       </div>
 
@@ -88,22 +88,22 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <section className="relative mb-16 text-center">
           <div
             className="absolute inset-x-0 top-0 h-[400px] -z-10 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 30%, rgba(200,168,75,0.08) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 30%, rgba(168,85,247,0.10) 0%, rgba(34,211,238,0.04) 60%, transparent 80%)' }}
           />
           <HeroParticles />
 
           {/* Badge */}
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 relative overflow-hidden"
-            style={{ background: 'rgba(200,168,75,0.10)', border: '1px solid rgba(200,168,75,0.25)' }}
+            style={{ background: 'rgba(168,85,247,0.10)', border: '1px solid rgba(168,85,247,0.28)' }}
           >
             {/* Shimmer shine */}
             <div
               className="absolute inset-0 -translate-x-full animate-[shimmer_3s_linear_infinite] pointer-events-none"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.15), transparent)', width: '60%' }}
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(168,85,247,0.18), transparent)', width: '60%' }}
             />
-            <span className="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style={{ background: '#c8a84b', boxShadow: '0 0 8px rgba(200,168,75,0.6)' }} />
-            <span className="text-[10px] font-black uppercase tracking-[0.25em] relative z-10" style={{ color: '#e8c46b' }}>
+            <span className="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style={{ background: '#a855f7', boxShadow: '0 0 10px rgba(168,85,247,0.7)' }} />
+            <span className="text-[10px] font-black uppercase tracking-[0.25em] relative z-10" style={{ color: '#c084fc' }}>
               ✨ {locale === 'en' ? 'Your Ultimate Teyvat Guide' : 'Cẩm Nang Teyvat Của Bạn'}
             </span>
           </div>
@@ -121,11 +121,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
           {/* Decorative rule */}
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-24 sm:w-40" style={{ background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.4))' }} />
-            <svg className="w-3.5 h-3.5 shrink-0" style={{ color: '#c8a84b' }} fill="currentColor" viewBox="0 0 20 20">
+            <div className="h-px w-24 sm:w-40" style={{ background: 'linear-gradient(90deg, transparent, rgba(168,85,247,0.50))' }} />
+            <svg className="w-3.5 h-3.5 shrink-0" style={{ color: '#a855f7' }} fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 2 L12 8 L18 8 L13.5 11.5 L15.5 18 L10 14 L4.5 18 L6.5 11.5 L2 8 L8 8 Z" />
             </svg>
-            <div className="h-px w-24 sm:w-40" style={{ background: 'linear-gradient(90deg, rgba(200,168,75,0.4), transparent)' }} />
+            <div className="h-px w-24 sm:w-40" style={{ background: 'linear-gradient(90deg, rgba(168,85,247,0.50), transparent)' }} />
           </div>
 
           {/* Tagline */}
@@ -202,7 +202,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <section className="mb-14">
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-3">
-              <div className="w-[3px] h-6 rounded-full" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+              <div className="w-[3px] h-6 rounded-full" style={{ background: 'linear-gradient(to bottom, #c084fc, #a855f7)' }} />
               <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40">
                 {locale === 'en' ? 'Character Spotlight' : 'Nhân Vật Nổi Bật'}
               </span>
@@ -210,7 +210,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <Link
               href="/characters"
               className="text-xs font-bold uppercase tracking-wider hover:opacity-70 transition-opacity"
-              style={{ color: '#c8a84b' }}
+              style={{ color: '#a855f7' }}
             >
               {locale === 'en' ? 'View All →' : 'Xem Tất Cả →'}
             </Link>
@@ -224,7 +224,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         ══════════════════════════════════════ */}
         <section className="mb-14">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-[3px] h-6 rounded-full" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+            <div className="w-[3px] h-6 rounded-full" style={{ background: 'linear-gradient(to bottom, #22d3ee, #a855f7)' }} />
             <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40">
               {locale === 'en' ? 'Explore Teyvat' : 'Khám Phá Teyvat'}
             </span>

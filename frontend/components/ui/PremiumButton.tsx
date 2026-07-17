@@ -28,8 +28,8 @@ export default function PremiumButton({
 
   const baseStyles = "group relative inline-flex items-center justify-center gap-2.5 font-black text-sm px-8 py-3.5 rounded-2xl transition-all duration-300 overflow-hidden uppercase tracking-wider";
   
-  const primaryStyles = "text-black bg-gradient-to-r from-[var(--theme-light)] via-[var(--theme-main)] to-[var(--theme-light)] shadow-[0_6px_28px_var(--theme-glow)]";
-  const secondaryStyles = "text-white/85 bg-white/5 border border-white/10 hover:border-white/20 hover:text-white";
+  const primaryStyles = "text-white bg-gradient-to-r from-[#a855f7] via-[#7c3aed] to-[#a855f7] shadow-[0_6px_28px_rgba(168,85,247,0.50)] hover:shadow-[0_8px_40px_rgba(168,85,247,0.65),_0_0_60px_rgba(34,211,238,0.15)] bg-[length:200%_100%]";
+  const secondaryStyles = "text-white/85 bg-white/5 border border-white/10 hover:border-[rgba(168,85,247,0.40)] hover:text-[#c084fc] hover:bg-[rgba(168,85,247,0.06)]";
 
   const content = (
     <>

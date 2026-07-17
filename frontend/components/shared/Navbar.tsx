@@ -58,13 +58,13 @@ export default function Navbar() {
       <nav
         className="sticky top-0 z-50 w-full"
         style={{
-          background: scrolled ? 'rgba(4,4,10,0.95)' : 'rgba(4,4,10,0.70)',
-          backdropFilter: `blur(${scrolled ? 28 : 14}px) saturate(160%)`,
-          WebkitBackdropFilter: `blur(${scrolled ? 28 : 14}px) saturate(160%)`,
+          background: scrolled ? 'rgba(3,3,8,0.97)' : 'rgba(3,3,8,0.75)',
+          backdropFilter: `blur(${scrolled ? 32 : 16}px) saturate(170%)`,
+          WebkitBackdropFilter: `blur(${scrolled ? 32 : 16}px) saturate(170%)`,
           borderBottom: scrolled
-            ? '1px solid rgba(200,168,75,0.12)'
+            ? '1px solid rgba(168,85,247,0.18)'
             : '1px solid rgba(255,255,255,0.04)',
-          boxShadow: scrolled ? '0 4px 40px rgba(0,0,0,0.5)' : 'none',
+          boxShadow: scrolled ? '0 4px 40px rgba(0,0,0,0.6), 0 0 60px -20px rgba(168,85,247,0.12)' : 'none',
           transition: 'background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease',
         }}
       >
@@ -87,7 +87,7 @@ export default function Navbar() {
                 className="text-lg font-black tracking-widest uppercase"
                 style={{
                   fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                  background: 'linear-gradient(135deg, #fff8e1 0%, #f0c84b 40%, #c8a84b 70%, #f0d080 100%)',
+                  background: 'linear-gradient(135deg, #fff 0%, #c084fc 35%, #a855f7 60%, #22d3ee 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -112,8 +112,8 @@ export default function Navbar() {
                   onClick={link.href === '/' ? handleLogoClick : undefined}
                   className={`relative px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider whitespace-nowrap group transition-all duration-200 ${
                     active
-                      ? 'text-[var(--theme-light)] bg-[var(--theme-main)]/10'
-                      : 'text-white/40 hover:text-[var(--theme-light)] hover:bg-white/5'
+                      ? 'text-[#c084fc] bg-[rgba(168,85,247,0.12)]'
+                      : 'text-white/40 hover:text-[#c084fc] hover:bg-white/5'
                   }`}
                 >
                   {link.label}
@@ -121,7 +121,7 @@ export default function Navbar() {
                   {active && (
                     <span
                       className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full"
-                      style={{ background: 'var(--theme-main)', boxShadow: '0 0 4px var(--theme-glow)' }}
+                      style={{ background: '#a855f7', boxShadow: '0 0 6px rgba(168,85,247,0.7)' }}
                     />
                   )}
                 </Link>
@@ -134,7 +134,7 @@ export default function Navbar() {
             {/* Search Button (Triggers Cmd+K) */}
             <button 
               onClick={handleSearchClick}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/60 hover:text-[#f0d080]"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 bg-white/5 hover:bg-[rgba(168,85,247,0.08)] border border-white/10 hover:border-[rgba(168,85,247,0.30)] text-white/60 hover:text-[#c084fc]"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               Search
@@ -142,7 +142,7 @@ export default function Navbar() {
             </button>
             <button 
               onClick={handleSearchClick}
-              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-200 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/60 hover:text-[#f0d080]"
+              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-xl transition-all duration-200 bg-white/5 hover:bg-[rgba(168,85,247,0.08)] border border-white/10 hover:border-[rgba(168,85,247,0.30)] text-white/60 hover:text-[#c084fc]"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button>
@@ -196,8 +196,8 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 h-[2px]"
           style={{
             width: `${scrollPct}%`,
-            background: 'linear-gradient(90deg, transparent, var(--theme-main), var(--theme-light))',
-            opacity: scrolled ? 0.75 : 0,
+            background: 'linear-gradient(90deg, transparent, #a855f7, #22d3ee)',
+            opacity: scrolled ? 0.80 : 0,
             transition: 'opacity 0.3s ease',
           }}
         />

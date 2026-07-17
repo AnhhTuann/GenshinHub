@@ -42,7 +42,7 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
 
 function SpotlightCard({ char, locale }: { char: SpotlightChar, locale: string }) {
   const name = locale === 'vi' ? (char.nameVi || char.nameEn) : char.nameEn;
-  const ec = ELEM_COLOR[char.element] ?? '#c8a84b';
+  const ec = ELEM_COLOR[char.element] ?? '#a855f7';
   
   const glowRef = useMouseGlow<HTMLAnchorElement>();
 

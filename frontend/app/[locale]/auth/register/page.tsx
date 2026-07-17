@@ -51,7 +51,7 @@ export default function RegisterPage() {
     }
   };
 
-  const handleSocialLogin = async (provider: string, data: any) => {
+  const handleSocialLogin = async (provider: string, token: string) => {
     setLoading(true);
     try {
       const res = await fetch('/api/auth/social', {
@@ -59,11 +59,7 @@ export default function RegisterPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           provider,
-          providerId: data.id || data.sub || data.userID,
-          email: data.email,
-          username: data.email.split('@')[0],
-          displayName: data.name,
-          avatarUrl: data.picture?.data?.url || data.picture,
+          token,
           gender: formData.gender, // from the character selection
         }),
       });
@@ -83,8 +79,7 @@ export default function RegisterPage() {
 
   const handleGoogleSuccess = async (credentialResponse: any) => {
     const token = credentialResponse.credential;
-    const payload = JSON.parse(atob(token.split('.')[1]));
-    await handleSocialLogin('google', payload);
+    await handleSocialLogin('google', token);
   };
 
   return (
@@ -255,7 +250,7 @@ export default function RegisterPage() {
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={(resp: any) => {
-                  if (resp.accessToken) handleSocialLogin('facebook', resp);
+                  if (resp.accessToken) handleSocialLogin('facebook', resp.accessToken);
                   else toast.error('Facebook login failed');
                 }}
                 render={(renderProps: any) => (

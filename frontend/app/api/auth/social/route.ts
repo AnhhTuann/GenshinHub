@@ -1,14 +1,54 @@
 import { NextResponse } from 'next/server';
 import { fetchGraphQL } from '@/lib/graphql';
 import { cookies } from 'next/headers';
+import { OAuth2Client } from 'google-auth-library';
+
+const googleClient = new OAuth2Client(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { provider, providerId, email, username, displayName, avatarUrl, gender } = body;
+    const { provider, token, gender } = body;
 
-    if (!provider || !providerId || !email) {
+    if (!provider || !token) {
       return NextResponse.json({ error: 'Thiếu thông tin đăng nhập từ Provider' }, { status: 400 });
+    }
+
+    let providerId = '';
+    let email = '';
+    let username = '';
+    let displayName = '';
+    let avatarUrl = '';
+
+    if (provider === 'google') {
+      const ticket = await googleClient.verifyIdToken({
+        idToken: token,
+        audience: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+      });
+      const payload = ticket.getPayload();
+      if (!payload || !payload.email) throw new Error('Invalid Google token');
+      
+      providerId = payload.sub;
+      email = payload.email;
+      username = email.split('@')[0];
+      displayName = payload.name || username;
+      avatarUrl = payload.picture || '';
+    } else if (provider === 'facebook') {
+      // Verify Facebook Access Token
+      const fbRes = await fetch(`https://graph.facebook.com/me?fields=id,name,email,picture.type(large)&access_token=${token}`);
+      const fbData = await fbRes.json();
+      
+      if (fbData.error) {
+        throw new Error('Invalid Facebook token');
+      }
+
+      providerId = fbData.id;
+      email = fbData.email || `${fbData.id}@facebook.com`; // FB might not return email
+      username = email.split('@')[0];
+      displayName = fbData.name;
+      avatarUrl = fbData.picture?.data?.url || '';
+    } else {
+      throw new Error('Unsupported provider');
     }
 
     const data = await fetchGraphQL(`

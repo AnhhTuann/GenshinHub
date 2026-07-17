@@ -213,7 +213,14 @@ export const userResolvers = {
         weapon: { pulls: Math.floor(Math.random() * 30), pity: 80, guaranteed: false },
         standard: { pulls: Math.floor(Math.random() * 70), pity: 90, guaranteed: false },
         winRate: 50 + Math.floor(Math.random() * 30),
-        totalPulls: 1000 + Math.floor(Math.random() * 500)
+        totalPulls: 1000 + Math.floor(Math.random() * 500),
+        fiveStarHistory: [
+          { id: '1', name: 'furina', type: 'CHARACTER', pity: 78, win: true, date: new Date().toISOString() },
+          { id: '2', name: 'keqing', type: 'CHARACTER', pity: 81, win: false, date: new Date(Date.now() - 86400000).toISOString() },
+          { id: '3', name: 'nahida', type: 'CHARACTER', pity: 45, win: true, date: new Date(Date.now() - 86400000 * 5).toISOString() },
+          { id: '4', name: 'staff-of-homa', type: 'WEAPON', pity: 65, win: true, date: new Date(Date.now() - 86400000 * 10).toISOString() },
+          { id: '5', name: 'qiqi', type: 'CHARACTER', pity: 75, win: false, date: new Date(Date.now() - 86400000 * 20).toISOString() },
+        ]
       };
 
       await prisma.user.update({

@@ -1,0 +1,1 @@
+import { fetchGraphQL } from './lib/graphql'; async function main() { try { const res = await fetchGraphQL(mutation { toggleFavorite(itemId: \" "albedo\, itemType: \CHARACTER\) { added } }, undefined, 0, undefined); console.log(res); } catch (e) { console.error(e.message); } } main();  

@@ -24,6 +24,14 @@ export async function GET() {
           avatarUrl
           travelerCharId
           favoritesCount
+          gachaStats {
+            character { pulls pity guaranteed }
+            weapon { pulls pity guaranteed }
+            standard { pulls pity guaranteed }
+            winRate
+            totalPulls
+            fiveStarHistory { id name type pity win date }
+          }
         }
         myFavorites {
           itemId

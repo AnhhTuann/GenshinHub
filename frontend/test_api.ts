@@ -1,0 +1,1 @@
+import { fetchGraphQL } from './lib/graphql'; async function main() { try { const data = await fetchGraphQL(query Me { myFavorites { itemId itemType } }, undefined, 0, undefined); console.log('myFavorites in API:', data.myFavorites); } catch (e) { console.error(e.message); } } main();  

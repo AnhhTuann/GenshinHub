@@ -69,7 +69,10 @@ export default function WishCounterTab({ user }: { user: User }) {
     standard: { pulls: 0, pity: 90 },
     winRate: 0,
     totalPulls: 0,
+    fiveStarHistory: []
   };
+
+  const totalPrimos = stats.totalPulls * 160;
 
   const handleSync = async () => {
     if (!urlInput.trim()) {
@@ -133,29 +136,101 @@ export default function WishCounterTab({ user }: { user: User }) {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="bg-black/40 p-5 rounded-xl border border-white/5 flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Lifetime Pulls</p>
+              <p className="text-3xl font-black text-white">{stats.totalPulls.toLocaleString()}</p>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+              <History className="w-6 h-6 text-white/40" />
+            </div>
+          </div>
+          <div className="bg-black/40 p-5 rounded-xl border border-white/5 flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Primogems Spent</p>
+              <p className="text-3xl font-black text-[#f0d080]">{totalPrimos.toLocaleString()}</p>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-[#c8a84b]/10 flex items-center justify-center border border-[#c8a84b]/20">
+              <span className="font-serif font-black text-[#f0d080] text-xl">✦</span>
+            </div>
+          </div>
+          <div className="bg-black/40 p-5 rounded-xl border border-white/5 flex items-center justify-between">
+            <div>
+              <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">50/50 Win Rate</p>
+              <p className="text-3xl font-black text-[#4db6ac]">{stats.winRate}%</p>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-[#4db6ac]/10 flex items-center justify-center border border-[#4db6ac]/20">
+              <PieChart className="w-6 h-6 text-[#4db6ac]" />
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
           <CircularProgress pulls={stats.character.pulls} pity={stats.character.pity} label="Character Banner" guaranteed={stats.character.guaranteed} />
           <CircularProgress pulls={stats.weapon.pulls} pity={stats.weapon.pity} label="Weapon Banner" guaranteed={stats.weapon.guaranteed} />
           <CircularProgress pulls={stats.standard.pulls} pity={stats.standard.pity} label="Standard Banner" />
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 relative z-10">
-          <div className="bg-black/40 p-4 rounded-xl border border-white/5">
-            <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Total Pulls</p>
-            <p className="text-2xl font-black text-white">{stats.totalPulls.toLocaleString()}</p>
-          </div>
-          <div className="bg-black/40 p-4 rounded-xl border border-white/5">
-            <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">50/50 Win Rate</p>
-            <p className="text-2xl font-black text-[#4db6ac]">{stats.winRate}%</p>
-          </div>
-          <div className="bg-black/40 p-4 rounded-xl border border-white/5 flex flex-col justify-center">
-            <p className="text-xs text-white/60 italic flex items-center gap-2">
-              <Info className="w-4 h-4 text-[#f0d080]" />
-              Data last updated: Today
-            </p>
+      {/* 5-Star History Section */}
+      {stats.fiveStarHistory && stats.fiveStarHistory.length > 0 && (
+        <div className="bg-[#1a1a24] border border-white/10 rounded-2xl p-6">
+          <h3 className="text-lg font-black uppercase tracking-widest text-white mb-6 flex items-center gap-2">
+            <span className="text-[#f0d080]">✦✦✦✦✦</span>
+            5-Star History
+          </h3>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm text-white/80 whitespace-nowrap">
+              <thead className="text-xs uppercase bg-white/5 text-white/60">
+                <tr>
+                  <th className="px-4 py-3 rounded-l-lg">Item</th>
+                  <th className="px-4 py-3">Pity</th>
+                  <th className="px-4 py-3">Status</th>
+                  <th className="px-4 py-3">Type</th>
+                  <th className="px-4 py-3 rounded-r-lg">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.fiveStarHistory.map((pull: any) => (
+                  <tr key={pull.id} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]">
+                    <td className="px-4 py-3 flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full overflow-hidden border border-[#f0d080]/50 bg-[#f0d080]/10 shrink-0">
+                        <img 
+                          src={`/assets/${pull.type === 'CHARACTER' ? 'characters' : 'weapons'}/${pull.name}/icon.webp`} 
+                          alt={pull.name} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => { e.currentTarget.src = '/assets/fallback-icon.webp'; }}
+                        />
+                      </div>
+                      <span className="font-bold capitalize">{pull.name.replace(/-/g, ' ')}</span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className={`font-black ${pull.pity > 75 ? 'text-[#ef4444]' : pull.pity > 50 ? 'text-[#f0d080]' : 'text-[#4db6ac]'}`}>
+                        {pull.pity}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      {pull.type === 'CHARACTER' ? (
+                        pull.win ? (
+                          <span className="text-xs px-2 py-1 bg-[#4db6ac]/20 text-[#4db6ac] border border-[#4db6ac]/30 rounded-md font-bold uppercase">Won 50/50</span>
+                        ) : (
+                          <span className="text-xs px-2 py-1 bg-[#ef4444]/20 text-[#ef4444] border border-[#ef4444]/30 rounded-md font-bold uppercase">Lost 50/50</span>
+                        )
+                      ) : (
+                        <span className="text-white/40">-</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-white/50">{pull.type}</td>
+                    <td className="px-4 py-3 text-white/50">{new Date(pull.date).toLocaleDateString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

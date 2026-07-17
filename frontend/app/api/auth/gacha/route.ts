@@ -20,6 +20,14 @@ export async function POST(req: Request) {
           standard { pulls pity guaranteed }
           winRate
           totalPulls
+          fiveStarHistory {
+            id
+            name
+            type
+            pity
+            win
+            date
+          }
         }
       }
     `, { url }, 0, token);

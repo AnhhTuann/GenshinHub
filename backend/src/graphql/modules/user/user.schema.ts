@@ -11,6 +11,7 @@ export const userSchema = `
     # Computed: travelerCharId based on gender
     travelerCharId: String!
     favoritesCount: Int!
+    gachaStats: GachaStats
   }
 
   type AuthPayload {
@@ -71,12 +72,22 @@ export const userSchema = `
     guaranteed: Boolean
   }
 
+  type FiveStarPull {
+    id: String!
+    name: String!
+    type: String!
+    pity: Int!
+    win: Boolean
+    date: String!
+  }
+
   type GachaStats {
     character: GachaBannerStats!
     weapon: GachaBannerStats!
     standard: GachaBannerStats!
     winRate: Float!
     totalPulls: Int!
+    fiveStarHistory: [FiveStarPull!]
   }
 
   type UserTeam {

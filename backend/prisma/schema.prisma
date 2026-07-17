@@ -236,3 +236,14 @@ model UserTeam {
 
   @@index([userId])
 }
+
+model Otp {
+  id        String   @id @default(uuid())
+  email     String
+  code      String
+  purpose   String   // e.g. "EMAIL_CHANGE"
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([email])
+}

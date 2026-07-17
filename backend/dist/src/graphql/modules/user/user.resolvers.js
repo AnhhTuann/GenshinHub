@@ -95,6 +95,27 @@ exports.userResolvers = {
                 favoritesCount: favCount,
             };
         },
+        changePassword: async (_, { oldPassword, newPassword }, { prisma, userId }) => {
+            if (!userId)
+                throw new Error('Chưa đăng nhập');
+            return user_service_1.userService.changePassword(prisma, userId, oldPassword, newPassword);
+        },
+        requestEmailChangeOtp: async (_, { newEmail }, { prisma, userId }) => {
+            if (!userId)
+                throw new Error('Chưa đăng nhập');
+            return user_service_1.userService.requestEmailChangeOtp(prisma, userId, newEmail);
+        },
+        verifyEmailChangeOtp: async (_, { newEmail, otp }, { prisma, userId }) => {
+            if (!userId)
+                throw new Error('Chưa đăng nhập');
+            const user = await user_service_1.userService.verifyEmailChangeOtp(prisma, userId, newEmail, otp);
+            const favCount = await prisma.userFavorite.count({ where: { userId } });
+            return {
+                ...user,
+                travelerCharId: getTravelerCharId(user.gender),
+                favoritesCount: favCount,
+            };
+        },
         toggleFavorite: async (_, { characterId }, { prisma, userId }) => {
             if (!userId)
                 throw new Error('Vui lòng đăng nhập để yêu thích nhân vật');

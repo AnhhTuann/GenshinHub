@@ -93,5 +93,8 @@ export const userSchema = `
     createTeam(name: String!, characters: [String!]!): UserTeam!
     updateTeam(id: String!, name: String, characters: [String!]): UserTeam!
     deleteTeam(id: String!): Boolean!
+    changePassword(oldPassword: String!, newPassword: String!): Boolean!
+    requestEmailChangeOtp(newEmail: String!): Boolean!
+    verifyEmailChangeOtp(newEmail: String!, otp: String!): User!
   }
 `;

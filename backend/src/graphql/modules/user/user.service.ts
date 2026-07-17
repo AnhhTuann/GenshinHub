@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { mailerService } from '../../../services/mailer.service';
 
 const USER_JWT_SECRET = process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod';
 
@@ -131,6 +132,81 @@ export const userService = {
       where: { id: userId },
       data: { ...input, updatedAt: new Date() },
     });
+  },
+
+  async changePassword(prisma: PrismaClient, userId: string, oldPassword: string, newPassword: string) {
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    if (!user) throw new Error('Không tìm thấy người dùng');
+    if (!user.password) throw new Error('Tài khoản này đăng nhập qua mạng xã hội, không có mật khẩu');
+
+    const valid = await bcrypt.compare(oldPassword, user.password);
+    if (!valid) throw new Error('Mật khẩu hiện tại không đúng');
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await prisma.user.update({
+      where: { id: userId },
+      data: { password: hashedPassword, updatedAt: new Date() },
+    });
+
+    return true;
+  },
+
+  async requestEmailChangeOtp(prisma: PrismaClient, userId: string, newEmail: string) {
+    // Basic email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail)) {
+      throw new Error('Email không hợp lệ');
+    }
+
+    const existingUser = await prisma.user.findUnique({ where: { email: newEmail } });
+    if (existingUser) throw new Error('Email này đã được sử dụng');
+
+    // Rate limiting: 60s cooldown
+    const recentOtp = await prisma.otp.findFirst({
+      where: { email: newEmail, purpose: 'EMAIL_CHANGE' },
+      orderBy: { createdAt: 'desc' }
+    });
+
+    if (recentOtp && Date.now() - recentOtp.createdAt.getTime() < 60000) {
+      throw new Error('Vui lòng đợi 60 giây trước khi yêu cầu mã mới');
+    }
+
+    // Generate 6 digit code
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes
+
+    await prisma.otp.create({
+      data: {
+        email: newEmail,
+        code,
+        purpose: 'EMAIL_CHANGE',
+        expiresAt,
+      }
+    });
+
+    await mailerService.sendOtpEmail(newEmail, code, 'EMAIL_CHANGE');
+    return true;
+  },
+
+  async verifyEmailChangeOtp(prisma: PrismaClient, userId: string, newEmail: string, otpCode: string) {
+    const otpRecord = await prisma.otp.findFirst({
+      where: { email: newEmail, code: otpCode, purpose: 'EMAIL_CHANGE' },
+      orderBy: { createdAt: 'desc' }
+    });
+
+    if (!otpRecord) throw new Error('Mã OTP không đúng');
+    if (otpRecord.expiresAt < new Date()) throw new Error('Mã OTP đã hết hạn');
+
+    const updatedUser = await prisma.user.update({
+      where: { id: userId },
+      data: { email: newEmail, updatedAt: new Date() },
+    });
+
+    // Clean up OTPs for this email
+    await prisma.otp.deleteMany({
+      where: { email: newEmail, purpose: 'EMAIL_CHANGE' }
+    });
+
+    return updatedUser;
   },
 
   // ─── Favorites ─────────────────────────────────────────────

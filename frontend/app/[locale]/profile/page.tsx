@@ -47,8 +47,13 @@ export default function ProfilePage() {
     );
   }
 
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/auth/login');
+    }
+  }, [user, loading, router]);
+
   if (!user) {
-    router.push('/auth/login');
     return null;
   }
 

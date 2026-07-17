@@ -4,7 +4,8 @@ import TcgDetailClient from './TcgDetailClient';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-export async function generateMetadata({ params: { locale, id } }: { params: { locale: string, id: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string, id: string }> }): Promise<Metadata> {
+  const { locale, id } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
   const card = await getTcgCardDetail(id, locale);
   
@@ -16,7 +17,8 @@ export async function generateMetadata({ params: { locale, id } }: { params: { l
   };
 }
 
-export default async function TcgCardPage({ params: { locale, id } }: { params: { locale: string, id: string } }) {
+export default async function TcgCardPage({ params }: { params: Promise<{ locale: string, id: string }> }) {
+  const { locale, id } = await params;
   const cardData = await getTcgCardDetail(id, locale);
 
   if (!cardData) {

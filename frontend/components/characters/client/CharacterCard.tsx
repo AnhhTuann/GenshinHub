@@ -89,13 +89,10 @@ export default function CharacterCard({ character }: { character: CharacterData 
 
   const onEnter = useCallback(() => {
     setHovered(true);
-    timerRef.current = setTimeout(() => { setOverlayReady(true); setOverlayOpen(true); }, 450);
   }, []);
   const onLeave = useCallback(() => {
     setHovered(false);
-    if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null; }
   }, []);
-  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
 
   const href = `/${locale}/characters/${character.id}`;
 
@@ -109,7 +106,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
           }}
           whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.03 }}
           whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
-          onClick={() => router.push(href)}
+          onClick={() => { setOverlayReady(true); setOverlayOpen(true); }}
           className="relative cursor-pointer rounded-2xl overflow-hidden"
           style={{
             aspectRatio: '4/5',

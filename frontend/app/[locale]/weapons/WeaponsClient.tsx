@@ -84,11 +84,11 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   }, [weapons, search, selectedType, selectedRarities, sortBy, sortAsc, locale]);
 
   const rarityCfg = (r: number) => {
-    if (r === 5) return { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', text: '#ffd54f', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.06)', stars: '#ffd54f' };
-    if (r === 4) return { ring: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]', glow: 'rgba(168,85,247,', text: '#c084fc', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.06)', stars: '#c084fc' };
-    if (r === 3) return { ring: 'from-[#60a5fa] via-[#3b82f6] to-[#1d4ed8]', glow: 'rgba(59,130,246,', text: '#93c5fd', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.06)', stars: '#93c5fd' };
-    if (r === 2) return { ring: 'from-[#4ade80] via-[#22c55e] to-[#15803d]', glow: 'rgba(34,197,94,',  text: '#86efac', border: 'rgba(34,197,94,0.25)',  bg: 'rgba(34,197,94,0.06)',  stars: '#86efac' };
-    return       { ring: 'from-gray-400 via-gray-500 to-gray-600',       glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.06)', stars: '#9ca3af' };
+    if (r === 5) return { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', text: '#ffd54f', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.12)', stars: '#ffd54f' };
+    if (r === 4) return { ring: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]', glow: 'rgba(168,85,247,', text: '#c084fc', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.12)', stars: '#c084fc' };
+    if (r === 3) return { ring: 'from-[#60a5fa] via-[#3b82f6] to-[#1d4ed8]', glow: 'rgba(59,130,246,', text: '#93c5fd', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.12)', stars: '#93c5fd' };
+    if (r === 2) return { ring: 'from-[#4ade80] via-[#22c55e] to-[#15803d]', glow: 'rgba(34,197,94,',  text: '#86efac', border: 'rgba(34,197,94,0.25)',  bg: 'rgba(34,197,94,0.12)',  stars: '#86efac' };
+    return       { ring: 'from-gray-400 via-gray-500 to-gray-600',       glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.12)', stars: '#9ca3af' };
   };
 
   return (
@@ -302,7 +302,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     <div className="relative z-10 p-4 flex flex-col items-center border-t border-white/5">
                       {/* Name */}
                       <p
-                        className="text-xs sm:text-sm font-extrabold text-center leading-snug line-clamp-2 transition-colors w-full tracking-wide"
+                        className="text-xs sm:text-sm font-extrabold text-center leading-snug truncate transition-colors w-full tracking-wide px-1"
                         style={{
                           color: '#fff',
                           textShadow: `0 0 16px ${cfg.glow}0.6)`,

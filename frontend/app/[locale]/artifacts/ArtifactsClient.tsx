@@ -25,10 +25,10 @@ interface ArtifactSet {
 /* ─── helpers ─────────────────────────────────────────────────── */
 
 function rarityConfig(max: number) {
-  if (max === 5) return { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', text: '#ffd54f', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.06)', stars: '#ffd54f' };
-  if (max === 4) return { ring: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]', glow: 'rgba(168,85,247,', text: '#c084fc', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.06)', stars: '#c084fc' };
-  if (max === 3) return { ring: 'from-[#60a5fa] via-[#3b82f6] to-[#1d4ed8]', glow: 'rgba(59,130,246,', text: '#93c5fd', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.06)', stars: '#93c5fd' };
-  return { ring: 'from-gray-400 via-gray-500 to-gray-600', glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.06)', stars: '#9ca3af' };
+  if (max === 5) return { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', text: '#ffd54f', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.12)', stars: '#ffd54f' };
+  if (max === 4) return { ring: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]', glow: 'rgba(168,85,247,', text: '#c084fc', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.12)', stars: '#c084fc' };
+  if (max === 3) return { ring: 'from-[#60a5fa] via-[#3b82f6] to-[#1d4ed8]', glow: 'rgba(59,130,246,', text: '#93c5fd', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.12)', stars: '#93c5fd' };
+  return { ring: 'from-gray-400 via-gray-500 to-gray-600', glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.12)', stars: '#9ca3af' };
 }
 
 /* ─── sub-components ──────────────────────────────────────────── */
@@ -96,13 +96,11 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
             <div className="text-5xl select-none opacity-30">💎</div>
           )}
 
-          {/* Rarity List Pills */}
-          <div className="absolute top-2 left-2 flex flex-col gap-1">
-             {artifact.rarityList.sort((a,b) => b-a).map(r => (
-               <div key={r} className="px-1.5 py-0.5 rounded-md backdrop-blur-md bg-black/40 border border-white/10 text-[8px] font-black text-white/70 tracking-widest flex items-center gap-0.5">
-                  {r}<span style={{ color: r === 5 ? '#ffd54f' : r === 4 ? '#ce93d8' : '#93c5fd' }}>★</span>
-               </div>
-             ))}
+          {/* Rarity Pill */}
+          <div className="absolute top-2 left-2">
+            <div className="px-1.5 py-0.5 rounded-md backdrop-blur-md bg-black/40 border border-white/10 text-[9px] font-black tracking-widest flex items-center gap-0.5" style={{ color: cfg.stars }}>
+              {max}★
+            </div>
           </div>
         </div>
       </div>
@@ -120,7 +118,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
         </div>
 
         {/* Name */}
-        <p className="text-white font-extrabold text-[13px] sm:text-sm text-center leading-snug font-display line-clamp-2 tracking-wide" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
+        <p className="text-white font-extrabold text-[13px] sm:text-sm text-center leading-snug font-display truncate w-full tracking-wide px-1" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
           {name}
         </p>
 

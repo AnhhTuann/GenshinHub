@@ -27,7 +27,7 @@ export default function WishlistTab({ user }: { user: User }) {
           query AllItems {
             characters { id nameEn nameVi rarity avatarUrl }
             weapons { id nameEn nameVi rarity type iconUrl }
-            artifacts { id nameEn nameVi rarity maxRarity iconUrl }
+            artifacts { id nameEn nameVi rarityList iconUrl }
           }
         `);
         

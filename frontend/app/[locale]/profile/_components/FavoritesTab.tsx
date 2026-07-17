@@ -28,7 +28,7 @@ export default function FavoritesTab({ user }: { user: User }) {
           query AllItems {
             characters { id nameEn nameVi element rarity avatarUrl splashArtUrl }
             weapons { id nameEn nameVi rarity type baseAtk subStat subStatValue passiveDescEn passiveDescVi iconUrl }
-            artifacts { id nameEn nameVi rarity maxRarity 2Pc 4Pc setType iconUrl }
+            artifacts { id nameEn nameVi rarityList piece2DescEn piece2DescVi piece4DescEn piece4DescVi iconUrl }
           }
         `);
         

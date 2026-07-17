@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Link } from '@/i18n/routing';
+import { useRouter, Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import toast from 'react-hot-toast';
 import { useUser } from '@/context/UserContext';

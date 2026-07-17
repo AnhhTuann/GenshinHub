@@ -40,10 +40,9 @@ export default function LoginPage() {
 
       setUser(data.user);
       toast.success('Logged in successfully!');
-      router.push('/profile');
+      window.location.href = '/profile';
     } catch (err: any) {
       toast.error(err.message);
-    } finally {
       setLoading(false);
     }
   };
@@ -65,10 +64,9 @@ export default function LoginPage() {
 
       setUser(result.user);
       toast.success('Logged in successfully!');
-      router.push('/profile');
+      window.location.href = '/profile';
     } catch (err: any) {
       toast.error(err.message);
-    } finally {
       setLoading(false);
     }
   };

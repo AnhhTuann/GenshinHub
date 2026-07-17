@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 import { fetchGraphQL } from '@/lib/graphql/client';
 import { GET_CHARACTERS } from '@/lib/graphql/queries/character';
 
-function SortableItem({ id, element }: { id: string, element: string }) {
+function SortableItem({ id, element, avatarUrl }: { id: string, element: string, avatarUrl?: string }) {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
   const style = {
@@ -27,7 +27,7 @@ function SortableItem({ id, element }: { id: string, element: string }) {
       className="w-24 h-24 rounded-2xl bg-black/50 border border-white/20 flex flex-col items-center justify-center cursor-grab active:cursor-grabbing overflow-hidden relative group"
     >
       {/* Temporary fallback, in full version fetch char data */}
-      <img src={`/assets/characters/${id}/avatar.webp`} alt={id} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" onError={(e) => e.currentTarget.style.display = 'none'} />
+      <img src={avatarUrl || `/assets/characters/${id}/avatar.webp`} alt={id} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" onError={(e) => e.currentTarget.style.display = 'none'} />
       <div className="absolute inset-x-0 bottom-0 bg-black/80 text-[10px] text-center p-1 uppercase truncate font-bold text-white/80">
         {id}
       </div>
@@ -63,6 +63,7 @@ export default function TeamsTab({ user }: { user: User }) {
           setAvailableChars(data.characters.map((c: any) => ({
             id: c.id,
             element: c.element,
+            avatarUrl: c.avatarUrl,
           })));
         }
       } catch (err) {
@@ -173,10 +174,14 @@ export default function TeamsTab({ user }: { user: User }) {
   const loadTeam = (savedTeam: any) => {
     setSelectedTeamId(savedTeam.id);
     setTeamName(savedTeam.name);
-    // Find elements for the saved characters
+    // Find elements and avatarUrls for the saved characters
     const loadedCharacters = savedTeam.characters.map((cid: string) => {
       const charInfo = availableChars.find(ac => ac.id === cid);
-      return { id: cid, element: charInfo ? charInfo.element : 'Unknown' };
+      return { 
+        id: cid, 
+        element: charInfo ? charInfo.element : 'Unknown',
+        avatarUrl: charInfo ? charInfo.avatarUrl : `/assets/characters/${cid}/avatar.webp`
+      };
     });
     setTeam(loadedCharacters);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -237,7 +242,7 @@ export default function TeamsTab({ user }: { user: User }) {
                 <div className="flex gap-4 min-h-[96px]">
                   {team.map((char) => (
                     <div key={char.id} className="relative group">
-                       <SortableItem id={char.id} element={char.element} />
+                       <SortableItem id={char.id} element={char.element} avatarUrl={char.avatarUrl} />
                        <button onClick={() => removeFromTeam(char.id)} className="absolute -top-2 -right-2 bg-red-500/80 hover:bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10">
                          <Trash2 className="w-3 h-3" />
                        </button>
@@ -308,7 +313,7 @@ export default function TeamsTab({ user }: { user: User }) {
                  <div className="flex gap-2">
                    {t.characters.map((cid: string) => (
                      <div key={cid} className="w-10 h-10 rounded-full border border-white/20 overflow-hidden bg-black/50">
-                       <img src={`/assets/characters/${cid}/avatar.webp`} alt={cid} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
+                       <img src={availableChars.find(c => c.id === cid)?.avatarUrl || `/assets/characters/${cid}/avatar.webp`} alt={cid} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
                      </div>
                    ))}
                  </div>
@@ -376,7 +381,7 @@ export default function TeamsTab({ user }: { user: User }) {
                       }}
                       className="w-full aspect-square rounded-2xl bg-black/50 hover:bg-white/10 border border-white/10 p-1 flex flex-col items-center justify-center relative overflow-hidden group transition-colors"
                     >
-                      <img src={`/assets/characters/${char.id}/avatar.webp`} alt={char.id} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
+                      <img src={char.avatarUrl || `/assets/characters/${char.id}/avatar.webp`} alt={char.id} className="w-full h-full object-cover" onError={(e) => e.currentTarget.style.display = 'none'} />
                       <div className="absolute top-1 left-1 w-4 h-4 rounded-full bg-black/50 border border-white/20 flex items-center justify-center p-0.5 z-10">
                         <img src={`/assets/elements/${char.element.toLowerCase()}.webp`} alt={char.element} className="w-full h-full object-contain" />
                       </div>

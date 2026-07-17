@@ -119,10 +119,10 @@ export default function CharacterCard({ character }: { character: CharacterData 
           {/* ─── Full-bleed Avatar ─────────────────── */}
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.06]">
             <FallbackImage
-              src={avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
+              src={splashUrl || avatarUrl || '/assets/characters/PlayerGirl/splash.webp'}
               alt={name} fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
-              className="object-cover object-top"
+              className="object-cover object-center"
               priority={false}
             />
           </div>

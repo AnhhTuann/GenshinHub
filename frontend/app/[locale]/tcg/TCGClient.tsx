@@ -6,11 +6,13 @@ import Image from 'next/image';
 import { tcgCards, TCGCard } from '@/data/tcgCards';
 import { metaDecks } from '@/data/tcgDecks';
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 export default function TCGClient({ locale }: { locale: string }) {
   const [activeTab, setActiveTab] = useState<'cards' | 'decks'>('cards');
   const [filterType, setFilterType] = useState<string>('all');
   const [search, setSearch] = useState('');
+  const t = useTranslations('Common');
 
   // Extract unique card types
   const cardTypes = useMemo(() => {
@@ -45,10 +47,10 @@ export default function TCGClient({ locale }: { locale: string }) {
               &larr; Home
             </Link>
             <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight text-gradient-gold">
-              Genius Invokation TCG
+              {t('tcg')}
             </h1>
             <p className="text-gray-455 text-sm font-medium">
-              Explore {tcgCards.length} cards and the best meta decks in Teyvat.
+              {locale === 'vi' ? `Khám phá ${tcgCards.length} lá bài và các bộ bài Meta Teyvat` : `Explore ${tcgCards.length} cards and the best meta decks in Teyvat.`}
             </p>
           </div>
           

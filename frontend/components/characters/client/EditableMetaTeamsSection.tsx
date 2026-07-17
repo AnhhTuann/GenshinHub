@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { useAdmin } from '@/hooks/useAdmin';
 import TeamFormModal from '@/components/admin/TeamFormModal';
@@ -63,6 +63,7 @@ const translateStat = (stat: string, locale: string) => {
 export default function EditableMetaTeamsSection({ characterId, teams, allCharacters, allWeapons, allArtifacts }: EditableMetaTeamsSectionProps) {
   const { isAdmin } = useAdmin();
   const locale = useLocale();
+  const t = useTranslations('Character');
   const [localTeams, setLocalTeams] = useState(teams);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTeam, setEditingTeam] = useState<any | null>(null);
@@ -156,7 +157,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2.5">
           <span className="w-[3px] h-5 rounded-full bg-blue-400" />
-          <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">Meta Team Comps</span>
+          <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">{t('metaTeams')}</span>
         </div>
         {isAdmin && (
           <button

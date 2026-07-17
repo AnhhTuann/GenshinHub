@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Cinzel, JetBrains_Mono } from "next/font/google";
+import { Inter, Montserrat, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
 import AdminModeToggle from "@/components/AdminModeToggle";
@@ -15,19 +15,19 @@ import PageTransition from '@/components/shared/PageTransition';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 const inter = Inter({ 
-  subsets: ["latin"],
+  subsets: ["latin", "vietnamese"],
   variable: "--font-inter",
   display: 'swap',
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
+const montserrat = Montserrat({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-outfit", // keep the variable name so CSS still works without changes
   display: 'swap',
 });
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
+const playfair = Playfair_Display({
+  subsets: ["latin", "vietnamese"],
   variable: "--font-cinzel",
   weight: ["400", "700", "900"],
   display: 'swap',

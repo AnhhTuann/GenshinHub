@@ -130,9 +130,9 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           Home
         </Link>
-        <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">⚔️ Weapons</h1>
+        <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">⚔️ {t('weapons')}</h1>
         <div className="flex items-center gap-4">
-          <p className="text-gray-450 text-sm font-medium">Explore all {weapons.length} weapons in Genshin Impact</p>
+          <p className="text-gray-450 text-sm font-medium">{locale === 'vi' ? `Khám phá toàn bộ ${weapons.length} vũ khí` : `Explore all ${weapons.length} weapons in Genshin Impact`}</p>
           {isAdmin && (
             <button
               onClick={() => setShowAddModal(true)}

@@ -210,13 +210,11 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">💎</span>
                 <h1 className="text-4xl sm:text-5xl font-black text-white font-display uppercase tracking-tight leading-none">
-                  Artifact Sets
+                  {t('artifacts')}
                 </h1>
               </div>
               <p className="text-gray-500 text-sm font-medium pl-1">
-                Browse all{' '}
-                <span className="text-amber-400 font-extrabold">{artifacts.length}</span>{' '}
-                artifact sets from Genshin Impact
+                {locale === 'vi' ? `Khám phá toàn bộ ${artifacts.length} bộ Thánh Di Vật` : `Browse all ${artifacts.length} artifact sets from Genshin Impact`}
               </p>
             </div>
 

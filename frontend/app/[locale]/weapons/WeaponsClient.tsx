@@ -235,7 +235,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
               <p className="text-sm font-semibold">No weapons matched your filters.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
               {filtered.map(weapon => {
                 const cfg = rarityCfg(weapon.rarity);
                 const name = locale === 'en' ? weapon.nameEn : weapon.nameVi;
@@ -301,17 +301,15 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     {/* Bottom Info */}
                     <div className="relative z-10 p-4 flex flex-col items-center border-t border-white/5">
                       {/* Name */}
-                      <div className="h-8 sm:h-10 flex items-center justify-center w-full px-1">
-                        <p
-                          className="text-xs sm:text-sm font-extrabold text-center leading-snug line-clamp-2 transition-colors w-full tracking-wide"
-                          style={{
-                            color: '#fff',
-                            textShadow: `0 0 16px ${cfg.glow}0.6)`,
-                          }}
-                        >
-                          {name}
-                        </p>
-                      </div>
+                      <p
+                        className="text-[13px] sm:text-[15px] font-extrabold text-center leading-snug truncate transition-colors w-full tracking-wide px-2"
+                        style={{
+                          color: '#fff',
+                          textShadow: `0 0 16px ${cfg.glow}0.6)`,
+                        }}
+                      >
+                        {name}
+                      </p>
 
                       {/* Stars */}
                       <div className="flex justify-center gap-[2px] mt-2">

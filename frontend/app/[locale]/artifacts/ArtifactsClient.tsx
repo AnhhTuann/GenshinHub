@@ -118,11 +118,9 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
         </div>
 
         {/* Name */}
-        <div className="h-8 sm:h-10 flex items-center justify-center w-full px-1">
-          <p className="text-white font-extrabold text-[13px] sm:text-sm text-center leading-snug font-display line-clamp-2 tracking-wide w-full" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
-            {name}
-          </p>
-        </div>
+        <p className="text-white font-extrabold text-[14px] sm:text-[15px] text-center leading-snug font-display truncate tracking-wide w-full px-2 mt-1" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
+          {name}
+        </p>
 
         {/* Bonus descriptions */}
         {(desc2 || desc4) && (
@@ -325,7 +323,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
             {filtered.map(artifact => (
               <ArtifactCard key={artifact.id} artifact={artifact} locale={locale} />
             ))}

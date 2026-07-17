@@ -23,7 +23,7 @@ export async function POST(request: Request) {
           }
         }
       }
-    `, { input: { username, email, password, gender, displayName } });
+    `, { input: { username, email, password, gender, displayName } }, 0);
 
     if (!data || !data.register) {
       return NextResponse.json({ error: 'Registration failed' }, { status: 400 });

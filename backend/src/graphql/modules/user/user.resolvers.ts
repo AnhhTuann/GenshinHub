@@ -80,6 +80,19 @@ export const userResolvers = {
       };
     },
 
+    socialLogin: async (_: unknown, args: any, { prisma }: Context) => {
+      const { token, user } = await userService.socialLogin(prisma, args);
+      const favCount = await prisma.userFavorite.count({ where: { userId: user.id } });
+      return {
+        token,
+        user: {
+          ...user,
+          travelerCharId: getTravelerCharId(user.gender),
+          favoritesCount: favCount,
+        },
+      };
+    },
+
     updateProfile: async (_: unknown, { input }: { input: any }, { prisma, userId }: Context) => {
       if (!userId) throw new Error('Chưa đăng nhập');
       const user = await userService.updateProfile(prisma, userId, input);

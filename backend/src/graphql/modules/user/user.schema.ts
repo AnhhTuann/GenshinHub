@@ -83,6 +83,7 @@ export const userSchema = `
   extend type Mutation {
     register(input: RegisterInput!): AuthPayload!
     login(email: String!, password: String!): AuthPayload!
+    socialLogin(provider: String!, providerId: String!, email: String!, username: String, displayName: String, avatarUrl: String, gender: String): AuthPayload!
     updateProfile(input: UpdateProfileInput!): User!
     syncGachaUrl(url: String!): GachaStats!
     toggleFavorite(characterId: String!): FavoriteResult!

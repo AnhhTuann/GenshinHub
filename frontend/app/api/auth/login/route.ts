@@ -23,7 +23,7 @@ export async function POST(request: Request) {
           }
         }
       }
-    `, { email, password });
+    `, { email, password }, 0);
 
     if (!data || !data.login) {
       return NextResponse.json({ error: 'Login failed' }, { status: 401 });

@@ -7,6 +7,8 @@ import { useTranslations } from 'next-intl';
 import toast from 'react-hot-toast';
 import { useUser } from '@/context/UserContext';
 import { Loader2, Mail, Lock } from 'lucide-react';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -46,7 +48,44 @@ export default function LoginPage() {
     }
   };
 
+  const handleSocialLogin = async (provider: string, data: any) => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/auth/social', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          provider,
+          providerId: data.id || data.sub || data.userID,
+          email: data.email,
+          username: data.email.split('@')[0],
+          displayName: data.name,
+          avatarUrl: data.picture?.data?.url || data.picture,
+        }),
+      });
+
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || 'Social login failed');
+
+      await refreshUser();
+      toast.success('Logged in successfully!');
+      router.push('/profile');
+    } catch (err: any) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleSuccess = async (credentialResponse: any) => {
+    // Decode JWT to get email/name
+    const token = credentialResponse.credential;
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    await handleSocialLogin('google', payload);
+  };
+
   return (
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || 'dummy-client-id'}>
     <main className="relative min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
       {/* Ambient backgrounds */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -122,6 +161,45 @@ export default function LoginPage() {
             </button>
           </form>
 
+          <div className="mt-6 flex items-center justify-between">
+            <span className="w-1/5 border-b border-white/10 lg:w-1/4"></span>
+            <span className="text-xs text-center text-white/40 uppercase">Or login with</span>
+            <span className="w-1/5 border-b border-white/10 lg:w-1/4"></span>
+          </div>
+
+          <div className="mt-6 flex gap-4">
+            <div className="w-1/2">
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={() => toast.error('Google login failed')}
+                theme="filled_black"
+                shape="rectangular"
+                width="100%"
+                text="signin_with"
+              />
+            </div>
+            <div className="w-1/2">
+              <FacebookLogin
+                appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID || 'dummy-app-id'}
+                autoLoad={false}
+                fields="name,email,picture"
+                callback={(resp: any) => {
+                  if (resp.accessToken) handleSocialLogin('facebook', resp);
+                  else toast.error('Facebook login failed');
+                }}
+                render={(renderProps: any) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    className="w-full h-[40px] flex items-center justify-center gap-2 bg-[#1877F2] hover:bg-[#1864D9] text-white rounded-[4px] font-medium text-[14px] transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                  </button>
+                )}
+              />
+            </div>
+          </div>
+
           <div className="mt-8 text-center border-t border-white/5 pt-6">
             <p className="text-white/40 text-sm">
               Don&apos;t have an account?{' '}
@@ -133,5 +211,6 @@ export default function LoginPage() {
         </div>
       </div>
     </main>
+    </GoogleOAuthProvider>
   );
 }

@@ -51,10 +51,53 @@ export const userService = {
 
   async login(prisma: PrismaClient, email: string, password: string) {
     const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) throw new Error('Email hoặc mật khẩu không đúng');
+    if (!user || !user.password) throw new Error('Email hoặc mật khẩu không đúng');
 
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) throw new Error('Email hoặc mật khẩu không đúng');
+
+    const token = jwt.sign(
+      { id: user.id, email: user.email, username: user.username, gender: user.gender },
+      USER_JWT_SECRET,
+      { expiresIn: '30d' }
+    );
+
+    return { token, user };
+  },
+
+  async socialLogin(prisma: PrismaClient, input: {
+    provider: string;
+    providerId: string;
+    email: string;
+    username?: string;
+    displayName?: string;
+    avatarUrl?: string;
+    gender?: string;
+  }) {
+    let user = await prisma.user.findUnique({ where: { email: input.email } });
+
+    if (user) {
+      // Link provider if not set
+      if (!user.providerId || user.provider === 'local') {
+        user = await prisma.user.update({
+          where: { id: user.id },
+          data: { provider: input.provider, providerId: input.providerId, avatarUrl: user.avatarUrl || input.avatarUrl }
+        });
+      }
+    } else {
+      // Create new social user
+      user = await prisma.user.create({
+        data: {
+          email: input.email,
+          username: input.username || `user_${Date.now()}`,
+          gender: input.gender || 'male',
+          displayName: input.displayName || input.username || 'Traveler',
+          avatarUrl: input.avatarUrl,
+          provider: input.provider,
+          providerId: input.providerId,
+        }
+      });
+    }
 
     const token = jwt.sign(
       { id: user.id, email: user.email, username: user.username, gender: user.gender },

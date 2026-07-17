@@ -36,6 +36,12 @@ export default function ProfilePage() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/auth/login');
+    }
+  }, [user, loading, router]);
+
   const handleTabChange = (tab: Tab) => {
     setActiveTab(tab);
     window.history.replaceState(null, '', tab === 'profile' ? window.location.pathname : '#' + tab);
@@ -48,12 +54,6 @@ export default function ProfilePage() {
       </div>
     );
   }
-
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push('/auth/login');
-    }
-  }, [user, loading, router]);
 
   if (!user) {
     return null;

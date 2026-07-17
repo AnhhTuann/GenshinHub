@@ -153,17 +153,17 @@ exports.userService = {
         return updatedUser;
     },
     // ─── Favorites ─────────────────────────────────────────────
-    async toggleFavorite(prisma, userId, characterId) {
+    async toggleFavorite(prisma, userId, itemId, itemType) {
         const existing = await prisma.userFavorite.findUnique({
-            where: { userId_characterId: { userId, characterId } },
+            where: { userId_itemId_itemType: { userId, itemId, itemType } },
         });
         if (existing) {
             await prisma.userFavorite.delete({ where: { id: existing.id } });
-            return { added: false, characterId };
+            return { added: false, itemId, itemType };
         }
         else {
-            await prisma.userFavorite.create({ data: { userId, characterId } });
-            return { added: true, characterId };
+            await prisma.userFavorite.create({ data: { userId, itemId, itemType } });
+            return { added: true, itemId, itemType };
         }
     },
     async getFavorites(prisma, userId) {
@@ -173,9 +173,9 @@ exports.userService = {
         });
     },
     // ─── Wishlist ──────────────────────────────────────────────
-    async addToWishlist(prisma, userId, characterId, note) {
+    async addToWishlist(prisma, userId, itemId, itemType, note) {
         return prisma.userWishlist.create({
-            data: { userId, characterId, note },
+            data: { userId, itemId, itemType, note },
         });
     },
     async removeFromWishlist(prisma, userId, wishlistId) {

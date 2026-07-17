@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 
 export async function POST(req: Request) {
   try {
-    const { characterId } = await req.json();
+    const { itemId, itemType } = await req.json();
     const cookieStore = await cookies();
     const token = cookieStore.get('user_token')?.value;
 
@@ -13,13 +13,14 @@ export async function POST(req: Request) {
     }
 
     const data = await fetchGraphQL(`
-      mutation ToggleFavorite($characterId: String!) {
-        toggleFavorite(characterId: $characterId) {
+      mutation ToggleFavorite($itemId: String!, $itemType: String!) {
+        toggleFavorite(itemId: $itemId, itemType: $itemType) {
           added
-          characterId
+          itemId
+          itemType
         }
       }
-    `, { characterId }, 0, token);
+    `, { itemId, itemType }, 0, token);
 
     return NextResponse.json({ success: true, result: data.toggleFavorite });
   } catch (err: any) {

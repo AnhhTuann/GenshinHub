@@ -28,16 +28,28 @@ exports.userSchema = `
 
   type UserFavorite {
     id: String!
-    characterId: String!
+    userId: String!
+    itemId: String!
+    itemType: String!
     createdAt: String!
+    # Optional resolved fields depending on itemType
+    character: Character
+    weapon: Weapon
+    artifact: ArtifactSet
   }
 
   type UserWishlistItem {
     id: String!
-    characterId: String!
+    userId: String!
+    itemId: String!
+    itemType: String!
     note: String
     priority: Int!
     createdAt: String!
+    # Optional resolved fields depending on itemType
+    character: Character
+    weapon: Weapon
+    artifact: ArtifactSet
   }
 
   input RegisterInput {
@@ -81,7 +93,7 @@ exports.userSchema = `
     myFavorites: [UserFavorite!]!
     myWishlist: [UserWishlistItem!]!
     myTeams: [UserTeam!]!
-    isFavorite(characterId: String!): Boolean!
+    isFavorite(itemId: String!, itemType: String!): Boolean!
   }
 
   extend type Mutation {
@@ -90,8 +102,8 @@ exports.userSchema = `
     socialLogin(provider: String!, providerId: String!, email: String!, username: String, displayName: String, avatarUrl: String, gender: String): AuthPayload!
     updateProfile(input: UpdateProfileInput!): User!
     syncGachaUrl(url: String!): GachaStats!
-    toggleFavorite(characterId: String!): FavoriteResult!
-    addToWishlist(characterId: String!, note: String): UserWishlistItem!
+    toggleFavorite(itemId: String!, itemType: String!): FavoriteResult!
+    addToWishlist(itemId: String!, itemType: String!, note: String): UserWishlistItem!
     removeFromWishlist(wishlistId: String!): Boolean!
     createTeam(name: String!, characters: [String!]!): UserTeam!
     updateTeam(id: String!, name: String, characters: [String!]): UserTeam!

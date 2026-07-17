@@ -5,6 +5,40 @@ const user_service_1 = require("./user.service");
 /** Traveler char ID dựa theo gender */
 const getTravelerCharId = (gender) => gender === 'female' ? 'traveler-girl' : 'traveler-boy';
 exports.userResolvers = {
+    UserFavorite: {
+        character: (parent, _, { prisma }) => {
+            if (parent.itemType === 'CHARACTER')
+                return prisma.character.findUnique({ where: { id: parent.itemId } });
+            return null;
+        },
+        weapon: (parent, _, { prisma }) => {
+            if (parent.itemType === 'WEAPON')
+                return prisma.weapon.findUnique({ where: { id: parent.itemId } });
+            return null;
+        },
+        artifact: (parent, _, { prisma }) => {
+            if (parent.itemType === 'ARTIFACT')
+                return prisma.artifactSet.findUnique({ where: { id: parent.itemId } });
+            return null;
+        }
+    },
+    UserWishlistItem: {
+        character: (parent, _, { prisma }) => {
+            if (parent.itemType === 'CHARACTER')
+                return prisma.character.findUnique({ where: { id: parent.itemId } });
+            return null;
+        },
+        weapon: (parent, _, { prisma }) => {
+            if (parent.itemType === 'WEAPON')
+                return prisma.weapon.findUnique({ where: { id: parent.itemId } });
+            return null;
+        },
+        artifact: (parent, _, { prisma }) => {
+            if (parent.itemType === 'ARTIFACT')
+                return prisma.artifactSet.findUnique({ where: { id: parent.itemId } });
+            return null;
+        }
+    },
     Query: {
         me: async (_, __, { prisma, userId }) => {
             if (!userId)
@@ -39,11 +73,11 @@ exports.userResolvers = {
                 orderBy: { createdAt: 'asc' },
             });
         },
-        isFavorite: async (_, { characterId }, { prisma, userId }) => {
+        isFavorite: async (_, { itemId, itemType }, { prisma, userId }) => {
             if (!userId)
                 return false;
             const fav = await prisma.userFavorite.findUnique({
-                where: { userId_characterId: { userId, characterId } },
+                where: { userId_itemId_itemType: { userId, itemId, itemType } },
             });
             return !!fav;
         },
@@ -116,15 +150,15 @@ exports.userResolvers = {
                 favoritesCount: favCount,
             };
         },
-        toggleFavorite: async (_, { characterId }, { prisma, userId }) => {
+        toggleFavorite: async (_, { itemId, itemType }, { prisma, userId }) => {
             if (!userId)
-                throw new Error('Vui lòng đăng nhập để yêu thích nhân vật');
-            return user_service_1.userService.toggleFavorite(prisma, userId, characterId);
+                throw new Error('Vui lòng đăng nhập để yêu thích');
+            return user_service_1.userService.toggleFavorite(prisma, userId, itemId, itemType);
         },
-        addToWishlist: async (_, { characterId, note }, { prisma, userId }) => {
+        addToWishlist: async (_, { itemId, itemType, note }, { prisma, userId }) => {
             if (!userId)
                 throw new Error('Vui lòng đăng nhập');
-            return user_service_1.userService.addToWishlist(prisma, userId, characterId, note);
+            return user_service_1.userService.addToWishlist(prisma, userId, itemId, itemType, note);
         },
         removeFromWishlist: async (_, { wishlistId }, { prisma, userId }) => {
             if (!userId)

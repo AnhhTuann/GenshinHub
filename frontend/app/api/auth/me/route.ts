@@ -33,11 +33,13 @@ export async function GET() {
           }
         }
         myFavorites {
-          characterId
+          itemId
+          itemType
         }
         myWishlist {
           id
-          characterId
+          itemId
+          itemType
           note
           priority
         }
@@ -57,7 +59,7 @@ export async function GET() {
 
     const userWithExtras = {
       ...data.me,
-      favoriteIds: data.myFavorites.map((f: any) => f.characterId),
+      favoriteIds: data.myFavorites.map((f: any) => f.itemId),
       wishlist: data.myWishlist,
       teams: data.myTeams,
     };

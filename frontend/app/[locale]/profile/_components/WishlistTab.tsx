@@ -1,14 +1,52 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { User } from '@/context/UserContext';
-import { Star, Info } from 'lucide-react';
+import { Star, Info, Loader2 } from 'lucide-react';
+import { fetchGraphQLClient } from '@/lib/graphql/client';
+import FallbackImage from '@/components/ui/FallbackImage';
 
 export default function WishlistTab({ user }: { user: User }) {
   const [currentPulls, setCurrentPulls] = useState<number>(0);
   const targetPulls = 180; // Hard pity guarantee
 
   const progress = Math.min((currentPulls / targetPulls) * 100, 100);
+
+  const [activeSubTab, setActiveSubTab] = useState<'CHARACTER' | 'WEAPON' | 'ARTIFACT'>('CHARACTER');
+  const [itemDict, setItemDict] = useState<Record<string, any>>({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      if (!user.wishlist || user.wishlist.length === 0) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const data = await fetchGraphQLClient(`
+          query AllItems {
+            characters { id nameEn nameVi rarity avatarUrl }
+            weapons { id nameEn nameVi rarity type iconUrl }
+            artifacts { id nameEn nameVi rarity maxRarity iconUrl }
+          }
+        `);
+        
+        const dict: Record<string, any> = {};
+        if (data.characters) data.characters.forEach((c: any) => dict[c.id] = c);
+        if (data.weapons) data.weapons.forEach((w: any) => dict[w.id] = w);
+        if (data.artifacts) data.artifacts.forEach((a: any) => dict[a.id] = a);
+        
+        setItemDict(dict);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchItems();
+  }, [user.wishlist]);
+
+  const filteredWishlist = (user.wishlist || []).filter(w => w.itemType === activeSubTab);
 
   return (
     <div className="space-y-8">
@@ -69,26 +107,65 @@ export default function WishlistTab({ user }: { user: User }) {
 
       {/* Wishlist Items */}
       <div>
-        <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Characters in Wishlist</h3>
-        {(!user.wishlist || user.wishlist.length === 0) ? (
+        <div className="flex items-center gap-2 border-b border-white/5 pb-2 mb-4 overflow-x-auto no-scrollbar">
+          {[
+            { id: 'CHARACTER', label: 'Characters' },
+            { id: 'WEAPON', label: 'Weapons' },
+            { id: 'ARTIFACT', label: 'Artifacts' },
+          ].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveSubTab(tab.id as any)}
+              className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all ${
+                activeSubTab === tab.id
+                  ? 'bg-[#c8a84b]/10 text-[#f0d080] border border-[#c8a84b]/30'
+                  : 'text-white/40 hover:bg-white/5 hover:text-white/80 border border-transparent'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {loading ? (
+          <div className="flex justify-center p-10"><Loader2 className="animate-spin text-[#c8a84b]" /></div>
+        ) : filteredWishlist.length === 0 ? (
           <div className="text-center p-10 bg-white/5 rounded-2xl border border-dashed border-white/20">
-            <p className="text-white/40">Your wishlist is empty. Add characters from their details page.</p>
+            <p className="text-white/40">Your wishlist is empty for this category.</p>
           </div>
         ) : (
           <div className="grid gap-4">
-             {/* List items will go here. In a real implementation, you'd join this with CharacterData similar to FavoritesTab */}
-             {user.wishlist.map(item => (
-               <div key={item.id} className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
-                 <div className="w-12 h-12 rounded-full bg-black/50 border border-[#c8a84b]/50 overflow-hidden shrink-0">
-                    {/* Placeholder image since we don't fetch char data directly in this snippet yet */}
-                    <img src={`/assets/characters/${item.characterId}/avatar.webp`} className="w-full h-full object-cover" alt="" onError={(e) => e.currentTarget.src = '/assets/elements/anemo.webp'} />
+             {filteredWishlist.map(item => {
+               const details = itemDict[item.itemId];
+               const name = details ? (details.nameEn || details.nameVi) : item.itemId.replace(/-/g, ' ');
+               const imgUrl = details ? (details.avatarUrl || details.iconUrl) : '';
+               const rarity = details ? (details.maxRarity || details.rarity || 5) : 5;
+               const stars = '★'.repeat(rarity);
+
+               return (
+                 <div key={item.id} className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                   <div className="w-14 h-14 rounded-full bg-black/50 border-2 border-[#c8a84b]/50 overflow-hidden shrink-0 flex items-center justify-center p-1">
+                      {imgUrl ? (
+                        <FallbackImage src={imgUrl} width={56} height={56} className="w-full h-full object-contain" alt={name} />
+                      ) : (
+                        <span className="text-xl">✨</span>
+                      )}
+                   </div>
+                   <div className="flex-1">
+                     <h4 className="font-black text-white capitalize text-sm sm:text-base flex items-center gap-2">
+                       {name}
+                       <span className="text-[#f0d080] text-[10px] tracking-widest">{stars}</span>
+                     </h4>
+                     <p className="text-xs text-white/50 italic mt-1 bg-black/40 inline-block px-2 py-1 rounded-md border border-white/5">
+                       Note: {item.note || 'None'}
+                     </p>
+                   </div>
+                   <div className="shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-black/40 border border-white/10 text-white/50 font-black text-xs">
+                     P{item.priority}
+                   </div>
                  </div>
-                 <div className="flex-1">
-                   <h4 className="font-bold text-white capitalize">{item.characterId.replace(/-/g, ' ')}</h4>
-                   <p className="text-xs text-white/40 italic">Note: {item.note || 'No note'}</p>
-                 </div>
-               </div>
-             ))}
+               );
+             })}
           </div>
         )}
       </div>

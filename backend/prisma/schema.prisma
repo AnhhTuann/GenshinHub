@@ -200,27 +200,30 @@ model User {
 }
 
 model UserFavorite {
-  id          String   @id @default(uuid())
-  userId      String
-  characterId String
-  createdAt   DateTime @default(now())
+  id        String   @id @default(uuid())
+  userId    String
+  itemId    String
+  itemType  String   // "CHARACTER" | "WEAPON" | "ARTIFACT"
+  createdAt DateTime @default(now())
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([userId, characterId])
+  @@unique([userId, itemId, itemType])
   @@index([userId])
 }
 
 model UserWishlist {
-  id          String   @id @default(uuid())
-  userId      String
-  characterId String
-  note        String?
-  priority    Int      @default(0)
-  createdAt   DateTime @default(now())
+  id        String   @id @default(uuid())
+  userId    String
+  itemId    String
+  itemType  String   // "CHARACTER" | "WEAPON" | "ARTIFACT"
+  note      String?
+  priority  Int      @default(0)
+  createdAt DateTime @default(now())
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  @@unique([userId, itemId, itemType])
   @@index([userId])
 }
 

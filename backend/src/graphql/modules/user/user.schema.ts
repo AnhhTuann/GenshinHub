@@ -20,7 +20,8 @@ export const userSchema = `
 
   type FavoriteResult {
     added: Boolean!
-    characterId: String!
+    itemId: String!
+    itemType: String!
   }
 
   type UserFavorite {

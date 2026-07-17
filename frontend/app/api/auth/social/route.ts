@@ -89,10 +89,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Social Login failed' }, { status: 400 });
     }
 
-    const { token, user } = data.socialLogin;
+    const { token: jwtToken, user } = data.socialLogin;
 
     const cookieStore = await cookies();
-    cookieStore.set('user_token', token, {
+    cookieStore.set('user_token', jwtToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

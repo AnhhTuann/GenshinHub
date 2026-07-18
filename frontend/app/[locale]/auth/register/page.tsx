@@ -113,8 +113,8 @@ export default function RegisterPage() {
 
   return (
     <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || 'dummy-client-id'}>
-    <main className="relative min-h-[calc(100vh-64px)] flex items-center justify-center p-4 pt-12 pb-24">
-      {/* Ambient backgrounds */}
+    <main className="relative flex-1 flex items-center justify-center p-4">
+      {/* Ambient background */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full"
              style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.07) 0%, transparent 70%)', filter: 'blur(100px)' }} />

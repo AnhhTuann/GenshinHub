@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter, Link } from '@/i18n/routing';
+import { useParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { useUser } from '@/context/UserContext';
 import { Loader2, Mail, Lock, Eye, EyeOff } from 'lucide-react';
@@ -9,6 +10,8 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 export default function LoginPage() {
   const router = useRouter();
+  const params = useParams();
+  const locale = (params?.locale as string) ?? 'vi';
   const { setUser } = useUser();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -38,10 +41,10 @@ export default function LoginPage() {
 
       setUser(data.user);
       toast.success('Logged in successfully!');
-      router.push('/profile');
+      // Force a full reload to the profile page to completely clear the auth state from cache
+      window.location.href = `/${locale}/profile`;
     } catch (err: any) {
       toast.error(err.message);
-    } finally {
       setLoading(false);
     }
   };
@@ -60,10 +63,9 @@ export default function LoginPage() {
 
       setUser(result.user);
       toast.success('Logged in successfully!');
-      router.push('/profile');
+      window.location.href = `/${locale}/profile`;
     } catch (err: any) {
       toast.error(err.message);
-    } finally {
       setLoading(false);
     }
   };

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useRouter, Link } from '@/i18n/routing';
+import { useParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { useUser } from '@/context/UserContext';
 import { Loader2, Mail, Lock, User, UserPlus, Eye, EyeOff, CheckCircle2, XCircle } from 'lucide-react';
@@ -27,6 +28,8 @@ function getPasswordStrength(password: string): { score: number; label: string; 
 
 export default function RegisterPage() {
   const router = useRouter();
+  const params = useParams();
+  const locale = (params?.locale as string) ?? 'vi';
   const { setUser } = useUser();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -73,11 +76,10 @@ export default function RegisterPage() {
       }
 
       setUser(data.user);
-      toast.success('Account created successfully!');
-      router.push('/profile');
+      toast.success('Registration successful!');
+      window.location.href = `/${locale}/profile`;
     } catch (err: any) {
       toast.error(err.message);
-    } finally {
       setLoading(false);
     }
   };

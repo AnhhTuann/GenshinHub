@@ -40,24 +40,32 @@ export async function middleware(request: NextRequest) {
 
   // 2. User Profile Authentication Check
   const isProfileRoute = new RegExp(`^/${localesPattern}/profile(/.*)?$`).test(pathname);
+  const isAuthRoute = new RegExp(`^/${localesPattern}/auth(/.*)?$`).test(pathname);
 
-  if (isProfileRoute) {
+  if (isProfileRoute || isAuthRoute) {
     const token = request.cookies.get('user_token')?.value;
+    const USER_SECRET = new TextEncoder().encode(
+      process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod'
+    );
     
-    if (!token) {
-      return NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));
+    let isValidToken = false;
+    if (token) {
+      try {
+        await jwtVerify(token, USER_SECRET);
+        isValidToken = true;
+      } catch {
+        // Token invalid or expired
+      }
     }
-    
-    try {
-      const USER_SECRET = new TextEncoder().encode(
-        process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod'
-      );
-      await jwtVerify(token, USER_SECRET);
-      // Auth passed
-    } catch {
+
+    if (isProfileRoute && !isValidToken) {
       const response = NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));
       response.cookies.delete('user_token');
       return response;
+    }
+
+    if (isAuthRoute && isValidToken) {
+      return NextResponse.redirect(new URL(`/${locale}/profile`, request.url));
     }
   }
 

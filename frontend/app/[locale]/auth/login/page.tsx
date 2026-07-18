@@ -41,8 +41,8 @@ export default function LoginPage() {
 
       setUser(data.user);
       toast.success('Logged in successfully!');
-      // Force a full reload to the profile page to completely clear the auth state from cache
-      window.location.href = `/${locale}/profile`;
+      router.push('/profile');
+      router.refresh(); // Ensure layout updates
     } catch (err: any) {
       toast.error(err.message);
       setLoading(false);
@@ -63,7 +63,8 @@ export default function LoginPage() {
 
       setUser(result.user);
       toast.success('Logged in successfully!');
-      window.location.href = `/${locale}/profile`;
+      router.push('/profile');
+      router.refresh();
     } catch (err: any) {
       toast.error(err.message);
       setLoading(false);

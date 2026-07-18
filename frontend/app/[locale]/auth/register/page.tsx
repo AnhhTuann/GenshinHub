@@ -77,7 +77,8 @@ export default function RegisterPage() {
 
       setUser(data.user);
       toast.success('Registration successful!');
-      window.location.href = `/${locale}/profile`;
+      router.push('/profile');
+      router.refresh();
     } catch (err: any) {
       toast.error(err.message);
       setLoading(false);

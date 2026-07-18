@@ -1,3 +1,4 @@
+import { useAdmin } from '@/hooks/useAdmin';
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -24,12 +25,10 @@ import CharacterStatsFormModal from '../admin/CharacterStatsFormModal';
 
 export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef, characterId }: CharacterStatsSectionProps & { characterId: string }) {
   const router = useRouter();
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
 
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
+  
 
   // Extract unique levels for the tabs
   const levels = stats ? Array.from(new Set(stats.map(s => s.level))) : ['Lv.1', 'Lv.20', 'Lv.40', 'Lv.50', 'Lv.60', 'Lv.70', 'Lv.80', 'Lv.90'];

@@ -3,7 +3,14 @@ import { fetchGraphQL } from '@/lib/graphql';
 import { cookies } from 'next/headers';
 import { OAuth2Client } from 'google-auth-library';
 
-const googleClient = new OAuth2Client(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
+// Lazy-init to avoid module crash when env var is missing
+let _googleClient: import('google-auth-library').OAuth2Client | null = null;
+function getGoogleClient() {
+  if (!_googleClient) {
+    _googleClient = new OAuth2Client(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
+  }
+  return _googleClient;
+}
 
 export async function POST(request: Request) {
   try {
@@ -21,7 +28,7 @@ export async function POST(request: Request) {
     let avatarUrl = '';
 
     if (provider === 'google') {
-      const ticket = await googleClient.verifyIdToken({
+      const ticket = await getGoogleClient().verifyIdToken({
         idToken: token,
         audience: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
       });

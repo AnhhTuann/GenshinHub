@@ -1,3 +1,4 @@
+import { useAdmin } from '@/hooks/useAdmin';
 'use client';
 
 import React, { useState } from 'react';
@@ -26,12 +27,10 @@ import AscensionMatsFormModal from '../admin/AscensionMatsFormModal';
 
 export default function CharacterAscensionMatsSection({ ascensionMats, allMaterials, characterId }: CharacterAscensionMatsSectionProps) {
   const router = useRouter();
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
 
-  React.useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
+  
 
   // Mock data if none provided
   const displayMats: AscensionLevelCost[] = ascensionMats && ascensionMats.length > 0 

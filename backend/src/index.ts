@@ -15,8 +15,21 @@ import { typeDefs, resolvers } from './graphql';
 import { createLoaders } from './graphql/dataloaders';
 import { getBackupFilePath, listBackups as listBackupFiles } from './backupService';
 import { prisma } from './prisma';
+import { mailerService } from './services/mailer.service';
 
 async function startServer() {
+  // ─── Startup Security Checks ───────────────────────────
+  const requiredEnvVars = ['USER_JWT_SECRET', 'ADMIN_JWT_SECRET', 'ADMIN_PASSWORD', 'DATABASE_URL'];
+  const missingVars = requiredEnvVars.filter(v => !process.env[v]);
+  if (missingVars.length > 0 && process.env.NODE_ENV === 'production') {
+    console.error(`\n⛔ FATAL: Missing required environment variables in production: ${missingVars.join(', ')}`);
+    console.error('Server cannot start without these secrets. Set them in your .env file.');
+    process.exit(1);
+  } else if (missingVars.length > 0) {
+    console.warn(`\n⚠️  WARNING: Missing env vars (using insecure defaults for dev): ${missingVars.join(', ')}`);
+    console.warn('DO NOT deploy to production without setting these!');
+  }
+
   const app = express();
   
   app.use(helmet({
@@ -115,9 +128,23 @@ async function startServer() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    formatError: (err) => {
-      console.error('[GraphQL Error]', err.message);
-      return err;
+    introspection: process.env.NODE_ENV !== 'production', // ← Disable in production
+    formatError: (formattedError, error) => {
+      // Log full error server-side
+      console.error('[GraphQL Error]', formattedError.message, error);
+      // In production, hide internal error details
+      if (process.env.NODE_ENV === 'production') {
+        // Allow user-facing errors to pass through
+        const message = formattedError.message;
+        const isUserFacingError = [
+          'Email', 'Password', 'Username', 'OTP', 'token', 'đăng nhập',
+          'không đúng', 'đã được', 'hết hạn', 'Unauthorized', 'Not found'
+        ].some(kw => message.toLowerCase().includes(kw.toLowerCase()));
+        if (isUserFacingError) return formattedError;
+        // Hide internal errors
+        return { ...formattedError, message: 'Internal server error', extensions: undefined };
+      }
+      return formattedError;
     },
   });
   await server.start();
@@ -164,8 +191,10 @@ async function startServer() {
   }
 
   const PORT = Number(process.env.PORT || 4000);
-  const httpServer = app.listen(PORT, () => {
+  const httpServer = app.listen(PORT, async () => {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
+    // Verify SMTP on startup
+    await mailerService.verifyConnection();
   });
 
   // Increase keep-alive timeout to avoid 502 errors on Render.com

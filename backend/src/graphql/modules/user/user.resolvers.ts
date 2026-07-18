@@ -155,6 +155,15 @@ export const userResolvers = {
       };
     },
 
+    // Forgot / Reset Password — no auth required
+    forgotPassword: async (_: unknown, { email }: { email: string }, { prisma }: Context) => {
+      return userService.forgotPassword(prisma, email);
+    },
+
+    resetPassword: async (_: unknown, { email, otp, newPassword }: { email: string; otp: string; newPassword: string }, { prisma }: Context) => {
+      return userService.resetPassword(prisma, email, otp, newPassword);
+    },
+
     toggleFavorite: async (_: unknown, { itemId, itemType }: { itemId: string, itemType: string }, { prisma, userId }: Context) => {
       if (!userId) throw new Error('Vui lòng đăng nhập để yêu thích');
       return userService.toggleFavorite(prisma, userId, itemId, itemType);

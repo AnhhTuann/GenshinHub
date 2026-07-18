@@ -1,3 +1,4 @@
+import { useAdmin } from '@/hooks/useAdmin';
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -91,7 +92,7 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
 export default function EditableStatsSection({ characterId, sands, goblet, circlet, subStatsPriority, talentPriority }: Props) {
   const locale = useLocale();
   const t = useTranslations('Character');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditingStats, setIsEditingStats] = useState(false);
   const [isEditingTalents, setIsEditingTalents] = useState(false);
 
@@ -113,9 +114,7 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
     setLocalTalents(talentPriority || []);
   }, [talentPriority]);
 
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
+  
 
   return (
     <div className="flex flex-col gap-5">

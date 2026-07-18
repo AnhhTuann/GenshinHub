@@ -19,6 +19,7 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
   const [formData, setFormData] = useState({
     username: user?.username || '',
     displayName: user?.displayName || '',
+    bio: (user as any)?.bio || '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -98,6 +99,22 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
                 className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors"
                 placeholder="What should we call you?"
               />
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <label className="text-xs font-bold text-white/50 uppercase tracking-widest">Bio</label>
+            <div className="relative">
+              <AlignLeft className="absolute left-3 top-3 w-4 h-4 text-white/30" />
+              <textarea
+                value={formData.bio}
+                onChange={e => setFormData({ ...formData, bio: e.target.value })}
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors resize-none"
+                placeholder="Tell the world about your Genshin journey..."
+                rows={3}
+                maxLength={200}
+              />
+              <p className="text-[10px] text-white/30 mt-1 text-right">{formData.bio.length}/200</p>
             </div>
           </div>
 

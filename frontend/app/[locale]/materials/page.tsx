@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import { useAdmin } from '@/hooks/useAdmin';
 import FallbackImage from '@/components/ui/FallbackImage';
 import { fetchGraphQL, GET_MATERIALS } from '@/lib/graphql';
 import Image from 'next/image';
@@ -25,7 +26,8 @@ export default function MaterialsPage() {
   const locale = useLocale();
   const [materials, setMaterials] = useState<MaterialData[]>([]);
   const [search, setSearch] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [search, setSearch] = useState('');
+  const { isAdmin } = useAdmin();
   
   const [isEditing, setIsEditing] = useState(false);
   const [selectedMaterial, setSelectedMaterial] = useState<MaterialData | undefined>(undefined);
@@ -40,7 +42,6 @@ export default function MaterialsPage() {
   };
 
   useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
     fetchMaterials();
   }, []);
 

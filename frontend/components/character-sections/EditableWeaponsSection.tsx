@@ -1,3 +1,4 @@
+import { useAdmin } from '@/hooks/useAdmin';
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -5,6 +6,7 @@ import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import InlineWeaponEditor from '@/components/admin/InlineWeaponEditor';
+import { fetchGraphQLAdmin } from '@/lib/graphql/client';
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
@@ -59,7 +61,7 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
 export default function EditableWeaponsSection({ characterId, weaponType, bestWeapons, tWeapons }: Props) {
   const locale = useLocale();
   const t = useTranslations('Character');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
   const [editingWeapon, setEditingWeapon] = useState<any>(null);
   const [localWeapons, setLocalWeapons] = useState(bestWeapons);
@@ -76,9 +78,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
     setLocalWeapons(bestWeapons);
   }, [bestWeapons]);
 
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
+  
 
   const handleDragStart = (idx: number) => {
     setDraggedItemIdx(idx);
@@ -92,7 +92,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
     setLocalWeapons(newWeapons);
     try {
       const weaponIds = newWeapons.map(w => w.id);
-      await fetchGraphQL(`mutation ReorderWeapons($weaponIds: [String!]!) { reorderCharacterWeapons(weaponIds: $weaponIds) }`, { weaponIds });
+      await fetchGraphQLAdmin(`mutation ReorderWeapons($weaponIds: [String!]!) { reorderCharacterWeapons(weaponIds: $weaponIds) }`, { weaponIds });
       toast.success("Weapon order updated");
     } catch (e: any) {
       toast.error("Failed to reorder: " + e.message);
@@ -131,7 +131,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
     const prev = localWeapons;
     setLocalWeapons(localWeapons.filter(w => w.id !== id));
     try {
-      await fetchGraphQL(`mutation { removeCharacterWeapon(id: "${id}") }`);
+      await fetchGraphQLAdmin(`mutation { removeCharacterWeapon(id: "${id}") }`);
       toast.success('Weapon removed');
     } catch (err: any) {
       setLocalWeapons(prev); // rollback

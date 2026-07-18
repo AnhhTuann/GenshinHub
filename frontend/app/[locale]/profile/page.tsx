@@ -1,7 +1,7 @@
 "use client";
 
 import { useUser } from '@/context/UserContext';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import FallbackImage from '@/components/ui/FallbackImage';
 import { getCharacterAvatar } from '@/utils/assetMap';
@@ -95,10 +95,17 @@ export default function ProfilePage() {
               <p className="text-white/50 text-sm font-medium">{user.email}</p>
             </div>
             
-            <div className="w-full sm:w-auto mt-4 sm:mt-16 flex justify-start sm:justify-end">
+            <div className="w-full sm:w-auto mt-4 sm:mt-16 flex justify-start sm:justify-end gap-3">
+               <button
+                 onClick={() => router.push('/profile/settings')}
+                 className="px-6 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-bold uppercase tracking-wider text-xs transition-colors text-white/60 hover:text-white"
+               >
+                 Settings
+               </button>
                <button 
                  onClick={() => setShowEditModal(true)}
-                 className="px-6 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-bold uppercase tracking-wider text-xs transition-colors"
+                 className="px-6 py-2 rounded-xl font-bold uppercase tracking-wider text-xs transition-colors text-black"
+                 style={{ background: 'linear-gradient(135deg, #c8a84b 0%, #8a6820 100%)' }}
                >
                  Edit Profile
                </button>
@@ -134,23 +141,32 @@ export default function ProfilePage() {
         {/* Tab Content */}
         <div className="bg-[#0a0a0f]/80 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-6 min-h-[400px]">
           {activeTab === 'profile' && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-                <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Gender</p>
-                <p className="text-lg font-black text-white capitalize">{user.gender}</p>
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Gender</p>
+                  <p className="text-lg font-black text-white capitalize">{user.gender}</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Traveler</p>
+                  <p className="text-lg font-black text-white">{user.gender === 'female' ? 'PlayerGirl' : 'PlayerBoy'}</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Favorites</p>
+                  <p className="text-lg font-black text-[#c8a84b]">{user.favoriteIds?.length || 0}</p>
+                </div>
+                <div className="bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Teams</p>
+                  <p className="text-lg font-black text-[#c8a84b]">{user.teams?.length || 0}</p>
+                </div>
               </div>
-              <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-                <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Traveler</p>
-                <p className="text-lg font-black text-white">{user.gender === 'female' ? 'PlayerGirl' : 'PlayerBoy'}</p>
-              </div>
-              <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-                <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Favorites</p>
-                <p className="text-lg font-black text-[#c8a84b]">{user.favoriteIds?.length || 0}</p>
-              </div>
-              <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-                <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Teams</p>
-                <p className="text-lg font-black text-[#c8a84b]">{user.teams?.length || 0}</p>
-              </div>
+              {/* Bio section */}
+              {(user as any).bio && (
+                <div className="bg-white/5 p-5 rounded-2xl border border-white/5">
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-2">About</p>
+                  <p className="text-white/80 text-sm leading-relaxed">{(user as any).bio}</p>
+                </div>
+              )}
             </div>
           )}
 

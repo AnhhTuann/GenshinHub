@@ -1,3 +1,4 @@
+import { useAdmin } from '@/hooks/useAdmin';
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -5,6 +6,7 @@ import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import InlineArtifactEditor from '@/components/admin/InlineArtifactEditor';
+import { fetchGraphQLAdmin } from '@/lib/graphql/client';
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
@@ -26,7 +28,7 @@ function SectionHeader({ label, accent }: { label: string; accent: string }) {
 
 export default function EditableArtifactsSection({ characterId, bestArtifacts, tArtifacts }: Props) {
   const locale = useLocale();
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
   const [localArtifacts, setLocalArtifacts] = useState(bestArtifacts);
   const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
@@ -42,9 +44,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
     setLocalArtifacts(bestArtifacts);
   }, [bestArtifacts]);
 
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
+  
 
   const handleDragStart = (idx: number) => {
     setDraggedItemIdx(idx);
@@ -58,7 +58,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
     setLocalArtifacts(newArtifacts);
     try {
       const artifactIds = newArtifacts.map(a => a.id);
-      await fetchGraphQL(`mutation ReorderArtifacts($artifactIds: [String!]!) { reorderCharacterArtifacts(artifactIds: $artifactIds) }`, { artifactIds });
+      await fetchGraphQLAdmin(`mutation ReorderArtifacts($artifactIds: [String!]!) { reorderCharacterArtifacts(artifactIds: $artifactIds) }`, { artifactIds });
       toast.success("Artifact order updated");
     } catch (e: any) {
       toast.error("Failed to reorder: " + e.message);
@@ -98,7 +98,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
     const prev = localArtifacts;
     setLocalArtifacts(localArtifacts.filter(a => a.id !== id));
     try {
-      await fetchGraphQL(`mutation { removeCharacterArtifact(id: "${id}") }`);
+      await fetchGraphQLAdmin(`mutation { removeCharacterArtifact(id: "${id}") }`);
       toast.success('Artifact removed');
     } catch (err: any) {
       setLocalArtifacts(prev); // rollback

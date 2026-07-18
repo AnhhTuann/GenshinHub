@@ -120,5 +120,8 @@ export const userSchema = `
     changePassword(oldPassword: String!, newPassword: String!): Boolean!
     requestEmailChangeOtp(newEmail: String!): Boolean!
     verifyEmailChangeOtp(newEmail: String!, otp: String!): User!
+    # Forgot / Reset Password (no auth required)
+    forgotPassword(email: String!): Boolean!
+    resetPassword(email: String!, otp: String!, newPassword: String!): Boolean!
   }
 `;

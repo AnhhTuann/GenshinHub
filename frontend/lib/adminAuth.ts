@@ -30,13 +30,29 @@ export async function loginAdmin(password: string): Promise<{ error?: string }> 
   return {};
 }
 
-export async function logoutAdmin(locale: string = 'vi') {
+export async function logoutAdmin(locale: string = 'vi', shouldRedirect: boolean = true) {
   const cookieStore = await cookies();
   cookieStore.delete('admin_token');
-  redirect(`/${locale}/admin/login`);
+  if (shouldRedirect) {
+    redirect(`/${locale}/admin/login`);
+  }
 }
 
 export async function getAdminToken(): Promise<string | null> {
   const cookieStore = await cookies();
   return cookieStore.get('admin_token')?.value ?? null;
+}
+
+export async function checkAdminStatus(): Promise<boolean> {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('admin_token')?.value;
+  if (!token) return false;
+  
+  try {
+    const { jwtVerify } = await import('jose');
+    await jwtVerify(token, ADMIN_SECRET);
+    return true;
+  } catch {
+    return false;
+  }
 }

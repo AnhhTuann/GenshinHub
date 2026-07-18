@@ -1,19 +1,16 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { fetchGraphQL } from '@/lib/graphql';
+import { fetchGraphQLAdmin } from '@/lib/graphql/client';
+import { useAdmin } from '@/hooks/useAdmin';
 import toast from 'react-hot-toast';
 
 export default function AdminEditableBuild({ character }: { character: any }) {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
   const [jsonStr, setJsonStr] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
 
   const openEditor = () => {
     const buildData = {
@@ -44,7 +41,7 @@ export default function AdminEditableBuild({ character }: { character: any }) {
       const parsed = JSON.parse(jsonStr);
       
       // Need to fetch full character to upsert it since the input expects all fields
-      const data = await fetchGraphQL(`query { character(id: "${character.id}") { id nameEn nameVi titleEn titleVi rarity element weapon region avatarUrl splashArtUrl descriptionEn descriptionVi baseHp baseAtk baseDef talentPriority } }`);
+      const data = await fetchGraphQLAdmin(`query { character(id: "${character.id}") { id nameEn nameVi titleEn titleVi rarity element weapon region avatarUrl splashArtUrl descriptionEn descriptionVi baseHp baseAtk baseDef talentPriority } }`);
       
       const stripTypename = (obj: any): any => {
         if (Array.isArray(obj)) return obj.map(stripTypename);
@@ -62,7 +59,7 @@ export default function AdminEditableBuild({ character }: { character: any }) {
       fullInput.bestWeapons = parsed.bestWeapons;
       fullInput.bestArtifacts = parsed.bestArtifacts;
 
-      await fetchGraphQL(`
+      await fetchGraphQLAdmin(`
         mutation Upsert($input: CharacterInput!) {
           upsertCharacter(input: $input) { id }
         }

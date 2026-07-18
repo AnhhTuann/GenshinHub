@@ -60,9 +60,9 @@ export async function GET() {
 
     const userWithExtras = {
       ...data.me,
-      favoriteIds: data.myFavorites.map((f: any) => f.itemId),
-      wishlist: data.myWishlist,
-      teams: data.myTeams,
+      favoriteIds: (data.myFavorites ?? []).map((f: any) => f.itemId),
+      wishlist: data.myWishlist ?? [],
+      teams: data.myTeams ?? [],
     };
 
     return NextResponse.json({ user: userWithExtras });

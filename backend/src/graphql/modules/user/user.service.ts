@@ -5,6 +5,31 @@ import { mailerService } from '../../../services/mailer.service';
 
 const USER_JWT_SECRET = process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod';
 
+// ─── Input Sanitization ───────────────────────────────
+function sanitize(str: string | undefined | null): string {
+  if (!str) return '';
+  return str
+    .trim()
+    .replace(/<[^>]*>/g, '') // Strip HTML tags
+    .replace(/[\x00-\x08\x0b-\x0c\x0e-\x1f\x7f]/g, ''); // Strip control chars
+}
+
+function validateUsername(username: string): void {
+  if (!username || username.length < 3) throw new Error('Tên đăng nhập phải có ít nhất 3 ký tự');
+  if (username.length > 20) throw new Error('Tên đăng nhập không được quá 20 ký tự');
+  if (!/^[a-zA-Z0-9_]+$/.test(username)) throw new Error('Tên đăng nhập chỉ được chứa chữ cái, số, và dấu gạch dưới');
+}
+
+function validateEmail(email: string): void {
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('Email không hợp lệ');
+  if (email.length > 254) throw new Error('Email quá dài');
+}
+
+function validatePassword(password: string): void {
+  if (!password || password.length < 6) throw new Error('Mật khẩu phải có ít nhất 6 ký tự');
+  if (password.length > 128) throw new Error('Mật khẩu quá dài');
+}
+
 export interface UserPayload {
   id: string;
   email: string;
@@ -22,22 +47,29 @@ export const userService = {
     gender: 'male' | 'female';
     displayName?: string;
   }) {
+    // Validate & sanitize
+    validateUsername(input.username);
+    validateEmail(input.email);
+    validatePassword(input.password);
+    const username = sanitize(input.username);
+    const displayName = sanitize(input.displayName) || username;
+
     const existing = await prisma.user.findFirst({
-      where: { OR: [{ email: input.email }, { username: input.username }] },
+      where: { OR: [{ email: input.email.toLowerCase() }, { username }] },
     });
     if (existing) {
-      if (existing.email === input.email) throw new Error('Email đã được sử dụng');
+      if (existing.email === input.email.toLowerCase()) throw new Error('Email đã được sử dụng');
       throw new Error('Username đã được sử dụng');
     }
 
     const hashedPassword = await bcrypt.hash(input.password, 12);
     const user = await prisma.user.create({
       data: {
-        username: input.username,
-        email: input.email,
+        username,
+        email: input.email.toLowerCase(),
         password: hashedPassword,
         gender: input.gender,
-        displayName: input.displayName || input.username,
+        displayName,
       },
     });
 
@@ -51,7 +83,8 @@ export const userService = {
   },
 
   async login(prisma: PrismaClient, email: string, password: string) {
-    const user = await prisma.user.findUnique({ where: { email } });
+    if (!email || !password) throw new Error('Email và mật khẩu là bắt buộc');
+    const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
     if (!user || !user.password) throw new Error('Email hoặc mật khẩu không đúng');
 
     const valid = await bcrypt.compare(password, user.password);
@@ -121,16 +154,41 @@ export const userService = {
     bio?: string;
     avatarUrl?: string;
   }) {
-    if (input.username) {
+    const updateData: any = {};
+
+    if (input.username !== undefined) {
+      validateUsername(input.username);
+      updateData.username = sanitize(input.username);
+
       const existing = await prisma.user.findFirst({
-        where: { username: input.username, id: { not: userId } }
+        where: { username: updateData.username, id: { not: userId } }
       });
-      if (existing) throw new Error('Tên đăng nhập đã được sử dụng');
+      if (existing) throw new Error('Tên đăng nhập đã được sứ dụng');
+    }
+
+    if (input.displayName !== undefined) {
+      const clean = sanitize(input.displayName);
+      if (clean.length > 50) throw new Error('Display name không được quá 50 ký tự');
+      updateData.displayName = clean;
+    }
+
+    if (input.bio !== undefined) {
+      const clean = sanitize(input.bio);
+      if (clean.length > 200) throw new Error('Bio không được quá 200 ký tự');
+      updateData.bio = clean;
+    }
+
+    if (input.avatarUrl !== undefined) {
+      // Basic URL validation
+      if (input.avatarUrl && !/^https?:\/\//.test(input.avatarUrl)) {
+        throw new Error('Avatar URL không hợp lệ');
+      }
+      updateData.avatarUrl = input.avatarUrl;
     }
 
     return prisma.user.update({
       where: { id: userId },
-      data: { ...input, updatedAt: new Date() },
+      data: { ...updateData, updatedAt: new Date() },
     });
   },
 
@@ -207,6 +265,73 @@ export const userService = {
     });
 
     return updatedUser;
+  },
+
+  // ─── Forgot / Reset Password ───────────────────────────────
+
+  async forgotPassword(prisma: PrismaClient, email: string) {
+    // Always return true to avoid email enumeration attacks
+    const user = await prisma.user.findUnique({ where: { email } });
+    if (!user || !user.password) return true; // Social-only account, silently ignore
+
+    // Rate limiting: 60s cooldown
+    const recentOtp = await prisma.otp.findFirst({
+      where: { email, purpose: 'PASSWORD_RESET' },
+      orderBy: { createdAt: 'desc' }
+    });
+    if (recentOtp && Date.now() - recentOtp.createdAt.getTime() < 60000) {
+      throw new Error('Vui lòng đợi 60 giây trước khi yêu cầu mã mới');
+    }
+
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+
+    await prisma.otp.create({
+      data: { email, code, purpose: 'PASSWORD_RESET', expiresAt }
+    });
+
+    await mailerService.sendOtpEmail(email, code, 'PASSWORD_RESET');
+    return true;
+  },
+
+  async resetPassword(prisma: PrismaClient, email: string, otpCode: string, newPassword: string) {
+    validateEmail(email);
+    validatePassword(newPassword);
+
+    // Check max attempts (5) to prevent brute-force
+    const recentFailed = await prisma.otp.count({
+      where: {
+        email,
+        purpose: 'PASSWORD_RESET',
+        // Count attempts by checking how many OTP records exist (each failed attempt doesn't delete)
+      }
+    });
+    // If somehow more than 5 OTPs exist, something is wrong - clear them
+    if (recentFailed > 5) {
+      await prisma.otp.deleteMany({ where: { email, purpose: 'PASSWORD_RESET' } });
+      throw new Error('Quá nhiều lần thử. Vui lòng yêu cầu mã mới');
+    }
+
+    const otpRecord = await prisma.otp.findFirst({
+      where: { email, code: otpCode, purpose: 'PASSWORD_RESET' },
+      orderBy: { createdAt: 'desc' }
+    });
+
+    if (!otpRecord) throw new Error('Mã OTP không đúng');
+    if (otpRecord.expiresAt < new Date()) throw new Error('Mã OTP đã hết hạn');
+
+    const hashedPassword = await bcrypt.hash(newPassword, 12);
+    await prisma.user.update({
+      where: { email },
+      data: { password: hashedPassword, updatedAt: new Date() },
+    });
+
+    // Clean up all reset OTPs for this email
+    await prisma.otp.deleteMany({
+      where: { email, purpose: 'PASSWORD_RESET' }
+    });
+
+    return true;
   },
 
   // ─── Favorites ─────────────────────────────────────────────

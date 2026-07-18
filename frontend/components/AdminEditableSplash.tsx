@@ -1,20 +1,17 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAdmin } from '@/hooks/useAdmin';
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 
 export default function AdminEditableSplash({ characterId, children }: { characterId: string, children: React.ReactNode }) {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
   const [urlInput, setUrlInput] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    setIsAdmin(!!localStorage.getItem('admin_key'));
-  }, []);
 
   const handleSave = async () => {
     try {
@@ -24,10 +21,8 @@ export default function AdminEditableSplash({ characterId, children }: { charact
       if (file) {
         const formData = new FormData();
         formData.append('image', file);
-        const uploadUrl = process.env.NEXT_PUBLIC_UPLOAD_URL || 'http://localhost:4000/upload';
-        const res = await fetch(uploadUrl, {
+        const res = await fetch('/api/admin/upload', {
           method: 'POST',
-          headers: { 'x-admin-key': localStorage.getItem('admin_key') || '' },
           body: formData
         });
         const data = await res.json();

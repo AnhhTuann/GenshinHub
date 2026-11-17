@@ -51,7 +51,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
       {/* Section header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="w-[3px] h-5 rounded-full shrink-0" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+          <span className="w-[3px] h-5 rounded-full shrink-0" style={{ background: 'linear-gradient(to bottom, #ffdf9e, #e8b64c)' }} />
           <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50">Daily Farming</span>
         </div>
 
@@ -66,16 +66,16 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
                 onClick={() => setSelectedDay(idx)}
                 className="px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all duration-200 relative motion-safe:active:scale-95"
                 style={{
-                  background: isActive ? 'rgba(200,168,75,0.15)' : 'transparent',
-                  color: isActive ? '#f0d080' : 'rgba(255,255,255,0.3)',
-                  border: isActive ? '1px solid rgba(200,168,75,0.3)' : '1px solid transparent',
+                  background: isActive ? 'rgba(232,182,76,0.15)' : 'transparent',
+                  color: isActive ? '#ffdf9e' : 'rgba(255,255,255,0.3)',
+                  border: isActive ? '1px solid rgba(232,182,76,0.3)' : '1px solid transparent',
                 }}
               >
                 {day.label}
                 {isToday && (
                   <span
                     className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full animate-pulse"
-                    style={{ background: '#c8a84b', boxShadow: '0 0 5px rgba(200,168,75,0.7)' }}
+                    style={{ background: '#e8b64c', boxShadow: '0 0 5px rgba(232,182,76,0.7)' }}
                   />
                 )}
               </button>
@@ -90,13 +90,13 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
         <div
           className="flex flex-col items-center justify-center py-10 text-center rounded-2xl relative overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, rgba(200,168,75,0.07), rgba(240,208,128,0.04))',
-            border: '1px solid rgba(200,168,75,0.18)',
+            background: 'linear-gradient(135deg, rgba(232,182,76,0.07), rgba(240,208,128,0.04))',
+            border: '1px solid rgba(232,182,76,0.18)',
           }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at 50% 30%, rgba(200,168,75,0.08) 0%, transparent 60%)' }}
+            style={{ background: 'radial-gradient(ellipse at 50% 30%, rgba(232,182,76,0.08)0%, transparent 60%)' }}
           />
           <span className="text-5xl mb-4 animate-bounce">✨</span>
           <p className="text-white font-black text-lg text-gradient-gold mb-1.5">Sunday All-Access</p>
@@ -114,14 +114,14 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
               key={idx}
               className="rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 group"
               style={{
-                background: 'linear-gradient(145deg, rgba(13,13,22,0.85), rgba(6,6,12,0.95))',
-                border: '1px solid rgba(255,255,255,0.06)',
+                background: 'linear-gradient(145deg, rgba(37,26,42,0.84), rgba(20,14,24,0.96))',
+                border: '1px solid rgba(179,173,255,0.1)',
               }}
             >
               {/* Domain header */}
               <div
                 className="flex items-center gap-3 px-4 py-3 border-b border-white/[0.04] group-hover:border-white/[0.07] transition-colors"
-                style={{ background: 'rgba(0,0,0,0.25)' }}
+                style={{ background: 'rgba(16,11,19,0.42)' }}
               >
                 <div className="relative w-7 h-7 shrink-0">
                   <FallbackImage src={domain.itemIcon} alt="domain item" fill className="object-contain drop-shadow-md" unoptimized />

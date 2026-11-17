@@ -12,13 +12,13 @@ import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
 
 const EL_TEXT: Record<string, string> = {
-  Pyro:    'text-[#ff6b4a]',
-  Hydro:   'text-[#4fc3f7]',
-  Cryo:    'text-[#80deea]',
-  Electro: 'text-[#ce93d8]',
-  Anemo:   'text-[#4db6ac]',
-  Geo:     'text-[#ffd54f]',
-  Dendro:  'text-[#aed581]',
+  Pyro:    'text-[#ff5a45]',
+  Hydro:   'text-[#3aa8ff]',
+  Cryo:    'text-[#8fe8f5]',
+  Electro: 'text-[#cf8fff]',
+  Anemo:   'text-[#35d6c5]',
+  Geo:     'text-[#ffd34d]',
+  Dendro:  'text-[#9ede5f]',
 };
 
 interface EditableMetaTeamsSectionProps {
@@ -153,7 +153,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
   if (!isAdmin && localTeams.length === 0) return null;
 
   return (
-    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+    <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2.5">
           <span className="w-[3px] h-5 rounded-full bg-blue-400" />
@@ -178,13 +178,13 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
             onDragEnter={() => isAdmin && handleDragEnter(tIdx)}
             onDragEnd={isAdmin ? handleDragEnd : undefined}
             onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
-            className={`bg-[#06060a]/50 border hover:border-blue-500/15 rounded-xl p-4 transition-all duration-200 relative group/team ${isAdmin ? 'cursor-move' : ''} ${
+            className={`bg-[#070a18]/50 border hover:border-blue-500/15 rounded-xl p-4 transition-all duration-200 relative group/team ${isAdmin ? 'cursor-move' : ''} ${
               dragOverItemIdx === tIdx ? 'border-blue-500/50 scale-[1.01] shadow-[0_0_15px_rgba(59,130,246,0.15)] z-10' : 'border-white/[0.04]'
             } ${draggedItemIdx === tIdx ? 'opacity-40' : 'opacity-100'}`}
           >
             
             {isAdmin && (
-              <div className="absolute top-3 right-3 opacity-0 group-hover/team:opacity-100 transition-opacity flex gap-1.5 z-10 bg-[#0d0d14] p-1.5 rounded-xl border border-white/5 shadow-xl">
+              <div className="absolute top-3 right-3 opacity-0 group-hover/team:opacity-100 transition-opacity flex gap-1.5 z-10 bg-[#0a0e22] p-1.5 rounded-xl border border-white/5 shadow-xl">
                 <button
                   onClick={(e) => handleMoveUp(e, tIdx)}
                   disabled={tIdx === 0}
@@ -239,7 +239,7 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
             <p className="text-white/30 text-xs mb-4 leading-relaxed italic">{team.description}</p>
 
             {/* Character avatars */}
-            <div className="grid grid-cols-4 gap-2 sm:gap-2.5 mb-4 bg-[#06060a]/50 p-2.5 rounded-xl border border-white/[0.03]">
+            <div className="grid grid-cols-4 gap-2 sm:gap-2.5 mb-4 bg-[#070a18]/50 p-2.5 rounded-xl border border-white/[0.03]">
               {team.members.map((m: any, mIdx: number) => {
                 const teammate = allCharacters.find(c => c.id === m.characterId);
                 const tmText   = EL_TEXT[teammate?.element ?? ''] ?? 'text-white/60';
@@ -248,13 +248,13 @@ export default function EditableMetaTeamsSection({ characterId, teams, allCharac
                     <div className={`relative w-full aspect-square rounded-xl overflow-hidden border border-white/[0.06] group-hover/tm:border-white/25 transition-all duration-250 p-0.5 ${
                       teammate?.id === 'aloy' ? 'bg-gradient-to-b from-[#cc4242] to-[#8c2a2a]' :
                       teammate?.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
-                      teammate?.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#5b4d75]' :
-                      'bg-[#0d0d14]'
+                      teammate?.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#4e3f78]' :
+                      'bg-[#0a0e22]'
                     }`}>
                       {teammate ? (
                         <>
                           <FallbackImage src={teammate.avatarUrl} alt={teammate.nameEn} fill className="object-cover object-top rounded-lg" />
-                          <div className="absolute top-1 left-1 w-[22px] h-[22px] bg-[#06060a]/50 backdrop-blur-md rounded-full border border-white/10 shadow-sm flex items-center justify-center p-0.5 z-10">
+                          <div className="absolute top-1 left-1 w-[22px] h-[22px] bg-[#070a18]/50 backdrop-blur-md rounded-full border border-white/10 shadow-sm flex items-center justify-center p-0.5 z-10">
                             <FallbackImage src={`/assets/elements/${teammate.element.toLowerCase()}.webp`} alt={teammate.element} fill className="object-contain p-[2px]" />
                           </div>
                         </>

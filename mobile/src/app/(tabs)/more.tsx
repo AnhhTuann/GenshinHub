@@ -40,9 +40,9 @@ const menuItems = [
     label: 'Player Showcase',
     desc: 'Enter UID to fetch live player stats',
     icon: Search,
-    color: '#a855f7',
-    bg: 'rgba(168,85,247,0.15)',
-    border: 'rgba(168,85,247,0.3)',
+    color: '#f4729c',
+    bg: 'rgba(244,114,156,0.13)',
+    border: 'rgba(244,114,156,0.3)',
   },
   {
     href: '/banners',
@@ -124,7 +124,7 @@ export default function MoreScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#080810' },
+  container: { flex: 1, backgroundColor: '#100b13' },
   header: {
     flexDirection: 'row',
     alignItems: 'center',

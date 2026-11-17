@@ -35,12 +35,12 @@ async function ArtifactsContent() {
     <>
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-[3px] h-8 rounded-full" style={{ background: 'linear-gradient(to bottom, #ce93d8, #a855f7)' }} />
+          <div className="w-[3px] h-8 rounded-full" style={{ background: 'linear-gradient(to bottom, #cf8fff, #a77cf6)' }} />
           <h1
             className="text-3xl sm:text-4xl font-black uppercase tracking-tight"
             style={{
               fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #f3e8ff 0%, #ce93d8 60%, #9333ea 100%)',
+              background: 'linear-gradient(135deg, #efe9ff 0%, #cf8fff 60%, #8f6bff 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -60,16 +60,16 @@ async function ArtifactsContent() {
 
 export default async function ArtifactsPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04040a)' }}>
+    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04060f)' }}>
       {/* Ambient */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -top-[15%] -right-[10%] w-[750px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(206,147,216,0.06) 0%, transparent 70%)', filter: 'blur(130px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(207,143,255,0.06)0%, transparent 70%)', filter: 'blur(130px)' }}
         />
         <div
           className="absolute bottom-[-15%] left-[15%] w-[600px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(79,195,247,0.04) 0%, transparent 70%)', filter: 'blur(110px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(58,168,255,0.04)0%, transparent 70%)', filter: 'blur(110px)' }}
         />
       </div>
 

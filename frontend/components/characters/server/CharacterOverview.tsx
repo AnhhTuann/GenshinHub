@@ -9,7 +9,7 @@ export function SectionHeader({ label, accent }: { label: string; accent: string
 
 export function StatCard({ label, value, color }: { label: string; value: number; color: string }) {
   return (
-    <div className="bg-[#06060a]/60 border border-white/[0.05] rounded-xl p-3 sm:p-4 flex flex-col items-center gap-1">
+    <div className="bg-[#070a18]/60 border border-white/[0.05] rounded-xl p-3 sm:p-4 flex flex-col items-center gap-1">
       <span className={`text-xl sm:text-2xl font-black font-display ${color}`}>{value.toLocaleString()}</span>
       <span className="text-white/25 text-[9px] font-black uppercase tracking-wider">{label}</span>
     </div>
@@ -30,7 +30,7 @@ export default function CharacterOverview({
   t: any; 
 }) {
   return (
-    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl overflow-hidden">
+    <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl overflow-hidden">
       <div className="h-[2px] w-full" style={{ background: `linear-gradient(90deg, transparent, ${elColor}60, transparent)` }} />
       <div className="p-5 sm:p-6">
         <SectionHeader label="Overview" accent={accentCls} />

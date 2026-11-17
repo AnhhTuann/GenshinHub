@@ -29,7 +29,7 @@ export default function AICharacterGenerator({ onGenerated }: { onGenerated: () 
   };
 
   return (
-    <section className="mb-8 p-6 rounded-2xl relative overflow-hidden" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
+    <section className="mb-8 p-6 rounded-2xl relative overflow-hidden" style={{ background:'rgba(10,14,34,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
       {/* Background glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 blur-[100px] pointer-events-none rounded-full -translate-y-1/2 translate-x-1/3" />
       
@@ -53,13 +53,13 @@ export default function AICharacterGenerator({ onGenerated }: { onGenerated: () 
             onKeyDown={e => e.key === 'Enter' && handleGenerate()}
             disabled={isGenerating}
             className="w-full md:w-64 px-4 py-2.5 rounded-xl text-sm outline-none font-bold placeholder-white/20"
-            style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
+            style={{ background:'rgba(5,8,20,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
           />
           <button 
             onClick={handleGenerate}
             disabled={isGenerating || !characterName}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-50 shrink-0"
-            style={{ background:'linear-gradient(135deg, #f0d080, #c8a84b)', color:'#080812', boxShadow:'0 4px 16px rgba(200,168,75,0.3)' }}
+            style={{ background:'linear-gradient(135deg, #ffdf9e, #e8b64c)', color:'#090d1f', boxShadow:'0 4px 16px rgba(232,182,76,0.3)' }}
           >
             {isGenerating ? (
               <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">

@@ -90,7 +90,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
   };
 
   const labelClass = "text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block";
-  const inputClass = "w-full bg-[#050508] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 transition-all placeholder-gray-600 font-medium";
+  const inputClass = "w-full bg-[#05060f] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/20 transition-all placeholder-gray-600 font-medium";
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center">
@@ -98,7 +98,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
 
       {/* Modal */}
-      <div className="relative bg-[#0d0d14] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/60 mx-4 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#0a0e22] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/60 mx-4 animate-in fade-in zoom-in-95 duration-200">
         {/* Header gradient stripe */}
         <div className="h-1 w-full bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 rounded-t-3xl" />
 
@@ -167,7 +167,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
               <div className="flex gap-3">
                 <input value={form.iconUrl} onChange={e => updateField('iconUrl', e.target.value)} placeholder="/assets/artifacts/..." className={inputClass} />
                 {form.iconUrl && (
-                  <div className="relative w-11 h-11 flex-shrink-0 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
+                  <div className="relative w-11 h-11 flex-shrink-0 rounded-xl border border-white/10 bg-[#05060f] flex items-center justify-center overflow-hidden">
                     <FallbackImage src={form.iconUrl} alt="preview" fill sizes="36px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
                   </div>
                 )}
@@ -182,7 +182,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
             </h3>
             <div className="space-y-4">
               {/* 2-Piece */}
-              <div className="bg-[#050508]/50 border border-white/5 rounded-2xl p-4">
+              <div className="bg-[#05060f]/50 border border-white/5 rounded-2xl p-4">
                 <span className="text-violet-400 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-violet-500/10 border border-violet-500/20 mb-3 inline-block">
                   2-Piece Set
                 </span>
@@ -199,7 +199,7 @@ export default function ArtifactFormModal({ artifact, onClose, onSaved }: Props)
               </div>
 
               {/* 4-Piece */}
-              <div className="bg-[#050508]/50 border border-white/5 rounded-2xl p-4">
+              <div className="bg-[#05060f]/50 border border-white/5 rounded-2xl p-4">
                 <span className="text-amber-400 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20 mb-3 inline-block">
                   4-Piece Set
                 </span>

@@ -4,17 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ELEMENT_COLORS: Record<string, string> = {
   Pyro: "#ff5c5c",
-  Hydro: "#4cc2f1",
-  Anemo: "#5cf1b5",
-  Electro: "#d35cff",
-  Dendro: "#a5c83b",
+  Hydro: "#54c8f5",
+  Anemo: "#5cf5c0",
+  Electro: "#cf8fff",
+  Dendro: "#a3d94e",
   Cryo: "#99ffff",
-  Geo: "#ffc85c",
+  Geo: "#ffd98a",
 };
 
 export default function WishIntro({ imageUrl, element }: { imageUrl: string, element?: string }) {
   const [show, setShow] = useState(true);
-  const color = ELEMENT_COLORS[element || ""] || "#ffd700";
+  const color = ELEMENT_COLORS[element || ""] || "#ffd34d";
 
   useEffect(() => {
     // Lock scroll while playing

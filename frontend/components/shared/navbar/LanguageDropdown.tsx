@@ -53,7 +53,7 @@ export default function LanguageDropdown() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 rounded-xl px-3 py-1.5 transition-all duration-200 group"
         style={{
-          background: 'rgba(13,13,20,0.6)',
+          background: 'rgba(16,22,46,0.6)',
           border: '1px solid rgba(255,255,255,0.06)',
         }}
       >

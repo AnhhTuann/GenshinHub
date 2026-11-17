@@ -1,5 +1,6 @@
-import { useAdmin } from '@/hooks/useAdmin';
 'use client';
+
+import { useAdmin } from '@/hooks/useAdmin';
 
 import { useState, useEffect } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
@@ -140,7 +141,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
   };
 
   return (
-    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+    <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
         <SectionHeader label={tWeapons} accent="bg-amber-400" />
         
@@ -190,7 +191,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
               dragOverItemIdx === idx ? 'scale-[1.01] shadow-[0_0_15px_rgba(251,191,36,0.15)] z-10' : ''
             } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
           >
-            <div className={`bg-[#06060a]/50 border hover:border-amber-500/15 rounded-xl p-3 sm:p-4 flex gap-4 items-center transition-colors duration-200 ${
+            <div className={`bg-[#070a18]/50 border hover:border-amber-500/15 rounded-xl p-3 sm:p-4 flex gap-4 items-center transition-colors duration-200 ${
               dragOverItemIdx === idx ? 'border-amber-500/50' : 'border-white/[0.04]'
             }`}>
               <span className="w-6 h-6 shrink-0 rounded-full bg-amber-500/10 text-amber-400/80 flex items-center justify-center text-xs font-black border border-amber-500/15">
@@ -198,8 +199,8 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
               </span>
               <div className={`relative w-16 h-16 shrink-0 rounded-lg border border-white/[0.05] flex items-center justify-center overflow-hidden ${
                 weapon.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
-                weapon.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#5b4d75]' :
-                weapon.rarity === 3 ? 'bg-gradient-to-b from-[#4d86b6] to-[#3a6388]' :
+                weapon.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#4e3f78]' :
+                weapon.rarity === 3 ? 'bg-gradient-to-b from-[#5b7ba6] to-[#4a5f86]' :
                 'bg-white/[0.02]'
               }`}>
                 {weapon.iconUrl && <FallbackImage src={weapon.iconUrl} alt={weapon.nameEn || ''} fill sizes="64px" className="object-contain drop-shadow-md p-1" />}

@@ -105,7 +105,7 @@ export default function BackupsAdmin() {
       {/* Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#aed581,#558b2f)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#9ede5f,#5d9c36)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             Backup Manager
           </h1>
           <p className="text-white/30 text-xs mt-0.5">{backups.length} backup{backups.length !== 1 ? 's' : ''} stored</p>
@@ -118,7 +118,7 @@ export default function BackupsAdmin() {
             onClick={handleCreate}
             disabled={creating}
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider disabled:opacity-50"
-            style={{ background:'linear-gradient(135deg,#aed581,#558b2f)', color:'#fff', boxShadow:'0 4px 16px rgba(174,213,129,0.25)' }}
+            style={{ background:'linear-gradient(135deg,#9ede5f,#5d9c36)', color:'#fff', boxShadow:'0 4px 16px rgba(158,222,95,0.25)' }}
           >
             {creating ? '...' : <>💾 Create Backup Now</>}
           </button>
@@ -126,7 +126,7 @@ export default function BackupsAdmin() {
       </div>
 
       {/* Info box */}
-      <div className="rounded-2xl p-4 flex items-start gap-4" style={{ background:'rgba(174,213,129,0.06)', border:'1px solid rgba(174,213,129,0.12)' }}>
+      <div className="rounded-2xl p-4 flex items-start gap-4" style={{ background:'rgba(158,222,95,0.06)', border:'1px solid rgba(158,222,95,0.12)' }}>
         <span className="text-xl shrink-0">ℹ️</span>
         <div className="text-xs text-white/45 space-y-1 leading-relaxed">
           <p>Backups are <strong className="text-white/65">JSON snapshots</strong> of the entire database stored on the server.</p>
@@ -136,7 +136,7 @@ export default function BackupsAdmin() {
       </div>
 
       {/* Backup list */}
-      <div className="rounded-2xl overflow-hidden" style={{ background:'rgba(8,8,18,0.70)', border:'1px solid rgba(255,255,255,0.05)' }}>
+      <div className="rounded-2xl overflow-hidden" style={{ background:'rgba(10,14,34,0.70)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="grid text-[10px] font-black uppercase tracking-widest text-white/25 px-4 py-2.5" style={{ gridTemplateColumns:'1fr 80px 60px 70px 70px 70px 90px', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
           <span>Filename</span><span>Created</span><span>Size</span><span>Chars</span><span>Weapons</span><span>Arts</span><span className="text-right">Actions</span>
         </div>

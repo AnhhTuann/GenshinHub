@@ -107,27 +107,27 @@ export default function ArtifactsAdmin() {
       {/* Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#ce93d8,#8e24aa)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#cf8fff,#7c3aed)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             Artifacts
           </h1>
           <p className="text-white/30 text-xs mt-0.5">{loading?'Loading...':`${filtered.length} of ${all.length} artifacts`}</p>
         </div>
-        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#ce93d8,#8e24aa)', color:'#fff', boxShadow:'0 4px 16px rgba(206,147,216,0.3)' }}>
+        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#cf8fff,#7c3aed)', color:'#fff', boxShadow:'0 4px 16px rgba(207,143,255,0.3)' }}>
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4"/></svg>
           Add Artifact Set
         </button>
       </div>
 
       {/* Filters */}
-      <div className="flex gap-2 p-3.5 rounded-2xl" style={{ background:'rgba(8,8,18,0.80)', border:'1px solid rgba(255,255,255,0.05)' }}>
+      <div className="flex gap-2 p-3.5 rounded-2xl" style={{ background:'rgba(10,14,34,0.80)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="relative flex-1 max-w-sm">
           <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/20 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input type="text" placeholder="Search artifact sets..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.85)'}}/>
+          <input type="text" placeholder="Search artifact sets..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.85)'}}/>
         </div>
       </div>
 
       {/* Table */}
-      <div className="rounded-2xl overflow-hidden" style={{background:'rgba(8,8,18,0.70)',border:'1px solid rgba(255,255,255,0.05)'}}>
+      <div className="rounded-2xl overflow-hidden" style={{background:'rgba(10,14,34,0.70)',border:'1px solid rgba(255,255,255,0.05)'}}>
         <div className="grid items-center text-[10px] font-black uppercase tracking-widest text-white/25 px-4 py-2.5" style={{gridTemplateColumns:'40px 180px 100px 1fr 80px',borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
           <span/><span>Name</span><span>Rarities</span><span>Effect (2-Piece)</span><span className="text-right">Actions</span>
         </div>
@@ -151,14 +151,14 @@ export default function ArtifactsAdmin() {
             </div>
             <div className="flex gap-1 flex-wrap">
               {(a.rarityList||[]).map((r: number) => (
-                <span key={r} className="px-1.5 py-0.5 rounded text-[9px] font-bold" style={{background:r===5?'rgba(255,213,79,0.1)':'rgba(206,147,216,0.1)',color:r===5?'#ffd54f':'#ce93d8',border:r===5?'1px solid rgba(255,213,79,0.2)':'1px solid rgba(206,147,216,0.2)'}}>
+                <span key={r} className="px-1.5 py-0.5 rounded text-[9px] font-bold" style={{background:r===5?'rgba(255,211,77,0.1)':'rgba(207,143,255,0.1)',color:r===5?'#ffd34d':'#cf8fff',border:r===5?'1px solid rgba(255,211,77,0.2)':'1px solid rgba(207,143,255,0.2)'}}>
                   {r}★
                 </span>
               ))}
             </div>
             <div className="text-xs text-white/40 truncate pr-4">{a.piece2DescEn || '—'}</div>
             <div className="flex gap-1.5 justify-end">
-              <button onClick={()=>openEdit(a.id)} className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase" style={{background:'rgba(206,147,216,0.10)',border:'1px solid rgba(206,147,216,0.20)',color:'#ce93d8'}}>Edit</button>
+              <button onClick={()=>openEdit(a.id)} className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase" style={{background:'rgba(207,143,255,0.10)',border:'1px solid rgba(207,143,255,0.20)',color:'#cf8fff'}}>Edit</button>
               <button onClick={()=>handleDelete(a.id,a.nameEn)} className="px-2 py-1.5 rounded-lg text-[10px] font-bold" style={{background:'rgba(239,68,68,0.08)',border:'1px solid rgba(239,68,68,0.15)',color:'rgba(239,68,68,0.7)'}}>
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd"/></svg>
               </button>
@@ -176,10 +176,10 @@ export default function ArtifactsAdmin() {
       <AdminModal open={modalOpen} onClose={()=>setModalOpen(false)} title={editId?'Edit Artifact Set':'Add Artifact Set'} subtitle={editId||'New set'} size="lg"
         footer={
           <div className="flex items-center justify-between">
-            {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#f0d080'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
+            {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#ffdf9e'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
             <div className="flex gap-2 ml-auto">
               <button onClick={()=>setModalOpen(false)} className="px-4 py-2 rounded-xl text-sm font-bold" style={{background:'rgba(255,255,255,0.05)',color:'rgba(255,255,255,0.5)'}}>Cancel</button>
-              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#ce93d8,#8e24aa)',color:'#fff',boxShadow:'0 4px 16px rgba(206,147,216,0.25)'}}>
+              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#cf8fff,#7c3aed)',color:'#fff',boxShadow:'0 4px 16px rgba(207,143,255,0.25)'}}>
                 {editId?'Save Changes':'Create Artifact'}
               </button>
             </div>
@@ -190,14 +190,14 @@ export default function ArtifactsAdmin() {
           {/* ID */}
           <div className="flex flex-col gap-1.5 col-span-2">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">ID (slug) <span className="text-red-400">*</span></label>
-            <input {...register('id')} placeholder="e.g. crimson-witch-of-flames" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(4,4,10,0.8)',border:errors.id?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+            <input {...register('id')} placeholder="e.g. crimson-witch-of-flames" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(5,8,20,0.8)',border:errors.id?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             {errors.id&&<p className="text-red-400 text-xs">{errors.id.message}</p>}
           </div>
           {/* Name EN/VI */}
           {(['nameEn','nameVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Name ({f==='nameEn'?'EN':'VI'}) <span className="text-red-400">*</span></label>
-              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(4,4,10,0.8)',border:errors[f]?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(5,8,20,0.8)',border:errors[f]?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
               {errors[f]&&<p className="text-red-400 text-xs">{(errors[f] as any)?.message}</p>}
             </div>
           ))}
@@ -212,12 +212,12 @@ export default function ArtifactsAdmin() {
                     key={r} type="button" onClick={() => toggleRarity(r)}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all"
                     style={{
-                      background: active ? 'rgba(206,147,216,0.15)' : 'rgba(255,255,255,0.04)',
-                      border: active ? '1px solid rgba(206,147,216,0.3)' : '1px solid rgba(255,255,255,0.08)',
-                      color: active ? '#ce93d8' : 'rgba(255,255,255,0.4)',
+                      background: active ? 'rgba(207,143,255,0.15)' : 'rgba(255,255,255,0.04)',
+                      border: active ? '1px solid rgba(207,143,255,0.3)' : '1px solid rgba(255,255,255,0.08)',
+                      color: active ? '#cf8fff' : 'rgba(255,255,255,0.4)',
                     }}
                   >
-                    <div className={`w-3 h-3 rounded flex items-center justify-center border ${active?'border-[#ce93d8] bg-[#ce93d8]':'border-white/20'}`}>
+                    <div className={`w-3 h-3 rounded flex items-center justify-center border ${active?'border-[#cf8fff] bg-[#cf8fff]':'border-white/20'}`}>
                       {active && <svg className="w-2.5 h-2.5 text-black" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>}
                     </div>
                     {r}★
@@ -234,7 +234,7 @@ export default function ArtifactsAdmin() {
           {(['piece2DescEn','piece2DescVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">{f==='piece2DescEn'?'EN':'VI'}</label>
-              <textarea {...register(f)} rows={2} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <textarea {...register(f)} rows={2} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             </div>
           ))}
           {/* Piece 4 */}
@@ -244,7 +244,7 @@ export default function ArtifactsAdmin() {
           {(['piece4DescEn','piece4DescVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">{f==='piece4DescEn'?'EN':'VI'}</label>
-              <textarea {...register(f)} rows={3} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <textarea {...register(f)} rows={3} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             </div>
           ))}
           {/* Icon URL */}

@@ -8,7 +8,7 @@ import '../../lib/i18n';
 
 // A mapping to get actual HEX color from theme enum since Tailwind classes aren't easily extracted here
 const THEME_COLORS: Record<string, string> = {
-  default: '#cfa858',
+  default: '#f4729c',
   pyro: '#ef4723',
   hydro: '#1e90ff',
   cryo: '#7dd3fc',
@@ -94,9 +94,9 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   tabBar: {
     position: 'absolute',
-    backgroundColor: 'rgba(12,12,24,0.7)',
+    backgroundColor: 'rgba(27,19,32,0.86)',
     borderTopWidth: 1,
-    borderTopColor: 'rgba(255,255,255,0.1)',
+    borderTopColor: 'rgba(255,182,202,0.14)',
     height: 60,
     paddingBottom: 6,
     paddingTop: 6,

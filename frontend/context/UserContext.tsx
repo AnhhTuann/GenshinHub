@@ -20,6 +20,14 @@ export interface User {
     standard: { pulls: number, pity: number, guaranteed?: boolean };
     winRate: number;
     totalPulls: number;
+    fiveStarHistory?: {
+      id: string;
+      name: string;
+      type: string;
+      pity: number;
+      win?: boolean;
+      date: string;
+    }[];
   };
 }
 

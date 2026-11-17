@@ -19,7 +19,7 @@ export default async function BannersPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
 
   return (
-    <main className="min-h-screen bg-[#07070a] pt-12 pb-24">
+    <main className="min-h-screen bg-[#080b1a] pt-12 pb-24">
       <BannersClient locale={locale} />
     </main>
   );

@@ -102,8 +102,8 @@ export default function MaterialsAdmin() {
     if(!editId && nameEnVal) setValue('id', nameEnVal.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,''));
   },[editId,nameEnVal,setValue]);
 
-  const RARITY_COLOR: Record<number,string> = {5:'#ffd54f',4:'#ce93d8',3:'#80cbc4',2:'#a5d6a7',1:'#bdbdbd'};
-  const RARITY_BG: Record<number,string> = {5:'rgba(255,213,79,0.1)',4:'rgba(206,147,216,0.1)',3:'rgba(128,203,196,0.1)',2:'rgba(165,214,167,0.1)',1:'rgba(189,189,189,0.1)'};
+  const RARITY_COLOR: Record<number,string> = {5:'#ffd34d',4:'#cf8fff',3:'#7fe3d8',2:'#b8ec9d',1:'#bdbdbd'};
+  const RARITY_BG: Record<number,string> = {5:'rgba(255,211,77,0.1)',4:'rgba(207,143,255,0.1)',3:'rgba(128,203,196,0.1)',2:'rgba(165,214,167,0.1)',1:'rgba(189,189,189,0.1)'};
 
   // Get unique types from existing data to populate filter
   const existingTypes = Array.from(new Set(all.map(m => m.type))).filter(Boolean).sort();
@@ -115,24 +115,24 @@ export default function MaterialsAdmin() {
       {/* Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#aed581,#689f38)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#9ede5f,#6fae3f)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             Materials
           </h1>
           <p className="text-white/30 text-xs mt-0.5">{loading?'Loading...':`${filtered.length} of ${all.length} materials`}</p>
         </div>
-        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#aed581,#689f38)', color:'#fff', boxShadow:'0 4px 16px rgba(174,213,129,0.25)' }}>
+        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#9ede5f,#6fae3f)', color:'#fff', boxShadow:'0 4px 16px rgba(158,222,95,0.25)' }}>
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4"/></svg>
           Add Material
         </button>
       </div>
 
       {/* Filters */}
-      <div className="flex gap-2 flex-wrap p-3.5 rounded-2xl" style={{ background:'rgba(8,8,18,0.80)', border:'1px solid rgba(255,255,255,0.05)' }}>
+      <div className="flex gap-2 flex-wrap p-3.5 rounded-2xl" style={{ background:'rgba(10,14,34,0.80)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="relative flex-1 min-w-[200px]">
           <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/20 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input type="text" placeholder="Search materials..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.85)'}}/>
+          <input type="text" placeholder="Search materials..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.85)'}}/>
         </div>
-        <select value={typeFilter} onChange={e=>setTypeFilter(e.target.value)} className="px-3 py-2 rounded-xl text-xs font-bold outline-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.7)'}}>
+        <select value={typeFilter} onChange={e=>setTypeFilter(e.target.value)} className="px-3 py-2 rounded-xl text-xs font-bold outline-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.7)'}}>
           <option value="">All Types</option>
           {existingTypes.map(t=><option key={t} value={t}>{t}</option>)}
         </select>
@@ -146,7 +146,7 @@ export default function MaterialsAdmin() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {items.map(m => (
-            <div key={m.id} className="flex gap-3 p-3 rounded-2xl group transition-colors" style={{ background:'rgba(8,8,18,0.70)', border:'1px solid rgba(255,255,255,0.05)' }} onMouseEnter={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'} onMouseLeave={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'}>
+            <div key={m.id} className="flex gap-3 p-3 rounded-2xl group transition-colors" style={{ background:'rgba(10,14,34,0.70)', border:'1px solid rgba(255,255,255,0.05)' }} onMouseEnter={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'} onMouseLeave={e=>e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'}>
               <div className="relative w-12 h-12 rounded-xl shrink-0 overflow-hidden" style={{ background: RARITY_BG[m.rarity] || 'rgba(255,255,255,0.05)', border: `1px solid ${RARITY_COLOR[m.rarity]||'#fff'}30` }}>
                 {m.iconUrl && <FallbackImage src={m.iconUrl} alt={m.nameEn} fill className="object-contain p-1" sizes="48px" unoptimized/>}
               </div>
@@ -179,10 +179,10 @@ export default function MaterialsAdmin() {
       <AdminModal open={modalOpen} onClose={()=>setModalOpen(false)} title={editId?'Edit Material':'Add Material'} subtitle={editId||'New material'} size="md"
         footer={
           <div className="flex items-center justify-between">
-            {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#f0d080'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
+            {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#ffdf9e'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
             <div className="flex gap-2 ml-auto">
               <button onClick={()=>setModalOpen(false)} className="px-4 py-2 rounded-xl text-sm font-bold" style={{background:'rgba(255,255,255,0.05)',color:'rgba(255,255,255,0.5)'}}>Cancel</button>
-              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#aed581,#689f38)',color:'#fff',boxShadow:'0 4px 16px rgba(174,213,129,0.25)'}}>
+              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#9ede5f,#6fae3f)',color:'#fff',boxShadow:'0 4px 16px rgba(158,222,95,0.25)'}}>
                 {editId?'Save':'Create'}
               </button>
             </div>
@@ -192,25 +192,25 @@ export default function MaterialsAdmin() {
         <div className="px-6 py-5 grid grid-cols-2 gap-4">
           <div className="flex flex-col gap-1.5 col-span-2">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">ID (slug) <span className="text-red-400">*</span></label>
-            <input {...register('id')} placeholder="e.g. agnidus-agate-sliver" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(4,4,10,0.8)',border:errors.id?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+            <input {...register('id')} placeholder="e.g. agnidus-agate-sliver" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(5,8,20,0.8)',border:errors.id?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             {errors.id&&<p className="text-red-400 text-xs">{errors.id.message}</p>}
           </div>
           {(['nameEn','nameVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Name ({f==='nameEn'?'EN':'VI'}) <span className="text-red-400">*</span></label>
-              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(4,4,10,0.8)',border:errors[f]?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(5,8,20,0.8)',border:errors[f]?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             </div>
           ))}
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Type <span className="text-red-400">*</span></label>
-            <input {...register('type')} list="material-types" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(4,4,10,0.8)',border:errors.type?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+            <input {...register('type')} list="material-types" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(5,8,20,0.8)',border:errors.type?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             <datalist id="material-types">
               {MATERIAL_TYPES.map(t=><option key={t} value={t}/>)}
             </datalist>
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Rarity</label>
-            <select {...register('rarity')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
+            <select {...register('rarity')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
               {[1,2,3,4,5].map(r=><option key={r} value={r}>{'★'.repeat(r)} {r}-Star</option>)}
             </select>
           </div>

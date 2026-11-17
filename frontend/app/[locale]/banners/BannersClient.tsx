@@ -116,7 +116,7 @@ export default function BannersClient({ locale }: { locale: string }) {
               </div>
 
               {/* Center Dot for Desktop */}
-              <div className="hidden md:flex absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] border-2 border-[#07070a] z-20" />
+              <div className="hidden md:flex absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] border-2 border-[#080b1a] z-20" />
 
               {/* Phase 2 */}
               <div className="md:w-1/2 flex justify-start md:pl-12 w-full mt-4 md:mt-24">

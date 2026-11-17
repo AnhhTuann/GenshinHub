@@ -17,33 +17,33 @@ import WishIntro from '@/components/WishIntro';
 import ThemeSetter from '@/context/ThemeSetter';
 
 const EL_COLOR: Record<string, string> = {
-  Pyro:    '#ff6b4a',
-  Hydro:   '#4fc3f7',
-  Cryo:    '#80deea',
-  Electro: '#ce93d8',
-  Anemo:   '#4db6ac',
-  Geo:     '#ffd54f',
-  Dendro:  '#aed581',
+  Pyro:    '#ff5a45',
+  Hydro:   '#3aa8ff',
+  Cryo:    '#8fe8f5',
+  Electro: '#cf8fff',
+  Anemo:   '#35d6c5',
+  Geo:     '#ffd34d',
+  Dendro:  '#9ede5f',
 };
 
 const EL_TEXT: Record<string, string> = {
-  Pyro:    'text-[#ff6b4a]',
-  Hydro:   'text-[#4fc3f7]',
-  Cryo:    'text-[#80deea]',
-  Electro: 'text-[#ce93d8]',
-  Anemo:   'text-[#4db6ac]',
-  Geo:     'text-[#ffd54f]',
-  Dendro:  'text-[#aed581]',
+  Pyro:    'text-[#ff5a45]',
+  Hydro:   'text-[#3aa8ff]',
+  Cryo:    'text-[#8fe8f5]',
+  Electro: 'text-[#cf8fff]',
+  Anemo:   'text-[#35d6c5]',
+  Geo:     'text-[#ffd34d]',
+  Dendro:  'text-[#9ede5f]',
 };
 
 const EL_GLOW: Record<string, string> = {
-  Pyro:    'rgba(255,107,74,0.18)',
-  Hydro:   'rgba(79,195,247,0.18)',
-  Cryo:    'rgba(128,222,234,0.18)',
-  Electro: 'rgba(206,147,216,0.18)',
-  Anemo:   'rgba(77,182,172,0.18)',
-  Geo:     'rgba(255,213,79,0.18)',
-  Dendro:  'rgba(174,213,129,0.18)',
+  Pyro:    'rgba(255,90,69,0.18)',
+  Hydro:   'rgba(58,168,255,0.18)',
+  Cryo:    'rgba(143,232,245,0.18)',
+  Electro: 'rgba(207,143,255,0.18)',
+  Anemo:   'rgba(53,214,197,0.18)',
+  Geo:     'rgba(255,211,77,0.18)',
+  Dendro:  'rgba(158,222,95,0.18)',
 };
 
 export async function generateStaticParams() {
@@ -126,7 +126,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   };
 
   return (
-    <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #04040a)' }}>
+    <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #04060f)' }}>
       <ThemeSetter element={character.element} />
       {/* ── JSON-LD Schema ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

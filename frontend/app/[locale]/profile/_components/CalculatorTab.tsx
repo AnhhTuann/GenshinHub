@@ -75,6 +75,7 @@ export default function CalculatorTab({ user }: { user: User }) {
 
   const handleAddItem = (char: any) => {
     const newItem = {
+      // eslint-disable-next-line react-hooks/purity -- event handler, not render
       id: `${char.id}-${Date.now()}`,
       charId: char.id,
       name: char.nameEn,
@@ -134,10 +135,10 @@ export default function CalculatorTab({ user }: { user: User }) {
     <div className="flex flex-col md:flex-row gap-6 h-full min-h-[600px]">
       
       {/* Sidebar: To-Do List */}
-      <div className="w-full md:w-64 flex flex-col gap-4 bg-[#1a1a24] border border-white/10 rounded-2xl p-4">
+      <div className="w-full md:w-64 flex flex-col gap-4 bg-[#141b38] border border-white/10 rounded-2xl p-4">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-xs font-black uppercase tracking-widest text-white/50">To-do List</h3>
-          <span className="text-xs font-bold bg-[#c8a84b]/20 text-[#f0d080] px-2 py-0.5 rounded-full">{todoList.length}</span>
+          <span className="text-xs font-bold bg-[#e8b64c]/20 text-[#ffdf9e] px-2 py-0.5 rounded-full">{todoList.length}</span>
         </div>
         
         <div className="flex-1 overflow-y-auto space-y-2 hide-scrollbar">
@@ -145,13 +146,13 @@ export default function CalculatorTab({ user }: { user: User }) {
             <div 
               key={item.id} 
               onClick={() => setActiveItemId(item.id)}
-              className={`flex items-center gap-3 p-2 rounded-xl cursor-pointer transition-colors group ${activeItemId === item.id ? 'bg-[#c8a84b]/20 border border-[#c8a84b]/50' : 'bg-black/40 border border-transparent hover:bg-white/5'}`}
+              className={`flex items-center gap-3 p-2 rounded-xl cursor-pointer transition-colors group ${activeItemId === item.id ? 'bg-[#e8b64c]/20 border border-[#e8b64c]/50' : 'bg-black/40 border border-transparent hover:bg-white/5'}`}
             >
               <div className="w-10 h-10 rounded-lg overflow-hidden bg-black shrink-0">
                 <FallbackImage src={item.avatarUrl || `/assets/characters/${item.charId}/avatar.webp`} alt={item.name} fill className="object-cover" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className={`text-xs font-bold truncate capitalize ${activeItemId === item.id ? 'text-[#f0d080]' : 'text-white'}`}>{item.name}</p>
+                <p className={`text-xs font-bold truncate capitalize ${activeItemId === item.id ? 'text-[#ffdf9e]' : 'text-white'}`}>{item.name}</p>
                 <p className="text-[10px] text-white/40">Lv. {item.targetLevel}</p>
               </div>
               <button onClick={(e) => { e.stopPropagation(); removeItem(item.id); }} className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-red-500/20 text-white/20 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all">
@@ -174,22 +175,22 @@ export default function CalculatorTab({ user }: { user: User }) {
       <div className="flex-1 flex flex-col lg:flex-row gap-6">
         
         {/* Editor Panel */}
-        <div className="flex-1 bg-[#1a1a24] border border-[#c8a84b]/30 rounded-2xl p-6">
+        <div className="flex-1 bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6">
           {!activeItem ? (
             <div className="h-full flex flex-col items-center justify-center text-center opacity-50">
-              <CalcIcon className="w-16 h-16 mb-4 text-[#c8a84b]" />
+              <CalcIcon className="w-16 h-16 mb-4 text-[#e8b64c]" />
               <h2 className="text-xl font-black uppercase text-white mb-2">No Item Selected</h2>
               <p className="text-sm">Add a character from the to-do list to start calculating.</p>
             </div>
           ) : (
             <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="flex items-center gap-4 border-b border-white/10 pb-6">
-                <div className="w-16 h-16 rounded-xl overflow-hidden bg-black border-2 border-[#c8a84b]">
+                <div className="w-16 h-16 rounded-xl overflow-hidden bg-black border-2 border-[#e8b64c]">
                   <FallbackImage src={activeItem.avatarUrl || `/assets/characters/${activeItem.charId}/avatar.webp`} alt={activeItem.name} fill className="object-cover" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-black uppercase tracking-wider text-white capitalize">{activeItem.name}</h2>
-                  <p className="text-xs font-bold text-[#c8a84b] tracking-widest uppercase">Character Calculation</p>
+                  <p className="text-xs font-bold text-[#e8b64c] tracking-widest uppercase">Character Calculation</p>
                 </div>
               </div>
 
@@ -201,14 +202,14 @@ export default function CalculatorTab({ user }: { user: User }) {
                     <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-2 flex justify-between">
                       <span>Current</span> <span className="text-white">Lv. {activeItem.startLevel}</span>
                     </label>
-                    <input type="range" min="1" max="90" value={activeItem.startLevel} onChange={(e) => updateActiveItem({ startLevel: Math.min(parseInt(e.target.value), activeItem.targetLevel) })} className="w-full accent-[#c8a84b]" />
+                    <input type="range" min="1" max="90" value={activeItem.startLevel} onChange={(e) => updateActiveItem({ startLevel: Math.min(parseInt(e.target.value), activeItem.targetLevel) })} className="w-full accent-[#e8b64c]" />
                   </div>
                   <ChevronRight className="w-5 h-5 text-white/20 mt-4" />
                   <div className="flex-1">
                     <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-2 flex justify-between">
-                      <span>Target</span> <span className="text-[#f0d080]">Lv. {activeItem.targetLevel}</span>
+                      <span>Target</span> <span className="text-[#ffdf9e]">Lv. {activeItem.targetLevel}</span>
                     </label>
-                    <input type="range" min="1" max="90" value={activeItem.targetLevel} onChange={(e) => updateActiveItem({ targetLevel: Math.max(parseInt(e.target.value), activeItem.startLevel) })} className="w-full accent-[#c8a84b]" />
+                    <input type="range" min="1" max="90" value={activeItem.targetLevel} onChange={(e) => updateActiveItem({ targetLevel: Math.max(parseInt(e.target.value), activeItem.startLevel) })} className="w-full accent-[#e8b64c]" />
                   </div>
                 </div>
               </div>
@@ -227,9 +228,9 @@ export default function CalculatorTab({ user }: { user: User }) {
                     <div className="w-10 text-center font-bold text-xs">{activeItem.talents[type as 'auto'].start}</div>
                     <ChevronRight className="w-4 h-4 text-white/20" />
                     <div className="flex-1">
-                      <input type="range" min="1" max="10" value={activeItem.talents[type as 'auto'].target} onChange={(e) => updateTalent(type as any, 'target', parseInt(e.target.value))} className="w-full accent-[#c8a84b]" />
+                      <input type="range" min="1" max="10" value={activeItem.talents[type as 'auto'].target} onChange={(e) => updateTalent(type as any, 'target', parseInt(e.target.value))} className="w-full accent-[#e8b64c]" />
                     </div>
-                    <div className="w-10 text-center font-bold text-xs text-[#f0d080]">{activeItem.talents[type as 'auto'].target}</div>
+                    <div className="w-10 text-center font-bold text-xs text-[#ffdf9e]">{activeItem.talents[type as 'auto'].target}</div>
                   </div>
                 ))}
               </div>
@@ -238,12 +239,12 @@ export default function CalculatorTab({ user }: { user: User }) {
         </div>
 
         {/* Requirements Panel */}
-        <div className="w-full lg:w-80 bg-[#1a1a24] border border-white/10 rounded-2xl p-6 flex flex-col h-full">
+        <div className="w-full lg:w-80 bg-[#141b38] border border-white/10 rounded-2xl p-6 flex flex-col h-full">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xs font-black uppercase tracking-widest text-white">Total Required</h3>
             <button 
               onClick={() => setShowInventory(!showInventory)}
-              className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-colors ${showInventory ? 'bg-[#c8a84b] text-black' : 'bg-white/10 text-white/60 hover:bg-white/20'}`}
+              className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-colors ${showInventory ? 'bg-[#e8b64c] text-black' : 'bg-white/10 text-white/60 hover:bg-white/20'}`}
             >
               Inventory
             </button>
@@ -251,7 +252,7 @@ export default function CalculatorTab({ user }: { user: User }) {
 
           <div className="flex-1 space-y-3 overflow-y-auto hide-scrollbar pr-2">
             {[
-              { key: 'mora', label: 'Mora', icon: 'M', color: 'text-[#f0d080]', bg: 'bg-[#c8a84b]/20' },
+              { key: 'mora', label: 'Mora', icon: 'M', color: 'text-[#ffdf9e]', bg: 'bg-[#e8b64c]/20' },
               { key: 'wits', label: 'Hero\'s Wit', icon: 'W', color: 'text-purple-400', bg: 'bg-purple-500/20' },
               { key: 'bossMats', label: 'Boss Drops', icon: 'B', color: 'text-red-400', bg: 'bg-red-500/20' },
               { key: 'localSpecialties', label: 'Specialties', icon: 'L', color: 'text-blue-400', bg: 'bg-blue-500/20' },
@@ -284,7 +285,7 @@ export default function CalculatorTab({ user }: { user: User }) {
       {/* Selector Modal */}
       {isSelectorOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-[#1a1a24] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden shadow-2xl animate-in zoom-in-95">
+          <div className="bg-[#141b38] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden shadow-2xl animate-in zoom-in-95">
             <div className="p-4 border-b border-white/10 flex items-center justify-between">
               <h2 className="text-lg font-black uppercase tracking-widest text-white">Select Character</h2>
               <button onClick={() => setIsSelectorOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors">
@@ -300,7 +301,7 @@ export default function CalculatorTab({ user }: { user: User }) {
                   placeholder="Search characters..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  className="w-full bg-black/50 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:border-[#c8a84b] outline-none transition-colors"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:border-[#e8b64c] outline-none transition-colors"
                 />
               </div>
 
@@ -312,12 +313,12 @@ export default function CalculatorTab({ user }: { user: User }) {
                       key={char.id}
                       onClick={() => !isAdded && handleAddItem(char)}
                       disabled={isAdded}
-                      className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${isAdded ? 'border-[#4db6ac] opacity-50 cursor-not-allowed' : 'border-transparent hover:border-white/50 cursor-pointer'}`}
+                      className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${isAdded ? 'border-[#35d6c5] opacity-50 cursor-not-allowed' : 'border-transparent hover:border-white/50 cursor-pointer'}`}
                     >
                       <FallbackImage src={`/assets/characters/${char.id}/avatar.webp`} alt={char.nameEn} fill className="object-cover" />
                       {isAdded && (
                         <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <Check className="w-6 h-6 text-[#4db6ac]" />
+                          <Check className="w-6 h-6 text-[#35d6c5]" />
                         </div>
                       )}
                     </button>

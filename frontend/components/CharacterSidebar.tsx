@@ -13,23 +13,23 @@ import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast';
 
 const ELEMENT_COLOR: Record<string, string> = {
-  Pyro: "#ff6b4a",
-  Hydro: "#4fc3f7",
-  Cryo: "#80deea",
-  Electro: "#ce93d8",
-  Anemo: "#4db6ac",
-  Geo: "#ffd54f",
-  Dendro: "#aed581",
+  Pyro: "#ff5a45",
+  Hydro: "#3aa8ff",
+  Cryo: "#8fe8f5",
+  Electro: "#cf8fff",
+  Anemo: "#35d6c5",
+  Geo: "#ffd34d",
+  Dendro: "#9ede5f",
 };
 
 const ELEMENT_TEXT: Record<string, string> = {
-  Pyro: "text-[#ff6b4a]",
-  Hydro: "text-[#4fc3f7]",
-  Cryo: "text-[#80deea]",
-  Electro: "text-[#ce93d8]",
-  Anemo: "text-[#4db6ac]",
-  Geo: "text-[#ffd54f]",
-  Dendro: "text-[#aed581]",
+  Pyro: "text-[#ff5a45]",
+  Hydro: "text-[#3aa8ff]",
+  Cryo: "text-[#8fe8f5]",
+  Electro: "text-[#cf8fff]",
+  Anemo: "text-[#35d6c5]",
+  Geo: "text-[#ffd34d]",
+  Dendro: "text-[#9ede5f]",
 };
 
 const WEAPON_TYPE_MAP: Record<string, string> = {
@@ -152,7 +152,7 @@ export default function CharacterSidebar({
       <div className="flex flex-col lg:flex-row gap-4 w-full items-stretch">
         {/* ── Info Panel (replaces portrait on sidebar) ── */}
         <div
-          className={`relative bg-[#0d0d14]/80 border ${borderColor} rounded-2xl overflow-hidden flex-1 min-w-[250px]`}
+          className={`relative bg-[#0a0e22]/80 border ${borderColor} rounded-2xl overflow-hidden flex-1 min-w-[250px]`}
           style={{ boxShadow: `0 0 40px -12px ${elColor}25` }}
         >
           {/* Top element accent bar */}
@@ -177,7 +177,7 @@ export default function CharacterSidebar({
 
         {/* ── Signature Weapon ── */}
         {(sigWeapons.length > 0 || isAdmin) && (
-          <div className="bg-[#0d0d14]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden group flex-[2] min-w-[300px]">
+          <div className="bg-[#0a0e22]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden group flex-[2] min-w-[300px]">
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/[0.05] rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex justify-between items-center mb-2.5">
@@ -235,7 +235,7 @@ export default function CharacterSidebar({
               href={character.fandomUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex flex-col items-center justify-center gap-2 text-xs text-white/30 hover:text-white/60 transition-colors p-4 border border-white/[0.04] hover:border-white/[0.1] rounded-2xl bg-[#0d0d14]/60 h-full"
+              className="flex-1 flex flex-col items-center justify-center gap-2 text-xs text-white/30 hover:text-white/60 transition-colors p-4 border border-white/[0.04] hover:border-white/[0.1] rounded-2xl bg-[#0a0e22]/60 h-full"
             >
               <svg
                 className="w-6 h-6 mb-1"

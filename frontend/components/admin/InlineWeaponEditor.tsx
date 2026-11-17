@@ -135,7 +135,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
 
-      <div className="relative bg-[#0d0d14] border border-white/10 rounded-2xl w-full max-w-xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#0a0e22] border border-white/10 rounded-2xl w-full max-w-xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="p-5 border-b border-white/10 flex items-center justify-between shrink-0">
           <h2 className="text-lg font-black text-white">{editingWeapon ? 'Edit' : 'Add'} Best Weapon</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors">✕</button>
@@ -149,7 +149,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
                 placeholder="Search weapons..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 mb-4"
+                className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 mb-4"
                 autoFocus
               />
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -187,7 +187,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
                     min="1"
                     value={rank}
                     onChange={e => setRank(parseInt(e.target.value) || 1)}
-                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
+                    className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
                   />
                 </div>
                 <div>
@@ -198,7 +198,7 @@ export default function InlineWeaponEditor({ characterId, weaponType, defaultCon
                     max="5"
                     value={refinement}
                     onChange={e => setRefinement(parseInt(e.target.value) || 1)}
-                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
+                    className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50"
                   />
                 </div>
               </div>

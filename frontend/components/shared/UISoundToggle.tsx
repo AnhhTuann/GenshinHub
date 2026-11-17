@@ -16,7 +16,7 @@ export default function UISoundToggle() {
       aria-label={soundEnabled ? "Disable UI Sounds" : "Enable UI Sounds"}
     >
       {soundEnabled ? (
-        <Volume2 className="w-4 h-4 text-[#c8a84b]" />
+        <Volume2 className="w-4 h-4 text-[#e8b64c]" />
       ) : (
         <VolumeX className="w-4 h-4 text-white/40" />
       )}

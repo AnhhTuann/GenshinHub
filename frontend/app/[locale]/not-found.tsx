@@ -4,13 +4,13 @@ export default function NotFound() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center text-center p-6 relative overflow-hidden"
-      style={{ background: '#04040a' }}
+      style={{ background: '#04060f' }}
     >
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 65%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 65%)', filter: 'blur(80px)' }}
         />
         <div
           className="absolute top-[30%] left-[20%] w-[400px] h-[400px] rounded-full"
@@ -18,7 +18,7 @@ export default function NotFound() {
         />
         <div
           className="absolute bottom-[20%] right-[20%] w-[300px] h-[300px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(79,195,247,0.04) 0%, transparent 65%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(58,168,255,0.04)0%, transparent 65%)', filter: 'blur(80px)' }}
         />
       </div>
 
@@ -47,12 +47,12 @@ export default function NotFound() {
             className="text-[8rem] sm:text-[12rem] font-black leading-none select-none"
             style={{
               fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #fff8e1 0%, #f0c84b 35%, #c8a84b 65%, rgba(200,168,75,0.2) 100%)',
+              background: 'linear-gradient(135deg, #fff6dd 0%, #f4c96e 35%, #e8b64c 65%, rgba(232,182,76,0.2)100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               textShadow: 'none',
-              filter: 'drop-shadow(0 0 40px rgba(200,168,75,0.25))',
+              filter: 'drop-shadow(0 0 40px rgba(232,182,76,0.25)',
             }}
           >
             404
@@ -60,7 +60,7 @@ export default function NotFound() {
           {/* Glowing orb behind */}
           <div
             className="absolute inset-0 -z-10 rounded-full m-auto w-48 h-48"
-            style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.12) 0%, transparent 70%)', filter: 'blur(30px)' }}
+            style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.12)0%, transparent 70%)', filter: 'blur(30px)' }}
           />
         </div>
 
@@ -80,9 +80,9 @@ export default function NotFound() {
 
         {/* Divider */}
         <div className="flex items-center gap-4 mb-8">
-          <div className="h-px w-20" style={{ background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.4))' }} />
-          <span style={{ color: '#c8a84b' }}>✦</span>
-          <div className="h-px w-20" style={{ background: 'linear-gradient(90deg, rgba(200,168,75,0.4), transparent)' }} />
+          <div className="h-px w-20" style={{ background: 'linear-gradient(90deg, transparent, rgba(232,182,76,0.4)' }} />
+          <span style={{ color: '#e8b64c' }}>✦</span>
+          <div className="h-px w-20" style={{ background: 'linear-gradient(90deg, rgba(232,182,76,0.4), transparent)' }} />
         </div>
 
         {/* CTA buttons — both gold-themed */}
@@ -91,10 +91,10 @@ export default function NotFound() {
             href="/en"
             className="flex items-center gap-2 px-6 py-3 rounded-2xl font-black text-sm transition-all duration-300 hover:-translate-y-0.5"
             style={{
-              background: 'linear-gradient(135deg, rgba(200,168,75,0.20), rgba(200,168,75,0.10))',
-              border: '1px solid rgba(200,168,75,0.35)',
-              color: '#f0d080',
-              boxShadow: '0 4px 20px rgba(200,168,75,0.08)',
+              background: 'linear-gradient(135deg, rgba(232,182,76,0.20), rgba(232,182,76,0.10)',
+              border: '1px solid rgba(232,182,76,0.35)',
+              color: '#ffdf9e',
+              boxShadow: '0 4px 20px rgba(232,182,76,0.08)',
             }}
           >
             🌏 Go Home (EN)

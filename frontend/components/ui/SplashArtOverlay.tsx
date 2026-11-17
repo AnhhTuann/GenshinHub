@@ -9,33 +9,33 @@ import { motion, AnimatePresence } from 'framer-motion';
    Element particle config
    ────────────────────────────────────────────────────── */
 const ELEMENT_PARTICLES: Record<string, { color: string; symbol: string; count: number }> = {
-  Pyro:    { color: '#ff6b4a', symbol: '✦', count: 18 },
-  Hydro:   { color: '#4fc3f7', symbol: '◆', count: 16 },
-  Cryo:    { color: '#80deea', symbol: '❄', count: 20 },
-  Electro: { color: '#ce93d8', symbol: '⚡', count: 16 },
-  Anemo:   { color: '#4db6ac', symbol: '◎', count: 22 },
-  Geo:     { color: '#ffd54f', symbol: '◇', count: 14 },
-  Dendro:  { color: '#aed581', symbol: '✿', count: 18 },
+  Pyro:    { color: '#ff5a45', symbol: '✦', count: 18 },
+  Hydro:   { color: '#3aa8ff', symbol: '◆', count: 16 },
+  Cryo:    { color: '#8fe8f5', symbol: '❄', count: 20 },
+  Electro: { color: '#cf8fff', symbol: '⚡', count: 16 },
+  Anemo:   { color: '#35d6c5', symbol: '◎', count: 22 },
+  Geo:     { color: '#ffd34d', symbol: '◇', count: 14 },
+  Dendro:  { color: '#9ede5f', symbol: '✿', count: 18 },
 };
 
 const ELEMENT_GLOW: Record<string, string> = {
-  Pyro:    'rgba(255,107,74,0.35)',
-  Hydro:   'rgba(79,195,247,0.35)',
-  Cryo:    'rgba(128,222,234,0.35)',
-  Electro: 'rgba(206,147,216,0.35)',
-  Anemo:   'rgba(77,182,172,0.35)',
-  Geo:     'rgba(255,213,79,0.35)',
-  Dendro:  'rgba(174,213,129,0.35)',
+  Pyro:    'rgba(255,90,69,0.35)',
+  Hydro:   'rgba(58,168,255,0.35)',
+  Cryo:    'rgba(143,232,245,0.35)',
+  Electro: 'rgba(207,143,255,0.35)',
+  Anemo:   'rgba(53,214,197,0.35)',
+  Geo:     'rgba(255,211,77,0.35)',
+  Dendro:  'rgba(158,222,95,0.35)',
 };
 
 const ELEMENT_COLOR: Record<string, string> = {
-  Pyro:    '#ff6b4a',
-  Hydro:   '#4fc3f7',
-  Cryo:    '#80deea',
-  Electro: '#ce93d8',
-  Anemo:   '#4db6ac',
-  Geo:     '#ffd54f',
-  Dendro:  '#aed581',
+  Pyro:    '#ff5a45',
+  Hydro:   '#3aa8ff',
+  Cryo:    '#8fe8f5',
+  Electro: '#cf8fff',
+  Anemo:   '#35d6c5',
+  Geo:     '#ffd34d',
+  Dendro:  '#9ede5f',
 };
 
 interface SplashArtOverlayProps {
@@ -98,7 +98,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
   }, [onClose]);
 
   const tierColor: Record<string, string> = {
-    SS: '#ff5252', S: '#ff9800', A: '#8bc34a', B: '#29b6f6', C: '#90a4ae'
+    SS: '#ff5252', S: '#f5a83d', A: '#8fce4e', B: '#3aa8ff', C: '#90a4ae'
   };
 
   if (typeof document === 'undefined') return null;
@@ -285,7 +285,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                   className="text-4xl sm:text-5xl font-black leading-none"
                   style={{
                     fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                    background: `linear-gradient(135deg, #fff 0%, ${elementColor} 60%, #fff9e0 100%)`,
+                    background: `linear-gradient(135deg, #fff 0%, ${elementColor} 60%, #fff8e2 100%)`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -311,7 +311,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.42 + i * 0.05, type: 'spring', stiffness: 400, damping: 20 }}
                     className="w-5 h-5"
-                    style={{ color: character.rarity === 5 ? '#ffd54f' : '#ba68c8' }}
+                    style={{ color: character.rarity === 5 ? '#ffd34d' : '#c98fff' }}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

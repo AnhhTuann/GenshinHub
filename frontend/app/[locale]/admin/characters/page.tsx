@@ -11,8 +11,8 @@ import Pagination from '@/components/admin/ui/Pagination';
 const CharacterFormModal = dynamic(() => import('./CharacterFormModal'), { ssr: false });
 
 const ELEM_COLOR: Record<string, string> = {
-  Pyro:'#ff6b4a', Hydro:'#4fc3f7', Cryo:'#80deea',
-  Electro:'#ce93d8', Anemo:'#4db6ac', Geo:'#ffd54f', Dendro:'#aed581',
+  Pyro:'#ff5a45', Hydro:'#3aa8ff', Cryo:'#8fe8f5',
+  Electro:'#cf8fff', Anemo:'#35d6c5', Geo:'#ffd34d', Dendro:'#9ede5f',
 };
 const ELEMENTS = ['Pyro','Hydro','Anemo','Electro','Dendro','Cryo','Geo'];
 
@@ -93,7 +93,7 @@ export default function CharactersAdmin() {
             className="text-xl font-black uppercase tracking-wide"
             style={{
               fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
+              background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}
           >
@@ -107,9 +107,9 @@ export default function CharactersAdmin() {
           onClick={handleNew}
           className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider"
           style={{
-            background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
-            color: '#080812',
-            boxShadow: '0 4px 16px rgba(200,168,75,0.30)',
+            background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
+            color: '#090d1f',
+            boxShadow: '0 4px 16px rgba(232,182,76,0.30)',
           }}
         >
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,7 +122,7 @@ export default function CharactersAdmin() {
       {/* Filter bar */}
       <div
         className="flex gap-2 flex-wrap p-3.5 rounded-2xl"
-        style={{ background: 'rgba(8,8,18,0.80)', border: '1px solid rgba(255,255,255,0.05)' }}
+        style={{ background: 'rgba(10,14,34,0.80)', border: '1px solid rgba(255,255,255,0.05)' }}
       >
         {/* Search */}
         <div className="relative flex-1 min-w-[180px]">
@@ -133,7 +133,7 @@ export default function CharactersAdmin() {
             type="text" placeholder="Search by name..." value={search}
             onChange={e => setSearch(e.target.value)}
             className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none"
-            style={{ background: 'rgba(4,4,10,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }}
+            style={{ background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }}
           />
         </div>
 
@@ -141,7 +141,7 @@ export default function CharactersAdmin() {
         <select
           value={elemFilter} onChange={e => setElemFilter(e.target.value)}
           className="px-3 py-2 rounded-xl text-xs font-bold outline-none"
-          style={{ background: 'rgba(4,4,10,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)' }}
+          style={{ background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)' }}
         >
           <option value="">All Elements</option>
           {ELEMENTS.map(e => <option key={e} value={e}>{e}</option>)}
@@ -151,7 +151,7 @@ export default function CharactersAdmin() {
         <select
           value={rarFilter} onChange={e => setRarFilter(Number(e.target.value))}
           className="px-3 py-2 rounded-xl text-xs font-bold outline-none"
-          style={{ background: 'rgba(4,4,10,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)' }}
+          style={{ background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)' }}
         >
           <option value={0}>All Rarities</option>
           <option value={5}>⭐⭐⭐⭐⭐ 5-Star</option>
@@ -162,7 +162,7 @@ export default function CharactersAdmin() {
       {/* Table */}
       <div
         className="rounded-2xl overflow-hidden"
-        style={{ background: 'rgba(8,8,18,0.70)', border: '1px solid rgba(255,255,255,0.05)' }}
+        style={{ background: 'rgba(10,14,34,0.70)', border: '1px solid rgba(255,255,255,0.05)' }}
       >
         {/* Table header */}
         <div
@@ -188,7 +188,7 @@ export default function CharactersAdmin() {
           <div className="py-16 text-center text-white/25 text-sm">No characters match your filters.</div>
         ) : (
           pageItems.map((c, i) => {
-            const ec = ELEM_COLOR[c.element] ?? '#c8a84b';
+            const ec = ELEM_COLOR[c.element] ?? '#e8b64c';
             const isLast = i === pageItems.length - 1;
             return (
               <div
@@ -222,7 +222,7 @@ export default function CharactersAdmin() {
                 </div>
 
                 {/* Rarity */}
-                <div className="text-xs font-bold" style={{ color: c.rarity === 5 ? '#ffd54f' : '#ce93d8' }}>
+                <div className="text-xs font-bold" style={{ color: c.rarity === 5 ? '#ffd34d' : '#cf8fff' }}>
                   {'★'.repeat(c.rarity)}
                 </div>
 
@@ -235,9 +235,9 @@ export default function CharactersAdmin() {
                     <span
                       className="px-2 py-0.5 rounded-md text-[10px] font-black"
                       style={{
-                        background: c.tier === 'SS' ? 'rgba(255,107,74,0.15)' : c.tier === 'S' ? 'rgba(255,213,79,0.12)' : 'rgba(255,255,255,0.06)',
-                        color: c.tier === 'SS' ? '#ff6b4a' : c.tier === 'S' ? '#ffd54f' : 'rgba(255,255,255,0.45)',
-                        border: `1px solid ${c.tier === 'SS' ? 'rgba(255,107,74,0.25)' : c.tier === 'S' ? 'rgba(255,213,79,0.20)' : 'rgba(255,255,255,0.08)'}`,
+                        background: c.tier === 'SS' ? 'rgba(255,90,69,0.15)' : c.tier === 'S' ? 'rgba(255,211,77,0.12)' : 'rgba(255,255,255,0.06)',
+                        color: c.tier === 'SS' ? '#ff5a45' : c.tier === 'S' ? '#ffd34d' : 'rgba(255,255,255,0.45)',
+                        border: `1px solid ${c.tier === 'SS' ? 'rgba(255,90,69,0.25)' : c.tier === 'S' ? 'rgba(255,211,77,0.20)' : 'rgba(255,255,255,0.08)'}`,
                       }}
                     >{c.tier}</span>
                   ) : <span className="text-white/15 text-xs">—</span>}
@@ -248,7 +248,7 @@ export default function CharactersAdmin() {
                   <button
                     onClick={() => handleEdit(c.id)}
                     className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide transition-all"
-                    style={{ background: 'rgba(79,195,247,0.10)', border: '1px solid rgba(79,195,247,0.20)', color: '#4fc3f7' }}
+                    style={{ background: 'rgba(58,168,255,0.10)', border: '1px solid rgba(58,168,255,0.20)', color: '#3aa8ff' }}
                     title="Edit"
                   >
                     Edit

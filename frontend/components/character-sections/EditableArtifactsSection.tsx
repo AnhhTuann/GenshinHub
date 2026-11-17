@@ -1,5 +1,6 @@
-import { useAdmin } from '@/hooks/useAdmin';
 'use client';
+
+import { useAdmin } from '@/hooks/useAdmin';
 
 import { useState, useEffect } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
@@ -107,7 +108,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
   };
 
   return (
-    <section className="bg-[#0d0d14]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+    <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
         <SectionHeader label={tArtifacts} accent="bg-purple-400" />
         
@@ -153,7 +154,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
             onDragEnter={() => isAdmin && handleDragEnter(idx)}
             onDragEnd={isAdmin ? handleDragEnd : undefined}
             onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
-            className={`relative group/acard bg-[#06060a]/50 border hover:border-purple-500/15 rounded-xl p-3 sm:p-4 flex flex-col gap-3 transition-all duration-200 ${isAdmin ? 'cursor-move' : ''} ${
+            className={`relative group/acard bg-[#070a18]/50 border hover:border-purple-500/15 rounded-xl p-3 sm:p-4 flex flex-col gap-3 transition-all duration-200 ${isAdmin ? 'cursor-move' : ''} ${
               dragOverItemIdx === idx ? 'border-purple-500/50 scale-[1.01] shadow-[0_0_15px_rgba(168,85,247,0.15)] z-10' : 'border-white/[0.04]'
             } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
           >
@@ -220,8 +221,8 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
               <div className="flex items-center gap-4">
                 <div className={`relative w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-lg border border-white/[0.05] flex items-center justify-center p-1 overflow-hidden ${
                   artifact.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
-                  artifact.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#5b4d75]' :
-                  artifact.rarity === 3 ? 'bg-gradient-to-b from-[#4d86b6] to-[#3a6388]' :
+                  artifact.rarity === 4 ? 'bg-gradient-to-b from-[#7e6b9c] to-[#4e3f78]' :
+                  artifact.rarity === 3 ? 'bg-gradient-to-b from-[#5b7ba6] to-[#4a5f86]' :
                   'bg-white/[0.02]'
                 }`}>
                   {artifact.iconUrl && (

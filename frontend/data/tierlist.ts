@@ -62,9 +62,9 @@ export function getWeaponTier(nameEn: string): Tier {
 export const TIER_STYLES: Record<Tier, { bg: string; text: string; border: string }> = {
   'SS': { bg: 'bg-[#ff4a4a]/20', text: 'text-[#ff4a4a]', border: 'border-[#ff4a4a]/30' },
   'S':  { bg: 'bg-[#ff9900]/20', text: 'text-[#ff9900]', border: 'border-[#ff9900]/30' },
-  'A':  { bg: 'bg-[#c084fc]/20', text: 'text-[#c084fc]', border: 'border-[#c084fc]/30' },
-  'B':  { bg: 'bg-[#4fc3f7]/20', text: 'text-[#4fc3f7]', border: 'border-[#4fc3f7]/30' },
-  'C':  { bg: 'bg-[#aed581]/20', text: 'text-[#aed581]', border: 'border-[#aed581]/30' },
+  'A':  { bg: 'bg-[#c9a8ff]/20', text: 'text-[#c9a8ff]', border: 'border-[#c9a8ff]/30' },
+  'B':  { bg: 'bg-[#3aa8ff]/20', text: 'text-[#3aa8ff]', border: 'border-[#3aa8ff]/30' },
+  'C':  { bg: 'bg-[#9ede5f]/20', text: 'text-[#9ede5f]', border: 'border-[#9ede5f]/30' },
   'D':  { bg: 'bg-[#ffcc80]/20', text: 'text-[#ffcc80]', border: 'border-[#ffcc80]/30' },
   'Unranked': { bg: 'bg-white/5', text: 'text-white/40', border: 'border-white/10' }
 };

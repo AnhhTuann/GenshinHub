@@ -82,23 +82,23 @@ export default function LoginPage() {
       {/* Ambient background */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full"
-             style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.07) 0%, transparent 70%)', filter: 'blur(100px)' }} />
+             style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.07)0%, transparent 70%)', filter: 'blur(100px)' }} />
         <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full"
              style={{ background: 'radial-gradient(ellipse, rgba(150,100,200,0.04) 0%, transparent 70%)', filter: 'blur(80px)' }} />
       </div>
 
       <div className="w-full max-w-md">
-        <div className="bg-[#0a0a0f]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="bg-[#0b1024]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c8a84b] to-[#8a6820] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#c8a84b]/20">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">
               <Lock className="w-7 h-7 text-black" />
             </div>
             <h1
               className="text-3xl font-black uppercase tracking-widest mb-2"
               style={{
                 fontFamily: 'var(--font-cinzel)',
-                background: 'linear-gradient(135deg, #f0d080 0%, #c8a84b 60%, #8a6820 100%)',
+                background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -121,7 +121,7 @@ export default function LoginPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 focus:bg-white/10 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
                   placeholder="traveler@teyvat.com"
                 />
               </div>
@@ -133,7 +133,7 @@ export default function LoginPage() {
                 <label className="block text-xs font-bold text-white/60 uppercase tracking-wider ml-1">Password</label>
                 <Link
                   href="/auth/forgot-password"
-                  className="text-xs text-[#c8a84b] hover:text-[#f0d080] transition-colors font-medium"
+                  className="text-xs text-[#e8b64c] hover:text-[#ffdf9e] transition-colors font-medium"
                 >
                   Forgot password?
                 </Link>
@@ -147,7 +147,7 @@ export default function LoginPage() {
                   required
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 focus:bg-white/10 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
                   placeholder="••••••••"
                 />
                 <button
@@ -168,7 +168,7 @@ export default function LoginPage() {
                 id="rememberMe"
                 checked={formData.rememberMe}
                 onChange={(e) => setFormData({ ...formData, rememberMe: e.target.checked })}
-                className="w-4 h-4 rounded border-white/10 bg-white/5 text-[#c8a84b] focus:ring-[#c8a84b]/50 focus:ring-offset-0 cursor-pointer accent-[#c8a84b]"
+                className="w-4 h-4 rounded border-white/10 bg-white/5 text-[#e8b64c] focus:ring-[#e8b64c]/50 focus:ring-offset-0 cursor-pointer accent-[#e8b64c]"
               />
               <label htmlFor="rememberMe" className="ml-2 text-sm text-white/60 cursor-pointer select-none">
                 Remember me
@@ -180,8 +180,8 @@ export default function LoginPage() {
               disabled={loading}
               className="w-full py-3.5 mt-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
-                background: 'linear-gradient(135deg, #c8a84b 0%, #8a6820 100%)',
-                boxShadow: '0 4px 15px rgba(200,168,75,0.3)',
+                background: 'linear-gradient(135deg, #e8b64c 0%, #a97e2f 100%)',
+                boxShadow: '0 4px 15px rgba(232,182,76,0.3)',
               }}
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -236,7 +236,7 @@ export default function LoginPage() {
           <div className="mt-8 text-center border-t border-white/5 pt-6">
             <p className="text-white/40 text-sm">
               Don&apos;t have an account?{' '}
-              <Link href="/auth/register" className="text-[#c8a84b] hover:text-[#f0d080] font-bold transition-colors">
+              <Link href="/auth/register" className="text-[#e8b64c] hover:text-[#ffdf9e] font-bold transition-colors">
                 Sign up
               </Link>
             </p>

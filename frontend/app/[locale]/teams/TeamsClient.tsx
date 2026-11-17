@@ -113,7 +113,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
   }, [allTeams, search, filterElement, filterRank]);
 
   return (
-    <main className="min-h-screen bg-[#06060a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#070a18] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
       
       {/* ── Hero section ──────────────────────────────────────── */}
       <div className="relative overflow-hidden border-b border-white/[0.04]">
@@ -150,7 +150,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
       </div>
 
       {/* ── Unified Filter Bar ─────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#06060a]/80 backdrop-blur-xl border-b border-white/[0.05] shadow-lg shadow-black/50">
+      <div className="sticky top-0 z-30 bg-[#070a18]/80 backdrop-blur-xl border-b border-white/[0.05] shadow-lg shadow-black/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col xl:flex-row gap-4 items-center justify-between">
           
           <div className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto items-center">
@@ -164,7 +164,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                 placeholder="Search teams..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full bg-[#0d0d14] border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 transition-all font-medium shadow-inner"
+                className="w-full bg-[#0a0e22] border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 transition-all font-medium shadow-inner"
               />
             </div>
 
@@ -182,7 +182,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                     className={`flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 motion-safe:active:scale-95 ${
                       isSelected
                         ? `${details.glow} ${details.border}`
-                        : 'border-white/10 text-gray-500 hover:bg-white/5 hover:border-white/20 hover:scale-110 bg-[#0d0d14]'
+                        : 'border-white/10 text-gray-500 hover:bg-white/5 hover:border-white/20 hover:scale-110 bg-[#0a0e22]'
                     }`}
                     title={el}
                   >
@@ -197,7 +197,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             <div className="h-6 w-px bg-white/10 hidden sm:block" />
 
             {/* Rank filters */}
-            <div className="flex gap-1.5 justify-center bg-[#0d0d14] p-1 rounded-full border border-white/10">
+            <div className="flex gap-1.5 justify-center bg-[#0a0e22] p-1 rounded-full border border-white/10">
               {(['SS', 'S', 'A', 'B'] as const).map(rank => {
                 const cfg = RANK_CONFIG[rank];
                 const isSelected = filterRank === rank;
@@ -218,7 +218,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             </div>
           </div>
 
-          <div className="text-gray-400 text-xs font-bold bg-[#0d0d14] px-4 py-2 rounded-full border border-white/5">
+          <div className="text-gray-400 text-xs font-bold bg-[#0a0e22] px-4 py-2 rounded-full border border-white/5">
             Showing <span className="text-white font-black">{filtered.length}</span> teams
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
       {/* ── Teams List ────────────────────────────────────────── */}
       <div className="max-w-5xl mx-auto px-6 mt-10">
         {filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-72 rounded-3xl border border-white/5 bg-[#0d0d14]/40 backdrop-blur-sm text-gray-500 gap-4">
+          <div className="flex flex-col items-center justify-center h-72 rounded-3xl border border-white/5 bg-[#0a0e22]/40 backdrop-blur-sm text-gray-500 gap-4">
             <span className="text-5xl">👻</span>
             <div className="text-center">
               <p className="text-base font-bold text-gray-300 mb-1">No teams found</p>
@@ -251,7 +251,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
               return (
                 <div
                   key={teamKey}
-                  className={`group bg-[#0d0d14] border border-white/[0.05] rounded-[1.5rem] overflow-hidden transition-all duration-500 shadow-xl ${
+                  className={`group bg-[#0a0e22] border border-white/[0.05] rounded-[1.5rem] overflow-hidden transition-all duration-500 shadow-xl ${
                     isExpanded ? `ring-1 ring-white/10 shadow-2xl scale-[1.01]` : 'hover:border-white/[0.15] hover:shadow-2xl hover:-translate-y-1'
                   }`}
                 >
@@ -288,7 +288,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                             const charElem = ELEMENT_DETAILS[char.element] || { color: 'text-white' };
                             return (
                               <div key={mi} className="flex flex-col items-center gap-1.5 w-14">
-                                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#0d0d14] ring-1 ring-white/10 shadow-lg group-hover:ring-white/30 transition-all bg-[#050508]">
+                                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#0a0e22] ring-1 ring-white/10 shadow-lg group-hover:ring-white/30 transition-all bg-[#05060f]">
                                   <FallbackImage src={char.avatarUrl} alt={locale === 'en' ? char.nameEn : char.nameVi} fill className="object-cover object-top scale-110" />
                                   <div className="absolute bottom-0 right-0 w-4 h-4 bg-black/80 rounded-full flex items-center justify-center p-[2px] border border-white/20">
                                     <FallbackImage src={`/assets/elements/${char.element.toLowerCase()}.webp`} alt={char.element} fill className="object-contain" />
@@ -314,7 +314,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
 
                   {/* Expanded Members Details */}
                   {isExpanded && (
-                    <div className="border-t border-white/[0.05] p-6 bg-[#050508]/80 backdrop-blur-sm">
+                    <div className="border-t border-white/[0.05] p-6 bg-[#05060f]/80 backdrop-blur-sm">
                       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {team.members.map((member, mi) => {
                           const char = charMap[member.characterId];
@@ -328,7 +328,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                             <Link
                               key={mi}
                               href={`/characters/${member.characterId}`}
-                              className="group/card relative bg-[#0d0d14] border border-white/[0.08] rounded-[1.25rem] p-5 flex flex-col transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:bg-[#12121a]"
+                              className="group/card relative bg-[#0a0e22] border border-white/[0.08] rounded-[1.25rem] p-5 flex flex-col transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:bg-[#131a36]"
                             >
                               {/* Character Header */}
                               <div className="flex items-start gap-4 mb-4">

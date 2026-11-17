@@ -28,22 +28,22 @@ export default function AdminLoginPage() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'var(--bg-void, #04040a)' }}
+      style={{ background: 'var(--bg-void, #04060f)' }}
     >
       {/* Ambient glows */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.08) 0%, transparent 70%)', filter: 'blur(100px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.08)0%, transparent 70%)', filter: 'blur(100px)' }}
         />
       </div>
 
       <div
         className="w-full max-w-md rounded-3xl p-8"
         style={{
-          background: 'rgba(8,8,18,0.90)',
+          background: 'rgba(10,14,34,0.90)',
           backdropFilter: 'blur(24px)',
-          border: '1px solid rgba(200,168,75,0.15)',
+          border: '1px solid rgba(232,182,76,0.15)',
           boxShadow: '0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03)',
         }}
       >
@@ -52,9 +52,9 @@ export default function AdminLoginPage() {
           <div
             className="inline-flex w-16 h-16 rounded-2xl items-center justify-center mb-4 text-3xl"
             style={{
-              background: 'linear-gradient(135deg, rgba(200,168,75,0.15), rgba(8,8,18,0.9))',
-              border: '1px solid rgba(200,168,75,0.25)',
-              boxShadow: '0 0 30px rgba(200,168,75,0.12)',
+              background: 'linear-gradient(135deg, rgba(232,182,76,0.15), rgba(10,14,34,0.9)',
+              border: '1px solid rgba(232,182,76,0.25)',
+              boxShadow: '0 0 30px rgba(232,182,76,0.12)',
             }}
           >
             🛡️
@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
             className="text-2xl font-black uppercase tracking-[0.1em]"
             style={{
               fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
+              background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -88,14 +88,14 @@ export default function AdminLoginPage() {
               autoFocus
               className="w-full px-4 py-3 rounded-xl text-sm font-medium outline-none"
               style={{
-                background: 'rgba(4,4,10,0.8)',
+                background: 'rgba(5,8,20,0.8)',
                 border: error ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(255,255,255,0.08)',
                 color: 'rgba(255,255,255,0.9)',
                 transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
               }}
               onFocus={e => {
-                e.target.style.borderColor = 'rgba(200,168,75,0.4)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.08)';
+                e.target.style.borderColor = 'rgba(232,182,76,0.4)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(232,182,76,0.08)';
               }}
               onBlur={e => {
                 e.target.style.borderColor = error ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.08)';
@@ -118,10 +118,10 @@ export default function AdminLoginPage() {
             className="w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               background: isPending
-                ? 'rgba(200,168,75,0.4)'
-                : 'linear-gradient(135deg, #f0d080, #c8a84b)',
-              color: '#080812',
-              boxShadow: isPending ? 'none' : '0 6px 24px rgba(200,168,75,0.3)',
+                ? 'rgba(232,182,76,0.4)'
+                : 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
+              color: '#090d1f',
+              boxShadow: isPending ? 'none' : '0 6px 24px rgba(232,182,76,0.3)',
             }}
           >
             {isPending ? (

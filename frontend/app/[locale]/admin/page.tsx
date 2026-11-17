@@ -6,18 +6,18 @@ import Link from 'next/link';
 interface Stats { characters: number; weapons: number; artifacts: number; materials: number; }
 
 const STAT_CARDS = (s: Stats) => [
-  { label: 'Characters', value: s.characters, icon: '⚔️', color: '#c8a84b', href: '/admin/characters', bg: 'rgba(200,168,75,0.08)' },
-  { label: 'Weapons',    value: s.weapons,    icon: '🗡️', color: '#4fc3f7', href: '/admin/weapons',    bg: 'rgba(79,195,247,0.08)' },
-  { label: 'Artifacts',  value: s.artifacts,  icon: '💎', color: '#ce93d8', href: '/admin/artifacts',  bg: 'rgba(206,147,216,0.08)' },
-  { label: 'Materials',  value: s.materials,  icon: '📦', color: '#aed581', href: '/admin/materials',  bg: 'rgba(174,213,129,0.08)' },
+  { label: 'Characters', value: s.characters, icon: '⚔️', color: '#e8b64c', href: '/admin/characters', bg: 'rgba(232,182,76,0.08)' },
+  { label: 'Weapons',    value: s.weapons,    icon: '🗡️', color: '#3aa8ff', href: '/admin/weapons',    bg: 'rgba(58,168,255,0.08)' },
+  { label: 'Artifacts',  value: s.artifacts,  icon: '💎', color: '#cf8fff', href: '/admin/artifacts',  bg: 'rgba(207,143,255,0.08)' },
+  { label: 'Materials',  value: s.materials,  icon: '📦', color: '#9ede5f', href: '/admin/materials',  bg: 'rgba(158,222,95,0.08)' },
 ];
 
 const QUICK_ACTIONS = [
-  { label: 'Add Character', href: '/admin/characters', icon: '👤', color: '#c8a84b' },
-  { label: 'Add Weapon',    href: '/admin/weapons',    icon: '🗡️', color: '#4fc3f7' },
-  { label: 'Manage Tiers',  href: '/admin/tierlist',   icon: '🏆', color: '#ffd54f' },
-  { label: 'Backup DB',     href: '/admin/backups',    icon: '💾', color: '#aed581' },
-  { label: 'Export Seeds',  href: '/admin/export',     icon: '📤', color: '#ce93d8' },
+  { label: 'Add Character', href: '/admin/characters', icon: '👤', color: '#e8b64c' },
+  { label: 'Add Weapon',    href: '/admin/weapons',    icon: '🗡️', color: '#3aa8ff' },
+  { label: 'Manage Tiers',  href: '/admin/tierlist',   icon: '🏆', color: '#ffd34d' },
+  { label: 'Backup DB',     href: '/admin/backups',    icon: '💾', color: '#9ede5f' },
+  { label: 'Export Seeds',  href: '/admin/export',     icon: '📤', color: '#cf8fff' },
 ];
 
 export default function AdminDashboard() {
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
           className="text-2xl font-black uppercase tracking-wide mb-1"
           style={{
             fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-            background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
+            background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           }}
         >
@@ -122,7 +122,7 @@ export default function AdminDashboard() {
       {/* Quick Actions */}
       <section>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #ffdf9e, #e8b64c)' }} />
           <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Quick Actions</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
               href={action.href as any}
               className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 group"
               style={{
-                background: 'rgba(13,13,20,0.70)',
+                background: 'rgba(16,22,46,0.70)',
                 border: '1px solid rgba(255,255,255,0.05)',
               }}
               onMouseEnter={e => {
@@ -155,14 +155,14 @@ export default function AdminDashboard() {
       <section
         className="rounded-2xl p-5"
         style={{
-          background: 'rgba(200,168,75,0.04)',
-          border: '1px solid rgba(200,168,75,0.12)',
+          background: 'rgba(232,182,76,0.04)',
+          border: '1px solid rgba(232,182,76,0.12)',
         }}
       >
         <div className="flex items-start gap-4">
           <div
             className="w-9 h-9 rounded-xl flex items-center justify-center text-base shrink-0"
-            style={{ background: 'rgba(200,168,75,0.12)', border: '1px solid rgba(200,168,75,0.20)' }}
+            style={{ background: 'rgba(232,182,76,0.12)', border: '1px solid rgba(232,182,76,0.20)' }}
           >
             💡
           </div>

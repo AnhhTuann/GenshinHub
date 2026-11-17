@@ -23,15 +23,15 @@ export default function ExportPage() {
     <div className="flex flex-col gap-6 max-w-3xl">
       {/* Header */}
       <div>
-        <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#ce93d8,#8e24aa)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+        <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#cf8fff,#7c3aed)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
           Export Source Code
         </h1>
         <p className="text-white/30 text-xs mt-0.5">Persist database changes back to the filesystem.</p>
       </div>
 
-      <div className="rounded-2xl p-5 flex flex-col gap-5" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
+      <div className="rounded-2xl p-5 flex flex-col gap-5" style={{ background:'rgba(10,14,34,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="flex items-start gap-4">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0" style={{ background:'rgba(206,147,216,0.12)', border:'1px solid rgba(206,147,216,0.20)' }}>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0" style={{ background:'rgba(207,143,255,0.12)', border:'1px solid rgba(207,143,255,0.20)' }}>
             📤
           </div>
           <div>
@@ -45,7 +45,7 @@ export default function ExportPage() {
               onClick={handleExport}
               disabled={loading}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wide disabled:opacity-50"
-              style={{ background:'linear-gradient(135deg, #ce93d8, #8e24aa)', color:'#fff', boxShadow:'0 4px 16px rgba(206,147,216,0.25)' }}
+              style={{ background:'linear-gradient(135deg, #cf8fff, #7c3aed)', color:'#fff', boxShadow:'0 4px 16px rgba(207,143,255,0.25)' }}
             >
               {loading ? (
                 <>

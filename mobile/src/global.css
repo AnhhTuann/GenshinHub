@@ -10,6 +10,22 @@
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
+  --app-background: #100b13;
+  --app-surface: #1b1320;
+  --app-elevated: #251a2a;
+  --accent-primary: #f4729c;
+  --accent-primary-light: #ffb6ca;
+  --accent-secondary: #ffd0dc;
+  --text-primary: #fff7fa;
+  --text-muted: #c4aebc;
+  --border-accent: rgba(255,182,202,0.14);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: var(--app-background);
 }
 
 /* =====================================================
@@ -22,9 +38,9 @@
 }
 
 :root {
-  --theme-main: #cfa858;
-  --theme-light: #f5d399;
-  --theme-glow: rgba(207,168,88,0.45);
+  --theme-main: var(--accent-primary);
+  --theme-light: var(--accent-primary-light);
+  --theme-glow: rgba(244,114,156,0.42);
 }
 .theme-pyro {
   --theme-main: #ef4723;
@@ -64,10 +80,14 @@
 
 @layer utilities {
   .text-gradient-gold {
-    background-image: linear-gradient(to bottom right, #f5d399, #cfa858);
+    background-image: linear-gradient(120deg, #ffe6ec, var(--accent-primary-light), var(--accent-primary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .sakura-glow {
+    box-shadow: 0 0 32px -8px rgba(244,114,156,0.3);
   }
 }
 

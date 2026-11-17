@@ -112,7 +112,7 @@ export default function WeaponsAdmin() {
     if(!editId && nameEnVal) setValue('id', nameEnVal.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,''));
   },[editId,nameEnVal,setValue]);
 
-  const RARITY_COLOR: Record<number,string> = {5:'#ffd54f',4:'#ce93d8',3:'#80cbc4',2:'#a5d6a7',1:'#bdbdbd'};
+  const RARITY_COLOR: Record<number,string> = {5:'#ffd34d',4:'#cf8fff',3:'#7fe3d8',2:'#b8ec9d',1:'#bdbdbd'};
 
   return (
     <div className="flex flex-col gap-5">
@@ -121,31 +121,31 @@ export default function WeaponsAdmin() {
       {/* Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#4fc3f7,#0284c7)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#3aa8ff,#2b8fd4)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             Weapons
           </h1>
           <p className="text-white/30 text-xs mt-0.5">{loading?'Loading...':`${filtered.length} of ${all.length} weapons`}</p>
         </div>
-        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#4fc3f7,#0284c7)', color:'#fff', boxShadow:'0 4px 16px rgba(79,195,247,0.3)' }}>
+        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#3aa8ff,#2b8fd4)', color:'#fff', boxShadow:'0 4px 16px rgba(58,168,255,0.3)' }}>
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4"/></svg>
           Add Weapon
         </button>
       </div>
 
       {/* Filters */}
-      <div className="flex gap-2 flex-wrap p-3.5 rounded-2xl" style={{ background:'rgba(8,8,18,0.80)', border:'1px solid rgba(255,255,255,0.05)' }}>
+      <div className="flex gap-2 flex-wrap p-3.5 rounded-2xl" style={{ background:'rgba(10,14,34,0.80)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="relative flex-1 min-w-[160px]">
           <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/20 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input type="text" placeholder="Search weapons..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.85)'}}/>
+          <input type="text" placeholder="Search weapons..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 rounded-xl text-xs font-medium outline-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.85)'}}/>
         </div>
-        <select value={typeFilter} onChange={e=>setTypeFilter(e.target.value)} className="px-3 py-2 rounded-xl text-xs font-bold outline-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.7)'}}>
+        <select value={typeFilter} onChange={e=>setTypeFilter(e.target.value)} className="px-3 py-2 rounded-xl text-xs font-bold outline-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.7)'}}>
           <option value="">All Types</option>
           {WEAPON_TYPES.map(t=><option key={t} value={t}>{t}</option>)}
         </select>
       </div>
 
       {/* Table */}
-      <div className="rounded-2xl overflow-hidden" style={{background:'rgba(8,8,18,0.70)',border:'1px solid rgba(255,255,255,0.05)'}}>
+      <div className="rounded-2xl overflow-hidden" style={{background:'rgba(10,14,34,0.70)',border:'1px solid rgba(255,255,255,0.05)'}}>
         <div className="grid items-center text-[10px] font-black uppercase tracking-widest text-white/25 px-4 py-2.5" style={{gridTemplateColumns:'40px 1fr 90px 80px 90px 70px 80px',borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
           <span/><span>Name</span><span>Type</span><span>Rarity</span><span>Base ATK</span><span>Tier</span><span className="text-right">Actions</span>
         </div>
@@ -167,9 +167,9 @@ export default function WeaponsAdmin() {
             <div className="text-xs text-white/45 font-medium">{w.type}</div>
             <div className="text-xs font-bold" style={{color:RARITY_COLOR[w.rarity]||'#fff'}}>{'★'.repeat(w.rarity)}</div>
             <div className="text-xs font-mono font-bold text-white/70">{w.baseAtk}</div>
-            <div>{w.tier?<span className="px-2 py-0.5 rounded text-[10px] font-black" style={{background:'rgba(200,168,75,0.12)',color:'#f0d080',border:'1px solid rgba(200,168,75,0.20)'}}>{w.tier}</span>:<span className="text-white/15 text-xs">—</span>}</div>
+            <div>{w.tier?<span className="px-2 py-0.5 rounded text-[10px] font-black" style={{background:'rgba(232,182,76,0.12)',color:'#ffdf9e',border:'1px solid rgba(232,182,76,0.20)'}}>{w.tier}</span>:<span className="text-white/15 text-xs">—</span>}</div>
             <div className="flex gap-1.5 justify-end">
-              <button onClick={()=>openEdit(w.id)} className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase" style={{background:'rgba(79,195,247,0.10)',border:'1px solid rgba(79,195,247,0.20)',color:'#4fc3f7'}}>Edit</button>
+              <button onClick={()=>openEdit(w.id)} className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase" style={{background:'rgba(58,168,255,0.10)',border:'1px solid rgba(58,168,255,0.20)',color:'#3aa8ff'}}>Edit</button>
               <button onClick={()=>handleDelete(w.id,w.nameEn)} className="px-2 py-1.5 rounded-lg text-[10px] font-bold" style={{background:'rgba(239,68,68,0.08)',border:'1px solid rgba(239,68,68,0.15)',color:'rgba(239,68,68,0.7)'}}>
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd"/></svg>
               </button>
@@ -187,10 +187,10 @@ export default function WeaponsAdmin() {
       <AdminModal open={modalOpen} onClose={()=>setModalOpen(false)} title={editId?'Edit Weapon':'Add Weapon'} subtitle={editId||'New weapon'} size="lg"
         footer={
           <div className="flex items-center justify-between">
-            {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#f0d080'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
+            {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#ffdf9e'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
             <div className="flex gap-2 ml-auto">
               <button onClick={()=>setModalOpen(false)} className="px-4 py-2 rounded-xl text-sm font-bold" style={{background:'rgba(255,255,255,0.05)',color:'rgba(255,255,255,0.5)'}}>Cancel</button>
-              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#4fc3f7,#0284c7)',color:'#fff',boxShadow:'0 4px 16px rgba(79,195,247,0.25)'}}>
+              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#3aa8ff,#2b8fd4)',color:'#fff',boxShadow:'0 4px 16px rgba(58,168,255,0.25)'}}>
                 {editId?'Save Changes':'Create Weapon'}
               </button>
             </div>
@@ -201,48 +201,48 @@ export default function WeaponsAdmin() {
           {/* ID */}
           <div className="flex flex-col gap-1.5 col-span-2">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">ID (slug) <span className="text-red-400">*</span></label>
-            <input {...register('id')} placeholder="e.g. staff-of-homa" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(4,4,10,0.8)',border:errors.id?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+            <input {...register('id')} placeholder="e.g. staff-of-homa" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(5,8,20,0.8)',border:errors.id?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             {errors.id&&<p className="text-red-400 text-xs">{errors.id.message}</p>}
           </div>
           {/* Name EN/VI */}
           {(['nameEn','nameVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Name ({f==='nameEn'?'EN':'VI'}) <span className="text-red-400">*</span></label>
-              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(4,4,10,0.8)',border:errors[f]?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(5,8,20,0.8)',border:errors[f]?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
               {errors[f]&&<p className="text-red-400 text-xs">{(errors[f] as any)?.message}</p>}
             </div>
           ))}
           {/* Type / Rarity / BaseAtk / SubStat / SubStatValue */}
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Type <span className="text-red-400">*</span></label>
-            <select {...register('type')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
+            <select {...register('type')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
               {WEAPON_TYPES.map(t=><option key={t} value={t}>{t}</option>)}
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Rarity</label>
-            <select {...register('rarity')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
+            <select {...register('rarity')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
               {RARITIES.map(r=><option key={r} value={r}>{'★'.repeat(r)} {r}-Star</option>)}
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Base ATK <span className="text-red-400">*</span></label>
-            <input {...register('baseAtk')} type="number" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(4,4,10,0.8)',border:errors.baseAtk?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+            <input {...register('baseAtk')} type="number" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(5,8,20,0.8)',border:errors.baseAtk?'1px solid rgba(239,68,68,0.5)':'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             {errors.baseAtk&&<p className="text-red-400 text-xs">{errors.baseAtk.message}</p>}
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Sub Stat</label>
-            <select {...register('subStat')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
+            <select {...register('subStat')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
               {SUBSTATS.map(s=><option key={s} value={s}>{s||'None'}</option>)}
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Sub Stat Value (%)</label>
-            <input {...register('subStatValue')} type="number" step="0.1" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+            <input {...register('subStatValue')} type="number" step="0.1" className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none font-mono" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Tier</label>
-            <select {...register('tier')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
+            <select {...register('tier')} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}>
               <option value="">— None —</option>
               {TIERS.map(t=><option key={t} value={t}>{t}</option>)}
             </select>
@@ -254,13 +254,13 @@ export default function WeaponsAdmin() {
           {(['passiveNameEn','passiveNameVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">{f==='passiveNameEn'?'EN':'VI'}</label>
-              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <input {...register(f)} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             </div>
           ))}
           {(['passiveDescEn','passiveDescVi'] as const).map(f=>(
             <div key={f} className="flex flex-col gap-1.5">
               <label className="text-[11px] font-bold uppercase tracking-widest text-white/40">Passive Desc {f==='passiveDescEn'?'(EN)':'(VI)'}</label>
-              <textarea {...register(f)} rows={2} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none" style={{background:'rgba(4,4,10,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
+              <textarea {...register(f)} rows={2} className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none" style={{background:'rgba(5,8,20,0.8)',border:'1px solid rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.88)'}}/>
             </div>
           ))}
           {/* Icon URL */}

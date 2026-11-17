@@ -6,9 +6,14 @@ module.exports = {
     extend: {
       colors: {
         dark: {
-          DEFAULT: '#080810',
-          card: '#0f0f1a',
-          border: 'rgba(255,255,255,0.08)',
+          DEFAULT: '#100b13',
+          card: '#1b1320',
+          border: 'rgba(255,182,202,0.14)',
+        },
+        sakura: {
+          DEFAULT: '#f4729c',
+          light: '#ffb6ca',
+          soft: '#ffd0dc',
         },
         gold: {
           DEFAULT: '#cfa858',

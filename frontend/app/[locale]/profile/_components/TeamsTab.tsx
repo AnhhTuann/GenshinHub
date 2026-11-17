@@ -208,9 +208,9 @@ export default function TeamsTab({ user }: { user: User }) {
   return (
     <div className="space-y-8">
       {/* Team Builder */}
-      <div className="bg-[#1a1a24] border border-[#c8a84b]/30 rounded-2xl p-6">
+      <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-black uppercase tracking-widest text-[#f0d080] flex items-center gap-2">
+          <h3 className="text-lg font-black uppercase tracking-widest text-[#ffdf9e] flex items-center gap-2">
             <Users className="w-5 h-5" />
             Team Builder
           </h3>
@@ -232,7 +232,7 @@ export default function TeamsTab({ user }: { user: User }) {
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)}
                 placeholder="E.g., Spiral Abyss Team 1"
-                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 focus:bg-white/5 transition-all"
+                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-2 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/5 transition-all"
               />
             </div>
             
@@ -252,7 +252,7 @@ export default function TeamsTab({ user }: { user: User }) {
                     <div 
                       key={`empty-${i}`} 
                       onClick={() => setIsSelectorOpen(true)}
-                      className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center text-white/20 cursor-pointer hover:border-[#c8a84b]/50 hover:text-[#c8a84b] transition-colors bg-white/5"
+                      className="w-24 h-24 rounded-2xl border-2 border-dashed border-white/10 flex items-center justify-center text-white/20 cursor-pointer hover:border-[#e8b64c]/50 hover:text-[#e8b64c] transition-colors bg-white/5"
                     >
                       <Plus className="w-6 h-6" />
                     </div>
@@ -267,7 +267,7 @@ export default function TeamsTab({ user }: { user: User }) {
               {resonances.length > 0 ? (
                 <div className="flex gap-2">
                   {resonances.map(r => (
-                    <span key={r} className="px-2 py-1 bg-[#c8a84b]/20 text-[#f0d080] rounded text-xs font-bold border border-[#c8a84b]/30 flex items-center gap-1">
+                    <span key={r} className="px-2 py-1 bg-[#e8b64c]/20 text-[#ffdf9e] rounded text-xs font-bold border border-[#e8b64c]/30 flex items-center gap-1">
                        <img src={`/assets/elements/${r.toLowerCase()}.webp`} alt={r} className="w-3 h-3" />
                        {r} Resonance
                     </span>
@@ -285,7 +285,7 @@ export default function TeamsTab({ user }: { user: User }) {
             <button 
               onClick={handleSaveTeam}
               disabled={saving}
-              className="mt-4 px-6 py-2 rounded-xl bg-[#c8a84b] hover:bg-[#f0d080] text-black font-bold uppercase tracking-widest text-xs transition-colors flex items-center gap-2 disabled:opacity-50"
+              className="mt-4 px-6 py-2 rounded-xl bg-[#e8b64c] hover:bg-[#ffdf9e] text-black font-bold uppercase tracking-widest text-xs transition-colors flex items-center gap-2 disabled:opacity-50"
             >
               {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />} 
               {selectedTeamId ? 'Update Team' : 'Save Team'}
@@ -306,7 +306,7 @@ export default function TeamsTab({ user }: { user: User }) {
              {user.teams.map((t: any) => (
                <div 
                  key={t.id} 
-                 className={`bg-white/5 p-4 rounded-2xl border ${selectedTeamId === t.id ? 'border-[#c8a84b]' : 'border-white/10'} hover:border-[#c8a84b]/50 transition-colors cursor-pointer relative group`}
+                 className={`bg-white/5 p-4 rounded-2xl border ${selectedTeamId === t.id ? 'border-[#e8b64c]' : 'border-white/10'} hover:border-[#e8b64c]/50 transition-colors cursor-pointer relative group`}
                  onClick={() => loadTeam(t)}
                >
                  <h4 className="font-bold text-white capitalize mb-3 pr-8">{t.name}</h4>
@@ -333,9 +333,9 @@ export default function TeamsTab({ user }: { user: User }) {
       {/* Character Selector Modal */}
       {isSelectorOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setIsSelectorOpen(false)}>
-          <div className="bg-[#1a1a24] border border-[#c8a84b]/30 rounded-2xl p-6 w-full max-w-3xl max-h-[80vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6 w-full max-w-3xl max-h-[80vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-lg font-black uppercase tracking-widest text-[#f0d080]">Select Character</h3>
+              <h3 className="text-lg font-black uppercase tracking-widest text-[#ffdf9e]">Select Character</h3>
               <button onClick={() => setIsSelectorOpen(false)} className="text-white/50 hover:text-white transition-colors">✕</button>
             </div>
             
@@ -345,14 +345,14 @@ export default function TeamsTab({ user }: { user: User }) {
                 placeholder="Search characters..." 
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="flex-1 bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 transition-all text-sm"
+                className="flex-1 bg-black/50 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 transition-all text-sm"
               />
               <div className="flex flex-wrap gap-1.5 justify-center sm:justify-start">
                 {['Anemo', 'Cryo', 'Dendro', 'Electro', 'Geo', 'Hydro', 'Pyro'].map(el => (
                   <button 
                     key={el}
                     onClick={() => setSelectedElement(selectedElement === el ? null : el)}
-                    className={`w-10 h-10 rounded-xl border ${selectedElement === el ? 'border-[#c8a84b] bg-[#c8a84b]/20 shadow-[0_0_10px_rgba(200,168,75,0.3)]' : 'border-white/10 bg-white/5'} flex items-center justify-center p-1.5 transition-all hover:border-[#c8a84b]/50`}
+                    className={`w-10 h-10 rounded-xl border ${selectedElement === el ? 'border-[#e8b64c] bg-[#e8b64c]/20 shadow-[0_0_10px_rgba(232,182,76,0.3)]' : 'border-white/10 bg-white/5'} flex items-center justify-center p-1.5 transition-all hover:border-[#e8b64c]/50`}
                     title={el}
                   >
                     <img src={`/assets/elements/${el.toLowerCase()}.webp`} alt={el} className="w-full h-full object-contain" />
@@ -364,7 +364,7 @@ export default function TeamsTab({ user }: { user: User }) {
             <div className="flex-1 overflow-y-auto min-h-0 pr-2 custom-scrollbar">
               {loadingChars ? (
                 <div className="flex justify-center items-center h-40">
-                  <Loader2 className="w-8 h-8 text-[#c8a84b] animate-spin" />
+                  <Loader2 className="w-8 h-8 text-[#e8b64c] animate-spin" />
                 </div>
               ) : filteredChars.length === 0 ? (
                 <div className="flex justify-center items-center h-40 text-white/30 text-sm">

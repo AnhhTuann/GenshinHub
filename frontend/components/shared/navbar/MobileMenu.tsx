@@ -6,13 +6,13 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
       <div
         className="md:hidden fixed left-0 right-0 z-40 overflow-hidden"
         style={{
-          top: '64px',
+          top: '72px',
           maxHeight: mobileOpen ? '600px' : '0px',
           transition: 'max-height 0.35s cubic-bezier(0.16,1,0.3,1)',
-          background: 'rgba(4,4,10,0.98)',
+          background: 'rgba(21,17,22,0.98)',
           backdropFilter: 'blur(28px)',
           WebkitBackdropFilter: 'blur(28px)',
-          borderBottom: mobileOpen ? '1px solid rgba(200,168,75,0.10)' : 'none',
+          borderBottom: mobileOpen ? '1px solid rgba(255,255,255,0.09)' : 'none',
           boxShadow: mobileOpen ? '0 20px 60px rgba(0,0,0,0.7)' : 'none',
         }}
       >
@@ -26,9 +26,9 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
                 onClick={link.href === '/' ? handleLogoClick : undefined}
                 className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-bold"
                 style={{
-                  background: active ? 'color-mix(in srgb, var(--theme-main) 10%, transparent)' : 'transparent',
-                  border: active ? '1px solid color-mix(in srgb, var(--theme-main) 20%, transparent)' : '1px solid transparent',
-                  color: active ? 'var(--theme-light)' : 'rgba(255,255,255,0.55)',
+                  background: active ? 'rgba(255,255,255,0.07)' : 'transparent',
+                  border: active ? '1px solid rgba(255,255,255,0.12)' : '1px solid transparent',
+                  color: active ? '#e2e5ff' : 'rgba(255,255,255,0.55)',
                   transition: 'background 0.2s ease, border-color 0.2s ease, color 0.2s ease',
                 }}
               >
@@ -51,7 +51,7 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
       {mobileOpen && (
         <div
           className="md:hidden fixed inset-0 z-30"
-          style={{ background: 'rgba(0,0,0,0.50)', backdropFilter: 'blur(2px)', top: '64px' }}
+          style={{ background: 'rgba(0,0,0,0.50)', backdropFilter: 'blur(2px)',           top: '72px' }}
           onClick={() => setMobileOpen(false)}
         />
       )}

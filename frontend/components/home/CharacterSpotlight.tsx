@@ -16,8 +16,8 @@ interface SpotlightChar {
 }
 
 const ELEM_COLOR: Record<string, string> = {
-  Pyro: '#ff6b4a', Hydro: '#4fc3f7', Cryo: '#80deea',
-  Electro: '#ce93d8', Anemo: '#4db6ac', Geo: '#ffd54f', Dendro: '#aed581',
+  Pyro: '#ff5a45', Hydro: '#3aa8ff', Cryo: '#8fe8f5',
+  Electro: '#cf8fff', Anemo: '#35d6c5', Geo: '#ffd34d', Dendro: '#9ede5f',
 };
 
 export default function CharacterSpotlight({ characters }: { characters: SpotlightChar[] }) {
@@ -42,7 +42,7 @@ export default function CharacterSpotlight({ characters }: { characters: Spotlig
 
 function SpotlightCard({ char, locale }: { char: SpotlightChar, locale: string }) {
   const name = locale === 'vi' ? (char.nameVi || char.nameEn) : char.nameEn;
-  const ec = ELEM_COLOR[char.element] ?? '#a855f7';
+  const ec = ELEM_COLOR[char.element] ?? '#a77cf6';
   
   const glowRef = useMouseGlow<HTMLAnchorElement>();
 
@@ -82,8 +82,8 @@ function SpotlightCard({ char, locale }: { char: SpotlightChar, locale: string }
           ref={glowRef as any}
           className="group relative shrink-0 rounded-2xl overflow-hidden transition-all duration-300 mouse-glow-card block"
           style={{
-            width: '112px',
-            height: '144px',
+            width: '132px',
+            height: '174px',
             border: `1px solid ${ec}30`,
             boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
           }}
@@ -128,7 +128,7 @@ function SpotlightCard({ char, locale }: { char: SpotlightChar, locale: string }
 
           {/* 5★ badge */}
           {char.rarity === 5 && (
-            <div className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(200,168,75,0.8)] pointer-events-none" />
+            <div className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(232,182,76,0.8)] pointer-events-none" />
           )}
 
           {/* Hover glow border */}

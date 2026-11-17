@@ -228,8 +228,8 @@ export default function CharacterDetailScreen() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#080810' },
-  center: { flex: 1, backgroundColor: '#080810', alignItems: 'center', justifyContent: 'center' },
+  root: { flex: 1, backgroundColor: '#100b13' },
+  center: { flex: 1, backgroundColor: '#100b13', alignItems: 'center', justifyContent: 'center' },
   loaderText: { color: 'rgba(255,255,255,0.4)', marginTop: 12, fontSize: 13 },
   notFound: { color: '#ffffff', fontSize: 16 },
   scroll: { flex: 1 },

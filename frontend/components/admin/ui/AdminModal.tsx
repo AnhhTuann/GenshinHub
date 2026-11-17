@@ -56,8 +56,8 @@ export default function AdminModal({ open, onClose, title, subtitle, children, s
       <div
         className={`w-full ${SIZE_CLASS[size]} max-h-[90vh] flex flex-col rounded-2xl overflow-hidden`}
         style={{
-          background: 'rgba(8,8,18,0.97)',
-          border: '1px solid rgba(200,168,75,0.14)',
+          background: 'rgba(10,14,34,0.97)',
+          border: '1px solid rgba(232,182,76,0.14)',
           boxShadow: '0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.03)',
           transform: open ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.97)',
           transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.25s ease',
@@ -73,7 +73,7 @@ export default function AdminModal({ open, onClose, title, subtitle, children, s
               className="text-base font-black uppercase tracking-wide"
               style={{
                 fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
+                background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

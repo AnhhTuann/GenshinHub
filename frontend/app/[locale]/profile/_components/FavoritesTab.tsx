@@ -63,7 +63,7 @@ export default function FavoritesTab({ user }: { user: User }) {
             onClick={() => setActiveSubTab(tab.id as any)}
             className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all ${
               activeSubTab === tab.id
-                ? 'bg-[#c8a84b]/10 text-[#f0d080] border border-[#c8a84b]/30'
+                ? 'bg-[#e8b64c]/10 text-[#ffdf9e] border border-[#e8b64c]/30'
                 : 'text-white/40 hover:bg-white/5 hover:text-white/80 border border-transparent'
             }`}
           >
@@ -73,7 +73,7 @@ export default function FavoritesTab({ user }: { user: User }) {
       </div>
 
       {loading ? (
-        <div className="flex justify-center p-10"><Loader2 className="animate-spin text-[#c8a84b]" /></div>
+        <div className="flex justify-center p-10"><Loader2 className="animate-spin text-[#e8b64c]" /></div>
       ) : items.length === 0 ? (
         <div className="text-center p-10 border border-white/5 bg-white/[0.01] rounded-2xl">
           <p className="text-white/40 text-sm font-medium">You haven&apos;t favorited any {activeSubTab}s yet.</p>

@@ -87,7 +87,7 @@ export default function AdminEditableBuild({ character }: { character: any }) {
 
       {isEditing && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-[#0d0d14] border border-white/10 rounded-xl p-6 w-full max-w-4xl max-h-[90vh] flex flex-col gap-4 shadow-2xl">
+          <div className="bg-[#0a0e22] border border-white/10 rounded-xl p-6 w-full max-w-4xl max-h-[90vh] flex flex-col gap-4 shadow-2xl">
             <h3 className="text-xl font-bold text-white">Edit Builds (JSON)</h3>
             <p className="text-xs text-white/50">
               Chỉnh sửa thông tin Vũ Khí, Thánh Di Vật và Đội Hình trực tiếp dưới dạng JSON.
@@ -96,7 +96,7 @@ export default function AdminEditableBuild({ character }: { character: any }) {
             <textarea 
               value={jsonStr}
               onChange={(e) => setJsonStr(e.target.value)}
-              className="w-full flex-1 min-h-[50vh] bg-[#06060a] text-green-400 font-mono text-sm p-4 rounded outline-none border border-white/10"
+              className="w-full flex-1 min-h-[50vh] bg-[#070a18] text-green-400 font-mono text-sm p-4 rounded outline-none border border-white/10"
               spellCheck={false}
             />
 

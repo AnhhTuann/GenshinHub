@@ -60,7 +60,7 @@ export default function AdminTierListPage() {
   };
 
   const inputStyle = {
-    background: 'rgba(4,4,10,0.8)',
+    background: 'rgba(5,8,20,0.8)',
     border: '1px solid rgba(255,255,255,0.07)',
     color: 'rgba(255,255,255,0.85)',
   };
@@ -71,7 +71,7 @@ export default function AdminTierListPage() {
     <div className="flex flex-col gap-8">
       {/* Header */}
       <div>
-        <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#f0d080,#c8a84b)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+        <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#ffdf9e,#e8b64c)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
           Tier List Management
         </h1>
         <p className="text-white/30 text-xs mt-0.5">Manage global tier ranks and bulk assign characters and weapons.</p>
@@ -84,20 +84,20 @@ export default function AdminTierListPage() {
 
       <section>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }} />
+          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #ffdf9e, #e8b64c)' }} />
           <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Characters</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {characters.map(char => (
-            <div key={char.id} className="p-4 rounded-2xl flex gap-4 transition-colors" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
+            <div key={char.id} className="p-4 rounded-2xl flex gap-4 transition-colors" style={{ background:'rgba(10,14,34,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
               <div className="w-14 h-14 relative shrink-0 rounded-xl overflow-hidden" style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.08)' }}>
                 {char.avatarUrl && <FallbackImage src={char.avatarUrl} alt={char.nameEn} fill className="object-cover" sizes="56px" />}
               </div>
               <div className="flex-1 min-w-0 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-sm text-white/90 truncate pr-2">{char.nameEn}</h3>
-                  <div className="text-[10px] font-black" style={{ color: char.rarity===5 ? '#ffd54f' : '#ce93d8' }}>{'★'.repeat(char.rarity)}</div>
+                  <div className="text-[10px] font-black" style={{ color: char.rarity===5 ? '#ffd34d' : '#cf8fff' }}>{'★'.repeat(char.rarity)}</div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3">
@@ -155,12 +155,12 @@ export default function AdminTierListPage() {
 
       <section>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #4fc3f7, #0284c7)' }} />
+          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #3aa8ff, #2b8fd4)' }} />
           <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Weapons</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
           {weapons.map(weapon => (
-            <div key={weapon.id} className="p-3 rounded-2xl flex flex-col items-center gap-2 text-center" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
+            <div key={weapon.id} className="p-3 rounded-2xl flex flex-col items-center gap-2 text-center" style={{ background:'rgba(10,14,34,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
               <div className="w-12 h-12 relative">
                 {weapon.iconUrl && <FallbackImage src={weapon.iconUrl} alt={weapon.nameEn} fill className="object-contain" sizes="48px" unoptimized />}
               </div>

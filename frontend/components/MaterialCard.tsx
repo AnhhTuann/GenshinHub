@@ -5,10 +5,10 @@ import FallbackImage from '@/components/ui/FallbackImage';
 
 // ─── Rarity config for materials ───────────────────────────
 const MAT_RARITY = {
-  5: { ring: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]', glow: 'rgba(245,158,11,', stars: '#ffd54f', badge: 'rgba(245,158,11,0.16)', badgeBorder: 'rgba(245,158,11,0.35)', text: '#ffd54f', dots: 5 },
-  4: { ring: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]', glow: 'rgba(168,85,247,', stars: '#c084fc', badge: 'rgba(168,85,247,0.16)', badgeBorder: 'rgba(168,85,247,0.35)', text: '#c084fc', dots: 4 },
-  3: { ring: 'from-[#60a5fa] via-[#3b82f6] to-[#1d4ed8]', glow: 'rgba(59,130,246,', stars: '#93c5fd', badge: 'rgba(59,130,246,0.16)', badgeBorder: 'rgba(59,130,246,0.35)', text: '#93c5fd', dots: 3 },
-  2: { ring: 'from-[#4ade80] via-[#22c55e] to-[#15803d]', glow: 'rgba(34,197,94,', stars: '#86efac', badge: 'rgba(34,197,94,0.16)', badgeBorder: 'rgba(34,197,94,0.35)', text: '#86efac', dots: 2 },
+  5: { ring: 'from-[#ffd34d] via-[#f0b64a] to-[#d99a2b]', glow: 'rgba(245,158,11,', stars: '#ffd34d', badge: 'rgba(245,158,11,0.16)', badgeBorder: 'rgba(245,158,11,0.35)', text: '#ffd34d', dots: 5 },
+  4: { ring: 'from-[#c9a8ff] via-[#a77cf6] to-[#7c5ce8]', glow: 'rgba(168,85,247,', stars: '#c9a8ff', badge: 'rgba(168,85,247,0.16)', badgeBorder: 'rgba(168,85,247,0.35)', text: '#c9a8ff', dots: 4 },
+  3: { ring: 'from-[#7ba2ff] via-[#4f7dff] to-[#3d5bd9]', glow: 'rgba(59,130,246,', stars: '#a9bcff', badge: 'rgba(59,130,246,0.16)', badgeBorder: 'rgba(59,130,246,0.35)', text: '#a9bcff', dots: 3 },
+  2: { ring: 'from-[#5ae89a] via-[#3ddc84] to-[#1a9e50]', glow: 'rgba(34,197,94,', stars: '#8ff0b8', badge: 'rgba(34,197,94,0.16)', badgeBorder: 'rgba(34,197,94,0.35)', text: '#8ff0b8', dots: 2 },
   1: { ring: 'from-slate-400 via-slate-500 to-slate-600',   glow: 'rgba(148,163,184,', stars: '#94a3b8', badge: 'rgba(148,163,184,0.12)', badgeBorder: 'rgba(148,163,184,0.25)', text: '#94a3b8', dots: 1 },
 };
 

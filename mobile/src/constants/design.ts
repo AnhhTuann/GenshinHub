@@ -11,6 +11,18 @@ const ELEMENT_COLORS: Record<string, string[]> = {
   Unranked: ['#9ca3af', '#6b7280'],
 };
 
+export const SakuraPalette = {
+  background: '#100b13',
+  surface: '#1b1320',
+  elevated: '#251a2a',
+  accent: '#f4729c',
+  accentLight: '#ffb6ca',
+  accentSoft: '#ffd0dc',
+  text: '#fff7fa',
+  textMuted: '#c4aebc',
+  border: 'rgba(255,182,202,0.14)',
+} as const;
+
 export function getElementColors(element: string): [string, string] {
   const colors = ELEMENT_COLORS[element] || ELEMENT_COLORS.Unranked;
   return [colors[0], colors[1]];

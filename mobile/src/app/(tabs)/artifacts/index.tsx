@@ -123,7 +123,7 @@ export default function ArtifactsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#080810' },
+  container: { flex: 1, backgroundColor: '#100b13' },
   header: {
     paddingHorizontal: 16,
     paddingTop: 16,

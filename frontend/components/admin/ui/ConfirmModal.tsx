@@ -52,9 +52,9 @@ export function ConfirmModal({ open, onConfirm, onCancel, title = 'Confirm Actio
             disabled={!canConfirm}
             className="px-5 py-2 rounded-lg text-sm font-black uppercase tracking-wide transition-all disabled:opacity-40 disabled:cursor-not-allowed"
             style={{
-              background: danger ? 'linear-gradient(135deg, #ef4444, #b91c1c)' : 'linear-gradient(135deg, #f0d080, #c8a84b)',
-              color: danger ? '#fff' : '#080812',
-              boxShadow: canConfirm ? (danger ? '0 4px 16px rgba(239,68,68,0.3)' : '0 4px 16px rgba(200,168,75,0.25)') : 'none',
+              background: danger ? 'linear-gradient(135deg, #ef4444, #b91c1c)' : 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
+              color: danger ? '#fff' : '#090d1f',
+              boxShadow: canConfirm ? (danger ? '0 4px 16px rgba(239,68,68,0.3)' : '0 4px 16px rgba(232,182,76,0.25)') : 'none',
             }}
           >
             {confirmLabel}
@@ -66,7 +66,7 @@ export function ConfirmModal({ open, onConfirm, onCancel, title = 'Confirm Actio
         <div className="flex items-start gap-4 mb-4">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
-            style={{ background: danger ? 'rgba(239,68,68,0.12)' : 'rgba(200,168,75,0.10)', border: danger ? '1px solid rgba(239,68,68,0.25)' : '1px solid rgba(200,168,75,0.20)' }}
+            style={{ background: danger ? 'rgba(239,68,68,0.12)' : 'rgba(232,182,76,0.10)', border: danger ? '1px solid rgba(239,68,68,0.25)' : '1px solid rgba(232,182,76,0.20)' }}
           >
             {danger ? '⚠️' : '❓'}
           </div>
@@ -85,7 +85,7 @@ export function ConfirmModal({ open, onConfirm, onCancel, title = 'Confirm Actio
               placeholder="DELETE"
               className="w-full px-3 py-2.5 rounded-lg text-sm font-mono outline-none"
               style={{
-                background: 'rgba(4,4,10,0.8)',
+                background: 'rgba(5,8,20,0.8)',
                 border: typed === 'DELETE' ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(255,255,255,0.08)',
                 color: typed === 'DELETE' ? '#f87171' : 'rgba(255,255,255,0.7)',
               }}

@@ -12,8 +12,8 @@ interface UpcomingBirthdaysProps {
 }
 
 const EL_COLOR: Record<string, string> = {
-  Pyro: '#ff6b4a', Hydro: '#4fc3f7', Cryo: '#80deea',
-  Electro: '#ce93d8', Anemo: '#4db6ac', Geo: '#ffd54f', Dendro: '#aed581',
+  Pyro: '#ff5a45', Hydro: '#3aa8ff', Cryo: '#8fe8f5',
+  Electro: '#cf8fff', Anemo: '#35d6c5', Geo: '#ffd34d', Dendro: '#9ede5f',
 };
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -62,7 +62,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
       transition={{ duration: 0.5, ease: "easeOut" }}
       style={{
         minHeight: '200px',
-        background: 'linear-gradient(145deg, rgba(13,13,22,0.90), rgba(6,6,12,0.95))',
+        background: 'linear-gradient(145deg, rgba(37,26,42,0.9), rgba(20,14,24,0.96))',
         border: hasToday ? '1px solid rgba(251,191,36,0.25)' : '1px solid rgba(255,255,255,0.06)',
         boxShadow: hasToday ? '0 0 30px -10px rgba(251,191,36,0.15)' : 'none',
       }}
@@ -88,7 +88,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
           {hasToday && (
             <span
               className="ml-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md text-[8px] font-black uppercase tracking-wider"
-              style={{ background: 'rgba(251,191,36,0.15)', color: '#fbbf24', border: '1px solid rgba(251,191,36,0.3)' }}
+              style={{ background: 'rgba(251,191,36,0.15)', color: '#f5c04e', border: '1px solid rgba(251,191,36,0.3)' }}
             >
               🎉 Today!
             </span>
@@ -98,7 +98,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
 
       <div className="grid grid-cols-4 gap-2">
         {upcoming.map((char, idx) => {
-          const elColor = EL_COLOR[char.element] ?? '#c8a84b';
+          const elColor = EL_COLOR[char.element] ?? '#e8b64c';
           const name = locale === 'en' ? char.nameEn : char.nameVi;
           return (
             <motion.div
@@ -120,7 +120,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                       : 'group-hover:shadow-[0_0_12px_rgba(255,255,255,0.08)]'
                   }`}
                   style={{
-                    background: `linear-gradient(135deg, ${elColor}25, #0d0d14)`,
+                    background: `linear-gradient(135deg, ${elColor}25, #1a2148)`,
                     border: char.isToday
                       ? '1.5px solid rgba(251,191,36,0.55)'
                       : `1px solid ${elColor}25`,
@@ -149,7 +149,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                   {/* Today indicator */}
                   {char.isToday && (
                     <div className="absolute bottom-0 left-0 right-0 py-0.5 text-center text-[7px] font-black uppercase tracking-wider"
-                      style={{ background: 'linear-gradient(to right, #f59e0b, #fbbf24)', color: '#000' }}>
+                      style={{ background: 'linear-gradient(to right, #f0b64a, #f5c04e)', color: '#000' }}>
                       🎂 Today
                     </div>
                   )}
@@ -163,7 +163,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                 {/* Date */}
                 <span
                   className="text-[9px] font-black tabular-nums"
-                  style={{ color: char.isToday ? '#fbbf24' : 'rgba(255,255,255,0.3)' }}
+                  style={{ color: char.isToday ? '#f5c04e' : 'rgba(255,255,255,0.3)' }}
                 >
                   {MONTHS[char.bMonth - 1]} {char.bDay}
                 </span>

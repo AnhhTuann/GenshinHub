@@ -9,28 +9,28 @@ import { ExternalLink, Layers } from 'lucide-react';
 // ── Rarity visual config ───────────────────────────────────
 const RARITY_CFG = {
   5: {
-    iconRing: 'from-[#ffd54f] via-[#f59e0b] to-[#d97706]',
+    iconRing: 'from-[#ffd34d] via-[#f0b64a] to-[#d99a2b]',
     glow: 'rgba(245,158,11,',
     border: 'rgba(245,158,11,0.22)',
     borderHover: 'rgba(245,158,11,0.50)',
-    badge: { bg: 'rgba(245,158,11,0.14)', border: 'rgba(245,158,11,0.35)', text: '#ffd54f' },
-    subPriority: { bg: 'rgba(250,204,21,0.12)', border: 'rgba(250,204,21,0.28)', text: '#fde68a' },
+    badge: { bg: 'rgba(245,158,11,0.14)', border: 'rgba(245,158,11,0.35)', text: '#ffd34d' },
+    subPriority: { bg: 'rgba(250,204,21,0.12)', border: 'rgba(250,204,21,0.28)', text: '#ffe3a1' },
     slotBg: 'rgba(245,158,11,0.06)',
     slotBorder: 'rgba(245,158,11,0.12)',
     stars: '★★★★★',
-    starColor: '#ffd54f',
+    starColor: '#ffd34d',
   },
   4: {
-    iconRing: 'from-[#c084fc] via-[#a855f7] to-[#7c3aed]',
+    iconRing: 'from-[#c9a8ff] via-[#a77cf6] to-[#7c5ce8]',
     glow: 'rgba(168,85,247,',
     border: 'rgba(168,85,247,0.22)',
     borderHover: 'rgba(168,85,247,0.50)',
-    badge: { bg: 'rgba(168,85,247,0.14)', border: 'rgba(168,85,247,0.35)', text: '#c084fc' },
-    subPriority: { bg: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.28)', text: '#e9d5ff' },
+    badge: { bg: 'rgba(168,85,247,0.14)', border: 'rgba(168,85,247,0.35)', text: '#c9a8ff' },
+    subPriority: { bg: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.28)', text: '#eadfff' },
     slotBg: 'rgba(168,85,247,0.06)',
     slotBorder: 'rgba(168,85,247,0.12)',
     stars: '★★★★',
-    starColor: '#c084fc',
+    starColor: '#c9a8ff',
   },
 };
 

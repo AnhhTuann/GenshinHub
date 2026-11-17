@@ -8,8 +8,8 @@ import toast from 'react-hot-toast';
 const getProgressColor = (pulls: number, pity: number) => {
   const ratio = pulls / pity;
   if (ratio > 0.8) return '#ef4444'; // Red (Soft pity/Hard pity)
-  if (ratio > 0.5) return '#f0d080'; // Yellow
-  return '#4db6ac'; // Green
+  if (ratio > 0.5) return '#ffdf9e'; // Yellow
+  return '#35d6c5'; // Green
 };
 
 const CircularProgress = ({ pulls, pity, label, guaranteed }: any) => {
@@ -49,7 +49,7 @@ const CircularProgress = ({ pulls, pity, label, guaranteed }: any) => {
       </div>
       <p className="text-xs font-bold text-white uppercase tracking-widest text-center">{label}</p>
       {guaranteed !== undefined && (
-        <span className={`mt-2 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${guaranteed ? 'bg-[#c8a84b]/20 text-[#f0d080] border border-[#c8a84b]/30' : 'bg-white/10 text-white/60'}`}>
+        <span className={`mt-2 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${guaranteed ? 'bg-[#e8b64c]/20 text-[#ffdf9e] border border-[#e8b64c]/30' : 'bg-white/10 text-white/60'}`}>
           {guaranteed ? 'Guaranteed' : '50/50'}
         </span>
       )}
@@ -103,13 +103,13 @@ export default function WishCounterTab({ user }: { user: User }) {
 
   return (
     <div className="space-y-8">
-      <div className="bg-[#1a1a24] border border-[#c8a84b]/30 rounded-2xl p-6 relative overflow-hidden">
+      <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-          <PieChart className="w-48 h-48 text-[#c8a84b]" />
+          <PieChart className="w-48 h-48 text-[#e8b64c]" />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 relative z-10 gap-4">
-          <h3 className="text-lg font-black uppercase tracking-widest text-[#f0d080] flex items-center gap-2">
+          <h3 className="text-lg font-black uppercase tracking-widest text-[#ffdf9e] flex items-center gap-2">
             <History className="w-5 h-5" />
             Wish Statistics
           </h3>
@@ -122,14 +122,14 @@ export default function WishCounterTab({ user }: { user: User }) {
                 value={urlInput}
                 onChange={(e) => setUrlInput(e.target.value)}
                 placeholder="Paste Gacha URL script here..."
-                className="w-full bg-black/50 border border-white/20 rounded-xl pl-9 pr-4 py-2 text-white text-sm focus:border-[#c8a84b] outline-none transition-colors"
+                className="w-full bg-black/50 border border-white/20 rounded-xl pl-9 pr-4 py-2 text-white text-sm focus:border-[#e8b64c] outline-none transition-colors"
                 disabled={syncing}
               />
             </div>
             <button
               onClick={handleSync}
               disabled={syncing}
-              className="px-4 py-2 rounded-xl bg-[#c8a84b] hover:bg-[#f0d080] text-black text-xs font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shrink-0"
+              className="px-4 py-2 rounded-xl bg-[#e8b64c] hover:bg-[#ffdf9e] text-black text-xs font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shrink-0"
             >
               {syncing ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Sync'}
             </button>
@@ -149,19 +149,19 @@ export default function WishCounterTab({ user }: { user: User }) {
           <div className="bg-black/40 p-5 rounded-xl border border-white/5 flex items-center justify-between">
             <div>
               <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Primogems Spent</p>
-              <p className="text-3xl font-black text-[#f0d080]">{totalPrimos.toLocaleString()}</p>
+              <p className="text-3xl font-black text-[#ffdf9e]">{totalPrimos.toLocaleString()}</p>
             </div>
-            <div className="w-12 h-12 rounded-full bg-[#c8a84b]/10 flex items-center justify-center border border-[#c8a84b]/20">
-              <span className="font-serif font-black text-[#f0d080] text-xl">✦</span>
+            <div className="w-12 h-12 rounded-full bg-[#e8b64c]/10 flex items-center justify-center border border-[#e8b64c]/20">
+              <span className="font-serif font-black text-[#ffdf9e] text-xl">✦</span>
             </div>
           </div>
           <div className="bg-black/40 p-5 rounded-xl border border-white/5 flex items-center justify-between">
             <div>
               <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">50/50 Win Rate</p>
-              <p className="text-3xl font-black text-[#4db6ac]">{stats.winRate}%</p>
+              <p className="text-3xl font-black text-[#35d6c5]">{stats.winRate}%</p>
             </div>
-            <div className="w-12 h-12 rounded-full bg-[#4db6ac]/10 flex items-center justify-center border border-[#4db6ac]/20">
-              <PieChart className="w-6 h-6 text-[#4db6ac]" />
+            <div className="w-12 h-12 rounded-full bg-[#35d6c5]/10 flex items-center justify-center border border-[#35d6c5]/20">
+              <PieChart className="w-6 h-6 text-[#35d6c5]" />
             </div>
           </div>
         </div>
@@ -175,9 +175,9 @@ export default function WishCounterTab({ user }: { user: User }) {
 
       {/* 5-Star History Section */}
       {stats.fiveStarHistory && stats.fiveStarHistory.length > 0 && (
-        <div className="bg-[#1a1a24] border border-white/10 rounded-2xl p-6">
+        <div className="bg-[#141b38] border border-white/10 rounded-2xl p-6">
           <h3 className="text-lg font-black uppercase tracking-widest text-white mb-6 flex items-center gap-2">
-            <span className="text-[#f0d080]">✦✦✦✦✦</span>
+            <span className="text-[#ffdf9e]">✦✦✦✦✦</span>
             5-Star History
           </h3>
           
@@ -196,7 +196,7 @@ export default function WishCounterTab({ user }: { user: User }) {
                 {stats.fiveStarHistory.map((pull: any) => (
                   <tr key={pull.id} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]">
                     <td className="px-4 py-3 flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full overflow-hidden border border-[#f0d080]/50 bg-[#f0d080]/10 shrink-0">
+                      <div className="w-8 h-8 rounded-full overflow-hidden border border-[#ffdf9e]/50 bg-[#ffdf9e]/10 shrink-0">
                         <img 
                           src={`/assets/${pull.type === 'CHARACTER' ? 'characters' : 'weapons'}/${pull.name}/icon.webp`} 
                           alt={pull.name} 
@@ -207,14 +207,14 @@ export default function WishCounterTab({ user }: { user: User }) {
                       <span className="font-bold capitalize">{pull.name.replace(/-/g, ' ')}</span>
                     </td>
                     <td className="px-4 py-3">
-                      <span className={`font-black ${pull.pity > 75 ? 'text-[#ef4444]' : pull.pity > 50 ? 'text-[#f0d080]' : 'text-[#4db6ac]'}`}>
+                      <span className={`font-black ${pull.pity > 75 ? 'text-[#ef4444]' : pull.pity > 50 ? 'text-[#ffdf9e]' : 'text-[#35d6c5]'}`}>
                         {pull.pity}
                       </span>
                     </td>
                     <td className="px-4 py-3">
                       {pull.type === 'CHARACTER' ? (
                         pull.win ? (
-                          <span className="text-xs px-2 py-1 bg-[#4db6ac]/20 text-[#4db6ac] border border-[#4db6ac]/30 rounded-md font-bold uppercase">Won 50/50</span>
+                          <span className="text-xs px-2 py-1 bg-[#35d6c5]/20 text-[#35d6c5] border border-[#35d6c5]/30 rounded-md font-bold uppercase">Won 50/50</span>
                         ) : (
                           <span className="text-xs px-2 py-1 bg-[#ef4444]/20 text-[#ef4444] border border-[#ef4444]/30 rounded-md font-bold uppercase">Lost 50/50</span>
                         )

@@ -144,7 +144,7 @@ export default async function RootLayout({ children, params }: { children: React
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} ${jetbrainsMono.variable} ${inter.className} bg-[#07070a] text-white antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} ${jetbrainsMono.variable} ${inter.className} text-white antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             <UISoundProvider>
@@ -153,9 +153,9 @@ export default async function RootLayout({ children, params }: { children: React
               <Toaster 
               position="bottom-center"
               toastOptions={{
-                className: 'bg-[#0a0a0f]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
+                className: 'bg-[#0b1024]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
                 style: {
-                  background: 'rgba(10, 10, 15, 0.8)',
+                  background: 'rgba(10,10,15,0.8)',
                   backdropFilter: 'blur(12px)',
                   color: '#fff',
                   border: '1px solid rgba(255,255,255,0.1)',
@@ -165,12 +165,12 @@ export default async function RootLayout({ children, params }: { children: React
                   fontWeight: 600,
                 },
                 success: {
-                  iconTheme: { primary: '#10b981', secondary: '#fff' },
-                  style: { borderColor: 'rgba(16, 185, 129, 0.3)' }
+                  iconTheme: { primary: '#1fc98f', secondary: '#fff' },
+                  style: { borderColor: 'rgba(16,185,129,0.3)' }
                 },
                 error: {
                   iconTheme: { primary: '#ef4444', secondary: '#fff' },
-                  style: { borderColor: 'rgba(239, 68, 68, 0.3)' }
+                  style: { borderColor: 'rgba(239,68,68,0.3)' }
                 }
               }}
             />
@@ -181,15 +181,15 @@ export default async function RootLayout({ children, params }: { children: React
               <div className="flex-1 flex flex-col">
                 <PageTransition>{children}</PageTransition>
               </div>
-              <footer className="border-t border-white/[0.04] py-8 bg-[#050508]">
+              <footer className="border-t border-[var(--border-subtle)] py-8 bg-[var(--bg-void)]/80">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
                   <div className="flex items-center gap-2">
                     <svg className="w-5 h-5 opacity-40" viewBox="0 0 100 100" fill="none">
                       <defs>
                         <linearGradient id="footer-logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
                           <stop offset="0%"   stopColor="#50e4ff" />
-                          <stop offset="50%"  stopColor="#c084fc" />
-                          <stop offset="100%" stopColor="#ffb300" />
+                          <stop offset="50%"  stopColor="#c9a8ff" />
+                          <stop offset="100%" stopColor="#f7bd4a" />
                         </linearGradient>
                       </defs>
                       <path d="M50 0 C50 35,65 50,100 50 C65 50,50 65,50 100 C50 65,35 50,0 50 C35 50,50 35,50 0 Z" fill="url(#footer-logo-g)" />

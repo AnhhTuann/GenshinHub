@@ -33,10 +33,10 @@ export default function TCGClient({ locale }: { locale: string }) {
   }, [filterType, search, locale]);
 
   return (
-    <main className="min-h-screen pt-[100px] pb-24 relative z-10 px-4 sm:px-6" style={{ background: 'var(--bg-void, #04040a)' }}>
+    <main className="min-h-screen pt-[100px] pb-24 relative z-10 px-4 sm:px-6" style={{ background: 'var(--bg-void, #04060f)' }}>
       {/* Ambient glows */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 70%)', filter: 'blur(120px)' }} />
+        <div className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(120px)' }} />
         <div className="absolute bottom-[20%] right-[5%] w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.05) 0%, transparent 70%)', filter: 'blur(100px)' }} />
       </div>
       <div className="max-w-[1400px] mx-auto">
@@ -65,13 +65,13 @@ export default function TCGClient({ locale }: { locale: string }) {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as 'cards' | 'decks')}
                   className="relative pb-2.5 px-4 text-xs sm:text-sm font-black transition-colors duration-200 uppercase tracking-wider"
-                  style={{ color: active ? '#f0d080' : 'rgba(255,255,255,0.4)' }}
+                  style={{ color: active ? '#ffdf9e' : 'rgba(255,255,255,0.4)' }}
                 >
                   <span className="mr-1.5">{tab.icon}</span>{tab.label}
                   {active && (
                     <span
                       className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
-                      style={{ background: 'linear-gradient(90deg, transparent, #c8a84b, transparent)' }}
+                      style={{ background: 'linear-gradient(90deg, transparent, #e8b64c, transparent)' }}
                     />
                   )}
                 </button>
@@ -108,7 +108,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                 const name = locale === 'vi' ? card.nameVi : card.nameEn;
                 return (
                   <Link href={`/tcg/${card.id}`} key={card.id} className="group flex flex-col items-center gap-2 cursor-pointer">
-                    <div className="relative w-full aspect-[256/440] transition-transform duration-300 group-hover:-translate-y-2 drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_15px_25px_rgba(200,168,75,0.3)]">
+                    <div className="relative w-full aspect-[256/440] transition-transform duration-300 group-hover:-translate-y-2 drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_15px_25px_rgba(232,182,76,0.3)]">
                       <FallbackImage
                         src={`/assets/tcg/${card.icon}.webp`}
                         alt={name}
@@ -151,7 +151,7 @@ export default function TCGClient({ locale }: { locale: string }) {
                     const card = tcgCards.find(c => c.id === charId);
                     if (!card) return null;
                     return (
-                      <div key={charId} className="w-1/3 aspect-[256/440] relative drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_15px_25px_rgba(200,168,75,0.3)] transition-all group-hover:-translate-y-2 duration-300">
+                      <div key={charId} className="w-1/3 aspect-[256/440] relative drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_15px_25px_rgba(232,182,76,0.3)] transition-all group-hover:-translate-y-2 duration-300">
                         <FallbackImage
                           src={`/assets/tcg/${card.icon}.webp`}
                           alt={card.nameEn}

@@ -92,8 +92,8 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
   };
 
   const labelClass = "text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block";
-  const inputClass = "w-full bg-[#050508] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-all placeholder-gray-600 font-medium";
-  const selectClass = "w-full bg-[#050508] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-all font-medium appearance-none cursor-pointer";
+  const inputClass = "w-full bg-[#05060f] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-all placeholder-gray-600 font-medium";
+  const selectClass = "w-full bg-[#05060f] border border-white/10 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-all font-medium appearance-none cursor-pointer";
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center">
@@ -101,7 +101,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
 
       {/* Modal */}
-      <div className="relative bg-[#0d0d14] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/60 mx-4 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#0a0e22] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/60 mx-4 animate-in fade-in zoom-in-95 duration-200">
         {/* Header gradient stripe */}
         <div className="h-1 w-full bg-gradient-to-r from-amber-600 via-yellow-500 to-orange-500 rounded-t-3xl" />
 
@@ -133,7 +133,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             <div>
               <label className={labelClass}>Type</label>
               <select value={form.type} onChange={e => updateField('type', e.target.value)} className={selectClass}>
-                {WEAPON_TYPES.map(t => <option className="bg-[#0d0d14] text-white" key={t} value={t}>{t}</option>)}
+                {WEAPON_TYPES.map(t => <option className="bg-[#0a0e22] text-white" key={t} value={t}>{t}</option>)}
               </select>
             </div>
 
@@ -182,7 +182,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             <div>
               <label className={labelClass}>Sub Stat</label>
               <select value={form.subStat} onChange={e => updateField('subStat', e.target.value)} className={selectClass}>
-                {SUB_STATS.map(s => <option className="bg-[#0d0d14] text-white" key={s} value={s}>{s || '— None —'}</option>)}
+                {SUB_STATS.map(s => <option className="bg-[#0a0e22] text-white" key={s} value={s}>{s || '— None —'}</option>)}
               </select>
             </div>
 
@@ -196,7 +196,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
             <div>
               <label className={labelClass}>Tier</label>
               <select value={form.tier} onChange={e => updateField('tier', e.target.value)} className={selectClass}>
-                {['', 'SS', 'S', 'A', 'B', 'C', 'D'].map(t => <option className="bg-[#0d0d14] text-white" key={t} value={t}>{t || '— None —'}</option>)}
+                {['', 'SS', 'S', 'A', 'B', 'C', 'D'].map(t => <option className="bg-[#0a0e22] text-white" key={t} value={t}>{t || '— None —'}</option>)}
               </select>
             </div>
 
@@ -210,7 +210,7 @@ export default function WeaponFormModal({ weapon, onClose, onSaved }: Props) {
           {/* Icon Preview */}
           {form.iconUrl && (
             <div className="mt-4 flex items-center gap-3">
-              <div className="relative w-14 h-14 rounded-xl border border-white/10 bg-[#050508] flex items-center justify-center overflow-hidden">
+              <div className="relative w-14 h-14 rounded-xl border border-white/10 bg-[#05060f] flex items-center justify-center overflow-hidden">
                 <FallbackImage src={form.iconUrl} alt="preview" fill sizes="48px" className="object-contain p-1" onError={e => (e.currentTarget.style.display = 'none')} />
               </div>
               <span className="text-gray-500 text-xs">Icon Preview</span>

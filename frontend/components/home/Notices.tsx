@@ -21,7 +21,7 @@ export default function Notices() {
     <div
       className="rounded-2xl overflow-hidden"
       style={{
-        background: 'linear-gradient(145deg, rgba(13,13,22,0.90), rgba(6,6,12,0.95))',
+        background: 'linear-gradient(145deg, rgba(15,20,44,0.90), rgba(6,6,12,0.95))',
         border: '1px solid rgba(255,255,255,0.06)',
       }}
     >
@@ -37,13 +37,13 @@ export default function Notices() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className="relative pb-2.5 px-3 text-[11px] font-black transition-colors duration-200 whitespace-nowrap"
-              style={{ color: active ? '#f0d080' : 'rgba(255,255,255,0.35)' }}
+              style={{ color: active ? '#ffdf9e' : 'rgba(255,255,255,0.35)' }}
             >
               {tab.icon} {tab.id}
               {active && (
                 <span
                   className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
-                  style={{ background: 'linear-gradient(90deg, transparent, #c8a84b, transparent)' }}
+                  style={{ background: 'linear-gradient(90deg, transparent, #e8b64c, transparent)' }}
                 />
               )}
             </button>
@@ -58,8 +58,8 @@ export default function Notices() {
             key={idx}
             className="flex items-start gap-2.5 p-2.5 rounded-xl transition-all duration-200 cursor-pointer group"
             style={{
-              background: 'rgba(200,168,75,0.04)',
-              border: '1px solid rgba(200,168,75,0.08)',
+              background: 'rgba(232,182,76,0.04)',
+              border: '1px solid rgba(232,182,76,0.08)',
             }}
           >
             <span className="text-base leading-none flex-shrink-0 mt-0.5">{item.icon}</span>

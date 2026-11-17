@@ -26,10 +26,10 @@ export default function PremiumButton({
 
   const isPrimary = variant === "primary";
 
-  const baseStyles = "group relative inline-flex items-center justify-center gap-2.5 font-black text-sm px-8 py-3.5 rounded-2xl transition-all duration-300 overflow-hidden uppercase tracking-wider";
+  const baseStyles = "group relative inline-flex min-h-12 items-center justify-center gap-2.5 font-bold text-sm px-7 py-3 rounded-full transition-all duration-300 overflow-hidden tracking-wide";
   
-  const primaryStyles = "text-white bg-gradient-to-r from-[#a855f7] via-[#7c3aed] to-[#a855f7] shadow-[0_6px_28px_rgba(168,85,247,0.50)] hover:shadow-[0_8px_40px_rgba(168,85,247,0.65),_0_0_60px_rgba(34,211,238,0.15)] bg-[length:200%_100%]";
-  const secondaryStyles = "text-white/85 bg-white/5 border border-white/10 hover:border-[rgba(168,85,247,0.40)] hover:text-[#c084fc] hover:bg-[rgba(168,85,247,0.06)]";
+  const primaryStyles = "text-[#f6f8ff] bg-[#9aa0e0] hover:bg-[#8a90d8] shadow-[0_5px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.26)]";
+  const secondaryStyles = "text-white/80 bg-white/[0.025] border border-white/10 hover:border-white/20 hover:text-white hover:bg-white/[0.06]";
 
   const content = (
     <>

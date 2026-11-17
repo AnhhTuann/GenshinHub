@@ -85,18 +85,18 @@ export default function ManageTiersSection({
   return (
     <section className="mb-8">
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #a78bfa, #8b5cf6)' }} />
+        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #b9a5ff, #9d8cff)' }} />
         <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Manage Tiers</h2>
       </div>
       
       {/* Add New Tier */}
-      <div className="flex gap-3 mb-6 p-4 rounded-2xl flex-wrap items-end" style={{ background:'rgba(8,8,18,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
+      <div className="flex gap-3 mb-6 p-4 rounded-2xl flex-wrap items-end" style={{ background:'rgba(10,14,34,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="flex flex-col gap-1.5 flex-1 min-w-[200px]">
           <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">New Tier Name</label>
           <input 
             type="text" placeholder="e.g. SSS" value={newTierName} onChange={e => setNewTierName(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm outline-none font-bold"
-            style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
+            style={{ background:'rgba(5,8,20,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
           />
         </div>
         <div className="flex flex-col gap-1.5 w-48 shrink-0">
@@ -104,7 +104,7 @@ export default function ManageTiersSection({
           <select 
             value={newTierColor} onChange={e => setNewTierColor(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm outline-none font-bold appearance-none"
-            style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
+            style={{ background:'rgba(5,8,20,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.85)' }}
           >
             {COLOR_OPTIONS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
@@ -112,14 +112,14 @@ export default function ManageTiersSection({
         <button 
           onClick={handleAddTier} disabled={loading || !newTierName}
           className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-40 h-[38px] shrink-0"
-          style={{ background:'linear-gradient(135deg, #a78bfa, #8b5cf6)', color:'#fff', boxShadow:'0 4px 12px rgba(139,92,246,0.25)' }}
+          style={{ background:'linear-gradient(135deg, #b9a5ff, #9d8cff)', color:'#fff', boxShadow:'0 4px 12px rgba(139,92,246,0.25)' }}
         >
           Add Tier
         </button>
       </div>
 
       {/* List of Tiers with Drag & Drop */}
-      <div className="space-y-2 rounded-2xl overflow-hidden" style={{ background:'rgba(8,8,18,0.4)', border:'1px solid rgba(255,255,255,0.03)' }}>
+      <div className="space-y-2 rounded-2xl overflow-hidden" style={{ background:'rgba(10,14,34,0.4)', border:'1px solid rgba(255,255,255,0.03)' }}>
         <div className="grid gap-4 px-4 py-2.5 text-[10px] font-black text-white/25 uppercase tracking-widest hidden sm:grid border-b" style={{ gridTemplateColumns: '40px 1fr 1fr 60px', borderColor: 'rgba(255,255,255,0.05)' }}>
           <div>Drag</div>
           <div>Tier Name</div>
@@ -145,7 +145,7 @@ export default function ManageTiersSection({
                 <select 
                   value={tier.colorBase} onChange={e => handleUpdateColor(tier.id, e.target.value)}
                   className="px-2 py-1.5 rounded-lg text-xs font-bold outline-none appearance-none w-full"
-                  style={{ background:'rgba(4,4,10,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.7)' }}
+                  style={{ background:'rgba(5,8,20,0.8)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.7)' }}
                 >
                   {COLOR_OPTIONS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
                 </select>

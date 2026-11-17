@@ -43,7 +43,7 @@ const ELEMENTS    = ['Pyro','Hydro','Anemo','Electro','Dendro','Cryo','Geo'];
 const WEAPON_TYPES = ['Sword','Claymore','Polearm','Bow','Catalyst'];
 const REGIONS     = ['Mondstadt','Liyue','Inazuma','Sumeru','Fontaine','Natlan','Snezhnaya','Khaenri\'ah'];
 const TIERS       = ['SS','S','A','B','C'];
-const ELEM_COLOR: Record<string,string> = { Pyro:'#ff6b4a',Hydro:'#4fc3f7',Cryo:'#80deea',Electro:'#ce93d8',Anemo:'#4db6ac',Geo:'#ffd54f',Dendro:'#aed581' };
+const ELEM_COLOR: Record<string,string> = { Pyro:'#ff5a45',Hydro:'#3aa8ff',Cryo:'#8fe8f5',Electro:'#cf8fff',Anemo:'#35d6c5',Geo:'#ffd34d',Dendro:'#9ede5f' };
 
 const TABS = [
   { id: 'basic',  label: 'Basic Info',    icon: '📋' },
@@ -79,7 +79,7 @@ function TextInput({ register, name, placeholder, error, type = 'text', mono = f
       placeholder={placeholder}
       className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none"
       style={{
-        background: 'rgba(4,4,10,0.8)',
+        background: 'rgba(5,8,20,0.8)',
         border: error ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(255,255,255,0.07)',
         color: 'rgba(255,255,255,0.88)',
         fontFamily: mono ? 'var(--font-mono, monospace)' : 'inherit',
@@ -94,7 +94,7 @@ function SelectInput({ register, name, children, error }: any) {
       {...register(name)}
       className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none appearance-none"
       style={{
-        background: 'rgba(4,4,10,0.8)',
+        background: 'rgba(5,8,20,0.8)',
         border: error ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(255,255,255,0.07)',
         color: 'rgba(255,255,255,0.88)',
       }}
@@ -217,7 +217,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
     tier: ['tier','role','recommendedC'].filter(f => errorFields.includes(f)).length,
   };
 
-  const ec = ELEM_COLOR[elementVal] ?? '#c8a84b';
+  const ec = ELEM_COLOR[elementVal] ?? '#e8b64c';
 
   return (
     <AdminModal
@@ -230,7 +230,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             {isDirty && (
-              <span className="flex items-center gap-1.5 text-xs font-medium" style={{ color: '#f0d080' }}>
+              <span className="flex items-center gap-1.5 text-xs font-medium" style={{ color: '#ffdf9e' }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                 Unsaved changes
               </span>
@@ -244,7 +244,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
               onClick={handleSubmit(onSubmit)}
               disabled={saving}
               className="flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-50"
-              style={{ background: 'linear-gradient(135deg, #f0d080, #c8a84b)', color: '#080812', boxShadow: '0 4px 16px rgba(200,168,75,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)', color: '#090d1f', boxShadow: '0 4px 16px rgba(232,182,76,0.3)' }}
             >
               {saving ? (
                 <>
@@ -274,7 +274,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
               onClick={() => setTab(t.id)}
               className="flex items-center gap-2 px-4 py-2.5 text-xs font-bold relative"
               style={{
-                color: active ? '#f0d080' : 'rgba(255,255,255,0.35)',
+                color: active ? '#ffdf9e' : 'rgba(255,255,255,0.35)',
                 borderBottom: active ? `2px solid ${ec}` : '2px solid transparent',
                 transition: 'color 0.2s, border-color 0.2s',
               }}
@@ -360,7 +360,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
                   rows={3}
                   placeholder="Character lore..."
                   className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none"
-                  style={{ background: 'rgba(4,4,10,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }}
+                  style={{ background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }}
                 />
               </Field>
               <Field label="Description (VI)" error={errors.descriptionVi?.message}>
@@ -369,7 +369,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
                   rows={3}
                   placeholder="Lore nhân vật..."
                   className="w-full px-3.5 py-2.5 rounded-xl text-sm outline-none resize-none"
-                  style={{ background: 'rgba(4,4,10,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }}
+                  style={{ background: 'rgba(5,8,20,0.8)', border: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }}
                 />
               </Field>
             </div>
@@ -444,16 +444,16 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
             {/* Tier preview */}
             <div
               className="rounded-xl p-4"
-              style={{ background: 'rgba(4,4,10,0.6)', border: '1px solid rgba(255,255,255,0.05)' }}
+              style={{ background: 'rgba(5,8,20,0.6)', border: '1px solid rgba(255,255,255,0.05)' }}
             >
               <p className="text-xs font-bold text-white/25 uppercase tracking-wider mb-3">Preview</p>
               <div className="flex items-center gap-4">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-black"
                   style={{
-                    background: watch('tier') === 'SS' ? 'rgba(255,107,74,0.15)' : watch('tier') === 'S' ? 'rgba(255,213,79,0.12)' : 'rgba(255,255,255,0.06)',
+                    background: watch('tier') === 'SS' ? 'rgba(255,90,69,0.15)' : watch('tier') === 'S' ? 'rgba(255,211,77,0.12)' : 'rgba(255,255,255,0.06)',
                     border: '1px solid rgba(255,255,255,0.10)',
-                    color: watch('tier') === 'SS' ? '#ff6b4a' : watch('tier') === 'S' ? '#ffd54f' : 'rgba(255,255,255,0.4)',
+                    color: watch('tier') === 'SS' ? '#ff5a45' : watch('tier') === 'S' ? '#ffd34d' : 'rgba(255,255,255,0.4)',
                   }}
                 >
                   {watch('tier') || '?'}

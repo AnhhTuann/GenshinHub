@@ -60,7 +60,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start justify-center pt-[15vh]">
       <Command 
-        className="w-[90%] max-w-[600px] bg-[#0c0c14] border border-white/10 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden"
+        className="w-[90%] max-w-[600px] bg-[#0b1020] border border-white/10 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden"
         label="Global Search"
         shouldFilter={true}
         onKeyDown={(e) => {
@@ -88,7 +88,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
                 className="flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer aria-selected:bg-white/10 aria-selected:text-white text-white/70 transition-colors"
                 value={item.name + " " + item.id}
               >
-                <div className="w-8 h-8 rounded-full overflow-hidden bg-white/5 relative border" style={{ borderColor: item.rarity === 5 ? 'rgba(255,213,79,0.3)' : 'rgba(206,147,216,0.3)' }}>
+                <div className="w-8 h-8 rounded-full overflow-hidden bg-white/5 relative border" style={{ borderColor: item.rarity === 5 ? 'rgba(255,211,77,0.3)' : 'rgba(207,143,255,0.3)' }}>
                   {item.iconUrl ? <FallbackImage src={item.iconUrl} alt={item.name} fill className="object-cover" sizes="32px" /> : <User className="w-4 h-4 m-auto mt-2 opacity-30" />}
                 </div>
                 <div className="flex flex-col">

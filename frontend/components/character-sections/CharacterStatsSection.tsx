@@ -1,7 +1,9 @@
-import { useAdmin } from '@/hooks/useAdmin';
 'use client';
 
+import { useAdmin } from '@/hooks/useAdmin';
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import CharacterStatsFormModal from '../admin/CharacterStatsFormModal';
 
 interface StatEntry {
   level: string; // e.g., "Lv.1", "Lv.20", "Lv.40"
@@ -19,9 +21,6 @@ interface CharacterStatsSectionProps {
   baseAtk?: number;
   baseDef?: number;
 }
-
-import { useRouter } from 'next/navigation';
-import CharacterStatsFormModal from '../admin/CharacterStatsFormModal';
 
 export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef, characterId }: CharacterStatsSectionProps & { characterId: string }) {
   const router = useRouter();
@@ -92,8 +91,8 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
             onClick={() => setActiveLevel(lv)}
             className={`px-4 py-2 rounded-lg font-semibold text-[13px] transition-all ${
               activeLevel === lv 
-                ? 'bg-[#e6cc98] text-[#1a1a24] shadow-md' 
-                : 'bg-[#2a2a35]/60 text-white/60 hover:bg-[#2a2a35] hover:text-white'
+                ? 'bg-[#ecd9a0] text-[#141b38] shadow-md' 
+                : 'bg-[#232e55]/60 text-white/60 hover:bg-[#232e55] hover:text-white'
             }`}
           >
             {lv}
@@ -105,7 +104,7 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
       <div className="w-full overflow-hidden rounded-xl border border-white/5">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="bg-[#2a2a35]/40 text-white font-bold text-[13px] border-b border-white/5">
+            <tr className="bg-[#232e55]/40 text-white font-bold text-[13px] border-b border-white/5">
               <th className="p-4 w-1/3"></th>
               <th className="p-4 w-1/3">Before Ascension</th>
               <th className="p-4 w-1/3">After Ascension</th>

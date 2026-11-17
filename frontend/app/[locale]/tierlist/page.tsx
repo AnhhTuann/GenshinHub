@@ -30,12 +30,12 @@ export default async function TierListPage({ params }: { params: Promise<{ local
   const tierRanks  = tierData.tierRanks     || [];
 
   return (
-    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04040a)' }}>
+    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04060f)' }}>
       {/* Ambient */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -top-[10%] -left-[5%] w-[700px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 70%)', filter: 'blur(130px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(130px)' }}
         />
         <div
           className="absolute top-[35%] -right-[8%] w-[500px] h-[400px] rounded-full"
@@ -47,12 +47,12 @@ export default async function TierListPage({ params }: { params: Promise<{ local
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-4">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-[3px] h-8 rounded-full" style={{ background: 'linear-gradient(to bottom, #ffd54f, #f59e0b)' }} />
+            <div className="w-[3px] h-8 rounded-full" style={{ background: 'linear-gradient(to bottom, #ffd34d, #f0b64a)' }} />
             <h1
               className="text-3xl sm:text-4xl font-black uppercase tracking-tight"
               style={{
                 fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                background: 'linear-gradient(135deg, #fef3c7 0%, #ffd54f 50%, #f59e0b 100%)',
+                background: 'linear-gradient(135deg, #fdf0cd 0%, #ffd34d 50%, #f0b64a 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

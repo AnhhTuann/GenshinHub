@@ -30,11 +30,11 @@ export default function Pagination({ page, totalPages, onChange, className = '' 
       disabled={disabled}
       className="min-w-[32px] h-8 px-2 rounded-lg text-xs font-bold transition-all"
       style={{
-        background: active ? 'linear-gradient(135deg, rgba(200,168,75,0.25), rgba(200,168,75,0.12))' : 'rgba(255,255,255,0.04)',
-        border: active ? '1px solid rgba(200,168,75,0.35)' : '1px solid rgba(255,255,255,0.06)',
-        color: active ? '#f0d080' : disabled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.55)',
+        background: active ? 'linear-gradient(135deg, rgba(232,182,76,0.25), rgba(232,182,76,0.12)' : 'rgba(255,255,255,0.04)',
+        border: active ? '1px solid rgba(232,182,76,0.35)' : '1px solid rgba(255,255,255,0.06)',
+        color: active ? '#ffdf9e' : disabled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.55)',
         cursor: disabled ? 'not-allowed' : 'pointer',
-        boxShadow: active ? '0 0 12px rgba(200,168,75,0.15)' : 'none',
+        boxShadow: active ? '0 0 12px rgba(232,182,76,0.15)' : 'none',
       }}
     >
       {label}

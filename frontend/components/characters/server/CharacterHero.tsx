@@ -33,8 +33,8 @@ export default function CharacterHero({
           <ParallaxSplash imageUrl={character.splashArtUrl} />
         )}
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#06060a] via-[#06060a]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06060a]/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070a18] via-[#070a18]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070a18]/70 via-transparent to-transparent" />
         <div
           className="absolute inset-0"
           style={{ background: `linear-gradient(135deg, ${elGlow} 0%, transparent 60%)` }}

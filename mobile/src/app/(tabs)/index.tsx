@@ -21,8 +21,11 @@ import { useGraphQL } from '@/hooks/useGraphQL';
 import { GET_CHARACTERS } from '@/lib/graphql';
 import { SkeletonList } from '@/components/SkeletonLoader';
 import { GlassCard } from '@/components/GlassCard';
+import { SakuraPalette } from '@/constants/design';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
+const SAKURA = SakuraPalette;
 
 const quickItems = [
   {
@@ -30,9 +33,9 @@ const quickItems = [
     label: 'Tier List',
     sub: 'Meta character rankings',
     icon: Star,
-    color: '#a855f7',
-    bg: 'rgba(168,85,247,0.15)',
-    border: 'rgba(168,85,247,0.35)',
+    color: SAKURA.accent,
+    bg: 'rgba(244,114,156,0.13)',
+    border: 'rgba(244,114,156,0.32)',
   },
   {
     href: '/weapons',
@@ -48,9 +51,9 @@ const quickItems = [
     label: 'Artifacts',
     sub: 'Best artifact sets',
     icon: Shield,
-    color: '#4db8ff',
-    bg: 'rgba(77,184,255,0.15)',
-    border: 'rgba(77,184,255,0.35)',
+    color: SAKURA.accentLight,
+    bg: 'rgba(255,182,202,0.10)',
+    border: 'rgba(255,182,202,0.28)',
   },
   {
     href: '/materials',
@@ -84,21 +87,21 @@ export default function HomeScreen() {
           <RefreshControl
             refreshing={loading}
             onRefresh={refetch}
-            tintColor="#cfa858"
-            colors={['#cfa858']}
+            tintColor={SAKURA.accent}
+            colors={[SAKURA.accent]}
           />
         }
       >
         {/* Hero Header */}
-        <View style={styles.hero}>
+        <Animated.View entering={FadeInDown.duration(500).delay(40)} style={styles.hero}>
           <View style={styles.heroGlow} />
           <View style={styles.sparkRow}>
-            <Sparkles size={14} color="#cfa858" />
+            <Sparkles size={14} color={SAKURA.accentLight} />
             <Text style={styles.sparkText}>Genshin Impact Guide</Text>
           </View>
           <Text style={styles.heroTitle}>GenshinHub</Text>
           <Text style={styles.heroSub}>Your complete Teyvat companion</Text>
-        </View>
+        </Animated.View>
 
         {/* Stats Row */}
         {loading ? (
@@ -128,30 +131,37 @@ export default function HomeScreen() {
           {quickItems.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <TouchableOpacity
+              <Animated.View
                 key={idx}
-                style={[styles.gridCard, { backgroundColor: item.bg, borderColor: item.border }]}
-                onPress={() => router.push(item.href as any)}
-                activeOpacity={0.7}
+                entering={FadeInDown.duration(420).delay(100 + idx * 70)}
+                style={styles.gridItem}
               >
-                <View style={[styles.iconCircle, { backgroundColor: item.bg, borderColor: item.border }]}>
-                  <Icon size={24} color={item.color} />
-                </View>
-                <Text style={styles.cardLabel}>{item.label}</Text>
-                <Text style={styles.cardSub}>{item.sub}</Text>
-                <ChevronRight size={14} color="rgba(255,255,255,0.3)" style={styles.cardArrow} />
-              </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.gridCard, { backgroundColor: item.bg, borderColor: item.border }]}
+                  onPress={() => router.push(item.href as any)}
+                  activeOpacity={0.72}
+                >
+                  <View style={[styles.iconCircle, { backgroundColor: item.bg, borderColor: item.border }]}>
+                    <Icon size={24} color={item.color} />
+                  </View>
+                  <Text style={styles.cardLabel}>{item.label}</Text>
+                  <Text style={styles.cardSub}>{item.sub}</Text>
+                  <ChevronRight size={14} color="rgba(255,255,255,0.3)" style={styles.cardArrow} />
+                </TouchableOpacity>
+              </Animated.View>
             );
           })}
         </View>
 
         {/* Welcome Card */}
-        <GlassCard style={styles.welcomeCard} intensity={25}>
-          <Text style={styles.welcomeTitle}>Welcome, Traveler! 🌏</Text>
-          <Text style={styles.welcomeText}>
-            Explore in-depth character builds, weapon rankings, artifact sets, and team compositions to master your journey through Teyvat.
-          </Text>
-        </GlassCard>
+        <Animated.View entering={FadeInDown.duration(460).delay(380)}>
+          <GlassCard style={styles.welcomeCard} intensity={25}>
+            <Text style={styles.welcomeTitle}>Welcome, Traveler! 🌏</Text>
+            <Text style={styles.welcomeText}>
+              Explore in-depth character builds, weapon rankings, artifact sets, and team compositions to master your journey through Teyvat.
+            </Text>
+          </GlassCard>
+        </Animated.View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -160,7 +170,7 @@ export default function HomeScreen() {
 const GOLD = '#cfa858';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#080810' },
+  container: { flex: 1, backgroundColor: SAKURA.background },
   scroll: { flex: 1 },
   content: { paddingHorizontal: 16, paddingBottom: 40 },
 
@@ -175,27 +185,27 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: 'rgba(207,168,88,0.08)',
+    backgroundColor: 'rgba(244,114,156,0.10)',
   },
   sparkRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
     marginBottom: 12,
-    backgroundColor: 'rgba(207,168,88,0.1)',
+    backgroundColor: 'rgba(244,114,156,0.10)',
     borderRadius: 20,
     paddingHorizontal: 12,
     paddingVertical: 5,
     borderWidth: 1,
-    borderColor: 'rgba(207,168,88,0.3)',
+    borderColor: 'rgba(244,114,156,0.28)',
   },
-  sparkText: { color: GOLD, fontSize: 11, fontWeight: '600', letterSpacing: 1 },
+  sparkText: { color: SAKURA.accentLight, fontSize: 11, fontWeight: '600', letterSpacing: 1 },
   heroTitle: {
     fontSize: 40,
     fontWeight: '900',
     color: '#ffffff',
     letterSpacing: -1,
-    textShadowColor: 'rgba(207,168,88,0.4)',
+    textShadowColor: 'rgba(244,114,156,0.4)',
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 20,
   },
@@ -211,7 +221,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.04)',
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.07)',
+    borderColor: 'rgba(255,182,202,0.12)',
     padding: 14,
     alignItems: 'center',
   },
@@ -251,8 +261,9 @@ const styles = StyleSheet.create({
     gap: 12,
     marginBottom: 24,
   },
+  gridItem: { width: (width - 44) / 2 },
   gridCard: {
-    width: (width - 44) / 2,
+    width: '100%',
     borderRadius: 16,
     borderWidth: 1,
     padding: 16,
@@ -275,7 +286,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.04)',
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.08)',
+    borderColor: 'rgba(255,182,202,0.14)',
     padding: 20,
   },
   welcomeTitle: { color: '#ffffff', fontWeight: '700', fontSize: 15, marginBottom: 8 },

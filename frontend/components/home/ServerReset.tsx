@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 
 const SERVERS = [
-  { label: 'Asia',    offset: 8,  flag: '🌏', color: '#4fc3f7' },
-  { label: 'Europe',  offset: 1,  flag: '🌍', color: '#aed581' },
-  { label: 'America', offset: -5, flag: '🌎', color: '#ff6b4a' },
+  { label: 'Asia',    offset: 8,  flag: '🌏', color: '#3aa8ff' },
+  { label: 'Europe',  offset: 1,  flag: '🌍', color: '#9ede5f' },
+  { label: 'America', offset: -5, flag: '🌎', color: '#ff5a45' },
 ];
 
 export default function ServerReset() {
@@ -51,7 +51,7 @@ export default function ServerReset() {
     <div
       className="rounded-2xl overflow-hidden relative"
       style={{
-        background: 'linear-gradient(145deg, rgba(13,13,22,0.90), rgba(6,6,12,0.95))',
+        background: 'linear-gradient(145deg, rgba(37,26,42,0.9), rgba(20,14,24,0.96))',
         border: `1px solid ${server.color}22`,
         boxShadow: `0 0 30px -10px ${server.color}15`,
       }}
@@ -68,7 +68,7 @@ export default function ServerReset() {
           <span
             className="w-2 h-2 rounded-full animate-pulse"
             style={{
-              background: urgency ? '#f87171' : '#34d399',
+              background: urgency ? '#f87171' : '#3fe0ae',
               boxShadow: `0 0 8px ${urgency ? 'rgba(248,113,113,0.7)' : 'rgba(52,211,153,0.6)'}`,
             }}
           />
@@ -117,7 +117,7 @@ export default function ServerReset() {
                 <div
                   className="rounded-xl px-3 py-2 min-w-[56px] text-center relative overflow-hidden"
                   style={{
-                    background: `linear-gradient(135deg, rgba(0,0,0,0.5), ${server.color}08)`,
+                    background: `linear-gradient(135deg, rgba(16,11,19,0.82), ${server.color}08)`,
                     border: `1px solid ${server.color}20`,
                   }}
                 >

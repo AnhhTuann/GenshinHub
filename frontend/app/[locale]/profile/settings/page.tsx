@@ -55,7 +55,7 @@ export default function SettingsPage() {
   if (userLoading) {
     return (
       <div className="min-h-[calc(100vh-64px)] flex items-center justify-center">
-        <Loader2 className="w-10 h-10 text-[#c8a84b] animate-spin" />
+        <Loader2 className="w-10 h-10 text-[#e8b64c] animate-spin" />
       </div>
     );
   }
@@ -71,7 +71,7 @@ export default function SettingsPage() {
     if (/[0-9]/.test(pw)) s++;
     if (/[^A-Za-z0-9]/.test(pw)) s++;
     const labels = ['', 'Very Weak', 'Weak', 'Fair', 'Strong', 'Very Strong'];
-    const colors = ['', '#ef4444', '#f97316', '#eab308', '#22c55e', '#c8a84b'];
+    const colors = ['', '#ef4444', '#ff9a4d', '#f2c14e', '#3ddc84', '#e8b64c'];
     return { score: s, label: labels[s] || '', color: colors[s] || '' };
   };
   const pwStrength = getPwStrength(passwordForm.newPassword);
@@ -184,9 +184,9 @@ export default function SettingsPage() {
     }
   };
 
-  const inputClass = "w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors";
+  const inputClass = "w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c] transition-colors";
   const labelClass = "text-xs font-bold text-white/60 uppercase tracking-widest";
-  const submitBtnClass = "px-8 py-4 rounded-xl bg-[#c8a84b] text-black font-black uppercase tracking-widest text-sm hover:bg-[#d4b455] transition-all disabled:opacity-50 flex items-center gap-3";
+  const submitBtnClass = "px-8 py-4 rounded-xl bg-[#e8b64c] text-black font-black uppercase tracking-widest text-sm hover:bg-[#e0b45c] transition-all disabled:opacity-50 flex items-center gap-3";
 
   const sidebarItems = [
     { id: 'profile', label: 'Profile Details', icon: <UserIcon className="w-4 h-4" /> },
@@ -200,7 +200,7 @@ export default function SettingsPage() {
       {/* Ambient bg */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-[10%] right-[5%] w-[400px] h-[400px] rounded-full opacity-30"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.1) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.1)0%, transparent 70%)', filter: 'blur(80px)' }} />
       </div>
 
       <div className="w-full max-w-4xl flex flex-col md:flex-row gap-8">
@@ -226,7 +226,7 @@ export default function SettingsPage() {
                       ? 'bg-red-500/10 text-red-400 border border-red-500/20'
                       : 'text-red-500/60 hover:text-red-400 hover:bg-red-500/5 border border-transparent'
                     : activeTab === item.id
-                      ? 'bg-[#c8a84b]/10 text-[#f0d080] border border-[#c8a84b]/20'
+                      ? 'bg-[#e8b64c]/10 text-[#ffdf9e] border border-[#e8b64c]/20'
                       : 'text-white/40 hover:text-white hover:bg-white/5 border border-transparent'
                 }`}
               >
@@ -237,15 +237,15 @@ export default function SettingsPage() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 bg-[#0a0a0f] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a84b]/5 rounded-full blur-3xl pointer-events-none translate-x-1/2 -translate-y-1/2" />
+        <div className="flex-1 bg-[#0b1024] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8b64c]/5 rounded-full blur-3xl pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
           <div className="relative">
 
             {/* ── Profile Details ── */}
             {activeTab === 'profile' && (
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                <h1 className="text-2xl font-black uppercase tracking-widest text-[#f0d080] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
+                <h1 className="text-2xl font-black uppercase tracking-widest text-[#ffdf9e] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
                   Profile Details
                 </h1>
                 <form onSubmit={handleProfileSubmit} className="space-y-6">
@@ -287,7 +287,7 @@ export default function SettingsPage() {
                       <textarea
                         value={profileForm.bio}
                         onChange={e => setProfileForm({ ...profileForm, bio: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors resize-none"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c] transition-colors resize-none"
                         placeholder="Tell the world about your Genshin journey..."
                         rows={3}
                         maxLength={200}
@@ -307,7 +307,7 @@ export default function SettingsPage() {
             {/* ── Security ── */}
             {activeTab === 'security' && (
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                <h1 className="text-2xl font-black uppercase tracking-widest text-[#f0d080] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
+                <h1 className="text-2xl font-black uppercase tracking-widest text-[#ffdf9e] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
                   Security
                 </h1>
                 <form onSubmit={handlePasswordSubmit} className="space-y-6">
@@ -394,7 +394,7 @@ export default function SettingsPage() {
             {/* ── Email Address ── */}
             {activeTab === 'email' && (
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                <h1 className="text-2xl font-black uppercase tracking-widest text-[#f0d080] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
+                <h1 className="text-2xl font-black uppercase tracking-widest text-[#ffdf9e] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
                   Email Address
                 </h1>
 
@@ -434,8 +434,8 @@ export default function SettingsPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleVerifyOtp} className="space-y-6">
-                    <div className="bg-[#c8a84b]/10 border border-[#c8a84b]/20 rounded-xl p-4 mb-6">
-                      <p className="text-sm text-[#f0d080]">We&apos;ve sent a 6-digit code to <strong>{emailForm.newEmail}</strong>.</p>
+                    <div className="bg-[#e8b64c]/10 border border-[#e8b64c]/20 rounded-xl p-4 mb-6">
+                      <p className="text-sm text-[#ffdf9e]">We&apos;ve sent a 6-digit code to <strong>{emailForm.newEmail}</strong>.</p>
                     </div>
 
                     <div className="space-y-2">

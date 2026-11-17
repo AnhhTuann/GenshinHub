@@ -70,7 +70,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                 onClick={() => setMobileOpen(false)}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all ${
                   active 
-                    ? 'bg-[#c8a84b]/10 border border-[#c8a84b]/20 text-[#f0d080] shadow-[0_0_12px_rgba(200,168,75,0.08)]' 
+                    ? 'bg-[#e8b64c]/10 border border-[#e8b64c]/20 text-[#ffdf9e] shadow-[0_0_12px_rgba(232,182,76,0.08)]' 
                     : 'border border-transparent text-white/40 hover:bg-white/5 hover:text-white'
                 }`}
               >
@@ -79,7 +79,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                   {item.label}
                 </span>
                 {active && (
-                  <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: '#c8a84b', boxShadow: '0 0 6px rgba(200,168,75,0.7)' }} />
+                  <div className="ml-auto w-1.5 h-1.5 rounded-full" style={{ background: '#e8b64c', boxShadow: '0 0 6px rgba(232,182,76,0.7)' }} />
                 )}
               </Link>
             );
@@ -90,13 +90,13 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
   );
 
   return (
-    <div className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04040a)' }}>
+    <div className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04060f)' }}>
       {/* Global Toast provider */}
       <Toaster
         position="top-right"
         toastOptions={{
           style: {
-            background: 'rgba(13,13,20,0.98)',
+            background: 'rgba(16,22,46,0.98)',
             color: '#fff',
             border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: '12px',
@@ -105,8 +105,8 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             backdropFilter: 'blur(20px)',
           },
           success: {
-            iconTheme: { primary: '#c8a84b', secondary: '#080812' },
-            style: { borderColor: 'rgba(200,168,75,0.25)' },
+            iconTheme: { primary: '#e8b64c', secondary: '#090d1f' },
+            style: { borderColor: 'rgba(232,182,76,0.25)' },
           },
           error: {
             iconTheme: { primary: '#ef4444', secondary: '#fff' },
@@ -120,9 +120,9 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
       <header
         className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 h-14"
         style={{
-          background: 'rgba(4,4,10,0.96)',
+          background: 'rgba(5,8,20,0.96)',
           backdropFilter: 'blur(24px)',
-          borderBottom: '1px solid rgba(200,168,75,0.08)',
+          borderBottom: '1px solid rgba(232,182,76,0.08)',
           boxShadow: '0 2px 20px rgba(0,0,0,0.4)',
         }}
       >
@@ -141,7 +141,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           <div className="flex items-center gap-2">
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center text-sm"
-              style={{ background: 'rgba(200,168,75,0.12)', border: '1px solid rgba(200,168,75,0.20)' }}
+              style={{ background: 'rgba(232,182,76,0.12)', border: '1px solid rgba(232,182,76,0.20)' }}
             >
               🛡️
             </div>
@@ -149,7 +149,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
               className="text-[13px] font-black uppercase tracking-[0.12em]"
               style={{
                 fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                background: 'linear-gradient(135deg, #f0d080, #c8a84b)',
+                background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -166,7 +166,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           {/* Admin mode badge */}
           <div
             className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg"
-            style={{ background: 'rgba(200,168,75,0.08)', border: '1px solid rgba(200,168,75,0.15)' }}
+            style={{ background: 'rgba(232,182,76,0.08)', border: '1px solid rgba(232,182,76,0.15)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.7)] animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-widest text-amber-400/70">Admin Mode</span>
@@ -211,7 +211,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           className="hidden lg:flex flex-col w-56 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto pt-4 pb-6 px-3"
           style={{
             borderRight: '1px solid rgba(255,255,255,0.04)',
-            background: 'rgba(4,4,10,0.6)',
+            background: 'rgba(5,8,20,0.6)',
           }}
         >
           {sidebarContent}
@@ -231,9 +231,9 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             top: '56px',
             transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
             transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
-            background: 'rgba(4,4,10,0.98)',
+            background: 'rgba(5,8,20,0.98)',
             backdropFilter: 'blur(24px)',
-            borderRight: '1px solid rgba(200,168,75,0.10)',
+            borderRight: '1px solid rgba(232,182,76,0.10)',
           }}
         >
           {sidebarContent}

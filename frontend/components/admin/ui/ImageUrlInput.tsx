@@ -35,10 +35,10 @@ export default function ImageUrlInput({ label, value, onChange, error, placehold
             placeholder={placeholder || 'https://...'}
             className="w-full px-3.5 py-2.5 rounded-xl text-sm font-medium outline-none"
             style={{
-              background: 'rgba(4,4,10,0.8)',
-              border: error ? '1px solid rgba(239,68,68,0.5)' : focused ? '1px solid rgba(200,168,75,0.4)' : '1px solid rgba(255,255,255,0.07)',
+              background: 'rgba(5,8,20,0.8)',
+              border: error ? '1px solid rgba(239,68,68,0.5)' : focused ? '1px solid rgba(232,182,76,0.4)' : '1px solid rgba(255,255,255,0.07)',
               color: 'rgba(255,255,255,0.88)',
-              boxShadow: focused ? '0 0 0 3px rgba(200,168,75,0.07)' : 'none',
+              boxShadow: focused ? '0 0 0 3px rgba(232,182,76,0.07)' : 'none',
               transition: 'border-color 0.2s, box-shadow 0.2s',
             }}
             onFocus={() => setFocused(true)}
@@ -58,8 +58,8 @@ export default function ImageUrlInput({ label, value, onChange, error, placehold
         <div
           className="shrink-0 w-14 h-14 rounded-xl overflow-hidden flex items-center justify-center"
           style={{
-            background: 'rgba(4,4,10,0.8)',
-            border: showPreview ? '1px solid rgba(200,168,75,0.25)' : '1px solid rgba(255,255,255,0.06)',
+            background: 'rgba(5,8,20,0.8)',
+            border: showPreview ? '1px solid rgba(232,182,76,0.25)' : '1px solid rgba(255,255,255,0.06)',
           }}
         >
           {showPreview ? (

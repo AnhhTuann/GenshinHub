@@ -31,7 +31,7 @@ class Particle {
   draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(200, 168, 75, ${this.life / this.maxLife})`;
+    ctx.fillStyle = `rgba(232,182,76, ${this.life / this.maxLife})`;
     ctx.fill();
   }
 }
@@ -83,8 +83,8 @@ export default function CustomCursor() {
           mouse.current.x, mouse.current.y, 0,
           mouse.current.x, mouse.current.y, 100
         );
-        gradient.addColorStop(0, "rgba(200, 168, 75, 0.15)");
-        gradient.addColorStop(1, "rgba(200, 168, 75, 0)");
+        gradient.addColorStop(0, "rgba(232,182,76,0.15)");
+        gradient.addColorStop(1, "rgba(232,182,76,0)");
         ctx.fillStyle = gradient;
         ctx.arc(mouse.current.x, mouse.current.y, 100, 0, Math.PI * 2);
         ctx.fill();

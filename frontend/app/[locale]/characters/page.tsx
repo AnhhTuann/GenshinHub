@@ -42,13 +42,13 @@ async function CharactersContent({ locale }: { locale: string }) {
         <div className="flex items-center gap-3 mb-2">
           <div
             className="w-[3px] h-8 rounded-full"
-            style={{ background: 'linear-gradient(to bottom, #f0d080, #c8a84b)' }}
+            style={{ background: 'linear-gradient(to bottom, #ffdf9e, #e8b64c)' }}
           />
           <h1
             className="text-3xl sm:text-4xl font-black uppercase tracking-tight"
             style={{
               fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #f0d080 0%, #c8a84b 60%, #8a6820 100%)',
+              background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -75,13 +75,13 @@ export default async function CharactersPage({ params }: { params: Promise<{ loc
   return (
     <main
       className="relative min-h-screen text-white overflow-x-hidden"
-      style={{ background: 'var(--bg-void, #04040a)' }}
+      style={{ background: 'var(--bg-void, #04060f)' }}
     >
       {/* Ambient glows */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -top-[15%] left-[10%] w-[700px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 70%)', filter: 'blur(130px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(130px)' }}
         />
         <div
           className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full"

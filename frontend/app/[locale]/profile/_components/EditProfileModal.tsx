@@ -58,9 +58,9 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
         onClick={onClose}
       />
       
-      <div className="relative bg-[#0a0a0f] border border-white/10 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#0b1024] border border-white/10 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="px-6 py-4 border-b border-white/5 flex items-center justify-between">
-          <h2 className="text-lg font-black tracking-widest uppercase text-[#f0d080] font-[family-name:var(--font-cinzel)]">
+          <h2 className="text-lg font-black tracking-widest uppercase text-[#ffdf9e] font-[family-name:var(--font-cinzel)]">
             Edit Profile
           </h2>
           <button 
@@ -80,7 +80,7 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
                 type="text"
                 value={formData.username}
                 onChange={e => setFormData({ ...formData, username: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c] transition-colors"
                 placeholder="Choose a username"
                 required
               />
@@ -96,7 +96,7 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
                 type="text"
                 value={formData.displayName}
                 onChange={e => setFormData({ ...formData, displayName: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c] transition-colors"
                 placeholder="What should we call you?"
               />
             </div>
@@ -109,7 +109,7 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
               <textarea
                 value={formData.bio}
                 onChange={e => setFormData({ ...formData, bio: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b] transition-colors resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c] transition-colors resize-none"
                 placeholder="Tell the world about your Genshin journey..."
                 rows={3}
                 maxLength={200}
@@ -129,7 +129,7 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-[#c8a84b] text-black font-black uppercase tracking-wider text-xs hover:bg-[#d4b455] transition-colors disabled:opacity-50"
+              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-[#e8b64c] text-black font-black uppercase tracking-wider text-xs hover:bg-[#e0b45c] transition-colors disabled:opacity-50"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

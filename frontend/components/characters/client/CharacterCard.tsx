@@ -15,20 +15,20 @@ const SplashArtOverlay = dynamic(() => import('@/components/ui/SplashArtOverlay'
 
 /* ─── Element colors ─────────────────────────── */
 const EL_COLOR: Record<string, string> = {
-  Pyro: '#ff6b4a', Hydro: '#4fc3f7', Cryo: '#80deea',
-  Electro: '#ce93d8', Anemo: '#4db6ac', Geo: '#ffd54f', Dendro: '#aed581',
+  Pyro: '#ff5a45', Hydro: '#3aa8ff', Cryo: '#8fe8f5',
+  Electro: '#cf8fff', Anemo: '#35d6c5', Geo: '#ffd34d', Dendro: '#9ede5f',
 };
 const EL_GLOW: Record<string, string> = {
-  Pyro: 'rgba(255,107,74,', Hydro: 'rgba(79,195,247,',
+  Pyro: 'rgba(255,90,69,', Hydro: 'rgba(79,195,247,',
   Cryo: 'rgba(128,222,234,', Electro: 'rgba(206,147,216,',
   Anemo: 'rgba(77,182,172,', Geo: 'rgba(255,213,79,', Dendro: 'rgba(174,213,129,',
 };
 
 const TIER_CFG: Record<string, { bg: string; border: string; text: string }> = {
   SS: { bg: 'rgba(255,77,109,0.25)', border: 'rgba(255,77,109,0.55)', text: '#ff4d6d' },
-  S:  { bg: 'rgba(245,158,11,0.25)', border: 'rgba(245,158,11,0.50)', text: '#fbbf24' },
-  A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#c084fc' },
-  B:  { bg: 'rgba(34,211,238,0.20)', border: 'rgba(34,211,238,0.40)', text: '#22d3ee' },
+  S:  { bg: 'rgba(245,158,11,0.25)', border: 'rgba(245,158,11,0.50)', text: '#f5c04e' },
+  A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#c9a8ff' },
+  B:  { bg: 'rgba(34,211,238,0.20)', border: 'rgba(34,211,238,0.40)', text: '#35d0e0' },
   C:  { bg: 'rgba(156,163,175,0.20)', border: 'rgba(156,163,175,0.40)', text: '#cbd5e1' },
   D:  { bg: 'rgba(100,116,139,0.20)', border: 'rgba(100,116,139,0.40)', text: '#94a3b8' },
   TBD:{ bg: 'rgba(156,163,175,0.10)', border: 'rgba(156,163,175,0.25)', text: '#9ca3af' },
@@ -43,8 +43,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const is5 = character.rarity === 5;
   const name = locale === 'en' ? character.nameEn : (character.nameVi || character.nameEn);
   const el = character.element;
-  const color = EL_COLOR[el] ?? '#a855f7';
-  const glow  = EL_GLOW[el]  ?? 'rgba(168,85,247,';
+  const color = EL_COLOR[el] ?? '#a77cf6';
+  const glow  = EL_GLOW[el]  ?? 'rgba(167,124,246,';
   
   const tierValue = character.tier || 'TBD';
   const tierCfg = TIER_CFG[tierValue] || TIER_CFG['TBD'];
@@ -217,7 +217,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
                   <svg
                     key={i}
                     className="w-3.5 h-3.5 drop-shadow-md"
-                    style={{ color: is5 ? '#ffd54f' : '#ce93d8', filter: `drop-shadow(0 0 3px ${is5 ? 'rgba(255,213,79,0.5)' : 'rgba(206,147,216,0.5)'})` }}
+                    style={{ color: is5 ? '#ffd34d' : '#cf8fff', filter: `drop-shadow(0 0 3px ${is5 ? 'rgba(255,211,77,0.5)' : 'rgba(207,143,255,0.5)'})` }}
                     fill="currentColor" viewBox="0 0 20 20"
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />

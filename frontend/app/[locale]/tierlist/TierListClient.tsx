@@ -23,7 +23,7 @@ const getImageUrl = (url: string | null) => {
 };
 
 const ELEMENT_COLORS: Record<string, string> = {
-  Pyro: 'bg-[#ff6b4a]', Hydro: 'bg-[#4fc3f7]', Cryo: 'bg-[#80deea]', Electro: 'bg-[#ce93d8]', Anemo: 'bg-[#4db6ac]', Geo: 'bg-[#ffd54f]', Dendro: 'bg-[#aed581]'
+  Pyro: 'bg-[#ff5a45]', Hydro: 'bg-[#3aa8ff]', Cryo: 'bg-[#8fe8f5]', Electro: 'bg-[#cf8fff]', Anemo: 'bg-[#35d6c5]', Geo: 'bg-[#ffd34d]', Dendro: 'bg-[#9ede5f]'
 };
 
 const containerVariants: Variants = {
@@ -69,11 +69,11 @@ const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
     rowGlow: 'group-hover:bg-orange-500/[0.03] border-orange-500/20'
   },
   purple: {
-    badge: 'bg-gradient-to-br from-[#a855f7] to-[#7c3aed] text-white border-purple-400 shadow-[0_0_35px_rgba(168,85,247,0.50)]',
+    badge: 'bg-gradient-to-br from-[#a77cf6] to-[#7c5ce8] text-white border-purple-400 shadow-[0_0_35px_rgba(168,85,247,0.50)]',
     rowGlow: 'group-hover:bg-purple-500/[0.04] border-purple-500/25'
   },
   cyan: {
-    badge: 'bg-gradient-to-br from-[#22d3ee] to-[#0891b2] text-black border-cyan-300 shadow-[0_0_35px_rgba(34,211,238,0.45)]',
+    badge: 'bg-gradient-to-br from-[#35d0e0] to-[#1fa8b8] text-black border-cyan-300 shadow-[0_0_35px_rgba(34,211,238,0.45)]',
     rowGlow: 'group-hover:bg-cyan-500/[0.03] border-cyan-500/20'
   },
   pink: {
@@ -81,7 +81,7 @@ const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
     rowGlow: 'group-hover:bg-pink-500/[0.02] border-pink-500/20'
   },
   default: {
-    badge: 'bg-gradient-to-br from-[#1a1a24] to-[#0d0d14] text-gray-500 border-gray-800',
+    badge: 'bg-gradient-to-br from-[#141b38] to-[#0a0e22] text-gray-500 border-gray-800',
     rowGlow: 'group-hover:bg-white/[0.02] border-white/[0.05]'
   }
 };
@@ -93,16 +93,16 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
   const name = locale === 'en' ? item.nameEn : item.nameVi;
   const is5Star = item.rarity === 5;
   const rarityBg = is5Star 
-    ? 'bg-gradient-to-br from-[#d4a06a] via-[#e5b76b] to-[#d4a06a] border-[#b07b46]' 
-    : 'bg-gradient-to-br from-[#9b80b7] via-[#ba9fd3] to-[#9b80b7] border-[#7d609a]';
-  const nameBg = is5Star ? 'bg-[#b07b46]' : 'bg-[#7d609a]';
+    ? 'bg-gradient-to-br from-[#e0b078] via-[#eec584] to-[#e0b078] border-[#a97c50]' 
+    : 'bg-gradient-to-br from-[#a78bfa] via-[#c4b5fd] to-[#a78bfa] border-[#6f5bb5]';
+  const nameBg = is5Star ? 'bg-[#a97c50]' : 'bg-[#6f5bb5]';
 
   return (
     <Link href={isChar ? `/characters/${item.id}` : `/weapons`}>
       <motion.div
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative w-[76px] sm:w-[86px] flex flex-col rounded-md overflow-hidden border border-transparent shadow-lg hover:shadow-2xl transition-all cursor-pointer bg-[#050508]"
+        className="group relative w-[76px] sm:w-[86px] flex flex-col rounded-md overflow-hidden border border-transparent shadow-lg hover:shadow-2xl transition-all cursor-pointer bg-[#05060f]"
       >
         {/* Glow effect on hover */}
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md ${is5Star ? 'bg-amber-400/30' : 'bg-purple-400/30'}`} />
@@ -195,7 +195,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
   ];
 
   return (
-    <main className="min-h-screen bg-[#06060a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#070a18] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
       
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="relative overflow-hidden border-b border-white/[0.04]">
@@ -234,7 +234,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-8">
         
         {/* ── Tabs ────────────────────────────────────────────── */}
-        <div className="flex justify-center gap-2 mb-12 bg-[#0d0d14]/80 p-2 rounded-full border border-white/10 w-fit mx-auto backdrop-blur-xl shadow-2xl">
+        <div className="flex justify-center gap-2 mb-12 bg-[#0a0e22]/80 p-2 rounded-full border border-white/10 w-fit mx-auto backdrop-blur-xl shadow-2xl">
           {tabs.map((tItem) => (
             <button
               key={tItem.id}
@@ -260,7 +260,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
               <button
                 key={wType.id}
                 onClick={() => setWeaponType(wType.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType.id ? 'bg-[#1a1a24] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType.id ? 'bg-[#141b38] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
               >
                 {wType.label}
               </button>
@@ -288,7 +288,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
                   const rowGlow = colorStyle.rowGlow;
 
                   return (
-                    <motion.div variants={itemVariants} key={tier.id} className={`relative flex flex-col md:flex-row bg-[#0d0d14] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
+                    <motion.div variants={itemVariants} key={tier.id} className={`relative flex flex-col md:flex-row bg-[#0a0e22] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
                       
                       {/* Thicker, more impactful Tier Badge */}
                       <div className={`w-20 sm:w-28 shrink-0 flex flex-col justify-center items-center py-6 border-b md:border-b-0 md:border-r border-white/10 relative overflow-hidden ${enhancedBadgeStyle}`}>
@@ -307,7 +307,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
                               <div className="py-3.5 px-5 flex items-center gap-3 border-b border-white/5 bg-black/20">
                                 <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]'}`} />
                                 <span className="text-xs font-black text-gray-300 uppercase tracking-[0.2em]">{role}</span>
-                                <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#06060a] border border-white/10 px-2.5 py-0.5 rounded-full">{itemsInRole.length}</span>
+                                <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#070a18] border border-white/10 px-2.5 py-0.5 rounded-full">{itemsInRole.length}</span>
                               </div>
                               <div className="p-5 flex flex-wrap gap-4 sm:gap-5 content-start">
                                 {itemsInRole.map((item: any) => (

@@ -35,21 +35,21 @@ export default function ShowcaseClient() {
   };
 
   const EL_TEXT: Record<string, string> = {
-    Pyro: 'text-[#ff6b4a]',
-    Hydro: 'text-[#4fc3f7]',
-    Cryo: 'text-[#80deea]',
-    Electro: 'text-[#ce93d8]',
-    Anemo: 'text-[#4db6ac]',
-    Geo: 'text-[#ffd54f]',
-    Dendro: 'text-[#aed581]',
+    Pyro: 'text-[#ff5a45]',
+    Hydro: 'text-[#3aa8ff]',
+    Cryo: 'text-[#8fe8f5]',
+    Electro: 'text-[#cf8fff]',
+    Anemo: 'text-[#35d6c5]',
+    Geo: 'text-[#ffd34d]',
+    Dendro: 'text-[#9ede5f]',
   };
 
   return (
-    <div className="min-h-screen bg-[#06060a] text-white font-sans">
+    <div className="min-h-screen bg-[#070a18] text-white font-sans">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div
           className="absolute -top-[15%] left-[10%] w-[700px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 70%)', filter: 'blur(130px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(130px)' }}
         />
         <div
           className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full"
@@ -87,14 +87,14 @@ export default function ShowcaseClient() {
               value={uid}
               onChange={(e) => setUid(e.target.value)}
               placeholder={t('placeholder')}
-              className="w-full bg-[#0d0d14]/80 text-white/90 px-6 py-4 rounded-2xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              className="w-full bg-[#0a0e22]/80 text-white/90 px-6 py-4 rounded-2xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
               style={{
                 border: '1px solid rgba(255,255,255,0.08)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
               }}
               onFocus={e => {
-                e.target.style.borderColor = 'rgba(200,168,75,0.4)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(200,168,75,0.1), 0 4px 20px rgba(0,0,0,0.2)';
+                e.target.style.borderColor = 'rgba(232,182,76,0.4)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(232,182,76,0.1), 0 4px 20px rgba(0,0,0,0.2)';
               }}
               onBlur={e => {
                 e.target.style.borderColor = 'rgba(255,255,255,0.08)';
@@ -107,9 +107,9 @@ export default function ShowcaseClient() {
             disabled={loading}
             className="px-8 py-4 text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 rounded-2xl shrink-0 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
             style={{
-              background: 'linear-gradient(135deg, #e8c46b, #c8a84b)',
+              background: 'linear-gradient(135deg, #eecf8a, #e8b64c)',
               color: '#000',
-              boxShadow: '0 8px 25px -5px rgba(200,168,75,0.3)',
+              boxShadow: '0 8px 25px -5px rgba(232,182,76,0.3)',
             }}
           >
             {loading ? (
@@ -141,14 +141,14 @@ export default function ShowcaseClient() {
         )}
 
         {showcase && (
-          <div className="bg-[#0d0d14]/60 border border-white/[0.06] rounded-2xl overflow-hidden animate-scale-in backdrop-blur-md shadow-2xl">
+          <div className="bg-[#0a0e22]/60 border border-white/[0.06] rounded-2xl overflow-hidden animate-scale-in backdrop-blur-md shadow-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-5 p-6 border-b border-white/[0.05]">
               {showcase.avatarUrl ? (
-                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0" style={{ background: '#0d0d14', border: '1px solid rgba(200,168,75,0.3)', boxShadow: '0 0 20px rgba(200,168,75,0.15)' }}>
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0" style={{ background: '#0a0e22', border: '1px solid rgba(232,182,76,0.3)', boxShadow: '0 0 20px rgba(232,182,76,0.15)' }}>
                   <FallbackImage src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="96px" />
                 </div>
               ) : (
-                <div className="w-20 h-20 rounded-full bg-[#0d0d14] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
+                <div className="w-20 h-20 rounded-full bg-[#0a0e22] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
                   No Avatar
                 </div>
               )}

@@ -15,10 +15,10 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (/[0-9]/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;
   if (score <= 1) return { score, label: 'Very Weak', color: '#ef4444' };
-  if (score === 2) return { score, label: 'Weak', color: '#f97316' };
-  if (score === 3) return { score, label: 'Fair', color: '#eab308' };
-  if (score === 4) return { score, label: 'Strong', color: '#22c55e' };
-  return { score, label: 'Very Strong', color: '#c8a84b' };
+  if (score === 2) return { score, label: 'Weak', color: '#ff9a4d' };
+  if (score === 3) return { score, label: 'Fair', color: '#f2c14e' };
+  if (score === 4) return { score, label: 'Strong', color: '#3ddc84' };
+  return { score, label: 'Very Strong', color: '#e8b64c' };
 }
 
 function ResetPasswordForm() {
@@ -90,7 +90,7 @@ function ResetPasswordForm() {
         </div>
         <h2 className="text-xl font-black text-white uppercase tracking-widest">Password Reset!</h2>
         <p className="text-white/50 text-sm">Redirecting you to login...</p>
-        <Loader2 className="w-5 h-5 text-[#c8a84b] animate-spin mx-auto" />
+        <Loader2 className="w-5 h-5 text-[#e8b64c] animate-spin mx-auto" />
       </div>
     );
   }
@@ -105,7 +105,7 @@ function ResetPasswordForm() {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white/70 placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 transition-all"
+          className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white/70 placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 transition-all"
           placeholder="your@email.com"
         />
       </div>
@@ -124,7 +124,7 @@ function ResetPasswordForm() {
             required
             value={formData.otp}
             onChange={(e) => setFormData({ ...formData, otp: e.target.value.replace(/\D/g, '').slice(0, 6) })}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 focus:bg-white/10 transition-all tracking-[0.5em] font-mono text-lg text-center"
+            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all tracking-[0.5em] font-mono text-lg text-center"
             placeholder="000000"
             maxLength={6}
           />
@@ -144,7 +144,7 @@ function ResetPasswordForm() {
             required
             value={formData.newPassword}
             onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#c8a84b]/50 focus:bg-white/10 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
             placeholder="••••••••"
             minLength={6}
           />
@@ -188,7 +188,7 @@ function ResetPasswordForm() {
             className={`w-full bg-white/5 border rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:bg-white/10 transition-all ${
               passwordsMatch ? 'border-green-500/50' :
               passwordsMismatch ? 'border-red-500/50' :
-              'border-white/10 focus:border-[#c8a84b]/50'
+              'border-white/10 focus:border-[#e8b64c]/50'
             }`}
             placeholder="••••••••"
           />
@@ -219,8 +219,8 @@ function ResetPasswordForm() {
         disabled={loading || passwordsMismatch || formData.otp.length < 6}
         className="w-full py-3.5 mt-2 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
         style={{
-          background: 'linear-gradient(135deg, #c8a84b 0%, #8a6820 100%)',
-          boxShadow: '0 4px 15px rgba(200,168,75,0.3)',
+          background: 'linear-gradient(135deg, #e8b64c 0%, #a97e2f 100%)',
+          boxShadow: '0 4px 15px rgba(232,182,76,0.3)',
         }}
       >
         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -238,21 +238,21 @@ export default function ResetPasswordPage() {
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(200,168,75,0.06) 0%, transparent 70%)', filter: 'blur(100px)' }}
+          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(100px)' }}
         />
       </div>
 
       <div className="w-full max-w-md">
-        <div className="bg-[#0a0a0f]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="bg-[#0b1024]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c8a84b] to-[#8a6820] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#c8a84b]/20">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">
               <ShieldCheck className="w-7 h-7 text-black" />
             </div>
             <h1
               className="text-2xl font-black uppercase tracking-widest mb-2"
               style={{
                 fontFamily: 'var(--font-cinzel)',
-                background: 'linear-gradient(135deg, #f0d080 0%, #c8a84b 60%, #8a6820 100%)',
+                background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -262,7 +262,7 @@ export default function ResetPasswordPage() {
             <p className="text-white/40 text-sm">Enter the code from your email and set a new password</p>
           </div>
 
-          <Suspense fallback={<div className="flex justify-center py-8"><Loader2 className="w-8 h-8 text-[#c8a84b] animate-spin" /></div>}>
+          <Suspense fallback={<div className="flex justify-center py-8"><Loader2 className="w-8 h-8 text-[#e8b64c] animate-spin" /></div>}>
             <ResetPasswordForm />
           </Suspense>
 

@@ -16,8 +16,8 @@ import { confirmDialog } from '@/utils/confirm';
 
 const RARITY_BG: Record<number, string> = {
   5: 'from-[#ffe1a0] via-[#f7bd4a] to-[#d98a2b]',
-  4: 'from-[#cf8fff] via-[#8b5cf6] to-[#5b21b6]',
-  3: 'from-[#8fc6ff] via-[#2c74d6] to-[#2745a8]',
+  4: 'from-[#cf8fff] via-[#8e97a8] to-[#6b6152]',
+  3: 'from-[#8fc6ff] via-[#8e97a8] to-[#2b251c]',
   2: 'from-gray-400 via-gray-650 to-gray-800',
   1: 'from-gray-500 via-gray-700 to-gray-900',
 };
@@ -25,7 +25,7 @@ const RARITY_BG: Record<number, string> = {
 const RARITY_BORDER: Record<number, string> = {
   5: 'border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.08)]',
   4: 'border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.08)]',
-  3: 'border-blue-500/40 shadow-[0_0_30px_rgba(59,130,246,0.08)]',
+  3: 'border-blue-500/40 shadow-[0_0_30px_rgba(201,168,106,0.08)]',
   2: 'border-gray-500/40',
   1: 'border-gray-600/40',
 };
@@ -121,7 +121,7 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
   };
 
   return (
-    <main className="min-h-screen bg-[#080b1a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
       <div className="max-w-5xl mx-auto px-6 pt-8 pb-4">
         <Link className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 text-xs font-black uppercase tracking-wider w-fit mb-6" href="/weapons">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,14 +150,14 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
         )}
 
         {/* Hero Section */}
-        <div className={`relative rounded-3xl border ${RARITY_BORDER[rarity]} overflow-hidden bg-[#0c1126]/50 shadow-2xl mb-8 backdrop-blur-md`}>
+        <div className={`relative rounded-3xl border ${RARITY_BORDER[rarity]} overflow-hidden bg-[#171410]/50 shadow-2xl mb-8 backdrop-blur-md`}>
           {/* Background glow */}
           <div className={`absolute inset-0 bg-gradient-to-br ${RARITY_BG[rarity]} opacity-[0.03]`} />
 
           <div className="relative flex flex-col md:flex-row gap-8 p-8">
             {/* Weapon Image Wrapper */}
             <div className={`w-40 h-40 flex-shrink-0 rounded-2xl bg-gradient-to-br ${RARITY_BG[rarity]} p-[1px] shadow-xl self-center`}>
-              <div className="relative w-full h-full rounded-2xl bg-[#080b1a]/90 flex items-center justify-center overflow-hidden p-2">
+              <div className="relative w-full h-full rounded-2xl bg-[#121109]/90 flex items-center justify-center overflow-hidden p-2">
                 {weapon.iconUrl ? (
                   <FallbackImage src={weapon.iconUrl} alt={name} fill className="object-contain p-2" />
                 ) : (
@@ -174,12 +174,12 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
 
               {/* Stats Row */}
               <div className="flex flex-wrap gap-3">
-                <div className="bg-[#05060f]/65 border border-gray-955 rounded-xl px-5 py-3 shadow-inner">
+                <div className="bg-[#0d0c0a]/65 border border-gray-955 rounded-xl px-5 py-3 shadow-inner">
                   <p className="text-gray-550 text-[9px] font-black uppercase tracking-widest mb-1">Base ATK</p>
                   <p className="text-red-405 font-black text-2xl font-display">{weapon.baseAtk}</p>
                 </div>
                 {subStat && (
-                  <div className="bg-[#05060f]/65 border border-gray-955 rounded-xl px-5 py-3 shadow-inner">
+                  <div className="bg-[#0d0c0a]/65 border border-gray-955 rounded-xl px-5 py-3 shadow-inner">
                     <p className="text-gray-550 text-[9px] font-black uppercase tracking-widest mb-1">{subStat}</p>
                     <p className="text-blue-400 font-black text-2xl font-display">
                       {weapon.subStatValue ?? '—'}
@@ -197,7 +197,7 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
 
           {/* Passive Description */}
           {passiveName && (
-            <div className="relative mx-8 mb-8 bg-[#05060f]/65 border border-gray-955 rounded-2xl p-5 shadow-inner">
+            <div className="relative mx-8 mb-8 bg-[#0d0c0a]/65 border border-gray-955 rounded-2xl p-5 shadow-inner">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-yellow-500 text-sm">⚡</span>
                 <p className="text-yellow-500 font-extrabold text-sm uppercase tracking-wider font-display">{passiveName}</p>
@@ -207,7 +207,7 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
                   className="text-gray-300 text-sm leading-relaxed"
                   dangerouslySetInnerHTML={{
                     __html: passiveDesc
-                      .replace(/<color=#99FFFFFF>/g, '<span style="color:#f0b64a; font-weight:bold">')
+                      .replace(/<color=#C3CAD6FF>/g, '<span style="color:#f0b64a; font-weight:bold">')
                       .replace(/<\/color>/g, '</span>')
                   }}
                 />
@@ -261,7 +261,7 @@ export default function WeaponDetailClient({ weapon: initialWeapon, characters }
               ))}
             </div>
           ) : (
-            <div className="bg-[#0c1126]/30 border border-gray-900/60 rounded-2xl p-8 text-center text-gray-500 text-sm">
+            <div className="bg-[#171410]/30 border border-gray-900/60 rounded-2xl p-8 text-center text-gray-500 text-sm">
               No recommended builds currently list this weapon.
             </div>
           )}

@@ -28,11 +28,11 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
                 style={{
                   background: active ? 'rgba(255,255,255,0.07)' : 'transparent',
                   border: active ? '1px solid rgba(255,255,255,0.12)' : '1px solid transparent',
-                  color: active ? '#e2e5ff' : 'rgba(255,255,255,0.55)',
+                  color: active ? '#e8e2d2' : 'rgba(255,255,255,0.55)',
                   transition: 'background 0.2s ease, border-color 0.2s ease, color 0.2s ease',
                 }}
               >
-                <span className="text-base">{link.icon}</span>
+                <link.icon className="w-4 h-4" />
                 <span style={{ fontFamily: active ? 'var(--font-cinzel, serif)' : 'inherit', fontSize: active ? '0.7rem' : undefined, letterSpacing: active ? '0.06em' : undefined }}>
                   {link.label}
                 </span>

@@ -91,8 +91,8 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
             onClick={() => setActiveLevel(lv)}
             className={`px-4 py-2 rounded-lg font-semibold text-[13px] transition-all ${
               activeLevel === lv 
-                ? 'bg-[#ecd9a0] text-[#141b38] shadow-md' 
-                : 'bg-[#232e55]/60 text-white/60 hover:bg-[#232e55] hover:text-white'
+                ? 'bg-[#ecd9a0] text-[#231e17] shadow-md' 
+                : 'bg-[#2b251c]/60 text-white/60 hover:bg-[#2b251c] hover:text-white'
             }`}
           >
             {lv}
@@ -104,7 +104,7 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
       <div className="w-full overflow-hidden rounded-xl border border-white/5">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="bg-[#232e55]/40 text-white font-bold text-[13px] border-b border-white/5">
+            <tr className="bg-[#2b251c]/40 text-white font-bold text-[13px] border-b border-white/5">
               <th className="p-4 w-1/3"></th>
               <th className="p-4 w-1/3">Before Ascension</th>
               <th className="p-4 w-1/3">After Ascension</th>

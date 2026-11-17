@@ -51,7 +51,7 @@ export default function WishlistTab({ user }: { user: User }) {
   return (
     <div className="space-y-8">
       {/* Pity Calculator */}
-      <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6 relative overflow-hidden">
+      <div className="bg-[#231e17] border border-[#e8b64c]/30 rounded-2xl p-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-10">
           <Star className="w-32 h-32 text-[#e8b64c]" />
         </div>

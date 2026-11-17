@@ -73,8 +73,8 @@ function TalentRow({ talent, index }: { talent: string; index: number }) {
     abbr = 'Q'; style = 'bg-purple-500/10 text-purple-400 border-purple-500/20';
   }
   return (
-    <div className="flex items-center gap-3 bg-[#070a18]/50 border border-white/[0.04] hover:border-white/[0.09] rounded-xl p-3 transition-colors duration-200">
-      <span className="w-5 h-5 rounded-full bg-[#0a0e22] border border-white/[0.07] flex items-center justify-center text-white/30 text-[10px] font-extrabold shrink-0">
+    <div className="flex items-center gap-3 bg-[#121109]/50 border border-white/[0.04] hover:border-white/[0.09] rounded-xl p-3 transition-colors duration-200">
+      <span className="w-5 h-5 rounded-full bg-[#1c1813] border border-white/[0.07] flex items-center justify-center text-white/30 text-[10px] font-extrabold shrink-0">
         {index + 1}
       </span>
       <span className={`text-[9px] font-black w-7 h-6 flex items-center justify-center rounded-md border ${style}`}>
@@ -120,7 +120,7 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
   return (
     <div className="flex flex-col gap-5">
       {/* Main Stats */}
-        <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+        <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
           <div className="flex items-center justify-between">
             <SectionHeader label={t('mainStats')} accent="bg-cyan-400" />
             {isAdmin && (
@@ -138,7 +138,7 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
               { slot: locale === 'en' ? 'Goblet' : 'Ly', emoji: '🏆', values: localGoblet },
               { slot: locale === 'en' ? 'Circlet' : 'Nón', emoji: '👑', values: localCirclet },
             ].map(({ slot, emoji, values }) => (
-              <div key={slot} className="flex items-center gap-3 bg-[#070a18]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
+              <div key={slot} className="flex items-center gap-3 bg-[#121109]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
                 <span className="text-base shrink-0">{emoji}</span>
                 <span className="text-white/50 text-[9px] font-black uppercase tracking-wider w-14 shrink-0">{slot}</span>
                 <span className="text-white/90 text-sm font-semibold">
@@ -168,7 +168,7 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
         </section>
 
       {/* Sub-stat priority */}
-        <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+        <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
           <div className="flex items-center justify-between">
             <SectionHeader label={t('subStatsPriority')} accent="bg-orange-400" />
             {isAdmin && (
@@ -201,7 +201,7 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
         </section>
 
       {/* Talent priority */}
-      <section className="bg-[#0a0e22]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+      <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
         <div className="flex items-center justify-between">
           <SectionHeader label={t('talentPriority')} accent="bg-red-400" />
           {isAdmin && (

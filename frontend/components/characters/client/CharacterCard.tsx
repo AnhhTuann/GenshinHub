@@ -25,13 +25,13 @@ const EL_GLOW: Record<string, string> = {
 };
 
 const TIER_CFG: Record<string, { bg: string; border: string; text: string }> = {
-  SS: { bg: 'rgba(255,77,109,0.25)', border: 'rgba(255,77,109,0.55)', text: '#ff4d6d' },
+  SS: { bg: 'rgba(255,77,109,0.25)', border: 'rgba(255,77,109,0.55)', text: '#d98a6a' },
   S:  { bg: 'rgba(245,158,11,0.25)', border: 'rgba(245,158,11,0.50)', text: '#f5c04e' },
-  A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#c9a8ff' },
-  B:  { bg: 'rgba(34,211,238,0.20)', border: 'rgba(34,211,238,0.40)', text: '#35d0e0' },
-  C:  { bg: 'rgba(156,163,175,0.20)', border: 'rgba(156,163,175,0.40)', text: '#cbd5e1' },
-  D:  { bg: 'rgba(100,116,139,0.20)', border: 'rgba(100,116,139,0.40)', text: '#94a3b8' },
-  TBD:{ bg: 'rgba(156,163,175,0.10)', border: 'rgba(156,163,175,0.25)', text: '#9ca3af' },
+  A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#e2c88f' },
+  B:  { bg: 'rgba(142,151,168,0.20)', border: 'rgba(142,151,168,0.40)', text: '#8e97a8' },
+  C:  { bg: 'rgba(156,163,175,0.20)', border: 'rgba(156,163,175,0.40)', text: '#c3cad6' },
+  D:  { bg: 'rgba(100,116,139,0.20)', border: 'rgba(100,116,139,0.40)', text: '#8e97a8' },
+  TBD:{ bg: 'rgba(156,163,175,0.10)', border: 'rgba(156,163,175,0.25)', text: '#8e97a8' },
 };
 
 export default function CharacterCard({ character }: { character: CharacterData }) {

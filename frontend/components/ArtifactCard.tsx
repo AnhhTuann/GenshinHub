@@ -21,16 +21,16 @@ const RARITY_CFG = {
     starColor: '#ffd34d',
   },
   4: {
-    iconRing: 'from-[#c9a8ff] via-[#a77cf6] to-[#7c5ce8]',
+    iconRing: 'from-[#e2c88f] via-[#a77cf6] to-[#8e97a8]',
     glow: 'rgba(168,85,247,',
     border: 'rgba(168,85,247,0.22)',
     borderHover: 'rgba(168,85,247,0.50)',
-    badge: { bg: 'rgba(168,85,247,0.14)', border: 'rgba(168,85,247,0.35)', text: '#c9a8ff' },
-    subPriority: { bg: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.28)', text: '#eadfff' },
+    badge: { bg: 'rgba(168,85,247,0.14)', border: 'rgba(168,85,247,0.35)', text: '#e2c88f' },
+    subPriority: { bg: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.28)', text: '#e8e2d2' },
     slotBg: 'rgba(168,85,247,0.06)',
     slotBorder: 'rgba(168,85,247,0.12)',
     stars: '★★★★',
-    starColor: '#c9a8ff',
+    starColor: '#e2c88f',
   },
 };
 

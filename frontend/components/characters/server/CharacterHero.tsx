@@ -33,8 +33,8 @@ export default function CharacterHero({
           <ParallaxSplash imageUrl={character.splashArtUrl} />
         )}
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070a18] via-[#070a18]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070a18]/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#121109] via-[#121109]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#121109]/70 via-transparent to-transparent" />
         <div
           className="absolute inset-0"
           style={{ background: `linear-gradient(135deg, ${elGlow} 0%, transparent 60%)` }}
@@ -79,7 +79,7 @@ export default function CharacterHero({
 
             {/* Name */}
             <div>
-              <h1 className={`text-4xl sm:text-5xl md:text-[80px] font-black leading-none uppercase tracking-tight drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] ${elText}`} style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}>
+              <h1 className={`text-4xl sm:text-5xl md:text-[80px] font-black leading-none uppercase tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] ${elText}`} style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}>
                 {name}
               </h1>
               {title && (

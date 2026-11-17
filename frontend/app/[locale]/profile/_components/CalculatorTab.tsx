@@ -135,7 +135,7 @@ export default function CalculatorTab({ user }: { user: User }) {
     <div className="flex flex-col md:flex-row gap-6 h-full min-h-[600px]">
       
       {/* Sidebar: To-Do List */}
-      <div className="w-full md:w-64 flex flex-col gap-4 bg-[#141b38] border border-white/10 rounded-2xl p-4">
+      <div className="w-full md:w-64 flex flex-col gap-4 bg-[#231e17] border border-white/10 rounded-2xl p-4">
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-xs font-black uppercase tracking-widest text-white/50">To-do List</h3>
           <span className="text-xs font-bold bg-[#e8b64c]/20 text-[#ffdf9e] px-2 py-0.5 rounded-full">{todoList.length}</span>
@@ -175,7 +175,7 @@ export default function CalculatorTab({ user }: { user: User }) {
       <div className="flex-1 flex flex-col lg:flex-row gap-6">
         
         {/* Editor Panel */}
-        <div className="flex-1 bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6">
+        <div className="flex-1 bg-[#231e17] border border-[#e8b64c]/30 rounded-2xl p-6">
           {!activeItem ? (
             <div className="h-full flex flex-col items-center justify-center text-center opacity-50">
               <CalcIcon className="w-16 h-16 mb-4 text-[#e8b64c]" />
@@ -239,7 +239,7 @@ export default function CalculatorTab({ user }: { user: User }) {
         </div>
 
         {/* Requirements Panel */}
-        <div className="w-full lg:w-80 bg-[#141b38] border border-white/10 rounded-2xl p-6 flex flex-col h-full">
+        <div className="w-full lg:w-80 bg-[#231e17] border border-white/10 rounded-2xl p-6 flex flex-col h-full">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xs font-black uppercase tracking-widest text-white">Total Required</h3>
             <button 
@@ -285,7 +285,7 @@ export default function CalculatorTab({ user }: { user: User }) {
       {/* Selector Modal */}
       {isSelectorOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-[#141b38] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden shadow-2xl animate-in zoom-in-95">
+          <div className="bg-[#231e17] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden shadow-2xl animate-in zoom-in-95">
             <div className="p-4 border-b border-white/10 flex items-center justify-between">
               <h2 className="text-lg font-black uppercase tracking-widest text-white">Select Character</h2>
               <button onClick={() => setIsSelectorOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors">

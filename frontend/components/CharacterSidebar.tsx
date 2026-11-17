@@ -101,7 +101,7 @@ export default function CharacterSidebar({
   const { isAdmin } = useAdmin();
 
   const sigWeapons = character.signatureWeapons || [];
-  const elColor = ELEMENT_COLOR[character.element] ?? "#ffffff";
+  const elColor = ELEMENT_COLOR[character.element] ?? "#f5f1e6";
   const borderColor = is5Star ? "border-amber-500/20" : "border-purple-500/20";
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -152,8 +152,8 @@ export default function CharacterSidebar({
       <div className="flex flex-col lg:flex-row gap-4 w-full items-stretch">
         {/* ── Info Panel (replaces portrait on sidebar) ── */}
         <div
-          className={`relative bg-[#0a0e22]/80 border ${borderColor} rounded-2xl overflow-hidden flex-1 min-w-[250px]`}
-          style={{ boxShadow: `0 0 40px -12px ${elColor}25` }}
+          className={`relative bg-[#1c1813]/80 border ${borderColor} rounded-2xl overflow-hidden flex-1 min-w-[250px]`}
+          style={{ boxShadow: `0 8px 24px -12px ${elColor}30` }}
         >
           {/* Top element accent bar */}
           <div
@@ -177,7 +177,7 @@ export default function CharacterSidebar({
 
         {/* ── Signature Weapon ── */}
         {(sigWeapons.length > 0 || isAdmin) && (
-          <div className="bg-[#0a0e22]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden group flex-[2] min-w-[300px]">
+          <div className="bg-[#1c1813]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden group flex-[2] min-w-[300px]">
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/[0.05] rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex justify-between items-center mb-2.5">
@@ -235,7 +235,7 @@ export default function CharacterSidebar({
               href={character.fandomUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex flex-col items-center justify-center gap-2 text-xs text-white/30 hover:text-white/60 transition-colors p-4 border border-white/[0.04] hover:border-white/[0.1] rounded-2xl bg-[#0a0e22]/60 h-full"
+              className="flex-1 flex flex-col items-center justify-center gap-2 text-xs text-white/30 hover:text-white/60 transition-colors p-4 border border-white/[0.04] hover:border-white/[0.1] rounded-2xl bg-[#1c1813]/60 h-full"
             >
               <svg
                 className="w-6 h-6 mb-1"

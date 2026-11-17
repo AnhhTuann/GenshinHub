@@ -71,7 +71,7 @@ export default function SettingsPage() {
     if (/[0-9]/.test(pw)) s++;
     if (/[^A-Za-z0-9]/.test(pw)) s++;
     const labels = ['', 'Very Weak', 'Weak', 'Fair', 'Strong', 'Very Strong'];
-    const colors = ['', '#ef4444', '#ff9a4d', '#f2c14e', '#3ddc84', '#e8b64c'];
+    const colors = ['', '#ef4444', '#ff9a4d', '#f2c14e', '#86a98f', '#e8b64c'];
     return { score: s, label: labels[s] || '', color: colors[s] || '' };
   };
   const pwStrength = getPwStrength(passwordForm.newPassword);
@@ -237,7 +237,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 bg-[#0b1024] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+        <div className="flex-1 bg-[#171410] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8b64c]/5 rounded-full blur-3xl pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
           <div className="relative">

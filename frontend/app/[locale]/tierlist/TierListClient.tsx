@@ -53,7 +53,7 @@ const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
     rowGlow: 'group-hover:bg-rose-500/[0.03] border-rose-500/25'
   },
   blue: {
-    badge: 'bg-gradient-to-br from-blue-400 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.40)]',
+    badge: 'bg-gradient-to-br from-blue-400 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(201,168,106,0.40)]',
     rowGlow: 'group-hover:bg-blue-500/[0.03] border-blue-500/20'
   },
   gray: {
@@ -61,7 +61,7 @@ const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
     rowGlow: 'group-hover:bg-slate-500/[0.02] border-slate-500/20'
   },
   emerald: {
-    badge: 'bg-gradient-to-br from-emerald-400 to-teal-600 text-white border-emerald-400 shadow-[0_0_28px_rgba(52,211,153,0.35)]',
+    badge: 'bg-gradient-to-br from-emerald-400 to-teal-600 text-white border-emerald-400 shadow-[0_0_28px_rgba(134,169,143,0.35)]',
     rowGlow: 'group-hover:bg-emerald-500/[0.03] border-emerald-500/20'
   },
   orange: {
@@ -69,19 +69,19 @@ const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
     rowGlow: 'group-hover:bg-orange-500/[0.03] border-orange-500/20'
   },
   purple: {
-    badge: 'bg-gradient-to-br from-[#a77cf6] to-[#7c5ce8] text-white border-purple-400 shadow-[0_0_35px_rgba(168,85,247,0.50)]',
+    badge: 'bg-gradient-to-br from-[#a77cf6] to-[#8e97a8] text-white border-purple-400 shadow-[0_0_35px_rgba(168,85,247,0.50)]',
     rowGlow: 'group-hover:bg-purple-500/[0.04] border-purple-500/25'
   },
   cyan: {
-    badge: 'bg-gradient-to-br from-[#35d0e0] to-[#1fa8b8] text-black border-cyan-300 shadow-[0_0_35px_rgba(34,211,238,0.45)]',
+    badge: 'bg-gradient-to-br from-[#8e97a8] to-[#1fa8b8] text-black border-cyan-300 shadow-[0_0_35px_rgba(142,151,168,0.45)]',
     rowGlow: 'group-hover:bg-cyan-500/[0.03] border-cyan-500/20'
   },
   pink: {
-    badge: 'bg-gradient-to-br from-pink-500 to-rose-500 text-white border-pink-400 shadow-[0_0_30px_rgba(236,72,153,0.35)]',
+    badge: 'bg-gradient-to-br from-pink-500 to-rose-500 text-white border-pink-400 shadow-[0_0_30px_rgba(214,160,110,0.35)]',
     rowGlow: 'group-hover:bg-pink-500/[0.02] border-pink-500/20'
   },
   default: {
-    badge: 'bg-gradient-to-br from-[#141b38] to-[#0a0e22] text-gray-500 border-gray-800',
+    badge: 'bg-gradient-to-br from-[#231e17] to-[#1c1813] text-gray-500 border-gray-800',
     rowGlow: 'group-hover:bg-white/[0.02] border-white/[0.05]'
   }
 };
@@ -94,15 +94,15 @@ function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, lo
   const is5Star = item.rarity === 5;
   const rarityBg = is5Star 
     ? 'bg-gradient-to-br from-[#e0b078] via-[#eec584] to-[#e0b078] border-[#a97c50]' 
-    : 'bg-gradient-to-br from-[#a78bfa] via-[#c4b5fd] to-[#a78bfa] border-[#6f5bb5]';
-  const nameBg = is5Star ? 'bg-[#a97c50]' : 'bg-[#6f5bb5]';
+    : 'bg-gradient-to-br from-[#8e97a8] via-[#c3cad6] to-[#8e97a8] border-[#6b6152]';
+  const nameBg = is5Star ? 'bg-[#a97c50]' : 'bg-[#6b6152]';
 
   return (
     <Link href={isChar ? `/characters/${item.id}` : `/weapons`}>
       <motion.div
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative w-[76px] sm:w-[86px] flex flex-col rounded-md overflow-hidden border border-transparent shadow-lg hover:shadow-2xl transition-all cursor-pointer bg-[#05060f]"
+        className="group relative w-[76px] sm:w-[86px] flex flex-col rounded-md overflow-hidden border border-transparent shadow-lg hover:shadow-2xl transition-all cursor-pointer bg-[#0d0c0a]"
       >
         {/* Glow effect on hover */}
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md ${is5Star ? 'bg-amber-400/30' : 'bg-purple-400/30'}`} />
@@ -195,14 +195,10 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
   ];
 
   return (
-    <main className="min-h-screen bg-[#070a18] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
       
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="relative overflow-hidden border-b border-white/[0.04]">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-500/10 blur-[120px] rounded-[100%]" />
-        </div>
-
         <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 relative z-10 text-center flex flex-col items-center">
           <Link
             className="inline-flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors text-xs font-black uppercase tracking-wider mb-8 group bg-white/5 px-3 py-1.5 rounded-full border border-white/10"
@@ -214,18 +210,15 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
             Home
           </Link>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[10px] font-black uppercase tracking-widest mb-6 shadow-[0_0_20px_rgba(234,179,8,0.15)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
-            Regularly Updated for Spiral Abyss
-          </div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-primary-light)] mb-4">
+            Regularly updated for Spiral Abyss
+          </p>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black font-display uppercase tracking-tight leading-none mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 drop-shadow-[0_2px_20px_rgba(245,158,11,0.3)]">
-              {t('title')}
-            </span>
+          <h1 className="page-title" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
+            {t('title')}
           </h1>
 
-          <p className="text-gray-400 text-sm sm:text-base font-medium max-w-2xl leading-relaxed">
+          <p className="page-desc" style={{ fontSize: '1rem' }}>
             {t('description')}
           </p>
         </div>
@@ -234,7 +227,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-8">
         
         {/* ── Tabs ────────────────────────────────────────────── */}
-        <div className="flex justify-center gap-2 mb-12 bg-[#0a0e22]/80 p-2 rounded-full border border-white/10 w-fit mx-auto backdrop-blur-xl shadow-2xl">
+        <div className="flex justify-center gap-2 mb-12 bg-[#1c1813]/80 p-2 rounded-full border border-white/10 w-fit mx-auto backdrop-blur-xl shadow-2xl">
           {tabs.map((tItem) => (
             <button
               key={tItem.id}
@@ -260,7 +253,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
               <button
                 key={wType.id}
                 onClick={() => setWeaponType(wType.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType.id ? 'bg-[#141b38] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType.id ? 'bg-[#231e17] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
               >
                 {wType.label}
               </button>
@@ -288,7 +281,7 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
                   const rowGlow = colorStyle.rowGlow;
 
                   return (
-                    <motion.div variants={itemVariants} key={tier.id} className={`relative flex flex-col md:flex-row bg-[#0a0e22] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
+                    <motion.div variants={itemVariants} key={tier.id} className={`relative flex flex-col md:flex-row bg-[#1c1813] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
                       
                       {/* Thicker, more impactful Tier Badge */}
                       <div className={`w-20 sm:w-28 shrink-0 flex flex-col justify-center items-center py-6 border-b md:border-b-0 md:border-r border-white/10 relative overflow-hidden ${enhancedBadgeStyle}`}>
@@ -305,9 +298,9 @@ export default function TierListClient({ locale, characters, weapons, tierRanks 
                           return (
                             <div key={role} className="flex flex-col bg-transparent">
                               <div className="py-3.5 px-5 flex items-center gap-3 border-b border-white/5 bg-black/20">
-                                <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]'}`} />
+                                <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(201,168,106,0.8)]'}`} />
                                 <span className="text-xs font-black text-gray-300 uppercase tracking-[0.2em]">{role}</span>
-                                <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#070a18] border border-white/10 px-2.5 py-0.5 rounded-full">{itemsInRole.length}</span>
+                                <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#121109] border border-white/10 px-2.5 py-0.5 rounded-full">{itemsInRole.length}</span>
                               </div>
                               <div className="p-5 flex flex-wrap gap-4 sm:gap-5 content-start">
                                 {itemsInRole.map((item: any) => (

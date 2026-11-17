@@ -17,7 +17,7 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (score <= 1) return { score, label: 'Very Weak', color: '#ef4444' };
   if (score === 2) return { score, label: 'Weak', color: '#ff9a4d' };
   if (score === 3) return { score, label: 'Fair', color: '#f2c14e' };
-  if (score === 4) return { score, label: 'Strong', color: '#3ddc84' };
+  if (score === 4) return { score, label: 'Strong', color: '#86a98f' };
   return { score, label: 'Very Strong', color: '#e8b64c' };
 }
 
@@ -235,15 +235,9 @@ function ResetPasswordForm() {
 export default function ResetPasswordPage() {
   return (
     <main className="relative min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(100px)' }}
-        />
-      </div>
 
       <div className="w-full max-w-md">
-        <div className="bg-[#0b1024]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="bg-[#1c1813] border border-white/10 rounded-3xl p-8 shadow-2xl">
           <div className="text-center mb-8">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">
               <ShieldCheck className="w-7 h-7 text-black" />

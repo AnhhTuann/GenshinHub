@@ -153,7 +153,7 @@ export default async function RootLayout({ children, params }: { children: React
               <Toaster 
               position="bottom-center"
               toastOptions={{
-                className: 'bg-[#0b1024]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
+                className: 'bg-[#171410]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
                 style: {
                   background: 'rgba(10,10,15,0.8)',
                   backdropFilter: 'blur(12px)',
@@ -165,8 +165,8 @@ export default async function RootLayout({ children, params }: { children: React
                   fontWeight: 600,
                 },
                 success: {
-                  iconTheme: { primary: '#1fc98f', secondary: '#fff' },
-                  style: { borderColor: 'rgba(16,185,129,0.3)' }
+                  iconTheme: { primary: '#86a98f', secondary: '#fff' },
+                  style: { borderColor: 'rgba(134,169,143,0.3)' }
                 },
                 error: {
                   iconTheme: { primary: '#ef4444', secondary: '#fff' },
@@ -187,8 +187,8 @@ export default async function RootLayout({ children, params }: { children: React
                     <svg className="w-5 h-5 opacity-40" viewBox="0 0 100 100" fill="none">
                       <defs>
                         <linearGradient id="footer-logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%"   stopColor="#50e4ff" />
-                          <stop offset="50%"  stopColor="#c9a8ff" />
+                          <stop offset="0%"   stopColor="#8e97a8" />
+                          <stop offset="50%"  stopColor="#e2c88f" />
                           <stop offset="100%" stopColor="#f7bd4a" />
                         </linearGradient>
                       </defs>

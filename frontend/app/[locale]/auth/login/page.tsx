@@ -79,16 +79,9 @@ export default function LoginPage() {
   return (
     <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || 'dummy-client-id'}>
     <main className="relative flex-1 flex items-center justify-center p-4">
-      {/* Ambient background */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full"
-             style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.07)0%, transparent 70%)', filter: 'blur(100px)' }} />
-        <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full"
-             style={{ background: 'radial-gradient(ellipse, rgba(150,100,200,0.04) 0%, transparent 70%)', filter: 'blur(80px)' }} />
-      </div>
 
       <div className="w-full max-w-md">
-        <div className="bg-[#0b1024]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="bg-[#1c1813] border border-white/10 rounded-3xl p-8 shadow-2xl">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">

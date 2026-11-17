@@ -244,7 +244,7 @@ export default function CharacterFormModal({ open, characterId, onClose, onSaved
               onClick={handleSubmit(onSubmit)}
               disabled={saving}
               className="flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-50"
-              style={{ background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)', color: '#090d1f', boxShadow: '0 4px 16px rgba(232,182,76,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)', color: '#121109', boxShadow: '0 4px 16px rgba(232,182,76,0.3)' }}
             >
               {saving ? (
                 <>

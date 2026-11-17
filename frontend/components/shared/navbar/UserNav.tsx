@@ -60,7 +60,7 @@ export function UserNav() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-48 rounded-2xl bg-[#0b1024] border border-white/10 shadow-xl overflow-hidden py-2 z-50">
+        <div className="absolute right-0 top-full mt-2 w-48 rounded-2xl bg-[#171410] border border-white/10 shadow-xl overflow-hidden py-2 z-50">
           <div className="px-4 py-2 border-b border-white/5 mb-2">
             <p className="text-sm font-bold text-white truncate">{user.displayName || user.username}</p>
             <p className="text-xs text-white/40 truncate">{user.email}</p>

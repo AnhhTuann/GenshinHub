@@ -45,30 +45,14 @@ export default function ShowcaseClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070a18] text-white font-sans">
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div
-          className="absolute -top-[15%] left-[10%] w-[700px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(130px)' }}
-        />
-        <div
-          className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.04) 0%, transparent 70%)', filter: 'blur(110px)' }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-[#121109] text-white font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 mb-10">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-5 h-[2px] bg-yellow-400 rounded-full" />
-              <span className="text-yellow-400/60 text-[10px] font-black uppercase tracking-[0.25em]">Enka.Network</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-black font-display tracking-tighter text-gradient-gold mb-2">
-              {t('title')}
-            </h1>
-            <p className="text-white/35 text-sm max-w-lg leading-relaxed">{t('description')}</p>
-          </div>
+          <header className="page-header" style={{ marginBottom: 0 }}>
+            <span className="page-rule" />
+            <h1 className="page-title">{t('title')}</h1>
+            <p className="page-desc">{t('description')}</p>
+          </header>
           <Link
             href="/"
             className="shrink-0 flex items-center gap-2 px-4 py-2.5 bg-white/[0.03] border border-white/[0.06] hover:border-white/10 rounded-xl text-sm font-semibold text-white/40 hover:text-white/70 transition-all duration-200"
@@ -87,7 +71,7 @@ export default function ShowcaseClient() {
               value={uid}
               onChange={(e) => setUid(e.target.value)}
               placeholder={t('placeholder')}
-              className="w-full bg-[#0a0e22]/80 text-white/90 px-6 py-4 rounded-2xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              className="w-full bg-[#1c1813]/80 text-white/90 px-6 py-4 rounded-2xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
               style={{
                 border: '1px solid rgba(255,255,255,0.08)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
@@ -141,14 +125,14 @@ export default function ShowcaseClient() {
         )}
 
         {showcase && (
-          <div className="bg-[#0a0e22]/60 border border-white/[0.06] rounded-2xl overflow-hidden animate-scale-in backdrop-blur-md shadow-2xl">
+          <div className="bg-[#1c1813]/60 border border-white/[0.06] rounded-2xl overflow-hidden animate-scale-in backdrop-blur-md shadow-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-5 p-6 border-b border-white/[0.05]">
               {showcase.avatarUrl ? (
-                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0" style={{ background: '#0a0e22', border: '1px solid rgba(232,182,76,0.3)', boxShadow: '0 0 20px rgba(232,182,76,0.15)' }}>
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0" style={{ background: '#1c1813', border: '1px solid rgba(232,182,76,0.3)', boxShadow: '0 0 20px rgba(232,182,76,0.15)' }}>
                   <FallbackImage src={showcase.avatarUrl} alt="Player Avatar" fill className="object-cover scale-105" sizes="96px" />
                 </div>
               ) : (
-                <div className="w-20 h-20 rounded-full bg-[#0a0e22] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
+                <div className="w-20 h-20 rounded-full bg-[#1c1813] border-2 border-white/[0.05] flex items-center justify-center text-white/20 text-xs shrink-0">
                   No Avatar
                 </div>
               )}

@@ -75,7 +75,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
                 {isToday && (
                   <span
                     className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full animate-pulse"
-                    style={{ background: '#e8b64c', boxShadow: '0 0 5px rgba(232,182,76,0.7)' }}
+                    style={{ background: '#e8b64c', boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
                   />
                 )}
               </button>

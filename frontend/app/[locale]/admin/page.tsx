@@ -54,17 +54,8 @@ export default function AdminDashboard() {
     <div className="flex flex-col gap-8">
       {/* Header */}
       <div>
-        <h1
-          className="text-2xl font-black uppercase tracking-wide mb-1"
-          style={{
-            fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-            background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
-            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-          }}
-        >
-          Dashboard
-        </h1>
-        <p className="text-white/30 text-sm">Welcome back, Admin. Here&apos;s an overview of your database.</p>
+        <h1 className="page-title" style={{ fontSize: '1.75rem' }}>Dashboard</h1>
+        <p className="page-desc" style={{ marginTop: '0.4rem' }}>Welcome back, Admin. Here&apos;s an overview of your database.</p>
       </div>
 
       {/* Stats Cards */}

@@ -36,9 +36,9 @@ export default function BannersClient({ locale }: { locale: string }) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16"
+        className="text-left mb-12"
       >
-        <h1 className="text-4xl md:text-6xl font-black font-display tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-indigo-500 mb-6 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)] uppercase">
+        <h1 className="text-4xl md:text-6xl font-black font-display tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-indigo-500 mb-6 drop-shadow-[0_0_30px_rgba(201,168,106,0.3)] uppercase">
           {t('title')}
         </h1>
         <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
@@ -59,7 +59,7 @@ export default function BannersClient({ locale }: { locale: string }) {
               
               {/* Version Badge for Mobile */}
               <div className="md:hidden flex items-center gap-4 mb-4">
-                <div className="px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/50 text-blue-400 font-black text-xl shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <div className="px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/50 text-blue-400 font-black text-xl shadow-[0_0_15px_rgba(201,168,106,0.3)]">
                   v{versionBlock.version}
                 </div>
                 <h2 className="text-xl font-bold text-white flex-1 leading-tight">{vName}</h2>
@@ -89,7 +89,7 @@ export default function BannersClient({ locale }: { locale: string }) {
                           <h3 className="text-xs font-bold text-blue-400/80 uppercase mb-3 tracking-widest">{t('characters')}</h3>
                           <div className="flex flex-col gap-4">
                             {versionBlock.phases[0].characterBanners.map((imgUrl, idx) => (
-                              <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(59,130,246,0.3)] cursor-pointer">
+                              <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(201,168,106,0.3)] cursor-pointer">
                                 <FallbackImage src={imgUrl} alt="Character Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
                               </div>
                             ))}
@@ -116,7 +116,7 @@ export default function BannersClient({ locale }: { locale: string }) {
               </div>
 
               {/* Center Dot for Desktop */}
-              <div className="hidden md:flex absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] border-2 border-[#080b1a] z-20" />
+              <div className="hidden md:flex absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(201,168,106,0.8)] border-2 border-[#121109] z-20" />
 
               {/* Phase 2 */}
               <div className="md:w-1/2 flex justify-start md:pl-12 w-full mt-4 md:mt-24">
@@ -138,7 +138,7 @@ export default function BannersClient({ locale }: { locale: string }) {
                           <h3 className="text-xs font-bold text-blue-400/80 uppercase mb-3 tracking-widest">{t('characters')}</h3>
                           <div className="flex flex-col gap-4">
                             {versionBlock.phases[1].characterBanners.map((imgUrl, idx) => (
-                              <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(59,130,246,0.3)] cursor-pointer">
+                              <div key={idx} className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.5)] group-hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_40px_rgba(201,168,106,0.3)] cursor-pointer">
                                 <FallbackImage src={imgUrl} alt="Character Banner" fill priority={index === 0} className="object-cover" sizes="(max-width: 768px) 100vw, 500px" />
                               </div>
                             ))}

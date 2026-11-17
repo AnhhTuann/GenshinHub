@@ -28,7 +28,7 @@ export function CharacterSelect({ value, onChange, allCharacters }: any) {
       </div>
       
       {open && (
-        <div className="absolute z-50 w-full mt-1 bg-[#141b38] border border-white/10 rounded-xl shadow-2xl max-h-60 flex flex-col">
+        <div className="absolute z-50 w-full mt-1 bg-[#231e17] border border-white/10 rounded-xl shadow-2xl max-h-60 flex flex-col">
           <div className="p-2 border-b border-white/10 shrink-0">
             <input autoFocus value={search} onChange={e => setSearch(e.target.value)} placeholder="Search character..." className="w-full bg-black/40 border border-white/10 rounded px-2 py-1 text-xs text-white outline-none" />
           </div>

@@ -60,7 +60,7 @@ export default function CommandPalette({ items }: { items: Item[] }) {
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start justify-center pt-[15vh]">
       <Command 
-        className="w-[90%] max-w-[600px] bg-[#0b1020] border border-white/10 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden"
+        className="w-[90%] max-w-[600px] bg-[#171410] border border-white/10 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden"
         label="Global Search"
         shouldFilter={true}
         onKeyDown={(e) => {

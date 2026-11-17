@@ -64,7 +64,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
         minHeight: '200px',
         background: 'linear-gradient(145deg, rgba(37,26,42,0.9), rgba(20,14,24,0.96))',
         border: hasToday ? '1px solid rgba(251,191,36,0.25)' : '1px solid rgba(255,255,255,0.06)',
-        boxShadow: hasToday ? '0 0 30px -10px rgba(251,191,36,0.15)' : 'none',
+        boxShadow: hasToday ? '0 8px 24px -12px rgba(251,191,36,0.25)' : 'none',
       }}
       className="rounded-2xl p-4 relative overflow-hidden"
     >
@@ -120,7 +120,7 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                       : 'group-hover:shadow-[0_0_12px_rgba(255,255,255,0.08)]'
                   }`}
                   style={{
-                    background: `linear-gradient(135deg, ${elColor}25, #1a2148)`,
+                    background: `linear-gradient(135deg, ${elColor}25, #231e17)`,
                     border: char.isToday
                       ? '1.5px solid rgba(251,191,36,0.55)'
                       : `1px solid ${elColor}25`,

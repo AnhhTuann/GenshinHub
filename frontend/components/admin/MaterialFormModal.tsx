@@ -67,7 +67,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
 
-      <div className="relative bg-[#0a0e22] border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#1c1813] border border-white/10 rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="p-5 border-b border-white/10 flex items-center justify-between shrink-0">
           <h2 className="text-lg font-black text-white">{initialData ? '✏️ Edit Material' : '➕ Add Material'}</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors">✕</button>
@@ -81,7 +81,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
               value={formData.id} 
               onChange={e => updateField('id', e.target.value)} 
               disabled={!!initialData} // Cannot edit ID if updating
-              className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 disabled:opacity-50" 
+              className="w-full bg-[#0d0c0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50 disabled:opacity-50" 
               placeholder="e.g. prithiva_topaz_sliver" 
             />
           </div>
@@ -93,7 +93,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
                 type="text" 
                 value={formData.nameEn} 
                 onChange={e => updateField('nameEn', e.target.value)} 
-                className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
+                className="w-full bg-[#0d0c0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
                 placeholder="Prithiva Topaz Sliver" 
               />
             </div>
@@ -103,7 +103,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
                 type="text" 
                 value={formData.nameVi} 
                 onChange={e => updateField('nameVi', e.target.value)} 
-                className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
+                className="w-full bg-[#0d0c0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
                 placeholder="Mảnh Hoàng Ngọc Kiên Cố" 
               />
             </div>
@@ -116,7 +116,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
                 type="text" 
                 value={formData.type} 
                 onChange={e => updateField('type', e.target.value)} 
-                className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
+                className="w-full bg-[#0d0c0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
                 placeholder="Ascension Material" 
               />
             </div>
@@ -127,7 +127,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
                 value={formData.rarity} 
                 onChange={e => updateField('rarity', parseInt(e.target.value) || 1)} 
                 min="1" max="5"
-                className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
+                className="w-full bg-[#0d0c0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
               />
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function MaterialFormModal({ initialData, onClose, onSaved }: Pro
               type="text" 
               value={formData.iconUrl} 
               onChange={e => updateField('iconUrl', e.target.value)} 
-              className="w-full bg-[#05060f] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
+              className="w-full bg-[#0d0c0a] border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-amber-500/50" 
               placeholder="/assets/items/UI_ItemIcon_xxx.webp" 
             />
           </div>

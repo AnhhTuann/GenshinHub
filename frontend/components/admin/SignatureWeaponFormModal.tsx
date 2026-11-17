@@ -61,7 +61,7 @@ export default function SignatureWeaponFormModal({
 
   return createPortal(
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="bg-[#141b38] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl">
+      <div className="bg-[#231e17] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl">
         {/* Header */}
         <div className="p-5 border-b border-white/10 flex justify-between items-center bg-white/[0.02]">
           <h2 className="text-xl font-bold text-white">Edit Signature Weapons</h2>

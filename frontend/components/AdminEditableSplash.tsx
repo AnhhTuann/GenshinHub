@@ -66,7 +66,7 @@ export default function AdminEditableSplash({ characterId, children }: { charact
 
       {isEditing && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-[#0a0e22] border border-white/10 rounded-xl p-6 w-full max-w-md flex flex-col gap-4 shadow-2xl">
+          <div className="bg-[#1c1813] border border-white/10 rounded-xl p-6 w-full max-w-md flex flex-col gap-4 shadow-2xl">
             <h3 className="text-xl font-bold text-white">Edit Splash Art</h3>
             
             <div className="flex flex-col gap-2">

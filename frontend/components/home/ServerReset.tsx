@@ -53,7 +53,7 @@ export default function ServerReset() {
       style={{
         background: 'linear-gradient(145deg, rgba(37,26,42,0.9), rgba(20,14,24,0.96))',
         border: `1px solid ${server.color}22`,
-        boxShadow: `0 0 30px -10px ${server.color}15`,
+        boxShadow: `0 8px 24px -12px ${server.color}20`,
       }}
     >
       {/* Ambient top glow */}
@@ -68,8 +68,8 @@ export default function ServerReset() {
           <span
             className="w-2 h-2 rounded-full animate-pulse"
             style={{
-              background: urgency ? '#f87171' : '#3fe0ae',
-              boxShadow: `0 0 8px ${urgency ? 'rgba(248,113,113,0.7)' : 'rgba(52,211,153,0.6)'}`,
+              background: urgency ? '#f87171' : '#86a98f',
+              boxShadow: `0 0 0 1px ${urgency ? 'rgba(248,113,113,0.5)' : 'rgba(134,169,143,0.5)'}`,
             }}
           />
           <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/50">

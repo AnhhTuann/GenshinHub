@@ -59,7 +59,7 @@ export default function AICharacterGenerator({ onGenerated }: { onGenerated: () 
             onClick={handleGenerate}
             disabled={isGenerating || !characterName}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-50 shrink-0"
-            style={{ background:'linear-gradient(135deg, #ffdf9e, #e8b64c)', color:'#090d1f', boxShadow:'0 4px 16px rgba(232,182,76,0.3)' }}
+            style={{ background:'linear-gradient(135deg, #ffdf9e, #e8b64c)', color:'#121109', boxShadow:'0 4px 16px rgba(232,182,76,0.3)' }}
           >
             {isGenerating ? (
               <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">

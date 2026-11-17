@@ -81,7 +81,7 @@ export default function CharacterStatsFormModal({ characterId, initialStats, onC
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
 
-      <div className="relative bg-[#0a0e22] border border-white/10 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#1c1813] border border-white/10 rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="p-5 border-b border-white/10 flex items-center justify-between shrink-0">
           <h2 className="text-lg font-black text-white">✏️ Edit Character Stats</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors">✕</button>
@@ -93,31 +93,31 @@ export default function CharacterStatsFormModal({ characterId, initialStats, onC
               <div key={idx} className="flex flex-wrap gap-3 items-end bg-white/[0.02] border border-white/5 p-4 rounded-xl">
                 <div className="flex-1 min-w-[80px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Level</label>
-                  <input type="text" value={stat.level} onChange={e => updateRow(idx, 'level', e.target.value)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
+                  <input type="text" value={stat.level} onChange={e => updateRow(idx, 'level', e.target.value)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
                 </div>
                 <div className="w-[80px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Ascend</label>
-                  <input type="number" value={stat.ascend} onChange={e => updateRow(idx, 'ascend', parseInt(e.target.value) || 0)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
+                  <input type="number" value={stat.ascend} onChange={e => updateRow(idx, 'ascend', parseInt(e.target.value) || 0)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
                 </div>
                 <div className="flex-1 min-w-[80px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Base HP</label>
-                  <input type="number" value={stat.baseHp} onChange={e => updateRow(idx, 'baseHp', parseInt(e.target.value) || 0)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
+                  <input type="number" value={stat.baseHp} onChange={e => updateRow(idx, 'baseHp', parseInt(e.target.value) || 0)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
                 </div>
                 <div className="flex-1 min-w-[80px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Base ATK</label>
-                  <input type="number" value={stat.baseAtk} onChange={e => updateRow(idx, 'baseAtk', parseInt(e.target.value) || 0)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
+                  <input type="number" value={stat.baseAtk} onChange={e => updateRow(idx, 'baseAtk', parseInt(e.target.value) || 0)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
                 </div>
                 <div className="flex-1 min-w-[80px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Base DEF</label>
-                  <input type="number" value={stat.baseDef} onChange={e => updateRow(idx, 'baseDef', parseInt(e.target.value) || 0)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
+                  <input type="number" value={stat.baseDef} onChange={e => updateRow(idx, 'baseDef', parseInt(e.target.value) || 0)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" />
                 </div>
                 <div className="flex-[2] min-w-[120px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Special Stat</label>
-                  <input type="text" value={stat.specialStatName} onChange={e => updateRow(idx, 'specialStatName', e.target.value)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" placeholder="CRIT DMG" />
+                  <input type="text" value={stat.specialStatName} onChange={e => updateRow(idx, 'specialStatName', e.target.value)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" placeholder="CRIT DMG" />
                 </div>
                 <div className="flex-1 min-w-[100px]">
                   <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1 block">Value</label>
-                  <input type="text" value={stat.specialStatValue} onChange={e => updateRow(idx, 'specialStatValue', e.target.value)} className="w-full bg-[#05060f] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" placeholder="38.4%" />
+                  <input type="text" value={stat.specialStatValue} onChange={e => updateRow(idx, 'specialStatValue', e.target.value)} className="w-full bg-[#0d0c0a] border border-white/10 rounded px-3 py-2 text-sm text-gray-200" placeholder="38.4%" />
                 </div>
                 <button onClick={() => removeRow(idx)} className="h-[38px] px-3 bg-red-500/20 text-red-400 rounded hover:bg-red-500/30 font-bold text-sm">
                   🗑️

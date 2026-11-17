@@ -97,7 +97,7 @@ export default function InlineStatsEditor({
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
 
-      <div className="relative bg-[#0a0e22] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#1c1813] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="p-5 border-b border-white/10 flex items-center justify-between shrink-0">
           <h2 className="text-lg font-black text-white">✏️ Edit Artifact Stats</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-white transition-colors">✕</button>

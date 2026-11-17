@@ -103,7 +103,7 @@ export default function WishCounterTab({ user }: { user: User }) {
 
   return (
     <div className="space-y-8">
-      <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6 relative overflow-hidden">
+      <div className="bg-[#231e17] border border-[#e8b64c]/30 rounded-2xl p-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
           <PieChart className="w-48 h-48 text-[#e8b64c]" />
         </div>
@@ -175,7 +175,7 @@ export default function WishCounterTab({ user }: { user: User }) {
 
       {/* 5-Star History Section */}
       {stats.fiveStarHistory && stats.fiveStarHistory.length > 0 && (
-        <div className="bg-[#141b38] border border-white/10 rounded-2xl p-6">
+        <div className="bg-[#231e17] border border-white/10 rounded-2xl p-6">
           <h3 className="text-lg font-black uppercase tracking-widest text-white mb-6 flex items-center gap-2">
             <span className="text-[#ffdf9e]">✦✦✦✦✦</span>
             5-Star History

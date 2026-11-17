@@ -48,8 +48,8 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
   const imgBg = is5
     ? 'bg-gradient-to-br from-[#ffe1a0] via-[#f7bd4a] to-[#d98a2b]'
     : is3
-    ? 'bg-gradient-to-br from-[#4fc3ff] via-[#2b8fd4] to-[#1d4e89]'
-    : 'bg-gradient-to-br from-[#b478ff] to-[#7c3aed]';
+    ? 'bg-gradient-to-br from-[#8e97a8] via-[#2b8fd4] to-[#2b251c]'
+    : 'bg-gradient-to-br from-[#b478ff] to-[#8e97a8]';
 
   const cardContent = (
     <motion.div
@@ -59,7 +59,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
       whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={`flex items-center gap-4 p-4 rounded-2xl border bg-[#0a0e22]/50 ${cardBorder} transition-all duration-300 cursor-pointer group/w`}
+      className={`flex items-center gap-4 p-4 rounded-2xl border bg-[#1c1813]/50 ${cardBorder} transition-all duration-300 cursor-pointer group/w`}
     >
       {/* Rank badge */}
       <span className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-[10px] font-black border ${rankStyle}`}>
@@ -69,12 +69,12 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
       {/* Icon */}
       {weapon.iconUrl ? (
         <div className={`w-14 h-14 shrink-0 rounded-xl overflow-hidden ${imgBg} p-[1.5px]`}>
-          <div className="w-full h-full bg-[#070a18]/90 rounded-xl overflow-hidden p-1 flex items-center justify-center">
+          <div className="w-full h-full bg-[#121109]/90 rounded-xl overflow-hidden p-1 flex items-center justify-center">
             <FallbackImage src={weapon.iconUrl} alt={name} width={52} height={52} className="w-full h-full object-contain" />
           </div>
         </div>
       ) : (
-        <div className="w-14 h-14 shrink-0 rounded-xl bg-[#0a0e22] border border-white/[0.05] flex items-center justify-center text-white/20 text-xs">?</div>
+        <div className="w-14 h-14 shrink-0 rounded-xl bg-[#1c1813] border border-white/[0.05] flex items-center justify-center text-white/20 text-xs">?</div>
       )}
 
       {/* Info */}
@@ -94,7 +94,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
 
       {/* Arrow */}
       {weapon.id && (
-        <div className="w-7 h-7 rounded-lg bg-[#070a18] border border-white/[0.05] flex items-center justify-center text-white/20 group-hover/w:text-white/60 group-hover/w:border-white/15 transition-all shrink-0">
+        <div className="w-7 h-7 rounded-lg bg-[#121109] border border-white/[0.05] flex items-center justify-center text-white/20 group-hover/w:text-white/60 group-hover/w:border-white/15 transition-all shrink-0">
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>

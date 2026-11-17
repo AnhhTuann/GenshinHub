@@ -30,7 +30,7 @@ const TcgTextParser: React.FC<TcgTextParserProps> = ({ text, params, dictionary 
     let prevText;
     do {
       prevText = parsedText;
-      parsedText = parsedText.replace(/<color=#[^>]+><color=#[^>]+>(.*?)<\/color>(.*?)<\/color>/gi, '<color=#FFFFFFFF>$1$2</color>');
+      parsedText = parsedText.replace(/<color=#[^>]+><color=#[^>]+>(.*?)<\/color>(.*?)<\/color>/gi, '<color=#F5F1E6FF>$1$2</color>');
     } while (parsedText !== prevText);
 
     // Split by tags and newlines
@@ -55,7 +55,7 @@ const TcgTextParser: React.FC<TcgTextParserProps> = ({ text, params, dictionary 
           // Special badge for Duration / Usages / Shield
           if (content.includes('Duration (Rounds):') || content.includes('Usage(s):') || content.includes('Shield')) {
             return (
-              <span key={index} className="inline-flex items-center gap-1.5 bg-[#182040] px-2.5 py-1 rounded-md border border-white/10 shadow-inner mt-2 mb-1 w-fit">
+              <span key={index} className="inline-flex items-center gap-1.5 bg-[#231e17] px-2.5 py-1 rounded-md border border-white/10 shadow-inner mt-2 mb-1 w-fit">
                 <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>

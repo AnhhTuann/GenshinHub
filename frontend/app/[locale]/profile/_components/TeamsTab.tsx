@@ -208,7 +208,7 @@ export default function TeamsTab({ user }: { user: User }) {
   return (
     <div className="space-y-8">
       {/* Team Builder */}
-      <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6">
+      <div className="bg-[#231e17] border border-[#e8b64c]/30 rounded-2xl p-6">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-lg font-black uppercase tracking-widest text-[#ffdf9e] flex items-center gap-2">
             <Users className="w-5 h-5" />
@@ -333,7 +333,7 @@ export default function TeamsTab({ user }: { user: User }) {
       {/* Character Selector Modal */}
       {isSelectorOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setIsSelectorOpen(false)}>
-          <div className="bg-[#141b38] border border-[#e8b64c]/30 rounded-2xl p-6 w-full max-w-3xl max-h-[80vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#231e17] border border-[#e8b64c]/30 rounded-2xl p-6 w-full max-w-3xl max-h-[80vh] flex flex-col shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-lg font-black uppercase tracking-widest text-[#ffdf9e]">Select Character</h3>
               <button onClick={() => setIsSelectorOpen(false)} className="text-white/50 hover:text-white transition-colors">✕</button>

@@ -53,7 +53,7 @@ export function ConfirmModal({ open, onConfirm, onCancel, title = 'Confirm Actio
             className="px-5 py-2 rounded-lg text-sm font-black uppercase tracking-wide transition-all disabled:opacity-40 disabled:cursor-not-allowed"
             style={{
               background: danger ? 'linear-gradient(135deg, #ef4444, #b91c1c)' : 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
-              color: danger ? '#fff' : '#090d1f',
+              color: danger ? '#fff' : '#121109',
               boxShadow: canConfirm ? (danger ? '0 4px 16px rgba(239,68,68,0.3)' : '0 4px 16px rgba(232,182,76,0.25)') : 'none',
             }}
           >

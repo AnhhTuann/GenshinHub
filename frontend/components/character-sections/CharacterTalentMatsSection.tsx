@@ -126,7 +126,7 @@ export default function CharacterTalentMatsSection({ talentMats, allMaterials, c
       <div className="w-full overflow-hidden rounded-xl border border-white/5">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="bg-[#232e55]/40 text-white/40 text-[11px] font-bold uppercase tracking-widest border-b border-white/5">
+            <tr className="bg-[#2b251c]/40 text-white/40 text-[11px] font-bold uppercase tracking-widest border-b border-white/5">
               <th className="p-4 w-1/4">Level</th>
               <th className="p-4 w-1/4">Mora</th>
               <th className="p-4 w-2/4">Materials</th>
@@ -150,7 +150,7 @@ export default function CharacterTalentMatsSection({ talentMats, allMaterials, c
                         <div key={i} className="relative group/mat flex flex-col items-center">
                           <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-white/[0.08] to-transparent border border-white/[0.06] p-1 mb-1">
                             {mat.iconUrl ? <FallbackImage src={getValidIconUrl(mat.iconUrl)} alt={mat.nameEn} fill className="object-contain drop-shadow" unoptimized /> : <div className="text-white/20 text-[8px] text-center w-full h-full flex items-center justify-center">NO ICON</div>}
-                            <span className="absolute -bottom-1.5 -right-1.5 bg-[#141b38] border border-white/10 rounded px-1.5 py-0.5 min-w-[18px] text-center text-[9px] font-black text-white z-10 shadow-lg">
+                            <span className="absolute -bottom-1.5 -right-1.5 bg-[#231e17] border border-white/10 rounded px-1.5 py-0.5 min-w-[18px] text-center text-[9px] font-black text-white z-10 shadow-lg">
                               {item.count}
                             </span>
                           </div>

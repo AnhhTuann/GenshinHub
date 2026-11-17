@@ -105,7 +105,7 @@ export default function BackupsAdmin() {
       {/* Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#9ede5f,#5d9c36)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#9ede5f,#7ba35c)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             Backup Manager
           </h1>
           <p className="text-white/30 text-xs mt-0.5">{backups.length} backup{backups.length !== 1 ? 's' : ''} stored</p>
@@ -118,7 +118,7 @@ export default function BackupsAdmin() {
             onClick={handleCreate}
             disabled={creating}
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider disabled:opacity-50"
-            style={{ background:'linear-gradient(135deg,#9ede5f,#5d9c36)', color:'#fff', boxShadow:'0 4px 16px rgba(158,222,95,0.25)' }}
+            style={{ background:'linear-gradient(135deg,#9ede5f,#7ba35c)', color:'#fff', boxShadow:'0 4px 16px rgba(158,222,95,0.25)' }}
           >
             {creating ? '...' : <>💾 Create Backup Now</>}
           </button>

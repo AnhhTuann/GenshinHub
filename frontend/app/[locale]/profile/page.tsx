@@ -63,23 +63,18 @@ export default function ProfilePage() {
   const avatarUrl = getCharacterAvatar(travelerCharId, user.gender);
 
   return (
-    <main className="min-h-[calc(100vh-64px)] p-4 sm:p-8 relative overflow-hidden" style={{ background: 'var(--bg-void, #04060f)' }}>
-      {/* Ambient glow blobs */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-[0%] left-[20%] w-[500px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full" />
-        <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] bg-purple-500/5 blur-[100px] rounded-full" />
-      </div>
+    <main className="min-h-[calc(100vh-64px)] p-4 sm:p-8 relative overflow-hidden" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Cover */}
-        <div className="bg-[#0b1024]/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl mb-8">
-          <div className="h-48 relative bg-gradient-to-r from-[#141b38] to-[#232e55] border-b border-white/10">
+        <div className="bg-[#1c1813] border border-white/10 rounded-3xl overflow-hidden shadow-2xl mb-8">
+          <div className="h-48 relative bg-gradient-to-r from-[#231e17] to-[#2b251c] border-b border-white/10">
             <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: 'url(/assets/backgrounds/mondstadt.webp)' }} />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0b1024]/90 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#171410]/90 to-transparent" />
           </div>
 
           <div className="px-8 pb-8 relative -mt-16 flex flex-col sm:flex-row gap-6 items-end sm:items-center">
-            <div className="w-32 h-32 rounded-full border-4 border-[#0b1024] overflow-hidden bg-black relative shrink-0">
+            <div className="w-32 h-32 rounded-full border-4 border-[#171410] overflow-hidden bg-black relative shrink-0">
               <FallbackImage
                 src={avatarUrl}
                 alt={user.username}
@@ -89,7 +84,7 @@ export default function ProfilePage() {
             </div>
             
             <div className="flex-1 mt-4 sm:mt-16 w-full">
-              <h1 className="text-3xl font-black uppercase tracking-widest text-[#ffdf9e]">
+              <h1 className="font-cinzel text-3xl font-semibold tracking-tight text-[#f0ead9]">
                 {user.displayName || user.username}
               </h1>
               <p className="text-white/50 text-sm font-medium">{user.email}</p>
@@ -139,7 +134,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-[#0b1024]/80 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-6 min-h-[400px]">
+        <div className="bg-[#1c1813] border border-white/10 rounded-3xl shadow-2xl p-6 min-h-[400px]">
           {activeTab === 'profile' && (
             <div className="space-y-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

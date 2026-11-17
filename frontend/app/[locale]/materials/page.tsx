@@ -93,21 +93,15 @@ export default function MaterialsPage() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: 'var(--bg-void, #04060f)' }}>
+    <main className="min-h-screen pt-24 pb-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
       {/* Ambient glow blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] blur-[130px] rounded-full" style={{ background: 'rgba(168,85,247,0.07)' }} />
-        <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] blur-[100px] rounded-full" style={{ background: 'rgba(34,211,238,0.05)' }} />
-      </div>
-
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-          <div>
-            <h1 className="text-4xl font-black font-display uppercase tracking-wider text-gradient-gold">
-              {t('title')}
-            </h1>
-            <p className="text-white/50 text-sm mt-1">{t('description')}</p>
-          </div>
+          <header className="page-header" style={{ marginBottom: 0 }}>
+            <span className="page-rule" />
+            <h1 className="page-title">{t('title')}</h1>
+            <p className="page-desc">{t('description')}</p>
+          </header>
           
           <div className="flex items-center gap-3 w-full md:w-auto">
             <input 
@@ -115,7 +109,7 @@ export default function MaterialsPage() {
               placeholder={t('searchPlaceholder')} 
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full md:w-64 bg-[#0a0e22]/80 border border-white/[0.08] text-white/90 px-4 py-3 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              className="w-full md:w-64 bg-[#1c1813]/80 border border-white/[0.08] text-white/90 px-4 py-3 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
               onFocus={e => {
                 e.target.style.borderColor = 'rgba(168,85,247,0.50)';
                 e.target.style.boxShadow = '0 0 0 3px rgba(168,85,247,0.12)';

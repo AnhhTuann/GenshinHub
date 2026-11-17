@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center text-center p-6 relative overflow-hidden"
-      style={{ background: '#04060f' }}
+      style={{ background: '#0d0c0a' }}
     >
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

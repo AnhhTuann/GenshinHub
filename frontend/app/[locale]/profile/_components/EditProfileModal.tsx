@@ -58,7 +58,7 @@ export default function EditProfileModal({ onClose }: EditProfileModalProps) {
         onClick={onClose}
       />
       
-      <div className="relative bg-[#0b1024] border border-white/10 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative bg-[#171410] border border-white/10 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="px-6 py-4 border-b border-white/5 flex items-center justify-between">
           <h2 className="text-lg font-black tracking-widest uppercase text-[#ffdf9e] font-[family-name:var(--font-cinzel)]">
             Edit Profile

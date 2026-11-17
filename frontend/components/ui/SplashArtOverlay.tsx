@@ -71,7 +71,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
   const el = character.element;
   const particleConfig = ELEMENT_PARTICLES[el] ?? ELEMENT_PARTICLES.Pyro;
   const glowColor = ELEMENT_GLOW[el] ?? 'rgba(255,255,255,0.2)';
-  const elementColor = ELEMENT_COLOR[el] ?? '#ffffff';
+  const elementColor = ELEMENT_COLOR[el] ?? '#f5f1e6';
   const displayName = locale === 'vi' && character.nameVi ? character.nameVi : character.nameEn;
 
   // Close on Escape
@@ -98,7 +98,7 @@ export default function SplashArtOverlay({ open, onClose, character, href, local
   }, [onClose]);
 
   const tierColor: Record<string, string> = {
-    SS: '#ff5252', S: '#f5a83d', A: '#8fce4e', B: '#3aa8ff', C: '#90a4ae'
+    SS: '#ff5252', S: '#f5a83d', A: '#9ede5f', B: '#3aa8ff', C: '#8e97a8'
   };
 
   if (typeof document === 'undefined') return null;

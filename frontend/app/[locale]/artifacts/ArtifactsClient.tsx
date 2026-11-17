@@ -27,9 +27,9 @@ interface ArtifactSet {
 
 function rarityConfig(max: number) {
   if (max === 5) return { ring: 'from-[#ffd34d] via-[#f0b64a] to-[#d99a2b]', glow: 'rgba(245,158,11,', text: '#ffd34d', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.12)', stars: '#ffd34d' };
-  if (max === 4) return { ring: 'from-[#c9a8ff] via-[#a77cf6] to-[#7c5ce8]', glow: 'rgba(168,85,247,', text: '#c9a8ff', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.12)', stars: '#c9a8ff' };
-  if (max === 3) return { ring: 'from-[#7ba2ff] via-[#4f7dff] to-[#3d5bd9]', glow: 'rgba(59,130,246,', text: '#a9bcff', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.12)', stars: '#a9bcff' };
-  return { ring: 'from-gray-400 via-gray-500 to-gray-600', glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.12)', stars: '#9ca3af' };
+  if (max === 4) return { ring: 'from-[#e2c88f] via-[#a77cf6] to-[#8e97a8]', glow: 'rgba(168,85,247,', text: '#e2c88f', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.12)', stars: '#e2c88f' };
+  if (max === 3) return { ring: 'from-[#8e97a8] via-[#c9a86a] to-[#8e97a8]', glow: 'rgba(201,168,106,', text: '#e2c88f', border: 'rgba(201,168,106,0.25)', bg: 'rgba(201,168,106,0.12)', stars: '#e2c88f' };
+  return { ring: 'from-gray-400 via-gray-500 to-gray-600', glow: 'rgba(156,163,175,', text: '#8e97a8', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.12)', stars: '#8e97a8' };
 }
 
 /* ─── sub-components ──────────────────────────────────────────── */
@@ -179,15 +179,10 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
   }, [filtered.length]);
 
   return (
-    <main className="min-h-screen bg-[#070a18] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
 
       {/* ── Hero header ──────────────────────────────────────── */}
       <div className="relative overflow-hidden">
-        {/* Ambient glow blobs */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[500px] blur-[130px] rounded-full" style={{ background: 'rgba(168,85,247,0.08)' }} />
-          <div className="absolute top-1/4 right-1/4 w-[500px] h-[400px] blur-[100px] rounded-full" style={{ background: 'rgba(34,211,238,0.06)' }} />
-        </div>
 
         <div className="max-w-7xl mx-auto px-6 pt-8 pb-8 relative z-10">
           {/* Back link */}
@@ -208,13 +203,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
 
           <div className="flex flex-col sm:flex-row sm:items-end gap-4 justify-between">
             <div>
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-3xl">💎</span>
-                <h1 className="text-4xl sm:text-5xl font-black text-white font-display uppercase tracking-tight leading-none">
-                  {t('artifacts')}
-                </h1>
-              </div>
-              <p className="text-gray-500 text-sm font-medium pl-1">
+              <h1 className="page-title" style={{ fontSize: '2rem' }}>{t('artifacts')}</h1>
+              <p className="page-desc" style={{ marginTop: '0.5rem' }}>
                 {locale === 'vi' ? `Khám phá toàn bộ ${artifacts.length} bộ Thánh Di Vật` : `Browse all ${artifacts.length} artifact sets from Genshin Impact`}
               </p>
             </div>
@@ -233,7 +223,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
       </div>
 
       {/* ── Sticky filter bar ─────────────────────────────────── */}
-      <div className="sticky top-0 z-20 bg-[#070a18]/85 backdrop-blur-xl border-b border-white/[0.05] shadow-[0_1px_0_rgba(255,255,255,0.03)]">
+      <div className="sticky top-0 z-20 bg-[#121109]/85 backdrop-blur-xl border-b border-white/[0.05] shadow-[0_1px_0_rgba(255,255,255,0.03)]">
         <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
 
           {/* Search */}
@@ -251,7 +241,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               placeholder="Search artifact sets…"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-[#0a0e22]/80 border border-white/[0.08] text-white/90 pl-10 pr-9 py-2.5 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              className="w-full bg-[#1c1813]/80 border border-white/[0.08] text-white/90 pl-10 pr-9 py-2.5 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
               onFocus={e => {
                 e.target.style.borderColor = 'rgba(168,85,247,0.50)';
                 e.target.style.boxShadow = '0 0 0 3px rgba(168,85,247,0.12)';
@@ -333,7 +323,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
       {/* ── Card grid ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 py-6 pb-20">
         {filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#0c1126]/30 rounded-3xl border border-gray-900/60 shadow-inner">
+          <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#171410]/30 rounded-3xl border border-gray-900/60 shadow-inner">
             <span className="text-4xl mb-3">👻</span>
             <p className="text-sm font-semibold">No artifact sets matched your criteria.</p>
           </div>

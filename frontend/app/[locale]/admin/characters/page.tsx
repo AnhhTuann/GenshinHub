@@ -108,7 +108,7 @@ export default function CharactersAdmin() {
           className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider"
           style={{
             background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
-            color: '#090d1f',
+            color: '#121109',
             boxShadow: '0 4px 16px rgba(232,182,76,0.30)',
           }}
         >

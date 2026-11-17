@@ -28,21 +28,14 @@ export default function AdminLoginPage() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'var(--bg-void, #04060f)' }}
+      style={{ background: 'var(--bg-void, #0d0c0a)' }}
     >
-      {/* Ambient glows */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
-        <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.08)0%, transparent 70%)', filter: 'blur(100px)' }}
-        />
-      </div>
 
       <div
         className="w-full max-w-md rounded-3xl p-8"
         style={{
-          background: 'rgba(10,14,34,0.90)',
-          backdropFilter: 'blur(24px)',
+          background: 'rgba(23,20,16,0.92)',
+          backdropFilter: 'blur(12px)',
           border: '1px solid rgba(232,182,76,0.15)',
           boxShadow: '0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03)',
         }}
@@ -120,7 +113,7 @@ export default function AdminLoginPage() {
               background: isPending
                 ? 'rgba(232,182,76,0.4)'
                 : 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
-              color: '#090d1f',
+              color: '#121109',
               boxShadow: isPending ? 'none' : '0 6px 24px rgba(232,182,76,0.3)',
             }}
           >

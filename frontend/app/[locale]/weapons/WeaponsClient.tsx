@@ -110,19 +110,14 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
 
   const rarityCfg = (r: number) => {
     if (r === 5) return { ring: 'from-[#ffd34d] via-[#f0b64a] to-[#d99a2b]', glow: 'rgba(245,158,11,', text: '#ffd34d', border: 'rgba(245,158,11,0.25)', bg: 'rgba(245,158,11,0.12)', stars: '#ffd34d' };
-    if (r === 4) return { ring: 'from-[#c9a8ff] via-[#a77cf6] to-[#7c5ce8]', glow: 'rgba(168,85,247,', text: '#c9a8ff', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.12)', stars: '#c9a8ff' };
-    if (r === 3) return { ring: 'from-[#7ba2ff] via-[#4f7dff] to-[#3d5bd9]', glow: 'rgba(59,130,246,', text: '#a9bcff', border: 'rgba(59,130,246,0.25)', bg: 'rgba(59,130,246,0.12)', stars: '#a9bcff' };
-    if (r === 2) return { ring: 'from-[#5ae89a] via-[#3ddc84] to-[#1a9e50]', glow: 'rgba(34,197,94,',  text: '#8ff0b8', border: 'rgba(34,197,94,0.25)',  bg: 'rgba(34,197,94,0.12)',  stars: '#8ff0b8' };
-    return       { ring: 'from-gray-400 via-gray-500 to-gray-600',       glow: 'rgba(156,163,175,', text: '#9ca3af', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.12)', stars: '#9ca3af' };
+    if (r === 4) return { ring: 'from-[#e2c88f] via-[#a77cf6] to-[#8e97a8]', glow: 'rgba(168,85,247,', text: '#e2c88f', border: 'rgba(168,85,247,0.25)', bg: 'rgba(168,85,247,0.12)', stars: '#e2c88f' };
+    if (r === 3) return { ring: 'from-[#8e97a8] via-[#c9a86a] to-[#8e97a8]', glow: 'rgba(201,168,106,', text: '#e2c88f', border: 'rgba(201,168,106,0.25)', bg: 'rgba(201,168,106,0.12)', stars: '#e2c88f' };
+    if (r === 2) return { ring: 'from-[#86a98f] via-[#86a98f] to-[#6f8f6a]', glow: 'rgba(34,197,94,',  text: '#86a98f', border: 'rgba(34,197,94,0.25)',  bg: 'rgba(34,197,94,0.12)',  stars: '#86a98f' };
+    return       { ring: 'from-gray-400 via-gray-500 to-gray-600',       glow: 'rgba(156,163,175,', text: '#8e97a8', border: 'rgba(156,163,175,0.25)', bg: 'rgba(156,163,175,0.12)', stars: '#8e97a8' };
   };
 
   return (
-    <main className="min-h-screen bg-[#080b1a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30 relative overflow-hidden">
-      {/* Ambient glow blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[10%] w-[600px] h-[500px] blur-[130px] rounded-full" style={{ background: 'rgba(168,85,247,0.07)' }} />
-        <div className="absolute bottom-[20%] right-[5%] w-[400px] h-[400px] blur-[100px] rounded-full" style={{ background: 'rgba(34,211,238,0.05)' }} />
-      </div>
+    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30 relative overflow-hidden">
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
@@ -130,9 +125,9 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           Home
         </Link>
-        <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight">⚔️ {t('weapons')}</h1>
+        <h1 className="page-title" style={{ fontSize: '2rem' }}>{t('weapons')}</h1>
         <div className="flex items-center gap-4">
-          <p className="text-gray-450 text-sm font-medium">{locale === 'vi' ? `Khám phá toàn bộ ${weapons.length} vũ khí` : `Explore all ${weapons.length} weapons in Genshin Impact`}</p>
+          <p className="page-desc" style={{ marginTop: 0 }}>{locale === 'vi' ? `Khám phá toàn bộ ${weapons.length} vũ khí` : `Explore all ${weapons.length} weapons in Genshin Impact`}</p>
           {isAdmin && (
             <button
               onClick={() => setShowAddModal(true)}
@@ -147,7 +142,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-6">
         {/* Sidebar Filters */}
         <div className="lg:w-64 flex-shrink-0">
-          <div className="bg-[#0c1126]/75 border border-gray-900 rounded-2xl p-5 sticky top-20 flex flex-col gap-6 shadow-xl backdrop-blur-md">
+          <div className="bg-[#171410]/75 border border-gray-900 rounded-2xl p-5 sticky top-20 flex flex-col gap-6 shadow-xl backdrop-blur-md">
             {/* Search */}
             <div>
               <label className="text-gray-500 text-[9px] font-black uppercase tracking-widest mb-2 block font-display">Search</label>
@@ -158,7 +153,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   placeholder="Weapon name..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  className="w-full bg-[#0a0e22]/80 border border-white/[0.08] text-white/90 pl-9 pr-3 py-2.5 rounded-xl outline-none text-xs font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+                  className="w-full bg-[#1c1813]/80 border border-white/[0.08] text-white/90 pl-9 pr-3 py-2.5 rounded-xl outline-none text-xs font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
                   onFocus={e => {
                     e.target.style.borderColor = 'rgba(232,182,76,0.4)';
                     e.target.style.boxShadow = '0 0 0 3px rgba(232,182,76,0.1)';
@@ -255,7 +250,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
         {/* Main Grid */}
         <div className="flex-1 min-w-0">
           {filtered.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#0c1126]/30 rounded-2xl border border-gray-900/60 shadow-inner">
+            <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#171410]/30 rounded-2xl border border-gray-900/60 shadow-inner">
               <span className="text-4xl mb-3">👻</span>
               <p className="text-sm font-semibold">No weapons matched your filters.</p>
             </div>

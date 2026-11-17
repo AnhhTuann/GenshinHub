@@ -48,10 +48,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
   }, [card.dictionary]);
 
   return (
-    <main className="min-h-screen pt-20 pb-32 relative z-10 px-4 sm:px-6 bg-[#0d1322] overflow-hidden">
-      {/* Background ambient glow based on element */}
-      <div className={`fixed top-0 left-0 w-full h-[800px] bg-gradient-to-br ${theme.bg} opacity-[0.04] blur-[150px] rounded-full pointer-events-none -z-10`} />
-
+    <main className="min-h-screen pt-20 pb-32 relative z-10 px-4 sm:px-6 bg-[#171410] overflow-hidden">
       <div className="max-w-[1300px] mx-auto relative z-10">
         
         {/* Breadcrumb Back Button */}
@@ -88,7 +85,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
             {/* Floating HP / Energy Badges Below Card */}
             <div className="flex gap-3 justify-center lg:justify-start w-full max-w-[280px] mx-auto lg:max-w-none mt-1">
               {card.props?.GCG_PROP_HP !== undefined && (
-                <div className="flex-1 flex items-center justify-center gap-1.5 bg-[#182040] border border-white/5 rounded-xl py-2 shadow-md hover:border-red-500/30 transition-colors">
+                <div className="flex-1 flex items-center justify-center gap-1.5 bg-[#231e17] border border-white/5 rounded-xl py-2 shadow-md hover:border-red-500/30 transition-colors">
                   <svg className="w-4 h-4 text-red-500 drop-shadow-md" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                   </svg>
@@ -97,7 +94,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                 </div>
               )}
               {card.props?.GCG_PROP_ENERGY !== undefined && (
-                <div className="flex-1 flex items-center justify-center gap-1.5 bg-[#182040] border border-white/5 rounded-xl py-2 shadow-md hover:border-yellow-500/30 transition-colors">
+                <div className="flex-1 flex items-center justify-center gap-1.5 bg-[#231e17] border border-white/5 rounded-xl py-2 shadow-md hover:border-yellow-500/30 transition-colors">
                   <svg className="w-4 h-4 text-yellow-400 drop-shadow-md" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2L22 12L12 22L2 12L12 2Z"/>
                   </svg>
@@ -125,7 +122,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-1 bg-[#182040] rounded-xl p-4 border border-white/5 flex flex-col gap-2.5 shadow-xl hover:border-white/10 transition-colors w-full max-w-[280px] mx-auto lg:max-w-none"
+              className="mt-1 bg-[#231e17] rounded-xl p-4 border border-white/5 flex flex-col gap-2.5 shadow-xl hover:border-white/10 transition-colors w-full max-w-[280px] mx-auto lg:max-w-none"
             >
               {card.storyTitle && (
                 <h3 className="text-[14px] font-bold text-gray-300">
@@ -176,14 +173,14 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                   const skillTypeTag = skill.tags ? Object.values(skill.tags)[0] : 'Skill';
 
                   return (
-                    <div key={skillId} className="bg-[#182040] rounded-xl border border-white/5 flex flex-col overflow-hidden shadow-lg hover:border-white/10 transition-all duration-300">
+                    <div key={skillId} className="bg-[#231e17] rounded-xl border border-white/5 flex flex-col overflow-hidden shadow-lg hover:border-white/10 transition-all duration-300">
                       
                       {/* Skill Header (Flex 2 Columns) */}
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 border-b border-white/5">
                         
                         {/* Left: Icon & Title */}
                         <div className="flex items-center gap-3.5">
-                          <div className="w-12 h-12 relative shrink-0 rounded-[10px] overflow-hidden bg-[#0d1322] border border-white/5 flex items-center justify-center p-1">
+                          <div className="w-12 h-12 relative shrink-0 rounded-[10px] overflow-hidden bg-[#171410] border border-white/5 flex items-center justify-center p-1">
                             <FallbackImage 
                               src={`https://gi.yatta.moe/assets/UI/${skill.icon}.webp`} 
                               alt={skill.name} 
@@ -208,7 +205,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                             
                             return (
                               <div key={costType} className="flex flex-col items-center gap-1">
-                                <div className="w-[26px] h-[26px] relative flex items-center justify-center bg-[#0d1322] rounded-full border border-white/5 shadow-sm">
+                                <div className="w-[26px] h-[26px] relative flex items-center justify-center bg-[#171410] rounded-full border border-white/5 shadow-sm">
                                   {costType === 'GCG_COST_DICE_VOID' || costType === 'GCG_COST_DICE_SAME' ? (
                                     <svg className="w-[14px] h-[14px] text-white opacity-80" viewBox="0 0 24 24" fill="currentColor">
                                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -236,7 +233,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                         
                         {/* Subskill Box (Inset) */}
                         {relatedSubskill && (
-                          <div className={`mt-1 bg-[#0b1120] border-l-[3px] ${theme.border} rounded-r-xl p-4 shadow-inner relative`}>
+                          <div className={`mt-1 bg-[#171410] border-l-[3px] ${theme.border} rounded-r-xl p-4 shadow-inner relative`}>
                             <h5 className="text-[14px] font-black text-white mb-1.5">
                               {relatedSubskill.name}
                             </h5>
@@ -269,7 +266,7 @@ export default function TcgDetailClient({ locale, card }: { locale: string; card
                 <span className="w-1 h-5 bg-gray-500 rounded-sm" />
                 Dictionary
               </h2>
-              <div className="bg-[#182040] rounded-xl border border-white/5 p-5 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6 hover:border-white/10 transition-colors">
+              <div className="bg-[#231e17] rounded-xl border border-white/5 p-5 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-6 hover:border-white/10 transition-colors">
                 {dictionaryEntries.map(entry => (
                   <div key={entry.key} className="flex flex-col gap-1.5">
                     <h4 className="text-[13px] font-black text-white flex items-center gap-2 uppercase tracking-wide">

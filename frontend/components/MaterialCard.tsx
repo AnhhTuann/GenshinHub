@@ -6,10 +6,10 @@ import FallbackImage from '@/components/ui/FallbackImage';
 // ─── Rarity config for materials ───────────────────────────
 const MAT_RARITY = {
   5: { ring: 'from-[#ffd34d] via-[#f0b64a] to-[#d99a2b]', glow: 'rgba(245,158,11,', stars: '#ffd34d', badge: 'rgba(245,158,11,0.16)', badgeBorder: 'rgba(245,158,11,0.35)', text: '#ffd34d', dots: 5 },
-  4: { ring: 'from-[#c9a8ff] via-[#a77cf6] to-[#7c5ce8]', glow: 'rgba(168,85,247,', stars: '#c9a8ff', badge: 'rgba(168,85,247,0.16)', badgeBorder: 'rgba(168,85,247,0.35)', text: '#c9a8ff', dots: 4 },
-  3: { ring: 'from-[#7ba2ff] via-[#4f7dff] to-[#3d5bd9]', glow: 'rgba(59,130,246,', stars: '#a9bcff', badge: 'rgba(59,130,246,0.16)', badgeBorder: 'rgba(59,130,246,0.35)', text: '#a9bcff', dots: 3 },
-  2: { ring: 'from-[#5ae89a] via-[#3ddc84] to-[#1a9e50]', glow: 'rgba(34,197,94,', stars: '#8ff0b8', badge: 'rgba(34,197,94,0.16)', badgeBorder: 'rgba(34,197,94,0.35)', text: '#8ff0b8', dots: 2 },
-  1: { ring: 'from-slate-400 via-slate-500 to-slate-600',   glow: 'rgba(148,163,184,', stars: '#94a3b8', badge: 'rgba(148,163,184,0.12)', badgeBorder: 'rgba(148,163,184,0.25)', text: '#94a3b8', dots: 1 },
+  4: { ring: 'from-[#e2c88f] via-[#a77cf6] to-[#8e97a8]', glow: 'rgba(168,85,247,', stars: '#e2c88f', badge: 'rgba(168,85,247,0.16)', badgeBorder: 'rgba(168,85,247,0.35)', text: '#e2c88f', dots: 4 },
+  3: { ring: 'from-[#8e97a8] via-[#c9a86a] to-[#8e97a8]', glow: 'rgba(201,168,106,', stars: '#e2c88f', badge: 'rgba(201,168,106,0.16)', badgeBorder: 'rgba(201,168,106,0.35)', text: '#e2c88f', dots: 3 },
+  2: { ring: 'from-[#86a98f] via-[#86a98f] to-[#6f8f6a]', glow: 'rgba(34,197,94,', stars: '#86a98f', badge: 'rgba(34,197,94,0.16)', badgeBorder: 'rgba(34,197,94,0.35)', text: '#86a98f', dots: 2 },
+  1: { ring: 'from-slate-400 via-slate-500 to-slate-600',   glow: 'rgba(148,163,184,', stars: '#8e97a8', badge: 'rgba(148,163,184,0.12)', badgeBorder: 'rgba(148,163,184,0.25)', text: '#8e97a8', dots: 1 },
 };
 
 interface MaterialCardProps {

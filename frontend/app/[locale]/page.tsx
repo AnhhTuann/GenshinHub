@@ -30,7 +30,7 @@ const FEATURES = (t: any, locale: string) => [
   { href: '/artifacts',  label: t('artifacts'),  desc: locale === 'en' ? 'Best artifact sets'         : 'Bộ thánh di vật tốt nhất',        color: '#cf8fff', bg: 'rgba(207,143,255,0.07)', icon: '💎' },
   { href: '/tierlist',   label: t('tierlist'),   desc: locale === 'en' ? 'Current meta rankings'      : 'Xếp hạng meta hiện tại',          color: '#e8b64c', bg: 'rgba(232,182,76,0.07)',   icon: '🏆' },
   { href: '/teams',      label: 'Teams',          desc: locale === 'en' ? 'Best team compositions'     : 'Đội hình meta tốt nhất',          color: '#3aa8ff', bg: 'rgba(58,168,255,0.07)',   icon: '👥' },
-  { href: '/banners',    label: t('banners'),    desc: locale === 'en' ? 'Current & upcoming banners' : 'Banner hiện tại & sắp tới',       color: '#b678ff', bg: 'rgba(236,72,153,0.07)',   icon: '📜' },
+  { href: '/banners',    label: t('banners'),    desc: locale === 'en' ? 'Current & upcoming banners' : 'Banner hiện tại & sắp tới',       color: '#c9a86a', bg: 'rgba(214,160,110,0.07)',   icon: '📜' },
   { href: '/materials',  label: 'Materials',      desc: locale === 'en' ? 'Ascension & talent mats'   : 'Nguyên liệu thăng cấp',           color: '#9ede5f', bg: 'rgba(158,222,95,0.07)', icon: '📦' },
   { href: '/showcase',   label: t('showcase'),   desc: locale === 'en' ? 'View your builds'           : 'Xem build của bạn',               color: '#3aa8ff', bg: 'rgba(58,168,255,0.07)',   icon: '🔍' },
   { href: '/tcg',        label: t('tcg'),        desc: locale === 'en' ? 'Card game decks'            : 'Bộ bài TCG',                      color: '#35d6c5', bg: 'rgba(53,214,197,0.07)',   icon: '🃏' },

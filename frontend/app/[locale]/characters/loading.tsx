@@ -1,6 +1,6 @@
 export default function CharactersLoading() {
   return (
-    <main className="min-h-screen bg-[#070a18] pt-[100px] pb-24 px-4 sm:px-6">
+    <main className="min-h-screen bg-[#121109] pt-[100px] pb-24 px-4 sm:px-6">
       <div className="max-w-[1400px] mx-auto animate-pulse">
         <div className="mb-8">
           <div className="h-10 w-48 bg-white/10 rounded-md mb-2"></div>

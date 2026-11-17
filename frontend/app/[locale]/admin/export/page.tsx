@@ -23,7 +23,7 @@ export default function ExportPage() {
     <div className="flex flex-col gap-6 max-w-3xl">
       {/* Header */}
       <div>
-        <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#cf8fff,#7c3aed)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+        <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#cf8fff,#8e97a8)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
           Export Source Code
         </h1>
         <p className="text-white/30 text-xs mt-0.5">Persist database changes back to the filesystem.</p>
@@ -45,7 +45,7 @@ export default function ExportPage() {
               onClick={handleExport}
               disabled={loading}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wide disabled:opacity-50"
-              style={{ background:'linear-gradient(135deg, #cf8fff, #7c3aed)', color:'#fff', boxShadow:'0 4px 16px rgba(207,143,255,0.25)' }}
+              style={{ background:'linear-gradient(135deg, #cf8fff, #8e97a8)', color:'#fff', boxShadow:'0 4px 16px rgba(207,143,255,0.25)' }}
             >
               {loading ? (
                 <>

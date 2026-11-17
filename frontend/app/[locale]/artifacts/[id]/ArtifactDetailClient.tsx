@@ -16,8 +16,8 @@ import { confirmDialog } from '@/utils/confirm';
 
 const RARITY_BG: Record<number, string> = {
   5: 'from-[#ffe1a0] via-[#f7bd4a] to-[#d98a2b]',
-  4: 'from-[#cf8fff] via-[#8b5cf6] to-[#5b21b6]',
-  3: 'from-[#8fc6ff] via-[#2c74d6] to-[#2745a8]',
+  4: 'from-[#cf8fff] via-[#8e97a8] to-[#6b6152]',
+  3: 'from-[#8fc6ff] via-[#8e97a8] to-[#2b251c]',
   2: 'from-gray-400 via-gray-650 to-gray-800',
   1: 'from-gray-500 via-gray-700 to-gray-900',
 };
@@ -25,7 +25,7 @@ const RARITY_BG: Record<number, string> = {
 const RARITY_BORDER: Record<number, string> = {
   5: 'border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.08)]',
   4: 'border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.08)]',
-  3: 'border-blue-500/40 shadow-[0_0_30px_rgba(59,130,246,0.08)]',
+  3: 'border-blue-500/40 shadow-[0_0_30px_rgba(201,168,106,0.08)]',
   2: 'border-gray-500/40',
   1: 'border-gray-600/40',
 };
@@ -98,7 +98,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
   };
 
   return (
-    <main className="min-h-screen bg-[#080b1a] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
+    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
       <div className="max-w-5xl mx-auto px-6 pt-8 pb-4">
         <Link className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 text-xs font-black uppercase tracking-wider w-fit mb-6" href="/artifacts">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,14 +127,14 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
         )}
 
         {/* Hero Section */}
-        <div className={`relative rounded-3xl border ${RARITY_BORDER[rarity]} overflow-hidden bg-[#0c1126]/50 shadow-2xl mb-8 backdrop-blur-md`}>
+        <div className={`relative rounded-3xl border ${RARITY_BORDER[rarity]} overflow-hidden bg-[#171410]/50 shadow-2xl mb-8 backdrop-blur-md`}>
           {/* Background glow */}
           <div className={`absolute inset-0 bg-gradient-to-br ${RARITY_BG[rarity]} opacity-[0.03]`} />
 
           <div className="relative flex flex-col md:flex-row gap-8 p-8">
             {/* Artifact Image Wrapper */}
             <div className={`w-40 h-40 flex-shrink-0 rounded-2xl bg-gradient-to-br ${RARITY_BG[rarity]} p-[1px] shadow-xl self-center`}>
-              <div className="relative w-full h-full rounded-2xl bg-[#080b1a]/90 flex items-center justify-center overflow-hidden p-2">
+              <div className="relative w-full h-full rounded-2xl bg-[#121109]/90 flex items-center justify-center overflow-hidden p-2">
                 {artifactSet.iconUrl ? (
                   <FallbackImage src={artifactSet.iconUrl} alt={name} fill className="object-contain p-2" />
                 ) : (
@@ -158,7 +158,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
           </div>
 
           {/* Set Effects */}
-          <div className="relative mx-8 mb-8 bg-[#05060f]/65 border border-gray-955 rounded-2xl p-5 shadow-inner flex flex-col gap-4">
+          <div className="relative mx-8 mb-8 bg-[#0d0c0a]/65 border border-gray-955 rounded-2xl p-5 shadow-inner flex flex-col gap-4">
             {piece2Desc && (
               <div>
                 <div className="flex items-center gap-2 mb-2">
@@ -227,7 +227,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
               ))}
             </div>
           ) : (
-            <div className="bg-[#0c1126]/30 border border-gray-900/60 rounded-2xl p-8 text-center text-gray-500 text-sm">
+            <div className="bg-[#171410]/30 border border-gray-900/60 rounded-2xl p-8 text-center text-gray-500 text-sm">
               No recommended builds currently list this artifact set.
             </div>
           )}

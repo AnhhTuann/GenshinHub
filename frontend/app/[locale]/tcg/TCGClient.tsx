@@ -33,12 +33,7 @@ export default function TCGClient({ locale }: { locale: string }) {
   }, [filterType, search, locale]);
 
   return (
-    <main className="min-h-screen pt-[100px] pb-24 relative z-10 px-4 sm:px-6" style={{ background: 'var(--bg-void, #04060f)' }}>
-      {/* Ambient glows */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(232,182,76,0.06)0%, transparent 70%)', filter: 'blur(120px)' }} />
-        <div className="absolute bottom-[20%] right-[5%] w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(127,90,240,0.05) 0%, transparent 70%)', filter: 'blur(100px)' }} />
-      </div>
+    <main className="min-h-screen pt-[100px] pb-24 relative z-10 px-4 sm:px-6" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
@@ -46,10 +41,10 @@ export default function TCGClient({ locale }: { locale: string }) {
             <Link href="/" className="text-sm font-bold text-white/50 hover:text-white mb-2 flex items-center gap-1 transition-colors uppercase tracking-widest">
               &larr; Home
             </Link>
-            <h1 className="text-4xl font-black text-white mb-1 font-display uppercase tracking-tight text-gradient-gold">
+            <h1 className="page-title" style={{ fontSize: '2rem' }}>
               {t('tcg')}
             </h1>
-            <p className="text-gray-455 text-sm font-medium">
+            <p className="page-desc">
               {locale === 'vi' ? `Khám phá ${tcgCards.length} lá bài và các bộ bài Meta Teyvat` : `Explore ${tcgCards.length} cards and the best meta decks in Teyvat.`}
             </p>
           </div>

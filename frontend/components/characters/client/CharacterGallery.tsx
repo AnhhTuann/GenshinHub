@@ -115,13 +115,14 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
             <input
               type="text"
               placeholder={locale === 'en' ? 'Search characters...' : 'Tìm nhân vật...'}
+              aria-label={locale === 'en' ? 'Search characters' : 'Tìm nhân vật'}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-8 py-2.5 rounded-lg text-sm font-medium outline-none"
+              className="w-full min-h-11 pl-10 pr-12 py-2.5 rounded-lg text-sm font-medium outline-none"
               style={{
                 background: '#100f10',
                 border: '1px solid rgba(226,216,198,0.14)',
-                color: '#f1ece5',
+                color: '#f0ead9',
                 transition: 'border-color 0.2s ease, background 0.2s ease',
               }}
               onFocus={e => {
@@ -135,8 +136,10 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
             />
             {search && (
               <button
+                type="button"
                 onClick={() => setSearch('')}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5"
+                aria-label={locale === 'en' ? 'Clear search' : 'Xóa tìm kiếm'}
+                className="absolute right-1 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
                 style={{ color: 'rgba(255,255,255,0.3)' }}
               >
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
@@ -153,8 +156,10 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
             return (
               <button
                 key={r}
+                type="button"
+                aria-pressed={active}
                 onClick={() => setSelectedRarity(active ? null : r)}
-                className="px-3 py-2.5 rounded-lg text-[11px] font-bold uppercase tracking-wider shrink-0"
+                className="min-h-11 min-w-11 px-3 py-2.5 rounded-lg text-[11px] font-bold uppercase tracking-wider shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
                 style={{
                   background: active ? `${c}18` : '#100f10',
                   border: `1px solid ${active ? `${c}50` : 'rgba(226,216,198,0.14)'}`,
@@ -173,7 +178,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
           <span className="text-[9px] font-bold uppercase tracking-widest shrink-0 hidden sm:block w-14" style={{ color: 'rgba(231,222,210,0.48)' }}>Element</span>
           <div className="hidden sm:block w-px h-3.5" style={{ background: 'rgba(226,216,198,0.14)' }} />
 
-          <PillBtn active={!selectedElement} onClick={() => setSelectedElement(null)} label="All" color="#ffffff" />
+          <PillBtn active={!selectedElement} onClick={() => setSelectedElement(null)} label="All" color="#f5f1e6" />
 
           {ELEMENTS.map((el) => {
             const active = selectedElement === el;
@@ -181,9 +186,12 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
             return (
               <button
                 key={el}
+                type="button"
+                aria-pressed={active}
                 onClick={() => setSelectedElement(active ? null : el)}
                 title={el}
-                className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg"
+                aria-label={el}
+                className="flex min-h-11 min-w-11 items-center justify-center gap-1.5 px-2 py-1.5 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
                 style={{
                   background: active ? `${ec}18` : 'transparent',
                   border: `1px solid ${active ? `${ec}50` : 'transparent'}`,
@@ -218,19 +226,21 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
           <span className="text-[9px] font-bold uppercase tracking-widest shrink-0 hidden sm:block w-14" style={{ color: 'rgba(231,222,210,0.48)' }}>Weapon</span>
           <div className="hidden sm:block w-px h-3.5" style={{ background: 'rgba(226,216,198,0.14)' }} />
 
-          <PillBtn active={!selectedWeapon} onClick={() => setSelectedWeapon(null)} label="All" color="#ffffff" />
+          <PillBtn active={!selectedWeapon} onClick={() => setSelectedWeapon(null)} label="All" color="#f5f1e6" />
 
           {WEAPON_TYPES.map((w) => {
             const active = selectedWeapon === w;
             return (
               <button
                 key={w}
+                type="button"
+                aria-pressed={active}
                 onClick={() => setSelectedWeapon(active ? null : w)}
-                className="px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider"
+                className="min-h-11 px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
                 style={{
                   background: active ? 'rgba(201,147,166,0.12)' : 'transparent',
                   border: `1px solid ${active ? 'rgba(201,147,166,0.38)' : 'transparent'}`,
-                  color: active ? '#d9afbd' : 'rgba(231,222,210,0.52)',
+                  color: active ? '#c9a86a' : 'rgba(231,222,210,0.52)',
                   transition: 'all 0.2s ease',
                 }}
               >
@@ -241,8 +251,9 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
 
           {hasFilters && (
             <button
+              type="button"
               onClick={clearAll}
-              className="ml-auto flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider"
+              className="ml-auto flex min-h-11 items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
               style={{ color: 'rgba(231,222,210,0.55)', transition: 'color 0.2s' }}
             >
               <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
@@ -257,7 +268,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
       {/* Result count */}
       <div className="flex items-center justify-between px-1">
         <span className="text-xs font-medium" style={{ color: 'rgba(231,222,210,0.58)' }}>
-          <span style={{ color: '#d9afbd', fontFamily: 'var(--font-mono, monospace)', fontWeight: 700 }}>
+          <span style={{ color: '#c9a86a', fontFamily: 'var(--font-mono, monospace)', fontWeight: 700 }}>
             {filtered.length}
           </span>
           {' '}{locale === 'en' ? 'characters' : 'nhân vật'}
@@ -285,7 +296,7 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
           </motion.div>
           {visibleCount < filtered.length && (
             <div ref={loaderRef} className="w-full h-20 flex items-center justify-center mt-8">
-              <div className="w-6 h-6 border-2 rounded-full animate-spin" style={{ borderColor: 'rgba(201,147,166,0.24)', borderTopColor: '#c993a6' }}></div>
+              <div className="w-6 h-6 border-2 rounded-full animate-spin" style={{ borderColor: 'rgba(201,147,166,0.24)', borderTopColor: '#c9a86a' }}></div>
             </div>
           )}
         </div>
@@ -304,9 +315,10 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
             {locale === 'en' ? 'No characters match your filters.' : 'Không tìm thấy nhân vật phù hợp.'}
           </p>
           <button
+            type="button"
             onClick={clearAll}
-            className="mt-4 text-xs font-bold underline underline-offset-2"
-            style={{ color: '#d9afbd' }}
+            className="mt-4 min-h-11 rounded-md px-3 text-xs font-bold underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
+            style={{ color: '#c9a86a' }}
           >
             {locale === 'en' ? 'Clear filters' : 'Xóa bộ lọc'}
           </button>
@@ -321,11 +333,13 @@ function PillBtn({ active, onClick, label, color }: { active: boolean; onClick: 
   return (
     <button
       onClick={onClick}
-      className="px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider"
+      type="button"
+      aria-pressed={active}
+      className="min-h-11 px-2.5 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a86a]"
       style={{
         background: active ? 'rgba(231,222,210,0.09)' : 'transparent',
         border: `1px solid ${active ? 'rgba(231,222,210,0.22)' : 'transparent'}`,
-        color: active ? '#f1ece5' : 'rgba(231,222,210,0.5)',
+        color: active ? '#f0ead9' : 'rgba(231,222,210,0.5)',
         transition: 'all 0.2s ease',
       }}
     >

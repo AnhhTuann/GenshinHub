@@ -112,7 +112,7 @@ export default function WeaponsAdmin() {
     if(!editId && nameEnVal) setValue('id', nameEnVal.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,''));
   },[editId,nameEnVal,setValue]);
 
-  const RARITY_COLOR: Record<number,string> = {5:'#ffd34d',4:'#cf8fff',3:'#7fe3d8',2:'#b8ec9d',1:'#bdbdbd'};
+  const RARITY_COLOR: Record<number,string> = {5:'#ffd34d',4:'#cf8fff',3:'#8e97a8',2:'#9ede5f',1:'#a8a294'};
 
   return (
     <div className="flex flex-col gap-5">

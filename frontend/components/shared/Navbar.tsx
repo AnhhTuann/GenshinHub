@@ -6,6 +6,7 @@ import { MobileMenu } from './navbar/MobileMenu';
 import { UserNav } from './navbar/UserNav';
 import UISoundToggle from './UISoundToggle';
 import LanguageDropdown from './navbar/LanguageDropdown';
+import { Sword, Swords, Gem, Trophy, Users, ScrollText, Search, Layers } from 'lucide-react';
 
 export default function Navbar() {
   const pathname   = usePathname();
@@ -44,14 +45,14 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: '/characters', label: t('characters'), icon: '⚔️' },
-    { href: '/weapons',    label: t('weapons'),    icon: '🗡️' },
-    { href: '/artifacts',  label: t('artifacts'),  icon: '💎' },
-    { href: '/tierlist',   label: t('tierlist'),   icon: '🏆' },
-    { href: '/teams',      label: 'Teams',          icon: '👥' },
-    { href: '/banners',    label: t('banners'),    icon: '📜' },
-    { href: '/showcase',   label: t('showcase'),   icon: '🔍' },
-    { href: '/tcg',        label: t('tcg'),        icon: '🃏' },
+    { href: '/characters', label: t('characters'), icon: Sword },
+    { href: '/weapons',    label: t('weapons'),    icon: Swords },
+    { href: '/artifacts',  label: t('artifacts'),  icon: Gem },
+    { href: '/tierlist',   label: t('tierlist'),   icon: Trophy },
+    { href: '/teams',      label: 'Teams',          icon: Users },
+    { href: '/banners',    label: t('banners'),    icon: ScrollText },
+    { href: '/showcase',   label: t('showcase'),   icon: Search },
+    { href: '/tcg',        label: t('tcg'),        icon: Layers },
   ];
 
   const isActive = (href: string) =>
@@ -62,9 +63,9 @@ export default function Navbar() {
       <nav
         className="site-nav sticky top-0 z-50 w-full"
         style={{
-          background: scrolled ? 'rgba(21,17,22,0.98)' : 'rgba(21,17,22,0.92)',
-          backdropFilter: `blur(${scrolled ? 32 : 16}px) saturate(170%)`,
-          WebkitBackdropFilter: `blur(${scrolled ? 32 : 16}px) saturate(170%)`,
+          background: scrolled ? 'rgba(13,12,10,0.97)' : 'rgba(13,12,10,0.90)',
+          backdropFilter: `blur(${scrolled ? 14 : 8}px)`,
+          WebkitBackdropFilter: `blur(${scrolled ? 14 : 8}px)`,
           borderBottom: scrolled
             ? '1px solid rgba(255,255,255,0.09)'
             : '1px solid rgba(255,255,255,0.055)',
@@ -91,7 +92,7 @@ export default function Navbar() {
                 className="text-[15px] font-black tracking-[0.18em] uppercase"
                 style={{
                   fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                  backgroundImage: 'linear-gradient(120deg, #f3f5ff 0%, #aab2ff 100%)',
+                  backgroundImage: 'linear-gradient(120deg, #f0ead9 0%, #e2c88f 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -144,7 +145,7 @@ export default function Navbar() {
                       className={`site-nav-menu-link ${isActive(link.href) ? 'is-active' : ''}`}
                       onClick={() => setMoreOpen(false)}
                     >
-                      <span className="site-nav-menu-icon" aria-hidden="true">{link.icon}</span>
+                      <span className="site-nav-menu-icon" aria-hidden="true"><link.icon className="w-3.5 h-3.5" /></span>
                       <span>{link.label}</span>
                       <span className="site-nav-menu-arrow" aria-hidden="true">↗</span>
                     </Link>
@@ -221,7 +222,7 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 h-[2px]"
           style={{
             width: `${scrollPct}%`,
-            background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-second))',
+            background: 'var(--accent-primary)',
             opacity: scrollPct > 0 ? 1 : 0,
           }}
         />

@@ -104,7 +104,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   const desc    = locale === 'en' ? character.descriptionEn : character.descriptionVi;
 
   const is5Star        = character.rarity === 5;
-  const elColor        = EL_COLOR[character.element] ?? '#ffffff';
+  const elColor        = EL_COLOR[character.element] ?? '#f5f1e6';
   const elText         = EL_TEXT[character.element] ?? 'text-white';
   const elGlow         = EL_GLOW[character.element] ?? 'rgba(255,255,255,0.1)';
   const accentCls      = is5Star ? 'bg-yellow-400' : 'bg-purple-400';
@@ -126,7 +126,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   };
 
   return (
-    <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #04060f)' }}>
+    <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
       <ThemeSetter element={character.element} />
       {/* ── JSON-LD Schema ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -135,10 +135,6 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
       {character.splashArtUrl && <WishIntro imageUrl={character.splashArtUrl} element={character.element} />}
 
       {/* ── Ambient element glow ── */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[5%] w-[700px] h-[700px] rounded-full blur-[160px] opacity-20" style={{ background: elColor }} />
-        <div className="absolute bottom-[-5%] right-[10%] w-[400px] h-[400px] rounded-full blur-[120px] opacity-10" style={{ background: elColor }} />
-      </div>
 
       {/* ── HERO BANNER ── */}
       <CharacterHero 

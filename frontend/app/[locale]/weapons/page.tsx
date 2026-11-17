@@ -9,20 +9,6 @@ export const metadata: Metadata = {
   description: 'Explore all weapons in Genshin Impact — ATK, substats, passives, and more.',
 };
 
-function PageAmbient({ color1, color2 }: { color1: string; color2: string }) {
-  return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div
-        className="absolute -top-[15%] -right-[10%] w-[750px] h-[600px] rounded-full"
-        style={{ background: `radial-gradient(ellipse, ${color1} 0%, transparent 70%)`, filter: 'blur(130px)' }}
-      />
-      <div
-        className="absolute bottom-[-15%] -left-[10%] w-[600px] h-[500px] rounded-full"
-        style={{ background: `radial-gradient(ellipse, ${color2} 0%, transparent 70%)`, filter: 'blur(110px)' }}
-      />
-    </div>
-  );
-}
 
 function WeaponsSkeleton() {
   return (
@@ -49,24 +35,11 @@ async function WeaponsContent() {
   return (
     <>
       <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-[3px] h-8 rounded-full" style={{ background: 'linear-gradient(to bottom, #ffdf9e, #e8b64c)' }} />
-          <h1
-            className="text-3xl sm:text-4xl font-black uppercase tracking-tight"
-            style={{
-              fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            {t('weapons')}
-          </h1>
-        </div>
-        <p className="text-white/35 text-sm font-medium pl-6">
-          {locale === 'vi' ? `${weapons.length} vũ khí — kiếm đơn, trọng kiếm, giáo, cung & pháp khí` : `${weapons.length} weapons — swords, claymores, polearms, bows & catalysts`}
-        </p>
+        <header className="page-header">
+          <span className="page-rule" />
+          <h1 className="page-title">{t('weapons')}</h1>
+          <p className="page-desc">{locale === 'vi' ? `${weapons.length} vũ khí — kiếm đơn, trọng kiếm, giáo, cung & pháp khí` : `${weapons.length} weapons — swords, claymores, polearms, bows & catalysts`}</p>
+        </header>
       </div>
       <WeaponsClient weapons={weapons} />
     </>
@@ -75,8 +48,7 @@ async function WeaponsContent() {
 
 export default async function WeaponsPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04060f)' }}>
-      <PageAmbient color1="rgba(232,182,76,0.06)" color2="rgba(239,68,68,0.03)" />
+    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-24">
         <Suspense fallback={<WeaponsSkeleton />}>

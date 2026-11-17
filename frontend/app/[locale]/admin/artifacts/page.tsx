@@ -107,12 +107,12 @@ export default function ArtifactsAdmin() {
       {/* Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#cf8fff,#7c3aed)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h1 className="text-xl font-black uppercase tracking-wide" style={{ fontFamily:'var(--font-cinzel,Cinzel,serif)', background:'linear-gradient(135deg,#cf8fff,#8e97a8)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             Artifacts
           </h1>
           <p className="text-white/30 text-xs mt-0.5">{loading?'Loading...':`${filtered.length} of ${all.length} artifacts`}</p>
         </div>
-        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#cf8fff,#7c3aed)', color:'#fff', boxShadow:'0 4px 16px rgba(207,143,255,0.3)' }}>
+        <button onClick={openNew} className="flex items-center gap-2 px-4 py-2.5 rounded-xl font-black text-[11px] uppercase tracking-wider" style={{ background:'linear-gradient(135deg,#cf8fff,#8e97a8)', color:'#fff', boxShadow:'0 4px 16px rgba(207,143,255,0.3)' }}>
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4"/></svg>
           Add Artifact Set
         </button>
@@ -179,7 +179,7 @@ export default function ArtifactsAdmin() {
             {isDirty&&<span className="flex items-center gap-1.5 text-xs" style={{color:'#ffdf9e'}}><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"/>Unsaved</span>}
             <div className="flex gap-2 ml-auto">
               <button onClick={()=>setModalOpen(false)} className="px-4 py-2 rounded-xl text-sm font-bold" style={{background:'rgba(255,255,255,0.05)',color:'rgba(255,255,255,0.5)'}}>Cancel</button>
-              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#cf8fff,#7c3aed)',color:'#fff',boxShadow:'0 4px 16px rgba(207,143,255,0.25)'}}>
+              <button onClick={handleSubmit(onSave)} className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide" style={{background:'linear-gradient(135deg,#cf8fff,#8e97a8)',color:'#fff',boxShadow:'0 4px 16px rgba(207,143,255,0.25)'}}>
                 {editId?'Save Changes':'Create Artifact'}
               </button>
             </div>

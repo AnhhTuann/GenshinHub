@@ -90,7 +90,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
   );
 
   return (
-    <div className="min-h-screen text-white" style={{ background: 'var(--bg-void, #04060f)' }}>
+    <div className="min-h-screen text-white" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
       {/* Global Toast provider */}
       <Toaster
         position="top-right"
@@ -105,7 +105,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             backdropFilter: 'blur(20px)',
           },
           success: {
-            iconTheme: { primary: '#e8b64c', secondary: '#090d1f' },
+            iconTheme: { primary: '#e8b64c', secondary: '#121109' },
             style: { borderColor: 'rgba(232,182,76,0.25)' },
           },
           error: {
@@ -168,7 +168,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg"
             style={{ background: 'rgba(232,182,76,0.08)', border: '1px solid rgba(232,182,76,0.15)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.7)] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(134,169,143,0.7)] animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-widest text-amber-400/70">Admin Mode</span>
           </div>
 

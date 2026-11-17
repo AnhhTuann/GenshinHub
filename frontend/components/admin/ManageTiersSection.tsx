@@ -85,7 +85,7 @@ export default function ManageTiersSection({
   return (
     <section className="mb-8">
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #b9a5ff, #9d8cff)' }} />
+        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #e2c88f, #c9a86a)' }} />
         <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Manage Tiers</h2>
       </div>
       
@@ -112,7 +112,7 @@ export default function ManageTiersSection({
         <button 
           onClick={handleAddTier} disabled={loading || !newTierName}
           className="px-5 py-2 rounded-xl text-sm font-black uppercase tracking-wide disabled:opacity-40 h-[38px] shrink-0"
-          style={{ background:'linear-gradient(135deg, #b9a5ff, #9d8cff)', color:'#fff', boxShadow:'0 4px 12px rgba(139,92,246,0.25)' }}
+          style={{ background:'linear-gradient(135deg, #e2c88f, #c9a86a)', color:'#fff', boxShadow:'0 4px 12px rgba(142,151,168,0.25)' }}
         >
           Add Tier
         </button>

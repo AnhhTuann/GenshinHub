@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ELEMENT_COLORS: Record<string, string> = {
   Pyro: "#ff5c5c",
-  Hydro: "#54c8f5",
-  Anemo: "#5cf5c0",
+  Hydro: "#8e97a8",
+  Anemo: "#86a98f",
   Electro: "#cf8fff",
-  Dendro: "#a3d94e",
-  Cryo: "#99ffff",
+  Dendro: "#9ede5f",
+  Cryo: "#c3cad6",
   Geo: "#ffd98a",
 };
 

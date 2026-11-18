@@ -58,8 +58,8 @@ export default async function CharactersPage({ params }: { params: Promise<{ loc
 
   return (
     <main
-      className="relative min-h-screen text-white overflow-x-hidden"
-      style={{ background: 'var(--bg-void, #0d0c0a)' }}
+      className="relative min-h-screen text-[var(--text-primary)] overflow-x-hidden"
+      style={{ background: 'var(--bg-base)' }}
     >
       {/* Ambient glows */}
 

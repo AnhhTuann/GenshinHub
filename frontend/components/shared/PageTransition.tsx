@@ -7,12 +7,15 @@ import { ReactNode } from "react";
 export default function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const isPrivatePage = pathname.split('/').some((segment) =>
+    ['admin', 'auth', 'login', 'profile', 'register'].includes(segment)
+  );
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
-        initial={{ opacity: 0, y: reduceMotion ? 0 : 12, scale: reduceMotion ? 1 : 0.995 }}
+        initial={false}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: reduceMotion ? 0 : -8, filter: reduceMotion ? "none" : "blur(3px)" }}
         transition={{
@@ -21,7 +24,7 @@ export default function PageTransition({ children }: { children: ReactNode }) {
           damping: 26,
           mass: 0.8,
         }}
-        className="site-page-content w-full h-full"
+        className={`site-page-content${isPrivatePage ? '' : ' site-public-content'} w-full h-full`}
       >
         {children}
       </motion.div>

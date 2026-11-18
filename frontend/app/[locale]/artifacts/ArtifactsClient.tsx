@@ -2,9 +2,8 @@
 
 import { useState, useMemo, useEffect, useRef } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
-import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
 import dynamic from 'next/dynamic';
 import { useDebounce } from '@/hooks/useDebounce';
@@ -36,8 +35,8 @@ function rarityConfig(max: number) {
 
 function BonusBadge({ label, text, glow }: { label: string; text: string; glow: string }) {
   return (
-    <div className="flex gap-2.5 items-start bg-white/5 rounded-lg p-2.5 border border-white/5">
-      <span className="mt-0.5 shrink-0 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-md" style={{ background: `${glow}0.15)`, color: '#fff', border: `1px solid ${glow}0.3)` }}>
+    <div className="flex gap-2.5 items-start bg-slate-50 rounded-lg p-2.5 border border-slate-200">
+      <span className="mt-0.5 shrink-0 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-md" style={{ background: `${glow}0.15)`, color: '#172b3a', border: `1px solid ${glow}0.3)` }}>
         {label}
       </span>
       <p className="text-[10px] text-gray-300 leading-snug line-clamp-2 flex-1 font-medium">{text}</p>
@@ -57,9 +56,9 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
       href={`/artifacts/${artifact.id}`}
       className="group relative flex flex-col justify-between overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1"
       style={{
-        background: `linear-gradient(145deg, rgba(12,12,24,0.95) 0%, rgba(5,5,12,0.98) 100%)`,
-        border: `1px solid ${cfg.border}`,
-        boxShadow: `0 4px 20px rgba(0,0,0,0.4)`,
+        background: 'linear-gradient(155deg, #ffffff 0%, #f3f8f9 100%)',
+        border: '1px solid rgba(23,43,58,0.12)',
+        boxShadow: '0 8px 24px rgba(23,43,58,0.07)',
       }}
     >
       {/* Hover border glow */}
@@ -78,7 +77,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
       <div className="relative w-full aspect-square p-[1.5px]">
         <div
           className="w-full h-full rounded-[22px] overflow-hidden flex items-center justify-center relative"
-          style={{ background: `linear-gradient(to top, ${cfg.bg} 0%, rgba(5,5,12,0.9) 100%)` }}
+          style={{ background: `linear-gradient(to top, ${cfg.bg} 0%, #eaf1f3 100%)` }}
         >
           {/* Glow dot behind artifact */}
           <div
@@ -99,7 +98,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
 
           {/* Rarity Pill */}
           <div className="absolute top-2 left-2">
-            <div className="px-1.5 py-0.5 rounded-md backdrop-blur-md bg-black/40 border border-white/10 text-[9px] font-black tracking-widest flex items-center gap-0.5" style={{ color: cfg.stars }}>
+            <div className="px-1.5 py-0.5 rounded-md backdrop-blur-md bg-[#172b3a]/80 border border-white/10 text-[9px] font-bold tracking-wide flex items-center gap-0.5" style={{ color: cfg.stars }}>
               {max}★
             </div>
           </div>
@@ -107,7 +106,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col pt-3 pb-4 px-4 gap-3 border-t border-white/5">
+      <div className="relative z-10 flex flex-col pt-3 pb-4 px-4 gap-3 border-t border-slate-200">
         
         {/* Stars */}
         <div className="flex justify-center gap-[2px]">
@@ -119,7 +118,7 @@ function ArtifactCard({ artifact, locale }: { artifact: ArtifactSet; locale: str
         </div>
 
         {/* Name */}
-        <p className="text-white font-extrabold text-[14px] sm:text-[15px] text-center leading-snug font-display truncate tracking-wide w-full px-2 mt-1" style={{ textShadow: `0 0 16px ${cfg.glow}0.6)` }}>
+        <p className="text-slate-900 font-extrabold text-[14px] sm:text-[15px] text-center leading-snug font-display truncate tracking-wide w-full px-2 mt-1">
           {name}
         </p>
 
@@ -142,7 +141,6 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
   const [selectedRarity, setSelectedRarity] = useState<number | null>(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const locale = useLocale();
-  const t = useTranslations('Common');
   const { isAdmin } = useAdmin();
 
   const debouncedSearch = useDebounce(search, 200);
@@ -179,51 +177,20 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
   }, [filtered.length]);
 
   return (
-    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
-
-      {/* ── Hero header ──────────────────────────────────────── */}
-      <div className="relative overflow-hidden">
-
-        <div className="max-w-7xl mx-auto px-6 pt-8 pb-8 relative z-10">
-          {/* Back link */}
-          <Link
-            className="inline-flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors text-xs font-black uppercase tracking-wider mb-6 group"
-            href="/"
+    <section className="artifact-catalog pb-12">
+      {isAdmin && (
+        <div className="max-w-7xl mx-auto px-6 pb-3 flex justify-end">
+          <button
+            onClick={() => setShowAddModal(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-violet-50 text-violet-800 border border-violet-200 hover:bg-violet-100 transition-colors"
           >
-            <svg
-              className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            Home
-          </Link>
-
-          <div className="flex flex-col sm:flex-row sm:items-end gap-4 justify-between">
-            <div>
-              <h1 className="page-title" style={{ fontSize: '2rem' }}>{t('artifacts')}</h1>
-              <p className="page-desc" style={{ marginTop: '0.5rem' }}>
-                {locale === 'vi' ? `Khám phá toàn bộ ${artifacts.length} bộ Thánh Di Vật` : `Browse all ${artifacts.length} artifact sets from Genshin Impact`}
-              </p>
-            </div>
-
-            {isAdmin && (
-              <button
-                onClick={() => setShowAddModal(true)}
-                className="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-black bg-violet-500/10 text-violet-300 border border-violet-500/20 hover:bg-violet-500/20 hover:border-violet-400/40 transition-all duration-200 shadow-lg shadow-violet-900/10"
-              >
-                <span className="text-base">✦</span>
-                Add New Artifact Set
-              </button>
-            )}
-          </div>
+            Add Artifact Set
+          </button>
         </div>
-      </div>
+      )}
 
       {/* ── Sticky filter bar ─────────────────────────────────── */}
-      <div className="sticky top-0 z-20 bg-[#121109]/85 backdrop-blur-xl border-b border-white/[0.05] shadow-[0_1px_0_rgba(255,255,255,0.03)]">
+      <div className="sticky top-[72px] z-20 bg-white/90 backdrop-blur-xl border-y border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
 
           {/* Search */}
@@ -241,13 +208,13 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               placeholder="Search artifact sets…"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full bg-[#1c1813]/80 border border-white/[0.08] text-white/90 pl-10 pr-9 py-2.5 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
+              className="w-full bg-slate-50 border border-slate-200 text-slate-900 pl-10 pr-9 py-2.5 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-slate-400"
               onFocus={e => {
-                e.target.style.borderColor = 'rgba(168,85,247,0.50)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(168,85,247,0.12)';
+                e.target.style.borderColor = 'rgba(49,140,123,0.5)';
+                e.target.style.boxShadow = '0 0 0 3px rgba(49,140,123,0.12)';
               }}
               onBlur={e => {
-                e.target.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.target.style.borderColor = 'rgba(23,43,58,0.13)';
                 e.target.style.boxShadow = 'none';
               }}
             />
@@ -269,8 +236,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               onClick={() => setSelectedRarity(null)}
               className={`px-4 py-1.5 rounded-full text-xs font-black border transition-all duration-200 ${
                 selectedRarity === null
-                  ? 'bg-white/10 text-white border-white/20 shadow-sm'
-                  : 'text-gray-500 border-white/6 hover:text-gray-300 hover:border-white/12 hover:bg-white/5'
+                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200 shadow-sm'
+                  : 'text-slate-600 border-slate-200 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
               All
@@ -280,8 +247,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               onClick={() => setSelectedRarity(selectedRarity === 5 ? null : 5)}
               className={`px-4 py-1.5 rounded-full text-xs font-black border transition-all duration-200 tracking-widest ${
                 selectedRarity === 5
-                  ? 'bg-amber-500/15 text-amber-300 border-amber-500/35 shadow-[0_0_12px_rgba(245,158,11,0.15)]'
-                  : 'text-gray-500 border-white/6 hover:text-amber-400 hover:border-amber-500/20 hover:bg-amber-500/8'
+                  ? 'bg-amber-50 text-amber-800 border-amber-200'
+                  : 'text-slate-600 border-slate-200 hover:text-amber-800 hover:border-amber-200 hover:bg-amber-50'
               }`}
             >
               ★★★★★
@@ -291,8 +258,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               onClick={() => setSelectedRarity(selectedRarity === 4 ? null : 4)}
               className={`px-4 py-1.5 rounded-full text-xs font-black border transition-all duration-200 tracking-widest ${
                 selectedRarity === 4
-                  ? 'bg-purple-500/15 text-purple-300 border-purple-500/35 shadow-[0_0_12px_rgba(168,85,247,0.15)]'
-                  : 'text-gray-500 border-white/6 hover:text-purple-400 hover:border-purple-500/20 hover:bg-purple-500/8'
+                  ? 'bg-violet-50 text-violet-800 border-violet-200'
+                  : 'text-slate-600 border-slate-200 hover:text-violet-800 hover:border-violet-200 hover:bg-violet-50'
               }`}
             >
               ★★★★
@@ -302,8 +269,8 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
               onClick={() => setSelectedRarity(selectedRarity === 3 ? null : 3)}
               className={`px-4 py-1.5 rounded-full text-xs font-black border transition-all duration-200 tracking-widest ${
                 selectedRarity === 3
-                  ? 'bg-sky-500/15 text-sky-300 border-sky-500/35 shadow-[0_0_12px_rgba(56,189,248,0.15)]'
-                  : 'text-gray-500 border-white/6 hover:text-sky-400 hover:border-sky-500/20 hover:bg-sky-500/8'
+                  ? 'bg-sky-50 text-sky-800 border-sky-200'
+                  : 'text-slate-600 border-slate-200 hover:text-sky-800 hover:border-sky-200 hover:bg-sky-50'
               }`}
             >
               ★★★
@@ -313,7 +280,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
           {/* Count */}
           <div className="sm:ml-auto flex-shrink-0">
             <p className="text-gray-600 text-[11px] font-bold whitespace-nowrap">
-              <span className="text-white font-extrabold">{filtered.length}</span>
+              <span className="text-slate-900 font-extrabold">{filtered.length}</span>
               {' / '}{artifacts.length} sets
             </p>
           </div>
@@ -323,8 +290,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
       {/* ── Card grid ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 py-6 pb-20">
         {filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#171410]/30 rounded-3xl border border-gray-900/60 shadow-inner">
-            <span className="text-4xl mb-3">👻</span>
+          <div className="flex flex-col items-center justify-center h-64 text-slate-600 bg-white rounded-3xl border border-slate-200">
             <p className="text-sm font-semibold">No artifact sets matched your criteria.</p>
           </div>
         ) : (
@@ -338,7 +304,7 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
         {/* Infinite Scroll Loader */}
         {visibleCount < filtered.length && (
           <div ref={loaderRef} className="w-full h-20 flex items-center justify-center mt-8">
-            <div className="w-6 h-6 border-2 border-violet-500/30 border-t-violet-500 rounded-full animate-spin"></div>
+            <div className="w-6 h-6 border-2 border-emerald-700/25 border-t-emerald-700 rounded-full animate-spin"></div>
           </div>
         )}
       </div>
@@ -350,6 +316,6 @@ export default function ArtifactsClient({ artifacts }: { artifacts: ArtifactSet[
           onSaved={() => window.location.reload()}
         />
       )}
-    </main>
+    </section>
   );
 }

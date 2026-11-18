@@ -1,27 +1,13 @@
 "use client";
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 export default function Template({ children }: { children: ReactNode }) {
-  const shouldReduceMotion = useReducedMotion();
-
-  const variants = {
-    hidden: { 
-      opacity: 0, 
-      y: shouldReduceMotion ? 0 : 20 
-    },
-    enter: { 
-      opacity: 1, 
-      y: 0 
-    },
-  };
-
   return (
     <motion.div
-      variants={variants}
-      initial="hidden"
-      animate="enter"
+      initial={false}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ 
         type: "spring", 
         stiffness: 260, 

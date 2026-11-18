@@ -9,11 +9,11 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
           top: '72px',
           maxHeight: mobileOpen ? '600px' : '0px',
           transition: 'max-height 0.35s cubic-bezier(0.16,1,0.3,1)',
-          background: 'rgba(21,17,22,0.98)',
+          background: 'rgba(23,43,58,0.98)',
           backdropFilter: 'blur(28px)',
           WebkitBackdropFilter: 'blur(28px)',
           borderBottom: mobileOpen ? '1px solid rgba(255,255,255,0.09)' : 'none',
-          boxShadow: mobileOpen ? '0 20px 60px rgba(0,0,0,0.7)' : 'none',
+          boxShadow: mobileOpen ? '0 20px 60px rgba(9,34,48,0.35)' : 'none',
         }}
       >
         <div className="flex flex-col p-4 gap-1">
@@ -26,9 +26,9 @@ export function MobileMenu({ navLinks, mobileOpen, setMobileOpen, isActive, hand
                 onClick={link.href === '/' ? handleLogoClick : undefined}
                 className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-bold"
                 style={{
-                  background: active ? 'rgba(255,255,255,0.07)' : 'transparent',
-                  border: active ? '1px solid rgba(255,255,255,0.12)' : '1px solid transparent',
-                  color: active ? '#e8e2d2' : 'rgba(255,255,255,0.55)',
+                  background: active ? 'rgba(85,181,194,0.15)' : 'transparent',
+                  border: active ? '1px solid rgba(155,216,206,0.25)' : '1px solid transparent',
+                  color: active ? '#b7eee2' : 'rgba(255,255,255,0.72)',
                   transition: 'background 0.2s ease, border-color 0.2s ease, color 0.2s ease',
                 }}
               >

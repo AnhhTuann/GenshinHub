@@ -47,7 +47,7 @@ async function ArtifactsContent() {
 
 export default async function ArtifactsPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
+    <main className="min-h-screen text-[var(--text-primary)]" style={{ background: 'var(--bg-base)' }}>
       {/* Ambient */}
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-24">

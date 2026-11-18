@@ -48,7 +48,7 @@ async function WeaponsContent() {
 
 export default async function WeaponsPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
+    <main className="min-h-screen text-[var(--text-primary)]" style={{ background: 'var(--bg-base)' }}>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-24">
         <Suspense fallback={<WeaponsSkeleton />}>

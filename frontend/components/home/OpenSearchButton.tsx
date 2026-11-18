@@ -1,5 +1,7 @@
 "use client";
 
+import { Search } from "lucide-react";
+
 export default function OpenSearchButton({ label }: { label: string }) {
   return (
     <button
@@ -7,7 +9,7 @@ export default function OpenSearchButton({ label }: { label: string }) {
       className="home-search-button"
       onClick={() => window.dispatchEvent(new Event("open-command-palette"))}
     >
-      <span className="home-search-icon" aria-hidden="true">⌕</span>
+      <Search className="home-search-icon" size={16} aria-hidden="true" />
       <span>{label}</span>
       <kbd>Ctrl K</kbd>
     </button>

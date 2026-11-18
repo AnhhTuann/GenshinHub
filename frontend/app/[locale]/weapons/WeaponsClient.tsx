@@ -2,9 +2,8 @@
 
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
-import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useAdmin } from '@/hooks/useAdmin';
 import dynamic from 'next/dynamic';
 import { useDebounce } from '@/hooks/useDebounce';
@@ -35,14 +34,6 @@ const WEAPON_TYPE_DB: Record<string, string[]> = {
   'Bow': ['Cung', 'Bow'],
   'Catalyst': ['Pháp Khí', 'Catalyst'],
 };
-const WEAPON_TYPE_ICONS: Record<string, string> = {
-  'Sword': '⚔️',
-  'Claymore': '🗡️',
-  'Polearm': '🔱',
-  'Bow': '🏹',
-  'Catalyst': '📖',
-};
-
 const RARITIES = [5, 4, 3, 2, 1];
 
 export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
@@ -53,7 +44,6 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   const [sortAsc, setSortAsc] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
   const locale = useLocale();
-  const t = useTranslations('Common');
   const { isAdmin } = useAdmin();
 
   const debouncedSearch = useDebounce(search, 200);
@@ -117,32 +107,22 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30 relative overflow-hidden">
-
-      {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 pt-8 pb-4">
-        <Link className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 text-xs font-black uppercase tracking-wider w-fit mb-6" href="/">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-          Home
-        </Link>
-        <h1 className="page-title" style={{ fontSize: '2rem' }}>{t('weapons')}</h1>
-        <div className="flex items-center gap-4">
-          <p className="page-desc" style={{ marginTop: 0 }}>{locale === 'vi' ? `Khám phá toàn bộ ${weapons.length} vũ khí` : `Explore all ${weapons.length} weapons in Genshin Impact`}</p>
-          {isAdmin && (
-            <button
-              onClick={() => setShowAddModal(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 transition-all"
-            >
-              ➕ Add New Weapon
-            </button>
-          )}
+    <section className="weapon-catalog pb-12">
+      {isAdmin && (
+        <div className="max-w-7xl mx-auto px-6 pb-3 flex justify-end">
+          <button
+            onClick={() => setShowAddModal(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition-colors"
+          >
+            Add New Weapon
+          </button>
         </div>
-      </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-6">
         {/* Sidebar Filters */}
         <div className="lg:w-64 flex-shrink-0">
-          <div className="bg-[#171410]/75 border border-gray-900 rounded-2xl p-5 sticky top-20 flex flex-col gap-6 shadow-xl backdrop-blur-md">
+          <div className="catalog-filter-panel bg-white border border-slate-200 rounded-2xl p-5 sticky top-24 flex flex-col gap-6 shadow-sm">
             {/* Search */}
             <div>
               <label className="text-gray-500 text-[9px] font-black uppercase tracking-widest mb-2 block font-display">Search</label>
@@ -153,15 +133,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                   placeholder="Weapon name..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  className="w-full bg-[#1c1813]/80 border border-white/[0.08] text-white/90 pl-9 pr-3 py-2.5 rounded-xl outline-none text-xs font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
-                  onFocus={e => {
-                    e.target.style.borderColor = 'rgba(232,182,76,0.4)';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(232,182,76,0.1)';
-                  }}
-                  onBlur={e => {
-                    e.target.style.borderColor = 'rgba(255,255,255,0.08)';
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 pl-9 pr-3 py-2.5 rounded-xl outline-none text-xs font-medium transition-all placeholder:text-slate-400"
                 />
               </div>
             </div>
@@ -176,11 +148,10 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     onClick={() => setSelectedType(type)}
                     className={`text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all border ${
                       selectedType === type
-                        ? 'bg-amber-500/15 text-amber-300 border-amber-500/35 shadow-[0_0_12px_rgba(245,158,11,0.15)]'
-                        : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border-white/5'
+                        ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
+                        : 'bg-slate-50 text-slate-600 hover:text-slate-900 hover:bg-slate-100 border-slate-200'
                     }`}
                   >
-                    {type !== 'All' && <span className="mr-2 select-none">{WEAPON_TYPE_ICONS[type]}</span>}
                     {type}
                   </button>
                 ))}
@@ -229,20 +200,20 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     }}
                     className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold transition-all border ${
                       sortBy === opt.key
-                        ? 'bg-yellow-500/10 text-yellow-455 border-yellow-500/20'
-                        : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent'
+                        ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border-transparent'
                     }`}
                   >
                     {opt.label}
-                    {sortBy === opt.key && <span className="text-yellow-500 font-extrabold">{sortAsc ? '↑' : '↓'}</span>}
+                    {sortBy === opt.key && <span className="text-emerald-700 font-extrabold">{sortAsc ? '↑' : '↓'}</span>}
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Stats */}
-            <div className="pt-4 border-t border-gray-950">
-              <p className="text-gray-550 text-[10px] font-bold">Showing <span className="text-white font-extrabold">{filtered.length}</span> / {weapons.length} weapons</p>
+            <div className="pt-4 border-t border-slate-200">
+              <p className="text-slate-600 text-[10px] font-semibold">Showing <span className="text-slate-900 font-extrabold">{filtered.length}</span> / {weapons.length} weapons</p>
             </div>
           </div>
         </div>
@@ -250,8 +221,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
         {/* Main Grid */}
         <div className="flex-1 min-w-0">
           {filtered.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-64 text-gray-500 bg-[#171410]/30 rounded-2xl border border-gray-900/60 shadow-inner">
-              <span className="text-4xl mb-3">👻</span>
+            <div className="flex flex-col items-center justify-center h-64 text-slate-600 bg-white rounded-2xl border border-slate-200">
               <p className="text-sm font-semibold">No weapons matched your filters.</p>
             </div>
           ) : (
@@ -265,9 +235,9 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     href={`/weapons/${weapon.id}`}
                     className="group relative flex flex-col justify-between overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1"
                     style={{
-                      background: `linear-gradient(145deg, rgba(12,12,24,0.95) 0%, rgba(5,5,12,0.98) 100%)`,
+                      background: 'linear-gradient(155deg, #ffffff 0%, #f3f8f9 100%)',
                       border: `1px solid ${cfg.border}`,
-                      boxShadow: `0 4px 20px rgba(0,0,0,0.4)`,
+                      boxShadow: '0 8px 24px rgba(23,43,58,0.07)',
                     }}
                   >
                     {/* Hover border glow */}
@@ -286,7 +256,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                     <div className="relative w-full aspect-[4/5] p-[1.5px]">
                       <div
                         className="w-full h-full rounded-[22px] overflow-hidden flex items-center justify-center relative"
-                        style={{ background: `linear-gradient(to top, ${cfg.bg} 0%, rgba(5,5,12,0.9) 100%)` }}
+                        style={{ background: `linear-gradient(to top, ${cfg.bg} 0%, #eaf1f3 100%)` }}
                       >
                         {/* Glow dot behind weapon */}
                         <div
@@ -302,30 +272,28 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                             className="object-contain p-2 group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
                           />
                         ) : (
-                          <div className="text-4xl select-none opacity-30">{WEAPON_TYPE_ICONS[weapon.type] || '⚔️'}</div>
+                          <div className="text-sm font-bold uppercase tracking-wider text-slate-400">{weapon.type}</div>
                         )}
                         
                         {/* Weapon type pill */}
-                        <div className="absolute top-2 left-2 px-2 py-1 rounded-md backdrop-blur-md bg-black/40 border border-white/10 flex items-center gap-1.5">
-                          <span className="text-[10px] leading-none">{WEAPON_TYPE_ICONS[weapon.type]}</span>
-                          <span className="text-[8px] font-black uppercase text-white/50 tracking-wider hidden xs:block">{weapon.type}</span>
+                        <div className="absolute top-2 left-2 px-2 py-1 rounded-md backdrop-blur-md bg-[#172b3a]/80 border border-white/10 flex items-center">
+                          <span className="text-[9px] font-bold uppercase text-white/90 tracking-wide">{weapon.type}</span>
                         </div>
                         
                         {/* Base ATK badge */}
-                        <div className="absolute top-2 right-2 px-1.5 py-1 rounded-md backdrop-blur-md bg-black/40 border border-white/10 text-[9px] font-black text-white/70 tracking-widest">
+                        <div                         className="absolute top-2 right-2 px-1.5 py-1 rounded-md backdrop-blur-md bg-[#172b3a]/80 border border-white/10 text-[9px] font-bold text-white/90 tracking-wide">
                           ATK {weapon.baseAtk}
                         </div>
                       </div>
                     </div>
 
                     {/* Bottom Info */}
-                    <div className="relative z-10 p-4 flex flex-col items-center border-t border-white/5">
+                    <div className="relative z-10 p-4 flex flex-col items-center border-t border-slate-200">
                       {/* Name */}
                       <p
                         className="text-[13px] sm:text-[15px] font-extrabold text-center leading-snug truncate transition-colors w-full tracking-wide px-2"
                         style={{
-                          color: '#fff',
-                          textShadow: `0 0 16px ${cfg.glow}0.6)`,
+                          color: '#172b3a',
                         }}
                       >
                         {name}
@@ -342,7 +310,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
                       
                       {/* Substat hint */}
                       {weapon.subStat && (
-                        <div className="mt-2 text-[9px] font-bold text-white/40 uppercase tracking-widest bg-white/5 px-2 py-0.5 rounded-full border border-white/5">
+                        <div className="mt-2 text-[9px] font-bold text-slate-600 uppercase tracking-widest bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
                           {weapon.subStat}
                         </div>
                       )}
@@ -356,7 +324,7 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           {/* Infinite Scroll Loader */}
           {visibleCount < filtered.length && (
             <div ref={loaderRef} className="w-full h-20 flex items-center justify-center mt-8">
-              <div className="w-6 h-6 border-2 border-amber-500/30 border-t-amber-500 rounded-full animate-spin"></div>
+              <div className="w-6 h-6 border-2 border-emerald-700/25 border-t-emerald-700 rounded-full animate-spin"></div>
             </div>
           )}
         </div>
@@ -368,6 +336,6 @@ export default function WeaponsClient({ weapons }: { weapons: Weapon[] }) {
           onSaved={() => window.location.reload()}
         />
       )}
-    </main>
+    </section>
   );
 }

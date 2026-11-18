@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, Noto_Sans, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
 import AdminModeToggle from "@/components/AdminModeToggle";
@@ -14,28 +14,22 @@ import CustomCursor from '@/components/shared/CustomCursor';
 import PageTransition from '@/components/shared/PageTransition';
 import { ThemeProvider } from '@/context/ThemeContext';
 
-const inter = Inter({ 
+const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  variable: "--font-inter",
+  variable: "--font-be-vietnam-pro",
+  weight: ["400", "500", "600", "700", "800"],
   display: 'swap',
 });
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   subsets: ["latin", "vietnamese"],
-  variable: "--font-outfit", // keep the variable name so CSS still works without changes
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-cinzel",
-  weight: ["400", "700", "900"],
+  variable: "--font-noto-sans",
   display: 'swap',
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains-mono",
   weight: ["400", "700"],
   display: 'swap',
 });
@@ -144,7 +138,7 @@ export default async function RootLayout({ children, params }: { children: React
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${montserrat.variable} ${playfair.variable} ${jetbrainsMono.variable} ${inter.className} text-white antialiased`} suppressHydrationWarning>
+      <body className={`${beVietnamPro.variable} ${notoSans.variable} ${jetbrainsMono.variable} ${notoSans.className} antialiased`} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             <UISoundProvider>
@@ -153,20 +147,20 @@ export default async function RootLayout({ children, params }: { children: React
               <Toaster 
               position="bottom-center"
               toastOptions={{
-                className: 'bg-[#171410]/80 backdrop-blur-md border border-white/10 text-white shadow-xl',
+                className: 'border shadow-xl',
                 style: {
-                  background: 'rgba(10,10,15,0.8)',
+                  background: 'rgba(255,255,255,0.96)',
                   backdropFilter: 'blur(12px)',
-                  color: '#fff',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  color: '#172b3a',
+                  border: '1px solid rgba(23,43,58,0.12)',
                   borderRadius: '16px',
                   padding: '12px 16px',
                   fontSize: '14px',
                   fontWeight: 600,
                 },
                 success: {
-                  iconTheme: { primary: '#86a98f', secondary: '#fff' },
-                  style: { borderColor: 'rgba(134,169,143,0.3)' }
+                  iconTheme: { primary: '#7C5AE0', secondary: '#fff' },
+                  style: { borderColor: 'rgba(124,90,224,0.3)' }
                 },
                 error: {
                   iconTheme: { primary: '#ef4444', secondary: '#fff' },
@@ -187,16 +181,16 @@ export default async function RootLayout({ children, params }: { children: React
                     <svg className="w-5 h-5 opacity-40" viewBox="0 0 100 100" fill="none">
                       <defs>
                         <linearGradient id="footer-logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%"   stopColor="#8e97a8" />
-                          <stop offset="50%"  stopColor="#e2c88f" />
-                          <stop offset="100%" stopColor="#f7bd4a" />
+                                    <stop offset="0%"   stopColor="#9B7AFF" />
+                                    <stop offset="50%"  stopColor="#7C5AE0" />
+                                    <stop offset="100%" stopColor="#E8B84C" />
                         </linearGradient>
                       </defs>
                       <path d="M50 0 C50 35,65 50,100 50 C65 50,50 65,50 100 C50 65,35 50,0 50 C35 50,50 35,50 0 Z" fill="url(#footer-logo-g)" />
                     </svg>
-                    <span className="text-white/20 font-black text-xs tracking-widest uppercase">GenshinHub</span>
+                    <span className="text-[var(--text-secondary)] font-black text-xs tracking-widest uppercase">GenshinHub</span>
                   </div>
-                  <p className="text-white/15 text-[11px] font-semibold">© 2026 GenshinHub. All rights reserved.</p>
+                  <p className="text-[var(--text-tertiary)] text-[11px] font-semibold">© 2026 GenshinHub. All rights reserved.</p>
                 </div>
               </footer>
             </div>

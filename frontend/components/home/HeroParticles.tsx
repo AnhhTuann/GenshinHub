@@ -9,33 +9,46 @@ class Particle {
   speedY: number;
   speedX: number;
   opacity: number;
+  maxOpacity: number;
   hue: number;
+  pulseSpeed: number;
+  pulseAngle: number;
 
-  constructor(width: number, height: number) {
+  constructor(width: number, height: number, initial = false) {
     this.x = Math.random() * width;
-    this.y = Math.random() * height + height; // start below
-    this.size = Math.random() * 2 + 0.5;
-    this.speedY = Math.random() * -1 - 0.5;
-    this.speedX = Math.random() * 1 - 0.5;
-    this.opacity = Math.random() * 0.5 + 0.1;
-    this.hue = Math.random() * 30 + 35; // gold-ish hues
+    this.y = initial ? Math.random() * height : height + 10;
+    this.size = Math.random() * 2 + 0.8;
+    this.speedY = -(Math.random() * 0.6 + 0.25);
+    this.speedX = (Math.random() - 0.5) * 0.4;
+    this.maxOpacity = Math.random() * 0.4 + 0.15;
+    this.opacity = this.maxOpacity;
+    // 70% soft violet/amethyst, 30% warm starlight amber
+    this.hue = Math.random() > 0.3 ? 260 + Math.random() * 20 : 42 + Math.random() * 10;
+    this.pulseSpeed = Math.random() * 0.03 + 0.01;
+    this.pulseAngle = Math.random() * Math.PI * 2;
   }
 
-  update(height: number) {
+  update(width: number, height: number) {
     this.y += this.speedY;
     this.x += this.speedX;
-    
-    if (this.y < 0) {
+    this.pulseAngle += this.pulseSpeed;
+    this.opacity = (Math.sin(this.pulseAngle) * 0.5 + 0.5) * this.maxOpacity;
+
+    if (this.y < -10) {
       this.y = height + 10;
-      this.opacity = Math.random() * 0.5 + 0.1;
+      this.x = Math.random() * width;
     }
   }
 
   draw(ctx: CanvasRenderingContext2D) {
+    ctx.save();
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `hsla(${this.hue}, 100%, 70%, ${this.opacity})`;
+    ctx.fillStyle = `hsla(${this.hue}, 85%, 75%, ${this.opacity})`;
+    ctx.shadowBlur = this.size * 3;
+    ctx.shadowColor = `hsla(${this.hue}, 90%, 70%, 0.6)`;
     ctx.fill();
+    ctx.restore();
   }
 }
 
@@ -55,24 +68,24 @@ export default function HeroParticles() {
 
     const resize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = 400; // Match hero height roughly
-      
-      // Initialize particles on resize
+      canvas.height = Math.min(window.innerHeight * 0.85, 750);
+
       particles.current = [];
-      const count = window.innerWidth < 768 ? 30 : 80;
+      const count = window.innerWidth < 768 ? 25 : 60;
       for (let i = 0; i < count; i++) {
-        particles.current.push(new Particle(canvas.width, canvas.height));
+        particles.current.push(new Particle(canvas.width, canvas.height, true));
       }
     };
+
     resize();
     window.addEventListener("resize", resize);
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       for (let i = 0; i < particles.current.length; i++) {
         const p = particles.current[i];
-        p.update(canvas.height);
+        p.update(canvas.width, canvas.height);
         p.draw(ctx);
       }
       animationFrame.current = requestAnimationFrame(animate);
@@ -88,8 +101,11 @@ export default function HeroParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      className="absolute top-0 left-0 w-full pointer-events-none z-0"
+      style={{
+        maskImage: "linear-gradient(to bottom, black 65%, transparent 100%)",
+        WebkitMaskImage: "linear-gradient(to bottom, black 65%, transparent 100%)",
+      }}
     />
   );
 }

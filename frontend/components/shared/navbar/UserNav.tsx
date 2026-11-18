@@ -30,7 +30,7 @@ export function UserNav() {
     return (
       <Link
         href="/auth/login"
-        className="px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 bg-[#e8b64c]/10 hover:bg-[#e8b64c]/20 border border-[#e8b64c]/30 text-[#ffdf9e]"
+        className="px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 bg-[rgba(85,181,194,0.14)] hover:bg-[rgba(85,181,194,0.22)] border border-[rgba(155,216,206,0.32)] text-[#b7eee2]"
       >
         Login
       </Link>
@@ -60,7 +60,7 @@ export function UserNav() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-48 rounded-2xl bg-[#171410] border border-white/10 shadow-xl overflow-hidden py-2 z-50">
+        <div className="site-nav-menu absolute right-0 top-full mt-2 w-48 rounded-2xl border border-white/10 overflow-hidden py-2 z-50">
           <div className="px-4 py-2 border-b border-white/5 mb-2">
             <p className="text-sm font-bold text-white truncate">{user.displayName || user.username}</p>
             <p className="text-xs text-white/40 truncate">{user.email}</p>

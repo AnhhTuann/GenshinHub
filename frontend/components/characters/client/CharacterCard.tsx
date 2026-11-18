@@ -108,20 +108,20 @@ export default function CharacterCard({ character }: { character: CharacterData 
           whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.03 }}
           whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
           onClick={() => { setOverlayReady(true); setOverlayOpen(true); }}
-          className="relative cursor-pointer rounded-2xl overflow-hidden"
+          className="character-art-card relative cursor-pointer rounded-2xl overflow-hidden"
           style={{
-            aspectRatio: '4/5',
-            background: `radial-gradient(circle at 50% 30%, ${glow}0.15) 0%, rgba(10,10,15,0.95) 100%)`,
+            aspectRatio: '0.88',
+            background: `radial-gradient(circle at 50% 30%, ${glow}0.12) 0%, #e8f0f2 100%)`,
             boxShadow: hovered
-              ? `0 20px 60px -10px ${glow}0.55), 0 0 0 1.5px ${glow}0.4)`
+              ? `0 18px 40px -10px ${glow}0.32), 0 0 0 1.5px ${glow}0.4)`
               : is5
-                ? `0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px ${glow}0.25)`
-                : `0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px ${glow}0.2)`,
+                ? `0 8px 24px rgba(23,43,58,0.12), 0 0 0 1px ${glow}0.25)`
+                : `0 8px 24px rgba(23,43,58,0.1), 0 0 0 1px ${glow}0.2)`,
             transition: 'box-shadow 0.4s ease',
           }}
         >
           {/* ─── Element Watermark ───────────── */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.06] pointer-events-none mix-blend-screen overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none mix-blend-multiply overflow-hidden">
             <FallbackImage
               src={`/assets/elements/${el.toLowerCase()}.webp`}
               alt={el} fill
@@ -135,7 +135,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
               src={avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
               alt={name} fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
-              className="object-contain object-bottom pt-2 drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)]"
+              className="object-contain object-bottom pt-2 drop-shadow-[0_8px_16px_rgba(23,43,58,0.16)]"
               priority={false}
             />
           </div>
@@ -145,9 +145,9 @@ export default function CharacterCard({ character }: { character: CharacterData 
             className="absolute inset-x-0 bottom-0 h-1/2 pointer-events-none"
             style={{
               background: `linear-gradient(to top,
-                rgba(8,8,12,1) 0%,
-                rgba(12,12,18,0.9) 40%,
-                ${glow}0.3) 60%,
+                rgba(23,43,58,0.96) 0%,
+                rgba(23,43,58,0.82) 38%,
+                ${glow}0.24) 64%,
                 transparent 100%
               )`,
             }}
@@ -204,8 +204,8 @@ export default function CharacterCard({ character }: { character: CharacterData 
           <div className="absolute inset-x-0 bottom-0 z-10 p-3 pointer-events-none flex flex-col justify-end">
             {/* Name */}
             <div
-              className="text-[13px] sm:text-base font-black tracking-wide leading-tight mb-1 truncate drop-shadow-[0_0_12px_rgba(0,0,0,0.8)]"
-              style={{ color: '#fff', textShadow: `0 0 15px ${glow}0.8)` }}
+              className="text-[13px] sm:text-base font-bold tracking-wide leading-tight mb-1 truncate"
+              style={{ color: '#fff', textShadow: '0 1px 5px rgba(23,43,58,0.35)' }}
             >
               {name}
             </div>

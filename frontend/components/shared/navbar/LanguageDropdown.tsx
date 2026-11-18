@@ -53,17 +53,17 @@ export default function LanguageDropdown() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 rounded-xl px-3 py-1.5 transition-all duration-200 group"
         style={{
-          background: 'rgba(16,22,46,0.6)',
-          border: '1px solid rgba(255,255,255,0.06)',
+          background: 'rgba(255,255,255,0.08)',
+          border: '1px solid rgba(255,255,255,0.16)',
         }}
       >
-        <span className="text-white/80 text-[10px] font-black uppercase tracking-widest group-hover:text-[var(--theme-light)] transition-colors">
+        <span className="text-white/85 text-[10px] font-bold uppercase tracking-widest group-hover:text-[#b7eee2] transition-colors">
           {locale.toUpperCase()}
         </span>
         <motion.svg
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          width="10" height="6" viewBox="0 0 10 6" fill="none" className="text-white/50 group-hover:text-[var(--theme-light)]"
+          width="10" height="6" viewBox="0 0 10 6" fill="none" className="text-white/65 group-hover:text-[#b7eee2]"
         >
           <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </motion.svg>
@@ -76,7 +76,7 @@ export default function LanguageDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full right-0 mt-2 w-max min-w-[120px] max-h-60 overflow-y-auto custom-scrollbar rounded-xl z-50 flex flex-col p-1 glass-strong border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+            className="site-nav-menu absolute top-full right-0 mt-2 w-max min-w-[120px] max-h-60 overflow-y-auto custom-scrollbar rounded-xl z-50 flex flex-col p-1"
           >
             {LOCALES.map((l) => (
               <button
@@ -84,8 +84,8 @@ export default function LanguageDropdown() {
                 onClick={() => handleSelect(l)}
                 className={`px-3 py-2 text-xs font-bold text-left rounded-lg transition-all duration-200 ${
                   locale === l
-                    ? 'text-[var(--theme-main)] bg-white/5'
-                    : 'text-white/60 hover:text-[var(--theme-light)] hover:bg-white/5'
+                    ? 'text-[#b7eee2] bg-white/10'
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {LOCALE_NAMES[l]}

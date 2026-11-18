@@ -61,17 +61,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="site-nav sticky top-0 z-50 w-full"
-        style={{
-          background: scrolled ? 'rgba(13,12,10,0.97)' : 'rgba(13,12,10,0.90)',
-          backdropFilter: `blur(${scrolled ? 14 : 8}px)`,
-          WebkitBackdropFilter: `blur(${scrolled ? 14 : 8}px)`,
-          borderBottom: scrolled
-            ? '1px solid rgba(255,255,255,0.09)'
-            : '1px solid rgba(255,255,255,0.055)',
-          boxShadow: scrolled ? '0 8px 28px rgba(0,0,0,0.2)' : 'none',
-          transition: 'background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease',
-        }}
+        className={`site-nav sticky top-0 z-50 w-full${scrolled ? ' is-scrolled' : ''}`}
       >
         <div className="site-nav-inner max-w-[1480px] mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-5">
 
@@ -88,19 +78,10 @@ export default function Navbar() {
 
             {/* Text */}
             <div className="hidden sm:flex flex-col leading-none">
-              <span
-                className="text-[15px] font-black tracking-[0.18em] uppercase"
-                style={{
-                  fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                  backgroundImage: 'linear-gradient(120deg, #f0ead9 0%, #e2c88f 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
+              <span className="site-brand-name text-[15px] font-black tracking-[0.12em] uppercase">
                 GENSHINHUB
               </span>
-              <span className="mt-1.5 text-[8px] font-semibold tracking-[0.24em] text-white/35 uppercase">Teyvat field guide</span>
+              <span className="mt-1.5 text-[8px] font-semibold tracking-[0.16em] text-white/55 uppercase">Teyvat field guide</span>
             </div>
           </Link>
 

@@ -10,10 +10,14 @@
     "seed": "prisma db seed",
     "export": "ts-node src/export-cli.ts",
     "sync-assets": "ts-node scripts/sync-assets.ts",
+    "sync:assets": "ts-node scripts/sync-assets.ts --sync",
+    "sync:assets:check": "ts-node scripts/sync-assets.ts",
     "sync:check": "ts-node scripts/sync/syncEngine.ts --dry-run",
     "sync:run": "ts-node scripts/sync/syncEngine.ts --sync --download-assets",
     "sync:validate": "ts-node scripts/sync/syncEngine.ts --validate --dry-run",
-    "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback"
+    "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback",
+    "sync:e2e": "ts-node scripts/sync/e2e.test.ts",
+    "test:assets": "ts-node scripts/sync/asset.test.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

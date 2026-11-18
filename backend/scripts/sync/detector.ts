@@ -99,12 +99,15 @@ export interface MaterialSource {
   genshinDbName: string;
   nameEn: string;
   nameVi: string;
-  rarity: number;
+  rarity: number;          // 0 = nguồn không có -> engine sẽ pending, không bịa
   iconUrl: string | null;
+  externalId: string | null; // game item ID từ genshin-db (cùng namespace yatta)
+  typeText: string;          // phân loại tiếng Anh từ nguồn (vd: 'Refinement Material')
+  category?: string;
 }
 
 export interface DiffEntry<T> {
-  action: 'create' | 'update' | 'unchanged';
+  action: 'create' | 'update' | 'unchanged' | 'pending';
   dbId: string | null; // null khi create và chưa resolve được external ID
   sourceName: string;
   source: T;
@@ -346,6 +349,9 @@ function mapMaterial(genshinName: string): MaterialSource | null {
     nameVi: clean(vi?.name) || clean(en.name),
     rarity: typeof en.rarity === 'number' ? en.rarity : 0,
     iconUrl: materialIconPath(en.images?.filename_icon),
+    externalId: typeof en.id === 'number' ? String(en.id) : null,
+    typeText: clean(en.typeText),
+    category: clean(en.category) || undefined,
   };
 }
 
@@ -412,7 +418,7 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
 
     if (!dbRow) {
       report.characters.push({
-        action: 'create',
+        action: source.pending ? 'pending' : 'create',
         dbId: slugId,
         sourceName: source.nameEn,
         source,
@@ -514,7 +520,7 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
     });
   }
 
-  // ---------- Materials (detect-only, không tạo mới) ----------
+  // ---------- Materials (update + tạo mới khi có ID/rarity đáng tin) ----------
   for (const name of uniqueNames(allNames((q, o) => genshindb.materials(q, o)))) {
     const source = mapMaterial(name);
     if (!source) continue;
@@ -523,12 +529,14 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
 
     if (!dbRow) {
       report.materials.push({
-        action: 'create',
+        action: source.rarity ? 'create' : 'pending',
         dbId: null,
         sourceName: source.nameEn,
         source,
         changes: [],
-        warnings: ['Material mới — bỏ qua tạo (type mapping chưa ổn định), chỉ báo cáo'],
+        warnings: source.rarity
+          ? ['Material mới — sẽ tạo với game ID từ genshin-db (type best-effort)']
+          : ['Material mới nhưng nguồn thiếu rarity — giữ pending, không tạo (không bịa dữ liệu)'],
       });
       continue;
     }

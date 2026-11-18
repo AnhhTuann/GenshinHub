@@ -32,15 +32,15 @@ import * as genshindb from 'genshin-db';
 import { detectChanges, SyncReport, DiffEntry, GENSHIN_DB_VERSION } from './detector';
 import {
   characterSplashPath,
-  assetFolderName,
   normalizeName,
 } from './idMapper';
-import { downloadAndConvertToWebp } from '../../src/utils/imageDownloader';
+import { downloadWithFallback as downloadAssetWithFallback } from '../../src/utils/imageDownloader';
+import { resolveAssetFilePath, isValidImageFile, getAssetStorageRoot } from '../../src/utils/assetStorage';
 
 const prisma = new PrismaClient();
 
 const BACKEND_ROOT = path.join(__dirname, '..', '..');
-const FRONTEND_PUBLIC = path.join(BACKEND_ROOT, '..', 'frontend', 'public');
+getAssetStorageRoot(); // khởi tạo/validate thư mục assets sớm
 const BACKUPS_DIR = path.join(BACKEND_ROOT, 'backups');
 const LOGS_DIR = path.join(BACKEND_ROOT, 'logs');
 const ENKA_UI = 'https://enka.network/ui';
@@ -107,7 +107,7 @@ async function takeSnapshot(entries: SnapshotEntry[]): Promise<string> {
   return file;
 }
 
-async function rollback(snapshotPath: string): Promise<void> {
+export async function rollback(snapshotPath: string): Promise<void> {
   const snap: Snapshot = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
   console.log(`↩️  Rollback từ snapshot ${snap.createdAt} (${snap.entries.length} entries)...`);
 
@@ -244,19 +244,44 @@ function validateReport(report: SyncReport): string[] {
 }
 
 // ------------------------------------------------------------------
+// Material type mapping (best-effort khi yatta không có item)
+// ------------------------------------------------------------------
+
+/**
+ * Map sang `type` camelCase của DB (theo convention gi.yatta.moe).
+ * Chỉ dùng khi tạo material mới không resolve được yatta — typeText
+ * từ genshin-db là phân loại hiển thị, không phải type DB.
+ */
+function mapMaterialType(s: { category?: string; typeText: string }): string {
+  const tt = (s.typeText || '').toLowerCase();
+  const cat = s.category || '';
+  if (tt.includes('weapon') && tt.includes('ascension')) return 'weaponAscensionMaterial';
+  if (tt.includes('adventure')) return 'adventureItem';
+  if (cat === 'WEAPON_EXP_STONE') return 'weaponAscensionMaterial';
+  if (cat === 'ELEM_CRYSTAL') return 'characterLevelUpMaterial';
+  return 'material';
+}
+
+// ------------------------------------------------------------------
 // Apply (sync)
 // ------------------------------------------------------------------
 
 function publicPathExists(rel: string): boolean {
-  return fs.existsSync(path.join(FRONTEND_PUBLIC, rel));
+  const abs = resolveAssetFilePath(rel);
+  return !!abs && isValidImageFile(abs);
 }
 
-export async function applyReport(report: SyncReport, downloadAssets: boolean): Promise<void> {
+export interface SyncDeps {
+  resolveYattaId?: (kind: 'weapon' | 'reliquary' | 'material', nameEn: string, nameVi: string) => Promise<string | null>;
+}
+
+export async function applyReport(report: SyncReport, downloadAssets: boolean, deps: SyncDeps = {}): Promise<void> {
+  const resolveId = deps.resolveYattaId || resolveYattaId;
   const snapshotEntries: SnapshotEntry[] = [];
 
   // ---------- Characters ----------
   for (const e of report.characters) {
-    if (e.action === 'unchanged') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
     if (e.action === 'create') {
       const id = e.dbId!;
@@ -346,10 +371,10 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 
   // ---------- Weapons ----------
   for (const e of report.weapons) {
-    if (e.action === 'unchanged') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
     if (e.action === 'create') {
-      const extId = await resolveYattaId('weapon', s.nameEn, s.nameVi);
+      const extId = await resolveId('weapon', s.nameEn, s.nameVi);
       if (!extId) {
         e.warnings.push('Không resolve được ID yatta — bỏ qua tạo (pending)');
         continue;
@@ -410,10 +435,10 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 
   // ---------- Artifact Sets ----------
   for (const e of report.artifacts) {
-    if (e.action === 'unchanged') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
     if (e.action === 'create') {
-      const extId = await resolveYattaId('reliquary', s.nameEn, s.nameVi);
+      const extId = await resolveId('reliquary', s.nameEn, s.nameVi);
       if (!extId) {
         e.warnings.push('Không resolve được ID yatta — bỏ qua tạo (pending)');
         continue;
@@ -461,10 +486,43 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
     console.log(`  ✏️  Artifact set cập nhật: ${s.nameEn} (${id}) — ${e.changes.length} trường`);
   }
 
-  // ---------- Materials: chỉ update, KHÔNG tạo ----------
+  // ---------- Materials ----------
   for (const e of report.materials) {
-    if (e.action !== 'update') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
+
+    if (e.action === 'create') {
+      // Ưu tiên ID yatta (kèm type/icon chuẩn); fallback game ID từ genshin-db
+      // (cùng namespace ID game, không phải ID bịa).
+      if (!s.rarity) {
+        e.warnings.push('Material thiếu rarity từ nguồn — bỏ qua tạo (pending)');
+        continue;
+      }
+      const yattaId = await resolveId('material', s.nameEn, s.nameVi);
+      const extId = yattaId || s.externalId;
+      if (!extId) {
+        e.warnings.push('Không có ID nguồn (yatta + genshin-db) — bỏ qua tạo');
+        continue;
+      }
+      const exists = await prisma.material.findUnique({ where: { id: extId }, select: { id: true } });
+      if (exists) { e.action = 'update'; e.dbId = extId; }
+      else {
+        snapshotEntries.push({ kind: 'material', action: 'create', id: extId, before: null });
+        await prisma.material.create({
+          data: {
+            id: extId,
+            nameEn: s.nameEn,
+            nameVi: s.nameVi,
+            type: mapMaterialType(s),
+            rarity: s.rarity,
+            iconUrl: s.iconUrl,
+          },
+        });
+        console.log(`  ➕ Material mới: ${s.nameEn} (${extId})`);
+        continue;
+      }
+    }
+
     const id = e.dbId!;
     const before = await prisma.material.findUnique({ where: { id } });
     if (!before) continue;
@@ -476,7 +534,7 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
         nameVi: s.nameVi,
         ...(s.rarity ? { rarity: s.rarity } : {}),
         ...(s.iconUrl ? { iconUrl: s.iconUrl } : {}),
-        // type giữ nguyên (mapping yatta <-> genshin-db chưa ổn định)
+        // type giữ nguyên (mapping nguồn chưa đủ tin cậy để ghi đè)
       },
     });
   }
@@ -495,10 +553,12 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 // ------------------------------------------------------------------
 
 interface GenshinAssetInfo {
-  avatarUrl?: string;   // URL nguồn trực tiếp (mihoyo)
-  splashUrl?: string;   // URL nguồn splash (enka UI)
-  iconUrl?: string;     // URL nguồn icon
+  avatarUrls?: string[];  // URL nguồn trực tiếp (mihoyo -> enka fallback)
+  splashUrls?: string[];  // URL nguồn splash (enka UI)
+  iconUrls?: string[];    // URL nguồn icon
 }
+
+const enka = (filename?: string) => (filename ? `${ENKA_UI}/${filename}.png` : undefined);
 
 function genshinCharacterAssetInfo(genshinName: string): GenshinAssetInfo {
   const en = genshindb.characters(genshinName) as any;
@@ -506,8 +566,8 @@ function genshinCharacterAssetInfo(genshinName: string): GenshinAssetInfo {
   const imgs = en.images || {};
   const splashFile = imgs.filename_gachaSplash || imgs.filename_sideIcon;
   return {
-    avatarUrl: imgs.mihoyo_icon || (imgs.filename_icon ? `${ENKA_UI}/${imgs.filename_icon}.png` : undefined),
-    splashUrl: splashFile ? `${ENKA_UI}/${splashFile}.png` : undefined,
+    avatarUrls: [imgs.mihoyo_icon, enka(imgs.filename_icon)].filter((u): u is string => Boolean(u)),
+    splashUrls: [enka(splashFile)].filter((u): u is string => Boolean(u)),
   };
 }
 
@@ -516,7 +576,7 @@ function genshinWeaponAssetInfo(genshinName: string): GenshinAssetInfo {
   if (!en) return {};
   const imgs = en.images || {};
   return {
-    iconUrl: imgs.mihoyo_icon || (imgs.filename_icon ? `${ENKA_UI}/${imgs.filename_icon}.png` : undefined),
+    iconUrls: [imgs.mihoyo_icon, enka(imgs.filename_icon), enka(imgs.filename_awakenIcon)].filter((u): u is string => Boolean(u)),
   };
 }
 
@@ -524,74 +584,89 @@ function genshinArtifactAssetInfo(genshinName: string): GenshinAssetInfo {
   const en = genshindb.artifacts(genshinName) as any;
   if (!en) return {};
   const imgs = en.images || {};
-  const f = imgs.filename_circlet || imgs.filename_goblet || imgs.filename_sands ||
-            imgs.filename_plume || imgs.filename_flower;
-  return { iconUrl: f ? `${ENKA_UI}/${f}.png` : undefined };
+  const f = imgs.filename_flower || imgs.filename_plume || imgs.filename_sands ||
+            imgs.filename_goblet || imgs.filename_circlet;
+  const mihoyoKey = f === imgs.filename_flower ? 'mihoyo_flower'
+    : f === imgs.filename_plume ? 'mihoyo_plume'
+    : f === imgs.filename_sands ? 'mihoyo_sands'
+    : f === imgs.filename_goblet ? 'mihoyo_goblet'
+    : 'mihoyo_circlet';
+  return { iconUrls: [imgs[mihoyoKey], enka(f)].filter((u): u is string => Boolean(u)) };
 }
 
 function genshinMaterialAssetInfo(genshinName: string): GenshinAssetInfo {
   const en = genshindb.materials(genshinName) as any;
   if (!en) return {};
-  const f = en.images?.filename_icon;
-  return { iconUrl: f ? `${ENKA_UI}/${f}.png` : undefined };
+  return { iconUrls: [enka(en.images?.filename_icon)].filter((u): u is string => Boolean(u)) };
 }
 
-async function downloadMissingAssets(report: SyncReport): Promise<void> {
-  let ok = 0, fail = 0, skipped = 0;
+export interface AssetSyncResult {
+  ok: number;
+  fail: number;
+  skipped: number;
+  unprocessed: { label: string; urls: string[] }[];
+}
 
-  const jobs: { url?: string; dest: string; label: string }[] = [];
+/**
+ * Tải ảnh với fallback: thử lần lượt các URL nguồn; chỉ ghi file khi
+ * download + convert WebP thành công và file kết quả hợp lệ.
+ * KHÔNG ghi đè file đã tồn tại & hợp lệ (no-overwrite trong downloader).
+ */
+async function downloadWithFallback(urls: string[], dest: string, label: string): Promise<boolean> {
+  const res = await downloadAssetWithFallback(urls, dest, { skipExisting: true });
+  if (res.ok) return true;
+  console.log(`     ↳ ${label}: ${res.error} (đã thử ${res.tried.length} nguồn)`);
+  return false;
+}
+
+async function downloadMissingAssets(report: SyncReport): Promise<AssetSyncResult> {
+  const result: AssetSyncResult = { ok: 0, fail: 0, skipped: 0, unprocessed: [] };
+  const jobs: { urls: string[]; dest: string; label: string }[] = [];
+
+  const pushJob = (urls: string[] | undefined, rel: string | null | undefined, label: string) => {
+    if (!urls || urls.length === 0 || !rel) { result.skipped++; return; }
+    const dest = resolveAssetFilePath(rel);
+    if (!dest) { result.skipped++; return; }
+    if (fs.existsSync(dest) && isValidImageFile(dest)) { result.skipped++; return; }
+    jobs.push({ urls, dest, label });
+  };
 
   for (const e of [...report.characters, ...report.weapons, ...report.artifacts, ...report.materials]) {
-    if (e.action === 'unchanged') continue;
-    const name = (e.source as any).genshinDbName as string;
+    if (e.action !== 'create' && e.action !== 'update') continue;
+    const src = e.source as any;
+    const name = src.genshinDbName as string;
     if (!name) continue;
 
-    if ('baseHp' in e.source) {
+    if ('baseHp' in src) {
       const info = genshinCharacterAssetInfo(name);
-      const avatarDest = path.join(FRONTEND_PUBLIC, (e.source as any).avatarUrl);
-      if (info.avatarUrl && !fs.existsSync(avatarDest)) {
-        jobs.push({ url: info.avatarUrl, dest: avatarDest, label: `avatar:${name}` });
-      } else skipped++;
-      const splashRel = characterSplashPath((e.source as any).nameEn);
-      const splashDest = path.join(FRONTEND_PUBLIC, splashRel);
-      if (info.splashUrl && !fs.existsSync(splashDest)) {
-        jobs.push({ url: info.splashUrl, dest: splashDest, label: `splash:${name}` });
-      }
-    } else if ('baseAtk' in e.source && 'typeVi' in e.source) {
+      pushJob(info.avatarUrls, src.avatarUrl, `avatar:${name}`);
+      pushJob(info.splashUrls, characterSplashPath(src.nameEn), `splash:${name}`);
+    } else if ('baseAtk' in src && 'typeVi' in src) {
       const info = genshinWeaponAssetInfo(name);
-      const rel = (e.source as any).iconUrl as string | null;
-      if (info.iconUrl && rel) {
-        const dest = path.join(FRONTEND_PUBLIC, rel);
-        if (!fs.existsSync(dest)) jobs.push({ url: info.iconUrl, dest, label: `weapon:${name}` });
-        else skipped++;
-      } else skipped++;
-    } else if ('rarityList' in e.source) {
+      pushJob(info.iconUrls, src.iconUrl, `weapon:${name}`);
+    } else if ('rarityList' in src) {
       const info = genshinArtifactAssetInfo(name);
-      const rel = (e.source as any).iconUrl as string | null;
-      if (info.iconUrl && rel) {
-        const dest = path.join(FRONTEND_PUBLIC, rel);
-        if (!fs.existsSync(dest)) jobs.push({ url: info.iconUrl, dest, label: `artifact:${name}` });
-        else skipped++;
-      } else skipped++;
-    } else if ('rarity' in e.source && 'iconUrl' in e.source && !('piece2DescEn' in e.source)) {
+      pushJob(info.iconUrls, src.iconUrl, `artifact:${name}`);
+    } else if ('externalId' in src) {
       const info = genshinMaterialAssetInfo(name);
-      const rel = (e.source as any).iconUrl as string | null;
-      if (info.iconUrl && rel) {
-        const dest = path.join(FRONTEND_PUBLIC, rel);
-        if (!fs.existsSync(dest)) jobs.push({ url: info.iconUrl, dest, label: `material:${name}` });
-        else skipped++;
-      } else skipped++;
+      pushJob(info.iconUrls, src.iconUrl, `material:${name}`);
     }
   }
 
-  console.log(`🖼️  Asset jobs: ${jobs.length} cần tải, ${skipped} đã có sẵn.`);
+  console.log(`🖼️  Asset jobs: ${jobs.length} cần tải, ${result.skipped} đã có sẵn.`);
   for (const job of jobs) {
-    if (!job.url) { fail++; continue; }
-    const success = await downloadAndConvertToWebp(job.url, job.dest);
-    if (success) { ok++; console.log(`  ✅ ${job.label}`); }
-    else { fail++; console.log(`  ❌ ${job.label} <- ${job.url}`); }
+    const success = await downloadWithFallback(job.urls, job.dest, job.label);
+    if (success) {
+      result.ok++;
+      console.log(`  ✅ ${job.label}`);
+    } else {
+      result.fail++;
+      result.unprocessed.push({ label: job.label, urls: job.urls });
+      console.log(`  ❌ ${job.label} <- tất cả nguồn thất bại (${job.urls.length} URL)`);
+    }
   }
-  console.log(`🖼️  Assets: ${ok} tải mới, ${fail} lỗi, ${skipped} bỏ qua.`);
+  console.log(`🖼️  Assets: ${result.ok} tải mới, ${result.fail} lỗi, ${result.skipped} bỏ qua.`);
+  return result;
 }
 
 // ------------------------------------------------------------------
@@ -613,7 +688,7 @@ function section(title: string, entries: DiffEntry<any>[]): string {
   return `### ${title}\n\n| Action | DB ID | Tên | Trường thay đổi | Ghi chú |\n|---|---|---|---|---|\n${rows}\n`;
 }
 
-function buildMarkdownReport(report: SyncReport, mode: string): string {
+function buildMarkdownReport(report: SyncReport, mode: string, assetResult?: AssetSyncResult | null): string {
   const count = (kind: keyof SyncReport, action: string) =>
     (report[kind] as DiffEntry<any>[]).filter(e => e.action === action).length;
 
@@ -663,7 +738,12 @@ ${report.unmatchedInDb.materials.slice(0, 100).map(x => `- ${x}`).join('\n')}${r
 
 </details>
 
-> *Tài nguyên hình ảnh thuộc bản quyền của miHoYo Co., Ltd.*
+${assetResult ? `## Assets
+
+- Tải mới: ${assetResult.ok} | Lỗi: ${assetResult.fail} | Bỏ qua (đã có): ${assetResult.skipped}
+${assetResult.unprocessed.length ? `\n### Icon chưa xử lý được (${assetResult.unprocessed.length})\n\n${assetResult.unprocessed.map(u => `- ${u.label} — nguồn: ${u.urls.join(', ')}`).join('\n')}` : ''}
+
+` : ''}> *Tài nguyên hình ảnh thuộc bản quyền của miHoYo Co., Ltd.*
 `;
 }
 
@@ -734,6 +814,7 @@ async function main() {
   // ---------- Report file ----------
   fs.mkdirSync(LOGS_DIR, { recursive: true });
   const reportPath = args.reportPath || path.join(LOGS_DIR, `sync_report_${Date.now()}.md`);
+  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(reportPath, buildMarkdownReport(report, args.sync ? 'sync' : 'dry-run'));
   console.log(`\n📝 Báo cáo: ${reportPath}`);
 
@@ -747,9 +828,12 @@ async function main() {
   console.log('\n💾 Đang đồng bộ vào database...');
   await applyReport(report, args.downloadAssets);
 
+  let assetResult: AssetSyncResult | null = null;
   if (args.downloadAssets) {
     console.log('\n🖼️  Đang đồng bộ assets...');
-    await downloadMissingAssets(report);
+    assetResult = await downloadMissingAssets(report);
+    // Ghi lại report kèm kết quả assets
+    fs.writeFileSync(reportPath, buildMarkdownReport(report, 'sync', assetResult));
   }
 
   console.log('\n✅ SYNC HOÀN TẤT.');

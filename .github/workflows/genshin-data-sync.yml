@@ -1,16 +1,17 @@
-name: Genshin Data Sync
+name: Genshin Data Sync — Check (dry-run)
 
-# Pipeline đồng bộ dữ liệu game (genshin-db -> PostgreSQL -> Next.js ISR).
+# Workflow KIỂM TRA — an toàn, chỉ đọc database, không ghi gì.
 #
-# - Cron hằng ngày 03:00 UTC (10:00 GMT+7): chạy DRY-RUN, nếu có chênh lệch
-#   sẽ tự động mở Pull Request kèm báo cáo Markdown để Admin xét duyệt.
-# - workflow_dispatch:
-#     action=dry-run               : chỉ kiểm tra & tạo PR (an toàn, không ghi DB).
-#     action=sync-and-revalidate   : đồng bộ THẬT vào production DB rồi gọi
-#                                    /api/revalidate. Job này dùng GitHub
-#                                    Environment "production" — hãy cấu hình
-#                                    Required reviewers trong repo settings để
-#                                    đảm bảo chỉ chạy sau khi được phê duyệt.
+# - Cron hằng ngày 03:00 UTC (10:00 GMT+7): chạy --dry-run so sánh
+#   genshin-db đã cài trong repo với database.
+# - Nếu phát hiện create/update THẬT -> commit báo cáo vào
+#   backend/reports/ và mở Pull Request để Admin review.
+# - Nếu KHÔNG có thay đổi -> chỉ upload artifact, KHÔNG tạo PR rỗng.
+# - Các bản ghi "pending" (thiếu dữ liệu nguồn) vẫn nằm trong report
+#   chi tiết nhưng không kích hoạt PR.
+#
+# ⚠️ Workflow này chạy trên schedule/workflow_dispatch — KHÔNG chạy
+# trên pull_request từ fork, nên secrets chỉ dùng cho code đã merge.
 
 on:
   schedule:
@@ -18,13 +19,12 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'Hành động thực hiện'
+        description: 'Hành động'
         required: true
         default: 'dry-run'
         type: choice
         options:
           - dry-run
-          - sync-and-revalidate
 
 permissions:
   contents: write
@@ -33,7 +33,6 @@ permissions:
 jobs:
   dry-run:
     name: Dry-run diff detection
-    if: github.event_name == 'schedule' || inputs.action == 'dry-run'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -56,25 +55,39 @@ jobs:
       - name: Run dry-run sync check
         id: check
         env:
+          # Nên trỏ tới read replica / reporting DB, KHÔNG phải production
+          # writer. Workflow này read-only nhưng vẫn cần DB reachable từ runner.
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           set +e
-          npm run sync:check -- --report logs/sync_report_ci.md
+          if [ -z "$DATABASE_URL" ]; then
+            echo "⚠️  DATABASE_URL chưa cấu hình — bỏ qua dry-run (cần read-only DB reachable từ GitHub runner)."
+            echo "has_changes=skip" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Report ghi vào backend/reports/ (KHÔNG bị gitignore) để có thể
+          # commit vào PR; bản copy cho artifact dùng logs/ cũng được.
+          npm run sync:check -- --report reports/sync_report_ci.md
           set -e
-          [ -f logs/sync_report_ci.md ] || { echo "❌ Sync check failed to produce report"; exit 1; }
-          count=$(grep -cE '^\| (create|update) \|' logs/sync_report_ci.md || true)
+          [ -f reports/sync_report_ci.md ] || { echo "❌ Sync check failed to produce report"; exit 1; }
+          # Chỉ đếm create/update thật — bỏ qua 'pending' (thiếu dữ liệu nguồn)
+          count=$(grep -cE '^\| (create|update) \|' reports/sync_report_ci.md || true)
           echo "has_changes=$count" >> "$GITHUB_OUTPUT"
-          echo "Detected $count changed entries."
+          echo "Detected $count appliable changed entries."
+          cp reports/sync_report_ci.md logs/sync_report_ci.md 2>/dev/null || true
 
       - name: Upload sync report artifact
         uses: actions/upload-artifact@v4
         with:
           name: genshin-sync-report
-          path: backend/logs/sync_report_ci.md
+          path: |
+            backend/reports/sync_report_ci.md
+            backend/logs/sync_report_ci.md
           retention-days: 30
+          if-no-files-found: warn
 
       - name: Open Pull Request with sync report
-        if: steps.check.outputs.has_changes != '0'
+        if: steps.check.outputs.has_changes != '0' && steps.check.outputs.has_changes != 'skip'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -85,80 +98,20 @@ jobs:
           body: |
             ## 🤖 Automated data sync dry-run report
 
-            Detected differences between `genshin-db` and the production
-            database. **No data has been written yet.**
+            Detected differences between the installed `genshin-db` version
+            and the database. **No data has been written yet.**
 
-            See the full diff report in `backend/logs/sync_report_ci.md` (also attached as workflow artifact).
+            Full diff report: `backend/reports/sync_report_ci.md`
+            (also attached as a workflow artifact).
 
             ### Next steps
-            1. Review the report — verify no admin-managed fields are touched.
-            2. Merge this PR or run the **Genshin Data Sync** workflow manually with
-               `action=sync-and-revalidate` (requires `production` environment approval)
-               to apply changes and revalidate the Next.js frontend.
+            1. Review the report — verify no admin-managed fields are touched
+               and no `pending` entries need manual data sourcing.
+            2. After approval, run the **Genshin Data Sync — Apply** workflow
+               manually (`sync-and-revalidate`). It requires the `production`
+               environment approval and takes a `pg_dump` backup first.
 
             > *Tài nguyên hình ảnh thuộc bản quyền của miHoYo Co., Ltd.*
           labels: |
             data-sync
             automated
-
-  sync-and-revalidate:
-    name: Sync DB + revalidate frontend
-    if: github.event_name == 'workflow_dispatch' && inputs.action == 'sync-and-revalidate'
-    runs-on: ubuntu-latest
-    # Environment protection: cấu hình Required reviewers trong repo settings
-    # để job này chỉ chạy sau khi được Admin phê duyệt.
-    environment: production
-    defaults:
-      run:
-        working-directory: ./backend
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: ./backend/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Generate Prisma Client
-        run: npx prisma generate
-
-      - name: Run sync (upsert + assets)
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npm run sync:run -- --report logs/sync_report_prod.md
-
-      - name: Upload production sync report
-        uses: actions/upload-artifact@v4
-        with:
-          name: genshin-sync-report-prod
-          path: backend/logs/sync_report_prod.md
-          retention-days: 90
-
-      - name: Revalidate Next.js frontend
-        env:
-          REVALIDATE_URL: ${{ secrets.FRONTEND_REVALIDATE_URL }}
-          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
-        run: |
-          if [ -z "$REVALIDATE_URL" ] || [ -z "$REVALIDATE_SECRET" ]; then
-            echo "⚠️  FRONTEND_REVALIDATE_URL hoặc REVALIDATE_SECRET chưa được cấu hình — bỏ qua revalidate."
-            exit 0
-          fi
-          curl -fsS -X POST "$REVALIDATE_URL" \
-            -H "Content-Type: application/json" \
-            -d "{\"secret\": \"$REVALIDATE_SECRET\"}" \
-            | tee revalidate_response.json
-
-      - name: Notify on failure
-        if: failure()
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          if [ -n "$DISCORD_WEBHOOK_URL" ]; then
-            curl -H "Content-Type: application/json" \
-              -d '{"content": "🚨 **GenshinHub data sync FAILED** — check GitHub Actions logs."}' \
-              "$DISCORD_WEBHOOK_URL"
-          fi

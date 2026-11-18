@@ -198,18 +198,27 @@ export default function CharacterGallery({ initialCharacters }: { initialCharact
                   transition: 'all 0.2s ease',
                 }}
               >
-                <div className="relative w-4 h-4 shrink-0">
-                  <FallbackImage
-                    src={`/assets/elements/${el.toLowerCase()}.webp`}
-                    alt={el}
-                    fill
-                    className="object-contain"
-                    style={{
-                      opacity: active ? 1 : 0.45,
-                      transform: active ? 'scale(1.15)' : 'scale(1)',
-                      transition: 'opacity 0.2s, transform 0.2s',
-                    }}
-                  />
+                <div
+                  className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
+                  style={{
+                    background: '#090d12',
+                    border: `1px solid ${ec}90`,
+                    boxShadow: `0 2px 6px rgba(0,0,0,0.28), 0 0 7px ${ec}35`,
+                  }}
+                >
+                  <div className="relative h-5 w-5">
+                    <FallbackImage
+                      src={`/assets/elements/${el.toLowerCase()}.webp`}
+                      alt={el}
+                      fill
+                      className="object-contain"
+                      style={{
+                        opacity: 1,
+                        transform: active ? 'scale(1.1)' : 'scale(1)',
+                        transition: 'transform 0.2s',
+                      }}
+                    />
+                  </div>
                 </div>
                 {active && (
                   <span className="text-[10px] font-bold hidden sm:block" style={{ color: 'var(--text-primary)' }}>

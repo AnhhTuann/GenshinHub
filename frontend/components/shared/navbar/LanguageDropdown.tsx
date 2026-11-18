@@ -51,19 +51,16 @@ export default function LanguageDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 rounded-xl px-3 py-1.5 transition-all duration-200 group"
-        style={{
-          background: 'rgba(255,255,255,0.08)',
-          border: '1px solid rgba(255,255,255,0.16)',
-        }}
+        className="h-8 sm:h-9 flex items-center gap-1.5 rounded-full px-3 transition-all duration-200 group bg-slate-100/80 hover:bg-slate-200/80 border border-slate-200/80 hover:border-violet-300/80 shadow-xs cursor-pointer"
+        aria-label="Select language"
       >
-        <span className="text-white/85 text-[10px] font-bold uppercase tracking-widest group-hover:text-[#b7eee2] transition-colors">
+        <span className="text-slate-700 text-[11px] font-extrabold uppercase tracking-wider group-hover:text-violet-700 transition-colors">
           {locale.toUpperCase()}
         </span>
         <motion.svg
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          width="10" height="6" viewBox="0 0 10 6" fill="none" className="text-white/65 group-hover:text-[#b7eee2]"
+          width="10" height="6" viewBox="0 0 10 6" fill="none" className="text-slate-400 group-hover:text-violet-600"
         >
           <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </motion.svg>
@@ -76,16 +73,16 @@ export default function LanguageDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="site-nav-menu absolute top-full right-0 mt-2 w-max min-w-[120px] max-h-60 overflow-y-auto custom-scrollbar rounded-xl z-50 flex flex-col p-1"
+            className="site-nav-menu absolute top-full right-0 mt-2 w-max min-w-[130px] max-h-60 overflow-y-auto custom-scrollbar rounded-2xl z-50 flex flex-col p-1.5 shadow-2xl"
           >
             {LOCALES.map((l) => (
               <button
                 key={l}
                 onClick={() => handleSelect(l)}
-                className={`px-3 py-2 text-xs font-bold text-left rounded-lg transition-all duration-200 ${
+                className={`px-3 py-1.5 text-xs text-left rounded-xl transition-all duration-150 cursor-pointer ${
                   locale === l
-                    ? 'text-[#b7eee2] bg-white/10'
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                    ? 'text-violet-700 bg-violet-50 font-extrabold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 font-bold'
                 }`}
               >
                 {LOCALE_NAMES[l]}

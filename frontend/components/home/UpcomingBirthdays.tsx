@@ -156,21 +156,6 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                     unoptimized
                   />
 
-                  {/* Element mini badge (Top Left) */}
-                  <div
-                    className="absolute top-1 left-1 w-4 h-4 rounded-md overflow-hidden flex items-center justify-center p-0.5 shadow-xs"
-                    style={{ background: `${elColor}35`, border: `1px solid ${elColor}50` }}
-                  >
-                    <FallbackImage
-                      src={`/assets/elements/${char.element.toLowerCase()}.webp`}
-                      alt={char.element}
-                      width={12}
-                      height={12}
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-
                   {/* Today Badge */}
                   {char.isToday && (
                     <div
@@ -187,13 +172,33 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
                   {name.split(' ').slice(-1)[0]}
                 </span>
 
-                {/* Date */}
-                <span
-                  className="text-[10px] font-bold tabular-nums"
-                  style={{ color: char.isToday ? '#b45309' : 'rgba(100, 116, 139, 0.75)' }}
-                >
-                  {monthLabel} {char.bDay}
-                </span>
+                {/* Element + Date */}
+                <div className="mt-0.5 flex items-center justify-center gap-1.5">
+                  <div
+                    className="w-6 h-6 shrink-0 rounded-full overflow-hidden flex items-center justify-center shadow-[0_2px_6px_rgba(15,23,42,0.28)]"
+                    style={{
+                      background: '#090d12',
+                      border: `1.5px solid ${elColor}90`,
+                      boxShadow: `0 0 7px ${elColor}45`,
+                    }}
+                    title={char.element}
+                  >
+                    <FallbackImage
+                      src={`/assets/elements/${char.element.toLowerCase()}.webp`}
+                      alt={char.element}
+                      width={18}
+                      height={18}
+                      className="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(255,255,255,0.75)]"
+                      unoptimized
+                    />
+                  </div>
+                  <span
+                    className="text-[10px] font-bold tabular-nums"
+                    style={{ color: char.isToday ? '#b45309' : 'rgba(71, 85, 105, 0.9)' }}
+                  >
+                    {monthLabel} {char.bDay}
+                  </span>
+                </div>
               </Link>
             </motion.div>
           );

@@ -260,6 +260,7 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
                               <Link
                                 href={`/characters/${char.id}`}
                                 className="group flex flex-col items-center text-center"
+                                title={char.name}
                               >
                                 {/* Avatar Box (To đẹp giống Upcoming Birthdays) */}
                                 <div
@@ -320,7 +321,10 @@ export default function DailyFarming({ locale }: DailyFarmingProps) {
                                 </div>
 
                                 {/* Name */}
-                                <span className="text-[11px] font-extrabold text-slate-700 group-hover:text-[#7C5AE0] transition-colors mt-1.5 truncate max-w-[66px] sm:max-w-[70px] px-0.5">
+                                <span
+                                  className="text-[11px] font-extrabold text-slate-700 group-hover:text-[#7C5AE0] transition-colors mt-1.5 truncate max-w-[66px] sm:max-w-[70px] px-0.5"
+                                  title={char.name}
+                                >
                                   {char.name}
                                 </span>
                               </Link>

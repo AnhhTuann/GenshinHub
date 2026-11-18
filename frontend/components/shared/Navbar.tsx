@@ -6,7 +6,7 @@ import { MobileMenu } from './navbar/MobileMenu';
 import { UserNav } from './navbar/UserNav';
 import UISoundToggle from './UISoundToggle';
 import LanguageDropdown from './navbar/LanguageDropdown';
-import { Sword, Swords, Gem, Trophy, Users, ScrollText, Search, Layers } from 'lucide-react';
+import { Sword, Swords, Gem, Trophy, Users, ScrollText, Search, Layers, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const pathname   = usePathname();
@@ -21,7 +21,7 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 30);
+      setScrolled(y > 20);
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       setScrollPct(maxScroll > 0 ? Math.min(100, (y / maxScroll) * 100) : 0);
     };
@@ -61,32 +61,34 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`site-nav sticky top-0 z-50 w-full${scrolled ? ' is-scrolled' : ''}`}
+        className={`site-nav sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? ' is-scrolled shadow-md' : ''}`}
       >
-        <div className="site-nav-inner max-w-[1480px] mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between gap-5">
+        <div className="site-nav-inner max-w-[1480px] mx-auto px-4 sm:px-6 h-[68px] sm:h-[72px] flex items-center justify-between gap-4">
 
           {/* ── Logo ── */}
           <Link
-            className="flex items-center gap-3 shrink-0 group"
+            className="flex items-center gap-3 shrink-0 group select-none"
             href="/"
             onClick={handleLogoClick}
           >
-            {/* Paimon Logo */}
-            <div className="site-brand-mark relative w-11 h-11 flex items-center justify-center rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              <img src="/logo.webp" alt="GenshinHub Logo" className="w-full h-full object-cover scale-[1.1]" />
+            {/* Paimon Logo Mark */}
+            <div className="site-brand-mark relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-2xl overflow-hidden group-hover:scale-105 transition-all duration-300">
+              <img src="/logo.webp" alt="GenshinHub Logo" className="w-full h-full object-cover scale-[1.08] transition-transform duration-300 group-hover:scale-115" />
             </div>
 
-            {/* Text */}
+            {/* Text Brand */}
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="site-brand-name text-[15px] font-black tracking-[0.12em] uppercase">
+              <span className="site-brand-name text-[15px] sm:text-[16px] font-black tracking-[0.14em] uppercase">
                 GENSHINHUB
               </span>
-              <span className="mt-1.5 text-[8px] font-semibold tracking-[0.16em] text-white/55 uppercase">Teyvat field guide</span>
+              <span className="mt-1 text-[8px] font-extrabold tracking-[0.2em] text-[#7C5AE0]/75 uppercase">
+                Teyvat field guide
+              </span>
             </div>
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1.5 p-1 rounded-full bg-slate-100/60 border border-slate-200/50">
             {navLinks.slice(0, 4).map((link) => {
               const active = isActive(link.href);
               return (
@@ -94,10 +96,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={link.href === '/' ? handleLogoClick : undefined}
-                  className={`site-nav-link relative px-3.5 py-2.5 rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap group transition-all duration-200 ${
+                  className={`site-nav-link relative px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide whitespace-nowrap transition-all duration-200 ${
                     active
-                      ? 'is-active text-[var(--accent-primary-light)] bg-[var(--accent-primary-dim)]'
-                      : 'text-white/55 hover:text-white hover:bg-white/5'
+                      ? 'is-active'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
                   }`}
                 >
                   {link.label}
@@ -107,15 +109,17 @@ export default function Navbar() {
             <div className="site-nav-more relative">
               <button
                 type="button"
-                className={`site-nav-link inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full text-[11px] font-bold tracking-wide transition-all ${moreOpen ? 'is-active text-[var(--accent-primary-light)] bg-[var(--accent-primary-dim)]' : 'text-white/55 hover:text-white hover:bg-white/5'}`}
+                className={`site-nav-link inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide transition-all ${
+                  moreOpen
+                    ? 'is-active'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
+                }`}
                 onClick={() => setMoreOpen(open => !open)}
                 aria-expanded={moreOpen}
                 aria-haspopup="true"
               >
-                {locale === 'en' ? 'Explore' : 'Khám phá'}
-                <svg className={`w-3 h-3 transition-transform ${moreOpen ? 'rotate-180' : ''}`} viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="m3.5 6 4.5 4 4.5-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <span>{locale === 'en' ? 'Explore' : 'Khám phá'}</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`} />
               </button>
               {moreOpen && (
                 <div className="site-nav-menu absolute right-0 top-full mt-3 w-64 p-2 rounded-2xl">
@@ -141,17 +145,19 @@ export default function Navbar() {
             {/* Search Button (Triggers Cmd+K) */}
             <button 
               onClick={handleSearchClick}
-              className="site-search-trigger hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold transition-all duration-200 bg-white/[0.035] hover:bg-[var(--accent-primary-dim)] border border-white/10 hover:border-[var(--border-accent)] text-white/65 hover:text-[var(--accent-primary-light)]"
+              className="site-search-trigger hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer"
+              aria-label="Search"
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-              Search
-              <kbd className="ml-1 px-1.5 py-0.5 rounded bg-black/40 text-[9px] border border-white/10 font-mono">Ctrl+K</kbd>
+              <Search className="w-3.5 h-3.5 text-slate-400" />
+              <span>{locale === 'en' ? 'Search' : 'Tìm kiếm'}</span>
+              <kbd className="ml-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-bold">Ctrl+K</kbd>
             </button>
             <button 
               onClick={handleSearchClick}
-              className="sm:hidden flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 bg-white/[0.035] hover:bg-[var(--accent-primary-dim)] border border-white/10 hover:border-[var(--border-accent)] text-white/65 hover:text-[var(--accent-primary-light)]"
+              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 site-search-trigger cursor-pointer"
+              aria-label="Search"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <Search className="w-4 h-4 text-slate-500" />
             </button>
 
             {/* Auth Component */}
@@ -165,13 +171,12 @@ export default function Navbar() {
 
             {/* Hamburger */}
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full gap-1.5"
-              style={{ border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.035)' }}
+              className="lg:hidden flex flex-col justify-center items-center w-9 h-9 rounded-full gap-1.5 bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/80 transition-all cursor-pointer"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
               <span
-                className="block h-[1.5px] bg-white/70 rounded-full"
+                className="block h-[1.8px] bg-slate-700 rounded-full"
                 style={{
                   width: '16px',
                   transform: mobileOpen ? 'rotate(45deg) translateY(5px)' : 'none',
@@ -179,7 +184,7 @@ export default function Navbar() {
                 }}
               />
               <span
-                className="block h-[1.5px] bg-white/70 rounded-full"
+                className="block h-[1.8px] bg-slate-700 rounded-full"
                 style={{
                   width: mobileOpen ? '0px' : '16px',
                   opacity: mobileOpen ? 0 : 1,
@@ -187,7 +192,7 @@ export default function Navbar() {
                 }}
               />
               <span
-                className="block h-[1.5px] bg-white/70 rounded-full"
+                className="block h-[1.8px] bg-slate-700 rounded-full"
                 style={{
                   width: '16px',
                   transform: mobileOpen ? 'rotate(-45deg) translateY(-5px)' : 'none',
@@ -200,11 +205,12 @@ export default function Navbar() {
 
         {/* ── Scroll Progress Bar ── */}
         <div
-          className="absolute bottom-0 left-0 h-[2px]"
+          className="absolute bottom-0 left-0 h-[2.5px] transition-all duration-150"
           style={{
             width: `${scrollPct}%`,
-            background: 'var(--accent-primary)',
+            background: 'linear-gradient(90deg, #7C5AE0 0%, #9B7AFF 40%, #E8B84C 100%)',
             opacity: scrollPct > 0 ? 1 : 0,
+            boxShadow: '0 0 8px rgba(124, 90, 224, 0.4)',
           }}
         />
       </nav>

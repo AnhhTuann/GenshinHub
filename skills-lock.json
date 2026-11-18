@@ -29,6 +29,12 @@
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c"
     },
+    "github-actions": {
+      "source": "tartinerlabs/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/workflow/skills/github-actions/SKILL.md",
+      "computedHash": "2ff4011c3ef1dcd3727e9483810bf7c1b6b0bdb7e751c897a90c447f3b148315"
+    },
     "graphql-schema": {
       "source": "apollographql/skills",
       "commit": "9dda1397730370aeb8df4ff8f2015c34c86b5003",
@@ -38,10 +44,9 @@
     },
     "prisma-client-api": {
       "source": "prisma/skills",
-      "commit": "a6f192959cf43b08aa330fe1ffca090267215812",
       "sourceType": "github",
       "skillPath": "prisma-client-api/SKILL.md",
-      "computedHash": "a4810158b4b436a69e782e6fab95a0ed5e5e0b2786c2ed00322051d29c4c2b64"
+      "computedHash": "cbbabff961c8e16b2d59f8c1ffb4e7e20be52154e778ab95121e0211d6d09969"
     },
     "prisma-orm-setup": {
       "source": "prisma/skills",
@@ -49,6 +54,12 @@
       "sourceType": "github",
       "skillPath": "prisma-orm-setup/SKILL.md",
       "computedHash": "04fe23d99323d5f97675b5038d7d42cec0b5d0ff5871929bd73412afb7941218"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/skill-creator/SKILL.md",
+      "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2"
     },
     "systematic-debugging": {
       "source": "obra/superpowers",

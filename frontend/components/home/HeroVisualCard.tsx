@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "@/i18n/routing";
 import { ArrowUpRight } from "lucide-react";
 import FallbackImage from "@/components/ui/FallbackImage";
@@ -9,7 +9,6 @@ interface ElementBadge {
   name: string;
   element: string;
   color: string;
-  bg: string;
   glow: string;
   top: string;
   left?: string;
@@ -21,205 +20,191 @@ const ELEMENT_BADGES: ElementBadge[] = [
   {
     name: "Pyro",
     element: "pyro",
-    color: "#ff5a45",
-    bg: "rgba(255, 90, 69, 0.12)",
-    glow: "rgba(255, 90, 69, 0.35)",
-    top: "20%",
-    left: "10%",
-    delay: 0,
+    color: "#ff785f",
+    glow: "rgba(255, 120, 95, 0.3)",
+    top: "22%",
+    left: "8%",
+    delay: 0.12,
   },
   {
     name: "Hydro",
     element: "hydro",
-    color: "#3aa8ff",
-    bg: "rgba(58, 168, 255, 0.12)",
-    glow: "rgba(58, 168, 255, 0.35)",
+    color: "#5ecbff",
+    glow: "rgba(94, 203, 255, 0.3)",
     top: "28%",
-    right: "10%",
-    delay: 0.8,
+    right: "8%",
+    delay: 0.24,
   },
   {
     name: "Anemo",
     element: "anemo",
-    color: "#35d6c5",
-    bg: "rgba(53, 214, 197, 0.12)",
-    glow: "rgba(53, 214, 197, 0.35)",
-    top: "62%",
-    left: "12%",
-    delay: 1.6,
+    color: "#62dcc7",
+    glow: "rgba(98, 220, 199, 0.3)",
+    top: "64%",
+    left: "10%",
+    delay: 0.36,
   },
   {
     name: "Electro",
     element: "electro",
-    color: "#cf8fff",
-    bg: "rgba(207, 143, 255, 0.12)",
-    glow: "rgba(207, 143, 255, 0.35)",
-    top: "65%",
-    right: "12%",
-    delay: 2.2,
+    color: "#d3a0ff",
+    glow: "rgba(211, 160, 255, 0.3)",
+    top: "67%",
+    right: "9%",
+    delay: 0.48,
   },
 ];
 
 export default function HeroVisualCard({ locale }: { locale: string }) {
   const shouldReduceMotion = useReducedMotion();
 
-  // 3D Tilt Setup
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const mouseXSpring = useSpring(x, { stiffness: 220, damping: 22 });
-  const mouseYSpring = useSpring(y, { stiffness: 220, damping: 22 });
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (shouldReduceMotion) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
   return (
-    <div
-      style={{ perspective: 1000 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative w-full"
-    >
+    <div className="relative w-full">
       <motion.div
-        style={shouldReduceMotion ? {} : { rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="group relative w-full min-h-[440px] md:min-h-[460px] rounded-3xl overflow-hidden border border-violet-500/20 bg-gradient-to-br from-violet-100/50 via-white/80 to-purple-50/60 p-6 md:p-8 backdrop-blur-xl shadow-[0_20px_50px_rgba(124,90,224,0.12)] transition-shadow duration-500 hover:shadow-[0_28px_65px_rgba(124,90,224,0.22)]"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 18, scale: 0.98 }}
+        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1] }}
+        className="group relative min-h-[440px] overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#1c1813] p-5 shadow-[0_24px_60px_rgba(0,0,0,0.32)] sm:p-6 md:min-h-[460px] md:p-8"
       >
-        {/* Subtle grid pattern background */}
         <div
-          className="absolute inset-0 opacity-[0.25] pointer-events-none"
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 45%, rgba(201,168,106,0.14), transparent 48%), radial-gradient(ellipse at 8% 100%, rgba(201,168,106,0.08), transparent 38%), linear-gradient(135deg, #1c1813 0%, #231e17 45%, #2b251c 100%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-3 rounded-[22px] border border-white/[0.045]"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.12]"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(90deg, transparent 0 42px, rgba(124,90,224,0.06) 43px, transparent 44px), repeating-linear-gradient(0deg, transparent 0 42px, rgba(124,90,224,0.06) 43px, transparent 44px)",
+              "linear-gradient(rgba(240,234,217,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(240,234,217,0.07) 1px, transparent 1px)",
+            backgroundSize: "42px 42px",
+            maskImage: "radial-gradient(ellipse at center, black 0%, transparent 76%)",
           }}
         />
 
-        {/* Ambient radial lighting */}
-        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-violet-400/20 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-amber-300/15 blur-3xl pointer-events-none" />
-
-        {/* Top Header Row */}
-        <div className="relative z-10 flex items-center justify-between text-[11px] font-bold tracking-wider uppercase">
-          <div className="flex items-center gap-2 text-violet-700/80 bg-violet-500/10 px-3 py-1.5 rounded-full border border-violet-500/20 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse" />
-            <span>{locale === 'en' ? 'Teyvat Archive' : 'Thư viện Teyvat'}</span>
+        <div className="relative z-10 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.16em]">
+          <div className="flex items-center gap-2 rounded-full border border-[var(--border-accent)] bg-[var(--accent-primary-dim)] px-3 py-1.5 text-[var(--accent-primary-light)]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#d7b56d] shadow-[0_0_9px_rgba(215,181,109,0.9)]" />
+            <span>{locale === "en" ? "Teyvat Archive" : "Thư viện Teyvat"}</span>
           </div>
-          <span className="text-violet-900/40 font-mono tracking-widest text-[10px]">
-            FIELD GUIDE • V5.4
+          <span className="font-mono text-[9px] tracking-[0.18em] text-white/50">
+            FIELD GUIDE · V5.4
           </span>
         </div>
 
-        {/* Centerpiece: Mascot + Celestial Ring */}
-        <div className="relative my-8 flex flex-col items-center justify-center">
-          {/* Animated Celestial Orbital Ring */}
-          <div className="relative flex items-center justify-center w-52 h-52 md:w-60 md:h-60">
-            {/* Outer dotted orbital ring */}
-            <motion.div
-              animate={shouldReduceMotion ? {} : { rotate: 360 }}
-              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full border border-dashed border-violet-400/40"
+        <div className="relative my-5 flex min-h-[326px] flex-col items-center justify-center sm:my-6">
+          <div className="relative flex h-52 w-52 items-center justify-center md:h-60 md:w-60">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full border border-dashed border-white/[0.12]"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-5 rounded-full border border-[var(--accent-primary)]/12"
             />
 
-            {/* Inner counter-rotating ring */}
-            <motion.div
-              animate={shouldReduceMotion ? {} : { rotate: -360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-4 rounded-full border border-violet-300/30 shadow-[0_0_20px_rgba(124,90,224,0.15)]"
-            />
+            {[0, 1, 2].map((pulse) => (
+              <motion.div
+                key={pulse}
+                aria-hidden="true"
+                initial={false}
+                animate={
+                  shouldReduceMotion
+                    ? { scale: 1, opacity: 0.12 }
+                    : { scale: [0.72, 1.28], opacity: [0.38, 0] }
+                }
+                transition={{
+                  duration: 3.6,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  ease: "easeOut",
+                  delay: pulse * 1.2,
+                }}
+                className="absolute inset-8 rounded-full border border-[var(--accent-primary)]/28"
+              />
+            ))}
 
-            {/* Glow halo behind mascot */}
-            <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-violet-500/20 via-purple-400/25 to-amber-300/20 blur-xl animate-pulse" />
-
-            {/* Mascot Avatar Container */}
-            <motion.div
-              animate={shouldReduceMotion ? {} : { y: [-5, 5, -5] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-32 h-32 md:w-36 md:h-36 rounded-full p-1.5 bg-gradient-to-b from-white via-white/80 to-violet-100 shadow-[0_12px_32px_rgba(124,90,224,0.22)] border-2 border-white"
-            >
-              <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
-                <img
+            <div className="relative z-10 h-32 w-32 rounded-full bg-gradient-to-br from-[#ffd34d] via-[#c9a86a] to-[#231e17] p-[3px] shadow-[0_0_32px_rgba(201,168,106,0.25)] md:h-36 md:w-36">
+              <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 bg-[#090b13]">
+                <FallbackImage
                   src="/logo.webp"
-                  alt="Paimon Mascot"
-                  className="w-full h-full object-cover scale-110 drop-shadow-md"
+                  alt="Paimon"
+                  fill
+                  priority
+                  sizes="144px"
+                  className="scale-110 object-cover"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          {/* TEYVAT Brand title */}
           <div className="mt-3 text-center">
-            <h2 className="text-lg md:text-xl font-black tracking-[0.35em] uppercase text-slate-800 drop-shadow-xs">
+            <h2 className="text-xl font-black uppercase tracking-[0.38em] text-[#f3ead7] drop-shadow-sm">
               TEYVAT
             </h2>
-            <p className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase mt-0.5">
-              {locale === 'en' ? 'Seven Nations • Living Encyclopedia' : 'Bảy Quốc Gia • Cẩm Nang Toàn Thư'}
+            <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#e7e1f1]/65">
+              {locale === "en"
+                ? "Seven nations · Living encyclopedia"
+                : "Bảy quốc gia · Cẩm nang toàn thư"}
             </p>
           </div>
         </div>
 
-        {/* Floating Elemental Badges */}
         {ELEMENT_BADGES.map((badge) => (
           <motion.div
             key={badge.name}
-            animate={shouldReduceMotion ? {} : { y: [-4, 4, -4] }}
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.78, y: 8 }}
+            animate={shouldReduceMotion ? undefined : { opacity: 1, scale: 1, y: 0 }}
             transition={{
-              duration: 3.5 + badge.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
+              type: "spring",
+              stiffness: 190,
+              damping: 17,
               delay: badge.delay,
             }}
-            className="absolute z-20 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md border transition-transform duration-300 hover:scale-110 cursor-pointer"
+            className="absolute z-20 hidden items-center gap-2 rounded-full border bg-[#10121d]/95 px-3 py-1.5 shadow-[0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur-md sm:flex"
             style={{
               top: badge.top,
               left: badge.left,
               right: badge.right,
-              backgroundColor: "rgba(255, 255, 255, 0.92)",
               borderColor: `${badge.color}45`,
-              boxShadow: `0 4px 16px ${badge.glow}`,
+              boxShadow: `0 8px 24px rgba(0,0,0,0.3), 0 0 18px ${badge.glow}`,
             }}
           >
-            <div
-              className="w-4 h-4 rounded-full flex items-center justify-center p-0.5"
-              style={{ backgroundColor: `${badge.color}20` }}
+            <span
+              className="flex h-5 w-5 items-center justify-center rounded-full border bg-[#090b13]"
+              style={{ borderColor: `${badge.color}60` }}
             >
               <FallbackImage
                 src={`/assets/elements/${badge.element}.webp`}
-                alt={badge.name}
+                alt=""
                 width={14}
                 height={14}
-                className="w-3.5 h-3.5 object-contain"
+                className="h-3.5 w-3.5 object-contain"
               />
-            </div>
-            <span
-              className="text-[11px] font-bold tracking-wide"
-              style={{ color: badge.color }}
-            >
+            </span>
+            <span className="text-[10px] font-bold tracking-wide" style={{ color: badge.color }}>
               {badge.name}
             </span>
           </motion.div>
         ))}
 
-        {/* Bottom Action Footer */}
-        <div className="relative z-10 pt-4 border-t border-violet-500/10 flex items-center justify-between">
-          <span className="text-[11px] font-bold text-slate-500 tracking-wider uppercase">
-            {locale === 'en' ? 'Guides for every journey' : 'Cẩm nang cho mọi hành trình'}
+        <div className="relative z-10 flex items-center justify-between border-t border-white/[0.07] pt-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.13em] text-[#d4d0df]/60">
+            {locale === "en" ? "Guides for every journey" : "Cẩm nang cho mọi hành trình"}
           </span>
           <Link
             href="/characters"
-            className="inline-flex items-center gap-1 text-[11px] font-extrabold text-[#7C5AE0] hover:text-[#6346C4] transition-colors uppercase tracking-wider group/link"
+            className="group/link inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.15em] text-[var(--accent-primary-light)] transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#dfc27e]"
           >
-            <span>{locale === 'en' ? 'Explore' : 'Khám phá'}</span>
+            <span>{locale === "en" ? "Explore" : "Khám phá"}</span>
             <ArrowUpRight
-              size={15}
+              size={14}
               className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
               aria-hidden="true"
             />

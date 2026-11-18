@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import type { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTERS } from '@/lib/graphql';
 import { CharacterData } from '@/types/character';
@@ -64,45 +65,80 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <div className="home-container">
         <section className="home-hero">
           <div className="home-hero-copy">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-[#7C5AE0] text-xs font-bold tracking-wide backdrop-blur-md shadow-xs mb-3">
-              <Sparkles size={14} className="text-[#E8B84C] animate-pulse" aria-hidden="true" />
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--accent-primary-dim)] border border-[var(--border-accent)] text-[var(--accent-primary-light)] text-xs font-bold tracking-wide backdrop-blur-md shadow-xs mb-4"
+            >
+              <Sparkles size={14} className="text-[var(--accent-primary)] animate-pulse" aria-hidden="true" />
               <span>{locale === 'en' ? 'Your journey through Teyvat' : 'Cẩm nang đồng hành tại Teyvat'}</span>
-            </div>
+            </motion.div>
 
-            <h1 className="home-title">
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
+              className="home-title"
+            >
               {locale === 'en' ? (
                 <>
                   Explore Teyvat,<br />
-                  <span className="bg-gradient-to-r from-[#7C5AE0] via-[#9B7AFF] to-[#E8B84C] bg-clip-text text-transparent">
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.35 }}
+                    className="text-[var(--accent-primary-light)] font-italic"
+                  >
                     your way.
-                  </span>
+                  </motion.span>
                 </>
               ) : (
                 <>
                   Chạm ngõ Teyvat,<br />
-                  <span className="bg-gradient-to-r from-[#7C5AE0] via-[#9B7AFF] to-[#E8B84C] bg-clip-text text-transparent">
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.35 }}
+                    className="text-[var(--accent-primary-light)] font-italic"
+                  >
                     viết hành trình riêng.
-                  </span>
+                  </motion.span>
                 </>
               )}
-            </h1>
-            <p className="home-description">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.16 }}
+              className="home-description"
+            >
               {locale === 'en'
                 ? 'A thoughtful companion for every build, every team, and every adventure.'
                 : 'Người bạn đồng hành cho từng đội hình, từng bản build và mọi chuyến phiêu lưu.'}
-            </p>
+            </motion.p>
 
-            <div className="home-actions">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.24 }}
+              className="home-actions"
+            >
               <PremiumButton href="/characters" icon={<Compass size={17} strokeWidth={1.8} aria-hidden="true" />}>
                 {locale === 'en' ? 'Discover characters' : 'Khám phá nhân vật'}
               </PremiumButton>
               <OpenSearchButton label={locale === 'en' ? 'Search the archive' : 'Tìm trong thư viện'} />
-            </div>
+            </motion.div>
 
-            <div className="home-trust-line">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="home-trust-line"
+            >
               <span className="home-status-dot" />
               {locale === 'en' ? 'Your Teyvat archive, all in one place' : 'Toàn bộ dữ liệu Teyvat trong một nơi'}
-            </div>
+            </motion.div>
           </div>
 
           <HeroVisualCard locale={locale} />

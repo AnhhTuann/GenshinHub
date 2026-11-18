@@ -14,6 +14,7 @@ exports.userSchema = `
     # Computed: travelerCharId based on gender
     travelerCharId: String!
     favoritesCount: Int!
+    gachaStats: GachaStats
   }
 
   type AuthPayload {
@@ -23,7 +24,8 @@ exports.userSchema = `
 
   type FavoriteResult {
     added: Boolean!
-    characterId: String!
+    itemId: String!
+    itemType: String!
   }
 
   type UserFavorite {
@@ -73,12 +75,22 @@ exports.userSchema = `
     guaranteed: Boolean
   }
 
+  type FiveStarPull {
+    id: String!
+    name: String!
+    type: String!
+    pity: Int!
+    win: Boolean
+    date: String!
+  }
+
   type GachaStats {
     character: GachaBannerStats!
     weapon: GachaBannerStats!
     standard: GachaBannerStats!
     winRate: Float!
     totalPulls: Int!
+    fiveStarHistory: [FiveStarPull!]
   }
 
   type UserTeam {
@@ -111,5 +123,8 @@ exports.userSchema = `
     changePassword(oldPassword: String!, newPassword: String!): Boolean!
     requestEmailChangeOtp(newEmail: String!): Boolean!
     verifyEmailChangeOtp(newEmail: String!, otp: String!): User!
+    # Forgot / Reset Password (no auth required)
+    forgotPassword(email: String!): Boolean!
+    resetPassword(email: String!, otp: String!, newPassword: String!): Boolean!
   }
 `;

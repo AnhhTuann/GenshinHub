@@ -19,7 +19,8 @@
     "sync:validate": "ts-node scripts/sync/syncEngine.ts --validate --dry-run",
     "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback",
     "sync:e2e": "ts-node scripts/sync/e2e.test.ts",
-    "test:assets": "ts-node scripts/sync/asset.test.ts"
+    "test:assets": "ts-node scripts/sync/asset.test.ts",
+    "seed:ci": "ts-node prisma/seed-ci.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

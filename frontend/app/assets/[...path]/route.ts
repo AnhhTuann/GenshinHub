@@ -36,11 +36,11 @@ function findAsset(relSegments: string[]): string | null {
   const candidates: string[] = [];
   const storageRoot = process.env.ASSET_STORAGE_PATH;
   if (storageRoot) {
-    const p = safeJoin(path.resolve(storageRoot), path.posix.join('assets', rel));
+    const p = safeJoin(path.resolve(storageRoot, 'assets'), rel);
     if (p) candidates.push(p);
   }
   // public/assets/<rel> — public root đã chứa thư mục assets
-  const pub = safeJoin(path.resolve(process.cwd(), 'public'), path.posix.join('assets', rel));
+  const pub = safeJoin(path.resolve(process.cwd(), 'public', 'assets'), rel);
   if (pub) candidates.push(pub);
   for (const c of candidates) {
     try {

@@ -15,6 +15,7 @@ import { getAssetStorageRoot } from '../src/utils/assetStorage';
 const prisma = new PrismaClient();
 
 async function main() {
+  if (!process.env.DATABASE_URL) throw new Error('Cần truyền DATABASE_URL rõ ràng qua môi trường');
   const args = process.argv.slice(2);
   const doSync = args.includes('--sync');
   const onlyIdx = args.indexOf('--only');
@@ -38,6 +39,11 @@ async function main() {
   console.log(`\n📊 Quét ${scan.total} bản ghi DB:`);
   console.log(`   ✅ Hợp lệ: ${scan.valid} | ❌ Thiếu: ${scan.missing} | ⚠️ Hỏng: ${scan.invalid} | (không URL: ${scan.skippedNoPath})`);
   console.log(`   🔧 Cần xử lý: ${scan.jobs.length}`);
+
+  if (scan.unresolved.length) {
+    console.log(`   Thiếu URL hoặc nguồn tải: ${scan.unresolved.length}`);
+    for (const item of scan.unresolved) console.log(`   - ${item.label} -> ${item.relPath || '(chưa cấu hình URL)'}`);
+  }
 
   if (!doSync) {
     console.log('\nℹ️  Check-only — chạy với --sync để tải asset thiếu.');

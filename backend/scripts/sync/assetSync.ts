@@ -18,19 +18,25 @@ import * as path from 'path';
 import { PrismaClient } from '@prisma/client';
 import * as genshindb from 'genshin-db';
 import axios from 'axios';
-import { resolveAssetFilePath, isValidImageFile, getAssetStorageRoot } from '../../src/utils/assetStorage';
+import { characterSplashPath } from './idMapper';
+import { resolveAssetFilePath, isDecodableImageFile, getAssetStorageRoot } from '../../src/utils/assetStorage';
 import { downloadWithFallback } from '../../src/utils/imageDownloader';
 
 const ENKA_UI = 'https://enka.network/ui';
 const ENKA_CHARS_URL = 'https://raw.githubusercontent.com/EnkaNetwork/API-docs/master/store/characters.json';
 const enka = (filename?: string | null) => (filename ? `${ENKA_UI}/${filename}.png` : undefined);
+export const yattaImage = (filename?: string | null) =>
+  filename && /^UI_[a-zA-Z0-9_-]+$/.test(filename)
+    ? `https://gi.yatta.moe/assets/UI/${filename}.png`
+    : undefined;
+
 
 /** Tạo URL Enka trực tiếp từ basename file local (UI_ItemIcon_xxx.webp -> UI_ItemIcon_xxx.png). */
-function enkaFromLocalPath(rel: string | null | undefined): string | undefined {
+export function filenameFromLocalPath(rel: string | null | undefined): string | undefined {
   if (!rel) return undefined;
   const base = path.basename(rel).replace(/\.webp$/i, '');
   if (!base || base === 'avatar' || base === 'splash' || base === 'icon') return undefined;
-  return enka(base);
+  return /^UI_[a-zA-Z0-9_-]+$/.test(base) ? base : undefined;
 }
 
 export interface AssetJob {
@@ -48,37 +54,44 @@ export interface AssetScanResult {
   invalid: number;      // có file nhưng hỏng/0-byte/sai format
   jobs: AssetJob[];     // các asset cần tải
   skippedNoPath: number; // record không có URL (iconUrl null)
+  unresolved: { label: string; relPath: string | null }[];
 }
 
-function pushJob(
+async function pushJob(
   jobs: AssetJob[],
+  unresolved: AssetScanResult['unresolved'],
   counters: { valid: number; missing: number; invalid: number; skippedNoPath: number },
   label: string,
   relPath: string | null | undefined,
   urls: string[],
-): void {
-  if (!relPath) { counters.skippedNoPath++; return; }
+): Promise<void> {
+  if (!relPath) { counters.skippedNoPath++; unresolved.push({ label, relPath: null }); return; }
   const abs = resolveAssetFilePath(relPath);
-  if (!abs) { counters.invalid++; return; } // path traversal -> invalid
+  if (!abs) { counters.invalid++; unresolved.push({ label, relPath }); return; } // path traversal -> invalid
   if (fs.existsSync(abs)) {
-    if (isValidImageFile(abs)) { counters.valid++; return; }
+    if (await isDecodableImageFile(abs)) { counters.valid++; return; }
     counters.invalid++;
   } else {
     counters.missing++;
   }
   const cleanUrls = urls.filter(Boolean);
-  if (cleanUrls.length) jobs.push({ label, relPath, absPath: abs, urls: cleanUrls });
+  if (cleanUrls.length) jobs.push({ label, relPath, absPath: abs, urls: [...new Set(cleanUrls)] });
+  else unresolved.push({ label, relPath });
 }
 
-/** Tra cứu genshin-db theo nameEn/nameVi, trả về images object hoặc null. */
-function genshinImagesByName(nameEn: string, nameVi?: string | null): any | null {
-  for (const q of [nameEn, nameVi].filter(Boolean) as string[]) {
-    try {
-      const m = genshindb.materials(q) || genshindb.weapons(q) || genshindb.artifacts(q) || genshindb.characters(q);
-      if (m?.images) return m.images;
-    } catch { /* ignore */ }
-  }
-  return null;
+function genshinImagesByName(
+  folder: 'materials' | 'weapons' | 'artifacts',
+  nameEn: string,
+  nameVi?: string | null,
+): any | null {
+  const en = genshindb[folder](nameEn);
+  if (en?.name === nameEn) return en.images;
+  if (!nameVi) return null;
+  const vi = genshindb[folder](nameVi, {
+    queryLanguages: [genshindb.Language.Vietnamese],
+    resultLanguage: genshindb.Language.Vietnamese,
+  });
+  return vi?.name === nameVi ? vi.images : null;
 }
 
 /** Map folder slug -> internal name từ Enka characters.json (fallback cho nhân vật genshin-db không tra được). */
@@ -109,20 +122,31 @@ function folderSlugFromPath(rel: string | null | undefined): string | null {
   return m ? m[1] : null;
 }
 
-function genshinCharacterImages(nameEn: string, nameVi?: string | null): { avatar?: string[]; splash?: string[] } {
-  for (const q of [nameEn, nameVi].filter(Boolean) as string[]) {
-    try {
-      const c = genshindb.characters(q);
-      if (c?.images) {
-        const imgs = c.images;
-        return {
-          avatar: [imgs.mihoyo_icon, enka(imgs.filename_icon)].filter(Boolean) as string[],
-          splash: [enka(imgs.filename_gachaSplash || imgs.filename_sideIcon)].filter(Boolean) as string[],
-        };
-      }
-    } catch { /* ignore */ }
-  }
-  return {};
+let yattaAvatars: Promise<Map<string, string>> | undefined;
+
+function getYattaAvatars(): Promise<Map<string, string>> {
+  yattaAvatars ??= axios.get('https://gi.yatta.moe/api/v2/en/avatar', { timeout: 10000 })
+    .then(({ data }) => {
+      const entries = Object.values(data?.data?.items || {}) as { name: string; icon: string }[];
+      return new Map(entries.map(({ name, icon }) => [name, icon]));
+    })
+    .catch(() => new Map());
+  return yattaAvatars;
+}
+
+export async function characterAssetUrls(nameEn: string) {
+  const character = genshindb.characters(nameEn);
+  if (character?.name !== nameEn) return { avatar: [], splash: [] };
+  const images = character.images;
+  const yattaIcon = images?.filename_icon || (await getYattaAvatars()).get(nameEn);
+  const splash = images?.filename_gachaSplash ||
+    yattaIcon?.replace(/^UI_AvatarIcon_(?!Side_)/, 'UI_Gacha_AvatarImg_');
+  const asStrings = (urls: (string | undefined)[]) =>
+    urls.filter((url): url is string => Boolean(url));
+  return {
+    avatar: asStrings([images?.mihoyo_icon, enka(yattaIcon), yattaImage(yattaIcon)]),
+    splash: asStrings([enka(splash), yattaImage(splash)]),
+  };
 }
 
 /**
@@ -133,15 +157,16 @@ export async function scanAssets(prisma: PrismaClient, kinds?: { characters?: bo
   const want = { characters: true, weapons: true, artifacts: true, materials: true, ...kinds };
   const counters = { valid: 0, missing: 0, invalid: 0, skippedNoPath: 0 };
   const jobs: AssetJob[] = [];
+  const unresolved: AssetScanResult['unresolved'] = [];
   let total = 0;
 
-  const enkaMap = await getEnkaCharMap();
+  const enkaMap = want.characters ? await getEnkaCharMap() : null;
 
   if (want.characters) {
     const rows = await prisma.character.findMany({ select: { id: true, nameEn: true, nameVi: true, avatarUrl: true, splashArtUrl: true } });
     total += rows.length;
     for (const r of rows) {
-      const imgs = genshinCharacterImages(r.nameEn, r.nameVi);
+      const imgs = await characterAssetUrls(r.nameEn);
       // Fallback Enka theo folder slug (vd Alhatham -> Alhaitham)
       const slug = folderSlugFromPath(r.avatarUrl) || folderSlugFromPath(r.splashArtUrl);
       const enkaInternal = slug && enkaMap
@@ -150,9 +175,9 @@ export async function scanAssets(prisma: PrismaClient, kinds?: { characters?: bo
       const enkaAvatar = enkaInternal ? enka(`UI_AvatarIcon_${enkaInternal}`) : undefined;
       const enkaSplash = enkaInternal ? enka(`UI_Gacha_AvatarImg_${enkaInternal}`) : undefined;
       const asStr = (arr: (string | undefined)[]) => arr.filter((u): u is string => Boolean(u));
-      pushJob(jobs, counters, `avatar:${r.nameEn}`, r.avatarUrl,
+      await pushJob(jobs, unresolved, counters, `avatar:${r.nameEn}`, r.avatarUrl,
         asStr([...(imgs.avatar || []), enkaAvatar]));
-      pushJob(jobs, counters, `splash:${r.nameEn}`, r.splashArtUrl || null,
+      await pushJob(jobs, unresolved, counters, `splash:${r.nameEn}`, r.splashArtUrl || (imgs.splash.length ? characterSplashPath(r.nameEn) : null),
         asStr([...(imgs.splash || []), enkaSplash]));
     }
   }
@@ -161,14 +186,15 @@ export async function scanAssets(prisma: PrismaClient, kinds?: { characters?: bo
     const rows = await prisma.weapon.findMany({ select: { id: true, nameEn: true, nameVi: true, iconUrl: true } });
     total += rows.length;
     for (const r of rows) {
-      const imgs = genshinImagesByName(r.nameEn, r.nameVi);
+      const imgs = genshinImagesByName('weapons', r.nameEn, r.nameVi);
       const urls = [
         imgs?.mihoyo_icon,
         enka(imgs?.filename_icon),
         enka(imgs?.filename_awakenIcon),
-        enkaFromLocalPath(r.iconUrl),
+        yattaImage(imgs?.filename_icon),
+        enka(filenameFromLocalPath(r.iconUrl)), yattaImage(filenameFromLocalPath(r.iconUrl)),
       ];
-      pushJob(jobs, counters, `weapon:${r.nameEn}`, r.iconUrl, urls.filter(Boolean) as string[]);
+      await pushJob(jobs, unresolved, counters, `weapon:${r.nameEn}`, r.iconUrl, urls.filter(Boolean) as string[]);
     }
   }
 
@@ -176,15 +202,15 @@ export async function scanAssets(prisma: PrismaClient, kinds?: { characters?: bo
     const rows = await prisma.artifactSet.findMany({ select: { id: true, nameEn: true, nameVi: true, iconUrl: true } });
     total += rows.length;
     for (const r of rows) {
-      const imgs = genshinImagesByName(r.nameEn, r.nameVi);
+      const imgs = genshinImagesByName('artifacts', r.nameEn, r.nameVi);
       const f = imgs?.filename_flower || imgs?.filename_plume || imgs?.filename_sands || imgs?.filename_goblet || imgs?.filename_circlet;
       const mihoyoKey = f === imgs?.filename_flower ? 'mihoyo_flower'
         : f === imgs?.filename_plume ? 'mihoyo_plume'
         : f === imgs?.filename_sands ? 'mihoyo_sands'
         : f === imgs?.filename_goblet ? 'mihoyo_goblet'
         : 'mihoyo_circlet';
-      const urls = [imgs?.[mihoyoKey], enka(f), enkaFromLocalPath(r.iconUrl)];
-      pushJob(jobs, counters, `artifact:${r.nameEn}`, r.iconUrl, urls.filter(Boolean) as string[]);
+      const urls = [imgs?.[mihoyoKey], enka(f), yattaImage(f), enka(filenameFromLocalPath(r.iconUrl)), yattaImage(filenameFromLocalPath(r.iconUrl))];
+      await pushJob(jobs, unresolved, counters, `artifact:${r.nameEn}`, r.iconUrl, urls.filter(Boolean) as string[]);
     }
   }
 
@@ -192,9 +218,9 @@ export async function scanAssets(prisma: PrismaClient, kinds?: { characters?: bo
     const rows = await prisma.material.findMany({ select: { id: true, nameEn: true, nameVi: true, iconUrl: true } });
     total += rows.length;
     for (const r of rows) {
-      const imgs = genshinImagesByName(r.nameEn, r.nameVi);
-      const urls = [enka(imgs?.filename_icon), enkaFromLocalPath(r.iconUrl)];
-      pushJob(jobs, counters, `material:${r.nameEn}`, r.iconUrl, urls.filter(Boolean) as string[]);
+      const imgs = genshinImagesByName('materials', r.nameEn, r.nameVi);
+      const urls = [imgs?.mihoyo_icon, enka(imgs?.filename_icon), yattaImage(imgs?.filename_icon), enka(filenameFromLocalPath(r.iconUrl)), yattaImage(filenameFromLocalPath(r.iconUrl))];
+      await pushJob(jobs, unresolved, counters, `material:${r.nameEn}`, r.iconUrl, urls.filter(Boolean) as string[]);
     }
   }
 
@@ -205,6 +231,7 @@ export async function scanAssets(prisma: PrismaClient, kinds?: { characters?: bo
     missing: counters.missing,
     invalid: counters.invalid,
     jobs,
+    unresolved,
     skippedNoPath: counters.skippedNoPath,
   };
 }
@@ -228,12 +255,14 @@ export async function syncAssets(prisma: PrismaClient, kinds?: Parameters<typeof
   }
 
   const concurrency = opts.concurrency ?? 4;
-  const queue = [...scan.jobs];
+  const queue = [...new Map(scan.jobs.map(job => [job.absPath, job])).values()];
   const workers = Array.from({ length: concurrency }, async () => {
     while (queue.length) {
       const job = queue.shift()!;
       const res = await downloadWithFallback(job.urls, job.absPath, { skipExisting: true });
-      if (res.ok) {
+      if (res.skipped) {
+        result.skippedValid++;
+      } else if (res.ok) {
         result.ok++;
       } else {
         result.fail++;

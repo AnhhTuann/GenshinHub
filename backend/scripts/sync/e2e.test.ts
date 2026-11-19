@@ -11,10 +11,9 @@
 
 import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
-import * as fs from 'fs';
-import * as path from 'path';
 import { applyReport, rollback, SyncDeps } from './syncEngine';
 import { detectChanges, SyncReport } from './detector';
+import { mapYattaMaterials } from './yattaMaterials';
 
 const prisma = new PrismaClient();
 const GRAPHQL_URL = process.env.GRAPHQL_URL || 'http://localhost:4000/graphql';
@@ -147,15 +146,50 @@ async function cleanup() {
   await prisma.material.deleteMany({ where: { id: E2E.materialId } });
 }
 
+function verifyTestTarget() {
+  const db = new URL(process.env.DATABASE_URL || '');
+  const api = new URL(GRAPHQL_URL);
+  const local = ['localhost', '127.0.0.1', '[::1]'];
+  if (process.env.NODE_ENV !== 'test' || !local.includes(db.hostname) ||
+      !db.pathname.endsWith('_test') || !local.includes(api.hostname)) {
+    throw new Error('E2E requires a loopback database ending in _test and a local GraphQL server');
+  }
+}
+
 async function main() {
+  verifyTestTarget();
   console.log('🧪 E2E TEST — fixture giả, dev DB only\n');
   await cleanup(); // đảm bảo sạch trước test
+
+  const invalidReport = buildFixtureReport();
+  invalidReport.artifacts[0].source.piece2DescEn = null as unknown as string;
+  await applyReport(invalidReport, false, fakeDeps).then(
+    () => check('batch rejects invalid artifact', false),
+    () => check('batch rejects invalid artifact', true),
+  );
+  check('failed batch leaves no character or weapon', (
+    await prisma.character.count({ where: { id: E2E.charId } }) +
+    await prisma.weapon.count({ where: { id: E2E.weaponId } })
+  ) === 0);
+  await cleanup();
+
+  const item = { id: 998881, name: 'E2E Catalog Item', type: 'specialCurrency', icon: 'UI_ItemIcon_998881', rank: 4 };
+  const pendingItem = { id: 998882, name: 'E2E Unranked Item', type: 'specialCurrency' };
+  const source = mapYattaMaterials({ '998881': item, '998882': pendingItem }, {});
+  const extended = await detectChanges(prisma, source);
+  check('catalog detects a new typed item', extended.materials.some(entry =>
+    entry.dbId === '998881' && entry.action === 'create' && entry.source.sourceType === 'specialCurrency'));
+  check('catalog leaves an unranked item pending', extended.materials.some(entry =>
+    entry.dbId === '998882' && entry.action === 'pending'));
+  check('extended dry-run does not add catalog items', await prisma.material.count({
+    where: { id: { in: ['998881', '998882'] } },
+  }) === 0);
 
   // ---------- 1. Dry-run: fixture KHÔNG tự chạy qua detector (không có trong genshin-db)
   //    -> mô phỏng bằng applyReport trực tiếp (đã test detector riêng ở sync:check)
   console.log('1️⃣  Apply fixture report (giả lập dữ liệu game mới)...');
   const report = buildFixtureReport();
-  await applyReport(report, false, fakeDeps);
+  const snapFile = await applyReport(report, false, fakeDeps);
 
   // ---------- 2. Verify Prisma ----------
   console.log('\n2️⃣  Verify Prisma records...');
@@ -197,6 +231,8 @@ async function main() {
     const res = await gql(`{ character(id:"${E2E.charId}"){ id nameEn baseHp tier } weapon(id:"${E2E.weaponId}"){ id nameEn baseAtk } }`);
     check('GraphQL character query', res?.data?.character?.nameEn === 'E2E Test Hero' && res?.data?.character?.tier === 'S', res);
     check('GraphQL weapon query', res?.data?.weapon?.baseAtk === 450, res);
+    const artifacts = await gql(`{ artifactSet(id:"${E2E.artifactId}"){ id nameEn } }`);
+    check('GraphQL artifact set detail', artifacts?.data?.artifactSet?.nameEn === 'E2E Test Set', artifacts);
     const mats = await gql(`{ materials { id nameEn } }`);
     check('GraphQL materials chứa fixture', mats?.data?.materials?.some((m: any) => m.id === E2E.materialId), 'material not found');
   } catch (e: any) {
@@ -212,24 +248,12 @@ async function main() {
 
   // ---------- 7. Rollback ----------
   console.log('\n7️⃣  Rollback snapshot...');
-  const backupsDir = path.join(__dirname, '..', '..', 'backups');
-  // Snapshot filenames chứa timestamp tăng dần -> sort() thường là cũ -> mới.
-  // Cần snapshot ghi action 'create' (lần apply đầu tiên), KHÔNG phải snapshot
-  // 'update' của các lần apply sau (rollback update chỉ restore, không xóa).
-  const snaps = fs.readdirSync(backupsDir).filter(f => f.startsWith('snapshot_before_sync_')).sort();
-  let snapFile = '';
-  for (const f of snaps) {
-    const snap = JSON.parse(fs.readFileSync(path.join(backupsDir, f), 'utf8'));
-    const hasCreate = snap.entries?.some((e: any) =>
-      e.action === 'create' &&
-      (e.id === E2E.charId || e.id === E2E.weaponId || e.id === E2E.materialId || e.id === E2E.artifactId));
-    if (hasCreate) { snapFile = path.join(backupsDir, f); break; } // snapshot cũ nhất chứa create
-  }
-  check('tìm thấy snapshot chứa fixture', !!snapFile, snaps.slice(0, 3));
+  check('tìm thấy snapshot chứa fixture', !!snapFile);
   if (snapFile) {
     await rollback(snapFile);
     check('character bị xóa sau rollback', !(await prisma.character.findUnique({ where: { id: E2E.charId } })));
     check('weapon bị xóa sau rollback', !(await prisma.weapon.findUnique({ where: { id: E2E.weaponId } })));
+    check('artifact bị xóa sau rollback', !(await prisma.artifactSet.findUnique({ where: { id: E2E.artifactId } })));
     check('material bị xóa sau rollback', !(await prisma.material.findUnique({ where: { id: E2E.materialId } })));
   }
 
@@ -241,7 +265,7 @@ async function main() {
 
 main().catch(async e => {
   console.error('❌ E2E ERROR:', e);
-  await cleanup().catch(() => {});
+  try { verifyTestTarget(); await cleanup(); } catch { /* preserve test failure */ }
   await prisma.$disconnect();
   process.exit(1);
 });

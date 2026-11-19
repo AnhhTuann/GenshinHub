@@ -119,6 +119,11 @@ async function main() {
   const relOk = '/assets/items/UI_Test_OkAfter404.webp';
   const res404 = await downloadWithFallback([`${baseUrl}/UI_Test_404.png`], resolveAssetFilePath(rel404)!);
   check('404 returns ok=false (không throw)', res404.ok === false);
+  check('404 skips retry on the same source', hits['/UI_Test_404.png'] === 1);
+  const damaged = Buffer.alloc(80, 0x41);
+  await atomicWriteFile(absBad, damaged);
+  await downloadAndConvertToWebp(`${baseUrl}/UI_Test_404.png`, relBad);
+  check('failed replacement preserves existing file', fs.existsSync(absBad) && fs.readFileSync(absBad).equals(damaged));
   const resOk = await downloadWithFallback([`${baseUrl}/UI_Test_OkAfter404.png`], resolveAssetFilePath(relOk)!);
   check('asset sau 404 vẫn tải được', resOk.ok === true, resOk);
   check('không có placeholder file cho 404', !fs.existsSync(resolveAssetFilePath(rel404)!));
@@ -133,9 +138,7 @@ async function main() {
   check('số lần thử <= MAX_RETRIES(3)', (hits['/UI_Test_Retry.png'] || 0) <= 3, hits);
 
   resetHits();
-  failNext.add('/UI_Test_AlwaysFail.png');
-  // server luôn trả 404 cho path này? failNext chỉ fail 1 lần -> dùng failAlways
-  failAlways.add('/UI_Test_AlwaysFail.png');
+  flakyCount['/UI_Test_AlwaysFail.png'] = 3; // HTTP 503 retries; HTTP 404 falls back immediately
   r = await downloadAndConvertToWebp(`${baseUrl}/UI_Test_AlwaysFail.png`, '/assets/items/UI_Test_AlwaysFail.webp');
   check('fail sau đúng 3 lần thử', (hits['/UI_Test_AlwaysFail.png'] || 0) === 3, hits['/UI_Test_AlwaysFail.png']);
   check('kết quả ok=false sau retries', r.ok === false);

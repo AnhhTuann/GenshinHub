@@ -10,10 +10,11 @@ Tài liệu này mô tả kiến trúc mục tiêu khi self-host toàn bộ Gens
 ├── frontend/            # Next.js app (build output .next/)
 ├── backend/             # Express + Apollo GraphQL + Prisma
 ├── assets/              # ASSET_STORAGE_PATH — persistent, NGOÀI source code
-│   ├── characters/
-│   ├── weapons/
-│   ├── artifacts/
-│   └── items/           # materials
+│   └── assets/          # URL namespace /assets/
+│       ├── characters/
+│       ├── weapons/
+│       ├── artifacts/
+│       └── items/       # materials
 ├── backups/             # pg_dump + snapshot JSON + assets tar
 └── logs/
 ```
@@ -53,13 +54,7 @@ server {
     server_name your-domain.com;
 
     # --- Assets: serve thẳng từ persistent storage, không qua Next.js ---
-    location /assets/ {
-        alias /srv/genshinhub/assets/;
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-        # Chặn path traversal (Nginx merge_slashes + alias an toàn)
-        location ~* \.(php|sh|py)$ { deny all; }
-    }
+    include /etc/nginx/snippets/genshinhub-assets.conf;
 
     # --- Frontend Next.js ---
     location / {
@@ -96,8 +91,7 @@ hoạt động ngay). Khuyến nghị vẫn dùng Nginx `alias` cho hiệu năng
 
 # Backend (GraphQL API)
 cd /srv/genshinhub/backend
-npm ci && npx prisma generate && npx prisma migrate deploy
-npm run build
+npm ci && npm run build
 # systemd unit: ExecStart=node dist/src/index.js
 
 # Frontend (Next.js standalone)
@@ -107,36 +101,45 @@ npm ci && npm run build
 # hoặc pm2: pm2 start npm --name genshinhub-web -- start
 ```
 
-## 5. Data Sync định kỳ (cron/systemd timer)
+## 5. Data Sync và template VPS
 
-```bash
-# crontab — chạy check hằng ngày; apply chỉ khi có thay đổi được duyệt
-0 3 * * *  cd /srv/genshinhub/backend && npm run sync:check >> logs/sync.log 2>&1
-# Apply thủ công hoặc qua GitHub Actions "Genshin Data Sync — Apply"
-```
+Các file mẫu nằm trong [deploy/vps](../deploy/vps). Cài Node 20+, PostgreSQL
+client, Bash và util-linux cho máy chạy sync. Chuẩn bị thư mục
+`/srv/genshinhub/assets/assets` và đưa thư mục `frontend/public/assets` hiện
+có vào đó trước khi bật Nginx. Nginx chỉ đọc volume, job asset có quyền ghi.
 
-Trên VPS có thể chạy `npm run sync:run` trực tiếp — assets sẽ ghi vào
-`/srv/genshinhub/assets` (persistent, sống sót qua deploy/rebuild).
+| Unit | Chức năng | Kích hoạt |
+| --- | --- | --- |
+| `genshinhub-sync-check.timer` | 03:00 UTC, kiểm tra npm, diff, validation và kiểm kê WebP | Bật sau khi xác minh cấu hình |
+| `genshinhub-sync-apply.service` | Kiểm tra phiên bản đã duyệt, backup PostgreSQL, sync, kiểm tra lại và revalidate | Chạy thủ công |
+| `genshinhub-sync-assets.service` | Tải assets còn thiếu và ghi log các lỗi CDN | Chạy thủ công hoặc sau apply |
 
-### Đường đi của assets mới
+Cấp `DATABASE_URL` chỉ đọc cho `sync-readonly.env`. Đặt URL PostgreSQL trực tiếp
+cùng quyền ghi bốn model game và quyền đọc để backup trong `sync-apply.env`, cùng
+`APPROVED_GENSHIN_DB_VERSION`, `SYNC_BACKUP_ROOT`,
+`FRONTEND_REVALIDATE_URL` và `REVALIDATE_SECRET`. Cấu hình backup ngoài cây
+source và giới hạn quyền đọc. Script apply dùng cùng host, port, DB và user
+từ URL này cho Prisma và pg_dump. Nếu validation sau apply, lệnh asset sync
+hoặc revalidation thất bại, script thử rollback snapshot của lần đó. Các
+icon 404 được ghi vào báo cáo asset và tiếp tục xử lý batch.
 
-- **Cách khuyến nghị (VPS tự sync):** cron/systemd chạy `sync:run` hoặc
-  `sync:assets` trực tiếp trên VPS → file ghi thẳng vào
-  `/srv/genshinhub/assets`, không qua GitHub.
-- **Cách qua GitHub Actions Apply:** workflow tải assets vào
-  `ASSET_STORAGE_PATH` tạm rồi upload `assets-downloaded-prod` artifact.
-  Artifact chỉ là cầu nối — sau khi apply, SSH vào VPS và restore:
+### Node.js, systemd và Nginx
 
-  ```bash
-  # Trên VPS (sau khi download artifact từ GitHub Actions)
-  tar -xzf assets_prod_YYYYMMDD_HHMMSS.tar.gz -C /srv/genshinhub/assets/
-  # hoặc chạy bù cho chắc:
-  cd /srv/genshinhub/backend && npm run sync:assets
-  ```
+Dùng `genshinhub-backend.service`, `genshinhub-frontend.service` và snippet
+`assets.nginx.conf`. Copy `.next/static` và `public` vào thư mục standalone
+nếu dùng output Next.js standalone. Cấu hình TLS và route GraphQL/nginx phù
+hợp với hostname thực tế trước khi khởi động.
 
-  `sync:assets` là idempotent — file đã có & hợp lệ sẽ bị skip, chỉ tải
-  phần còn thiếu. Vì vậy quy trình an toàn là: apply trên GitHub → restore
-  artifact → chạy `sync:assets` trên VPS để bù phần artifact không chứa.
+### Docker Compose và Nginx
+
+Dùng `compose.yml` cùng `compose.assets.yml`. Cấp image tags đã được review
+qua `GENSHINHUB_BACKEND_IMAGE` và `GENSHINHUB_FRONTEND_IMAGE`, tạo các env
+file mẫu tương ứng ngay trước khi chạy. Frontend image phải được build với
+GraphQL endpoint có thể truy cập được lúc build và từ trình duyệt. Nginx
+template lắng nghe HTTP trên loopback 8080, để cấu hình TLS phía trước. Đặt
+sync runner bên ngoài image runtime tối giản và mount cùng asset volume vào
+runner khi chọn Docker. Dùng network nội bộ hoặc direct PostgreSQL endpoint
+đã phê duyệt cho runner.
 
 ## 6. Backup
 

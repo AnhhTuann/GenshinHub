@@ -1,0 +1,18 @@
+# Merge with a deployment Compose file that already defines these services.
+services:
+  backend:
+    environment:
+      ASSET_STORAGE_PATH: /srv/genshinhub/assets
+    volumes:
+      - game-assets:/srv/genshinhub/assets
+  frontend:
+    environment:
+      ASSET_STORAGE_PATH: /srv/genshinhub/assets
+    volumes:
+      - game-assets:/srv/genshinhub/assets:ro
+  nginx:
+    volumes:
+      - game-assets:/srv/genshinhub/assets:ro
+      - ./assets.nginx.conf:/etc/nginx/snippets/genshinhub-assets.conf:ro
+volumes:
+  game-assets:

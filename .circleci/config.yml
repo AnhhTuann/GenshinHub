@@ -75,6 +75,18 @@ jobs:
             DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
           command: npm run build
 
+      - run:
+          name: Validate Prisma schema
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npx prisma validate
+
+      - run:
+          name: Run source version checker tests
+          working_directory: backend
+          command: npm run test:sync:version
+
       # Chia sẻ node_modules + dist cho các job phụ thuộc
       - persist_to_workspace:
           root: ~/project
@@ -120,7 +132,7 @@ jobs:
           paths:
             - frontend/node_modules
 
-  # ── Job 3: 39 Asset integration tests (không cần DB) ─────────
+  # ── Job 3: Asset integration tests (không cần DB) ─────────
   asset-integration-tests:
     executor: node-executor
     steps:
@@ -137,7 +149,7 @@ jobs:
           command: npx prisma generate
 
       - run:
-          name: Run 39 asset integration tests
+          name: Run asset integration tests
           working_directory: backend
           environment:
             DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
@@ -147,7 +159,7 @@ jobs:
           command: npm run test:assets
           no_output_timeout: 3m
 
-  # ── Job 4: 21 E2E tests (PostgreSQL test + GraphQL server) ────
+  # ── Job 4: Data sync E2E tests (PostgreSQL test + GraphQL server) ────
   e2e-tests:
     executor: node-postgres
     steps:
@@ -196,7 +208,7 @@ jobs:
           command: dockerize -wait tcp://localhost:4000 -timeout 30s
 
       - run:
-          name: Run 21 E2E tests
+          name: Run Data sync E2E tests
           working_directory: backend
           environment:
             DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test

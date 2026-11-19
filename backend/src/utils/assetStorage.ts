@@ -1,4 +1,6 @@
 import * as fs from 'fs';
+import { randomUUID } from 'node:crypto';
+import sharp from 'sharp';
 import * as path from 'path';
 
 /**
@@ -84,6 +86,16 @@ export function isValidImageFile(filePath: string, minBytes = 30): boolean {
   }
 }
 
+export async function isDecodableImageFile(filePath: string): Promise<boolean> {
+  if (!isValidImageFile(filePath)) return false;
+  try {
+    await sharp(filePath, { failOn: 'warning' }).stats();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Atomic write: write to temp file in same dir then rename.
  * Ensures parent dir exists and stays inside root.
@@ -91,7 +103,11 @@ export function isValidImageFile(filePath: string, minBytes = 30): boolean {
 export async function atomicWriteFile(absPath: string, data: Buffer | string): Promise<void> {
   const dir = path.dirname(absPath);
   fs.mkdirSync(dir, { recursive: true });
-  const tmp = absPath + '.tmp-' + process.pid + '-' + Date.now();
-  fs.writeFileSync(tmp, data);
-  fs.renameSync(tmp, absPath);
+  const tmp = absPath + '.tmp-' + randomUUID();
+  try {
+    await fs.promises.writeFile(tmp, data, { flag: 'wx' });
+    await fs.promises.rename(tmp, absPath);
+  } finally {
+    await fs.promises.rm(tmp, { force: true });
+  }
 }

@@ -1,0 +1,18 @@
+[Unit]
+Description=GenshinHub Apollo GraphQL
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=genshinhub
+WorkingDirectory=/srv/genshinhub/backend
+Environment=NODE_ENV=production
+Environment=PORT=4000
+Environment=ASSET_STORAGE_PATH=/srv/genshinhub/assets
+EnvironmentFile=/etc/genshinhub/backend.env
+ExecStart=/usr/bin/node /srv/genshinhub/backend/dist/src/index.js
+Restart=on-failure
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

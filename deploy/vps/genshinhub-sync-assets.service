@@ -1,0 +1,15 @@
+[Unit]
+Description=Download missing GenshinHub WebP assets
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=genshinhub
+WorkingDirectory=/srv/genshinhub/backend
+Environment=ASSET_STORAGE_PATH=/srv/genshinhub/assets
+EnvironmentFile=/etc/genshinhub/sync-readonly.env
+ExecStart=/usr/bin/bash /srv/genshinhub/deploy/vps/sync.sh assets
+TimeoutStartSec=45min
+NoNewPrivileges=yes
+UMask=0077

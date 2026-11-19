@@ -1,8 +1,7 @@
 import axios, { AxiosError } from 'axios';
-import * as fs from 'fs';
 import * as path from 'path';
 import sharp from 'sharp';
-import { getAssetStorageRoot, resolveAssetFilePath, atomicWriteFile, isValidImageFile } from './assetStorage';
+import { getAssetStorageRoot, resolveAssetFilePath, atomicWriteFile, isDecodableImageFile } from './assetStorage';
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 1000;
@@ -68,14 +67,9 @@ export async function downloadAndConvertToWebp(
     return { ok: false, error: `Invalid output path for ${url}` };
   }
 
-  if (skipExisting && fs.existsSync(target) && isValidImageFile(target)) {
+  if (skipExisting && await isDecodableImageFile(target)) {
     return { ok: true, path: target, skipped: true };
   }
-  // If file exists but corrupt: remove it so we can replace safely
-  if (fs.existsSync(target) && !isValidImageFile(target)) {
-    try { fs.unlinkSync(target); } catch { /* ignore */ }
-  }
-
   let lastErr = '';
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
@@ -93,6 +87,9 @@ export async function downloadAndConvertToWebp(
         .webp({ quality: 80 })
         .toBuffer();
       if (webp.length < 50) throw new Error('webp output too small');
+      if (skipExisting && await isDecodableImageFile(target)) {
+        return { ok: true, path: target, skipped: true };
+      }
       await atomicWriteFile(target, webp);
       return { ok: true, path: target };
     } catch (err) {
@@ -100,6 +97,7 @@ export async function downloadAndConvertToWebp(
       lastErr = e?.response?.status
         ? `HTTP ${e.response.status}`
         : e?.message || String(err);
+      if (e?.response?.status === 404) break;
       if (attempt < MAX_RETRIES) {
         await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt));
       }

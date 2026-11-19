@@ -1,0 +1,28 @@
+# Merge with compose.assets.yml. Use reviewed application images.
+services:
+  postgres:
+    image: postgres:16-alpine
+    env_file: ./postgres.env
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  backend:
+    image: ${GENSHINHUB_BACKEND_IMAGE:?Set a reviewed backend image}
+    env_file: ./backend.env
+    depends_on:
+      - postgres
+  frontend:
+    image: ${GENSHINHUB_FRONTEND_IMAGE:?Set a reviewed frontend image}
+    env_file: ./frontend.env
+    depends_on:
+      - backend
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./site.compose.nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      - frontend
+      - backend
+volumes:
+  postgres-data:

@@ -1,0 +1,19 @@
+[Unit]
+Description=GenshinHub Next.js
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=genshinhub
+WorkingDirectory=/srv/genshinhub/frontend/.next/standalone
+Environment=NODE_ENV=production
+Environment=HOSTNAME=127.0.0.1
+Environment=PORT=3000
+Environment=ASSET_STORAGE_PATH=/srv/genshinhub/assets
+EnvironmentFile=/etc/genshinhub/frontend.env
+ExecStart=/usr/bin/node /srv/genshinhub/frontend/.next/standalone/server.js
+Restart=on-failure
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

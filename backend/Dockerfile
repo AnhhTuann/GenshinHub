@@ -1,4 +1,7 @@
-FROM node:20-alpine AS builder
+FROM node:20-alpine AS base
+RUN apk add --no-cache openssl
+
+FROM base AS builder
 
 WORKDIR /app
 
@@ -11,11 +14,10 @@ RUN npm ci
 # Copy the rest of the application code
 COPY . .
 
-# Generate Prisma client and build typescript
-RUN npx prisma generate
+# Generate Prisma Client and compile TypeScript.
 RUN npm run build
 
-FROM node:20-alpine AS runner
+FROM base AS runner
 
 WORKDIR /app
 
@@ -29,7 +31,7 @@ RUN npm ci --omit=dev
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
-COPY --from=builder /app/src/schema ./src/schema
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 
 EXPOSE 4000
 

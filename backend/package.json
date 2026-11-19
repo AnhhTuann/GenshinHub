@@ -10,10 +10,16 @@
     "seed": "prisma db seed",
     "export": "ts-node src/export-cli.ts",
     "sync-assets": "ts-node scripts/sync-assets.ts",
+    "sync:assets": "ts-node scripts/sync-assets.ts --sync",
+    "sync:assets:check": "ts-node scripts/sync-assets.ts",
+    "sync:version": "node scripts/sync/check-version.cjs",
+    "test:sync:version": "node --test scripts/sync/check-version.test.cjs",
     "sync:check": "ts-node scripts/sync/syncEngine.ts --dry-run",
     "sync:run": "ts-node scripts/sync/syncEngine.ts --sync --download-assets",
     "sync:validate": "ts-node scripts/sync/syncEngine.ts --validate --dry-run",
-    "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback"
+    "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback",
+    "sync:e2e": "ts-node scripts/sync/e2e.test.ts",
+    "test:assets": "ts-node scripts/sync/asset.test.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -42,7 +48,7 @@
     "enka-network-api": "^5.0.15",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
-    "genshin-db": "^5.2.11",
+    "genshin-db": "5.2.15",
     "graphql": "^16.14.1",
     "graphql-type-json": "^0.3.2",
     "helmet": "^8.2.0",
@@ -50,6 +56,7 @@
     "lru-cache": "^11.5.1",
     "multer": "^2.1.1",
     "nodemailer": "^9.0.3",
+    "semver": "7.8.6",
     "sharp": "^0.35.2",
     "xss": "^1.0.15"
   },

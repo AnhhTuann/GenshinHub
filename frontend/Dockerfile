@@ -15,7 +15,8 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Next.js build
+# The public URL must be reachable by both Next.js at build time and the browser.
+ARG NEXT_PUBLIC_GRAPHQL_URL
 RUN npm run build
 
 # Production image, copy all the files and run next

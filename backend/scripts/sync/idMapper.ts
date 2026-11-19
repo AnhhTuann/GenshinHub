@@ -7,10 +7,8 @@
  * Nguyên tắc:
  *  - Character ID trong DB là slug (vd: "hu-tao", "lanyan", "yumemizu").
  *  - Weapon / ArtifactSet / Material ID trong DB là ID số của
- *    gi.yatta.moe (vd: "11505", "10001", "100011"). Với các bản ghi
- *    MỚI chưa có ID yatta, engine sẽ tra cứu yatta trước; nếu không
- *    tìm thấy sẽ dùng slug và đánh dấu `pendingExternalId = true`
- *    trong báo cáo.
+ *    game (vd: "11505", "10001", "100011"). Engine ưu tiên ID từ nguồn
+ *    genshin-db, tra cứu Yatta khi thiếu và báo pending nếu chưa có ID.
  *  - Mọi ánh xạ đặc biệt (Traveler, Lan Yan, Yumemizuki Mizuki, Kirara…)
  *    phải đi qua file này để đảm bảo tính nhất quán.
  */

@@ -15,6 +15,7 @@
  *  - ArtifactSet / Material: không có trường admin (toàn bộ là game data).
  */
 
+import { isDecodableImageFile, resolveAssetFilePath } from '../../src/utils/assetStorage';
 import { PrismaClient } from '@prisma/client';
 import * as genshindb from 'genshin-db';
 import {
@@ -67,6 +68,7 @@ export interface CharacterSource {
 }
 
 export interface WeaponSource {
+  externalId?: string;
   genshinDbName: string;
   nameEn: string;
   nameVi: string;
@@ -84,6 +86,7 @@ export interface WeaponSource {
 }
 
 export interface ArtifactSource {
+  externalId?: string;
   genshinDbName: string;
   nameEn: string;
   nameVi: string;
@@ -99,12 +102,16 @@ export interface MaterialSource {
   genshinDbName: string;
   nameEn: string;
   nameVi: string;
-  rarity: number;
+  rarity: number;          // 0 = nguồn không có -> engine sẽ pending, không bịa
   iconUrl: string | null;
+  externalId: string | null; // game item ID từ genshin-db (cùng namespace yatta)
+  typeText: string;          // phân loại tiếng Anh từ nguồn (vd: 'Refinement Material')
+  category?: string;
+  sourceType?: string;
 }
 
 export interface DiffEntry<T> {
-  action: 'create' | 'update' | 'unchanged';
+  action: 'create' | 'update' | 'unchanged' | 'pending';
   dbId: string | null; // null khi create và chưa resolve được external ID
   sourceName: string;
   source: T;
@@ -180,7 +187,7 @@ function diffFields<T extends Record<string, any>>(
 const CHARACTER_GAME_FIELDS = [
   'nameEn', 'nameVi', 'titleEn', 'titleVi', 'rarity', 'element', 'weapon',
   'region', 'birthday', 'descriptionEn', 'descriptionVi',
-  'baseHp', 'baseAtk', 'baseDef', 'fandomUrl', 'avatarUrl',
+  'baseHp', 'baseAtk', 'baseDef', 'fandomUrl', 'avatarUrl', 'splashArtUrl',
 ] as const;
 
 function mapCharacter(genshinName: string): { source: CharacterSource; warnings: string[] } | null {
@@ -274,6 +281,7 @@ function mapWeapon(genshinName: string): WeaponSource | null {
   const passiveDescVi = vi?.r1?.description || vi?.description || passiveDescEn;
 
   return {
+    externalId: Number.isSafeInteger(en.id) && en.id > 0 ? String(en.id) : undefined,
     genshinDbName: genshinName,
     nameEn: clean(en.name),
     nameVi: clean(vi?.name) || clean(en.name),
@@ -314,6 +322,7 @@ function mapArtifact(genshinName: string): ArtifactSource | null {
 
   const pick = (a: any, key: string) => clean(a?.[key]);
   return {
+    externalId: Number.isSafeInteger(en.id) && en.id > 0 ? String(en.id) : undefined,
     genshinDbName: genshinName,
     nameEn: clean(en.name),
     nameVi: clean(vi?.name) || clean(en.name),
@@ -346,6 +355,9 @@ function mapMaterial(genshinName: string): MaterialSource | null {
     nameVi: clean(vi?.name) || clean(en.name),
     rarity: typeof en.rarity === 'number' ? en.rarity : 0,
     iconUrl: materialIconPath(en.images?.filename_icon),
+    externalId: typeof en.id === 'number' ? String(en.id) : null,
+    typeText: clean(en.typeText),
+    category: clean(en.category) || undefined,
   };
 }
 
@@ -364,7 +376,7 @@ function uniqueNames(names: string[]): string[] {
 // Detector entrypoint
 // ------------------------------------------------------------------
 
-export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
+export async function detectChanges(prisma: PrismaClient, supplementalMaterials: MaterialSource[] = []): Promise<SyncReport> {
   const report: SyncReport = {
     genshinDbVersion: GENSHIN_DB_VERSION,
     generatedAt: new Date().toISOString(),
@@ -394,10 +406,9 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
   const matchedMatIds = new Set<string>();
 
   // ---------- Characters ----------
-  // genshin-db có 2 cặp entry trùng cho nhân vật chính:
-  //   Aether/Lumine  ==  Manekin/Manekina (cùng stats, ELEMENT_NONE).
-  // DB đặt tên theo Manekin/Manekina -> chỉ sync cặp sau, bỏ cặp trước
-  // để tránh 2 nguồn ghi đè tên của nhau mỗi lần chạy.
+  // Aether/Lumine có game ID riêng. GenshinHub trình bày Traveler qua các
+  // hồ sơ legacy, còn Manekin/Manekina có hai slug legacy riêng.
+  // Giữ quy ước đó để tránh ghi chồng vào các slug đang dùng.
   const SKIP_DUPLICATE_SOURCES = new Set(['Aether', 'Lumine']);
   for (const name of uniqueNames(allNames((q, o) => genshindb.characters(q, o)))) {
     if (SKIP_DUPLICATE_SOURCES.has(name)) continue;
@@ -412,7 +423,7 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
 
     if (!dbRow) {
       report.characters.push({
-        action: 'create',
+        action: source.pending ? 'pending' : 'create',
         dbId: slugId,
         sourceName: source.nameEn,
         source,
@@ -423,12 +434,18 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
     }
 
     matchedCharIds.add(dbRow.id);
-    const src: any = { ...source };
+    const src: any = { ...source, avatarUrl: dbRow.avatarUrl || source.avatarUrl };
+    if (dbRow.splashArtUrl) src.splashArtUrl = dbRow.splashArtUrl;
+    else {
+      const candidate = characterSplashPath(source.nameEn);
+      const file = resolveAssetFilePath(candidate);
+      src.splashArtUrl = file && await isDecodableImageFile(file) ? candidate : undefined;
+    }
     if (!src.descriptionEn) src.descriptionEn = undefined;
     if (!src.descriptionVi) src.descriptionVi = undefined;
     const changes = diffFields(dbRow as any, src as any, [...CHARACTER_GAME_FIELDS]);
     report.characters.push({
-      action: changes.length ? 'update' : 'unchanged',
+      action: source.pending ? 'pending' : changes.length ? 'update' : 'unchanged',
       dbId: dbRow.id,
       sourceName: source.nameEn,
       source,
@@ -447,11 +464,11 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
     if (!dbRow) {
       report.weapons.push({
         action: 'create',
-        dbId: null, // cần resolve ID yatta trong engine
+        dbId: source.externalId ?? null,
         sourceName: source.nameEn,
         source,
         changes: [],
-        warnings: ['Vũ khí mới — cần tra cứu ID gi.yatta.moe'],
+        warnings: source.externalId ? [] : ['Vũ khí mới — cần tra cứu ID gi.yatta.moe'],
       });
       continue;
     }
@@ -459,7 +476,7 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
     matchedWeaponIds.add(dbRow.id);
     const row = { ...dbRow, type: dbRow.type };
     const src: any = { ...source, type: source.typeVi };
-    if (src.iconUrl == null) src.iconUrl = undefined;
+    if (dbRow.iconUrl || src.iconUrl == null) src.iconUrl = undefined;
     if (src.subStatValue == null) src.subStatValue = undefined;
     if (src.subStat == null) src.subStat = undefined;
     if (src.passiveNameEn == null) src.passiveNameEn = undefined;
@@ -487,18 +504,18 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
     if (!dbRow) {
       report.artifacts.push({
         action: 'create',
-        dbId: null,
+        dbId: source.externalId ?? null,
         sourceName: source.nameEn,
         source,
         changes: [],
-        warnings: ['Artifact set mới — cần tra cứu ID gi.yatta.moe'],
+        warnings: source.externalId ? [] : ['Artifact set mới — cần tra cứu ID gi.yatta.moe'],
       });
       continue;
     }
 
     matchedArtIds.add(dbRow.id);
     const src: any = { ...source };
-    if (src.iconUrl == null) src.iconUrl = undefined;
+    if (dbRow.iconUrl || src.iconUrl == null) src.iconUrl = undefined;
     if (!src.piece2DescEn) src.piece2DescEn = undefined;
     if (!src.piece2DescVi) src.piece2DescVi = undefined;
     if (!src.piece4DescEn) src.piece4DescEn = undefined;
@@ -514,28 +531,64 @@ export async function detectChanges(prisma: PrismaClient): Promise<SyncReport> {
     });
   }
 
-  // ---------- Materials (detect-only, không tạo mới) ----------
-  for (const name of uniqueNames(allNames((q, o) => genshindb.materials(q, o)))) {
-    const source = mapMaterial(name);
-    if (!source) continue;
-    const dbRow = matIndex.get(normalizeName(source.nameEn)) ||
-                  matIndex.get(normalizeName(source.nameVi));
-
-    if (!dbRow) {
+  // Keep the package mapping for overlapping IDs. Yatta covers the wider item
+  // catalog already supported by the legacy Material seed.
+  const materialSources = uniqueNames(allNames((q, o) => genshindb.materials(q, o)))
+    .map(mapMaterial).filter((source): source is MaterialSource => source !== null);
+  const primaryIds = new Set(materialSources.map(source => source.externalId));
+  const yattaById = new Map(supplementalMaterials.map(source => [source.externalId, source]));
+  const materialRowsById = new Map(dbMats.map(row => [row.id, row]));
+  for (const source of [
+    ...materialSources,
+    ...supplementalMaterials.filter(source => !primaryIds.has(source.externalId)),
+  ]) {
+    const id = source.externalId;
+    const knownId = id ? materialRowsById.get(id) : undefined;
+    const yatta = id ? yattaById.get(id) : undefined;
+    if (!source.rarity && yatta?.rarity) source.rarity = yatta.rarity;
+    const knownName = matIndex.get(normalizeName(source.nameEn)) ||
+                      matIndex.get(normalizeName(source.nameVi));
+    const dbRow = knownId || (source.sourceType ? undefined : knownName);
+    if (!dbRow && source.sourceType && knownName) {
       report.materials.push({
-        action: 'create',
-        dbId: null,
+        action: 'pending',
+        dbId: id,
         sourceName: source.nameEn,
         source,
         changes: [],
-        warnings: ['Material mới — bỏ qua tạo (type mapping chưa ổn định), chỉ báo cáo'],
+        warnings: [`Tên khớp bản ghi hiện có với ID khác (${knownName.id}) — cần review`],
       });
       continue;
     }
 
+    if (!dbRow) {
+      report.materials.push({
+        action: source.rarity ? 'create' : 'pending',
+        dbId: source.externalId ?? null,
+        sourceName: source.nameEn,
+        source,
+        changes: [],
+        warnings: source.rarity
+          ? ['Material mới — sẽ tạo với game ID từ genshin-db (type best-effort)']
+          : ['Material mới nhưng nguồn thiếu rarity — giữ pending, không tạo (không bịa dữ liệu)'],
+      });
+      continue;
+    }
+
+    if (matchedMatIds.has(dbRow.id)) {
+      report.materials.push({
+        action: 'pending',
+        dbId: id,
+        sourceName: source.nameEn,
+        source,
+        changes: [],
+        warnings: [`Nhiều bản ghi nguồn trỏ đến Material ${dbRow.id} — cần review`],
+      });
+      continue;
+    }
     matchedMatIds.add(dbRow.id);
     const src: any = { ...source };
-    if (src.iconUrl == null) src.iconUrl = undefined;
+    if (dbRow.iconUrl || src.iconUrl == null) src.iconUrl = undefined;
     if (!src.rarity) src.rarity = undefined;
     const changes = diffFields(dbRow as any, src as any, [...MATERIAL_GAME_FIELDS]);
     report.materials.push({

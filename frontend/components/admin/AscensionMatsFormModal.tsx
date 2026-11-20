@@ -22,11 +22,12 @@ interface Props {
   characterId: string;
   initialMats: AscensionLevelCost[];
   allMaterials: any[];
+  kind?: 'ascension' | 'talent';
   onClose: () => void;
   onSaved: () => void;
 }
 
-export default function AscensionMatsFormModal({ characterId, initialMats, allMaterials, onClose, onSaved }: Props) {
+export default function AscensionMatsFormModal({ characterId, initialMats, allMaterials, kind = 'ascension', onClose, onSaved }: Props) {
   const [mats, setMats] = useState<AscensionLevelCost[]>(initialMats || []);
   const [loading, setLoading] = useState(false);
   const [activeLevelIdx, setActiveLevelIdx] = useState<number | null>(null);
@@ -41,16 +42,18 @@ export default function AscensionMatsFormModal({ characterId, initialMats, allMa
   const handleSave = async () => {
     setLoading(true);
     try {
-      await fetchGraphQL(`
-        mutation UpdateCharacterAscensionMats($id: String!, $ascensionMats: JSON!) {
-          updateCharacterAscensionMats(id: $id, ascensionMats: $ascensionMats) {
-            id
-          }
-        }
-      `, {
-        id: characterId,
-        ascensionMats: mats
-      });
+      const mutation = kind === 'talent'
+        ? `mutation UpdateCharacterTalentMats($id: String!, $talentMats: JSON!) {
+            updateCharacterTalentMats(id: $id, talentMats: $talentMats) { id }
+          }`
+        : `mutation UpdateCharacterAscensionMats($id: String!, $ascensionMats: JSON!) {
+            updateCharacterAscensionMats(id: $id, ascensionMats: $ascensionMats) { id }
+          }`;
+      const variables = kind === 'talent'
+        ? { id: characterId, talentMats: mats }
+        : { id: characterId, ascensionMats: mats };
+
+      await fetchGraphQL(mutation, variables);
       onSaved();
       onClose();
     } catch (err: any) {

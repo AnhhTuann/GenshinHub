@@ -34,6 +34,7 @@ export const characterMutations = {
     updateCharacterArtifactStats: async (_: any, args: any, context: GraphQLContext) => mutationsImpl.updateCharacterArtifactStats(_, args, context),
     updateCharacterStats: async (_: any, args: any, context: GraphQLContext) => mutationsImpl.updateCharacterStats(_, args, context),
     updateCharacterAscensionMats: async (_: any, args: any, context: GraphQLContext) => mutationsImpl.updateCharacterAscensionMats(_, args, context),
+    updateCharacterTalentMats: async (_: any, args: any, context: GraphQLContext) => mutationsImpl.updateCharacterTalentMats(_, args, context),
     
     generateCharacterAI: async (_: any, args: any, context: GraphQLContext) => mutationsImpl.generateCharacterAI(_, args, context),
   }

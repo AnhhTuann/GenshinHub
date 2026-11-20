@@ -64,6 +64,21 @@ Sandrone được cập nhật theo bản ghi sẵn có. Lần apply chính cậ
 - Sáu icon thiếu là `200116` Martens’ Omni-Fix, `200117` Dandelion Bookmark, `200118` Surging Sacred Chalice, `200119` Super-Duper Invincible Shining Sparkly Magic Crystal, `200120` Exalted Earth và `200121` Cam and Cables of Law. Hai CDN trả 404 và catalog Item Yatta không chứa các ID này.
 - Năm Material pending do chưa xác thực rarity là Crimson Agate (Display) `107011`, Lumenspar `107016`, Moonchase Charm `107015`, Spirit Carp `107026` và Cryoculus `107035`. Hai dòng chỉ có trong DB tiếp tục nằm trong báo cáo diff.
 
+## Character ascension/talent materials
+
+`ascensionMats` và `talentMats` vẫn là protected fields của sync engine thông thường. Một pipeline riêng, chỉ chạy thủ công trên dev/test, đọc `characters().costs` và `talents().costs` từ `genshin-db` đã pin version để điền **duy nhất các field đang trống**:
+
+```bash
+npm run test:mats                 # unit test chuyển đổi costs -> rows
+node --env-file=.env node_modules/ts-node/dist/bin.js scripts/sync/materialBackfill.ts --validate --dry-run --report ../docs/CHARACTER_MATERIALS_AUDIT.md
+node --env-file=.env node_modules/ts-node/dist/bin.js scripts/sync/materialBackfill.ts --sync --validate --report ../docs/CHARACTER_MATERIALS_AUDIT.md
+node --env-file=.env node_modules/ts-node/dist/bin.js scripts/sync/materialBackfill.ts --verify --report ../docs/CHARACTER_MATERIALS_AUDIT.md
+```
+
+Pipeline kiểm tra: đúng 6 mốc đột phá / 9 cấp thiên phú, Mora tách riêng, materialId phải có trong `Material` catalog và icon WebP local, không trùng ID, count dương, không ghi đè field có sẵn. Mỗi lần `--sync` tạo snapshot riêng trong `backend/backups/material_backfill_*.json`; rollback bằng lệnh trong `package.json`. Lệnh ghi bị từ chối nếu `DATABASE_URL` không trỏ tới localhost/loopback. Không có cron/workflow nào gọi pipeline này trên production.
+
+Mapping đặc biệt: `traveler` dùng `characters(Aether).costs` + `talents(Traveler (Anemo)).costs`; các `traveler-<element>` dùng `characters(Aether).costs` + `talents(Traveler (<Element>)).costs`. `traveler-boy`/`traveler-girl` là slug legacy của Manekin/Manekina — mannequin của Miliastra Wonderland (v6.1) lên cấp qua Wonderland Level và **không cần nguyên liệu** ([Fandom](https://genshin-impact.fandom.com/wiki/Wonderland_Manekin)); pipeline lưu `[]` đã kiểm chứng cho cả hai field thay vì `null`, nên frontend phân biệt được "không cần nguyên liệu" với "chưa công bố". Không có nhân vật nào còn pending.
+
 ## Chạy lại trên development
 
 Xác minh `.env` trỏ đến PostgreSQL development trước khi chạy. Từ `backend/`:

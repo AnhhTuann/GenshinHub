@@ -18,6 +18,26 @@ export const GET_WEAPON_BY_ID = `
   }
 `;
 
+export const GET_WEAPON_GAME_DATA = `
+  query GetWeaponGameData($id: String!) {
+    weaponGameData(id: $id) {
+      id sourceId nameEn weaponType weaponText rarity description passiveName
+      mainStatType mainStatText version
+      levels { level ascension label phase baseAtk subStatValue subStatDisplay }
+      refinements { rank description values }
+      ascension { key label mora items { materialId nameEn count } }
+    }
+  }
+`;
+
+export const GET_WEAPON_RECOMMENDED_USERS = `
+  query GetWeaponRecommendedUsers($id: String!) {
+    weaponRecommendedUsers(id: $id) {
+      id nameEn nameVi element rarity avatarUrl tier role rank isF2P
+    }
+  }
+`;
+
 export const GET_CHARACTERS_BY_WEAPON_TYPE = `
   query GetCharactersByWeaponType($weaponType: String!) {
     charactersByWeaponType(weaponType: $weaponType) {

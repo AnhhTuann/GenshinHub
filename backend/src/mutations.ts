@@ -575,6 +575,16 @@ export const Mutation = {
     clearAllCaches(); resetArtifactSetLookup(); debouncedExport(); debouncedBackup();
     return c;
   },
+
+  updateCharacterTalentMats: async (_: any, { id, talentMats }: any, context: any) => {
+    requireAdmin(context);
+    const c = await prisma.character.update({
+      where: { id },
+      data: { talentMats }
+    });
+    clearAllCaches(); resetArtifactSetLookup(); debouncedExport(); debouncedBackup();
+    return c;
+  },
   
   generateCharacterAI: async (_: any, { nameEn }: any, context: any) => {
     requireAdmin(context);

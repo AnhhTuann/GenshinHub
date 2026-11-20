@@ -210,6 +210,7 @@ export const characterTypeDefs = `#graphql
     updateCharacterArtifactStats(id: String!, sands: [String!]!, goblet: [String!]!, circlet: [String!]!, subStatsPriority: [String!]!): Boolean
     updateCharacterStats(id: String!, stats: JSON!): Character
     updateCharacterAscensionMats(id: String!, ascensionMats: JSON!): Character
+    updateCharacterTalentMats(id: String!, talentMats: JSON!): Character
     
     generateCharacterAI(nameEn: String!): Character
   }

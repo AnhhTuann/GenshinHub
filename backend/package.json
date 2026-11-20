@@ -18,8 +18,13 @@
     "sync:run": "ts-node scripts/sync/syncEngine.ts --sync --download-assets",
     "sync:validate": "ts-node scripts/sync/syncEngine.ts --validate --dry-run",
     "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback",
+    "sync:mats:check": "ts-node scripts/sync/materialBackfill.ts --dry-run --validate",
+    "sync:mats:verify": "ts-node scripts/sync/materialBackfill.ts --verify --validate",
+    "sync:mats:apply": "ts-node scripts/sync/materialBackfill.ts --sync --validate",
+    "sync:mats:rollback": "ts-node scripts/sync/materialBackfill.ts --rollback",
     "sync:e2e": "ts-node scripts/sync/e2e.test.ts",
-    "test:assets": "ts-node scripts/sync/asset.test.ts"
+    "test:assets": "ts-node scripts/sync/asset.test.ts",
+    "test:mats": "ts-node scripts/sync/materialBackfill.test.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

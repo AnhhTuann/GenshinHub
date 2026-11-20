@@ -87,7 +87,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
     fetchGraphQL(GET_ARTIFACTS),
   ]);
   const character = characterData.character;
-  const materials = materialsData.materials;
+  const materials = materialsData.materials || [];
   const allCharacters = charactersData.characters || [];
   const allWeapons = weaponsData.weapons || [];
   const allArtifacts = artifactsData.artifacts || [];
@@ -227,7 +227,13 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                 <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
                   {t('ascensionMaterials')}
                 </h2>
-                <CharacterAscensionMatsSection characterId={character.id} ascensionMats={character.ascensionMats} allMaterials={materials} />
+                <CharacterAscensionMatsSection
+                  characterId={character.id}
+                  ascensionMats={character.ascensionMats}
+                  allMaterials={materials}
+                  pending={!character.ascensionMats}
+                  noMaterials={Array.isArray(character.ascensionMats) && character.ascensionMats.length === 0}
+                />
               </div>
             </ScrollEntrance>
 
@@ -237,7 +243,13 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                 <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
                   {t('talentMaterials') || 'Talent Materials'}
                 </h2>
-                <CharacterTalentMatsSection characterId={character.id} talentMats={character.talentMats} allMaterials={materials} />
+                <CharacterTalentMatsSection
+                  characterId={character.id}
+                  talentMats={character.talentMats}
+                  allMaterials={materials}
+                  pending={!character.talentMats}
+                  noMaterials={Array.isArray(character.talentMats) && character.talentMats.length === 0}
+                />
               </div>
             </ScrollEntrance>
 

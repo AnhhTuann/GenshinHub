@@ -1,322 +1,366 @@
 "use client";
 
-import { useState, useMemo } from 'react';
-import FallbackImage from '@/components/ui/FallbackImage';
+import { useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import { Link } from '@/i18n/routing';
-import { Role } from '@/data/tierlist';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import MotionRevealGroup from '@/components/shared/MotionRevealGroup';
+import CharacterTierBoard from '@/components/tierlist/CharacterTierBoard';
+import TierWeaponCard from '@/components/tierlist/TierWeaponCard';
+import styles from '@/components/tierlist/TierList.module.css';
+import { hasRole, resolveTierRows, UNRANKED_TIER_NAME, type AdminTierRank } from '@/data/tierRanks';
+import type { TierCharacter, TierWeapon } from '@/components/tierlist/types';
 
-type TierRank = {
-  id: string;
-  name: string;
-  order: number;
-  colorBase: string;
-};
-
-type TierCharacter = { id: string, nameEn: string, nameVi: string, avatarUrl: string, rarity: number, element: string, tier: string | null, role: string | null, recommendedC: string | null, tierNoteEn: string[], tierNoteVi: string[] };
-type TierWeapon    = { id: string, nameEn: string, nameVi: string, iconUrl: string | null, rarity: number, type: string, tier: string | null, role: string | null };
-
-const getImageUrl = (url: string | null) => {
-  return url;
-};
-
-const ELEMENT_COLORS: Record<string, string> = {
-  Pyro: 'bg-[#ff5a45]', Hydro: 'bg-[#3aa8ff]', Cryo: 'bg-[#8fe8f5]', Electro: 'bg-[#cf8fff]', Anemo: 'bg-[#35d6c5]', Geo: 'bg-[#ffd34d]', Dendro: 'bg-[#9ede5f]'
-};
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
-};
-
-// ────────────────────────────────────────────────────────────────────────
-// Dynamic Tier Styles
-// ────────────────────────────────────────────────────────────────────────
-
-const COLOR_MAP: Record<string, { badge: string, rowGlow: string }> = {
-  amber: {
-    badge: 'bg-gradient-to-br from-amber-400 to-orange-500 text-black border-amber-400 shadow-[0_0_40px_rgba(251,191,36,0.45)]',
-    rowGlow: 'group-hover:bg-amber-500/[0.04] border-amber-500/25'
+const COPY = {
+  vi: {
+    source: 'Nguồn: dữ liệu Admin trong PostgreSQL development',
+    version: 'Phiên bản game: chưa có metadata xếp hạng',
+    methodTitle: 'Phương pháp xếp hạng',
+    method: [
+      'Hiệu quả trong đúng vai trò được đánh giá (Main DPS / Sub DPS / Support).',
+      'Sức mạnh trong đội hình hợp lệ, kể cả điều kiện năng lượng và rotation.',
+      'Khả năng duy trì sát thương hoặc hỗ trợ trong thời gian dài.',
+      'Tính linh hoạt giữa nhiều đội hình, nguyên tố và nội dung endgame.',
+      'Điều kiện đầu tư: giả định C0 trừ khi thẻ ghi rõ C1/C6; không xếp theo độ hiếm, Base ATK hay độ phổ biến.',
+      'Môi trường tham chiếu: Spiral Abyss / endgame hiện tại. Dữ liệu chưa có phiên bản nên không tự gán số hiệu phiên bản.',
+      'Bậc D là dữ liệu Admin cũ vẫn được giữ nguyên, không tự động đổi sang C.',
+      'Dữ liệu Admin hiện lưu một tier tổng quát cho mỗi nhân vật; bản ghi nhiều vai trò dùng cùng tier ở mỗi cột. Chưa có tier riêng theo từng vai trò.',
+    ],
+    scopeChar: 'Bậc của nhân vật được đọc trực tiếp từ dữ liệu Admin; một nhân vật có thể xuất hiện ở nhiều vai trò.',
+    scopeWeapon: 'Vũ khí được đánh giá theo từng loại và ngữ cảnh (nhân vật/build). Một vũ khí 4★ có thể phù hợp hơn 5★ trong đúng build; bảng không phải là giá trị tuyệt đối.',
+    role: 'Vai trò',
+    element: 'Nguyên tố',
+    rarity: 'Độ hiếm',
+    weaponType: 'Loại vũ khí',
+    tier: 'Bậc',
+    searchChar: 'Tìm nhân vật...',
+    searchWeapon: 'Tìm vũ khí...',
+    clear: 'Xóa bộ lọc',
+    all: 'Tất cả',
+    ranked: 'đã xếp hạng',
+    unrankedCount: 'chưa xếp hạng',
+    showing: 'đang hiển thị',
+    empty: 'Không có kết quả khớp bộ lọc hiện tại. Xóa bộ lọc để xem lại toàn bộ dữ liệu.',
+    weaponPendingTitle: 'CHƯA CÓ XẾP HẠNG VŨ KHÍ ĐƯỢC DUYỆT — DATA PENDING',
+    weaponPendingText: 'Database development có {count} vũ khí nhưng chưa có bậc nào được Admin phê duyệt. Trang hiển thị nhóm "Chưa xếp hạng" thay vì tự tạo tier. Admin có thể gán bậc tại /admin/tierlist.',
+    footerChar: 'Bảng xếp hạng là tham khảo theo môi trường endgame, không phải đánh giá chính thức.',
+    footerWeapon: 'Bậc chỉ có ý nghĩa trong ngữ cảnh nhân vật/build tương ứng; hãy xem chi tiết từng vũ khí trước khi quyết định.',
   },
-  red: {
-    badge: 'bg-gradient-to-br from-rose-500 to-red-600 text-white border-rose-400 shadow-[0_0_35px_rgba(244,63,94,0.45)]',
-    rowGlow: 'group-hover:bg-rose-500/[0.03] border-rose-500/25'
+  en: {
+    source: 'Source: Admin data in the development PostgreSQL database',
+    version: 'Game version: no ranking metadata available',
+    methodTitle: 'Ranking methodology',
+    method: [
+      'Effectiveness in the role being evaluated (Main DPS / Sub DPS / Support).',
+      'Strength in valid team compositions, including energy and rotation requirements.',
+      'Sustained damage or support uptime over a full rotation.',
+      'Flexibility across teams, elements and current endgame content.',
+      'Investment assumptions: C0 unless the card states C1/C6; rarity, base ATK and popularity are not ranking criteria.',
+      'Reference environment: current Spiral Abyss / endgame. No version number is shown because no ranking metadata exists.',
+      'The legacy D tier is preserved from existing Admin data and is not silently remapped to C.',
+      'Admin data currently stores one general tier per character; multi-role records reuse that tier in each column. Per-role tiers are not available yet.',
+    ],
+    scopeChar: 'Character tiers are read directly from Admin data; one character may appear under multiple roles.',
+    scopeWeapon: 'Weapons are evaluated per type and context (character/build). A 4★ weapon can outperform a 5★ in the right build; these tiers are not absolute.',
+    role: 'Role',
+    element: 'Element',
+    rarity: 'Rarity',
+    weaponType: 'Weapon type',
+    tier: 'Tier',
+    searchChar: 'Search characters...',
+    searchWeapon: 'Search weapons...',
+    clear: 'Clear filters',
+    all: 'All',
+    ranked: 'ranked',
+    unrankedCount: 'unranked',
+    showing: 'shown',
+    empty: 'No items match the current filters. Clear the filters to see all data.',
+    weaponPendingTitle: 'NO APPROVED WEAPON RANKINGS YET — DATA PENDING',
+    weaponPendingText: 'The development database has {count} weapons but no Admin-approved tier. The page shows an "Unranked" group instead of inventing ranks. Admin can assign tiers at /admin/tierlist.',
+    footerChar: 'Tier lists are endgame references, not official verdicts.',
+    footerWeapon: 'Tiers only make sense together with the matching character/build; check each weapon detail before deciding.',
   },
-  blue: {
-    badge: 'bg-gradient-to-br from-blue-400 to-indigo-600 text-white border-blue-400 shadow-[0_0_30px_rgba(201,168,106,0.40)]',
-    rowGlow: 'group-hover:bg-blue-500/[0.03] border-blue-500/20'
-  },
-  gray: {
-    badge: 'bg-gradient-to-br from-slate-400 to-slate-600 text-white border-slate-400 shadow-[0_0_20px_rgba(148,163,184,0.25)]',
-    rowGlow: 'group-hover:bg-slate-500/[0.02] border-slate-500/20'
-  },
-  emerald: {
-    badge: 'bg-gradient-to-br from-emerald-400 to-teal-600 text-white border-emerald-400 shadow-[0_0_28px_rgba(134,169,143,0.35)]',
-    rowGlow: 'group-hover:bg-emerald-500/[0.03] border-emerald-500/20'
-  },
-  orange: {
-    badge: 'bg-gradient-to-br from-orange-400 to-amber-600 text-white border-orange-400 shadow-[0_0_28px_rgba(251,146,60,0.35)]',
-    rowGlow: 'group-hover:bg-orange-500/[0.03] border-orange-500/20'
-  },
-  purple: {
-    badge: 'bg-gradient-to-br from-[#a77cf6] to-[#8e97a8] text-white border-purple-400 shadow-[0_0_35px_rgba(168,85,247,0.50)]',
-    rowGlow: 'group-hover:bg-purple-500/[0.04] border-purple-500/25'
-  },
-  cyan: {
-    badge: 'bg-gradient-to-br from-[#8e97a8] to-[#1fa8b8] text-black border-cyan-300 shadow-[0_0_35px_rgba(142,151,168,0.45)]',
-    rowGlow: 'group-hover:bg-cyan-500/[0.03] border-cyan-500/20'
-  },
-  pink: {
-    badge: 'bg-gradient-to-br from-pink-500 to-rose-500 text-white border-pink-400 shadow-[0_0_30px_rgba(214,160,110,0.35)]',
-    rowGlow: 'group-hover:bg-pink-500/[0.02] border-pink-500/20'
-  },
-  default: {
-    badge: 'bg-gradient-to-br from-[#231e17] to-[#1c1813] text-gray-500 border-gray-800',
-    rowGlow: 'group-hover:bg-white/[0.02] border-white/[0.05]'
-  }
-};
+} as const;
 
-// ────────────────────────────────────────────────────────────────────────
-// Card Component
+const ELEMENTS = ['Pyro', 'Hydro', 'Anemo', 'Electro', 'Dendro', 'Cryo', 'Geo'];
+const ROLES = ['Main DPS', 'Sub DPS', 'Support'];
+const WEAPON_TYPES = [
+  { value: 'Kiếm Đơn', label: 'Sword' },
+  { value: 'Trọng Kiếm', label: 'Claymore' },
+  { value: 'Vũ Khí Cán Dài', label: 'Polearm' },
+  { value: 'Cung', label: 'Bow' },
+  { value: 'Pháp Khí', label: 'Catalyst' },
+];
 
-function TierItemCard({ item, isChar, locale }: { item: any, isChar: boolean, locale: string }) {
-  const name = locale === 'en' ? item.nameEn : item.nameVi;
-  const is5Star = item.rarity === 5;
-  const rarityBg = is5Star 
-    ? 'bg-gradient-to-br from-[#e0b078] via-[#eec584] to-[#e0b078] border-[#a97c50]' 
-    : 'bg-gradient-to-br from-[#8e97a8] via-[#c3cad6] to-[#8e97a8] border-[#6b6152]';
-  const nameBg = is5Star ? 'bg-[#a97c50]' : 'bg-[#6b6152]';
-
-  return (
-    <Link href={isChar ? `/characters/${item.id}` : `/weapons`}>
-      <motion.div
-        whileHover={{ scale: 1.05, y: -2 }}
-        whileTap={{ scale: 0.95 }}
-        className="group relative w-[76px] sm:w-[86px] flex flex-col rounded-md overflow-hidden border border-transparent shadow-lg hover:shadow-2xl transition-all cursor-pointer bg-[#0d0c0a]"
-      >
-        {/* Glow effect on hover */}
-        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md ${is5Star ? 'bg-amber-400/30' : 'bg-purple-400/30'}`} />
-        
-        {/* Image Container (Square) */}
-        <div className={`relative w-full aspect-square ${rarityBg} border-b-0 rounded-t-md p-1`}>
-          {isChar ? (
-            <FallbackImage 
-              src={getImageUrl(item.avatarUrl) || '/assets/characters/avatars/UI_AvatarIcon_PlayerGirl.webp'} 
-              alt={name} 
-              fill 
-              className="object-cover rounded-sm" 
-              sizes="86px" 
-            />
-          ) : (
-            <FallbackImage 
-              src={getImageUrl(item.iconUrl) || '/placeholder.webp'} 
-              alt={name} 
-              fill 
-              className="object-contain drop-shadow-md scale-90 group-hover:scale-100 transition-transform duration-300" 
-            />
-          )}
-
-          {/* Element overlay for characters (Top Left) */}
-          {isChar && item.element && (
-            <div className="absolute top-0 left-0 w-5 h-5 bg-black/30 rounded-br-md p-[2px] z-10 backdrop-blur-sm">
-              <FallbackImage src={`/assets/elements/${item.element.toLowerCase()}.webp`} alt={item.element} fill className="object-contain" />
-            </div>
-          )}
-        </div>
-        
-        {/* Name Bar */}
-        <div className={`relative z-20 w-full ${nameBg} py-1 px-1 flex flex-col items-center justify-center`}>
-          <span className="text-[10px] sm:text-[11px] font-bold text-white text-center truncate w-full px-1 drop-shadow-md leading-tight">
-            {name}
-          </span>
-        </div>
-      </motion.div>
-    </Link>
-  );
+function normalize(value: string) {
+  return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
-// ────────────────────────────────────────────────────────────────────────
-// Main Component
-// ────────────────────────────────────────────────────────────────────────
-
-export default function TierListClient({ locale, characters, weapons, tierRanks }: { locale: string, characters: TierCharacter[], weapons: TierWeapon[], tierRanks: TierRank[] }) {
+export default function TierListClient({
+  locale,
+  characters,
+  weapons,
+  tierRanks,
+}: {
+  locale: string;
+  characters: TierCharacter[];
+  weapons: TierWeapon[];
+  tierRanks: AdminTierRank[];
+}) {
   const t = useTranslations('TierList');
+  const reduceMotion = useReducedMotion();
+  const copy = COPY[locale as 'vi' | 'en'] ?? COPY.en;
+
   const [tab, setTab] = useState<'character' | 'weapon'>('character');
-  const [weaponType, setWeaponType] = useState<string>('Kiếm Đơn');
+  const [role, setRole] = useState('All');
+  const [element, setElement] = useState('All');
+  const [rarity, setRarity] = useState('All');
+  const [weaponType, setWeaponType] = useState('All');
+  const [tierFilter, setTierFilter] = useState('All');
+  const [query, setQuery] = useState('');
 
-  const groupedCharacters = useMemo(() => {
-    const group: Record<string, TierCharacter[]> = {};
-    tierRanks.forEach(tr => group[tr.name] = []);
-    group['Unranked'] = [];
-    
-    characters.forEach(c => {
-      const tier = c.tier || 'Unranked';
-      if (!group[tier]) group[tier] = [];
-      group[tier].push(c);
+  const filteredCharacters = useMemo(() => {
+    const needle = normalize(query.trim());
+    return characters.filter((character) => {
+      if (role !== 'All' && !hasRole(character.role, role)) return false;
+      if (element !== 'All' && character.element !== element) return false;
+      if (rarity !== 'All' && character.rarity !== Number(rarity)) return false;
+      if (!needle) return true;
+      return normalize(`${character.nameEn} ${character.nameVi}`).includes(needle);
     });
-    return group;
-  }, [characters, tierRanks]);
+  }, [characters, role, element, rarity, query]);
 
-  const groupedWeapons = useMemo(() => {
-    const group: Record<string, TierWeapon[]> = {};
-    tierRanks.forEach(tr => group[tr.name] = []);
-    group['Unranked'] = [];
-
-    weapons.forEach(w => {
-      if (w.type !== weaponType) return;
-      const tier = w.tier || 'Unranked';
-      if (!group[tier]) group[tier] = [];
-      group[tier].push(w);
+  const filteredWeapons = useMemo(() => {
+    const needle = normalize(query.trim());
+    return weapons.filter((weapon) => {
+      if (weaponType !== 'All' && weapon.type !== weaponType) return false;
+      if (tierFilter !== 'All' && (weapon.tier || UNRANKED_TIER_NAME) !== tierFilter) return false;
+      if (rarity !== 'All' && weapon.rarity !== Number(rarity)) return false;
+      if (!needle) return true;
+      return normalize(`${weapon.nameEn} ${weapon.nameVi}`).includes(needle);
     });
-    return group;
-  }, [weapons, weaponType, tierRanks]);
+  }, [weapons, weaponType, tierFilter, rarity, query]);
 
-  const tabs = [
-    { id: 'character', label: t('characterTab') },
-    { id: 'weapon', label: t('weaponTab') }
-  ];
+  const activeItems: Array<TierCharacter | TierWeapon> = tab === 'character' ? filteredCharacters : filteredWeapons;
+  const totalItems = tab === 'character' ? characters.length : weapons.length;
+  const rankedTotal = (tab === 'character' ? characters : weapons).filter((item) => item.tier).length;
+  const hasActiveFilters = Boolean(role !== 'All' || element !== 'All' || rarity !== 'All' || weaponType !== 'All' || tierFilter !== 'All' || query.trim());
 
-  const WEAPON_TYPES = [
-    { id: 'Kiếm Đơn', label: 'Sword' },
-    { id: 'Trọng Kiếm', label: 'Claymore' },
-    { id: 'Vũ Khí Cán Dài', label: 'Polearm' },
-    { id: 'Cung', label: 'Bow' },
-    { id: 'Pháp Khí', label: 'Catalyst' }
-  ];
+  const tierRows = useMemo(
+    () => resolveTierRows(tierRanks, activeItems.map((item) => item.tier)),
+    [tierRanks, activeItems],
+  );
+
+  const grouped = useMemo(() => {
+    const groups = new Map<string, Array<TierCharacter | TierWeapon>>();
+    activeItems.forEach((item) => {
+      const key = item.tier || UNRANKED_TIER_NAME;
+      const bucket = groups.get(key) ?? [];
+      bucket.push(item);
+      groups.set(key, bucket);
+    });
+    return groups;
+  }, [activeItems]);
+
+  const weaponTierOptions = useMemo(
+    () => tierRows.filter((row) => row.name !== UNRANKED_TIER_NAME).map((row) => row.name),
+    [tierRows],
+  );
+
+  const clearFilters = () => {
+    setRole('All');
+    setElement('All');
+    setRarity('All');
+    setWeaponType('All');
+    setTierFilter('All');
+    setQuery('');
+  };
+
+  const switchTab = (next: 'character' | 'weapon') => {
+    setTab(next);
+    clearFilters();
+  };
+
+  const visibleTierRows = tierRows.filter((row) => (grouped.get(row.name)?.length ?? 0) > 0);
 
   return (
-    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
-      
-      {/* ── Hero Header ──────────────────────────────────────── */}
-      <div className="relative overflow-hidden border-b border-white/[0.04]">
-        <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 relative z-10 text-center flex flex-col items-center">
-          <Link
-            className="inline-flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors text-xs font-black uppercase tracking-wider mb-8 group bg-white/5 px-3 py-1.5 rounded-full border border-white/10"
-            href="/"
-          >
-            <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            Home
-          </Link>
+    <main className={styles.page}>
+      <div className={`${styles.container} ${tab === 'character' ? styles.wideContainer : ''}`}>
+        <header className={styles.header}>
+          <div>
+            <h1 className={styles.title}>{t('title')}</h1>
+            <p className={styles.description}>{t('description')}</p>
+            <p className={styles.meta}>
+              <span>{copy.source}</span>
+              <span>{copy.version}</span>
+              {tierRanks.length === 0 && <span>TierRank config: empty · using default order</span>}
+            </p>
+          </div>
+          <details className={styles.methodology}>
+            <summary className={styles.methodologySummary}>{copy.methodTitle}</summary>
+            <ul className={styles.methodologyList}>
+              {copy.method.map((line) => <li key={line}>{line}</li>)}
+              <li>{tab === 'character' ? copy.scopeChar : copy.scopeWeapon}</li>
+            </ul>
+          </details>
+        </header>
 
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-primary-light)] mb-4">
-            Regularly updated for Spiral Abyss
-          </p>
-
-          <h1 className="page-title" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
-            {t('title')}
-          </h1>
-
-          <p className="page-desc" style={{ fontSize: '1rem' }}>
-            {t('description')}
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-8">
-        
-        {/* ── Tabs ────────────────────────────────────────────── */}
-        <div className="flex justify-center gap-2 mb-12 bg-[#1c1813]/80 p-2 rounded-full border border-white/10 w-fit mx-auto backdrop-blur-xl shadow-2xl">
-          {tabs.map((tItem) => (
+        <div className={styles.tabs} role="tablist" aria-label="Tier list type">
+          {([
+            { id: 'character', label: t('characterTab') },
+            { id: 'weapon', label: t('weaponTab') },
+          ] as const).map((item) => (
             <button
-              key={tItem.id}
-              onClick={() => setTab(tItem.id as any)}
-              className={`relative px-8 py-3 rounded-full font-black text-[13px] transition-colors duration-300 ${tab === tItem.id ? 'text-black' : 'text-gray-400 hover:text-white'}`}
+              key={item.id}
+              type="button"
+              role="tab"
+              aria-selected={tab === item.id}
+              className={styles.tab}
+              onClick={() => switchTab(item.id)}
             >
-              {tab === tItem.id && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full shadow-[0_0_24px_rgba(245,158,11,0.5)]"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10 tracking-widest uppercase">{tItem.label}</span>
+              {item.label}
             </button>
           ))}
         </div>
 
-        {tab === 'weapon' && (
-          <div className="flex justify-center flex-wrap gap-3 sm:gap-4 mb-10">
-            {WEAPON_TYPES.map(wType => (
-              <button
-                key={wType.id}
-                onClick={() => setWeaponType(wType.id)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border transition-all duration-300 font-bold text-sm uppercase tracking-wider ${weaponType === wType.id ? 'bg-[#231e17] border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]' : 'bg-transparent border-white/5 text-gray-400 hover:bg-white/5 hover:text-gray-200'}`}
-              >
-                {wType.label}
-              </button>
-            ))}
+        {tab === 'weapon' && weapons.length > 0 && rankedTotal === 0 && (
+          <div className={styles.notice} data-tone="pending" role="status">
+            <span className={styles.noticeIcon} aria-hidden="true">!</span>
+            <div>
+              <span className={styles.noticeTitle}>{copy.weaponPendingTitle}</span>
+              <span className={styles.noticeText}>{copy.weaponPendingText.replace('{count}', String(weapons.length))}</span>
+            </div>
           </div>
         )}
 
-        {/* ── Tab Content ─────────────────────────────────────── */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={tab}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
-            className="w-full"
-          >
-              <motion.div variants={containerVariants} initial="hidden" animate="show" className="flex flex-col gap-8">
-                {[...tierRanks, { id: 'unranked', name: 'Unranked', order: 999, colorBase: 'default' }].map(tier => {
-                  const items = tab === 'character' ? (groupedCharacters[tier.name] || []) : (groupedWeapons[tier.name] || []);
-                  if (items.length === 0) return null;
+        <section className={styles.filters} aria-label={copy.methodTitle === 'Phương pháp xếp hạng' ? 'Bộ lọc xếp hạng' : 'Tier list filters'}>
+          {tab === 'character' ? (
+            <>
+              <div className={styles.filterRow}>
+                <div className={`${styles.filterGroup} ${styles.roleFilterGroup}`}>
+                  <span className={styles.filterLabel}>{copy.role}</span>
+                  <div className={styles.chips}>
+                    {['All', ...ROLES].map((value) => (
+                      <button key={value} type="button" className={styles.chip} aria-pressed={role === value} onClick={() => setRole(value)}>
+                        {value === 'All' ? copy.all : value}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.filterGroup}>
+                  <span className={styles.filterLabel}>{copy.element}</span>
+                  <select className={styles.select} value={element} onChange={(event) => setElement(event.target.value)} aria-label={copy.element}>
+                    {['All', ...ELEMENTS].map((value) => (
+                      <option key={value} value={value}>{value === 'All' ? copy.all : value}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div className={styles.filterRow}>
+                <div className={styles.filterGroup}>
+                  <span className={styles.filterLabel}>{copy.rarity}</span>
+                  <div className={styles.chips}>
+                    {['All', '5', '4'].map((value) => (
+                      <button key={value} type="button" className={styles.chip} aria-pressed={rarity === value} onClick={() => setRarity(value)}>
+                        {value === 'All' ? copy.all : `${value}★`}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <input className={styles.search} type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={copy.searchChar} aria-label={copy.searchChar} />
+                <button type="button" className={styles.clear} onClick={clearFilters} disabled={!hasActiveFilters}>{copy.clear}</button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles.filterRow}>
+                <div className={styles.filterGroup}>
+                  <span className={styles.filterLabel}>{copy.weaponType}</span>
+                  <div className={styles.chips}>
+                    {[{ value: 'All', label: copy.all }, ...WEAPON_TYPES].map((value) => (
+                      <button key={value.value} type="button" className={styles.chip} aria-pressed={weaponType === value.value} onClick={() => setWeaponType(value.value)} title={value.value === 'All' ? undefined : value.value}>
+                        {value.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.filterGroup}>
+                  <span className={styles.filterLabel}>{copy.tier}</span>
+                  <select className={styles.select} value={tierFilter} onChange={(event) => setTierFilter(event.target.value)} aria-label={copy.tier}>
+                    <option value="All">{copy.all}</option>
+                    {weaponTierOptions.map((value) => <option key={value} value={value}>{value}</option>)}
+                    <option value={UNRANKED_TIER_NAME}>{t('unranked')}</option>
+                  </select>
+                </div>
+              </div>
+              <div className={styles.filterRow}>
+                <div className={styles.filterGroup}>
+                  <span className={styles.filterLabel}>{copy.rarity}</span>
+                  <div className={styles.chips}>
+                    {['All', '5', '4', '3'].map((value) => (
+                      <button key={value} type="button" className={styles.chip} aria-pressed={rarity === value} onClick={() => setRarity(value)}>
+                        {value === 'All' ? copy.all : `${value}★`}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <input className={styles.search} type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={copy.searchWeapon} aria-label={copy.searchWeapon} />
+                <button type="button" className={styles.clear} onClick={clearFilters} disabled={!hasActiveFilters}>{copy.clear}</button>
+              </div>
+            </>
+          )}
+        </section>
 
-                  const colorStyle = COLOR_MAP[tier.colorBase] || COLOR_MAP.default;
-                  const enhancedBadgeStyle = colorStyle.badge;
-                  const rowGlow = colorStyle.rowGlow;
+        <p className={styles.summary} aria-live="polite">
+          <span><strong>{activeItems.length}</strong> / {totalItems} {tab === 'character' ? 'characters' : 'weapons'} {copy.showing}</span>
+          <span><strong>{rankedTotal}</strong> {copy.ranked}</span>
+          <span><strong>{totalItems - rankedTotal}</strong> {copy.unrankedCount}</span>
+        </p>
 
-                  return (
-                    <motion.div variants={itemVariants} key={tier.id} className={`relative flex flex-col md:flex-row bg-[#1c1813] border rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 group ${rowGlow}`}>
-                      
-                      {/* Thicker, more impactful Tier Badge */}
-                      <div className={`w-20 sm:w-28 shrink-0 flex flex-col justify-center items-center py-6 border-b md:border-b-0 md:border-r border-white/10 relative overflow-hidden ${enhancedBadgeStyle}`}>
+        <motion.div
+          key={tab}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: reduceMotion ? 0 : 0.18 }}
+        >
+          {tab === 'character' ? (
+            <CharacterTierBoard
+              characters={filteredCharacters}
+              tierRows={tierRows}
+              role={role}
+              onRoleChange={setRole}
+              locale={locale}
+            />
+          ) : visibleTierRows.length === 0 ? (
+            <div className={styles.emptyState} role="status">{copy.empty}</div>
+          ) : (
+            <MotionRevealGroup key={`weapon-${weaponType}-${rarity}-${tierFilter}-${query}`} className={styles.tierList}>
+              {visibleTierRows.map((tier) => {
+                const items = (grouped.get(tier.name) ?? []) as TierWeapon[];
+                return (
+                  <section key={tier.id} className={styles.tierRow} data-motion-row data-tier={tier.name} aria-label={`${tier.name}: ${items.length}`}>
+                    <div className={styles.tierLabel}>
+                      <span className={styles.tierName}>{tier.name === UNRANKED_TIER_NAME ? '?' : tier.name}</span>
+                      <span className={styles.tierCount}>{items.length} wpn</span>
+                    </div>
+                    <div className={styles.tierItems}>
+                      {items.map((item) => (
+                        <TierWeaponCard
+                          key={item.id}
+                          item={item}
+                          locale={locale}
+                          tierLabel={tier.name}
+                          typeLabel={WEAPON_TYPES.find((type) => type.value === item.type)?.label ?? item.type}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
+            </MotionRevealGroup>
+          )}
+        </motion.div>
 
-                        <span className="text-4xl sm:text-5xl font-black font-display relative z-10 drop-shadow-md">
-                          {tier.name !== 'Unranked' ? tier.name : '?'}
-                        </span>
-                      </div>
-                      
-                      {/* Grid */}
-                      <div className="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/5 bg-transparent relative z-10">
-                        {(['Main DPS', 'Sub DPS', 'Support'] as Role[]).map(role => {
-                          const itemsInRole = items.filter((c: any) => c.role?.includes(role));
-                          return (
-                            <div key={role} className="flex flex-col bg-transparent">
-                              <div className="py-3.5 px-5 flex items-center gap-3 border-b border-white/5 bg-black/20">
-                                <div className={`w-2 h-2 rounded-full ${role === 'Main DPS' ? 'bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]' : role === 'Sub DPS' ? 'bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]' : 'bg-blue-500 shadow-[0_0_12px_rgba(201,168,106,0.8)]'}`} />
-                                <span className="text-xs font-black text-gray-300 uppercase tracking-[0.2em]">{role}</span>
-                                <span className="ml-auto text-[10px] font-bold text-gray-400 bg-[#121109] border border-white/10 px-2.5 py-0.5 rounded-full">{itemsInRole.length}</span>
-                              </div>
-                              <div className="p-5 flex flex-wrap gap-4 sm:gap-5 content-start">
-                                {itemsInRole.map((item: any) => (
-                                  <TierItemCard key={item.id} item={item} isChar={tab === 'character'} locale={locale} />
-                                ))}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-          </motion.div>
-        </AnimatePresence>
+        <p className={styles.footerNote}>{tab === 'character' ? copy.footerChar : copy.footerWeapon}</p>
       </div>
     </main>
   );

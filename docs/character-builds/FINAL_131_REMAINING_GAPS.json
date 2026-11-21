@@ -1,0 +1,2192 @@
+{
+  "runId": "character-7.2-development-maintenance-6c29abb47f040d20",
+  "summary": {
+    "catalog": 131,
+    "priorErrorIdentities": 42,
+    "errorIdentitiesResolved": 10,
+    "errorIdentitiesRemaining": 32,
+    "previousOpenIdentities": 45,
+    "unresolvedIdentitiesRemaining": 44,
+    "weaponStageCount": 9,
+    "originalWeaponAliases": 79,
+    "extraWeaponAliases": 52,
+    "artifactLabels": 4,
+    "teamStages": 2,
+    "teamSlots": 5,
+    "statTables": 7,
+    "missingCompleted": 0,
+    "bennettCorrected": 0,
+    "legacyRevisions": 28,
+    "auditRowsAdded": 39,
+    "databaseRowWrites": 214
+  },
+  "measurement": "Resolved errors and open evidence identities are separate units. An identity can have corrected rows and still be open for a different field or prior rotation hold.",
+  "outcomes": [
+    {
+      "characterId": "aino",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "8d3f6a24-57ea-449d-a241-f4e4f2b69be8",
+        "7d76a11b-af4c-4346-a126-5fad4a9f5f9d"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "9c5f738d-0676-4704-9f6f-fbeb30ac9057",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "aino:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "aloy",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "b5abedac-6cce-4bcb-9504-7bd1d65f8473",
+        "07cea621-5a7a-4d0d-b558-8fa6c954e233",
+        "15b08d27-0879-4453-a27e-3efe46f303a2",
+        "e184d98b-5c95-4b96-ac14-d8f4dc9e6d3a",
+        "94953405-02de-4e81-9151-d9c00686138d",
+        "a38976eb-ad57-4794-b84a-f64c4bfcafc2",
+        "8616a90f-64cb-4e19-82c2-6f4426a67802",
+        "b927ae62-b1a3-40fe-b63b-54543a7ba6b5",
+        "9d677715-53ec-4001-a7ca-e43168380a56",
+        "df4c04a3-4971-4565-b16e-a35c5f1d96cb"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "aloy:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "alyosha",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "alyosha"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "alyosha:1",
+          "buildId": null,
+          "field": "CharacterBuild",
+          "before": null,
+          "proposed": {
+            "roles": [
+              "SUPPORT",
+              "SUB_DPS"
+            ],
+            "checks": {
+              "weapon": [
+                {
+                  "id": "13509",
+                  "name": "Engulfing Lightning",
+                  "refinement": 1,
+                  "passive": "Timeless Dream: Eternal Stove"
+                },
+                {
+                  "id": "13407",
+                  "name": "Favonius Lance",
+                  "refinement": 1,
+                  "passive": "Windfall"
+                },
+                {
+                  "id": "13402",
+                  "name": "Prototype Starglitter",
+                  "refinement": 1,
+                  "passive": "Magic Affinity"
+                }
+              ],
+              "artifacts": [
+                [
+                  {
+                    "id": "15007",
+                    "name": "Noblesse Oblige",
+                    "pieces": 4
+                  }
+                ],
+                [
+                  {
+                    "id": "15020",
+                    "name": "Emblem of Severed Fate",
+                    "pieces": 4
+                  }
+                ]
+              ],
+              "teams": [
+                [
+                  "alyosha",
+                  "mitya",
+                  "odette",
+                  "valeriy"
+                ]
+              ]
+            },
+            "mainStats": {
+              "sands": [
+                "Energy Recharge"
+              ],
+              "goblet": [
+                "ATK%"
+              ],
+              "circlet": [
+                "Healing Bonus"
+              ]
+            },
+            "substats": [
+              "Energy Recharge",
+              "ATK%",
+              "CRIT Rate"
+            ],
+            "talents": [
+              "Burst",
+              "Skill",
+              "Normal Attack"
+            ]
+          },
+          "reason": {
+            "rotation": "Apply Hunter’s Mark with Skill, then Burst before handing field time to Mitya. Mark lasts 15s, Burst lasts 14s, Burst cooldown is 18s. Four existing draft teammate IDs resolve.",
+            "open": "Measure Alyosha’s particle yield and collection in the recurring 70-Energy rotation. Verify which buffs and healing cover Mitya’s active window. Choose the sole Noblesse carrier if Valeriy also has this option.",
+            "gear": "ATK scales the heal and ER improves availability and Skill/Burst bonus. Favonius needs on-field CRIT. Emblem serves Burst damage, while Noblesse serves the party. Healing Bonus circlet fits sustain; document CRIT if relying on Favonius."
+          }
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "alyosha:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "amber",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "b2375864-4b58-4a64-b187-eabadbaaefd3",
+        "565be65c-c7a4-4edb-bb3a-017eb8afc76b",
+        "d591588d-82d6-4df9-9ac6-618cfeaa40b4",
+        "56a67ddb-59de-4f5f-bf6c-7411bc2e4553",
+        "8e398de1-4a0a-4ce0-8d7d-5d3440fc18de",
+        "7f9f2672-5c30-4db7-9de2-805ef290cfa4",
+        "61e75fd2-bf0e-4213-b4fa-e92fc3ede7a3",
+        "458d0fcd-0b07-4884-8bf6-1c51ef5ce890",
+        "5869db7c-1259-4446-a3b5-087fca64d6dc",
+        "a183f4c1-12ca-4c55-8985-30d4f9917797",
+        "7721ec55-e7b5-48f7-a5ad-87d7b4270fe4",
+        "2523a643-c53a-4a93-bd1c-4d7e0c61c686",
+        "536a59ae-8c1b-4503-a009-fcab2d491ccb",
+        "ccf5bccd-4d15-401d-8295-e5c24a177fa0",
+        "cd3d0651-eb6f-415e-98e7-69444f498710",
+        "4627779e-ba7b-4465-a2eb-52beaaeffa5f",
+        "b4fb2ed4-f572-441e-89e0-fafcb1999c4a",
+        "2bee3224-fce6-437c-8d80-ae31950142a4"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "amber:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "barbara",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "3a693164-1847-4c74-90b4-3aed3d7c3825",
+        "6fcb6ba0-1509-4571-9f24-91822f3a7513"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "fb407ef2-cf5a-4c76-8c5b-fc85f6754aef",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "barbara:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "bennett",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "legacy-bennett",
+          "buildId": null,
+          "field": "teams.members.characterId",
+          "before": [
+            {
+              "teamId": "b8140eb3-cdb8-4941-95ee-420f48ee2e0e",
+              "memberId": "87b1ca30-4eaa-41ea-b64d-a8e9bd20735a",
+              "value": "kazuha"
+            },
+            {
+              "teamId": "71c8c8fc-5753-4691-bdf5-e240bd61648d",
+              "memberId": "bd8e5b7c-ac18-4593-bcbf-dd0ab9828359",
+              "value": "kazuha"
+            },
+            {
+              "teamId": "26ee8d9a-0fda-4a2a-a738-aad7b9b688ce",
+              "memberId": "8cb2793c-bb66-4eaa-97ae-f01a5516f791",
+              "value": "kazuha"
+            },
+            {
+              "teamId": "e1556187-170b-45e0-882d-cf4eec9866e4",
+              "memberId": "fa04c321-7676-4a2d-a6e5-625a5dcdd534",
+              "value": "kazuha"
+            }
+          ],
+          "proposed": [
+            {
+              "teamId": "b8140eb3-cdb8-4941-95ee-420f48ee2e0e",
+              "memberId": "87b1ca30-4eaa-41ea-b64d-a8e9bd20735a",
+              "value": "kaedehara-kazuha"
+            },
+            {
+              "teamId": "71c8c8fc-5753-4691-bdf5-e240bd61648d",
+              "memberId": "bd8e5b7c-ac18-4593-bcbf-dd0ab9828359",
+              "value": "kaedehara-kazuha"
+            },
+            {
+              "teamId": "26ee8d9a-0fda-4a2a-a738-aad7b9b688ce",
+              "memberId": "8cb2793c-bb66-4eaa-97ae-f01a5516f791",
+              "value": "kaedehara-kazuha"
+            },
+            {
+              "teamId": "e1556187-170b-45e0-882d-cf4eec9866e4",
+              "memberId": "fa04c321-7676-4a2d-a6e5-625a5dcdd534",
+              "value": "kaedehara-kazuha"
+            }
+          ],
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "05bf4d00-7572-45f5-b1c6-e5262bd268e8",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "ánh-sáng-đêm-sương-mù",
+          "proposed": "11509",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "cd766ed6-18c9-49ef-89b3-8e86c0d1780a",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "xá-tội",
+          "proposed": "11515",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "0b9b2890-1d96-41b7-a236-45da456e56b4",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "thương-diệu",
+          "proposed": "11517",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "eb4b3d0f-47cd-4ff8-967e-edd9c8c80391",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "phong-ưng-kiếm",
+          "proposed": "11501",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "7a572f9d-c223-48b4-91d1-716a84ac82b7",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "tia-sáng-nơi-hẻm-tối",
+          "proposed": "11410",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "98e7165d-7f4f-4721-b243-7e55a2331cfd",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "lời-thề-tự-do-cổ-xưa",
+          "proposed": "11503",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "e5cd57be-0b54-4eb1-b4d3-0fc98ddb055b",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "khúc-ca-núi-đá",
+          "proposed": "11516",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "3da2b78d-e0b1-4ed0-bfba-809ebbcb14d5",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "thiên-không-kiếm",
+          "proposed": "11502",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "29cf6f4a-e554-4a29-86b4-9a22e4320ddd",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "kiếm-gỗ",
+          "proposed": "11417",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "61290556-0a0e-4156-8a61-23230e6b1b84",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "mẫu-trảm-nham",
+          "proposed": "11406",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "c10572bb-1295-4abb-ba8e-fcb9ca4e243a",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "tai-họa-eshu",
+          "proposed": "11432",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "eafe4cf5-29ec-4933-8d95-011dfcdf9b5a",
+          "buildId": "legacy-bennett",
+          "field": "weaponId",
+          "before": "tây-phong-kiếm",
+          "proposed": "11401",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        }
+      ],
+      "historicalEvidenceHolds": []
+    },
+    {
+      "characterId": "candace",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "9f922208-dc41-423c-84c1-14807c3302cd"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "d57b59e9-7fb7-4ed6-8288-641fc20b919b",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [
+        {
+          "recordId": "c90b7041-5ffa-442e-8ebe-4480d0218a0c",
+          "buildId": "legacy-candace",
+          "field": "weaponId",
+          "before": "thương-diệu",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "candace:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "citlali",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "00c0dfde-cd32-4332-917f-f4b783eaa83d",
+        "d8964291-b011-4526-b801-2b62b0412216",
+        "e75765be-27cc-4d4e-9769-ed1d61f46e53",
+        "c09e8ed2-14bc-4383-804b-f6fa8f76c269",
+        "5542c2d1-5c58-45b5-8691-31f5dec6c3d7",
+        "3fb51beb-aa13-4c3a-babc-678d0ce0e370"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "citlali:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Model Cryo application versus Arlecchino attack timing and the assigned Scroll holder."
+        }
+      ]
+    },
+    {
+      "characterId": "columbina",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "a5ed9d00-e4bf-40b6-a4c0-a636c350c588",
+        "b6aee307-c059-4866-ad84-753e9bc9fdb4",
+        "c6591a02-5c60-4ecf-a619-b6870efcf237",
+        "04b09759-ec52-4bf9-8c2e-23007bb4b57a"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "ac7a7a7a-f3dc-4d99-ac65-90e5999c9c08",
+          "field": "artifacts",
+          "oldValue": "2-piece Mix (HP% / EM / ER)",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "columbina:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "dahlia",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "fc54fa3e-84db-4b9f-8dad-4bc0e499459b",
+        "2568f2eb-1f80-404d-9c47-292ad818bdb4"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "c33df15a-6dfe-44e3-8720-a684e0c39b88",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "dahlia:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "dori",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "1f9b8918-7910-43fd-a16f-c2da6b91b3e3",
+        "f843d4b0-d284-4465-af94-1024e94cd55b"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "20f8968b-cbb9-4336-a411-aa731409473f",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "dori:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "durin",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "fa78f4c3-e083-4396-9712-4cb13b82ef41",
+        "d64fb018-d952-42d3-add9-cabf918f355b",
+        "d58732c1-95d3-4d6f-826b-10e2886d3e2b",
+        "2a13ca70-c1fc-4112-9eb7-486d7f2e1b4a",
+        "b267d0ff-e04b-442f-859e-130bea627e20",
+        "11fb343d-6b95-43bb-8c03-30ad2309c0ea",
+        "605d088f-75e1-40e8-8b50-aa2aa7fb9a70",
+        "3d5ac551-d208-49dd-9abb-a84a77f01f3c",
+        "35432538-3411-4200-a123-b24e0a5effe1",
+        "117e35ef-792c-4f93-bce8-2131446df557",
+        "6ed2b5b8-6a79-4790-9895-d04c084bc20c",
+        "5ef33a81-c13e-4b3f-9e6e-c33f6980b780",
+        "4bacd8cc-14b7-4748-b67d-39c2696594d7",
+        "f8c1bd92-be41-4524-98a3-1adce2b3914f",
+        "6f43d93f-79e8-4b9f-b5c3-306c0aeb49f8"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "86290742-f63b-4b0f-9937-b05c65e0c27e",
+          "field": "artifacts",
+          "oldValue": "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "durin:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "fischl",
+      "priorConfirmedError": false,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "KEEP_VALID_ALTERNATIVE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "legacy-fischl",
+          "field": "teams",
+          "kind": "EXPERIMENTAL_TEAM_ROTATION_UNVERIFIED",
+          "reason": "The unchanged A01 approved configuration remains a valid off-field alternative. The prior verified import still labels its team experimental, and no new rotation evidence was supplied."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": []
+    },
+    {
+      "characterId": "iansan",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "ab6f7a6f-4d29-4489-a012-ddae314c479e",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [
+        {
+          "recordId": "60b445e8-7a76-428d-b7c2-e5b1f7795016",
+          "buildId": "legacy-iansan",
+          "field": "weaponId",
+          "before": "chương-nhạc-lang-thang",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        },
+        {
+          "recordId": "37db6d7e-bb37-4181-be0d-20c9e722990f",
+          "buildId": "legacy-iansan",
+          "field": "weaponId",
+          "before": "điển-tích-tây-phong",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "iansan:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "illuga",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "4f70393f-7dd5-4190-bed3-758d19e8800a",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [
+        {
+          "recordId": "5874f319-582b-4d29-b09b-4491ef95501d",
+          "buildId": "legacy-illuga",
+          "field": "weaponId",
+          "before": "chương-nhạc-lang-thang",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        },
+        {
+          "recordId": "e37a0dc4-38f7-4dcb-b17d-8984d8758b9c",
+          "buildId": "legacy-illuga",
+          "field": "weaponId",
+          "before": "điển-tích-tây-phong",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "illuga:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "jahoda",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "bd30aa76-536a-45fc-827b-ed2aab5adfb9",
+        "f175f662-f771-4edd-9e4c-98255fc48868"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "f5ece7ca-45cd-4f77-9516-a062c6aebe58",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "jahoda:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "kachina",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "917509c9-591a-4565-ac34-c7300f433f41"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "fc5ce990-6c5b-421b-9631-a45e396d3c06",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [
+        {
+          "recordId": "38e919ca-dda5-4e1c-9d21-39621633dfd3",
+          "buildId": "legacy-kachina",
+          "field": "weaponId",
+          "before": "thương-diệu",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "kachina:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "kaveh",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "4ae80ebb-06a2-46a0-83e0-92874857aad0",
+        "2d378e1c-d99e-44bf-be24-74c20fc90d17"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "847bbb80-15f1-45d8-8267-78c15ac307df",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "kaveh:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "lanyan",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "db89a9a4-63e3-4af4-a4fd-36081cb9a73f",
+        "f169a94d-b86c-47ac-ac6a-e233e493a5cf"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "78986c24-6640-486f-9253-e4d3ec21c280",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "lanyan:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "layla",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "c690e62e-89c2-447e-a7d3-767fc33bd297",
+        "1d69366c-2a38-4ef0-9eb4-8894cddcb514"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "384aca3f-c993-47c2-8806-db3405253e7e",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "layla:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "linnea",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "b711089f-b776-40d9-8aa6-783b0b4a09dd",
+        "f1405bde-3aae-4ba8-b507-f0871d756bca"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "972346ed-1f67-4c46-b96c-dff291db4802",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "linnea:1",
+          "state": "BLOCKED",
+          "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+        }
+      ]
+    },
+    {
+      "characterId": "lohen",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "665cb892-546b-4132-81d3-2f89a78fb3bd",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [
+        {
+          "recordId": "97adc477-a6fc-47cd-8c2b-da6282383545",
+          "buildId": "legacy-lohen",
+          "field": "weaponId",
+          "before": "chương-nhạc-lang-thang",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        },
+        {
+          "recordId": "41134d27-aff6-45c9-a791-a078616dd25f",
+          "buildId": "legacy-lohen",
+          "field": "weaponId",
+          "before": "điển-tích-tây-phong",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "lohen:1",
+          "state": "BLOCKED",
+          "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+        }
+      ]
+    },
+    {
+      "characterId": "lynette",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "8e6dcdf3-2e47-4a47-9198-150fcd39f53f",
+        "733bdf66-8805-41da-9a12-227605190bce"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "616a74c1-abfb-469d-92d5-2ad3aa152077",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "lynette:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "mavuika",
+      "priorConfirmedError": false,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "mavuika:2",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Check Mualani bite timing and Pyro application after Xilonen takes Scroll."
+        }
+      ]
+    },
+    {
+      "characterId": "mitya",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "RESOLVED_AND_VERIFIED",
+      "stillOpen": false,
+      "appliedRecordIds": [
+        "mitya"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": []
+    },
+    {
+      "characterId": "neuvillette",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "7999a79d-3cd3-4a41-8f4d-0d2ad3209da1",
+        "f8b2ff2f-f5dc-410f-8263-b85ea091ae7d",
+        "94dfd250-c259-49e5-996c-53e18fe5fef8",
+        "06e61c80-64ec-4ebe-8e2b-543809b10a74",
+        "6c756772-ef9b-489e-95ec-46dae1ee181a",
+        "c011f047-c49c-44e7-9dcb-8ea2e60726d7",
+        "efcf7487-7382-4929-85a3-dc75b41c3524",
+        "e4a5a752-18c3-433b-9244-198df9425e6e",
+        "06ee8f4a-b982-4bfd-9ee6-14fb1315a884",
+        "a5108ae0-0246-4b7c-89f9-9d462a631203",
+        "9e61c33b-3b49-4ab2-88a5-6d8720a77fbe",
+        "b8658770-b28d-4d99-a5ea-3a3874f8b88a",
+        "428f24da-f2d8-4abe-80a5-5d8e20f4fc36",
+        "dded23db-f22f-453e-ad63-f9770e47d2e8",
+        "e807136c-f954-436d-98f9-51b96784b5ed"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "0f8e9ecd-67d8-4cef-83e3-70e7dc6ddc98",
+          "field": "artifacts",
+          "oldValue": "Mix 2 bộ Thủy / HP / Thợ Săn",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "neuvillette:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "nicole",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "8452d3c9-74b2-4e03-864e-4c97fe083aae",
+        "6a95fbfe-a731-402a-a404-8c112973a7ab",
+        "5e3fbe5d-470e-4ee8-854f-eda52f9f7f17",
+        "3e2eedbb-50f9-4251-90f9-1aad0148324a",
+        "d2a93970-86d2-4319-9aab-5773a3839c56",
+        "8d774ad3-e6a5-46e9-8327-0b51158719fa",
+        "6fd85b92-7e6f-40a7-ab0b-37d0884c2094",
+        "9ee864b6-fd5b-4c3b-9356-aec87438139e",
+        "eaf62bc5-e5d2-4601-a9b5-2d0cf7eccf82",
+        "1e09dae9-7c71-4b38-b30a-83b76de9da7e"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "b95fc47d-36e2-455b-a648-07bef94ffef7",
+          "field": "artifacts",
+          "oldValue": "Mix 2 bộ Tấn Công / Hiệu Quả Nạp",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "nicole:1",
+          "state": "BLOCKED",
+          "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+        }
+      ]
+    },
+    {
+      "characterId": "nilou",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "c72091fc-20eb-4ba0-a3d5-b9cb4e4608b7",
+        "b1f831a8-f866-4efd-bfce-6476fea3f143",
+        "b0e8179b-f4d8-49e7-938c-bfe66d316bca",
+        "dbc34e79-21d7-46b8-a966-30a044add462",
+        "ff778312-4895-4a91-b28c-4274538da610",
+        "0aa85f74-ce84-4ec9-bee0-742933c93cd1",
+        "62d30402-9435-4e23-9980-67c1d313fcac",
+        "bdbca425-4414-4be2-b5a2-6378c62e3c47"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "nilou:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "odette",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "odette"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "odette:1",
+          "buildId": null,
+          "field": "CharacterBuild",
+          "before": null,
+          "proposed": {
+            "roles": [
+              "SUB_DPS",
+              "SUPPORT"
+            ],
+            "checks": {
+              "weapon": [
+                {
+                  "id": "11520",
+                  "name": "Whitelake Frostfeather",
+                  "refinement": 1,
+                  "passive": "Snow Swan's Finale"
+                },
+                {
+                  "id": "11401",
+                  "name": "Favonius Sword",
+                  "refinement": 1,
+                  "passive": "Windfall"
+                },
+                {
+                  "id": "11425",
+                  "name": "Finale of the Deep",
+                  "refinement": 1,
+                  "passive": "An End Sublime"
+                }
+              ],
+              "artifacts": [
+                [
+                  {
+                    "id": "15046",
+                    "name": "Disenchantment in Deep Shadow",
+                    "pieces": 4
+                  }
+                ],
+                [
+                  {
+                    "id": "15048",
+                    "name": "Heart of the Furnace",
+                    "pieces": 4
+                  }
+                ],
+                [
+                  {
+                    "id": "15020",
+                    "name": "Emblem of Severed Fate",
+                    "pieces": 4
+                  }
+                ]
+              ],
+              "teams": [
+                [
+                  "odette",
+                  "vesna",
+                  "vodyanitsa",
+                  "kaedehara-kazuha"
+                ]
+              ]
+            },
+            "mainStats": {
+              "sands": [
+                "ATK%"
+              ],
+              "goblet": [
+                "Cryo DMG Bonus"
+              ],
+              "circlet": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "substats": [
+              "Energy Recharge",
+              "ATK%",
+              "CRIT Rate",
+              "CRIT DMG"
+            ],
+            "talents": [
+              "Skill",
+              "Burst",
+              "Normal Attack"
+            ]
+          },
+          "reason": {
+            "rotation": "Skill or Burst summons or refreshes the 20s double. Each action opens a 6s special-Skill window; plan its use around Vesna’s field time. Burst costs 60 Energy with a 15s cooldown.",
+            "open": "Verify repeatable special-Skill timing, Cryo Swirl conversion and the double’s Cryo application with the draft’s Hydro and double-Anemo lineup. Check Favonius CRIT or Finale’s healing clearance, and attribute the reaction to its real owner.",
+            "gear": "ATK/Cryo/CRIT describes personal damage. Match Disenchantment to Stellar-Conduct ownership; it is not automatically useful in a Swirl-only rotation. Heart of the Furnace is conditional on the wearer triggering or dealing the eligible reaction. Emblem is Burst-focused."
+          }
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "odette:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "prune",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "f66edf82-4511-4c83-a97c-ccb6376cb557",
+        "eb73cddf-2946-4b60-bf61-24e4c6497113"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "c187df91-40a9-4884-a86d-2b0be6892788",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "prune:1",
+          "state": "BLOCKED",
+          "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+        }
+      ]
+    },
+    {
+      "characterId": "sandrone",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "sandrone"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "98a14828-960f-4ea1-b190-b1b9f6502269",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đồ Cổ",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [
+        {
+          "recordId": "aa157f9d-5f62-4fdc-8688-6a858fa0dfb0",
+          "buildId": "legacy-sandrone",
+          "field": "weaponId",
+          "before": "lost-prayer-to-the-sacred-winds",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        },
+        {
+          "recordId": "cf32c5d7-b918-4e97-9316-d999539e260c",
+          "buildId": "legacy-sandrone",
+          "field": "weaponId",
+          "before": "the-widsith",
+          "proposed": null,
+          "reason": "Pinned type is incompatible. No verified replacement for the inherited recommendation. Keep the original for targeted editorial review."
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "sandrone:1",
+          "state": "BLOCKED",
+          "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+        }
+      ]
+    },
+    {
+      "characterId": "sangonomiya-kokomi",
+      "priorConfirmedError": false,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "sangonomiya-kokomi:2",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "sayu",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "8f67cc07-4829-4a6a-8d25-5b41835732bd",
+        "a1b8c7ee-a99e-45bc-af67-531333682eaf"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "28df0d47-4a4f-43e0-bbfc-aa2285be2a74",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "sayu:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "traveler-anemo",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "d6fc2d17-ec49-477b-8557-9b26fa5ff65a",
+        "3e67f4d1-0c99-4701-8bda-e2debd2b5e01"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "ec904f69-ab48-41ca-88ab-826cf9e3a85c",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        },
+        {
+          "recordId": "traveler-anemo",
+          "field": "baseHp",
+          "oldValue": 3262,
+          "candidateValue": 10875,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-anemo",
+          "field": "baseAtk",
+          "oldValue": 64,
+          "candidateValue": 212,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-anemo",
+          "field": "baseDef",
+          "oldValue": 205,
+          "candidateValue": 683,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-anemo",
+          "field": "stats",
+          "oldValue": [],
+          "kind": "NO_ASCENSION_STAT_TABLE",
+          "reason": "No candidate-specific variant table and no safe stats update path."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "traveler-anemo:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "traveler-dendro",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "traveler-dendro",
+          "field": "baseHp",
+          "oldValue": 3262,
+          "candidateValue": 10875,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-dendro",
+          "field": "baseAtk",
+          "oldValue": 64,
+          "candidateValue": 212,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-dendro",
+          "field": "baseDef",
+          "oldValue": 205,
+          "candidateValue": 683,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-dendro",
+          "field": "stats",
+          "oldValue": [],
+          "kind": "NO_ASCENSION_STAT_TABLE",
+          "reason": "No candidate-specific variant table and no safe stats update path."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": []
+    },
+    {
+      "characterId": "traveler-electro",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "94eb7b57-9678-461b-9b9a-10e8a47e7a95",
+        "78304199-a326-4c6f-a5e4-bd5cc6047b96"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "ec17a145-b412-496e-a087-98a1d8dfab21",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        },
+        {
+          "recordId": "traveler-electro",
+          "field": "baseHp",
+          "oldValue": 3262,
+          "candidateValue": 10875,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-electro",
+          "field": "baseAtk",
+          "oldValue": 64,
+          "candidateValue": 212,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-electro",
+          "field": "baseDef",
+          "oldValue": 205,
+          "candidateValue": 683,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-electro",
+          "field": "stats",
+          "oldValue": [],
+          "kind": "NO_ASCENSION_STAT_TABLE",
+          "reason": "No candidate-specific variant table and no safe stats update path."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "traveler-electro:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "traveler-geo",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "traveler-geo",
+          "field": "baseHp",
+          "oldValue": 3262,
+          "candidateValue": 10875,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-geo",
+          "field": "baseAtk",
+          "oldValue": 64,
+          "candidateValue": 212,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-geo",
+          "field": "baseDef",
+          "oldValue": 205,
+          "candidateValue": 683,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-geo",
+          "field": "stats",
+          "oldValue": [],
+          "kind": "NO_ASCENSION_STAT_TABLE",
+          "reason": "No candidate-specific variant table and no safe stats update path."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": []
+    },
+    {
+      "characterId": "traveler-hydro",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "67958a1a-8ee8-45ef-9f38-d592039afe32",
+        "d3d31c21-034e-453a-b6e9-bf1b49bc2354",
+        "3c477f8b-c923-4a2b-8852-1fab4f0d9364",
+        "3b557d9b-80b3-43ce-b326-269a512db24b",
+        "7776dd42-b8fc-476b-bb0a-b51cd1fac6d5",
+        "3a0c6192-cc15-408e-a6a5-092ee045f1cf"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "traveler-hydro",
+          "field": "baseHp",
+          "oldValue": 3262,
+          "candidateValue": 10875,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-hydro",
+          "field": "baseAtk",
+          "oldValue": 64,
+          "candidateValue": 212,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-hydro",
+          "field": "baseDef",
+          "oldValue": 205,
+          "candidateValue": 683,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-hydro",
+          "field": "stats",
+          "oldValue": [],
+          "kind": "NO_ASCENSION_STAT_TABLE",
+          "reason": "No candidate-specific variant table and no safe stats update path."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "traveler-hydro:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "traveler-pyro",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "29d096cb-07e4-45bd-894b-7231e0a4b2ee",
+        "b48a861e-a042-43ab-bc02-c61364bf3e03",
+        "7df65d60-43aa-40ae-afe8-64a3cea03ca5",
+        "3a04008b-736f-42a8-8ba6-c2f43ac88563",
+        "87ebed30-780c-4a0e-9eb8-4ed2fbfef21a"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "d9b16cee-b74c-43c0-a131-1cdac49db6c0",
+          "field": "artifacts",
+          "oldValue": "Mix 2 bộ Hiệu Quả Nạp +20%",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        },
+        {
+          "recordId": "traveler-pyro",
+          "field": "baseHp",
+          "oldValue": 3262,
+          "candidateValue": 10875,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-pyro",
+          "field": "baseAtk",
+          "oldValue": 64,
+          "candidateValue": 212,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-pyro",
+          "field": "baseDef",
+          "oldValue": 205,
+          "candidateValue": 683,
+          "kind": "GENERIC_TRAVELER_BASELINE_DIFFERS",
+          "reason": "Aether reference has different scope. Do not overwrite elemental variant metadata."
+        },
+        {
+          "recordId": "traveler-pyro",
+          "field": "stats",
+          "oldValue": [],
+          "kind": "NO_ASCENSION_STAT_TABLE",
+          "reason": "No candidate-specific variant table and no safe stats update path."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "traveler-pyro:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    },
+    {
+      "characterId": "valeriy",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "valeriy"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "valeriy:1",
+          "buildId": null,
+          "field": "CharacterBuild",
+          "before": null,
+          "proposed": {
+            "roles": [
+              "SUPPORT"
+            ],
+            "checks": {
+              "weapon": [
+                {
+                  "id": "11504",
+                  "name": "Summit Shaper",
+                  "refinement": 1,
+                  "passive": "Golden Majesty"
+                },
+                {
+                  "id": "11401",
+                  "name": "Favonius Sword",
+                  "refinement": 1,
+                  "passive": "Windfall"
+                },
+                {
+                  "id": "11434",
+                  "name": "Moonweaver's Dawn",
+                  "refinement": 1,
+                  "passive": "Secret Silver's Testament"
+                }
+              ],
+              "artifacts": [
+                [
+                  {
+                    "id": "15048",
+                    "name": "Heart of the Furnace",
+                    "pieces": 4
+                  }
+                ],
+                [
+                  {
+                    "id": "15007",
+                    "name": "Noblesse Oblige",
+                    "pieces": 4
+                  }
+                ]
+              ],
+              "teams": [
+                [
+                  "valeriy",
+                  "mitya",
+                  "odette",
+                  "alyosha"
+                ]
+              ]
+            },
+            "mainStats": {
+              "sands": [
+                "Energy Recharge"
+              ],
+              "goblet": [
+                "ATK%"
+              ],
+              "circlet": [
+                "ATK%"
+              ]
+            },
+            "substats": [
+              "Energy Recharge",
+              "ATK%",
+              "CRIT Rate"
+            ],
+            "talents": [
+              "Skill",
+              "Burst",
+              "Normal Attack"
+            ]
+          },
+          "reason": {
+            "rotation": "Skill creates an ATK-scaling shield and grants 40 Momentum. Burst costs 60 Energy and has a 12s projectile window. An allied active Electro hitter can build additional Momentum before the special Charged Attack.",
+            "open": "Verify a repeatable swap-back window to consume Momentum, the actual number of allied Electro hits and who receives the directive. Check shield coverage and distinguish Stellar-Conduct and ordinary coefficients.",
+            "gear": "ER/ATK/ATK and Skill-first favor shield and Burst uptime. Summit Shaper stacks require wielder hits. Favonius requires on-field CRIT. Moonweaver’s Dawn is an ATK option. Noblesse cannot stack with Alyosha’s. The Furnace condition depends on reaction activity."
+          }
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "valeriy:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "varka",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "9678523b-c900-471a-a42e-07c485030513",
+        "a0379cb5-44ec-45e7-8a7f-ebcf3740f5f3"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "a8c63248-d3ec-420f-a3ee-499a929bd73a",
+          "field": "artifacts",
+          "oldValue": "Thánh Di Vật Đề Cử",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "varka:1",
+          "state": "BLOCKED",
+          "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+        }
+      ]
+    },
+    {
+      "characterId": "vesna",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "vesna"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "vesna:1",
+          "buildId": null,
+          "field": "CharacterBuild",
+          "before": null,
+          "proposed": {
+            "roles": [
+              "MAIN_DPS"
+            ],
+            "checks": {
+              "weapon": [
+                {
+                  "id": "11522",
+                  "name": "Beyond the Chrysalis",
+                  "refinement": 1,
+                  "passive": "Dance of Wings Unbound"
+                },
+                {
+                  "id": "11425",
+                  "name": "Finale of the Deep",
+                  "refinement": 1,
+                  "passive": "An End Sublime"
+                },
+                {
+                  "id": "11401",
+                  "name": "Favonius Sword",
+                  "refinement": 1,
+                  "passive": "Windfall"
+                }
+              ],
+              "artifacts": [
+                [
+                  {
+                    "id": "15047",
+                    "name": "Scarlet Proof",
+                    "pieces": 4
+                  }
+                ],
+                [
+                  {
+                    "id": "15044",
+                    "name": "A Day Carved From Rising Winds",
+                    "pieces": 4
+                  }
+                ]
+              ],
+              "teams": [
+                [
+                  "vesna",
+                  "odette",
+                  "vodyanitsa",
+                  "shenhe"
+                ]
+              ]
+            },
+            "mainStats": {
+              "sands": [
+                "ATK%"
+              ],
+              "goblet": [
+                "Anemo DMG Bonus"
+              ],
+              "circlet": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "substats": [
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%",
+              "Energy Recharge",
+              "Elemental Mastery"
+            ],
+            "talents": [
+              "Skill",
+              "Normal Attack",
+              "Burst"
+            ]
+          },
+          "reason": {
+            "rotation": "Enter the 15s Armed for Action state with Skill. Use infused attacks to build Sword Essence and spend it on Windborne Sword. Burst costs 60 Energy and supplies Essence. Leaving early removes Disciplinary Action stacks.",
+            "open": "Verify the order and number of Essence builders and spenders under the draft team’s Cryo aura and healing windows. Check Finale’s Bond of Life clearance and whether burst cadence is feasible. No verified number of rotations or damage ranking is assumed.",
+            "gear": "ATK/Anemo/CRIT with Skill-first fits her on-field kit. Scarlet Proof is tied to Stellar Swirl ownership; A Day Carved From Rising Winds needs its specified attack sequence. Favonius is an ER tradeoff, with a separate damage cost."
+          }
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "vesna:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "vodyanitsa",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": true,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "vodyanitsa"
+      ],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "vodyanitsa:1",
+          "buildId": null,
+          "field": "CharacterBuild",
+          "before": null,
+          "proposed": {
+            "roles": [
+              "SUPPORT"
+            ],
+            "checks": {
+              "weapon": [
+                {
+                  "id": "14524",
+                  "name": "Hymn of the Maelstrom",
+                  "refinement": 1,
+                  "passive": "Rondo of Slumber"
+                },
+                {
+                  "id": "14302",
+                  "name": "Thrilling Tales of Dragon Slayers",
+                  "refinement": 5,
+                  "passive": "Heritage"
+                },
+                {
+                  "id": "14406",
+                  "name": "Prototype Amber",
+                  "refinement": 1,
+                  "passive": "Gilding"
+                }
+              ],
+              "artifacts": [
+                [
+                  {
+                    "id": "15033",
+                    "name": "Song of Days Past",
+                    "pieces": 4
+                  }
+                ],
+                [
+                  {
+                    "id": "15017",
+                    "name": "Tenacity of the Millelith",
+                    "pieces": 4
+                  }
+                ]
+              ],
+              "teams": [
+                [
+                  "vodyanitsa",
+                  "vesna",
+                  "odette",
+                  "shenhe"
+                ]
+              ]
+            },
+            "mainStats": {
+              "sands": [
+                "HP%"
+              ],
+              "goblet": [
+                "HP%"
+              ],
+              "circlet": [
+                "Healing Bonus"
+              ]
+            },
+            "substats": [
+              "HP%",
+              "Energy Recharge"
+            ],
+            "talents": [
+              "Skill",
+              "Burst",
+              "Normal Attack"
+            ]
+          },
+          "reason": {
+            "rotation": "Use Skill before switching to the desired recipient. The Skill lasts 16s, heals active characters every 1.5s, and has a 16s cooldown. Treat the 60-Energy Burst as a separate damage or Prototype Amber trigger, not a precondition for Skill healing.",
+            "open": "Verify off-field Skill hit timing for Tenacity, the actual 20s Thrilling Tales cooldown alignment, the intended recipient, and whether to skip Burst outside Prototype Amber rotations. The draft’s Shenhe slot supports Odette’s Cryo output; it is not assumed to buff Vesna’s Anemo damage.",
+            "gear": "HP/HP/Healing Bonus and Skill-first match Max HP healing. Song of Days Past needs actual healing and Tenacity needs landed Skill hits. Pinned Heritage R5 gives +48% ATK to the next character for 10s every 20s; +24% is R1. No community usage inputs."
+          }
+        }
+      ],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "vodyanitsa:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "Specific rotation evidence remains open."
+        }
+      ]
+    },
+    {
+      "characterId": "xiangling",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "BLOCKED_BY_SPECIFIC_EVIDENCE",
+      "stillOpen": true,
+      "appliedRecordIds": [],
+      "remainingDistinctFindings": [],
+      "remainingCorrections": [
+        {
+          "recordId": "fa19a40e-941f-4394-a159-e48f7bd9ae83",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "quyền-trượng-cát-đỏ",
+          "proposed": "13511",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "35a664a5-a46d-4969-955a-65847989520a",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "đoạn-thảo-trường-đao",
+          "proposed": "13509",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "41ca373d-f2f6-4d67-87ec-f1a88d125c47",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "hòa-phác-diên",
+          "proposed": "13505",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "7be9c23f-02a7-4d01-8b91-b7bb5841fc91",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "bi-ca-lumidouce",
+          "proposed": "13513",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "14e10e8e-a9a8-4a0d-af4a-2bca7a4a4c40",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "hào-quang-tách-rời",
+          "proposed": "13515",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "70ac7b58-df12-41e0-9604-d7fdc453f1fa",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "trượng-hộ-ma",
+          "proposed": "13501",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "b6bd8c7a-2cd5-4870-b158-27c6b9dcb3a3",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "tai-họa-và-hối-hận",
+          "proposed": "13517",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "663b73ba-5ca4-42bf-9a3e-a59e37e67509",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "lao-xiên-cá",
+          "proposed": "13415",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "45361342-de26-4cbf-b2ab-9f6dd38870e4",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "thương-quyết-chiến",
+          "proposed": "13405",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "5694ffd1-3529-4a30-aeaa-19e79c6bf502",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "khúc-ca-vịnh-hẹp",
+          "proposed": "13424",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "d86f49f7-c519-4f4d-be5c-584ce896b08e",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "hủy-diệt",
+          "proposed": "13507",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "c4d36123-43ea-4c4b-8a39-0b8ac5daa983",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "giáo-nịnh-thần",
+          "proposed": "13504",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "6a0bc3c9-878a-47d4-9f0d-1cd47ec916d1",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "hình-thái-xích-nguyệt",
+          "proposed": "13512",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "13434f69-7ae5-43f8-83bc-5c8616c901bb",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "tàn-tích-nhuốm-máu",
+          "proposed": "13516",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "2e4f594e-76e9-40fa-92dc-1e3d55406b98",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "vây-cá-chẻ-sóng",
+          "proposed": "13416",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "c5c4f028-b844-4ea7-91c8-64681408d186",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "mũi-nhọn-của-gió",
+          "proposed": "13419",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "c1520faf-ddec-4d6b-bbb3-c4685e4e457f",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "giáo-thập-tự-kitain",
+          "proposed": "13414",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "a6bd8f9c-a8bc-41ef-b711-c274153460bd",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "thương-thiên-nham",
+          "proposed": "13406",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        },
+        {
+          "recordId": "a3375225-f696-4645-a47c-e288c0e33ece",
+          "buildId": "legacy-xiangling",
+          "field": "weaponId",
+          "before": "thương-tây-phong",
+          "proposed": "13407",
+          "reason": "Protected approved build. The existing schema has no independently visible maintenance revision that leaves the approved revision and default intact."
+        }
+      ],
+      "historicalEvidenceHolds": []
+    },
+    {
+      "characterId": "xinyan",
+      "priorConfirmedError": true,
+      "confirmedErrorFullyResolved": false,
+      "outcome": "CORRECTED",
+      "stillOpen": true,
+      "appliedRecordIds": [
+        "90e9d624-5f95-40f1-aac9-adf5b7f1aed0",
+        "ef9c00f6-0adf-4ed7-86d1-12a72732c800",
+        "59296723-2c29-4d72-83ed-1c0913c1f5aa",
+        "70b52897-5697-437e-9c88-eab1d20ea657",
+        "c412df5f-cba1-4aca-889f-58c9c2594427",
+        "af170a2a-c221-4163-a11f-701551140de7",
+        "55a25e09-faf6-439f-b16b-81c9c6c78985",
+        "6ee43417-4bb9-4ff3-a392-4888eb66b63c",
+        "48e6882e-6bff-4065-b31d-e934fe9cc60b",
+        "03996c0d-cfe7-4d63-9084-186b0f09dca7",
+        "b44b981b-d466-4c23-be25-58897e9ca5aa"
+      ],
+      "remainingDistinctFindings": [
+        {
+          "recordId": "d8355766-83fd-4327-bc7a-ff5ceefd4755",
+          "field": "artifacts",
+          "oldValue": "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        },
+        {
+          "recordId": "5d01017d-76d2-4302-b72a-aaafc090a9d0",
+          "field": "artifacts",
+          "oldValue": "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+          "kind": "UNRESOLVED_ARTIFACT_SET",
+          "reason": "No independently validated, safe replacement captured for this field. Preserve existing public data."
+        }
+      ],
+      "remainingCorrections": [],
+      "historicalEvidenceHolds": [
+        {
+          "candidateId": "xinyan:1",
+          "state": "NEEDS_MORE_EVIDENCE",
+          "reason": "No supported team rotation or explicit team omission sign-off."
+        }
+      ]
+    }
+  ],
+  "unchangedExamples": [
+    {
+      "characterId": "mitya",
+      "outcome": "KEEP_VALID_ALTERNATIVE",
+      "scope": "Both approved builds and their default; only Character.stats changed."
+    },
+    {
+      "characterId": "xingqiu",
+      "outcome": "KEEP_VALID_ALTERNATIVE",
+      "scope": "Approved C0 Energy-dependent build unchanged."
+    },
+    {
+      "characterId": "traveler",
+      "outcome": "NOT_BUILDABLE",
+      "scope": "Generic catalog identity, not an elemental build."
+    }
+  ]
+}

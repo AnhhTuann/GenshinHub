@@ -66,12 +66,12 @@ No payload was rewritten; no new authorization was required.
 
 | Property | Value |
 | --- | --- |
-| Path | `<redacted private backup path>` |
+| Path | `/home/tuan/.private/genshinhub-backups/final-all-832aad6928ca/genshinhub-final-all-2026-11-20T15-50-11-364Z.dump` |
 | SHA-256 | `dedc686a2561a6f8fceb5367023a41111e6976f414e81e297d5fa2c7bed1f587` |
 | Size | 387,400 bytes |
 | Directory / file mode | `700` / `600` |
 
-This is a new complete `pg_dump` taken after development had changed since A01; the A01 backup was not reused. A deterministic read-only before-import snapshot was also stored at `<redacted private snapshot path>` covering builds, audits, defaults, weapon/artifact/team/member rows, Mitya and A01 builds, Admin-managed fields, tier rankings and migration history. No credentials are stored in the backup metadata or reports.
+This is a new complete `pg_dump` taken after development had changed since A01; the A01 backup was not reused. A deterministic read-only before-import snapshot was also stored at `/home/tuan/.private/genshinhub-backups/before-import-snapshot.json` covering builds, audits, defaults, weapon/artifact/team/member rows, Mitya and A01 builds, Admin-managed fields, tier rankings and migration history. No credentials are stored in the backup metadata or reports.
 
 ## 9. Isolated restore verification
 
@@ -171,7 +171,7 @@ One earlier runner invocation aborted at the first candidate (`albedo:1`) during
 - `FINAL_ALL_BUILDS_IMPORT_CHECKPOINTS.json` — per-candidate durable checkpoints
 - `FINAL_ALL_BUILDS_POST_IMPORT_VALIDATION.json` — full post-import read-only validation
 - `FINAL_ALL_BUILDS_BROWSER_VERIFICATION.json` — browser sample evidence
-- Private, permission-restricted backup and snapshots under `<redacted private backup directory>`
+- Private, permission-restricted backup and snapshots under `/home/tuan/.private/genshinhub-backups/`
 
 No commit, push, deploy, production write, UI redesign, schema migration or Tier List work was performed.
 

@@ -1,0 +1,2482 @@
+{
+  "mode": "DRY_RUN",
+  "writes": 0,
+  "selection": {
+    "batch": "ALL",
+    "subsetSupported": true
+  },
+  "candidates": [
+    {
+      "candidateId": "aino:1",
+      "characterId": "aino",
+      "checksum": "2a67feb7de2f68b43a74b74475b114dd533835ac8ddbc3e457378c47a1f1b042",
+      "expectedBaseline": {
+        "buildId": "legacy-aino",
+        "version": 1,
+        "checksum": "4029b2be731b4c1e5f5f899cae0b43cc9449e8093f491e29a36075d716dd252c",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-aino",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "albedo:1",
+      "characterId": "albedo",
+      "checksum": "a23feb828657d1ba053aca5fd53b5bd3a60813de382dfc271877c2b800cefd20",
+      "expectedBaseline": {
+        "buildId": "legacy-albedo",
+        "version": 1,
+        "checksum": "54078ff392c9436610c6e6a99aaa8f5efb2e677f69bbedad4edd758636da307f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-albedo",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "alhaitham:1",
+      "characterId": "alhaitham",
+      "checksum": "db7d4baefe91a4d21aa882502228547fbaede75da10d1b1873e29d848dab87c2",
+      "expectedBaseline": {
+        "buildId": "legacy-alhaitham",
+        "version": 1,
+        "checksum": "e6d1ed749131ccdce35323641ee7b92d7d07487d166bbed2fe530ab921b19ba7",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-alhaitham",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "aloy:1",
+      "characterId": "aloy",
+      "checksum": "ee99221e1de768ef42d194d999f977aea3a77105c4ca1ead1c590c91840bac30",
+      "expectedBaseline": {
+        "buildId": "legacy-aloy",
+        "version": 1,
+        "checksum": "aded51affb4aece6029530fda35a51cd556cd20e1e911ab9d02cd23ebfa9650d",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-aloy",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "alyosha:1",
+      "characterId": "alyosha",
+      "checksum": "d6b68b131ac456e94a080abee08b642d866f2e9fc280355acf5898f950765202",
+      "expectedBaseline": null,
+      "existingDefault": null,
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": true,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "amber:1",
+      "characterId": "amber",
+      "checksum": "5302841c9601f665c341984d021292d1c789a6ac3a498e7f236a5297a3e65ead",
+      "expectedBaseline": {
+        "buildId": "legacy-amber",
+        "version": 1,
+        "checksum": "cb1b5c2b1759196f66bf09b1bce1c6e759c8ab2a2552825681df5628cba2ccf4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-amber",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "arataki-itto:1",
+      "characterId": "arataki-itto",
+      "checksum": "a72922f6b1e4e884eb6280161ee89516cf30b24f3dbf7e8e43a984dc03a16ab0",
+      "expectedBaseline": {
+        "buildId": "legacy-arataki-itto",
+        "version": 1,
+        "checksum": "2684516cb43030d3cd7476df297632456feb76fe883737095334abc49d90b7e4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-arataki-itto",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "arlecchino:1",
+      "characterId": "arlecchino",
+      "checksum": "316f4ddf726223068657b12c79ddaa764cb374146c2a573984412819be563a52",
+      "expectedBaseline": {
+        "buildId": "legacy-arlecchino",
+        "version": 1,
+        "checksum": "a61720cbfc95113a37eaa04fbd964a758d2d95a6ebe9df6a9478d5f002cd5dfa",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-arlecchino",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "baizhu:1",
+      "characterId": "baizhu",
+      "checksum": "6c75ee5fc2b1c5fabc88700b2eb36ea2f9ad37453e52781c825fb436e156ff4c",
+      "expectedBaseline": {
+        "buildId": "legacy-baizhu",
+        "version": 1,
+        "checksum": "726a8ea9b5111b46cac430cdc2ee5c10fe62745ab09dc777ec803ab5c0b3ad50",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-baizhu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "barbara:1",
+      "characterId": "barbara",
+      "checksum": "96266f0afd069fe707dd01c647c6647f788718b1874983f527509e7ef2142a5f",
+      "expectedBaseline": {
+        "buildId": "legacy-barbara",
+        "version": 1,
+        "checksum": "42805a2b8fae69b4dbd1260c15ac1b5a8381397db97aedf6bfbac8dd77f4c044",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-barbara",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "beidou:1",
+      "characterId": "beidou",
+      "checksum": "1f0da966b7c3756c5c1d8c9d6c12ad569fd9229b423a33064908edb94bb6b6f7",
+      "expectedBaseline": {
+        "buildId": "legacy-beidou",
+        "version": 1,
+        "checksum": "82b2f122809b75b777ecef2bfc2a0063a535bd26f2be8841ab4ce3871049e1c1",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-beidou",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "bennett:1",
+      "characterId": "bennett",
+      "checksum": "6c5527ba0bf9fc768bb41db2e2313ddd277fa3c85824f56c19b99e9bbced5744",
+      "expectedBaseline": {
+        "buildId": "legacy-bennett",
+        "version": 1,
+        "checksum": "42516bd8f7deeb62d85a20127b17a9af2d5db2e0a778a9853229c743b3ef057f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-bennett",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "candace:1",
+      "characterId": "candace",
+      "checksum": "9cfcfa6c60d2dfe50e0a0e24d3f2731192ec8011612b042cadf7c0143bece32c",
+      "expectedBaseline": {
+        "buildId": "legacy-candace",
+        "version": 1,
+        "checksum": "6f8cd2a2c019f60a28e9ff0e086bb4632e4211b626f0fc8bcd49e8f37d2a9a08",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-candace",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "charlotte:1",
+      "characterId": "charlotte",
+      "checksum": "317c369a91ea14284ee8f2422e3fc716fe223c55ad85d050f7ddc0bafd667c04",
+      "expectedBaseline": {
+        "buildId": "legacy-charlotte",
+        "version": 1,
+        "checksum": "9c30af643ea9545f6ead7baa46a23b1ac7a680adba553b15225367313ce2c68e",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-charlotte",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "chasca:1",
+      "characterId": "chasca",
+      "checksum": "90040cdbb541d19499d19404fae1e28cbd124aea589e5c12a7fe2feab6d76a15",
+      "expectedBaseline": {
+        "buildId": "legacy-chasca",
+        "version": 1,
+        "checksum": "e9ba9fa7aae0c67e8b01d8dac4f40825d9ea276a5b6994394f93ad7c9d6e5f58",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-chasca",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "chevreuse:1",
+      "characterId": "chevreuse",
+      "checksum": "f3467fc5988d0d2c3352e748d0322f11d250d5ba5d2e073e31ad919410647410",
+      "expectedBaseline": {
+        "buildId": "legacy-chevreuse",
+        "version": 1,
+        "checksum": "4ccb184778952486770d4ae14e8017cbf56d313a240b17b93505add6fcf89d12",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-chevreuse",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "chiori:1",
+      "characterId": "chiori",
+      "checksum": "a87b819ef6d802818e6d0ec88ac7e8813fd33dcdebc8d01d485322d7d66f8cf6",
+      "expectedBaseline": {
+        "buildId": "legacy-chiori",
+        "version": 1,
+        "checksum": "3b3d2373c9b65d06817697e1725bab13724ebf24f74bb5f9430732529c6e8dd4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-chiori",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "chongyun:1",
+      "characterId": "chongyun",
+      "checksum": "1699db6a0c141f0cfef7f94e7e8108673942948976bcd91579ef6ba0d82f9700",
+      "expectedBaseline": {
+        "buildId": "legacy-chongyun",
+        "version": 1,
+        "checksum": "53efa22951417b9fc8809f242d6cb699aca6a4013098bdcad7cf04d83aacee04",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-chongyun",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "citlali:1",
+      "characterId": "citlali",
+      "checksum": "5e26e84258918672c9be71ba65975c36cfd2a17508424ffc4f11a5c97a74835b",
+      "expectedBaseline": {
+        "buildId": "legacy-citlali",
+        "version": 1,
+        "checksum": "ba80701d2f8937dda92ba05f6a66e111cd37802b2a87578a721cb1370a0480ce",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-citlali",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "clorinde:1",
+      "characterId": "clorinde",
+      "checksum": "e9b3a2b1d4b86aac6b0872be7fe3ffacdf377c43383fbe8455cf5dbc5225c5b3",
+      "expectedBaseline": {
+        "buildId": "legacy-clorinde",
+        "version": 1,
+        "checksum": "487f22c8227d9bda194486c0a7930a731f871837e08800a83d03afaedd835529",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-clorinde",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "collei:1",
+      "characterId": "collei",
+      "checksum": "19249904eb2c8ce41fbd227469c6aa128dcc9444adb4687bf93b0bb549693a00",
+      "expectedBaseline": {
+        "buildId": "legacy-collei",
+        "version": 1,
+        "checksum": "352f1e4c410d4f2de591b4a40da61fa4e6c808a6c66d1d04ae87e597e583ad79",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-collei",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "dahlia:1",
+      "characterId": "dahlia",
+      "checksum": "175b2a8382fc393d81e3d0557108c82fb0e8f349345757bd47939a62195e3ca1",
+      "expectedBaseline": {
+        "buildId": "legacy-dahlia",
+        "version": 1,
+        "checksum": "c777f6fda181b3605dadea49501a30d228a618d0286f63af5b3906fa6e7d1f8e",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-dahlia",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "dehya:1",
+      "characterId": "dehya",
+      "checksum": "36a5efdd630067499ee1254da8f7db18b6ed306c0780d4c6a9bc2ec0db5a75cd",
+      "expectedBaseline": {
+        "buildId": "legacy-dehya",
+        "version": 1,
+        "checksum": "98db46529e346b0d02d0f2aa3e3a50ce4d84c0895bbee980dd2da0d190770c01",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-dehya",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "dehya:2",
+      "characterId": "dehya",
+      "checksum": "1443681d8d3041d81f090b35513dc79239771dc16d4bf2d511acc11aa62ad5c7",
+      "expectedBaseline": null,
+      "existingDefault": "legacy-dehya",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "diluc:1",
+      "characterId": "diluc",
+      "checksum": "6056937bd2e2b43cf1ade1c68e5e65feddd27cdefcb9030437926213d1236a4c",
+      "expectedBaseline": {
+        "buildId": "legacy-diluc",
+        "version": 1,
+        "checksum": "1bd934e991c747e77a9aa89a3e3379151715facd916e58582bebdbef3732f580",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-diluc",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "diona:1",
+      "characterId": "diona",
+      "checksum": "2dcdf2efbab16fb213477d089a564cfb0721fafdf45d750317e764ff38576c58",
+      "expectedBaseline": {
+        "buildId": "legacy-diona",
+        "version": 1,
+        "checksum": "90b45047a85c7810515aee9d55cc8ca3889f7e077368e61be2520ef1c874b677",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-diona",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "dori:1",
+      "characterId": "dori",
+      "checksum": "e8369fab026409044249a0852615e827e44890fdd621992c9997c2ea01da0fd2",
+      "expectedBaseline": {
+        "buildId": "legacy-dori",
+        "version": 1,
+        "checksum": "bf071d2fb38cd21cf5da3555095d793968549bad3a383cfd809ff6d8e8c72e55",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-dori",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "emilie:1",
+      "characterId": "emilie",
+      "checksum": "5c717dfd056e2d86d47ddabf89b9918e339605614f616104b1f4729380197a56",
+      "expectedBaseline": {
+        "buildId": "legacy-emilie",
+        "version": 1,
+        "checksum": "7051431d6316e473aa3244057d34fa56b66ef8a5e96a27d424ca3ff508531ded",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-emilie",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "escoffier:1",
+      "characterId": "escoffier",
+      "checksum": "eb2bc95c0a8bbff5b6123b13894862a2ee99f36c05ef0a5a3b2069b176ea2f31",
+      "expectedBaseline": {
+        "buildId": "legacy-escoffier",
+        "version": 1,
+        "checksum": "27304de93c8859be054c906037a0d99a43aaf2fc0383f3ece776b5ffb02413fd",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-escoffier",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "eula:1",
+      "characterId": "eula",
+      "checksum": "bde2e9dc979e3505db18820d31828fabf3a85f8dfaa6cf056da91e9f4d5f0fb1",
+      "expectedBaseline": {
+        "buildId": "legacy-eula",
+        "version": 1,
+        "checksum": "385f2ad72b90946c3c9edf1c3572ab30c6f080de1ba14e4975a55c3d0657f77b",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-eula",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "faruzan:1",
+      "characterId": "faruzan",
+      "checksum": "e94c5d0f26b7565e9ed51b8d7138cdea30555f4c17f4823d57a7ddc6eb7a17f6",
+      "expectedBaseline": {
+        "buildId": "legacy-faruzan",
+        "version": 1,
+        "checksum": "c2e5a1a28e1d9a4f57c391a2d68b94d026abb3e001d75f2a08d8fe86c534ce06",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-faruzan",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "fischl:1",
+      "characterId": "fischl",
+      "checksum": "1207015e89a97db353d5331a1b0ad8dc7b21e48e3b0226fd0dc54a8c93759744",
+      "expectedBaseline": {
+        "buildId": "legacy-fischl",
+        "version": 1,
+        "checksum": "99fd470d9f00bc3d94b8b84e87a04ffdc40ebfd279b0be5a8df33aec2b144d9a",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-fischl",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "furina:1",
+      "characterId": "furina",
+      "checksum": "32dded048defdeee681ee2a5f2f782aa74235c70efc06890bdee8382404f21df",
+      "expectedBaseline": {
+        "buildId": "legacy-furina",
+        "version": 1,
+        "checksum": "6bec065e54801c9d3d925734f2067b85b334384a750bce133d041bf55e536692",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-furina",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "gaming:1",
+      "characterId": "gaming",
+      "checksum": "7cae047aaf6696f0602300416b5aa2fa97fb73358270412631e7213e3392c44e",
+      "expectedBaseline": {
+        "buildId": "legacy-gaming",
+        "version": 1,
+        "checksum": "05a0839bb633b985e561cd1320bd12ebb2f5cc07efea2aa4c963ebf15529cad8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-gaming",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "ganyu:1",
+      "characterId": "ganyu",
+      "checksum": "98a79370cfc97eadf731c29f6fc60dd4a11662a6643a636aaeffeae8107052c8",
+      "expectedBaseline": {
+        "buildId": "legacy-ganyu",
+        "version": 1,
+        "checksum": "f582f215bcd4a2b586840e9db10d8f9f1d57d365a8738699f63342f1baa30110",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-ganyu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "ganyu:2",
+      "characterId": "ganyu",
+      "checksum": "1f3daa1c3186ac3a15277c431c605ca19ebb58a2631456e646b94ed257130265",
+      "expectedBaseline": null,
+      "existingDefault": "legacy-ganyu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "gorou:1",
+      "characterId": "gorou",
+      "checksum": "ae217e44dac13eeb3f8fdc0cffba7e6dfd1068a7163eb2f5de51832f91608eda",
+      "expectedBaseline": {
+        "buildId": "legacy-gorou",
+        "version": 1,
+        "checksum": "848fedd584408ca7b93944c069ddd13e63f408e136a29b63eed1ebf8c68c7b43",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-gorou",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "hu-tao:1",
+      "characterId": "hu-tao",
+      "checksum": "d4c74b25f82e59919c9238509993913eceff4a929a5d0f6268a201aae3482e12",
+      "expectedBaseline": {
+        "buildId": "legacy-hu-tao",
+        "version": 1,
+        "checksum": "51be8b680f43dcad80f4aef334f0ed37d525b24c702abdece61c42e307d5d030",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-hu-tao",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "jean:1",
+      "characterId": "jean",
+      "checksum": "7003252dd69dda50c230081c30051241e11289d53ffb7baf3c5c04a43a63e0a7",
+      "expectedBaseline": {
+        "buildId": "legacy-jean",
+        "version": 1,
+        "checksum": "9ceef8b26e63f5301de5d2ea04fbeb32375228469a4779f881f08ce1279f5211",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-jean",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kachina:1",
+      "characterId": "kachina",
+      "checksum": "ed8a90181e37f99fd02cdef9347e5186014dcdf9986b91438533f63b50745a98",
+      "expectedBaseline": {
+        "buildId": "legacy-kachina",
+        "version": 1,
+        "checksum": "6eec95e55b2575b75e00ca44ac03a78fb734f659448adb3e8e7375fe5dba0d23",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kachina",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kaedehara-kazuha:1",
+      "characterId": "kaedehara-kazuha",
+      "checksum": "caba51ecdb1b1468108d5c9fed33bf4d18533a6434513d66a83ca0d8a1174c9a",
+      "expectedBaseline": {
+        "buildId": "legacy-kaedehara-kazuha",
+        "version": 1,
+        "checksum": "9f6d188d9498685ac0601c62851a6cbf84d5df3b9cb7030f5b9b510d795f89b5",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kaedehara-kazuha",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kamisato-ayaka:1",
+      "characterId": "kamisato-ayaka",
+      "checksum": "01f322bae195d25030cfddbbdd98fd936cfae113118f45c2cf89b330fa7c876a",
+      "expectedBaseline": {
+        "buildId": "legacy-kamisato-ayaka",
+        "version": 1,
+        "checksum": "7c04d7de4477b6a948bced8dcd3fe7c56a45107ea38a1652bd238b9ac6699280",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kamisato-ayaka",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kamisato-ayato:1",
+      "characterId": "kamisato-ayato",
+      "checksum": "20ef2d1b7885f48afdf438979efae9575ea414e4de44fe170c8ddf7b21fe047c",
+      "expectedBaseline": {
+        "buildId": "legacy-kamisato-ayato",
+        "version": 1,
+        "checksum": "236614b2a1aefae7b1829f592c88e0e4e4943d49d2d7025aa2cc86ca31cf9bba",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kamisato-ayato",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "keqing:1",
+      "characterId": "keqing",
+      "checksum": "d10bae8d57324fb1dbd2ed321843ac71c0584b91dc42bbcf54e493177ab812fe",
+      "expectedBaseline": {
+        "buildId": "legacy-keqing",
+        "version": 1,
+        "checksum": "888e92a8a7cee24ab7a1fefe8fa3c34620b4c3a821e7dddf4f46e1249b7f8fbf",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-keqing",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kinich:1",
+      "characterId": "kinich",
+      "checksum": "da675c5f09563e935ddce5f1f94ebb6583b834d910b738acfb505d7ffd9300ac",
+      "expectedBaseline": {
+        "buildId": "legacy-kinich",
+        "version": 1,
+        "checksum": "07513860a4c439aad21e95643098db94dfff6b81dd6724b45231fb22ae5b4813",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kinich",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kuki-shinobu:1",
+      "characterId": "kuki-shinobu",
+      "checksum": "e4eb12c17346c01d3462414967a6fd52a69284ab97fd2973edd6049bfebb8834",
+      "expectedBaseline": {
+        "buildId": "legacy-kuki-shinobu",
+        "version": 1,
+        "checksum": "703a268e4077c4c3c619bee3665e89697f82edc9dfb00bb30119a55a9eac3943",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kuki-shinobu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "layla:1",
+      "characterId": "layla",
+      "checksum": "2724b89eaa3f79715ad095d56508c9c0e527a7489d349ca92f36546b178bade0",
+      "expectedBaseline": {
+        "buildId": "legacy-layla",
+        "version": 1,
+        "checksum": "4ba6da4b06117db46a2fbbe67d5b3093765b3879193cc81e36445c8e0fbf5568",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-layla",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "mavuika:1",
+      "characterId": "mavuika",
+      "checksum": "a5e2154ca5853eb621f9e1c139f67da48df11d65a2e4fa43ccfb34d8e999db22",
+      "expectedBaseline": {
+        "buildId": "legacy-mavuika",
+        "version": 1,
+        "checksum": "5d33bbecc9250d2e2c8b69f0c0bf192654348d6de39fbf378f49c80e45d9b8eb",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-mavuika",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "mavuika:2",
+      "characterId": "mavuika",
+      "checksum": "c3907bce68c5dc2fa8c30fe3f9b588cf16b156d501c48f234ce0d2984f51f6d7",
+      "expectedBaseline": null,
+      "existingDefault": "legacy-mavuika",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "mona:1",
+      "characterId": "mona",
+      "checksum": "dd0eaebd76dcea782c4ab97d091e5b79d44fc76e5ce7045460ec2a092ee6a72f",
+      "expectedBaseline": {
+        "buildId": "legacy-mona",
+        "version": 1,
+        "checksum": "60d2b0662933c0917fa20e7b9167d9d52c5d0e1a47d66f0df98b7a673781a94f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-mona",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "mualani:1",
+      "characterId": "mualani",
+      "checksum": "fae1d8b461fa11329e3a2344d6503424578d6fb384fbcb611159b330b6d814ae",
+      "expectedBaseline": {
+        "buildId": "legacy-mualani",
+        "version": 1,
+        "checksum": "6e4a7866e8a6554604e62c6366469c53e8498b2c0c904d3deeceeb918f2854e6",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-mualani",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "nahida:1",
+      "characterId": "nahida",
+      "checksum": "3ec34e15b3f7a5db47fcd5e1281192a76cb32a550bebca4dd27505d3b298eb2e",
+      "expectedBaseline": {
+        "buildId": "legacy-nahida",
+        "version": 1,
+        "checksum": "aff2169670814a5a54aac5935cb749e11a87a208f5c139c481ac21c514439252",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-nahida",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "navia:1",
+      "characterId": "navia",
+      "checksum": "5857d41fc9580251e9914b02a0cbb0e0d50d96f1d4e1e5f66ad1347d5e1776df",
+      "expectedBaseline": {
+        "buildId": "legacy-navia",
+        "version": 1,
+        "checksum": "532d720a803d39695f1538ba7b246ef23203e6f4e48bcda0882a2fb8466dbbc2",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-navia",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "neuvillette:1",
+      "characterId": "neuvillette",
+      "checksum": "6da10951e5238c183f32b02a2f525a210b4ef8c8d71478011c9a4446740158a3",
+      "expectedBaseline": {
+        "buildId": "legacy-neuvillette",
+        "version": 1,
+        "checksum": "7786556e79d38d00c8fc0c9f0d0293326133593a284cbbfe9bf00e453ea2978e",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-neuvillette",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "nilou:1",
+      "characterId": "nilou",
+      "checksum": "1e7e8c06ac4be02f7599c44d7d0ec949f44782b177cc18f99ed43bcb646ba3eb",
+      "expectedBaseline": {
+        "buildId": "legacy-nilou",
+        "version": 1,
+        "checksum": "17cb45bbebb1acc21862e1af8e6b816ae815cdb7c48f5f40ed3c8f73d7e441f8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-nilou",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "odette:1",
+      "characterId": "odette",
+      "checksum": "621bb7822f288fc71e8839b6908d6a31969c88c4d82e7c0e0712e984ae283846",
+      "expectedBaseline": null,
+      "existingDefault": null,
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": true,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "raiden-shogun:1",
+      "characterId": "raiden-shogun",
+      "checksum": "c4c90337b556627dee0743b8303b49ec4d0c52fe0f2481c53abea766b78f0b83",
+      "expectedBaseline": {
+        "buildId": "legacy-raiden-shogun",
+        "version": 1,
+        "checksum": "742b4e4e0780664081b3f286406ea70d5638ac7403968db2ebe48aec2b57a722",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-raiden-shogun",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "raiden-shogun:2",
+      "characterId": "raiden-shogun",
+      "checksum": "c8954331c8a123a6c16c34191aa11bb15e501f66797793dee4583524f186aeb5",
+      "expectedBaseline": null,
+      "existingDefault": "legacy-raiden-shogun",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "rosaria:1",
+      "characterId": "rosaria",
+      "checksum": "81bc7aa8a4ae27da4512a82dddb927737488335995ea4cc02e9207ea823ff9c6",
+      "expectedBaseline": {
+        "buildId": "legacy-rosaria",
+        "version": 1,
+        "checksum": "600d38880ada8d993f85ebb7fdaeb0eaf157b5e2cad023042a192b45cb39f564",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-rosaria",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sangonomiya-kokomi:1",
+      "characterId": "sangonomiya-kokomi",
+      "checksum": "bfb318323aa1f9da0236e9b8e7679d14c7ae866c8b502d0fec642ab3d62f63bd",
+      "expectedBaseline": {
+        "buildId": "legacy-sangonomiya-kokomi",
+        "version": 1,
+        "checksum": "45d7f12911930a8cde4d5fb3166ef2ec8a381227e13d65891ccbcbbbfc9ee3a8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-sangonomiya-kokomi",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sangonomiya-kokomi:2",
+      "characterId": "sangonomiya-kokomi",
+      "checksum": "dd729c693bffa8e59a6afb34165aa6a111f849f7058bf2a424f043491842e00a",
+      "expectedBaseline": null,
+      "existingDefault": "legacy-sangonomiya-kokomi",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "shenhe:1",
+      "characterId": "shenhe",
+      "checksum": "5e055e803f75e4f332276d00b3122cb4707c58c7d703cff531f84162f695f57c",
+      "expectedBaseline": {
+        "buildId": "legacy-shenhe",
+        "version": 1,
+        "checksum": "05dd540d365dcda1624f2fc169278d82acb5e92b8ddb25fa661fad8220de6cc1",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-shenhe",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sucrose:1",
+      "characterId": "sucrose",
+      "checksum": "52e22b811c2fb6e04aa22891b7e309bd00e1f1d148d89ca24dab0f73821c21d0",
+      "expectedBaseline": {
+        "buildId": "legacy-sucrose",
+        "version": 1,
+        "checksum": "45da895ab90ed2498261cd7b51fb691ed12603c9b246d9e823cba0330c133913",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-sucrose",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "thoma:1",
+      "characterId": "thoma",
+      "checksum": "59d398cd563551e02a81466db4528fc046cc5f0d1ba0f9c887757403d35c8361",
+      "expectedBaseline": {
+        "buildId": "legacy-thoma",
+        "version": 1,
+        "checksum": "895514a0b549666b9a3794822fee8ea922cf7d05269f7b20769f88ca23e8927f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-thoma",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "thoma:2",
+      "characterId": "thoma",
+      "checksum": "3547d6246dd39bc64ed0d4b7550c4366813abb1aa00ff2ef8ebbea03c82c84eb",
+      "expectedBaseline": null,
+      "existingDefault": "legacy-thoma",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "tighnari:1",
+      "characterId": "tighnari",
+      "checksum": "1601d2818240bb8b5509e607fd1e53416109acd43e6cc6c344f172a5fee98ed2",
+      "expectedBaseline": {
+        "buildId": "legacy-tighnari",
+        "version": 1,
+        "checksum": "2c0a7b692e43c3a4bc549117d20a6ae39496b7b48a6a72ed03af4ee138f16b0d",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-tighnari",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "valeriy:1",
+      "characterId": "valeriy",
+      "checksum": "1af7179dffedc9828ceb64e46a2332db6818996992208fd758e3e08e2679f123",
+      "expectedBaseline": null,
+      "existingDefault": null,
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": true,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "venti:1",
+      "characterId": "venti",
+      "checksum": "c0a4928c9388b739779ce68cd4be6614a78113039e65afa250ac3484dae7a3f5",
+      "expectedBaseline": {
+        "buildId": "legacy-venti",
+        "version": 1,
+        "checksum": "cbf67af7ffe51cff1d5b810f778a834b6ca52b8ae58089504ec25c7824849395",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-venti",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "vesna:1",
+      "characterId": "vesna",
+      "checksum": "3e87028567158b5897cdede1b308c58d610016a88193a17fe50bc3f55f46f043",
+      "expectedBaseline": null,
+      "existingDefault": null,
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": true,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "vodyanitsa:1",
+      "characterId": "vodyanitsa",
+      "checksum": "0b64a262655aa48e07583ac23bfd5df37357121db4559f36daaa8449e4b56449",
+      "expectedBaseline": null,
+      "existingDefault": null,
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": true,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "wanderer:1",
+      "characterId": "wanderer",
+      "checksum": "07e8e8014edaaf6c0dc44f517917291289eb84ea17ab99933f33ef3b8ed58d43",
+      "expectedBaseline": {
+        "buildId": "legacy-wanderer",
+        "version": 1,
+        "checksum": "e09d203bb3387723630cd734279582ec606ae360e469cf181f5912b7f050cb8e",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-wanderer",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "xiangling:1",
+      "characterId": "xiangling",
+      "checksum": "774f141372764dccc0ea67ea042012939be490d80d1b152d901eee875fc62056",
+      "expectedBaseline": {
+        "buildId": "legacy-xiangling",
+        "version": 1,
+        "checksum": "dbb703b9a08c7dac715fc74ff809d5599b8d7f3c6738f00c41a5636cf4e07206",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-xiangling",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "xingqiu:1",
+      "characterId": "xingqiu",
+      "checksum": "544fda227357cd95d9c8fa7caae7927258ef532cbc8340af8f13279aa99f75a3",
+      "expectedBaseline": {
+        "buildId": "legacy-xingqiu",
+        "version": 1,
+        "checksum": "91de7c60e4246d45061327265009331650e346254f27894be5f1a4194a1869e0",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-xingqiu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "yae-miko:1",
+      "characterId": "yae-miko",
+      "checksum": "3d44f735f4b371f3f1f611489c1a137c645c7fb44fd52606405789ce8c0331eb",
+      "expectedBaseline": {
+        "buildId": "legacy-yae-miko",
+        "version": 1,
+        "checksum": "199d08156024463f993c577538c1ae8c5519e6a1be165f53f8f92c583991baa8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yae-miko",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "yaoyao:1",
+      "characterId": "yaoyao",
+      "checksum": "fd683f81f8a31ce29d9b5b20ca41ce51d2eb7ffab5c8adb47da2474b1a34a104",
+      "expectedBaseline": {
+        "buildId": "legacy-yaoyao",
+        "version": 1,
+        "checksum": "42ff5ba1ed5efb14044ac9a5f4506d2400bc5584a813c66b49470acea62d627a",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yaoyao",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "yelan:1",
+      "characterId": "yelan",
+      "checksum": "e5b2bdf37df5cf9aae69f4a7a395348e0c1c69caf6e690edd065ab0496f7ae8e",
+      "expectedBaseline": {
+        "buildId": "legacy-yelan",
+        "version": 1,
+        "checksum": "99b0aca6a3981a5241fd182509aa14f0630faca4f613a99123c85896dd2aa64d",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yelan",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "yoimiya:1",
+      "characterId": "yoimiya",
+      "checksum": "656170f522c30640bb2202a8e70b67e9c92b6dd516c0fec8363b012aa9e5ee94",
+      "expectedBaseline": {
+        "buildId": "legacy-yoimiya",
+        "version": 1,
+        "checksum": "b0f718d8d480c1f80cbe6a0b4a95e2786fe07c3de356950045cc57a544178c60",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yoimiya",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "yun-jin:1",
+      "characterId": "yun-jin",
+      "checksum": "74057a58fe9780b4a0941b27955547f6f04f53c9ac796da118d7cd3d17eb08d8",
+      "expectedBaseline": {
+        "buildId": "legacy-yun-jin",
+        "version": 1,
+        "checksum": "c064446045a801bdc09a7a5ef0506adf486ef7fdf5ac93103f23655ac885be70",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yun-jin",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "zhongli:1",
+      "characterId": "zhongli",
+      "checksum": "9bae40b0ea84b658ae89b3a46645ab2fcfad33a2faca781d3639f6f7aa3841a1",
+      "expectedBaseline": {
+        "buildId": "legacy-zhongli",
+        "version": 1,
+        "checksum": "366f324d2e5d2b28fa584e16591a1e801a6b1e7aa06c897f1f0bea368fbb235d",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-zhongli",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "columbina:1",
+      "characterId": "columbina",
+      "checksum": "6e3b84483fec1135662a8eea12364406e8e7415c8e6972e356ba72a43a052c0f",
+      "expectedBaseline": {
+        "buildId": "legacy-columbina",
+        "version": 1,
+        "checksum": "21c252c9b58ae1fb7f2617757f9918c472472815ca3b9401c56b38655e66716a",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-columbina",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "cyno:1",
+      "characterId": "cyno",
+      "checksum": "acf13f3363e594004c6215b1d01486040842335e87fc66974d88d02f9354c35d",
+      "expectedBaseline": {
+        "buildId": "legacy-cyno",
+        "version": 1,
+        "checksum": "a2e404f03e7d66709dda7bb2399886f4f042556449055be979b04d1784754ba6",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-cyno",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "durin:1",
+      "characterId": "durin",
+      "checksum": "591c050ae80819d0999d01f279f40768f925d2252b792bb4e6c822ef4fab11b7",
+      "expectedBaseline": {
+        "buildId": "legacy-durin",
+        "version": 1,
+        "checksum": "7d654f17dab50eccf4c7a3dc8771c3c85f1ff3dcd8323f7bfc1c8ead3f544aef",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-durin",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "flins:1",
+      "characterId": "flins",
+      "checksum": "48e81d8ef8ad0e6275aef73e8ad74dd1cfb86bc00f7a79c4e297ac305ffa598a",
+      "expectedBaseline": {
+        "buildId": "legacy-flins",
+        "version": 1,
+        "checksum": "dc2f8275fbb6de0d413bc52e036391791dfb57632a4f98174082d4d808e46b91",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-flins",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "freminet:1",
+      "characterId": "freminet",
+      "checksum": "2768f26b6110883411984973374577e1b8935e983b7ea007d269b3555bbe3c33",
+      "expectedBaseline": {
+        "buildId": "legacy-freminet",
+        "version": 1,
+        "checksum": "2abcf83e7159c711d5c31b09d4a8adf74e57ab569553d79fe6cba643300bb8d6",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-freminet",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "iansan:1",
+      "characterId": "iansan",
+      "checksum": "c712701ccbe71b0912e7d9fa758375394cc7cadc4d11bf153fd64ce002bf198f",
+      "expectedBaseline": {
+        "buildId": "legacy-iansan",
+        "version": 1,
+        "checksum": "0246077eaad3b9bfb12327ae16914c914a26af638587e263f3f9c6bb1b727427",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-iansan",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "ifa:1",
+      "characterId": "ifa",
+      "checksum": "4e03174b9141baa8ed24ec706a2981661495fadfb2cb8fb642dcd0580f85dc0d",
+      "expectedBaseline": {
+        "buildId": "legacy-ifa",
+        "version": 1,
+        "checksum": "6bf5d731e69469eccc242a2d9fec3e935e4d7e6d940bea5c7726656cfd695a4f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-ifa",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "illuga:1",
+      "characterId": "illuga",
+      "checksum": "a501cfbc162b1161b91ec6ee9f76a082ee5f10dfc4b3c110f9cac193f3a0e96a",
+      "expectedBaseline": {
+        "buildId": "legacy-illuga",
+        "version": 1,
+        "checksum": "b60ca6c03625aa38d442dbd35dcb32e336adde1e096f464dad169bb54bfa953f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-illuga",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "ineffa:1",
+      "characterId": "ineffa",
+      "checksum": "85586f4559dc66c1ccd9c4f348ae638f0e01ecb4a77d3515547fc244ca55ac36",
+      "expectedBaseline": {
+        "buildId": "legacy-ineffa",
+        "version": 1,
+        "checksum": "afdd11debaf2d854449d77662560f0f1dcd402281f52079cce76689d5887a17b",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-ineffa",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "jahoda:1",
+      "characterId": "jahoda",
+      "checksum": "20a611707b21d0842967ddbc7a89b2f72ea7859d4f17b588739c937a94a5db87",
+      "expectedBaseline": {
+        "buildId": "legacy-jahoda",
+        "version": 1,
+        "checksum": "40216acd7f5acbd0a3239327735a460bd5be247437fec677bb86522139ede4a3",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-jahoda",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kaeya:1",
+      "characterId": "kaeya",
+      "checksum": "c14f0c8214ad61a2dbe9ca58728876fb28e731cc78ea07137afdd3217cc59d9b",
+      "expectedBaseline": {
+        "buildId": "legacy-kaeya",
+        "version": 1,
+        "checksum": "1893e32d2ea636231bfd8b57e76a448e7379ed03ed125333a0de1925c3a14fc3",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kaeya",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kaveh:1",
+      "characterId": "kaveh",
+      "checksum": "ed973a418274e1bbc2258becf985f83fa4763e0608da1d9ed82df20f5db4283f",
+      "expectedBaseline": {
+        "buildId": "legacy-kaveh",
+        "version": 1,
+        "checksum": "f2197626a405719303cf4e3b657efd0c0a150f8ed023abb36758c0854b96df35",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kaveh",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "klee:1",
+      "characterId": "klee",
+      "checksum": "a340f150b4ed3510a115989e3584aca6eb1ab843682058bf642f021aa62bc01c",
+      "expectedBaseline": {
+        "buildId": "legacy-klee",
+        "version": 1,
+        "checksum": "97181aee5f6834c5e167c796e2738c6d276b23ea01b40b0934c6b1e2da5937b4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-klee",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "kujou-sara:1",
+      "characterId": "kujou-sara",
+      "checksum": "f50feca630c15c2d0fa57eec1f3de4984d4c9485ab4ef05934fdc110548a946d",
+      "expectedBaseline": {
+        "buildId": "legacy-kujou-sara",
+        "version": 1,
+        "checksum": "5fc6669ec0cc407d4a811e5666ecc2e320c7d6414771f01b772e34a5b9109b30",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-kujou-sara",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "lanyan:1",
+      "characterId": "lanyan",
+      "checksum": "a03604d04ce048a652c02c904cec4131cb1b69f354bfa017fa44d7f5cbbd3bfe",
+      "expectedBaseline": {
+        "buildId": "legacy-lanyan",
+        "version": 1,
+        "checksum": "7fca6c46032f5421374b2e4d56292ba90a2c54488b5a323d614eceb351f51c41",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-lanyan",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "lauma:1",
+      "characterId": "lauma",
+      "checksum": "684df1259e90c2682c6fc33efd020b074df5b7e5abc233cbee9c29c33fb611ba",
+      "expectedBaseline": {
+        "buildId": "legacy-lauma",
+        "version": 1,
+        "checksum": "c0f89e15b2d427df44f0dd161e76e41ba489beffe42ee39dd33c86844cbf91ba",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-lauma",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "linnea:1",
+      "characterId": "linnea",
+      "checksum": "684f43f25cd0ac20a31b65adb5d9d2792831abca8f3f85cf077c92f6da0a3968",
+      "expectedBaseline": {
+        "buildId": "legacy-linnea",
+        "version": 1,
+        "checksum": "477a496830002d8ebcd9ec25ffe7fc5ec821e313796d247fe9698e1b6c0316a0",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-linnea",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "EVIDENCE_HOLD",
+      "group": "C",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "lisa:1",
+      "characterId": "lisa",
+      "checksum": "4d7d47210185fda6d0bd892befde29c947fe3d3fccca3835c52593b5bc46483c",
+      "expectedBaseline": {
+        "buildId": "legacy-lisa",
+        "version": 1,
+        "checksum": "2318f24c7e1812726bf433b03e1546a65b8faabaea97f6ddf3d02dceda461867",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-lisa",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "lohen:1",
+      "characterId": "lohen",
+      "checksum": "d53cd013c9c484f7298257ac9adb9ae9f579f006fc7824045f6257f968aad546",
+      "expectedBaseline": {
+        "buildId": "legacy-lohen",
+        "version": 1,
+        "checksum": "5a8d70270f059036a7b13bbaa106457bf9936e3b37cd7d8999a74a7843c1461b",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-lohen",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "EVIDENCE_HOLD",
+      "group": "C",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "lynette:1",
+      "characterId": "lynette",
+      "checksum": "7765b97a5aa81217f0062419d7593e790c3392e409f945e43f59fb524fe60396",
+      "expectedBaseline": {
+        "buildId": "legacy-lynette",
+        "version": 1,
+        "checksum": "925163c525d71ad44a5d63ee140b0acc06c170dfbd18c3ed8b25c6b126118102",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-lynette",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "lyney:1",
+      "characterId": "lyney",
+      "checksum": "2de2f1c6df2a63a802d72d7c89ffa3a5639d83ed39406564b48f9a237f23835d",
+      "expectedBaseline": {
+        "buildId": "legacy-lyney",
+        "version": 1,
+        "checksum": "8c18579516394a9054bdb951b0a02a10f20c9794e6d7d3ebf28c51dd1565e9b4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-lyney",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "mika:1",
+      "characterId": "mika",
+      "checksum": "dc5f92702eedc944110571c8de4327b699f86b5c014d5a840d4b9757673d6b2f",
+      "expectedBaseline": {
+        "buildId": "legacy-mika",
+        "version": 1,
+        "checksum": "569afa172208af091960da0d23989fa2ad7dabb72fccc63f9c5c2619cba9b6d4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-mika",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "momoka:1",
+      "characterId": "momoka",
+      "checksum": "a777d1a6212279cd1fd11bcc5f2229ca66f7cbf1dd3fc4856a0c3ea1a95947aa",
+      "expectedBaseline": {
+        "buildId": "legacy-momoka",
+        "version": 1,
+        "checksum": "6a64a48a6139f8149409fd4b4ef3307ba4d2ea84538aad2625f0cc7d021a0dbd",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-momoka",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "nefer:1",
+      "characterId": "nefer",
+      "checksum": "e51f57d98c01ebd0cc14041fcfefd507cda623d614637c63dffa3cae7c30a704",
+      "expectedBaseline": {
+        "buildId": "legacy-nefer",
+        "version": 1,
+        "checksum": "08a9014404e549c94e40ec2025b0da38241cb5ea7031cd22a6301339a46333e2",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-nefer",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "nicole:1",
+      "characterId": "nicole",
+      "checksum": "d04a4ee96eb7d4f4bf5b6dda33b55bfc6cb2255b0cd70d136c4f481c07581408",
+      "expectedBaseline": {
+        "buildId": "legacy-nicole",
+        "version": 1,
+        "checksum": "05b86cbee33d4cbfa73b62564a67243ece84aad00ac863e41da9a628e85023eb",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-nicole",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "EVIDENCE_HOLD",
+      "group": "C",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "ningguang:1",
+      "characterId": "ningguang",
+      "checksum": "5f9373f94dceda9e47aa230f098e78efff5b2f270594ac2bb64535ecacb0efb3",
+      "expectedBaseline": {
+        "buildId": "legacy-ningguang",
+        "version": 1,
+        "checksum": "a3211d64e038ca41b8f8bc6dd06045128a6ad2d9d5b28a10f22eb7cdc3c9b6a7",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-ningguang",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "noelle:1",
+      "characterId": "noelle",
+      "checksum": "ec575dffbd340db8a5b36e917cf75410de6253cd1e63b1a1c0cc46319aa61ffa",
+      "expectedBaseline": {
+        "buildId": "legacy-noelle",
+        "version": 1,
+        "checksum": "e0861777ed4c1a9dcecce7db979c4e36cc56d14e24c503229e480e166da5eb78",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-noelle",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "ororon:1",
+      "characterId": "ororon",
+      "checksum": "dcf24cf42781eca006d608083c9d29bc1e4f8beec53fc0421c955f4205137084",
+      "expectedBaseline": {
+        "buildId": "legacy-ororon",
+        "version": 1,
+        "checksum": "8c9d1e63786f73442bfe0141e42569f3915f1bbcac5a2ba27b2ea27f6cb2f565",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-ororon",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "prune:1",
+      "characterId": "prune",
+      "checksum": "137dfdc320f8087cde314d4ee8e2d7bd7542e8a9be32332ce62937bd7014edd2",
+      "expectedBaseline": {
+        "buildId": "legacy-prune",
+        "version": 1,
+        "checksum": "6353f81b1c7f5054e259c91479d6fced8852a8bced0c4b961566ead495227af8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-prune",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "EVIDENCE_HOLD",
+      "group": "C",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "qiqi:1",
+      "characterId": "qiqi",
+      "checksum": "055313d74592e1358d2fdd5b36072f371167619c2482f57d4951ec0724b8706b",
+      "expectedBaseline": {
+        "buildId": "legacy-qiqi",
+        "version": 1,
+        "checksum": "a6b30de89e1f68f7ab598504a0ec461d23b52f7aa6f96e72f4842983905146cf",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-qiqi",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "razor:1",
+      "characterId": "razor",
+      "checksum": "918e94331f3a81f7ff79f409548305987585e80dc458790fe6b798dfb9c7700b",
+      "expectedBaseline": {
+        "buildId": "legacy-razor",
+        "version": 1,
+        "checksum": "07f19278c8d4c760aa0c90bf1a3dc5dc22fa1e233fb2fad02971c9fc8ffc4f58",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-razor",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sandrone:1",
+      "characterId": "sandrone",
+      "checksum": "26e98a6fdd2de03f106ea0f57d2e1e59410307ee3b33d5672f3dff38a3c5acf7",
+      "expectedBaseline": {
+        "buildId": "legacy-sandrone",
+        "version": 1,
+        "checksum": "01f37237d82560149319f2913d5797c0e0cd5807a52c5578783c6eb73e11bf2b",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-sandrone",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "EVIDENCE_HOLD",
+      "group": "C",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sayu:1",
+      "characterId": "sayu",
+      "checksum": "08ffa1c983c9a409bf2448bc7f5c3b7dfa31936d0245f0a019a63265c452a769",
+      "expectedBaseline": {
+        "buildId": "legacy-sayu",
+        "version": 1,
+        "checksum": "f371ac9676fb6b87d037aa7a7fd8c7a66e8e543f1901a20c14aeadf02548b7b4",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-sayu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sethos:1",
+      "characterId": "sethos",
+      "checksum": "a65be6c3fcc6ccfa5968c230e3769853d99ae57b79562f9233aa82ebf5209e64",
+      "expectedBaseline": {
+        "buildId": "legacy-sethos",
+        "version": 1,
+        "checksum": "057efb7c503f99e3e1ecd8c88f8eb44d455a95566663f0f52aae2393392a8a17",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-sethos",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "shikanoin-heizou:1",
+      "characterId": "shikanoin-heizou",
+      "checksum": "cbc8e20c163b165d7924cd119516793387665a56df211726cd85cca8a5668f58",
+      "expectedBaseline": {
+        "buildId": "legacy-shikanoin-heizou",
+        "version": 1,
+        "checksum": "795337296521d0eb9fa4f35e1734ac4e9441024eeefd06adabd6722dd88fb14b",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-shikanoin-heizou",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "sigewinne:1",
+      "characterId": "sigewinne",
+      "checksum": "2d1a010a5bc4771e2daf7c730f5f748ff50774e63a69588bb184fb23f3f8816b",
+      "expectedBaseline": {
+        "buildId": "legacy-sigewinne",
+        "version": 1,
+        "checksum": "6888a27fd3eb19b4f09701a67dd2efa54ae7a627b7e0cdb00e1a1afde3a879a8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-sigewinne",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "skirk:1",
+      "characterId": "skirk",
+      "checksum": "8d0092baf834337ab8b657121333740e3ee87b8b1e9821d976d72a2fb7ffaa32",
+      "expectedBaseline": {
+        "buildId": "legacy-skirk",
+        "version": 1,
+        "checksum": "868fff55eedb19088d607c1261be33dc60a70b4056af627de702663dd3e21f53",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-skirk",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "tartaglia:1",
+      "characterId": "tartaglia",
+      "checksum": "06bd5c21e0e31bd419814297b7cb28ced26de7e10fce2efc2a179f77f587f844",
+      "expectedBaseline": {
+        "buildId": "legacy-tartaglia",
+        "version": 1,
+        "checksum": "8b1bd1a26c275684b97cac3ba0d0c42da6f00dc9f020b34d5cfe610c6f969fac",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-tartaglia",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "traveler-anemo:1",
+      "characterId": "traveler-anemo",
+      "checksum": "07ed1f2dde1db9008f8f9a06e87948fcc9617ca6d274547692bd3c3ca12a00e1",
+      "expectedBaseline": {
+        "buildId": "legacy-traveler-anemo",
+        "version": 1,
+        "checksum": "0bdbe4894623c6f3ba0c5c9e277a5102c07ae00fd057d519a11bfc73785aa100",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-traveler-anemo",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "traveler-dendro:1",
+      "characterId": "traveler-dendro",
+      "checksum": "587724146b8dfd5a117d4e157d21116beb2135805a56f8ac0f625d3ea710f221",
+      "expectedBaseline": {
+        "buildId": "legacy-traveler-dendro",
+        "version": 1,
+        "checksum": "9ba03d99587ec98e0e39b13fba3680eb01fc398c374a3d1d748df442a5435764",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-traveler-dendro",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "traveler-electro:1",
+      "characterId": "traveler-electro",
+      "checksum": "5850064202f98ebb5e271bb6c5488a237fea97be0252d316dd7cfec0be49a16f",
+      "expectedBaseline": {
+        "buildId": "legacy-traveler-electro",
+        "version": 1,
+        "checksum": "e0f1a9af25b1321e89cff8cb7035015bd73c8b858b76191d4f94ddfc908894e8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-traveler-electro",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "traveler-geo:1",
+      "characterId": "traveler-geo",
+      "checksum": "3d19d0b33bf0abc3f2d7c6df59f7d4ae1eae2735e767316a85cff4dad676d2c0",
+      "expectedBaseline": {
+        "buildId": "legacy-traveler-geo",
+        "version": 1,
+        "checksum": "5d2cd89cb5b388d042ecf21877000b9070162e82486c4e7841404c35aab16afd",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-traveler-geo",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "traveler-hydro:1",
+      "characterId": "traveler-hydro",
+      "checksum": "f434906d397b4f92b20e7c655581cf52c3d3d8e0285e6383232c46d5b8280f75",
+      "expectedBaseline": {
+        "buildId": "legacy-traveler-hydro",
+        "version": 1,
+        "checksum": "f41418db3e84aa62be847db2fe995839c13fccb098ec935c509e988262cad685",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-traveler-hydro",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "traveler-pyro:1",
+      "characterId": "traveler-pyro",
+      "checksum": "be4385bfec10107d5cdd6a6cfdae77e1c46486bdd26510f063679e9b1d5eb392",
+      "expectedBaseline": {
+        "buildId": "legacy-traveler-pyro",
+        "version": 1,
+        "checksum": "a6683b1fd9eb9ced15abe1826e19cc5687f2862d9c27a204bd58412ed5142db3",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-traveler-pyro",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "varesa:1",
+      "characterId": "varesa",
+      "checksum": "40a836e36441636afab8747636c4aa5f7bc2e4452a87c28435b147f1f8410f84",
+      "expectedBaseline": {
+        "buildId": "legacy-varesa",
+        "version": 1,
+        "checksum": "9ff174a7aaea5e2299f9a79db64e9d5a476589f643904887762b831f06d52e5c",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-varesa",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "A",
+      "state": "REVIEW_READY",
+      "authorized": false
+    },
+    {
+      "candidateId": "varka:1",
+      "characterId": "varka",
+      "checksum": "771eadaa12ba3e6a4181a77572087d0bbb553eff36eba04c9606d1c2d0398530",
+      "expectedBaseline": {
+        "buildId": "legacy-varka",
+        "version": 1,
+        "checksum": "8c880f41268172cc9f35be425a545d5192d48eb30cf960470104aa68261d896f",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-varka",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "EVIDENCE_HOLD",
+      "group": "C",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "wriothesley:1",
+      "characterId": "wriothesley",
+      "checksum": "4c62384f5d4b558e77e293f55157ad06700c569176eaca9eb06ea6b408e4a27e",
+      "expectedBaseline": {
+        "buildId": "legacy-wriothesley",
+        "version": 1,
+        "checksum": "b7227e69c658666e44f9015f95be2da4d78a5e585c040cb2cbe31464088cb13a",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-wriothesley",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "xianyun:1",
+      "characterId": "xianyun",
+      "checksum": "cab48c3ad51b660e925809d7b9d81a287591b6b9f50a346cf44c8f94bf5a9b3a",
+      "expectedBaseline": {
+        "buildId": "legacy-xianyun",
+        "version": 1,
+        "checksum": "801596a28f662329b6a957e1571cda97059215d9212fe2ebb76fa389e406f8a8",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-xianyun",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "xiao:1",
+      "characterId": "xiao",
+      "checksum": "c55187f8ce7eaa6199eb02a4bd256bd07fab2d0f4a68d0220d4efee58ab727a3",
+      "expectedBaseline": {
+        "buildId": "legacy-xiao",
+        "version": 1,
+        "checksum": "158abb628667fb8e45ee54a41fb29f4a6948a782e8136b8da6d0d1197313349b",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-xiao",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "xilonen:1",
+      "characterId": "xilonen",
+      "checksum": "00ce7dcc349d4489334c4f1b08d919833bd18ea6187f34d1e9e4a59952b93955",
+      "expectedBaseline": {
+        "buildId": "legacy-xilonen",
+        "version": 1,
+        "checksum": "43bed1186252c6a78f555f659ee4beacee73efc0378254ec1f0f45b7bbf08f12",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-xilonen",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "xinyan:1",
+      "characterId": "xinyan",
+      "checksum": "09691793b9e9644f1d02c19ecc6b3124f9fd0ceaa70c04d59cfd4c746072f155",
+      "expectedBaseline": {
+        "buildId": "legacy-xinyan",
+        "version": 1,
+        "checksum": "153b216b5f0d1e309b1eba3df946c4022818de91a15103de7def968ea424c246",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-xinyan",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "yanfei:1",
+      "characterId": "yanfei",
+      "checksum": "8d2a577bab71517c081479df5d5ac948a6de4d0de61357f051feb0ab8a2350df",
+      "expectedBaseline": {
+        "buildId": "legacy-yanfei",
+        "version": 1,
+        "checksum": "d61b0d90418a975d30d0869c3eb31efc8c78f4f7ed6d35d86022595da3bfe7f5",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yanfei",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "yumemizu:1",
+      "characterId": "yumemizu",
+      "checksum": "426bbfe2682cf7cc1d381e0487e65f01e81f5cf91aa6e030737b325fe23a90d9",
+      "expectedBaseline": {
+        "buildId": "legacy-yumemizu",
+        "version": 1,
+        "checksum": "a91cc3345b06afc99d35ec667d8893182abd15db0f829845430608bf1c5801ca",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-yumemizu",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    },
+    {
+      "candidateId": "zibai:1",
+      "characterId": "zibai",
+      "checksum": "fa97d85d97039cb8b1fa0a91ca0d7b6a99672f6fc357c1b501d16b9039d22746",
+      "expectedBaseline": {
+        "buildId": "legacy-zibai",
+        "version": 1,
+        "checksum": "d575be436363507b6a9c8aa868bf0c3204015c8d0f8573818887533785d23af1",
+        "status": "LEGACY_IMPORT"
+      },
+      "existingDefault": "legacy-zibai",
+      "requestedDefaultChange": false,
+      "requiresFirstDefaultDecision": false,
+      "writeEligible": false,
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "group": "B",
+      "state": "DRAFTED",
+      "authorized": false
+    }
+  ]
+}

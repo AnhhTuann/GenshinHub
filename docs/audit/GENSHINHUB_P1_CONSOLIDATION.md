@@ -21,7 +21,7 @@ The D2 importer now submits only the reviewed candidate ID, batch hash, record h
 - Revised Character wiring in `backend/src/graphql/modules/characterTierRanking/characterTierRanking.service.ts`, `backend/src/graphql/modules/phaseD3/versionedReview.ts`, the existing Character review page, and `frontend/components/admin/CharacterTierReviewClient.tsx`.
 - Importers in `backend/scripts/phaseD3/import-approved-d3.cjs`, its planner test, and `backend/scripts/weapon-tier-independent/import-approved.cjs`.
 - Existing weapon review pages and projection label, and `frontend/app/[locale]/tierlist/page.tsx`.
-- Release contexts in both Dockerfiles, root `.dockerignore`, `README.md`, and `GUIDE.md`. Build from repository root with `docker build -f backend/Dockerfile .` or `docker build -f frontend/Dockerfile .`. The committed Dockerfiles omit source-derived dossier copies; the isolated release checks used locally staged dossier artifacts. A deployment configured with an app subdirectory as build context must use the repository root for these Dockerfiles.
+- Release contexts in both Dockerfiles, root `.dockerignore`, `README.md`, and `GUIDE.md`. Build from repository root with `docker build -f backend/Dockerfile .` or `docker build -f frontend/Dockerfile .`. Both Dockerfiles explicitly copy the required dossier files. A deployment configured with an app subdirectory as build context must use the repository root for these Dockerfiles.
 
 ## Verification
 

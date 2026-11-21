@@ -1,0 +1,4633 @@
+{
+  "version": "7.2",
+  "backupSha256": "46e2589569094a700f235fdfdd921c98ea44897106b89cb0ef4bc761c5f0e826",
+  "records": [
+    {
+      "characterId": "alyosha",
+      "recordId": null,
+      "candidateId": "alyosha:1",
+      "classification": "MISSING_BUILD",
+      "before": null,
+      "after": {
+        "proposedRole": [
+          "SUPPORT",
+          "SUB_DPS"
+        ],
+        "existingDraft": "docs/character-builds/proposed-builds.json"
+      },
+      "evidence": {
+        "existingCandidateId": "alyosha:1",
+        "role": [
+          "SUPPORT",
+          "SUB_DPS"
+        ],
+        "evidenceHold": [
+          "Specific rotation evidence remains open."
+        ],
+        "action": "Preserve the existing draft. Require traceable representative rotation and Energy or separately authorized scope omitting unverified teams before staging."
+      },
+      "status": "HELD_NEEDS_MORE_EVIDENCE",
+      "rollback": null,
+      "humanApprovalRequired": true
+    },
+    {
+      "characterId": "alyosha",
+      "recordId": "alyosha",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 1003,
+          "baseAtk": 22,
+          "baseDef": 59,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2577,
+          "baseAtk": 57,
+          "baseDef": 151,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 3326,
+          "baseAtk": 74,
+          "baseDef": 195,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 4982,
+          "baseAtk": 111,
+          "baseDef": 293,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 5514,
+          "baseAtk": 122,
+          "baseDef": 324,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "6.7%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 6343,
+          "baseAtk": 141,
+          "baseDef": 373,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "6.7%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 7052,
+          "baseAtk": 157,
+          "baseDef": 414,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "13.3%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 7881,
+          "baseAtk": 175,
+          "baseDef": 463,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "13.3%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 8413,
+          "baseAtk": 187,
+          "baseDef": 494,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "13.3%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 9241,
+          "baseAtk": 205,
+          "baseDef": 543,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "13.3%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 9773,
+          "baseAtk": 217,
+          "baseDef": 574,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "20.0%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 10602,
+          "baseAtk": 235,
+          "baseDef": 623,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "20.0%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 11134,
+          "baseAtk": 247,
+          "baseDef": 654,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "26.7%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 11962,
+          "baseAtk": 265,
+          "baseDef": 703,
+          "specialStatName": "Energy Recharge",
+          "specialStatValue": "26.7%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "mitya",
+      "recordId": "mitya",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 906,
+          "baseAtk": 20,
+          "baseDef": 62,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2349,
+          "baseAtk": 53,
+          "baseDef": 160,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 3126,
+          "baseAtk": 71,
+          "baseDef": 213,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 4677,
+          "baseAtk": 106,
+          "baseDef": 318,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 5229,
+          "baseAtk": 118,
+          "baseDef": 356,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 6016,
+          "baseAtk": 136,
+          "baseDef": 409,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 6752,
+          "baseAtk": 153,
+          "baseDef": 459,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 7547,
+          "baseAtk": 171,
+          "baseDef": 514,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 8098,
+          "baseAtk": 183,
+          "baseDef": 551,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 8901,
+          "baseAtk": 201,
+          "baseDef": 606,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 9453,
+          "baseAtk": 214,
+          "baseDef": 643,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "28.8%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 10264,
+          "baseAtk": 232,
+          "baseDef": 698,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "28.8%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 10816,
+          "baseAtk": 245,
+          "baseDef": 736,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "38.4%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 11634,
+          "baseAtk": 263,
+          "baseDef": 792,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "38.4%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "odette",
+      "recordId": null,
+      "candidateId": "odette:1",
+      "classification": "MISSING_BUILD",
+      "before": null,
+      "after": {
+        "proposedRole": [
+          "SUB_DPS",
+          "SUPPORT"
+        ],
+        "existingDraft": "docs/character-builds/proposed-builds.json"
+      },
+      "evidence": {
+        "existingCandidateId": "odette:1",
+        "role": [
+          "SUB_DPS",
+          "SUPPORT"
+        ],
+        "evidenceHold": [
+          "Specific rotation evidence remains open."
+        ],
+        "action": "Preserve the existing draft. Require traceable representative rotation and Energy or separately authorized scope omitting unverified teams before staging."
+      },
+      "status": "HELD_NEEDS_MORE_EVIDENCE",
+      "rollback": null,
+      "humanApprovalRequired": true
+    },
+    {
+      "characterId": "odette",
+      "recordId": "odette",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 1011,
+          "baseAtk": 26,
+          "baseDef": 61,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2621,
+          "baseAtk": 68,
+          "baseDef": 159,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 3488,
+          "baseAtk": 90,
+          "baseDef": 211,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 5219,
+          "baseAtk": 135,
+          "baseDef": 316,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 5834,
+          "baseAtk": 151,
+          "baseDef": 354,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 6712,
+          "baseAtk": 173,
+          "baseDef": 407,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 7533,
+          "baseAtk": 194,
+          "baseDef": 457,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 8421,
+          "baseAtk": 217,
+          "baseDef": 511,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 9036,
+          "baseAtk": 233,
+          "baseDef": 548,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 9932,
+          "baseAtk": 256,
+          "baseDef": 602,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 10547,
+          "baseAtk": 272,
+          "baseDef": 639,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "28.8%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 11453,
+          "baseAtk": 295,
+          "baseDef": 694,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "28.8%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 12068,
+          "baseAtk": 311,
+          "baseDef": 732,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "38.4%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 12981,
+          "baseAtk": 335,
+          "baseDef": 787,
+          "specialStatName": "CRIT DMG",
+          "specialStatValue": "38.4%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "sandrone",
+      "recordId": "/assets/characters/Sandrone/avatar.webp",
+      "field": "assetEncoding",
+      "before": {
+        "type": "PNG",
+        "sha256": "e0cdb9cb2ab6041e06d003119ae7379c403dd1d04e478b02668c7143a508d756"
+      },
+      "after": {
+        "type": "lossless WebP",
+        "sha256": "1cac2e7c6d26fdcc776bcaa76a103927c96c0c0546c101555a04ffc6d7b8df96"
+      },
+      "evidence": "256×256 and decoded RGBA absolute error 0. Existing URL returned HTTP 200 image/webp.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "APPLIED",
+      "rollback": {
+        "file": "/tmp/genshinhub-build131-backup.E9wmzCcd/sandrone-avatar-before.png",
+        "guard": "Restore only if corrected asset SHA-256 still matches."
+      }
+    },
+    {
+      "characterId": "sandrone",
+      "recordId": "sandrone",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 1030,
+          "baseAtk": 27,
+          "baseDef": 59,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2671,
+          "baseAtk": 69,
+          "baseDef": 152,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 3554,
+          "baseAtk": 92,
+          "baseDef": 202,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 5317,
+          "baseAtk": 138,
+          "baseDef": 302,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 5944,
+          "baseAtk": 154,
+          "baseDef": 338,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "4.8%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 6839,
+          "baseAtk": 177,
+          "baseDef": 389,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "4.8%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 7675,
+          "baseAtk": 198,
+          "baseDef": 437,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 8579,
+          "baseAtk": 222,
+          "baseDef": 488,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 9207,
+          "baseAtk": 238,
+          "baseDef": 524,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 10119,
+          "baseAtk": 262,
+          "baseDef": 576,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 10746,
+          "baseAtk": 278,
+          "baseDef": 611,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 11669,
+          "baseAtk": 302,
+          "baseDef": 664,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 12296,
+          "baseAtk": 318,
+          "baseDef": 700,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 13226,
+          "baseAtk": 342,
+          "baseDef": 752,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "19.2%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "valeriy",
+      "recordId": null,
+      "candidateId": "valeriy:1",
+      "classification": "MISSING_BUILD",
+      "before": null,
+      "after": {
+        "proposedRole": [
+          "SUPPORT"
+        ],
+        "existingDraft": "docs/character-builds/proposed-builds.json"
+      },
+      "evidence": {
+        "existingCandidateId": "valeriy:1",
+        "role": [
+          "SUPPORT"
+        ],
+        "evidenceHold": [
+          "Specific rotation evidence remains open."
+        ],
+        "action": "Preserve the existing draft. Require traceable representative rotation and Energy or separately authorized scope omitting unverified teams before staging."
+      },
+      "status": "HELD_NEEDS_MORE_EVIDENCE",
+      "rollback": null,
+      "humanApprovalRequired": true
+    },
+    {
+      "characterId": "valeriy",
+      "recordId": "valeriy",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 839,
+          "baseAtk": 21,
+          "baseDef": 59,
+          "specialStatName": "ATK",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2155,
+          "baseAtk": 55,
+          "baseDef": 151,
+          "specialStatName": "ATK",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 2782,
+          "baseAtk": 71,
+          "baseDef": 195,
+          "specialStatName": "ATK",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 4167,
+          "baseAtk": 106,
+          "baseDef": 293,
+          "specialStatName": "ATK",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 4612,
+          "baseAtk": 117,
+          "baseDef": 324,
+          "specialStatName": "ATK",
+          "specialStatValue": "6.0%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 5305,
+          "baseAtk": 135,
+          "baseDef": 373,
+          "specialStatName": "ATK",
+          "specialStatValue": "6.0%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 5898,
+          "baseAtk": 150,
+          "baseDef": 414,
+          "specialStatName": "ATK",
+          "specialStatValue": "12.0%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 6591,
+          "baseAtk": 168,
+          "baseDef": 463,
+          "specialStatName": "ATK",
+          "specialStatValue": "12.0%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 7037,
+          "baseAtk": 179,
+          "baseDef": 494,
+          "specialStatName": "ATK",
+          "specialStatValue": "12.0%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 7729,
+          "baseAtk": 197,
+          "baseDef": 543,
+          "specialStatName": "ATK",
+          "specialStatValue": "12.0%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 8174,
+          "baseAtk": 208,
+          "baseDef": 574,
+          "specialStatName": "ATK",
+          "specialStatValue": "18.0%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 8867,
+          "baseAtk": 226,
+          "baseDef": 623,
+          "specialStatName": "ATK",
+          "specialStatValue": "18.0%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 9312,
+          "baseAtk": 237,
+          "baseDef": 654,
+          "specialStatName": "ATK",
+          "specialStatValue": "24.0%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 10005,
+          "baseAtk": 255,
+          "baseDef": 703,
+          "specialStatName": "ATK",
+          "specialStatValue": "24.0%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "vesna",
+      "recordId": null,
+      "candidateId": "vesna:1",
+      "classification": "MISSING_BUILD",
+      "before": null,
+      "after": {
+        "proposedRole": [
+          "MAIN_DPS"
+        ],
+        "existingDraft": "docs/character-builds/proposed-builds.json"
+      },
+      "evidence": {
+        "existingCandidateId": "vesna:1",
+        "role": [
+          "MAIN_DPS"
+        ],
+        "evidenceHold": [
+          "Specific rotation evidence remains open."
+        ],
+        "action": "Preserve the existing draft. Require traceable representative rotation and Energy or separately authorized scope omitting unverified teams before staging."
+      },
+      "status": "HELD_NEEDS_MORE_EVIDENCE",
+      "rollback": null,
+      "humanApprovalRequired": true
+    },
+    {
+      "characterId": "vesna",
+      "recordId": "vesna",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 1032,
+          "baseAtk": 28,
+          "baseDef": 57,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2678,
+          "baseAtk": 71,
+          "baseDef": 147,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 3563,
+          "baseAtk": 95,
+          "baseDef": 196,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 5332,
+          "baseAtk": 142,
+          "baseDef": 294,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 5961,
+          "baseAtk": 159,
+          "baseDef": 328,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "4.8%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 6858,
+          "baseAtk": 183,
+          "baseDef": 378,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "4.8%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 7697,
+          "baseAtk": 205,
+          "baseDef": 424,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 8603,
+          "baseAtk": 230,
+          "baseDef": 474,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 9232,
+          "baseAtk": 246,
+          "baseDef": 508,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 10147,
+          "baseAtk": 271,
+          "baseDef": 559,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "9.6%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 10776,
+          "baseAtk": 288,
+          "baseDef": 593,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 11701,
+          "baseAtk": 312,
+          "baseDef": 644,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 12330,
+          "baseAtk": 329,
+          "baseDef": 679,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "19.2%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 13262,
+          "baseAtk": 354,
+          "baseDef": 730,
+          "specialStatName": "CRIT Rate",
+          "specialStatValue": "19.2%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "vodyanitsa",
+      "recordId": null,
+      "candidateId": "vodyanitsa:1",
+      "classification": "MISSING_BUILD",
+      "before": null,
+      "after": {
+        "proposedRole": [
+          "SUPPORT"
+        ],
+        "existingDraft": "docs/character-builds/proposed-builds.json"
+      },
+      "evidence": {
+        "existingCandidateId": "vodyanitsa:1",
+        "role": [
+          "SUPPORT"
+        ],
+        "evidenceHold": [
+          "Specific rotation evidence remains open."
+        ],
+        "action": "Preserve the existing draft. Require traceable representative rotation and Energy or separately authorized scope omitting unverified teams before staging."
+      },
+      "status": "HELD_NEEDS_MORE_EVIDENCE",
+      "rollback": null,
+      "humanApprovalRequired": true
+    },
+    {
+      "characterId": "vodyanitsa",
+      "recordId": "vodyanitsa",
+      "field": "stats",
+      "before": null,
+      "after": [
+        {
+          "level": "Lv.1",
+          "ascend": 0,
+          "baseHp": 1154,
+          "baseAtk": 8,
+          "baseDef": 38,
+          "specialStatName": "HP",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 0,
+          "baseHp": 2992,
+          "baseAtk": 22,
+          "baseDef": 98,
+          "specialStatName": "HP",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.20",
+          "ascend": 1,
+          "baseHp": 3981,
+          "baseAtk": 29,
+          "baseDef": 130,
+          "specialStatName": "HP",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 1,
+          "baseHp": 5957,
+          "baseAtk": 43,
+          "baseDef": 195,
+          "specialStatName": "HP",
+          "specialStatValue": "0.0%"
+        },
+        {
+          "level": "Lv.40",
+          "ascend": 2,
+          "baseHp": 6660,
+          "baseAtk": 48,
+          "baseDef": 218,
+          "specialStatName": "HP",
+          "specialStatValue": "7.2%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 2,
+          "baseHp": 7662,
+          "baseAtk": 56,
+          "baseDef": 250,
+          "specialStatName": "HP",
+          "specialStatValue": "7.2%"
+        },
+        {
+          "level": "Lv.50",
+          "ascend": 3,
+          "baseHp": 8599,
+          "baseAtk": 62,
+          "baseDef": 281,
+          "specialStatName": "HP",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 3,
+          "baseHp": 9612,
+          "baseAtk": 70,
+          "baseDef": 314,
+          "specialStatName": "HP",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.60",
+          "ascend": 4,
+          "baseHp": 10315,
+          "baseAtk": 75,
+          "baseDef": 337,
+          "specialStatName": "HP",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 4,
+          "baseHp": 11337,
+          "baseAtk": 82,
+          "baseDef": 370,
+          "specialStatName": "HP",
+          "specialStatValue": "14.4%"
+        },
+        {
+          "level": "Lv.70",
+          "ascend": 5,
+          "baseHp": 12040,
+          "baseAtk": 87,
+          "baseDef": 393,
+          "specialStatName": "HP",
+          "specialStatValue": "21.6%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 5,
+          "baseHp": 13073,
+          "baseAtk": 95,
+          "baseDef": 427,
+          "specialStatName": "HP",
+          "specialStatValue": "21.6%"
+        },
+        {
+          "level": "Lv.80",
+          "ascend": 6,
+          "baseHp": 13776,
+          "baseAtk": 100,
+          "baseDef": 450,
+          "specialStatName": "HP",
+          "specialStatValue": "28.8%"
+        },
+        {
+          "level": "Lv.90",
+          "ascend": 6,
+          "baseHp": 14818,
+          "baseAtk": 108,
+          "baseDef": 484,
+          "specialStatName": "HP",
+          "specialStatValue": "28.8%"
+        }
+      ],
+      "evidence": "Pinned exact character stats(level, ascension); bonus relative to unascended baseline; Lv.90 checked against catalog.",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PREPARED_NOT_APPLIED",
+      "humanApprovalRequired": true,
+      "rollback": {
+        "before": null
+      },
+      "blockedBy": "Stats Admin mutation triggers full seed export and rolling-backup cleanup. Existing non-destructive sync protects stats."
+    },
+    {
+      "characterId": "neuvillette",
+      "recordId": "legacy-neuvillette",
+      "field": "teams.members.characterId",
+      "classification": "UPDATE_REQUIRED",
+      "before": [
+        {
+          "teamId": "0c736496-be1b-48c9-9c52-53e63392821f",
+          "memberId": "b8658770-b28d-4d99-a5ea-3a3874f8b88a",
+          "value": "kazuha"
+        },
+        {
+          "teamId": "4a7efbab-b763-42f3-a6e1-79e20e7c532f",
+          "memberId": "428f24da-f2d8-4abe-80a5-5d8e20f4fc36",
+          "value": "kazuha"
+        },
+        {
+          "teamId": "15f238a3-34c1-44b7-b44c-1c0f863da2cf",
+          "memberId": "dded23db-f22f-453e-ad63-f9770e47d2e8",
+          "value": "kazuha"
+        },
+        {
+          "teamId": "4b3cadd4-d519-4f1d-ab14-ea3227ec9e8b",
+          "memberId": "e807136c-f954-436d-98f9-51b96784b5ed",
+          "value": "kazuha"
+        }
+      ],
+      "after": [
+        {
+          "teamId": "0c736496-be1b-48c9-9c52-53e63392821f",
+          "memberId": "b8658770-b28d-4d99-a5ea-3a3874f8b88a",
+          "value": "kaedehara-kazuha"
+        },
+        {
+          "teamId": "4a7efbab-b763-42f3-a6e1-79e20e7c532f",
+          "memberId": "428f24da-f2d8-4abe-80a5-5d8e20f4fc36",
+          "value": "kaedehara-kazuha"
+        },
+        {
+          "teamId": "15f238a3-34c1-44b7-b44c-1c0f863da2cf",
+          "memberId": "dded23db-f22f-453e-ad63-f9770e47d2e8",
+          "value": "kaedehara-kazuha"
+        },
+        {
+          "teamId": "4b3cadd4-d519-4f1d-ab14-ea3227ec9e8b",
+          "memberId": "e807136c-f954-436d-98f9-51b96784b5ed",
+          "value": "kaedehara-kazuha"
+        }
+      ],
+      "status": "STAGED_PENDING_ADMIN_APPROVAL",
+      "stagedVersion": 2,
+      "humanApprovalRequired": true,
+      "evidence": "Exact Kazuha alias on existing team slot; normalized to live catalog Kaedehara Kazuha. All other team fields retained.",
+      "rollback": {
+        "operation": "reviewCharacterBuild REJECT with current version after verifying pending patch",
+        "beforeVersion": 1
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "recordId": "legacy-xinyan",
+      "field": "teams.members.characterId",
+      "classification": "UPDATE_REQUIRED",
+      "before": [
+        {
+          "teamId": "38e4e916-ded5-42c4-8ba8-f127dcde2721",
+          "memberId": "b44b981b-d466-4c23-be25-58897e9ca5aa",
+          "value": "kazuha"
+        }
+      ],
+      "after": [
+        {
+          "teamId": "38e4e916-ded5-42c4-8ba8-f127dcde2721",
+          "memberId": "b44b981b-d466-4c23-be25-58897e9ca5aa",
+          "value": "kaedehara-kazuha"
+        }
+      ],
+      "status": "STAGED_PENDING_ADMIN_APPROVAL",
+      "stagedVersion": 2,
+      "humanApprovalRequired": true,
+      "evidence": "Exact Kazuha alias on existing team slot; normalized to live catalog Kaedehara Kazuha. All other team fields retained.",
+      "rollback": {
+        "operation": "reviewCharacterBuild REJECT with current version after verifying pending patch",
+        "beforeVersion": 1
+      }
+    },
+    {
+      "characterId": "bennett",
+      "recordId": "legacy-bennett",
+      "field": "teams.members.characterId",
+      "classification": "UPDATE_REQUIRED",
+      "before": [
+        {
+          "teamId": "b8140eb3-cdb8-4941-95ee-420f48ee2e0e",
+          "memberId": "87b1ca30-4eaa-41ea-b64d-a8e9bd20735a",
+          "value": "kazuha"
+        },
+        {
+          "teamId": "71c8c8fc-5753-4691-bdf5-e240bd61648d",
+          "memberId": "bd8e5b7c-ac18-4593-bcbf-dd0ab9828359",
+          "value": "kazuha"
+        },
+        {
+          "teamId": "26ee8d9a-0fda-4a2a-a738-aad7b9b688ce",
+          "memberId": "8cb2793c-bb66-4eaa-97ae-f01a5516f791",
+          "value": "kazuha"
+        },
+        {
+          "teamId": "e1556187-170b-45e0-882d-cf4eec9866e4",
+          "memberId": "fa04c321-7676-4a2d-a6e5-625a5dcdd534",
+          "value": "kazuha"
+        }
+      ],
+      "after": [
+        {
+          "teamId": "b8140eb3-cdb8-4941-95ee-420f48ee2e0e",
+          "memberId": "87b1ca30-4eaa-41ea-b64d-a8e9bd20735a",
+          "value": "kaedehara-kazuha"
+        },
+        {
+          "teamId": "71c8c8fc-5753-4691-bdf5-e240bd61648d",
+          "memberId": "bd8e5b7c-ac18-4593-bcbf-dd0ab9828359",
+          "value": "kaedehara-kazuha"
+        },
+        {
+          "teamId": "26ee8d9a-0fda-4a2a-a738-aad7b9b688ce",
+          "memberId": "8cb2793c-bb66-4eaa-97ae-f01a5516f791",
+          "value": "kaedehara-kazuha"
+        },
+        {
+          "teamId": "e1556187-170b-45e0-882d-cf4eec9866e4",
+          "memberId": "fa04c321-7676-4a2d-a6e5-625a5dcdd534",
+          "value": "kaedehara-kazuha"
+        }
+      ],
+      "status": "PROTECTED_APPROVAL_READY_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Catalog canonical ID and pinned name. Preserve A01 approved build and all non-ID team values.",
+      "rollback": {
+        "beforeVersion": 3,
+        "guard": "Do not stage against another version."
+      }
+    },
+    {
+      "characterId": "aino",
+      "buildId": "legacy-aino",
+      "recordId": "8d3f6a24-57ea-449d-a241-f4e4f2b69be8",
+      "field": "weaponId",
+      "before": "mẫu-cổ-hoa",
+      "after": "12406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-cổ-hoa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aino",
+      "buildId": "legacy-aino",
+      "recordId": "7d76a11b-af4c-4346-a126-5fad4a9f5f9d",
+      "field": "weaponId",
+      "before": "đường-cùng-của-sói",
+      "after": "12502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12502; compatible weapon type.",
+      "rollback": {
+        "before": "đường-cùng-của-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "b5abedac-6cce-4bcb-9504-7bd1d65f8473",
+      "field": "weaponId",
+      "before": "thundering-pulse",
+      "after": "15509",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15509; compatible weapon type.",
+      "rollback": {
+        "before": "thundering-pulse",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "07cea621-5a7a-4d0d-b558-8fa6c954e233",
+      "field": "weaponId",
+      "before": "polar-star",
+      "after": "15507",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15507; compatible weapon type.",
+      "rollback": {
+        "before": "polar-star",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "15b08d27-0879-4453-a27e-3efe46f303a2",
+      "field": "weaponId",
+      "before": "skyward-harp",
+      "after": "15501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15501; compatible weapon type.",
+      "rollback": {
+        "before": "skyward-harp",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "e184d98b-5c95-4b96-ac14-d8f4dc9e6d3a",
+      "field": "weaponId",
+      "before": "the-stringless",
+      "after": "15402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15402; compatible weapon type.",
+      "rollback": {
+        "before": "the-stringless",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "94953405-02de-4e81-9151-d9c00686138d",
+      "field": "weaponId",
+      "before": "amos'-bow",
+      "after": "15502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15502; compatible weapon type.",
+      "rollback": {
+        "before": "amos'-bow",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "a38976eb-ad57-4794-b84a-f64c4bfcafc2",
+      "field": "weaponId",
+      "before": "alley-hunter",
+      "after": "15410",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15410; compatible weapon type.",
+      "rollback": {
+        "before": "alley-hunter",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "8616a90f-64cb-4e19-82c2-6f4426a67802",
+      "field": "weaponId",
+      "before": "prototype-crescent",
+      "after": "15406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15406; compatible weapon type.",
+      "rollback": {
+        "before": "prototype-crescent",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "b927ae62-b1a3-40fe-b63b-54543a7ba6b5",
+      "field": "weaponId",
+      "before": "predator",
+      "after": "15415",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15415; compatible weapon type.",
+      "rollback": {
+        "before": "predator",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "9d677715-53ec-4001-a7ca-e43168380a56",
+      "field": "weaponId",
+      "before": "sacrificial-bow",
+      "after": "15403",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15403; compatible weapon type.",
+      "rollback": {
+        "before": "sacrificial-bow",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "aloy",
+      "buildId": "legacy-aloy",
+      "recordId": "df4c04a3-4971-4565-b16e-a35c5f1d96cb",
+      "field": "weaponId",
+      "before": "slingshot",
+      "after": "15304",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15304; compatible weapon type.",
+      "rollback": {
+        "before": "slingshot",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "b2375864-4b58-4a64-b187-eabadbaaefd3",
+      "field": "weaponId",
+      "before": "màn-ảo-thuật-đầu-tiên",
+      "after": "15512",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15512; compatible weapon type.",
+      "rollback": {
+        "before": "màn-ảo-thuật-đầu-tiên",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "565be65c-c7a4-4edb-bb3a-017eb8afc76b",
+      "field": "weaponId",
+      "before": "nhược-thủy",
+      "after": "15508",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15508; compatible weapon type.",
+      "rollback": {
+        "before": "nhược-thủy",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "d591588d-82d6-4df9-9ac6-618cfeaa40b4",
+      "field": "weaponId",
+      "before": "sấm-sét-rung-động",
+      "after": "15509",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15509; compatible weapon type.",
+      "rollback": {
+        "before": "sấm-sét-rung-động",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "56a67ddb-59de-4f5f-bf6c-7411bc2e4553",
+      "field": "weaponId",
+      "before": "cánh-thiên-không",
+      "after": "15501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15501; compatible weapon type.",
+      "rollback": {
+        "before": "cánh-thiên-không",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "8e398de1-4a0a-4ce0-8d7d-5d3440fc18de",
+      "field": "weaponId",
+      "before": "ngôi-sao-cực-đông",
+      "after": "15507",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15507; compatible weapon type.",
+      "rollback": {
+        "before": "ngôi-sao-cực-đông",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "7f9f2672-5c30-4db7-9de2-805ef290cfa4",
+      "field": "weaponId",
+      "before": "nỏ-kéo",
+      "after": "15304",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15304; compatible weapon type.",
+      "rollback": {
+        "before": "nỏ-kéo",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "61e75fd2-bf0e-4213-b4fa-e92fc3ede7a3",
+      "field": "weaponId",
+      "before": "cung-amos",
+      "after": "15502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15502; compatible weapon type.",
+      "rollback": {
+        "before": "cung-amos",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "458d0fcd-0b07-4884-8bf6-1c51ef5ce890",
+      "field": "weaponId",
+      "before": "con-đường-thợ-săn",
+      "after": "15511",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15511; compatible weapon type.",
+      "rollback": {
+        "before": "con-đường-thợ-săn",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "5869db7c-1259-4446-a3b5-087fca64d6dc",
+      "field": "weaponId",
+      "before": "mỏ-cò-xuyên-thấu",
+      "after": "15419",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15419; compatible weapon type.",
+      "rollback": {
+        "before": "mỏ-cò-xuyên-thấu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "a183f4c1-12ca-4c55-8985-30d4f9917797",
+      "field": "weaponId",
+      "before": "cung-sắc-xanh",
+      "after": "15409",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15409; compatible weapon type.",
+      "rollback": {
+        "before": "cung-sắc-xanh",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "7721ec55-e7b5-48f7-a5ad-87d7b4270fe4",
+      "field": "weaponId",
+      "before": "cung-trừ-ma",
+      "after": "15414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15414; compatible weapon type.",
+      "rollback": {
+        "before": "cung-trừ-ma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "2523a643-c53a-4a93-bd1c-4d7e0c61c686",
+      "field": "weaponId",
+      "before": "mẫu-đạm-nguyệt",
+      "after": "15406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-đạm-nguyệt",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "536a59ae-8c1b-4503-a009-fcab2d491ccb",
+      "field": "weaponId",
+      "before": "khúc-ca-tĩnh-lặng",
+      "after": "15425",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15425; compatible weapon type.",
+      "rollback": {
+        "before": "khúc-ca-tĩnh-lặng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "ccf5bccd-4d15-401d-8295-e5c24a177fa0",
+      "field": "weaponId",
+      "before": "bài-ca-hoa-gió",
+      "after": "15413",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15413; compatible weapon type.",
+      "rollback": {
+        "before": "bài-ca-hoa-gió",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "cd3d0651-eb6f-415e-98e7-69444f498710",
+      "field": "weaponId",
+      "before": "tuyệt-huyền",
+      "after": "15402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15402; compatible weapon type.",
+      "rollback": {
+        "before": "tuyệt-huyền",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "4627779e-ba7b-4465-a2eb-52beaaeffa5f",
+      "field": "weaponId",
+      "before": "lời-thề-xạ-thủ-thần",
+      "after": "15302",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15302; compatible weapon type.",
+      "rollback": {
+        "before": "lời-thề-xạ-thủ-thần",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "b4fb2ed4-f572-441e-89e0-fafcb1999c4a",
+      "field": "weaponId",
+      "before": "cận-vệ-nhà-vua",
+      "after": "15417",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15417; compatible weapon type.",
+      "rollback": {
+        "before": "cận-vệ-nhà-vua",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "amber",
+      "buildId": "legacy-amber",
+      "recordId": "2bee3224-fce6-437c-8d80-ae31950142a4",
+      "field": "weaponId",
+      "before": "hậu-duệ-mặt-trời",
+      "after": "15424",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15424; compatible weapon type.",
+      "rollback": {
+        "before": "hậu-duệ-mặt-trời",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "barbara",
+      "buildId": "legacy-barbara",
+      "recordId": "3a693164-1847-4c74-90b4-3aed3d7c3825",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": "14402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; compatible weapon type.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "barbara",
+      "buildId": "legacy-barbara",
+      "recordId": "6fcb6ba0-1509-4571-9f24-91822f3a7513",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": "14502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; compatible weapon type.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "05bf4d00-7572-45f5-b1c6-e5262bd268e8",
+      "field": "weaponId",
+      "before": "ánh-sáng-đêm-sương-mù",
+      "after": "11509",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11509; compatible weapon type.",
+      "rollback": {
+        "before": "ánh-sáng-đêm-sương-mù",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "cd766ed6-18c9-49ef-89b3-8e86c0d1780a",
+      "field": "weaponId",
+      "before": "xá-tội",
+      "after": "11515",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11515; compatible weapon type.",
+      "rollback": {
+        "before": "xá-tội",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "0b9b2890-1d96-41b7-a236-45da456e56b4",
+      "field": "weaponId",
+      "before": "thương-diệu",
+      "after": "11517",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11517; compatible weapon type.",
+      "rollback": {
+        "before": "thương-diệu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "eb4b3d0f-47cd-4ff8-967e-edd9c8c80391",
+      "field": "weaponId",
+      "before": "phong-ưng-kiếm",
+      "after": "11501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11501; compatible weapon type.",
+      "rollback": {
+        "before": "phong-ưng-kiếm",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "7a572f9d-c223-48b4-91d1-716a84ac82b7",
+      "field": "weaponId",
+      "before": "tia-sáng-nơi-hẻm-tối",
+      "after": "11410",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11410; compatible weapon type.",
+      "rollback": {
+        "before": "tia-sáng-nơi-hẻm-tối",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "98e7165d-7f4f-4721-b243-7e55a2331cfd",
+      "field": "weaponId",
+      "before": "lời-thề-tự-do-cổ-xưa",
+      "after": "11503",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11503; compatible weapon type.",
+      "rollback": {
+        "before": "lời-thề-tự-do-cổ-xưa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "e5cd57be-0b54-4eb1-b4d3-0fc98ddb055b",
+      "field": "weaponId",
+      "before": "khúc-ca-núi-đá",
+      "after": "11516",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11516; compatible weapon type.",
+      "rollback": {
+        "before": "khúc-ca-núi-đá",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "3da2b78d-e0b1-4ed0-bfba-809ebbcb14d5",
+      "field": "weaponId",
+      "before": "thiên-không-kiếm",
+      "after": "11502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11502; compatible weapon type.",
+      "rollback": {
+        "before": "thiên-không-kiếm",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "29cf6f4a-e554-4a29-86b4-9a22e4320ddd",
+      "field": "weaponId",
+      "before": "kiếm-gỗ",
+      "after": "11417",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11417; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-gỗ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "61290556-0a0e-4156-8a61-23230e6b1b84",
+      "field": "weaponId",
+      "before": "mẫu-trảm-nham",
+      "after": "11406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-trảm-nham",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "c10572bb-1295-4abb-ba8e-fcb9ca4e243a",
+      "field": "weaponId",
+      "before": "tai-họa-eshu",
+      "after": "11432",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11432; compatible weapon type.",
+      "rollback": {
+        "before": "tai-họa-eshu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "bennett",
+      "buildId": "legacy-bennett",
+      "recordId": "eafe4cf5-29ec-4933-8d95-011dfcdf9b5a",
+      "field": "weaponId",
+      "before": "tây-phong-kiếm",
+      "after": "11401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-kiếm",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "candace",
+      "buildId": "legacy-candace",
+      "recordId": "9f922208-dc41-423c-84c1-14807c3302cd",
+      "field": "weaponId",
+      "before": "lao-xiên-cá",
+      "after": "13415",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13415; compatible weapon type.",
+      "rollback": {
+        "before": "lao-xiên-cá",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "candace",
+      "buildId": "legacy-candace",
+      "recordId": "c90b7041-5ffa-442e-8ebe-4480d0218a0c",
+      "field": "weaponId",
+      "before": "thương-diệu",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11517; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "thương-diệu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "citlali",
+      "buildId": "legacy-citlali",
+      "recordId": "00c0dfde-cd32-4332-917f-f4b783eaa83d",
+      "field": "weaponId",
+      "before": "ánh-nhìn-tư-tế",
+      "after": "14517",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14517; compatible weapon type.",
+      "rollback": {
+        "before": "ánh-nhìn-tư-tế",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "citlali",
+      "buildId": "legacy-citlali",
+      "recordId": "d8964291-b011-4526-b801-2b62b0412216",
+      "field": "weaponId",
+      "before": "câu-chuyện-diệt-rồng",
+      "after": "14302",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14302; compatible weapon type.",
+      "rollback": {
+        "before": "câu-chuyện-diệt-rồng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "citlali",
+      "buildId": "legacy-citlali",
+      "recordId": "e75765be-27cc-4d4e-9769-ed1d61f46e53",
+      "field": "weaponId",
+      "before": "tây-phong-mật-điển",
+      "after": "14401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-mật-điển",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "citlali",
+      "buildId": "legacy-citlali",
+      "recordId": "c09e8ed2-14bc-4383-804b-f6fa8f76c269",
+      "field": "weaponId",
+      "before": "đàn-thiên-quang",
+      "after": "14432",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14432; compatible weapon type.",
+      "rollback": {
+        "before": "đàn-thiên-quang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "citlali",
+      "buildId": "legacy-citlali",
+      "recordId": "5542c2d1-5c58-45b5-8691-31f5dec6c3d7",
+      "field": "weaponId",
+      "before": "mảnh-chương-tế-lễ",
+      "after": "14403",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14403; compatible weapon type.",
+      "rollback": {
+        "before": "mảnh-chương-tế-lễ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "citlali",
+      "buildId": "legacy-citlali",
+      "recordId": "3fb51beb-aa13-4c3a-babc-678d0ce0e370",
+      "field": "weaponId",
+      "before": "sao-đêm-rong-ruổi",
+      "after": "14416",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14416; compatible weapon type.",
+      "rollback": {
+        "before": "sao-đêm-rong-ruổi",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "columbina",
+      "buildId": "legacy-columbina",
+      "recordId": "a5ed9d00-e4bf-40b6-a4c0-a636c350c588",
+      "field": "weaponId",
+      "before": "dạ-khúc-hạ-màn",
+      "after": "14522",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14522; compatible weapon type.",
+      "rollback": {
+        "before": "dạ-khúc-hạ-màn",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "columbina",
+      "buildId": "legacy-columbina",
+      "recordId": "b6aee307-c059-4866-ad84-753e9bc9fdb4",
+      "field": "weaponId",
+      "before": "mẫu-kim-phách",
+      "after": "14406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-kim-phách",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "columbina",
+      "buildId": "legacy-columbina",
+      "recordId": "c6591a02-5c60-4ecf-a619-b6870efcf237",
+      "field": "weaponId",
+      "before": "ngọc-bích-hiến-tế",
+      "after": "14424",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14424; compatible weapon type.",
+      "rollback": {
+        "before": "ngọc-bích-hiến-tế",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "columbina",
+      "buildId": "legacy-columbina",
+      "recordId": "04b09759-ec52-4bf9-8c2e-23007bb4b57a",
+      "field": "weaponId",
+      "before": "tây-phong-mật-điển",
+      "after": "14401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-mật-điển",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "dahlia",
+      "buildId": "legacy-dahlia",
+      "recordId": "fc54fa3e-84db-4b9f-8dad-4bc0e499459b",
+      "field": "weaponId",
+      "before": "đoản-đao-amenoma",
+      "after": "11414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11414; compatible weapon type.",
+      "rollback": {
+        "before": "đoản-đao-amenoma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "dahlia",
+      "buildId": "legacy-dahlia",
+      "recordId": "2568f2eb-1f80-404d-9c47-292ad818bdb4",
+      "field": "weaponId",
+      "before": "bàn-nham-kết-lục",
+      "after": "11505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11505; compatible weapon type.",
+      "rollback": {
+        "before": "bàn-nham-kết-lục",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "dori",
+      "buildId": "legacy-dori",
+      "recordId": "1f9b8918-7910-43fd-a16f-c2da6b91b3e3",
+      "field": "weaponId",
+      "before": "mẫu-cổ-hoa",
+      "after": "12406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-cổ-hoa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "dori",
+      "buildId": "legacy-dori",
+      "recordId": "f843d4b0-d284-4465-af94-1024e94cd55b",
+      "field": "weaponId",
+      "before": "đường-cùng-của-sói",
+      "after": "12502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12502; compatible weapon type.",
+      "rollback": {
+        "before": "đường-cùng-của-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "fa78f4c3-e083-4396-9712-4cb13b82ef41",
+      "field": "weaponId",
+      "before": "hắc-ám-xâm-thực",
+      "after": "11518",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11518; compatible weapon type.",
+      "rollback": {
+        "before": "hắc-ám-xâm-thực",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "d64fb018-d952-42d3-add9-cabf918f355b",
+      "field": "weaponId",
+      "before": "bàn-nham-kết-lục",
+      "after": "11505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11505; compatible weapon type.",
+      "rollback": {
+        "before": "bàn-nham-kết-lục",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "d58732c1-95d3-4d6f-826b-10e2886d3e2b",
+      "field": "weaponId",
+      "before": "thương-diệu",
+      "after": "11517",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11517; compatible weapon type.",
+      "rollback": {
+        "before": "thương-diệu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "2a13ca70-c1fc-4112-9eb7-486d7f2e1b4a",
+      "field": "weaponId",
+      "before": "ánh-sáng-đêm-sương-mù",
+      "after": "11509",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11509; compatible weapon type.",
+      "rollback": {
+        "before": "ánh-sáng-đêm-sương-mù",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "b267d0ff-e04b-442f-859e-130bea627e20",
+      "field": "weaponId",
+      "before": "haran-geppaku-futsu",
+      "after": "11510",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11510; compatible weapon type.",
+      "rollback": {
+        "before": "haran-geppaku-futsu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "11fb343d-6b95-43bb-8c03-30ad2309c0ea",
+      "field": "weaponId",
+      "before": "xá-tội",
+      "after": "11515",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11515; compatible weapon type.",
+      "rollback": {
+        "before": "xá-tội",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "605d088f-75e1-40e8-8b50-aa2aa7fb9a70",
+      "field": "weaponId",
+      "before": "kiếm-chước-phong",
+      "after": "11504",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11504; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-chước-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "3d5ac551-d208-49dd-9abb-a84a77f01f3c",
+      "field": "weaponId",
+      "before": "ánh-lá-phán-quyết",
+      "after": "11512",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11512; compatible weapon type.",
+      "rollback": {
+        "before": "ánh-lá-phán-quyết",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "35432538-3411-4200-a123-b24e0a5effe1",
+      "field": "weaponId",
+      "before": "lời-thề-tự-do-cổ-xưa",
+      "after": "11503",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11503; compatible weapon type.",
+      "rollback": {
+        "before": "lời-thề-tự-do-cổ-xưa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "117e35ef-792c-4f93-bce8-2131446df557",
+      "field": "weaponId",
+      "before": "nhạc-khúc-biển-sâu",
+      "after": "11425",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11425; compatible weapon type.",
+      "rollback": {
+        "before": "nhạc-khúc-biển-sâu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "6ed2b5b8-6a79-4790-9895-d04c084bc20c",
+      "field": "weaponId",
+      "before": "nanh-sói",
+      "after": "11424",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11424; compatible weapon type.",
+      "rollback": {
+        "before": "nanh-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "5ef33a81-c13e-4b3f-9e6e-c33f6980b780",
+      "field": "weaponId",
+      "before": "uraku-misugiri",
+      "after": "11514",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11514; compatible weapon type.",
+      "rollback": {
+        "before": "uraku-misugiri",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "4bacd8cc-14b7-4748-b67d-39c2696594d7",
+      "field": "weaponId",
+      "before": "sắc-nước-lộng-lẫy",
+      "after": "11513",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11513; compatible weapon type.",
+      "rollback": {
+        "before": "sắc-nước-lộng-lẫy",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "f8c1bd92-be41-4524-98a3-1adce2b3914f",
+      "field": "weaponId",
+      "before": "mảnh-trăng-ánh-sáng",
+      "after": "11519",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11519; compatible weapon type.",
+      "rollback": {
+        "before": "mảnh-trăng-ánh-sáng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "durin",
+      "buildId": "legacy-durin",
+      "recordId": "6f43d93f-79e8-4b9f-b5c3-306c0aeb49f8",
+      "field": "weaponId",
+      "before": "bình-minh-của-người-dệt-trăng",
+      "after": "11434",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11434; compatible weapon type.",
+      "rollback": {
+        "before": "bình-minh-của-người-dệt-trăng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "iansan",
+      "buildId": "legacy-iansan",
+      "recordId": "60b445e8-7a76-428d-b7c2-e5b1f7795016",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "iansan",
+      "buildId": "legacy-iansan",
+      "recordId": "37db6d7e-bb37-4181-be0d-20c9e722990f",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "illuga",
+      "buildId": "legacy-illuga",
+      "recordId": "5874f319-582b-4d29-b09b-4491ef95501d",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "illuga",
+      "buildId": "legacy-illuga",
+      "recordId": "e37a0dc4-38f7-4dcb-b17d-8984d8758b9c",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "jahoda",
+      "buildId": "legacy-jahoda",
+      "recordId": "bd30aa76-536a-45fc-827b-ed2aab5adfb9",
+      "field": "weaponId",
+      "before": "tuyệt-huyền",
+      "after": "15402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15402; compatible weapon type.",
+      "rollback": {
+        "before": "tuyệt-huyền",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "jahoda",
+      "buildId": "legacy-jahoda",
+      "recordId": "f175f662-f771-4edd-9e4c-98255fc48868",
+      "field": "weaponId",
+      "before": "cánh-thiên-không",
+      "after": "15501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15501; compatible weapon type.",
+      "rollback": {
+        "before": "cánh-thiên-không",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "kachina",
+      "buildId": "legacy-kachina",
+      "recordId": "917509c9-591a-4565-ac34-c7300f433f41",
+      "field": "weaponId",
+      "before": "lao-xiên-cá",
+      "after": "13415",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13415; compatible weapon type.",
+      "rollback": {
+        "before": "lao-xiên-cá",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "kachina",
+      "buildId": "legacy-kachina",
+      "recordId": "38e919ca-dda5-4e1c-9d21-39621633dfd3",
+      "field": "weaponId",
+      "before": "thương-diệu",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11517; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "thương-diệu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "kaveh",
+      "buildId": "legacy-kaveh",
+      "recordId": "4ae80ebb-06a2-46a0-83e0-92874857aad0",
+      "field": "weaponId",
+      "before": "mẫu-cổ-hoa",
+      "after": "12406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-cổ-hoa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "kaveh",
+      "buildId": "legacy-kaveh",
+      "recordId": "2d378e1c-d99e-44bf-be24-74c20fc90d17",
+      "field": "weaponId",
+      "before": "đường-cùng-của-sói",
+      "after": "12502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12502; compatible weapon type.",
+      "rollback": {
+        "before": "đường-cùng-của-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "lanyan",
+      "buildId": "legacy-lanyan",
+      "recordId": "db89a9a4-63e3-4af4-a4fd-36081cb9a73f",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": "14402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; compatible weapon type.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "lanyan",
+      "buildId": "legacy-lanyan",
+      "recordId": "f169a94d-b86c-47ac-ac6a-e233e493a5cf",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": "14502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; compatible weapon type.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "layla",
+      "buildId": "legacy-layla",
+      "recordId": "c690e62e-89c2-447e-a7d3-767fc33bd297",
+      "field": "weaponId",
+      "before": "đoản-đao-amenoma",
+      "after": "11414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11414; compatible weapon type.",
+      "rollback": {
+        "before": "đoản-đao-amenoma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "layla",
+      "buildId": "legacy-layla",
+      "recordId": "1d69366c-2a38-4ef0-9eb4-8894cddcb514",
+      "field": "weaponId",
+      "before": "bàn-nham-kết-lục",
+      "after": "11505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11505; compatible weapon type.",
+      "rollback": {
+        "before": "bàn-nham-kết-lục",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "linnea",
+      "buildId": "legacy-linnea",
+      "recordId": "b711089f-b776-40d9-8aa6-783b0b4a09dd",
+      "field": "weaponId",
+      "before": "tuyệt-huyền",
+      "after": "15402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15402; compatible weapon type.",
+      "rollback": {
+        "before": "tuyệt-huyền",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "linnea",
+      "buildId": "legacy-linnea",
+      "recordId": "f1405bde-3aae-4ba8-b507-f0871d756bca",
+      "field": "weaponId",
+      "before": "cánh-thiên-không",
+      "after": "15501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 15501; compatible weapon type.",
+      "rollback": {
+        "before": "cánh-thiên-không",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "lohen",
+      "buildId": "legacy-lohen",
+      "recordId": "97adc477-a6fc-47cd-8c2b-da6282383545",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "lohen",
+      "buildId": "legacy-lohen",
+      "recordId": "41134d27-aff6-45c9-a791-a078616dd25f",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "lynette",
+      "buildId": "legacy-lynette",
+      "recordId": "8e6dcdf3-2e47-4a47-9198-150fcd39f53f",
+      "field": "weaponId",
+      "before": "đoản-đao-amenoma",
+      "after": "11414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11414; compatible weapon type.",
+      "rollback": {
+        "before": "đoản-đao-amenoma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "lynette",
+      "buildId": "legacy-lynette",
+      "recordId": "733bdf66-8805-41da-9a12-227605190bce",
+      "field": "weaponId",
+      "before": "bàn-nham-kết-lục",
+      "after": "11505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11505; compatible weapon type.",
+      "rollback": {
+        "before": "bàn-nham-kết-lục",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "7999a79d-3cd3-4a41-8f4d-0d2ad3209da1",
+      "field": "weaponId",
+      "before": "nghi-thức-dòng-chảy-vĩnh-hằng",
+      "after": "14514",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14514; compatible weapon type.",
+      "rollback": {
+        "before": "nghi-thức-dòng-chảy-vĩnh-hằng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "f8b2ff2f-f5dc-410f-8263-b85ea091ae7d",
+      "field": "weaponId",
+      "before": "thời-khắc-lướt-sóng",
+      "after": "14516",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14516; compatible weapon type.",
+      "rollback": {
+        "before": "thời-khắc-lướt-sóng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "94dfd250-c259-49e5-996c-53e18fe5fef8",
+      "field": "weaponId",
+      "before": "chân-ngôn-bí-hạp",
+      "after": "14521",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14521; compatible weapon type.",
+      "rollback": {
+        "before": "chân-ngôn-bí-hạp",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "06e61c80-64ec-4ebe-8e2b-543809b10a74",
+      "field": "weaponId",
+      "before": "ngọc-bích-huy-hoàng",
+      "after": "14505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14505; compatible weapon type.",
+      "rollback": {
+        "before": "ngọc-bích-huy-hoàng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "6c756772-ef9b-489e-95ec-46dae1ee181a",
+      "field": "weaponId",
+      "before": "mẫu-kim-phách",
+      "after": "14406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-kim-phách",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "c011f047-c49c-44e7-9dcb-8ea2e60726d7",
+      "field": "weaponId",
+      "before": "quản-đốc-vàng-ròng",
+      "after": "14513",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14513; compatible weapon type.",
+      "rollback": {
+        "before": "quản-đốc-vàng-ròng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "efcf7487-7382-4929-85a3-dc75b41c3524",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": "14402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; compatible weapon type.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "e4a5a752-18c3-433b-9244-198df9425e6e",
+      "field": "weaponId",
+      "before": "chân-ý-của-kagura",
+      "after": "14509",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14509; compatible weapon type.",
+      "rollback": {
+        "before": "chân-ý-của-kagura",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "06ee8f4a-b982-4bfd-9ee6-14fb1315a884",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": "14502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; compatible weapon type.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "buildId": "legacy-neuvillette",
+      "recordId": "a5108ae0-0246-4b7c-89f9-9d462a631203",
+      "field": "weaponId",
+      "before": "sừng-rượu-vân-xanh",
+      "after": "14427",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14427; compatible weapon type.",
+      "rollback": {
+        "before": "sừng-rượu-vân-xanh",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "8452d3c9-74b2-4e03-864e-4c97fe083aae",
+      "field": "weaponId",
+      "before": "trần-quang-thất-dụ",
+      "after": "14523",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14523; compatible weapon type.",
+      "rollback": {
+        "before": "trần-quang-thất-dụ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "6a95fbfe-a731-402a-a404-8c112973a7ab",
+      "field": "weaponId",
+      "before": "khóa-trần-thế",
+      "after": "14504",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14504; compatible weapon type.",
+      "rollback": {
+        "before": "khóa-trần-thế",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "5e3fbe5d-470e-4ee8-854f-eda52f9f7f17",
+      "field": "weaponId",
+      "before": "dư-âm-tiếng-hạc",
+      "after": "14515",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14515; compatible weapon type.",
+      "rollback": {
+        "before": "dư-âm-tiếng-hạc",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "3e2eedbb-50f9-4251-90f9-1aad0148324a",
+      "field": "weaponId",
+      "before": "quyển-thiên-không",
+      "after": "14501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14501; compatible weapon type.",
+      "rollback": {
+        "before": "quyển-thiên-không",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "d2a93970-86d2-4319-9aab-5773a3839c56",
+      "field": "weaponId",
+      "before": "ánh-nhìn-tư-tế",
+      "after": "14517",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14517; compatible weapon type.",
+      "rollback": {
+        "before": "ánh-nhìn-tư-tế",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "8d774ad3-e6a5-46e9-8327-0b51158719fa",
+      "field": "weaponId",
+      "before": "con-ngươi-tuyên-thệ",
+      "after": "14415",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14415; compatible weapon type.",
+      "rollback": {
+        "before": "con-ngươi-tuyên-thệ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "6fd85b92-7e6f-40a7-ab0b-37d0884c2094",
+      "field": "weaponId",
+      "before": "vòng-bạch-thần",
+      "after": "14414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14414; compatible weapon type.",
+      "rollback": {
+        "before": "vòng-bạch-thần",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "9ee864b6-fd5b-4c3b-9356-aec87438139e",
+      "field": "weaponId",
+      "before": "dòng-chảy-tinh-khiết",
+      "after": "14425",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14425; compatible weapon type.",
+      "rollback": {
+        "before": "dòng-chảy-tinh-khiết",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "eaf62bc5-e5d2-4601-a9b5-2d0cf7eccf82",
+      "field": "weaponId",
+      "before": "tây-phong-mật-điển",
+      "after": "14401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-mật-điển",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nicole",
+      "buildId": "legacy-nicole",
+      "recordId": "1e09dae9-7c71-4b38-b30a-83b76de9da7e",
+      "field": "weaponId",
+      "before": "câu-chuyện-diệt-rồng",
+      "after": "14302",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14302; compatible weapon type.",
+      "rollback": {
+        "before": "câu-chuyện-diệt-rồng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nilou",
+      "buildId": "legacy-nilou",
+      "recordId": "c72091fc-20eb-4ba0-a3d5-b9cb4e4608b7",
+      "field": "weaponId",
+      "before": "chìa-khóa-khaj-nisut",
+      "after": "11511",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11511; compatible weapon type.",
+      "rollback": {
+        "before": "chìa-khóa-khaj-nisut",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nilou",
+      "buildId": "legacy-nilou",
+      "recordId": "b1f831a8-f866-4efd-bfce-6476fea3f143",
+      "field": "weaponId",
+      "before": "ánh-trăng-xiphos",
+      "after": "11418",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11418; compatible weapon type.",
+      "rollback": {
+        "before": "ánh-trăng-xiphos",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nilou",
+      "buildId": "legacy-nilou",
+      "recordId": "b0e8179b-f4d8-49e7-938c-bfe66d316bca",
+      "field": "weaponId",
+      "before": "kiếm-bến-tàu",
+      "after": "11427",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11427; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-bến-tàu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nilou",
+      "buildId": "legacy-nilou",
+      "recordId": "dbc34e79-21d7-46b8-a966-30a044add462",
+      "field": "weaponId",
+      "before": "tây-phong-kiếm",
+      "after": "11401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-kiếm",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "nilou",
+      "buildId": "legacy-nilou",
+      "recordId": "ff778312-4895-4a91-b28c-4274538da610",
+      "field": "weaponId",
+      "before": "kiếm-tế-lễ",
+      "after": "11403",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11403; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-tế-lễ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "prune",
+      "buildId": "legacy-prune",
+      "recordId": "f66edf82-4511-4c83-a97c-ccb6376cb557",
+      "field": "weaponId",
+      "before": "chương-nhạc-lang-thang",
+      "after": "14402",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; compatible weapon type.",
+      "rollback": {
+        "before": "chương-nhạc-lang-thang",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "prune",
+      "buildId": "legacy-prune",
+      "recordId": "eb73cddf-2946-4b60-bf61-24e4c6497113",
+      "field": "weaponId",
+      "before": "điển-tích-tây-phong",
+      "after": "14502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; compatible weapon type.",
+      "rollback": {
+        "before": "điển-tích-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "sandrone",
+      "buildId": "legacy-sandrone",
+      "recordId": "aa157f9d-5f62-4fdc-8688-6a858fa0dfb0",
+      "field": "weaponId",
+      "before": "lost-prayer-to-the-sacred-winds",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14502; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "lost-prayer-to-the-sacred-winds",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "sandrone",
+      "buildId": "legacy-sandrone",
+      "recordId": "cf32c5d7-b918-4e97-9316-d999539e260c",
+      "field": "weaponId",
+      "before": "the-widsith",
+      "after": null,
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 14402; incompatible type; remove from build after review.",
+      "rollback": {
+        "before": "the-widsith",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "sayu",
+      "buildId": "legacy-sayu",
+      "recordId": "8f67cc07-4829-4a6a-8d25-5b41835732bd",
+      "field": "weaponId",
+      "before": "mẫu-cổ-hoa",
+      "after": "12406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-cổ-hoa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "sayu",
+      "buildId": "legacy-sayu",
+      "recordId": "a1b8c7ee-a99e-45bc-af67-531333682eaf",
+      "field": "weaponId",
+      "before": "đường-cùng-của-sói",
+      "after": "12502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12502; compatible weapon type.",
+      "rollback": {
+        "before": "đường-cùng-của-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-anemo",
+      "buildId": "legacy-traveler-anemo",
+      "recordId": "d6fc2d17-ec49-477b-8557-9b26fa5ff65a",
+      "field": "weaponId",
+      "before": "đoản-đao-amenoma",
+      "after": "11414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11414; compatible weapon type.",
+      "rollback": {
+        "before": "đoản-đao-amenoma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-anemo",
+      "buildId": "legacy-traveler-anemo",
+      "recordId": "3e67f4d1-0c99-4701-8bda-e2debd2b5e01",
+      "field": "weaponId",
+      "before": "bàn-nham-kết-lục",
+      "after": "11505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11505; compatible weapon type.",
+      "rollback": {
+        "before": "bàn-nham-kết-lục",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-electro",
+      "buildId": "legacy-traveler-electro",
+      "recordId": "94eb7b57-9678-461b-9b9a-10e8a47e7a95",
+      "field": "weaponId",
+      "before": "đoản-đao-amenoma",
+      "after": "11414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11414; compatible weapon type.",
+      "rollback": {
+        "before": "đoản-đao-amenoma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-electro",
+      "buildId": "legacy-traveler-electro",
+      "recordId": "78304199-a326-4c6f-a5e4-bd5cc6047b96",
+      "field": "weaponId",
+      "before": "bàn-nham-kết-lục",
+      "after": "11505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11505; compatible weapon type.",
+      "rollback": {
+        "before": "bàn-nham-kết-lục",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "buildId": "legacy-traveler-hydro",
+      "recordId": "67958a1a-8ee8-45ef-9f38-d592039afe32",
+      "field": "weaponId",
+      "before": "tây-phong-kiếm",
+      "after": "11401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-kiếm",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "buildId": "legacy-traveler-hydro",
+      "recordId": "d3d31c21-034e-453a-b6e9-bf1b49bc2354",
+      "field": "weaponId",
+      "before": "ống-đồng-cát-tàn",
+      "after": "11426",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11426; compatible weapon type.",
+      "rollback": {
+        "before": "ống-đồng-cát-tàn",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "buildId": "legacy-traveler-hydro",
+      "recordId": "3c477f8b-c923-4a2b-8852-1fab4f0d9364",
+      "field": "weaponId",
+      "before": "thiên-không-kiêu-hùng",
+      "after": "11502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11502; compatible weapon type.",
+      "rollback": {
+        "before": "thiên-không-kiêu-hùng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "buildId": "legacy-traveler-hydro",
+      "recordId": "3b557d9b-80b3-43ce-b326-269a512db24b",
+      "field": "weaponId",
+      "before": "lời-thề-tự-do-cổ-xưa",
+      "after": "11503",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11503; compatible weapon type.",
+      "rollback": {
+        "before": "lời-thề-tự-do-cổ-xưa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "buildId": "legacy-traveler-hydro",
+      "recordId": "7776dd42-b8fc-476b-bb0a-b51cd1fac6d5",
+      "field": "weaponId",
+      "before": "kiếm-tế-lễ",
+      "after": "11403",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11403; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-tế-lễ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "buildId": "legacy-traveler-hydro",
+      "recordId": "3a0c6192-cc15-408e-a6a5-092ee045f1cf",
+      "field": "weaponId",
+      "before": "đoản-đao-amenoma",
+      "after": "11414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11414; compatible weapon type.",
+      "rollback": {
+        "before": "đoản-đao-amenoma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "buildId": "legacy-traveler-pyro",
+      "recordId": "29d096cb-07e4-45bd-894b-7231e0a4b2ee",
+      "field": "weaponId",
+      "before": "tây-phong-kiếm",
+      "after": "11401",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11401; compatible weapon type.",
+      "rollback": {
+        "before": "tây-phong-kiếm",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "buildId": "legacy-traveler-pyro",
+      "recordId": "b48a861e-a042-43ab-bc02-c61364bf3e03",
+      "field": "weaponId",
+      "before": "khúc-ca-núi-đá",
+      "after": "11516",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11516; compatible weapon type.",
+      "rollback": {
+        "before": "khúc-ca-núi-đá",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "buildId": "legacy-traveler-pyro",
+      "recordId": "7df65d60-43aa-40ae-afe8-64a3cea03ca5",
+      "field": "weaponId",
+      "before": "lời-thề-tự-do-cổ-xưa",
+      "after": "11503",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11503; compatible weapon type.",
+      "rollback": {
+        "before": "lời-thề-tự-do-cổ-xưa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "buildId": "legacy-traveler-pyro",
+      "recordId": "3a04008b-736f-42a8-8ba6-c2f43ac88563",
+      "field": "weaponId",
+      "before": "chìa-khóa-khaj-nisut",
+      "after": "11511",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11511; compatible weapon type.",
+      "rollback": {
+        "before": "chìa-khóa-khaj-nisut",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "buildId": "legacy-traveler-pyro",
+      "recordId": "87ebed30-780c-4a0e-9eb8-4ed2fbfef21a",
+      "field": "weaponId",
+      "before": "kiếm-tế-lễ",
+      "after": "11403",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 11403; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-tế-lễ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "varka",
+      "buildId": "legacy-varka",
+      "recordId": "9678523b-c900-471a-a42e-07c485030513",
+      "field": "weaponId",
+      "before": "mẫu-cổ-hoa",
+      "after": "12406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-cổ-hoa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "varka",
+      "buildId": "legacy-varka",
+      "recordId": "a0379cb5-44ec-45e7-8a7f-ebcf3740f5f3",
+      "field": "weaponId",
+      "before": "đường-cùng-của-sói",
+      "after": "12502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12502; compatible weapon type.",
+      "rollback": {
+        "before": "đường-cùng-của-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "fa19a40e-941f-4394-a159-e48f7bd9ae83",
+      "field": "weaponId",
+      "before": "quyền-trượng-cát-đỏ",
+      "after": "13511",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13511; compatible weapon type.",
+      "rollback": {
+        "before": "quyền-trượng-cát-đỏ",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "35a664a5-a46d-4969-955a-65847989520a",
+      "field": "weaponId",
+      "before": "đoạn-thảo-trường-đao",
+      "after": "13509",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13509; compatible weapon type.",
+      "rollback": {
+        "before": "đoạn-thảo-trường-đao",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "41ca373d-f2f6-4d67-87ec-f1a88d125c47",
+      "field": "weaponId",
+      "before": "hòa-phác-diên",
+      "after": "13505",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13505; compatible weapon type.",
+      "rollback": {
+        "before": "hòa-phác-diên",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "7be9c23f-02a7-4d01-8b91-b7bb5841fc91",
+      "field": "weaponId",
+      "before": "bi-ca-lumidouce",
+      "after": "13513",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13513; compatible weapon type.",
+      "rollback": {
+        "before": "bi-ca-lumidouce",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "14e10e8e-a9a8-4a0d-af4a-2bca7a4a4c40",
+      "field": "weaponId",
+      "before": "hào-quang-tách-rời",
+      "after": "13515",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13515; compatible weapon type.",
+      "rollback": {
+        "before": "hào-quang-tách-rời",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "70ac7b58-df12-41e0-9604-d7fdc453f1fa",
+      "field": "weaponId",
+      "before": "trượng-hộ-ma",
+      "after": "13501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13501; compatible weapon type.",
+      "rollback": {
+        "before": "trượng-hộ-ma",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "b6bd8c7a-2cd5-4870-b158-27c6b9dcb3a3",
+      "field": "weaponId",
+      "before": "tai-họa-và-hối-hận",
+      "after": "13517",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13517; compatible weapon type.",
+      "rollback": {
+        "before": "tai-họa-và-hối-hận",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "663b73ba-5ca4-42bf-9a3e-a59e37e67509",
+      "field": "weaponId",
+      "before": "lao-xiên-cá",
+      "after": "13415",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13415; compatible weapon type.",
+      "rollback": {
+        "before": "lao-xiên-cá",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "45361342-de26-4cbf-b2ab-9f6dd38870e4",
+      "field": "weaponId",
+      "before": "thương-quyết-chiến",
+      "after": "13405",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13405; compatible weapon type.",
+      "rollback": {
+        "before": "thương-quyết-chiến",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "5694ffd1-3529-4a30-aeaa-19e79c6bf502",
+      "field": "weaponId",
+      "before": "khúc-ca-vịnh-hẹp",
+      "after": "13424",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13424; compatible weapon type.",
+      "rollback": {
+        "before": "khúc-ca-vịnh-hẹp",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "d86f49f7-c519-4f4d-be5c-584ce896b08e",
+      "field": "weaponId",
+      "before": "hủy-diệt",
+      "after": "13507",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13507; compatible weapon type.",
+      "rollback": {
+        "before": "hủy-diệt",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "c4d36123-43ea-4c4b-8a39-0b8ac5daa983",
+      "field": "weaponId",
+      "before": "giáo-nịnh-thần",
+      "after": "13504",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13504; compatible weapon type.",
+      "rollback": {
+        "before": "giáo-nịnh-thần",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "6a0bc3c9-878a-47d4-9f0d-1cd47ec916d1",
+      "field": "weaponId",
+      "before": "hình-thái-xích-nguyệt",
+      "after": "13512",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13512; compatible weapon type.",
+      "rollback": {
+        "before": "hình-thái-xích-nguyệt",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "13434f69-7ae5-43f8-83bc-5c8616c901bb",
+      "field": "weaponId",
+      "before": "tàn-tích-nhuốm-máu",
+      "after": "13516",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13516; compatible weapon type.",
+      "rollback": {
+        "before": "tàn-tích-nhuốm-máu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "2e4f594e-76e9-40fa-92dc-1e3d55406b98",
+      "field": "weaponId",
+      "before": "vây-cá-chẻ-sóng",
+      "after": "13416",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13416; compatible weapon type.",
+      "rollback": {
+        "before": "vây-cá-chẻ-sóng",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "c5c4f028-b844-4ea7-91c8-64681408d186",
+      "field": "weaponId",
+      "before": "mũi-nhọn-của-gió",
+      "after": "13419",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13419; compatible weapon type.",
+      "rollback": {
+        "before": "mũi-nhọn-của-gió",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "c1520faf-ddec-4d6b-bbb3-c4685e4e457f",
+      "field": "weaponId",
+      "before": "giáo-thập-tự-kitain",
+      "after": "13414",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13414; compatible weapon type.",
+      "rollback": {
+        "before": "giáo-thập-tự-kitain",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "a6bd8f9c-a8bc-41ef-b711-c274153460bd",
+      "field": "weaponId",
+      "before": "thương-thiên-nham",
+      "after": "13406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13406; compatible weapon type.",
+      "rollback": {
+        "before": "thương-thiên-nham",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "buildId": "legacy-xiangling",
+      "recordId": "a3375225-f696-4645-a47c-e288c0e33ece",
+      "field": "weaponId",
+      "before": "thương-tây-phong",
+      "after": "13407",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 13407; compatible weapon type.",
+      "rollback": {
+        "before": "thương-tây-phong",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "90e9d624-5f95-40f1-aac9-adf5b7f1aed0",
+      "field": "weaponId",
+      "before": "xích-giác-phá-thạch-đao",
+      "after": "12510",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12510; compatible weapon type.",
+      "rollback": {
+        "before": "xích-giác-phá-thạch-đao",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "ef9c00f6-0adf-4ed7-86d1-12a72732c800",
+      "field": "weaponId",
+      "before": "thiên-không-kiêu-ngạo",
+      "after": "12501",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12501; compatible weapon type.",
+      "rollback": {
+        "before": "thiên-không-kiêu-ngạo",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "59296723-2c29-4d72-83ed-1c0913c1f5aa",
+      "field": "weaponId",
+      "before": "kiếm-li-cốt",
+      "after": "12409",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12409; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-li-cốt",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "70b52897-5697-437e-9c88-eab1d20ea657",
+      "field": "weaponId",
+      "before": "kiếm-vô-công",
+      "after": "12504",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12504; compatible weapon type.",
+      "rollback": {
+        "before": "kiếm-vô-công",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "c412df5f-cba1-4aca-889f-58c9c2594427",
+      "field": "weaponId",
+      "before": "tiếng-gió-trong-rừng-thông",
+      "after": "12503",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12503; compatible weapon type.",
+      "rollback": {
+        "before": "tiếng-gió-trong-rừng-thông",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "af170a2a-c221-4163-a11f-701551140de7",
+      "field": "weaponId",
+      "before": "đường-cùng-của-sói",
+      "after": "12502",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12502; compatible weapon type.",
+      "rollback": {
+        "before": "đường-cùng-của-sói",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "55a25e09-faf6-439f-b16b-81c9c6c78985",
+      "field": "weaponId",
+      "before": "vua-biển-hàng-hiệu",
+      "after": "12412",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12412; compatible weapon type.",
+      "rollback": {
+        "before": "vua-biển-hàng-hiệu",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "6ee43417-4bb9-4ff3-a392-4888eb66b63c",
+      "field": "weaponId",
+      "before": "tuyết-vùi-tinh-ngân",
+      "after": "12411",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12411; compatible weapon type.",
+      "rollback": {
+        "before": "tuyết-vùi-tinh-ngân",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "buildId": "legacy-xinyan",
+      "recordId": "48e6882e-6bff-4065-b31d-e934fe9cc60b",
+      "field": "weaponId",
+      "before": "mẫu-cổ-hoa",
+      "after": "12406",
+      "classification": "UPDATE_REQUIRED",
+      "status": "PROPOSED_NOT_STAGED",
+      "humanApprovalRequired": true,
+      "evidence": "Exact EN/VI catalog name verified against genshin-db@5.2.15 numeric weapon ID 12406; compatible weapon type.",
+      "rollback": {
+        "before": "mẫu-cổ-hoa",
+        "guard": "Existing row and complete build version must match audit baseline."
+      }
+    }
+  ],
+  "cleanup": {
+    "confirmedTestRecord": {
+      "characterId": "albedo",
+      "buildId": "baseline-albedo",
+      "teamId": "268f1329-b6d6-471d-9f90-ff093c718464",
+      "name": "sdasd",
+      "state": "ALREADY_QUARANTINED_LEGACY_ARCHIVE",
+      "classification": "TEST_OR_JUNK_CONFIRMED",
+      "members": [
+        "albedo",
+        "aino",
+        "aloy",
+        "alhaitham"
+      ]
+    },
+    "placeholderRecommendations": [
+      {
+        "characterId": "aino",
+        "buildId": "legacy-aino",
+        "rowId": "9c5f738d-0676-4704-9f6f-fbeb30ac9057",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "alhaitham",
+        "buildId": "baseline-alhaitham",
+        "rowId": "b9392222-a0a0-4603-aa4e-614175c0920d",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "arataki-itto",
+        "buildId": "baseline-arataki-itto",
+        "rowId": "8d0924ac-a6db-49b4-a6c1-08ff3f619e96",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "baizhu",
+        "buildId": "baseline-baizhu",
+        "rowId": "dedea744-e9a2-4145-99de-01cd122517cf",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "barbara",
+        "buildId": "legacy-barbara",
+        "rowId": "fb407ef2-cf5a-4c76-8c5b-fc85f6754aef",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "beidou",
+        "buildId": "baseline-beidou",
+        "rowId": "1ec84c23-7771-4dc9-98c2-50efc2d0d18c",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "candace",
+        "buildId": "legacy-candace",
+        "rowId": "d57b59e9-7fb7-4ed6-8288-641fc20b919b",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "chasca",
+        "buildId": "baseline-chasca",
+        "rowId": "a26d48dd-d616-4bf0-b596-7cafff4f9455",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "chiori",
+        "buildId": "baseline-chiori",
+        "rowId": "d7f91d22-345d-43d1-a69c-0574533af344",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "clorinde",
+        "buildId": "baseline-clorinde",
+        "rowId": "4de982dc-08c5-433c-8941-b6441d1f629f",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "collei",
+        "buildId": "baseline-collei",
+        "rowId": "8fdd82c9-3c34-4028-af07-e9672445e05e",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "cyno",
+        "buildId": "baseline-cyno",
+        "rowId": "7abb4cea-9037-4e96-8b5d-f4e2e3cdd285",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "dahlia",
+        "buildId": "legacy-dahlia",
+        "rowId": "c33df15a-6dfe-44e3-8720-a684e0c39b88",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "dori",
+        "buildId": "legacy-dori",
+        "rowId": "20f8968b-cbb9-4336-a411-aa731409473f",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "emilie",
+        "buildId": "baseline-emilie",
+        "rowId": "b2d7dcd2-7f97-46d6-87da-7d4ddaf0314f",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "faruzan",
+        "buildId": "baseline-faruzan",
+        "rowId": "253f16ab-4839-4a8e-97e6-fb5c4ac423b7",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "fischl",
+        "buildId": "baseline-fischl",
+        "rowId": "35fbdb10-ffae-4673-b456-f4616a28e588",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "flins",
+        "buildId": "baseline-flins",
+        "rowId": "df7ab89a-3c45-40d0-9d51-b2a4dea5248f",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "freminet",
+        "buildId": "baseline-freminet",
+        "rowId": "ab2091e8-a8f4-44ff-a45d-34679d90ec1f",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "ganyu",
+        "buildId": "baseline-ganyu",
+        "rowId": "5aa2c727-433f-460b-b232-93fcf24d70cb",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "gorou",
+        "buildId": "baseline-gorou",
+        "rowId": "63cdb28b-b34d-41f1-b59b-f863cee042d3",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "iansan",
+        "buildId": "legacy-iansan",
+        "rowId": "ab6f7a6f-4d29-4489-a012-ddae314c479e",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "ifa",
+        "buildId": "baseline-ifa",
+        "rowId": "0ac4cd6d-0ae8-4547-b0da-ba4e7b90a1ec",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "illuga",
+        "buildId": "legacy-illuga",
+        "rowId": "4f70393f-7dd5-4190-bed3-758d19e8800a",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "ineffa",
+        "buildId": "baseline-ineffa",
+        "rowId": "5187605f-ee0f-44b0-a3c6-b48057778ed2",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "jahoda",
+        "buildId": "legacy-jahoda",
+        "rowId": "f5ece7ca-45cd-4f77-9516-a062c6aebe58",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "jean",
+        "buildId": "baseline-jean",
+        "rowId": "097c6e00-031e-44d6-b27f-8a47044fdd21",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "kachina",
+        "buildId": "legacy-kachina",
+        "rowId": "fc5ce990-6c5b-421b-9631-a45e396d3c06",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "kaeya",
+        "buildId": "baseline-kaeya",
+        "rowId": "f52c006e-e7da-471e-9a87-06547c3c9f5d",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "kamisato-ayaka",
+        "buildId": "baseline-kamisato-ayaka",
+        "rowId": "43b81e67-4aaf-4f32-a4a6-ba98d8c3a349",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "kaveh",
+        "buildId": "legacy-kaveh",
+        "rowId": "847bbb80-15f1-45d8-8267-78c15ac307df",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "keqing",
+        "buildId": "baseline-keqing",
+        "rowId": "609b7cd8-768e-4ee6-9482-b9fb4316c122",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "kinich",
+        "buildId": "baseline-kinich",
+        "rowId": "05dc9839-bd6d-47de-be8a-3d75a978d30f",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "kujou-sara",
+        "buildId": "baseline-kujou-sara",
+        "rowId": "d0c379e4-3834-4c32-8cde-e9ed93bcf50a",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "kuki-shinobu",
+        "buildId": "baseline-kuki-shinobu",
+        "rowId": "15f9825c-a1ff-4f47-a937-b10271741ce9",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "lanyan",
+        "buildId": "legacy-lanyan",
+        "rowId": "78986c24-6640-486f-9253-e4d3ec21c280",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "lauma",
+        "buildId": "baseline-lauma",
+        "rowId": "4a504b1f-4f7e-4ec4-bfae-5446672b300b",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "layla",
+        "buildId": "legacy-layla",
+        "rowId": "384aca3f-c993-47c2-8806-db3405253e7e",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "linnea",
+        "buildId": "legacy-linnea",
+        "rowId": "972346ed-1f67-4c46-b96c-dff291db4802",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "lisa",
+        "buildId": "baseline-lisa",
+        "rowId": "ee0bf566-af5b-4df4-91b9-2f49d86a5df0",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "lohen",
+        "buildId": "legacy-lohen",
+        "rowId": "665cb892-546b-4132-81d3-2f89a78fb3bd",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "lynette",
+        "buildId": "legacy-lynette",
+        "rowId": "616a74c1-abfb-469d-92d5-2ad3aa152077",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "mika",
+        "buildId": "baseline-mika",
+        "rowId": "c775f298-4d2c-4278-82ff-391f3ce9d78c",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "momoka",
+        "buildId": "baseline-momoka",
+        "rowId": "540857cc-215a-4878-a8b0-9db6247a9635",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "mona",
+        "buildId": "baseline-mona",
+        "rowId": "7c4c5c25-c4c4-4d77-9096-d921abb5069a",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "navia",
+        "buildId": "baseline-navia",
+        "rowId": "eee364ca-d26a-48e6-9875-64681f92564a",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "nefer",
+        "buildId": "baseline-nefer",
+        "rowId": "9f1dad10-adbf-42c1-be2f-8cb6241d31d3",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "ningguang",
+        "buildId": "baseline-ningguang",
+        "rowId": "b684adce-f80c-4907-9433-9cb9adc140e1",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "noelle",
+        "buildId": "baseline-noelle",
+        "rowId": "29bf49f8-9f85-4bc7-9192-3d3d47610272",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "ororon",
+        "buildId": "baseline-ororon",
+        "rowId": "19208db9-4369-40d6-afba-e31f42ecc577",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "prune",
+        "buildId": "legacy-prune",
+        "rowId": "c187df91-40a9-4884-a86d-2b0be6892788",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "qiqi",
+        "buildId": "baseline-qiqi",
+        "rowId": "879fb01c-f460-473e-ba54-50b6e28e73f2",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "razor",
+        "buildId": "baseline-razor",
+        "rowId": "b4cea009-9e3f-4f1e-b1e3-65999cad964d",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "rosaria",
+        "buildId": "baseline-rosaria",
+        "rowId": "a22b16cb-e3e4-4d45-ab9f-75617353b47d",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "sayu",
+        "buildId": "legacy-sayu",
+        "rowId": "28df0d47-4a4f-43e0-bbfc-aa2285be2a74",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "sethos",
+        "buildId": "baseline-sethos",
+        "rowId": "d1a56d10-a865-4fa6-afbc-289fde865e89",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "shenhe",
+        "buildId": "baseline-shenhe",
+        "rowId": "92bf3de8-37ce-40f4-b5aa-2a368ce61229",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "shikanoin-heizou",
+        "buildId": "baseline-shikanoin-heizou",
+        "rowId": "0748039c-059a-4497-ab7d-5f2b1a760f18",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "skirk",
+        "buildId": "baseline-skirk",
+        "rowId": "64c09e88-602f-4baf-bdb2-d72c8b24a341",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "sucrose",
+        "buildId": "baseline-sucrose",
+        "rowId": "c4108b87-0226-4da0-82ae-3723816f4306",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "tartaglia",
+        "buildId": "baseline-tartaglia",
+        "rowId": "33d540fd-2ec1-4925-90de-9c3c1f31e955",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "tighnari",
+        "buildId": "baseline-tighnari",
+        "rowId": "8e9f4790-b83b-4b88-8a1b-5b119d9d2842",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "traveler",
+        "buildId": "legacy-traveler",
+        "rowId": "e53aa2c4-850f-4a5b-bbbd-a11efc6ce58f",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "traveler-anemo",
+        "buildId": "legacy-traveler-anemo",
+        "rowId": "ec904f69-ab48-41ca-88ab-826cf9e3a85c",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "traveler-boy",
+        "buildId": "legacy-traveler-boy",
+        "rowId": "95b82ea0-d132-4921-9a00-cc49d7a7c63e",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "traveler-dendro",
+        "buildId": "baseline-traveler-dendro",
+        "rowId": "5cbf21d6-898d-490d-917f-e8dea6182335",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "traveler-electro",
+        "buildId": "legacy-traveler-electro",
+        "rowId": "ec17a145-b412-496e-a087-98a1d8dfab21",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "traveler-geo",
+        "buildId": "baseline-traveler-geo",
+        "rowId": "e7fc4f74-79e6-46cb-bf91-09b295de324a",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "traveler-girl",
+        "buildId": "legacy-traveler-girl",
+        "rowId": "6782d4c1-86ef-44c8-ad86-5d3beb82a574",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "varesa",
+        "buildId": "baseline-varesa",
+        "rowId": "2ae10c8c-945b-4284-bec7-b7414d6d4c01",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "varka",
+        "buildId": "legacy-varka",
+        "rowId": "a8c63248-d3ec-420f-a3ee-499a929bd73a",
+        "alreadyArchived": false,
+        "isDefault": true
+      },
+      {
+        "characterId": "venti",
+        "buildId": "baseline-venti",
+        "rowId": "4e083a26-06a5-4cee-b189-57cfef9caa72",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "wanderer",
+        "buildId": "baseline-wanderer",
+        "rowId": "d1dcd355-4e8f-4892-92f8-16fe2a02c7fd",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "wriothesley",
+        "buildId": "baseline-wriothesley",
+        "rowId": "bd88c907-6718-41b0-bb55-27242ab61e5e",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "xianyun",
+        "buildId": "baseline-xianyun",
+        "rowId": "b0a4a782-5c44-426f-8199-77afeb8fd6d8",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "xiao",
+        "buildId": "baseline-xiao",
+        "rowId": "2ed6d502-4f5d-4d12-b9e0-62f420f15597",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "xilonen",
+        "buildId": "baseline-xilonen",
+        "rowId": "71e7c134-7246-436b-8e54-149effebb8dd",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "xingqiu",
+        "buildId": "baseline-xingqiu",
+        "rowId": "ebab6538-e393-40a6-b8c7-f16aca3d236e",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "yae-miko",
+        "buildId": "baseline-yae-miko",
+        "rowId": "c4b13b43-e44e-4d07-b125-19169588d254",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "yaoyao",
+        "buildId": "baseline-yaoyao",
+        "rowId": "53a9bd29-0dfd-4284-b4c6-74366ffb7d5c",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "yumemizu",
+        "buildId": "baseline-yumemizu",
+        "rowId": "fd9fce69-cb08-4d27-a25a-135873743166",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "yun-jin",
+        "buildId": "baseline-yun-jin",
+        "rowId": "6f9fdd32-4e7a-4450-ba2d-9153693c6a16",
+        "alreadyArchived": true,
+        "isDefault": false
+      },
+      {
+        "characterId": "zibai",
+        "buildId": "baseline-zibai",
+        "rowId": "f0827c84-c5b5-4605-98ef-ecc7a6cc85dc",
+        "alreadyArchived": true,
+        "isDefault": false
+      }
+    ],
+    "archiveWrites": 0
+  }
+}

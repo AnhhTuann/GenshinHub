@@ -48,3 +48,5 @@ The two additional evidence recommendations are Favonius Sword R1 and Favonius L
 1. Resolve the candidate-specific gaps on both Favonius R1 proposals or record the recommended requests for changes in Weapon Tier Review. The other 18 can proceed to human examination of the rights evidence.
 2. Personally review each exact checksum-bound packet. Supply missing authorship and editorial provenance, verify all five grounds individually, and explicitly acknowledge the gameplay evidence. Use the existing Character signed note or Weapon rights controls described in the decision sheet.
 3. Provide and record the final candidate-specific Admin decision. For a Character approval, separately authorize its immediate public visibility. For a Weapon approval, authorize publication separately through the existing projection operation. Recheck the live checksum and version and take a fresh restore-tested development backup before any such write.
+
+[Consolidated decision sheet](FINAL_20_CANDIDATE_ADMIN_REVIEW.md) · [Candidate rights matrix](FINAL_20_CANDIDATE_RIGHTS_MATRIX.json) · [Tier confirmation audit report](FINAL_TIER_CHANGE_CONFIRMATIONS.md)

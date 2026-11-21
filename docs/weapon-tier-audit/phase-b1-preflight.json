@@ -1,0 +1,119 @@
+{
+  "phase": "B1",
+  "checks": [
+    {
+      "name": "DATABASE_URL points at local development DB",
+      "ok": true,
+      "detail": "127.0.0.1:5434/genshinhub"
+    },
+    {
+      "name": "No production DSN in environment",
+      "ok": true,
+      "detail": "development DSN only"
+    },
+    {
+      "name": "Docker container is postgres:15-alpine on 127.0.0.1:5434",
+      "ok": true,
+      "detail": "{\"5432/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"5434\"}]}"
+    },
+    {
+      "name": "Migration has no DROP statement",
+      "ok": true,
+      "detail": "DROP statement"
+    },
+    {
+      "name": "Migration has no TRUNCATE statement",
+      "ok": true,
+      "detail": "TRUNCATE statement"
+    },
+    {
+      "name": "Migration has no DML statement",
+      "ok": true,
+      "detail": "DML statement"
+    },
+    {
+      "name": "Migration has no legacy table ALTER",
+      "ok": true,
+      "detail": "legacy table ALTER"
+    },
+    {
+      "name": "Migration has no unrelated system referenced",
+      "ok": true,
+      "detail": "unrelated system referenced"
+    },
+    {
+      "name": "Every ALTER TABLE is ADD CONSTRAINT on a new table",
+      "ok": true,
+      "detail": "WeaponTierRank, WeaponTierAudit"
+    },
+    {
+      "name": "Migration creates both new tables and the null-safe unique key",
+      "ok": true,
+      "detail": "weapon-only objects"
+    },
+    {
+      "name": "Schema contains enum WeaponRankTier",
+      "ok": true,
+      "detail": "enum WeaponRankTier"
+    },
+    {
+      "name": "Schema contains enum WeaponTierRole",
+      "ok": true,
+      "detail": "enum WeaponTierRole"
+    },
+    {
+      "name": "Schema contains enum WeaponRefinementContext",
+      "ok": true,
+      "detail": "enum WeaponRefinementContext"
+    },
+    {
+      "name": "Schema contains model WeaponTierRank",
+      "ok": true,
+      "detail": "model WeaponTierRank"
+    },
+    {
+      "name": "Schema contains model WeaponTierAudit",
+      "ok": true,
+      "detail": "model WeaponTierAudit"
+    },
+    {
+      "name": "Weapon relation exposes tierRanks",
+      "ok": true,
+      "detail": "relation field"
+    },
+    {
+      "name": "Legacy Weapon.tier and Weapon.role still present",
+      "ok": true,
+      "detail": "legacy preserved"
+    },
+    {
+      "name": "Development DB has 279 weapons and zero legacy weapon tiers",
+      "ok": true,
+      "detail": "weapons=279 tiered=0 roleSet=0"
+    },
+    {
+      "name": "Weapon tier tables do not exist yet (no overwrite risk)",
+      "ok": true,
+      "detail": "CharacterBuild, CharacterBuildAudit"
+    },
+    {
+      "name": "Character Tier migration is the only recorded migration",
+      "ok": true,
+      "detail": "20261120151000_add_character_tier_rankings"
+    }
+  ],
+  "warnings": [
+    {
+      "name": "Multi-Build tables exist outside Prisma migration history",
+      "detail": "CharacterBuild, CharacterBuildAudit were applied by the separate development-migrations path; this weapon migration does not reference or alter them."
+    }
+  ],
+  "failures": [],
+  "ok": true,
+  "backup": {
+    "file": "/tmp/opencode/db-backups/genshinhub-pre-weapon-b1-final-20261120.dump",
+    "sha256": "2143ef16fd2fbcaa8b3d3e454170d1ae7867e265c62ab02a9863994ecb11a440",
+    "note": "Full custom-format dump taken immediately before the weapon migration; verified restorable."
+  },
+  "target": "127.0.0.1:5434/genshinhub"
+}

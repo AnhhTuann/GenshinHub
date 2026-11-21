@@ -1,0 +1,348 @@
+{
+  "phase": "D - READY FOR ADMIN REVIEW ONLY",
+  "status": "NO APPROVAL. NO DATABASE WRITE.",
+  "generatedFrom": "docs/tierlist-v7.2-audit/PHASE_B2_RANKING_DRAFTS.json",
+  "sourceBatchId": "phase-b2-independent-001",
+  "sourceBatchSha256": "7b102da59c3fe3c75f084363de5a989e2561c1816cb68737e228f967cc0afc2c",
+  "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+  "counts": {
+    "sourceRankings": 15,
+    "readyForAdminReview": 9,
+    "excluded": 6,
+    "currentlyImportable": 0
+  },
+  "allowedDecisions": [
+    "APPROVE",
+    "REQUEST_CHANGES",
+    "REJECT",
+    "PENDING"
+  ],
+  "records": [
+    {
+      "recordId": "CHAR-TIER-B2-01",
+      "recordKey": "xiangling|SUB_DPS|C0",
+      "characterId": "xiangling",
+      "characterName": "Xiangling",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 83.8,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu S va trinh Admin phe duyet.",
+      "risks": "Nhu cau ER 80 energy va battery van la gia dinh rotation; khong co risk ve evidence hoac rubric.",
+      "sensitivity": {
+        "performanceOnly": 84.7,
+        "performanceOnlyTier": "S"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:xiangling-sub_dps-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "0336f88f1ad66bedeccc7a125c90f9abee0a0c5d225fc507062e6a7391a79b89",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-02",
+      "recordKey": "xiangling|SUB_DPS|C6",
+      "characterId": "xiangling",
+      "characterName": "Xiangling",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "proposedTier": "S",
+      "rubricScore": 81.5,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu S va trinh Admin phe duyet.",
+      "risks": "Buff 15% Pyro DMG chi co gia tri voi Pyro damage; C1 Pyro RES shred khong duoc cong, da ghi ro.",
+      "sensitivity": {
+        "performanceOnly": 81.9,
+        "performanceOnlyTier": "S"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:xiangling-sub_dps-c6",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "ddde1a741219d9d62b4f0bdb9f0c00441dad25a7eee0a76248fde851c04fd56f",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-03",
+      "recordKey": "furina|SUB_DPS|C0",
+      "characterId": "furina",
+      "characterName": "Furina",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 87.9,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu SS va trinh Admin phe duyet.",
+      "risks": "Gia dinh co healer va dao dong HP de tich Fanfare; energy da dua ve 60 (khong phai \"cao\").",
+      "sensitivity": {
+        "performanceOnly": 88.4,
+        "performanceOnlyTier": "SS"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:furina-sub_dps-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "75541b909f10a7b23c9936239dcba65c2f4966dfe1e1b8000ec7cbb165a23efc",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-04",
+      "recordKey": "furina|SUPPORT|C0",
+      "characterId": "furina",
+      "characterName": "Furina",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 88.8,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu SS nhung Admin xac nhan hai record SUPPORT/SUB_DPS duoc phe duyet rieng.",
+      "risks": "Trung lap mot phan voi record SUB_DPS (cung kit, khac goc nhan); can Admin xac nhan cho phep hai role cho cung mot character.",
+      "sensitivity": {
+        "performanceOnly": 89.5,
+        "performanceOnlyTier": "SS"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:furina-support-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "538f11b1a3522b220f85b6ea206f837c1258b563b960c789c94817bd2d82370d",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-05",
+      "recordKey": "neuvillette|MAIN_DPS|C0",
+      "characterId": "neuvillette",
+      "characterName": "Neuvillette",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 86.3,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu SS va trinh Admin phe duyet.",
+      "risks": "Da sua gia dinh: can 3 loai reaction KHAC NHAU do party member trigger de lay du 3 stack (moi loai stack rieng, toi da 3). Interruption resistance van la gia dinh thao tac.",
+      "sensitivity": {
+        "performanceOnly": 86.4,
+        "performanceOnlyTier": "SS"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:neuvillette-main_dps-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "a5f92bff8291740647564f7acc8320a96cc9bcb8fa235011b52cb74c0f7c1805",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-06",
+      "recordKey": "raiden-shogun|MAIN_DPS|C0",
+      "characterId": "raiden-shogun",
+      "characterName": "Raiden Shogun",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 81.5,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu S va trinh Admin phe duyet.",
+      "risks": "Gia dinh party co nhieu unit hay dung Burst de tich Resolve; C2/C6 khong duoc cong.",
+      "sensitivity": {
+        "performanceOnly": 81.4,
+        "performanceOnlyTier": "S"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:raiden-shogun-main_dps-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "0a66f70cf3639d98046376b4930898020898d245160863f4ce0f9f0e56f703c2",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-07",
+      "recordKey": "nahida|SUPPORT|C0",
+      "characterId": "nahida",
+      "characterName": "Nahida",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 91,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu SS va trinh Admin phe duyet.",
+      "risks": "Da sua energy tu 80 thanh 50 theo genshin-db. Con phu thuoc reaction partner va duy tri mark.",
+      "sensitivity": {
+        "performanceOnly": 91.7,
+        "performanceOnlyTier": "SS"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:nahida-support-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "5a4394a5aa57e6ba10904bd2c0d0febd0a8c3cf49bebe05d4a119efb12029bc8",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-08",
+      "recordKey": "zhongli|SUPPORT|C0",
+      "characterId": "zhongli",
+      "characterName": "Zhongli",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 84.1,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu S va trinh Admin phe duyet.",
+      "risks": "Da sua energy tu 80 thanh 40 theo genshin-db. It damage buff truc tiep la diem yeu da ghi nhan.",
+      "sensitivity": {
+        "performanceOnly": 84.6,
+        "performanceOnlyTier": "S"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:zhongli-support-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "e4076469882f22b097ca886e8537c8a291781b08c70f67d72c10e82fe61155d0",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    },
+    {
+      "recordId": "CHAR-TIER-B2-09",
+      "recordKey": "yelan|SUB_DPS|C0",
+      "characterId": "yelan",
+      "characterName": "Yelan",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 83.9,
+      "category": "READY_FOR_ADMIN_REVIEW",
+      "reviewRecommendation": "Giu S va trinh Admin phe duyet.",
+      "risks": "Da sua energy tu 80 thanh 70 theo genshin-db. Buff ramp mat neu recast Burst la gia dinh da ghi ro.",
+      "sensitivity": {
+        "performanceOnly": 84.9,
+        "performanceOnlyTier": "S"
+      },
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:yelan-sub_dps-c0",
+      "batchId": "phase-b2-independent-001",
+      "gameVersion": "7.2",
+      "recordSha256": "bb5d45f5c28afb2b2fd61ef4bd5c0431c54b9d99b593fb4a0fe38951cc2eb225",
+      "sourceApprovalStatus": "PENDING_REVIEW",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false
+      }
+    }
+  ],
+  "excludedFromSheet": [
+    {
+      "recordKey": "bennett|SUPPORT|C0",
+      "category": "RUBRIC_RECALIBRATION",
+      "reason": "Evidence quality (20%) dang duoc tinh vao performance. Bo evidence va chuan hoa lai: 86.4 -> SS, trong khi rubric v1.0 cho S. Buff van bi tran boi Base ATK va field-bound."
+    },
+    {
+      "recordKey": "bennett|SUPPORT|C6",
+      "category": "RUBRIC_RECALIBRATION",
+      "reason": "SS chỉ hơn nguong 0.1 diem; +15% Pyro DMG va infusion chi ap dung cho sword/claymore/polearm, khong universal. Trung lap giua constellation score va access score khi danh gia chi phi C6."
+    },
+    {
+      "recordKey": "fischl|SUB_DPS|C0",
+      "category": "RUBRIC_RECALIBRATION",
+      "reason": "Bo evidence va chuan hoa lai: 76.4 -> S, lech mot tier so voi A hien tai. Local DB co 0 CharacterTeam row nen confidence MEDIUM; Oz van duoc duy tri la gia dinh."
+    },
+    {
+      "recordKey": "xingqiu|SUB_DPS|C0",
+      "category": "NEEDS_MORE_EVIDENCE",
+      "reason": "Co 3 trich dan genshin-db xac thuc nhung local DB chi 2 weapon / 1 artifact / 0 team row; confidence MEDIUM. Gia dinh DPS dung Normal Attack chua duoc corroborate bang team row."
+    },
+    {
+      "recordKey": "kaedehara-kazuha|SUPPORT|C0",
+      "category": "NEEDS_MORE_EVIDENCE",
+      "reason": "VV 40% RES shred la gia dinh artifact set (da bo sung trich dan genshin-db/artifacts). Local DB co 0 CharacterTeam row nen khong the corroborate rotation Swirl-truoc-DPS."
+    },
+    {
+      "recordKey": "mitya|SUPPORT|C0",
+      "category": "GAMEPLAY_ASSUMPTION_UNVERIFIED",
+      "reason": "Da bo sung dieu kien: 30 EM / Beacon chi o Steady State; Overloaded cho Beacon sau Stellar-Conduct; base Stellar-Conduct DMG cap 14%. Kit chi huu ich trong comp Electro+Cryo va can quan ly trang thai Core; release v7.2 nen local evidence con mong (3 team row)."
+    }
+  ],
+  "workflow": [
+    "Admin verifies the frozen record hash and reads risks/recommendation before deciding.",
+    "A real Admin session casts one decision per record; actor and timestamp are server-derived.",
+    "PENDING/REQUEST_CHANGES/REJECT blocks insert. Only APPROVE is import-eligible.",
+    "Insert must enter through the backend Admin context with audit logging; never via this JSON."
+  ]
+}

@@ -1,0 +1,1820 @@
+{
+  "isProUser": false,
+  "weaponsMap": {
+    "a_teaspoon_of_transcendence": {
+      "id": "a_teaspoon_of_transcendence",
+      "name": "A Teaspoon of Transcendence",
+      "rarity": 5
+    },
+    "a_thousand_blazing_suns": {
+      "id": "a_thousand_blazing_suns",
+      "name": "A Thousand Blazing Suns",
+      "rarity": 5
+    },
+    "a_thousand_floating_dreams": {
+      "id": "a_thousand_floating_dreams",
+      "name": "A Thousand Floating Dreams",
+      "rarity": 5
+    },
+    "absolution": {
+      "id": "absolution",
+      "name": "Absolution",
+      "rarity": 5
+    },
+    "akuoumaru": {
+      "id": "akuoumaru",
+      "name": "Akuoumaru",
+      "rarity": 4
+    },
+    "alley_hunter": {
+      "id": "alley_hunter",
+      "name": "Alley Hunter",
+      "rarity": 4
+    },
+    "amenoma_kageuchi": {
+      "id": "amenoma_kageuchi",
+      "name": "Amenoma Kageuchi",
+      "rarity": 4
+    },
+    "amos_bow": {
+      "id": "amos_bow",
+      "name": "Amos' Bow",
+      "rarity": 5
+    },
+    "angelos_heptades": {
+      "id": "angelos_heptades",
+      "name": "Angelos' Heptades",
+      "rarity": 5
+    },
+    "apprentices_notes": {
+      "id": "apprentices_notes",
+      "name": "Apprentice's Notes",
+      "rarity": 1
+    },
+    "aqua_simulacra": {
+      "id": "aqua_simulacra",
+      "name": "Aqua Simulacra",
+      "rarity": 5
+    },
+    "aquila_favonia": {
+      "id": "aquila_favonia",
+      "name": "Aquila Favonia",
+      "rarity": 5
+    },
+    "ashgraven_drinking_horn": {
+      "id": "ashgraven_drinking_horn",
+      "name": "Ash-Graven Drinking Horn",
+      "rarity": 4
+    },
+    "astral_vultures_crimson_plumage": {
+      "id": "astral_vultures_crimson_plumage",
+      "name": "Astral Vulture's Crimson Plumage",
+      "rarity": 5
+    },
+    "athame_artis": {
+      "id": "athame_artis",
+      "name": "Athame Artis",
+      "rarity": 5
+    },
+    "azurelight": {
+      "id": "azurelight",
+      "name": "Azurelight",
+      "rarity": 5
+    },
+    "ballad_of_the_boundless_blue": {
+      "id": "ballad_of_the_boundless_blue",
+      "name": "Ballad of the Boundless Blue",
+      "rarity": 4
+    },
+    "ballad_of_the_fjords": {
+      "id": "ballad_of_the_fjords",
+      "name": "Ballad of the Fjords",
+      "rarity": 4
+    },
+    "beacon_of_the_reed_sea": {
+      "id": "beacon_of_the_reed_sea",
+      "name": "Beacon of the Reed Sea",
+      "rarity": 5
+    },
+    "beginners_protector": {
+      "id": "beginners_protector",
+      "name": "Beginner's Protector",
+      "rarity": 1
+    },
+    "beyond_the_chrysalis": {
+      "id": "beyond_the_chrysalis",
+      "name": "Beyond the Chrysalis",
+      "rarity": 5
+    },
+    "black_tassel": {
+      "id": "black_tassel",
+      "name": "Black Tassel",
+      "rarity": 3
+    },
+    "blackcliff_agate": {
+      "id": "blackcliff_agate",
+      "name": "Blackcliff Agate",
+      "rarity": 4
+    },
+    "blackcliff_longsword": {
+      "id": "blackcliff_longsword",
+      "name": "Blackcliff Longsword",
+      "rarity": 4
+    },
+    "blackcliff_pole": {
+      "id": "blackcliff_pole",
+      "name": "Blackcliff Pole",
+      "rarity": 4
+    },
+    "blackcliff_slasher": {
+      "id": "blackcliff_slasher",
+      "name": "Blackcliff Slasher",
+      "rarity": 4
+    },
+    "blackcliff_warbow": {
+      "id": "blackcliff_warbow",
+      "name": "Blackcliff Warbow",
+      "rarity": 4
+    },
+    "blackmarrow_lantern": {
+      "id": "blackmarrow_lantern",
+      "name": "Blackmarrow Lantern",
+      "rarity": 4
+    },
+    "blade_of_atonement": {
+      "id": "blade_of_atonement",
+      "name": "Blade of Atonement",
+      "rarity": 4
+    },
+    "bloodsoaked_ruins": {
+      "id": "bloodsoaked_ruins",
+      "name": "Bloodsoaked Ruins",
+      "rarity": 5
+    },
+    "bloodtainted_greatsword": {
+      "id": "bloodtainted_greatsword",
+      "name": "Bloodtainted Greatsword",
+      "rarity": 3
+    },
+    "breezeborne_refrain": {
+      "id": "breezeborne_refrain",
+      "name": "Breezeborne Refrain",
+      "rarity": 4
+    },
+    "calamity_of_eshu": {
+      "id": "calamity_of_eshu",
+      "name": "Calamity of Eshu",
+      "rarity": 4
+    },
+    "calamity_queller": {
+      "id": "calamity_queller",
+      "name": "Calamity Queller",
+      "rarity": 5
+    },
+    "cashflow_supervision": {
+      "id": "cashflow_supervision",
+      "name": "Cashflow Supervision",
+      "rarity": 5
+    },
+    "chain_breaker": {
+      "id": "chain_breaker",
+      "name": "Chain Breaker",
+      "rarity": 4
+    },
+    "cinnabar_spindle": {
+      "id": "cinnabar_spindle",
+      "name": "Cinnabar Spindle",
+      "rarity": 4
+    },
+    "clash_of_kings": {
+      "id": "clash_of_kings",
+      "name": "Clash of Kings",
+      "rarity": 4
+    },
+    "cloudforged": {
+      "id": "cloudforged",
+      "name": "Cloudforged",
+      "rarity": 4
+    },
+    "compound_bow": {
+      "id": "compound_bow",
+      "name": "Compound Bow",
+      "rarity": 4
+    },
+    "cool_steel": {
+      "id": "cool_steel",
+      "name": "Cool Steel",
+      "rarity": 3
+    },
+    "covenant_of_frost_and_snow": {
+      "id": "covenant_of_frost_and_snow",
+      "name": "Covenant of Frost and Snow",
+      "rarity": 4
+    },
+    "cranes_echoing_call": {
+      "id": "cranes_echoing_call",
+      "name": "Crane's Echoing Call",
+      "rarity": 5
+    },
+    "crescent_pike": {
+      "id": "crescent_pike",
+      "name": "Crescent Pike",
+      "rarity": 4
+    },
+    "crimson_moons_semblance": {
+      "id": "crimson_moons_semblance",
+      "name": "Crimson Moon's Semblance",
+      "rarity": 5
+    },
+    "dark_iron_sword": {
+      "id": "dark_iron_sword",
+      "name": "Dark Iron Sword",
+      "rarity": 3
+    },
+    "dawning_frost": {
+      "id": "dawning_frost",
+      "name": "Dawning Frost",
+      "rarity": 4
+    },
+    "deathmatch": {
+      "id": "deathmatch",
+      "name": "Deathmatch",
+      "rarity": 4
+    },
+    "debate_club": {
+      "id": "debate_club",
+      "name": "Debate Club",
+      "rarity": 3
+    },
+    "dialogues_of_the_desert_sages": {
+      "id": "dialogues_of_the_desert_sages",
+      "name": "Dialogues of the Desert Sages",
+      "rarity": 4
+    },
+    "disaster_and_remorse": {
+      "id": "disaster_and_remorse",
+      "name": "Disaster and Remorse",
+      "rarity": 5
+    },
+    "dodoco_tales": {
+      "id": "dodoco_tales",
+      "name": "Dodoco Tales",
+      "rarity": 4
+    },
+    "dragons_bane": {
+      "id": "dragons_bane",
+      "name": "Dragon's Bane",
+      "rarity": 4
+    },
+    "dragonspine_spear": {
+      "id": "dragonspine_spear",
+      "name": "Dragonspine Spear",
+      "rarity": 4
+    },
+    "dull_blade": {
+      "id": "dull_blade",
+      "name": "Dull Blade",
+      "rarity": 1
+    },
+    "earth_shaker": {
+      "id": "earth_shaker",
+      "name": "Earth Shaker",
+      "rarity": 4
+    },
+    "echoes_of_the_heart": {
+      "id": "echoes_of_the_heart",
+      "name": "Echoes of the Heart",
+      "rarity": 4
+    },
+    "elegy_for_the_end": {
+      "id": "elegy_for_the_end",
+      "name": "Elegy for the End",
+      "rarity": 5
+    },
+    "emberwell": {
+      "id": "emberwell",
+      "name": "Emberwell",
+      "rarity": 4
+    },
+    "emerald_orb": {
+      "id": "emerald_orb",
+      "name": "Emerald Orb",
+      "rarity": 3
+    },
+    "end_of_the_line": {
+      "id": "end_of_the_line",
+      "name": "End of the Line",
+      "rarity": 4
+    },
+    "engulfing_lightning": {
+      "id": "engulfing_lightning",
+      "name": "Engulfing Lightning",
+      "rarity": 5
+    },
+    "etherlight_spindlelute": {
+      "id": "etherlight_spindlelute",
+      "name": "Etherlight Spindlelute",
+      "rarity": 4
+    },
+    "everlasting_moonglow": {
+      "id": "everlasting_moonglow",
+      "name": "Everlasting Moonglow",
+      "rarity": 5
+    },
+    "exaiphanes_blade": {
+      "id": "exaiphanes_blade",
+      "name": "Exaiphanes Blade",
+      "rarity": 5
+    },
+    "eye_of_perception": {
+      "id": "eye_of_perception",
+      "name": "Eye of Perception",
+      "rarity": 4
+    },
+    "fading_twilight": {
+      "id": "fading_twilight",
+      "name": "Fading Twilight",
+      "rarity": 4
+    },
+    "fang_of_the_mountain_king": {
+      "id": "fang_of_the_mountain_king",
+      "name": "Fang of the Mountain King",
+      "rarity": 5
+    },
+    "favonius_codex": {
+      "id": "favonius_codex",
+      "name": "Favonius Codex",
+      "rarity": 4
+    },
+    "favonius_greatsword": {
+      "id": "favonius_greatsword",
+      "name": "Favonius Greatsword",
+      "rarity": 4
+    },
+    "favonius_lance": {
+      "id": "favonius_lance",
+      "name": "Favonius Lance",
+      "rarity": 4
+    },
+    "favonius_sword": {
+      "id": "favonius_sword",
+      "name": "Favonius Sword",
+      "rarity": 4
+    },
+    "favonius_warbow": {
+      "id": "favonius_warbow",
+      "name": "Favonius Warbow",
+      "rarity": 4
+    },
+    "ferrous_shadow": {
+      "id": "ferrous_shadow",
+      "name": "Ferrous Shadow",
+      "rarity": 3
+    },
+    "festering_desire": {
+      "id": "festering_desire",
+      "name": "Festering Desire",
+      "rarity": 4
+    },
+    "fillet_blade": {
+      "id": "fillet_blade",
+      "name": "Fillet Blade",
+      "rarity": 3
+    },
+    "finale_of_the_deep": {
+      "id": "finale_of_the_deep",
+      "name": "Finale of the Deep",
+      "rarity": 4
+    },
+    "flameforged_insight": {
+      "id": "flameforged_insight",
+      "name": "Flame-Forged Insight",
+      "rarity": 4
+    },
+    "fleuve_cendre_ferryman": {
+      "id": "fleuve_cendre_ferryman",
+      "name": "Fleuve Cendre Ferryman",
+      "rarity": 4
+    },
+    "flowerwreathed_feathers": {
+      "id": "flowerwreathed_feathers",
+      "name": "Flower-Wreathed Feathers",
+      "rarity": 4
+    },
+    "flowing_purity": {
+      "id": "flowing_purity",
+      "name": "Flowing Purity",
+      "rarity": 4
+    },
+    "flute_of_ezpitzal": {
+      "id": "flute_of_ezpitzal",
+      "name": "Flute of Ezpitzal",
+      "rarity": 4
+    },
+    "footprint_of_the_rainbow": {
+      "id": "footprint_of_the_rainbow",
+      "name": "Footprint of the Rainbow",
+      "rarity": 4
+    },
+    "forest_regalia": {
+      "id": "forest_regalia",
+      "name": "Forest Regalia",
+      "rarity": 4
+    },
+    "forged_by_the_golden_melody": {
+      "id": "forged_by_the_golden_melody",
+      "name": "Forged by the Golden Melody",
+      "rarity": 4
+    },
+    "fractured_halo": {
+      "id": "fractured_halo",
+      "name": "Fractured Halo",
+      "rarity": 5
+    },
+    "freedomsworn": {
+      "id": "freedomsworn",
+      "name": "Freedom-Sworn",
+      "rarity": 5
+    },
+    "frostbearer": {
+      "id": "frostbearer",
+      "name": "Frostbearer",
+      "rarity": 4
+    },
+    "frostbreath": {
+      "id": "frostbreath",
+      "name": "Frostbreath",
+      "rarity": 4
+    },
+    "fruit_of_fulfillment": {
+      "id": "fruit_of_fulfillment",
+      "name": "Fruit of Fulfillment",
+      "rarity": 4
+    },
+    "fruitful_hook": {
+      "id": "fruitful_hook",
+      "name": "Fruitful Hook",
+      "rarity": 4
+    },
+    "gest_of_the_mighty_wolf": {
+      "id": "gest_of_the_mighty_wolf",
+      "name": "Gest of the Mighty Wolf",
+      "rarity": 5
+    },
+    "golden_frostbound_oath": {
+      "id": "golden_frostbound_oath",
+      "name": "Golden Frostbound Oath",
+      "rarity": 5
+    },
+    "hakushin_ring": {
+      "id": "hakushin_ring",
+      "name": "Hakushin Ring",
+      "rarity": 4
+    },
+    "halberd": {
+      "id": "halberd",
+      "name": "Halberd",
+      "rarity": 3
+    },
+    "hamayumi": {
+      "id": "hamayumi",
+      "name": "Hamayumi",
+      "rarity": 4
+    },
+    "haran_geppaku_futsu": {
+      "id": "haran_geppaku_futsu",
+      "name": "Haran Geppaku Futsu",
+      "rarity": 5
+    },
+    "harbinger_of_dawn": {
+      "id": "harbinger_of_dawn",
+      "name": "Harbinger of Dawn",
+      "rarity": 3
+    },
+    "heretics_molten_blade": {
+      "id": "heretics_molten_blade",
+      "name": "Heretic's Molten Blade",
+      "rarity": 4
+    },
+    "hunters_bow": {
+      "id": "hunters_bow",
+      "name": "Hunter's Bow",
+      "rarity": 1
+    },
+    "hunters_path": {
+      "id": "hunters_path",
+      "name": "Hunter's Path",
+      "rarity": 5
+    },
+    "hymn_of_the_maelstrom": {
+      "id": "hymn_of_the_maelstrom",
+      "name": "Hymn of the Maelstrom",
+      "rarity": 5
+    },
+    "ibis_piercer": {
+      "id": "ibis_piercer",
+      "name": "Ibis Piercer",
+      "rarity": 4
+    },
+    "iron_point": {
+      "id": "iron_point",
+      "name": "Iron Point",
+      "rarity": 2
+    },
+    "iron_sting": {
+      "id": "iron_sting",
+      "name": "Iron Sting",
+      "rarity": 4
+    },
+    "jade_vista": {
+      "id": "jade_vista",
+      "name": "Jade Vista",
+      "rarity": 4
+    },
+    "jadefalls_splendor": {
+      "id": "jadefalls_splendor",
+      "name": "Jadefall's Splendor",
+      "rarity": 5
+    },
+    "kagotsurube_isshin": {
+      "id": "kagotsurube_isshin",
+      "name": "Kagotsurube Isshin",
+      "rarity": 4
+    },
+    "kaguras_verity": {
+      "id": "kaguras_verity",
+      "name": "Kagura's Verity",
+      "rarity": 5
+    },
+    "katsuragikiri_nagamasa": {
+      "id": "katsuragikiri_nagamasa",
+      "name": "Katsuragikiri Nagamasa",
+      "rarity": 4
+    },
+    "key_of_khajnisut": {
+      "id": "key_of_khajnisut",
+      "name": "Key of Khaj-Nisut",
+      "rarity": 5
+    },
+    "kings_squire": {
+      "id": "kings_squire",
+      "name": "King's Squire",
+      "rarity": 4
+    },
+    "kitain_cross_spear": {
+      "id": "kitain_cross_spear",
+      "name": "Kitain Cross Spear",
+      "rarity": 4
+    },
+    "light_of_foliar_incision": {
+      "id": "light_of_foliar_incision",
+      "name": "Light of Foliar Incision",
+      "rarity": 5
+    },
+    "lightbearing_moonshard": {
+      "id": "lightbearing_moonshard",
+      "name": "Lightbearing Moonshard",
+      "rarity": 5
+    },
+    "lions_roar": {
+      "id": "lions_roar",
+      "name": "Lion's Roar",
+      "rarity": 4
+    },
+    "lithic_blade": {
+      "id": "lithic_blade",
+      "name": "Lithic Blade",
+      "rarity": 4
+    },
+    "lithic_spear": {
+      "id": "lithic_spear",
+      "name": "Lithic Spear",
+      "rarity": 4
+    },
+    "lost_prayer_to_the_sacred_winds": {
+      "id": "lost_prayer_to_the_sacred_winds",
+      "name": "Lost Prayer to the Sacred Winds",
+      "rarity": 5
+    },
+    "lumidouce_elegy": {
+      "id": "lumidouce_elegy",
+      "name": "Lumidouce Elegy",
+      "rarity": 5
+    },
+    "luxurious_sealord": {
+      "id": "luxurious_sealord",
+      "name": "Luxurious Sea-Lord",
+      "rarity": 4
+    },
+    "magic_guide": {
+      "id": "magic_guide",
+      "name": "Magic Guide",
+      "rarity": 3
+    },
+    "mailed_flower": {
+      "id": "mailed_flower",
+      "name": "Mailed Flower",
+      "rarity": 4
+    },
+    "makhaira_aquamarine": {
+      "id": "makhaira_aquamarine",
+      "name": "Makhaira Aquamarine",
+      "rarity": 4
+    },
+    "mappa_mare": {
+      "id": "mappa_mare",
+      "name": "Mappa Mare",
+      "rarity": 4
+    },
+    "master_key": {
+      "id": "master_key",
+      "name": "Master Key",
+      "rarity": 4
+    },
+    "memory_of_dust": {
+      "id": "memory_of_dust",
+      "name": "Memory of Dust",
+      "rarity": 5
+    },
+    "messenger": {
+      "id": "messenger",
+      "name": "Messenger",
+      "rarity": 3
+    },
+    "missive_windspear": {
+      "id": "missive_windspear",
+      "name": "Missive Windspear",
+      "rarity": 4
+    },
+    "mistsplitter_reforged": {
+      "id": "mistsplitter_reforged",
+      "name": "Mistsplitter Reforged",
+      "rarity": 5
+    },
+    "mitternachts_waltz": {
+      "id": "mitternachts_waltz",
+      "name": "Mitternachts Waltz",
+      "rarity": 4
+    },
+    "moonpiercer": {
+      "id": "moonpiercer",
+      "name": "Moonpiercer",
+      "rarity": 4
+    },
+    "moonweavers_dawn": {
+      "id": "moonweavers_dawn",
+      "name": "Moonweaver's Dawn",
+      "rarity": 4
+    },
+    "mountainbracing_bolt": {
+      "id": "mountainbracing_bolt",
+      "name": "Mountain-Bracing Bolt",
+      "rarity": 4
+    },
+    "mouuns_moon": {
+      "id": "mouuns_moon",
+      "name": "Mouun's Moon",
+      "rarity": 4
+    },
+    "new_bough": {
+      "id": "new_bough",
+      "name": "New Bough",
+      "rarity": 4
+    },
+    "nightweavers_looking_glass": {
+      "id": "nightweavers_looking_glass",
+      "name": "Nightweaver's Looking Glass",
+      "rarity": 5
+    },
+    "nocturnes_curtain_call": {
+      "id": "nocturnes_curtain_call",
+      "name": "Nocturne's Curtain Call",
+      "rarity": 5
+    },
+    "oathsworn_eye": {
+      "id": "oathsworn_eye",
+      "name": "Oathsworn Eye",
+      "rarity": 4
+    },
+    "old_mercs_pal": {
+      "id": "old_mercs_pal",
+      "name": "Old Merc's Pal",
+      "rarity": 2
+    },
+    "otherworldly_story": {
+      "id": "otherworldly_story",
+      "name": "Otherworldly Story",
+      "rarity": 3
+    },
+    "peak_patrol_song": {
+      "id": "peak_patrol_song",
+      "name": "Peak Patrol Song",
+      "rarity": 5
+    },
+    "pocket_grimoire": {
+      "id": "pocket_grimoire",
+      "name": "Pocket Grimoire",
+      "rarity": 2
+    },
+    "polar_star": {
+      "id": "polar_star",
+      "name": "Polar Star",
+      "rarity": 5
+    },
+    "portable_power_saw": {
+      "id": "portable_power_saw",
+      "name": "Portable Power Saw",
+      "rarity": 4
+    },
+    "predator": {
+      "id": "predator",
+      "name": "Predator",
+      "rarity": 4
+    },
+    "primordial_jade_cutter": {
+      "id": "primordial_jade_cutter",
+      "name": "Primordial Jade Cutter",
+      "rarity": 5
+    },
+    "primordial_jade_wingedspear": {
+      "id": "primordial_jade_wingedspear",
+      "name": "Primordial Jade Winged-Spear",
+      "rarity": 5
+    },
+    "prospectors_drill": {
+      "id": "prospectors_drill",
+      "name": "Prospector's Drill",
+      "rarity": 4
+    },
+    "prospectors_shovel": {
+      "id": "prospectors_shovel",
+      "name": "Prospector's Shovel",
+      "rarity": 4
+    },
+    "prototype_amber": {
+      "id": "prototype_amber",
+      "name": "Prototype Amber",
+      "rarity": 4
+    },
+    "prototype_archaic": {
+      "id": "prototype_archaic",
+      "name": "Prototype Archaic",
+      "rarity": 4
+    },
+    "prototype_crescent": {
+      "id": "prototype_crescent",
+      "name": "Prototype Crescent",
+      "rarity": 4
+    },
+    "prototype_rancour": {
+      "id": "prototype_rancour",
+      "name": "Prototype Rancour",
+      "rarity": 4
+    },
+    "prototype_starglitter": {
+      "id": "prototype_starglitter",
+      "name": "Prototype Starglitter",
+      "rarity": 4
+    },
+    "rainbow_serpents_rain_bow": {
+      "id": "rainbow_serpents_rain_bow",
+      "name": "Rainbow Serpent's Rain Bow",
+      "rarity": 4
+    },
+    "rainslasher": {
+      "id": "rainslasher",
+      "name": "Rainslasher",
+      "rarity": 4
+    },
+    "range_gauge": {
+      "id": "range_gauge",
+      "name": "Range Gauge",
+      "rarity": 4
+    },
+    "raven_bow": {
+      "id": "raven_bow",
+      "name": "Raven Bow",
+      "rarity": 3
+    },
+    "recurve_bow": {
+      "id": "recurve_bow",
+      "name": "Recurve Bow",
+      "rarity": 3
+    },
+    "redhorn_stonethresher": {
+      "id": "redhorn_stonethresher",
+      "name": "Redhorn Stonethresher",
+      "rarity": 5
+    },
+    "reliquary_of_truth": {
+      "id": "reliquary_of_truth",
+      "name": "Reliquary of Truth",
+      "rarity": 5
+    },
+    "rightful_reward": {
+      "id": "rightful_reward",
+      "name": "Rightful Reward",
+      "rarity": 4
+    },
+    "ring_of_yaxche": {
+      "id": "ring_of_yaxche",
+      "name": "Ring of Yaxche",
+      "rarity": 4
+    },
+    "royal_bow": {
+      "id": "royal_bow",
+      "name": "Royal Bow",
+      "rarity": 4
+    },
+    "royal_greatsword": {
+      "id": "royal_greatsword",
+      "name": "Royal Greatsword",
+      "rarity": 4
+    },
+    "royal_grimoire": {
+      "id": "royal_grimoire",
+      "name": "Royal Grimoire",
+      "rarity": 4
+    },
+    "royal_longsword": {
+      "id": "royal_longsword",
+      "name": "Royal Longsword",
+      "rarity": 4
+    },
+    "royal_spear": {
+      "id": "royal_spear",
+      "name": "Royal Spear",
+      "rarity": 4
+    },
+    "rust": {
+      "id": "rust",
+      "name": "Rust",
+      "rarity": 4
+    },
+    "sacrificers_staff": {
+      "id": "sacrificers_staff",
+      "name": "Sacrificer's Staff",
+      "rarity": 4
+    },
+    "sacrificial_bow": {
+      "id": "sacrificial_bow",
+      "name": "Sacrificial Bow",
+      "rarity": 4
+    },
+    "sacrificial_fragments": {
+      "id": "sacrificial_fragments",
+      "name": "Sacrificial Fragments",
+      "rarity": 4
+    },
+    "sacrificial_greatsword": {
+      "id": "sacrificial_greatsword",
+      "name": "Sacrificial Greatsword",
+      "rarity": 4
+    },
+    "sacrificial_jade": {
+      "id": "sacrificial_jade",
+      "name": "Sacrificial Jade",
+      "rarity": 4
+    },
+    "sacrificial_sword": {
+      "id": "sacrificial_sword",
+      "name": "Sacrificial Sword",
+      "rarity": 4
+    },
+    "sapwood_blade": {
+      "id": "sapwood_blade",
+      "name": "Sapwood Blade",
+      "rarity": 4
+    },
+    "scion_of_the_blazing_sun": {
+      "id": "scion_of_the_blazing_sun",
+      "name": "Scion of the Blazing Sun",
+      "rarity": 4
+    },
+    "seasoned_hunters_bow": {
+      "id": "seasoned_hunters_bow",
+      "name": "Seasoned Hunter's Bow",
+      "rarity": 2
+    },
+    "sequence_of_solitude": {
+      "id": "sequence_of_solitude",
+      "name": "Sequence of Solitude",
+      "rarity": 4
+    },
+    "serenitys_call": {
+      "id": "serenitys_call",
+      "name": "Serenity's Call",
+      "rarity": 4
+    },
+    "serpent_spine": {
+      "id": "serpent_spine",
+      "name": "Serpent Spine",
+      "rarity": 4
+    },
+    "sharpshooters_oath": {
+      "id": "sharpshooters_oath",
+      "name": "Sharpshooter's Oath",
+      "rarity": 3
+    },
+    "silver_light": {
+      "id": "silver_light",
+      "name": "Silver Light",
+      "rarity": 4
+    },
+    "silver_sword": {
+      "id": "silver_sword",
+      "name": "Silver Sword",
+      "rarity": 2
+    },
+    "silvershower_heartstrings": {
+      "id": "silvershower_heartstrings",
+      "name": "Silvershower Heartstrings",
+      "rarity": 5
+    },
+    "skyrider_greatsword": {
+      "id": "skyrider_greatsword",
+      "name": "Skyrider Greatsword",
+      "rarity": 3
+    },
+    "skyrider_sword": {
+      "id": "skyrider_sword",
+      "name": "Skyrider Sword",
+      "rarity": 3
+    },
+    "skyward_atlas": {
+      "id": "skyward_atlas",
+      "name": "Skyward Atlas",
+      "rarity": 5
+    },
+    "skyward_blade": {
+      "id": "skyward_blade",
+      "name": "Skyward Blade",
+      "rarity": 5
+    },
+    "skyward_harp": {
+      "id": "skyward_harp",
+      "name": "Skyward Harp",
+      "rarity": 5
+    },
+    "skyward_pride": {
+      "id": "skyward_pride",
+      "name": "Skyward Pride",
+      "rarity": 5
+    },
+    "skyward_spine": {
+      "id": "skyward_spine",
+      "name": "Skyward Spine",
+      "rarity": 5
+    },
+    "slingshot": {
+      "id": "slingshot",
+      "name": "Slingshot",
+      "rarity": 3
+    },
+    "snare_hook": {
+      "id": "snare_hook",
+      "name": "Snare Hook",
+      "rarity": 4
+    },
+    "snowtombed_starsilver": {
+      "id": "snowtombed_starsilver",
+      "name": "Snow-Tombed Starsilver",
+      "rarity": 4
+    },
+    "solar_pearl": {
+      "id": "solar_pearl",
+      "name": "Solar Pearl",
+      "rarity": 4
+    },
+    "song_of_broken_pines": {
+      "id": "song_of_broken_pines",
+      "name": "Song of Broken Pines",
+      "rarity": 5
+    },
+    "song_of_stillness": {
+      "id": "song_of_stillness",
+      "name": "Song of Stillness",
+      "rarity": 4
+    },
+    "song_of_the_vigil": {
+      "id": "song_of_the_vigil",
+      "name": "Song of the Vigil",
+      "rarity": 4
+    },
+    "splendor_of_tranquil_waters": {
+      "id": "splendor_of_tranquil_waters",
+      "name": "Splendor of Tranquil Waters",
+      "rarity": 5
+    },
+    "staff_of_homa": {
+      "id": "staff_of_homa",
+      "name": "Staff of Homa",
+      "rarity": 5
+    },
+    "staff_of_the_scarlet_sands": {
+      "id": "staff_of_the_scarlet_sands",
+      "name": "Staff of the Scarlet Sands",
+      "rarity": 5
+    },
+    "starcallers_watch": {
+      "id": "starcallers_watch",
+      "name": "Starcaller's Watch",
+      "rarity": 5
+    },
+    "starsealed_edict": {
+      "id": "starsealed_edict",
+      "name": "Starsealed Edict",
+      "rarity": 5
+    },
+    "sturdy_bone": {
+      "id": "sturdy_bone",
+      "name": "Sturdy Bone",
+      "rarity": 4
+    },
+    "summit_shaper": {
+      "id": "summit_shaper",
+      "name": "Summit Shaper",
+      "rarity": 5
+    },
+    "sunny_morning_sleepin": {
+      "id": "sunny_morning_sleepin",
+      "name": "Sunny Morning Sleep-In",
+      "rarity": 5
+    },
+    "surfs_up": {
+      "id": "surfs_up",
+      "name": "Surf's Up",
+      "rarity": 5
+    },
+    "sword_of_descension": {
+      "id": "sword_of_descension",
+      "name": "Sword of Descension",
+      "rarity": 4
+    },
+    "sword_of_narzissenkreuz": {
+      "id": "sword_of_narzissenkreuz",
+      "name": "Sword of Narzissenkreuz",
+      "rarity": 4
+    },
+    "symphonist_of_scents": {
+      "id": "symphonist_of_scents",
+      "name": "Symphonist of Scents",
+      "rarity": 5
+    },
+    "talking_stick": {
+      "id": "talking_stick",
+      "name": "Talking Stick",
+      "rarity": 4
+    },
+    "tamayuratei_no_ohanashi": {
+      "id": "tamayuratei_no_ohanashi",
+      "name": "Tamayuratei no Ohanashi",
+      "rarity": 4
+    },
+    "the_alley_flash": {
+      "id": "the_alley_flash",
+      "name": "The Alley Flash",
+      "rarity": 4
+    },
+    "the_bell": {
+      "id": "the_bell",
+      "name": "The Bell",
+      "rarity": 4
+    },
+    "the_black_sword": {
+      "id": "the_black_sword",
+      "name": "The Black Sword",
+      "rarity": 4
+    },
+    "the_catch": {
+      "id": "the_catch",
+      "name": "\"The Catch\"",
+      "rarity": 4
+    },
+    "the_daybreak_chronicles": {
+      "id": "the_daybreak_chronicles",
+      "name": "The Daybreak Chronicles",
+      "rarity": 5
+    },
+    "the_dockhands_assistant": {
+      "id": "the_dockhands_assistant",
+      "name": "The Dockhand's Assistant",
+      "rarity": 4
+    },
+    "the_first_great_magic": {
+      "id": "the_first_great_magic",
+      "name": "The First Great Magic",
+      "rarity": 5
+    },
+    "the_flute": {
+      "id": "the_flute",
+      "name": "The Flute",
+      "rarity": 4
+    },
+    "the_stringless": {
+      "id": "the_stringless",
+      "name": "The Stringless",
+      "rarity": 4
+    },
+    "the_unforged": {
+      "id": "the_unforged",
+      "name": "The Unforged",
+      "rarity": 5
+    },
+    "the_viridescent_hunt": {
+      "id": "the_viridescent_hunt",
+      "name": "The Viridescent Hunt",
+      "rarity": 4
+    },
+    "the_widsith": {
+      "id": "the_widsith",
+      "name": "The Widsith",
+      "rarity": 4
+    },
+    "thrilling_tales_of_dragon_slayers": {
+      "id": "thrilling_tales_of_dragon_slayers",
+      "name": "Thrilling Tales of Dragon Slayers",
+      "rarity": 3
+    },
+    "thundering_pulse": {
+      "id": "thundering_pulse",
+      "name": "Thundering Pulse",
+      "rarity": 5
+    },
+    "tidal_shadow": {
+      "id": "tidal_shadow",
+      "name": "Tidal Shadow",
+      "rarity": 4
+    },
+    "tome_of_the_eternal_flow": {
+      "id": "tome_of_the_eternal_flow",
+      "name": "Tome of the Eternal Flow",
+      "rarity": 5
+    },
+    "toukabou_shigure": {
+      "id": "toukabou_shigure",
+      "name": "Toukabou Shigure",
+      "rarity": 4
+    },
+    "travelers_handy_sword": {
+      "id": "travelers_handy_sword",
+      "name": "Traveler's Handy Sword",
+      "rarity": 3
+    },
+    "tulaytullahs_remembrance": {
+      "id": "tulaytullahs_remembrance",
+      "name": "Tulaytullah's Remembrance",
+      "rarity": 5
+    },
+    "twin_nephrite": {
+      "id": "twin_nephrite",
+      "name": "Twin Nephrite",
+      "rarity": 3
+    },
+    "ultimate_overlords_mega_magic_sword": {
+      "id": "ultimate_overlords_mega_magic_sword",
+      "name": "\"Ultimate Overlord's Mega Magic Sword\"",
+      "rarity": 4
+    },
+    "uraku_misugiri": {
+      "id": "uraku_misugiri",
+      "name": "Uraku Misugiri",
+      "rarity": 5
+    },
+    "verdict": {
+      "id": "verdict",
+      "name": "Verdict",
+      "rarity": 5
+    },
+    "vivid_notions": {
+      "id": "vivid_notions",
+      "name": "Vivid Notions",
+      "rarity": 5
+    },
+    "vortex_vanquisher": {
+      "id": "vortex_vanquisher",
+      "name": "Vortex Vanquisher",
+      "rarity": 5
+    },
+    "wandering_evenstar": {
+      "id": "wandering_evenstar",
+      "name": "Wandering Evenstar",
+      "rarity": 4
+    },
+    "waster_greatsword": {
+      "id": "waster_greatsword",
+      "name": "Waster Greatsword",
+      "rarity": 1
+    },
+    "wavebreakers_fin": {
+      "id": "wavebreakers_fin",
+      "name": "Wavebreaker's Fin",
+      "rarity": 4
+    },
+    "waveriding_whirl": {
+      "id": "waveriding_whirl",
+      "name": "Waveriding Whirl",
+      "rarity": 4
+    },
+    "white_iron_greatsword": {
+      "id": "white_iron_greatsword",
+      "name": "White Iron Greatsword",
+      "rarity": 3
+    },
+    "white_tassel": {
+      "id": "white_tassel",
+      "name": "White Tassel",
+      "rarity": 3
+    },
+    "whiteblind": {
+      "id": "whiteblind",
+      "name": "Whiteblind",
+      "rarity": 4
+    },
+    "whitelake_frostfeather": {
+      "id": "whitelake_frostfeather",
+      "name": "Whitelake Frostfeather",
+      "rarity": 5
+    },
+    "windblume_ode": {
+      "id": "windblume_ode",
+      "name": "Windblume Ode",
+      "rarity": 4
+    },
+    "wine_and_song": {
+      "id": "wine_and_song",
+      "name": "Wine and Song",
+      "rarity": 4
+    },
+    "winters_heavy_heart": {
+      "id": "winters_heavy_heart",
+      "name": "Winter's Heavy Heart",
+      "rarity": 4
+    },
+    "wolffang": {
+      "id": "wolffang",
+      "name": "Wolf-Fang",
+      "rarity": 4
+    },
+    "wolfs_gravestone": {
+      "id": "wolfs_gravestone",
+      "name": "Wolf's Gravestone",
+      "rarity": 5
+    },
+    "xiphos_moonlight": {
+      "id": "xiphos_moonlight",
+      "name": "Xiphos' Moonlight",
+      "rarity": 4
+    }
+  },
+  "tierlist": {
+    "sword": {
+      "maindps": {
+        "0": [
+          "primordial_jade_cutter",
+          "mistsplitter_reforged",
+          "haran_geppaku_futsu"
+        ],
+        "1": [
+          "uraku_misugiri",
+          "azurelight",
+          "lightbearing_moonshard",
+          "light_of_foliar_incision",
+          "splendor_of_tranquil_waters",
+          "absolution",
+          "calamity_of_eshu",
+          "wolffang",
+          "the_black_sword"
+        ],
+        "2": [
+          "skyward_blade",
+          "amenoma_kageuchi",
+          "toukabou_shigure",
+          "iron_sting",
+          "harbinger_of_dawn"
+        ],
+        "3": [
+          "summit_shaper",
+          "aquila_favonia",
+          "sturdy_bone",
+          "moonweavers_dawn",
+          "finale_of_the_deep",
+          "lions_roar",
+          "blackcliff_longsword"
+        ],
+        "4": [
+          "the_flute",
+          "royal_longsword",
+          "prototype_rancour",
+          "dark_iron_sword",
+          "skyrider_sword"
+        ],
+        "5": [
+          "sword_of_narzissenkreuz",
+          "sword_of_descension",
+          "kagotsurube_isshin",
+          "fillet_blade",
+          "cool_steel"
+        ]
+      },
+      "subdps": {
+        "0": [
+          "splendor_of_tranquil_waters",
+          "freedomsworn",
+          "primordial_jade_cutter",
+          "sacrificial_sword"
+        ],
+        "1": [
+          "uraku_misugiri",
+          "athame_artis",
+          "skyward_blade",
+          "key_of_khajnisut",
+          "fleuve_cendre_ferryman",
+          "favonius_sword",
+          "xiphos_moonlight",
+          "harbinger_of_dawn"
+        ],
+        "2": [
+          "wolffang",
+          "the_dockhands_assistant",
+          "serenitys_call",
+          "amenoma_kageuchi",
+          "iron_sting",
+          "toukabou_shigure",
+          "festering_desire"
+        ],
+        "3": [
+          "flute_of_ezpitzal",
+          "lions_roar",
+          "the_alley_flash",
+          "cinnabar_spindle"
+        ],
+        "4": [
+          "dark_iron_sword",
+          "cool_steel"
+        ],
+        "5": [
+          "skyrider_sword"
+        ]
+      },
+      "support": {
+        "0": [
+          "peak_patrol_song",
+          "freedomsworn",
+          "favonius_sword",
+          "xiphos_moonlight"
+        ],
+        "1": [
+          "skyward_blade",
+          "fleuve_cendre_ferryman",
+          "sacrificial_sword"
+        ],
+        "2": [
+          "sapwood_blade"
+        ],
+        "3": [
+          "the_dockhands_assistant",
+          "serenitys_call"
+        ],
+        "4": [],
+        "5": [
+          "travelers_handy_sword"
+        ]
+      }
+    },
+    "claymore": {
+      "maindps": {
+        "0": [
+          "verdict",
+          "a_thousand_blazing_suns",
+          "gest_of_the_mighty_wolf",
+          "beacon_of_the_reed_sea",
+          "redhorn_stonethresher",
+          "serpent_spine"
+        ],
+        "1": [
+          "fang_of_the_mountain_king",
+          "wolfs_gravestone",
+          "the_unforged",
+          "song_of_broken_pines"
+        ],
+        "2": [
+          "skyward_pride",
+          "earth_shaker",
+          "flameforged_insight",
+          "ultimate_overlords_mega_magic_sword",
+          "rainslasher",
+          "whiteblind",
+          "mailed_flower"
+        ],
+        "3": [
+          "fruitful_hook",
+          "talking_stick",
+          "luxurious_sealord",
+          "akuoumaru",
+          "prototype_archaic",
+          "blackcliff_slasher"
+        ],
+        "4": [
+          "tidal_shadow",
+          "lithic_blade",
+          "snowtombed_starsilver"
+        ],
+        "5": [
+          "royal_greatsword",
+          "white_iron_greatsword",
+          "ferrous_shadow",
+          "bloodtainted_greatsword",
+          "debate_club",
+          "skyrider_greatsword"
+        ]
+      },
+      "subdps": {
+        "0": [
+          "verdict",
+          "beacon_of_the_reed_sea",
+          "favonius_greatsword",
+          "sacrificial_greatsword"
+        ],
+        "1": [
+          "wolfs_gravestone",
+          "akuoumaru"
+        ],
+        "2": [
+          "skyward_pride",
+          "flameforged_insight",
+          "ultimate_overlords_mega_magic_sword",
+          "master_key",
+          "rainslasher",
+          "katsuragikiri_nagamasa",
+          "makhaira_aquamarine"
+        ],
+        "3": [
+          "mailed_flower",
+          "luxurious_sealord"
+        ],
+        "4": [
+          "tidal_shadow",
+          "portable_power_saw",
+          "lithic_blade"
+        ],
+        "5": [
+          "bloodtainted_greatsword"
+        ]
+      },
+      "support": {
+        "0": [
+          "wolfs_gravestone",
+          "beacon_of_the_reed_sea",
+          "favonius_greatsword"
+        ],
+        "1": [
+          "sacrificial_greatsword",
+          "makhaira_aquamarine"
+        ],
+        "2": [
+          "forest_regalia"
+        ],
+        "3": [
+          "master_key"
+        ],
+        "4": [
+          "the_unforged",
+          "the_bell"
+        ],
+        "5": [
+          "white_iron_greatsword",
+          "ferrous_shadow"
+        ]
+      }
+    },
+    "polearm": {
+      "maindps": {
+        "0": [
+          "staff_of_homa",
+          "primordial_jade_wingedspear",
+          "staff_of_the_scarlet_sands"
+        ],
+        "1": [
+          "engulfing_lightning",
+          "deathmatch"
+        ],
+        "2": [
+          "crimson_moons_semblance",
+          "bloodsoaked_ruins",
+          "vortex_vanquisher",
+          "calamity_queller",
+          "skyward_spine",
+          "ballad_of_the_fjords",
+          "prospectors_drill"
+        ],
+        "3": [
+          "sacrificers_staff",
+          "missive_windspear",
+          "prospectors_drill",
+          "tamayuratei_no_ohanashi",
+          "dragons_bane",
+          "blackcliff_pole",
+          "lithic_spear",
+          "white_tassel"
+        ],
+        "4": [
+          "crescent_pike",
+          "prototype_starglitter",
+          "dragonspine_spear"
+        ],
+        "5": [
+          "royal_spear",
+          "halberd"
+        ]
+      },
+      "subdps": {
+        "0": [
+          "symphonist_of_scents",
+          "engulfing_lightning",
+          "staff_of_homa",
+          "staff_of_the_scarlet_sands",
+          "the_catch",
+          "favonius_lance"
+        ],
+        "1": [
+          "lumidouce_elegy",
+          "skyward_spine",
+          "ballad_of_the_fjords",
+          "kitain_cross_spear",
+          "wavebreakers_fin"
+        ],
+        "2": [
+          "fractured_halo",
+          "calamity_queller",
+          "mountainbracing_bolt",
+          "sacrificers_staff",
+          "prospectors_drill",
+          "dragons_bane",
+          "deathmatch"
+        ],
+        "3": [
+          "moonpiercer",
+          "prospectors_drill",
+          "tamayuratei_no_ohanashi",
+          "missive_windspear",
+          "lithic_spear"
+        ],
+        "4": [
+          "footprint_of_the_rainbow",
+          "prototype_starglitter"
+        ],
+        "5": [
+          "black_tassel"
+        ]
+      },
+      "support": {
+        "0": [
+          "favonius_lance"
+        ],
+        "1": [
+          "symphonist_of_scents",
+          "rightful_reward",
+          "dialogues_of_the_desert_sages",
+          "black_tassel"
+        ],
+        "2": [
+          "fractured_halo",
+          "calamity_queller",
+          "moonpiercer"
+        ],
+        "3": [],
+        "4": [
+          "vortex_vanquisher"
+        ],
+        "5": []
+      }
+    },
+    "bow": {
+      "maindps": {
+        "0": [
+          "astral_vultures_crimson_plumage",
+          "the_first_great_magic",
+          "polar_star",
+          "thundering_pulse",
+          "aqua_simulacra"
+        ],
+        "1": [
+          "hunters_bow",
+          "amos_bow",
+          "skyward_harp",
+          "flowerwreathed_feathers",
+          "rust"
+        ],
+        "2": [
+          "the_daybreak_chronicles",
+          "scion_of_the_blazing_sun",
+          "hamayumi",
+          "mouuns_moon"
+        ],
+        "3": [
+          "chain_breaker",
+          "range_gauge",
+          "cloudforged",
+          "mitternachts_waltz",
+          "blackcliff_warbow",
+          "the_viridescent_hunt",
+          "kings_squire",
+          "raven_bow",
+          "slingshot"
+        ],
+        "4": [
+          "ibis_piercer",
+          "prototype_crescent",
+          "compound_bow",
+          "sharpshooters_oath"
+        ],
+        "5": [
+          "predator",
+          "royal_bow",
+          "messenger"
+        ]
+      },
+      "subdps": {
+        "0": [
+          "polar_star",
+          "aqua_simulacra",
+          "elegy_for_the_end",
+          "skyward_harp",
+          "the_stringless"
+        ],
+        "1": [
+          "hunters_bow",
+          "favonius_warbow"
+        ],
+        "2": [
+          "silvershower_heartstrings",
+          "golden_frostbound_oath",
+          "song_of_stillness",
+          "snare_hook",
+          "rainbow_serpents_rain_bow",
+          "alley_hunter",
+          "mouuns_moon",
+          "fading_twilight",
+          "sacrificial_bow"
+        ],
+        "3": [
+          "sequence_of_solitude",
+          "range_gauge",
+          "cloudforged",
+          "windblume_ode",
+          "kings_squire"
+        ],
+        "4": [
+          "end_of_the_line",
+          "raven_bow",
+          "sharpshooters_oath"
+        ],
+        "5": []
+      },
+      "support": {
+        "0": [
+          "elegy_for_the_end",
+          "favonius_warbow"
+        ],
+        "1": [
+          "sacrificial_bow"
+        ],
+        "2": [
+          "silvershower_heartstrings"
+        ],
+        "3": [
+          "chain_breaker",
+          "sequence_of_solitude",
+          "snare_hook",
+          "rainbow_serpents_rain_bow"
+        ],
+        "4": [
+          "recurve_bow"
+        ],
+        "5": []
+      }
+    },
+    "catalyst": {
+      "maindps": {
+        "0": [
+          "lost_prayer_to_the_sacred_winds",
+          "tulaytullahs_remembrance",
+          "the_widsith"
+        ],
+        "1": [
+          "surfs_up",
+          "vivid_notions",
+          "cashflow_supervision",
+          "tome_of_the_eternal_flow",
+          "sunny_morning_sleepin",
+          "skyward_atlas",
+          "kaguras_verity",
+          "dawning_frost"
+        ],
+        "2": [
+          "reliquary_of_truth",
+          "nightweavers_looking_glass",
+          "memory_of_dust",
+          "ring_of_yaxche",
+          "etherlight_spindlelute",
+          "ballad_of_the_boundless_blue",
+          "solar_pearl"
+        ],
+        "3": [
+          "ashgraven_drinking_horn",
+          "flowing_purity",
+          "dodoco_tales",
+          "mappa_mare",
+          "wandering_evenstar",
+          "magic_guide"
+        ],
+        "4": [
+          "everlasting_moonglow",
+          "blackcliff_agate"
+        ],
+        "5": [
+          "eye_of_perception",
+          "royal_grimoire",
+          "frostbearer",
+          "wine_and_song",
+          "twin_nephrite",
+          "emerald_orb"
+        ]
+      },
+      "subdps": {
+        "0": [
+          "sunny_morning_sleepin",
+          "kaguras_verity",
+          "the_widsith"
+        ],
+        "1": [
+          "skyward_atlas",
+          "sacrificial_fragments"
+        ],
+        "2": [
+          "nocturnes_curtain_call",
+          "etherlight_spindlelute",
+          "fruit_of_fulfillment",
+          "blackmarrow_lantern",
+          "hakushin_ring",
+          "favonius_codex",
+          "mappa_mare",
+          "wandering_evenstar",
+          "magic_guide"
+        ],
+        "3": [
+          "waveriding_whirl",
+          "flowing_purity",
+          "sacrificial_jade"
+        ],
+        "4": [
+          "oathsworn_eye",
+          "emerald_orb"
+        ],
+        "5": [
+          "otherworldly_story"
+        ]
+      },
+      "support": {
+        "0": [
+          "starcallers_watch",
+          "a_thousand_floating_dreams",
+          "prototype_amber",
+          "thrilling_tales_of_dragon_slayers"
+        ],
+        "1": [
+          "cranes_echoing_call",
+          "sunny_morning_sleepin",
+          "favonius_codex",
+          "wandering_evenstar"
+        ],
+        "2": [
+          "nocturnes_curtain_call",
+          "etherlight_spindlelute",
+          "oathsworn_eye",
+          "hakushin_ring",
+          "sacrificial_fragments"
+        ],
+        "3": [
+          "everlasting_moonglow",
+          "jadefalls_splendor",
+          "waveriding_whirl",
+          "blackmarrow_lantern"
+        ],
+        "4": [],
+        "5": [
+          "otherworldly_story"
+        ]
+      }
+    },
+    "id": "weapons"
+  },
+  "pathname": "/en/tier-list-weapons",
+  "locale": "en",
+  "messages": {
+    "main_dps": "Main DPS",
+    "sub_dps": "Sub DPS",
+    "support": "Support"
+  }
+}

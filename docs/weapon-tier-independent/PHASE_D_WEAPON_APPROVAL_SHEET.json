@@ -1,0 +1,814 @@
+{
+  "phase": "D - READY FOR ADMIN REVIEW ONLY",
+  "status": "NO APPROVAL. NO RIGHTS FLIP. NO DATABASE WRITE.",
+  "source": {
+    "freezeManifest": "docs/weapon-tier-independent/freeze-manifest.json",
+    "freezeManifestSha256": "1ed3a88e32cf6d83d2f19b7820355465cccec6488b00491c0d4fcad2e23ed5dd",
+    "batchSha256": "e61f9f4cca59697b3812c17019c211555c51b8a2b81fd4af200e3857177a810e",
+    "decisionSheetSha256": "a100002cc2e5f1815bf20836bda1b111c68d97bd22aa924161541c61df40caf9",
+    "adminReviewSheetSha256": "ec4fb8cc2b2bb0888342f4cb81c57cc75d1814117ebc51450d1f524a91052d83",
+    "approvalPackageSha256": "3ad72e120b4b28405ac1df9c7aace93b3ce3c0c85d5d5f640c676eddb7a1bc00"
+  },
+  "counts": {
+    "candidates": 14,
+    "groupAReviewable": 13,
+    "groupBBlocked": 1,
+    "tierChangesRequiringReReview": 2,
+    "currentlyImportable": 0
+  },
+  "allowedDecisions": [
+    "APPROVE",
+    "REQUEST_CHANGES",
+    "REJECT"
+  ],
+  "rightsPolicy": {
+    "allPublishRightsVerifiedFalse": true,
+    "independentRankings": true,
+    "originalExplanations": true,
+    "noGenshinBuildsEditorialCopy": true,
+    "gameFactsAttributed": true,
+    "sourceDerivedResearchUsedAsRanking": false,
+    "note": "publishRightsVerified changes only after an authorized human verifies actual rights. Automation never flips it.",
+    "records": [
+      {
+        "candidateId": "independent-11401-SUPPORT-R1",
+        "weaponId": "11401",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Original Vietnamese explanation, internal rubric v1.1, genshin-db facts only. Eligible for explicit admin rights verification; flag stays false."
+      },
+      {
+        "candidateId": "independent-11403-SUB_DPS-R5",
+        "weaponId": "11403",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Explanation rewritten independently; no external editorial text. Flag stays false."
+      },
+      {
+        "candidateId": "independent-11418-SUPPORT-R1",
+        "weaponId": "11418",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Independent mechanical analysis; no external ranking text. Flag stays false."
+      },
+      {
+        "candidateId": "independent-11512-MAIN_DPS-R1",
+        "weaponId": "11512",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Rubric-based independent explanation; game facts from genshin-db. Flag stays false."
+      },
+      {
+        "candidateId": "independent-12502-SUPPORT-R1",
+        "weaponId": "12502",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Independent evaluation, not based on recommendation counts. Flag stays false."
+      },
+      {
+        "candidateId": "independent-13407-SUPPORT-R1",
+        "weaponId": "13407",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Internal analysis; no copied ranking text. Flag stays false."
+      },
+      {
+        "candidateId": "independent-13501-MAIN_DPS-R1",
+        "weaponId": "13501",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Independent tier decision, not from recommended-user lists. Flag stays false."
+      },
+      {
+        "candidateId": "independent-14302-SUPPORT-R5",
+        "weaponId": "14302",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Tier lowered by internal rubric, not copied from an external list. Flag stays false."
+      },
+      {
+        "candidateId": "independent-14402-SUB_DPS-R1",
+        "weaponId": "14402",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Tier change is an internal editorial conclusion; no external tier used. Flag stays false."
+      },
+      {
+        "candidateId": "independent-14406-SUPPORT-R5",
+        "weaponId": "14406",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Corrected explanation is original GenshinHub text from local game facts. Flag stays false."
+      },
+      {
+        "candidateId": "independent-14509-SUB_DPS-R1",
+        "weaponId": "14509",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Explanation rewritten from local game facts; no external editorial text. Flag stays false."
+      },
+      {
+        "candidateId": "independent-15402-SUB_DPS-R1",
+        "weaponId": "15402",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Evidence pointer normalized to resolvable genshin-db and local game facts. Flag stays false."
+      },
+      {
+        "candidateId": "independent-15508-MAIN_DPS-R1",
+        "weaponId": "15508",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Corrected condition comes from local game facts; tier is independently judged. Flag stays false."
+      },
+      {
+        "candidateId": "independent-12401-SUB_DPS-R1",
+        "weaponId": "12401",
+        "publishRightsVerified": false,
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "attributionRecorded": true,
+        "assessment": "Corrected explanation is original; no external text converted. Flag stays false. Rights review is deferred until evidence is complete."
+      }
+    ]
+  },
+  "authenticationPolicy": {
+    "jsonActorIsEvidence": false,
+    "authorizationSource": "backend Admin session; x-admin-key verified against ADMIN_PASSWORD",
+    "actorSource": "verified session id; approvedBy and audit.actor are server-derived",
+    "permissionCheck": true,
+    "checksumBinding": true,
+    "auditLog": true,
+    "rejectChangedContent": true,
+    "fakeActorsRejected": true
+  },
+  "records": [
+    {
+      "candidateId": "independent-11401-SUPPORT-R1",
+      "weaponId": "11401",
+      "weaponName": "Favonius Sword",
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "proposedTier": "SS",
+      "oldTier": "SS",
+      "tierChanged": false,
+      "confidence": "HIGH",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "SS giữ nguyên: sinh hạt ER ở R1 hoạt động ngay, phổ dụng cho Support kiếm cần xoay vòng; điều kiện bạo kích được ghi rõ nên không phải buff không điều kiện.",
+      "exactGameplayAssumptions": [
+        "có tỷ lệ bạo kích đủ dùng",
+        "phải ra sân để gây bạo kích",
+        "R1 là mức đánh giá"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Original Vietnamese explanation, internal rubric v1.1, genshin-db facts only. Eligible for explicit admin rights verification; flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights explicitly, then approve or reject R1 / Support / SS with an admin key.",
+      "recordSha256": "99bcedcc30f03b29008f31285c00fdcac1a19dd0337c30764060c99bcfa9dce9",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-11403-SUB_DPS-R5",
+      "weaponId": "11403",
+      "weaponName": "Sacrificial Sword",
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "refinement": "R5",
+      "proposedTier": "S",
+      "oldTier": "S",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "S giữ nguyên nhưng kèm điều kiện: reset R5 mạnh (80%/16s) chỉ chuyển thành sát thương và năng lượng khi kỹ năng trúng địch và có lần recast trên sân.",
+      "exactGameplayAssumptions": [
+        "kỹ năng phải gây damage để có cơ hội reset",
+        "xác suất 80% và ICD 16s ở R5",
+        "cần on-field recast trong rotation",
+        "không giả định reset luôn proc"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Explanation rewritten independently; no external editorial text. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R5 / Sub DPS / S with the recorded recast condition.",
+      "recordSha256": "79833088e0284741a1401b572af8f51788c55f627225a0df02f2260bf90cd257",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-11418-SUPPORT-R1",
+      "weaponId": "11418",
+      "weaponName": "Xiphos' Moonlight",
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "proposedTier": "S",
+      "oldTier": "S",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "S giữ nguyên: buff ER đội hình có điều kiện EM, chạy off-field nhưng không phổ dụng như Favonius.",
+      "exactGameplayAssumptions": [
+        "cần đầu tư Tinh Thông",
+        "tự động kích hoạt mỗi 10s kể cả off-field",
+        "chia 30% cho đồng đội gần"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Independent mechanical analysis; no external ranking text. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R1 / Support / S.",
+      "recordSha256": "3e268bac16e789d3ddc732a562f5d8db4678f94784f663e5828da8683e36bda7",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-11512-MAIN_DPS-R1",
+      "weaponId": "11512",
+      "weaponName": "Light of Foliar Incision",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "refinement": "R1",
+      "proposedTier": "S",
+      "oldTier": "S",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "S giữ nguyên: passive mạnh nhưng bị khóa bởi đòn thường gây sát thương nguyên tố và hệ số EM, nên không xếp SS tổng quát.",
+      "exactGameplayAssumptions": [
+        "đòn thường phải gây sát thương nguyên tố",
+        "duy trì đòn thường trong 12s hoặc 28 lần",
+        "cần CRIT Rate và EM"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Rubric-based independent explanation; game facts from genshin-db. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R1 / Main DPS / S.",
+      "recordSha256": "ff161813968954a2eaf2387b04eed7da6232e9846328160079f571c99e047929",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-12401-SUB_DPS-R1",
+      "weaponId": "12401",
+      "weaponName": "Favonius Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "proposedTier": "A",
+      "oldTier": "A",
+      "tierChanged": false,
+      "confidence": "LOW",
+      "reviewStatus": "NEEDS_MORE_EVIDENCE",
+      "reviewGroup": "B",
+      "reviewRecommendation": "REQUEST_CHANGES",
+      "tierJustification": "A giữ nhưng confidence hạ LOW: lợi ích Sub DPS phụ thuộc cửa sổ on-field để crit, không có bằng chứng uptime ổn định.",
+      "exactGameplayAssumptions": [
+        "passive cần CRIT hit",
+        "nhân vật phải đứng sân khi kích hoạt",
+        "60% chance, 12s ICD, 6 Energy ở R1",
+        "cần CRIT Rate đủ"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Corrected explanation is original; no external text converted. Flag stays false. Rights review is deferred until evidence is complete.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Do not approve yet. Admin should return REQUEST_CHANGES requesting the rotation/CRIT evidence; re-review tier A after evidence is supplied, then verify rights explicitly.",
+      "recordSha256": "4c6d8185295e9e7abb9f1fdab6d682b85569c5d8b12ca1cbab8e67d20dff051a",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-12502-SUPPORT-R1",
+      "weaponId": "12502",
+      "weaponName": "Wolf's Gravestone",
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "proposedTier": "A",
+      "oldTier": "A",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "A giữ nguyên: buff ATK 40% mạnh nhưng có điều kiện HP <30% và uptime 12/30s, thiếu tiện ích năng lượng.",
+      "exactGameplayAssumptions": [
+        "mục tiêu phải dưới 30% HP",
+        "phải đánh trúng để kích hoạt",
+        "chu kỳ 30s, buff 12s"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Independent evaluation, not based on recommendation counts. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R1 / Support / A.",
+      "recordSha256": "4831c47ef50dd9ec4481101b0c0e408a29b7215e0c78bd3e433503ebbecf6724",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-13407-SUPPORT-R1",
+      "weaponId": "13407",
+      "weaponName": "Favonius Lance",
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "proposedTier": "SS",
+      "oldTier": "SS",
+      "tierChanged": false,
+      "confidence": "HIGH",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "SS giữ nguyên: ER substat cộng particle là tiện ích năng lượng phổ dụng, điều kiện crit được ghi rõ nhưng dễ đáp ứng.",
+      "exactGameplayAssumptions": [
+        "cần CRIT Rate đủ",
+        "phải có một lần đánh trên sân",
+        "R1 baseline"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Internal analysis; no copied ranking text. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R1 / Support / SS.",
+      "recordSha256": "9c05a3f28683a33234e1ad912882ad281822e53c0db41dcb3944d06212b83e0e",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-13501-MAIN_DPS-R1",
+      "weaponId": "13501",
+      "weaponName": "Staff of Homa",
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "refinement": "R1",
+      "proposedTier": "SS",
+      "oldTier": "SS",
+      "tierChanged": false,
+      "confidence": "HIGH",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "SS giữ nguyên: nền tảng CRIT DMG + ATK từ Max HP tự đủ và không giới hạn ở một vài nhân vật; bonus dưới 50% HP bị loại khỏi căn cứ SS. Không dùng danh sách Recommended Users làm bằng chứng.",
+      "exactGameplayAssumptions": [
+        "R1 baseline",
+        "phần ATK từ Max HP áp dụng cho mọi cán dài nhưng tỷ lệ hưởng lợi tùy Max HP",
+        "dưới 50% HP chỉ là phần thưởng, không tính vào căn cứ SS",
+        "nhân vật scale DEF/HP hưởng ít hơn từ phần ATK"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Independent tier decision, not from recommended-user lists. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R1 / Main DPS / SS.",
+      "recordSha256": "af208d96f8a5d859d1ed54bcc35d7c95122decec2c7897705aba62282cb17e86",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-14302-SUPPORT-R5",
+      "weaponId": "14302",
+      "weaponName": "Thrilling Tales of Dragon Slayers",
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "refinement": "R5",
+      "proposedTier": "S",
+      "oldTier": "SS",
+      "tierChanged": true,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "OLD_TIER=SS → PROPOSED_TIER=S. Lý do: buff 48% ATK chỉ áp dụng cho nhân vật vào sân kế tiếp, chỉ có ý nghĩa với carry scale ATK và phủ 10/20s; SS đòi hỏi tính phổ dụng mà record không chứng minh được.",
+      "exactGameplayAssumptions": [
+        "buff ATK cho nhân vật vào sân ngay sau người cầm",
+        "người cầm phải swap out đúng trình tự",
+        "10s duration / 20s cooldown",
+        "chỉ có giá trị nếu carry scale ATK"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Tier lowered by internal rubric, not copied from an external list. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Mandatory re-review of the SS→S change, then verify rights and approve/reject R5 / Support / S.",
+      "recordSha256": "14e2cd13fc59cf36709fcf2189ad9f9ea825f4c76adfd669b1d4fcc9667f7c57",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-14402-SUB_DPS-R1",
+      "weaponId": "14402",
+      "weaponName": "The Widsith",
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "proposedTier": "A",
+      "oldTier": "S",
+      "tierChanged": true,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "OLD_TIER=S → PROPOSED_TIER=A. Lý do: giá trị thay đổi theo nhóm nhân vật (EM có thể là bản ca tốt với Sub DPS scale EM, không phải luôn vô dụng), cộng thêm buff chỉ 10s trên chu kỳ 30s và dễ lệch burst window; A phản ánh kỳ vọng thực tế thay vì buff tốt nhất.",
+      "exactGameplayAssumptions": [
+        "kích hoạt khi nhân vật ra sân",
+        "ba hiệu ứng ngẫu nhiên và không chọn được bản ca",
+        "10s duration / 30s cooldown",
+        "cần căn burst window trong 10s hiệu lực",
+        "giá trị tùy nhóm: EM có thể hữu ích với Sub DPS scale EM hoặc đội chuyển hóa"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Tier change is an internal editorial conclusion; no external tier used. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Mandatory re-review of the S→A change, then verify rights and approve/reject R1 / Sub DPS / A.",
+      "recordSha256": "7976f8d5c0119eba5c393b495e4445f60d22486f2e4b33e6bcb799cbbc620df9",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-14406-SUPPORT-R5",
+      "weaponId": "14406",
+      "weaponName": "Prototype Amber",
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "refinement": "R5",
+      "proposedTier": "A",
+      "oldTier": "A",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "A giữ sau correction: mất khoản 'energy cho cả đội' từng được giả định, nhưng vẫn có 18% Max HP heal mỗi thành viên và 18 Energy cho người cầm; HP% substat và phụ thuộc Burst kéo giá trị xuống, không đủ cho S.",
+      "exactGameplayAssumptions": [
+        "phải dùng Elemental Burst để kích hoạt",
+        "6 Energy/2s trong 6s chỉ cho người cầm",
+        "mỗi thành viên hồi 6% Max HP của chính họ mỗi 2s",
+        "tổng 18% Max HP mỗi người trước healing bonus"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Corrected explanation is original GenshinHub text from local game facts. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify the corrected Gilding facts and verify rights explicitly, then approve/reject R5 / Support / A.",
+      "recordSha256": "25d579067f2654c8eb4f591a6eeee33ce0ef78965cb8414621fc69ddc6711e0d",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-14509-SUB_DPS-R1",
+      "weaponId": "14509",
+      "weaponName": "Kagura's Verity",
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "proposedTier": "A",
+      "oldTier": "A",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "A giữ nhưng chỉ khi đạt 3 stack trong 24s; không cộng 12% all-elemental DMG khi điều kiện chưa thỏa.",
+      "exactGameplayAssumptions": [
+        "stack tạo bằng Elemental Skill, không phải bằng thời gian đứng sân",
+        "mỗi tầng 24s, tối đa 3",
+        "cần 3 lần dùng kỹ năng",
+        "3 stack mới cho +12% elemental DMG ở R1"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Explanation rewritten from local game facts; no external editorial text. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights and the stack assumption, then approve/reject R1 / Sub DPS / A.",
+      "recordSha256": "50bf4af224937eaf825459f7c2dab84aea3cd36c634493631a606862acb9b381",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-15402-SUB_DPS-R1",
+      "weaponId": "15402",
+      "weaponName": "The Stringless",
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "proposedTier": "S",
+      "oldTier": "S",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "S giữ nguyên: buff Skill/Burst 24% hoạt động trực tiếp, EM là substat hữu ích cho Sub DPS phản ứng.",
+      "exactGameplayAssumptions": [
+        "R1 baseline",
+        "Sub DPS dùng kỹ năng và năng lượng",
+        "đội hình có thể kích hoạt phản ứng"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Evidence pointer normalized to resolvable genshin-db and local game facts. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify rights, then approve/reject R1 / Sub DPS / S.",
+      "recordSha256": "c4ded204a2e3c98b210583071984ca6607cb109d47de5e861fbb671e29bdc448",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    },
+    {
+      "candidateId": "independent-15508-MAIN_DPS-R1",
+      "weaponId": "15508",
+      "weaponName": "Aqua Simulacra",
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "refinement": "R1",
+      "proposedTier": "S",
+      "oldTier": "S",
+      "tierChanged": false,
+      "confidence": "MEDIUM",
+      "reviewStatus": "READY_FOR_ADMIN_REVIEW",
+      "reviewGroup": "A",
+      "reviewRecommendation": "APPROVE",
+      "tierJustification": "S giữ sau correction: điều kiện 'có địch ở gần' dễ đáp ứng nhưng buff chỉ 20% và HP ít giá trị với đa số Main DPS cung; không tự động coi là SS hay best-in-slot.",
+      "exactGameplayAssumptions": [
+        "phải có kẻ địch ở gần",
+        "buff có hiệu lực cả khi off-field",
+        "R1: +16% HP và +20% DMG",
+        "CRIT DMG là substat"
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "assessment": "Corrected condition comes from local game facts; tier is independently judged. Flag stays false.",
+        "originalExplanation": true,
+        "independentTier": true,
+        "externalEditorialTextCopied": false,
+        "gameFactsLicense": "game data facts from local genshin-db; attribution recorded in evidence",
+        "attributionRequiredAndRecorded": true
+      },
+      "adminActionRequired": "Verify the corrected proximity condition and verify rights explicitly, then approve/reject R1 / Main DPS / S.",
+      "recordSha256": "07431e870377f01815f9d071b363040a5f7124c5b3420308382a71620e0874e8",
+      "decision": {
+        "adminDecision": "PENDING",
+        "adminActor": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      }
+    }
+  ],
+  "tierChanges": [
+    {
+      "candidateId": "independent-14302-SUPPORT-R5",
+      "weaponName": "Thrilling Tales of Dragon Slayers",
+      "change": "SS → S",
+      "reason": "OLD_TIER=SS → PROPOSED_TIER=S. Lý do: buff 48% ATK chỉ áp dụng cho nhân vật vào sân kế tiếp, chỉ có ý nghĩa với carry scale ATK và phủ 10/20s; SS đòi hỏi tính phổ dụng mà record không chứng minh được.",
+      "tierReReviewConfirmed": false
+    },
+    {
+      "candidateId": "independent-14402-SUB_DPS-R1",
+      "weaponName": "The Widsith",
+      "change": "S → A",
+      "reason": "OLD_TIER=S → PROPOSED_TIER=A. Lý do: giá trị thay đổi theo nhóm nhân vật (EM có thể là bản ca tốt với Sub DPS scale EM, không phải luôn vô dụng), cộng thêm buff chỉ 10s trên chu kỳ 30s và dễ lệch burst window; A phản ánh kỳ vọng thực tế thay vì buff tốt nhất.",
+      "tierReReviewConfirmed": false
+    }
+  ],
+  "blocked": [
+    {
+      "candidateId": "independent-12401-SUB_DPS-R1",
+      "weaponName": "Favonius Greatsword",
+      "reason": "NEEDS_MORE_EVIDENCE - crit-rate assumptions, passive proc conditions, rotation, field time and energy assumptions require supplementation."
+    }
+  ],
+  "workflow": [
+    "Verify freeze manifest and per-record checksums before reading any decision.",
+    "Admin verifies rights explicitly; publishRightsVerified stays false until then.",
+    "Tier changes require a separate tierReReviewConfirmed decision.",
+    "Favonius Greatsword stays blocked; supplement evidence before any decision.",
+    "Import only after a real Admin session approves each record; actor/audit are server-derived."
+  ]
+}

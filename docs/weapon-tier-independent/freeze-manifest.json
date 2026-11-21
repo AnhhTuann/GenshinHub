@@ -1,0 +1,123 @@
+{
+  "phase": "B3",
+  "frozenAt": "2026-11-20T16:23:19.460Z",
+  "description": "Frozen B3 draft checksums. Per-record hash covers the candidate, its evidence and its review decision. No approval or rights flag is part of this freeze.",
+  "files": {
+    "docs/weapon-tier-audit/PHASE_B2_6_FINAL_REVIEW.md": {
+      "sha256": "1489092b927c1ef1b3882f0ca37ddcf2db415c45d31b74f3ed02d5b1df559530",
+      "size": 48117,
+      "mtimeMs": 1795166265795.1965
+    },
+    "docs/weapon-tier-independent/approval-package.json": {
+      "sha256": "3ad72e120b4b28405ac1df9c7aace93b3ce3c0c85d5d5f640c676eddb7a1bc00",
+      "size": 43391,
+      "mtimeMs": 1795165799755.9253
+    },
+    "backend/scripts/weapon-tier-independent/candidates.input.json": {
+      "sha256": "554704cc623535f38a2cda3ea8cb02a8facb29b265a3c394429782b392296704",
+      "size": 32497,
+      "mtimeMs": 1795165737965.1387
+    },
+    "backend/scripts/weapon-tier-independent/review.input.json": {
+      "sha256": "f6595a22ceb306d90f899f5306c300152291d6472e31694eeedf910a217efa31",
+      "size": 13661,
+      "mtimeMs": 1795165772078.9062
+    },
+    "docs/weapon-tier-independent/RUBRIC.md": {
+      "sha256": "05ef89acfbc90982dc2132ea3df776975055a6904fd544fc2bf84974dfdb7f74",
+      "size": 5417,
+      "mtimeMs": 1795164966432.02
+    },
+    "docs/weapon-tier-independent/independent-candidates.json": {
+      "sha256": "26931cdfb1eccc47a1a010bfe78ca68f5ee754d25d0147ef9d2802b1d92aca28",
+      "size": 47290,
+      "mtimeMs": 1795165799589.2566
+    },
+    "docs/weapon-tier-independent/game-facts.json": {
+      "sha256": "7d8312b98b973ba91ea0a40caebf165ea48e6d327ac176f0970d81144a1ea79c",
+      "size": 11183,
+      "mtimeMs": 1795164834420.3582
+    }
+  },
+  "records": [
+    {
+      "candidateId": "independent-11401-SUPPORT-R1",
+      "weaponId": "11401",
+      "sha256": "99bcedcc30f03b29008f31285c00fdcac1a19dd0337c30764060c99bcfa9dce9"
+    },
+    {
+      "candidateId": "independent-11403-SUB_DPS-R5",
+      "weaponId": "11403",
+      "sha256": "79833088e0284741a1401b572af8f51788c55f627225a0df02f2260bf90cd257"
+    },
+    {
+      "candidateId": "independent-11418-SUPPORT-R1",
+      "weaponId": "11418",
+      "sha256": "3e268bac16e789d3ddc732a562f5d8db4678f94784f663e5828da8683e36bda7"
+    },
+    {
+      "candidateId": "independent-11512-MAIN_DPS-R1",
+      "weaponId": "11512",
+      "sha256": "ff161813968954a2eaf2387b04eed7da6232e9846328160079f571c99e047929"
+    },
+    {
+      "candidateId": "independent-12401-SUB_DPS-R1",
+      "weaponId": "12401",
+      "sha256": "4c6d8185295e9e7abb9f1fdab6d682b85569c5d8b12ca1cbab8e67d20dff051a"
+    },
+    {
+      "candidateId": "independent-12502-SUPPORT-R1",
+      "weaponId": "12502",
+      "sha256": "4831c47ef50dd9ec4481101b0c0e408a29b7215e0c78bd3e433503ebbecf6724"
+    },
+    {
+      "candidateId": "independent-13407-SUPPORT-R1",
+      "weaponId": "13407",
+      "sha256": "9c05a3f28683a33234e1ad912882ad281822e53c0db41dcb3944d06212b83e0e"
+    },
+    {
+      "candidateId": "independent-13501-MAIN_DPS-R1",
+      "weaponId": "13501",
+      "sha256": "af208d96f8a5d859d1ed54bcc35d7c95122decec2c7897705aba62282cb17e86"
+    },
+    {
+      "candidateId": "independent-14302-SUPPORT-R5",
+      "weaponId": "14302",
+      "sha256": "14e2cd13fc59cf36709fcf2189ad9f9ea825f4c76adfd669b1d4fcc9667f7c57"
+    },
+    {
+      "candidateId": "independent-14402-SUB_DPS-R1",
+      "weaponId": "14402",
+      "sha256": "7976f8d5c0119eba5c393b495e4445f60d22486f2e4b33e6bcb799cbbc620df9"
+    },
+    {
+      "candidateId": "independent-14406-SUPPORT-R5",
+      "weaponId": "14406",
+      "sha256": "25d579067f2654c8eb4f591a6eeee33ce0ef78965cb8414621fc69ddc6711e0d"
+    },
+    {
+      "candidateId": "independent-14509-SUB_DPS-R1",
+      "weaponId": "14509",
+      "sha256": "50bf4af224937eaf825459f7c2dab84aea3cd36c634493631a606862acb9b381"
+    },
+    {
+      "candidateId": "independent-15402-SUB_DPS-R1",
+      "weaponId": "15402",
+      "sha256": "c4ded204a2e3c98b210583071984ca6607cb109d47de5e861fbb671e29bdc448"
+    },
+    {
+      "candidateId": "independent-15508-MAIN_DPS-R1",
+      "weaponId": "15508",
+      "sha256": "07431e870377f01815f9d071b363040a5f7124c5b3420308382a71620e0874e8"
+    }
+  ],
+  "batchSha256": "e61f9f4cca59697b3812c17019c211555c51b8a2b81fd4af200e3857177a810e",
+  "dbStateAtFreeze": {
+    "ranks": 0,
+    "audits": 0,
+    "weapons": 279
+  },
+  "writeCount": 0,
+  "decisionSheetSha256": "a100002cc2e5f1815bf20836bda1b111c68d97bd22aa924161541c61df40caf9",
+  "sha256": "30372bf5de13d50856d479789f64598b53fde474c6043f4787094d5fd628777a"
+}

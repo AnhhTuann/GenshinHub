@@ -1,0 +1,259 @@
+{
+  "mode": "DRY_RUN",
+  "endpoint": "http://127.0.0.1:4000/graphql",
+  "freezeOk": true,
+  "batchSha256": "e61f9f4cca59697b3812c17019c211555c51b8a2b81fd4af200e3857177a810e",
+  "dbState": {
+    "ranks": 0,
+    "audits": 0,
+    "matchesFreeze": true
+  },
+  "selection": {
+    "mode": "all",
+    "by": "candidateId",
+    "values": []
+  },
+  "adminAuthorization": {
+    "jsonActorIsEvidence": false,
+    "authorizationSource": "backend Admin session (x-admin-key verified against ADMIN_PASSWORD)",
+    "serverDerivedActor": true,
+    "permissionCheck": true,
+    "auditLog": true,
+    "rejectChangedContent": true,
+    "actorFieldsNeverSentToGraphQL": true
+  },
+  "counts": {
+    "total": 14,
+    "eligible": 0,
+    "blocked": 14,
+    "skipped": 0,
+    "changed": 0,
+    "writeCount": 0
+  },
+  "ok": false,
+  "issues": [
+    "FAKE_OR_MISSING_DECIDED_BY",
+    "MISSING_DECIDED_AT"
+  ],
+  "eligible": [],
+  "blocked": [
+    {
+      "candidateId": "independent-11401-SUPPORT-R1",
+      "weaponId": "11401",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-11403-SUB_DPS-R5",
+      "weaponId": "11403",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-11418-SUPPORT-R1",
+      "weaponId": "11418",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-11512-MAIN_DPS-R1",
+      "weaponId": "11512",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-12401-SUB_DPS-R1",
+      "weaponId": "12401",
+      "reviewGroup": "B",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN",
+        "GROUP_B_EVIDENCE_INCOMPLETE:critRateAssumptions,passiveProcConditions,rotation,fieldTimeRequirements,energyGenerationAssumptions,rubricJustification",
+        "GROUP_B_EVIDENCE_ACTOR_MISSING",
+        "GROUP_B_EVIDENCE_DATE_MISSING"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-12502-SUPPORT-R1",
+      "weaponId": "12502",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-13407-SUPPORT-R1",
+      "weaponId": "13407",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-13501-MAIN_DPS-R1",
+      "weaponId": "13501",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-14302-SUPPORT-R5",
+      "weaponId": "14302",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN",
+        "TIER_RE_REVIEW_NOT_CONFIRMED"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-14402-SUB_DPS-R1",
+      "weaponId": "14402",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN",
+        "TIER_RE_REVIEW_NOT_CONFIRMED"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-14406-SUPPORT-R5",
+      "weaponId": "14406",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-14509-SUB_DPS-R1",
+      "weaponId": "14509",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-15402-SUB_DPS-R1",
+      "weaponId": "15402",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    },
+    {
+      "candidateId": "independent-15508-MAIN_DPS-R1",
+      "weaponId": "15508",
+      "reviewGroup": "A",
+      "status": "blocked",
+      "reasons": [
+        "ADMIN_DECISION_PENDING",
+        "FAKE_OR_MISSING_ACTOR",
+        "MISSING_RECORD_DECIDED_AT",
+        "MISSING_DECISION_REASON",
+        "GAMEPLAY_EVIDENCE_NOT_ACKNOWLEDGED",
+        "RIGHTS_NOT_VERIFIED_BY_ADMIN"
+      ],
+      "decision": "PENDING"
+    }
+  ],
+  "skipped": [],
+  "changed": [],
+  "writeCount": 0
+}

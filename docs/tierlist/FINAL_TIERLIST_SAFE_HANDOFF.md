@@ -19,3 +19,5 @@
 ## Remaining human action
 
 Review the five grounds on each exact D2 candidate. Supply responsible authorship, dated source-use records and any applicable permission. Where the evidence cannot support the existing text, independently re-author it under a new version and checksum. Human gameplay acknowledgement, personal rights verification and any future approval or publication each require separate authorization.
+
+[Favonius decision results](FINAL_FAVONIUS_REQUEST_CHANGES_RESULT.md) · [18-candidate provenance matrix](FINAL_18_RIGHTS_PROVENANCE_MATRIX.json) · [Human review packet](FINAL_18_HUMAN_REVIEW_PACKET.md)

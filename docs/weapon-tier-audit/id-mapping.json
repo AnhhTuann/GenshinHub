@@ -1,0 +1,3771 @@
+{
+  "target": "127.0.0.1:5434/genshinhub",
+  "method": "source English name -> genshin-db 5.2.15 id -> local Weapon.id; normalized English name fallback; Vietnamese name cross-check only. Type verified from game data, never from artwork.",
+  "matched": {
+    "primordial_jade_cutter": {
+      "weaponId": "11505",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Primordial Jade Cutter",
+      "nameVi": "Bàn Nham Kết Lục",
+      "rarity": 5,
+      "gdbId": "11505",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "mistsplitter_reforged": {
+      "weaponId": "11509",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Mistsplitter Reforged",
+      "nameVi": "Ánh Sáng Đêm Sương Mù",
+      "rarity": 5,
+      "gdbId": "11509",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "haran_geppaku_futsu": {
+      "weaponId": "11510",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Haran Geppaku Futsu",
+      "nameVi": "Haran Geppaku Futsu",
+      "rarity": 5,
+      "gdbId": "11510",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "uraku_misugiri": {
+      "weaponId": "11514",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Uraku Misugiri",
+      "nameVi": "Uraku Misugiri",
+      "rarity": 5,
+      "gdbId": "11514",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "azurelight": {
+      "weaponId": "11517",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Azurelight",
+      "nameVi": "Thương Diệu",
+      "rarity": 5,
+      "gdbId": "11517",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "lightbearing_moonshard": {
+      "weaponId": "11519",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Lightbearing Moonshard",
+      "nameVi": "Mảnh Trăng Ánh Sáng",
+      "rarity": 5,
+      "gdbId": "11519",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "light_of_foliar_incision": {
+      "weaponId": "11512",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Light of Foliar Incision",
+      "nameVi": "Ánh Lá Phán Quyết",
+      "rarity": 5,
+      "gdbId": "11512",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "splendor_of_tranquil_waters": {
+      "weaponId": "11513",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Splendor of Tranquil Waters",
+      "nameVi": "Sắc Nước Lộng Lẫy",
+      "rarity": 5,
+      "gdbId": "11513",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "absolution": {
+      "weaponId": "11515",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Absolution",
+      "nameVi": "Xá Tội",
+      "rarity": 5,
+      "gdbId": "11515",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "calamity_of_eshu": {
+      "weaponId": "11432",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Calamity of Eshu",
+      "nameVi": "Tai Họa Eshu",
+      "rarity": 4,
+      "gdbId": "11432",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "wolffang": {
+      "weaponId": "11424",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Wolf-Fang",
+      "nameVi": "Nanh Sói",
+      "rarity": 4,
+      "gdbId": "11424",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "the_black_sword": {
+      "weaponId": "11409",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "The Black Sword",
+      "nameVi": "Kiếm Đen",
+      "rarity": 4,
+      "gdbId": "11409",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "skyward_blade": {
+      "weaponId": "11502",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Skyward Blade",
+      "nameVi": "Thiên Không Kiếm",
+      "rarity": 5,
+      "gdbId": "11502",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "amenoma_kageuchi": {
+      "weaponId": "11414",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Amenoma Kageuchi",
+      "nameVi": "Đoản Đao Amenoma",
+      "rarity": 4,
+      "gdbId": "11414",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "toukabou_shigure": {
+      "weaponId": "11422",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Toukabou Shigure",
+      "nameVi": "Toukabou Shigure",
+      "rarity": 4,
+      "gdbId": "11422",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "iron_sting": {
+      "weaponId": "11407",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Iron Sting",
+      "nameVi": "Thiết Phong Kích",
+      "rarity": 4,
+      "gdbId": "11407",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "harbinger_of_dawn": {
+      "weaponId": "11302",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Harbinger of Dawn",
+      "nameVi": "Thần Kiếm Lê Minh",
+      "rarity": 3,
+      "gdbId": "11302",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "summit_shaper": {
+      "weaponId": "11504",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Summit Shaper",
+      "nameVi": "Kiếm Chước Phong",
+      "rarity": 5,
+      "gdbId": "11504",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "aquila_favonia": {
+      "weaponId": "11501",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Aquila Favonia",
+      "nameVi": "Phong Ưng Kiếm",
+      "rarity": 5,
+      "gdbId": "11501",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "sturdy_bone": {
+      "weaponId": "11430",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Sturdy Bone",
+      "nameVi": "Xương Cứng",
+      "rarity": 4,
+      "gdbId": "11430",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "moonweavers_dawn": {
+      "weaponId": "11434",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Moonweaver's Dawn",
+      "nameVi": "Bình Minh Của Người Dệt Trăng",
+      "rarity": 4,
+      "gdbId": "11434",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "finale_of_the_deep": {
+      "weaponId": "11425",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Finale of the Deep",
+      "nameVi": "Nhạc Khúc Biển Sâu",
+      "rarity": 4,
+      "gdbId": "11425",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "lions_roar": {
+      "weaponId": "11405",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Lion's Roar",
+      "nameVi": "Tiếng Hét Của Rồng",
+      "rarity": 4,
+      "gdbId": "11405",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "blackcliff_longsword": {
+      "weaponId": "11408",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Blackcliff Longsword",
+      "nameVi": "Hắc Nham Trường Kiếm",
+      "rarity": 4,
+      "gdbId": "11408",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "the_flute": {
+      "weaponId": "11402",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "The Flute",
+      "nameVi": "Kiếm Sáo",
+      "rarity": 4,
+      "gdbId": "11402",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "royal_longsword": {
+      "weaponId": "11404",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Royal Longsword",
+      "nameVi": "Trường Kiếm Tông Thất",
+      "rarity": 4,
+      "gdbId": "11404",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "prototype_rancour": {
+      "weaponId": "11406",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Prototype Rancour",
+      "nameVi": "Mẫu Trảm Nham",
+      "rarity": 4,
+      "gdbId": "11406",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "dark_iron_sword": {
+      "weaponId": "11304",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Dark Iron Sword",
+      "nameVi": "Kiếm Sắt Đen",
+      "rarity": 3,
+      "gdbId": "11304",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "skyrider_sword": {
+      "weaponId": "11306",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Skyrider Sword",
+      "nameVi": "Kiếm Phi Thiên",
+      "rarity": 3,
+      "gdbId": "11306",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "freedomsworn": {
+      "weaponId": "11503",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Freedom-Sworn",
+      "nameVi": "Lời Thề Tự Do Cổ Xưa",
+      "rarity": 5,
+      "gdbId": "11503",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "sacrificial_sword": {
+      "weaponId": "11403",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Sacrificial Sword",
+      "nameVi": "Kiếm Tế Lễ",
+      "rarity": 4,
+      "gdbId": "11403",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "athame_artis": {
+      "weaponId": "11518",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Athame Artis",
+      "nameVi": "Hắc Ám Xâm Thực",
+      "rarity": 5,
+      "gdbId": "11518",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "key_of_khajnisut": {
+      "weaponId": "11511",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Key of Khaj-Nisut",
+      "nameVi": "Chìa Khóa Khaj-Nisut",
+      "rarity": 5,
+      "gdbId": "11511",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "fleuve_cendre_ferryman": {
+      "weaponId": "11426",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Fleuve Cendre Ferryman",
+      "nameVi": "Ống Đồng Fleuve Cendre",
+      "rarity": 4,
+      "gdbId": "11426",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "favonius_sword": {
+      "weaponId": "11401",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Favonius Sword",
+      "nameVi": "Tây Phong Kiếm",
+      "rarity": 4,
+      "gdbId": "11401",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "xiphos_moonlight": {
+      "weaponId": "11418",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Xiphos' Moonlight",
+      "nameVi": "Ánh Trăng Xiphos",
+      "rarity": 4,
+      "gdbId": "11418",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "the_dockhands_assistant": {
+      "weaponId": "11427",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "The Dockhand's Assistant",
+      "nameVi": "Kiếm Bến Tàu",
+      "rarity": 4,
+      "gdbId": "11427",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "serenitys_call": {
+      "weaponId": "11433",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Serenity's Call",
+      "nameVi": "Còi Yên Tĩnh",
+      "rarity": 4,
+      "gdbId": "11433",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "festering_desire": {
+      "weaponId": "11413",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Festering Desire",
+      "nameVi": "Răng Nanh Rỉ Sét",
+      "rarity": 4,
+      "gdbId": "11413",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "flute_of_ezpitzal": {
+      "weaponId": "11431",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Flute of Ezpitzal",
+      "nameVi": "Sáo Ezpitzal",
+      "rarity": 4,
+      "gdbId": "11431",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "the_alley_flash": {
+      "weaponId": "11410",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "The Alley Flash",
+      "nameVi": "Tia Sáng Nơi Hẻm Tối",
+      "rarity": 4,
+      "gdbId": "11410",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "cinnabar_spindle": {
+      "weaponId": "11415",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Cinnabar Spindle",
+      "nameVi": "Con Thoi Chu Sa",
+      "rarity": 4,
+      "gdbId": "11415",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "cool_steel": {
+      "weaponId": "11301",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Cool Steel",
+      "nameVi": "Lãnh Nhẫn",
+      "rarity": 3,
+      "gdbId": "11301",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "peak_patrol_song": {
+      "weaponId": "11516",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Peak Patrol Song",
+      "nameVi": "Khúc Ca Núi Đá",
+      "rarity": 5,
+      "gdbId": "11516",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "sapwood_blade": {
+      "weaponId": "11417",
+      "weaponType": "SWORD",
+      "dbType": "Kiếm Đơn",
+      "nameEn": "Sapwood Blade",
+      "nameVi": "Kiếm Gỗ",
+      "rarity": 4,
+      "gdbId": "11417",
+      "gdbType": "WEAPON_SWORD_ONE_HAND",
+      "via": "genshin-db id"
+    },
+    "verdict": {
+      "weaponId": "12512",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Verdict",
+      "nameVi": "Phán Quyết",
+      "rarity": 5,
+      "gdbId": "12512",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "a_thousand_blazing_suns": {
+      "weaponId": "12514",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "A Thousand Blazing Suns",
+      "nameVi": "Thiên Dương Rực Lửa",
+      "rarity": 5,
+      "gdbId": "12514",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "gest_of_the_mighty_wolf": {
+      "weaponId": "12515",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Gest of the Mighty Wolf",
+      "nameVi": "Chiến Hùng Ca Của Sói",
+      "rarity": 5,
+      "gdbId": "12515",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "beacon_of_the_reed_sea": {
+      "weaponId": "12511",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Beacon of the Reed Sea",
+      "nameVi": "Hải Đăng Bờ Biển Lau",
+      "rarity": 5,
+      "gdbId": "12511",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "redhorn_stonethresher": {
+      "weaponId": "12510",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Redhorn Stonethresher",
+      "nameVi": "Xích Giác Phá Thạch Đao",
+      "rarity": 5,
+      "gdbId": "12510",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "serpent_spine": {
+      "weaponId": "12409",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Serpent Spine",
+      "nameVi": "Kiếm Li Cốt",
+      "rarity": 4,
+      "gdbId": "12409",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "fang_of_the_mountain_king": {
+      "weaponId": "12513",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Fang of the Mountain King",
+      "nameVi": "Nanh Sơn Vương",
+      "rarity": 5,
+      "gdbId": "12513",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "wolfs_gravestone": {
+      "weaponId": "12502",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Wolf's Gravestone",
+      "nameVi": "Đường Cùng Của Sói",
+      "rarity": 5,
+      "gdbId": "12502",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "the_unforged": {
+      "weaponId": "12504",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "The Unforged",
+      "nameVi": "Kiếm Vô Công",
+      "rarity": 5,
+      "gdbId": "12504",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "song_of_broken_pines": {
+      "weaponId": "12503",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Song of Broken Pines",
+      "nameVi": "Tiếng Gió Trong Rừng Thông",
+      "rarity": 5,
+      "gdbId": "12503",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "skyward_pride": {
+      "weaponId": "12501",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Skyward Pride",
+      "nameVi": "Thiên Không Kiêu Ngạo",
+      "rarity": 5,
+      "gdbId": "12501",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "earth_shaker": {
+      "weaponId": "12431",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Earth Shaker",
+      "nameVi": "Đao Chấn Động",
+      "rarity": 4,
+      "gdbId": "12431",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "flameforged_insight": {
+      "weaponId": "12432",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Flame-Forged Insight",
+      "nameVi": "Trí Tuệ Dung Luyện",
+      "rarity": 4,
+      "gdbId": "12432",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "ultimate_overlords_mega_magic_sword": {
+      "weaponId": "12426",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "\"Ultimate Overlord's Mega Magic Sword\"",
+      "nameVi": "\"Bá Vương Tối Thượng Siêu Cấp Ma Kiếm\"",
+      "rarity": 4,
+      "gdbId": "12426",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "rainslasher": {
+      "weaponId": "12405",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Rainslasher",
+      "nameVi": "Vũ Tài",
+      "rarity": 4,
+      "gdbId": "12405",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "whiteblind": {
+      "weaponId": "12407",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Whiteblind",
+      "nameVi": "Kiếm Bạch Ảnh",
+      "rarity": 4,
+      "gdbId": "12407",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "mailed_flower": {
+      "weaponId": "12418",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Mailed Flower",
+      "nameVi": "Đóa Hoa Tôn Màu Thép",
+      "rarity": 4,
+      "gdbId": "12418",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "fruitful_hook": {
+      "weaponId": "12430",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Fruitful Hook",
+      "nameVi": "Móc Trĩu Quả",
+      "rarity": 4,
+      "gdbId": "12430",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "talking_stick": {
+      "weaponId": "12424",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Talking Stick",
+      "nameVi": "Gậy Đàm Phán",
+      "rarity": 4,
+      "gdbId": "12424",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "luxurious_sealord": {
+      "weaponId": "12412",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Luxurious Sea-Lord",
+      "nameVi": "Vua Biển Hàng Hiệu",
+      "rarity": 4,
+      "gdbId": "12412",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "akuoumaru": {
+      "weaponId": "12416",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Akuoumaru",
+      "nameVi": "Akuoumaru",
+      "rarity": 4,
+      "gdbId": "12416",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "prototype_archaic": {
+      "weaponId": "12406",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Prototype Archaic",
+      "nameVi": "Mẫu Cổ Hoa",
+      "rarity": 4,
+      "gdbId": "12406",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "blackcliff_slasher": {
+      "weaponId": "12408",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Blackcliff Slasher",
+      "nameVi": "Hắc Nham Trảm Đao",
+      "rarity": 4,
+      "gdbId": "12408",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "tidal_shadow": {
+      "weaponId": "12425",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Tidal Shadow",
+      "nameVi": "Bóng Tối Thủy Triều",
+      "rarity": 4,
+      "gdbId": "12425",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "lithic_blade": {
+      "weaponId": "12410",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Lithic Blade",
+      "nameVi": "Thiên Nham Cổ Kiếm",
+      "rarity": 4,
+      "gdbId": "12410",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "snowtombed_starsilver": {
+      "weaponId": "12411",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Snow-Tombed Starsilver",
+      "nameVi": "Tuyết Vùi Tinh Ngân",
+      "rarity": 4,
+      "gdbId": "12411",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "favonius_greatsword": {
+      "weaponId": "12401",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Favonius Greatsword",
+      "nameVi": "Đại Kiếm Tây Phong",
+      "rarity": 4,
+      "gdbId": "12401",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "sacrificial_greatsword": {
+      "weaponId": "12403",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Sacrificial Greatsword",
+      "nameVi": "Đại Kiếm Tế Lễ",
+      "rarity": 4,
+      "gdbId": "12403",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "master_key": {
+      "weaponId": "12433",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Master Key",
+      "nameVi": "Chìa Khóa Vạn Năng",
+      "rarity": 4,
+      "gdbId": "12433",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "katsuragikiri_nagamasa": {
+      "weaponId": "12414",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Katsuragikiri Nagamasa",
+      "nameVi": "Trường Đao Katsuragi",
+      "rarity": 4,
+      "gdbId": "12414",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "makhaira_aquamarine": {
+      "weaponId": "12415",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Makhaira Aquamarine",
+      "nameVi": "Sắc Nước Makhaira",
+      "rarity": 4,
+      "gdbId": "12415",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "portable_power_saw": {
+      "weaponId": "12427",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Portable Power Saw",
+      "nameVi": "Máy Cưa Cầm Tay",
+      "rarity": 4,
+      "gdbId": "12427",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "forest_regalia": {
+      "weaponId": "12417",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "Forest Regalia",
+      "nameVi": "Vương Khí Rừng Sâu",
+      "rarity": 4,
+      "gdbId": "12417",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "the_bell": {
+      "weaponId": "12402",
+      "weaponType": "CLAYMORE",
+      "dbType": "Trọng Kiếm",
+      "nameEn": "The Bell",
+      "nameVi": "Kiếm Chuông",
+      "rarity": 4,
+      "gdbId": "12402",
+      "gdbType": "WEAPON_CLAYMORE",
+      "via": "genshin-db id"
+    },
+    "staff_of_homa": {
+      "weaponId": "13501",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Staff of Homa",
+      "nameVi": "Trượng Hộ Ma",
+      "rarity": 5,
+      "gdbId": "13501",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "primordial_jade_wingedspear": {
+      "weaponId": "13505",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Primordial Jade Winged-Spear",
+      "nameVi": "Hòa Phác Diên",
+      "rarity": 5,
+      "gdbId": "13505",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "staff_of_the_scarlet_sands": {
+      "weaponId": "13511",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Staff of the Scarlet Sands",
+      "nameVi": "Quyền Trượng Cát Đỏ",
+      "rarity": 5,
+      "gdbId": "13511",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "engulfing_lightning": {
+      "weaponId": "13509",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Engulfing Lightning",
+      "nameVi": "Đoạn Thảo Trường Đao",
+      "rarity": 5,
+      "gdbId": "13509",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "deathmatch": {
+      "weaponId": "13405",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Deathmatch",
+      "nameVi": "Thương Quyết Chiến",
+      "rarity": 4,
+      "gdbId": "13405",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "crimson_moons_semblance": {
+      "weaponId": "13512",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Crimson Moon's Semblance",
+      "nameVi": "Hình Thái Xích Nguyệt",
+      "rarity": 5,
+      "gdbId": "13512",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "bloodsoaked_ruins": {
+      "weaponId": "13516",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Bloodsoaked Ruins",
+      "nameVi": "Tàn Tích Nhuốm Máu",
+      "rarity": 5,
+      "gdbId": "13516",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "vortex_vanquisher": {
+      "weaponId": "13504",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Vortex Vanquisher",
+      "nameVi": "Giáo Nịnh Thần",
+      "rarity": 5,
+      "gdbId": "13504",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "calamity_queller": {
+      "weaponId": "13507",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Calamity Queller",
+      "nameVi": "Hủy Diệt",
+      "rarity": 5,
+      "gdbId": "13507",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "skyward_spine": {
+      "weaponId": "13502",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Skyward Spine",
+      "nameVi": "Xương Sống Thiên Không",
+      "rarity": 5,
+      "gdbId": "13502",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "ballad_of_the_fjords": {
+      "weaponId": "13424",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Ballad of the Fjords",
+      "nameVi": "Khúc Ca Vịnh Hẹp",
+      "rarity": 4,
+      "gdbId": "13424",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "prospectors_drill": {
+      "weaponId": "13427",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Prospector's Drill",
+      "nameVi": "Mũi Khoan Thăm Dò",
+      "rarity": 4,
+      "gdbId": "13427",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "sacrificers_staff": {
+      "weaponId": "13434",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Sacrificer's Staff",
+      "nameVi": "Quyền Trượng Kẻ Thánh Tế",
+      "rarity": 4,
+      "gdbId": "13434",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "missive_windspear": {
+      "weaponId": "13419",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Missive Windspear",
+      "nameVi": "Mũi Nhọn Của Gió",
+      "rarity": 4,
+      "gdbId": "13419",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "tamayuratei_no_ohanashi": {
+      "weaponId": "13432",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Tamayuratei no Ohanashi",
+      "nameVi": "Tamayuratei no Ohanashi",
+      "rarity": 4,
+      "gdbId": "13432",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "dragons_bane": {
+      "weaponId": "13401",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Dragon's Bane",
+      "nameVi": "Tai Ương Của Rồng",
+      "rarity": 4,
+      "gdbId": "13401",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "blackcliff_pole": {
+      "weaponId": "13404",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Blackcliff Pole",
+      "nameVi": "Thương Hắc Nham",
+      "rarity": 4,
+      "gdbId": "13404",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "lithic_spear": {
+      "weaponId": "13406",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Lithic Spear",
+      "nameVi": "Thương Thiên Nham",
+      "rarity": 4,
+      "gdbId": "13406",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "white_tassel": {
+      "weaponId": "13301",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "White Tassel",
+      "nameVi": "Thương Bạch Anh",
+      "rarity": 3,
+      "gdbId": "13301",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "crescent_pike": {
+      "weaponId": "13403",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Crescent Pike",
+      "nameVi": "Lưu Nguyệt Châm",
+      "rarity": 4,
+      "gdbId": "13403",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "prototype_starglitter": {
+      "weaponId": "13402",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Prototype Starglitter",
+      "nameVi": "Mẫu Tinh Liêm",
+      "rarity": 4,
+      "gdbId": "13402",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "dragonspine_spear": {
+      "weaponId": "13409",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Dragonspine Spear",
+      "nameVi": "Thương Long Tích",
+      "rarity": 4,
+      "gdbId": "13409",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "symphonist_of_scents": {
+      "weaponId": "13514",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Symphonist of Scents",
+      "nameVi": "Nhạc Sĩ Hương Thơm",
+      "rarity": 5,
+      "gdbId": "13514",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "the_catch": {
+      "weaponId": "13415",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "\"The Catch\"",
+      "nameVi": "Lao Xiên Cá",
+      "rarity": 4,
+      "gdbId": "13415",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "favonius_lance": {
+      "weaponId": "13407",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Favonius Lance",
+      "nameVi": "Thương Tây Phong",
+      "rarity": 4,
+      "gdbId": "13407",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "lumidouce_elegy": {
+      "weaponId": "13513",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Lumidouce Elegy",
+      "nameVi": "Bi Ca Lumidouce",
+      "rarity": 5,
+      "gdbId": "13513",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "kitain_cross_spear": {
+      "weaponId": "13414",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Kitain Cross Spear",
+      "nameVi": "Giáo Thập Tự Kitain",
+      "rarity": 4,
+      "gdbId": "13414",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "wavebreakers_fin": {
+      "weaponId": "13416",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Wavebreaker's Fin",
+      "nameVi": "Vây Cá Chẻ Sóng",
+      "rarity": 4,
+      "gdbId": "13416",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "fractured_halo": {
+      "weaponId": "13515",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Fractured Halo",
+      "nameVi": "Hào Quang Tách Rời",
+      "rarity": 5,
+      "gdbId": "13515",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "mountainbracing_bolt": {
+      "weaponId": "13430",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Mountain-Bracing Bolt",
+      "nameVi": "Mũi Đinh Trấn Núi",
+      "rarity": 4,
+      "gdbId": "13430",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "moonpiercer": {
+      "weaponId": "13417",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Moonpiercer",
+      "nameVi": "Quán Nguyệt Thương",
+      "rarity": 4,
+      "gdbId": "13417",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "footprint_of_the_rainbow": {
+      "weaponId": "13431",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Footprint of the Rainbow",
+      "nameVi": "Vết Tích Cầu Vồng",
+      "rarity": 4,
+      "gdbId": "13431",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "rightful_reward": {
+      "weaponId": "13425",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Rightful Reward",
+      "nameVi": "Thù Lao Của Chính Nghĩa",
+      "rarity": 4,
+      "gdbId": "13425",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "dialogues_of_the_desert_sages": {
+      "weaponId": "13426",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Dialogues of the Desert Sages",
+      "nameVi": "Đối Thoại Của Hiền Giả Sa Mạc",
+      "rarity": 4,
+      "gdbId": "13426",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "black_tassel": {
+      "weaponId": "13303",
+      "weaponType": "POLEARM",
+      "dbType": "Vũ Khí Cán Dài",
+      "nameEn": "Black Tassel",
+      "nameVi": "Hắc Anh Thương",
+      "rarity": 3,
+      "gdbId": "13303",
+      "gdbType": "WEAPON_POLE",
+      "via": "genshin-db id"
+    },
+    "astral_vultures_crimson_plumage": {
+      "weaponId": "15514",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Astral Vulture's Crimson Plumage",
+      "nameVi": "Xích Vũ Tinh Tựu",
+      "rarity": 5,
+      "gdbId": "15514",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "the_first_great_magic": {
+      "weaponId": "15512",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "The First Great Magic",
+      "nameVi": "Màn Ảo Thuật Đầu Tiên",
+      "rarity": 5,
+      "gdbId": "15512",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "polar_star": {
+      "weaponId": "15507",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Polar Star",
+      "nameVi": "Ngôi Sao Cực Đông",
+      "rarity": 5,
+      "gdbId": "15507",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "thundering_pulse": {
+      "weaponId": "15509",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Thundering Pulse",
+      "nameVi": "Sấm Sét Rung Động",
+      "rarity": 5,
+      "gdbId": "15509",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "aqua_simulacra": {
+      "weaponId": "15508",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Aqua Simulacra",
+      "nameVi": "Nhược Thủy",
+      "rarity": 5,
+      "gdbId": "15508",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "hunters_bow": {
+      "weaponId": "15101",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Hunter's Bow",
+      "nameVi": "Cung Săn Bắn",
+      "rarity": 1,
+      "gdbId": "15101",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "amos_bow": {
+      "weaponId": "15502",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Amos' Bow",
+      "nameVi": "Cung Amos",
+      "rarity": 5,
+      "gdbId": "15502",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "skyward_harp": {
+      "weaponId": "15501",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Skyward Harp",
+      "nameVi": "Cánh Thiên Không",
+      "rarity": 5,
+      "gdbId": "15501",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "flowerwreathed_feathers": {
+      "weaponId": "15430",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Flower-Wreathed Feathers",
+      "nameVi": "Lông Vũ Thêu Hoa",
+      "rarity": 4,
+      "gdbId": "15430",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "rust": {
+      "weaponId": "15405",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Rust",
+      "nameVi": "Cung Rỉ Sét",
+      "rarity": 4,
+      "gdbId": "15405",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "the_daybreak_chronicles": {
+      "weaponId": "15515",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "The Daybreak Chronicles",
+      "nameVi": "Biên Niên Sử Bình Minh",
+      "rarity": 5,
+      "gdbId": "15515",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "scion_of_the_blazing_sun": {
+      "weaponId": "15424",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Scion of the Blazing Sun",
+      "nameVi": "Hậu Duệ Mặt Trời",
+      "rarity": 4,
+      "gdbId": "15424",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "hamayumi": {
+      "weaponId": "15414",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Hamayumi",
+      "nameVi": "Cung Trừ Ma",
+      "rarity": 4,
+      "gdbId": "15414",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "mouuns_moon": {
+      "weaponId": "15416",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Mouun's Moon",
+      "nameVi": "Ánh Trăng Mouun",
+      "rarity": 4,
+      "gdbId": "15416",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "chain_breaker": {
+      "weaponId": "15431",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Chain Breaker",
+      "nameVi": "Phá Xích",
+      "rarity": 4,
+      "gdbId": "15431",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "range_gauge": {
+      "weaponId": "15427",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Range Gauge",
+      "nameVi": "Máy Đo Cự Ly",
+      "rarity": 4,
+      "gdbId": "15427",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "cloudforged": {
+      "weaponId": "15426",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Cloudforged",
+      "nameVi": "Trúc Vân",
+      "rarity": 4,
+      "gdbId": "15426",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "mitternachts_waltz": {
+      "weaponId": "15412",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Mitternachts Waltz",
+      "nameVi": "Điệu Van Ban Đêm",
+      "rarity": 4,
+      "gdbId": "15412",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "blackcliff_warbow": {
+      "weaponId": "15408",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Blackcliff Warbow",
+      "nameVi": "Cung Hắc Nham",
+      "rarity": 4,
+      "gdbId": "15408",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "the_viridescent_hunt": {
+      "weaponId": "15409",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "The Viridescent Hunt",
+      "nameVi": "Cung Sắc Xanh",
+      "rarity": 4,
+      "gdbId": "15409",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "kings_squire": {
+      "weaponId": "15417",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "King's Squire",
+      "nameVi": "Cận Vệ Nhà Vua",
+      "rarity": 4,
+      "gdbId": "15417",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "raven_bow": {
+      "weaponId": "15301",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Raven Bow",
+      "nameVi": "Cung Lông Quạ",
+      "rarity": 3,
+      "gdbId": "15301",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "slingshot": {
+      "weaponId": "15304",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Slingshot",
+      "nameVi": "Nỏ Kéo",
+      "rarity": 3,
+      "gdbId": "15304",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "ibis_piercer": {
+      "weaponId": "15419",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Ibis Piercer",
+      "nameVi": "Mỏ Cò Xuyên Thấu",
+      "rarity": 4,
+      "gdbId": "15419",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "prototype_crescent": {
+      "weaponId": "15406",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Prototype Crescent",
+      "nameVi": "Mẫu Đạm Nguyệt",
+      "rarity": 4,
+      "gdbId": "15406",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "compound_bow": {
+      "weaponId": "15407",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Compound Bow",
+      "nameVi": "Cung Thép",
+      "rarity": 4,
+      "gdbId": "15407",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "sharpshooters_oath": {
+      "weaponId": "15302",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Sharpshooter's Oath",
+      "nameVi": "Lời Thề Xạ Thủ Thần",
+      "rarity": 3,
+      "gdbId": "15302",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "elegy_for_the_end": {
+      "weaponId": "15503",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Elegy for the End",
+      "nameVi": "Tiếng Thở Dài Vô Tận",
+      "rarity": 5,
+      "gdbId": "15503",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "the_stringless": {
+      "weaponId": "15402",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "The Stringless",
+      "nameVi": "Tuyệt Huyền",
+      "rarity": 4,
+      "gdbId": "15402",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "favonius_warbow": {
+      "weaponId": "15401",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Favonius Warbow",
+      "nameVi": "Cung Tây Phong",
+      "rarity": 4,
+      "gdbId": "15401",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "silvershower_heartstrings": {
+      "weaponId": "15513",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Silvershower Heartstrings",
+      "nameVi": "Màn Mưa Tơ Lòng",
+      "rarity": 5,
+      "gdbId": "15513",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "golden_frostbound_oath": {
+      "weaponId": "15516",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Golden Frostbound Oath",
+      "nameVi": "Lời Thề Vàng Sương Giá",
+      "rarity": 5,
+      "gdbId": "15516",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "song_of_stillness": {
+      "weaponId": "15425",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Song of Stillness",
+      "nameVi": "Khúc Ca Tĩnh Lặng",
+      "rarity": 4,
+      "gdbId": "15425",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "snare_hook": {
+      "weaponId": "15433",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Snare Hook",
+      "nameVi": "Móc Cạm Bẫy",
+      "rarity": 4,
+      "gdbId": "15433",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "rainbow_serpents_rain_bow": {
+      "weaponId": "15434",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Rainbow Serpent's Rain Bow",
+      "nameVi": "Dây Mưa Của Cầu Vồng",
+      "rarity": 4,
+      "gdbId": "15434",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "alley_hunter": {
+      "weaponId": "15410",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Alley Hunter",
+      "nameVi": "Thợ Săn Hẻm Tối",
+      "rarity": 4,
+      "gdbId": "15410",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "fading_twilight": {
+      "weaponId": "15411",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Fading Twilight",
+      "nameVi": "Lạc Hà",
+      "rarity": 4,
+      "gdbId": "15411",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "sacrificial_bow": {
+      "weaponId": "15403",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Sacrificial Bow",
+      "nameVi": "Cung Tế Lễ",
+      "rarity": 4,
+      "gdbId": "15403",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "sequence_of_solitude": {
+      "weaponId": "15432",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Sequence of Solitude",
+      "nameVi": "Thanh Âm Lạnh Lẽo",
+      "rarity": 4,
+      "gdbId": "15432",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "windblume_ode": {
+      "weaponId": "15413",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Windblume Ode",
+      "nameVi": "Bài Ca Hoa Gió",
+      "rarity": 4,
+      "gdbId": "15413",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "end_of_the_line": {
+      "weaponId": "15418",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "End of the Line",
+      "nameVi": "Sông Cạn",
+      "rarity": 4,
+      "gdbId": "15418",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "recurve_bow": {
+      "weaponId": "15303",
+      "weaponType": "BOW",
+      "dbType": "Cung",
+      "nameEn": "Recurve Bow",
+      "nameVi": "Cung Phản Khúc",
+      "rarity": 3,
+      "gdbId": "15303",
+      "gdbType": "WEAPON_BOW",
+      "via": "genshin-db id"
+    },
+    "lost_prayer_to_the_sacred_winds": {
+      "weaponId": "14502",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Lost Prayer to the Sacred Winds",
+      "nameVi": "Điển Tích Tây Phong",
+      "rarity": 5,
+      "gdbId": "14502",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "tulaytullahs_remembrance": {
+      "weaponId": "14512",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Tulaytullah's Remembrance",
+      "nameVi": "Hồi Ức Tulaytullah",
+      "rarity": 5,
+      "gdbId": "14512",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "the_widsith": {
+      "weaponId": "14402",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "The Widsith",
+      "nameVi": "Chương Nhạc Lang Thang",
+      "rarity": 4,
+      "gdbId": "14402",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "surfs_up": {
+      "weaponId": "14516",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Surf's Up",
+      "nameVi": "Thời Khắc Lướt Sóng",
+      "rarity": 5,
+      "gdbId": "14516",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "vivid_notions": {
+      "weaponId": "14519",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Vivid Notions",
+      "nameVi": "Tâm Niệm Sắc Màu",
+      "rarity": 5,
+      "gdbId": "14519",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "cashflow_supervision": {
+      "weaponId": "14513",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Cashflow Supervision",
+      "nameVi": "Quản Đốc Vàng Ròng",
+      "rarity": 5,
+      "gdbId": "14513",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "tome_of_the_eternal_flow": {
+      "weaponId": "14514",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Tome of the Eternal Flow",
+      "nameVi": "Nghi Thức Dòng Chảy Vĩnh Hằng",
+      "rarity": 5,
+      "gdbId": "14514",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "sunny_morning_sleepin": {
+      "weaponId": "14518",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Sunny Morning Sleep-In",
+      "nameVi": "Hòa Giấc Trong Nắng Mai",
+      "rarity": 5,
+      "gdbId": "14518",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "skyward_atlas": {
+      "weaponId": "14501",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Skyward Atlas",
+      "nameVi": "Quyển Thiên Không",
+      "rarity": 5,
+      "gdbId": "14501",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "kaguras_verity": {
+      "weaponId": "14509",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Kagura's Verity",
+      "nameVi": "Chân Ý Của Kagura",
+      "rarity": 5,
+      "gdbId": "14509",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "dawning_frost": {
+      "weaponId": "14434",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Dawning Frost",
+      "nameVi": "Sương Mai",
+      "rarity": 4,
+      "gdbId": "14434",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "reliquary_of_truth": {
+      "weaponId": "14521",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Reliquary of Truth",
+      "nameVi": "Chân Ngôn Bí Hạp",
+      "rarity": 5,
+      "gdbId": "14521",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "nightweavers_looking_glass": {
+      "weaponId": "14520",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Nightweaver's Looking Glass",
+      "nameVi": "Kính Dệt Màn Đêm",
+      "rarity": 5,
+      "gdbId": "14520",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "memory_of_dust": {
+      "weaponId": "14504",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Memory of Dust",
+      "nameVi": "Khóa Trần Thế",
+      "rarity": 5,
+      "gdbId": "14504",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "ring_of_yaxche": {
+      "weaponId": "14431",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Ring of Yaxche",
+      "nameVi": "Vòng Yaxche",
+      "rarity": 4,
+      "gdbId": "14431",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "etherlight_spindlelute": {
+      "weaponId": "14432",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Etherlight Spindlelute",
+      "nameVi": "Đàn Thiên Quang",
+      "rarity": 4,
+      "gdbId": "14432",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "ballad_of_the_boundless_blue": {
+      "weaponId": "14426",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Ballad of the Boundless Blue",
+      "nameVi": "Khúc Ca Xanh Bao La",
+      "rarity": 4,
+      "gdbId": "14426",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "solar_pearl": {
+      "weaponId": "14405",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Solar Pearl",
+      "nameVi": "Nhật Nguyệt Hạp",
+      "rarity": 4,
+      "gdbId": "14405",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "ashgraven_drinking_horn": {
+      "weaponId": "14427",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Ash-Graven Drinking Horn",
+      "nameVi": "Sừng Rượu Vân Xanh",
+      "rarity": 4,
+      "gdbId": "14427",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "flowing_purity": {
+      "weaponId": "14425",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Flowing Purity",
+      "nameVi": "Dòng Chảy Tinh Khiết",
+      "rarity": 4,
+      "gdbId": "14425",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "dodoco_tales": {
+      "weaponId": "14413",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Dodoco Tales",
+      "nameVi": "Tuyển tập các câu chuyện về Dodoco",
+      "rarity": 4,
+      "gdbId": "14413",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "mappa_mare": {
+      "weaponId": "14407",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Mappa Mare",
+      "nameVi": "Hải Đồ Vạn Quốc",
+      "rarity": 4,
+      "gdbId": "14407",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "wandering_evenstar": {
+      "weaponId": "14416",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Wandering Evenstar",
+      "nameVi": "Sao Đêm Rong Ruổi",
+      "rarity": 4,
+      "gdbId": "14416",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "magic_guide": {
+      "weaponId": "14301",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Magic Guide",
+      "nameVi": "Tóm Tắt Ma Pháp",
+      "rarity": 3,
+      "gdbId": "14301",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "everlasting_moonglow": {
+      "weaponId": "14506",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Everlasting Moonglow",
+      "nameVi": "Vầng Trăng Bất Diệt",
+      "rarity": 5,
+      "gdbId": "14506",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "blackcliff_agate": {
+      "weaponId": "14408",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Blackcliff Agate",
+      "nameVi": "Hắc Nham Phỉ Ngọc",
+      "rarity": 4,
+      "gdbId": "14408",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "sacrificial_fragments": {
+      "weaponId": "14403",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Sacrificial Fragments",
+      "nameVi": "Mảnh Chương Tế Lễ",
+      "rarity": 4,
+      "gdbId": "14403",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "nocturnes_curtain_call": {
+      "weaponId": "14522",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Nocturne's Curtain Call",
+      "nameVi": "Dạ Khúc Hạ Màn",
+      "rarity": 5,
+      "gdbId": "14522",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "fruit_of_fulfillment": {
+      "weaponId": "14417",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Fruit of Fulfillment",
+      "nameVi": "Quả Mọng",
+      "rarity": 4,
+      "gdbId": "14417",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "blackmarrow_lantern": {
+      "weaponId": "14433",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Blackmarrow Lantern",
+      "nameVi": "Đèn Tủy Đen",
+      "rarity": 4,
+      "gdbId": "14433",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "hakushin_ring": {
+      "weaponId": "14414",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Hakushin Ring",
+      "nameVi": "Vòng Bạch Thần",
+      "rarity": 4,
+      "gdbId": "14414",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "favonius_codex": {
+      "weaponId": "14401",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Favonius Codex",
+      "nameVi": "Tây Phong Mật Điển",
+      "rarity": 4,
+      "gdbId": "14401",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "waveriding_whirl": {
+      "weaponId": "14430",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Waveriding Whirl",
+      "nameVi": "Vòng Xoáy Cưỡi Sóng",
+      "rarity": 4,
+      "gdbId": "14430",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "sacrificial_jade": {
+      "weaponId": "14424",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Sacrificial Jade",
+      "nameVi": "Ngọc Bích Hiến Tế",
+      "rarity": 4,
+      "gdbId": "14424",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "oathsworn_eye": {
+      "weaponId": "14415",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Oathsworn Eye",
+      "nameVi": "Con Ngươi Tuyên Thệ",
+      "rarity": 4,
+      "gdbId": "14415",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "emerald_orb": {
+      "weaponId": "14304",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Emerald Orb",
+      "nameVi": "Quả Cầu Ngọc",
+      "rarity": 3,
+      "gdbId": "14304",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "starcallers_watch": {
+      "weaponId": "14517",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Starcaller's Watch",
+      "nameVi": "Ánh Nhìn Tư Tế",
+      "rarity": 5,
+      "gdbId": "14517",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "a_thousand_floating_dreams": {
+      "weaponId": "14511",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "A Thousand Floating Dreams",
+      "nameVi": "Cõi Mộng Ngàn Đêm",
+      "rarity": 5,
+      "gdbId": "14511",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "prototype_amber": {
+      "weaponId": "14406",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Prototype Amber",
+      "nameVi": "Mẫu Kim Phách",
+      "rarity": 4,
+      "gdbId": "14406",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "thrilling_tales_of_dragon_slayers": {
+      "weaponId": "14302",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Thrilling Tales of Dragon Slayers",
+      "nameVi": "Câu Chuyện Diệt Rồng",
+      "rarity": 3,
+      "gdbId": "14302",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "cranes_echoing_call": {
+      "weaponId": "14515",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Crane's Echoing Call",
+      "nameVi": "Dư Âm Tiếng Hạc",
+      "rarity": 5,
+      "gdbId": "14515",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    },
+    "jadefalls_splendor": {
+      "weaponId": "14505",
+      "weaponType": "CATALYST",
+      "dbType": "Pháp Khí",
+      "nameEn": "Jadefall's Splendor",
+      "nameVi": "Ngọc Bích Huy Hoàng",
+      "rarity": 5,
+      "gdbId": "14505",
+      "gdbType": "WEAPON_CATALYST",
+      "via": "genshin-db id"
+    }
+  },
+  "unmatched": [],
+  "crossChecks": [
+    {
+      "sourceId": "primordial_jade_cutter",
+      "nameEn": "Primordial Jade Cutter",
+      "nameVi": "Bàn Nham Kết Lục",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "mistsplitter_reforged",
+      "nameEn": "Mistsplitter Reforged",
+      "nameVi": "Ánh Sáng Đêm Sương Mù",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "haran_geppaku_futsu",
+      "nameEn": "Haran Geppaku Futsu",
+      "nameVi": "Haran Geppaku Futsu",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "uraku_misugiri",
+      "nameEn": "Uraku Misugiri",
+      "nameVi": "Uraku Misugiri",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "azurelight",
+      "nameEn": "Azurelight",
+      "nameVi": "Thương Diệu",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "lightbearing_moonshard",
+      "nameEn": "Lightbearing Moonshard",
+      "nameVi": "Mảnh Trăng Ánh Sáng",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "light_of_foliar_incision",
+      "nameEn": "Light of Foliar Incision",
+      "nameVi": "Ánh Lá Phán Quyết",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "splendor_of_tranquil_waters",
+      "nameEn": "Splendor of Tranquil Waters",
+      "nameVi": "Sắc Nước Lộng Lẫy",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "absolution",
+      "nameEn": "Absolution",
+      "nameVi": "Xá Tội",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "calamity_of_eshu",
+      "nameEn": "Calamity of Eshu",
+      "nameVi": "Tai Họa Eshu",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "wolffang",
+      "nameEn": "Wolf-Fang",
+      "nameVi": "Nanh Sói",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_black_sword",
+      "nameEn": "The Black Sword",
+      "nameVi": "Kiếm Đen",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "skyward_blade",
+      "nameEn": "Skyward Blade",
+      "nameVi": "Thiên Không Kiếm",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "amenoma_kageuchi",
+      "nameEn": "Amenoma Kageuchi",
+      "nameVi": "Đoản Đao Amenoma",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "toukabou_shigure",
+      "nameEn": "Toukabou Shigure",
+      "nameVi": "Toukabou Shigure",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "iron_sting",
+      "nameEn": "Iron Sting",
+      "nameVi": "Thiết Phong Kích",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "harbinger_of_dawn",
+      "nameEn": "Harbinger of Dawn",
+      "nameVi": "Thần Kiếm Lê Minh",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "summit_shaper",
+      "nameEn": "Summit Shaper",
+      "nameVi": "Kiếm Chước Phong",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "aquila_favonia",
+      "nameEn": "Aquila Favonia",
+      "nameVi": "Phong Ưng Kiếm",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sturdy_bone",
+      "nameEn": "Sturdy Bone",
+      "nameVi": "Xương Cứng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "moonweavers_dawn",
+      "nameEn": "Moonweaver's Dawn",
+      "nameVi": "Bình Minh Của Người Dệt Trăng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "finale_of_the_deep",
+      "nameEn": "Finale of the Deep",
+      "nameVi": "Nhạc Khúc Biển Sâu",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "lions_roar",
+      "nameEn": "Lion's Roar",
+      "nameVi": "Tiếng Hét Của Rồng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "blackcliff_longsword",
+      "nameEn": "Blackcliff Longsword",
+      "nameVi": "Hắc Nham Trường Kiếm",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_flute",
+      "nameEn": "The Flute",
+      "nameVi": "Kiếm Sáo",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "royal_longsword",
+      "nameEn": "Royal Longsword",
+      "nameVi": "Trường Kiếm Tông Thất",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "prototype_rancour",
+      "nameEn": "Prototype Rancour",
+      "nameVi": "Mẫu Trảm Nham",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "dark_iron_sword",
+      "nameEn": "Dark Iron Sword",
+      "nameVi": "Kiếm Sắt Đen",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "skyrider_sword",
+      "nameEn": "Skyrider Sword",
+      "nameVi": "Kiếm Phi Thiên",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "freedomsworn",
+      "nameEn": "Freedom-Sworn",
+      "nameVi": "Lời Thề Tự Do Cổ Xưa",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sacrificial_sword",
+      "nameEn": "Sacrificial Sword",
+      "nameVi": "Kiếm Tế Lễ",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "athame_artis",
+      "nameEn": "Athame Artis",
+      "nameVi": "Hắc Ám Xâm Thực",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "key_of_khajnisut",
+      "nameEn": "Key of Khaj-Nisut",
+      "nameVi": "Chìa Khóa Khaj-Nisut",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "fleuve_cendre_ferryman",
+      "nameEn": "Fleuve Cendre Ferryman",
+      "nameVi": "Ống Đồng Fleuve Cendre",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "favonius_sword",
+      "nameEn": "Favonius Sword",
+      "nameVi": "Tây Phong Kiếm",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "xiphos_moonlight",
+      "nameEn": "Xiphos' Moonlight",
+      "nameVi": "Ánh Trăng Xiphos",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_dockhands_assistant",
+      "nameEn": "The Dockhand's Assistant",
+      "nameVi": "Kiếm Bến Tàu",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "serenitys_call",
+      "nameEn": "Serenity's Call",
+      "nameVi": "Còi Yên Tĩnh",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "festering_desire",
+      "nameEn": "Festering Desire",
+      "nameVi": "Răng Nanh Rỉ Sét",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "flute_of_ezpitzal",
+      "nameEn": "Flute of Ezpitzal",
+      "nameVi": "Sáo Ezpitzal",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_alley_flash",
+      "nameEn": "The Alley Flash",
+      "nameVi": "Tia Sáng Nơi Hẻm Tối",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "cinnabar_spindle",
+      "nameEn": "Cinnabar Spindle",
+      "nameVi": "Con Thoi Chu Sa",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "cool_steel",
+      "nameEn": "Cool Steel",
+      "nameVi": "Lãnh Nhẫn",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "peak_patrol_song",
+      "nameEn": "Peak Patrol Song",
+      "nameVi": "Khúc Ca Núi Đá",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sapwood_blade",
+      "nameEn": "Sapwood Blade",
+      "nameVi": "Kiếm Gỗ",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "verdict",
+      "nameEn": "Verdict",
+      "nameVi": "Phán Quyết",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "a_thousand_blazing_suns",
+      "nameEn": "A Thousand Blazing Suns",
+      "nameVi": "Thiên Dương Rực Lửa",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "gest_of_the_mighty_wolf",
+      "nameEn": "Gest of the Mighty Wolf",
+      "nameVi": "Chiến Hùng Ca Của Sói",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "beacon_of_the_reed_sea",
+      "nameEn": "Beacon of the Reed Sea",
+      "nameVi": "Hải Đăng Bờ Biển Lau",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "redhorn_stonethresher",
+      "nameEn": "Redhorn Stonethresher",
+      "nameVi": "Xích Giác Phá Thạch Đao",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "serpent_spine",
+      "nameEn": "Serpent Spine",
+      "nameVi": "Kiếm Li Cốt",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "fang_of_the_mountain_king",
+      "nameEn": "Fang of the Mountain King",
+      "nameVi": "Nanh Sơn Vương",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "wolfs_gravestone",
+      "nameEn": "Wolf's Gravestone",
+      "nameVi": "Đường Cùng Của Sói",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_unforged",
+      "nameEn": "The Unforged",
+      "nameVi": "Kiếm Vô Công",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "song_of_broken_pines",
+      "nameEn": "Song of Broken Pines",
+      "nameVi": "Tiếng Gió Trong Rừng Thông",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "skyward_pride",
+      "nameEn": "Skyward Pride",
+      "nameVi": "Thiên Không Kiêu Ngạo",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "earth_shaker",
+      "nameEn": "Earth Shaker",
+      "nameVi": "Đao Chấn Động",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "flameforged_insight",
+      "nameEn": "Flame-Forged Insight",
+      "nameVi": "Trí Tuệ Dung Luyện",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "ultimate_overlords_mega_magic_sword",
+      "nameEn": "\"Ultimate Overlord's Mega Magic Sword\"",
+      "nameVi": "\"Bá Vương Tối Thượng Siêu Cấp Ma Kiếm\"",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "rainslasher",
+      "nameEn": "Rainslasher",
+      "nameVi": "Vũ Tài",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "whiteblind",
+      "nameEn": "Whiteblind",
+      "nameVi": "Kiếm Bạch Ảnh",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "mailed_flower",
+      "nameEn": "Mailed Flower",
+      "nameVi": "Đóa Hoa Tôn Màu Thép",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "fruitful_hook",
+      "nameEn": "Fruitful Hook",
+      "nameVi": "Móc Trĩu Quả",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "talking_stick",
+      "nameEn": "Talking Stick",
+      "nameVi": "Gậy Đàm Phán",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "luxurious_sealord",
+      "nameEn": "Luxurious Sea-Lord",
+      "nameVi": "Vua Biển Hàng Hiệu",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "akuoumaru",
+      "nameEn": "Akuoumaru",
+      "nameVi": "Akuoumaru",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "prototype_archaic",
+      "nameEn": "Prototype Archaic",
+      "nameVi": "Mẫu Cổ Hoa",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "blackcliff_slasher",
+      "nameEn": "Blackcliff Slasher",
+      "nameVi": "Hắc Nham Trảm Đao",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "tidal_shadow",
+      "nameEn": "Tidal Shadow",
+      "nameVi": "Bóng Tối Thủy Triều",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "lithic_blade",
+      "nameEn": "Lithic Blade",
+      "nameVi": "Thiên Nham Cổ Kiếm",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "snowtombed_starsilver",
+      "nameEn": "Snow-Tombed Starsilver",
+      "nameVi": "Tuyết Vùi Tinh Ngân",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "favonius_greatsword",
+      "nameEn": "Favonius Greatsword",
+      "nameVi": "Đại Kiếm Tây Phong",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sacrificial_greatsword",
+      "nameEn": "Sacrificial Greatsword",
+      "nameVi": "Đại Kiếm Tế Lễ",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "master_key",
+      "nameEn": "Master Key",
+      "nameVi": "Chìa Khóa Vạn Năng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "katsuragikiri_nagamasa",
+      "nameEn": "Katsuragikiri Nagamasa",
+      "nameVi": "Trường Đao Katsuragi",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "makhaira_aquamarine",
+      "nameEn": "Makhaira Aquamarine",
+      "nameVi": "Sắc Nước Makhaira",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "portable_power_saw",
+      "nameEn": "Portable Power Saw",
+      "nameVi": "Máy Cưa Cầm Tay",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "forest_regalia",
+      "nameEn": "Forest Regalia",
+      "nameVi": "Vương Khí Rừng Sâu",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_bell",
+      "nameEn": "The Bell",
+      "nameVi": "Kiếm Chuông",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "staff_of_homa",
+      "nameEn": "Staff of Homa",
+      "nameVi": "Trượng Hộ Ma",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "primordial_jade_wingedspear",
+      "nameEn": "Primordial Jade Winged-Spear",
+      "nameVi": "Hòa Phác Diên",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "staff_of_the_scarlet_sands",
+      "nameEn": "Staff of the Scarlet Sands",
+      "nameVi": "Quyền Trượng Cát Đỏ",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "engulfing_lightning",
+      "nameEn": "Engulfing Lightning",
+      "nameVi": "Đoạn Thảo Trường Đao",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "deathmatch",
+      "nameEn": "Deathmatch",
+      "nameVi": "Thương Quyết Chiến",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "crimson_moons_semblance",
+      "nameEn": "Crimson Moon's Semblance",
+      "nameVi": "Hình Thái Xích Nguyệt",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "bloodsoaked_ruins",
+      "nameEn": "Bloodsoaked Ruins",
+      "nameVi": "Tàn Tích Nhuốm Máu",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "vortex_vanquisher",
+      "nameEn": "Vortex Vanquisher",
+      "nameVi": "Giáo Nịnh Thần",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "calamity_queller",
+      "nameEn": "Calamity Queller",
+      "nameVi": "Hủy Diệt",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "skyward_spine",
+      "nameEn": "Skyward Spine",
+      "nameVi": "Xương Sống Thiên Không",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "ballad_of_the_fjords",
+      "nameEn": "Ballad of the Fjords",
+      "nameVi": "Khúc Ca Vịnh Hẹp",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "prospectors_drill",
+      "nameEn": "Prospector's Drill",
+      "nameVi": "Mũi Khoan Thăm Dò",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sacrificers_staff",
+      "nameEn": "Sacrificer's Staff",
+      "nameVi": "Quyền Trượng Kẻ Thánh Tế",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "missive_windspear",
+      "nameEn": "Missive Windspear",
+      "nameVi": "Mũi Nhọn Của Gió",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "tamayuratei_no_ohanashi",
+      "nameEn": "Tamayuratei no Ohanashi",
+      "nameVi": "Tamayuratei no Ohanashi",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "dragons_bane",
+      "nameEn": "Dragon's Bane",
+      "nameVi": "Tai Ương Của Rồng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "blackcliff_pole",
+      "nameEn": "Blackcliff Pole",
+      "nameVi": "Thương Hắc Nham",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "lithic_spear",
+      "nameEn": "Lithic Spear",
+      "nameVi": "Thương Thiên Nham",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "white_tassel",
+      "nameEn": "White Tassel",
+      "nameVi": "Thương Bạch Anh",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "crescent_pike",
+      "nameEn": "Crescent Pike",
+      "nameVi": "Lưu Nguyệt Châm",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "prototype_starglitter",
+      "nameEn": "Prototype Starglitter",
+      "nameVi": "Mẫu Tinh Liêm",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "dragonspine_spear",
+      "nameEn": "Dragonspine Spear",
+      "nameVi": "Thương Long Tích",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "symphonist_of_scents",
+      "nameEn": "Symphonist of Scents",
+      "nameVi": "Nhạc Sĩ Hương Thơm",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_catch",
+      "nameEn": "\"The Catch\"",
+      "nameVi": "Lao Xiên Cá",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "favonius_lance",
+      "nameEn": "Favonius Lance",
+      "nameVi": "Thương Tây Phong",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "lumidouce_elegy",
+      "nameEn": "Lumidouce Elegy",
+      "nameVi": "Bi Ca Lumidouce",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "kitain_cross_spear",
+      "nameEn": "Kitain Cross Spear",
+      "nameVi": "Giáo Thập Tự Kitain",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "wavebreakers_fin",
+      "nameEn": "Wavebreaker's Fin",
+      "nameVi": "Vây Cá Chẻ Sóng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "fractured_halo",
+      "nameEn": "Fractured Halo",
+      "nameVi": "Hào Quang Tách Rời",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "mountainbracing_bolt",
+      "nameEn": "Mountain-Bracing Bolt",
+      "nameVi": "Mũi Đinh Trấn Núi",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "moonpiercer",
+      "nameEn": "Moonpiercer",
+      "nameVi": "Quán Nguyệt Thương",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "footprint_of_the_rainbow",
+      "nameEn": "Footprint of the Rainbow",
+      "nameVi": "Vết Tích Cầu Vồng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "rightful_reward",
+      "nameEn": "Rightful Reward",
+      "nameVi": "Thù Lao Của Chính Nghĩa",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "dialogues_of_the_desert_sages",
+      "nameEn": "Dialogues of the Desert Sages",
+      "nameVi": "Đối Thoại Của Hiền Giả Sa Mạc",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "black_tassel",
+      "nameEn": "Black Tassel",
+      "nameVi": "Hắc Anh Thương",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "astral_vultures_crimson_plumage",
+      "nameEn": "Astral Vulture's Crimson Plumage",
+      "nameVi": "Xích Vũ Tinh Tựu",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_first_great_magic",
+      "nameEn": "The First Great Magic",
+      "nameVi": "Màn Ảo Thuật Đầu Tiên",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "polar_star",
+      "nameEn": "Polar Star",
+      "nameVi": "Ngôi Sao Cực Đông",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "thundering_pulse",
+      "nameEn": "Thundering Pulse",
+      "nameVi": "Sấm Sét Rung Động",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "aqua_simulacra",
+      "nameEn": "Aqua Simulacra",
+      "nameVi": "Nhược Thủy",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "hunters_bow",
+      "nameEn": "Hunter's Bow",
+      "nameVi": "Cung Săn Bắn",
+      "sourceRarity": 1,
+      "dbRarity": 1,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "amos_bow",
+      "nameEn": "Amos' Bow",
+      "nameVi": "Cung Amos",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "skyward_harp",
+      "nameEn": "Skyward Harp",
+      "nameVi": "Cánh Thiên Không",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "flowerwreathed_feathers",
+      "nameEn": "Flower-Wreathed Feathers",
+      "nameVi": "Lông Vũ Thêu Hoa",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "rust",
+      "nameEn": "Rust",
+      "nameVi": "Cung Rỉ Sét",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_daybreak_chronicles",
+      "nameEn": "The Daybreak Chronicles",
+      "nameVi": "Biên Niên Sử Bình Minh",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "scion_of_the_blazing_sun",
+      "nameEn": "Scion of the Blazing Sun",
+      "nameVi": "Hậu Duệ Mặt Trời",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "hamayumi",
+      "nameEn": "Hamayumi",
+      "nameVi": "Cung Trừ Ma",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "mouuns_moon",
+      "nameEn": "Mouun's Moon",
+      "nameVi": "Ánh Trăng Mouun",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "chain_breaker",
+      "nameEn": "Chain Breaker",
+      "nameVi": "Phá Xích",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "range_gauge",
+      "nameEn": "Range Gauge",
+      "nameVi": "Máy Đo Cự Ly",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "cloudforged",
+      "nameEn": "Cloudforged",
+      "nameVi": "Trúc Vân",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "mitternachts_waltz",
+      "nameEn": "Mitternachts Waltz",
+      "nameVi": "Điệu Van Ban Đêm",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "blackcliff_warbow",
+      "nameEn": "Blackcliff Warbow",
+      "nameVi": "Cung Hắc Nham",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_viridescent_hunt",
+      "nameEn": "The Viridescent Hunt",
+      "nameVi": "Cung Sắc Xanh",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "kings_squire",
+      "nameEn": "King's Squire",
+      "nameVi": "Cận Vệ Nhà Vua",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "raven_bow",
+      "nameEn": "Raven Bow",
+      "nameVi": "Cung Lông Quạ",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "slingshot",
+      "nameEn": "Slingshot",
+      "nameVi": "Nỏ Kéo",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "ibis_piercer",
+      "nameEn": "Ibis Piercer",
+      "nameVi": "Mỏ Cò Xuyên Thấu",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "prototype_crescent",
+      "nameEn": "Prototype Crescent",
+      "nameVi": "Mẫu Đạm Nguyệt",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "compound_bow",
+      "nameEn": "Compound Bow",
+      "nameVi": "Cung Thép",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sharpshooters_oath",
+      "nameEn": "Sharpshooter's Oath",
+      "nameVi": "Lời Thề Xạ Thủ Thần",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "elegy_for_the_end",
+      "nameEn": "Elegy for the End",
+      "nameVi": "Tiếng Thở Dài Vô Tận",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_stringless",
+      "nameEn": "The Stringless",
+      "nameVi": "Tuyệt Huyền",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "favonius_warbow",
+      "nameEn": "Favonius Warbow",
+      "nameVi": "Cung Tây Phong",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "silvershower_heartstrings",
+      "nameEn": "Silvershower Heartstrings",
+      "nameVi": "Màn Mưa Tơ Lòng",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "golden_frostbound_oath",
+      "nameEn": "Golden Frostbound Oath",
+      "nameVi": "Lời Thề Vàng Sương Giá",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "song_of_stillness",
+      "nameEn": "Song of Stillness",
+      "nameVi": "Khúc Ca Tĩnh Lặng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "snare_hook",
+      "nameEn": "Snare Hook",
+      "nameVi": "Móc Cạm Bẫy",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "rainbow_serpents_rain_bow",
+      "nameEn": "Rainbow Serpent's Rain Bow",
+      "nameVi": "Dây Mưa Của Cầu Vồng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "alley_hunter",
+      "nameEn": "Alley Hunter",
+      "nameVi": "Thợ Săn Hẻm Tối",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "fading_twilight",
+      "nameEn": "Fading Twilight",
+      "nameVi": "Lạc Hà",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sacrificial_bow",
+      "nameEn": "Sacrificial Bow",
+      "nameVi": "Cung Tế Lễ",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sequence_of_solitude",
+      "nameEn": "Sequence of Solitude",
+      "nameVi": "Thanh Âm Lạnh Lẽo",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "windblume_ode",
+      "nameEn": "Windblume Ode",
+      "nameVi": "Bài Ca Hoa Gió",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "end_of_the_line",
+      "nameEn": "End of the Line",
+      "nameVi": "Sông Cạn",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "recurve_bow",
+      "nameEn": "Recurve Bow",
+      "nameVi": "Cung Phản Khúc",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "lost_prayer_to_the_sacred_winds",
+      "nameEn": "Lost Prayer to the Sacred Winds",
+      "nameVi": "Điển Tích Tây Phong",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "tulaytullahs_remembrance",
+      "nameEn": "Tulaytullah's Remembrance",
+      "nameVi": "Hồi Ức Tulaytullah",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "the_widsith",
+      "nameEn": "The Widsith",
+      "nameVi": "Chương Nhạc Lang Thang",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "surfs_up",
+      "nameEn": "Surf's Up",
+      "nameVi": "Thời Khắc Lướt Sóng",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "vivid_notions",
+      "nameEn": "Vivid Notions",
+      "nameVi": "Tâm Niệm Sắc Màu",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "cashflow_supervision",
+      "nameEn": "Cashflow Supervision",
+      "nameVi": "Quản Đốc Vàng Ròng",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "tome_of_the_eternal_flow",
+      "nameEn": "Tome of the Eternal Flow",
+      "nameVi": "Nghi Thức Dòng Chảy Vĩnh Hằng",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sunny_morning_sleepin",
+      "nameEn": "Sunny Morning Sleep-In",
+      "nameVi": "Hòa Giấc Trong Nắng Mai",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "skyward_atlas",
+      "nameEn": "Skyward Atlas",
+      "nameVi": "Quyển Thiên Không",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "kaguras_verity",
+      "nameEn": "Kagura's Verity",
+      "nameVi": "Chân Ý Của Kagura",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "dawning_frost",
+      "nameEn": "Dawning Frost",
+      "nameVi": "Sương Mai",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "reliquary_of_truth",
+      "nameEn": "Reliquary of Truth",
+      "nameVi": "Chân Ngôn Bí Hạp",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "nightweavers_looking_glass",
+      "nameEn": "Nightweaver's Looking Glass",
+      "nameVi": "Kính Dệt Màn Đêm",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "memory_of_dust",
+      "nameEn": "Memory of Dust",
+      "nameVi": "Khóa Trần Thế",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "ring_of_yaxche",
+      "nameEn": "Ring of Yaxche",
+      "nameVi": "Vòng Yaxche",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "etherlight_spindlelute",
+      "nameEn": "Etherlight Spindlelute",
+      "nameVi": "Đàn Thiên Quang",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "ballad_of_the_boundless_blue",
+      "nameEn": "Ballad of the Boundless Blue",
+      "nameVi": "Khúc Ca Xanh Bao La",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "solar_pearl",
+      "nameEn": "Solar Pearl",
+      "nameVi": "Nhật Nguyệt Hạp",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "ashgraven_drinking_horn",
+      "nameEn": "Ash-Graven Drinking Horn",
+      "nameVi": "Sừng Rượu Vân Xanh",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "flowing_purity",
+      "nameEn": "Flowing Purity",
+      "nameVi": "Dòng Chảy Tinh Khiết",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "dodoco_tales",
+      "nameEn": "Dodoco Tales",
+      "nameVi": "Tuyển tập các câu chuyện về Dodoco",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "mappa_mare",
+      "nameEn": "Mappa Mare",
+      "nameVi": "Hải Đồ Vạn Quốc",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "wandering_evenstar",
+      "nameEn": "Wandering Evenstar",
+      "nameVi": "Sao Đêm Rong Ruổi",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "magic_guide",
+      "nameEn": "Magic Guide",
+      "nameVi": "Tóm Tắt Ma Pháp",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "everlasting_moonglow",
+      "nameEn": "Everlasting Moonglow",
+      "nameVi": "Vầng Trăng Bất Diệt",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "blackcliff_agate",
+      "nameEn": "Blackcliff Agate",
+      "nameVi": "Hắc Nham Phỉ Ngọc",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sacrificial_fragments",
+      "nameEn": "Sacrificial Fragments",
+      "nameVi": "Mảnh Chương Tế Lễ",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "nocturnes_curtain_call",
+      "nameEn": "Nocturne's Curtain Call",
+      "nameVi": "Dạ Khúc Hạ Màn",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "fruit_of_fulfillment",
+      "nameEn": "Fruit of Fulfillment",
+      "nameVi": "Quả Mọng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "blackmarrow_lantern",
+      "nameEn": "Blackmarrow Lantern",
+      "nameVi": "Đèn Tủy Đen",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "hakushin_ring",
+      "nameEn": "Hakushin Ring",
+      "nameVi": "Vòng Bạch Thần",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "favonius_codex",
+      "nameEn": "Favonius Codex",
+      "nameVi": "Tây Phong Mật Điển",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "waveriding_whirl",
+      "nameEn": "Waveriding Whirl",
+      "nameVi": "Vòng Xoáy Cưỡi Sóng",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "sacrificial_jade",
+      "nameEn": "Sacrificial Jade",
+      "nameVi": "Ngọc Bích Hiến Tế",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "oathsworn_eye",
+      "nameEn": "Oathsworn Eye",
+      "nameVi": "Con Ngươi Tuyên Thệ",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "emerald_orb",
+      "nameEn": "Emerald Orb",
+      "nameVi": "Quả Cầu Ngọc",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "starcallers_watch",
+      "nameEn": "Starcaller's Watch",
+      "nameVi": "Ánh Nhìn Tư Tế",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "a_thousand_floating_dreams",
+      "nameEn": "A Thousand Floating Dreams",
+      "nameVi": "Cõi Mộng Ngàn Đêm",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "prototype_amber",
+      "nameEn": "Prototype Amber",
+      "nameVi": "Mẫu Kim Phách",
+      "sourceRarity": 4,
+      "dbRarity": 4,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "thrilling_tales_of_dragon_slayers",
+      "nameEn": "Thrilling Tales of Dragon Slayers",
+      "nameVi": "Câu Chuyện Diệt Rồng",
+      "sourceRarity": 3,
+      "dbRarity": 3,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "cranes_echoing_call",
+      "nameEn": "Crane's Echoing Call",
+      "nameVi": "Dư Âm Tiếng Hạc",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    },
+    {
+      "sourceId": "jadefalls_splendor",
+      "nameEn": "Jadefall's Splendor",
+      "nameVi": "Ngọc Bích Huy Hoàng",
+      "sourceRarity": 5,
+      "dbRarity": 5,
+      "rarityConsistent": true
+    }
+  ]
+}

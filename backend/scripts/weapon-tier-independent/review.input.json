@@ -1,0 +1,152 @@
+{
+  "reviewedAt": "2026-11-20",
+  "reviewer": "Phase B2.6 final validation",
+  "gameDataSource": "genshin-db@5.2.15 local package; exact values in docs/weapon-tier-independent/game-facts.json",
+  "note": "Phase B3 final review package. All 14 corrected explanations and evidence are applied in independent-candidates.json. Favonius Greatsword (12401) is downgraded from READY_FOR_ADMIN_REVIEW to NEEDS_MORE_EVIDENCE because LOW confidence is not backed by a concrete rotation/uptime record. Publish rights remain false and every record requires an explicit Admin decision.",
+  "decisions": {
+    "independent-11401-SUPPORT-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "ER substat; Windfall R1 60% chance / 6 Energy / 12s ICD, R5 100% / 6s ICD. Requires a CRIT hit on-field.",
+      "assessment": "Re-checked: passive trigger is on-field crit, so universality is conditional but easily met for sword supports. SS kept as a role judgement, not from rarity or recommended-user lists.",
+      "refinement": "R1 kept; R5 only improves reliability and does not change the role claim.",
+      "rightsNote": "Original Vietnamese explanation, internal rubric v1.1, genshin-db facts only. Eligible for explicit admin rights verification; flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["phụ thuộc CRIT Rate", "không sinh hạt khi off-field"],
+      "adminDecisionRequired": "Verify rights explicitly, then approve or reject R1 / Support / SS with an admin key."
+    },
+    "independent-11403-SUB_DPS-R5": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "Composed R1 40% / 30s; R5 80% / 16s. Skill must damage an opponent; reset does not trigger automatically and recast needs on-field time.",
+      "assessment": "Re-checked trigger, ICD, recast and energy impact. S kept with explicit rotation condition; reset is not assumed in every rotation.",
+      "refinement": "R5 kept because reset reliability is the assessed property; R1 is materially weaker and not reused.",
+      "rightsNote": "Explanation rewritten independently; no external editorial text. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["reset không luôn proc", "cần on-field recast", "kỹ năng phải trúng địch"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R5 / Sub DPS / S with the recorded recast condition."
+    },
+    "independent-11418-SUPPORT-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "EM substat; Jinni's Whisper R1 0.036% ER per EM for 12s every 10s, 30% shared; triggers off-field; R5 doubles coefficient.",
+      "assessment": "Re-checked off-field trigger and party share. S reflects the EM-investment condition; not treated as universal energy like Favonius.",
+      "refinement": "R1 kept; R5 scaling does not change the conditional nature of the buff.",
+      "rightsNote": "Independent mechanical analysis; no external ranking text. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["phụ thuộc EM", "chỉ chia 30% cho đồng đội"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R1 / Support / S."
+    },
+    "independent-11512-MAIN_DPS-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "CRIT DMG substat; Whitemoon Bristle R1 +4% CRIT Rate, +120% EM to NA/Skill DMG for 12s or 28 instances; R5 +8% / +240%.",
+      "assessment": "Re-checked passive compatibility and uptime. S kept as conditional: normal attacks must deal elemental DMG and EM must matter.",
+      "refinement": "R1 kept as 5★ baseline; no silent upgrade to R5.",
+      "rightsNote": "Rubric-based independent explanation; game facts from genshin-db. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["không phù hợp kiếm không dùng đòn thường", "buff có thể cắt sau 28 lần"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R1 / Main DPS / S."
+    },
+    "independent-12502-SUPPORT-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "ATK% substat; Wolfish Tracker R1 +20% self ATK, +40% party ATK for 12s on targets below 30% HP, 30s ICD; R5 +40% / +80%.",
+      "assessment": "Re-checked buff condition and 12s/30s uptime. A kept; no team energy and no universal utility.",
+      "refinement": "R1 kept; R5 raises magnitude but keeps the same HP condition.",
+      "rightsNote": "Independent evaluation, not based on recommendation counts. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["buff ngắt quãng", "yêu cầu địch dưới 30% HP"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R1 / Support / A."
+    },
+    "independent-12401-SUB_DPS-R1": {
+      "recommendation": "NEEDS_MORE_EVIDENCE",
+      "gameFact": "ER substat; Windfall R1 60% chance / 6 Energy / 12s ICD on CRIT hit; R5 100% / 6s ICD.",
+      "assessment": "Re-checked Phase B3: on-field CRIT is mandatory for Windfall, and no concrete rotation or uptime evidence exists for a typical off-field claymore Sub DPS. READY status alone is not a reason to approve. Moved back to NEEDS_MORE_EVIDENCE with confidence LOW; tier A is provisional until evidence is supplied.",
+      "refinement": "R1 kept; R5 would improve reliability but is a separate context and must not raise the tier by itself.",
+      "rightsNote": "Corrected explanation is original; no external text converted. Flag stays false. Rights review is deferred until evidence is complete.",
+      "proposedDiff": [
+        "Provide a concrete sample rotation for a claymore Sub DPS showing the on-field window, number of CRIT hits and resulting Windfall particles/Energy.",
+        "Record the minimum CRIT Rate and the observed Windfall proc rate in that window; without this, keep confidence LOW and do not approve.",
+        "Re-derive tier A after evidence is supplied; do not auto-promote because R5 has 100% chance / 6s ICD."
+      ],
+      "limitations": ["không sinh hạt off-field", "confidence LOW", "thiếu rotation và số liệu proc thực chiến"],
+      "adminDecisionRequired": "Do not approve yet. Admin should return REQUEST_CHANGES requesting the rotation/CRIT evidence; re-review tier A after evidence is supplied, then verify rights explicitly."
+    },
+    "independent-13407-SUPPORT-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "ER substat; Windfall R1 60% chance / 6 Energy / 12s ICD on CRIT hit; R5 100% / 6s ICD.",
+      "assessment": "Re-checked trigger and role fit. SS kept: team energy is universal within polearm supports once crit condition is met.",
+      "refinement": "R1 kept; no default R5.",
+      "rightsNote": "Internal analysis; no copied ranking text. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["phụ thuộc CRIT Rate"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R1 / Support / SS."
+    },
+    "independent-13501-MAIN_DPS-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "CRIT DMG substat; Reckless Cinnabar R1 +20% HP, 0.8% Max HP to ATK, +1% below 50% HP; R5 +40% / 1.6% / 1.8%.",
+      "assessment": "Phase B3 cross-character re-check: SS is justified only by the character-agnostic CRIT DMG + HP-to-ATK base, which applies to every polearm user. The low-HP bonus is explicitly excluded from the SS justification. Characters with low Max HP or DEF/HP scaling benefit less, so SS is not inferred from a few standout users or from Recommended Users lists.",
+      "refinement": "R1 kept as 5★ baseline.",
+      "rightsNote": "Independent tier decision, not from recommended-user lists. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["mốc HP thấp có rủi ro và không được tính vào SS", "lợi ích tùy Max HP", "nhân vật scale DEF/HP hưởng ít hơn từ phần ATK"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R1 / Main DPS / SS."
+    },
+    "independent-14302-SUPPORT-R5": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "HP% substat; Heritage R5 +48% ATK for the incoming character for 10s, 20s ICD; R1 +24%.",
+      "assessment": "OLD_TIER=SS, PROPOSED_TIER=S. Reason: buff is ATK-scaler only, applies to the next character, and covers 10/20s. SS threshold of role universality is not met.",
+      "refinement": "R5 kept because the assessed property is the maximum 3★ ATK transfer.",
+      "rightsNote": "Tier lowered by internal rubric, not copied from an external list. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["carry không scale ATK thì vô dụng", "uptime 10/20s", "phụ thuộc thứ tự swap"],
+      "adminDecisionRequired": "Mandatory re-review of the SS→S change, then verify rights and approve/reject R5 / Support / S."
+    },
+    "independent-14402-SUB_DPS-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "CRIT DMG substat; Debut R1 random 10s theme every 30s: +60% ATK / +48% Elemental DMG / +240 EM; R5 120% / 96% / 480.",
+      "assessment": "Phase B3 re-check: all three themes were assessed by character group. The EM theme is NOT treated as useless — for EM-scaling or transformative-reaction Sub DPS it can be the best theme, while ATK/Elemental-DMG scalers benefit from the other two. A is kept for the general Sub DPS role because value is group-dependent, the buff lasts only 10s per 30s, and it must align with a short burst window; S would require best-case assumptions.",
+      "refinement": "R1 kept; no assumption of receiving the desired theme each rotation.",
+      "rightsNote": "Tier change is an internal editorial conclusion; no external tier used. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["1/3 bản ca nên không chọn được", "uptime 10/30s", "dễ lệch burst window", "giá trị tùy nhóm nhân vật — EM không phải luôn kém"],
+      "adminDecisionRequired": "Mandatory re-review of the S→A change, then verify rights and approve/reject R1 / Sub DPS / A."
+    },
+    "independent-14406-SUPPORT-R5": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "HP% substat; Gilding R5 wielder-only 6 Energy every 2s for 6s = 18 Energy; party heals 6% of each member's own Max HP every 2s = 18% Max HP total; no party-wide Energy.",
+      "assessment": "Fact corrected. Tier A re-derived and kept: team healing and wielder burst support remain useful, but losing the imagined team-energy benefit and having an HP% substat prevent S.",
+      "refinement": "R5 kept for craftable maximum; R1 is 4 Energy / 4% HP and must not be reused.",
+      "rightsNote": "Corrected explanation is original GenshinHub text from local game facts. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["không hồi Energy cho đồng đội", "phụ thuộc Burst", "HP% ít giá trị tấn công"],
+      "adminDecisionRequired": "Verify the corrected Gilding facts and verify rights explicitly, then approve/reject R5 / Support / A."
+    },
+    "independent-14509-SUB_DPS-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "CRIT DMG substat; Kagura Dance R1 stack on Elemental Skill, 24s duration, max 3 stacks, +12% Skill/Stellar-Conduct DMG per stack and +12% All Elemental DMG at 3 stacks; R5 24% values.",
+      "assessment": "Re-checked stack trigger. A kept only with 3 stacks reachable in 24s; full passive is not counted when that condition is unmet.",
+      "refinement": "R1 kept as 5★ baseline; R5 does not change the stack requirement.",
+      "rightsNote": "Explanation rewritten from local game facts; no external editorial text. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["skill cooldown dài không đạt 3 stack", "không cộng full passive khi thiếu stack"],
+      "adminDecisionRequired": "Verify rights and the stack assumption, then approve/reject R1 / Sub DPS / A."
+    },
+    "independent-15402-SUB_DPS-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "EM substat; Arrowless Song R1 +24% Elemental Skill and Burst DMG; R5 +48%.",
+      "assessment": "Re-checked direct buff versus reaction dependence. S kept because the Skill/Burst bonus works independently of team reactions.",
+      "refinement": "R1 kept; R5 is a separate scaling claim.",
+      "rightsNote": "Evidence pointer normalized to resolvable genshin-db and local game facts. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["phản ứng phụ thuộc đội hình"],
+      "adminDecisionRequired": "Verify rights, then approve/reject R1 / Sub DPS / S."
+    },
+    "independent-15508-MAIN_DPS-R1": {
+      "recommendation": "READY_FOR_ADMIN_REVIEW",
+      "gameFact": "CRIT DMG substat; The Cleansing Form R1 +16% HP and +20% DMG when opponents are nearby, effective on-field and off-field; R5 +32% / +40%. NOT a no-enemies condition.",
+      "assessment": "Condition corrected. Tier S re-derived and kept, not raised to SS or best-in-slot: the DMG bonus is modest and the HP bonus is not useful for most bow Main DPS.",
+      "refinement": "R1 kept as 5★ baseline; R5 doubles values but keeps the same proximity condition.",
+      "rightsNote": "Corrected condition comes from local game facts; tier is independently judged. Flag stays false.",
+      "proposedDiff": [],
+      "limitations": ["HP ít giá trị với đa số Main DPS cung", "buff 20% khiêm tốn"],
+      "adminDecisionRequired": "Verify the corrected proximity condition and verify rights explicitly, then approve/reject R1 / Main DPS / S."
+    }
+  }
+}

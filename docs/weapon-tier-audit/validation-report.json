@@ -1,0 +1,2616 @@
+{
+  "ok": false,
+  "records": 296,
+  "issues": [
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[2] 11510/MAIN_DPS",
+      "detail": "11510|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[2] 11510/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[3] 11514/MAIN_DPS",
+      "detail": "11514|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[3] 11514/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[4] 11517/MAIN_DPS",
+      "detail": "11517|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[4] 11517/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[5] 11519/MAIN_DPS",
+      "detail": "11519|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[5] 11519/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[7] 11513/MAIN_DPS",
+      "detail": "11513|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[7] 11513/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[8] 11515/MAIN_DPS",
+      "detail": "11515|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[8] 11515/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[9] 11432/MAIN_DPS",
+      "detail": "11432|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[9] 11432/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[10] 11424/MAIN_DPS",
+      "detail": "11424|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[10] 11424/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[11] 11409/MAIN_DPS",
+      "detail": "11409|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[11] 11409/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[12] 11502/MAIN_DPS",
+      "detail": "11502|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[12] 11502/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[13] 11414/MAIN_DPS",
+      "detail": "11414|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[13] 11414/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[14] 11422/MAIN_DPS",
+      "detail": "11422|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[14] 11422/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[15] 11407/MAIN_DPS",
+      "detail": "11407|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[15] 11407/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[16] 11302/MAIN_DPS",
+      "detail": "11302|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[16] 11302/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[18] 11501/MAIN_DPS",
+      "detail": "11501|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[18] 11501/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[19] 11430/MAIN_DPS",
+      "detail": "11430|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[19] 11430/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[20] 11434/MAIN_DPS",
+      "detail": "11434|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[20] 11434/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[21] 11425/MAIN_DPS",
+      "detail": "11425|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[21] 11425/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[22] 11405/MAIN_DPS",
+      "detail": "11405|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[22] 11405/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[23] 11408/MAIN_DPS",
+      "detail": "11408|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[23] 11408/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[24] 11402/MAIN_DPS",
+      "detail": "11402|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[24] 11402/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[25] 11404/MAIN_DPS",
+      "detail": "11404|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[25] 11404/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[26] 11406/MAIN_DPS",
+      "detail": "11406|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[26] 11406/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[27] 11304/MAIN_DPS",
+      "detail": "11304|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[27] 11304/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[28] 11306/MAIN_DPS",
+      "detail": "11306|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[28] 11306/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[29] 11513/SUB_DPS",
+      "detail": "11513|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[29] 11513/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[30] 11503/SUB_DPS",
+      "detail": "11503|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[30] 11503/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[33] 11514/SUB_DPS",
+      "detail": "11514|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[33] 11514/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[34] 11518/SUB_DPS",
+      "detail": "11518|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[34] 11518/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[35] 11502/SUB_DPS",
+      "detail": "11502|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[35] 11502/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[37] 11426/SUB_DPS",
+      "detail": "11426|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[37] 11426/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[40] 11302/SUB_DPS",
+      "detail": "11302|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[40] 11302/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[41] 11424/SUB_DPS",
+      "detail": "11424|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[41] 11424/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[42] 11427/SUB_DPS",
+      "detail": "11427|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[42] 11427/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[43] 11433/SUB_DPS",
+      "detail": "11433|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[43] 11433/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[44] 11414/SUB_DPS",
+      "detail": "11414|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[44] 11414/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[45] 11407/SUB_DPS",
+      "detail": "11407|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[45] 11407/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[46] 11422/SUB_DPS",
+      "detail": "11422|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[46] 11422/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[47] 11413/SUB_DPS",
+      "detail": "11413|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[47] 11413/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[48] 11431/SUB_DPS",
+      "detail": "11431|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[48] 11431/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[49] 11405/SUB_DPS",
+      "detail": "11405|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[49] 11405/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[50] 11410/SUB_DPS",
+      "detail": "11410|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[50] 11410/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[51] 11415/SUB_DPS",
+      "detail": "11415|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[51] 11415/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[52] 11304/SUB_DPS",
+      "detail": "11304|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[52] 11304/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[53] 11301/SUB_DPS",
+      "detail": "11301|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[53] 11301/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[54] 11516/SUPPORT",
+      "detail": "11516|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[54] 11516/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[55] 11503/SUPPORT",
+      "detail": "11503|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[55] 11503/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[58] 11502/SUPPORT",
+      "detail": "11502|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[58] 11502/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[59] 11426/SUPPORT",
+      "detail": "11426|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[59] 11426/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[61] 11417/SUPPORT",
+      "detail": "11417|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[61] 11417/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[62] 11427/SUPPORT",
+      "detail": "11427|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[62] 11427/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[63] 11433/SUPPORT",
+      "detail": "11433|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[63] 11433/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[64] 12512/MAIN_DPS",
+      "detail": "12512|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[64] 12512/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[66] 12515/MAIN_DPS",
+      "detail": "12515|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[66] 12515/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[67] 12511/MAIN_DPS",
+      "detail": "12511|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[67] 12511/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[68] 12510/MAIN_DPS",
+      "detail": "12510|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[68] 12510/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[69] 12409/MAIN_DPS",
+      "detail": "12409|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[69] 12409/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[70] 12513/MAIN_DPS",
+      "detail": "12513|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[70] 12513/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[72] 12504/MAIN_DPS",
+      "detail": "12504|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[72] 12504/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[73] 12503/MAIN_DPS",
+      "detail": "12503|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[73] 12503/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[74] 12501/MAIN_DPS",
+      "detail": "12501|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[74] 12501/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[75] 12431/MAIN_DPS",
+      "detail": "12431|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[75] 12431/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[76] 12432/MAIN_DPS",
+      "detail": "12432|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[76] 12432/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[77] 12426/MAIN_DPS",
+      "detail": "12426|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[77] 12426/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[78] 12405/MAIN_DPS",
+      "detail": "12405|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[78] 12405/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[79] 12407/MAIN_DPS",
+      "detail": "12407|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[79] 12407/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[80] 12418/MAIN_DPS",
+      "detail": "12418|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[80] 12418/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[81] 12430/MAIN_DPS",
+      "detail": "12430|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[81] 12430/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[82] 12424/MAIN_DPS",
+      "detail": "12424|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[82] 12424/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[83] 12412/MAIN_DPS",
+      "detail": "12412|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[83] 12412/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[84] 12416/MAIN_DPS",
+      "detail": "12416|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[84] 12416/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[85] 12406/MAIN_DPS",
+      "detail": "12406|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[85] 12406/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[86] 12408/MAIN_DPS",
+      "detail": "12408|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[86] 12408/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[87] 12425/MAIN_DPS",
+      "detail": "12425|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[87] 12425/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[88] 12410/MAIN_DPS",
+      "detail": "12410|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[88] 12410/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[89] 12411/MAIN_DPS",
+      "detail": "12411|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[89] 12411/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[90] 12512/SUB_DPS",
+      "detail": "12512|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[90] 12512/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[91] 12511/SUB_DPS",
+      "detail": "12511|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[91] 12511/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[93] 12403/SUB_DPS",
+      "detail": "12403|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[93] 12403/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[95] 12416/SUB_DPS",
+      "detail": "12416|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[95] 12416/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[96] 12501/SUB_DPS",
+      "detail": "12501|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[96] 12501/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[97] 12432/SUB_DPS",
+      "detail": "12432|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[97] 12432/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[98] 12426/SUB_DPS",
+      "detail": "12426|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[98] 12426/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[99] 12433/SUB_DPS",
+      "detail": "12433|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[99] 12433/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[100] 12405/SUB_DPS",
+      "detail": "12405|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[100] 12405/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[101] 12414/SUB_DPS",
+      "detail": "12414|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[101] 12414/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[102] 12415/SUB_DPS",
+      "detail": "12415|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[102] 12415/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[103] 12418/SUB_DPS",
+      "detail": "12418|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[103] 12418/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[104] 12412/SUB_DPS",
+      "detail": "12412|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[104] 12412/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[105] 12425/SUB_DPS",
+      "detail": "12425|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[105] 12425/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[106] 12427/SUB_DPS",
+      "detail": "12427|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[106] 12427/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[107] 12410/SUB_DPS",
+      "detail": "12410|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[107] 12410/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[109] 12511/SUPPORT",
+      "detail": "12511|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[109] 12511/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[111] 12403/SUPPORT",
+      "detail": "12403|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[111] 12403/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[112] 12415/SUPPORT",
+      "detail": "12415|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[112] 12415/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[113] 12417/SUPPORT",
+      "detail": "12417|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[113] 12417/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[114] 12433/SUPPORT",
+      "detail": "12433|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[114] 12433/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[115] 12504/SUPPORT",
+      "detail": "12504|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[115] 12504/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[116] 12402/SUPPORT",
+      "detail": "12402|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[116] 12402/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[118] 13505/MAIN_DPS",
+      "detail": "13505|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[118] 13505/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[119] 13511/MAIN_DPS",
+      "detail": "13511|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[119] 13511/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[120] 13509/MAIN_DPS",
+      "detail": "13509|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[120] 13509/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[121] 13405/MAIN_DPS",
+      "detail": "13405|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[121] 13405/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[122] 13512/MAIN_DPS",
+      "detail": "13512|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[122] 13512/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[123] 13516/MAIN_DPS",
+      "detail": "13516|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[123] 13516/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[124] 13504/MAIN_DPS",
+      "detail": "13504|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[124] 13504/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[125] 13507/MAIN_DPS",
+      "detail": "13507|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[125] 13507/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[126] 13502/MAIN_DPS",
+      "detail": "13502|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[126] 13502/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[127] 13424/MAIN_DPS",
+      "detail": "13424|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[127] 13424/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[128] 13427/MAIN_DPS",
+      "detail": "13427|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[128] 13427/MAIN_DPS",
+      "detail": "DISPUTED"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[129] 13434/MAIN_DPS",
+      "detail": "13434|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[129] 13434/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[130] 13419/MAIN_DPS",
+      "detail": "13419|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[130] 13419/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "DUPLICATE_RANKING",
+      "where": "records[131] 13427/MAIN_DPS",
+      "detail": "13427|POLEARM|MAIN_DPS|UNSPECIFIED|UNSPECIFIED|UNSPECIFIED"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[131] 13427/MAIN_DPS",
+      "detail": "13427|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[131] 13427/MAIN_DPS",
+      "detail": "DISPUTED"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[132] 13432/MAIN_DPS",
+      "detail": "13432|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[132] 13432/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[134] 13404/MAIN_DPS",
+      "detail": "13404|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[134] 13404/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[135] 13406/MAIN_DPS",
+      "detail": "13406|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[135] 13406/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[136] 13301/MAIN_DPS",
+      "detail": "13301|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[136] 13301/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[137] 13403/MAIN_DPS",
+      "detail": "13403|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[137] 13403/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[138] 13402/MAIN_DPS",
+      "detail": "13402|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[138] 13402/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[139] 13409/MAIN_DPS",
+      "detail": "13409|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[139] 13409/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[140] 13514/SUB_DPS",
+      "detail": "13514|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[140] 13514/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[141] 13509/SUB_DPS",
+      "detail": "13509|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[141] 13509/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[143] 13511/SUB_DPS",
+      "detail": "13511|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[143] 13511/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[144] 13415/SUB_DPS",
+      "detail": "13415|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[144] 13415/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[146] 13513/SUB_DPS",
+      "detail": "13513|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[146] 13513/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[147] 13502/SUB_DPS",
+      "detail": "13502|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[147] 13502/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[148] 13424/SUB_DPS",
+      "detail": "13424|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[148] 13424/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[149] 13414/SUB_DPS",
+      "detail": "13414|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[149] 13414/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[150] 13416/SUB_DPS",
+      "detail": "13416|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[150] 13416/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[151] 13515/SUB_DPS",
+      "detail": "13515|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[151] 13515/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[152] 13507/SUB_DPS",
+      "detail": "13507|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[152] 13507/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[153] 13430/SUB_DPS",
+      "detail": "13430|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[153] 13430/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[154] 13434/SUB_DPS",
+      "detail": "13434|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[154] 13434/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[155] 13427/SUB_DPS",
+      "detail": "13427|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[155] 13427/SUB_DPS",
+      "detail": "DISPUTED"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[157] 13405/SUB_DPS",
+      "detail": "13405|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[157] 13405/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[158] 13417/SUB_DPS",
+      "detail": "13417|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[158] 13417/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "DUPLICATE_RANKING",
+      "where": "records[159] 13427/SUB_DPS",
+      "detail": "13427|POLEARM|SUB_DPS|UNSPECIFIED|UNSPECIFIED|UNSPECIFIED"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[159] 13427/SUB_DPS",
+      "detail": "13427|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[159] 13427/SUB_DPS",
+      "detail": "DISPUTED"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[160] 13432/SUB_DPS",
+      "detail": "13432|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[160] 13432/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[161] 13419/SUB_DPS",
+      "detail": "13419|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[161] 13419/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[162] 13406/SUB_DPS",
+      "detail": "13406|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[162] 13406/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[163] 13431/SUB_DPS",
+      "detail": "13431|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[163] 13431/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[164] 13402/SUB_DPS",
+      "detail": "13402|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[164] 13402/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[166] 13514/SUPPORT",
+      "detail": "13514|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[166] 13514/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[167] 13425/SUPPORT",
+      "detail": "13425|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[167] 13425/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[168] 13426/SUPPORT",
+      "detail": "13426|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[168] 13426/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[169] 13303/SUPPORT",
+      "detail": "13303|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[169] 13303/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[170] 13515/SUPPORT",
+      "detail": "13515|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[170] 13515/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[171] 13507/SUPPORT",
+      "detail": "13507|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[171] 13507/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[172] 13417/SUPPORT",
+      "detail": "13417|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[172] 13417/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[173] 13504/SUPPORT",
+      "detail": "13504|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[173] 13504/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[174] 15514/MAIN_DPS",
+      "detail": "15514|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[174] 15514/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[175] 15512/MAIN_DPS",
+      "detail": "15512|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[175] 15512/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[176] 15507/MAIN_DPS",
+      "detail": "15507|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[176] 15507/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[179] 15101/MAIN_DPS",
+      "detail": "15101|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[179] 15101/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[180] 15502/MAIN_DPS",
+      "detail": "15502|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[180] 15502/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[181] 15501/MAIN_DPS",
+      "detail": "15501|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[181] 15501/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[182] 15430/MAIN_DPS",
+      "detail": "15430|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[182] 15430/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[183] 15405/MAIN_DPS",
+      "detail": "15405|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[183] 15405/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[184] 15515/MAIN_DPS",
+      "detail": "15515|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[184] 15515/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[185] 15424/MAIN_DPS",
+      "detail": "15424|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[185] 15424/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[186] 15414/MAIN_DPS",
+      "detail": "15414|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[186] 15414/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[187] 15416/MAIN_DPS",
+      "detail": "15416|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[187] 15416/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[188] 15431/MAIN_DPS",
+      "detail": "15431|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[188] 15431/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[189] 15427/MAIN_DPS",
+      "detail": "15427|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[189] 15427/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[190] 15426/MAIN_DPS",
+      "detail": "15426|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[190] 15426/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[191] 15412/MAIN_DPS",
+      "detail": "15412|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[191] 15412/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[192] 15408/MAIN_DPS",
+      "detail": "15408|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[192] 15408/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[193] 15409/MAIN_DPS",
+      "detail": "15409|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[193] 15409/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[194] 15417/MAIN_DPS",
+      "detail": "15417|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[194] 15417/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[195] 15301/MAIN_DPS",
+      "detail": "15301|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[195] 15301/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[196] 15304/MAIN_DPS",
+      "detail": "15304|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[196] 15304/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[197] 15419/MAIN_DPS",
+      "detail": "15419|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[197] 15419/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[198] 15406/MAIN_DPS",
+      "detail": "15406|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[198] 15406/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[199] 15407/MAIN_DPS",
+      "detail": "15407|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[199] 15407/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[200] 15302/MAIN_DPS",
+      "detail": "15302|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[200] 15302/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[201] 15507/SUB_DPS",
+      "detail": "15507|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[201] 15507/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[204] 15501/SUB_DPS",
+      "detail": "15501|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[204] 15501/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[206] 15101/SUB_DPS",
+      "detail": "15101|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[206] 15101/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[208] 15513/SUB_DPS",
+      "detail": "15513|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[208] 15513/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[209] 15516/SUB_DPS",
+      "detail": "15516|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[209] 15516/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[210] 15425/SUB_DPS",
+      "detail": "15425|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[210] 15425/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[211] 15433/SUB_DPS",
+      "detail": "15433|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[211] 15433/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[212] 15434/SUB_DPS",
+      "detail": "15434|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[212] 15434/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[213] 15410/SUB_DPS",
+      "detail": "15410|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[213] 15410/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[214] 15416/SUB_DPS",
+      "detail": "15416|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[214] 15416/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[215] 15411/SUB_DPS",
+      "detail": "15411|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[215] 15411/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[216] 15403/SUB_DPS",
+      "detail": "15403|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[216] 15403/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[217] 15432/SUB_DPS",
+      "detail": "15432|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[217] 15432/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[218] 15427/SUB_DPS",
+      "detail": "15427|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[218] 15427/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[219] 15426/SUB_DPS",
+      "detail": "15426|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[219] 15426/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[220] 15413/SUB_DPS",
+      "detail": "15413|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[220] 15413/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[221] 15417/SUB_DPS",
+      "detail": "15417|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[221] 15417/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[222] 15418/SUB_DPS",
+      "detail": "15418|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[222] 15418/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[223] 15301/SUB_DPS",
+      "detail": "15301|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[223] 15301/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[224] 15302/SUB_DPS",
+      "detail": "15302|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[224] 15302/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[227] 15403/SUPPORT",
+      "detail": "15403|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[227] 15403/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[228] 15513/SUPPORT",
+      "detail": "15513|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[228] 15513/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[229] 15431/SUPPORT",
+      "detail": "15431|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[229] 15431/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[230] 15432/SUPPORT",
+      "detail": "15432|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[230] 15432/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[231] 15433/SUPPORT",
+      "detail": "15433|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[231] 15433/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[232] 15434/SUPPORT",
+      "detail": "15434|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[232] 15434/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[233] 15303/SUPPORT",
+      "detail": "15303|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[233] 15303/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[234] 14502/MAIN_DPS",
+      "detail": "14502|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[234] 14502/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[235] 14512/MAIN_DPS",
+      "detail": "14512|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[235] 14512/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[237] 14516/MAIN_DPS",
+      "detail": "14516|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[237] 14516/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[238] 14519/MAIN_DPS",
+      "detail": "14519|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[238] 14519/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[239] 14513/MAIN_DPS",
+      "detail": "14513|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[239] 14513/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[240] 14514/MAIN_DPS",
+      "detail": "14514|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[240] 14514/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[241] 14518/MAIN_DPS",
+      "detail": "14518|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[241] 14518/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[242] 14501/MAIN_DPS",
+      "detail": "14501|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[242] 14501/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[244] 14434/MAIN_DPS",
+      "detail": "14434|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[244] 14434/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[245] 14521/MAIN_DPS",
+      "detail": "14521|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[245] 14521/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[246] 14520/MAIN_DPS",
+      "detail": "14520|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[246] 14520/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[247] 14504/MAIN_DPS",
+      "detail": "14504|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[247] 14504/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[248] 14431/MAIN_DPS",
+      "detail": "14431|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[248] 14431/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[249] 14432/MAIN_DPS",
+      "detail": "14432|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[249] 14432/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[250] 14426/MAIN_DPS",
+      "detail": "14426|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[250] 14426/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[251] 14405/MAIN_DPS",
+      "detail": "14405|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[251] 14405/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[252] 14427/MAIN_DPS",
+      "detail": "14427|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[252] 14427/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[253] 14425/MAIN_DPS",
+      "detail": "14425|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[253] 14425/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[254] 14413/MAIN_DPS",
+      "detail": "14413|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[254] 14413/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[255] 14407/MAIN_DPS",
+      "detail": "14407|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[255] 14407/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[256] 14416/MAIN_DPS",
+      "detail": "14416|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[256] 14416/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[257] 14301/MAIN_DPS",
+      "detail": "14301|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[257] 14301/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[258] 14506/MAIN_DPS",
+      "detail": "14506|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[258] 14506/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[259] 14408/MAIN_DPS",
+      "detail": "14408|MAIN_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[259] 14408/MAIN_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[260] 14518/SUB_DPS",
+      "detail": "14518|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[260] 14518/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[263] 14501/SUB_DPS",
+      "detail": "14501|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[263] 14501/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[264] 14403/SUB_DPS",
+      "detail": "14403|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[264] 14403/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[265] 14522/SUB_DPS",
+      "detail": "14522|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[265] 14522/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[266] 14432/SUB_DPS",
+      "detail": "14432|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[266] 14432/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[267] 14417/SUB_DPS",
+      "detail": "14417|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[267] 14417/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[268] 14433/SUB_DPS",
+      "detail": "14433|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[268] 14433/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[269] 14414/SUB_DPS",
+      "detail": "14414|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[269] 14414/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[270] 14401/SUB_DPS",
+      "detail": "14401|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[270] 14401/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[271] 14407/SUB_DPS",
+      "detail": "14407|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[271] 14407/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[272] 14416/SUB_DPS",
+      "detail": "14416|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[272] 14416/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[273] 14301/SUB_DPS",
+      "detail": "14301|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[273] 14301/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[274] 14430/SUB_DPS",
+      "detail": "14430|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[274] 14430/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[275] 14425/SUB_DPS",
+      "detail": "14425|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[275] 14425/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[276] 14424/SUB_DPS",
+      "detail": "14424|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[276] 14424/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[277] 14415/SUB_DPS",
+      "detail": "14415|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[277] 14415/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[278] 14304/SUB_DPS",
+      "detail": "14304|SUB_DPS"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[278] 14304/SUB_DPS",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[279] 14517/SUPPORT",
+      "detail": "14517|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[279] 14517/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[280] 14511/SUPPORT",
+      "detail": "14511|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[280] 14511/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[283] 14515/SUPPORT",
+      "detail": "14515|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[283] 14515/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[284] 14518/SUPPORT",
+      "detail": "14518|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[284] 14518/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[285] 14401/SUPPORT",
+      "detail": "14401|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[285] 14401/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[286] 14416/SUPPORT",
+      "detail": "14416|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[286] 14416/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[287] 14522/SUPPORT",
+      "detail": "14522|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[287] 14522/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[288] 14432/SUPPORT",
+      "detail": "14432|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[288] 14432/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[289] 14415/SUPPORT",
+      "detail": "14415|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[289] 14415/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[290] 14414/SUPPORT",
+      "detail": "14414|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[290] 14414/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[291] 14403/SUPPORT",
+      "detail": "14403|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[291] 14403/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[292] 14506/SUPPORT",
+      "detail": "14506|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[292] 14506/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[293] 14505/SUPPORT",
+      "detail": "14505|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[293] 14505/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[294] 14430/SUPPORT",
+      "detail": "14430|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[294] 14430/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "EXPLANATION_MISSING",
+      "where": "records[295] 14433/SUPPORT",
+      "detail": "14433|SUPPORT"
+    },
+    {
+      "code": "NOT_APPROVED",
+      "where": "records[295] 14433/SUPPORT",
+      "detail": "NEEDS_REVIEW"
+    },
+    {
+      "code": "SOURCE_CONFLICT",
+      "where": "13427|MAIN_DPS",
+      "detail": "A, B"
+    },
+    {
+      "code": "SOURCE_CONFLICT",
+      "where": "13427|SUB_DPS",
+      "detail": "A, B"
+    }
+  ],
+  "counts": {
+    "EXPLANATION_MISSING": 258,
+    "NOT_APPROVED": 258,
+    "DUPLICATE_RANKING": 2,
+    "SOURCE_CONFLICT": 2
+  },
+  "rightsVerified": false,
+  "gameVersionStatus": "SOURCE_MISSING",
+  "target": "127.0.0.1:5434/genshinhub",
+  "note": "Draft validation only. No database write."
+}

@@ -1,0 +1,2268 @@
+{
+  "sourceUrl": "https://genshin-builds.com/en/tier-list",
+  "gameVersion": "7.2",
+  "tierLabels": {
+    "0": "SS",
+    "1": "S",
+    "2": "A",
+    "3": "B",
+    "4": "C",
+    "5": "D"
+  },
+  "roleLabels": {
+    "maindps": "MAIN_DPS",
+    "subdps": "SUB_DPS",
+    "support": "SUPPORT"
+  },
+  "grid": [
+    {
+      "sourceId": "sandrone",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "sandrone"
+    },
+    {
+      "sourceId": "mitya",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "mitya"
+    },
+    {
+      "sourceId": "vesna",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "vesna"
+    },
+    {
+      "sourceId": "traveler_cryo",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": null
+    },
+    {
+      "sourceId": "zibai",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "zibai"
+    },
+    {
+      "sourceId": "mavuika",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "mavuika"
+    },
+    {
+      "sourceId": "nefer",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "nefer"
+    },
+    {
+      "sourceId": "flins",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "flins"
+    },
+    {
+      "sourceId": "wriothesley",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "wriothesley"
+    },
+    {
+      "sourceId": "cyno",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "cyno"
+    },
+    {
+      "sourceId": "yumemizuki_mizuki",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "yumemizu"
+    },
+    {
+      "sourceId": "skirk",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "skirk"
+    },
+    {
+      "sourceId": "varka",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "varka"
+    },
+    {
+      "sourceId": "mualani",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "mualani"
+    },
+    {
+      "sourceId": "varesa",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "varesa"
+    },
+    {
+      "sourceId": "chasca",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "chasca"
+    },
+    {
+      "sourceId": "lohen",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "lohen"
+    },
+    {
+      "sourceId": "kinich",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "kinich"
+    },
+    {
+      "sourceId": "arlecchino",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "arlecchino"
+    },
+    {
+      "sourceId": "neuvillette",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "neuvillette"
+    },
+    {
+      "sourceId": "klee",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "klee"
+    },
+    {
+      "sourceId": "kamisato_ayaka",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "kamisato-ayaka"
+    },
+    {
+      "sourceId": "venti",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "venti"
+    },
+    {
+      "sourceId": "clorinde",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "clorinde"
+    },
+    {
+      "sourceId": "gaming",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "gaming"
+    },
+    {
+      "sourceId": "navia",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "navia"
+    },
+    {
+      "sourceId": "alhaitham",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "alhaitham"
+    },
+    {
+      "sourceId": "lyney",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "lyney"
+    },
+    {
+      "sourceId": "hu_tao",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "hu-tao"
+    },
+    {
+      "sourceId": "xiao",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "xiao"
+    },
+    {
+      "sourceId": "razor",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "razor"
+    },
+    {
+      "sourceId": "raiden_shogun",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "raiden-shogun"
+    },
+    {
+      "sourceId": "tartaglia",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "tartaglia"
+    },
+    {
+      "sourceId": "wanderer",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "wanderer"
+    },
+    {
+      "sourceId": "yoimiya",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "yoimiya"
+    },
+    {
+      "sourceId": "diluc",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "diluc"
+    },
+    {
+      "sourceId": "arataki_itto",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "arataki-itto"
+    },
+    {
+      "sourceId": "kamisato_ayato",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "kamisato-ayato"
+    },
+    {
+      "sourceId": "ganyu",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "ganyu"
+    },
+    {
+      "sourceId": "tighnari",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "tighnari"
+    },
+    {
+      "sourceId": "sethos",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "sethos"
+    },
+    {
+      "sourceId": "ifa",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "ifa"
+    },
+    {
+      "sourceId": "keqing",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "keqing"
+    },
+    {
+      "sourceId": "noelle",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "noelle"
+    },
+    {
+      "sourceId": "eula",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "eula"
+    },
+    {
+      "sourceId": "odette",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "odette"
+    },
+    {
+      "sourceId": "columbina",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "columbina"
+    },
+    {
+      "sourceId": "ineffa",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "ineffa"
+    },
+    {
+      "sourceId": "lauma",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "lauma"
+    },
+    {
+      "sourceId": "linnea",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "linnea"
+    },
+    {
+      "sourceId": "yae_miko",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "yae-miko"
+    },
+    {
+      "sourceId": "mavuika",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "mavuika"
+    },
+    {
+      "sourceId": "furina",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "furina"
+    },
+    {
+      "sourceId": "escoffier",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "escoffier"
+    },
+    {
+      "sourceId": "durin",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "durin"
+    },
+    {
+      "sourceId": "yelan",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "yelan"
+    },
+    {
+      "sourceId": "fischl",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "fischl"
+    },
+    {
+      "sourceId": "nahida",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "nahida"
+    },
+    {
+      "sourceId": "albedo",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "albedo"
+    },
+    {
+      "sourceId": "emilie",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "emilie"
+    },
+    {
+      "sourceId": "xingqiu",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "xingqiu"
+    },
+    {
+      "sourceId": "xiangling",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "xiangling"
+    },
+    {
+      "sourceId": "venti",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "venti"
+    },
+    {
+      "sourceId": "raiden_shogun",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "raiden-shogun"
+    },
+    {
+      "sourceId": "nilou",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "nilou"
+    },
+    {
+      "sourceId": "kuki_shinobu",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "kuki-shinobu"
+    },
+    {
+      "sourceId": "ororon",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "ororon"
+    },
+    {
+      "sourceId": "mona",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "mona"
+    },
+    {
+      "sourceId": "prune",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "prune"
+    },
+    {
+      "sourceId": "sucrose",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "sucrose"
+    },
+    {
+      "sourceId": "aino",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "aino"
+    },
+    {
+      "sourceId": "chiori",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "chiori"
+    },
+    {
+      "sourceId": "rosaria",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "rosaria"
+    },
+    {
+      "sourceId": "ganyu",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "ganyu"
+    },
+    {
+      "sourceId": "sangonomiya_kokomi",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "sangonomiya-kokomi"
+    },
+    {
+      "sourceId": "traveler_pyro",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "traveler-pyro"
+    },
+    {
+      "sourceId": "thoma",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "thoma"
+    },
+    {
+      "sourceId": "beidou",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "beidou"
+    },
+    {
+      "sourceId": "collei",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "collei"
+    },
+    {
+      "sourceId": "jahoda",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "jahoda"
+    },
+    {
+      "sourceId": "lynette",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "lynette"
+    },
+    {
+      "sourceId": "traveler_dendro",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "traveler-dendro"
+    },
+    {
+      "sourceId": "kaeya",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "kaeya"
+    },
+    {
+      "sourceId": "kachina",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "kachina"
+    },
+    {
+      "sourceId": "dehya",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "dehya"
+    },
+    {
+      "sourceId": "lisa",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "lisa"
+    },
+    {
+      "sourceId": "chongyun",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "chongyun"
+    },
+    {
+      "sourceId": "sayu",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "sayu"
+    },
+    {
+      "sourceId": "odette",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "odette"
+    },
+    {
+      "sourceId": "columbina",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "columbina"
+    },
+    {
+      "sourceId": "mitya",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "mitya"
+    },
+    {
+      "sourceId": "lauma",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "lauma"
+    },
+    {
+      "sourceId": "nicole",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "nicole"
+    },
+    {
+      "sourceId": "linnea",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "linnea"
+    },
+    {
+      "sourceId": "bennett",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "bennett"
+    },
+    {
+      "sourceId": "iansan",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "iansan"
+    },
+    {
+      "sourceId": "citlali",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "citlali"
+    },
+    {
+      "sourceId": "ineffa",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C0",
+      "characterId": "ineffa"
+    },
+    {
+      "sourceId": "vodyanitsa",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "vodyanitsa"
+    },
+    {
+      "sourceId": "qiqi",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "qiqi"
+    },
+    {
+      "sourceId": "furina",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "furina"
+    },
+    {
+      "sourceId": "xilonen",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "xilonen"
+    },
+    {
+      "sourceId": "escoffier",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "escoffier"
+    },
+    {
+      "sourceId": "sucrose",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "sucrose"
+    },
+    {
+      "sourceId": "chevreuse",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C0",
+      "characterId": "chevreuse"
+    },
+    {
+      "sourceId": "nahida",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "nahida"
+    },
+    {
+      "sourceId": "mona",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "mona"
+    },
+    {
+      "sourceId": "kaedehara_kazuha",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "kaedehara-kazuha"
+    },
+    {
+      "sourceId": "xianyun",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "xianyun"
+    },
+    {
+      "sourceId": "baizhu",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "baizhu"
+    },
+    {
+      "sourceId": "zhongli",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "zhongli"
+    },
+    {
+      "sourceId": "shenhe",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C0",
+      "characterId": "shenhe"
+    },
+    {
+      "sourceId": "prune",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "prune"
+    },
+    {
+      "sourceId": "alyosha",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "alyosha"
+    },
+    {
+      "sourceId": "valeriy",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "valeriy"
+    },
+    {
+      "sourceId": "jean",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "jean"
+    },
+    {
+      "sourceId": "sangonomiya_kokomi",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "sangonomiya-kokomi"
+    },
+    {
+      "sourceId": "yaoyao",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "yaoyao"
+    },
+    {
+      "sourceId": "lan_yan",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "lanyan"
+    },
+    {
+      "sourceId": "layla",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "layla"
+    },
+    {
+      "sourceId": "kuki_shinobu",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "kuki-shinobu"
+    },
+    {
+      "sourceId": "illuga",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C0",
+      "characterId": "illuga"
+    },
+    {
+      "sourceId": "sigewinne",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "sigewinne"
+    },
+    {
+      "sourceId": "diona",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "diona"
+    },
+    {
+      "sourceId": "faruzan",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "faruzan"
+    },
+    {
+      "sourceId": "yun_jin",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "yun-jin"
+    },
+    {
+      "sourceId": "gorou",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "gorou"
+    },
+    {
+      "sourceId": "charlotte",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "charlotte"
+    },
+    {
+      "sourceId": "kirara",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "momoka"
+    },
+    {
+      "sourceId": "dehya",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "dehya"
+    },
+    {
+      "sourceId": "kujou_sara",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C0",
+      "characterId": "kujou-sara"
+    },
+    {
+      "sourceId": "jahoda",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "jahoda"
+    },
+    {
+      "sourceId": "mika",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "mika"
+    },
+    {
+      "sourceId": "yumemizuki_mizuki",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "yumemizu"
+    },
+    {
+      "sourceId": "dahlia",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "dahlia"
+    },
+    {
+      "sourceId": "barbara",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "barbara"
+    },
+    {
+      "sourceId": "sayu",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "sayu"
+    },
+    {
+      "sourceId": "candace",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "candace"
+    },
+    {
+      "sourceId": "thoma",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "thoma"
+    },
+    {
+      "sourceId": "rosaria",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C0",
+      "characterId": "rosaria"
+    },
+    {
+      "sourceId": "sandrone",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "sandrone"
+    },
+    {
+      "sourceId": "mitya",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "mitya"
+    },
+    {
+      "sourceId": "vesna",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "vesna"
+    },
+    {
+      "sourceId": "zibai",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "zibai"
+    },
+    {
+      "sourceId": "mavuika",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "mavuika"
+    },
+    {
+      "sourceId": "mualani",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "mualani"
+    },
+    {
+      "sourceId": "chasca",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "chasca"
+    },
+    {
+      "sourceId": "skirk",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "skirk"
+    },
+    {
+      "sourceId": "flins",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "flins"
+    },
+    {
+      "sourceId": "nefer",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "nefer"
+    },
+    {
+      "sourceId": "traveler_cryo",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": null
+    },
+    {
+      "sourceId": "wriothesley",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "wriothesley"
+    },
+    {
+      "sourceId": "cyno",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "cyno"
+    },
+    {
+      "sourceId": "varka",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "varka"
+    },
+    {
+      "sourceId": "neuvillette",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "neuvillette"
+    },
+    {
+      "sourceId": "arlecchino",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "arlecchino"
+    },
+    {
+      "sourceId": "yumemizuki_mizuki",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "yumemizu"
+    },
+    {
+      "sourceId": "navia",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "navia"
+    },
+    {
+      "sourceId": "varesa",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "varesa"
+    },
+    {
+      "sourceId": "lohen",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "lohen"
+    },
+    {
+      "sourceId": "chiori",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "chiori"
+    },
+    {
+      "sourceId": "kinich",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "kinich"
+    },
+    {
+      "sourceId": "yelan",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "yelan"
+    },
+    {
+      "sourceId": "clorinde",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "clorinde"
+    },
+    {
+      "sourceId": "lyney",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "lyney"
+    },
+    {
+      "sourceId": "furina",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "furina"
+    },
+    {
+      "sourceId": "wanderer",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "wanderer"
+    },
+    {
+      "sourceId": "xiao",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "xiao"
+    },
+    {
+      "sourceId": "klee",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "klee"
+    },
+    {
+      "sourceId": "venti",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "venti"
+    },
+    {
+      "sourceId": "kamisato_ayaka",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "kamisato-ayaka"
+    },
+    {
+      "sourceId": "gaming",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "gaming"
+    },
+    {
+      "sourceId": "alhaitham",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "alhaitham"
+    },
+    {
+      "sourceId": "hu_tao",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "hu-tao"
+    },
+    {
+      "sourceId": "xianyun",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "xianyun"
+    },
+    {
+      "sourceId": "kamisato_ayato",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "kamisato-ayato"
+    },
+    {
+      "sourceId": "raiden_shogun",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "raiden-shogun"
+    },
+    {
+      "sourceId": "arataki_itto",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "arataki-itto"
+    },
+    {
+      "sourceId": "razor",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "razor"
+    },
+    {
+      "sourceId": "tighnari",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "tighnari"
+    },
+    {
+      "sourceId": "ganyu",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "ganyu"
+    },
+    {
+      "sourceId": "eula",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "eula"
+    },
+    {
+      "sourceId": "diluc",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "diluc"
+    },
+    {
+      "sourceId": "tartaglia",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "tartaglia"
+    },
+    {
+      "sourceId": "yoimiya",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "yoimiya"
+    },
+    {
+      "sourceId": "sethos",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "sethos"
+    },
+    {
+      "sourceId": "ifa",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "ifa"
+    },
+    {
+      "sourceId": "keqing",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "keqing"
+    },
+    {
+      "sourceId": "noelle",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "noelle"
+    },
+    {
+      "sourceId": "yanfei",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "yanfei"
+    },
+    {
+      "sourceId": "dehya",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "dehya"
+    },
+    {
+      "sourceId": "shikanoin_heizou",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "shikanoin-heizou"
+    },
+    {
+      "sourceId": "kaveh",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "kaveh"
+    },
+    {
+      "sourceId": "ningguang",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "ningguang"
+    },
+    {
+      "sourceId": "freminet",
+      "role": "MAIN_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "freminet"
+    },
+    {
+      "sourceId": "odette",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "odette"
+    },
+    {
+      "sourceId": "columbina",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "columbina"
+    },
+    {
+      "sourceId": "furina",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "furina"
+    },
+    {
+      "sourceId": "durin",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "durin"
+    },
+    {
+      "sourceId": "mavuika",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "mavuika"
+    },
+    {
+      "sourceId": "yae_miko",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "yae-miko"
+    },
+    {
+      "sourceId": "escoffier",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "escoffier"
+    },
+    {
+      "sourceId": "lauma",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "lauma"
+    },
+    {
+      "sourceId": "ineffa",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "ineffa"
+    },
+    {
+      "sourceId": "linnea",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "linnea"
+    },
+    {
+      "sourceId": "yelan",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "yelan"
+    },
+    {
+      "sourceId": "nahida",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "nahida"
+    },
+    {
+      "sourceId": "fischl",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "fischl"
+    },
+    {
+      "sourceId": "emilie",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "emilie"
+    },
+    {
+      "sourceId": "albedo",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "albedo"
+    },
+    {
+      "sourceId": "nilou",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "nilou"
+    },
+    {
+      "sourceId": "raiden_shogun",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "raiden-shogun"
+    },
+    {
+      "sourceId": "mona",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "mona"
+    },
+    {
+      "sourceId": "xiangling",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "xiangling"
+    },
+    {
+      "sourceId": "xingqiu",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "xingqiu"
+    },
+    {
+      "sourceId": "venti",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "venti"
+    },
+    {
+      "sourceId": "prune",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "prune"
+    },
+    {
+      "sourceId": "kuki_shinobu",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "kuki-shinobu"
+    },
+    {
+      "sourceId": "ororon",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "ororon"
+    },
+    {
+      "sourceId": "aino",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "aino"
+    },
+    {
+      "sourceId": "chiori",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "chiori"
+    },
+    {
+      "sourceId": "sucrose",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "sucrose"
+    },
+    {
+      "sourceId": "rosaria",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "rosaria"
+    },
+    {
+      "sourceId": "ganyu",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "ganyu"
+    },
+    {
+      "sourceId": "sangonomiya_kokomi",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "sangonomiya-kokomi"
+    },
+    {
+      "sourceId": "thoma",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "thoma"
+    },
+    {
+      "sourceId": "collei",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "collei"
+    },
+    {
+      "sourceId": "traveler_pyro",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "traveler-pyro"
+    },
+    {
+      "sourceId": "beidou",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "beidou"
+    },
+    {
+      "sourceId": "dehya",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "dehya"
+    },
+    {
+      "sourceId": "kaeya",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "kaeya"
+    },
+    {
+      "sourceId": "lynette",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "lynette"
+    },
+    {
+      "sourceId": "traveler_dendro",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "traveler-dendro"
+    },
+    {
+      "sourceId": "kachina",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "kachina"
+    },
+    {
+      "sourceId": "lisa",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "lisa"
+    },
+    {
+      "sourceId": "chongyun",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "chongyun"
+    },
+    {
+      "sourceId": "sayu",
+      "role": "SUB_DPS",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "sayu"
+    },
+    {
+      "sourceId": "nicole",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "nicole"
+    },
+    {
+      "sourceId": "columbina",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "columbina"
+    },
+    {
+      "sourceId": "odette",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "odette"
+    },
+    {
+      "sourceId": "mitya",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "mitya"
+    },
+    {
+      "sourceId": "vodyanitsa",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "vodyanitsa"
+    },
+    {
+      "sourceId": "furina",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "furina"
+    },
+    {
+      "sourceId": "citlali",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "citlali"
+    },
+    {
+      "sourceId": "lauma",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "lauma"
+    },
+    {
+      "sourceId": "linnea",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "linnea"
+    },
+    {
+      "sourceId": "ineffa",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "ineffa"
+    },
+    {
+      "sourceId": "xilonen",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "xilonen"
+    },
+    {
+      "sourceId": "escoffier",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "constellation": "C6",
+      "characterId": "escoffier"
+    },
+    {
+      "sourceId": "nahida",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "nahida"
+    },
+    {
+      "sourceId": "bennett",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "bennett"
+    },
+    {
+      "sourceId": "iansan",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "iansan"
+    },
+    {
+      "sourceId": "prune",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "prune"
+    },
+    {
+      "sourceId": "sucrose",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "sucrose"
+    },
+    {
+      "sourceId": "qiqi",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "qiqi"
+    },
+    {
+      "sourceId": "chevreuse",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "chevreuse"
+    },
+    {
+      "sourceId": "kaedehara_kazuha",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "kaedehara-kazuha"
+    },
+    {
+      "sourceId": "mavuika",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "mavuika"
+    },
+    {
+      "sourceId": "alyosha",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "alyosha"
+    },
+    {
+      "sourceId": "valeriy",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "valeriy"
+    },
+    {
+      "sourceId": "shenhe",
+      "role": "SUPPORT",
+      "tier": "S",
+      "constellation": "C6",
+      "characterId": "shenhe"
+    },
+    {
+      "sourceId": "xianyun",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "xianyun"
+    },
+    {
+      "sourceId": "baizhu",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "baizhu"
+    },
+    {
+      "sourceId": "mona",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "mona"
+    },
+    {
+      "sourceId": "faruzan",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "faruzan"
+    },
+    {
+      "sourceId": "illuga",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "illuga"
+    },
+    {
+      "sourceId": "zhongli",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "zhongli"
+    },
+    {
+      "sourceId": "jean",
+      "role": "SUPPORT",
+      "tier": "A",
+      "constellation": "C6",
+      "characterId": "jean"
+    },
+    {
+      "sourceId": "sangonomiya_kokomi",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "sangonomiya-kokomi"
+    },
+    {
+      "sourceId": "lan_yan",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "lanyan"
+    },
+    {
+      "sourceId": "gorou",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "gorou"
+    },
+    {
+      "sourceId": "diona",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "diona"
+    },
+    {
+      "sourceId": "yaoyao",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "yaoyao"
+    },
+    {
+      "sourceId": "charlotte",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "charlotte"
+    },
+    {
+      "sourceId": "kuki_shinobu",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "kuki-shinobu"
+    },
+    {
+      "sourceId": "layla",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "layla"
+    },
+    {
+      "sourceId": "kirara",
+      "role": "SUPPORT",
+      "tier": "B",
+      "constellation": "C6",
+      "characterId": "momoka"
+    },
+    {
+      "sourceId": "sigewinne",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "sigewinne"
+    },
+    {
+      "sourceId": "jahoda",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "jahoda"
+    },
+    {
+      "sourceId": "yun_jin",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "yun-jin"
+    },
+    {
+      "sourceId": "kujou_sara",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "kujou-sara"
+    },
+    {
+      "sourceId": "yumemizuki_mizuki",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "yumemizu"
+    },
+    {
+      "sourceId": "dehya",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "dehya"
+    },
+    {
+      "sourceId": "thoma",
+      "role": "SUPPORT",
+      "tier": "C",
+      "constellation": "C6",
+      "characterId": "thoma"
+    },
+    {
+      "sourceId": "mika",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "mika"
+    },
+    {
+      "sourceId": "sayu",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "sayu"
+    },
+    {
+      "sourceId": "dahlia",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "dahlia"
+    },
+    {
+      "sourceId": "barbara",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "barbara"
+    },
+    {
+      "sourceId": "candace",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "candace"
+    },
+    {
+      "sourceId": "traveler_electro",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "traveler-electro"
+    },
+    {
+      "sourceId": "rosaria",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "rosaria"
+    },
+    {
+      "sourceId": "dori",
+      "role": "SUPPORT",
+      "tier": "D",
+      "constellation": "C6",
+      "characterId": "dori"
+    }
+  ],
+  "unranked": [
+    {
+      "sourceId": "yanfei",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "shikanoin_heizou",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "kaveh",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "freminet",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "ningguang",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "dehya",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "xinyan",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "aloy",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "xinyan",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "amber",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_geo",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_anemo",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_hydro",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "dori",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "lisa",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "chongyun",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_electro",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "noelle",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "xinyan",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "xinyan",
+      "role": "MAIN_DPS",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "xinyan",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_geo",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "amber",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_anemo",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "traveler_hydro",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "noelle",
+      "role": "SUPPORT",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "chongyun",
+      "role": "SUPPORT",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "lisa",
+      "role": "SUPPORT",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "xinyan",
+      "role": "SUPPORT",
+      "constellation": "C6",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 7 không được gán nhãn SS–D trong giao diện; không suy diễn tier."
+    }
+  ]
+}

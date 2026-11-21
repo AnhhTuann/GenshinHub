@@ -1,0 +1,1054 @@
+{
+  "batchId": "phase-b2-independent-001",
+  "gameVersion": "7.2",
+  "status": "DRAFT - CHUA DUOC ADMIN PHE DUYET, CHUA GHI DATABASE",
+  "method": {
+    "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+    "scoreFormula": "0.30*kit + 0.25*flex + 0.20*evidence + 0.15*constellation + 0.10*access",
+    "tierThresholds": {
+      "SS": 86,
+      "S": 76,
+      "A": 66,
+      "B": 56,
+      "C": 46,
+      "D": 0
+    },
+    "constellationPolicy": "Chi C0 va C6 duoc danh gia; C1-C5 de danh cho review rieng.",
+    "independencePolicy": "Khong doc tier tu snapshot Genshin-Builds lam dap an; khong dung rarity lam tier; tier duoc tinh tu rubric va mechanics da xac minh.",
+    "approvalPolicy": "Moi record la PENDING_REVIEW. Khong goi mutation Admin, khong tao approval actor.",
+    "b25Audit": {
+      "auditedAt": "2026-11-20",
+      "scope": "Rubric audit, gameplay assumption verification, evidence-quality separation and tier sensitivity; khong approve, khong ghi database.",
+      "note": "Evidence duoc danh gia la quality/verification signal nhung van con trong cong thuc rubric v1.0; moi record co b25Review voi category, risks, recommendation va performanceOnly sensitivity."
+    }
+  },
+  "rankings": [
+    {
+      "characterId": "bennett",
+      "characterName": "Bennett",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 84.3,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Burst Fantastic Voyage tạo Inspiration Field, vừa hồi máu khi đồng đội dưới 70% HP vừa cho buff ATK dựa trên Base ATK của Bennett, nên anh là trụ cột của các đội scale ATK. Đề xuất S vì ở C0 buff đã đủ mạnh để mở rộng nhiều rotation, nhưng bị trần bởi Base ATK và bắt buộc đứng trong trường nên chưa chạm ngưỡng SS. Điều kiện: hiệu quả tăng khi cả đội giữ trên 70% HP và đứng gần nhau; giảm khi gặp self-Pyro khó kiểm soát hoặc khi DPS chính scale theo HP/DEF. Constellation: không phụ thuộc; C0 đã có đủ buff lẫn heal, C1 chỉ bỏ giới hạn HP và cộng thêm 20% Base ATK. Hạn chế: tự áp Pyro có thể kích hoạt reaction ngoài ý muốn và buff không giúp được unit không scale ATK.",
+      "strengths": [
+        "ATK buff dựa trên Base ATK, hiệu quả với phần lớn DPS scale ATK",
+        "Hồi máu liên tục trong trường giúp giảm áp lực lên healer",
+        "Chi phí Burst thấp, tự tạo hạt Pyro nên dễ xoay chiêu"
+      ],
+      "limitations": [
+        "Buff bị giới hạn trong Inspiration Field",
+        "Không buff được character scale HP/DEF",
+        "Tự áp Pyro có thể làm hỏng setup Freeze hoặc reaction khác"
+      ],
+      "teamAssumptions": [
+        "Có ít nhất một DPS scale ATK đứng trong trường",
+        "Rotation giữ phần lớn thời gian trên 70% HP để nhận buff ATK",
+        "Không giả định C1 trở lên"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Bennett, Fantastic Voyage: \"If the health of a character within the AoE is equal to or falls below 70%, their health will continuously regenerate... If higher than 70%, they gain an ATK Bonus that is based on Bennett's Base ATK. Imbues characters within the AoE with Pyro.\"",
+          "genshin-db/talents Bennett, Rekindle/Fearnaught: giảm 20% CD skill và 50% CD skillinside field (kiểm tra conditions thực tế).",
+          "genshin-db/constellations Bennett C1 Grand Expectation và C6 Fire Ventures With Me (dùng để xác nhận C0 là baseline independent).",
+          "GenshinHub development DB: 12 CharacterWeapon rows, 4 CharacterArtifact rows, 8 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Bennett, Fantastic Voyage: Energy Cost = 60 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 86,
+          "flex": 82,
+          "evidence": 76,
+          "constellation": 92,
+          "access": 90
+        },
+        "energyRequirements": "Burst 60 năng lượng; tự sinh hạt từ skill nên thường self-sufficient, vẫn có thể cần ER phụ nếu rotation bỏ skill.",
+        "reactionCompatibility": "Pyro tự áp mở Vaporize/Melt cho Pyro DPS nhưng có thể cản trở Freeze hoặc Hydro-Cryo setup.",
+        "damageContribution": "Chủ yếu gián tiếp qua ATK buff; cá nhân không phải nguồn DPS chính ở C0.",
+        "teamUtility": " Buff ATK + heal + Pyro resonance enabler trong một slot.",
+        "constellationEffects": "Đánh giá thuần C0; C6 được tách thành record riêng để tránh gộp claim.",
+        "gameplayAssumptions": "Field được duy trì liên tục; DPS đứng trong field khi xả chiêu; không tính buff ngoài field.",
+        "versionNote": "genshin-db ghi release v1.0; cơ chế cốt lõi được đối chiếu với snapshot 7.2 tại local DB.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:bennett-support-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "RUBRIC_RECALIBRATION",
+        "risks": "Evidence quality (20%) dang duoc tinh vao performance. Bo evidence va chuan hoa lai: 86.4 -> SS, trong khi rubric v1.0 cho S. Buff van bi tran boi Base ATK va field-bound.",
+        "recommendation": "Gi S theo rubric v1.0 nhung Admin phai chot dinh nghia evidence la quality gate hay performance truoc approve; neu la quality gate thi can xem xet SS.",
+        "sensitivity": {
+          "performanceOnly": 86.4,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "bennett",
+      "characterName": "Bennett",
+      "role": "SUPPORT",
+      "constellation": "C6",
+      "proposedTier": "SS",
+      "rubricScore": 86.1,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: ở C6, Fire Ventures With Me cho +15% Pyro DMG và infuse Pyro cho character dùng sword, claymore hoặc polearm đứng trong field, nên Bennett không chỉ buff ATK mà còn mở thêm reaction và rotation Pyro cho một nhóm vũ khí cụ thể. Đề xuất SS nhưng kèm điều kiện: mức tăng đủ lớn để vượt S trong đội hình Pyro melee, nhưng không áp dụng cho bow/catalyst nên không phải universal upgrade. Điều kiện: có ít nhất một DPS sword/claymore/polearm hưởng lợi và Bennett đứng trong field; hiệu quả giảm rõ rệt nếu đội toàn bow/catalyst hoặc nếu tự infuse phá reaction. Constellation: record này đánh giá riêng C6, không kế thừa điểm C0; chi phí C6 được phạt nhẹ trong tiêu chí accessibility. Hạn chế: tự Pyro vẫn là rủi ro và 15% Pyro DMG chỉ có giá trị với Pyro damage.",
+      "strengths": [
+        "+15% Pyro DMG cho cả đội trong field",
+        "Pyro infusion mở thêm rotation cho sword/claymore/polearm",
+        "Vẫn giữ nguyên heal và ATK buff của C0"
+      ],
+      "limitations": [
+        "Không hưởng lợi với bow/catalyst",
+        "Pyro infusion có thể tự kích hoạt reaction ngoài ý muốn",
+        "Yêu cầu đầu tư C6 nên accessibility thấp hơn C0"
+      ],
+      "teamAssumptions": [
+        "Có DPS melee sword/claymore/polearm trong đội",
+        "Rotation ưu tiên Pyro/Vaporize/Melt",
+        "Không áp dụng cho đội thuần bow/catalyst"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/constellations Bennett C6 Fire Ventures With Me: \"Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with Pyro.\"",
+          "genshin-db/talents Bennett Fantastic Voyage: baseline ATK buff và heal vẫn hoạt động ở mọi constellation.",
+          "GenshinHub development DB: 12 CharacterWeapon rows, 4 CharacterArtifact rows, 8 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Bennett, Fantastic Voyage: Energy Cost = 60 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 96,
+          "flex": 88,
+          "evidence": 84,
+          "constellation": 82,
+          "access": 62
+        },
+        "energyRequirements": "Giữ nguyên mức 60 năng lượng của C0; C6 không đổi chi phí Burst.",
+        "reactionCompatibility": "Pyro infusion làm Vaporize/Melt dễ duy trì nhưng có thể cản Freeze; cần kiểm soát thứ tự áp element.",
+        "damageContribution": "Tăng gián tiếp 15% Pyro DMG cho cả đội cộng với ATK buff; không biến Bennett thành DPS chính.",
+        "teamUtility": "Mở rộng lựa chọn melee Pyro mà không đổi slot support.",
+        "constellationEffects": "C6 là điều kiện định nghĩa của record này; không suy từ C0 sang C6.",
+        "gameplayAssumptions": "DPS melee đứng trong field và chủ động dùng Pyro infusion; không tính giá trị cho bow/catalyst.",
+        "versionNote": "Cơ chế C6 từ genshin-db release v1.0, đối chiếu snapshot 7.2 tại local DB.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:bennett-support-c6",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "RUBRIC_RECALIBRATION",
+        "risks": "SS chỉ hơn nguong 0.1 diem; +15% Pyro DMG va infusion chi ap dung cho sword/claymore/polearm, khong universal. Trung lap giua constellation score va access score khi danh gia chi phi C6.",
+        "recommendation": "Admin xac nhan co giu SS (margin rat mong) hay ha S; khong tu chinh tier o pha nay.",
+        "sensitivity": {
+          "performanceOnly": 86.6,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "fischl",
+      "characterName": "Fischl",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "A",
+      "rubricScore": 74.3,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Fischl triệu hồi Oz để gây Electro damage off-field liên tục, và passive Undone Be Thy Sinful Hex tạo thêm sát thương khi active character kích hoạt reaction Electro, nên cô là nguồn damage nền ổn định mà không chiếm thời gian trên sân. Đề xuất A vì hiệu quả rõ ràng nhưng local DB chỉ có 2 weapon row, 1 artifact row và không có team row nên mức độ corroboration thấp hơn các candidate khác; cô cũng cạnh tranh trực tiếp với các sub-DPS Electro có utility rộng hơn. Điều kiện: cần giữ Oz trên sân và active character thường xuyên trigger Electro-related reaction; hiệu quả giảm nếu rotation hiếm reaction hoặc Oz bị hết hạn. Constellation: không phụ thuộc; C0 đã có Oz và coordinated damage từ passive, C6 chỉ tăng tần suất đánh cùng. Hạn chế: bản thân không có buff đội đáng kể và số liệu local hạn chế nên confidence chỉ ở mức MEDIUM.",
+      "strengths": [
+        "Off-field Electro damage ổn định qua Oz",
+        "Passive cộng thêm damage mỗi khi đội trigger reaction Electro",
+        "Không cần constellation để hoạt động"
+      ],
+      "limitations": [
+        "Ít buff trực tiếp cho đồng đội",
+        "Corroboration local mỏng: 0 team row",
+        "Phụ thuộc việc duy trì Oz và reaction Electro"
+      ],
+      "teamAssumptions": [
+        "Active character thường xuyên trigger Electro-related reaction",
+        "Oz được triệu hồi lại đúng chu kỳ",
+        "Không giả định C6 hoặc coordinated attack từ constellation"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Fischl, Nightrider: Oz \"will continuously attack nearby opponents with Freikugel\" trong suốt thời gian tồn tại.",
+          "genshin-db/talents Fischl, Undone Be Thy Sinful Hex: \"when your current active character triggers an Electro-related Elemental Reaction when Oz is on the field... Thundering Retribution that deals Electro DMG equal to 80% of Fischl's ATK.\"",
+          "genshin-db/constellations Fischl C6 Evernight Raven dùng để phân biệt rõ baseline C0 và bản C6 (không gộp claim).",
+          "GenshinHub development DB: 2 CharacterWeapon rows, 1 CharacterArtifact rows, 0 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Fischl, Midnight Nightmare: Energy Cost = 60 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 72,
+          "flex": 68,
+          "evidence": 66,
+          "constellation": 90,
+          "access": 90
+        },
+        "energyRequirements": "Burst Midnight Nightmare / Nightrider costs 60 energy (genshin-db talents attributes); uu tien ER du de hoi Oz thay vi spam Burst.",
+        "reactionCompatibility": "Electro-Charged, Overload và Quicken/Aggravate đều là reaction liên quan Electro mà passive có thể hưởng.",
+        "damageContribution": "Off-field là chính; on-field chỉ là filler trong rotation ngắn.",
+        "teamUtility": "Chủ yếu là damage; có thêm particle Electro từ Oz nhưng không có buff đội đáng kể.",
+        "constellationEffects": "Đánh giá C0; C6 Evernight Raven không được tính vào record này.",
+        "gameplayAssumptions": "Abyss-style rotation ngắn, Oz luôn present khi active character đánh reaction.",
+        "versionNote": "Release v1.0 trong genshin-db; snapshot 7.2 local chỉ corroborate mức độ dùng, không cung cấp tier mẫu.",
+        "confidence": "MEDIUM"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:fischl-sub_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "RUBRIC_RECALIBRATION",
+        "risks": "Bo evidence va chuan hoa lai: 76.4 -> S, lech mot tier so voi A hien tai. Local DB co 0 CharacterTeam row nen confidence MEDIUM; Oz van duoc duy tri la gia dinh.",
+        "recommendation": "Chot lai cach tin evidence weight truoc approve; neu evidence chi la quality gate thi Fischl can duoc review lai o tier S.",
+        "sensitivity": {
+          "performanceOnly": 76.4,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "xingqiu",
+      "characterName": "Xingqiu",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 83.7,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Burst Raincutter khiến đòn Normal Attack của active character kích hoạt thêm sword rain, tạo lượng Hydro damage off-field dày đặc; bộ Rain Swords còn giảm sát thương nhận vào và hồi máu nhỏ qua passive Hydropathic. Đề xuất S vì combo damage + Hydro application + survivability này hoạt động ngay ở C0 và fit nhiều đội, nhưng anh không có buff đội quy mô lớn nên chưa đạt SS. Điều kiện: cần active character liên tục Normal Attack trong suốt Burst; hiệu quả giảm mạnh nếu DPS dùng Charged/Plunge hoặc Rotation ngắt quãng. Constellation: không phụ thuộc; C0 đã có Raincutter đầy đủ, C1 chỉ thêm một Rain Sword và C6 cải thiện sword rain thứ ba. Hạn chế: yêu cầu ER đáng kể để giữ Burst liên tục và local DB chỉ có 2 weapon row, 1 artifact row, 0 team row nên confidence bị kéo xuống MEDIUM.",
+      "strengths": [
+        "Hydro damage off-field tần suất cao theo Normal Attack",
+        "Rain Swords giảm damage và tăng interruption resistance",
+        "Hydro application đều giúp Vaporize/Frozen"
+      ],
+      "limitations": [
+        "Phụ thuộc active character Normal Attack",
+        "Cần ER cao để duy trì Burst",
+        "Corroboration local mỏng"
+      ],
+      "teamAssumptions": [
+        "DPS chính dùng Normal Attack làm nguồn damage chính",
+        "Xingqiu đứng off-field trong suốt Raincutter",
+        "Không tính C1/C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Xingqiu, Guhua Sword: Raincutter: \"Your active character's Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.\"",
+          "genshin-db/talents Xingqiu, Guhua Sword: Fatal Rainscreen: Rain Swords \"reducing the amount of DMG taken\" và \"Increases the character's resistance to interruption\".",
+          "genshin-db/talents Xingqiu, Hydropathic: hồi HP dựa trên 6% Max HP mỗi khi Rain Sword vỡ hoặc hết hạn.",
+          "GenshinHub development DB: 2 CharacterWeapon rows, 1 CharacterArtifact rows, 0 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Xingqiu, Guhua Sword: Raincutter: Energy Cost = 80 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 84,
+          "flex": 82,
+          "evidence": 76,
+          "constellation": 92,
+          "access": 90
+        },
+        "energyRequirements": "Burst Guhua Sword: Raincutter costs 80 energy (genshin-db talents attributes); can ER hoac particle Hydro de xoay lien tuc, dac biet khi khong co battery.",
+        "reactionCompatibility": "Hydro application theo nhịp đánh rất hợp Vaporize và Frozen; Electro-Charged cũng duy trì tốt.",
+        "damageContribution": "Nguồn sub-DPS chính trong đội Normal Attack; damage cá nhân không thay DPS chủ lực.",
+        "teamUtility": "Giảm sát thương + hồi nhỏ + interruption resistance là utility phòng thủ giá trị.",
+        "constellationEffects": "Chỉ đánh giá C0; C6 không được cộng vào record này.",
+        "gameplayAssumptions": "Active character đánh Normal Attack liên tục; Rain Swords ở mức tối đa nhờ skill.",
+        "versionNote": "Release v1.0; cơ chế đối chiếu snapshot 7.2 nhưng local evidence hạn chế nên confidence MEDIUM.",
+        "confidence": "MEDIUM"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:xingqiu-sub_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "NEEDS_MORE_EVIDENCE",
+        "risks": "Co 3 trich dan genshin-db xac thuc nhung local DB chi 2 weapon / 1 artifact / 0 team row; confidence MEDIUM. Gia dinh DPS dung Normal Attack chua duoc corroborate bang team row.",
+        "recommendation": "Gi S nhung yeu cau bo sung it nhat 1-2 CharacterTeam row truoc approve, hoac Admin chap nhan confidence MEDIUM.",
+        "sensitivity": {
+          "performanceOnly": 85.6,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "characterName": "Xiangling",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 83.8,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Pyronado xoay theoactive character và gây Pyro damage dày đặc trong suốt Burst, cộng với Guoba và chili pepper cho Pyro application liên tục, nên Xiangling là sub-DPS Pyro rất mạnh mà không cần lên sân. Đề xuất S vì sức nặng damage và Pyro application của cô đã đủ cao, nhưng nhu cầu năng lượng lớn và sự phụ thuộc vào battery/rotation giữ cô lại dưới ngưỡng SS. Điều kiện: cần đủ ER hoặc đồng đội tạo particle để Pyronado gần như permanent; hiệu quả giảm khi rotation không cho cô dùng Burst đúng chu kỳ hoặc khi enemy di chuyển ra khỏi tầm xoay. Constellation: không phụ thuộc; C0 đã có Pyronado hoàn chỉnh, C1 giảm Pyro RES và C6 mới cho buff Pyro DMG cho cả đội. Hạn chế: self-sufficiency năng lượng kém nhất trong batch này và local DB có 19 weapon row/5 artifact row/8 team row nên evidence ở mức khá.",
+      "strengths": [
+        "Pyronado là một trong những nguồn Pyro damage off-field dày nhất",
+        "Guoba và chili pepper duy trì Pyro application",
+        "Hoạt động tốt ở C0"
+      ],
+      "limitations": [
+        "Nhu cầu ER rất cao",
+        "Phụ thuộc battery và timing Burst",
+        "Pyronado có thể miss nếu enemy di chuyển"
+      ],
+      "teamAssumptions": [
+        "Có battery hoặc particle đủ để Xiangling cast Burst theo chu kỳ",
+        "DPS chủ lực ở gần enemy để Pyronado trúng",
+        "Không tính C4/C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Xiangling, Pyronado: \"The Pyronado will move with your character for the ability's duration, dealing Pyro DMG to all opponents in its path.\"",
+          "genshin-db/talents Xiangling, Beware, It's Super Hot!: chili pepper cho +10% ATK trong 10s.",
+          "genshin-db/constellations Xiangling C6 Condensed Pyronado: +15% Pyro DMG cả đội trong Pyronado (dùng để tách C6 thành record riêng).",
+          "GenshinHub development DB: 19 CharacterWeapon rows, 5 CharacterArtifact rows, 8 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Xiangling, Pyronado: Energy Cost = 80 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 86,
+          "flex": 80,
+          "evidence": 80,
+          "constellation": 88,
+          "access": 88
+        },
+        "energyRequirements": "Burst Pyronado costs 80 energy (genshin-db talents attributes); gan nhu luon can ER substat hoac battery Electro/Pyro particle.",
+        "reactionCompatibility": "Pyro application dày rất hợp Vaporize, Melt, Overload và Burning.",
+        "damageContribution": "Sub-DPS damage chính, có thể vượt đòn on-field trong rotation dài.",
+        "teamUtility": "Chủ yếu damage; C0 không có buff đội đáng kể ngoài Pyro application.",
+        "constellationEffects": "C0 baseline; C6 được tách record riêng để tránh gộp buff 15% Pyro DMG vào C0.",
+        "gameplayAssumptions": "Pyronado duy trì liên tục; Xiangling không đứng on-field lâu.",
+        "versionNote": "Release v1.0; snapshot 7.2 local dùng để corroborate, không dùng tier cũ làm ground truth.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:xiangling-sub_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Nhu cau ER 80 energy va battery van la gia dinh rotation; khong co risk ve evidence hoac rubric.",
+        "recommendation": "Giu S va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 84.7,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "xiangling",
+      "characterName": "Xiangling",
+      "role": "SUB_DPS",
+      "constellation": "C6",
+      "proposedTier": "S",
+      "rubricScore": 81.5,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: ở C6, Condensed Pyronado cộng thêm 15% Pyro DMG cho toàn đội trong thời gian Pyronado hoạt động, nên giá trị của Xiangling tăng từ damage cá nhân sang buff cho cả rotation Pyro. Đề xuất S, không SS: đây là buff có điều kiện và chỉ có ý nghĩa với Pyro damage, trong khi bản thân vẫn giữ nhu cầu ER cao như C0. Điều kiện: phải duy trì Pyronado và có ít nhất một đồng đội gây Pyro damage; lợi ích gần như bằng zero nếu Burst không lên hoặc đội không dùng Pyro. Constellation: record này đánh giá riêng C6, kế thừa Pyronado cơ bản nhưng không cộng thêm claim từ C1/C4. Hạn chế: chi phí đạt C6 và phạm vi buff hẹp khiến accessibility giảm; local evidence tốt nhưng không đủ để đẩy lên SS.",
+      "strengths": [
+        "+15% Pyro DMG cho cả đội khi Pyronado active",
+        "Vẫn giữ nguyên damage off-field của C0",
+        "Buff áp dụng cho mọi Pyro damage source trong đội"
+      ],
+      "limitations": [
+        "Chỉ hưởng lợi với Pyro damage",
+        "Vẫn cần ER và battery như C0",
+        "C6 có chi phí cao"
+      ],
+      "teamAssumptions": [
+        "Pyronado active trong phần lớn rotation",
+        "Có ít nhất một Pyro DPS/sub-DPS khác hưởng buff"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/constellations Xiangling C6 Condensed Pyronado: \"For the duration of Pyronado, all party members receive a 15% Pyro DMG Bonus.\"",
+          "genshin-db/talents Xiangling Pyronado: xác nhận điều kiện kích hoạt buff là thời gian tồn tại của Pyronado.",
+          "GenshinHub development DB: 19 CharacterWeapon rows, 5 CharacterArtifact rows, 8 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Xiangling, Pyronado: Energy Cost = 80 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 88,
+          "flex": 82,
+          "evidence": 80,
+          "constellation": 80,
+          "access": 66
+        },
+        "energyRequirements": "Burst Pyronado costs 80 energy, khong doi o C6 (genshin-db talents attributes); van can ER/battery de Pyronado cover rotation.",
+        "reactionCompatibility": "Buff 15% Pyro DMG làm mạnh Vaporize/Melt/Overload/Burning nhưng không giúp reaction không có Pyro damage.",
+        "damageContribution": "Damage cá nhân giữ nguyên; giá trị tăng thêm nằm ở buff Pyro cho đồng đội.",
+        "teamUtility": "Party-wide Pyro DMG bonus là utility rõ ràng hơn C0.",
+        "constellationEffects": "C6 là điều kiện định nghĩa; không tự động cộng C1 Pyro RES shred vào score.",
+        "gameplayAssumptions": "Pyronado lên đúng chu kỳ và đồng đội Pyro đánh trong thời gian buff.",
+        "versionNote": "Release v1.0; cơ chế C6 đối chiếu snapshot 7.2 tại local DB.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:xiangling-sub_dps-c6",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Buff 15% Pyro DMG chi co gia tri voi Pyro damage; C1 Pyro RES shred khong duoc cong, da ghi ro.",
+        "recommendation": "Giu S va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 81.9,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "kaedehara-kazuha",
+      "characterName": "Kaedehara Kazuha",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 89.7,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Kazuha kéo và gom enemy bằng Chihayaburu, còn passive Poetics of Fuubutsu chuyển Elemental Mastery của anh thành Elemental DMG Bonus cho cả đội sau mỗi Swirl; Burst để lại field absorption nên tiếp tục gây damage và reaction. Đề xuất SS vì bộ gom địch + tăng elemental damage + VV shred cùng lúc là hiếm có và hoạt động ngay ở C0. Điều kiện: cần Swirl được element mong muốn trước khi xả rotation; hiệu quả giảm nếu không thể absorb đúng element hoặc nếu enemy quá lớn không bị kéo. Constellation: không phụ thuộc; C0 đã có đầy đủ mechanism cốt lõi, C6 mới thêm Anemo infusion và scaling theo EM cho đòn cá nhân. Hạn chế: local DB có 9 weapon row, 2 artifact row nhưng 0 team row nên corroborate về đội hình yếu hơn; anh cũng cần VV set và timing Swirl chuẩn để phát huy tối đa.",
+      "strengths": [
+        "Gom địch quy mô lớn với chi phí thấp",
+        "EM to thành Elemental DMG Bonus cho cả đội",
+        "Burst absorption duy trì damage/reaction trong field"
+      ],
+      "limitations": [
+        "Cần Swirl đúng element để buff đúng loại",
+        "Enemy lớn/không bị kéo làm giảm giá trị",
+        "Local DB có 0 team row"
+      ],
+      "teamAssumptions": [
+        "Có element có thể Swirl trong rotation",
+        "Kazuha mặc VV và kịp Swirl trước DPS",
+        "Không tính C6",
+        "Rotation co buoc Swirl truoc khi active DPS xa damage; enemy nam trong tam keo; gia dinh Kazuha mac Viridescent Venerer 4-piece de hun 40% Elemental RES (da co trich dan artifacts)."
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Kaedehara Kazuha, Chihayaburu: \"pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE\".",
+          "genshin-db/talents Kaedehara Kazuha, Poetics of Fuubutsu: \"Upon triggering a Swirl... grant all party members a 0.04% Elemental DMG Bonus to the element absorbed by Swirl for every point of Elemental Mastery he has for 8s.\"",
+          "genshin-db/talents Kaedehara Kazuha, Kazuha Slash: Autumn Whirlwind có Elemental Absorption với Hydro/Pyro/Cryo/Electro.",
+          "GenshinHub development DB: 9 CharacterWeapon rows, 2 CharacterArtifact rows, 0 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Kaedehara Kazuha, Kazuha Slash: Energy Cost = 60 (genshin-db talents.attributes.parameters).",
+          "genshin-db/artifacts Viridescent Venerer 4-piece: \"Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.\" (day la GIA DINH artifact set, khong phai talent; da them vao evidence de minh ba hoa)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 94,
+          "flex": 92,
+          "evidence": 82,
+          "constellation": 94,
+          "access": 80
+        },
+        "energyRequirements": "Burst 60 năng lượng; skill tạo particle Anemo nên dễ hồi, vẫn có thể cần ER nếu bỏ skill.",
+        "reactionCompatibility": "Swirl là trung tâm; absorption cho phép tiếp tục reaction của element đã hấp thụ trong field.",
+        "damageContribution": "Damage cá nhân ở C0 không lớn; giá trị nằm ở grouping và buff.",
+        "teamUtility": "Grouping + elemental damage bonus + VV shred trong một slot support.",
+        "constellationEffects": "C0 baseline; C6 Anemo infusion không được cộng vào record này.",
+        "gameplayAssumptions": "Rotation có bước Swirl trước khi active DPS xả damage; enemy nằm trong tầm kéo.",
+        "versionNote": "Release v1.6; snapshot 7.2 local corroborate mức dùng nhưng team row bằng 0 nên confidence MEDIUM.",
+        "confidence": "MEDIUM"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:kaedehara-kazuha-support-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "teamAssumptionDetail": "Rotation co buoc Swirl truoc khi active DPS xa damage; enemy nam trong tam keo; gia dinh Kazuha mac Viridescent Venerer 4-piece de hun 40% Elemental RES (da co trich dan artifacts).",
+      "b25Review": {
+        "category": "NEEDS_MORE_EVIDENCE",
+        "risks": "VV 40% RES shred la gia dinh artifact set (da bo sung trich dan genshin-db/artifacts). Local DB co 0 CharacterTeam row nen khong the corroborate rotation Swirl-truoc-DPS.",
+        "recommendation": "Giu SS nhung bo sung team evidence hoac Admin chap nhan gia dinh VV truoc approve.",
+        "sensitivity": {
+          "performanceOnly": 91.6,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "furina",
+      "characterName": "Furina",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 87.9,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Salon Solitaire triệu hồi ba Salon Member đánh Hydro off-field theo Max HP và tự tiêu HP đồng đội để tăng damage, trong khi Burst tích Fanfare từ mọi thay đổi HP rồi chuyển thành damage bonus và incoming healing bonus cho cả đội. Đề xuất SS vì Furina vừa là nguồn Hydro damage mạnh vừa là một trong những cơ chế buff lớn nhất trò chơi, và tất cả đều có ở C0. Điều kiện: cần một healer hoặc nguồn hồi HP liên tục để Fanfare tăng nhanh; hiệu quả giảm nếu HP đội không dao động hoặc nếu không có healer. Constellation: không phụ thuộc; C0 đã có đầy đủ Fanfare và Salon Members, C1 chỉ cho Fanfare ban đầu và C6 biến cô thành on-field DPS nên tách riêng nếu đánh giá. Hạn chế: consume HP có thể nguy hiểm nếu thiếu heal, và rotation cần thiết kế để vừa drain vừa hồi.",
+      "strengths": [
+        "Hydro damage off-field mạnh dựa trên Max HP",
+        "Fanfare cho damage bonus và incoming healing bonus quy mô lớn",
+        "Pneuma mode có thể tự hồi khi cần"
+      ],
+      "limitations": [
+        "Cần healer để đạt Fanfare cao",
+        "Tự consume HP gây rủi ro nếu rotation sai",
+        "Pneuma/Pousia alignment cần quản lý"
+      ],
+      "teamAssumptions": [
+        "Có healer hoặc nguồn hồi HP liên tục",
+        "Rotation cho phép HP dao động để tích Fanfare",
+        "Không tính C1/C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Furina, Salon Solitaire: Salon Members \"will attack nearby opponents at intervals, dealing Hydro DMG based on Max HP\" và tăng 110%/120%/130%/140% damage theo số character trên 50% HP.",
+          "genshin-db/talents Furina, Let the People Rejoice: \"when nearby party members' HP increases or decreases, 1 Fanfare point... Furina will increase the DMG dealt by and Incoming Healing Bonus of all nearby party members.\"",
+          "genshin-db/talents Furina, Endless Waltz: overflow heal from nguồn khác cho Furina hồi 2% Max HP mỗi 2s trong 4s.",
+          "GenshinHub development DB: 14 CharacterWeapon rows, 3 CharacterArtifact rows, 9 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Furina, Let the People Rejoice: Energy Cost = 60 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 94,
+          "flex": 88,
+          "evidence": 86,
+          "constellation": 90,
+          "access": 70
+        },
+        "energyRequirements": "Burst Let the People Rejoice costs 60 energy (genshin-db talents attributes), khong phai burst rat cao; can ER de giu Burst bao phu rotation va tich Fanfare.",
+        "reactionCompatibility": "Hydro damage đều giúp Vaporize/Frozen/Electro-Charged/Bloom; Fanfare buff áp dụng cho mọi nguồn damage.",
+        "damageContribution": "Vừa sub-DPS vừa damage-buff; đóng góp tổng rất lớn dù không đứng on-field.",
+        "teamUtility": "Damage bonus + incoming healing bonus + Hydro application trong cùng một character.",
+        "constellationEffects": "C0 baseline; C6 on-field infusion được tách riêng, không gộp vào record này.",
+        "gameplayAssumptions": "Healer active trong Burst; Fanfare đạt mức cao trước khi DPS xả chiêu.",
+        "versionNote": "Release v4.2 trong genshin-db; snapshot 7.2 local có 9 team row nên evidence khá chắc.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:furina-sub_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Gia dinh co healer va dao dong HP de tich Fanfare; energy da dua ve 60 (khong phai \"cao\").",
+        "recommendation": "Giu SS va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 88.4,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "furina",
+      "characterName": "Furina",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 88.8,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: với tư cách support, Furina dùng Fanfare để tăng DMG dealt và Incoming Healing Bonus cho toàn đội, còn Endless Waltz tận dụng healing overflow để hồi tiếp cho party; nhờ vậy cô vừa buff vừa giảm áp lực lên healer. Đề xuất SS vì bộ buff toàn đội này áp dụng cho hầu hết rotation và không bị giới hạn bởi loại vũ khí hay element của DPS. Điều kiện: hiệu quả tỉ lệ thuận với tốc độ dao động HP và chất lượng healer; nếu đội đã có quá nhiều heal overflow mà không có Furina thì Fanfare lên chậm. Constellation: không phụ thuộc; C0 đã có Fanfare đầy đủ, C1 chỉ thêm 150 Fanfare ban đầu và nâng trần. Hạn chế: vẫn consume HP của đồng đội và cần thiết kế rotation cẩn thận, nên đây không phải support \"set and forget\" như Zhongli.",
+      "strengths": [
+        "Buff damage toàn đội tỉ lệ với Fanfare",
+        "Incoming Healing Bonus giúp healer hiệu quả hơn",
+        "Endless Waltz tận dụng healing overflow"
+      ],
+      "limitations": [
+        "Fanfare phụ thuộc dao động HP",
+        "Cần healer hoặc nguồn hồi chủ động",
+        "Rotation phức tạp hơn support truyền thống"
+      ],
+      "teamAssumptions": [
+        "Có healer representative trong đội",
+        "Rotation tạo dao động HP liên tục trong Burst",
+        "Không tính C1"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Furina, Let the People Rejoice: Fanfare tăng \"DMG dealt by and Incoming Healing Bonus of all nearby party members\".",
+          "genshin-db/talents Furina, Endless Waltz: \"if the source of the healing is not Furina herself and the healing overflows, then Furina will heal nearby party members for 2% of their Max HP once every 2s for the next 4s.\"",
+          "genshin-db/talents Furina, Unheard Confession: mỗi 1000 Max HP tăng 0.7% damage Salon Members đến 28%.",
+          "GenshinHub development DB: 14 CharacterWeapon rows, 3 CharacterArtifact rows, 9 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Furina, Let the People Rejoice: Energy Cost = 60 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 96,
+          "flex": 90,
+          "evidence": 86,
+          "constellation": 90,
+          "access": 68
+        },
+        "energyRequirements": "Burst Let the People Rejoice costs 60 energy (genshin-db talents attributes); Fanfare chi tich trong Burst nen van can ER du de duy tri uptime.",
+        "reactionCompatibility": "DMG bonus của Fanfare áp dụng cho mọi reaction damage; Hydro từ Salon Members hỗ trợ reaction gốc Hydro.",
+        "damageContribution": "Thiên về buff hơn là damage trực tiếp trong role SUPPORT.",
+        "teamUtility": "Một trong những bộ damage buff toàn đội mạnh nhất ở C0.",
+        "constellationEffects": "Chỉ C0; C1 extra Fanfare không được cộng vào record này.",
+        "gameplayAssumptions": "Healer hồi đều trong Burst; Fanfare đạt giá trị cao trước khi DPS kết thúc rotation.",
+        "versionNote": "Release v4.2; corroborated bởi 9 CharacterTeam row trong snapshot 7.2.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:furina-support-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Trung lap mot phan voi record SUB_DPS (cung kit, khac goc nhan); can Admin xac nhan cho phep hai role cho cung mot character.",
+        "recommendation": "Giu SS nhung Admin xac nhan hai record SUPPORT/SUB_DPS duoc phe duyet rieng.",
+        "sensitivity": {
+          "performanceOnly": 89.5,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "characterName": "Neuvillette",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 86.3,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Neuvillette dùng Charged Attack Equitable Judgment làm nguồn damage chính, được tăng mạnh bởi stack Past Draconic Glories mỗi khi đội trigger từng loại reaction và được cộng Hydro DMG Bonus theo HP hiện tại qua passive thứ hai. Đề xuất SS vì anh tự đủ damage, tự buff và có HP scaling riêng, nhưng vẫn cần đồng đội tạo reaction và bảo vệ khỏi interruption nên chưa tuyệt đối. Điều kiện: cần ít nhất một reaction partner để có stack; ngược lại damage giảm rõ rệt; interruption khi đang charge cũng làm mất giá trị lớn. Constellation: không phụ thuộc; C0 đã có đầy đủ stack và Hydro DMG Bonus, C1 chỉ thêm một stack ban đầu cùng interruption resistance, C6 thêm current nên tách riêng nếu đánh giá. Hạn chế: tốc độ charge chậm, dễ bị ngắt và rotation khá cố định quanh một đòn dài.",
+      "strengths": [
+        "Damage trên sân rất cao với HP scaling",
+        "Tự có Hydro DMG Bonus theo HP",
+        "Stack reaction cho phép linh hoạt nhiều reaction partner"
+      ],
+      "limitations": [
+        "Charged Attack dễ bị interruption",
+        "Phụ thuộc đồng đội trigger reaction để đạt stack tối đa",
+        "Rotation dài và ít linh hoạt"
+      ],
+      "teamAssumptions": [
+        "Có ít nhất một đồng đội trigger reaction khác loại",
+        "Có shielding/interruption resistance hoặc positioning tốt",
+        "Không tính C1/C6",
+        "Can it nhat 3 loai Elemental Reaction KHAC NHAU do party member trigger (Vaporize/Frozen/Electro-Charged/Bloom/Hydro Swirl/Hydro Crystallize...) de lay du 3 stack Past Draconic Glories; HP luon tren 30%; co shielding/interruption resistance hoac positioning tot."
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Neuvillette, Heir to the Ancient Sea's Authority: reaction tạo stack \"Past Draconic Glories... Charged Attack: Equitable Judgment to deal 110%/125%/160% of its original DMG\".",
+          "genshin-db/talents Neuvillette, Discipline of the Supreme Arbitration: \"For each 1% of Neuvillette's current HP greater than 30%... 0.6% Hydro DMG Bonus\", tối đa 30%.",
+          "genshin-db/talents Neuvillette, O Tears I Shall Repay: tạo Sourcewater Droplets để hỗ trợ charge.",
+          "GenshinHub development DB: 11 CharacterWeapon rows, 6 CharacterArtifact rows, 5 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Neuvillette, O Tears I Shall Repay: Energy Cost = 70 (genshin-db talents.attributes.parameters).",
+          "genshin-db/talents Neuvillette, Heir to the Ancient Sea's Authority: \"When a party member triggers a Vaporize, Frozen, Electro-Charged, Lunar-Charged, Bloom, Lunar-Bloom, Hydro Swirl, Hydro Crystallize or a Lunar-Crystallize reaction... 1 stack... Max 3 stacks. The stacks... created by each kind of Elemental Reaction exist independently.\""
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 96,
+          "flex": 80,
+          "evidence": 86,
+          "constellation": 86,
+          "access": 74
+        },
+        "energyRequirements": "Burst 70 năng lượng nhưng không phải nguồn damage chính; ưu tiên HP/CRIT hơn ER cực cao.",
+        "reactionCompatibility": "Vaporize, Frozen, Electro-Charged, Bloom và Hydro Swirl/Crystallize đều tạo stack riêng.",
+        "damageContribution": "Main carry tuyệt đối; phần lớn damage đến từ Equitable Judgment.",
+        "teamUtility": "Ít buff cho đồng đội; outward value nằm ở việc kích hoạt reaction cho stack.",
+        "constellationEffects": "C0 baseline; C1 interruption resistance và C6 currents không được cộng vào đây.",
+        "gameplayAssumptions": "Equitable Judgment được charge trọn vẹn; HP duy trì trên 30% Max HP.",
+        "versionNote": "Release v4.1; snapshot 7.2 local có 5 team row và 6 artifact row.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:neuvillette-main_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "teamAssumptionDetail": "Can it nhat 3 loai Elemental Reaction KHAC NHAU do party member trigger (Vaporize/Frozen/Electro-Charged/Bloom/Hydro Swirl/Hydro Crystallize...) de lay du 3 stack Past Draconic Glories; HP luon tren 30%; co shielding/interruption resistance hoac positioning tot.",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Da sua gia dinh: can 3 loai reaction KHAC NHAU do party member trigger de lay du 3 stack (moi loai stack rieng, toi da 3). Interruption resistance van la gia dinh thao tac.",
+        "recommendation": "Giu SS va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 86.4,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "raiden-shogun",
+      "characterName": "Raiden Shogun",
+      "role": "MAIN_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 81.5,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Musou Shinsetsu tiêu thụ Resolve tích từ Burst của đồng đội để tạo một đòn AoE lớn rồi chuyển sang Musou Isshin, trong đó đòn thường được tính là Burst damage và hồi năng lượng cho cả đội. Đề xuất S vì combo burst-nuke + energy recharge + coordinated attack từ E rất mạnh, nhưng hiệu quả gắn chặt với việc đồng đội phải dùng Burst thường xuyên nên kém self-sufficient hơn Neuvillette. Điều kiện: cần party có nhiều Burst cost cao để tích Resolve; nếu rotation không tạo đủ stack thì đòn cuối yếu. Constellation: không phụ thuộc; C0 đã có Musou Isshin và energy restore, C2 là constellation quan trọng nhưng không được cộng vào claim C0 và C6 giảm CD cũng tách riêng. Hạn chế: thời gian trên sân dài, dễ bị interruption và phần lớn sức mạnh nằm ở cửa sổ Burst ngắn.",
+      "strengths": [
+        "Burst damage lớn tỉ lệ với Resolve",
+        "Musou Isshin hồi năng lượng cho cả đội",
+        "Skill Eye of Stormy Judgment cho coordinated attack và tăng Burst DMG đồng đội"
+      ],
+      "limitations": [
+        "Phụ thuộc đồng đội dùng Burst để tích Resolve",
+        "Thời gian on-field dài",
+        "Cần ER cao để tự xoay Burst"
+      ],
+      "teamAssumptions": [
+        "Party có ít nhất hai unit hay dùng Burst",
+        "Raiden đứng on-field đủ lâu để dùng Musou Isshin",
+        "Không tính C2/C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Raiden Shogun, Secret Art: Musou Shinsetsu: damage \"increased based on the number of Chakra Desiderata's Resolve stacks consumed\" và Musou Isshin attacks \"regenerate Energy for all nearby party members\".",
+          "genshin-db/talents Raiden Shogun, Transcendence: Baleful Omen: Eye of Stormy Judgment tăng Elemental Burst DMG dựa trên Energy Cost và coordinated attack mỗi 0.9s.",
+          "genshin-db/talents Raiden Shogun, Enlightened One: ER vượt 100% cho 0.4% Electro DMG và 0.6% energy restore mỗi 1%.",
+          "GenshinHub development DB: 14 CharacterWeapon rows, 4 CharacterArtifact rows, 7 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Raiden Shogun, Secret Art: Musou Shinsetsu: Energy Cost = 90 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 86,
+          "flex": 78,
+          "evidence": 82,
+          "constellation": 84,
+          "access": 72
+        },
+        "energyRequirements": "Burst 90 năng lượng; ER là stat ưu tiên hàng đầu để tự maintenance và tối ưu Enlightened One.",
+        "reactionCompatibility": "Electro-Charged, Overload và Aggravate đều dùng được; Burst damage không bị reaction khuếch đại trực tiếp.",
+        "damageContribution": "Main carry trong cửa sổ Musou Isshin; ngoài ra có off-field coordinated damage từ Eye.",
+        "teamUtility": "Energy restore toàn đội và Burst DMG bonus từ Eye là utility đáng kể.",
+        "constellationEffects": "C0 baseline; C2 DEF ignore và C6 burst CD reduction không được cộng vào score.",
+        "gameplayAssumptions": "Resolve tích ở mức cao trước khi cast Burst; Musou Isshin hoàn thành 5 nhịp hồi năng lượng.",
+        "versionNote": "Release v2.1; snapshot 7.2 local có 7 team row làm corroboration.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:raiden-shogun-main_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Gia dinh party co nhieu unit hay dung Burst de tich Resolve; C2/C6 khong duoc cong.",
+        "recommendation": "Giu S va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 81.4,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "nahida",
+      "characterName": "Nahida",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "SS",
+      "rubricScore": 91,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Skill đánh dấu tới 8 opponent bằng Seed of Skandha và tự bắn Tri-Karma Purification khi đội trigger reaction hoặc Dendro Core gây damage; Burst Shrine of Maya lại tăng EM cho active character và điều chỉnh damage/interval theo Pyro, Electro, Hydro trong party. Đề xuất SS vì Nahida vừa duy trì Dendro application lâu vừa buff EM và damage cho cả hệ sinh thái Dendro reaction, mà vẫn hoạt động off-field ngay ở C0. Điều kiện: cần có reaction hoặc Dendro Core để Tri-Karma kích hoạt; nếu party thiếu Hydro/Electro/Pyro thì Shrine of Maya mất nhiều effect. Constellation: không phụ thuộc; C0 đã có mark, Tri-Karma và EM share, C1 chỉ giả thêm element count và C6 thêm Karmic Oblivion nên tách riêng. Hạn chế: hiệu quả gắn chặt vào party reaction và local DB có 18 weapon row, 6 artifact row, 9 team row nên evidence rất chắc nhưng không dùng để copy tier cũ.",
+      "strengths": [
+        "Dendro application lâu và-mark nhiều mục tiêu",
+        "Tri-Karma Purification tự kích hoạt theo reaction",
+        "Shrine of Maya chia EM và tăng damage theo element trong party"
+      ],
+      "limitations": [
+        "Phụ thuộc có reaction partner",
+        "Cần giữ Nahida trong Shrine để một số buff có hiệu lực",
+        "Tỷ lệ Tri-Karma có giới hạn"
+      ],
+      "teamAssumptions": [
+        "Party có ít nhất Hydro/Electro/Pyro để trigger reaction",
+        "Nahida duy trì Skill mark trên mục tiêu chính",
+        "Không tính C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Nahida, All Schemes to Know: \"mark up to 8 opponents hit with the Seed of Skandha\" và Tri-Karma Purification kích hoạt khi trigger reactions hoặc Dendro Core damage.",
+          "genshin-db/talents Nahida, Illusory Heart: Shrine of Maya nhận effect riêng cho Pyro/Electro/Hydro và vẫn có hiệu lực khi Nahida không on-field miễn party ở trong field.",
+          "genshin-db/talents Nahida, Compassion Illuminated: active character nhận 25% EM từ party member cao nhất, tối đa 250 EM.",
+          "GenshinHub development DB: 18 CharacterWeapon rows, 6 CharacterArtifact rows, 9 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Nahida, Illusory Heart: Energy Cost = 50 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 96,
+          "flex": 92,
+          "evidence": 88,
+          "constellation": 92,
+          "access": 78
+        },
+        "energyRequirements": "Burst Illusory Heart costs 50 energy (genshin-db talents attributes), khong phai 80; Skill co duration dai nen ER vua phai la du neu rotation on dinh.",
+        "reactionCompatibility": "Quicken/Aggravate/Spread, Bloom/Hyperbloom/Burgeon đều được hưởng từ mark và EM share.",
+        "damageContribution": "Off-field Dendro damage đáng kể nhưng role SUPPORT vẫn ưu tiên mark và buff.",
+        "teamUtility": "EM sharing + reaction enable + Dendro application trong một slot.",
+        "constellationEffects": "C0 baseline; C6 Karmic Oblivion không được cộng vào record này.",
+        "gameplayAssumptions": "Mark được refresh theo chu kỳ; party trigger reaction liên tục trong Shrine.",
+        "versionNote": "Release v3.2; snapshot 7.2 local corroborate với 9 team row.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:nahida-support-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Da sua energy tu 80 thanh 50 theo genshin-db. Con phu thuoc reaction partner va duy tri mark.",
+        "recommendation": "Giu SS va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 91.7,
+          "performanceOnlyTier": "SS"
+        }
+      }
+    },
+    {
+      "characterId": "zhongli",
+      "characterName": "Zhongli",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 84.1,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Jade Shield của Zhongli có absorption theo Max HP và làm giảm Elemental RES của đối thủ khi có đồng đội được shield bảo vệ, trong khi Planet Befall petrify và gây Geo damage; ông vì thế là lựa chọn bảo vệ cực ổn định. Đề xuất S vì shield và RES shred hoạt động ở C0 với rất ít twist, nhưng đóng góp damage trực tiếp khiêm tốn nên không đạt SS. Điều kiện: cần giữ shield còn nguyên để RES shred có hiệu lực; hiệu quả giảm khi shield vỡ liên tục hoặc khi party đã có shield khác. Constellation: không phụ thuộc; C0 đã có shield, shred và burst, C1 chỉ thêm stele còn C6 mới chuyển damage thành heal nên tách riêng. Hạn chế: slot support của anh thiếu buff damage trực tiếp và Geo construct có thể tương tác lạ với một số địa hình.",
+      "strengths": [
+        "Shield cực dày và shred RES của đối thủ",
+        "Petrification giúp kiểm soát địch",
+        "Hoạt động tốt ở C0 với ít yêu cầu rotation"
+      ],
+      "limitations": [
+        "Ít damage buff trực tiếp",
+        "RES shred mất khi shield vỡ",
+        "Geo construct có thể gây cản trở"
+      ],
+      "teamAssumptions": [
+        "Shield được duy trì trong phần lớn rotation",
+        "Đội ưu tiên survivability hơn damage buff",
+        "Không tính C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Zhongli, Dominus Lapidis: Jade Shield absorption scales with Max HP, 150% absorption vs Elemental/Physical DMG và \"decrease the Elemental R[ES]\" của character được bảo vệ.",
+          "genshin-db/talents Zhongli, Planet Befall: \"dealing massive Geo DMG... applying the Petrification status\".",
+          "genshin-db/talents Zhongli, Dominance of Earth: Planet Befall damage tăng 33% Max HP (chỉ làm reference cho damage, không dùng làm tier).",
+          "GenshinHub development DB: 13 CharacterWeapon rows, 6 CharacterArtifact rows, 7 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Zhongli, Planet Befall: Energy Cost = 40 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 84,
+          "flex": 80,
+          "evidence": 82,
+          "constellation": 94,
+          "access": 84
+        },
+        "energyRequirements": "Burst Planet Befall costs 40 energy (genshin-db talents attributes), khong phai 80; shield la nguon chinh nen ER quan trong hon damage stat.",
+        "reactionCompatibility": "Geo không tạo reaction khuếch đại; shield giúp giữ reaction setup ổn định bằng interruption resistance.",
+        "damageContribution": "Rất thấp trong role SUPPORT; giá trị nằm ở shield và petrify.",
+        "teamUtility": "Shield + RES shred + crowd control là bộ phòng thủ rất đầy đủ.",
+        "constellationEffects": "C0 baseline; C6 damage-to-heal không được cộng vào đây.",
+        "gameplayAssumptions": "Shield còn nguyên trong lúc DPS xả chiêu; petrify dùng để lock mục tiêu nguy hiểm.",
+        "versionNote": "Release v1.1; snapshot 7.2 local có 7 team row làm corroboration.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:zhongli-support-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Da sua energy tu 80 thanh 40 theo genshin-db. It damage buff truc tiep la diem yeu da ghi nhan.",
+        "recommendation": "Giu S va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 84.6,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "yelan",
+      "characterName": "Yelan",
+      "role": "SUB_DPS",
+      "constellation": "C0",
+      "proposedTier": "S",
+      "rubricScore": 83.9,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Exquisite Throw từ Depth-Clarion Dice bắn coordinated Hydro damage theo Max HP mỗi khi active character Normal Attack, và passive Adapt With Ease tăng dần DMG dealt của active character tới 50% trong suốt Burst. Đề xuất S vì cô kết hợp Hydro damage off-field và damage buff toàn đội trong một slot, nhưng buff bị mất nếu recast Burst và damage phụ thuộc nhịp Normal Attack. Điều kiện: cần active character đánh Normal Attack thường xuyên và giữ Exquisite Throw trong duration; nếu recast Burst sớm thì buff reset. Constellation: không phụ thuộc; C0 đã có coordinated attack và buff, C1 chỉ thêm charge skill còn C6 biến cô thành on-field DPS nên tách riêng nếu đánh giá. Hạn chế: defensive utility kém hơn Xingqiu và local DB có 4 weapon row, 3 artifact row, 8 team row nên evidence khá nhưng không dùng để copy tier.",
+      "strengths": [
+        "Coordinated Hydro damage theo Max HP",
+        "Adapt With Ease buff tới 50% DMG dealt",
+        "Hydro application đủ dùng cho Vaporize"
+      ],
+      "limitations": [
+        "Buff mất nếu recast Burst",
+        "Phụ thuộc Normal Attack của active character",
+        "Không có damage reduction như Xingqiu"
+      ],
+      "teamAssumptions": [
+        "DPS chính dùng Normal Attack",
+        "Exquisite Throw duy trì trong suốt rotation",
+        "Không tính C6"
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Yelan, Depth-Clarion Dice: Exquisite Throw \"will initiate a coordinated attack... dealing Hydro DMG based on Yelan's Max HP\" khi active character Normal Attack.",
+          "genshin-db/talents Yelan, Adapt With Ease: active character \"deals 1% more DMG... increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%\".",
+          "genshin-db/talents Yelan, Turn Control: HP tăng 6%/12%/18%/30% theo số element type trong party.",
+          "GenshinHub development DB: 4 CharacterWeapon rows, 3 CharacterArtifact rows, 8 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Yelan, Depth-Clarion Dice: Energy Cost = 70 (genshin-db talents.attributes.parameters)."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 86,
+          "flex": 84,
+          "evidence": 80,
+          "constellation": 90,
+          "access": 76
+        },
+        "energyRequirements": "Burst Depth-Clarion Dice costs 70 energy (genshin-db talents attributes), khong phai 80; can ER de giu Exquisite Throw lien tuc vi buff tich theo thoi gian.",
+        "reactionCompatibility": "Hydro coordinated attack hỗ trợ Vaporize/Frozen/Electro-Charged; DMG bonus từ passive buff mọi nguồn damage.",
+        "damageContribution": "Sub-DPS damage khá tốt, cộng thêm damage buff cho active character.",
+        "teamUtility": "Damage buff dạng ramp là điểm mạnh chính ngoài Hydro application.",
+        "constellationEffects": "C0 baseline; C6 Mastermind on-field arrows không được cộng vào.",
+        "gameplayAssumptions": "Không recast Burst trong lúc buff đang tích; active character Normal Attack liên tục.",
+        "versionNote": "Release v2.7; snapshot 7.2 local có 8 team row làm corroboration.",
+        "confidence": "HIGH"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:yelan-sub_dps-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "b25Review": {
+        "category": "READY_FOR_ADMIN_REVIEW",
+        "risks": "Da sua energy tu 80 thanh 70 theo genshin-db. Buff ramp mat neu recast Burst la gia dinh da ghi ro.",
+        "recommendation": "Giu S va trinh Admin phe duyet.",
+        "sensitivity": {
+          "performanceOnly": 84.9,
+          "performanceOnlyTier": "S"
+        }
+      }
+    },
+    {
+      "characterId": "mitya",
+      "characterName": "Mitya",
+      "role": "SUPPORT",
+      "constellation": "C0",
+      "proposedTier": "A",
+      "rubricScore": 74,
+      "gameVersion": "7.2",
+      "explanationVi": "Đóng góp: Mitya tạo Detection Core và Gradient Beacon; passive Baseline Stress Test cho cả đội 30 EM cho mỗi Beacon ở trạng thái Steady State, còn passive Stellar Jubilee đổi Superconduct thành Stellar-Conduct và tăng Base Stellar-Conduct damage theo EM của Mitya. Đề xuất A vì bộ hỗ trợ reaction Electro-Cryo này rất đặc thù và có ở C0, nhưng phạm vi dùng hẹp, cần setup Superconduct/Stellar-Conduct và local DB chỉ có 3 team row nên confidence MEDIUM. Điều kiện: muốn hưởng EM buff thì giữ Detection Core ở Steady State và có Beacon; muốn dùng Stellar-Conduct thì party phải trigger Superconduct và phối hợp Electro-Cryo. Constellation: không phụ thuộc; C0 đã có chuyển đổi reaction và EM buff, C1 chỉ thêm Beacon/CRIT DMG và C6 nâng damage Stellar-Conduct nên tách riêng nếu đánh giá. Hạn chế: không phải support universal, khó áp dụng vào đội không có Electro-Cryo, và cần kiểm soát trạng thái Core trong rotation.",
+      "strengths": [
+        "+30 EM cho cả đội mỗi Gradient Beacon ở Steady State",
+        "Đổi Superconduct thành Stellar-Conduct và tăng damage theo EM",
+        "Cơ chế đặc thù giúp reaction Electro-Cryo có thêm giá trị"
+      ],
+      "limitations": [
+        "Phạm vi dùng hẹp, cần Electro + Cryo",
+        "Phải quản lý trạng thái Detection Core",
+        "Corroboration local chỉ 3 team row"
+      ],
+      "teamAssumptions": [
+        "Party có Electro và Cryo để trigger Superconduct",
+        "Mitya có thể đảo đổi trạng thái Core trong rotation",
+        "Không tính C1/C6",
+        "Party co Electro + Cryo de trigger Superconduct -> Stellar-Conduct; Detection Core o Steady State khi can EM (30 / Beacon), chuyen sang Overloaded khi can them Beacon; khong tinh C1/C6."
+      ],
+      "evidence": {
+        "rubric": "GenshinHub Tier Rubric v1.0 (kit 30% / team flexibility 25% / verified evidence 20% / constellation independence 15% / accessibility 10%)",
+        "primaryEvidence": [
+          "genshin-db/talents Mitya (release v7.2), Principle: Variable Detection: tạo Detection Core và có thể đổi trạng thái bằng tap lại trong 6s.",
+          "genshin-db/talents Mitya, Baseline Stress Test: \"Steady State: All nearby party members gain 30 Elemental Mastery for each Gradient Beacon Mitya has\".",
+          "genshin-db/talents Mitya, Stellar Jubilee: \"When party members trigger Superconduct, it will be changed to Stellar-Conduct... Base Stellar-Conduct DMG dealt by all nearby party members will be increased based on Mitya's Elemental Mastery\".",
+          "GenshinHub development DB: 6 CharacterWeapon rows, 3 CharacterArtifact rows, 3 CharacterTeam rows (7.2 snapshot, corroboration only; không dùng tier cũ làm đáp án).",
+          "genshin-db/talents Mitya, Analysis: Gradient Theory: Energy Cost = 60 (genshin-db talents.attributes.parameters).",
+          "genshin-db/talents Mitya, Baseline Stress Test: 30 EM / Beacon chi ap dung cho Detection Core o trang thai Steady State; trang thai Overloaded cho 1 Beacon / 1.5s trong 6s sau Stellar-Conduct.",
+          "genshin-db/talents Mitya, Stellar Jubilee: Base Stellar-Conduct DMG tang 0.028% / EM, toi da 14%; can Electro + Cryo de trigger Superconduct chuyen thanh Stellar-Conduct."
+        ],
+        "reviewer": "GenshinHub Tier Editorial (Phase B2 draft; Admin reviewer chưa gán)",
+        "verifiedAt": "2026-11-20",
+        "rubricScores": {
+          "kit": 76,
+          "flex": 68,
+          "evidence": 72,
+          "constellation": 88,
+          "access": 66
+        },
+        "energyRequirements": "Burst Analysis: Gradient Theory costs 60 energy (genshin-db talents attributes) va tao 3 Gradient Beacon; uu tien ER du de duy tri Beacon.",
+        "reactionCompatibility": "Stellar-Conduct thay Superconduct; EM buff hưởng lợi cho mọi reaction scale EM trong đội.",
+        "damageContribution": "Thiên về enable và buff reaction hơn là damage trực tiếp.",
+        "teamUtility": "EM buff + chuyển đổi reaction là utility rõ ràng nhưng chỉ trong comp Electro-Cryo.",
+        "constellationEffects": "C0 baseline; C1 và C6 không được cộng vào score.",
+        "gameplayAssumptions": "Core ở đúng trạng thái khi cần; party trigger Superconduct trong cửa sổ Beacon.",
+        "versionNote": "genshin-db ghi release v7.2 — khớp version nghiên cứu; local DB có 3 team row.",
+        "confidence": "MEDIUM"
+      },
+      "derivation": "INDEPENDENT",
+      "approvalStatus": "PENDING_REVIEW",
+      "sourceUrl": "urn:genshinhub:tierlist:7.2:phase-b2-independent-001:mitya-support-c0",
+      "sourceName": "GenshinHub Independent Evaluation",
+      "sourceId": "phase-b2-independent-001",
+      "sourceLocale": "vi",
+      "lastReviewedDate": "2026-11-20",
+      "teamAssumptionDetail": "Party co Electro + Cryo de trigger Superconduct -> Stellar-Conduct; Detection Core o Steady State khi can EM (30 / Beacon), chuyen sang Overloaded khi can them Beacon; khong tinh C1/C6.",
+      "b25Review": {
+        "category": "GAMEPLAY_ASSUMPTION_UNVERIFIED",
+        "risks": "Da bo sung dieu kien: 30 EM / Beacon chi o Steady State; Overloaded cho Beacon sau Stellar-Conduct; base Stellar-Conduct DMG cap 14%. Kit chi huu ich trong comp Electro+Cryo va can quan ly trang thai Core; release v7.2 nen local evidence con mong (3 team row).",
+        "recommendation": "Giu A tam thoi; yeu cau Admin xac nhan da doc va chap nhan cac gia dinh state/comp truoc approve.",
+        "sensitivity": {
+          "performanceOnly": 74.5,
+          "performanceOnlyTier": "A"
+        }
+      }
+    }
+  ]
+}

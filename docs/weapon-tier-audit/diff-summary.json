@@ -1,0 +1,11 @@
+{
+  "records": 296,
+  "statusCounts": {
+    "NEW": 296,
+    "SOURCE_MISSING": 296,
+    "EXPLANATION_MISSING": 258,
+    "NEEDS_REVIEW": 254,
+    "SOURCE_CONFLICT": 4,
+    "DISPUTED": 4
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "status": "PENDING_REVIEW",
+  "characterId": "mitya",
+  "playstyle": "C0 Steady State Support",
+  "source": {
+    "kind": "INDEPENDENT",
+    "reference": "GenshinHub original C0 Support review using genshin-db 5.2.15 game mechanics; conditions, verification and references in mitya-support-review.md"
+  },
+  "weapons": [
+    {
+      "id": "14302",
+      "isF2P": true,
+      "refinement": 5
+    },
+    {
+      "id": "14416",
+      "isF2P": false
+    },
+    {
+      "id": "14417",
+      "isF2P": true
+    },
+    {
+      "id": "14401",
+      "isF2P": false
+    }
+  ],
+  "artifacts": [
+    [
+      "15048"
+    ],
+    [
+      "15017"
+    ]
+  ],
+  "sands": [
+    "Elemental Mastery"
+  ],
+  "goblet": [
+    "Elemental Mastery"
+  ],
+  "circlet": [
+    "Elemental Mastery",
+    "CRIT Rate"
+  ],
+  "subStatsPriority": [
+    "Elemental Mastery",
+    "CRIT Rate",
+    "CRIT DMG"
+  ],
+  "talentPriority": [
+    "Skill",
+    "Burst",
+    "Normal Attack"
+  ],
+  "teams": [
+    {
+      "name": "Wriothesley Cryo–Electro Support",
+      "description": "Mitya C0 Steady State Support. Experimental lineup. Combat performance has not been verified. Diona C6 is not assumed.",
+      "members": [
+        {
+          "characterId": "wriothesley",
+          "role": "Main DPS"
+        },
+        {
+          "characterId": "mitya",
+          "role": "Support"
+        },
+        {
+          "characterId": "fischl",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "diona",
+          "role": "Sustain"
+        }
+      ]
+    }
+  ]
+}

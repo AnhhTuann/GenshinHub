@@ -40,6 +40,9 @@ async function startServer() {
     }));
     app.use((0, compression_1.default)());
     const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://genshinhub.onrender.com'];
+    if (app.get('env') === 'development') {
+        allowedOrigins.push('http://localhost:3010', 'http://127.0.0.1:3010');
+    }
     app.use((0, cors_1.default)({ origin: allowedOrigins, methods: ['GET', 'POST'] }));
     const limiter = (0, express_rate_limit_1.default)({
         windowMs: 15 * 60 * 1000, // 15 minutes
@@ -165,11 +168,25 @@ async function startServer() {
                     console.warn("Invalid user token", err.message);
                 }
             }
+            // Phase D1: the acting Admin identity is derived server-side from the verified
+            // admin key (or an explicit operator-configured actor id). It is never read
+            // from request JSON and never logged.
+            let adminActor;
+            if (isAdmin) {
+                const configured = process.env.ADMIN_ACTOR_ID;
+                if (configured && configured.trim()) {
+                    adminActor = configured.trim();
+                }
+                else if (typeof adminKey === 'string' && adminKey) {
+                    adminActor = `admin-${require('node:crypto').createHash('sha256').update(adminKey).digest('hex').slice(0, 12)}`;
+                }
+            }
             return {
                 prisma: prisma_1.prisma,
                 dataloaders: (0, dataloaders_1.createLoaders)(prisma_1.prisma),
                 user: { isAdmin },
                 isAdmin,
+                adminActor,
                 userId,
                 userGender
             };

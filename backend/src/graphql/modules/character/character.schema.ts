@@ -61,7 +61,7 @@ export const characterTypeDefs = `#graphql
   }
   
   enum CharacterBuildPlaystyle { MAIN_DPS SUB_DPS SUPPORT }
-  enum CharacterBuildReviewStatus { DRAFT PENDING_REVIEW APPROVED REJECTED LEGACY_IMPORT }
+  enum CharacterBuildReviewStatus { DRAFT PENDING_REVIEW APPROVED REJECTED LEGACY_IMPORT MAINTENANCE }
   enum CharacterTeamReviewStatus { VERIFIED EXPERIMENTAL }
 
   type CharacterBuild {

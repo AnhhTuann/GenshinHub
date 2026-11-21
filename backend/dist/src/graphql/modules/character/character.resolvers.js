@@ -2,8 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.characterResolvers = void 0;
 const character_service_1 = require("./character.service");
+const legacyMode = () => process.env.CHARACTER_BUILD_READ_MODE === 'legacy';
+const publicBuilds = (characterId, context) => legacyMode() ? [] : context.dataloaders.characterBuildsLoader.load(characterId);
+async function defaultBuild(characterId, context) {
+    return (await publicBuilds(characterId, context)).find(build => build.isDefault) ?? null;
+}
+async function legacyBaseline(id, context) {
+    if (!legacyMode())
+        return null;
+    return context.prisma.characterBuild.findUnique({
+        where: { id: `baseline-${id}` }, select: { id: true },
+    });
+}
+const buildStats = ['sands', 'goblet', 'circlet', 'subStatsPriority', 'talentPriority'];
 exports.characterResolvers = {
     Query: {
+        characterBuilds: (_, { characterId }, context) => publicBuilds(characterId, context),
+        characterBuild: (_, { id }, context) => legacyMode() ? null : context.prisma.characterBuild.findFirst({
+            where: { id, reviewStatus: { in: ['APPROVED', 'LEGACY_IMPORT', 'MAINTENANCE'] } },
+        }),
         characters: async (_, __, context) => {
             const service = new character_service_1.CharacterService(context.prisma);
             return service.getAllCharacters();
@@ -19,20 +36,41 @@ exports.characterResolvers = {
     },
     // Field Resolvers (Solving N+1 Problem via DataLoader)
     Character: {
+        builds: (parent, _, context) => publicBuilds(parent.id, context),
+        defaultBuild: (parent, _, context) => defaultBuild(parent.id, context),
+        ...Object.fromEntries(buildStats.map(field => [field, async (parent, _, context) => (await defaultBuild(parent.id, context))?.[field] ?? parent[field]])),
         signatureWeapons: async (parent, _, context) => {
             if (!parent.signatureWeapons || parent.signatureWeapons.length === 0)
                 return [];
             return context.prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
         },
         bestWeapons: async (parent, _, context) => {
-            return context.dataloaders.characterWeaponsLoader.load(parent.id);
+            const build = await defaultBuild(parent.id, context) ?? await legacyBaseline(parent.id, context);
+            return build ? context.dataloaders.buildWeaponsLoader.load(build.id) :
+                context.dataloaders.characterWeaponsLoader.load(parent.id);
         },
         bestArtifacts: async (parent, _, context) => {
-            return context.dataloaders.characterArtifactsLoader.load(parent.id);
+            const build = await defaultBuild(parent.id, context) ?? await legacyBaseline(parent.id, context);
+            return build ? context.dataloaders.buildArtifactsLoader.load(build.id) :
+                context.dataloaders.characterArtifactsLoader.load(parent.id);
         },
         teams: async (parent, _, context) => {
-            return context.dataloaders.characterTeamsLoader.load(parent.id);
+            const build = await defaultBuild(parent.id, context) ?? await legacyBaseline(parent.id, context);
+            return build ? context.dataloaders.buildTeamsLoader.load(build.id) :
+                context.dataloaders.characterTeamsLoader.load(parent.id);
         },
+    },
+    CharacterBuildAudit: {
+        createdAt: (parent) => parent.createdAt.toISOString(),
+    },
+    CharacterBuild: {
+        source: (parent, _, context) => context.user.isAdmin ? parent.source : null,
+        approvalChecksum: (parent, _, context) => context.user.isAdmin ? parent.approvalChecksum : null,
+        bestWeapons: (parent, _, context) => context.dataloaders.buildWeaponsLoader.load(parent.id),
+        bestArtifacts: (parent, _, context) => context.dataloaders.buildArtifactsLoader.load(parent.id),
+        teams: (parent, _, context) => context.dataloaders.buildTeamsLoader.load(parent.id),
+        createdAt: (parent) => parent.createdAt.toISOString(),
+        updatedAt: (parent) => parent.updatedAt.toISOString(),
     },
     TeamBuild: {
         members: async (parent, _, context) => {
@@ -40,6 +78,20 @@ exports.characterResolvers = {
         }
     },
     CharacterWeapon: {
+        catalogWeaponId: async (parent, _, context) => {
+            const byId = await context.prisma.weapon.findUnique({ where: { id: parent.weaponId }, select: { id: true } });
+            if (byId)
+                return byId.id;
+            // Legacy build rows may store a localized weapon alias instead of a catalog ID.
+            // Resolve through either localized name, but only when it identifies one catalog weapon.
+            const matches = await context.prisma.weapon.findMany({
+                where: { OR: [{ nameEn: parent.nameEn }, { nameVi: parent.nameEn }, { nameVi: parent.nameVi }] },
+                select: { id: true },
+                take: 2,
+            });
+            const uniqueIds = new Set(matches.map(match => match.id));
+            return uniqueIds.size === 1 ? [...uniqueIds][0] : null;
+        },
         rarity: async (parent, _, context) => {
             // Find the weapon in DB to get its rarity
             const weapon = await context.prisma.weapon.findFirst({

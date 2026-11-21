@@ -32,13 +32,19 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAssetStorageRoot = getAssetStorageRoot;
 exports.resolveAssetFilePath = resolveAssetFilePath;
 exports.publicAssetPath = publicAssetPath;
 exports.isValidImageFile = isValidImageFile;
+exports.isDecodableImageFile = isDecodableImageFile;
 exports.atomicWriteFile = atomicWriteFile;
 const fs = __importStar(require("fs"));
+const node_crypto_1 = require("node:crypto");
+const sharp_1 = __importDefault(require("sharp"));
 const path = __importStar(require("path"));
 /**
  * Central asset storage resolution.
@@ -126,6 +132,17 @@ function isValidImageFile(filePath, minBytes = 30) {
         return false;
     }
 }
+async function isDecodableImageFile(filePath) {
+    if (!isValidImageFile(filePath))
+        return false;
+    try {
+        await (0, sharp_1.default)(filePath, { failOn: 'warning' }).stats();
+        return true;
+    }
+    catch {
+        return false;
+    }
+}
 /**
  * Atomic write: write to temp file in same dir then rename.
  * Ensures parent dir exists and stays inside root.
@@ -133,7 +150,12 @@ function isValidImageFile(filePath, minBytes = 30) {
 async function atomicWriteFile(absPath, data) {
     const dir = path.dirname(absPath);
     fs.mkdirSync(dir, { recursive: true });
-    const tmp = absPath + '.tmp-' + process.pid + '-' + Date.now();
-    fs.writeFileSync(tmp, data);
-    fs.renameSync(tmp, absPath);
+    const tmp = absPath + '.tmp-' + (0, node_crypto_1.randomUUID)();
+    try {
+        await fs.promises.writeFile(tmp, data, { flag: 'wx' });
+        await fs.promises.rename(tmp, absPath);
+    }
+    finally {
+        await fs.promises.rm(tmp, { force: true });
+    }
 }

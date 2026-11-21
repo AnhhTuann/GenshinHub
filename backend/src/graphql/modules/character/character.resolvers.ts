@@ -24,7 +24,7 @@ export const characterResolvers = {
       publicBuilds(characterId, context),
     characterBuild: (_: unknown, { id }: { id: string }, context: GraphQLContext) =>
       legacyMode() ? null : context.prisma.characterBuild.findFirst({
-        where: { id, reviewStatus: { in: ['APPROVED', 'LEGACY_IMPORT'] } },
+        where: { id, reviewStatus: { in: ['APPROVED', 'LEGACY_IMPORT', 'MAINTENANCE'] } },
       }),
     characters: async (_: any, __: any, context: GraphQLContext) => {
       const service = new CharacterService(context.prisma);
@@ -92,13 +92,18 @@ export const characterResolvers = {
   },
 
   CharacterWeapon: {
-    catalogWeaponId: async (parent: { weaponId: string; nameEn: string }, _: unknown, context: GraphQLContext) => {
+    catalogWeaponId: async (parent: { weaponId: string; nameEn: string; nameVi?: string }, _: unknown, context: GraphQLContext) => {
       const byId = await context.prisma.weapon.findUnique({ where: { id: parent.weaponId }, select: { id: true } });
       if (byId) return byId.id;
+      // Legacy build rows may store a localized weapon alias instead of a catalog ID.
+      // Resolve through either localized name, but only when it identifies one catalog weapon.
       const matches = await context.prisma.weapon.findMany({
-        where: { nameEn: parent.nameEn }, select: { id: true }, take: 2,
+        where: { OR: [{ nameEn: parent.nameEn }, { nameVi: parent.nameEn }, { nameVi: parent.nameVi }] },
+        select: { id: true },
+        take: 2,
       });
-      return matches.length === 1 ? matches[0].id : null;
+      const uniqueIds = new Set(matches.map(match => match.id));
+      return uniqueIds.size === 1 ? [...uniqueIds][0] : null;
     },
     rarity: async (parent: any, _: any, context: GraphQLContext) => {
       // Find the weapon in DB to get its rarity

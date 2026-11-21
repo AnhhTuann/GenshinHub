@@ -1,0 +1,26 @@
+# Mitya C0 Off-Field Support / Sub DPS
+
+**PENDING_REVIEW · 2026-11-20 · Genshin Impact 7.2.** Local character ID `mitya` (game ID `10000136`). This draft is the Tap Skill off-field playstyle only. Mitya creates the Steady State Detection Core, deals Electro damage off-field, and raises party EM for each Gradient Beacon held. Recommendations are original selections checked against `genshin-db@5.2.15` mechanics, the structured build/team data exposed at [Genshin-Builds][gb], and the role/ER discussion at [GameWith][gw]. No external tier, popularity percentage, or guide prose was imported.
+
+| Recommendation | ID | Rationale and condition | Confidence · review |
+|---|---|---|---|
+| Starsealed Edict R1 | `14525` | Still the strongest raw-stat option; CRIT DMG and EM-related bonuses improve off-field Skill damage, and its Stellar bonus can help the whole team. Limited 5-star; R1 assumed. | High mechanics · Pending |
+| Reliquary of Truth R1 | `14521` | CRIT/EM stat stick for off-field Skill damage and beacon generation. Limited 5-star; R1 assumed. | High stat fit · Pending |
+| Wandering Evenstar R1 | `14416` | EM for Mitya's scaling plus a conditional team ATK buff while off-field. The buff depends on maintaining the right aura/condition; limited 4-star. | High mechanic, medium uptime · Pending |
+| Sacrificial Fragments R1 | `14403` | EM stat stick; Skill reset can provide extra off-field Electro application and beacon generation if the reset procs. Standard 4-star gacha, not guaranteed F2P. | Medium · Pending |
+| Etherlight Spindlelute R1 | `14432` | ER plus EM after Skill; useful pre-C1 or without a second Electro battery so Mitya can afford Burst. Event weapon: may not be owned. | Medium, conditional · Pending |
+| Thrilling Tales of Dragon Slayers R5 | `14302` | Budget team ATK buff for the next on-field ATK-scaling carry. Requires a direct switch from Mitya to the intended recipient; gives no personal EM/CRIT. R5 assumed. | High mechanic, medium rotation fit · Pending |
+| Tenacity of the Millelith 4pc | `15017` | Off-field Skill hits can keep the team ATK buff active; no unique-set conflict in either verified lineup. Best default when the carry is ATK-scaling. | High mechanic, medium uptime · Pending |
+| Heart of the Furnace 4pc | `15048` | Increases team Stellar Glimmer reaction damage from off-field. Use only if no teammate already carries it: Alyosha carries it in the Sandrone lineup and Odette carries it in the Cyno lineup. | High mechanic, overlap-gated · Pending |
+| Wanderer's Troupe 2 + Gilded Dreams 2 | `15003`, `15026` | Flat EM placeholder that needs no reaction trigger; Gilded 4pc can give more EM only with enough differing-element teammates and reliable reaction ownership. | Medium placeholder · Pending |
+| Sands / Goblet / Circlet | `mitya` | Default EM / EM / CRIT Rate or CRIT DMG. ER Sands is conditional, not default: use it pre-C1 or when there is no second Electro battery and Burst uptime is required. EM circlet is acceptable only when CRIT needs are already covered. C0 assumed. | High distinction · Pending |
+| Substats | `mitya` | EM first for reaction/beacon scaling, then CRIT Rate and CRIT DMG for off-field Core damage, then ER only if the rotation needs Burst. A fixed ER target is not asserted for the experimental lineup. | High mechanic, medium exact order · Pending |
+| Talents | `mitya` | Skill first because the Steady State Core scales with it; Burst second for damage/beacons; Normal Attack last for Tap Skill support. C0 assumed. | High · Pending |
+| Sandrone / Mitya / Odette / Alyosha | `sandrone`, `mitya`, `odette`, `alyosha` | Roles: Sandrone Main DPS, Mitya Sub DPS, Odette Support, Alyosha Support. All slots C0 or lower. Party-triggered Superconduct is converted to Stellar-Conduct; Alyosha already carries Heart of the Furnace, so Mitya uses Tenacity. | High lineup identity, medium local performance evidence · Pending |
+| Cyno / Mitya / Odette / Alyosha | `cyno`, `mitya`, `odette`, `alyosha` | Roles: Cyno Main DPS, Mitya Sub DPS, Odette Sub DPS, Alyosha Support. All slots C0 or lower. Three Electro members enable Electro Resonance; Odette carries Heart of the Furnace and Alyosha carries Noblesse Oblige, so Mitya uses Tenacity. | High lineup identity, medium local performance evidence · Pending |
+| Wriothesley / Mitya / Fischl / Diona | `wriothesley`, `mitya`, `fischl`, `diona` | **EXPERIMENTAL DRAFT ONLY.** Roles: Wriothesley Main DPS, Mitya Support, Fischl Sub DPS, Diona Sustain. Requires party Superconduct conversion; Diona C6 EM buff is not assumed; Fischl A4 aura ownership, exact rotation, and performance are untested. No tier or verified-meta label. | Low-medium · Pending |
+
+Not promoted from the previous draft: Fruit of Fulfillment (`14417`) and Favonius Codex (`14401`) remain mechanically valid conditional ER options, but neither is a default here. Fruit depends on Mitya personally maintaining reaction stacks; Favonius needs an on-field crit and cannot proc from off-field Core hits. They are intentionally omitted from the reviewed default list rather than mixed with the role-defining options.
+
+[gb]: https://genshin-builds.com/en/character/mitya
+[gw]: https://gamewith.net/genshin-impact/article/show/76475

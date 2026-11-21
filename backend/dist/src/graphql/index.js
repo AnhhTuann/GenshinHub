@@ -4,6 +4,7 @@ exports.resolvers = exports.typeDefs = void 0;
 const merge_1 = require("@graphql-tools/merge");
 const character_schema_1 = require("./modules/character/character.schema");
 const character_resolvers_1 = require("./modules/character/character.resolvers");
+const character_build_admin_1 = require("./modules/character/character-build-admin");
 const character_mutations_1 = require("./modules/character/character.mutations");
 const weapon_schema_1 = require("./modules/weapon/weapon.schema");
 const weapon_resolvers_1 = require("./modules/weapon/weapon.resolvers");
@@ -17,6 +18,14 @@ const material_mutations_1 = require("./modules/material/material.mutations");
 const tierRank_schema_1 = require("./modules/tierRank/tierRank.schema");
 const tierRank_resolvers_1 = require("./modules/tierRank/tierRank.resolvers");
 const tierRank_mutations_1 = require("./modules/tierRank/tierRank.mutations");
+const characterTierRanking_schema_1 = require("./modules/characterTierRanking/characterTierRanking.schema");
+const characterTierRanking_resolvers_1 = require("./modules/characterTierRanking/characterTierRanking.resolvers");
+const weaponTierRanking_schema_1 = require("./modules/weaponTierRanking/weaponTierRanking.schema");
+const weaponTierRanking_resolvers_1 = require("./modules/weaponTierRanking/weaponTierRanking.resolvers");
+const weaponTierReview_schema_1 = require("./modules/weaponTierReview/weaponTierReview.schema");
+const weaponTierReview_resolvers_1 = require("./modules/weaponTierReview/weaponTierReview.resolvers");
+const versionedReview_schema_1 = require("./modules/phaseD3/versionedReview.schema");
+const versionedReview_resolvers_1 = require("./modules/phaseD3/versionedReview.resolvers");
 const backup_schema_1 = require("./modules/backup/backup.schema");
 const backup_resolvers_1 = require("./modules/backup/backup.resolvers");
 const backup_mutations_1 = require("./modules/backup/backup.mutations");
@@ -32,6 +41,10 @@ exports.typeDefs = (0, merge_1.mergeTypeDefs)([
     artifact_schema_1.artifactTypeDefs,
     material_schema_1.materialTypeDefs,
     tierRank_schema_1.tierRankTypeDefs,
+    characterTierRanking_schema_1.characterTierRankingTypeDefs,
+    weaponTierRanking_schema_1.weaponTierRankingTypeDefs,
+    weaponTierReview_schema_1.weaponTierReviewTypeDefs,
+    versionedReview_schema_1.phaseD3ReviewTypeDefs,
     backup_schema_1.backupTypeDefs,
     enka_schema_1.enkaTypeDefs,
     user_schema_1.userSchema,
@@ -40,6 +53,7 @@ exports.typeDefs = (0, merge_1.mergeTypeDefs)([
 exports.resolvers = (0, merge_1.mergeResolvers)([
     character_resolvers_1.characterResolvers,
     character_mutations_1.characterMutations,
+    character_build_admin_1.characterBuildAdmin,
     weapon_resolvers_1.weaponResolvers,
     weapon_mutations_1.weaponMutations,
     artifact_resolvers_1.artifactResolvers,
@@ -48,6 +62,10 @@ exports.resolvers = (0, merge_1.mergeResolvers)([
     material_mutations_1.materialMutations,
     tierRank_resolvers_1.tierRankResolvers,
     tierRank_mutations_1.tierRankMutations,
+    characterTierRanking_resolvers_1.characterTierRankingResolvers,
+    weaponTierRanking_resolvers_1.weaponTierRankingResolvers,
+    weaponTierReview_resolvers_1.weaponTierReviewResolvers,
+    versionedReview_resolvers_1.phaseD3ReviewResolvers,
     backup_resolvers_1.backupResolvers,
     backup_mutations_1.backupMutations,
     enka_resolvers_1.enkaResolvers,

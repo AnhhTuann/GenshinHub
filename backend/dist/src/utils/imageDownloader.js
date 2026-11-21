@@ -39,7 +39,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.downloadAndConvertToWebp = downloadAndConvertToWebp;
 exports.downloadWithFallback = downloadWithFallback;
 const axios_1 = __importDefault(require("axios"));
-const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const sharp_1 = __importDefault(require("sharp"));
 const assetStorage_1 = require("./assetStorage");
@@ -94,15 +93,8 @@ async function downloadAndConvertToWebp(url, outputPath, options = {}) {
     if (!target) {
         return { ok: false, error: `Invalid output path for ${url}` };
     }
-    if (skipExisting && fs.existsSync(target) && (0, assetStorage_1.isValidImageFile)(target)) {
+    if (skipExisting && await (0, assetStorage_1.isDecodableImageFile)(target)) {
         return { ok: true, path: target, skipped: true };
-    }
-    // If file exists but corrupt: remove it so we can replace safely
-    if (fs.existsSync(target) && !(0, assetStorage_1.isValidImageFile)(target)) {
-        try {
-            fs.unlinkSync(target);
-        }
-        catch { /* ignore */ }
     }
     let lastErr = '';
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -122,6 +114,9 @@ async function downloadAndConvertToWebp(url, outputPath, options = {}) {
                 .toBuffer();
             if (webp.length < 50)
                 throw new Error('webp output too small');
+            if (skipExisting && await (0, assetStorage_1.isDecodableImageFile)(target)) {
+                return { ok: true, path: target, skipped: true };
+            }
             await (0, assetStorage_1.atomicWriteFile)(target, webp);
             return { ok: true, path: target };
         }
@@ -130,6 +125,8 @@ async function downloadAndConvertToWebp(url, outputPath, options = {}) {
             lastErr = e?.response?.status
                 ? `HTTP ${e.response.status}`
                 : e?.message || String(err);
+            if (e?.response?.status === 404)
+                break;
             if (attempt < MAX_RETRIES) {
                 await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt));
             }

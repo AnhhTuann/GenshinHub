@@ -28,8 +28,9 @@ export function createLoaders(prisma: PrismaClient): MyLoaders {
     });
 
   return {
+    // MAINTENANCE is public but explicitly distinct from human APPROVED / legacy imports.
     characterBuildsLoader: byKey(keys => prisma.characterBuild.findMany({
-      where: { characterId: { in: keys }, reviewStatus: { in: ['APPROVED', 'LEGACY_IMPORT'] } },
+      where: { characterId: { in: keys }, reviewStatus: { in: ['APPROVED', 'LEGACY_IMPORT', 'MAINTENANCE'] } },
       orderBy: [{ isDefault: 'desc' }, { createdAt: 'asc' }, { id: 'asc' }],
     }), row => row.characterId),
     buildWeaponsLoader: byKey(keys => prisma.characterWeapon.findMany({

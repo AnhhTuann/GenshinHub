@@ -11,6 +11,7 @@ case "${1:-}" in
     status=0
     npm run sync:version || status=1
     npm run sync:validate || status=1
+    npm run sync:mats:check || status=1
     npm run sync:assets:check || status=1
     exit "$status"
     ;;

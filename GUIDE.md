@@ -461,7 +461,7 @@ npx ts-node fix_materials.ts
 ### Deploy Backend Lên Render
 
 1. Push code lên GitHub
-2. Render tự động detect `Dockerfile` trong `backend/`
+2. Dùng thư mục gốc repository làm Docker build context và chọn `backend/Dockerfile`
 3. Cài biến môi trường trong Render Dashboard:
    - `DATABASE_URL` — Neon connection string
    - `GEMINI_API_KEY` — Google AI Studio key
@@ -482,17 +482,16 @@ Hoặc kết nối GitHub repo với Vercel, mỗi lần push sẽ tự động 
 ### Docker (Self-host)
 
 ```bash
-# Backend
-cd backend
-docker-compose up -d          # Khởi động PostgreSQL
-docker build -t genshinhub-backend .
+# Backend, from repository root
+docker compose -f backend/docker-compose.yml up -d
+docker build -f backend/Dockerfile -t genshinhub-backend .
 docker run -p 4000:4000 \
   -e DATABASE_URL="postgresql://..." \
   genshinhub-backend
 
 # Frontend
-cd frontend
-docker build -t genshinhub-frontend .
+# Run from repository root
+docker build -f frontend/Dockerfile -t genshinhub-frontend .
 docker run -p 3000:3000 genshinhub-frontend
 ```
 

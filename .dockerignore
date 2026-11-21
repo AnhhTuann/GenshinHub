@@ -1,0 +1,14 @@
+**
+!backend/
+!backend/**
+!frontend/
+!frontend/**
+**/node_modules
+**/.env*
+backend/dist
+backend/backups
+backend/logs
+backend/reports
+frontend/.next
+**/*.tsbuildinfo
+**/__pycache__

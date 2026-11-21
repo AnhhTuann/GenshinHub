@@ -24,7 +24,8 @@
     "sync:mats:rollback": "ts-node scripts/sync/materialBackfill.ts --rollback",
     "sync:e2e": "ts-node scripts/sync/e2e.test.ts",
     "test:assets": "ts-node scripts/sync/asset.test.ts",
-    "test:mats": "ts-node scripts/sync/materialBackfill.test.ts"
+    "test:mats": "ts-node scripts/sync/materialBackfill.test.ts",
+    "seed:ci": "ts-node prisma/seed-ci.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

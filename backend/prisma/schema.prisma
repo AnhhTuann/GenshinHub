@@ -1,53 +1,56 @@
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Character {
-  id             String              @id
-  nameEn         String
-  nameVi         String
-  titleEn        String
-  titleVi        String
-  rarity         Int
-  element        String
-  weapon         String
-  region         String
-  avatarUrl      String
-  splashArtUrl   String
-  
-  // Extended data
-  descriptionEn  String
-  descriptionVi  String
-  baseHp         Int
-  baseAtk        Int
-  baseDef        Int
-  fandomUrl      String?
-  birthday       String?
-  
-  // Tier List Data
-  tier           String?   // "SS", "S", "A", "B", "C", "D"
-  role           String?   // "Main DPS", "Sub DPS", "Support"
-  recommendedC   String?   // "C0", "C1", etc
-  tierNoteEn     String[]
-  tierNoteVi     String[]
+  builds       CharacterBuild[] // build-scoped profiles; legacy fields below stay untouched
+  id           String           @id
+  nameEn       String
+  nameVi       String
+  titleEn      String
+  titleVi      String
+  rarity       Int
+  element      String
+  weapon       String
+  region       String
+  avatarUrl    String
+  splashArtUrl String
 
-  bestWeapons    CharacterWeapon[]
-  bestArtifacts  CharacterArtifact[]
-  talentPriority String[]
+  // Extended data
+  descriptionEn String
+  descriptionVi String
+  baseHp        Int
+  baseAtk       Int
+  baseDef       Int
+  fandomUrl     String?
+  birthday      String?
+
+  // Tier List Data
+  tier         String? // "SS", "S", "A", "B", "C", "D"
+  role         String? // "Main DPS", "Sub DPS", "Support"
+  recommendedC String? // "C0", "C1", etc
+  tierNoteEn   String[]
+  tierNoteVi   String[]
+
+  bestWeapons      CharacterWeapon[]
+  bestArtifacts    CharacterArtifact[]
+  talentPriority   String[]
   signatureWeapons String[]
-  teams          CharacterTeam[]
-  
-  stats          Json?
-  ascensionMats  Json?
-  talentMats     Json?
-  
-  sands          String[]
-  goblet         String[]
-  circlet        String[]
+  teams            CharacterTeam[]
+  tierRankings     CharacterTierRanking[]
+
+  stats         Json?
+  ascensionMats Json?
+  talentMats    Json?
+
+  sands            String[]
+  goblet           String[]
+  circlet          String[]
   subStatsPriority String[]
 
   @@index([element])
@@ -58,7 +61,9 @@ model Character {
 }
 
 model CharacterWeapon {
-  id            String    @id @default(uuid())
+  buildId       String? // nullable throughout the proposed migration
+  build         CharacterBuild? @relation(fields: [buildId, characterId], references: [id, characterId], onDelete: Restrict)
+  id            String          @id @default(uuid())
   weaponId      String
   nameEn        String
   nameVi        String
@@ -68,50 +73,58 @@ model CharacterWeapon {
   subStat       String?
   passiveDescEn String?
   passiveDescVi String?
-  refinement    Int?      @default(1)
-  constellation String?   @default("C0")
-  order         Int       @default(0)
-  character     Character @relation(fields: [characterId], references: [id])
+  refinement    Int?            @default(1)
+  constellation String?         @default("C0")
+  order         Int             @default(0)
+  character     Character       @relation(fields: [characterId], references: [id])
   characterId   String
 
   @@index([characterId])
+  @@index([buildId, characterId])
 }
 
 model CharacterArtifact {
-  id               String    @id @default(uuid())
-  setNameEn        String
-  setNameVi        String
-  pieces           Int
-  order            Int       @default(0)
-  constellation    String?   @default("C0")
-  character        Character @relation(fields: [characterId], references: [id])
-  characterId      String
+  buildId       String?
+  build         CharacterBuild? @relation(fields: [buildId, characterId], references: [id, characterId], onDelete: Restrict)
+  id            String          @id @default(uuid())
+  setNameEn     String
+  setNameVi     String
+  pieces        Int
+  order         Int             @default(0)
+  constellation String?         @default("C0")
+  character     Character       @relation(fields: [characterId], references: [id])
+  characterId   String
 
   @@index([characterId])
+  @@index([buildId, characterId])
 }
 
 model CharacterTeam {
-  id          String   @id @default(uuid())
-  name        String
-  rank        String
-  description String
-  order       Int      @default(0)
-  character   Character @relation(fields: [characterId], references: [id])
-  characterId String
-  members     TeamMember[]
-  
+  buildId      String?
+  build        CharacterBuild?            @relation(fields: [buildId, characterId], references: [id, characterId], onDelete: Restrict)
+  reviewStatus CharacterTeamReviewStatus? // null = legacy/unclassified
+  id           String                     @id @default(uuid())
+  name         String
+  rank         String
+  description  String
+  order        Int                        @default(0)
+  character    Character                  @relation(fields: [characterId], references: [id])
+  characterId  String
+  members      TeamMember[]
+
   @@index([characterId])
+  @@index([buildId, characterId])
 }
 
 model TeamMember {
-  id          String   @id @default(uuid())
+  id          String        @id @default(uuid())
   characterId String
   role        String
   roleDesc    String
   weapons     String[]
   artifacts   String[]
   substats    String[]
-  order       Int      @default(0)
+  order       Int           @default(0)
   team        CharacterTeam @relation(fields: [teamId], references: [id], onDelete: Cascade)
   teamId      String
 
@@ -133,35 +146,205 @@ model Weapon {
   passiveDescEn String?
   passiveDescVi String?
   iconUrl       String?
-  
-  // Tier List Data
-  tier          String?
-  role          String?
+
+  // Tier List Data (legacy general fields - never overwritten by role-specific rankings)
+  tier String?
+  role String?
+
+  tierRanks WeaponTierRank[]
 
   @@index([rarity])
   @@index([type])
   @@index([tier])
 }
 
+// Additive weapon tier infrastructure. Legacy Weapon.tier/role stay untouched.
+enum WeaponTierRole {
+  MAIN_DPS
+  SUB_DPS
+  SUPPORT
+}
+
+enum WeaponRankTier {
+  SS
+  S
+  A
+  B
+  C
+  D
+}
+
+enum WeaponTierReviewStatus {
+  PENDING_REVIEW
+  NEEDS_REVIEW
+  APPROVED
+  REJECTED
+  DISPUTED
+}
+
+enum WeaponTierDerivation {
+  INDEPENDENT
+  SOURCE_DERIVED
+  ADMIN_OVERRIDE
+}
+
+// Non-null so PostgreSQL UNIQUE never relies on NULL equality.
+enum WeaponRefinementContext {
+  R1
+  R2
+  R3
+  R4
+  R5
+  UNSPECIFIED
+  SOURCE_MISSING
+}
+
+enum WeaponVersionStatus {
+  VERIFIED
+  SOURCE_MISSING
+}
+
+enum WeaponConfidence {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+model WeaponTierRank {
+  id         String @id @default(uuid())
+  weapon     Weapon @relation(fields: [weaponId], references: [id], onDelete: Cascade)
+  weaponId   String
+  weaponType String // copied from Weapon.type, validated, never inferred from art/name
+
+  role              WeaponTierRole
+  tier              WeaponRankTier
+  refinementContext WeaponRefinementContext
+  refinementLevel   Int? // 1..5 only when context is R1..R5
+  versionKey        String // non-null unique key: e.g. "7.2" or "UNSPECIFIED"
+  gameVersion       String?
+  gameVersionStatus WeaponVersionStatus
+
+  explanationVi String?
+  evidence      Json?
+  rubricVersion String?
+  confidence    WeaponConfidence?
+  reviewNotes   String?
+
+  sourceUrl             String?
+  sourceName            String?
+  sourceId              String?
+  sourceLocale          String  @default("en")
+  sourceChecksum        String?
+  publishRightsVerified Boolean @default(false)
+  rightsNote            String?
+
+  derivation      WeaponTierDerivation   @default(SOURCE_DERIVED)
+  reviewStatus    WeaponTierReviewStatus @default(PENDING_REVIEW)
+  rejectionReason String?
+  reviewedAt      DateTime?
+  approvedBy      String? // acting Admin, set server-side only
+  createdAt       DateTime               @default(now())
+  updatedAt       DateTime               @updatedAt
+
+  audits WeaponTierAudit[]
+
+  @@unique([weaponId, role, versionKey, refinementContext])
+  @@index([weaponId])
+  @@index([weaponType, role])
+  @@index([role, tier])
+  @@index([versionKey, reviewStatus])
+  @@index([derivation, reviewStatus])
+  @@index([publishRightsVerified, reviewStatus])
+}
+
+model WeaponTierAudit {
+  id        String         @id @default(uuid())
+  ranking   WeaponTierRank @relation(fields: [rankingId], references: [id], onDelete: Cascade)
+  rankingId String
+  action    String // CREATED | UPDATED | APPROVED | REJECTED
+  actor     String // authenticated server-side identity
+  changes   Json?
+  createdAt DateTime       @default(now())
+
+  @@index([rankingId, createdAt])
+}
+
+// B3.2 - Admin review workflow. This table records DECISIONS on the frozen
+// candidates; it never creates a ranking row. Rankings are written only by the
+// explicit, separately gated import step.
+enum WeaponTierDecision {
+  PENDING
+  APPROVE
+  REQUEST_CHANGES
+  REJECT
+}
+
+model WeaponTierReview {
+  id           String             @id @default(uuid())
+  candidateId  String             @unique
+  weaponId     String
+  batchSha256  String // freeze batch hash the decision is bound to
+  recordSha256 String // frozen per-record checksum the decision is bound to
+  reviewGroup  String // A = reviewable, B = needs more evidence
+
+  decision       WeaponTierDecision @default(PENDING)
+  decisionReason String?
+  decidedAt      DateTime?
+  decidedBy      String? // server-derived authenticated Admin principal
+
+  rightsVerified   Boolean   @default(false)
+  rightsBasis      Json? // stored verification grounds + verifier context
+  rightsVerifiedAt DateTime?
+  rightsVerifiedBy String? // server-derived authenticated Admin principal
+
+  tierChangeConfirmed   Boolean   @default(false)
+  tierChangeConfirmedAt DateTime?
+  tierChangeConfirmedBy String? // server-derived authenticated Admin principal
+
+  evidenceAcknowledged Boolean @default(false)
+  evidenceSupplement   Json?
+  version              Int     @default(1) // optimistic concurrency token
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  audits WeaponTierReviewAudit[]
+
+  @@index([decision])
+  @@index([weaponId])
+}
+
+model WeaponTierReviewAudit {
+  id        String           @id @default(uuid())
+  review    WeaponTierReview @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  reviewId  String
+  action    String // DECISION_RECORDED | DECISION_CHANGED | RIGHTS_VERIFIED | TIER_CHANGE_CONFIRMED | EVIDENCE_SUPPLEMENTED | REVIEW_CREATED
+  actor     String // server-derived authenticated Admin principal
+  changes   Json?
+  createdAt DateTime         @default(now())
+
+  @@index([reviewId, createdAt])
+}
+
 model ArtifactSet {
-  id            String  @id
-  nameEn        String
-  nameVi        String
-  rarityList    Int[]
-  piece2DescEn  String
-  piece2DescVi  String
-  piece4DescEn  String
-  piece4DescVi  String
-  iconUrl       String?
+  id           String  @id
+  nameEn       String
+  nameVi       String
+  rarityList   Int[]
+  piece2DescEn String
+  piece2DescVi String
+  piece4DescEn String
+  piece4DescVi String
+  iconUrl      String?
 }
 
 model Material {
-  id          String  @id
-  nameEn      String
-  nameVi      String
-  type        String
-  rarity      Int
-  iconUrl     String?
+  id      String  @id
+  nameEn  String
+  nameVi  String
+  type    String
+  rarity  Int
+  iconUrl String?
 
   @@index([type])
   @@index([rarity])
@@ -171,8 +354,87 @@ model Material {
 model TierRank {
   id        String @id @default(uuid())
   name      String @unique
-  order     Int      @default(0)
-  colorBase String   @default("amber") // e.g. amber, red, blue, emerald, gray, orange, purple
+  order     Int    @default(0)
+  colorBase String @default("amber") // e.g. amber, red, blue, emerald, gray, orange, purple
+}
+
+// Independent per-role / per-constellation character tier rankings.
+// Additive only: legacy Character.tier/role/recommendedC/notes stay authoritative.
+enum TierListRole {
+  MAIN_DPS
+  SUB_DPS
+  SUPPORT
+}
+
+enum TierListTier {
+  SS
+  S
+  A
+  B
+  C
+  D
+}
+
+enum TierListConstellation {
+  C0
+  C1
+  C2
+  C3
+  C4
+  C5
+  C6
+}
+
+enum TierListApprovalStatus {
+  PENDING_REVIEW
+  NEEDS_REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum TierListDerivation {
+  INDEPENDENT
+  SOURCE_DERIVED
+  ADMIN_OVERRIDE
+}
+
+model CharacterTierRanking {
+  id          String    @id @default(uuid())
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  characterId String
+
+  role          TierListRole
+  tier          TierListTier
+  constellation TierListConstellation
+  gameVersion   String
+
+  explanationVi String?
+  explanationEn String?
+
+  sourceUrl              String
+  sourceName             String
+  sourceId               String?
+  sourceLocale           String    @default("en")
+  sourceGrid             String?
+  sourceTierKey          String?
+  sourceMinConstellation Int?
+  evidence               Json?
+  lastReviewedDate       DateTime?
+
+  derivation      TierListDerivation     @default(SOURCE_DERIVED)
+  approvalStatus  TierListApprovalStatus @default(PENDING_REVIEW)
+  rejectionReason String?
+  reviewedAt      DateTime?
+  approvedBy      String? // acting Admin for approve/reject; never taken from request input
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([characterId, role, constellation, gameVersion])
+  @@index([characterId])
+  @@index([role, tier])
+  @@index([gameVersion, approvalStatus])
+  @@index([derivation, approvalStatus])
 }
 
 // --- User Authentication ---
@@ -180,10 +442,10 @@ model User {
   id          String   @id @default(uuid())
   username    String   @unique
   email       String   @unique
-  password    String?  // bcrypt hashed, optional for social auth
+  password    String? // bcrypt hashed, optional for social auth
   provider    String   @default("local") // "local", "google", "facebook"
   providerId  String?  @unique // OAuth provider ID
-  gender      String   // "male" | "female"
+  gender      String // "male" | "female"
   displayName String?
   avatarUrl   String?
   bio         String?
@@ -191,9 +453,9 @@ model User {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  favorites   UserFavorite[]
-  wishlist    UserWishlist[]
-  teams       UserTeam[]
+  favorites UserFavorite[]
+  wishlist  UserWishlist[]
+  teams     UserTeam[]
 
   @@index([email])
   @@index([username])
@@ -203,10 +465,10 @@ model UserFavorite {
   id        String   @id @default(uuid())
   userId    String
   itemId    String
-  itemType  String   // "CHARACTER" | "WEAPON" | "ARTIFACT"
+  itemType  String // "CHARACTER" | "WEAPON" | "ARTIFACT"
   createdAt DateTime @default(now())
 
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, itemId, itemType])
   @@index([userId])
@@ -216,26 +478,26 @@ model UserWishlist {
   id        String   @id @default(uuid())
   userId    String
   itemId    String
-  itemType  String   // "CHARACTER" | "WEAPON" | "ARTIFACT"
+  itemType  String // "CHARACTER" | "WEAPON" | "ARTIFACT"
   note      String?
   priority  Int      @default(0)
   createdAt DateTime @default(now())
 
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, itemId, itemType])
   @@index([userId])
 }
 
 model UserTeam {
-  id          String   @id @default(uuid())
-  userId      String
-  name        String
-  characters  String[] // Array of character IDs, max 4
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String   @id @default(uuid())
+  userId     String
+  name       String
+  characters String[] // Array of character IDs, max 4
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
 }
@@ -244,9 +506,81 @@ model Otp {
   id        String   @id @default(uuid())
   email     String
   code      String
-  purpose   String   // e.g. "EMAIL_CHANGE"
+  purpose   String // e.g. "EMAIL_CHANGE"
   expiresAt DateTime
   createdAt DateTime @default(now())
 
   @@index([email])
+}
+
+enum CharacterBuildPlaystyle {
+  MAIN_DPS
+  SUB_DPS
+  SUPPORT
+}
+
+enum CharacterBuildReviewStatus {
+  DRAFT
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+  LEGACY_IMPORT
+}
+
+enum CharacterTeamReviewStatus {
+  VERIFIED
+  EXPERIMENTAL
+}
+
+// Build-scoped profile, independent of Character.role and TierRank.
+model CharacterBuild {
+  id          String    @id @default(uuid())
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Restrict)
+  characterId String
+
+  name                     String
+  playstyles               CharacterBuildPlaystyle[]
+  constellationAssumptions String[] // e.g. ["C0"]
+  isDefault                Boolean                    @default(false)
+  reviewStatus             CharacterBuildReviewStatus @default(PENDING_REVIEW)
+  source                   String?
+  approvalChecksum         String?                    @unique
+  version                  Int                        @default(1)
+  notesEn                  String?
+  notesVi                  String?
+
+  // Build-specific copy of the former single-build fields.
+  bestWeapons      CharacterWeapon[]
+  bestArtifacts    CharacterArtifact[]
+  teams            CharacterTeam[]
+  talentPriority   String[]
+  signatureWeapons String[]
+  sands            String[]
+  goblet           String[]
+  circlet          String[]
+  subStatsPriority String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  audits CharacterBuildAudit[]
+
+  @@unique([characterId, name])
+  @@unique([id, characterId])
+  @@index([characterId])
+}
+
+model CharacterBuildAudit {
+  id          String         @id @default(uuid())
+  characterId String
+  buildId     String
+  build       CharacterBuild @relation(fields: [buildId, characterId], references: [id, characterId], onDelete: Restrict)
+  action      String // CREATED | UPDATED | APPROVED | REJECTED | DEFAULT_CHANGED
+  actor       String // authenticated server-side identity
+  version     Int
+  changes     Json?
+  createdAt   DateTime       @default(now())
+
+  @@index([buildId])
+  @@index([characterId, createdAt])
 }

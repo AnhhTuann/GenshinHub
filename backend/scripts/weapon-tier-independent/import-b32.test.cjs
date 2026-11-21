@@ -20,7 +20,7 @@ let state;
 
 test('setup: read-only dev state with 5 migrations and zero ranking rows', async () => {
   state = await readOnlyState();
-  assert.equal(state.migrationRows.length, 5);
+  assert.equal(state.migrationRows.length, 6);
   const { openReadOnly } = require('../weapon-tier-audit/db.cjs');
   const { prisma } = openReadOnly();
   try {

@@ -525,6 +525,7 @@ enum CharacterBuildReviewStatus {
   APPROVED
   REJECTED
   LEGACY_IMPORT
+  MAINTENANCE // Owner-authorized development data maintenance; never an Admin approval
 }
 
 enum CharacterTeamReviewStatus {

@@ -180,7 +180,7 @@ test('tampered decision sheet, non-empty DB and bad migrations are fatal', () =>
 
 test('all applied migrations (including B3.2 review schema) match local checksums', () => {
   assert.deepEqual(checkMigrations(state.migrationRows), []);
-  assert.equal(state.migrationRows.length, 5);
+  assert.equal(state.migrationRows.length, 6);
 });
 
 test('built operations bind the frozen checksum and never carry an actor field', () => {

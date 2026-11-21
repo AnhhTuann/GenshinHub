@@ -164,11 +164,17 @@ Port 3000 belongs to `vietlabel_app` and was not used.
 
 Commits created on `feat/balanced-fantasy-motion`:
 
-PENDING_COMMIT_LIST
+1. `a446773f58de0cd442f9fe500e846bfcb0e92ac2` chore(ci): align Docker build contexts and ignore Python caches
+2. `8696f3e8399501af860370d37f02176a271b9498` feat(db): add MAINTENANCE build status with migration guards
+3. `4f4c49d3462e065c3d9228623cf009d63b9fa98c` feat(builds): expose maintenance builds and resolve localized weapon aliases
+4. `e242b6a93072536a73b7891d79d2d7c0367481e1` feat(tierlist): finalize independent tier ranking and admin review workflow
+5. `73fcb8a8c052fc99249c2dba9020724292079dab` feat(frontend): add verified artifact fallback and tier review admin UI
+6. `94ca5d98d3e6c01cc97ffd9bf5e0e59779a8b75b` docs(builds): record full character build completion and queue resolution
+7. `a994ec5964072b4e1412597dd72fd309a0d7b707` docs(release): add final completion report and release checklist
 
 Pushed to `origin/feat/balanced-fantasy-motion` (no force):
 
-- Verified remote SHA: `PENDING_PUSHED_SHA`
+- Verified remote SHA: `a994ec5964072b4e1412597dd72fd309a0d7b707`
 - Command: `git ls-remote origin refs/heads/feat/balanced-fantasy-motion`
 
 Review and release checklist: `docs/FINAL_RELEASE_CHECKLIST.md`.

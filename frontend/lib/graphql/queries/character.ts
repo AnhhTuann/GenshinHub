@@ -80,3 +80,21 @@ export const GENERATE_CHARACTER_AI = `
     }
   }
 `;
+
+export const GET_CHARACTER_BUILDS = `
+  query GetCharacterBuilds($id: String!) {
+    characterBuilds(characterId: $id) {
+      id name playstyles constellationAssumptions isDefault notesEn notesVi version reviewStatus
+      sands goblet circlet subStatsPriority talentPriority
+      bestWeapons { id weaponId nameEn nameVi rank isF2P iconUrl subStat passiveDescEn passiveDescVi refinement rarity constellation }
+      bestArtifacts {
+        id setNameEn setNameVi pieces rarity iconUrl artifactSetId constellation
+        mixSets { nameEn nameVi iconUrl artifactSetId }
+      }
+      teams {
+        id name rank description reviewStatus
+        members { id characterId role roleDesc weapons artifacts substats }
+      }
+    }
+  }
+`;

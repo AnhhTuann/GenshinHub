@@ -4,6 +4,8 @@ export const characterTypeDefs = `#graphql
   type CharacterWeapon {
     id: ID!
     weaponId: String!
+    catalogWeaponId: String
+    order: Int!
     nameEn: String!
     nameVi: String!
     rank: Int!
@@ -48,7 +50,8 @@ export const characterTypeDefs = `#graphql
     order: Int
   }
   
-  type TeamBuild { 
+  type TeamBuild {
+    reviewStatus: CharacterTeamReviewStatus
     id: String!
     name: String!
     rank: String!
@@ -57,6 +60,111 @@ export const characterTypeDefs = `#graphql
     members: [TeamMemberBuild!]! 
   }
   
+  enum CharacterBuildPlaystyle { MAIN_DPS SUB_DPS SUPPORT }
+  enum CharacterBuildReviewStatus { DRAFT PENDING_REVIEW APPROVED REJECTED LEGACY_IMPORT }
+  enum CharacterTeamReviewStatus { VERIFIED EXPERIMENTAL }
+
+  type CharacterBuild {
+    id: ID!
+    characterId: String!
+    name: String!
+    playstyles: [CharacterBuildPlaystyle!]!
+    constellationAssumptions: [String!]!
+    reviewStatus: CharacterBuildReviewStatus!
+    isDefault: Boolean!
+    notesEn: String
+    notesVi: String
+    version: Int!
+    source: String
+    approvalChecksum: String
+    bestWeapons: [CharacterWeapon!]!
+    bestArtifacts: [CharacterArtifact!]!
+    sands: [String!]!
+    goblet: [String!]!
+    circlet: [String!]!
+    subStatsPriority: [String!]!
+    talentPriority: [String!]!
+    teams: [TeamBuild!]!
+    createdAt: String!
+    updatedAt: String!
+  }
+
+  extend type Query {
+    characterBuilds(characterId: String!): [CharacterBuild!]!
+    characterBuild(id: ID!): CharacterBuild
+  }
+
+  enum CharacterBuildReviewDecision { APPROVE REJECT }
+
+  input CharacterBuildWeaponInput {
+    weaponId: String!
+    isF2P: Boolean!
+    refinement: Int
+    constellation: String
+  }
+
+  input CharacterBuildArtifactInput {
+    setIds: [String!]!
+    constellation: String
+  }
+
+  input CharacterBuildMemberInput {
+    characterId: String!
+    role: String!
+    roleDesc: String
+    weapons: [String!]
+    artifacts: [String!]
+    substats: [String!]
+  }
+
+  input CharacterBuildTeamInput {
+    name: String!
+    description: String
+    rank: String
+    reviewStatus: CharacterTeamReviewStatus
+    members: [CharacterBuildMemberInput!]!
+  }
+
+  input CharacterBuildInput {
+    name: String
+    playstyles: [CharacterBuildPlaystyle!]
+    constellationAssumptions: [String!]
+    notesEn: String
+    notesVi: String
+    source: String
+    weapons: [CharacterBuildWeaponInput!]
+    artifacts: [CharacterBuildArtifactInput!]
+    teams: [CharacterBuildTeamInput!]
+    sands: [String!]
+    goblet: [String!]
+    circlet: [String!]
+    subStatsPriority: [String!]
+    talentPriority: [String!]
+  }
+
+  type CharacterBuildAudit {
+    id: ID!
+    action: String!
+    actor: String!
+    version: Int!
+    changes: JSON
+    createdAt: String!
+  }
+
+  extend type Query {
+    adminCharacterBuilds(characterId: String!): [CharacterBuild!]!
+    characterBuildAudits(buildId: ID!): [CharacterBuildAudit!]!
+    characterBuildPending(buildId: ID!): JSON
+  }
+
+  extend type Mutation {
+    createCharacterBuild(characterId: String!, name: String!, playstyles: [CharacterBuildPlaystyle!]!): CharacterBuild!
+    updateCharacterBuild(id: ID!, characterId: String!, expectedVersion: Int!, input: CharacterBuildInput!): CharacterBuild!
+    reviewCharacterBuild(id: ID!, characterId: String!, expectedVersion: Int!, decision: CharacterBuildReviewDecision!): CharacterBuild!
+    setDefaultCharacterBuild(id: ID!, characterId: String!, expectedVersion: Int!): CharacterBuild!
+    archiveCharacterBuild(id: ID!, characterId: String!, expectedVersion: Int!): CharacterBuild!
+  }
+
   type Character { 
     id: String!
     nameEn: String!
@@ -76,6 +184,8 @@ export const characterTypeDefs = `#graphql
     baseAtk: Int!
     baseDef: Int!
     fandomUrl: String
+    builds: [CharacterBuild!]!
+    defaultBuild: CharacterBuild
     bestWeapons: [CharacterWeapon!]!
     bestArtifacts: [CharacterArtifact!]!
     talentPriority: [String!]!

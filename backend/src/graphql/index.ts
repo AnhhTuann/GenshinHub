@@ -1,6 +1,7 @@
 import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge';
 import { characterTypeDefs } from './modules/character/character.schema';
 import { characterResolvers } from './modules/character/character.resolvers';
+import { characterBuildAdmin } from './modules/character/character-build-admin';
 import { characterMutations } from './modules/character/character.mutations';
 
 import { weaponTypeDefs } from './modules/weapon/weapon.schema';
@@ -52,6 +53,7 @@ export const typeDefs = mergeTypeDefs([
 export const resolvers = mergeResolvers([
   characterResolvers,
   characterMutations,
+  characterBuildAdmin,
   weaponResolvers,
   weaponMutations,
   artifactResolvers,

@@ -18,6 +18,10 @@ import { materialMutations } from './modules/material/material.mutations';
 import { tierRankTypeDefs } from './modules/tierRank/tierRank.schema';
 import { tierRankResolvers } from './modules/tierRank/tierRank.resolvers';
 import { tierRankMutations } from './modules/tierRank/tierRank.mutations';
+import { weaponTierRankingTypeDefs } from './modules/weaponTierRanking/weaponTierRanking.schema';
+import { weaponTierRankingResolvers } from './modules/weaponTierRanking/weaponTierRanking.resolvers';
+import { weaponTierReviewTypeDefs } from './modules/weaponTierReview/weaponTierReview.schema';
+import { weaponTierReviewResolvers } from './modules/weaponTierReview/weaponTierReview.resolvers';
 
 import { backupTypeDefs } from './modules/backup/backup.schema';
 import { backupResolvers } from './modules/backup/backup.resolvers';
@@ -37,6 +41,8 @@ export const typeDefs = mergeTypeDefs([
   artifactTypeDefs,
   materialTypeDefs,
   tierRankTypeDefs,
+  weaponTierRankingTypeDefs,
+  weaponTierReviewTypeDefs,
   backupTypeDefs,
   enkaTypeDefs,
   userSchema,
@@ -54,6 +60,8 @@ export const resolvers = mergeResolvers([
   materialMutations,
   tierRankResolvers,
   tierRankMutations,
+  weaponTierRankingResolvers,
+  weaponTierReviewResolvers,
   backupResolvers,
   backupMutations,
   enkaResolvers,

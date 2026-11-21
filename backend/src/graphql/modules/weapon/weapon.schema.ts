@@ -14,7 +14,9 @@ export const weaponTypeDefs = `#graphql
     passiveDescVi: String
     iconUrl: String
     tier: String
-    role: String 
+    role: String
+    """Public approved rankings only; legacy tier/role fields are untouched."""
+    tierRanks: [WeaponTierRank!]!
   }
   
   type WeaponGameLevel {

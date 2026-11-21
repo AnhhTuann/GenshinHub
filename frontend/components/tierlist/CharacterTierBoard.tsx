@@ -146,7 +146,7 @@ export default function CharacterTierBoard({
                         <div className={styles.roleCardGrid}>
                           {items.map((character) => (
                             <TierCharacterCard
-                              key={character.id}
+                              key={(character as any).rankingId ?? character.id}
                               item={character}
                               locale={locale}
                               tierLabel={tier.name}
@@ -175,7 +175,7 @@ export default function CharacterTierBoard({
           <div className={styles.pendingGrid}>
             {pending.map((character) => (
               <TierCharacterCard
-                key={character.id}
+                key={(character as any).rankingId ?? character.id}
                 item={character}
                 locale={locale}
                 tierLabel={UNRANKED_TIER_NAME}

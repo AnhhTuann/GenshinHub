@@ -11,6 +11,7 @@ import { fetchGraphQLAdmin } from '@/lib/graphql/client';
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
+import { artifactDisplayName, isUnverifiedArtifact } from '@/lib/artifact-display';
 
 interface CatalogArtifact {
   id: string;
@@ -245,10 +246,16 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
               </div>
             ) : (
               <div className="char-guide-set-row">
-                <ArtifactThumbnail image={artifact.iconUrl} catalogImage={findIcon(artifact.artifactSetId, artifact.setNameEn, artifact.setNameVi)} />
+                {!isUnverifiedArtifact(artifact.setNameEn) && (
+                  <ArtifactThumbnail image={artifact.iconUrl} catalogImage={findIcon(artifact.artifactSetId, artifact.setNameEn, artifact.setNameVi)} />
+                )}
                 <div className="flex-1 min-w-0">
-                  <h4 className="char-guide-set-name">{locale === 'en' ? artifact.setNameEn : (artifact.setNameVi || artifact.setNameEn)}</h4>
-                  <p className="char-guide-pieces">{artifact.pieces}{locale === 'en' ? '-Piece Set' : ' Món'}</p>
+                  <h4 className="char-guide-set-name">{artifactDisplayName(artifact.setNameEn, artifact.setNameVi, locale)}</h4>
+                  <p className="char-guide-pieces">
+                    {isUnverifiedArtifact(artifact.setNameEn)
+                      ? (locale === 'en' ? 'No verified recommendation available' : 'Chưa có khuyến nghị đã xác minh')
+                      : `${artifact.pieces}${locale === 'en' ? '-Piece Set' : ' Món'}`}
+                  </p>
                 </div>
               </div>
             )}

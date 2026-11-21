@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArtifactBuild } from '@/types/character';
 import { ExternalLink, Layers } from 'lucide-react';
+import { artifactDisplayName } from '@/lib/artifact-display';
 
 // ── Rarity visual config ───────────────────────────────────
 const RARITY_CFG = {
@@ -38,7 +39,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
   const locale = useLocale();
   const t = useTranslations('Artifact');
   const rarity = artifact.rarity || 5;
-  const setName = locale === 'en' ? artifact.setNameEn : artifact.setNameVi;
+  const setName = artifactDisplayName(artifact.setNameEn, artifact.setNameVi, locale);
   const isMix = artifact.mixSets && artifact.mixSets.length > 0;
   const shouldReduceMotion = useReducedMotion();
 

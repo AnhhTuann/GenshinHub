@@ -3,9 +3,7 @@ import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 import { jwtVerify } from 'jose';
 
-const ADMIN_SECRET = new TextEncoder().encode(
-  process.env.ADMIN_JWT_SECRET || 'genshinhub-admin-secret-key-change-in-prod'
-);
+import { verifyAdminSession } from './lib/adminSession';
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -19,21 +17,15 @@ export async function middleware(request: NextRequest) {
   const locale = match ? match[1] : 'en';
 
   // 1. Admin Authentication Check
-  const isAdminRoute = new RegExp(`^/${localesPattern}/admin(/(?!login).*)?$`).test(pathname);
-  
-  if (isAdminRoute) {
+  const localizedPath = match ? pathname.slice(match[1].length + 1) : pathname;
+  const adminLogin = localizedPath === '/admin/login' || localizedPath === '/admin/login/';
+  const isAdminRoute = localizedPath === '/admin' || localizedPath.startsWith('/admin/');
+
+  if (isAdminRoute && !adminLogin) {
     const token = request.cookies.get('admin_token')?.value;
-    
-    if (!token) {
-      return NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
-    }
-    
-    try {
-      await jwtVerify(token, ADMIN_SECRET);
-      // Auth passed, proceed to intl middleware
-    } catch {
+    if (!await verifyAdminSession(token)) {
       const response = NextResponse.redirect(new URL(`/${locale}/admin/login`, request.url));
-      response.cookies.delete('admin_token');
+      if (token) response.cookies.delete('admin_token');
       return response;
     }
   }

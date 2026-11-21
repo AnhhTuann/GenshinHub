@@ -39,6 +39,9 @@ async function startServer() {
   app.use(compression());
   
   const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://genshinhub.onrender.com'];
+  if (app.get('env') === 'development') {
+    allowedOrigins.push('http://localhost:3010', 'http://127.0.0.1:3010');
+  }
   app.use(cors({ origin: allowedOrigins, methods: ['GET', 'POST'] }));
   
   const limiter = rateLimit({
@@ -175,11 +178,25 @@ async function startServer() {
         }
       }
 
+      // Phase D1: the acting Admin identity is derived server-side from the verified
+      // admin key (or an explicit operator-configured actor id). It is never read
+      // from request JSON and never logged.
+      let adminActor: string | undefined;
+      if (isAdmin) {
+        const configured = process.env.ADMIN_ACTOR_ID;
+        if (configured && configured.trim()) {
+          adminActor = configured.trim();
+        } else if (typeof adminKey === 'string' && adminKey) {
+          adminActor = `admin-${require('node:crypto').createHash('sha256').update(adminKey).digest('hex').slice(0, 12)}`;
+        }
+      }
+
       return { 
         prisma,
         dataloaders: createLoaders(prisma),
         user: { isAdmin },
         isAdmin,
+        adminActor,
         userId,
         userGender
       };

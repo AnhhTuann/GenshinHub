@@ -12,11 +12,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { jwtVerify } from 'jose';
-
-const ADMIN_SECRET = new TextEncoder().encode(
-  process.env.ADMIN_JWT_SECRET || 'genshinhub-admin-secret-key-change-in-prod'
-);
+import { verifyAdminSession } from '@/lib/adminSession';
 
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
 
@@ -29,9 +25,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ errors: [{ message: 'Unauthorized: Admin token required' }] }, { status: 401 });
   }
 
-  try {
-    await jwtVerify(adminToken, ADMIN_SECRET);
-  } catch {
+  if (!await verifyAdminSession(adminToken)) {
     return NextResponse.json({ errors: [{ message: 'Unauthorized: Invalid or expired admin token' }] }, { status: 401 });
   }
 

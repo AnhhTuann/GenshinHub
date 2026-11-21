@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { jwtVerify } from 'jose';
-
-const ADMIN_SECRET = new TextEncoder().encode(
-  process.env.ADMIN_JWT_SECRET || 'genshinhub-admin-secret-key-change-in-prod'
-);
+import { verifyAdminSession } from '@/lib/adminSession';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
@@ -17,9 +13,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized: Admin token required' }, { status: 401 });
   }
 
-  try {
-    await jwtVerify(adminToken, ADMIN_SECRET);
-  } catch {
+  if (!await verifyAdminSession(adminToken)) {
     return NextResponse.json({ error: 'Unauthorized: Invalid or expired admin token' }, { status: 401 });
   }
 

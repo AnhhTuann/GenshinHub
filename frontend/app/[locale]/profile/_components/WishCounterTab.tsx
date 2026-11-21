@@ -201,7 +201,7 @@ export default function WishCounterTab({ user }: { user: User }) {
                           src={`/assets/${pull.type === 'CHARACTER' ? 'characters' : 'weapons'}/${pull.name}/icon.webp`} 
                           alt={pull.name} 
                           className="w-full h-full object-cover"
-                          onError={(e) => { e.currentTarget.src = '/assets/fallback-icon.webp'; }}
+                          onError={(e) => { e.currentTarget.src = '/logo.webp'; }}
                         />
                       </div>
                       <span className="font-bold capitalize">{pull.name.replace(/-/g, ' ')}</span>

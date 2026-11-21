@@ -9,9 +9,9 @@ interface ServerResetProps {
 }
 
 const SERVERS = [
-  { label: 'Asia', offset: 8, color: '#7C5AE0', bg: 'rgba(124,90,224,0.12)' },
-  { label: 'Europe', offset: 1, color: '#10b981', bg: 'rgba(16,185,129,0.12)' },
-  { label: 'America', offset: -5, color: '#f43f5e', bg: 'rgba(244,63,94,0.12)' },
+  { label: 'Asia', offset: 8, color: 'var(--accent-primary)' },
+  { label: 'Europe', offset: 1, color: 'var(--accent-second)' },
+  { label: 'America', offset: -5, color: 'var(--pyro)' },
 ];
 
 export default function ServerReset({ locale = 'en' }: ServerResetProps) {
@@ -68,15 +68,15 @@ export default function ServerReset({ locale = 'en' }: ServerResetProps) {
 
   return (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
       className="server-reset-panel group relative rounded-2xl overflow-hidden p-5 flex flex-col justify-between"
       style={{
-        background: 'rgba(255, 255, 255, 0.92)',
-        border: '1px solid rgba(23, 43, 58, 0.08)',
-        boxShadow: '0 8px 24px rgba(23, 43, 58, 0.05)',
+        background: 'var(--bg-surface)',
+        border: '1px solid var(--border-subtle)',
+        boxShadow: 'var(--atlas-shadow)',
       }}
     >
       {/* Top ambient colored line */}
@@ -88,25 +88,25 @@ export default function ServerReset({ locale = 'en' }: ServerResetProps) {
       />
 
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-2.5">
           <span
-            className="w-2.5 h-2.5 rounded-full animate-pulse shrink-0"
+            className="w-2.5 h-2.5 rounded-full shrink-0"
             style={{
-              background: isUrgent ? '#ef4444' : server.color,
-              boxShadow: `0 0 10px ${isUrgent ? 'rgba(239,68,68,0.5)' : server.color}`,
+              background: isUrgent ? 'var(--danger-ink)' : server.color,
+              boxShadow: `0 0 10px -2px ${isUrgent ? 'var(--danger-ink)' : server.color}`,
             }}
           />
           <div>
-            <h3 className="text-[13px] font-extrabold text-slate-800 flex items-center gap-1.5 leading-none">
+            <h3 className="text-base font-bold text-[var(--text-primary)] flex items-center gap-1.5 leading-none">
               <span>{locale === 'vi' ? 'Làm mới máy chủ' : 'Server Reset'}</span>
               {isUrgent && (
-                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-red-100 text-red-600 border border-red-200">
+                <span className="text-xs font-bold px-1.5 py-0.5 rounded-md bg-[color-mix(in_srgb,var(--danger-ink)_12%,var(--bg-surface))] text-[var(--danger-ink)] border border-[color-mix(in_srgb,var(--danger-ink)_30%,var(--border-default))]">
                   {locale === 'vi' ? 'Sắp reset!' : 'Reset Soon!'}
                 </span>
               )}
             </h3>
-            <span className="text-[10px] font-semibold text-slate-400 mt-0.5 flex items-center gap-1">
+            <span className="text-xs font-semibold text-[var(--text-secondary)] mt-0.5 flex items-center gap-1">
               <Globe size={10} />
               <span>{server.label} Time: {currentServerTime}</span>
             </span>
@@ -114,16 +114,16 @@ export default function ServerReset({ locale = 'en' }: ServerResetProps) {
         </div>
 
         {/* Server Tabs */}
-        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200/80">
+        <div className="flex items-center gap-1 bg-[var(--bg-elevated)] p-1 rounded-xl border border-[var(--border-default)]">
           {SERVERS.map((s, i) => {
             const isActive = activeIdx === i;
             return (
               <button
                 key={s.label}
                 onClick={() => setActiveIdx(i)}
-                className="relative px-2.5 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider transition-colors duration-200"
+                className="relative min-h-11 min-w-11 px-2 py-1 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors duration-200"
                 style={{
-                  color: isActive ? s.color : 'rgba(100, 116, 139, 0.8)',
+                  color: isActive ? 'var(--accent-primary-light)' : 'var(--text-secondary)',
                 }}
                 type="button"
               >
@@ -132,8 +132,8 @@ export default function ServerReset({ locale = 'en' }: ServerResetProps) {
                     layoutId="activeServerResetTab"
                     className="absolute inset-0 rounded-lg shadow-xs"
                     style={{
-                      background: '#ffffff',
-                      border: `1px solid ${s.color}35`,
+                      background: 'var(--bg-surface)',
+                      border: `1px solid color-mix(in srgb, ${s.color} 32%, var(--border-default))`,
                     }}
                     transition={{ type: 'spring', stiffness: 500, damping: 35 }}
                   />
@@ -164,23 +164,23 @@ export default function ServerReset({ locale = 'en' }: ServerResetProps) {
               )}
               <div className="flex flex-col items-center">
                 <div
-                  className="rounded-3xl px-3 sm:px-4 py-3.5 sm:py-4 md:py-5 min-w-[76px] sm:min-w-[92px] md:min-w-[104px] text-center relative overflow-hidden backdrop-blur-md transition-all duration-300 shadow-sm"
+                  className="rounded-3xl px-3 sm:px-4 py-3.5 sm:py-4 md:py-5 min-w-[52px] sm:min-w-[76px] xl:min-w-[96px] text-center relative overflow-hidden transition-all duration-300 shadow-sm"
                   style={{
-                    background: `linear-gradient(145deg, #ffffff, ${server.color}0a)`,
-                    border: `1.5px solid ${server.color}35`,
-                    boxShadow: `0 8px 24px ${server.color}15`,
+                    background: `linear-gradient(145deg, var(--bg-elevated), color-mix(in srgb, ${server.color} 5%, var(--bg-elevated)))`,
+                    border: `1.5px solid color-mix(in srgb, ${server.color} 28%, var(--border-default))`,
+                    boxShadow: `0 8px 24px -12px color-mix(in srgb, ${server.color} 55%, transparent)`,
                   }}
                 >
                   <span
                     className="relative text-3xl sm:text-4xl md:text-5xl font-black font-mono tracking-tight tabular-nums drop-shadow-xs"
                     style={{
-                      color: isUrgent && block.label.includes('HR') ? '#ef4444' : server.color,
+                      color: isUrgent && block.label.includes('HR') ? 'var(--danger-ink)' : 'var(--accent-primary-light)',
                     }}
                   >
                     {block.val}
                   </span>
                 </div>
-                <span className="text-[10px] sm:text-[11px] font-black text-slate-400 tracking-[0.2em] uppercase mt-2">
+                <span className="text-xs font-black text-[var(--text-secondary)] tracking-[0.2em] uppercase mt-2">
                   {block.label}
                 </span>
               </div>
@@ -191,23 +191,23 @@ export default function ServerReset({ locale = 'en' }: ServerResetProps) {
 
       {/* Progress Bar & Footer */}
       <div className="mt-3">
-        <div className="h-2 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200/60">
+        <div className="h-2 bg-[var(--bg-elevated)] rounded-full overflow-hidden p-0.5 border border-[var(--border-default)]">
           <div
             className="h-full rounded-full transition-all duration-1000 relative overflow-hidden"
             style={{
               width: `${progress}%`,
-              background: `linear-gradient(90deg, ${server.color}80, ${server.color})`,
+              background: `linear-gradient(90deg, color-mix(in srgb, ${server.color} 60%, transparent), ${server.color})`,
             }}
           >
-            <div className="absolute inset-0 bg-white/30 animate-pulse rounded-full" />
+            <div className="absolute inset-0 animate-pulse rounded-full" style={{ background: 'color-mix(in srgb, var(--bg-surface) 35%, transparent)' }} />
           </div>
         </div>
-        <div className="flex justify-between items-center mt-2 text-[10px] font-bold">
-          <span className="text-slate-400 flex items-center gap-1">
-            <Clock size={11} className="text-slate-400" />
+        <div className="flex justify-between items-center mt-2 text-xs font-bold">
+          <span className="text-[var(--text-secondary)] flex items-center gap-1">
+            <Clock size={11} className="text-[var(--text-secondary)]" />
             <span>04:00 Daily Reset</span>
           </span>
-          <span className="font-extrabold" style={{ color: server.color }}>
+          <span className="font-extrabold text-[var(--accent-primary-light)]">
             {progress.toFixed(0)}% {locale === 'vi' ? 'đã qua' : 'elapsed'}
           </span>
         </div>

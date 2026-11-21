@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import toast from 'react-hot-toast';
 import { useConfirm } from '@/components/admin/ui/ConfirmModal';
 import Pagination from '@/components/admin/ui/Pagination';
+import { Link } from '@/i18n/routing';
 
 const CharacterFormModal = dynamic(() => import('./CharacterFormModal'), { ssr: false });
 
@@ -212,7 +213,12 @@ export default function CharactersAdmin() {
                 {/* Name */}
                 <div>
                   <div className="text-sm font-bold text-white/85">{c.nameEn}</div>
-                  <div className="text-[10px] text-white/25 font-mono">{c.id}</div>
+                  <div className="flex gap-2 items-center">
+                    <span className="text-[10px] text-white/25 font-mono">{c.id}</span>
+                    <Link href={`/characters/${c.id}#character-build`} className="text-xs text-sky-300 hover:underline">
+                      Builds
+                    </Link>
+                  </div>
                 </div>
 
                 {/* Element */}

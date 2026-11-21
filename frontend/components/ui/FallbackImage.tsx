@@ -18,7 +18,7 @@ export default function FallbackImage({ src, externalSrc, alt, ...props }: Fallb
 
   let currentSrc = src;
   if (tier === 2 && externalSrc) currentSrc = externalSrc;
-  if (tier === 3 || (tier === 2 && !externalSrc)) currentSrc = '/assets/fallback-icon.webp';
+  if (tier === 3 || (tier === 2 && !externalSrc)) currentSrc = '/logo.webp';
 
   return (
     <Image

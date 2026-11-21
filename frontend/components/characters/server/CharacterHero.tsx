@@ -1,120 +1,76 @@
 import { Link } from '@/i18n/routing';
-import FallbackImage from '@/components/ui/FallbackImage';
-import ParallaxSplash from '@/components/ParallaxSplash';
+import { CakeSlice, ExternalLink } from 'lucide-react';
 import AdminEditableSplash from '@/components/AdminEditableSplash';
 import ShareButton from '@/components/ShareButton';
+import SpotlightPanel, { type SpotlightCharacter } from '@/components/characters/SpotlightPanel';
 
-export default function CharacterHero({ 
-  character, 
-  name, 
-  title, 
-  elColor, 
-  elText, 
-  elGlow, 
-  rarityBadge, 
-  rarityStyle, 
-  tCommon 
-}: { 
-  character: any; 
-  name: string; 
-  title: string; 
-  elColor: string; 
-  elText: string; 
-  elGlow: string; 
-  rarityBadge: string; 
-  rarityStyle: string; 
-  tCommon: any; 
+type HeroCharacter = SpotlightCharacter & {
+  id: string;
+  baseHp?: number;
+  baseAtk?: number;
+  baseDef?: number;
+  birthday?: string;
+  fandomUrl?: string;
+};
+
+export default function CharacterHero({
+  character, name, title, description, baseStatsLabel, statLabels, locale, backLabel,
+}: {
+  character: HeroCharacter;
+  name: string;
+  title: string;
+  description?: string;
+  baseStatsLabel: string;
+  statLabels: { hp: string; atk: string; def: string };
+  locale: string;
+  backLabel: string;
 }) {
+  const vi = locale === 'vi';
+  const stats = [
+    { label: statLabels.hp, value: character.baseHp },
+    { label: statLabels.atk, value: character.baseAtk },
+    { label: statLabels.def, value: character.baseDef },
+  ].filter(stat => stat.value);
+
+  const meta = (
+    <div className="character-spotlight-meta">
+      <span className="character-spotlight-meta-item">
+        <CakeSlice size={15} aria-hidden="true" />
+        <span>{vi ? 'Sinh nhật' : 'Birthday'}</span>
+        <strong>{character.birthday || '—'}</strong>
+      </span>
+      {character.fandomUrl && (
+        <a href={character.fandomUrl} target="_blank" rel="noopener noreferrer"
+          className="character-spotlight-meta-link home-text-link">
+          Fandom Wiki <ExternalLink size={13} aria-hidden="true" />
+        </a>
+      )}
+    </div>
+  );
+
   return (
-    <AdminEditableSplash characterId={character.id}>
-      <div className="relative w-full overflow-hidden" style={{ minHeight: 'clamp(400px, 50vw, 650px)' }}>
-        {/* Splash art background */}
-        {character.splashArtUrl && (
-          <ParallaxSplash imageUrl={character.splashArtUrl} />
-        )}
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121109] via-[#121109]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#121109]/70 via-transparent to-transparent" />
-        <div
-          className="absolute inset-0"
-          style={{ background: `linear-gradient(135deg, ${elGlow} 0%, transparent 60%)` }}
-        />
-
-        {/* Top actions (Back & Share) */}
-        <div className="absolute top-4 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-xs font-black uppercase tracking-wider group bg-black/20 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/[0.06] hover:border-white/[0.12]"
-          >
-            <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            {tCommon('back')}
-          </Link>
-          <ShareButton title={`${name} Build - GenshinHub`} />
-        </div>
-
-        {/* Hero content */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-6 sm:pb-8 flex flex-col md:flex-row justify-between items-end gap-6">
-          <div className="flex flex-col gap-2">
-            {/* Element + rarity badges */}
-            <div className="flex items-center gap-2 flex-wrap">
-              <div className="flex items-center gap-1.5 bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-white/[0.08]">
-                <div className="relative w-4 h-4">
-                  <FallbackImage src={`/assets/elements/${character.element.toLowerCase()}.webp`} alt={character.element} fill className="object-contain" />
-                </div>
-                <span className="text-[10px] font-black uppercase tracking-widest" style={{ color: elColor }}>
-                  {character.element}
-                </span>
-              </div>
-              <span className={`text-[10px] font-black px-2.5 py-1 rounded-lg border backdrop-blur-sm ${rarityStyle}`}>
-                {rarityBadge}
-              </span>
-              {character.weapon && (
-                <span className="text-[10px] font-black px-2.5 py-1 rounded-lg border border-white/[0.08] bg-black/30 backdrop-blur-sm text-white/60">
-                  {character.weapon}
-                </span>
-              )}
-            </div>
-
-            {/* Name */}
-            <div>
-              <h1 className={`text-4xl sm:text-5xl md:text-[80px] font-black leading-none uppercase tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] ${elText}`} style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}>
-                {name}
-              </h1>
-              {title && (
-                <p className="text-white/45 text-sm sm:text-base italic mt-1 font-medium">{title}</p>
-              )}
-            </div>
-
-            {/* Quick stats row */}
-            <div className="flex items-center gap-4 flex-wrap mt-1">
-              {[
-                { label: 'HP', value: character.baseHp, color: 'text-emerald-400' },
-                { label: 'ATK', value: character.baseAtk, color: 'text-red-400' },
-                { label: 'DEF', value: character.baseDef, color: 'text-blue-400' },
-              ].filter(s => s.value).map(({ label, value, color }) => (
-                <div key={label} className="flex items-baseline gap-1.5">
-                  <span className={`text-base font-black font-display ${color}`}>{value?.toLocaleString()}</span>
-                  <span className="text-[10px] text-white/30 uppercase font-bold">{label}</span>
-                </div>
-              ))}
-              {character.region && (
-                <>
-                  <div className="w-px h-4 bg-white/10" />
-                  <span className="text-xs text-white/35 font-medium">{character.region}</span>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Decorative bottom element line */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-[2px]"
-          style={{ background: `linear-gradient(90deg, transparent, ${elColor}60, transparent)` }}
-        />
+    <div className="character-detail-spotlight">
+      <div className="character-detail-tools">
+        <Link href="/characters" className="fantasy-action">‹ {backLabel}</Link>
+        <ShareButton title={`${name} Build - GenshinHub`} />
       </div>
-    </AdminEditableSplash>
+      <AdminEditableSplash characterId={character.id}>
+        <SpotlightPanel character={character} name={name} title={title} locale={locale} headingId="character-spotlight-heading"
+          meta={meta}
+          actions={<a href="#character-build" className="fantasy-action fantasy-action-primary">{vi ? 'Xem bản build' : 'Explore build'}</a>}>
+          {description && (
+            <p className="character-spotlight-description">{description}</p>
+          )}
+          {stats.length > 0 && (
+            <div className="character-spotlight-stats-wrap">
+              <p className="character-spotlight-stats-caption">{baseStatsLabel}</p>
+              <dl className="character-spotlight-stats">
+                {stats.map(({ label, value }) => <div key={label}><dt>{label}</dt><dd>{value?.toLocaleString(locale)}</dd></div>)}
+              </dl>
+            </div>
+          )}
+        </SpotlightPanel>
+      </AdminEditableSplash>
+    </div>
   );
 }

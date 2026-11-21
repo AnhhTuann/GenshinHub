@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from 'framer-motion';
 import FallbackImage from '@/components/ui/FallbackImage';
 
 // ─── Rarity config for materials ───────────────────────────
@@ -39,21 +38,13 @@ export default function MaterialCard({ id, nameEn, nameVi, type, rarity, iconUrl
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.90 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
-      whileHover={{ y: -5, scale: 1.04 }}
-      whileTap={{ scale: 0.96 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 24 }}
+    <div
       onClick={isAdmin ? onEdit : undefined}
-      className={`relative flex flex-col items-center text-center group rounded-2xl p-3.5 overflow-hidden ${isAdmin ? 'cursor-pointer' : 'cursor-default'}`}
+      className={`fantasy-material-card relative flex flex-col items-center text-center group rounded-2xl p-3.5 overflow-hidden ${isAdmin ? 'cursor-pointer' : 'cursor-default'}`}
       style={{
         background: `linear-gradient(160deg, rgba(10,10,22,0.95) 0%, rgba(5,5,12,0.99) 100%)`,
         border: `1px solid ${cfg.glow}0.18)`,
-        backdropFilter: 'blur(16px)',
         boxShadow: `0 4px 20px rgba(0,0,0,0.40)`,
-        transition: 'border-color 0.3s ease, box-shadow 0.35s ease',
       }}
     >
       {/* Top sheen line */}
@@ -62,17 +53,11 @@ export default function MaterialCard({ id, nameEn, nameVi, type, rarity, iconUrl
         style={{ background: `linear-gradient(90deg, transparent, ${cfg.glow}0.45), transparent)` }}
       />
 
-      {/* Corner glow */}
-      <div
-        className="absolute -top-6 -right-6 w-16 h-16 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: `radial-gradient(circle, ${cfg.glow}0.20), transparent 70%)`, filter: 'blur(10px)' }}
-      />
-
       {/* Admin delete */}
       {isAdmin && (
         <button
           onClick={onDelete}
-          className="absolute top-2 right-2 w-5 h-5 bg-red-500/20 text-red-400 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500/40 z-10 text-[10px] font-bold"
+          className="absolute top-2 right-2 w-5 h-5 bg-[var(--danger-soft)] text-[var(--danger-ink)] rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:brightness-110 z-10 text-xs font-bold"
         >
           ✕
         </button>
@@ -93,7 +78,7 @@ export default function MaterialCard({ id, nameEn, nameVi, type, rarity, iconUrl
                 unoptimized
               />
             ) : (
-              <span className="text-white/20 text-[10px] font-bold">NO IMG</span>
+              <span className="text-[var(--text-tertiary)] text-xs font-bold">NO IMG</span>
             )}
           </div>
         </div>
@@ -112,7 +97,7 @@ export default function MaterialCard({ id, nameEn, nameVi, type, rarity, iconUrl
 
       {/* Name */}
       <h3
-        className="text-[11px] font-bold leading-tight line-clamp-2 mt-0.5 px-1 transition-colors duration-200"
+        className="text-xs font-bold leading-tight line-clamp-2 mt-0.5 px-1 transition-colors duration-200"
         style={{ color: 'rgba(255,255,255,0.88)' }}
         title={displayName}
       >
@@ -121,7 +106,7 @@ export default function MaterialCard({ id, nameEn, nameVi, type, rarity, iconUrl
 
       {/* Type badge */}
       <div
-        className="mt-2 px-2 py-0.5 rounded-md text-[8px] font-black uppercase tracking-wider truncate max-w-full"
+        className="mt-2 px-2 py-0.5 rounded-md text-xs font-black uppercase tracking-wider truncate max-w-full"
         style={{
           background: cfg.badge,
           border: `1px solid ${cfg.badgeBorder}`,
@@ -130,6 +115,6 @@ export default function MaterialCard({ id, nameEn, nameVi, type, rarity, iconUrl
       >
         {type}
       </div>
-    </motion.div>
+    </div>
   );
 }

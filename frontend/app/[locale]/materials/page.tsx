@@ -25,19 +25,23 @@ export default function MaterialsPage() {
   const t = useTranslations('Materials');
   const locale = useLocale();
   const [materials, setMaterials] = useState<MaterialData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
   const [search, setSearch] = useState('');
+  const [visibleCount, setVisibleCount] = useState(48);
   const { isAdmin } = useAdmin();
   
   const [isEditing, setIsEditing] = useState(false);
   const [selectedMaterial, setSelectedMaterial] = useState<MaterialData | undefined>(undefined);
 
   const fetchMaterials = () => {
+    setFailed(false);
     fetchGraphQL(GET_MATERIALS).then(data => {
       setMaterials(data.materials || []);
     }).catch(err => {
       console.error(err);
-      toast.error('Failed to load materials');
-    });
+      setFailed(true);
+    }).finally(() => setLoading(false));
   };
 
   useEffect(() => {
@@ -93,9 +97,9 @@ export default function MaterialsPage() {
   };
 
   return (
-    <main className="min-h-screen pt-24 pb-20 px-4 sm:px-6 relative overflow-hidden" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
+    <main className="min-h-screen pt-10 pb-20 relative overflow-hidden" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
       {/* Ambient glow blobs */}
-      <div className="max-w-[1400px] mx-auto relative z-10">
+      <div className="atlas-container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <header className="page-header" style={{ marginBottom: 0 }}>
             <span className="page-rule" />
@@ -108,7 +112,7 @@ export default function MaterialsPage() {
               type="text" 
               placeholder={t('searchPlaceholder')} 
               value={search}
-              onChange={e => setSearch(e.target.value)}
+              onChange={e => { setSearch(e.target.value); setVisibleCount(48); }}
               className="w-full md:w-64 bg-[#1c1813]/80 border border-white/[0.08] text-white/90 px-4 py-3 rounded-xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
               onFocus={e => {
                 e.target.style.borderColor = 'rgba(168,85,247,0.50)';
@@ -130,8 +134,9 @@ export default function MaterialsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
-          {filtered.map(mat => (
+        <div aria-busy={loading} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+          {loading && Array.from({ length: 8 }, (_, index) => <div key={index} className="material-skeleton" aria-hidden="true" />)}
+          {filtered.slice(0, visibleCount).map(mat => (
             <MaterialCard
               key={mat.id}
               id={mat.id}
@@ -148,7 +153,16 @@ export default function MaterialsPage() {
           ))}
         </div>
 
-        {filtered.length === 0 && (
+        {filtered.length > visibleCount && (
+          <div className="mt-6 flex justify-center">
+            <button type="button" className="fantasy-action" onClick={() => setVisibleCount(count => count + 48)}>
+              {locale === 'vi' ? 'Xem thêm' : 'Load more'} ({visibleCount}/{filtered.length})
+            </button>
+          </div>
+        )}
+
+        {!loading && failed && <p role="alert" className="text-center py-8">{locale === 'vi' ? 'Không thể tải nguyên liệu.' : 'Could not load materials.'}</p>}
+        {!loading && !failed && filtered.length === 0 && (
           <div className="text-center py-20 text-gray-500 font-bold">
             {t('noMaterials')}
           </div>

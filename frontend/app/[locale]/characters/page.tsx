@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 function CharactersSkeleton() {
   return (
     <div className="w-full">
-      <div className="mb-8 animate-pulse">
-        <div className="h-10 w-48 bg-white/[0.05] rounded-md mb-2" />
-        <div className="h-5 w-64 bg-white/[0.03] rounded-md pl-6" />
+      <div className="mb-8 motion-safe:animate-pulse">
+        <div className="h-10 w-48 bg-[var(--bg-overlay)] rounded-md mb-2" />
+        <div className="h-5 w-64 bg-[var(--bg-overlay)] rounded-md pl-6" />
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3 sm:gap-4 lg:gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
         {Array.from({ length: 14 }).map((_, i) => (
-          <div key={i} className="aspect-[3/4] bg-white/[0.03] animate-pulse rounded-2xl border border-white/5" />
+          <div key={i} className="aspect-[3/4] bg-[var(--bg-overlay)] motion-safe:animate-pulse rounded-2xl border border-[var(--border-default)]" />
         ))}
       </div>
     </div>
@@ -39,10 +39,9 @@ async function CharactersContent({ locale }: { locale: string }) {
   return (
     <>
       <div className="mb-8">
-        <header className="page-header">
-          <span className="page-rule" />
-          <h1 className="page-title">{locale === 'en' ? 'Characters' : 'Nhân Vật'}</h1>
-          <p className="page-desc">{locale === 'en'
+        <header className="atlas-catalog-heading">
+          <h1 className="atlas-detail-title">{locale === 'en' ? 'Characters' : 'Nhân Vật'}</h1>
+          <p className="atlas-result-count">{locale === 'en'
             ? `Explore ${characters.length} characters in Teyvat — builds, teams, weapons & stats`
             : `Khám phá ${characters.length} nhân vật trong Teyvat — build, đội hình, vũ khí & chỉ số`}</p>
         </header>

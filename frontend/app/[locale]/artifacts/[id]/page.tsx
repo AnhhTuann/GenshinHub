@@ -3,6 +3,16 @@ import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { fetchGraphQL, GET_ARTIFACT_SET, GET_ARTIFACTS } from '@/lib/graphql';
 import ArtifactDetailClient from './ArtifactDetailClient';
+import { artifactPieces } from '@/data/artifact-pieces';
+import { Crown, Feather, Flower2, Hourglass, Wine } from 'lucide-react';
+
+const pieceSlots = {
+  flower: { icon: Flower2, en: 'Flower of Life', vi: 'Hoa Sự Sống' },
+  plume: { icon: Feather, en: 'Plume of Death', vi: 'Lông Vũ Tử Vong' },
+  sands: { icon: Hourglass, en: 'Sands of Eon', vi: 'Cát Thời Gian' },
+  goblet: { icon: Wine, en: 'Goblet of Eonothem', vi: 'Ly Không Gian' },
+  circlet: { icon: Crown, en: 'Circlet of Logos', vi: 'Nón Lý Trí' },
+};
 
 export async function generateStaticParams() {
   const data = await fetchGraphQL(GET_ARTIFACTS);
@@ -67,5 +77,29 @@ export default async function ArtifactDetailPage({ params }: { params: Promise<{
     avatarUrl: char.avatarUrl,
   }));
 
-  return <ArtifactDetailClient artifactSet={artifactSet} characters={characters} />;
+  const pieces = Object.hasOwn(artifactPieces, id) ? artifactPieces[id] : undefined;
+  const language = locale === 'vi' ? 'vi' : 'en';
+
+  return (
+    <ArtifactDetailClient artifactSet={artifactSet} characters={characters}>
+      {pieces && (
+        <section className="mb-10" aria-labelledby="artifact-pieces-title">
+          <h2 id="artifact-pieces-title" className="atlas-section-title mb-4">
+            {language === 'vi' ? 'Các món trong bộ' : 'Set pieces'}
+          </h2>
+          <ul className="atlas-piece-list">
+            {pieces.map(piece => {
+              const { icon: Icon, ...slot } = pieceSlots[piece.slot];
+              return (
+                <li key={piece.slot}>
+                  <span className="atlas-quick-icon"><Icon size={22} aria-hidden="true" /></span>
+                  <div><p>{slot[language]}</p><strong>{piece[language]}</strong></div>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+    </ArtifactDetailClient>
+  );
 }

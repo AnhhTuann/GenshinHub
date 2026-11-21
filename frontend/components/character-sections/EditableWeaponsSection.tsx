@@ -13,6 +13,8 @@ import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
 
 interface Props {
+  readOnly?: boolean;
+  showBestInSlot?: boolean;
   characterId: string;
   weaponType: string;
   bestWeapons: any[];
@@ -52,17 +54,18 @@ const translateStat = (stat: string, locale: string) => {
 
 function SectionHeader({ label, accent }: { label: string; accent: string }) {
   return (
-    <div className="flex items-center gap-2.5 mb-5">
-      <span className={`w-[3px] h-5 rounded-full ${accent}`} />
-      <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">{label}</span>
+    <div className="char-guide-section-head">
+      <span className={`char-guide-section-accent ${accent}`} />
+      <span className="char-guide-section-title">{label}</span>
     </div>
   );
 }
 
-export default function EditableWeaponsSection({ characterId, weaponType, bestWeapons, tWeapons }: Props) {
+export default function EditableWeaponsSection({ characterId, weaponType, bestWeapons, tWeapons, readOnly = false, showBestInSlot = true }: Props) {
   const locale = useLocale();
   const t = useTranslations('Character');
-  const { isAdmin } = useAdmin();
+  const { isAdmin: admin } = useAdmin();
+  const isAdmin = admin && !readOnly;
   const [isEditing, setIsEditing] = useState(false);
   const [editingWeapon, setEditingWeapon] = useState<any>(null);
   const [localWeapons, setLocalWeapons] = useState(bestWeapons);
@@ -141,14 +144,14 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
   };
 
   return (
-    <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+    <section className="atlas-surface p-5 sm:p-6 relative group/section h-full">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <SectionHeader label={tWeapons} accent="bg-amber-400" />
+        <SectionHeader label={tWeapons} accent="bg-[var(--fantasy-gold)]" />
         
         <div className="flex items-center gap-4">
           {/* Constellation Switcher */}
           {(availableConstellations.length > 1 || isAdmin) && (
-            <div className="flex items-center bg-black/40 border border-white/10 rounded-lg p-1">
+            <div className="flex items-center bg-[var(--bg-elevated)] border border-[var(--border-default)] rounded-lg p-1">
               {['C0', 'C1', 'C2', 'C4', 'C6'].map(c => {
                 if (!isAdmin && !availableConstellations.includes(c)) return null;
                 const isActive = activeConstellation === c;
@@ -156,8 +159,8 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
                   <button
                     key={c}
                     onClick={() => setActiveConstellation(c)}
-                    className={`px-3 py-1 text-[10px] font-black uppercase tracking-wider rounded-md transition-colors ${
-                      isActive ? 'bg-amber-400/20 text-amber-400 border border-amber-400/30 shadow-[0_0_10px_rgba(251,191,36,0.2)]' : 'text-white/40 hover:text-white/80 hover:bg-white/5 border border-transparent'
+                    className={`px-3 py-1 text-xs font-black uppercase tracking-wider rounded-md transition-colors ${
+                      isActive ? 'bg-[var(--gold-glow)] text-[var(--gold-ink)] border border-[var(--border-gold)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface)] border border-transparent'
                     }`}
                   >
                     {c}
@@ -170,7 +173,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
           {isAdmin && (
             <button 
               onClick={() => { setIsEditing(true); setEditingWeapon(null); }}
-              className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-bold rounded hover:bg-amber-500/30 transition-all border border-amber-500/30"
+              className="atlas-add-action"
             >
               ➕ Add Weapon
             </button>
@@ -188,43 +191,38 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
             onDragEnd={isAdmin ? handleDragEnd : undefined}
             onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
             className={`relative group/wcard transition-all duration-200 ${isAdmin ? 'cursor-move' : ''} ${
-              dragOverItemIdx === idx ? 'scale-[1.01] shadow-[0_0_15px_rgba(251,191,36,0.15)] z-10' : ''
+              dragOverItemIdx === idx ? 'scale-[1.01] shadow-[0_0_15px_-6px_var(--gold-glow-strong)] z-10' : ''
             } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
           >
-            <div className={`bg-[#121109]/50 border hover:border-amber-500/15 rounded-xl p-3 sm:p-4 flex gap-4 items-center transition-colors duration-200 ${
-              dragOverItemIdx === idx ? 'border-amber-500/50' : 'border-white/[0.04]'
-            }`}>
-              <span className="w-6 h-6 shrink-0 rounded-full bg-amber-500/10 text-amber-400/80 flex items-center justify-center text-xs font-black border border-amber-500/15">
-                {idx + 1}
-              </span>
-              <div className={`relative w-16 h-16 shrink-0 rounded-lg border border-white/[0.05] flex items-center justify-center overflow-hidden ${
-                weapon.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
-                weapon.rarity === 4 ? 'bg-gradient-to-b from-[#8e97a8] to-[#5c5344]' :
-                weapon.rarity === 3 ? 'bg-gradient-to-b from-[#8e97a8] to-[#6b6152]' :
-                'bg-white/[0.02]'
-              }`}>
+            <div
+              data-rarity={weapon.rarity ?? 5}
+              className="char-guide-item p-3 sm:p-4 flex gap-3 sm:gap-4 items-center"
+            >
+              <span className="char-guide-rank">{idx + 1}</span>
+              <div className="atlas-artifact-thumbnail char-guide-thumb">
                 {weapon.iconUrl && <FallbackImage src={weapon.iconUrl} alt={weapon.nameEn || ''} fill sizes="64px" className="object-contain drop-shadow-md p-1" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <h4 className="text-white/80 font-bold text-sm truncate">{locale === 'en' ? weapon.nameEn : weapon.nameVi}</h4>
-                  <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider ${
-                    idx === 0 
-                      ? 'bg-amber-400/10 text-amber-400 border border-amber-400/20' 
-                      : weapon.isF2P 
-                        ? 'bg-emerald-400/10 text-emerald-400 border border-emerald-400/20'
-                        : 'bg-white/5 text-white/40 border border-white/10'
-                  }`}>
-                    {idx === 0 ? t('bestInSlot') : weapon.isF2P ? t('f2pAlternative') : t('alternative')}
-                  </span>
-                  {weapon.refinement && weapon.refinement > 1 && (
-                    <span className="px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider bg-purple-400/10 text-purple-400 border border-purple-400/20">
-                      R{weapon.refinement}
+                  <h4 className="char-guide-item-title">{locale === 'en' ? weapon.nameEn : weapon.nameVi}</h4>
+                  {/* Approved import IDs encode list order without certifying a best-in-slot choice. */}
+                  {(idx !== 0 || (showBestInSlot && !weapon.id?.startsWith('build-'))) && (
+                    <span className={`char-guide-badge ${idx === 0 ? 'is-best' : weapon.isF2P ? 'is-f2p' : 'is-alt'}`}>
+                      {idx === 0 ? t('bestInSlot') : weapon.isF2P ? t('f2pAlternative') : t('alternative')}
                     </span>
                   )}
+                  {weapon.refinement && weapon.refinement > 1 && (
+                    <span className="char-guide-badge is-refine">R{weapon.refinement}</span>
+                  )}
+                  <span className="char-guide-rarity" aria-label={locale === 'vi' ? `${weapon.rarity ?? 5} sao` : `${weapon.rarity ?? 5} stars`}>
+                    {weapon.rarity ?? 5}★
+                  </span>
                 </div>
                 {weapon.subStat && (
-                  <p className="text-xs text-white/40 font-medium">{t('secondary')}: <span className="text-white/70">{translateStat(weapon.subStat, locale)}</span></p>
+                  <p className="char-guide-stat">
+                    <span className="char-guide-stat-label">{t('secondary')}:</span>
+                    <span className="char-guide-stat-value">{translateStat(weapon.subStat, locale)}</span>
+                  </p>
                 )}
               </div>
               {isAdmin && (
@@ -232,7 +230,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
                   <button
                     onClick={(e) => handleMoveUp(e, idx)}
                     disabled={idx === 0}
-                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-[var(--bg-surface)] hover:bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] disabled:opacity-30 disabled:cursor-not-allowed"
                     title="Move Up"
                   >
                     ↑
@@ -240,22 +238,22 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
                   <button
                     onClick={(e) => handleMoveDown(e, idx)}
                     disabled={idx === localWeapons.length - 1}
-                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-[var(--bg-surface)] hover:bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] disabled:opacity-30 disabled:cursor-not-allowed"
                     title="Move Down"
                   >
                     ↓
                   </button>
-                  <div className="w-[1px] h-4 bg-white/10 self-center mx-1" />
+                  <div className="w-[1px] h-4 bg-[var(--border-default)] self-center mx-1" />
                   <button
                     onClick={() => { setEditingWeapon(weapon); setIsEditing(true); }}
-                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-blue-500/10 hover:bg-blue-500 border border-transparent hover:border-blue-500/20 text-blue-400 hover:text-white transition-all"
+                    className="w-7 h-7 flex items-center justify-center rounded-lg bg-[var(--accent-primary-dim)] hover:bg-[var(--accent-primary)] border border-transparent hover:border-[var(--border-accent)] text-[var(--accent-primary-light)] hover:text-[var(--atlas-action-ink)] transition-all"
                     title="Edit Weapon"
                   >
                     ✎
                   </button>
                   <button
                     onClick={() => handleRemove(weapon.id)}
-                    className="w-7 h-7 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center"
+                    className="w-7 h-7 rounded-lg bg-[color-mix(in_srgb,var(--danger-ink)_12%,var(--bg-surface))] text-[var(--danger-ink)] hover:bg-[var(--danger-ink)] hover:text-[var(--bg-surface)] transition-all flex items-center justify-center"
                     title="Remove Weapon"
                   >
                     🗑️
@@ -266,7 +264,7 @@ export default function EditableWeaponsSection({ characterId, weaponType, bestWe
           </div>
         ))}
         {bestWeapons.length === 0 && (
-          <p className="text-sm text-white/40 italic">No recommended weapons yet.</p>
+          <p className="text-sm text-[var(--text-secondary)] italic">No recommended weapons yet.</p>
         )}
       </div>
 

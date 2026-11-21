@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import ElementIcon from '@/components/ui/ElementIcon';
+import { Check } from 'lucide-react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
@@ -113,38 +115,10 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
   }, [allTeams, search, filterElement, filterRank]);
 
   return (
-    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
-      
-      {/* ── Hero section ──────────────────────────────────────── */}
-      <div className="relative overflow-hidden border-b border-white/[0.04]">
-        <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 relative z-10 text-center flex flex-col items-center">
-          <Link
-            className="inline-flex items-center gap-1.5 text-gray-500 hover:text-white transition-colors text-xs font-black uppercase tracking-wider mb-8 group bg-white/5 px-3 py-1.5 rounded-full border border-white/10"
-            href="/"
-          >
-            <svg className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Home
-          </Link>
-
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--accent-primary-light)] mb-4">
-            {allTeams.length} optimal compositions
-          </p>
-
-          <h1 className="page-title" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
-            Meta <span style={{ color: 'var(--accent-primary-light)' }}>Teams</span>
-          </h1>
-
-          <p className="page-desc" style={{ fontSize: '1rem' }}>
-            Discover the most powerful team synergies in Genshin Impact. Filter by element, rank, or character to find the perfect squad for Spiral Abyss.
-          </p>
-        </div>
-      </div>
-
+    <section aria-label="Team catalogue">
       {/* ── Unified Filter Bar ─────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#121109]/80 backdrop-blur-xl border-b border-white/[0.05] shadow-lg shadow-black/50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col xl:flex-row gap-4 items-center justify-between">
+      <div className="relative lg:sticky lg:top-[72px] z-30 bg-[var(--bg-surface)] border-y border-[var(--border-default)]">
+        <div className="atlas-container py-4 flex flex-col xl:flex-row gap-4 items-center justify-between">
           
           <div className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto items-center">
             {/* Search */}
@@ -155,9 +129,10 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
               <input
                 type="text"
                 placeholder="Search teams..."
+                aria-label="Search teams"
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full bg-[#1c1813] border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30 transition-all font-medium shadow-inner"
+                className="w-full min-h-11 rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] pl-10 pr-4 text-sm text-[var(--text-primary)]"
               />
             </div>
 
@@ -167,21 +142,12 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             <div className="flex flex-wrap gap-1.5 justify-center">
               {ELEMENTS.map(el => {
                 const isSelected = filterElement === el;
-                const details = ELEMENT_DETAILS[el];
                 return (
-                  <button
-                    key={el}
-                    onClick={() => setFilterElement(filterElement === el ? null : el)}
-                    className={`flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 motion-safe:active:scale-95 ${
-                      isSelected
-                        ? `${details.glow} ${details.border}`
-                        : 'border-white/10 text-gray-500 hover:bg-white/5 hover:border-white/20 hover:scale-110 bg-[#1c1813]'
-                    }`}
-                    title={el}
-                  >
-                    <div className="relative w-4 h-4">
-                      <FallbackImage src={`/assets/elements/${el.toLowerCase()}.webp`} alt={el} fill className={`object-contain ${!isSelected && 'opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all'}`} />
-                    </div>
+                  <button key={el} type="button" aria-label={el} aria-pressed={isSelected}
+                    className="atlas-filter-chip atlas-element-chip" title={el}
+                    onClick={() => setFilterElement(isSelected ? null : el)}>
+                    <ElementIcon element={el} />
+                    <Check className="atlas-chip-check" size={14} aria-hidden="true" />
                   </button>
                 );
               })}
@@ -211,14 +177,14 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
             </div>
           </div>
 
-          <div className="text-gray-400 text-xs font-bold bg-[#1c1813] px-4 py-2 rounded-full border border-white/5">
-            Showing <span className="text-white font-black">{filtered.length}</span> teams
-          </div>
+          <p className="atlas-result-count" role="status">
+            <strong>{filtered.length}</strong> / {allTeams.length} {locale === 'vi' ? 'đội hình' : 'teams'}
+          </p>
         </div>
       </div>
 
       {/* ── Teams List ────────────────────────────────────────── */}
-      <div className="max-w-5xl mx-auto px-6 mt-10">
+      <div className="atlas-container max-w-5xl mt-6">
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-72 rounded-3xl border border-white/5 bg-[#1c1813]/40 backdrop-blur-sm text-gray-500 gap-4">
             <span className="text-5xl">👻</span>
@@ -244,13 +210,14 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
               return (
                 <div
                   key={teamKey}
-                  className={`group bg-[#1c1813] border border-white/[0.05] rounded-[1.5rem] overflow-hidden transition-all duration-500 shadow-xl ${
-                    isExpanded ? `ring-1 ring-white/10 shadow-2xl scale-[1.01]` : 'hover:border-white/[0.15] hover:shadow-2xl hover:-translate-y-1'
+                  className={`fantasy-team-card group bg-[#1c1813] border border-white/[0.05] rounded-[1.5rem] overflow-hidden shadow-xl ${
+                    isExpanded ? `ring-1 ring-white/10 shadow-2xl` : 'hover:border-white/[0.15] hover:shadow-2xl hover:-translate-y-1'
                   }`}
                 >
                   {/* Card Header (Clickable Accordion Trigger) */}
                   <button
                     className="w-full text-left relative motion-safe:active:scale-[0.98] transition-transform duration-300"
+                    aria-expanded={isExpanded}
                     onClick={() => setExpandedTeam(isExpanded ? null : teamKey)}
                   >
                     {/* Background gradient wash based on element */}
@@ -307,7 +274,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
 
                   {/* Expanded Members Details */}
                   {isExpanded && (
-                    <div className="border-t border-white/[0.05] p-6 bg-[#0d0c0a]/80 backdrop-blur-sm">
+                    <div className="fantasy-team-expanded border-t border-white/[0.05] p-6 bg-[#0d0c0a]/80 backdrop-blur-sm">
                       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {team.members.map((member, mi) => {
                           const char = charMap[member.characterId];
@@ -321,7 +288,7 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
                             <Link
                               key={mi}
                               href={`/characters/${member.characterId}`}
-                              className="group/card relative bg-[#1c1813] border border-white/[0.08] rounded-[1.25rem] p-5 flex flex-col transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:bg-[#171410]"
+                              className="fantasy-team-member group/card relative bg-[#1c1813] border border-white/[0.08] rounded-[1.25rem] p-5 flex flex-col transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:bg-[#171410]"
                             >
                               {/* Character Header */}
                               <div className="flex items-start gap-4 mb-4">
@@ -391,6 +358,6 @@ export default function TeamsClient({ characters }: { characters: CharInfo[] }) 
           </div>
         )}
       </div>
-    </main>
+    </section>
   );
 }

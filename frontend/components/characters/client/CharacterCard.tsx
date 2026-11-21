@@ -1,17 +1,24 @@
 "use client";
-import { useState, useRef, useEffect, useCallback, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import ElementIcon from '@/components/ui/ElementIcon';
 import FallbackImage from '@/components/ui/FallbackImage';
-import { useRouter } from 'next/navigation';
-import { motion, useReducedMotion } from 'framer-motion';
+import RarityStars from '@/components/ui/RarityStars';
 import { CharacterData } from '@/types/character';
 import { useLocale } from 'next-intl';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { UserContext } from '@/context/UserContext';
 import { getCharacterAvatar, getCharacterSplash } from '@/utils/assetMap';
 import { Heart } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const SplashArtOverlay = dynamic(() => import('@/components/ui/SplashArtOverlay'), { ssr: false });
+const loadPreview = () => import('@/components/ui/SplashArtOverlay');
+const SplashArtOverlay = dynamic(loadPreview, { ssr: false });
+
+function warmPreview() {
+  // The dynamic component still handles errors on click if the hint failed.
+  void loadPreview().catch(() => {});
+}
 
 /* ─── Element colors ─────────────────────────── */
 const EL_COLOR: Record<string, string> = {
@@ -24,19 +31,11 @@ const EL_GLOW: Record<string, string> = {
   Anemo: 'rgba(77,182,172,', Geo: 'rgba(255,213,79,', Dendro: 'rgba(174,213,129,',
 };
 
-const TIER_CFG: Record<string, { bg: string; border: string; text: string }> = {
-  SS: { bg: 'rgba(255,77,109,0.25)', border: 'rgba(255,77,109,0.55)', text: '#d98a6a' },
-  S:  { bg: 'rgba(245,158,11,0.25)', border: 'rgba(245,158,11,0.50)', text: '#f5c04e' },
-  A:  { bg: 'rgba(168,85,247,0.22)', border: 'rgba(168,85,247,0.45)', text: '#e2c88f' },
-  B:  { bg: 'rgba(142,151,168,0.20)', border: 'rgba(142,151,168,0.40)', text: '#8e97a8' },
-  C:  { bg: 'rgba(156,163,175,0.20)', border: 'rgba(156,163,175,0.40)', text: '#c3cad6' },
-  D:  { bg: 'rgba(100,116,139,0.20)', border: 'rgba(100,116,139,0.40)', text: '#8e97a8' },
-  TBD:{ bg: 'rgba(156,163,175,0.10)', border: 'rgba(156,163,175,0.25)', text: '#8e97a8' },
-};
-
-export default function CharacterCard({ character }: { character: CharacterData }) {
+export default function CharacterCard({ character, variant = 'standard' }: {
+  character: CharacterData;
+  variant?: 'standard' | 'collection';
+}) {
   const locale = useLocale();
-  const router = useRouter();
   const userCtx = useContext(UserContext);
   const user = userCtx?.user;
 
@@ -47,15 +46,9 @@ export default function CharacterCard({ character }: { character: CharacterData 
   const glow  = EL_GLOW[el]  ?? 'rgba(167,124,246,';
   
   const tierValue = character.tier || 'TBD';
-  const tierCfg = TIER_CFG[tierValue] || TIER_CFG['TBD'];
 
   const [overlayOpen, setOverlayOpen]   = useState(false);
   const [overlayReady, setOverlayReady] = useState(false);
-  const [hovered, setHovered]           = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const cardRef  = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-
   const isTraveler       = character.id.startsWith('traveler');
   const avatarUrl        = isTraveler ? getCharacterAvatar(character.id, user?.gender) : character.avatarUrl;
   const splashUrl        = isTraveler ? getCharacterSplash(character.id, user?.gender) : character.splashArtUrl;
@@ -75,51 +68,59 @@ export default function CharacterCard({ character }: { character: CharacterData 
     } catch { setIsFav(p => !p); toast.error('Error, please try again.'); }
   };
 
-  /* Prefetch splash on IntersectionObserver */
-  useEffect(() => {
-    const node = cardRef.current; if (!node || !splashUrl) return;
-    const obs = new IntersectionObserver(e => {
-      if (e[0].isIntersecting) {
-        const l = document.createElement('link'); l.rel = 'prefetch'; l.as = 'image'; l.href = splashUrl;
-        document.head.appendChild(l); obs.disconnect();
-      }
-    }, { rootMargin: '200px' });
-    obs.observe(node);
-    return () => obs.disconnect();
-  }, [splashUrl]);
-
-  const onEnter = useCallback(() => {
-    setHovered(true);
-  }, []);
-  const onLeave = useCallback(() => {
-    setHovered(false);
-  }, []);
-
   const href = `/${locale}/characters/${character.id}`;
+  const avatarSrc = avatarUrl || '/assets/characters/PlayerGirl/avatar.webp';
+  const avatarSizes = '(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px';
+  const favoriteLabel = locale === 'vi' ? 'Yêu thích' : 'Favorite';
+
+  if (variant === 'collection') {
+    const rank = tierValue.trim().toUpperCase();
+    const rankLabel = !rank || rank === 'TBD' || rank === 'UNRANKED' ? 'Unranked' : rank;
+
+    return (
+      <article className="collection-character-card" style={{ '--card-element': color } as React.CSSProperties}>
+        <Link href={href} prefetch={false} className="collection-character-link" aria-label={name} />
+        <div className="collection-character-controls">
+          <div className="collection-character-badges">
+            <ElementIcon element={el} label={el} />
+            <span className="collection-character-rank" data-rank={rankLabel}>
+              {rankLabel}
+            </span>
+          </div>
+          <button
+            type="button"
+            className="collection-character-favorite"
+            onClick={toggleFav}
+            aria-label={favoriteLabel}
+            aria-pressed={isFav}
+          >
+            <Heart size={16} aria-hidden="true" />
+          </button>
+        </div>
+        <div className="collection-character-stage">
+          <div className="collection-character-portrait">
+            <FallbackImage src={avatarSrc} alt="" fill sizes={avatarSizes} />
+          </div>
+        </div>
+        <div className="collection-character-caption">
+          <h2 className="collection-character-name">{name}</h2>
+          <RarityStars rarity={character.rarity} locale={locale} />
+          {character.weapon && <span className="collection-character-weapon">{character.weapon}</span>}
+        </div>
+      </article>
+    );
+  }
 
   return (
     <>
-      <div ref={cardRef} onMouseEnter={onEnter} onMouseLeave={onLeave} className="group relative">
-        <motion.div
-          variants={shouldReduceMotion ? undefined : {
-            hidden: { opacity: 0, y: 20 },
-            show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 350, damping: 25 } }
-          }}
-          whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.03 }}
-          whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
-          onClick={() => { setOverlayReady(true); setOverlayOpen(true); }}
-          className="character-art-card relative cursor-pointer rounded-2xl overflow-hidden"
-          style={{
-            aspectRatio: '0.88',
-            background: `radial-gradient(circle at 50% 30%, ${glow}0.12) 0%, #e8f0f2 100%)`,
-            boxShadow: hovered
-              ? `0 18px 40px -10px ${glow}0.32), 0 0 0 1.5px ${glow}0.4)`
-              : is5
-                ? `0 8px 24px rgba(23,43,58,0.12), 0 0 0 1px ${glow}0.25)`
-                : `0 8px 24px rgba(23,43,58,0.1), 0 0 0 1px ${glow}0.2)`,
-            transition: 'box-shadow 0.4s ease',
-          }}
-        >
+      <div className="group relative">
+        <div className="character-art-card fantasy-character-card relative rounded-2xl overflow-hidden"
+          style={{ aspectRatio: '0.88', '--card-element': color } as React.CSSProperties}>
+          <button type="button" className="character-preview-trigger" aria-haspopup="dialog"
+            aria-label={locale === 'vi' ? `Xem trước ${name}` : `Preview ${name}`}
+            onFocus={warmPreview}
+            onPointerEnter={event => { if (event.pointerType === 'mouse') warmPreview(); }}
+            onClick={() => { setOverlayReady(true); setOverlayOpen(true); }} />
           {/* ─── Element Watermark ───────────── */}
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none mix-blend-multiply overflow-hidden">
             <FallbackImage
@@ -130,11 +131,11 @@ export default function CharacterCard({ character }: { character: CharacterData 
           </div>
 
           {/* ─── Avatar Image (Square fitting top) ─── */}
-          <div className="absolute inset-x-0 top-0 bottom-1/4 transition-transform duration-700 ease-out group-hover:scale-[1.08] group-hover:-translate-y-1">
+          <div className="absolute inset-x-0 top-0 bottom-1/4 fantasy-character-artwork">
             <FallbackImage
-              src={avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
+              src={avatarSrc}
               alt={name} fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 260px"
+              sizes={avatarSizes}
               className="object-contain object-bottom pt-2 drop-shadow-[0_8px_16px_rgba(23,43,58,0.16)]"
               priority={false}
             />
@@ -166,27 +167,18 @@ export default function CharacterCard({ character }: { character: CharacterData 
 
           {/* ─── TOP LEFT: Element & Tier ──────────── */}
           <div className="absolute top-2 left-2 z-20 flex flex-col gap-1.5">
-            <div className="relative w-7 h-7">
-              <FallbackImage
-                src={`/assets/elements/${el.toLowerCase()}.webp`}
-                alt={el} fill
-                className="object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
-              />
-            </div>
-            {tierCfg && (
-              <div
-                className="px-2 py-[2px] rounded text-[8px] font-black uppercase tracking-widest backdrop-blur-md shadow-lg"
-                style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}`, color: tierCfg.text }}
-              >
-                {tierValue === 'TBD' ? 'UNRANKED' : `${character.tier}`}
-              </div>
-            )}
+            <ElementIcon element={el} label={el} />
+            <span className="character-card-tier px-2 py-0.5 rounded text-[11px] font-bold uppercase">
+              {tierValue === 'TBD' ? 'UNRANKED' : tierValue}
+            </span>
           </div>
 
           {/* ─── TOP RIGHT: Fav button ─────────── */}
           <div className="absolute top-2 right-2 z-20">
             <button
               onClick={toggleFav}
+              aria-label={favoriteLabel}
+              aria-pressed={isFav}
               className="p-2 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95"
               style={{
                 background: isFav ? 'rgba(239,68,68,0.28)' : 'rgba(0,0,0,0.50)',
@@ -195,7 +187,7 @@ export default function CharacterCard({ character }: { character: CharacterData 
             >
               <Heart
                 className="w-4 h-4 transition-all duration-200"
-                style={{ fill: isFav ? '#ef4444' : 'transparent', color: isFav ? '#ef4444' : 'rgba(255,255,255,0.65)' }}
+                style={{ fill: isFav ? '#ef4444' : 'transparent', color: isFav ? '#ff9da8' : '#fff' }}
               />
             </button>
           </div>
@@ -212,12 +204,12 @@ export default function CharacterCard({ character }: { character: CharacterData 
 
             {/* Rarity & Weapon */}
             <div className="flex flex-wrap items-center gap-1.5 mt-0.5">
-              <div className="flex gap-[2px]">
+              <div className="character-rarity flex gap-[2px]" data-rarity={character.rarity} role="img" aria-label={locale === 'vi' ? `${character.rarity} sao` : `${character.rarity} stars`}>
                 {Array.from({ length: character.rarity }).map((_, i) => (
                   <svg
                     key={i}
                     className="w-3.5 h-3.5 drop-shadow-md"
-                    style={{ color: is5 ? '#ffd34d' : '#cf8fff', filter: `drop-shadow(0 0 3px ${is5 ? 'rgba(255,211,77,0.5)' : 'rgba(207,143,255,0.5)'})` }}
+                    aria-hidden="true"
                     fill="currentColor" viewBox="0 0 20 20"
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -226,22 +218,14 @@ export default function CharacterCard({ character }: { character: CharacterData 
               </div>
               
               {character.weapon && (
-                <span className="text-[8px] font-bold px-1.5 py-[2px] rounded uppercase tracking-wider shrink-0 bg-white/5 border border-white/10 text-white/60">
+                <span className="character-card-weapon">
                   {character.weapon}
                 </span>
               )}
             </div>
           </div>
 
-          {/* ─── Hover: glowing border overlay ───── */}
-          <div
-            className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-400"
-            style={{
-              boxShadow: `inset 0 0 0 1.5px ${glow}${hovered ? '0.60)' : '0.18)'}`,
-              opacity: 1,
-            }}
-          />
-        </motion.div>
+        </div>
       </div>
 
       {overlayReady && (
@@ -249,10 +233,11 @@ export default function CharacterCard({ character }: { character: CharacterData 
           open={overlayOpen}
           onClose={() => setOverlayOpen(false)}
           character={{
-            id: character.id, nameEn: character.nameEn, nameVi: character.nameVi,
+            nameEn: character.nameEn, nameVi: character.nameVi,
             element: character.element, rarity: character.rarity,
             splashArtUrl: splashUrl || avatarUrl || '',
-            avatarUrl, weapon: character.weapon, role: character.role, tier: character.tier,
+            avatarUrl, weapon: character.weapon, region: character.region,
+            title: locale === 'vi' ? character.titleVi : character.titleEn, role: character.role, tier: character.tier,
           }}
           href={href}
           locale={locale}

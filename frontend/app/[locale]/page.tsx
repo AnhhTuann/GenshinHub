@@ -8,7 +8,6 @@ import DailyFarming from '@/components/home/DailyFarming';
 import ServerReset from '@/components/home/ServerReset';
 import FeatureGrid from '@/components/home/FeatureGrid';
 import CharacterSpotlight from '@/components/home/CharacterSpotlight';
-import HeroParticles from '@/components/home/HeroParticles';
 import HeroVisualCard from '@/components/home/HeroVisualCard';
 import HeroCopy from '@/components/home/HeroCopy';
 import AnimatedStats from '@/components/home/AnimatedStats';
@@ -29,15 +28,15 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 const FEATURES = (t: any, locale: string) => [
-  { href: '/characters', label: t('characters'), desc: locale === 'en' ? 'Builds, teams & stats'      : 'Build, đội hình & chỉ số',        color: '#7C5AE0', bg: 'rgba(124,90,224,0.08)', icon: 'characters' },
-  { href: '/weapons',    label: t('weapons'),    desc: locale === 'en' ? 'Find the perfect weapon'    : 'Tìm vũ khí tốt nhất',             color: '#55b5c2', bg: 'rgba(85,181,194,0.08)', icon: 'weapons' },
-  { href: '/artifacts',  label: t('artifacts'),  desc: locale === 'en' ? 'Best artifact sets'         : 'Bộ thánh di vật tốt nhất',        color: '#7669d8', bg: 'rgba(118,105,216,0.08)', icon: 'artifacts' },
-  { href: '/tierlist',   label: t('tierlist'),   desc: locale === 'en' ? 'Current meta rankings'      : 'Xếp hạng meta hiện tại',          color: '#a8731c', bg: 'rgba(217,157,47,0.08)', icon: 'tierlist' },
-  { href: '/teams',      label: 'Teams',          desc: locale === 'en' ? 'Best team compositions'     : 'Đội hình meta tốt nhất',          color: '#4d86c7', bg: 'rgba(77,134,199,0.08)', icon: 'teams' },
-  { href: '/banners',    label: t('banners'),    desc: locale === 'en' ? 'Current & upcoming banners' : 'Banner hiện tại & sắp tới',       color: '#d97560', bg: 'rgba(217,117,96,0.08)', icon: 'banners' },
-  { href: '/materials',  label: 'Materials',      desc: locale === 'en' ? 'Ascension & talent mats'   : 'Nguyên liệu thăng cấp',           color: '#649d64', bg: 'rgba(100,157,100,0.08)', icon: 'materials' },
-  { href: '/showcase',   label: t('showcase'),   desc: locale === 'en' ? 'View your builds'           : 'Xem build của bạn',               color: '#287d89', bg: 'rgba(40,125,137,0.08)', icon: 'showcase' },
-  { href: '/tcg',        label: t('tcg'),        desc: locale === 'en' ? 'Card game decks'            : 'Bộ bài TCG',                      color: '#7b72b5', bg: 'rgba(123,114,181,0.08)', icon: 'tcg' },
+  { href: '/characters', label: t('characters'), desc: locale === 'en' ? 'Builds, teams & stats'      : 'Build, đội hình & chỉ số', icon: 'characters' },
+  { href: '/weapons',    label: t('weapons'),    desc: locale === 'en' ? 'Find the perfect weapon'    : 'Tìm vũ khí tốt nhất', icon: 'weapons' },
+  { href: '/artifacts',  label: t('artifacts'),  desc: locale === 'en' ? 'Best artifact sets'         : 'Bộ thánh di vật tốt nhất', icon: 'artifacts' },
+  { href: '/tierlist',   label: t('tierlist'),   desc: locale === 'en' ? 'Current meta rankings'      : 'Xếp hạng meta hiện tại', icon: 'tierlist' },
+  { href: '/teams',      label: 'Teams',          desc: locale === 'en' ? 'Best team compositions'     : 'Đội hình meta tốt nhất', icon: 'teams' },
+  { href: '/banners',    label: t('banners'),    desc: locale === 'en' ? 'Current & upcoming banners' : 'Banner hiện tại & sắp tới', icon: 'banners' },
+  { href: '/materials',  label: 'Materials',      desc: locale === 'en' ? 'Ascension & talent mats'   : 'Nguyên liệu thăng cấp', icon: 'materials' },
+  { href: '/showcase',   label: t('showcase'),   desc: locale === 'en' ? 'View your builds'           : 'Xem build của bạn', icon: 'showcase' },
+  { href: '/tcg',        label: t('tcg'),        desc: locale === 'en' ? 'Card game decks'            : 'Bộ bài TCG', icon: 'tcg' },
 ];
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -49,7 +48,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   const total5Star = characters.filter(c => c.rarity === 5).length;
   const features   = FEATURES(t, locale);
-  const spotlight  = [...characters].sort((a, b) => b.rarity - a.rarity).slice(0, 32);
+  const spotlight = [...characters].sort((a, b) => b.rarity - a.rarity);
 
   return (
     <main className="site-home">
@@ -57,7 +56,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <span className="home-atmosphere-orb home-atmosphere-orb--one" />
         <span className="home-atmosphere-orb home-atmosphere-orb--two" />
         <span className="home-atmosphere-grain" />
-        <HeroParticles />
       </div>
 
       <div className="home-container">
@@ -68,7 +66,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </section>
 
         <ScrollEntrance delay={0.05}>
-          <div className="mt-8 md:mt-12">
+          <div className="mt-6 md:mt-8">
             <AnimatedStats
               charactersCount={characters.length}
               fiveStarCount={total5Star}
@@ -115,7 +113,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
               <p>{locale === 'en' ? 'Tools and knowledge for the next adventure.' : 'Công cụ và kiến thức cho chuyến đi tiếp theo.'}</p>
             </div>
-            <FeatureGrid features={features} locale={locale} />
+            <FeatureGrid features={features} />
           </section>
         </ScrollEntrance>
 

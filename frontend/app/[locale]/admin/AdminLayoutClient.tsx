@@ -28,6 +28,9 @@ const NAV_GROUPS = [
     icon: '🔧',
     items: [
       { href: '/admin/tierlist',   label: 'Tier List',  icon: '🏆' },
+      { href: '/admin/character-tier-review', label: 'Character Review', icon: '🧪' },
+      { href: '/admin/weapon-ranking-review', label: 'Weapon Ranking Review', icon: '🔬' },
+      { href: '/admin/weapon-tier-review', label: 'Weapon Review', icon: '🔍' },
       { href: '/admin/backups',    label: 'Backups',    icon: '💾' },
       { href: '/admin/export',     label: 'Export TS',  icon: '📤' },
     ],
@@ -58,7 +61,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
         <div key={group.label} className="mb-2">
           <div className="px-3 py-1.5 flex items-center gap-2">
             <div className="h-px flex-1" style={{ background: 'rgba(255,255,255,0.05)' }} />
-            <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white/20">{group.label}</span>
+            <span className="text-xs font-bold text-white/65">{group.label}</span>
             <div className="h-px flex-1" style={{ background: 'rgba(255,255,255,0.05)' }} />
           </div>
           {group.items.map((item) => {
@@ -71,11 +74,11 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all ${
                   active 
                     ? 'bg-[#e8b64c]/10 border border-[#e8b64c]/20 text-[#ffdf9e] shadow-[0_0_12px_rgba(232,182,76,0.08)]' 
-                    : 'border border-transparent text-white/40 hover:bg-white/5 hover:text-white'
+                    : 'border border-transparent text-white/70 hover:bg-white/5 hover:text-white'
                 }`}
               >
                 <span className="text-base w-5 text-center shrink-0">{item.icon}</span>
-                <span style={{ fontFamily: active ? 'var(--font-cinzel, serif)' : 'inherit', fontSize: active ? '0.68rem' : undefined, letterSpacing: active ? '0.04em' : undefined }}>
+                <span style={{ fontFamily: active ? 'var(--font-cinzel, serif)' : 'inherit', letterSpacing: active ? '0.04em' : undefined }}>
                   {item.label}
                 </span>
                 {active && (
@@ -102,7 +105,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             borderRadius: '12px',
             fontSize: '13px',
             fontWeight: 600,
-            backdropFilter: 'blur(20px)',
+
           },
           success: {
             iconTheme: { primary: '#e8b64c', secondary: '#121109' },
@@ -120,16 +123,17 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
       <header
         className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 h-14"
         style={{
-          background: 'rgba(5,8,20,0.96)',
-          backdropFilter: 'blur(24px)',
-          borderBottom: '1px solid rgba(232,182,76,0.08)',
-          boxShadow: '0 2px 20px rgba(0,0,0,0.4)',
+          background: 'var(--bg-surface)',
+          borderBottom: '1px solid var(--border-default)',
         }}
       >
         <div className="flex items-center gap-3">
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden flex flex-col gap-1 p-2"
+            className="lg:hidden flex min-h-11 min-w-11 flex-col items-center justify-center gap-1"
+            aria-label="Toggle admin navigation"
+            aria-expanded={mobileOpen}
+            aria-controls="admin-mobile-navigation"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {[0,1,2].map(i => (
@@ -158,7 +162,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
               Admin
             </span>
             <span className="text-white/15 text-xs">·</span>
-            <span className="text-white/30 text-xs font-medium">GenshinHub</span>
+            <span className="text-white/65 text-xs font-medium">GenshinHub</span>
           </div>
         </div>
 
@@ -211,7 +215,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           className="hidden lg:flex flex-col w-56 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto pt-4 pb-6 px-3"
           style={{
             borderRight: '1px solid rgba(255,255,255,0.04)',
-            background: 'rgba(5,8,20,0.6)',
+            background: 'var(--bg-surface)',
           }}
         >
           {sidebarContent}
@@ -226,13 +230,15 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           />
         )}
         <div
-          className="lg:hidden fixed left-0 bottom-0 z-50 w-64 overflow-y-auto pt-4 pb-6 px-3"
+          id="admin-mobile-navigation"
+          inert={!mobileOpen}
+          aria-hidden={!mobileOpen}
+          className="fantasy-admin-drawer lg:hidden fixed left-0 bottom-0 z-50 w-64 overflow-y-auto pt-4 pb-6 px-3"
           style={{
             top: '56px',
             transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
-            transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
-            background: 'rgba(5,8,20,0.98)',
-            backdropFilter: 'blur(24px)',
+            transition: 'transform var(--motion-modal) var(--motion-ease)',
+            background: 'var(--bg-surface)',
             borderRight: '1px solid rgba(232,182,76,0.10)',
           }}
         >
@@ -240,7 +246,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
         </div>
 
         {/* ── Main content ── */}
-        <main className="flex-1 min-w-0 p-4 sm:p-6 lg:p-8 pb-24">
+        <main className="fantasy-admin-content flex-1 min-w-0 p-4 sm:p-6 lg:p-8 pb-24">
           {children}
         </main>
       </div>

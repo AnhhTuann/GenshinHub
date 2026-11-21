@@ -45,8 +45,8 @@ export default function ShowcaseClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121109] text-white font-sans">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <main className="min-h-screen">
+      <div className="atlas-container max-w-5xl py-10">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 mb-10">
           <header className="page-header" style={{ marginBottom: 0 }}>
             <span className="page-rule" />
@@ -64,37 +64,22 @@ export default function ShowcaseClient() {
           </Link>
         </div>
 
-        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 mb-10">
-          <div className="relative flex-1 group">
+        <form onSubmit={handleSearch} aria-busy={loading} className="atlas-filter-panel flex flex-col sm:flex-row gap-3 mb-8">
+          <div className="flex-1 min-w-0">
+            <label htmlFor="showcase-uid" className="atlas-filter-label mb-2 block">UID</label>
             <input
+              id="showcase-uid"
               type="text"
               value={uid}
-              onChange={(e) => setUid(e.target.value)}
+              onChange={(event) => setUid(event.target.value)}
               placeholder={t('placeholder')}
-              className="w-full bg-[#1c1813]/80 text-white/90 px-6 py-4 rounded-2xl outline-none text-sm font-medium transition-all placeholder:text-white/30 backdrop-blur-md"
-              style={{
-                border: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-              }}
-              onFocus={e => {
-                e.target.style.borderColor = 'rgba(232,182,76,0.4)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(232,182,76,0.1), 0 4px 20px rgba(0,0,0,0.2)';
-              }}
-              onBlur={e => {
-                e.target.style.borderColor = 'rgba(255,255,255,0.08)';
-                e.target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-              }}
+              className="w-full min-h-11 rounded-xl border border-[var(--border-default)] px-3"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="px-8 py-4 text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 rounded-2xl shrink-0 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
-            style={{
-              background: 'linear-gradient(135deg, #eecf8a, #e8b64c)',
-              color: '#000',
-              boxShadow: '0 8px 25px -5px rgba(232,182,76,0.3)',
-            }}
+            className="atlas-auth-submit min-h-11 sm:self-end px-5 rounded-xl flex items-center justify-center gap-2 font-bold disabled:opacity-50"
           >
             {loading ? (
               <>
@@ -219,6 +204,6 @@ export default function ShowcaseClient() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

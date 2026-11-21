@@ -81,27 +81,21 @@ export default function LoginPage() {
     <main className="relative flex-1 flex items-center justify-center p-4">
 
       <div className="w-full max-w-md">
-        <div className="bg-[#1c1813] border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="atlas-surface px-5 py-7 sm:p-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">
-              <Lock className="w-7 h-7 text-black" />
+            <div className="w-16 h-16 rounded-2xl bg-[var(--accent-primary-dim)] text-[var(--accent-primary-light)] flex items-center justify-center mx-auto mb-4">
+              <Lock className="w-7 h-7" />
             </div>
             <h1
-              className="text-3xl font-black uppercase tracking-widest mb-2"
-              style={{
-                fontFamily: 'var(--font-cinzel)',
-                background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="atlas-section-title mb-2"
             >
               Welcome Back
             </h1>
             <p className="text-white/40 text-sm">Sign in to your GenshinHub account</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} aria-busy={loading} className="fantasy-auth-form space-y-4">
             {/* Email */}
             <div>
               <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
@@ -171,14 +165,10 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 mt-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{
-                background: 'linear-gradient(135deg, #e8b64c 0%, #a97e2f 100%)',
-                boxShadow: '0 4px 15px rgba(232,182,76,0.3)',
-              }}
+              className="atlas-auth-submit w-full py-3.5 mt-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative text-black flex items-center justify-center gap-2">
+              <span className="relative flex items-center justify-center gap-2">
                 {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Login'}
               </span>
             </button>

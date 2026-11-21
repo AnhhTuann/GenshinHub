@@ -23,20 +23,16 @@ export function UserNav() {
   }, []);
 
   if (loading) {
-    return <div className="w-8 h-8 rounded-full bg-slate-200/60 animate-pulse" />;
+    return <div className="w-16 h-11 rounded-xl bg-[var(--bg-elevated)] motion-safe:animate-pulse" />;
   }
 
   if (!user) {
     return (
       <Link
         href="/auth/login"
-        className="relative group inline-flex items-center justify-center px-4 py-1.5 sm:py-2 rounded-full text-xs font-extrabold text-white transition-all duration-300 shadow-md shadow-violet-500/25 hover:shadow-lg hover:shadow-violet-500/40 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden cursor-pointer"
-        style={{
-          background: 'linear-gradient(135deg, #7C5AE0 0%, #9B7AFF 100%)',
-        }}
+        className="site-nav-login inline-flex items-center justify-center rounded-xl px-3 text-xs font-bold"
       >
-        <span className="relative z-10 tracking-wide">Login</span>
-        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+        Login
       </Link>
     );
   }
@@ -47,9 +43,9 @@ export function UserNav() {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 p-1 pr-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80 border border-slate-200/80 hover:border-violet-300/80 transition-all shadow-xs cursor-pointer"
+        className="site-nav-control gap-2 p-1 sm:pr-3"
       >
-        <div className="w-7 h-7 rounded-full overflow-hidden ring-2 ring-[#e8b64c]/70 shadow-xs">
+        <div className="w-7 h-7 rounded-full overflow-hidden ring-2 ring-[var(--fantasy-gold)] shadow-xs">
           <FallbackImage
             src={avatarSrc}
             alt={user.username}
@@ -58,35 +54,35 @@ export function UserNav() {
             className="w-full h-full object-cover"
           />
         </div>
-        <span className="text-xs font-bold text-slate-800 max-w-[85px] truncate hidden sm:block">
+        <span className="text-xs font-bold text-[var(--text-primary)] max-w-[85px] truncate hidden sm:block">
           {user.displayName || user.username}
         </span>
       </button>
 
       {open && (
-        <div className="site-nav-menu absolute right-0 top-full mt-2 w-52 rounded-2xl border border-slate-200/90 overflow-hidden py-2 z-50 shadow-2xl">
-          <div className="px-4 py-2 border-b border-slate-100 mb-1">
-            <p className="text-sm font-bold text-slate-900 truncate">{user.displayName || user.username}</p>
-            <p className="text-xs text-slate-400 truncate">{user.email}</p>
+        <div className="site-nav-menu absolute right-0 top-full mt-2 w-52 rounded-2xl border overflow-hidden py-2 z-50 shadow-2xl">
+          <div className="px-4 py-2 border-b border-[var(--border-default)] mb-1">
+            <p className="text-sm font-bold text-[var(--text-primary)] truncate">{user.displayName || user.username}</p>
+            <p className="text-xs text-[var(--text-secondary)] truncate">{user.email}</p>
           </div>
           
           <Link
             href="/profile"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-4 py-2 text-xs font-bold text-slate-700 hover:text-violet-700 hover:bg-violet-50/70 transition-colors"
+            className="flex items-center gap-3 px-4 py-2 text-xs font-bold text-[var(--text-primary)] hover:bg-[var(--bg-overlay)] transition-colors"
           >
-            <User className="w-4 h-4 text-violet-500" />
+            <User className="w-4 h-4 text-[var(--accent-primary-light)]" />
             Profile
           </Link>
           
           <Link
             href="/profile#favorites"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-4 py-2 text-xs font-bold text-slate-700 hover:text-violet-700 hover:bg-violet-50/70 transition-colors"
+            className="flex items-center gap-3 px-4 py-2 text-xs font-bold text-[var(--text-primary)] hover:bg-[var(--bg-overlay)] transition-colors"
           >
             <Heart className="w-4 h-4 text-pink-500" />
             Favorites
-            <span className="ml-auto bg-violet-100 text-violet-700 text-[10px] font-black px-1.5 py-0.5 rounded-full">
+            <span className="ml-auto bg-[var(--selected-surface)] text-[var(--text-primary)] text-xs font-black px-1.5 py-0.5 rounded-full">
               {user.favoritesCount}
             </span>
           </Link>
@@ -94,22 +90,22 @@ export function UserNav() {
           <Link
             href="/profile/settings"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-4 py-2 text-xs font-bold text-slate-700 hover:text-violet-700 hover:bg-violet-50/70 transition-colors"
+            className="flex items-center gap-3 px-4 py-2 text-xs font-bold text-[var(--text-primary)] hover:bg-[var(--bg-overlay)] transition-colors"
           >
-            <Settings className="w-4 h-4 text-slate-500" />
+            <Settings className="w-4 h-4 text-[var(--text-secondary)]" />
             Settings
           </Link>
           
-          <div className="h-px bg-slate-100 my-1.5" />
+          <div className="h-px bg-[var(--bg-elevated)] my-1.5" />
           
           <button
             onClick={() => {
               setOpen(false);
               logout();
             }}
-            className="w-full flex items-center gap-3 px-4 py-2 text-xs font-bold text-rose-600 hover:text-rose-700 hover:bg-rose-50/80 transition-colors text-left cursor-pointer"
+            className="w-full flex items-center gap-3 px-4 py-2 text-xs font-bold text-[var(--danger-ink)] hover:bg-[var(--bg-overlay)] transition-colors text-left cursor-pointer"
           >
-            <LogOut className="w-4 h-4 text-rose-500" />
+            <LogOut className="w-4 h-4 text-current" />
             Logout
           </button>
         </div>

@@ -186,7 +186,7 @@ export default function ArtifactCard({ artifact }: { artifact: ArtifactBuild }) 
 
   const wrappedCard = (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.01 }}

@@ -85,14 +85,14 @@ export default function ManageTiersSection({
   return (
     <section className="mb-8">
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #e2c88f, #c9a86a)' }} />
-        <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Manage Tiers</h2>
+        <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, var(--fantasy-gold), var(--gold-deep))' }} />
+        <h2 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--text-secondary)]">Manage Tiers</h2>
       </div>
       
       {/* Add New Tier */}
       <div className="flex gap-3 mb-6 p-4 rounded-2xl flex-wrap items-end" style={{ background:'rgba(10,14,34,0.7)', border:'1px solid rgba(255,255,255,0.05)' }}>
         <div className="flex flex-col gap-1.5 flex-1 min-w-[200px]">
-          <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">New Tier Name</label>
+          <label className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">New Tier Name</label>
           <input 
             type="text" placeholder="e.g. SSS" value={newTierName} onChange={e => setNewTierName(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm outline-none font-bold"
@@ -100,7 +100,7 @@ export default function ManageTiersSection({
           />
         </div>
         <div className="flex flex-col gap-1.5 w-48 shrink-0">
-          <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">Theme Color</label>
+          <label className="text-xs font-bold uppercase tracking-wider text-[var(--text-secondary)]">Theme Color</label>
           <select 
             value={newTierColor} onChange={e => setNewTierColor(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm outline-none font-bold appearance-none"
@@ -120,7 +120,7 @@ export default function ManageTiersSection({
 
       {/* List of Tiers with Drag & Drop */}
       <div className="space-y-2 rounded-2xl overflow-hidden" style={{ background:'rgba(10,14,34,0.4)', border:'1px solid rgba(255,255,255,0.03)' }}>
-        <div className="grid gap-4 px-4 py-2.5 text-[10px] font-black text-white/25 uppercase tracking-widest hidden sm:grid border-b" style={{ gridTemplateColumns: '40px 1fr 1fr 60px', borderColor: 'rgba(255,255,255,0.05)' }}>
+        <div className="grid gap-4 px-4 py-2.5 text-xs font-black text-[var(--text-secondary)] uppercase tracking-widest hidden sm:grid border-b" style={{ gridTemplateColumns: '40px 1fr 1fr 60px', borderColor: 'rgba(255,255,255,0.05)' }}>
           <div>Drag</div>
           <div>Tier Name</div>
           <div>Theme Color</div>
@@ -135,10 +135,10 @@ export default function ManageTiersSection({
               className="grid gap-4 items-center px-4 py-3 cursor-grab active:cursor-grabbing hover:bg-white/5 transition-colors border-b last:border-b-0"
               style={{ gridTemplateColumns: '40px 1fr 1fr 60px', borderColor: 'rgba(255,255,255,0.04)' }}
             >
-              <div className="text-white/20 pl-2 cursor-grab active:cursor-grabbing">
+              <div className="text-[var(--text-tertiary)] pl-2 cursor-grab active:cursor-grabbing">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" /></svg>
               </div>
-              <div className="font-black text-sm text-white/90">
+              <div className="font-black text-sm text-[var(--text-primary)]">
                 {tier.name}
               </div>
               <div>
@@ -162,7 +162,7 @@ export default function ManageTiersSection({
             </Reorder.Item>
           ))}
           {tierRanks.length === 0 && (
-            <div className="text-center text-white/30 text-xs py-8 italic">No tiers created yet. Add one above.</div>
+            <div className="text-center text-[var(--text-secondary)] text-xs py-8 italic">No tiers created yet. Add one above.</div>
           )}
         </Reorder.Group>
       </div>

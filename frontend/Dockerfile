@@ -40,6 +40,12 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/static ./.next/static
 
+COPY docs/tierlist/phase-d2/CHARACTER_REVISED_DRAFT.json /app/docs/tierlist/phase-d2/CHARACTER_REVISED_DRAFT.json
+COPY docs/tierlist-v7.2-audit/PHASE_D_CHARACTER_APPROVAL_SHEET.json /app/docs/tierlist-v7.2-audit/PHASE_D_CHARACTER_APPROVAL_SHEET.json
+COPY docs/tierlist-v7.2-audit/PHASE_B2_RANKING_DRAFTS.json /app/docs/tierlist-v7.2-audit/PHASE_B2_RANKING_DRAFTS.json
+COPY docs/weapon-tier-independent/PHASE_D_WEAPON_APPROVAL_SHEET.json /app/docs/weapon-tier-independent/PHASE_D_WEAPON_APPROVAL_SHEET.json
+COPY docs/weapon-tier-independent/independent-candidates.json /app/docs/weapon-tier-independent/independent-candidates.json
+
 USER nextjs
 
 EXPOSE 3000

@@ -3,6 +3,17 @@
 !backend/**
 !frontend/
 !frontend/**
+!docs/
+!docs/tierlist/
+!docs/tierlist/phase-d2/
+!docs/tierlist/phase-d2/**
+!docs/tierlist-v7.2-audit/
+!docs/tierlist-v7.2-audit/PHASE_D_CHARACTER_APPROVAL_SHEET.json
+!docs/tierlist-v7.2-audit/PHASE_B2_RANKING_DRAFTS.json
+!docs/weapon-tier-audit/
+!docs/weapon-tier-audit/PHASE_B2_6_FINAL_REVIEW.md
+!docs/weapon-tier-independent/
+!docs/weapon-tier-independent/**
 **/node_modules
 **/.env*
 backend/dist

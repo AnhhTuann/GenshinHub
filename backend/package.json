@@ -13,6 +13,7 @@
     "sync:assets": "ts-node scripts/sync-assets.ts --sync",
     "sync:assets:check": "ts-node scripts/sync-assets.ts",
     "sync:version": "node scripts/sync/check-version.cjs",
+    "test:sync:source": "node -r ts-node/register --test scripts/sync/sourceCatalog.test.ts",
     "test:sync:version": "node --test scripts/sync/check-version.test.cjs",
     "sync:check": "ts-node scripts/sync/syncEngine.ts --dry-run",
     "sync:run": "ts-node scripts/sync/syncEngine.ts --sync --download-assets",

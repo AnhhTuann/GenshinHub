@@ -38,6 +38,7 @@ jobs:
   dry-run:
     name: Dry-run diff detection
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: ./backend
@@ -61,11 +62,11 @@ jobs:
         env:
           # Nên trỏ tới read replica / reporting DB, KHÔNG phải production
           # writer. Workflow này read-only nhưng vẫn cần DB reachable từ runner.
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.SYNC_READONLY_DATABASE_URL }}
         run: |
           set -euo pipefail
           if [ -z "$DATABASE_URL" ]; then
-            echo "⚠️  DATABASE_URL chưa cấu hình — bỏ qua dry-run (cần read-only DB reachable từ GitHub runner)."
+            echo "⚠️  SYNC_READONLY_DATABASE_URL chưa cấu hình — bỏ qua dry-run (cần read-only DB reachable từ GitHub runner)."
             echo "has_changes=skip" >> "$GITHUB_OUTPUT"
             exit 0
           fi

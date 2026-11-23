@@ -1,0 +1,2035 @@
+{
+  "batch": {
+    "id": "A01",
+    "candidates": [
+      {
+        "characterId": "bennett",
+        "candidateId": "bennett:1",
+        "role": [
+          "SUPPORT"
+        ],
+        "version": "character-build-catalog-7.2-r2",
+        "checksum": "6e94ecbffb40fa65c7ddb251430d151127ec55c78f9af3ff1a08852e666f07eb",
+        "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+        "evidenceSummary": "Burst buff uses base ATK; meet ER first. Noblesse has one holder and the C0 HP threshold applies.",
+        "evidenceReferences": [
+          "genshin-db@5.2.15",
+          "https://genshin-builds.com/en/character/bennett",
+          "https://keqingmains.com/q/bennett-quickguide/"
+        ],
+        "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+        "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+        "existingBuildId": "legacy-bennett",
+        "expectedBaseline": {
+          "buildId": "legacy-bennett",
+          "version": 1,
+          "checksum": "42516bd8f7deeb62d85a20127b17a9af2d5db2e0a778a9853229c743b3ef057f",
+          "status": "LEGACY_IMPORT"
+        },
+        "preserveDefault": true,
+        "state": "REVIEW_READY",
+        "preview": {
+          "name": {
+            "before": "Legacy build",
+            "after": "C0 Burst buffer and heal"
+          },
+          "playstyles": {
+            "before": [],
+            "after": [
+              "SUPPORT"
+            ]
+          },
+          "constellationAssumptions": {
+            "before": [],
+            "after": [
+              "C0"
+            ]
+          },
+          "notesEn": {
+            "before": null,
+            "after": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation. At C0 the active character needs above 70% HP for the ATK buff. Use a CRIT Rate circlet when relying on Favonius and do not count its particles without an on-field proc."
+          },
+          "source": {
+            "before": "Legacy development build",
+            "after": "character-build-catalog-7.2-r2"
+          },
+          "weapons": {
+            "before": [
+              {
+                "weaponId": "ánh-sáng-đêm-sương-mù",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "xá-tội",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "thương-diệu",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "phong-ưng-kiếm",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "tia-sáng-nơi-hẻm-tối",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "lời-thề-tự-do-cổ-xưa",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "khúc-ca-núi-đá",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "thiên-không-kiếm",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "kiếm-gỗ",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "mẫu-trảm-nham",
+                "refinement": 1,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "tai-họa-eshu",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "tây-phong-kiếm",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "weaponId": "11501",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "11502",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "11417",
+                "isF2P": true,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "11401",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              }
+            ]
+          },
+          "artifacts": {
+            "before": [
+              {
+                "setIds": [
+                  "15037"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15007"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "10007"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15025"
+                ],
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "setIds": [
+                  "15007"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "10007"
+                ],
+                "constellation": "C0"
+              }
+            ]
+          },
+          "sands": {
+            "before": [
+              "Hiệu Quả Nạp",
+              "Tấn Công%",
+              "HP%"
+            ],
+            "after": [
+              "Energy Recharge"
+            ]
+          },
+          "goblet": {
+            "before": [
+              "Sát Thương Nguyên Tố Hỏa",
+              "HP%"
+            ],
+            "after": [
+              "HP%"
+            ]
+          },
+          "circlet": {
+            "before": [
+              "Tỷ Lệ Bạo Kích",
+              "HP%",
+              "Tăng Trị Liệu"
+            ],
+            "after": [
+              "Healing Bonus",
+              "CRIT Rate"
+            ]
+          },
+          "subStatsPriority": {
+            "before": [
+              "Energy Recharge",
+              "CRIT Rate",
+              "CRIT DMG",
+              "HP%",
+              "ATK%",
+              "HP"
+            ],
+            "after": [
+              "Energy Recharge",
+              "HP%",
+              "CRIT Rate"
+            ]
+          },
+          "talentPriority": {
+            "before": null,
+            "after": [
+              "Burst",
+              "Skill",
+              "Normal Attack"
+            ]
+          },
+          "teams": {
+            "before": [
+              {
+                "name": "Bennett Vaporize Team #3",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "klee"
+                  },
+                  {
+                    "characterId": "xingqiu"
+                  },
+                  {
+                    "characterId": "sucrose"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Bennett Pure Pyro",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "klee"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "kazuha"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Bennett Thunder Team",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "raiden-shogun"
+                  },
+                  {
+                    "characterId": "kujou-sara"
+                  },
+                  {
+                    "characterId": "bennett"
+                  },
+                  {
+                    "characterId": "kazuha"
+                  }
+                ]
+              },
+              {
+                "name": "Hu Tao Vaporize with Bennett",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "hu-tao"
+                  },
+                  {
+                    "characterId": "xingqiu"
+                  },
+                  {
+                    "characterId": "sucrose"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Bennett Vaporize Team #2",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "yoimiya"
+                  },
+                  {
+                    "characterId": "xingqiu"
+                  },
+                  {
+                    "characterId": "kazuha"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Bennett Superconduct Team",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "eula"
+                  },
+                  {
+                    "characterId": "fischl"
+                  },
+                  {
+                    "characterId": "diona"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Bennett Vaporize Team #1",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "tartaglia"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "bennett"
+                  },
+                  {
+                    "characterId": "kazuha"
+                  }
+                ]
+              },
+              {
+                "name": "Bennett Vaporize Team",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "yanfei"
+                  },
+                  {
+                    "characterId": "xingqiu"
+                  },
+                  {
+                    "characterId": "sucrose"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              }
+            ],
+            "after": [
+              {
+                "name": "Burst buffer and heal",
+                "description": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation.",
+                "reviewStatus": "EXPERIMENTAL",
+                "members": [
+                  {
+                    "characterId": "bennett",
+                    "role": "SUPPORT",
+                    "roleDesc": "ATK buff, healing and Pyro particles"
+                  },
+                  {
+                    "characterId": "xiangling",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Pyronado"
+                  },
+                  {
+                    "characterId": "xingqiu",
+                    "role": "SUB_DPS",
+                    "roleDesc": "Hydro via normal-attack triggers"
+                  },
+                  {
+                    "characterId": "sucrose",
+                    "role": "SUPPORT",
+                    "roleDesc": "on-field driver and resistance shred"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "characterId": "fischl",
+        "candidateId": "fischl:1",
+        "role": [
+          "SUB_DPS"
+        ],
+        "version": "character-build-catalog-7.2-r2",
+        "checksum": "92483f765e9bbb0a0ca1caab7f3347f60431da958e98a8a39b1117e80cd6f703",
+        "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+        "evidenceSummary": "Oz uses Skill scaling and off-field Golden Troupe. Alternate Skill and Burst and allow sufficient field time for weapon setup.",
+        "evidenceReferences": [
+          "genshin-db@5.2.15",
+          "https://genshin-builds.com/en/character/fischl",
+          "https://keqingmains.com/q/fischl-quickguide/"
+        ],
+        "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+        "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+        "existingBuildId": "legacy-fischl",
+        "expectedBaseline": {
+          "buildId": "legacy-fischl",
+          "version": 1,
+          "checksum": "99fd470d9f00bc3d94b8b84e87a04ffdc40ebfd279b0be5a8df33aec2b144d9a",
+          "status": "LEGACY_IMPORT"
+        },
+        "preserveDefault": true,
+        "state": "REVIEW_READY",
+        "preview": {
+          "name": {
+            "before": "Legacy build",
+            "after": "C0 Off-field Oz in Aggravate"
+          },
+          "playstyles": {
+            "before": [],
+            "after": [
+              "SUB_DPS"
+            ]
+          },
+          "constellationAssumptions": {
+            "before": [],
+            "after": [
+              "C0"
+            ]
+          },
+          "notesEn": {
+            "before": null,
+            "after": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks."
+          },
+          "source": {
+            "before": "Legacy development build",
+            "after": "character-build-catalog-7.2-r2"
+          },
+          "weapons": {
+            "before": [
+              {
+                "weaponId": "tuyệt-huyền",
+                "refinement": 5,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "cánh-thiên-không",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "weaponId": "15507",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "15402",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "15425",
+                "isF2P": true,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "15410",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              }
+            ]
+          },
+          "artifacts": {
+            "before": [
+              {
+                "setIds": [
+                  null
+                ],
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "setIds": [
+                  "15032"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15005",
+                  "15001"
+                ],
+                "constellation": "C0"
+              }
+            ]
+          },
+          "sands": {
+            "before": null,
+            "after": [
+              "ATK%"
+            ]
+          },
+          "goblet": {
+            "before": [
+              "Elemental DMG Bonus"
+            ],
+            "after": [
+              "Electro DMG Bonus"
+            ]
+          },
+          "circlet": {
+            "before": [
+              "CRIT Rate"
+            ],
+            "after": [
+              "CRIT Rate",
+              "CRIT DMG"
+            ]
+          },
+          "subStatsPriority": {
+            "before": [
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%"
+            ],
+            "after": [
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%",
+              "Elemental Mastery",
+              "Energy Recharge"
+            ]
+          },
+          "talentPriority": {
+            "before": [
+              "Normal Attack",
+              "Elemental Skill",
+              "Elemental Burst"
+            ],
+            "after": [
+              "Skill",
+              "Burst",
+              "Normal Attack"
+            ]
+          },
+          "teams": {
+            "before": [],
+            "after": [
+              {
+                "name": "Off-field Oz in Aggravate",
+                "description": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+                "reviewStatus": "EXPERIMENTAL",
+                "members": [
+                  {
+                    "characterId": "fischl",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Oz and Aggravate follow-up"
+                  },
+                  {
+                    "characterId": "keqing",
+                    "role": "MAIN_DPS",
+                    "roleDesc": "quick-swap Electro attacker"
+                  },
+                  {
+                    "characterId": "nahida",
+                    "role": "SUB_DPS",
+                    "roleDesc": "ongoing Dendro application"
+                  },
+                  {
+                    "characterId": "yaoyao",
+                    "role": "SUPPORT",
+                    "roleDesc": "healing and Dendro application"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "characterId": "xiangling",
+        "candidateId": "xiangling:1",
+        "role": [
+          "SUB_DPS"
+        ],
+        "version": "character-build-catalog-7.2-r2",
+        "checksum": "8b217db9e2b920e674bcb00f0de81648a871373e016fbb24d028ef1eb1b2847e",
+        "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+        "evidenceSummary": "The Catch R5 and Emblem address a Burst-driven role. Bennett funnels particles; Hydro must be maintained.",
+        "evidenceReferences": [
+          "genshin-db@5.2.15",
+          "https://genshin-builds.com/en/character/xiangling",
+          "https://keqingmains.com/xiangling/"
+        ],
+        "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+        "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+        "existingBuildId": "legacy-xiangling",
+        "expectedBaseline": {
+          "buildId": "legacy-xiangling",
+          "version": 1,
+          "checksum": "dbb703b9a08c7dac715fc74ff809d5599b8d7f3c6738f00c41a5636cf4e07206",
+          "status": "LEGACY_IMPORT"
+        },
+        "preserveDefault": true,
+        "state": "REVIEW_READY",
+        "preview": {
+          "name": {
+            "before": "Legacy build",
+            "after": "C0 Off-field Vaporize Burst"
+          },
+          "playstyles": {
+            "before": [],
+            "after": [
+              "SUB_DPS"
+            ]
+          },
+          "constellationAssumptions": {
+            "before": [],
+            "after": [
+              "C0"
+            ]
+          },
+          "notesEn": {
+            "before": null,
+            "after": "80-energy Pyronado rewards funneling and snapshots relevant buffs. ER Sands is the safe starting option, and ATK or EM may win once Energy is covered."
+          },
+          "source": {
+            "before": "Legacy development build",
+            "after": "character-build-catalog-7.2-r2"
+          },
+          "weapons": {
+            "before": [
+              {
+                "weaponId": "quyền-trượng-cát-đỏ",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "đoạn-thảo-trường-đao",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "hòa-phác-diên",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "bi-ca-lumidouce",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "hào-quang-tách-rời",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "trượng-hộ-ma",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "tai-họa-và-hối-hận",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "lao-xiên-cá",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "thương-quyết-chiến",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "khúc-ca-vịnh-hẹp",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "hủy-diệt",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "giáo-nịnh-thần",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "hình-thái-xích-nguyệt",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "tàn-tích-nhuốm-máu",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "vây-cá-chẻ-sóng",
+                "refinement": 5,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "mũi-nhọn-của-gió",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "giáo-thập-tự-kitain",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "thương-thiên-nham",
+                "refinement": 5,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "thương-tây-phong",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "weaponId": "13415",
+                "isF2P": true,
+                "refinement": 5,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "13509",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "13407",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "13401",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              }
+            ]
+          },
+          "artifacts": {
+            "before": [
+              {
+                "setIds": [
+                  "15020",
+                  "15007"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15006",
+                  "15020"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15006",
+                  "15007"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15020"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15006"
+                ],
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "setIds": [
+                  "15020"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15006",
+                  "15007"
+                ],
+                "constellation": "C0"
+              }
+            ]
+          },
+          "sands": {
+            "before": [
+              "Hiệu Quả Nạp",
+              "Tấn Công%",
+              "Tinh Thông Nguyên Tố"
+            ],
+            "after": [
+              "Energy Recharge"
+            ]
+          },
+          "goblet": {
+            "before": [
+              "Sát Thương Nguyên Tố Hỏa"
+            ],
+            "after": [
+              "Pyro DMG Bonus"
+            ]
+          },
+          "circlet": {
+            "before": [
+              "Tỷ Lệ Bạo Kích",
+              "Sát Thương Bạo Kích"
+            ],
+            "after": [
+              "CRIT Rate",
+              "CRIT DMG"
+            ]
+          },
+          "subStatsPriority": {
+            "before": [
+              "Energy Recharge",
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%",
+              "Elemental Mastery"
+            ],
+            "after": [
+              "Energy Recharge",
+              "CRIT Rate",
+              "CRIT DMG",
+              "Elemental Mastery",
+              "ATK%"
+            ]
+          },
+          "talentPriority": {
+            "before": null,
+            "after": [
+              "Burst",
+              "Skill",
+              "Normal Attack"
+            ]
+          },
+          "teams": {
+            "before": [
+              {
+                "name": "Xiangling Melting Team #1",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "ganyu"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "zhongli"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Xiangling Overload Team #2",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "keqing"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "beidou"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Xiangling Vaporize Team #3",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "xingqiu"
+                  },
+                  {
+                    "characterId": "sucrose"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Xiangling Vaporize Team #1",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "tartaglia"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "kaedehara-kazuha"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Xiangling Overload Team #1",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "raiden-shogun"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "kujou-sara"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Xiangling Vaporize Team #2",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "sangonomiya-kokomi"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "bennett"
+                  },
+                  {
+                    "characterId": "kaedehara-kazuha"
+                  }
+                ]
+              },
+              {
+                "name": "Raiden Overload Vaporize",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "raiden-shogun"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "xingqiu"
+                  },
+                  {
+                    "characterId": "bennett"
+                  }
+                ]
+              },
+              {
+                "name": "Xiangling Pure Pyro Team",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "klee"
+                  },
+                  {
+                    "characterId": "xiangling"
+                  },
+                  {
+                    "characterId": "bennett"
+                  },
+                  {
+                    "characterId": "kaedehara-kazuha"
+                  }
+                ]
+              }
+            ],
+            "after": [
+              {
+                "name": "Off-field Vaporize Burst",
+                "description": "80-energy Pyronado rewards funneling and snapshots relevant buffs. ER Sands is the safe starting option, and ATK or EM may win once Energy is covered.",
+                "reviewStatus": "EXPERIMENTAL",
+                "members": [
+                  {
+                    "characterId": "xiangling",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Pyro and Vaporize trigger"
+                  },
+                  {
+                    "characterId": "bennett",
+                    "role": "SUPPORT",
+                    "roleDesc": "ATK buff, healing and Pyro battery"
+                  },
+                  {
+                    "characterId": "xingqiu",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Hydro"
+                  },
+                  {
+                    "characterId": "sucrose",
+                    "role": "SUPPORT",
+                    "roleDesc": "on-field Swirl driver"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "checksum": "1acfde1c57701c09a90574eab83c969abbd0554bf73e39c1cb083377e418ae36"
+  },
+  "records": [
+    {
+      "candidate": {
+        "revision": "character-build-catalog-7.2-r2",
+        "candidateId": "bennett:1",
+        "characterId": "bennett",
+        "operation": "PROPOSE_REVISION",
+        "baseline": {
+          "buildId": "legacy-bennett",
+          "version": 1,
+          "checksum": "42516bd8f7deeb62d85a20127b17a9af2d5db2e0a778a9853229c743b3ef057f",
+          "status": "LEGACY_IMPORT"
+        },
+        "defaultPolicy": "PRESERVE",
+        "stage": "PENDING_ADMIN_REVIEW",
+        "confidence": "MODERATE",
+        "patch": {
+          "name": "C0 Burst buffer and heal",
+          "playstyles": [
+            "SUPPORT"
+          ],
+          "constellationAssumptions": [
+            "C0"
+          ],
+          "notesEn": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation. At C0 the active character needs above 70% HP for the ATK buff. Use a CRIT Rate circlet when relying on Favonius and do not count its particles without an on-field proc.",
+          "source": "character-build-catalog-7.2-r2",
+          "weapons": [
+            {
+              "weaponId": "11501",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "11502",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "11417",
+              "isF2P": true,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "11401",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            }
+          ],
+          "artifacts": [
+            {
+              "setIds": [
+                "15007"
+              ],
+              "constellation": "C0"
+            },
+            {
+              "setIds": [
+                "10007"
+              ],
+              "constellation": "C0"
+            }
+          ],
+          "sands": [
+            "Energy Recharge"
+          ],
+          "goblet": [
+            "HP%"
+          ],
+          "circlet": [
+            "Healing Bonus",
+            "CRIT Rate"
+          ],
+          "subStatsPriority": [
+            "Energy Recharge",
+            "HP%",
+            "CRIT Rate"
+          ],
+          "talentPriority": [
+            "Burst",
+            "Skill",
+            "Normal Attack"
+          ],
+          "teams": [
+            {
+              "name": "Burst buffer and heal",
+              "description": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "bennett",
+                  "role": "SUPPORT",
+                  "roleDesc": "ATK buff, healing and Pyro particles"
+                },
+                {
+                  "characterId": "xiangling",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Pyronado"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "Hydro via normal-attack triggers"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "SUPPORT",
+                  "roleDesc": "on-field driver and resistance shred"
+                }
+              ]
+            }
+          ]
+        },
+        "weaponAccess": [
+          {
+            "weaponId": "11501",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "11502",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "11417",
+            "availability": "CRAFT_FISHING_OR_EXPLORATION",
+            "note": null
+          },
+          {
+            "weaponId": "11401",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": "Proc ordinarily needs the wearer on field and a critical hit."
+          }
+        ],
+        "artifactRationale": [
+          [
+            "Burst damage and a non-stacking team ATK bonus after Burst"
+          ],
+          [
+            "Team EM after the holder triggers a reaction on field"
+          ]
+        ],
+        "missingEvidence": [
+          "Rotation, energy and matchup checks before making performance claims"
+        ],
+        "provenance": {
+          "method": "Independent contextual shortlist checked against local catalog and talent records",
+          "mechanics": {
+            "package": "genshin-db@5.2.15",
+            "id": 10000032,
+            "characterVersion": "1.0",
+            "talentVersion": "1.0",
+            "burstEnergy": 60,
+            "talents": {
+              "Normal Attack": "Strike of Fortune",
+              "Skill": "Passion Overload",
+              "Burst": "Fantastic Voyage"
+            },
+            "constellations": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ]
+          },
+          "externalReference": {
+            "url": "https://genshin-builds.com/en/character/bennett",
+            "checkedAt": "2026-11-20T12:28:24.513Z",
+            "indexed": true,
+            "status": "AVAILABLE",
+            "version": null
+          },
+          "corroboration": null,
+          "externalComparison": {
+            "weapons": {
+              "compared": 4,
+              "overlap": 4,
+              "firstChoiceAgrees": false
+            },
+            "artifacts": {
+              "compared": 2,
+              "overlap": 2
+            },
+            "teams": {
+              "compared": 1,
+              "overlap": 0
+            },
+            "stats": {
+              "sands": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "goblet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": false
+              },
+              "circlet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": false
+              },
+              "subStatsPriority": {
+                "compared": 3,
+                "overlap": 2,
+                "firstChoiceAgrees": true
+              },
+              "talentPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              }
+            }
+          },
+          "evidenceLine": 13
+        },
+        "supersedes": {
+          "revision": "character-build-catalog-7.2-r1",
+          "checksum": "3d0f1dcf45b0359ad502e7627382aa49b586e003045cd093ec7f342acda3569d"
+        },
+        "reviewDecision": "NONE_REVIEW_MUST_RESTART",
+        "checksum": "6e94ecbffb40fa65c7ddb251430d151127ec55c78f9af3ff1a08852e666f07eb"
+      },
+      "changes": [
+        {
+          "category": "stats",
+          "reason": "The generic healing circlet does not meet the Favonius proc condition reliably. Include a conditional CRIT Rate alternative and clarify the C0 threshold."
+        },
+        {
+          "category": "teams",
+          "reason": "Make the named team rotation reviewable by assigning each member’s actual job."
+        }
+      ],
+      "fields": {
+        "notesEn": {
+          "before": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation.",
+          "after": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation. At C0 the active character needs above 70% HP for the ATK buff. Use a CRIT Rate circlet when relying on Favonius and do not count its particles without an on-field proc."
+        },
+        "source": {
+          "before": "character-build-catalog-7.2-r1",
+          "after": "character-build-catalog-7.2-r2"
+        },
+        "circlet": {
+          "before": [
+            "Healing Bonus"
+          ],
+          "after": [
+            "Healing Bonus",
+            "CRIT Rate"
+          ]
+        },
+        "teams": {
+          "before": [
+            {
+              "name": "Burst buffer and heal",
+              "description": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "bennett",
+                  "role": "SUPPORT"
+                },
+                {
+                  "characterId": "xiangling",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "TEAMMATE"
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "name": "Burst buffer and heal",
+              "description": "The buff uses character and weapon base ATK. C0 HP condition matters. ER precedes base ATK when it is needed to Burst each rotation.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "bennett",
+                  "role": "SUPPORT",
+                  "roleDesc": "ATK buff, healing and Pyro particles"
+                },
+                {
+                  "characterId": "xiangling",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Pyronado"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "Hydro via normal-attack triggers"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "SUPPORT",
+                  "roleDesc": "on-field driver and resistance shred"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate": {
+        "revision": "character-build-catalog-7.2-r2",
+        "candidateId": "fischl:1",
+        "characterId": "fischl",
+        "operation": "PROPOSE_REVISION",
+        "baseline": {
+          "buildId": "legacy-fischl",
+          "version": 1,
+          "checksum": "99fd470d9f00bc3d94b8b84e87a04ffdc40ebfd279b0be5a8df33aec2b144d9a",
+          "status": "LEGACY_IMPORT"
+        },
+        "defaultPolicy": "PRESERVE",
+        "stage": "PENDING_ADMIN_REVIEW",
+        "confidence": "MODERATE",
+        "patch": {
+          "name": "C0 Off-field Oz in Aggravate",
+          "playstyles": [
+            "SUB_DPS"
+          ],
+          "constellationAssumptions": [
+            "C0"
+          ],
+          "notesEn": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+          "source": "character-build-catalog-7.2-r2",
+          "weapons": [
+            {
+              "weaponId": "15507",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "15402",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "15425",
+              "isF2P": true,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "15410",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            }
+          ],
+          "artifacts": [
+            {
+              "setIds": [
+                "15032"
+              ],
+              "constellation": "C0"
+            },
+            {
+              "setIds": [
+                "15005",
+                "15001"
+              ],
+              "constellation": "C0"
+            }
+          ],
+          "sands": [
+            "ATK%"
+          ],
+          "goblet": [
+            "Electro DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate",
+            "CRIT DMG"
+          ],
+          "subStatsPriority": [
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%",
+            "Elemental Mastery",
+            "Energy Recharge"
+          ],
+          "talentPriority": [
+            "Skill",
+            "Burst",
+            "Normal Attack"
+          ],
+          "teams": [
+            {
+              "name": "Off-field Oz in Aggravate",
+              "description": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "fischl",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Oz and Aggravate follow-up"
+                },
+                {
+                  "characterId": "keqing",
+                  "role": "MAIN_DPS",
+                  "roleDesc": "quick-swap Electro attacker"
+                },
+                {
+                  "characterId": "nahida",
+                  "role": "SUB_DPS",
+                  "roleDesc": "ongoing Dendro application"
+                },
+                {
+                  "characterId": "yaoyao",
+                  "role": "SUPPORT",
+                  "roleDesc": "healing and Dendro application"
+                }
+              ]
+            }
+          ]
+        },
+        "weaponAccess": [
+          {
+            "weaponId": "15507",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "15402",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "15425",
+            "availability": "CRAFT_FISHING_OR_EXPLORATION",
+            "note": null
+          },
+          {
+            "weaponId": "15410",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          }
+        ],
+        "artifactRationale": [
+          [
+            "Skill damage with a larger off-field effect"
+          ],
+          [
+            "Electro and reaction damage plus eligible reaction-triggered Skill cooldown reduction",
+            "ATK and, on eligible melee weapons, Normal Attack damage"
+          ]
+        ],
+        "missingEvidence": [
+          "Rotation, energy and matchup checks before making performance claims"
+        ],
+        "provenance": {
+          "method": "Independent contextual shortlist checked against local catalog and talent records",
+          "mechanics": {
+            "package": "genshin-db@5.2.15",
+            "id": 10000031,
+            "characterVersion": "1.0",
+            "talentVersion": "1.0",
+            "burstEnergy": 60,
+            "talents": {
+              "Normal Attack": "Bolts of Downfall",
+              "Skill": "Nightrider",
+              "Burst": "Midnight Phantasmagoria"
+            },
+            "constellations": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ]
+          },
+          "externalReference": {
+            "url": "https://genshin-builds.com/en/character/fischl",
+            "checkedAt": "2026-11-20T12:28:42.095Z",
+            "indexed": true,
+            "status": "AVAILABLE",
+            "version": null
+          },
+          "corroboration": "https://keqingmains.com/q/fischl-quickguide/",
+          "externalComparison": {
+            "weapons": {
+              "compared": 4,
+              "overlap": 4,
+              "firstChoiceAgrees": false
+            },
+            "artifacts": {
+              "compared": 2,
+              "overlap": 1
+            },
+            "teams": {
+              "compared": 1,
+              "overlap": 0
+            },
+            "stats": {
+              "sands": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "goblet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "circlet": {
+                "compared": 2,
+                "overlap": 2,
+                "firstChoiceAgrees": true
+              },
+              "subStatsPriority": {
+                "compared": 5,
+                "overlap": 5,
+                "firstChoiceAgrees": false
+              },
+              "talentPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              }
+            }
+          },
+          "evidenceLine": 33
+        },
+        "supersedes": {
+          "revision": "character-build-catalog-7.2-r1",
+          "checksum": "a6d6fc9cf2a91f993fd2b190ba49865c2470a88265565d53b090ddeab8603f7b"
+        },
+        "reviewDecision": "NONE_REVIEW_MUST_RESTART",
+        "checksum": "92483f765e9bbb0a0ca1caab7f3347f60431da958e98a8a39b1117e80cd6f703"
+      },
+      "changes": [
+        {
+          "category": "teams",
+          "reason": "Make the named team rotation reviewable by assigning each member’s actual job."
+        }
+      ],
+      "fields": {
+        "source": {
+          "before": "character-build-catalog-7.2-r1",
+          "after": "character-build-catalog-7.2-r2"
+        },
+        "teams": {
+          "before": [
+            {
+              "name": "Off-field Oz in Aggravate",
+              "description": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "fischl",
+                  "role": "SUB_DPS"
+                },
+                {
+                  "characterId": "keqing",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "nahida",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "yaoyao",
+                  "role": "TEAMMATE"
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "name": "Off-field Oz in Aggravate",
+              "description": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "fischl",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Oz and Aggravate follow-up"
+                },
+                {
+                  "characterId": "keqing",
+                  "role": "MAIN_DPS",
+                  "roleDesc": "quick-swap Electro attacker"
+                },
+                {
+                  "characterId": "nahida",
+                  "role": "SUB_DPS",
+                  "roleDesc": "ongoing Dendro application"
+                },
+                {
+                  "characterId": "yaoyao",
+                  "role": "SUPPORT",
+                  "roleDesc": "healing and Dendro application"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate": {
+        "revision": "character-build-catalog-7.2-r2",
+        "candidateId": "xiangling:1",
+        "characterId": "xiangling",
+        "operation": "PROPOSE_REVISION",
+        "baseline": {
+          "buildId": "legacy-xiangling",
+          "version": 1,
+          "checksum": "dbb703b9a08c7dac715fc74ff809d5599b8d7f3c6738f00c41a5636cf4e07206",
+          "status": "LEGACY_IMPORT"
+        },
+        "defaultPolicy": "PRESERVE",
+        "stage": "PENDING_ADMIN_REVIEW",
+        "confidence": "MODERATE",
+        "patch": {
+          "name": "C0 Off-field Vaporize Burst",
+          "playstyles": [
+            "SUB_DPS"
+          ],
+          "constellationAssumptions": [
+            "C0"
+          ],
+          "notesEn": "80-energy Pyronado rewards funneling and snapshots relevant buffs. ER Sands is the safe starting option, and ATK or EM may win once Energy is covered.",
+          "source": "character-build-catalog-7.2-r2",
+          "weapons": [
+            {
+              "weaponId": "13415",
+              "isF2P": true,
+              "refinement": 5,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "13509",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "13407",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "13401",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            }
+          ],
+          "artifacts": [
+            {
+              "setIds": [
+                "15020"
+              ],
+              "constellation": "C0"
+            },
+            {
+              "setIds": [
+                "15006",
+                "15007"
+              ],
+              "constellation": "C0"
+            }
+          ],
+          "sands": [
+            "Energy Recharge"
+          ],
+          "goblet": [
+            "Pyro DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate",
+            "CRIT DMG"
+          ],
+          "subStatsPriority": [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "Elemental Mastery",
+            "ATK%"
+          ],
+          "talentPriority": [
+            "Burst",
+            "Skill",
+            "Normal Attack"
+          ],
+          "teams": [
+            {
+              "name": "Off-field Vaporize Burst",
+              "description": "80-energy Pyronado rewards funneling and snapshots relevant buffs. ER Sands is the safe starting option, and ATK or EM may win once Energy is covered.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "xiangling",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Pyro and Vaporize trigger"
+                },
+                {
+                  "characterId": "bennett",
+                  "role": "SUPPORT",
+                  "roleDesc": "ATK buff, healing and Pyro battery"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Hydro"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "SUPPORT",
+                  "roleDesc": "on-field Swirl driver"
+                }
+              ]
+            }
+          ]
+        },
+        "weaponAccess": [
+          {
+            "weaponId": "13415",
+            "availability": "CRAFT_FISHING_OR_EXPLORATION",
+            "note": "The listed refinement is part of this option."
+          },
+          {
+            "weaponId": "13509",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "13407",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": "Proc ordinarily needs the wearer on field and a critical hit."
+          },
+          {
+            "weaponId": "13401",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          }
+        ],
+        "artifactRationale": [
+          [
+            "ER at two pieces and ER-based Burst damage at four pieces"
+          ],
+          [
+            "Pyro damage and reaction bonuses",
+            "Burst damage and a non-stacking team ATK bonus after Burst"
+          ]
+        ],
+        "missingEvidence": [
+          "Rotation, energy and matchup checks before making performance claims"
+        ],
+        "provenance": {
+          "method": "Independent contextual shortlist checked against local catalog and talent records",
+          "mechanics": {
+            "package": "genshin-db@5.2.15",
+            "id": 10000023,
+            "characterVersion": "1.0",
+            "talentVersion": "1.0",
+            "burstEnergy": 80,
+            "talents": {
+              "Normal Attack": "Dough-Fu",
+              "Skill": "Guoba Attack",
+              "Burst": "Pyronado"
+            },
+            "constellations": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ]
+          },
+          "externalReference": {
+            "url": "https://genshin-builds.com/en/character/xiangling",
+            "checkedAt": "2026-11-20T12:29:54.442Z",
+            "indexed": true,
+            "status": "AVAILABLE",
+            "version": null
+          },
+          "corroboration": "https://keqingmains.com/xiangling/",
+          "externalComparison": {
+            "weapons": {
+              "compared": 4,
+              "overlap": 4,
+              "firstChoiceAgrees": false
+            },
+            "artifacts": {
+              "compared": 2,
+              "overlap": 1
+            },
+            "teams": {
+              "compared": 1,
+              "overlap": 1
+            },
+            "stats": {
+              "sands": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "goblet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "circlet": {
+                "compared": 2,
+                "overlap": 2,
+                "firstChoiceAgrees": true
+              },
+              "subStatsPriority": {
+                "compared": 5,
+                "overlap": 5,
+                "firstChoiceAgrees": true
+              },
+              "talentPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              }
+            }
+          },
+          "evidenceLine": 73
+        },
+        "supersedes": {
+          "revision": "character-build-catalog-7.2-r1",
+          "checksum": "e392185a2378353735d194e4f69349c244c5484864ec32b142e8005bb4acb311"
+        },
+        "reviewDecision": "NONE_REVIEW_MUST_RESTART",
+        "checksum": "8b217db9e2b920e674bcb00f0de81648a871373e016fbb24d028ef1eb1b2847e"
+      },
+      "changes": [
+        {
+          "category": "teams",
+          "reason": "Make the named team rotation reviewable by assigning each member’s actual job."
+        }
+      ],
+      "fields": {
+        "source": {
+          "before": "character-build-catalog-7.2-r1",
+          "after": "character-build-catalog-7.2-r2"
+        },
+        "teams": {
+          "before": [
+            {
+              "name": "Off-field Vaporize Burst",
+              "description": "80-energy Pyronado rewards funneling and snapshots relevant buffs. ER Sands is the safe starting option, and ATK or EM may win once Energy is covered.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "xiangling",
+                  "role": "SUB_DPS"
+                },
+                {
+                  "characterId": "bennett",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "TEAMMATE"
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "name": "Off-field Vaporize Burst",
+              "description": "80-energy Pyronado rewards funneling and snapshots relevant buffs. ER Sands is the safe starting option, and ATK or EM may win once Energy is covered.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "xiangling",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Pyro and Vaporize trigger"
+                },
+                {
+                  "characterId": "bennett",
+                  "role": "SUPPORT",
+                  "roleDesc": "ATK buff, healing and Pyro battery"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Hydro"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "SUPPORT",
+                  "roleDesc": "on-field Swirl driver"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

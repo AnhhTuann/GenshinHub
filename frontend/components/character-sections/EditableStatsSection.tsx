@@ -46,6 +46,7 @@ const cleanAndTranslate = (arr: string[], locale: string) => {
 };
 
 interface Props {
+  readOnly?: boolean;
   characterId: string;
   sands: string[];
   goblet: string[];
@@ -56,44 +57,39 @@ interface Props {
 
 function SectionHeader({ label, accent }: { label: string; accent: string }) {
   return (
-    <div className="flex items-center gap-2.5 mb-5">
-      <span className={`w-[3px] h-5 rounded-full ${accent}`} />
-      <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">{label}</span>
+    <div className="char-guide-section-head">
+      <span className={`char-guide-section-accent ${accent}`} />
+      <span className="char-guide-section-title">{label}</span>
     </div>
   );
 }
 
-function TalentRow({ talent, index }: { talent: string; index: number }) {
+function TalentRow({ talent, index, topLabel }: { talent: string; index: number; topLabel: string }) {
   const lower = talent.toLowerCase();
   let abbr = 'AA';
-  let style = 'bg-white/[0.05] text-white/40 border-white/[0.06]';
+  let tone = '';
   if (lower.includes('skill') || lower === 'e') {
-    abbr = 'E'; style = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+    abbr = 'E';
+    tone = 'is-skill';
   } else if (lower.includes('burst') || lower === 'q') {
-    abbr = 'Q'; style = 'bg-purple-500/10 text-purple-400 border-purple-500/20';
+    abbr = 'Q';
+    tone = 'is-burst';
   }
   return (
-    <div className="flex items-center gap-3 bg-[#121109]/50 border border-white/[0.04] hover:border-white/[0.09] rounded-xl p-3 transition-colors duration-200">
-      <span className="w-5 h-5 rounded-full bg-[#1c1813] border border-white/[0.07] flex items-center justify-center text-white/30 text-[10px] font-extrabold shrink-0">
-        {index + 1}
-      </span>
-      <span className={`text-[9px] font-black w-7 h-6 flex items-center justify-center rounded-md border ${style}`}>
-        {abbr}
-      </span>
-      <span className="text-white/70 text-sm font-semibold">{talent.replace('Elemental ', '')}</span>
-      {index === 0 && (
-        <span className="ml-auto text-[8px] text-yellow-400/70 font-black uppercase tracking-widest bg-yellow-400/5 px-2 py-0.5 rounded border border-yellow-400/10">
-          Priority
-        </span>
-      )}
+    <div className={`char-guide-priority-row ${index === 0 ? 'is-top' : ''}`}>
+      <span className="char-guide-order">{index + 1}</span>
+      <span className={`char-guide-talent-abbr ${tone}`}>{abbr}</span>
+      <span className="char-guide-row-label">{talent.replace('Elemental ', '')}</span>
+      {index === 0 && <span className="char-guide-top-tag">{topLabel}</span>}
     </div>
   );
 }
 
-export default function EditableStatsSection({ characterId, sands, goblet, circlet, subStatsPriority, talentPriority }: Props) {
+export default function EditableStatsSection({ characterId, sands, goblet, circlet, subStatsPriority, talentPriority, readOnly = false }: Props) {
   const locale = useLocale();
   const t = useTranslations('Character');
-  const { isAdmin } = useAdmin();
+  const { isAdmin: admin } = useAdmin();
+  const isAdmin = admin && !readOnly;
   const [isEditingStats, setIsEditingStats] = useState(false);
   const [isEditingTalents, setIsEditingTalents] = useState(false);
 
@@ -118,15 +114,15 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
   
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 items-stretch">
       {/* Main Stats */}
-        <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+        <section className="atlas-surface p-5 sm:p-6 relative group/section h-full">
           <div className="flex items-center justify-between">
-            <SectionHeader label={t('mainStats')} accent="bg-cyan-400" />
+            <SectionHeader label={t('mainStats')} accent="bg-[var(--accent-second)]" />
             {isAdmin && (
               <button 
                 onClick={() => setIsEditingStats(true)}
-                className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-bold rounded hover:bg-cyan-500/30 transition-all border border-cyan-500/30"
+                className="atlas-add-action"
               >
                 ✏️ Edit Stats
               </button>
@@ -138,10 +134,10 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
               { slot: locale === 'en' ? 'Goblet' : 'Ly', emoji: '🏆', values: localGoblet },
               { slot: locale === 'en' ? 'Circlet' : 'Nón', emoji: '👑', values: localCirclet },
             ].map(({ slot, emoji, values }) => (
-              <div key={slot} className="flex items-center gap-3 bg-[#121109]/60 border border-white/[0.04] rounded-xl px-4 py-2.5">
-                <span className="text-base shrink-0">{emoji}</span>
-                <span className="text-white/50 text-[9px] font-black uppercase tracking-wider w-14 shrink-0">{slot}</span>
-                <span className="text-white/90 text-sm font-semibold">
+              <div key={slot} className="char-guide-mainstat-row">
+                <span className="char-guide-mainstat-icon" aria-hidden="true">{emoji}</span>
+                <span className="char-guide-slot">{slot}</span>
+                <span className="char-guide-value">
                   {values.length > 0 ? cleanAndTranslate(values, locale).join(' / ') : '—'}
                 </span>
               </div>
@@ -168,46 +164,43 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
         </section>
 
       {/* Sub-stat priority */}
-        <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+        <section className="atlas-surface p-5 sm:p-6 relative group/section h-full">
           <div className="flex items-center justify-between">
-            <SectionHeader label={t('subStatsPriority')} accent="bg-orange-400" />
+            <SectionHeader label={t('subStatsPriority')} accent="bg-[var(--fantasy-gold)]" />
             {isAdmin && (
               <button 
                 onClick={() => setIsEditingStats(true)}
-                className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-orange-500/20 text-orange-300 text-xs font-bold rounded hover:bg-orange-500/30 transition-all border border-orange-500/30"
+                className="atlas-add-action"
               >
                 ✏️ Edit Sub-Stats
               </button>
             )}
           </div>
-          <div className="flex flex-wrap items-center gap-1.5">
+          <div className="char-guide-priority-list">
             {localSubStats.length > 0 ? (
-              cleanAndTranslate(localSubStats, locale).map((stat: string, idx: number, arr: string[]) => (
-                <div key={idx} className="flex items-center gap-1.5">
-                  <span className={`text-[11px] font-bold px-3 py-1.5 rounded-lg border ${
-                    idx === 0
-                      ? 'bg-yellow-400/10 border-yellow-400/20 text-yellow-300'
-                      : 'bg-white/5 border-white/10 text-white/75'
-                  }`}>{stat}</span>
-                  {idx < arr.length - 1 && (
-                    <span className="text-white/40 text-xs">›</span>
+              cleanAndTranslate(localSubStats, locale).map((stat: string, idx: number) => (
+                <div key={idx} className={`char-guide-priority-row ${idx === 0 ? 'is-top' : ''}`}>
+                  <span className="char-guide-order">{idx + 1}</span>
+                  <span className="char-guide-row-label">{stat}</span>
+                  {idx === 0 && (
+                    <span className="char-guide-top-tag">{locale === 'vi' ? 'Cao nhất' : 'Top'}</span>
                   )}
                 </div>
               ))
             ) : (
-              <span className="text-white/40 text-sm italic">No sub-stats configured.</span>
+              <span className="text-[var(--text-secondary)] text-sm italic">No sub-stats configured.</span>
             )}
           </div>
         </section>
 
       {/* Talent priority */}
-      <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+      <section className="atlas-surface p-5 sm:p-6 relative group/section h-full">
         <div className="flex items-center justify-between">
-          <SectionHeader label={t('talentPriority')} accent="bg-red-400" />
+          <SectionHeader label={t('talentPriority')} accent="bg-[var(--pyro)]" />
           {isAdmin && (
             <button 
               onClick={() => setIsEditingTalents(true)}
-              className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-red-500/20 text-red-300 text-xs font-bold rounded hover:bg-red-500/30 transition-all border border-red-500/30"
+              className="atlas-add-action"
             >
               ✏️ Edit Talents
             </button>
@@ -216,10 +209,10 @@ export default function EditableStatsSection({ characterId, sands, goblet, circl
         <div className="flex flex-col gap-2">
           {localTalents.length > 0 ? (
             localTalents.map((talent, idx) => (
-              <TalentRow key={idx} talent={talent} index={idx} />
+              <TalentRow key={idx} talent={talent} index={idx} topLabel={locale === 'vi' ? 'Cao nhất' : 'Top'} />
             ))
           ) : (
-            <span className="text-white/40 text-sm italic">No talent priority configured.</span>
+            <span className="text-[var(--text-secondary)] text-sm italic">No talent priority configured.</span>
           )}
         </div>
 

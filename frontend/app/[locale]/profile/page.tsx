@@ -73,7 +73,7 @@ export default function ProfilePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#171410]/90 to-transparent" />
           </div>
 
-          <div className="px-8 pb-8 relative -mt-16 flex flex-col sm:flex-row gap-6 items-end sm:items-center">
+          <div className="px-4 sm:px-8 pb-6 relative -mt-16 flex flex-col sm:flex-row gap-6 items-end sm:items-center">
             <div className="w-32 h-32 rounded-full border-4 border-[#171410] overflow-hidden bg-black relative shrink-0">
               <FallbackImage
                 src={avatarUrl}
@@ -84,7 +84,7 @@ export default function ProfilePage() {
             </div>
             
             <div className="flex-1 mt-4 sm:mt-16 w-full">
-              <h1 className="font-cinzel text-3xl font-semibold tracking-tight text-[#f0ead9]">
+              <h1 className="atlas-section-title">
                 {user.displayName || user.username}
               </h1>
               <p className="text-white/50 text-sm font-medium">{user.email}</p>

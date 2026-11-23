@@ -1,0 +1,105 @@
+{
+  "status": "PENDING_REVIEW",
+  "characterId": "mitya",
+  "playstyle": "C0 On-Field Main DPS",
+  "source": {
+    "kind": "INDEPENDENT",
+    "reference": "GenshinHub original Main DPS synthesis from Genshin-Builds v7.2 structured build/team data, GameWith role cross-check, and genshin-db 5.2.15 mechanics; no external tier or editorial rank imported"
+  },
+  "weapons": [
+    {
+      "id": "14525",
+      "isF2P": false,
+      "refinement": 1
+    },
+    {
+      "id": "14521",
+      "isF2P": false,
+      "refinement": 1
+    },
+    {
+      "id": "14502",
+      "isF2P": false,
+      "refinement": 1
+    }
+  ],
+  "artifacts": [
+    [
+      "15026"
+    ],
+    [
+      "15046"
+    ],
+    [
+      "15003",
+      "15026"
+    ]
+  ],
+  "sands": [
+    "Elemental Mastery"
+  ],
+  "goblet": [
+    "Elemental Mastery"
+  ],
+  "circlet": [
+    "CRIT Rate",
+    "CRIT DMG"
+  ],
+  "subStatsPriority": [
+    "CRIT DMG",
+    "CRIT Rate",
+    "Elemental Mastery",
+    "Energy Recharge"
+  ],
+  "talentPriority": [
+    "Normal Attack",
+    "Burst",
+    "Skill"
+  ],
+  "teams": [
+    {
+      "name": "Mitya Stellar-Conduct Team",
+      "description": "VERIFIED REFERENCE LINEUP. Mitya is the on-field Main DPS; Odette supports Stellar-Conduct reaction conversion and buffs; Sucrose provides VV resistance reduction and EM sharing; Valeriy shields and supports Electro damage. All four slots assume C0 or lower. Party-triggered Superconduct must be converted to Stellar-Conduct; Mitya holds Skill to enter Overloaded State and spends Gradient Beacons with his special Charged Attack. Artifact overlap checked: Odette carries Heart of the Furnace, Sucrose carries Viridescent Venerer, Valeriy carries Gladiator's Finale + Shimenawa's Reminiscence, so Mitya uses Gilded Dreams / Disenchantment in Deep Shadow without competing for a unique support set.",
+      "members": [
+        {
+          "characterId": "mitya",
+          "role": "Main DPS"
+        },
+        {
+          "characterId": "odette",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "sucrose",
+          "role": "Support"
+        },
+        {
+          "characterId": "valeriy",
+          "role": "Support"
+        }
+      ]
+    },
+    {
+      "name": "Stellar-Conduct Synergy Team",
+      "description": "VERIFIED REFERENCE LINEUP. Mitya is the on-field Main DPS; Odette supplies Cryo and Stellar-Conduct support; Yae Miko supplies off-field Electro damage and particles; Valeriy shields and supports Electro damage. All four slots assume C0 or lower. Party-triggered Superconduct must be converted to Stellar-Conduct; extra Electro particles reduce Mitya's ER need, so ER remains a substat rather than a main stat. Artifact overlap checked: Odette carries Heart of the Furnace, Yae Miko carries Disenchantment in Deep Shadow, Valeriy carries Gladiator's Finale + Shimenawa's Reminiscence, so Mitya's listed Personal-DPS sets remain available.",
+      "members": [
+        {
+          "characterId": "mitya",
+          "role": "Main DPS"
+        },
+        {
+          "characterId": "odette",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "yae-miko",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "valeriy",
+          "role": "Support"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+| Weapon | Type | Role | Current Tier | Proposed Tier | Refinement | Source | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Primordial Jade Cutter | SWORD | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Mistsplitter Reforged | SWORD | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Haran Geppaku Futsu | SWORD | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Uraku Misugiri | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Azurelight | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lightbearing Moonshard | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Light of Foliar Incision | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Splendor of Tranquil Waters | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Absolution | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Calamity of Eshu | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wolf-Fang | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Black Sword | SWORD | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Blade | SWORD | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Amenoma Kageuchi | SWORD | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Toukabou Shigure | SWORD | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Iron Sting | SWORD | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Harbinger of Dawn | SWORD | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Summit Shaper | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Aquila Favonia | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sturdy Bone | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Moonweaver's Dawn | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Finale of the Deep | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lion's Roar | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Blackcliff Longsword | SWORD | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Flute | SWORD | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Royal Longsword | SWORD | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prototype Rancour | SWORD | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Dark Iron Sword | SWORD | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyrider Sword | SWORD | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Splendor of Tranquil Waters | SWORD | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Freedom-Sworn | SWORD | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Primordial Jade Cutter | SWORD | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Sacrificial Sword | SWORD | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Uraku Misugiri | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Athame Artis | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Blade | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Key of Khaj-Nisut | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Fleuve Cendre Ferryman | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Sword | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Xiphos' Moonlight | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Harbinger of Dawn | SWORD | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wolf-Fang | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Dockhand's Assistant | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Serenity's Call | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Amenoma Kageuchi | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Iron Sting | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Toukabou Shigure | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Festering Desire | SWORD | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Flute of Ezpitzal | SWORD | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lion's Roar | SWORD | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Alley Flash | SWORD | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Cinnabar Spindle | SWORD | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Dark Iron Sword | SWORD | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Cool Steel | SWORD | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Peak Patrol Song | SWORD | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Freedom-Sworn | SWORD | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Sword | SWORD | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Xiphos' Moonlight | SWORD | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Skyward Blade | SWORD | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fleuve Cendre Ferryman | SWORD | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sacrificial Sword | SWORD | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Sapwood Blade | SWORD | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Dockhand's Assistant | SWORD | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Serenity's Call | SWORD | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Verdict | CLAYMORE | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| A Thousand Blazing Suns | CLAYMORE | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Gest of the Mighty Wolf | CLAYMORE | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Beacon of the Reed Sea | CLAYMORE | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Redhorn Stonethresher | CLAYMORE | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Serpent Spine | CLAYMORE | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fang of the Mountain King | CLAYMORE | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wolf's Gravestone | CLAYMORE | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| The Unforged | CLAYMORE | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Song of Broken Pines | CLAYMORE | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Pride | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Earth Shaker | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Flame-Forged Insight | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| "Ultimate Overlord's Mega Magic Sword" | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Rainslasher | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Whiteblind | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mailed Flower | CLAYMORE | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fruitful Hook | CLAYMORE | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Talking Stick | CLAYMORE | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Luxurious Sea-Lord | CLAYMORE | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Akuoumaru | CLAYMORE | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prototype Archaic | CLAYMORE | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Blackcliff Slasher | CLAYMORE | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Tidal Shadow | CLAYMORE | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lithic Blade | CLAYMORE | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Snow-Tombed Starsilver | CLAYMORE | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Verdict | CLAYMORE | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Beacon of the Reed Sea | CLAYMORE | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Greatsword | CLAYMORE | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Sacrificial Greatsword | CLAYMORE | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wolf's Gravestone | CLAYMORE | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Akuoumaru | CLAYMORE | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Pride | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Flame-Forged Insight | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| "Ultimate Overlord's Mega Magic Sword" | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Master Key | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Rainslasher | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Katsuragikiri Nagamasa | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Makhaira Aquamarine | CLAYMORE | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mailed Flower | CLAYMORE | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Luxurious Sea-Lord | CLAYMORE | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Tidal Shadow | CLAYMORE | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Portable Power Saw | CLAYMORE | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lithic Blade | CLAYMORE | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wolf's Gravestone | CLAYMORE | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Beacon of the Reed Sea | CLAYMORE | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Greatsword | CLAYMORE | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Sacrificial Greatsword | CLAYMORE | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Makhaira Aquamarine | CLAYMORE | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Forest Regalia | CLAYMORE | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Master Key | CLAYMORE | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Unforged | CLAYMORE | SUPPORT |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Bell | CLAYMORE | SUPPORT |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Staff of Homa | POLEARM | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Primordial Jade Winged-Spear | POLEARM | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Staff of the Scarlet Sands | POLEARM | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Engulfing Lightning | POLEARM | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Deathmatch | POLEARM | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Crimson Moon's Semblance | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Bloodsoaked Ruins | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Vortex Vanquisher | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Calamity Queller | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Spine | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Ballad of the Fjords | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prospector's Drill | POLEARM | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_CONFLICT;DISPUTED;SOURCE_MISSING |
+| Sacrificer's Staff | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Missive Windspear | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prospector's Drill | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_CONFLICT;DISPUTED;SOURCE_MISSING |
+| Tamayuratei no Ohanashi | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Dragon's Bane | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Blackcliff Pole | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lithic Spear | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| White Tassel | POLEARM | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Crescent Pike | POLEARM | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prototype Starglitter | POLEARM | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Dragonspine Spear | POLEARM | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Symphonist of Scents | POLEARM | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Engulfing Lightning | POLEARM | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Staff of Homa | POLEARM | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Staff of the Scarlet Sands | POLEARM | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| "The Catch" | POLEARM | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Lance | POLEARM | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Lumidouce Elegy | POLEARM | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Spine | POLEARM | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Ballad of the Fjords | POLEARM | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Kitain Cross Spear | POLEARM | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wavebreaker's Fin | POLEARM | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fractured Halo | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Calamity Queller | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mountain-Bracing Bolt | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sacrificer's Staff | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prospector's Drill | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_CONFLICT;DISPUTED;SOURCE_MISSING |
+| Dragon's Bane | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Deathmatch | POLEARM | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Moonpiercer | POLEARM | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prospector's Drill | POLEARM | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_CONFLICT;DISPUTED;SOURCE_MISSING |
+| Tamayuratei no Ohanashi | POLEARM | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Missive Windspear | POLEARM | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lithic Spear | POLEARM | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Footprint of the Rainbow | POLEARM | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prototype Starglitter | POLEARM | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Lance | POLEARM | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Symphonist of Scents | POLEARM | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Rightful Reward | POLEARM | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Dialogues of the Desert Sages | POLEARM | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Black Tassel | POLEARM | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fractured Halo | POLEARM | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Calamity Queller | POLEARM | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Moonpiercer | POLEARM | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Vortex Vanquisher | POLEARM | SUPPORT |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Astral Vulture's Crimson Plumage | BOW | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The First Great Magic | BOW | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Polar Star | BOW | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Thundering Pulse | BOW | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Aqua Simulacra | BOW | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Hunter's Bow | BOW | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Amos' Bow | BOW | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Harp | BOW | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Flower-Wreathed Feathers | BOW | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Rust | BOW | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Daybreak Chronicles | BOW | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Scion of the Blazing Sun | BOW | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Hamayumi | BOW | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mouun's Moon | BOW | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Chain Breaker | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Range Gauge | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Cloudforged | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mitternachts Waltz | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Blackcliff Warbow | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Viridescent Hunt | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| King's Squire | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Raven Bow | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Slingshot | BOW | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Ibis Piercer | BOW | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prototype Crescent | BOW | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Compound Bow | BOW | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sharpshooter's Oath | BOW | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Polar Star | BOW | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Aqua Simulacra | BOW | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Elegy for the End | BOW | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Skyward Harp | BOW | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Stringless | BOW | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Hunter's Bow | BOW | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Warbow | BOW | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Silvershower Heartstrings | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Golden Frostbound Oath | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Song of Stillness | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Snare Hook | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Rainbow Serpent's Rain Bow | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Alley Hunter | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mouun's Moon | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fading Twilight | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sacrificial Bow | BOW | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sequence of Solitude | BOW | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Range Gauge | BOW | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Cloudforged | BOW | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Windblume Ode | BOW | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| King's Squire | BOW | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| End of the Line | BOW | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Raven Bow | BOW | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sharpshooter's Oath | BOW | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Elegy for the End | BOW | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Favonius Warbow | BOW | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Sacrificial Bow | BOW | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Silvershower Heartstrings | BOW | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Chain Breaker | BOW | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sequence of Solitude | BOW | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Snare Hook | BOW | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Rainbow Serpent's Rain Bow | BOW | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Recurve Bow | BOW | SUPPORT |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Lost Prayer to the Sacred Winds | CATALYST | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Tulaytullah's Remembrance | CATALYST | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| The Widsith | CATALYST | MAIN_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Surf's Up | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Vivid Notions | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Cashflow Supervision | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Tome of the Eternal Flow | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sunny Morning Sleep-In | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Skyward Atlas | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Kagura's Verity | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Dawning Frost | CATALYST | MAIN_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Reliquary of Truth | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Nightweaver's Looking Glass | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Memory of Dust | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Ring of Yaxche | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Etherlight Spindlelute | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Ballad of the Boundless Blue | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Solar Pearl | CATALYST | MAIN_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Ash-Graven Drinking Horn | CATALYST | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Flowing Purity | CATALYST | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Dodoco Tales | CATALYST | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mappa Mare | CATALYST | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wandering Evenstar | CATALYST | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Magic Guide | CATALYST | MAIN_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Everlasting Moonglow | CATALYST | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Blackcliff Agate | CATALYST | MAIN_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sunny Morning Sleep-In | CATALYST | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Kagura's Verity | CATALYST | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| The Widsith | CATALYST | SUB_DPS |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Skyward Atlas | CATALYST | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sacrificial Fragments | CATALYST | SUB_DPS |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Nocturne's Curtain Call | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Etherlight Spindlelute | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Fruit of Fulfillment | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Blackmarrow Lantern | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Hakushin Ring | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Codex | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Mappa Mare | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wandering Evenstar | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Magic Guide | CATALYST | SUB_DPS |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Waveriding Whirl | CATALYST | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Flowing Purity | CATALYST | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sacrificial Jade | CATALYST | SUB_DPS |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Oathsworn Eye | CATALYST | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Emerald Orb | CATALYST | SUB_DPS |  | C | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Starcaller's Watch | CATALYST | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| A Thousand Floating Dreams | CATALYST | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Prototype Amber | CATALYST | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Thrilling Tales of Dragon Slayers | CATALYST | SUPPORT |  | SS | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;SOURCE_MISSING |
+| Crane's Echoing Call | CATALYST | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sunny Morning Sleep-In | CATALYST | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Favonius Codex | CATALYST | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Wandering Evenstar | CATALYST | SUPPORT |  | S | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Nocturne's Curtain Call | CATALYST | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Etherlight Spindlelute | CATALYST | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Oathsworn Eye | CATALYST | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Hakushin Ring | CATALYST | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Sacrificial Fragments | CATALYST | SUPPORT |  | A | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Everlasting Moonglow | CATALYST | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Jadefall's Splendor | CATALYST | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Waveriding Whirl | CATALYST | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |
+| Blackmarrow Lantern | CATALYST | SUPPORT |  | B | UNSPECIFIED | https://genshin-builds.com/en/tier-list-weapons | NEW;EXPLANATION_MISSING;SOURCE_MISSING;NEEDS_REVIEW |

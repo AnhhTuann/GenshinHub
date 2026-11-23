@@ -16,7 +16,7 @@ const charIdToFolder = (charId: string): string => {
  * Cấu trúc folder: /assets/characters/{CharName}/avatar.webp
  */
 export const getCharacterAvatar = (charId: string, userGender?: 'male' | 'female') => {
-  if (!charId) return '/assets/fallback-icon.webp';
+  if (!charId) return '/logo.webp';
   
   if (charId.startsWith('traveler')) {
     const folder = userGender === 'female' ? 'PlayerGirl' : 'PlayerBoy';
@@ -31,7 +31,7 @@ export const getCharacterAvatar = (charId: string, userGender?: 'male' | 'female
  * Cấu trúc folder: /assets/characters/{CharName}/splash.webp
  */
 export const getCharacterSplash = (charId: string, userGender?: 'male' | 'female') => {
-  if (!charId) return '/assets/fallback-icon.webp';
+  if (!charId) return '/logo.webp';
 
   if (charId.startsWith('traveler')) {
     const folder = userGender === 'female' ? 'PlayerGirl' : 'PlayerBoy';
@@ -45,7 +45,7 @@ export const getCharacterSplash = (charId: string, userGender?: 'male' | 'female
  * Lấy đường dẫn ảnh Vũ khí
  */
 export const getWeaponIcon = (weaponId: string) => {
-  if (!weaponId) return '/assets/fallback-icon.webp';
+  if (!weaponId) return '/logo.webp';
   return `/assets/weapons/${weaponId}.webp`;
 };
 
@@ -53,7 +53,7 @@ export const getWeaponIcon = (weaponId: string) => {
  * Lấy đường dẫn ảnh Thánh Di Vật / Vật phẩm
  */
 export const getItemIcon = (itemId: string | number) => {
-  if (!itemId) return '/assets/fallback-icon.webp';
+  if (!itemId) return '/logo.webp';
   return `/assets/items/${itemId}.webp`;
 };
 
@@ -61,6 +61,6 @@ export const getItemIcon = (itemId: string | number) => {
  * Lấy đường dẫn ảnh Hệ nguyên tố (Element)
  */
 export const getElementIcon = (elementName: string) => {
-  if (!elementName) return '/assets/fallback-icon.webp';
+  if (!elementName) return '/logo.webp';
   return `/assets/elements/${elementName.toLowerCase()}.webp`;
 };

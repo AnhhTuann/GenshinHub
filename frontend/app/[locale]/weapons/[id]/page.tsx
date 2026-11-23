@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { fetchGraphQL, GET_WEAPON_BY_ID, GET_CHARACTERS_BY_WEAPON_TYPE, GET_WEAPONS } from '@/lib/graphql';
+import { fetchGraphQL, GET_MATERIALS, GET_WEAPON_BY_ID, GET_WEAPON_GAME_DATA, GET_WEAPON_RECOMMENDED_USERS, GET_WEAPONS } from '@/lib/graphql';
 import WeaponDetailClient from './WeaponDetailClient';
 
 export async function generateStaticParams() {
@@ -30,8 +30,18 @@ export default async function WeaponDetailPage({ params }: { params: Promise<{ i
   const weapon = weaponData.weapon;
   if (!weapon) notFound();
 
-  const charsData = await fetchGraphQL(GET_CHARACTERS_BY_WEAPON_TYPE, { weaponType: weapon.type });
-  const characters = charsData.charactersByWeaponType || [];
+  const [gameDataResult, recommendedResult, materialsResult] = await Promise.all([
+    fetchGraphQL(GET_WEAPON_GAME_DATA, { id }),
+    fetchGraphQL(GET_WEAPON_RECOMMENDED_USERS, { id }),
+    fetchGraphQL(GET_MATERIALS),
+  ]);
 
-  return <WeaponDetailClient weapon={weapon} characters={characters} />;
+  return (
+    <WeaponDetailClient
+      weapon={weapon}
+      gameData={gameDataResult.weaponGameData ?? null}
+      recommendedUsers={recommendedResult.weaponRecommendedUsers ?? []}
+      materials={materialsResult.materials ?? []}
+    />
+  );
 }

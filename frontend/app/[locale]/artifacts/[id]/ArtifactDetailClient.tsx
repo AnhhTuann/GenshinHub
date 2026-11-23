@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
-import Image from 'next/image';
+import ElementIcon from '@/components/ui/ElementIcon';
+import { ArrowLeft, Gem } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
@@ -13,30 +14,6 @@ const ArtifactFormModal = dynamic(() => import('@/components/admin/ArtifactFormM
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
-
-const RARITY_BG: Record<number, string> = {
-  5: 'from-[#ffe1a0] via-[#f7bd4a] to-[#d98a2b]',
-  4: 'from-[#cf8fff] via-[#8e97a8] to-[#6b6152]',
-  3: 'from-[#8fc6ff] via-[#8e97a8] to-[#2b251c]',
-  2: 'from-gray-400 via-gray-650 to-gray-800',
-  1: 'from-gray-500 via-gray-700 to-gray-900',
-};
-
-const RARITY_BORDER: Record<number, string> = {
-  5: 'border-amber-500/40 shadow-[0_0_30px_rgba(245,158,11,0.08)]',
-  4: 'border-purple-500/40 shadow-[0_0_30px_rgba(168,85,247,0.08)]',
-  3: 'border-blue-500/40 shadow-[0_0_30px_rgba(201,168,106,0.08)]',
-  2: 'border-gray-500/40',
-  1: 'border-gray-600/40',
-};
-
-const STAR_COLOR: Record<number, string> = {
-  5: 'text-yellow-400',
-  4: 'text-purple-400',
-  3: 'text-blue-400',
-  2: 'text-gray-400',
-  1: 'text-gray-500',
-};
 
 interface ArtifactSet {
   id: string;
@@ -62,9 +39,10 @@ interface CharBasic {
 interface Props {
   artifactSet: ArtifactSet;
   characters: CharBasic[];
+  children?: ReactNode;
 }
 
-export default function ArtifactDetailClient({ artifactSet: initialSet, characters }: Props) {
+export default function ArtifactDetailClient({ artifactSet: initialSet, characters, children }: Props) {
   const locale = useLocale();
   const router = useRouter();
   const { isAdmin } = useAdmin();
@@ -73,7 +51,7 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
   const [deleting, setDeleting] = useState(false);
 
   const rarity = artifactSet.rarityList && artifactSet.rarityList.length > 0 ? Math.max(...artifactSet.rarityList) : 5;
-  const stars = '★'.repeat(rarity);
+  const vi = locale === 'vi';
   const name = locale === 'en' ? artifactSet.nameEn : artifactSet.nameVi;
   const piece2Desc = locale === 'en' ? artifactSet.piece2DescEn : artifactSet.piece2DescVi;
   const piece4Desc = locale === 'en' ? artifactSet.piece4DescEn : artifactSet.piece4DescVi;
@@ -98,13 +76,10 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
   };
 
   return (
-    <main className="min-h-screen bg-[#121109] text-gray-200 pb-24 font-sans selection:bg-yellow-500/30">
-      <div className="max-w-5xl mx-auto px-6 pt-8 pb-4">
-        <Link className="text-gray-500 hover:text-white transition-colors flex items-center gap-2 text-xs font-black uppercase tracking-wider w-fit mb-6" href="/artifacts">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          All Artifact Sets
+    <main className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] pb-24">
+      <div className="atlas-container pt-8 pb-4">
+        <Link href="/artifacts" className="fantasy-action mb-5">
+          <ArrowLeft size={18} aria-hidden="true" />{vi ? 'Tất cả bộ thánh di vật' : 'All artifact sets'}
         </Link>
 
         {/* Admin Controls */}
@@ -126,71 +101,35 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
           </div>
         )}
 
-        {/* Hero Section */}
-        <div className={`relative rounded-3xl border ${RARITY_BORDER[rarity]} overflow-hidden bg-[#171410]/50 shadow-2xl mb-8 backdrop-blur-md`}>
-          {/* Background glow */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${RARITY_BG[rarity]} opacity-[0.03]`} />
-
-          <div className="relative flex flex-col md:flex-row gap-8 p-8">
-            {/* Artifact Image Wrapper */}
-            <div className={`w-40 h-40 flex-shrink-0 rounded-2xl bg-gradient-to-br ${RARITY_BG[rarity]} p-[1px] shadow-xl self-center`}>
-              <div className="relative w-full h-full rounded-2xl bg-[#121109]/90 flex items-center justify-center overflow-hidden p-2">
-                {artifactSet.iconUrl ? (
-                  <FallbackImage src={artifactSet.iconUrl} alt={name} fill className="object-contain p-2" />
-                ) : (
-                  <span className="text-5xl select-none">💎</span>
-                )}
-              </div>
+        <div className="atlas-surface overflow-hidden mb-10">
+          <div className="atlas-relic-detail-hero">
+            <div className="atlas-relic-art rounded-2xl" data-rarity={rarity}>
+              {artifactSet.iconUrl
+                ? <FallbackImage src={artifactSet.iconUrl} alt="" fill sizes="(max-width: 639px) 80vw, 360px" />
+                : <Gem size={64} aria-hidden="true" />}
             </div>
-
-            {/* Artifact Info */}
-            <div className="flex-1 flex flex-col justify-center">
-              <p className="text-gray-550 text-[10px] font-black uppercase tracking-widest mb-1 font-display">Artifact Set</p>
-              <h1 className="text-3xl md:text-4xl font-black text-white mb-2 leading-tight font-display uppercase tracking-tight">{name}</h1>
-              <div className="flex items-center gap-3 mb-4">
-                <p className={`text-xl font-bold ${STAR_COLOR[rarity]}`}>{stars}</p>
-                <span className="text-gray-800">|</span>
-                <span className="text-xs text-gray-400 font-semibold">
-                  Rarities: {artifactSet.rarityList.map(r => `${r}★`).join(', ')}
-                </span>
-              </div>
+            <div className="min-w-0">
+              <p className="font-semibold text-[var(--accent-primary-light)]">{vi ? 'Bộ thánh di vật' : 'Artifact set'}</p>
+              <h1 className="atlas-detail-title">{name}</h1>
+              <p className="atlas-result-count">{vi ? 'Độ hiếm' : 'Rarity'} · {artifactSet.rarityList.map(r => `${r} ★`).join(', ')}</p>
             </div>
           </div>
-
-          {/* Set Effects */}
-          <div className="relative mx-8 mb-8 bg-[#0d0c0a]/65 border border-gray-955 rounded-2xl p-5 shadow-inner flex flex-col gap-4">
-            {piece2Desc && (
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-yellow-550 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-yellow-550/10 border border-yellow-550/20 font-display">
-                    2-Piece Set
-                  </span>
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed">{piece2Desc}</p>
-              </div>
-            )}
-            
-            {piece4Desc && (
-              <div className="border-t border-gray-950 pt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-yellow-550 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-yellow-550/10 border border-yellow-550/20 font-display">
-                    4-Piece Set
-                  </span>
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed">{piece4Desc}</p>
-              </div>
-            )}
+          <div className="fantasy-detail-secondary atlas-relic-effects">
+            {[{ pieces: 2, description: piece2Desc }, { pieces: 4, description: piece4Desc }].map(({ pieces, description }) => (
+              description && <section key={pieces}>
+                <h2>{vi ? `Bộ ${pieces} món` : `${pieces}-Piece Set`}</h2>
+                <p>{description}</p>
+              </section>
+            ))}
           </div>
         </div>
 
-        {/* Characters that can use this set */}
-        <section>
-          <h2 className="text-xl font-black text-white mb-5 flex items-center gap-3 font-display uppercase tracking-wider">
-            <span className="w-1 h-5 rounded-full bg-yellow-500 inline-block"></span>
-            Recommended For
-            <span className="text-gray-500 text-xs font-bold uppercase tracking-widest ml-1 font-sans">({characters.length} characters)</span>
-          </h2>
+        {children}
 
+        <section>
+          <h2 className="atlas-section-title mb-5">
+            {vi ? 'Nhân vật đề xuất' : 'Recommended characters'} <span className="atlas-result-count">({characters.length})</span>
+          </h2>
           {characters.length > 0 ? (
             <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3">
               {characters.map((char) => (
@@ -210,25 +149,17 @@ export default function ArtifactDetailClient({ artifactSet: initialSet, characte
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-2xl">👤</div>
                     )}
-                    <div className="absolute bottom-1 right-1 w-4 h-4 bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/5">
-                      <FallbackImage
-                        src={`/assets/elements/${char.element.toLowerCase()}.webp`}
-                        alt={char.element}
-                        width={12}
-                        height={12}
-                        className="drop-shadow-md"
-                      />
-                    </div>
+                    <ElementIcon element={char.element} label={char.element} className="absolute bottom-1 right-1" />
                   </div>
-                  <p className="text-[10px] text-gray-400 text-center leading-tight group-hover:text-white transition-colors line-clamp-2">
+                  <p className="text-sm text-[var(--text-secondary)] text-center font-semibold leading-tight group-hover:text-[var(--text-primary)] transition-colors">
                     {locale === 'en' ? char.nameEn : char.nameVi}
                   </p>
                 </Link>
               ))}
             </div>
           ) : (
-            <div className="bg-[#171410]/30 border border-gray-900/60 rounded-2xl p-8 text-center text-gray-500 text-sm">
-              No recommended builds currently list this artifact set.
+            <div className="atlas-surface p-8 text-center text-sm">
+              {vi ? 'Chưa có build đề xuất cho bộ thánh di vật này.' : 'No recommended builds currently list this artifact set.'}
             </div>
           )}
         </section>

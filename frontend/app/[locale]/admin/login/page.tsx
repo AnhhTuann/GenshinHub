@@ -1,138 +1,140 @@
 "use client";
-import { useState, useTransition } from 'react';
+import { Suspense, useState, useTransition } from 'react';
 import { loginAdmin } from '@/lib/adminAuth';
-import { useRouter, useParams } from 'next/navigation';
+import { Eye, EyeOff, LoaderCircle, Shield } from 'lucide-react';
+import { useParams, useSearchParams } from 'next/navigation';
 
-export default function AdminLoginPage() {
+const COPY = {
+  en: {
+    title: 'Admin sign in',
+    subtitle: 'GenshinHub control panel',
+    username: 'Admin username',
+    password: 'Admin password',
+    show: 'Show password',
+    hide: 'Hide password',
+    submit: 'Enter Admin Panel',
+    verifying: 'Verifying…',
+    expired: 'Your Admin session expired. Please sign in again.',
+    denied: 'This customer account does not have Admin access.',
+    note: 'Access is limited to authorized administrators.',
+    fail: 'Admin sign-in failed.',
+  },
+  vi: {
+    title: 'Đăng nhập Admin',
+    subtitle: 'Bảng điều khiển GenshinHub',
+    username: 'Tên đăng nhập Admin',
+    password: 'Mật khẩu Admin',
+    show: 'Hiện mật khẩu',
+    hide: 'Ẩn mật khẩu',
+    submit: 'Vào bảng Admin',
+    verifying: 'Đang xác thực…',
+    expired: 'Phiên Admin đã hết hạn. Vui lòng đăng nhập lại.',
+    denied: 'Tài khoản này không có quyền truy cập Admin.',
+    note: 'Chỉ quản trị viên được phép truy cập.',
+    fail: 'Đăng nhập Admin thất bại.',
+  },
+} as const;
+
+function AdminLoginForm() {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError]       = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
   const params = useParams();
-  const locale = (params?.locale as string) ?? 'vi';
+  const searchParams = useSearchParams();
+  const rawLocale = (params?.locale as string) ?? 'en';
+  const locale: 'en' | 'vi' = rawLocale === 'vi' ? 'vi' : 'en';
+  const copy = COPY[locale];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setError('');
     startTransition(async () => {
-      const result = await loginAdmin(password);
+      const result = await loginAdmin(username, password, locale);
       if (result.error) {
         setError(result.error);
       } else {
-        router.push(`/${locale}/admin`);
-        router.refresh();
+        // A full navigation avoids an RSC prefetch of this login route, whose
+        // middleware redirect can otherwise be cross-origin in local dev.
+        window.location.assign(`/${locale}/admin`);
       }
     });
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'var(--bg-void, #0d0c0a)' }}
-    >
+    <div className="grid min-h-[calc(100svh-11rem)] place-items-center px-3 py-8">
+      <section className="atlas-surface w-full max-w-md p-5 sm:p-8" aria-labelledby="admin-access-title">
+        <header className="mb-6">
+          <span className="atlas-quick-icon mb-4"><Shield size={24} aria-hidden="true" /></span>
+          <h1 id="admin-access-title" className="atlas-section-title">{copy.title}</h1>
+          <p className="mt-2 text-sm text-[var(--text-secondary)]">{copy.subtitle}</p>
+        </header>
 
-      <div
-        className="w-full max-w-md rounded-3xl p-8"
-        style={{
-          background: 'rgba(23,20,16,0.92)',
-          backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(232,182,76,0.15)',
-          boxShadow: '0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03)',
-        }}
-      >
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <div
-            className="inline-flex w-16 h-16 rounded-2xl items-center justify-center mb-4 text-3xl"
-            style={{
-              background: 'linear-gradient(135deg, rgba(232,182,76,0.15), rgba(10,14,34,0.9)',
-              border: '1px solid rgba(232,182,76,0.25)',
-              boxShadow: '0 0 30px rgba(232,182,76,0.12)',
-            }}
-          >
-            🛡️
-          </div>
-          <h1
-            className="text-2xl font-black uppercase tracking-[0.1em]"
-            style={{
-              fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-              background: 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            Admin Access
-          </h1>
-          <p className="text-white/30 text-xs mt-1 font-medium tracking-wider">GENSHINHUB CONTROL PANEL</p>
-        </div>
+        {searchParams.get('expired') === '1' && (
+          <p role="status" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-sm text-amber-200">
+            {copy.expired}
+          </p>
+        )}
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="flex flex-col gap-1.5">
-            <label className="text-[11px] font-bold uppercase tracking-widest text-white/35">
-              Admin Password
-            </label>
+        {searchParams.get('denied') === '1' && (
+          <p role="status" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-sm text-amber-200">
+            {copy.denied}
+          </p>
+        )}
+
+        <form onSubmit={handleSubmit} aria-busy={isPending} className="fantasy-auth-form grid gap-4">
+          <div className="grid gap-2">
+            <label htmlFor="admin-username" className="text-sm font-semibold">{copy.username}</label>
             <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              autoFocus
-              className="w-full px-4 py-3 rounded-xl text-sm font-medium outline-none"
-              style={{
-                background: 'rgba(5,8,20,0.8)',
-                border: error ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(255,255,255,0.08)',
-                color: 'rgba(255,255,255,0.9)',
-                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-              }}
-              onFocus={e => {
-                e.target.style.borderColor = 'rgba(232,182,76,0.4)';
-                e.target.style.boxShadow = '0 0 0 3px rgba(232,182,76,0.08)';
-              }}
-              onBlur={e => {
-                e.target.style.borderColor = error ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.08)';
-                e.target.style.boxShadow = 'none';
-              }}
+              id="admin-username"
+              type="text"
+              autoComplete="username"
+              value={username}
+              onChange={event => setUsername(event.target.value)}
+              aria-invalid={Boolean(error)}
+              className="min-h-11 w-full rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] px-3 py-2.5"
+              required
             />
-            {error && (
-              <p className="text-red-400 text-xs font-medium flex items-center gap-1.5">
-                <svg className="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                </svg>
-                {error}
-              </p>
-            )}
           </div>
 
-          <button
-            type="submit"
-            disabled={isPending || !password}
-            className="w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{
-              background: isPending
-                ? 'rgba(232,182,76,0.4)'
-                : 'linear-gradient(135deg, #ffdf9e, #e8b64c)',
-              color: '#121109',
-              boxShadow: isPending ? 'none' : '0 6px 24px rgba(232,182,76,0.3)',
-            }}
-          >
-            {isPending ? (
-              <span className="flex items-center justify-center gap-2">
-                <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                </svg>
-                Verifying...
-              </span>
-            ) : '→  Enter Admin Panel'}
+          <div className="grid gap-2">
+            <label htmlFor="admin-password" className="text-sm font-semibold">{copy.password}</label>
+            <div className="relative">
+              <input
+                id="admin-password"
+                type={showPassword ? 'text' : 'password'}
+                autoComplete="current-password"
+                value={password}
+                onChange={event => setPassword(event.target.value)}
+                aria-invalid={Boolean(error)}
+                aria-describedby={error ? 'admin-access-error' : undefined}
+                className="min-h-11 w-full rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] px-3 py-2.5 pr-12"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(value => !value)}
+                aria-label={showPassword ? copy.hide : copy.show}
+                className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-[var(--text-secondary)]"
+              >
+                {showPassword ? <EyeOff size={18} aria-hidden="true" /> : <Eye size={18} aria-hidden="true" />}
+              </button>
+            </div>
+            {error && <p id="admin-access-error" role="alert" className="text-sm text-red-300">{error}</p>}
+          </div>
+
+          <button type="submit" disabled={isPending || !username || !password}
+            className="atlas-auth-submit flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 font-bold disabled:cursor-not-allowed disabled:opacity-65">
+            {isPending ? <><LoaderCircle size={18} className="motion-safe:animate-spin" aria-hidden="true" />{copy.verifying}</> : copy.submit}
           </button>
         </form>
-
-        <p className="text-center text-white/15 text-[10px] mt-6 font-medium tracking-wider">
-          Unauthorized access is prohibited · GenshinHub Admin
-        </p>
-      </div>
+        <p className="mt-5 text-sm text-[var(--text-secondary)]">{copy.note}</p>
+      </section>
     </div>
   );
+}
+
+export default function AdminLoginPage() {
+  return <Suspense fallback={null}><AdminLoginForm /></Suspense>;
 }

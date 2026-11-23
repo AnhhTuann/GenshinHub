@@ -1,400 +1,74 @@
 "use client";
-import { useEffect, useRef, useCallback, useState } from 'react';
-import FallbackImage from '@/components/ui/FallbackImage';
+
+import { useEffect, useId, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { X } from 'lucide-react';
+import SpotlightPanel, { type SpotlightCharacter } from '@/components/characters/SpotlightPanel';
 
-/* ──────────────────────────────────────────────────────
-   Element particle config
-   ────────────────────────────────────────────────────── */
-const ELEMENT_PARTICLES: Record<string, { color: string; symbol: string; count: number }> = {
-  Pyro:    { color: '#ff5a45', symbol: '✦', count: 18 },
-  Hydro:   { color: '#3aa8ff', symbol: '◆', count: 16 },
-  Cryo:    { color: '#8fe8f5', symbol: '❄', count: 20 },
-  Electro: { color: '#cf8fff', symbol: '⚡', count: 16 },
-  Anemo:   { color: '#35d6c5', symbol: '◎', count: 22 },
-  Geo:     { color: '#ffd34d', symbol: '◇', count: 14 },
-  Dendro:  { color: '#9ede5f', symbol: '✿', count: 18 },
-};
-
-const ELEMENT_GLOW: Record<string, string> = {
-  Pyro:    'rgba(255,90,69,0.35)',
-  Hydro:   'rgba(58,168,255,0.35)',
-  Cryo:    'rgba(143,232,245,0.35)',
-  Electro: 'rgba(207,143,255,0.35)',
-  Anemo:   'rgba(53,214,197,0.35)',
-  Geo:     'rgba(255,211,77,0.35)',
-  Dendro:  'rgba(158,222,95,0.35)',
-};
-
-const ELEMENT_COLOR: Record<string, string> = {
-  Pyro:    '#ff5a45',
-  Hydro:   '#3aa8ff',
-  Cryo:    '#8fe8f5',
-  Electro: '#cf8fff',
-  Anemo:   '#35d6c5',
-  Geo:     '#ffd34d',
-  Dendro:  '#9ede5f',
-};
-
-interface SplashArtOverlayProps {
+interface Props {
   open: boolean;
   onClose: () => void;
-  character: {
-    id: string;
-    nameEn: string;
-    nameVi?: string;
-    element: string;
-    rarity: number;
-    splashArtUrl: string;
-    avatarUrl?: string;
-    weapon?: string;
-    role?: string;
-    tier?: string;
-  };
+  character: SpotlightCharacter & { nameEn: string; nameVi?: string; title?: string; role?: string; tier?: string };
   href: string;
-  locale?: string;
+  locale: string;
 }
 
-export default function SplashArtOverlay({ open, onClose, character, href, locale }: SplashArtOverlayProps) {
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+export default function SplashArtOverlay({ open, onClose, character, href, locale }: Props) {
+  const ref = useRef<HTMLDialogElement>(null);
+  const headingId = useId();
+  const vi = locale === 'vi';
+  const name = vi && character.nameVi ? character.nameVi : character.nameEn;
 
-  const el = character.element;
-  const particleConfig = ELEMENT_PARTICLES[el] ?? ELEMENT_PARTICLES.Pyro;
-  const glowColor = ELEMENT_GLOW[el] ?? 'rgba(255,255,255,0.2)';
-  const elementColor = ELEMENT_COLOR[el] ?? '#f5f1e6';
-  const displayName = locale === 'vi' && character.nameVi ? character.nameVi : character.nameEn;
+  function dismiss() {
+    ref.current?.close();
+    onClose();
+  }
 
-  // Close on Escape
   useEffect(() => {
-    if (!open) return;
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
-  }, [open, onClose]);
-
-  // Lock body scroll
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
+    const dialog = ref.current;
+    if (!open || !dialog) return;
+    const trigger = document.activeElement;
+    const overflow = document.body.style.overflow;
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+    return () => {
+      if (dialog.open) dialog.close();
+      document.body.style.overflow = overflow;
+      if (trigger instanceof HTMLElement && trigger.isConnected) trigger.focus({ preventScroll: true });
+    };
   }, [open]);
 
-  // Click outside
-  const handleBackdropClick = useCallback((e: React.MouseEvent) => {
-    if (e.target === overlayRef.current) onClose();
-  }, [onClose]);
-
-  const tierColor: Record<string, string> = {
-    SS: '#ff5252', S: '#f5a83d', A: '#9ede5f', B: '#3aa8ff', C: '#8e97a8'
-  };
-
-  if (typeof document === 'undefined') return null;
-
   return createPortal(
-    <AnimatePresence>
-      {open && (
-        /* ── Backdrop ── */
-        <motion.div
-          ref={overlayRef}
-          onClick={handleBackdropClick}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          style={{ zIndex: 9999 }}
-          className="fixed inset-0 flex items-center justify-center"
-        >
-          {/* ── Blurred void background ── */}
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
-
-          {/* ── Element glow orb ── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: `radial-gradient(ellipse 70% 60% at 60% 45%, ${glowColor} 0%, transparent 65%)`,
-            }}
-          />
-
-          {/* ── Particle System ── */}
-          {!isMobile && (
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              {Array.from({ length: particleConfig.count }).map((_, i) => {
-                const pseudoRandom = (seed: number) => {
-                  const x = Math.sin(seed) * 10000;
-                  return x - Math.floor(x);
-                };
-                const left = 30 + pseudoRandom(i) * 45;
-                const delay = pseudoRandom(i + 100) * 3;
-                const dur = 2.5 + pseudoRandom(i + 200) * 3;
-                const size = 8 + pseudoRandom(i + 300) * 14;
-                const driftX = (pseudoRandom(i + 400) - 0.5) * 60;
-                return (
-                  <div
-                    key={i}
-                    style={{
-                      position: 'absolute',
-                      left: `${left}%`,
-                      bottom: '15%',
-                      color: particleConfig.color,
-                      fontSize: `${size}px`,
-                      filter: `drop-shadow(0 0 ${size / 2}px ${particleConfig.color})`,
-                      textShadow: `0 0 ${size}px ${particleConfig.color}`,
-                      opacity: 0,
-                      '--drift-x': `${driftX}px`,
-                      animation: `float-particle ${dur}s ease-out ${delay}s infinite`
-                    } as React.CSSProperties}
-                  >
-                    {particleConfig.symbol}
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {/* ── Main modal card ── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 20 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-5xl h-[85vh] max-h-[680px] mx-4 rounded-3xl overflow-hidden"
-            style={{
-              border: `1px solid ${elementColor}30`,
-              boxShadow: `0 0 60px -10px ${glowColor}, 0 40px 80px -20px rgba(0,0,0,0.8)`,
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* ── Splash Art with Ken Burns ── */}
-            <div className="absolute inset-0">
-              <motion.div
-                className="absolute inset-0"
-                initial={{ scale: 1, x: '0%', y: '0%' }}
-                animate={{ scale: 1.08, x: '-2%', y: '-1.5%' }}
-                transition={{ duration: 9, ease: 'linear' }}
-              >
-                <FallbackImage
-                  src={character.splashArtUrl || character.avatarUrl || '/assets/characters/PlayerGirl/avatar.webp'}
-                  alt={displayName}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 900px"
-                  className="object-cover object-top"
-                />
-              </motion.div>
-
-              {/* Gradient overlays — cinematic depth */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: `linear-gradient(135deg, ${elementColor}12 0%, transparent 60%)`,
-                }}
-              />
-            </div>
-
-            {/* ── Decorative element line top ── */}
-            <div
-              className="absolute top-0 left-0 right-0 h-[2px]"
-              style={{
-                background: `linear-gradient(90deg, transparent 0%, ${elementColor} 40%, ${elementColor}aa 60%, transparent 100%)`,
-              }}
-            />
-
-            {/* ── Close button ── */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-              style={{
-                background: 'rgba(0,0,0,0.6)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                backdropFilter: 'blur(8px)',
-              }}
-            >
-              <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {/* ── Content — Left Panel ── */}
-            <div className="absolute inset-y-0 left-0 w-[48%] flex flex-col justify-end pb-8 pl-8 pr-4 z-20">
-              {/* Element + Tier badge */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-3 mb-4"
-              >
-                <div
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
-                  style={{
-                    background: `${elementColor}20`,
-                    border: `1px solid ${elementColor}50`,
-                    color: elementColor,
-                  }}
-                >
-                  <FallbackImage
-                    src={`/assets/elements/${el.toLowerCase()}.webp`}
-                    alt={el}
-                    width={16}
-                    height={16}
-                    className="object-contain"
-                  />
-                  {el}
-                </div>
-
-                {character.tier && (
-                  <div
-                    className="px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider"
-                    style={{
-                      background: tierColor[character.tier] ?? '#555',
-                      color: '#fff',
-                      boxShadow: `0 0 12px ${tierColor[character.tier] ?? '#555'}60`,
-                    }}
-                  >
-                    {character.tier} Tier
-                  </div>
-                )}
-              </motion.div>
-
-              {/* Character name */}
-              <motion.div
-                initial={{ opacity: 0, y: 24, letterSpacing: '0.3em' }}
-                animate={{ opacity: 1, y: 0, letterSpacing: '0.04em' }}
-                transition={{ delay: 0.28, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="mb-2"
-              >
-                <h2
-                  className="text-4xl sm:text-5xl font-black leading-none"
-                  style={{
-                    fontFamily: 'var(--font-cinzel, Cinzel, serif)',
-                    background: `linear-gradient(135deg, #fff 0%, ${elementColor} 60%, #fff8e2 100%)`,
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: 'none',
-                    filter: `drop-shadow(0 0 24px ${glowColor})`,
-                  }}
-                >
-                  {displayName}
-                </h2>
-              </motion.div>
-
-              {/* Stars */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-                className="flex gap-0.5 mb-5"
-              >
-                {Array.from({ length: character.rarity }).map((_, i) => (
-                  <motion.svg
-                    key={i}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.42 + i * 0.05, type: 'spring', stiffness: 400, damping: 20 }}
-                    className="w-5 h-5"
-                    style={{ color: character.rarity === 5 ? '#ffd34d' : '#c98fff' }}
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </motion.svg>
-                ))}
-              </motion.div>
-
-              {/* Quick info */}
-              {(character.weapon || character.role) && (
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.45, duration: 0.5 }}
-                  className="flex flex-wrap gap-2 mb-6"
-                >
-                  {character.weapon && (
-                    <span
-                      className="px-3 py-1 rounded-lg text-xs font-semibold uppercase tracking-wider"
-                      style={{
-                        background: 'rgba(255,255,255,0.08)',
-                        border: '1px solid rgba(255,255,255,0.12)',
-                        color: 'rgba(255,255,255,0.7)',
-                      }}
-                    >
-                      {character.weapon}
-                    </span>
-                  )}
-                  {character.role && (
-                    <span
-                      className="px-3 py-1 rounded-lg text-xs font-semibold"
-                      style={{
-                        background: `${elementColor}18`,
-                        border: `1px solid ${elementColor}35`,
-                        color: elementColor,
-                      }}
-                    >
-                      {character.role}
-                    </span>
-                  )}
-                </motion.div>
-              )}
-
-              {/* CTA Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.55, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <a
-                  href={href}
-                  className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                  style={{
-                    background: `linear-gradient(135deg, ${elementColor}cc, ${elementColor})`,
-                    color: '#000',
-                    boxShadow: `0 8px 32px -4px ${glowColor}`,
-                  }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 48px -4px ${glowColor}, 0 0 0 1px ${elementColor}`;
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 32px -4px ${glowColor}`;
-                  }}
-                >
-                  <span style={{ fontFamily: 'var(--font-cinzel, Cinzel, serif)' }}>View Full Build</span>
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              </motion.div>
-            </div>
-
-            {/* ── Decorative element line bottom ── */}
-            <div
-              className="absolute bottom-0 left-0 right-0 h-[1px]"
-              style={{
-                background: `linear-gradient(90deg, ${elementColor}80 0%, transparent 100%)`,
-              }}
-            />
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>,
-    document.body
+    <dialog ref={ref} aria-labelledby={headingId} className="character-preview"
+      onKeyDown={event => {
+        if (event.key !== 'Tab') return;
+        const controls = event.currentTarget.querySelectorAll<HTMLElement>('button, a[href]');
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }}
+      onCancel={event => { event.preventDefault(); dismiss(); }}
+      onClick={event => { if (event.target === event.currentTarget) dismiss(); }}>
+      <div className="character-preview-inner">
+        <button autoFocus type="button" className="character-preview-close fantasy-action"
+          aria-label={vi ? 'Đóng xem trước' : 'Close preview'} onClick={dismiss}><X size={20} /></button>
+        <SpotlightPanel compact character={character} name={name} title={character.title} locale={locale}
+          headingId={headingId} actions={<Link className="fantasy-action fantasy-action-primary" href={href} onClick={dismiss}>
+            {vi ? 'Xem bản build' : 'View Full Build'}
+          </Link>}>
+          {(character.tier || character.role) && <p className="character-spotlight-title">
+            {[character.tier, character.role].filter(Boolean).join(' · ')}
+          </p>}
+        </SpotlightPanel>
+      </div>
+    </dialog>,
+    document.body,
   );
 }

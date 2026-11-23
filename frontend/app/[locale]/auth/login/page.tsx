@@ -6,7 +6,6 @@ import { useParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { useUser } from '@/context/UserContext';
 import { Loader2, Mail, Lock, Eye, EyeOff } from 'lucide-react';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -30,7 +29,7 @@ export default function LoginPage() {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, locale }),
       });
 
       const data = await res.json();
@@ -40,7 +39,7 @@ export default function LoginPage() {
       }
 
       setUser(data.user);
-      toast.success('Logged in successfully!');
+      toast.success(locale === 'vi' ? 'Đăng nhập thành công!' : 'Signed in successfully!');
       router.push('/profile');
       router.refresh(); // Ensure layout updates
     } catch (err: any) {
@@ -49,62 +48,28 @@ export default function LoginPage() {
     }
   };
 
-  const handleSocialLogin = async (provider: string, token: string) => {
-    setLoading(true);
-    try {
-      const res = await fetch('/api/auth/social', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ provider, token }),
-      });
-
-      const result = await res.json();
-      if (!res.ok) throw new Error(result.error || 'Social login failed');
-
-      setUser(result.user);
-      toast.success('Logged in successfully!');
-      router.push('/profile');
-      router.refresh();
-    } catch (err: any) {
-      toast.error(err.message);
-      setLoading(false);
-    }
-  };
-
-  const handleGoogleSuccess = async (credentialResponse: any) => {
-    const token = credentialResponse.credential;
-    await handleSocialLogin('google', token);
-  };
-
   return (
-    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || 'dummy-client-id'}>
     <main className="relative flex-1 flex items-center justify-center p-4">
 
       <div className="w-full max-w-md">
-        <div className="bg-[#1c1813] border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="atlas-surface px-5 py-7 sm:p-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">
-              <Lock className="w-7 h-7 text-black" />
+            <div className="w-16 h-16 rounded-2xl bg-[var(--accent-primary-dim)] text-[var(--accent-primary-light)] flex items-center justify-center mx-auto mb-4">
+              <Lock className="w-7 h-7" />
             </div>
             <h1
-              className="text-3xl font-black uppercase tracking-widest mb-2"
-              style={{
-                fontFamily: 'var(--font-cinzel)',
-                background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="atlas-section-title mb-2"
             >
-              Welcome Back
+              {locale === 'vi' ? 'Chào mừng trở lại' : 'Welcome Back'}
             </h1>
-            <p className="text-white/40 text-sm">Sign in to your GenshinHub account</p>
+            <p className="text-white/40 text-sm">{locale === 'vi' ? 'Đăng nhập tài khoản GenshinHub' : 'Sign in to your GenshinHub account'}</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} aria-busy={loading} className="fantasy-auth-form space-y-4">
             {/* Email */}
             <div>
-              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
+              <label htmlFor="login-email" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <Mail className="h-5 w-5 text-white/30" />
@@ -112,6 +77,8 @@ export default function LoginPage() {
                 <input
                   type="email"
                   required
+                  id="login-email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
@@ -123,12 +90,12 @@ export default function LoginPage() {
             {/* Password */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="block text-xs font-bold text-white/60 uppercase tracking-wider ml-1">Password</label>
+                <label htmlFor="login-password" className="block text-xs font-bold text-white/60 uppercase tracking-wider ml-1">{locale === 'vi' ? 'Mật khẩu' : 'Password'}</label>
                 <Link
                   href="/auth/forgot-password"
                   className="text-xs text-[#e8b64c] hover:text-[#ffdf9e] transition-colors font-medium"
                 >
-                  Forgot password?
+                  {locale === 'vi' ? 'Quên mật khẩu?' : 'Forgot password?'}
                 </Link>
               </div>
               <div className="relative">
@@ -138,6 +105,8 @@ export default function LoginPage() {
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
+                  id="login-password"
+                  autoComplete="current-password"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
@@ -147,7 +116,9 @@ export default function LoginPage() {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-                  tabIndex={-1}
+                  aria-label={showPassword
+                    ? (locale === 'vi' ? 'Ẩn mật khẩu' : 'Hide password')
+                    : (locale === 'vi' ? 'Hiện mật khẩu' : 'Show password')}
                 >
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
@@ -164,79 +135,33 @@ export default function LoginPage() {
                 className="w-4 h-4 rounded border-white/10 bg-white/5 text-[#e8b64c] focus:ring-[#e8b64c]/50 focus:ring-offset-0 cursor-pointer accent-[#e8b64c]"
               />
               <label htmlFor="rememberMe" className="ml-2 text-sm text-white/60 cursor-pointer select-none">
-                Remember me
+                {locale === 'vi' ? 'Ghi nhớ đăng nhập' : 'Remember me'}
               </label>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 mt-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{
-                background: 'linear-gradient(135deg, #e8b64c 0%, #a97e2f 100%)',
-                boxShadow: '0 4px 15px rgba(232,182,76,0.3)',
-              }}
+              className="atlas-auth-submit w-full py-3.5 mt-4 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative text-black flex items-center justify-center gap-2">
-                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Login'}
+              <span className="relative flex items-center justify-center gap-2">
+                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : (locale === 'vi' ? 'Đăng nhập' : 'Sign in')}
               </span>
             </button>
           </form>
 
           {/* Divider */}
-          <div className="mt-6 flex items-center justify-between">
-            <span className="w-1/5 border-b border-white/10 lg:w-1/4"></span>
-            <span className="text-xs text-center text-white/40 uppercase">Or login with</span>
-            <span className="w-1/5 border-b border-white/10 lg:w-1/4"></span>
-          </div>
-
-          {/* Social Login */}
-          <div className="mt-6 flex gap-4">
-            <div className="w-1/2">
-              {process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID && process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID !== 'dummy-client-id' ? (
-                <GoogleLogin
-                  onSuccess={handleGoogleSuccess}
-                  onError={() => toast.error('Google login failed')}
-                  theme="filled_black"
-                  shape="rectangular"
-                  width="100%"
-                  text="signin_with"
-                />
-              ) : (
-                <button
-                  disabled
-                  className="w-full h-[40px] flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white/30 rounded-lg text-sm cursor-not-allowed"
-                  title="Google login not configured"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                  Google (N/A)
-                </button>
-              )}
-            </div>
-            <div className="w-1/2">
-              <button
-                disabled
-                className="w-full h-[40px] flex items-center justify-center gap-2 bg-[#1877F2]/20 border border-[#1877F2]/30 text-[#1877F2]/50 rounded-lg text-sm cursor-not-allowed"
-                title="Facebook login coming soon"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook (Soon)
-              </button>
-            </div>
-          </div>
-
           <div className="mt-8 text-center border-t border-white/5 pt-6">
             <p className="text-white/40 text-sm">
-              Don&apos;t have an account?{' '}
+              {locale === 'vi' ? 'Chưa có tài khoản?' : "Don't have an account?"}{' '}
               <Link href="/auth/register" className="text-[#e8b64c] hover:text-[#ffdf9e] font-bold transition-colors">
-                Sign up
+                {locale === 'vi' ? 'Đăng ký' : 'Sign up'}
               </Link>
             </p>
           </div>
         </div>
       </div>
     </main>
-    </GoogleOAuthProvider>
   );
 }

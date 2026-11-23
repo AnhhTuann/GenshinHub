@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { useRouter, Link } from '@/i18n/routing';
-import { useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
-import { Loader2, Lock, KeyRound, Eye, EyeOff, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
+import { Loader2, Lock, Eye, EyeOff, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
 
 function getPasswordStrength(password: string): { score: number; label: string; color: string } {
   if (!password) return { score: 0, label: '', color: '' };
   let score = 0;
-  if (password.length >= 6) score++;
+  if (password.length >= 8) score++;
   if (password.length >= 10) score++;
   if (/[A-Z]/.test(password)) score++;
   if (/[0-9]/.test(password)) score++;
@@ -23,12 +23,12 @@ function getPasswordStrength(password: string): { score: number; label: string; 
 
 function ResetPasswordForm() {
   const router = useRouter();
+  const params = useParams();
+  const locale: 'en' | 'vi' = (params?.locale as string) === 'vi' ? 'vi' : 'en';
   const searchParams = useSearchParams();
-  const emailFromUrl = searchParams.get('email') || '';
+  const tokenFromUrl = searchParams.get('token') || '';
 
   const [formData, setFormData] = useState({
-    email: emailFromUrl,
-    otp: '',
     newPassword: '',
     confirmPassword: '',
   });
@@ -45,15 +45,16 @@ function ResetPasswordForm() {
     e.preventDefault();
 
     if (formData.newPassword !== formData.confirmPassword) {
-      toast.error("Passwords don't match");
+      toast.error(locale === 'vi' ? 'Mật khẩu không khớp' : "Passwords don't match");
       return;
     }
-    if (formData.newPassword.length < 6) {
-      toast.error('Password must be at least 6 characters');
-      return;
-    }
-    if (formData.otp.length !== 6) {
-      toast.error('Please enter the 6-digit code');
+    const strong = formData.newPassword.length >= 8 && new TextEncoder().encode(formData.newPassword).length <= 72
+      && /[a-z]/.test(formData.newPassword) && /[A-Z]/.test(formData.newPassword)
+      && /[0-9]/.test(formData.newPassword) && /[^A-Za-z0-9]/.test(formData.newPassword);
+    if (!strong) {
+      toast.error(locale === 'vi'
+        ? 'Mật khẩu cần ít nhất 8 ký tự và tối đa 72 byte UTF-8, gồm chữ hoa, chữ thường, số và ký tự đặc biệt'
+        : 'Use at least 8 characters and at most 72 UTF-8 bytes, with upper/lower case, a number, and a symbol');
       return;
     }
 
@@ -63,9 +64,9 @@ function ResetPasswordForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: formData.email,
-          otp: formData.otp,
+          token: tokenFromUrl,
           newPassword: formData.newPassword,
+          locale,
         }),
       });
 
@@ -73,7 +74,7 @@ function ResetPasswordForm() {
       if (!res.ok) throw new Error(data.error || 'Failed to reset password');
 
       setSuccess(true);
-      toast.success('Password reset successfully!');
+      toast.success(locale === 'vi' ? 'Đã đặt lại mật khẩu!' : 'Password reset successfully!');
       setTimeout(() => router.push('/auth/login'), 2500);
     } catch (err: any) {
       toast.error(err.message);
@@ -88,71 +89,44 @@ function ResetPasswordForm() {
         <div className="w-20 h-20 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-10 h-10 text-green-400" />
         </div>
-        <h2 className="text-xl font-black text-white uppercase tracking-widest">Password Reset!</h2>
-        <p className="text-white/50 text-sm">Redirecting you to login...</p>
+        <h2 className="text-xl font-black text-white uppercase tracking-widest">{locale === 'vi' ? 'Đã đặt lại mật khẩu!' : 'Password Reset!'}</h2>
+        <p className="text-white/50 text-sm">{locale === 'vi' ? 'Đang chuyển đến trang đăng nhập…' : 'Redirecting you to login...'}</p>
         <Loader2 className="w-5 h-5 text-[#e8b64c] animate-spin mx-auto" />
       </div>
     );
   }
 
+  if (!tokenFromUrl) {
+    return <p role="alert" className="text-center text-red-300">
+      {locale === 'vi' ? 'Mở liên kết đặt lại từ email của bạn.' : 'Open the reset link from your email.'}
+    </p>;
+  }
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Email (pre-filled, readonly) */}
-      <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
-        <input
-          type="email"
-          required
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white/70 placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 transition-all"
-          placeholder="your@email.com"
-        />
-      </div>
-
-      {/* OTP Code */}
-      <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">
-          Verification Code
-        </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <KeyRound className="h-5 w-5 text-white/30" />
-          </div>
-          <input
-            type="text"
-            required
-            value={formData.otp}
-            onChange={(e) => setFormData({ ...formData, otp: e.target.value.replace(/\D/g, '').slice(0, 6) })}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all tracking-[0.5em] font-mono text-lg text-center"
-            placeholder="000000"
-            maxLength={6}
-          />
-        </div>
-        <p className="text-[10px] text-white/30 mt-1 ml-1">Enter the 6-digit code sent to your email</p>
-      </div>
-
+    <form onSubmit={handleSubmit} className="space-y-4" aria-busy={loading}>
       {/* New Password */}
       <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">New Password</label>
+        <label htmlFor="new-password" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">{locale === 'vi' ? 'Mật khẩu mới' : 'New Password'}</label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <Lock className="h-5 w-5 text-white/30" />
           </div>
           <input
+            id="new-password"
+            autoComplete="new-password"
             type={showPassword ? 'text' : 'password'}
             required
             value={formData.newPassword}
             onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
             className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
             placeholder="••••••••"
-            minLength={6}
+            minLength={8}
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-            tabIndex={-1}
+            aria-label={showPassword ? (locale === 'vi' ? 'Ẩn mật khẩu' : 'Hide password') : (locale === 'vi' ? 'Hiện mật khẩu' : 'Show password')}
           >
             {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
@@ -175,12 +149,14 @@ function ResetPasswordForm() {
 
       {/* Confirm Password */}
       <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Confirm New Password</label>
+        <label htmlFor="confirm-new-password" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">{locale === 'vi' ? 'Xác nhận mật khẩu mới' : 'Confirm New Password'}</label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <Lock className="h-5 w-5 text-white/30" />
           </div>
           <input
+            id="confirm-new-password"
+            autoComplete="new-password"
             type={showConfirm ? 'text' : 'password'}
             required
             value={formData.confirmPassword}
@@ -196,7 +172,7 @@ function ResetPasswordForm() {
             type="button"
             onClick={() => setShowConfirm(!showConfirm)}
             className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-            tabIndex={-1}
+            aria-label={showConfirm ? (locale === 'vi' ? 'Ẩn mật khẩu' : 'Hide password') : (locale === 'vi' ? 'Hiện mật khẩu' : 'Show password')}
           >
             {showConfirm ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
@@ -210,22 +186,18 @@ function ResetPasswordForm() {
           )}
         </div>
         {passwordsMismatch && (
-          <p className="text-[10px] text-red-400 mt-1 ml-1">Passwords do not match</p>
+          <p className="text-[10px] text-red-400 mt-1 ml-1">{locale === 'vi' ? 'Mật khẩu không khớp' : 'Passwords do not match'}</p>
         )}
       </div>
 
       <button
         type="submit"
-        disabled={loading || passwordsMismatch || formData.otp.length < 6}
-        className="w-full py-3.5 mt-2 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
-        style={{
-          background: 'linear-gradient(135deg, #e8b64c 0%, #a97e2f 100%)',
-          boxShadow: '0 4px 15px rgba(232,182,76,0.3)',
-        }}
+        disabled={loading || passwordsMismatch || formData.newPassword.length < 8 || !tokenFromUrl}
+        className="atlas-auth-submit w-full py-3.5 mt-2 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-        <span className="relative text-black flex items-center justify-center gap-2">
-          {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><ShieldCheck className="w-4 h-4" /> Reset Password</>}
+        <span className="relative flex items-center justify-center gap-2">
+          {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><ShieldCheck className="w-4 h-4" /> {locale === 'vi' ? 'Đặt lại mật khẩu' : 'Reset Password'}</>}
         </span>
       </button>
     </form>
@@ -233,27 +205,22 @@ function ResetPasswordForm() {
 }
 
 export default function ResetPasswordPage() {
+  const locale = useParams()?.locale;
   return (
     <main className="relative min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
 
       <div className="w-full max-w-md">
-        <div className="bg-[#1c1813] border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="atlas-surface px-5 py-7 sm:p-8">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e8b64c] to-[#a97e2f] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-[#e8b64c]/20">
-              <ShieldCheck className="w-7 h-7 text-black" />
+            <div className="w-16 h-16 rounded-2xl bg-[var(--accent-primary-dim)] text-[var(--accent-primary-light)] flex items-center justify-center mx-auto mb-4">
+              <ShieldCheck className="w-7 h-7" />
             </div>
             <h1
-              className="text-2xl font-black uppercase tracking-widest mb-2"
-              style={{
-                fontFamily: 'var(--font-cinzel)',
-                background: 'linear-gradient(135deg, #ffdf9e 0%, #e8b64c 60%, #a97e2f 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="atlas-section-title mb-2"
             >
-              Reset Password
+              {locale === 'vi' ? 'Đặt lại mật khẩu' : 'Reset Password'}
             </h1>
-            <p className="text-white/40 text-sm">Enter the code from your email and set a new password</p>
+            <p className="text-white/40 text-sm">{locale === 'vi' ? 'Đặt mật khẩu mới bằng liên kết trong email' : 'Enter the code from your email and set a new password'}</p>
           </div>
 
           <Suspense fallback={<div className="flex justify-center py-8"><Loader2 className="w-8 h-8 text-[#e8b64c] animate-spin" /></div>}>
@@ -266,7 +233,7 @@ export default function ResetPasswordPage() {
               className="inline-flex items-center gap-2 text-white/40 hover:text-white text-sm transition-colors font-medium"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Forgot Password
+              {locale === 'vi' ? 'Yêu cầu liên kết mới' : 'Back to Forgot Password'}
             </Link>
           </div>
         </div>

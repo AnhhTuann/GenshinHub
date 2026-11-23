@@ -1,0 +1,14 @@
+{
+  "records": 292,
+  "statusCounts": {
+    "NEW": 18,
+    "ROLE_CHANGED": 23,
+    "CONSTELLATION_CHANGED": 175,
+    "UNMATCHED": 2,
+    "UNCHANGED": 71,
+    "TIER_CHANGED": 201,
+    "ADMIN_CONFLICT": 203,
+    "EXPLANATION_MISSING": 194,
+    "NEEDS_REVIEW": 194
+  }
+}

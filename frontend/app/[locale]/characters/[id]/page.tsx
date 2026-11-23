@@ -1,50 +1,15 @@
-import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
 import { fetchGraphQL, GET_CHARACTER_BY_ID, GET_CHARACTERS, GET_WEAPONS, GET_ARTIFACTS, GET_MATERIALS } from '@/lib/graphql';
 import CharacterSidebar from '@/components/CharacterSidebar';
 import ScrollEntrance from '@/components/ScrollEntrance';
-import EditableWeaponsSection from '@/components/character-sections/EditableWeaponsSection';
-import EditableArtifactsSection from '@/components/character-sections/EditableArtifactsSection';
-import EditableStatsSection from '@/components/character-sections/EditableStatsSection';
-import EditableMetaTeamsSection from '@/components/characters/client/EditableMetaTeamsSection';
+import CharacterBuildSwitcher from '@/components/characters/client/CharacterBuildSwitcher';
+import { GET_CHARACTER_BUILDS } from '@/lib/graphql/queries/character';
 import CharacterStatsSection from '@/components/character-sections/CharacterStatsSection';
 import CharacterAscensionMatsSection from '@/components/character-sections/CharacterAscensionMatsSection';
 import CharacterTalentMatsSection from '@/components/character-sections/CharacterTalentMatsSection';
 import CharacterHero from '@/components/characters/server/CharacterHero';
-import CharacterOverview from '@/components/characters/server/CharacterOverview';
-import WishIntro from '@/components/WishIntro';
 import ThemeSetter from '@/context/ThemeSetter';
-
-const EL_COLOR: Record<string, string> = {
-  Pyro:    '#ff5a45',
-  Hydro:   '#3aa8ff',
-  Cryo:    '#8fe8f5',
-  Electro: '#cf8fff',
-  Anemo:   '#35d6c5',
-  Geo:     '#ffd34d',
-  Dendro:  '#9ede5f',
-};
-
-const EL_TEXT: Record<string, string> = {
-  Pyro:    'text-[#ff5a45]',
-  Hydro:   'text-[#3aa8ff]',
-  Cryo:    'text-[#8fe8f5]',
-  Electro: 'text-[#cf8fff]',
-  Anemo:   'text-[#35d6c5]',
-  Geo:     'text-[#ffd34d]',
-  Dendro:  'text-[#9ede5f]',
-};
-
-const EL_GLOW: Record<string, string> = {
-  Pyro:    'rgba(255,90,69,0.18)',
-  Hydro:   'rgba(58,168,255,0.18)',
-  Cryo:    'rgba(143,232,245,0.18)',
-  Electro: 'rgba(207,143,255,0.18)',
-  Anemo:   'rgba(53,214,197,0.18)',
-  Geo:     'rgba(255,211,77,0.18)',
-  Dendro:  'rgba(158,222,95,0.18)',
-};
 
 export async function generateStaticParams() {
   const data = await fetchGraphQL(GET_CHARACTERS);
@@ -79,21 +44,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function CharacterDetail({ params }: { params: Promise<{ id: string; locale: string }> }) {
   const p = await params;
   setRequestLocale(p.locale);
-  const [characterData, materialsData, charactersData, weaponsData, artifactsData] = await Promise.all([
-    fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }),
+  const [characterData, materialsData, charactersData, weaponsData, artifactsData, buildData] = await Promise.all([
+    fetchGraphQL(GET_CHARACTER_BY_ID, { id: p.id }, 0),
     fetchGraphQL(GET_MATERIALS),
     fetchGraphQL(GET_CHARACTERS),
     fetchGraphQL(GET_WEAPONS),
     fetchGraphQL(GET_ARTIFACTS),
+    fetchGraphQL(GET_CHARACTER_BUILDS, { id: p.id }, 0),
   ]);
   const character = characterData.character;
-  const materials = materialsData.materials;
+  const materials = materialsData.materials || [];
   const allCharacters = charactersData.characters || [];
   const allWeapons = weaponsData.weapons || [];
   const allArtifacts = artifactsData.artifacts || [];
   
   if (!character) {
-    return <div className="p-8 text-center text-white/50 flex flex-col items-center justify-center min-h-screen"><h2 className="text-2xl font-bold mb-4">Character Not Found</h2><p>This character does not exist or has not been added yet.</p></div>;
+    return <div className="p-8 text-center text-[var(--text-secondary)] flex flex-col items-center justify-center min-h-screen"><h2 className="text-2xl font-bold mb-4">Character Not Found</h2><p>This character does not exist or has not been added yet.</p></div>;
   }
 
   const t = await getTranslations({ locale: p.locale, namespace: 'Character' });
@@ -102,16 +68,6 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   const name    = locale === 'en' ? character.nameEn : character.nameVi;
   const title   = locale === 'en' ? character.titleEn : character.titleVi;
   const desc    = locale === 'en' ? character.descriptionEn : character.descriptionVi;
-
-  const is5Star        = character.rarity === 5;
-  const elColor        = EL_COLOR[character.element] ?? '#f5f1e6';
-  const elText         = EL_TEXT[character.element] ?? 'text-white';
-  const elGlow         = EL_GLOW[character.element] ?? 'rgba(255,255,255,0.1)';
-  const accentCls      = is5Star ? 'bg-yellow-400' : 'bg-purple-400';
-  const rarityBadge    = is5Star ? '★★★★★' : '★★★★';
-  const rarityStyle    = is5Star
-    ? 'bg-amber-400/10 text-amber-300 border-amber-400/20'
-    : 'bg-purple-400/10 text-purple-300 border-purple-400/20';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -126,120 +82,71 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
   };
 
   return (
-    <main className="min-h-screen text-white font-sans selection:bg-yellow-400/25 overflow-x-hidden" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
+    <main className="min-h-screen text-[var(--text-primary)] font-sans selection:bg-[var(--gold-glow)] overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
       <ThemeSetter element={character.element} />
       {/* ── JSON-LD Schema ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       
-      {/* ── CINEMATIC BANNER PULL INTRO ── */}
-      {character.splashArtUrl && <WishIntro imageUrl={character.splashArtUrl} element={character.element} />}
-
-      {/* ── Ambient element glow ── */}
-
-      {/* ── HERO BANNER ── */}
-      <CharacterHero 
-        character={character} 
-        name={name} 
-        title={title} 
-        elColor={elColor} 
-        elText={elText} 
-        elGlow={elGlow} 
-        rarityBadge={rarityBadge} 
-        rarityStyle={rarityStyle} 
-        tCommon={tCommon} 
-      />
+      <CharacterHero character={character} name={name || character.nameEn}
+        title={title} description={desc} locale={locale} backLabel={tCommon('back')}
+        baseStatsLabel={`${t('baseStats')} (Lv. 90)`}
+        statLabels={{ hp: t('hp'), atk: t('atk'), def: t('def') }} />
 
       {/* ── MAIN CONTENT ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-6 sm:mt-8 pb-16 sm:pb-24">
+      <div id="character-build" className="atlas-container mt-6 sm:mt-8 pb-16 sm:pb-24 scroll-mt-20">
         
         {/* CHARACTER INFO STRIP */}
-        <div className="w-full mb-8">
+        <div className="w-full mb-4">
           <CharacterSidebar character={character} allWeapons={allWeapons} />
         </div>
 
-        <div className="w-full flex flex-col gap-5">
+        <div className="atlas-build-flow">
 
-            {/* ── 1. OVERVIEW ── */}
-            <ScrollEntrance>
-              <CharacterOverview 
-                character={character} 
-                desc={desc} 
-                elColor={elColor} 
-                accentCls={accentCls} 
-                t={t} 
-              />
-            </ScrollEntrance>
-
-            {/* ── 2. BEST WEAPONS & ARTIFACTS (2 COLUMNS) ── */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-start">
-              {/* ── BEST WEAPONS ── */}
-              <ScrollEntrance delay={0.1}>
-                <EditableWeaponsSection characterId={character.id} weaponType={character.weapon} bestWeapons={character.bestWeapons || []} tWeapons={t('weapons')} />
-              </ScrollEntrance>
-
-              {/* ── ARTIFACTS & STATS ── */}
-              <ScrollEntrance delay={0.2}>
-                <div className="flex flex-col gap-5">
-                  <EditableArtifactsSection characterId={character.id} bestArtifacts={character.bestArtifacts || []} tArtifacts={t('artifacts')} />
-                  
-                  {/* ── STATS & TALENTS ── */}
-                  <EditableStatsSection 
-                    characterId={character.id} 
-                    sands={character.sands}
-                    goblet={character.goblet}
-                    circlet={character.circlet}
-                    subStatsPriority={character.subStatsPriority}
-                    talentPriority={character.talentPriority || []} 
-                  />
-                </div>
-              </ScrollEntrance>
-            </div>
-
-            {/* ── 5. META TEAM COMPS ── */}
-            <ScrollEntrance delay={0.3}>
-              <div className="mb-24">
-                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
-                  {t('metaTeams')}
-                </h2>
-                <EditableMetaTeamsSection 
-                  characterId={character.id}
-                  teams={character.teams || []} 
-                  allCharacters={allCharacters}
-                  allWeapons={allWeapons}
-                  allArtifacts={allArtifacts}
-                />
-              </div>
-            </ScrollEntrance>
+            <CharacterBuildSwitcher characterId={character.id} builds={buildData.characterBuilds}
+              weaponType={character.weapon} weaponsLabel={t('weapons')} artifactsLabel={t('artifacts')}
+              allCharacters={allCharacters} allWeapons={allWeapons} allArtifacts={allArtifacts}
+              legacy={{
+                bestWeapons: character.bestWeapons || [], bestArtifacts: character.bestArtifacts || [], teams: character.teams || [],
+                sands: character.sands || [], goblet: character.goblet || [], circlet: character.circlet || [],
+                subStatsPriority: character.subStatsPriority || [], talentPriority: character.talentPriority || [],
+              }} />
 
             {/* Stats Section */}
             <ScrollEntrance delay={0.4}>
-              <div className="mb-24">
-                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
+              <div className="atlas-build-section">
+                <h2 className="atlas-section-title mb-4">
                   {t('stats')}
                 </h2>
                 <CharacterStatsSection characterId={character.id} stats={character.stats} baseHp={character.baseHp} baseAtk={character.baseAtk} baseDef={character.baseDef} />
               </div>
             </ScrollEntrance>
 
-            {/* Ascension Materials Section */}
-            <ScrollEntrance delay={0.5}>
-              <div className="mb-24">
-                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
-                  {t('ascensionMaterials')}
-                </h2>
-                <CharacterAscensionMatsSection characterId={character.id} ascensionMats={character.ascensionMats} allMaterials={materials} />
-              </div>
-            </ScrollEntrance>
-
-            {/* Talent Materials Section */}
-            <ScrollEntrance delay={0.6}>
-              <div className="mb-24">
-                <h2 className="text-3xl font-black text-white font-display mb-8 tracking-wide drop-shadow-md">
-                  {t('talentMaterials') || 'Talent Materials'}
-                </h2>
-                <CharacterTalentMatsSection characterId={character.id} talentMats={character.talentMats} allMaterials={materials} />
-              </div>
-            </ScrollEntrance>
+            <div className="grid gap-5 xl:grid-cols-2">
+              <ScrollEntrance delay={0.5}>
+                <section className="min-w-0">
+                  <h2 className="atlas-section-title mb-4">{t('ascensionMaterials')}</h2>
+                  <CharacterAscensionMatsSection
+                    characterId={character.id}
+                    ascensionMats={character.ascensionMats}
+                    allMaterials={materials}
+                    pending={!character.ascensionMats}
+                    noMaterials={Array.isArray(character.ascensionMats) && character.ascensionMats.length === 0}
+                  />
+                </section>
+              </ScrollEntrance>
+              <ScrollEntrance delay={0.6}>
+                <section className="min-w-0">
+                  <h2 className="atlas-section-title mb-4">{t('talentMaterials') || 'Talent Materials'}</h2>
+                  <CharacterTalentMatsSection
+                    characterId={character.id}
+                    talentMats={character.talentMats}
+                    allMaterials={materials}
+                    pending={!character.talentMats}
+                    noMaterials={Array.isArray(character.talentMats) && character.talentMats.length === 0}
+                  />
+                </section>
+              </ScrollEntrance>
+            </div>
 
           </div>
       </div>

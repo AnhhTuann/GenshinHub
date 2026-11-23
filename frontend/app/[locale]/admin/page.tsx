@@ -2,22 +2,23 @@
 import { useEffect, useState } from 'react';
 import { fetchGraphQL } from '@/lib/graphql';
 import Link from 'next/link';
+import { Archive, ArrowUpRight, Download, Gem, Info, Package, Sword, Trophy, UserRound, UserRoundPlus } from 'lucide-react';
 
 interface Stats { characters: number; weapons: number; artifacts: number; materials: number; }
 
-const STAT_CARDS = (s: Stats) => [
-  { label: 'Characters', value: s.characters, icon: '⚔️', color: '#e8b64c', href: '/admin/characters', bg: 'rgba(232,182,76,0.08)' },
-  { label: 'Weapons',    value: s.weapons,    icon: '🗡️', color: '#3aa8ff', href: '/admin/weapons',    bg: 'rgba(58,168,255,0.08)' },
-  { label: 'Artifacts',  value: s.artifacts,  icon: '💎', color: '#cf8fff', href: '/admin/artifacts',  bg: 'rgba(207,143,255,0.08)' },
-  { label: 'Materials',  value: s.materials,  icon: '📦', color: '#9ede5f', href: '/admin/materials',  bg: 'rgba(158,222,95,0.08)' },
+const STAT_CARDS = (stats: Stats) => [
+  { label: 'Characters', value: stats.characters, icon: UserRound, href: '/admin/characters' },
+  { label: 'Weapons', value: stats.weapons, icon: Sword, href: '/admin/weapons' },
+  { label: 'Artifacts', value: stats.artifacts, icon: Gem, href: '/admin/artifacts' },
+  { label: 'Materials', value: stats.materials, icon: Package, href: '/admin/materials' },
 ];
 
 const QUICK_ACTIONS = [
-  { label: 'Add Character', href: '/admin/characters', icon: '👤', color: '#e8b64c' },
-  { label: 'Add Weapon',    href: '/admin/weapons',    icon: '🗡️', color: '#3aa8ff' },
-  { label: 'Manage Tiers',  href: '/admin/tierlist',   icon: '🏆', color: '#ffd34d' },
-  { label: 'Backup DB',     href: '/admin/backups',    icon: '💾', color: '#9ede5f' },
-  { label: 'Export Seeds',  href: '/admin/export',     icon: '📤', color: '#cf8fff' },
+  { label: 'Add Character', href: '/admin/characters', icon: UserRoundPlus },
+  { label: 'Add Weapon', href: '/admin/weapons', icon: Sword },
+  { label: 'Manage Tiers', href: '/admin/tierlist', icon: Trophy },
+  { label: 'Backup DB', href: '/admin/backups', icon: Archive },
+  { label: 'Export Seeds', href: '/admin/export', icon: Download },
 ];
 
 export default function AdminDashboard() {
@@ -48,126 +49,45 @@ export default function AdminDashboard() {
     load();
   }, []);
 
-  const cards = STAT_CARDS(stats);
-
   return (
-    <div className="flex flex-col gap-8">
-      {/* Header */}
-      <div>
-        <h1 className="page-title" style={{ fontSize: '1.75rem' }}>Dashboard</h1>
-        <p className="page-desc" style={{ marginTop: '0.4rem' }}>Welcome back, Admin. Here&apos;s an overview of your database.</p>
+    <div className="grid gap-8">
+      <header>
+        <h1 className="atlas-section-title">Dashboard</h1>
+        <p className="mt-2 text-[var(--text-secondary)]">Manage the GenshinHub database.</p>
+      </header>
+      <section aria-label="Database inventory" aria-busy={loading} className="grid grid-cols-2 xl:grid-cols-4 gap-3">
+        {STAT_CARDS(stats).map(({ label, value, icon: Icon, href }) => (
+          <Link key={label} href={href as any} className="atlas-surface atlas-admin-stat">
+            <span className="atlas-quick-icon"><Icon size={22} aria-hidden="true" /></span>
+            <strong>{loading ? '—' : value}</strong>
+            <span>{label}</span>
+          </Link>
+        ))}
+      </section>
+
+      <div className="grid lg:grid-cols-[1fr_1.25fr] gap-4 items-start">
+        <section className="atlas-surface p-4 sm:p-6">
+          <h2 className="text-lg font-bold mb-3">Quick actions</h2>
+          <div className="divide-y divide-[var(--border-default)]">
+            {QUICK_ACTIONS.map(({ label, href, icon: Icon }) => (
+              <Link key={label} href={href as any} className="atlas-admin-action">
+                <Icon size={18} aria-hidden="true" />
+                <span>{label}</span>
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </section>
+        <section className="atlas-surface p-4 sm:p-6">
+          <h2 className="flex items-center gap-2 text-lg font-bold mb-3"><Info size={20} aria-hidden="true" />Getting started</h2>
+          <ul className="space-y-3 ps-5 list-disc text-sm leading-relaxed text-[var(--text-secondary)]">
+            <li>Use the sidebar to navigate between entity managers.</li>
+            <li>All changes auto-save to the database via GraphQL.</li>
+            <li>Use <strong>Backups</strong> to create snapshots before making bulk edits.</li>
+            <li>Use <strong>Export TS</strong> to persist changes to seed files.</li>
+          </ul>
+        </section>
       </div>
-
-      {/* Stats Cards */}
-      <section>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {cards.map((card) => (
-            <Link
-              key={card.label}
-              href={card.href as any}
-              className="group rounded-2xl p-5 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-0.5"
-              style={{
-                background: card.bg,
-                border: `1px solid ${card.color}20`,
-                boxShadow: 'none',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.boxShadow = `0 8px 24px ${card.color}15`)}
-              onMouseLeave={e => (e.currentTarget.style.boxShadow = 'none')}
-            >
-              <div className="flex items-center justify-between">
-                <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center text-lg"
-                  style={{ background: `${card.color}18`, border: `1px solid ${card.color}30` }}
-                >
-                  {card.icon}
-                </div>
-                <svg
-                  className="w-4 h-4 opacity-0 group-hover:opacity-60 group-hover:translate-x-0.5 transition-all"
-                  style={{ color: card.color }}
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-              <div>
-                <div
-                  className="text-3xl font-black leading-none"
-                  style={{
-                    fontFamily: 'var(--font-mono, monospace)',
-                    color: card.color,
-                    filter: loading ? 'blur(8px)' : 'none',
-                    transition: 'filter 0.4s ease',
-                  }}
-                >
-                  {loading ? '—' : card.value}
-                </div>
-                <div className="text-[11px] font-bold uppercase tracking-wider text-white/35 mt-0.5">
-                  {card.label}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Quick Actions */}
-      <section>
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-[3px] h-5 rounded-full" style={{ background: 'linear-gradient(to bottom, #ffdf9e, #e8b64c)' }} />
-          <h2 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/35">Quick Actions</h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          {QUICK_ACTIONS.map((action) => (
-            <Link
-              key={action.label}
-              href={action.href as any}
-              className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 group"
-              style={{
-                background: 'rgba(16,22,46,0.70)',
-                border: '1px solid rgba(255,255,255,0.05)',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = `${action.color}30`;
-                e.currentTarget.style.boxShadow = `0 4px 16px ${action.color}12`;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <span className="text-xl w-8 text-center shrink-0">{action.icon}</span>
-              <span className="text-xs font-bold text-white/60 group-hover:text-white/85 transition-colors">{action.label}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Help Card */}
-      <section
-        className="rounded-2xl p-5"
-        style={{
-          background: 'rgba(232,182,76,0.04)',
-          border: '1px solid rgba(232,182,76,0.12)',
-        }}
-      >
-        <div className="flex items-start gap-4">
-          <div
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-base shrink-0"
-            style={{ background: 'rgba(232,182,76,0.12)', border: '1px solid rgba(232,182,76,0.20)' }}
-          >
-            💡
-          </div>
-          <div>
-            <h3 className="text-sm font-black text-amber-400/80 mb-2">Getting Started</h3>
-            <ul className="text-xs text-white/40 space-y-1.5 font-medium">
-              <li className="flex items-center gap-2"><span className="text-amber-400/50">→</span> Use the sidebar to navigate between entity managers.</li>
-              <li className="flex items-center gap-2"><span className="text-amber-400/50">→</span> All changes auto-save to database via GraphQL mutations.</li>
-              <li className="flex items-center gap-2"><span className="text-amber-400/50">→</span> Use <strong className="text-white/60">Backups</strong> to create snapshots before making bulk edits.</li>
-              <li className="flex items-center gap-2"><span className="text-amber-400/50">→</span> Use <strong className="text-white/60">Export TS</strong> to persist changes permanently to seed files.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

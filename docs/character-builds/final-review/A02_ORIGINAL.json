@@ -1,0 +1,1499 @@
+{
+  "batch": {
+    "id": "A02",
+    "candidates": [
+      {
+        "characterId": "albedo",
+        "candidateId": "albedo:1",
+        "role": [
+          "SUB_DPS"
+        ],
+        "version": "character-build-catalog-7.2-r2",
+        "checksum": "146d014a45bb6355852df038d8e4d9c612ce9be981aa5235e97c2f70f28f2c74",
+        "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+        "evidenceSummary": "DEF and Skill damage drive Transient Blossoms. Shield coverage helps keep Harbinger above its HP threshold.",
+        "evidenceReferences": [
+          "genshin-db@5.2.15",
+          "https://genshin-builds.com/en/character/albedo"
+        ],
+        "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+        "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+        "existingBuildId": "legacy-albedo",
+        "expectedBaseline": {
+          "buildId": "legacy-albedo",
+          "version": 1,
+          "checksum": "54078ff392c9436610c6e6a99aaa8f5efb2e677f69bbedad4edd758636da307f",
+          "status": "LEGACY_IMPORT"
+        },
+        "preserveDefault": true,
+        "state": "REVIEW_READY",
+        "preview": {
+          "name": {
+            "before": "Legacy build",
+            "after": "C0 Off-field Geo Skill"
+          },
+          "playstyles": {
+            "before": [],
+            "after": [
+              "SUB_DPS"
+            ]
+          },
+          "constellationAssumptions": {
+            "before": [],
+            "after": [
+              "C0"
+            ]
+          },
+          "notesEn": {
+            "before": null,
+            "after": "Transient Blossoms scale with DEF and count as Skill damage. Harbinger needs more than 90% HP. Geo resonance and Gorou support skill damage."
+          },
+          "source": {
+            "before": "Legacy development build",
+            "after": "character-build-catalog-7.2-r2"
+          },
+          "weapons": {
+            "before": [
+              {
+                "weaponId": "thương-diệu",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "đoản-đao-amenoma",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "bàn-nham-kết-lục",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "weaponId": "11514",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "11431",
+                "isF2P": true,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "11302",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              }
+            ]
+          },
+          "artifacts": {
+            "before": [
+              {
+                "setIds": [
+                  "15014"
+                ],
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "setIds": [
+                  "15032"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15021"
+                ],
+                "constellation": "C0"
+              }
+            ]
+          },
+          "sands": {
+            "before": [
+              "ATK%",
+              "DEF%",
+              "Elemental DMG Bonus"
+            ],
+            "after": [
+              "DEF%"
+            ]
+          },
+          "goblet": {
+            "before": [
+              "Elemental DMG Bonus"
+            ],
+            "after": [
+              "Geo DMG Bonus"
+            ]
+          },
+          "circlet": {
+            "before": [
+              "Elemental DMG Bonus"
+            ],
+            "after": [
+              "CRIT Rate",
+              "CRIT DMG"
+            ]
+          },
+          "subStatsPriority": {
+            "before": [
+              "Elemental DMG Bonus",
+              "Energy Recharge",
+              "DEF%"
+            ],
+            "after": [
+              "CRIT Rate",
+              "CRIT DMG",
+              "DEF%"
+            ]
+          },
+          "talentPriority": {
+            "before": [
+              "Normal Attack",
+              "Elemental Skill",
+              "Elemental Burst"
+            ],
+            "after": [
+              "Skill",
+              "Burst",
+              "Normal Attack"
+            ]
+          },
+          "teams": {
+            "before": [
+              {
+                "name": "sdasd",
+                "reviewStatus": null,
+                "members": [
+                  {
+                    "characterId": "albedo"
+                  },
+                  {
+                    "characterId": "aino"
+                  },
+                  {
+                    "characterId": "aloy"
+                  },
+                  {
+                    "characterId": "alhaitham"
+                  }
+                ]
+              }
+            ],
+            "after": [
+              {
+                "name": "Off-field Geo Skill",
+                "description": "Transient Blossoms scale with DEF and count as Skill damage. Harbinger needs more than 90% HP. Geo resonance and Gorou support skill damage.",
+                "reviewStatus": "EXPERIMENTAL",
+                "members": [
+                  {
+                    "characterId": "albedo",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Geo Skill damage"
+                  },
+                  {
+                    "characterId": "arataki-itto",
+                    "role": "MAIN_DPS",
+                    "roleDesc": "on-field charged Geo damage"
+                  },
+                  {
+                    "characterId": "gorou",
+                    "role": "SUPPORT",
+                    "roleDesc": "DEF and Geo buffs"
+                  },
+                  {
+                    "characterId": "zhongli",
+                    "role": "SUPPORT",
+                    "roleDesc": "shield and nearby resistance reduction"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "characterId": "baizhu",
+        "candidateId": "baizhu:1",
+        "role": [
+          "SUPPORT"
+        ],
+        "version": "character-build-catalog-7.2-r2",
+        "checksum": "172b7d99b90b16f58c9f2887627433064534615c3a5208b52bf04162eeff58c8",
+        "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+        "evidenceSummary": "Burst uptime matters for sustain; Prototype Amber restores Energy after Burst. Nahida may already hold Deepwood.",
+        "evidenceReferences": [
+          "genshin-db@5.2.15",
+          "https://genshin-builds.com/en/character/baizhu",
+          "https://keqingmains.com/q/baizhu-quickguide/"
+        ],
+        "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+        "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+        "existingBuildId": "legacy-baizhu",
+        "expectedBaseline": {
+          "buildId": "legacy-baizhu",
+          "version": 1,
+          "checksum": "726a8ea9b5111b46cac430cdc2ee5c10fe62745ab09dc777ec803ab5c0b3ad50",
+          "status": "LEGACY_IMPORT"
+        },
+        "preserveDefault": true,
+        "state": "REVIEW_READY",
+        "preview": {
+          "name": {
+            "before": "Legacy build",
+            "after": "C0 Burst healer and Dendro support"
+          },
+          "playstyles": {
+            "before": [],
+            "after": [
+              "SUPPORT"
+            ]
+          },
+          "constellationAssumptions": {
+            "before": [],
+            "after": [
+              "C0"
+            ]
+          },
+          "notesEn": {
+            "before": null,
+            "after": "HP scales healing and passive reaction support. Prototype Amber refunds energy after Burst, and another Deepwood holder frees the set slot."
+          },
+          "source": {
+            "before": "Legacy development build",
+            "after": "character-build-catalog-7.2-r2"
+          },
+          "weapons": {
+            "before": [
+              {
+                "weaponId": "chương-nhạc-lang-thang",
+                "refinement": 5,
+                "isF2P": false,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "điển-tích-tây-phong",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "weaponId": "14505",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "14406",
+                "isF2P": true,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "14401",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              }
+            ]
+          },
+          "artifacts": {
+            "before": [
+              {
+                "setIds": [
+                  null
+                ],
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "setIds": [
+                  "15025"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15007"
+                ],
+                "constellation": "C0"
+              }
+            ]
+          },
+          "sands": {
+            "before": [
+              "ATK%"
+            ],
+            "after": [
+              "Energy Recharge"
+            ]
+          },
+          "goblet": {
+            "before": [
+              "Elemental DMG Bonus"
+            ],
+            "after": [
+              "HP%"
+            ]
+          },
+          "circlet": {
+            "before": [
+              "CRIT Rate"
+            ],
+            "after": [
+              "Healing Bonus"
+            ]
+          },
+          "subStatsPriority": {
+            "before": [
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%"
+            ],
+            "after": [
+              "Energy Recharge",
+              "HP%",
+              "CRIT Rate"
+            ]
+          },
+          "talentPriority": {
+            "before": [
+              "Normal Attack",
+              "Elemental Skill",
+              "Elemental Burst"
+            ],
+            "after": [
+              "Burst",
+              "Skill",
+              "Normal Attack"
+            ]
+          },
+          "teams": {
+            "before": [],
+            "after": [
+              {
+                "name": "Burst healer and Dendro support",
+                "description": "HP scales healing and passive reaction support. Prototype Amber refunds energy after Burst, and another Deepwood holder frees the set slot.",
+                "reviewStatus": "EXPERIMENTAL",
+                "members": [
+                  {
+                    "characterId": "baizhu",
+                    "role": "SUPPORT",
+                    "roleDesc": "healing and Dendro sustain"
+                  },
+                  {
+                    "characterId": "cyno",
+                    "role": "MAIN_DPS",
+                    "roleDesc": "long-field Electro carry"
+                  },
+                  {
+                    "characterId": "nahida",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Dendro marking"
+                  },
+                  {
+                    "characterId": "xingqiu",
+                    "role": "SUB_DPS",
+                    "roleDesc": "Hydro via normal-attack triggers"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "characterId": "beidou",
+        "candidateId": "beidou:1",
+        "role": [
+          "SUB_DPS"
+        ],
+        "version": "character-build-catalog-7.2-r2",
+        "checksum": "4fa4d2e24a8f016ea6c8ed28166e9cbedd4535665788d47396d7b23b49b266f7",
+        "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+        "evidenceSummary": "Normal attacks from the driver proc Stormbreaker; Fischl batteries Beidou. Recommend for multi-target content with bounce opportunities.",
+        "evidenceReferences": [
+          "genshin-db@5.2.15",
+          "https://genshin-builds.com/en/character/beidou",
+          "https://keqingmains.com/beidou/"
+        ],
+        "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+        "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+        "existingBuildId": "legacy-beidou",
+        "expectedBaseline": {
+          "buildId": "legacy-beidou",
+          "version": 1,
+          "checksum": "82b2f122809b75b777ecef2bfc2a0063a535bd26f2be8841ab4ce3871049e1c1",
+          "status": "LEGACY_IMPORT"
+        },
+        "preserveDefault": true,
+        "state": "REVIEW_READY",
+        "preview": {
+          "name": {
+            "before": "Legacy build",
+            "after": "C0 Off-field multi-target Electro"
+          },
+          "playstyles": {
+            "before": [],
+            "after": [
+              "SUB_DPS"
+            ]
+          },
+          "constellationAssumptions": {
+            "before": [],
+            "after": [
+              "C0"
+            ]
+          },
+          "notesEn": {
+            "before": null,
+            "after": "Stormbreaker excels with targets to bounce between and needs a driver and Electro battery. Raiden Burst hits do not drive Stormbreaker."
+          },
+          "source": {
+            "before": "Legacy development build",
+            "after": "character-build-catalog-7.2-r2"
+          },
+          "weapons": {
+            "before": [
+              {
+                "weaponId": "mẫu-cổ-hoa",
+                "refinement": 5,
+                "isF2P": true,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "đường-cùng-của-sói",
+                "refinement": 1,
+                "isF2P": false,
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "weaponId": "12502",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "12409",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "12401",
+                "isF2P": false,
+                "refinement": 1,
+                "constellation": "C0"
+              },
+              {
+                "weaponId": "12406",
+                "isF2P": true,
+                "refinement": 1,
+                "constellation": "C0"
+              }
+            ]
+          },
+          "artifacts": {
+            "before": [
+              {
+                "setIds": [
+                  null
+                ],
+                "constellation": "C0"
+              }
+            ],
+            "after": [
+              {
+                "setIds": [
+                  "15020"
+                ],
+                "constellation": "C0"
+              },
+              {
+                "setIds": [
+                  "15007",
+                  "15001"
+                ],
+                "constellation": "C0"
+              }
+            ]
+          },
+          "sands": {
+            "before": [
+              "ATK%"
+            ],
+            "after": [
+              "Energy Recharge"
+            ]
+          },
+          "goblet": {
+            "before": [
+              "Elemental DMG Bonus"
+            ],
+            "after": [
+              "Electro DMG Bonus"
+            ]
+          },
+          "circlet": {
+            "before": [
+              "CRIT Rate"
+            ],
+            "after": [
+              "CRIT Rate",
+              "CRIT DMG"
+            ]
+          },
+          "subStatsPriority": {
+            "before": [
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%"
+            ],
+            "after": [
+              "Energy Recharge",
+              "CRIT Rate",
+              "CRIT DMG",
+              "ATK%"
+            ]
+          },
+          "talentPriority": {
+            "before": [
+              "Normal Attack",
+              "Elemental Skill",
+              "Elemental Burst"
+            ],
+            "after": [
+              "Burst",
+              "Skill",
+              "Normal Attack"
+            ]
+          },
+          "teams": {
+            "before": [],
+            "after": [
+              {
+                "name": "Off-field multi-target Electro",
+                "description": "Stormbreaker excels with targets to bounce between and needs a driver and Electro battery. Raiden Burst hits do not drive Stormbreaker.",
+                "reviewStatus": "EXPERIMENTAL",
+                "members": [
+                  {
+                    "characterId": "beidou",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Stormbreaker"
+                  },
+                  {
+                    "characterId": "sucrose",
+                    "role": "SUPPORT",
+                    "roleDesc": "on-field Swirl driver"
+                  },
+                  {
+                    "characterId": "fischl",
+                    "role": "SUB_DPS",
+                    "roleDesc": "Oz and Electro battery"
+                  },
+                  {
+                    "characterId": "xingqiu",
+                    "role": "SUB_DPS",
+                    "roleDesc": "off-field Hydro"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "checksum": "07c4298b06cc15b03ad354499559477068a170ef88795ea5d882f232b160192d"
+  },
+  "records": [
+    {
+      "candidate": {
+        "revision": "character-build-catalog-7.2-r2",
+        "candidateId": "albedo:1",
+        "characterId": "albedo",
+        "operation": "PROPOSE_REVISION",
+        "baseline": {
+          "buildId": "legacy-albedo",
+          "version": 1,
+          "checksum": "54078ff392c9436610c6e6a99aaa8f5efb2e677f69bbedad4edd758636da307f",
+          "status": "LEGACY_IMPORT"
+        },
+        "defaultPolicy": "PRESERVE",
+        "stage": "PENDING_ADMIN_REVIEW",
+        "confidence": "MODERATE",
+        "patch": {
+          "name": "C0 Off-field Geo Skill",
+          "playstyles": [
+            "SUB_DPS"
+          ],
+          "constellationAssumptions": [
+            "C0"
+          ],
+          "notesEn": "Transient Blossoms scale with DEF and count as Skill damage. Harbinger needs more than 90% HP. Geo resonance and Gorou support skill damage.",
+          "source": "character-build-catalog-7.2-r2",
+          "weapons": [
+            {
+              "weaponId": "11514",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "11431",
+              "isF2P": true,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "11302",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            }
+          ],
+          "artifacts": [
+            {
+              "setIds": [
+                "15032"
+              ],
+              "constellation": "C0"
+            },
+            {
+              "setIds": [
+                "15021"
+              ],
+              "constellation": "C0"
+            }
+          ],
+          "sands": [
+            "DEF%"
+          ],
+          "goblet": [
+            "Geo DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate",
+            "CRIT DMG"
+          ],
+          "subStatsPriority": [
+            "CRIT Rate",
+            "CRIT DMG",
+            "DEF%"
+          ],
+          "talentPriority": [
+            "Skill",
+            "Burst",
+            "Normal Attack"
+          ],
+          "teams": [
+            {
+              "name": "Off-field Geo Skill",
+              "description": "Transient Blossoms scale with DEF and count as Skill damage. Harbinger needs more than 90% HP. Geo resonance and Gorou support skill damage.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "albedo",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Geo Skill damage"
+                },
+                {
+                  "characterId": "arataki-itto",
+                  "role": "MAIN_DPS",
+                  "roleDesc": "on-field charged Geo damage"
+                },
+                {
+                  "characterId": "gorou",
+                  "role": "SUPPORT",
+                  "roleDesc": "DEF and Geo buffs"
+                },
+                {
+                  "characterId": "zhongli",
+                  "role": "SUPPORT",
+                  "roleDesc": "shield and nearby resistance reduction"
+                }
+              ]
+            }
+          ]
+        },
+        "weaponAccess": [
+          {
+            "weaponId": "11514",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "11431",
+            "availability": "CRAFT_FISHING_OR_EXPLORATION",
+            "note": null
+          },
+          {
+            "weaponId": "11302",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          }
+        ],
+        "artifactRationale": [
+          [
+            "Skill damage with a larger off-field effect"
+          ],
+          [
+            "DEF and conditional Geo bonus while stacking the four-piece effect"
+          ]
+        ],
+        "missingEvidence": [
+          "Rotation, energy and matchup checks before making performance claims"
+        ],
+        "provenance": {
+          "method": "Independent contextual shortlist checked against local catalog and talent records",
+          "mechanics": {
+            "package": "genshin-db@5.2.15",
+            "id": 10000038,
+            "characterVersion": "1.2",
+            "talentVersion": "1.2",
+            "burstEnergy": 40,
+            "talents": {
+              "Normal Attack": "Favonius Bladework - Weiss",
+              "Skill": "Abiogenesis: Solar Isotoma",
+              "Burst": "Rite of Progeniture: Tectonic Tide"
+            },
+            "constellations": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ]
+          },
+          "externalReference": {
+            "url": "https://genshin-builds.com/en/character/albedo",
+            "checkedAt": "2026-11-20T12:28:16.789Z",
+            "indexed": true,
+            "status": "AVAILABLE",
+            "version": null
+          },
+          "corroboration": null,
+          "externalComparison": {
+            "weapons": {
+              "compared": 3,
+              "overlap": 3,
+              "firstChoiceAgrees": false
+            },
+            "artifacts": {
+              "compared": 2,
+              "overlap": 2
+            },
+            "teams": {
+              "compared": 1,
+              "overlap": 0
+            },
+            "stats": {
+              "sands": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "goblet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "circlet": {
+                "compared": 2,
+                "overlap": 2,
+                "firstChoiceAgrees": true
+              },
+              "subStatsPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              },
+              "talentPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              }
+            }
+          },
+          "evidenceLine": 3
+        },
+        "supersedes": {
+          "revision": "character-build-catalog-7.2-r1",
+          "checksum": "44a84b35bc41b66dc53c67fcf102936f9e3048c896473d845029a87d85481c5f"
+        },
+        "reviewDecision": "NONE_REVIEW_MUST_RESTART",
+        "checksum": "146d014a45bb6355852df038d8e4d9c612ce9be981aa5235e97c2f70f28f2c74"
+      },
+      "changes": [
+        {
+          "category": "teams",
+          "reason": "Make the named team rotation reviewable by assigning each member’s actual job."
+        }
+      ],
+      "fields": {
+        "source": {
+          "before": "character-build-catalog-7.2-r1",
+          "after": "character-build-catalog-7.2-r2"
+        },
+        "teams": {
+          "before": [
+            {
+              "name": "Off-field Geo Skill",
+              "description": "Transient Blossoms scale with DEF and count as Skill damage. Harbinger needs more than 90% HP. Geo resonance and Gorou support skill damage.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "albedo",
+                  "role": "SUB_DPS"
+                },
+                {
+                  "characterId": "arataki-itto",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "gorou",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "zhongli",
+                  "role": "TEAMMATE"
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "name": "Off-field Geo Skill",
+              "description": "Transient Blossoms scale with DEF and count as Skill damage. Harbinger needs more than 90% HP. Geo resonance and Gorou support skill damage.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "albedo",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Geo Skill damage"
+                },
+                {
+                  "characterId": "arataki-itto",
+                  "role": "MAIN_DPS",
+                  "roleDesc": "on-field charged Geo damage"
+                },
+                {
+                  "characterId": "gorou",
+                  "role": "SUPPORT",
+                  "roleDesc": "DEF and Geo buffs"
+                },
+                {
+                  "characterId": "zhongli",
+                  "role": "SUPPORT",
+                  "roleDesc": "shield and nearby resistance reduction"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate": {
+        "revision": "character-build-catalog-7.2-r2",
+        "candidateId": "baizhu:1",
+        "characterId": "baizhu",
+        "operation": "PROPOSE_REVISION",
+        "baseline": {
+          "buildId": "legacy-baizhu",
+          "version": 1,
+          "checksum": "726a8ea9b5111b46cac430cdc2ee5c10fe62745ab09dc777ec803ab5c0b3ad50",
+          "status": "LEGACY_IMPORT"
+        },
+        "defaultPolicy": "PRESERVE",
+        "stage": "PENDING_ADMIN_REVIEW",
+        "confidence": "MODERATE",
+        "patch": {
+          "name": "C0 Burst healer and Dendro support",
+          "playstyles": [
+            "SUPPORT"
+          ],
+          "constellationAssumptions": [
+            "C0"
+          ],
+          "notesEn": "HP scales healing and passive reaction support. Prototype Amber refunds energy after Burst, and another Deepwood holder frees the set slot.",
+          "source": "character-build-catalog-7.2-r2",
+          "weapons": [
+            {
+              "weaponId": "14505",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "14406",
+              "isF2P": true,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "14401",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            }
+          ],
+          "artifacts": [
+            {
+              "setIds": [
+                "15025"
+              ],
+              "constellation": "C0"
+            },
+            {
+              "setIds": [
+                "15007"
+              ],
+              "constellation": "C0"
+            }
+          ],
+          "sands": [
+            "Energy Recharge"
+          ],
+          "goblet": [
+            "HP%"
+          ],
+          "circlet": [
+            "Healing Bonus"
+          ],
+          "subStatsPriority": [
+            "Energy Recharge",
+            "HP%",
+            "CRIT Rate"
+          ],
+          "talentPriority": [
+            "Burst",
+            "Skill",
+            "Normal Attack"
+          ],
+          "teams": [
+            {
+              "name": "Burst healer and Dendro support",
+              "description": "HP scales healing and passive reaction support. Prototype Amber refunds energy after Burst, and another Deepwood holder frees the set slot.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "baizhu",
+                  "role": "SUPPORT",
+                  "roleDesc": "healing and Dendro sustain"
+                },
+                {
+                  "characterId": "cyno",
+                  "role": "MAIN_DPS",
+                  "roleDesc": "long-field Electro carry"
+                },
+                {
+                  "characterId": "nahida",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Dendro marking"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "Hydro via normal-attack triggers"
+                }
+              ]
+            }
+          ]
+        },
+        "weaponAccess": [
+          {
+            "weaponId": "14505",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "14406",
+            "availability": "CRAFT_FISHING_OR_EXPLORATION",
+            "note": null
+          },
+          {
+            "weaponId": "14401",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": "Proc ordinarily needs the wearer on field and a critical hit."
+          }
+        ],
+        "artifactRationale": [
+          [
+            "Dendro damage and team Dendro resistance reduction from Skill or Burst hits"
+          ],
+          [
+            "Burst damage and a non-stacking team ATK bonus after Burst"
+          ]
+        ],
+        "missingEvidence": [
+          "Rotation, energy and matchup checks before making performance claims"
+        ],
+        "provenance": {
+          "method": "Independent contextual shortlist checked against local catalog and talent records",
+          "mechanics": {
+            "package": "genshin-db@5.2.15",
+            "id": 10000082,
+            "characterVersion": "3.6",
+            "talentVersion": "3.6",
+            "burstEnergy": 80,
+            "talents": {
+              "Normal Attack": "The Classics of Acupuncture",
+              "Skill": "Universal Diagnosis",
+              "Burst": "Holistic Revivification"
+            },
+            "constellations": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ]
+          },
+          "externalReference": {
+            "url": "https://genshin-builds.com/en/character/baizhu",
+            "checkedAt": "2026-11-20T12:28:22.200Z",
+            "indexed": true,
+            "status": "AVAILABLE",
+            "version": null
+          },
+          "corroboration": "https://keqingmains.com/q/baizhu-quickguide/",
+          "externalComparison": {
+            "weapons": {
+              "compared": 3,
+              "overlap": 3,
+              "firstChoiceAgrees": true
+            },
+            "artifacts": {
+              "compared": 2,
+              "overlap": 2
+            },
+            "teams": {
+              "compared": 1,
+              "overlap": 0
+            },
+            "stats": {
+              "sands": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": false
+              },
+              "goblet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "circlet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": false
+              },
+              "subStatsPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              },
+              "talentPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              }
+            }
+          },
+          "evidenceLine": 10
+        },
+        "supersedes": {
+          "revision": "character-build-catalog-7.2-r1",
+          "checksum": "82a58d11ea98de882b4475907f65910ed7f8d2a5d8ee9a0536b1b378f3361fb5"
+        },
+        "reviewDecision": "NONE_REVIEW_MUST_RESTART",
+        "checksum": "172b7d99b90b16f58c9f2887627433064534615c3a5208b52bf04162eeff58c8"
+      },
+      "changes": [
+        {
+          "category": "teams",
+          "reason": "Make the named team rotation reviewable by assigning each member’s actual job."
+        }
+      ],
+      "fields": {
+        "source": {
+          "before": "character-build-catalog-7.2-r1",
+          "after": "character-build-catalog-7.2-r2"
+        },
+        "teams": {
+          "before": [
+            {
+              "name": "Burst healer and Dendro support",
+              "description": "HP scales healing and passive reaction support. Prototype Amber refunds energy after Burst, and another Deepwood holder frees the set slot.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "baizhu",
+                  "role": "SUPPORT"
+                },
+                {
+                  "characterId": "cyno",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "nahida",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "TEAMMATE"
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "name": "Burst healer and Dendro support",
+              "description": "HP scales healing and passive reaction support. Prototype Amber refunds energy after Burst, and another Deepwood holder frees the set slot.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "baizhu",
+                  "role": "SUPPORT",
+                  "roleDesc": "healing and Dendro sustain"
+                },
+                {
+                  "characterId": "cyno",
+                  "role": "MAIN_DPS",
+                  "roleDesc": "long-field Electro carry"
+                },
+                {
+                  "characterId": "nahida",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Dendro marking"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "Hydro via normal-attack triggers"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate": {
+        "revision": "character-build-catalog-7.2-r2",
+        "candidateId": "beidou:1",
+        "characterId": "beidou",
+        "operation": "PROPOSE_REVISION",
+        "baseline": {
+          "buildId": "legacy-beidou",
+          "version": 1,
+          "checksum": "82b2f122809b75b777ecef2bfc2a0063a535bd26f2be8841ab4ce3871049e1c1",
+          "status": "LEGACY_IMPORT"
+        },
+        "defaultPolicy": "PRESERVE",
+        "stage": "PENDING_ADMIN_REVIEW",
+        "confidence": "MODERATE",
+        "patch": {
+          "name": "C0 Off-field multi-target Electro",
+          "playstyles": [
+            "SUB_DPS"
+          ],
+          "constellationAssumptions": [
+            "C0"
+          ],
+          "notesEn": "Stormbreaker excels with targets to bounce between and needs a driver and Electro battery. Raiden Burst hits do not drive Stormbreaker.",
+          "source": "character-build-catalog-7.2-r2",
+          "weapons": [
+            {
+              "weaponId": "12502",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "12409",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "12401",
+              "isF2P": false,
+              "refinement": 1,
+              "constellation": "C0"
+            },
+            {
+              "weaponId": "12406",
+              "isF2P": true,
+              "refinement": 1,
+              "constellation": "C0"
+            }
+          ],
+          "artifacts": [
+            {
+              "setIds": [
+                "15020"
+              ],
+              "constellation": "C0"
+            },
+            {
+              "setIds": [
+                "15007",
+                "15001"
+              ],
+              "constellation": "C0"
+            }
+          ],
+          "sands": [
+            "Energy Recharge"
+          ],
+          "goblet": [
+            "Electro DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate",
+            "CRIT DMG"
+          ],
+          "subStatsPriority": [
+            "Energy Recharge",
+            "CRIT Rate",
+            "CRIT DMG",
+            "ATK%"
+          ],
+          "talentPriority": [
+            "Burst",
+            "Skill",
+            "Normal Attack"
+          ],
+          "teams": [
+            {
+              "name": "Off-field multi-target Electro",
+              "description": "Stormbreaker excels with targets to bounce between and needs a driver and Electro battery. Raiden Burst hits do not drive Stormbreaker.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "beidou",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Stormbreaker"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "SUPPORT",
+                  "roleDesc": "on-field Swirl driver"
+                },
+                {
+                  "characterId": "fischl",
+                  "role": "SUB_DPS",
+                  "roleDesc": "Oz and Electro battery"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Hydro"
+                }
+              ]
+            }
+          ]
+        },
+        "weaponAccess": [
+          {
+            "weaponId": "12502",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "12409",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": null
+          },
+          {
+            "weaponId": "12401",
+            "availability": "CHECK_WISH_SHOP_OR_PASS_AVAILABILITY",
+            "note": "Proc ordinarily needs the wearer on field and a critical hit."
+          },
+          {
+            "weaponId": "12406",
+            "availability": "CRAFT_FISHING_OR_EXPLORATION",
+            "note": null
+          }
+        ],
+        "artifactRationale": [
+          [
+            "ER at two pieces and ER-based Burst damage at four pieces"
+          ],
+          [
+            "Burst damage and a non-stacking team ATK bonus after Burst",
+            "ATK and, on eligible melee weapons, Normal Attack damage"
+          ]
+        ],
+        "missingEvidence": [
+          "Rotation, energy and matchup checks before making performance claims"
+        ],
+        "provenance": {
+          "method": "Independent contextual shortlist checked against local catalog and talent records",
+          "mechanics": {
+            "package": "genshin-db@5.2.15",
+            "id": 10000024,
+            "characterVersion": "1.0",
+            "talentVersion": "1.0",
+            "burstEnergy": 80,
+            "talents": {
+              "Normal Attack": "Oceanborne",
+              "Skill": "Tidecaller",
+              "Burst": "Stormbreaker"
+            },
+            "constellations": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ]
+          },
+          "externalReference": {
+            "url": "https://genshin-builds.com/en/character/beidou",
+            "checkedAt": "2026-11-20T12:28:23.733Z",
+            "indexed": true,
+            "status": "AVAILABLE",
+            "version": null
+          },
+          "corroboration": null,
+          "externalComparison": {
+            "weapons": {
+              "compared": 4,
+              "overlap": 2,
+              "firstChoiceAgrees": false
+            },
+            "artifacts": {
+              "compared": 2,
+              "overlap": 1
+            },
+            "teams": {
+              "compared": 1,
+              "overlap": 0
+            },
+            "stats": {
+              "sands": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": false
+              },
+              "goblet": {
+                "compared": 1,
+                "overlap": 1,
+                "firstChoiceAgrees": true
+              },
+              "circlet": {
+                "compared": 2,
+                "overlap": 2,
+                "firstChoiceAgrees": true
+              },
+              "subStatsPriority": {
+                "compared": 4,
+                "overlap": 4,
+                "firstChoiceAgrees": true
+              },
+              "talentPriority": {
+                "compared": 3,
+                "overlap": 3,
+                "firstChoiceAgrees": true
+              }
+            }
+          },
+          "evidenceLine": 12
+        },
+        "supersedes": {
+          "revision": "character-build-catalog-7.2-r1",
+          "checksum": "d5e248012b4afe89971f7520cf98f56d761c119a1da7674ba0556500bc2eaec3"
+        },
+        "reviewDecision": "NONE_REVIEW_MUST_RESTART",
+        "checksum": "4fa4d2e24a8f016ea6c8ed28166e9cbedd4535665788d47396d7b23b49b266f7"
+      },
+      "changes": [
+        {
+          "category": "teams",
+          "reason": "Make the named team rotation reviewable by assigning each member’s actual job."
+        }
+      ],
+      "fields": {
+        "source": {
+          "before": "character-build-catalog-7.2-r1",
+          "after": "character-build-catalog-7.2-r2"
+        },
+        "teams": {
+          "before": [
+            {
+              "name": "Off-field multi-target Electro",
+              "description": "Stormbreaker excels with targets to bounce between and needs a driver and Electro battery. Raiden Burst hits do not drive Stormbreaker.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "beidou",
+                  "role": "SUB_DPS"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "fischl",
+                  "role": "TEAMMATE"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "TEAMMATE"
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "name": "Off-field multi-target Electro",
+              "description": "Stormbreaker excels with targets to bounce between and needs a driver and Electro battery. Raiden Burst hits do not drive Stormbreaker.",
+              "reviewStatus": "EXPERIMENTAL",
+              "members": [
+                {
+                  "characterId": "beidou",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Stormbreaker"
+                },
+                {
+                  "characterId": "sucrose",
+                  "role": "SUPPORT",
+                  "roleDesc": "on-field Swirl driver"
+                },
+                {
+                  "characterId": "fischl",
+                  "role": "SUB_DPS",
+                  "roleDesc": "Oz and Electro battery"
+                },
+                {
+                  "characterId": "xingqiu",
+                  "role": "SUB_DPS",
+                  "roleDesc": "off-field Hydro"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

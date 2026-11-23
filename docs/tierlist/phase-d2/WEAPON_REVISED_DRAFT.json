@@ -1,0 +1,1628 @@
+{
+  "phase": "D2",
+  "artifact": "WEAPON_REVISED_DRAFT",
+  "version": "phase-d2-weapon-revised-001",
+  "status": "REVISED DRAFT — NOT ADMIN APPROVED — NO RIGHTS FLIP — NO DATABASE WRITE — NOT IMPORTABLE",
+  "generatedAt": "2026-11-20T10:05:00.000Z",
+  "source": {
+    "candidatesInput": {
+      "path": "backend/scripts/weapon-tier-independent/candidates.input.json",
+      "sha256": "554704cc623535f38a2cda3ea8cb02a8facb29b265a3c394429782b392296704"
+    },
+    "reviewInput": {
+      "path": "backend/scripts/weapon-tier-independent/review.input.json",
+      "sha256": "f6595a22ceb306d90f899f5306c300152291d6472e31694eeedf910a217efa31"
+    },
+    "approvalPackage": {
+      "path": "docs/weapon-tier-independent/approval-package.json",
+      "sha256": "3ad72e120b4b28405ac1df9c7aace93b3ce3c0c85d5d5f640c676eddb7a1bc00"
+    },
+    "freezeManifest": {
+      "path": "docs/weapon-tier-independent/freeze-manifest.json",
+      "sha256": "1ed3a88e32cf6d83d2f19b7820355465cccec6488b00491c0d4fcad2e23ed5dd"
+    },
+    "decisionSheet": {
+      "path": "docs/weapon-tier-independent/decision-sheet.json",
+      "sha256": "c3b53aadafb3a1558336956d560bec2c766a962d1b9ab6d3e35186bfecf69302"
+    },
+    "adminReviewSheet": {
+      "path": "docs/weapon-tier-independent/admin-review-sheet.json",
+      "sha256": "ec4fb8cc2b2bb0888342f4cb81c57cc75d1814117ebc51450d1f524a91052d83"
+    },
+    "phaseDApprovalSheet": {
+      "path": "docs/weapon-tier-independent/PHASE_D_WEAPON_APPROVAL_SHEET.json",
+      "sha256": "fdb6bd6195c739068efe16c30963eea04107fdac0ecbf1e564b1558dd33a8c72"
+    },
+    "rubric": {
+      "path": "docs/weapon-tier-independent/RUBRIC.md",
+      "sha256": "05ef89acfbc90982dc2132ea3df776975055a6904fd544fc2bf84974dfdb7f74"
+    },
+    "gameFacts": {
+      "path": "docs/weapon-tier-independent/game-facts.json",
+      "sha256": "7d8312b98b973ba91ea0a40caebf165ea48e6d327ac176f0970d81144a1ea79c"
+    }
+  },
+  "independentReview": {
+    "path": "/home/tuan/Downloads/GENSHINHUB_PHASE_D_REVIEW_NOT_APPROVAL.md",
+    "sha256": "d311acb7bd493a5e927dcc216fe014afd554819ddccd4542c67b269907d7206f"
+  },
+  "freeze": {
+    "verified": true,
+    "issues": [],
+    "batchSha256": "e61f9f4cca59697b3812c17019c211555c51b8a2b81fd4af200e3857177a810e",
+    "manifestSha256": "30372bf5de13d50856d479789f64598b53fde474c6043f4787094d5fd628777a",
+    "decisionSheetSha256": "a100002cc2e5f1815bf20836bda1b111c68d97bd22aa924161541c61df40caf9",
+    "originalFilesImmutable": true
+  },
+  "gameData": {
+    "source": "genshin-db@5.2.15 (local backend/node_modules) + docs/weapon-tier-independent/game-facts.json",
+    "externalEditorialTextCopied": false
+  },
+  "checksumPolicy": {
+    "canonicalization": "recursively sorted object keys, compact JSON, no whitespace",
+    "oldChecksum": "frozen B3 decision-sheet recordSha256",
+    "newChecksum": "SHA-256 of canonical revised record excluding only the newChecksum field",
+    "artifactSha256": "SHA-256 of canonical records array",
+    "manualChecksumEdits": "forbidden"
+  },
+  "counts": {
+    "sourceCandidates": 14,
+    "revisedRecords": 14,
+    "groupAReviewableBeforeD2": 13,
+    "groupBBlocked": 1,
+    "needsMoreEvidence": 1,
+    "needsMoreComparativeEvidence": 1,
+    "mandatoryTierReReviews": 2,
+    "tierChangesAutoConfirmed": 0,
+    "approvals": 0,
+    "rightsVerifiedTrue": 0,
+    "importableNow": 0
+  },
+  "tierChangeDecisions": [
+    {
+      "candidateId": "independent-14302-SUPPORT-R5",
+      "weaponId": "14302",
+      "change": "SS → S",
+      "separateConfirmationRequired": true,
+      "confirmed": false,
+      "question": [
+        "Does Tier measure general team flexibility or best-in-class niche value?",
+        "Can a niche best-in-slot weapon qualify for SS under the approved rubric?",
+        "Is the 10s/20s uptime plus ATK-scaling restriction sufficient to downrank SS to S?"
+      ]
+    },
+    {
+      "candidateId": "independent-14402-SUB_DPS-R1",
+      "weaponId": "14402",
+      "change": "S → A",
+      "separateConfirmationRequired": true,
+      "confirmed": false,
+      "question": [
+        "Use expected value over all three themes rather than the best theme only.",
+        "Does a 10s/30s random buff with burst-window sensitivity merit A for the evaluated role?",
+        "Do EM-scaling Sub DPS cases prevent a universal downrank, or only narrow the scope?"
+      ]
+    }
+  ],
+  "blockedCandidate": [
+    {
+      "field": "critRateAssumptions",
+      "label": "CRIT Rate assumptions",
+      "present": false
+    },
+    {
+      "field": "passiveProcConditions",
+      "label": "Passive proc conditions",
+      "present": false
+    },
+    {
+      "field": "rotation",
+      "label": "Rotation",
+      "present": false
+    },
+    {
+      "field": "fieldTimeRequirements",
+      "label": "Field-time requirements",
+      "present": false
+    },
+    {
+      "field": "energyGenerationAssumptions",
+      "label": "Energy generation assumptions",
+      "present": false
+    },
+    {
+      "field": "rubricJustification",
+      "label": "Rubric justification",
+      "present": false
+    }
+  ],
+  "hardGates": [
+    "No record is approved, rejected or importable.",
+    "publishRightsVerified remains false for all 14 records.",
+    "No fake actor, decidedAt or reason was created.",
+    "Favonius Greatsword remains blocked until six evidence fields are supplied.",
+    "Both tier changes require separate Admin confirmation.",
+    "SOURCE_DERIVED research records remain excluded."
+  ],
+  "records": [
+    {
+      "recordId": "WEAPON-TIER-D2-01",
+      "candidateId": "independent-11401-SUPPORT-R1",
+      "stableId": "independent-11401-SUPPORT-R1",
+      "weaponId": "11401",
+      "weaponName": "Favonius Sword",
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "oldTier": "SS",
+      "proposedTier": "SS",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/11401",
+        "game-facts.json#11401"
+      ],
+      "gameplayAssumptions": [
+        "Expected Energy per eligible 12s R1 window = 0.60 × 6 = 3.6 for wielder when a CRIT occurs",
+        "R5 100%/6s is context only",
+        "CRIT Rate and on-field hit window are mandatory conditions"
+      ],
+      "explanation": "Windfall ở R1 có 60% xác suất tạo Particle trị 6 Energy cho người cầm sau một cú CRIT, với ICD 12s. Nếu có ít nhất một CRIT trong cửa sổ đủ điều kiện, kỳ vọng ở mức 0,60 × 6 = 3,6 Energy cho người cầm mỗi 12s, không phải 6 Energy đảm bảo; người cầm cần CRIT Rate thực tế và một cửa sổ ra sân để gây CRIT. Chỉ số phụ ER giúp bản thân Favonius Sword xoay Burst tốt hơn, còn Particle chia cho đội phụ thuộc thu thập. Đánh giá SS ở R1 vì tiện ích năng lượng phổ dụng cho Support kiếm có cửa sổ CRIT trên sân; điều kiện này được nêu rõ và không được thay bằng giá trị R5 (100%/6s).",
+      "explanationVi": "Windfall ở R1 có 60% xác suất tạo Particle trị 6 Energy cho người cầm sau một cú CRIT, với ICD 12s. Nếu có ít nhất một CRIT trong cửa sổ đủ điều kiện, kỳ vọng ở mức 0,60 × 6 = 3,6 Energy cho người cầm mỗi 12s, không phải 6 Energy đảm bảo; người cầm cần CRIT Rate thực tế và một cửa sổ ra sân để gây CRIT. Chỉ số phụ ER giúp bản thân Favonius Sword xoay Burst tốt hơn, còn Particle chia cho đội phụ thuộc thu thập. Đánh giá SS ở R1 vì tiện ích năng lượng phổ dụng cho Support kiếm có cửa sổ CRIT trên sân; điều kiện này được nêu rõ và không được thay bằng giá trị R5 (100%/6s).",
+      "confidence": "HIGH",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "R1 reliability was not quantified; added explicit R1-only expected Energy and on-field CRIT requirements. R5 values are context only and are not used to justify R1 SS.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 Windfall 60% chance, 6 Energy, 12s ICD on CRIT hits.",
+          "R5 100%/6s is a different refinement and is not the evaluated configuration."
+        ],
+        "editorialJudgment": "SS giữ nguyên như đề xuất chờ Admin: giá trị R1 đã đủ có điều kiện; không dùng R5 để nâng mức tin cậy.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "99bcedcc30f03b29008f31285c00fdcac1a19dd0337c30764060c99bcfa9dce9",
+      "newChecksum": "c272e3d99e0bf387e9bee7ea9d2382901bb95611ce94c080067916d337c2796a",
+      "changeReason": "R1 reliability was not quantified; added explicit R1-only expected Energy and on-field CRIT requirements. R5 values are context only and are not used to justify R1 SS.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Chỉ số phụ Năng Lượng Nạp và Windfall ở R1 cho xác suất 60% tạo 6 Năng Lượng mỗi 12s khi đánh bạo kích, nên cơ chế sinh hạt đã hoạt động mà không cần tinh luyện sâu. Điều kiện là người cầm phải đạt tỷ lệ bạo kích đủ dùng và có mặt trên sân để gây bạo kích. Đây là đánh giá độc lập theo tiêu chí sinh năng lượng và tính phổ dụng của vai trò Support, không dựa trên độ hiếm hay danh sách nhân vật đề xuất.",
+          "after": "Windfall ở R1 có 60% xác suất tạo Particle trị 6 Energy cho người cầm sau một cú CRIT, với ICD 12s. Nếu có ít nhất một CRIT trong cửa sổ đủ điều kiện, kỳ vọng ở mức 0,60 × 6 = 3,6 Energy cho người cầm mỗi 12s, không phải 6 Energy đảm bảo; người cầm cần CRIT Rate thực tế và một cửa sổ ra sân để gây CRIT. Chỉ số phụ ER giúp bản thân Favonius Sword xoay Burst tốt hơn, còn Particle chia cho đội phụ thuộc thu thập. Đánh giá SS ở R1 vì tiện ích năng lượng phổ dụng cho Support kiếm có cửa sổ CRIT trên sân; điều kiện này được nêu rõ và không được thay bằng giá trị R5 (100%/6s).",
+          "reason": "R1 reliability was not quantified; added explicit R1-only expected Energy and on-field CRIT requirements. R5 values are context only and are not used to justify R1 SS."
+        },
+        {
+          "field": "tierJustification",
+          "before": "SS giữ nguyên: sinh hạt ER ở R1 hoạt động ngay, phổ dụng cho Support kiếm cần xoay vòng; điều kiện bạo kích được ghi rõ nên không phải buff không điều kiện.",
+          "after": "SS giữ nguyên như đề xuất chờ Admin: giá trị R1 đã đủ có điều kiện; không dùng R5 để nâng mức tin cậy.",
+          "reason": "R1 reliability was not quantified; added explicit R1-only expected Energy and on-field CRIT requirements. R5 values are context only and are not used to justify R1 SS."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "có tỷ lệ bạo kích đủ dùng",
+            "phải ra sân để gây bạo kích",
+            "R1 là mức đánh giá"
+          ],
+          "after": [
+            "Expected Energy per eligible 12s R1 window = 0.60 × 6 = 3.6 for wielder when a CRIT occurs",
+            "R5 100%/6s is context only",
+            "CRIT Rate and on-field hit window are mandatory conditions"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "ER substat",
+            "Windfall R1: 60% chance, 6 Energy, 12s ICD",
+            "Windfall R5: 100% chance, 6s ICD"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 Windfall 60% chance, 6 Energy, 12s ICD on CRIT hits.",
+            "R5 100%/6s is a different refinement and is not the evaluated configuration."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "R1 reliability was not quantified; added explicit R1-only expected Energy and on-field CRIT requirements. R5 values are context only and are not used to justify R1 SS."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-02",
+      "candidateId": "independent-11403-SUB_DPS-R5",
+      "stableId": "independent-11403-SUB_DPS-R5",
+      "weaponId": "11403",
+      "weaponName": "Sacrificial Sword",
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "refinement": "R5",
+      "oldTier": "S",
+      "proposedTier": "S",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/11403",
+        "game-facts.json#11403"
+      ],
+      "gameplayAssumptions": [
+        "Skill must damage an opponent",
+        "Reset chance is 80%, not 100%",
+        "ICD is 16s at R5",
+        "Applicable characters need a damaging Skill and a short on-field recast window"
+      ],
+      "explanation": "Composed ở R5 chỉ có cơ hội kích hoạt sau khi Elemental Skill gây sát thương cho đối thủ: xác suất 80%, ICD 16s. Để trở thành giá trị Sub DPS, nhân vật phải có Skill gây damage, quay lại sân để recast trong rotation vàSkill đó phải trúng; lần cast thứ hai chỉ sinh thêm Particle nếu Skill có khả năng sinh hạt. Không giả định reset luôn thành công. Vì cần cửa sổ on-field ngắn nên lợi ích không tự động áp dụng cho mọi Sword Sub DPS; tier S được giữ như đề xuất có điều kiện.",
+      "explanationVi": "Composed ở R5 chỉ có cơ hội kích hoạt sau khi Elemental Skill gây sát thương cho đối thủ: xác suất 80%, ICD 16s. Để trở thành giá trị Sub DPS, nhân vật phải có Skill gây damage, quay lại sân để recast trong rotation vàSkill đó phải trúng; lần cast thứ hai chỉ sinh thêm Particle nếu Skill có khả năng sinh hạt. Không giả định reset luôn thành công. Vì cần cửa sổ on-field ngắn nên lợi ích không tự động áp dụng cho mọi Sword Sub DPS; tier S được giữ như đề xuất có điều kiện.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Made E-hit, 80% reset, 16s ICD, on-field recast and applicable-character limits explicit; no 100% reset assumption.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R5 Composed 80% reset chance, 16s ICD, requires Elemental Skill to damage an opponent."
+        ],
+        "editorialJudgment": "S giữ nguyên: reset R5 mạnh nhưng chỉ chuyển thành damage/Energy khi trúng và có recast trên sân.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "79833088e0284741a1401b572af8f51788c55f627225a0df02f2260bf90cd257",
+      "newChecksum": "9d2ba88fe7e76548a7d441cec191c5f85084802c7395e5aa5b0011d0a8a71897",
+      "changeReason": "Made E-hit, 80% reset, 16s ICD, on-field recast and applicable-character limits explicit; no 100% reset assumption.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Composed ở R5 có xác suất 80% đặt lại thời gian hồi kỹ năng sau khi kỹ năng gây sát thương cho địch, với chu kỳ tối đa một lần mỗi 16s. Để sub DPS hưởng lợi, nhân vật phải trở lại sân và dùng lại kỹ năng, đồng thời kỹ năng đó phải trúng địch; vì vậy lợi ích không được giả định là luôn xảy ra. Lần dùng kỹ năng thứ hai có thể tạo thêm hạt nếu kỹ năng sinh hạt, nhưng cần một cửa sổ ngắn trên sân trong xoay vòng. Với điều kiện được ghi rõ, tier S phản ánh giá trị khi reset hoạt động, không phải mức tự động cho mọi nhân vật.",
+          "after": "Composed ở R5 chỉ có cơ hội kích hoạt sau khi Elemental Skill gây sát thương cho đối thủ: xác suất 80%, ICD 16s. Để trở thành giá trị Sub DPS, nhân vật phải có Skill gây damage, quay lại sân để recast trong rotation vàSkill đó phải trúng; lần cast thứ hai chỉ sinh thêm Particle nếu Skill có khả năng sinh hạt. Không giả định reset luôn thành công. Vì cần cửa sổ on-field ngắn nên lợi ích không tự động áp dụng cho mọi Sword Sub DPS; tier S được giữ như đề xuất có điều kiện.",
+          "reason": "Made E-hit, 80% reset, 16s ICD, on-field recast and applicable-character limits explicit; no 100% reset assumption."
+        },
+        {
+          "field": "tierJustification",
+          "before": "S giữ nguyên nhưng kèm điều kiện: reset R5 mạnh (80%/16s) chỉ chuyển thành sát thương và năng lượng khi kỹ năng trúng địch và có lần recast trên sân.",
+          "after": "S giữ nguyên: reset R5 mạnh nhưng chỉ chuyển thành damage/Energy khi trúng và có recast trên sân.",
+          "reason": "Made E-hit, 80% reset, 16s ICD, on-field recast and applicable-character limits explicit; no 100% reset assumption."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "kỹ năng phải gây damage để có cơ hội reset",
+            "xác suất 80% và ICD 16s ở R5",
+            "cần on-field recast trong rotation",
+            "không giả định reset luôn proc"
+          ],
+          "after": [
+            "Skill must damage an opponent",
+            "Reset chance is 80%, not 100%",
+            "ICD is 16s at R5",
+            "Applicable characters need a damaging Skill and a short on-field recast window"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "Composed R1: skill must damage opponent, 40% chance, 30s ICD",
+            "Composed R5: 80% chance, 16s ICD"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R5 Composed 80% reset chance, 16s ICD, requires Elemental Skill to damage an opponent."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Made E-hit, 80% reset, 16s ICD, on-field recast and applicable-character limits explicit; no 100% reset assumption."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-03",
+      "candidateId": "independent-11418-SUPPORT-R1",
+      "stableId": "independent-11418-SUPPORT-R1",
+      "weaponId": "11418",
+      "weaponName": "Xiphos' Moonlight",
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "oldTier": "S",
+      "proposedTier": "S",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/11418",
+        "game-facts.json#11418"
+      ],
+      "gameplayAssumptions": [
+        "Illustrative 800 EM example is not a universal build target",
+        "Party members must be nearby to receive 30% share",
+        "Non-EM supports receive little value"
+      ],
+      "explanation": "Jinni's Whisper R1 cho người cầm 0,036% Energy Recharge cho mỗi điểm EM trong 12s, kích hoạt mỗi 10s và chia 30% giá trị đó cho đồng đội gần; hiệu ứng vẫn chạy off-field. Ví dụ minh họa với 800 EM: 28,8% ER cho người cầm và khoảng 8,64% ER chia cho mỗi đồng đội, trước các giới hạn thực tế. Đây không phải nguồn năng lượng phổ dụng: Support không build EM hưởng rất ít, trong khi Favonius chỉ cần CRIT/on-field. Đánh giá S vì giá trị ER đội hình mạnh nhưng có điều kiện build EM và team share.",
+      "explanationVi": "Jinni's Whisper R1 cho người cầm 0,036% Energy Recharge cho mỗi điểm EM trong 12s, kích hoạt mỗi 10s và chia 30% giá trị đó cho đồng đội gần; hiệu ứng vẫn chạy off-field. Ví dụ minh họa với 800 EM: 28,8% ER cho người cầm và khoảng 8,64% ER chia cho mỗi đồng đội, trước các giới hạn thực tế. Đây không phải nguồn năng lượng phổ dụng: Support không build EM hưởng rất ít, trong khi Favonius chỉ cần CRIT/on-field. Đánh giá S vì giá trị ER đội hình mạnh nhưng có điều kiện build EM và team share.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Added quantified EM condition, team-share math and comparison with non-EM supports; removed any implication of universal sword-support utility.",
+        "gameFacts": [
+          "genshin-db@5.2.15: 0.036% ER per EM for 12s every 10s, 30% shared; triggers off-field."
+        ],
+        "editorialJudgment": "S giữ nguyên: buff ER đội hình có điều kiện EM, không phải hỗ trợ phổ dụng cho mọi Sword Support.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "3e268bac16e789d3ddc732a562f5d8db4678f94784f663e5828da8683e36bda7",
+      "newChecksum": "44030aa2e6271b6266ae44d3296554206b0cff0cb1361bba5063de44a8c3a0b2",
+      "changeReason": "Added quantified EM condition, team-share math and comparison with non-EM supports; removed any implication of universal sword-support utility.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Jinni's Whisper ở R1 chuyển 0,036% Năng Lượng Nạp cho mỗi điểm Tinh Thông trong 12s, kích hoạt mỗi 10s và chia 30% cho đồng đội gần đó. Hiệu ứng vẫn chạy khi người cầm không ra sân, nhưng tỷ lệ chia sẻ phụ thuộc vào việc xây dựng đủ Tinh Thông. Đánh giá S phản ánh giá trị năng lượng đội hình có điều kiện, không phải mức phổ dụng như một nguồn hồi năng lượng không điều kiện.",
+          "after": "Jinni's Whisper R1 cho người cầm 0,036% Energy Recharge cho mỗi điểm EM trong 12s, kích hoạt mỗi 10s và chia 30% giá trị đó cho đồng đội gần; hiệu ứng vẫn chạy off-field. Ví dụ minh họa với 800 EM: 28,8% ER cho người cầm và khoảng 8,64% ER chia cho mỗi đồng đội, trước các giới hạn thực tế. Đây không phải nguồn năng lượng phổ dụng: Support không build EM hưởng rất ít, trong khi Favonius chỉ cần CRIT/on-field. Đánh giá S vì giá trị ER đội hình mạnh nhưng có điều kiện build EM và team share.",
+          "reason": "Added quantified EM condition, team-share math and comparison with non-EM supports; removed any implication of universal sword-support utility."
+        },
+        {
+          "field": "tierJustification",
+          "before": "S giữ nguyên: buff ER đội hình có điều kiện EM, chạy off-field nhưng không phổ dụng như Favonius.",
+          "after": "S giữ nguyên: buff ER đội hình có điều kiện EM, không phải hỗ trợ phổ dụng cho mọi Sword Support.",
+          "reason": "Added quantified EM condition, team-share math and comparison with non-EM supports; removed any implication of universal sword-support utility."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "cần đầu tư Tinh Thông",
+            "tự động kích hoạt mỗi 10s kể cả off-field",
+            "chia 30% cho đồng đội gần"
+          ],
+          "after": [
+            "Illustrative 800 EM example is not a universal build target",
+            "Party members must be nearby to receive 30% share",
+            "Non-EM supports receive little value"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "EM substat",
+            "Jinni's Whisper R1: 0.036% ER per EM for 12s every 10s, 30% shared",
+            "R5 coefficient 0.072%"
+          ],
+          "after": [
+            "genshin-db@5.2.15: 0.036% ER per EM for 12s every 10s, 30% shared; triggers off-field."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Added quantified EM condition, team-share math and comparison with non-EM supports; removed any implication of universal sword-support utility."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-04",
+      "candidateId": "independent-11512-MAIN_DPS-R1",
+      "stableId": "independent-11512-MAIN_DPS-R1",
+      "weaponId": "11512",
+      "weaponName": "Light of Foliar Incision",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "refinement": "R1",
+      "oldTier": "S",
+      "proposedTier": "S",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/11512",
+        "game-facts.json#11512"
+      ],
+      "gameplayAssumptions": [
+        "Normal Attack must deal Elemental DMG",
+        "User must benefit from EM-added damage and CRIT DMG",
+        "28 instances or 12s caps uptime; not all Sword users qualify"
+      ],
+      "explanation": "Whitemoon Bristle R1 tăng 4% CRIT Rate; sau khi Normal Attack gây Elemental DMG, hiệu ứng cộng 120% EM vào sát thương Normal Attack và Elemental Skill trong tối đa 28 lần nhận sát thương hoặc 12s. Để đạt giá trị, nhân vật vừa phải có Normal Attack gây sát thương nguyên tố, vừa có mô hình damage hưởng lợi từ EM và CRIT DMG substat. Nhân vật Sword dùng Normal Attack thuần physical hoặc không scale EM gần như không hưởng lợi, nên không thể gán passive cho mọi Sword user. Tier S giữ nguyên như đề xuất có điều kiện.",
+      "explanationVi": "Whitemoon Bristle R1 tăng 4% CRIT Rate; sau khi Normal Attack gây Elemental DMG, hiệu ứng cộng 120% EM vào sát thương Normal Attack và Elemental Skill trong tối đa 28 lần nhận sát thương hoặc 12s. Để đạt giá trị, nhân vật vừa phải có Normal Attack gây sát thương nguyên tố, vừa có mô hình damage hưởng lợi từ EM và CRIT DMG substat. Nhân vật Sword dùng Normal Attack thuần physical hoặc không scale EM gần như không hưởng lợi, nên không thể gán passive cho mọi Sword user. Tier S giữ nguyên như đề xuất có điều kiện.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Restricted the passive to real Elemental Normal Attack + EM/CRIT compatible users and explicitly rejected applying it to every Sword character.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 +4% CRIT Rate, +120% EM to Normal Attack and Elemental Skill DMG after Normal Attack deals Elemental DMG, 28 instances/12s."
+        ],
+        "editorialJudgment": "S giữ nguyên: passive mạnh nhưng bị giới hạn bởi trigger Elemental Normal Attack và hệ số EM/CRIT.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "ff161813968954a2eaf2387b04eed7da6232e9846328160079f571c99e047929",
+      "newChecksum": "65d1680be8357af2876bea3a5a01eb62db29f6f3d60b9ab49588f8cee034d1be",
+      "changeReason": "Restricted the passive to real Elemental Normal Attack + EM/CRIT compatible users and explicitly rejected applying it to every Sword character.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Whitemoon Bristle ở R1 tăng 4% CRIT Rate và cộng 120% Tinh Thông vào sát thương đòn thường cùng kỹ năng sau khi đòn thường gây sát thương nguyên tố, tồn tại 12s hoặc 28 lần nhận sát thương. Chỉ số phụ CRIT DMG khớp với hiệu ứng này nhưng lợi ích chỉ trọn vẹn khi nhân vật duy trì đòn thường và có hệ số Tinh Thông đáng kể. Vì điều kiện đó, tier S được giữ làm đánh giá có điều kiện thay vì suy từ rarity 5 sao.",
+          "after": "Whitemoon Bristle R1 tăng 4% CRIT Rate; sau khi Normal Attack gây Elemental DMG, hiệu ứng cộng 120% EM vào sát thương Normal Attack và Elemental Skill trong tối đa 28 lần nhận sát thương hoặc 12s. Để đạt giá trị, nhân vật vừa phải có Normal Attack gây sát thương nguyên tố, vừa có mô hình damage hưởng lợi từ EM và CRIT DMG substat. Nhân vật Sword dùng Normal Attack thuần physical hoặc không scale EM gần như không hưởng lợi, nên không thể gán passive cho mọi Sword user. Tier S giữ nguyên như đề xuất có điều kiện.",
+          "reason": "Restricted the passive to real Elemental Normal Attack + EM/CRIT compatible users and explicitly rejected applying it to every Sword character."
+        },
+        {
+          "field": "tierJustification",
+          "before": "S giữ nguyên: passive mạnh nhưng bị khóa bởi đòn thường gây sát thương nguyên tố và hệ số EM, nên không xếp SS tổng quát.",
+          "after": "S giữ nguyên: passive mạnh nhưng bị giới hạn bởi trigger Elemental Normal Attack và hệ số EM/CRIT.",
+          "reason": "Restricted the passive to real Elemental Normal Attack + EM/CRIT compatible users and explicitly rejected applying it to every Sword character."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "đòn thường phải gây sát thương nguyên tố",
+            "duy trì đòn thường trong 12s hoặc 28 lần",
+            "cần CRIT Rate và EM"
+          ],
+          "after": [
+            "Normal Attack must deal Elemental DMG",
+            "User must benefit from EM-added damage and CRIT DMG",
+            "28 instances or 12s caps uptime; not all Sword users qualify"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "CRIT DMG substat",
+            "Whitemoon Bristle R1: +4% CRIT Rate, 120% EM added to NA/Skill DMG, 28 instances or 12s",
+            "R5: +8% CRIT Rate, 240% EM"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 +4% CRIT Rate, +120% EM to Normal Attack and Elemental Skill DMG after Normal Attack deals Elemental DMG, 28 instances/12s."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Restricted the passive to real Elemental Normal Attack + EM/CRIT compatible users and explicitly rejected applying it to every Sword character."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-05",
+      "candidateId": "independent-12401-SUB_DPS-R1",
+      "stableId": "independent-12401-SUB_DPS-R1",
+      "weaponId": "12401",
+      "weaponName": "Favonius Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "oldTier": "A",
+      "proposedTier": "A",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/12401",
+        "game-facts.json#12401"
+      ],
+      "gameplayAssumptions": [
+        "CRIT Rate assumptions: MISSING",
+        "Passive proc conditions: MISSING",
+        "Rotation: MISSING",
+        "Field-time requirements: MISSING",
+        "Energy generation assumptions: MISSING",
+        "Rubric justification: MISSING"
+      ],
+      "explanation": "Windfall ở R1 cho 60% xác suất tạo 6 Năng Lượng mỗi 12s khi bạo kích, và chỉ số phụ Năng Lượng Nạp giúp bản thân người cầm xoay vòng tốt hơn. Sub DPS trọng kiếm thường ở sân ngắn, nên nội tại chỉ sinh hạt nếu có cửa sổ đứng sân để gây bạo kích và tỷ lệ bạo kích đủ cao. Vì thời gian kích hoạt không đảm bảo trong mọi rotation, tier A được giữ kèm độ tin cậy thấp và không được nâng lên khi thiếu điều kiện uptime.",
+      "explanationVi": "Windfall ở R1 cho 60% xác suất tạo 6 Năng Lượng mỗi 12s khi bạo kích, và chỉ số phụ Năng Lượng Nạp giúp bản thân người cầm xoay vòng tốt hơn. Sub DPS trọng kiếm thường ở sân ngắn, nên nội tại chỉ sinh hạt nếu có cửa sổ đứng sân để gây bạo kích và tỷ lệ bạo kích đủ cao. Vì thời gian kích hoạt không đảm bảo trong mọi rotation, tier A được giữ kèm độ tin cậy thấp và không được nâng lên khi thiếu điều kiện uptime.",
+      "confidence": "LOW",
+      "reviewStatus": "NEEDS_MORE_EVIDENCE",
+      "d2Review": {
+        "recommendationFromIndependentReport": "REQUEST_CHANGES_BLOCKED",
+        "changeReason": "Frozen Group B status is retained. All six required evidence fields remain absent; confidence stays LOW and the record remains blocked and non-importable. The incomplete reason string in the prior sheet is corrected to name all six fields.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 Windfall 60% chance, 6 Energy, 12s ICD on CRIT hits.",
+          "Game facts are valid but insufficient; they do not unblock this candidate."
+        ],
+        "editorialJudgment": "No tier change is made in this D2 pass.",
+        "missingEvidence": [],
+        "blockedEvidence": [
+          {
+            "field": "critRateAssumptions",
+            "label": "CRIT Rate assumptions",
+            "present": false
+          },
+          {
+            "field": "passiveProcConditions",
+            "label": "Passive proc conditions",
+            "present": false
+          },
+          {
+            "field": "rotation",
+            "label": "Rotation",
+            "present": false
+          },
+          {
+            "field": "fieldTimeRequirements",
+            "label": "Field-time requirements",
+            "present": false
+          },
+          {
+            "field": "energyGenerationAssumptions",
+            "label": "Energy generation assumptions",
+            "present": false
+          },
+          {
+            "field": "rubricJustification",
+            "label": "Rubric justification",
+            "present": false
+          }
+        ],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "4c6d8185295e9e7abb9f1fdab6d682b85569c5d8b12ca1cbab8e67d20dff051a",
+      "newChecksum": "4f716a4ea1013604e38c04d034a369c0448103b0ae7331ca01ee1bc855886d4f",
+      "changeReason": "Frozen Group B status is retained. All six required evidence fields remain absent; confidence stays LOW and the record remains blocked and non-importable. The incomplete reason string in the prior sheet is corrected to name all six fields.",
+      "changedFields": [
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "passive cần CRIT hit",
+            "nhân vật phải đứng sân khi kích hoạt",
+            "60% chance, 12s ICD, 6 Energy ở R1",
+            "cần CRIT Rate đủ"
+          ],
+          "after": [
+            "CRIT Rate assumptions: MISSING",
+            "Passive proc conditions: MISSING",
+            "Rotation: MISSING",
+            "Field-time requirements: MISSING",
+            "Energy generation assumptions: MISSING",
+            "Rubric justification: MISSING"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "ER substat",
+            "Windfall R1: 60% chance, 6 Energy, 12s ICD, requires CRIT hit",
+            "R5: 100% chance, 6s ICD"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 Windfall 60% chance, 6 Energy, 12s ICD on CRIT hits.",
+            "Game facts are valid but insufficient; they do not unblock this candidate."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "NEEDS_MORE_EVIDENCE",
+          "after": "NEEDS_MORE_EVIDENCE",
+          "reason": "Frozen Group B status is retained. All six required evidence fields remain absent; confidence stays LOW and the record remains blocked and non-importable. The incomplete reason string in the prior sheet is corrected to name all six fields."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-06",
+      "candidateId": "independent-12502-SUPPORT-R1",
+      "stableId": "independent-12502-SUPPORT-R1",
+      "weaponId": "12502",
+      "weaponName": "Wolf's Gravestone",
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "oldTier": "A",
+      "proposedTier": "A",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/12502",
+        "game-facts.json#12502"
+      ],
+      "gameplayAssumptions": [
+        "On-hit trigger against opponent below 30% HP",
+        "Buff duration 12s, ICD 30s",
+        "Role classified as SUPPORT because of party-wide ATK buff",
+        "Team must scale with ATK"
+      ],
+      "explanation": "Wolfish Tracker R1 tăng 20% ATK cho người cầm và, khi một đòn đánh trúng đối thủ dưới 30% HP, tăng 40% ATK cho toàn đội trong 12s với ICD 30s. Đây là party-wide ATK buff nên được đánh giá trong role SUPPORT, không phải chỉ là damage cá nhân; tuy nhiên trigger phụ thuộc mốc HP thấp, phải đánh trúng và uptime chỉ 12/30s. Chỉ số phụ ATK% không bổ sung Energy hay tiện ích phòng thủ. Tier A được giữ vì buff mạnh nhưng ngắt quãng và situational.",
+      "explanationVi": "Wolfish Tracker R1 tăng 20% ATK cho người cầm và, khi một đòn đánh trúng đối thủ dưới 30% HP, tăng 40% ATK cho toàn đội trong 12s với ICD 30s. Đây là party-wide ATK buff nên được đánh giá trong role SUPPORT, không phải chỉ là damage cá nhân; tuy nhiên trigger phụ thuộc mốc HP thấp, phải đánh trúng và uptime chỉ 12/30s. Chỉ số phụ ATK% không bổ sung Energy hay tiện ích phòng thủ. Tier A được giữ vì buff mạnh nhưng ngắt quãng và situational.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Explained low-HP trigger, party ATK buff, 12s/30s uptime and why the record is evaluated under SUPPORT rather than personal damage.",
+        "gameFacts": [
+          "genshin-db@5.2.15: +20% self ATK; on hit against targets below 30% HP, +40% party ATK for 12s, once every 30s."
+        ],
+        "editorialJudgment": "A giữ nguyên: party ATK 40% là support value có thật nhưng uptime 12/30s và điều kiện HP <30% kéo xuống A.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "4831c47ef50dd9ec4481101b0c0e408a29b7215e0c78bd3e433503ebbecf6724",
+      "newChecksum": "6f8a75c36bce167607de3199b3a7f50a3da75b6bba659766058bc0fb77f2c903",
+      "changeReason": "Explained low-HP trigger, party ATK buff, 12s/30s uptime and why the record is evaluated under SUPPORT rather than personal damage.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Wolfish Tracker ở R1 tăng 20% ATK cho người cầm và 40% ATK cho cả đội trong 12s khi đánh trúng mục tiêu dưới 30% HP, với chu kỳ 30s. Buff mang lại giá trị hỗ trợ rõ nhưng điều kiện HP thấp và thời gian phủ 12s trên chu kỳ 30s khiến hiệu quả không liên tục. Chỉ số phụ ATK% không bổ sung năng lượng hay tiện ích đội hình, nên tier A được giữ sau khi xét cả điều kiện lẫn thời gian phủ.",
+          "after": "Wolfish Tracker R1 tăng 20% ATK cho người cầm và, khi một đòn đánh trúng đối thủ dưới 30% HP, tăng 40% ATK cho toàn đội trong 12s với ICD 30s. Đây là party-wide ATK buff nên được đánh giá trong role SUPPORT, không phải chỉ là damage cá nhân; tuy nhiên trigger phụ thuộc mốc HP thấp, phải đánh trúng và uptime chỉ 12/30s. Chỉ số phụ ATK% không bổ sung Energy hay tiện ích phòng thủ. Tier A được giữ vì buff mạnh nhưng ngắt quãng và situational.",
+          "reason": "Explained low-HP trigger, party ATK buff, 12s/30s uptime and why the record is evaluated under SUPPORT rather than personal damage."
+        },
+        {
+          "field": "tierJustification",
+          "before": "A giữ nguyên: buff ATK 40% mạnh nhưng có điều kiện HP <30% và uptime 12/30s, thiếu tiện ích năng lượng.",
+          "after": "A giữ nguyên: party ATK 40% là support value có thật nhưng uptime 12/30s và điều kiện HP <30% kéo xuống A.",
+          "reason": "Explained low-HP trigger, party ATK buff, 12s/30s uptime and why the record is evaluated under SUPPORT rather than personal damage."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "mục tiêu phải dưới 30% HP",
+            "phải đánh trúng để kích hoạt",
+            "chu kỳ 30s, buff 12s"
+          ],
+          "after": [
+            "On-hit trigger against opponent below 30% HP",
+            "Buff duration 12s, ICD 30s",
+            "Role classified as SUPPORT because of party-wide ATK buff",
+            "Team must scale with ATK"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "ATK% substat",
+            "Wolfish Tracker R1: +20% self ATK, +40% party ATK for 12s on targets below 30% HP, 30s ICD",
+            "R5: +40% / +80%"
+          ],
+          "after": [
+            "genshin-db@5.2.15: +20% self ATK; on hit against targets below 30% HP, +40% party ATK for 12s, once every 30s."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Explained low-HP trigger, party ATK buff, 12s/30s uptime and why the record is evaluated under SUPPORT rather than personal damage."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-07",
+      "candidateId": "independent-13407-SUPPORT-R1",
+      "stableId": "independent-13407-SUPPORT-R1",
+      "weaponId": "13407",
+      "weaponName": "Favonius Lance",
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "refinement": "R1",
+      "oldTier": "SS",
+      "proposedTier": "SS",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/13407",
+        "game-facts.json#13407"
+      ],
+      "gameplayAssumptions": [
+        "Expected Energy per eligible 12s R1 window = 3.6 when a CRIT occurs",
+        "Polearm Support needs a real on-field CRIT window",
+        "R5 values are not used"
+      ],
+      "explanation": "Favonius Lance có chỉ số phụ ER và Windfall R1: 60% xác suất tạo Particle trị 6 Energy sau CRIT, ICD 12s. Khi có CRIT trong cửa sổ hợp lệ, kỳ vọng là 0,60 × 6 = 3,6 Energy cho người cầm mỗi 12s, không phải 6 Energy đảm bảo. Support cán dài thường có cửa sổ ra sân ngắn nên CRIT Rate thực tế và thời gian xuất hiện là điều kiện quyết định; giá trị R5 100%/6s chỉ là thông tin tham khảo. Đánh giá SS vì tiện ích ER và Particle đội hình rất mạnh khi điều kiện R1 được đáp ứng.",
+      "explanationVi": "Favonius Lance có chỉ số phụ ER và Windfall R1: 60% xác suất tạo Particle trị 6 Energy sau CRIT, ICD 12s. Khi có CRIT trong cửa sổ hợp lệ, kỳ vọng là 0,60 × 6 = 3,6 Energy cho người cầm mỗi 12s, không phải 6 Energy đảm bảo. Support cán dài thường có cửa sổ ra sân ngắn nên CRIT Rate thực tế và thời gian xuất hiện là điều kiện quyết định; giá trị R5 100%/6s chỉ là thông tin tham khảo. Đánh giá SS vì tiện ích ER và Particle đội hình rất mạnh khi điều kiện R1 được đáp ứng.",
+      "confidence": "HIGH",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Added the same R1-only reliability model as the sword Favonius case and realistic polearm-support on-field CRIT limitation; no R5 extrapolation.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 Windfall 60% chance, 6 Energy, 12s ICD on CRIT hits."
+        ],
+        "editorialJudgment": "SS giữ nguyên như đề xuất chờ Admin, không dùng R5 để biện minh cho độ tin cậy R1.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "9c05a3f28683a33234e1ad912882ad281822e53c0db41dcb3944d06212b83e0e",
+      "newChecksum": "bce10da76bc12a1549a15b0086ad2dccd170cdd341b9075b773fd713dcaced25",
+      "changeReason": "Added the same R1-only reliability model as the sword Favonius case and realistic polearm-support on-field CRIT limitation; no R5 extrapolation.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Favonius Lance có chỉ số phụ Năng Lượng Nạp và Windfall ở R1 tạo 6 Năng Lượng với xác suất 60% mỗi 12s khi bạo kích. Điều kiện cần có tỷ lệ bạo kích đủ dùng và một lần đánh trên sân, phù hợp với Support cán dài có thời gian ra sân ngắn. Đây là đánh giá độc lập theo khả năng nuôi xoay vòng đội hình, không lấy từ bảng xếp hạng bên ngoài hay số lượt đề xuất.",
+          "after": "Favonius Lance có chỉ số phụ ER và Windfall R1: 60% xác suất tạo Particle trị 6 Energy sau CRIT, ICD 12s. Khi có CRIT trong cửa sổ hợp lệ, kỳ vọng là 0,60 × 6 = 3,6 Energy cho người cầm mỗi 12s, không phải 6 Energy đảm bảo. Support cán dài thường có cửa sổ ra sân ngắn nên CRIT Rate thực tế và thời gian xuất hiện là điều kiện quyết định; giá trị R5 100%/6s chỉ là thông tin tham khảo. Đánh giá SS vì tiện ích ER và Particle đội hình rất mạnh khi điều kiện R1 được đáp ứng.",
+          "reason": "Added the same R1-only reliability model as the sword Favonius case and realistic polearm-support on-field CRIT limitation; no R5 extrapolation."
+        },
+        {
+          "field": "tierJustification",
+          "before": "SS giữ nguyên: ER substat cộng particle là tiện ích năng lượng phổ dụng, điều kiện crit được ghi rõ nhưng dễ đáp ứng.",
+          "after": "SS giữ nguyên như đề xuất chờ Admin, không dùng R5 để biện minh cho độ tin cậy R1.",
+          "reason": "Added the same R1-only reliability model as the sword Favonius case and realistic polearm-support on-field CRIT limitation; no R5 extrapolation."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "cần CRIT Rate đủ",
+            "phải có một lần đánh trên sân",
+            "R1 baseline"
+          ],
+          "after": [
+            "Expected Energy per eligible 12s R1 window = 3.6 when a CRIT occurs",
+            "Polearm Support needs a real on-field CRIT window",
+            "R5 values are not used"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "ER substat",
+            "Windfall R1: 60% chance, 6 Energy, 12s ICD",
+            "R5: 100% chance, 6s ICD"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 Windfall 60% chance, 6 Energy, 12s ICD on CRIT hits."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Added the same R1-only reliability model as the sword Favonius case and realistic polearm-support on-field CRIT limitation; no R5 extrapolation."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-08",
+      "candidateId": "independent-13501-MAIN_DPS-R1",
+      "stableId": "independent-13501-MAIN_DPS-R1",
+      "weaponId": "13501",
+      "weaponName": "Staff of Homa",
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "refinement": "R1",
+      "oldTier": "SS",
+      "proposedTier": "SS",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/13501",
+        "game-facts.json#13501"
+      ],
+      "gameplayAssumptions": [
+        "Below-50% HP bonus remains excluded from the SS basis",
+        "Need examples across varied Polearm MAIN_DPS scalings (ATK, HP, DEF/EM-oriented kits)",
+        "Need team examples beyond one or two standout users",
+        "Need explicit S-vs-SS threshold justification for the assessed version"
+      ],
+      "explanation": "Reckless Cinnabar ở R1 tăng 20% HP và cộng vào ATK một lượng bằng 0,8% Max HP, cộng thêm 1% Max HP khi người cầm dưới 50% HP. Phần chuyển HP sang ATK áp dụng cho mọi người dùng cán dài chứ không chỉ nhân vật scale HP, nên CRIT DMG cùng ATK cộng thêm tạo nền tảng tự đủ mà không cần điều kiện đội hình. Mốc HP thấp chỉ là phần thưởng bổ sung và không được tính vào căn cứ xếp SS, còn nhân vật có Max HP thấp hoặc scale DEF/HP hưởng ít hơn từ phần ATK. Vì vậy SS được đánh giá cho nhóm Main DPS cán dài nói chung dựa trên stats tự đủ, không suy từ trường hợp mạnh nhất của một vài nhân vật.",
+      "explanationVi": "Reckless Cinnabar ở R1 tăng 20% HP và cộng vào ATK một lượng bằng 0,8% Max HP, cộng thêm 1% Max HP khi người cầm dưới 50% HP. Phần chuyển HP sang ATK áp dụng cho mọi người dùng cán dài chứ không chỉ nhân vật scale HP, nên CRIT DMG cùng ATK cộng thêm tạo nền tảng tự đủ mà không cần điều kiện đội hình. Mốc HP thấp chỉ là phần thưởng bổ sung và không được tính vào căn cứ xếp SS, còn nhân vật có Max HP thấp hoặc scale DEF/HP hưởng ít hơn từ phần ATK. Vì vậy SS được đánh giá cho nhóm Main DPS cán dài nói chung dựa trên stats tự đủ, không suy từ trường hợp mạnh nhất của một vài nhân vật.",
+      "confidence": "HIGH",
+      "reviewStatus": "NEEDS_MORE_COMPARATIVE_EVIDENCE",
+      "d2Review": {
+        "recommendationFromIndependentReport": "REQUEST_CHANGES_COMPARATIVE_JUSTIFICATION",
+        "changeReason": "Mechanical facts are verified, but a category-wide SS claim requires version-scoped comparison across varied Polearm Main DPS. Status paused; proposed tier unchanged and no generic defense was invented.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 +20% HP, ATK bonus equal to 0.8% Max HP, +1% Max HP when below 50% HP; CRIT DMG substat.",
+          "The below-50% bonus is conditional and excluded from the baseline argument."
+        ],
+        "editorialJudgment": "No tier change is made in this D2 pass.",
+        "missingEvidence": [
+          "Comparative dossier across varied Polearm Main DPS users in the assessed version.",
+          "Examples showing where Max HP-to-ATK conversion matters and where it does not.",
+          "Team configurations for ATK-scaling, HP-scaling and DEF/EM-oriented carries.",
+          "Explicit rationale for SS rather than S using the weapon rubric criteria."
+        ],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "af208d96f8a5d859d1ed54bcc35d7c95122decec2c7897705aba62282cb17e86",
+      "newChecksum": "90da5f517c5feb9531e47bca67d81033e341ea2629ee59af8e7d4e4491f26831",
+      "changeReason": "Mechanical facts are verified, but a category-wide SS claim requires version-scoped comparison across varied Polearm Main DPS. Status paused; proposed tier unchanged and no generic defense was invented.",
+      "changedFields": [
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "R1 baseline",
+            "phần ATK từ Max HP áp dụng cho mọi cán dài nhưng tỷ lệ hưởng lợi tùy Max HP",
+            "dưới 50% HP chỉ là phần thưởng, không tính vào căn cứ SS",
+            "nhân vật scale DEF/HP hưởng ít hơn từ phần ATK"
+          ],
+          "after": [
+            "Below-50% HP bonus remains excluded from the SS basis",
+            "Need examples across varied Polearm MAIN_DPS scalings (ATK, HP, DEF/EM-oriented kits)",
+            "Need team examples beyond one or two standout users",
+            "Need explicit S-vs-SS threshold justification for the assessed version"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "CRIT DMG substat",
+            "Reckless Cinnabar R1: +20% HP, 0.8% Max HP to ATK, +1% below 50% HP",
+            "R5: +40% HP, 1.6% / 1.8%"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 +20% HP, ATK bonus equal to 0.8% Max HP, +1% Max HP when below 50% HP; CRIT DMG substat.",
+            "The below-50% bonus is conditional and excluded from the baseline argument."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "NEEDS_MORE_COMPARATIVE_EVIDENCE",
+          "reason": "Mechanical facts are verified, but a category-wide SS claim requires version-scoped comparison across varied Polearm Main DPS. Status paused; proposed tier unchanged and no generic defense was invented."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-09",
+      "candidateId": "independent-14302-SUPPORT-R5",
+      "stableId": "independent-14302-SUPPORT-R5",
+      "weaponId": "14302",
+      "weaponName": "Thrilling Tales of Dragon Slayers",
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "refinement": "R5",
+      "oldTier": "SS",
+      "proposedTier": "S",
+      "tierChanged": true,
+      "evidence": [
+        "genshin-db://weapons/14302",
+        "game-facts.json#14302"
+      ],
+      "gameplayAssumptions": [
+        "48% ATK applies only to the next character taking the field",
+        "Duration 10s, ICD 20s",
+        "Benefit requires an ATK-scaling carry and correct swap order",
+        "Tier-semantics question remains unresolved"
+      ],
+      "explanation": "Heritage ở R5 tăng 48% ATK trong 10s cho nhân vật vào sân ngay sau người cầm, với chu kỳ 20s và yêu cầu người cầm rời sân đúng trình tự. Buff chỉ có giá trị với nhân vật scale theo ATK và có thời gian phủ 10s trên chu kỳ 20s, nên không phải hỗ trợ phổ dụng cho mọi vai trò Support. Tier được điều chỉnh từ SS xuống S vì giá trị bị giới hạn bởi hệ số scale, thứ tự đổi người và uptime, dù mức buff tại R5 rất cao.",
+      "explanationVi": "Heritage ở R5 tăng 48% ATK trong 10s cho nhân vật vào sân ngay sau người cầm, với chu kỳ 20s và yêu cầu người cầm rời sân đúng trình tự. Buff chỉ có giá trị với nhân vật scale theo ATK và có thời gian phủ 10s trên chu kỳ 20s, nên không phải hỗ trợ phổ dụng cho mọi vai trò Support. Tier được điều chỉnh từ SS xuống S vì giá trị bị giới hạn bởi hệ số scale, thứ tự đổi người và uptime, dù mức buff tại R5 rất cao.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "MANDATORY_TIER_RE_REVIEW_PENDING",
+      "d2Review": {
+        "recommendationFromIndependentReport": "MANDATORY_SEPARATE_TIER_RE_REVIEW",
+        "changeReason": "D2 adds a separate tier-semantics dossier for SS→S. No confirmation is granted; the proposed S remains pending and the Admin must decide whether tier measures universal flexibility or niche best-in-slot value.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R5 +48% ATK to incoming character for 10s, once every 20s.",
+          "R1 +24% ATK is context only."
+        ],
+        "editorialJudgment": "No tier change is made in this D2 pass.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": {
+          "previousTier": "SS",
+          "proposedTier": "S",
+          "change": "SS → S",
+          "criteriaToConfirm": [
+            "Does Tier measure general team flexibility or best-in-class niche value?",
+            "Can a niche best-in-slot weapon qualify for SS under the approved rubric?",
+            "Is the 10s/20s uptime plus ATK-scaling restriction sufficient to downrank SS to S?"
+          ],
+          "separateConfirmationRequired": true,
+          "confirmed": false
+        }
+      },
+      "oldChecksum": "14e2cd13fc59cf36709fcf2189ad9f9ea825f4c76adfd669b1d4fcc9667f7c57",
+      "newChecksum": "353ed2b6feccc42d45e6cb711c4f689e2c828e828a25beae992d5cc9ba5b568a",
+      "changeReason": "D2 adds a separate tier-semantics dossier for SS→S. No confirmation is granted; the proposed S remains pending and the Admin must decide whether tier measures universal flexibility or niche best-in-slot value.",
+      "changedFields": [
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "buff ATK cho nhân vật vào sân ngay sau người cầm",
+            "người cầm phải swap out đúng trình tự",
+            "10s duration / 20s cooldown",
+            "chỉ có giá trị nếu carry scale ATK"
+          ],
+          "after": [
+            "48% ATK applies only to the next character taking the field",
+            "Duration 10s, ICD 20s",
+            "Benefit requires an ATK-scaling carry and correct swap order",
+            "Tier-semantics question remains unresolved"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "HP% substat",
+            "Heritage R5: +48% ATK for incoming character for 10s, 20s ICD",
+            "R1: +24% ATK"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R5 +48% ATK to incoming character for 10s, once every 20s.",
+            "R1 +24% ATK is context only."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "MANDATORY_TIER_RE_REVIEW_PENDING",
+          "reason": "D2 adds a separate tier-semantics dossier for SS→S. No confirmation is granted; the proposed S remains pending and the Admin must decide whether tier measures universal flexibility or niche best-in-slot value."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-10",
+      "candidateId": "independent-14402-SUB_DPS-R1",
+      "stableId": "independent-14402-SUB_DPS-R1",
+      "weaponId": "14402",
+      "weaponName": "The Widsith",
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "oldTier": "S",
+      "proposedTier": "A",
+      "tierChanged": true,
+      "evidence": [
+        "genshin-db://weapons/14402",
+        "game-facts.json#14402"
+      ],
+      "gameplayAssumptions": [
+        "Each of the three songs has 1/3 base probability",
+        "Buff lasts 10s per 30s cycle",
+        "Burst window alignment materially changes value",
+        "EM theme can be valuable for EM-scaling Sub DPS or transformative teams"
+      ],
+      "explanation": "Debut R1 chọn ngẫu nhiên một trong ba bản ca khi nhân vật vào sân, mỗi bản 10s trên chu kỳ 30s: +60% ATK, +48% Elemental DMG hoặc +240 EM. Với phân bổ ngẫu nhiên, mỗi bản có kỳ vọng 1/3 trước khi xét độ phù hợp nhân vật; bản ca EM có thể là bản tốt nhất cho Sub DPS scale EM hoặc đội chuyển hóa, nên không được gọi là vô dụng. Giá trị thực tế phụ thuộc việc căn burst window vào 10s hiệu lực và nhóm nhân vật hưởng lợi. Đề xuất A (từ S) vì expected value thấp hơn best-case, nhưng thay đổi này bắt buộc phải do Admin xác nhận riêng.",
+      "explanationVi": "Debut R1 chọn ngẫu nhiên một trong ba bản ca khi nhân vật vào sân, mỗi bản 10s trên chu kỳ 30s: +60% ATK, +48% Elemental DMG hoặc +240 EM. Với phân bổ ngẫu nhiên, mỗi bản có kỳ vọng 1/3 trước khi xét độ phù hợp nhân vật; bản ca EM có thể là bản tốt nhất cho Sub DPS scale EM hoặc đội chuyển hóa, nên không được gọi là vô dụng. Giá trị thực tế phụ thuộc việc căn burst window vào 10s hiệu lực và nhóm nhân vật hưởng lợi. Đề xuất A (từ S) vì expected value thấp hơn best-case, nhưng thay đổi này bắt buộc phải do Admin xác nhận riêng.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "MANDATORY_TIER_RE_REVIEW_PENDING",
+      "d2Review": {
+        "recommendationFromIndependentReport": "MANDATORY_SEPARATE_TIER_RE_REVIEW",
+        "changeReason": "D2 adds an explicit expected-value model for S→A. EM theme is not treated as useless; no confirmation is granted and the proposed A remains pending.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 random 10s theme every 30s: +60% ATK / +48% Elemental DMG / +240 EM."
+        ],
+        "editorialJudgment": "S → A là proposed diff, chưa được xác nhận. Mô hình expected value 1/3 + uptime 10/30s được nộp để Admin re-review.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": {
+          "previousTier": "S",
+          "proposedTier": "A",
+          "change": "S → A",
+          "criteriaToConfirm": [
+            "Use expected value over all three themes rather than the best theme only.",
+            "Does a 10s/30s random buff with burst-window sensitivity merit A for the evaluated role?",
+            "Do EM-scaling Sub DPS cases prevent a universal downrank, or only narrow the scope?"
+          ],
+          "separateConfirmationRequired": true,
+          "confirmed": false
+        }
+      },
+      "oldChecksum": "7976f8d5c0119eba5c393b495e4445f60d22486f2e4b33e6bcb799cbbc620df9",
+      "newChecksum": "6c8cedf40352a1af1323fb041be8666bb9bd96a35b59a37ff958f78555ab795f",
+      "changeReason": "D2 adds an explicit expected-value model for S→A. EM theme is not treated as useless; no confirmation is granted and the proposed A remains pending.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Debut kích hoạt khi nhân vật ra sân, cho một trong ba bản ca ngẫu nhiên trong 10s với chu kỳ 30s; ở R1 các mức là 60% ATK, 48% sát thương nguyên tố hoặc 240 Tinh Thông. Bản ca Tinh Thông không nên xem là vô dụng: với Sub DPS scale EM hoặc đội phản ứng chuyển hóa, 240 EM có thể là bản ca có giá trị cao nhất, trong khi nhóm scale ATK hoặc sát thương nguyên tố hưởng lợi từ hai bản ca còn lại. Vì Sub DPS thường có cửa sổ burst ngắn, buff chỉ có giá trị nếu burst trùng với 10s hiệu lực; nếu kỹ năng và burst bước vào hồi chiêu ngoài cửa sổ 30s thì buff bị lãng phí. Tier điều chỉnh từ S xuống A vì giá trị phụ thuộc nhóm nhân vật và chỉ phủ 10/30s, không phải vì bản ca EM luôn kém.",
+          "after": "Debut R1 chọn ngẫu nhiên một trong ba bản ca khi nhân vật vào sân, mỗi bản 10s trên chu kỳ 30s: +60% ATK, +48% Elemental DMG hoặc +240 EM. Với phân bổ ngẫu nhiên, mỗi bản có kỳ vọng 1/3 trước khi xét độ phù hợp nhân vật; bản ca EM có thể là bản tốt nhất cho Sub DPS scale EM hoặc đội chuyển hóa, nên không được gọi là vô dụng. Giá trị thực tế phụ thuộc việc căn burst window vào 10s hiệu lực và nhóm nhân vật hưởng lợi. Đề xuất A (từ S) vì expected value thấp hơn best-case, nhưng thay đổi này bắt buộc phải do Admin xác nhận riêng.",
+          "reason": "D2 adds an explicit expected-value model for S→A. EM theme is not treated as useless; no confirmation is granted and the proposed A remains pending."
+        },
+        {
+          "field": "tierJustification",
+          "before": "OLD_TIER=S → PROPOSED_TIER=A. Lý do: giá trị thay đổi theo nhóm nhân vật (EM có thể là bản ca tốt với Sub DPS scale EM, không phải luôn vô dụng), cộng thêm buff chỉ 10s trên chu kỳ 30s và dễ lệch burst window; A phản ánh kỳ vọng thực tế thay vì buff tốt nhất.",
+          "after": "S → A là proposed diff, chưa được xác nhận. Mô hình expected value 1/3 + uptime 10/30s được nộp để Admin re-review.",
+          "reason": "D2 adds an explicit expected-value model for S→A. EM theme is not treated as useless; no confirmation is granted and the proposed A remains pending."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "kích hoạt khi nhân vật ra sân",
+            "ba hiệu ứng ngẫu nhiên và không chọn được bản ca",
+            "10s duration / 30s cooldown",
+            "cần căn burst window trong 10s hiệu lực",
+            "giá trị tùy nhóm: EM có thể hữu ích với Sub DPS scale EM hoặc đội chuyển hóa"
+          ],
+          "after": [
+            "Each of the three songs has 1/3 base probability",
+            "Buff lasts 10s per 30s cycle",
+            "Burst window alignment materially changes value",
+            "EM theme can be valuable for EM-scaling Sub DPS or transformative teams"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "CRIT DMG substat",
+            "Debut R1: random 10s theme every 30s: +60% ATK / +48% Elemental DMG / +240 EM",
+            "R5: 120% / 96% / 480"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 random 10s theme every 30s: +60% ATK / +48% Elemental DMG / +240 EM."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "MANDATORY_TIER_RE_REVIEW_PENDING",
+          "reason": "D2 adds an explicit expected-value model for S→A. EM theme is not treated as useless; no confirmation is granted and the proposed A remains pending."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-11",
+      "candidateId": "independent-14406-SUPPORT-R5",
+      "stableId": "independent-14406-SUPPORT-R5",
+      "weaponId": "14406",
+      "weaponName": "Prototype Amber",
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "refinement": "R5",
+      "oldTier": "A",
+      "proposedTier": "A",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/14406",
+        "game-facts.json#14406"
+      ],
+      "gameplayAssumptions": [
+        "No direct team-wide Energy regeneration",
+        "Each teammate heals from their own Max HP",
+        "18% total is before healing modifiers",
+        "Burst-dependent activation"
+      ],
+      "explanation": "Sau khi dùng Elemental Burst, Gilding R5 hồi 6 Energy mỗi 2s trong 6s cho riêng người cầm, tổng 18 Energy. Các thành viên đội không nhận Energy trực tiếp; mỗi người hồi 6% Max HP của chính họ mỗi 2s trong cùng 6s, tổng 18% Max HP mỗi người trước healing modifiers. Chỉ số phụ HP% hỗ trợ healing nhưng ít giá trị tấn công, và toàn bộ hiệu ứng phụ thuộc việc dùng Burst thường xuyên. Tier A được giữ vì team healing và hỗ trợ Burst cho người cầm vẫn đáng kể nhưng không đủ cho S.",
+      "explanationVi": "Sau khi dùng Elemental Burst, Gilding R5 hồi 6 Energy mỗi 2s trong 6s cho riêng người cầm, tổng 18 Energy. Các thành viên đội không nhận Energy trực tiếp; mỗi người hồi 6% Max HP của chính họ mỗi 2s trong cùng 6s, tổng 18% Max HP mỗi người trước healing modifiers. Chỉ số phụ HP% hỗ trợ healing nhưng ít giá trị tấn công, và toàn bộ hiệu ứng phụ thuộc việc dùng Burst thường xuyên. Tier A được giữ vì team healing và hỗ trợ Burst cho người cầm vẫn đáng kể nhưng không đủ cho S.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Verified the corrected Gilding facts and separated verbatim genshin-db values from mechanical interpretation of wielder-only Energy and per-character own-Max-HP healing.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R5 regenerates 6 Energy every 2s for 6s for wielder; all party members regenerate 6% of their own Max HP every 2s.",
+          "Wielder-only Energy and modifier ordering are mechanical interpretation consistent with the source values, not verbatim additions."
+        ],
+        "editorialJudgment": "A giữ nguyên: 18 Energy chỉ cho wielder, 18% own Max HP healing cho mỗi member, Burst-dependent.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "25d579067f2654c8eb4f591a6eeee33ce0ef78965cb8414621fc69ddc6711e0d",
+      "newChecksum": "f6ce9d3d53e9c1482e657e09add62f06f1f0e601101c6dce131e08a65e4abc11",
+      "changeReason": "Verified the corrected Gilding facts and separated verbatim genshin-db values from mechanical interpretation of wielder-only Energy and per-character own-Max-HP healing.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Sau khi dùng Năng Lượng Nạp ở R5, Gilding hồi 6 Năng Lượng mỗi 2s trong 6s cho riêng người cầm, tổng 18 Năng Lượng, còn mỗi thành viên đội chỉ hồi 6% Max HP của chính họ mỗi 2s, tổng 18% Max HP mỗi thành viên trong 6 giây trước modifier hồi máu. Không có hồi năng lượng trực tiếp cho cả đội và chỉ số phụ HP% có giá trị hỗ trợ hồi máu nhưng ít giá trị tấn công. Tier A được giữ lại vì khả năng hồi máu đội hình và hỗ trợ burst của người cầm vẫn đáng kể, nhưng phụ thuộc hoàn toàn vào rotation có dùng Burst thường xuyên.",
+          "after": "Sau khi dùng Elemental Burst, Gilding R5 hồi 6 Energy mỗi 2s trong 6s cho riêng người cầm, tổng 18 Energy. Các thành viên đội không nhận Energy trực tiếp; mỗi người hồi 6% Max HP của chính họ mỗi 2s trong cùng 6s, tổng 18% Max HP mỗi người trước healing modifiers. Chỉ số phụ HP% hỗ trợ healing nhưng ít giá trị tấn công, và toàn bộ hiệu ứng phụ thuộc việc dùng Burst thường xuyên. Tier A được giữ vì team healing và hỗ trợ Burst cho người cầm vẫn đáng kể nhưng không đủ cho S.",
+          "reason": "Verified the corrected Gilding facts and separated verbatim genshin-db values from mechanical interpretation of wielder-only Energy and per-character own-Max-HP healing."
+        },
+        {
+          "field": "tierJustification",
+          "before": "A giữ sau correction: mất khoản 'energy cho cả đội' từng được giả định, nhưng vẫn có 18% Max HP heal mỗi thành viên và 18 Energy cho người cầm; HP% substat và phụ thuộc Burst kéo giá trị xuống, không đủ cho S.",
+          "after": "A giữ nguyên: 18 Energy chỉ cho wielder, 18% own Max HP healing cho mỗi member, Burst-dependent.",
+          "reason": "Verified the corrected Gilding facts and separated verbatim genshin-db values from mechanical interpretation of wielder-only Energy and per-character own-Max-HP healing."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "phải dùng Elemental Burst để kích hoạt",
+            "6 Energy/2s trong 6s chỉ cho người cầm",
+            "mỗi thành viên hồi 6% Max HP của chính họ mỗi 2s",
+            "tổng 18% Max HP mỗi người trước healing bonus"
+          ],
+          "after": [
+            "No direct team-wide Energy regeneration",
+            "Each teammate heals from their own Max HP",
+            "18% total is before healing modifiers",
+            "Burst-dependent activation"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "HP% substat",
+            "Gilding R5: wielder regenerates 6 Energy every 2s for 6s = 18 Energy total",
+            "All party members regenerate 6% of their own Max HP every 2s for 6s = 18% Max HP total",
+            "No team-wide Energy regeneration"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R5 regenerates 6 Energy every 2s for 6s for wielder; all party members regenerate 6% of their own Max HP every 2s.",
+            "Wielder-only Energy and modifier ordering are mechanical interpretation consistent with the source values, not verbatim additions."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Verified the corrected Gilding facts and separated verbatim genshin-db values from mechanical interpretation of wielder-only Energy and per-character own-Max-HP healing."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-12",
+      "candidateId": "independent-14509-SUB_DPS-R1",
+      "stableId": "independent-14509-SUB_DPS-R1",
+      "weaponId": "14509",
+      "weaponName": "Kagura's Verity",
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "oldTier": "A",
+      "proposedTier": "A",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/14509",
+        "game-facts.json#14509"
+      ],
+      "gameplayAssumptions": [
+        "Stacks are created by Elemental Skill uses, not by time on-field",
+        "Each stack lasts 24s, max 3",
+        "Three stacks within 24s are character- and rotation-dependent",
+        "12% All Elemental DMG applies only at 3 stacks"
+      ],
+      "explanation": "Mỗi lần dùng Elemental Skill tạo một tầng Kagura Dance, mỗi tầng 24s, tối đa 3; mỗi tầng tăng 12% Skill DMG và 12% Stellar-Conduct DMG ở R1, và chỉ khi có đủ 3 tầng mới nhận thêm 12% All Elemental DMG. Không được mặc định Sub DPS luôn full-stack. Các Catalyst có nhiều lần dùng Skill trong 24s như Yae Miko, hoặc Nahida/Sucrose trong rotation phù hợp, có thể đạt 3 stack; nhân vật có Skill cooldown dài hoặc chỉ dùng một lần mỗi rotation thường không duy trì được full passive. Vì vậy giá trị được tính theo số tầng thực tế, không cộng 12% elemental DMG khi điều kiện chưa thỏa. Tier A giữ nguyên như đề xuất chờ Admin.",
+      "explanationVi": "Mỗi lần dùng Elemental Skill tạo một tầng Kagura Dance, mỗi tầng 24s, tối đa 3; mỗi tầng tăng 12% Skill DMG và 12% Stellar-Conduct DMG ở R1, và chỉ khi có đủ 3 tầng mới nhận thêm 12% All Elemental DMG. Không được mặc định Sub DPS luôn full-stack. Các Catalyst có nhiều lần dùng Skill trong 24s như Yae Miko, hoặc Nahida/Sucrose trong rotation phù hợp, có thể đạt 3 stack; nhân vật có Skill cooldown dài hoặc chỉ dùng một lần mỗi rotation thường không duy trì được full passive. Vì vậy giá trị được tính theo số tầng thực tế, không cộng 12% elemental DMG khi điều kiện chưa thỏa. Tier A giữ nguyên như đề xuất chờ Admin.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISION_READY_FOR_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "REQUEST_CHANGES",
+        "changeReason": "Removed the assumption that three stacks are automatic. Added realistic stack conditions and named Catalyst Sub DPS examples that can or cannot maintain three Skill stacks within 24s. Tier unchanged.",
+        "gameFacts": [
+          "genshin-db@5.2.15: Skill grants a 24s stack, max 3; +12% Skill DMG and +12% Stellar-Conduct DMG per stack; +12% All Elemental DMG at 3 stacks."
+        ],
+        "editorialJudgment": "A giữ nguyên nhưng chỉ với stack assumption thực tế; không cộng full passive mặc định.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "50bf4af224937eaf825459f7c2dab84aea3cd36c634493631a606862acb9b381",
+      "newChecksum": "88c4f434069705901ba1e8b58286c1afb4858b583f14a6970bea58fd8558deeb",
+      "changeReason": "Removed the assumption that three stacks are automatic. Added realistic stack conditions and named Catalyst Sub DPS examples that can or cannot maintain three Skill stacks within 24s. Tier unchanged.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Kagura Dance of the Sacred Sakura tạo một tầng khi dùng kỹ năng nguyên tố, mỗi tầng kéo dài 24s, tối đa 3 tầng và chỉ khi đủ 3 tầng thì mới nhận thêm 12% sát thương nguyên tố ở R1. Sub DPS cần ba lần dùng kỹ năng trong cửa sổ còn hiệu lực, nên nhân vật có kỹ năng có thời gian hồi ngắn sẽ tích stack ổn định hơn nhiều. Tier A được giữ với giả định ba stack đạt được trong rotation; nếu không, chỉ phần tăng sát thương kỹ năng được tính và không được cộng full passive.",
+          "after": "Mỗi lần dùng Elemental Skill tạo một tầng Kagura Dance, mỗi tầng 24s, tối đa 3; mỗi tầng tăng 12% Skill DMG và 12% Stellar-Conduct DMG ở R1, và chỉ khi có đủ 3 tầng mới nhận thêm 12% All Elemental DMG. Không được mặc định Sub DPS luôn full-stack. Các Catalyst có nhiều lần dùng Skill trong 24s như Yae Miko, hoặc Nahida/Sucrose trong rotation phù hợp, có thể đạt 3 stack; nhân vật có Skill cooldown dài hoặc chỉ dùng một lần mỗi rotation thường không duy trì được full passive. Vì vậy giá trị được tính theo số tầng thực tế, không cộng 12% elemental DMG khi điều kiện chưa thỏa. Tier A giữ nguyên như đề xuất chờ Admin.",
+          "reason": "Removed the assumption that three stacks are automatic. Added realistic stack conditions and named Catalyst Sub DPS examples that can or cannot maintain three Skill stacks within 24s. Tier unchanged."
+        },
+        {
+          "field": "tierJustification",
+          "before": "A giữ nhưng chỉ khi đạt 3 stack trong 24s; không cộng 12% all-elemental DMG khi điều kiện chưa thỏa.",
+          "after": "A giữ nguyên nhưng chỉ với stack assumption thực tế; không cộng full passive mặc định.",
+          "reason": "Removed the assumption that three stacks are automatic. Added realistic stack conditions and named Catalyst Sub DPS examples that can or cannot maintain three Skill stacks within 24s. Tier unchanged."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "stack tạo bằng Elemental Skill, không phải bằng thời gian đứng sân",
+            "mỗi tầng 24s, tối đa 3",
+            "cần 3 lần dùng kỹ năng",
+            "3 stack mới cho +12% elemental DMG ở R1"
+          ],
+          "after": [
+            "Stacks are created by Elemental Skill uses, not by time on-field",
+            "Each stack lasts 24s, max 3",
+            "Three stacks within 24s are character- and rotation-dependent",
+            "12% All Elemental DMG applies only at 3 stacks"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "CRIT DMG substat",
+            "Kagura Dance R1: skill grants 24s stack, +12% Skill DMG and +12% Stellar-Conduct DMG, max 3 stacks, +12% All Elemental DMG at 3 stacks",
+            "R5: 24% values"
+          ],
+          "after": [
+            "genshin-db@5.2.15: Skill grants a 24s stack, max 3; +12% Skill DMG and +12% Stellar-Conduct DMG per stack; +12% All Elemental DMG at 3 stacks."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISION_READY_FOR_ADMIN_REVIEW",
+          "reason": "Removed the assumption that three stacks are automatic. Added realistic stack conditions and named Catalyst Sub DPS examples that can or cannot maintain three Skill stacks within 24s. Tier unchanged."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-13",
+      "candidateId": "independent-15402-SUB_DPS-R1",
+      "stableId": "independent-15402-SUB_DPS-R1",
+      "weaponId": "15402",
+      "weaponName": "The Stringless",
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "refinement": "R1",
+      "oldTier": "S",
+      "proposedTier": "S",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/15402",
+        "game-facts.json#15402"
+      ],
+      "gameplayAssumptions": [
+        "Only game-tagged Elemental Skill / Elemental Burst damage receives +24%",
+        "Off-field damage must be checked by damage type, not visual appearance",
+        "EM value depends on reaction teams"
+      ],
+      "explanation": "Arrowless Song R1 tăng 24% sát thương của Elemental Skill và Elemental Burst, không phải mọi nguồn damage. Với Sub DPS, chỉ các hit được hệ thống gán tag Skill hoặc Burst mới hưởng mức +24%; các hit off-field thuộc loại khác không tự động được cộng. EM secondary stat hữu ích trong đội phản ứng, nhưng bản thân mức tăng Skill/Burst hoạt động độc lập với việc có reaction hay không. Tier S giữ nguyên như đề xuất, không suy từ tần suất khuyến nghị hay rarity.",
+      "explanationVi": "Arrowless Song R1 tăng 24% sát thương của Elemental Skill và Elemental Burst, không phải mọi nguồn damage. Với Sub DPS, chỉ các hit được hệ thống gán tag Skill hoặc Burst mới hưởng mức +24%; các hit off-field thuộc loại khác không tự động được cộng. EM secondary stat hữu ích trong đội phản ứng, nhưng bản thân mức tăng Skill/Burst hoạt động độc lập với việc có reaction hay không. Tier S giữ nguyên như đề xuất, không suy từ tần suất khuyến nghị hay rarity.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Replaced ambiguous wording with explicit Elemental Skill and Elemental Burst damage tags and limited EM/reaction value to applicable teams. Tier unchanged.",
+        "gameFacts": [
+          "genshin-db@5.2.15: +24% Elemental Skill and Elemental Burst DMG at R1; EM substat."
+        ],
+        "editorialJudgment": "S giữ nguyên: +24% Skill/Burst trực tiếp, EM hỗ trợ reaction team; không áp dụng cho damage source khác.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "c4ded204a2e3c98b210583071984ca6607cb109d47de5e861fbb671e29bdc448",
+      "newChecksum": "53ee1c03f49387df21ef034804503958bfa43a2e131e5c6c4ddb7d5a69eff67f",
+      "changeReason": "Replaced ambiguous wording with explicit Elemental Skill and Elemental Burst damage tags and limited EM/reaction value to applicable teams. Tier unchanged.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "Arrowless Song ở R1 tăng 24% sát thương kỹ năng và năng lượng, kết hợp với chỉ số phụ Tinh Thông phù hợp với Sub DPS dùng kỹ năng để gây sát thương. Hiệu quả phản ứng vẫn phụ thuộc vào đội hình, nhưng bản thân mức tăng sát thương kỹ năng và năng lượng hoạt động độc lập với điều kiện đó. Vì vậy tier S được giữ như đánh giá độc lập, không suy từ tần suất được khuyến nghị.",
+          "after": "Arrowless Song R1 tăng 24% sát thương của Elemental Skill và Elemental Burst, không phải mọi nguồn damage. Với Sub DPS, chỉ các hit được hệ thống gán tag Skill hoặc Burst mới hưởng mức +24%; các hit off-field thuộc loại khác không tự động được cộng. EM secondary stat hữu ích trong đội phản ứng, nhưng bản thân mức tăng Skill/Burst hoạt động độc lập với việc có reaction hay không. Tier S giữ nguyên như đề xuất, không suy từ tần suất khuyến nghị hay rarity.",
+          "reason": "Replaced ambiguous wording with explicit Elemental Skill and Elemental Burst damage tags and limited EM/reaction value to applicable teams. Tier unchanged."
+        },
+        {
+          "field": "tierJustification",
+          "before": "S giữ nguyên: buff Skill/Burst 24% hoạt động trực tiếp, EM là substat hữu ích cho Sub DPS phản ứng.",
+          "after": "S giữ nguyên: +24% Skill/Burst trực tiếp, EM hỗ trợ reaction team; không áp dụng cho damage source khác.",
+          "reason": "Replaced ambiguous wording with explicit Elemental Skill and Elemental Burst damage tags and limited EM/reaction value to applicable teams. Tier unchanged."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "R1 baseline",
+            "Sub DPS dùng kỹ năng và năng lượng",
+            "đội hình có thể kích hoạt phản ứng"
+          ],
+          "after": [
+            "Only game-tagged Elemental Skill / Elemental Burst damage receives +24%",
+            "Off-field damage must be checked by damage type, not visual appearance",
+            "EM value depends on reaction teams"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "EM substat",
+            "Arrowless Song R1: +24% Elemental Skill and Burst DMG",
+            "R5: +48%"
+          ],
+          "after": [
+            "genshin-db@5.2.15: +24% Elemental Skill and Elemental Burst DMG at R1; EM substat."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Replaced ambiguous wording with explicit Elemental Skill and Elemental Burst damage tags and limited EM/reaction value to applicable teams. Tier unchanged."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    },
+    {
+      "recordId": "WEAPON-TIER-D2-14",
+      "candidateId": "independent-15508-MAIN_DPS-R1",
+      "stableId": "independent-15508-MAIN_DPS-R1",
+      "weaponId": "15508",
+      "weaponName": "Aqua Simulacra",
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "refinement": "R1",
+      "oldTier": "S",
+      "proposedTier": "S",
+      "tierChanged": false,
+      "evidence": [
+        "genshin-db://weapons/15508",
+        "game-facts.json#15508"
+      ],
+      "gameplayAssumptions": [
+        "Opponents must be nearby; condition is not reversed",
+        "DMG bonus works off-field",
+        "HP scaling/benefit varies by Bow Main DPS",
+        "Proximity is practical but must be stated correctly"
+      ],
+      "explanation": "The Cleansing Form R1 tăng 16% HP và tăng 20% DMG dealt khi có đối thủ ở gần; hiệu ứng DMG có tác dụng dù người cầm on-field hay off-field. Điều kiện đúng là \"có địch ở gần\", không phải \"không có địch ở gần\". CRIT DMG là substat có giá trị phổ dụng, trong khi phần HP chỉ hữu ích với Bow Main DPS có mô hình hoặc nhu cầuHP rõ ràng. Tier S được giữ vì buff 20% ổn định nhưng khiêm tốn và giá trị HP không phổ dụng cho mọi Main DPS cung; không tự động coi là best-in-slot hay SS.",
+      "explanationVi": "The Cleansing Form R1 tăng 16% HP và tăng 20% DMG dealt khi có đối thủ ở gần; hiệu ứng DMG có tác dụng dù người cầm on-field hay off-field. Điều kiện đúng là \"có địch ở gần\", không phải \"không có địch ở gần\". CRIT DMG là substat có giá trị phổ dụng, trong khi phần HP chỉ hữu ích với Bow Main DPS có mô hình hoặc nhu cầuHP rõ ràng. Tier S được giữ vì buff 20% ổn định nhưng khiêm tốn và giá trị HP không phổ dụng cho mọi Main DPS cung; không tự động coi là best-in-slot hay SS.",
+      "confidence": "MEDIUM",
+      "reviewStatus": "REVISED_PENDING_ADMIN_REVIEW",
+      "d2Review": {
+        "recommendationFromIndependentReport": "CONTENT_PLAUSIBLE_CONDITIONAL",
+        "changeReason": "Preserved the corrected proximity condition, stated on/off-field effect explicitly and limited HP value to characters/teams that use it. Tier unchanged.",
+        "gameFacts": [
+          "genshin-db@5.2.15: R1 +16% HP and +20% DMG when opponents are nearby; works on-field and off-field."
+        ],
+        "editorialJudgment": "S giữ nguyên: +20% DMG có điều kiện proximity dễ đáp ứng, CRIT DMG mạnh, HP value thay đổi theo nhân vật.",
+        "missingEvidence": [],
+        "blockedEvidence": [],
+        "tierReviewQuestion": null
+      },
+      "oldChecksum": "07431e870377f01815f9d071b363040a5f7124c5b3420308382a71620e0874e8",
+      "newChecksum": "ca6e01e22ec2114ba18985b47c20813af57055ef2bbe6fd79c5f7f748a0820e2",
+      "changeReason": "Preserved the corrected proximity condition, stated on/off-field effect explicitly and limited HP value to characters/teams that use it. Tier unchanged.",
+      "changedFields": [
+        {
+          "field": "explanationVi",
+          "before": "The Cleansing Form ở R1 tăng 16% HP và tăng 20% sát thương khi có kẻ địch ở gần, hiệu ứng vẫn có tác dụng dù nhân vật đang ngoài sân. Chỉ số phụ CRIT DMG và mức tăng sát thương 20% là giá trị cốt lõi, trong khi phần HP chỉ có ích với nhân vật biết tận dụng hoặc cần độ bền. Điều kiện địch ở gần gần như luôn thỏa mãn trong chiến đấu thực tế, nhưng tier S được giữ thay vì SS vì buff khiêm tốn và giá trị HP không phổ dụng cho Main DPS cung.",
+          "after": "The Cleansing Form R1 tăng 16% HP và tăng 20% DMG dealt khi có đối thủ ở gần; hiệu ứng DMG có tác dụng dù người cầm on-field hay off-field. Điều kiện đúng là \"có địch ở gần\", không phải \"không có địch ở gần\". CRIT DMG là substat có giá trị phổ dụng, trong khi phần HP chỉ hữu ích với Bow Main DPS có mô hình hoặc nhu cầuHP rõ ràng. Tier S được giữ vì buff 20% ổn định nhưng khiêm tốn và giá trị HP không phổ dụng cho mọi Main DPS cung; không tự động coi là best-in-slot hay SS.",
+          "reason": "Preserved the corrected proximity condition, stated on/off-field effect explicitly and limited HP value to characters/teams that use it. Tier unchanged."
+        },
+        {
+          "field": "tierJustification",
+          "before": "S giữ sau correction: điều kiện 'có địch ở gần' dễ đáp ứng nhưng buff chỉ 20% và HP ít giá trị với đa số Main DPS cung; không tự động coi là SS hay best-in-slot.",
+          "after": "S giữ nguyên: +20% DMG có điều kiện proximity dễ đáp ứng, CRIT DMG mạnh, HP value thay đổi theo nhân vật.",
+          "reason": "Preserved the corrected proximity condition, stated on/off-field effect explicitly and limited HP value to characters/teams that use it. Tier unchanged."
+        },
+        {
+          "field": "exactGameplayAssumptions",
+          "before": [
+            "phải có kẻ địch ở gần",
+            "buff có hiệu lực cả khi off-field",
+            "R1: +16% HP và +20% DMG",
+            "CRIT DMG là substat"
+          ],
+          "after": [
+            "Opponents must be nearby; condition is not reversed",
+            "DMG bonus works off-field",
+            "HP scaling/benefit varies by Bow Main DPS",
+            "Proximity is practical but must be stated correctly"
+          ],
+          "reason": "Made gameplay assumptions explicit and machine-reviewable."
+        },
+        {
+          "field": "gameFacts",
+          "before": [
+            "CRIT DMG substat",
+            "The Cleansing Form R1: +16% HP, +20% DMG when opponents are nearby, effective on-field and off-field",
+            "R5: +32% HP, +40% DMG",
+            "NOT a 'no enemies nearby' condition"
+          ],
+          "after": [
+            "genshin-db@5.2.15: R1 +16% HP and +20% DMG when opponents are nearby; works on-field and off-field."
+          ],
+          "reason": "Re-verified against genshin-db@5.2.15 / game-facts.json without copying external editorial text."
+        },
+        {
+          "field": "reviewStatus",
+          "before": "READY_FOR_ADMIN_REVIEW",
+          "after": "REVISED_PENDING_ADMIN_REVIEW",
+          "reason": "Preserved the corrected proximity condition, stated on/off-field effect explicitly and limited HP value to characters/teams that use it. Tier unchanged."
+        }
+      ],
+      "rightsStatus": {
+        "publishRightsVerified": false,
+        "sourceDerivedResearchUsedAsRanking": false
+      },
+      "approval": {
+        "adminDecision": "PENDING",
+        "decidedBy": null,
+        "decidedAt": null,
+        "reason": null,
+        "rightsVerified": false,
+        "rightsVerifiedBy": null,
+        "evidenceAcknowledged": false,
+        "tierReReviewConfirmed": false
+      },
+      "importEligibleNow": false
+    }
+  ],
+  "artifactSha256": "eae26ea26b737d8e1cbe6cdabcc340c13575e47af0737a91e6662749b7460185"
+}

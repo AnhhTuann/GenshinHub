@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import FallbackImage from '@/components/ui/FallbackImage';
-import { fetchGraphQL, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, UPDATE_WEAPON_TIER_LIST, GET_TIER_RANKS } from "@/lib/graphql";
+import { fetchGraphQL, fetchGraphQLAdmin, GET_CHARACTERS, GET_WEAPONS, UPDATE_CHARACTER_TIER_LIST, UPDATE_WEAPON_TIER_LIST, GET_TIER_RANKS } from "@/lib/graphql";
+import { TIER_SELECT_OPTIONS } from "@/data/tierRanks";
 import Image from "next/image";
 import toast from 'react-hot-toast';
 import ManageTiersSection from "@/components/admin/ManageTiersSection";
@@ -38,7 +39,7 @@ export default function AdminTierListPage() {
   const handleUpdateChar = async (id: string, updates: any) => {
     setSavingId(id);
     try {
-      await fetchGraphQL(UPDATE_CHARACTER_TIER_LIST, { id, ...updates });
+      await fetchGraphQLAdmin(UPDATE_CHARACTER_TIER_LIST, { id, ...updates });
       setCharacters(chars => chars.map(c => c.id === id ? { ...c, ...updates } : c));
     } catch (e) {
       toast.error("Error updating: " + e);
@@ -50,7 +51,7 @@ export default function AdminTierListPage() {
   const handleUpdateWeapon = async (id: string, updates: any) => {
     setSavingId(id);
     try {
-      await fetchGraphQL(UPDATE_WEAPON_TIER_LIST, { id, ...updates });
+      await fetchGraphQLAdmin(UPDATE_WEAPON_TIER_LIST, { id, ...updates });
       setWeapons(weaps => weaps.map(w => w.id === id ? { ...w, ...updates } : w));
     } catch (e) {
       toast.error("Error updating: " + e);
@@ -65,6 +66,15 @@ export default function AdminTierListPage() {
     color: 'rgba(255,255,255,0.85)',
   };
 
+  // Keep the Admin-defined tiers first; canonical tiers stay selectable even
+  // while the TierRank config table is empty. Existing values are never removed.
+  const tierOptions = Array.from(new Set([
+    ...tierRanks.map((tier: any) => tier.name).filter(Boolean),
+    ...TIER_SELECT_OPTIONS,
+    ...characters.map((char: any) => char.tier).filter(Boolean),
+    ...weapons.map((weapon: any) => weapon.tier).filter(Boolean),
+  ]));
+
   if (loading) return <div className="p-10 text-white/40 text-sm">Loading tier list data...</div>;
 
   return (
@@ -75,6 +85,7 @@ export default function AdminTierListPage() {
           Tier List Management
         </h1>
         <p className="text-white/30 text-xs mt-0.5">Manage global tier ranks and bulk assign characters and weapons.</p>
+        <p className="text-white/30 text-xs mt-1">Tier columns use existing Admin fields. Version, notes, source and approval status still need a Prisma schema change before they can be stored.</p>
       </div>
 
       <ManageTiersSection tierRanks={tierRanks} setTierRanks={setTierRanks} />
@@ -112,22 +123,27 @@ export default function AdminTierListPage() {
                       disabled={savingId === char.id}
                     >
                       <option value="">- None -</option>
-                      {tierRanks.map(t => <option key={t.id} value={t.name}>{t.name}</option>)}
+                      {tierOptions.map(name => <option key={name} value={name}>{name}</option>)}
                     </select>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">Role</label>
-                    <select 
+                    <label className="text-[9px] font-bold uppercase tracking-wider text-white/30">Roles (comma separated)</label>
+                    <input
+                      type="text"
                       className="w-full px-2 py-1.5 rounded-lg text-xs font-bold outline-none" style={inputStyle}
+                      placeholder="Main DPS, Sub DPS"
                       value={char.role || ""}
-                      onChange={(e) => handleUpdateChar(char.id, { 
-                        tier: char.tier, role: e.target.value || null, recommendedC: char.recommendedC, tierNoteEn: char.tierNoteEn, tierNoteVi: char.tierNoteVi
+                      onBlur={(e) => handleUpdateChar(char.id, {
+                        tier: char.tier, role: e.target.value.trim() || null, recommendedC: char.recommendedC, tierNoteEn: char.tierNoteEn, tierNoteVi: char.tierNoteVi
                       })}
+                      onChange={(e) => {
+                        const next = [...characters];
+                        const idx = next.findIndex(c => c.id === char.id);
+                        next[idx] = { ...next[idx], role: e.target.value };
+                        setCharacters(next);
+                      }}
                       disabled={savingId === char.id}
-                    >
-                      <option value="">- None -</option>
-                      {['Main DPS','Sub DPS','Support','Healer','Buffer','Shielder'].map(r => <option key={r} value={r}>{r}</option>)}
-                    </select>
+                    />
                   </div>
                 </div>
 
@@ -165,14 +181,27 @@ export default function AdminTierListPage() {
                 {weapon.iconUrl && <FallbackImage src={weapon.iconUrl} alt={weapon.nameEn} fill className="object-contain" sizes="48px" unoptimized />}
               </div>
               <h3 className="font-bold text-[10px] text-white/80 truncate w-full">{weapon.nameEn}</h3>
-              <select 
+              <select
                 className="w-full px-2 py-1.5 rounded-lg text-[10px] font-bold outline-none" style={inputStyle}
+                aria-label={`Tier for ${weapon.nameEn}`}
                 value={weapon.tier || ""}
-                onChange={(e) => handleUpdateWeapon(weapon.id, { tier: e.target.value || null })}
+                onChange={(e) => handleUpdateWeapon(weapon.id, { tier: e.target.value || null, role: weapon.role || null })}
                 disabled={savingId === weapon.id}
               >
                 <option value="">- None -</option>
-                {tierRanks.map(t => <option key={t.id} value={t.name}>{t.name}</option>)}
+                {tierOptions.map(name => <option key={name} value={name}>{name}</option>)}
+              </select>
+              <select
+                className="w-full px-2 py-1.5 rounded-lg text-[10px] font-bold outline-none" style={inputStyle}
+                aria-label={`Context for ${weapon.nameEn}`}
+                value={weapon.role || ""}
+                onChange={(e) => handleUpdateWeapon(weapon.id, { tier: weapon.tier || null, role: e.target.value || null })}
+                disabled={savingId === weapon.id}
+              >
+                <option value="">- Context -</option>
+                {Array.from(new Set(['Main DPS', 'Sub DPS', 'Support', 'F2P', weapon.role].filter(Boolean))).map((value) => (
+                  <option key={value as string} value={value as string}>{value}</option>
+                ))}
               </select>
             </div>
           ))}

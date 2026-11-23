@@ -1,0 +1,810 @@
+{
+  "validatedAt": "2026-11-20T15:51:29.426Z",
+  "package": "character-build-catalog-7.2-r4-final-all",
+  "overallSha256": "e53479a44866447690d10980ebea83ed714109eaf4839a9ae29e1e5870016365",
+  "candidates": [
+    {
+      "candidateId": "albedo:1",
+      "buildId": "legacy-albedo",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-albedo",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "alhaitham:1",
+      "buildId": "legacy-alhaitham",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-alhaitham",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "arataki-itto:1",
+      "buildId": "legacy-arataki-itto",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-arataki-itto",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "arlecchino:1",
+      "buildId": "legacy-arlecchino",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-arlecchino",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "baizhu:1",
+      "buildId": "legacy-baizhu",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-baizhu",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "beidou:1",
+      "buildId": "legacy-beidou",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-beidou",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "charlotte:1",
+      "buildId": "legacy-charlotte",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-charlotte",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "chasca:1",
+      "buildId": "legacy-chasca",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-chasca",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "chevreuse:1",
+      "buildId": "legacy-chevreuse",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-chevreuse",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "chiori:1",
+      "buildId": "legacy-chiori",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-chiori",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "chongyun:1",
+      "buildId": "legacy-chongyun",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-chongyun",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "clorinde:1",
+      "buildId": "legacy-clorinde",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-clorinde",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "collei:1",
+      "buildId": "legacy-collei",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-collei",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "cyno:1",
+      "buildId": "legacy-cyno",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-cyno",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "dehya:1",
+      "buildId": "legacy-dehya",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-dehya",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "dehya:2",
+      "buildId": "4130a5f0-43ca-4c64-a806-da938a8c4674",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": null,
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "diluc:1",
+      "buildId": "legacy-diluc",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-diluc",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "diona:1",
+      "buildId": "legacy-diona",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-diona",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "emilie:1",
+      "buildId": "legacy-emilie",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-emilie",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "escoffier:1",
+      "buildId": "legacy-escoffier",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-escoffier",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "eula:1",
+      "buildId": "legacy-eula",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-eula",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "faruzan:1",
+      "buildId": "legacy-faruzan",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-faruzan",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "flins:1",
+      "buildId": "legacy-flins",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-flins",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "freminet:1",
+      "buildId": "legacy-freminet",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-freminet",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "furina:1",
+      "buildId": "legacy-furina",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-furina",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "gaming:1",
+      "buildId": "legacy-gaming",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-gaming",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "ganyu:1",
+      "buildId": "legacy-ganyu",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-ganyu",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "ganyu:2",
+      "buildId": "845383e8-c4c8-4dfd-a36b-c572bc9fb74a",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": null,
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "gorou:1",
+      "buildId": "legacy-gorou",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-gorou",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "hu-tao:1",
+      "buildId": "legacy-hu-tao",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-hu-tao",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "ifa:1",
+      "buildId": "legacy-ifa",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-ifa",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "ineffa:1",
+      "buildId": "legacy-ineffa",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-ineffa",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "jean:1",
+      "buildId": "legacy-jean",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-jean",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kaedehara-kazuha:1",
+      "buildId": "legacy-kaedehara-kazuha",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kaedehara-kazuha",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kaeya:1",
+      "buildId": "legacy-kaeya",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kaeya",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kamisato-ayaka:1",
+      "buildId": "legacy-kamisato-ayaka",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kamisato-ayaka",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kamisato-ayato:1",
+      "buildId": "legacy-kamisato-ayato",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kamisato-ayato",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "keqing:1",
+      "buildId": "legacy-keqing",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-keqing",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kinich:1",
+      "buildId": "legacy-kinich",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kinich",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "klee:1",
+      "buildId": "legacy-klee",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-klee",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kujou-sara:1",
+      "buildId": "legacy-kujou-sara",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kujou-sara",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "kuki-shinobu:1",
+      "buildId": "legacy-kuki-shinobu",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-kuki-shinobu",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "lauma:1",
+      "buildId": "legacy-lauma",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-lauma",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "lisa:1",
+      "buildId": "legacy-lisa",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-lisa",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "lyney:1",
+      "buildId": "legacy-lyney",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-lyney",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "mavuika:1",
+      "buildId": "legacy-mavuika",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-mavuika",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "mika:1",
+      "buildId": "legacy-mika",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-mika",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "momoka:1",
+      "buildId": "legacy-momoka",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-momoka",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "mona:1",
+      "buildId": "legacy-mona",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-mona",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "mualani:1",
+      "buildId": "legacy-mualani",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-mualani",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "nahida:1",
+      "buildId": "legacy-nahida",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-nahida",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "navia:1",
+      "buildId": "legacy-navia",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-navia",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "nefer:1",
+      "buildId": "legacy-nefer",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-nefer",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "ningguang:1",
+      "buildId": "legacy-ningguang",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-ningguang",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "noelle:1",
+      "buildId": "legacy-noelle",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-noelle",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "ororon:1",
+      "buildId": "legacy-ororon",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-ororon",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "qiqi:1",
+      "buildId": "legacy-qiqi",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-qiqi",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "raiden-shogun:1",
+      "buildId": "legacy-raiden-shogun",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-raiden-shogun",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "raiden-shogun:2",
+      "buildId": "6c9f6980-fede-4341-8c85-451903af241c",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": null,
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "razor:1",
+      "buildId": "legacy-razor",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-razor",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "rosaria:1",
+      "buildId": "legacy-rosaria",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-rosaria",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "sangonomiya-kokomi:1",
+      "buildId": "legacy-sangonomiya-kokomi",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-sangonomiya-kokomi",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "sethos:1",
+      "buildId": "legacy-sethos",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-sethos",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "shenhe:1",
+      "buildId": "legacy-shenhe",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-shenhe",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "shikanoin-heizou:1",
+      "buildId": "legacy-shikanoin-heizou",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-shikanoin-heizou",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "sigewinne:1",
+      "buildId": "legacy-sigewinne",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-sigewinne",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "skirk:1",
+      "buildId": "legacy-skirk",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-skirk",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "sucrose:1",
+      "buildId": "legacy-sucrose",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-sucrose",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "tartaglia:1",
+      "buildId": "legacy-tartaglia",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-tartaglia",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "thoma:1",
+      "buildId": "legacy-thoma",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-thoma",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "thoma:2",
+      "buildId": "18b1c08b-810b-451f-bf40-92dee1f40e66",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": null,
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "tighnari:1",
+      "buildId": "legacy-tighnari",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-tighnari",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "traveler-dendro:1",
+      "buildId": "legacy-traveler-dendro",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-traveler-dendro",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "traveler-geo:1",
+      "buildId": "legacy-traveler-geo",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-traveler-geo",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "varesa:1",
+      "buildId": "legacy-varesa",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-varesa",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "venti:1",
+      "buildId": "legacy-venti",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-venti",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "wanderer:1",
+      "buildId": "legacy-wanderer",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-wanderer",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "wriothesley:1",
+      "buildId": "legacy-wriothesley",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-wriothesley",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "xianyun:1",
+      "buildId": "legacy-xianyun",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-xianyun",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "xiao:1",
+      "buildId": "legacy-xiao",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-xiao",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "xilonen:1",
+      "buildId": "legacy-xilonen",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-xilonen",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "xingqiu:1",
+      "buildId": "legacy-xingqiu",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-xingqiu",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yae-miko:1",
+      "buildId": "legacy-yae-miko",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yae-miko",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yanfei:1",
+      "buildId": "legacy-yanfei",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yanfei",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yaoyao:1",
+      "buildId": "legacy-yaoyao",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yaoyao",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yelan:1",
+      "buildId": "legacy-yelan",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yelan",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yoimiya:1",
+      "buildId": "legacy-yoimiya",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yoimiya",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yumemizu:1",
+      "buildId": "legacy-yumemizu",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yumemizu",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "yun-jin:1",
+      "buildId": "legacy-yun-jin",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-yun-jin",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "zhongli:1",
+      "buildId": "legacy-zhongli",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-zhongli",
+      "repeatSafe": true
+    },
+    {
+      "candidateId": "zibai:1",
+      "buildId": "legacy-zibai",
+      "version": 3,
+      "status": "APPROVED",
+      "archive": "baseline-zibai",
+      "repeatSafe": true
+    }
+  ],
+  "protection": {
+    "migrations": {
+      "count": 5,
+      "unchanged": true
+    },
+    "characterTierRanking": {
+      "count": 0,
+      "unchanged": true
+    },
+    "weaponTierRank": {
+      "count": 0,
+      "unchanged": true
+    },
+    "tierRank": {
+      "count": 0,
+      "unchanged": true
+    },
+    "character": {
+      "count": 131,
+      "unchanged": true
+    },
+    "weapon": {
+      "count": 279,
+      "unchanged": true
+    },
+    "artifactSet": {
+      "count": 63,
+      "unchanged": true
+    },
+    "a01": {
+      "count": 4,
+      "unchanged": true
+    },
+    "mitya": {
+      "count": 2,
+      "unchanged": true
+    },
+    "defaults": {
+      "count": 126,
+      "unique": true,
+      "unchanged": true
+    },
+    "auditHistory": {
+      "preservedCount": 133,
+      "appended": 186
+    }
+  },
+  "graphql": {
+    "publicProjectionCheckedForAll": true,
+    "adminProjectionCheckedForAll": true,
+    "characterDefaultCheckedForAll": true,
+    "archivedOnlyLeak": false
+  },
+  "repeatPreflight": {
+    "rerunExecuted": false,
+    "allCandidatesAlreadyApproved": true,
+    "noDuplicateBuilds": true,
+    "noDuplicateArchives": true,
+    "noDuplicateAudits": true,
+    "noPendingStage": true
+  },
+  "database": {
+    "name": "genshinhub",
+    "host": "127.0.0.1",
+    "hostPort": 5434,
+    "serverReportedInternalPort": 5432
+  },
+  "counts": {
+    "builds": 219,
+    "approved": 96,
+    "audits": 319,
+    "publishedAudits": 94,
+    "createdAudits": 4,
+    "archives": 88
+  }
+}

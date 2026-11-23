@@ -15,7 +15,8 @@ function createTransporter() {
 
   if (!host || !user || !pass) {
     if (isProduction) {
-      console.error('⛔ SMTP not configured! Set SMTP_HOST, SMTP_USER, SMTP_PASS in .env');
+      // Never claim delivery or expose a reset link in production without SMTP.
+      throw new Error('AUTH_SMTP_NOT_CONFIGURED');
     }
     return null; // Will fall back to console logging in dev
   }
@@ -164,6 +165,29 @@ export const mailerService = {
       }
       throw new Error('Không thể gửi email xác thực. Vui lòng thử lại sau.');
     }
+  },
+
+  /**
+   * Send a one-time password-reset link. The raw token is only placed in the
+   * email; the database stores a SHA-256 hash. Never returned by an API.
+   */
+  async sendPasswordResetEmail(to: string, token: string, locale: 'en' | 'vi' = 'en'): Promise<boolean> {
+    const baseUrl = (process.env.FRONTEND_URL || 'http://localhost:3001').replace(/\/$/, '');
+    const link = `${baseUrl}/${locale}/auth/reset-password?token=${encodeURIComponent(token)}`;
+    const subject = locale === 'vi' ? 'GenshinHub — Đặt lại mật khẩu' : 'GenshinHub — Reset your password';
+    const text = locale === 'vi'
+      ? `Mở liên kết này để đặt lại mật khẩu (có hiệu lực 15 phút):\n${link}\n\nNếu bạn không yêu cầu, hãy bỏ qua email này.`
+      : `Open this link to reset your password (valid for 15 minutes):\n${link}\n\nIf you did not request this, ignore this email.`;
+    const html = `<!doctype html><html lang="${locale}"><body style="background:#04040a;color:#fff;font-family:sans-serif;padding:32px"><h1 style="color:#f0d080">${subject}</h1><p>${locale === 'vi' ? 'Mở liên kết bên dưới để đặt lại mật khẩu. Liên kết hết hạn sau 15 phút.' : 'Open the link below to reset your password. The link expires in 15 minutes.'}</p><p><a href="${link}" style="color:#f0d080">${locale === 'vi' ? 'Đặt lại mật khẩu' : 'Reset password'}</a></p><p style="opacity:.6">${locale === 'vi' ? 'Nếu bạn không yêu cầu, hãy bỏ qua email này.' : 'If you did not request this, ignore this email.'}</p></body></html>`;
+    const from = process.env.EMAIL_FROM || 'GenshinHub <noreply@genshinhub.com>';
+    const transporter = createTransporter();
+
+    if (!transporter) {
+      throw new Error('AUTH_SMTP_NOT_CONFIGURED');
+    }
+
+    await transporter.sendMail({ from, to, subject, text, html });
+    return true;
   },
 
   /**

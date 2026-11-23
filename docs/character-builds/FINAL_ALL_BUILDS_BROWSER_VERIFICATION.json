@@ -1,0 +1,242 @@
+{
+  "verifiedAt": "2026-11-20T15:58:57.773Z",
+  "package": "character-build-catalog-7.2-r4-final-all",
+  "overallSha256": "e53479a44866447690d10980ebea83ed714109eaf4839a9ae29e1e5870016365",
+  "environment": {
+    "frontend": "http://localhost:3010/en",
+    "backend": "http://localhost:4000/graphql",
+    "method": "Playwright Chromium headless, sequential, networkidle"
+  },
+  "summary": {
+    "pagesChecked": 16,
+    "http200": 16,
+    "characterListChecked": true,
+    "characterDetailPages": 14,
+    "allRequiredSectionsPresent": true,
+    "allExpectedBuildNamesPresent": true,
+    "multiBuildSelectorsVerified": 4,
+    "experimentalTeamsVisible": 12,
+    "localizationVerified": true,
+    "benignConsoleErrors": "401 /api/auth/me for anonymous sessions (expected admin-session probe)"
+  },
+  "pages": [
+    {
+      "path": "/en/characters",
+      "httpStatus": 200,
+      "title": "Characters — GenshinHub",
+      "catalogCountShown": true,
+      "bodyLength": 883
+    },
+    {
+      "path": "/en/characters/albedo",
+      "httpStatus": 200,
+      "title": "Albedo Build & Guide — GenshinHub",
+      "bodyLength": 4653,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/beidou",
+      "httpStatus": 200,
+      "title": "Beidou Build & Guide — GenshinHub",
+      "bodyLength": 4765,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/chongyun",
+      "httpStatus": 200,
+      "title": "Chongyun Build & Guide — GenshinHub",
+      "bodyLength": 3420,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/mualani",
+      "httpStatus": 200,
+      "title": "Mualani Build & Guide — GenshinHub",
+      "bodyLength": 4085,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/mavuika",
+      "httpStatus": 200,
+      "title": "Mavuika Build & Guide — GenshinHub",
+      "bodyLength": 4066,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/wanderer",
+      "httpStatus": 200,
+      "title": "Wanderer Build & Guide — GenshinHub",
+      "bodyLength": 3651,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/dehya",
+      "httpStatus": 200,
+      "title": "Dehya Build & Guide — GenshinHub",
+      "bodyLength": 3957,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/ganyu",
+      "httpStatus": 200,
+      "title": "Ganyu Build & Guide — GenshinHub",
+      "bodyLength": 3577,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/raiden-shogun",
+      "httpStatus": 200,
+      "title": "Raiden Shogun Build & Guide — GenshinHub",
+      "bodyLength": 3705,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/thoma",
+      "httpStatus": 200,
+      "title": "Thoma Build & Guide — GenshinHub",
+      "bodyLength": 3833,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/bennett",
+      "httpStatus": 200,
+      "title": "Bennett Build & Guide — GenshinHub",
+      "bodyLength": 6750,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": false,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/fischl",
+      "httpStatus": 200,
+      "title": "Fischl Build & Guide — GenshinHub",
+      "bodyLength": 4275,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/xiangling",
+      "httpStatus": 200,
+      "title": "Xiangling Build & Guide — GenshinHub",
+      "bodyLength": 8003,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": false,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/en/characters/mitya",
+      "httpStatus": 200,
+      "title": "Mitya Build & Guide — GenshinHub",
+      "bodyLength": 5664,
+      "sectionsPresent": true,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": true,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ]
+    },
+    {
+      "path": "/vi/characters/albedo",
+      "httpStatus": 200,
+      "title": "Albedo Build & Guide — GenshinHub",
+      "bodyLength": 4768,
+      "sectionsPresent": false,
+      "missingSections": [],
+      "buildsPresent": true,
+      "missingBuilds": [],
+      "experimentalShown": null,
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+      ],
+      "localizedBodySample": "GENSHINHUB\nTEYVAT FIELD GUIDE\nNhân Vật\nVũ Khí\nThánh Di Vật\nBảng Xếp Hạng\nKhám phá\nTìm kiếm\nCtrl+K\nLogin\nVI\n‹ Quay lại\nSHARE\nAlbedo\n\nKreideprinz\n\nNgười đứng đầu trong các Giả Kim Thuật Sĩ kiêm đội trưởng tiểu đội điều tra của Đội Kỵ Sĩ Tây Phong, được gọi là thiên tài \"Kreideprinz\".\n\nCHỈ SỐ CƠ BẢN (L"
+    }
+  ]
+}

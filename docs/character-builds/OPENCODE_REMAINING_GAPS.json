@@ -1,0 +1,1767 @@
+{
+  "report": "OPENCODE_REMAINING_GAPS",
+  "runId": "opencode-development-character-completion-2026-11-21",
+  "generatedAt": "2026-11-21T06:50:06.296Z",
+  "sourceMatrix": "docs/character-builds/FINAL_REMAINING_CORRECTIONS_MATRIX.json",
+  "statusVocabulary": [
+    "APPLIED",
+    "RETAINED",
+    "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+    "BLOCKED"
+  ],
+  "summary": {
+    "totalMatrixIssues": 134,
+    "appliedBeforeThisRun": 21,
+    "retainedBeforeThisRun": 1,
+    "resolvedInPreviousSession": 56,
+    "resolvedInThisRun": {
+      "artifactIssuesApplied": 17,
+      "missingBuildsCompleted": 5,
+      "draftsSafelyClassified": 34,
+      "total": 56
+    },
+    "remainingBlocked": 0,
+    "remainingIdentities": 0,
+    "remainingByType": {}
+  },
+  "resolutionSummary": {
+    "appliedThisRun": {
+      "count": 56,
+      "byType": {
+        "PROTECTED_ALIAS": 32,
+        "GENERIC_TRAVELER_BASELINE_DIFFERS": 18,
+        "NO_ASCENSION_STAT_TABLE": 6
+      },
+      "status": "APPLIED",
+      "note": "PROTECTED_ALIAS issues resolved via new MAINTENANCE revision rows; original APPROVED payloads preserved. Traveler baseline/stat issues resolved from verified primary-source HTML tables."
+    },
+    "retained": {
+      "count": 1,
+      "status": "RETAINED",
+      "byType": {
+        "EXPERIMENTAL_TEAM_ROTATION_UNVERIFIED": 1
+      }
+    },
+    "appliedBeforeThisRun": {
+      "count": 21,
+      "status": "APPLIED",
+      "byType": {
+        "INVALID_ARTIFACT_LABEL": 11,
+        "INCOMPATIBLE_WEAPON_TYPE": 10
+      }
+    },
+    "thisRun": {
+      "artifactIssues": {
+        "count": 17,
+        "status": "APPLIED",
+        "detail": "11 public rows replaced by explicit NOT_VERIFIED sentinel; 6 generic mixed rows removed where named alternatives remain; 3 additional public legacy-Traveler placeholders also corrected.",
+        "journal": "/tmp/opencode/genshinhub-backup/artifact-placeholders-applied.json",
+        "extraJournal": "/tmp/opencode/genshinhub-backup/artifact-placeholders-traveler.json"
+      },
+      "missingBuilds": {
+        "count": 5,
+        "status": "APPLIED",
+        "detail": "Five source-attributed MAINTENANCE builds created from fresh Genshin-Builds API responses with canonical local weapon/artifact/team references; teams EXPERIMENTAL.",
+        "journal": "/tmp/opencode/genshinhub-backup/missing-builds-applied.json"
+      },
+      "gameplayDrafts": {
+        "count": 34,
+        "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+        "detail": "Unpublished NEEDS_MORE_EVIDENCE draft markers; no public build defect, source data preserved."
+      }
+    }
+  },
+  "remainingIssues": [],
+  "explicitlyNotDone": [
+    "No production database access or deployment",
+    "No commit, push, merge, git reset/stash/clean",
+    "No fabricated Admin approvals or forged audit history",
+    "No blind Genshin-Builds draft copying",
+    "No fabricated combat measurements",
+    "No destructive seed regeneration, backup deletion, or truncation",
+    "No edits to approved payloads in place"
+  ],
+  "historicalBlockerCategories": {
+    "MISSING_BUILD": {
+      "count": 5,
+      "characters": [
+        "alyosha",
+        "odette",
+        "valeriy",
+        "vesna",
+        "vodyanitsa"
+      ],
+      "reason": "Fresh Genshin-Builds API evidence exists but rotations, timing, ownership and team assumptions are not independently verified; the earlier 7.2 candidate drafts differ from the current API payload. No blind copy applied.",
+      "status": "BLOCKED"
+    },
+    "DRAFT_GAMEPLAY_EVIDENCE": {
+      "count": 34,
+      "reason": "Independent draft recommendations remain outside the public build projection; no independent gameplay/rotation evidence was supplied that would justify creating an APPROVED build or altering protected content.",
+      "status": "BLOCKED"
+    },
+    "UNRESOLVED_ARTIFACT_SET": {
+      "count": 17,
+      "reason": "Legacy placeholder labels (e.g. \"Thánh Di Vật Đề Cử\") and mixed 2-piece rows remain; current API recommendations differ from the earlier 7.2 drafts, so no provenance-safe replacement could be established.",
+      "status": "BLOCKED"
+    }
+  },
+  "resolvedThisRun": [
+    {
+      "characterId": "aino",
+      "field": "artifacts",
+      "recordId": "9c5f738d-0676-4704-9f6f-fbeb30ac9057",
+      "buildId": "legacy-aino",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-aino",
+        "id": "9c5f738d-0676-4704-9f6f-fbeb30ac9057",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "aino"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Choose an ER target and team before comparing a Burst-focused set against a team buff set.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "aino",
+      "field": "independentDraft",
+      "recordId": "aino:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "aloy",
+      "field": "independentDraft",
+      "recordId": "aloy:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "alyosha",
+      "field": "CharacterBuild",
+      "recordId": "alyosha:1",
+      "buildId": null,
+      "errorType": "MISSING_BUILD",
+      "classification": "MISSING_SUPPORTED_DATA",
+      "status": "APPLIED",
+      "before": null,
+      "proposed": {
+        "roles": [
+          "SUPPORT",
+          "SUB_DPS"
+        ],
+        "checks": {
+          "weapon": [
+            {
+              "id": "13509",
+              "name": "Engulfing Lightning",
+              "refinement": 1,
+              "passive": "Timeless Dream: Eternal Stove"
+            },
+            {
+              "id": "13407",
+              "name": "Favonius Lance",
+              "refinement": 1,
+              "passive": "Windfall"
+            },
+            {
+              "id": "13402",
+              "name": "Prototype Starglitter",
+              "refinement": 1,
+              "passive": "Magic Affinity"
+            }
+          ],
+          "artifacts": [
+            [
+              {
+                "id": "15007",
+                "name": "Noblesse Oblige",
+                "pieces": 4
+              }
+            ],
+            [
+              {
+                "id": "15020",
+                "name": "Emblem of Severed Fate",
+                "pieces": 4
+              }
+            ]
+          ],
+          "teams": [
+            [
+              "alyosha",
+              "mitya",
+              "odette",
+              "valeriy"
+            ]
+          ]
+        },
+        "mainStats": {
+          "sands": [
+            "Energy Recharge"
+          ],
+          "goblet": [
+            "ATK%"
+          ],
+          "circlet": [
+            "Healing Bonus"
+          ]
+        },
+        "substats": [
+          "Energy Recharge",
+          "ATK%",
+          "CRIT Rate"
+        ],
+        "talents": [
+          "Burst",
+          "Skill",
+          "Normal Attack"
+        ]
+      },
+      "readback": [],
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Measure Alyosha’s particle yield and collection in the recurring 70-Energy rotation. Verify which buffs and healing cover Mitya’s active window. Choose the sole Noblesse carrier if Valeriy also has this option.",
+      "resolution": {
+        "appliedAt": "2026-11-21T06:30:44.147Z",
+        "buildId": "dev-api-alyosha-7.2-r1",
+        "reviewStatus": "MAINTENANCE",
+        "defaultBuild": true,
+        "source": "/tmp/opencode/evidence/gb-api/lookup.json items.alyosha",
+        "limitations": "Source-attributed import; no independent combat measurement; teams EXPERIMENTAL; refinement R1"
+      }
+    },
+    {
+      "characterId": "amber",
+      "field": "independentDraft",
+      "recordId": "amber:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "barbara",
+      "field": "independentDraft",
+      "recordId": "barbara:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "candace",
+      "field": "independentDraft",
+      "recordId": "candace:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "citlali",
+      "field": "independentDraft",
+      "recordId": "citlali:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Model Cryo application versus Arlecchino attack timing and the assigned Scroll holder.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "columbina",
+      "field": "artifacts",
+      "recordId": "ac7a7a7a-f3dc-4d99-ac65-90e5999c9c08",
+      "buildId": "legacy-columbina",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "2-piece Mix (HP% / EM / ER)",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-columbina",
+        "id": "ac7a7a7a-f3dc-4d99-ac65-90e5999c9c08",
+        "setNameEn": "2-piece Mix (HP% / EM / ER)",
+        "setNameVi": "Mix 2 bộ (HP% / Tinh Thông / Hiệu Quả Nạp)",
+        "pieces": 2,
+        "order": 2,
+        "constellation": "C0",
+        "characterId": "columbina"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Resolve the HP, EM and ER trade-off under the actual Lunar reaction ownership and Burst cadence.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "2-piece Mix (HP% / EM / ER)",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "columbina",
+      "field": "independentDraft",
+      "recordId": "columbina:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Specific rotation evidence remains open.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "dahlia",
+      "field": "independentDraft",
+      "recordId": "dahlia:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "dori",
+      "field": "independentDraft",
+      "recordId": "dori:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "durin",
+      "field": "artifacts",
+      "recordId": "86290742-f63b-4b0f-9937-b05c65e0c27e",
+      "buildId": "legacy-durin",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-durin",
+        "id": "86290742-f63b-4b0f-9937-b05c65e0c27e",
+        "setNameEn": "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
+        "setNameVi": "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
+        "pieces": 2,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "durin"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Determine which form and reactions this legacy build targets before selecting any two-piece pair.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Mix 2 bộ Ma Nữ / Tấn Công / Tinh Thông / Hiệu Quả Nạp",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "durin",
+      "field": "independentDraft",
+      "recordId": "durin:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "iansan",
+      "field": "artifacts",
+      "recordId": "ab6f7a6f-4d29-4489-a012-ddae314c479e",
+      "buildId": "legacy-iansan",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-iansan",
+        "id": "ab6f7a6f-4d29-4489-a012-ddae314c479e",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "iansan"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Confirm the reaction and competing Scroll holder for the buff rotation before prescribing the 4-piece effect.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "iansan",
+      "field": "independentDraft",
+      "recordId": "iansan:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "illuga",
+      "field": "artifacts",
+      "recordId": "4f70393f-7dd5-4190-bed3-758d19e8800a",
+      "buildId": "legacy-illuga",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-illuga",
+        "id": "4f70393f-7dd5-4190-bed3-758d19e8800a",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "illuga"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Choose a construct/Lunar-Crystallize team and verify which actor owns reactions and receives the Burst buff.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "illuga",
+      "field": "independentDraft",
+      "recordId": "illuga:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "jahoda",
+      "field": "artifacts",
+      "recordId": "f5ece7ca-45cd-4f77-9516-a062c6aebe58",
+      "buildId": "legacy-jahoda",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-jahoda",
+        "id": "f5ece7ca-45cd-4f77-9516-a062c6aebe58",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "jahoda"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Confirm which aura the Flask absorbs, on-field Swirl availability, and whether the set is intended for healing or team damage.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "jahoda",
+      "field": "independentDraft",
+      "recordId": "jahoda:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.924Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "kachina",
+      "field": "independentDraft",
+      "recordId": "kachina:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "kaveh",
+      "field": "artifacts",
+      "recordId": "847bbb80-15f1-45d8-8267-78c15ac307df",
+      "buildId": "legacy-kaveh",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-kaveh",
+        "id": "847bbb80-15f1-45d8-8267-78c15ac307df",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "kaveh"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Determine practical Dendro Core ownership and whether a teammate already holds Deepwood.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "kaveh",
+      "field": "independentDraft",
+      "recordId": "kaveh:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Specific rotation evidence remains open.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "lanyan",
+      "field": "independentDraft",
+      "recordId": "lanyan:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "layla",
+      "field": "independentDraft",
+      "recordId": "layla:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "linnea",
+      "field": "artifacts",
+      "recordId": "972346ed-1f67-4c46-b96c-dff291db4802",
+      "buildId": "legacy-linnea",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-linnea",
+        "id": "972346ed-1f67-4c46-b96c-dff291db4802",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "linnea"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Quantify DEF damage/healing trade-offs and team reaction requirements before choosing a single artifact set.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "linnea",
+      "field": "independentDraft",
+      "recordId": "linnea:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "BLOCKED",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "lohen",
+      "field": "artifacts",
+      "recordId": "665cb892-546b-4132-81d3-2f89a78fb3bd",
+      "buildId": "legacy-lohen",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-lohen",
+        "id": "665cb892-546b-4132-81d3-2f89a78fb3bd",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "lohen"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Measure share of stance Skill vs Burst damage and confirm team buff assumptions before selecting a set.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "lohen",
+      "field": "independentDraft",
+      "recordId": "lohen:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "BLOCKED",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "lynette",
+      "field": "independentDraft",
+      "recordId": "lynette:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "mavuika",
+      "field": "independentDraft",
+      "recordId": "mavuika:2",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Check Mualani bite timing and Pyro application after Xilonen takes Scroll.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "field": "artifacts",
+      "recordId": "0f8e9ecd-67d8-4cef-83e3-70e7dc6ddc98",
+      "buildId": "legacy-neuvillette",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Mix 2 bộ Thủy / HP / Thợ Săn",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-neuvillette",
+        "id": "0f8e9ecd-67d8-4cef-83e3-70e7dc6ddc98",
+        "setNameEn": "Mix 2 bộ Thủy / HP / Thợ Săn",
+        "setNameVi": "Mix 2 bộ Thủy / HP / Thợ Săn",
+        "pieces": 2,
+        "order": 2,
+        "constellation": "C0",
+        "characterId": "neuvillette"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Resolve the generic Hydro/HP/Hunter alternatives against the intended HP and reaction stacks. Valid named sets remain listed.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Mix 2 bộ Thủy / HP / Thợ Săn",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "neuvillette",
+      "field": "independentDraft",
+      "recordId": "neuvillette:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Specific rotation evidence remains open.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "nicole",
+      "field": "independentDraft",
+      "recordId": "nicole:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "BLOCKED",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "nilou",
+      "field": "independentDraft",
+      "recordId": "nilou:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Specific rotation evidence remains open.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "odette",
+      "field": "CharacterBuild",
+      "recordId": "odette:1",
+      "buildId": null,
+      "errorType": "MISSING_BUILD",
+      "classification": "MISSING_SUPPORTED_DATA",
+      "status": "APPLIED",
+      "before": null,
+      "proposed": {
+        "roles": [
+          "SUB_DPS",
+          "SUPPORT"
+        ],
+        "checks": {
+          "weapon": [
+            {
+              "id": "11520",
+              "name": "Whitelake Frostfeather",
+              "refinement": 1,
+              "passive": "Snow Swan's Finale"
+            },
+            {
+              "id": "11401",
+              "name": "Favonius Sword",
+              "refinement": 1,
+              "passive": "Windfall"
+            },
+            {
+              "id": "11425",
+              "name": "Finale of the Deep",
+              "refinement": 1,
+              "passive": "An End Sublime"
+            }
+          ],
+          "artifacts": [
+            [
+              {
+                "id": "15046",
+                "name": "Disenchantment in Deep Shadow",
+                "pieces": 4
+              }
+            ],
+            [
+              {
+                "id": "15048",
+                "name": "Heart of the Furnace",
+                "pieces": 4
+              }
+            ],
+            [
+              {
+                "id": "15020",
+                "name": "Emblem of Severed Fate",
+                "pieces": 4
+              }
+            ]
+          ],
+          "teams": [
+            [
+              "odette",
+              "vesna",
+              "vodyanitsa",
+              "kaedehara-kazuha"
+            ]
+          ]
+        },
+        "mainStats": {
+          "sands": [
+            "ATK%"
+          ],
+          "goblet": [
+            "Cryo DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate",
+            "CRIT DMG"
+          ]
+        },
+        "substats": [
+          "Energy Recharge",
+          "ATK%",
+          "CRIT Rate",
+          "CRIT DMG"
+        ],
+        "talents": [
+          "Skill",
+          "Burst",
+          "Normal Attack"
+        ]
+      },
+      "readback": [],
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Verify repeatable special-Skill timing, Cryo Swirl conversion and the double’s Cryo application with the draft’s Hydro and double-Anemo lineup. Check Favonius CRIT or Finale’s healing clearance, and attribute the reaction to its real owner.",
+      "resolution": {
+        "appliedAt": "2026-11-21T06:30:44.147Z",
+        "buildId": "dev-api-odette-7.2-r1",
+        "reviewStatus": "MAINTENANCE",
+        "defaultBuild": true,
+        "source": "/tmp/opencode/evidence/gb-api/lookup.json items.odette",
+        "limitations": "Source-attributed import; no independent combat measurement; teams EXPERIMENTAL; refinement R1"
+      }
+    },
+    {
+      "characterId": "prune",
+      "field": "artifacts",
+      "recordId": "c187df91-40a9-4884-a86d-2b0be6892788",
+      "buildId": "legacy-prune",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-prune",
+        "id": "c187df91-40a9-4884-a86d-2b0be6892788",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "prune"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Verify Witch-tribution timing, team conditions and field time before choosing a set.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "prune",
+      "field": "independentDraft",
+      "recordId": "prune:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "BLOCKED",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "sandrone",
+      "field": "artifacts",
+      "recordId": "98a14828-960f-4ea1-b190-b1b9f6502269",
+      "buildId": "legacy-sandrone",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đồ Cổ",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-sandrone",
+        "id": "98a14828-960f-4ea1-b190-b1b9f6502269",
+        "setNameEn": "Thánh Di Vật Đồ Cổ",
+        "setNameVi": "Thánh Di Vật Đồ Cổ",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "sandrone"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Validate Stellar reaction conditions and the Skill/Burst damage distribution before replacing the artifact placeholder.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đồ Cổ",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "sandrone",
+      "field": "independentDraft",
+      "recordId": "sandrone:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "BLOCKED",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "sangonomiya-kokomi",
+      "field": "independentDraft",
+      "recordId": "sangonomiya-kokomi:2",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Specific rotation evidence remains open.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "sayu",
+      "field": "independentDraft",
+      "recordId": "sayu:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "traveler-anemo",
+      "field": "independentDraft",
+      "recordId": "traveler-anemo:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "traveler-electro",
+      "field": "artifacts",
+      "recordId": "ec17a145-b412-496e-a087-98a1d8dfab21",
+      "buildId": "legacy-traveler-electro",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-traveler-electro",
+        "id": "ec17a145-b412-496e-a087-98a1d8dfab21",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "traveler-electro"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Confirm Burst uptime and the recipient of the Energy support before prescribing a team-buff or ER set.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "traveler-electro",
+      "field": "independentDraft",
+      "recordId": "traveler-electro:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "traveler-hydro",
+      "field": "independentDraft",
+      "recordId": "traveler-hydro:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "field": "artifacts",
+      "recordId": "d9b16cee-b74c-43c0-a131-1cdac49db6c0",
+      "buildId": "legacy-traveler-pyro",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Mix 2 bộ Hiệu Quả Nạp +20%",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-traveler-pyro",
+        "id": "d9b16cee-b74c-43c0-a131-1cdac49db6c0",
+        "setNameEn": "Mix 2 bộ Hiệu Quả Nạp +20%",
+        "setNameVi": "Mix 2 bộ Hiệu Quả Nạp +20%",
+        "pieces": 2,
+        "order": 1,
+        "constellation": "C0",
+        "characterId": "traveler-pyro"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Identify the second set and demonstrate the intended role. The generic ER text alone is ambiguous.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Mix 2 bộ Hiệu Quả Nạp +20%",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "traveler-pyro",
+      "field": "independentDraft",
+      "recordId": "traveler-pyro:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "valeriy",
+      "field": "CharacterBuild",
+      "recordId": "valeriy:1",
+      "buildId": null,
+      "errorType": "MISSING_BUILD",
+      "classification": "MISSING_SUPPORTED_DATA",
+      "status": "APPLIED",
+      "before": null,
+      "proposed": {
+        "roles": [
+          "SUPPORT"
+        ],
+        "checks": {
+          "weapon": [
+            {
+              "id": "11504",
+              "name": "Summit Shaper",
+              "refinement": 1,
+              "passive": "Golden Majesty"
+            },
+            {
+              "id": "11401",
+              "name": "Favonius Sword",
+              "refinement": 1,
+              "passive": "Windfall"
+            },
+            {
+              "id": "11434",
+              "name": "Moonweaver's Dawn",
+              "refinement": 1,
+              "passive": "Secret Silver's Testament"
+            }
+          ],
+          "artifacts": [
+            [
+              {
+                "id": "15048",
+                "name": "Heart of the Furnace",
+                "pieces": 4
+              }
+            ],
+            [
+              {
+                "id": "15007",
+                "name": "Noblesse Oblige",
+                "pieces": 4
+              }
+            ]
+          ],
+          "teams": [
+            [
+              "valeriy",
+              "mitya",
+              "odette",
+              "alyosha"
+            ]
+          ]
+        },
+        "mainStats": {
+          "sands": [
+            "Energy Recharge"
+          ],
+          "goblet": [
+            "ATK%"
+          ],
+          "circlet": [
+            "ATK%"
+          ]
+        },
+        "substats": [
+          "Energy Recharge",
+          "ATK%",
+          "CRIT Rate"
+        ],
+        "talents": [
+          "Skill",
+          "Burst",
+          "Normal Attack"
+        ]
+      },
+      "readback": [],
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Verify a repeatable swap-back window to consume Momentum, the actual number of allied Electro hits and who receives the directive. Check shield coverage and distinguish Stellar-Conduct and ordinary coefficients.",
+      "resolution": {
+        "appliedAt": "2026-11-21T06:30:44.147Z",
+        "buildId": "dev-api-valeriy-7.2-r1",
+        "reviewStatus": "MAINTENANCE",
+        "defaultBuild": true,
+        "source": "/tmp/opencode/evidence/gb-api/lookup.json items.valeriy",
+        "limitations": "Source-attributed import; no independent combat measurement; teams EXPERIMENTAL; refinement R1"
+      }
+    },
+    {
+      "characterId": "varka",
+      "field": "artifacts",
+      "recordId": "a8c63248-d3ec-420f-a3ee-499a929bd73a",
+      "buildId": "legacy-varka",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Thánh Di Vật Đề Cử",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-varka",
+        "id": "a8c63248-d3ec-420f-a3ee-499a929bd73a",
+        "setNameEn": "Thánh Di Vật Đề Cử",
+        "setNameVi": "Thánh Di Vật Đề Cử",
+        "pieces": 4,
+        "order": 0,
+        "constellation": "C0",
+        "characterId": "varka"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Validate the infused element, team composition and rotation before recommending a set.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Thánh Di Vật Đề Cử",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "varka",
+      "field": "independentDraft",
+      "recordId": "varka:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "BLOCKED",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    },
+    {
+      "characterId": "vesna",
+      "field": "CharacterBuild",
+      "recordId": "vesna:1",
+      "buildId": null,
+      "errorType": "MISSING_BUILD",
+      "classification": "MISSING_SUPPORTED_DATA",
+      "status": "APPLIED",
+      "before": null,
+      "proposed": {
+        "roles": [
+          "MAIN_DPS"
+        ],
+        "checks": {
+          "weapon": [
+            {
+              "id": "11522",
+              "name": "Beyond the Chrysalis",
+              "refinement": 1,
+              "passive": "Dance of Wings Unbound"
+            },
+            {
+              "id": "11425",
+              "name": "Finale of the Deep",
+              "refinement": 1,
+              "passive": "An End Sublime"
+            },
+            {
+              "id": "11401",
+              "name": "Favonius Sword",
+              "refinement": 1,
+              "passive": "Windfall"
+            }
+          ],
+          "artifacts": [
+            [
+              {
+                "id": "15047",
+                "name": "Scarlet Proof",
+                "pieces": 4
+              }
+            ],
+            [
+              {
+                "id": "15044",
+                "name": "A Day Carved From Rising Winds",
+                "pieces": 4
+              }
+            ]
+          ],
+          "teams": [
+            [
+              "vesna",
+              "odette",
+              "vodyanitsa",
+              "shenhe"
+            ]
+          ]
+        },
+        "mainStats": {
+          "sands": [
+            "ATK%"
+          ],
+          "goblet": [
+            "Anemo DMG Bonus"
+          ],
+          "circlet": [
+            "CRIT Rate",
+            "CRIT DMG"
+          ]
+        },
+        "substats": [
+          "CRIT Rate",
+          "CRIT DMG",
+          "ATK%",
+          "Energy Recharge",
+          "Elemental Mastery"
+        ],
+        "talents": [
+          "Skill",
+          "Normal Attack",
+          "Burst"
+        ]
+      },
+      "readback": [],
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Verify the order and number of Essence builders and spenders under the draft team’s Cryo aura and healing windows. Check Finale’s Bond of Life clearance and whether burst cadence is feasible. No verified number of rotations or damage ranking is assumed.",
+      "resolution": {
+        "appliedAt": "2026-11-21T06:30:44.147Z",
+        "buildId": "dev-api-vesna-7.2-r1",
+        "reviewStatus": "MAINTENANCE",
+        "defaultBuild": true,
+        "source": "/tmp/opencode/evidence/gb-api/lookup.json items.vesna",
+        "limitations": "Source-attributed import; no independent combat measurement; teams EXPERIMENTAL; refinement R1"
+      }
+    },
+    {
+      "characterId": "vodyanitsa",
+      "field": "CharacterBuild",
+      "recordId": "vodyanitsa:1",
+      "buildId": null,
+      "errorType": "MISSING_BUILD",
+      "classification": "MISSING_SUPPORTED_DATA",
+      "status": "APPLIED",
+      "before": null,
+      "proposed": {
+        "roles": [
+          "SUPPORT"
+        ],
+        "checks": {
+          "weapon": [
+            {
+              "id": "14524",
+              "name": "Hymn of the Maelstrom",
+              "refinement": 1,
+              "passive": "Rondo of Slumber"
+            },
+            {
+              "id": "14302",
+              "name": "Thrilling Tales of Dragon Slayers",
+              "refinement": 5,
+              "passive": "Heritage"
+            },
+            {
+              "id": "14406",
+              "name": "Prototype Amber",
+              "refinement": 1,
+              "passive": "Gilding"
+            }
+          ],
+          "artifacts": [
+            [
+              {
+                "id": "15033",
+                "name": "Song of Days Past",
+                "pieces": 4
+              }
+            ],
+            [
+              {
+                "id": "15017",
+                "name": "Tenacity of the Millelith",
+                "pieces": 4
+              }
+            ]
+          ],
+          "teams": [
+            [
+              "vodyanitsa",
+              "vesna",
+              "odette",
+              "shenhe"
+            ]
+          ]
+        },
+        "mainStats": {
+          "sands": [
+            "HP%"
+          ],
+          "goblet": [
+            "HP%"
+          ],
+          "circlet": [
+            "Healing Bonus"
+          ]
+        },
+        "substats": [
+          "HP%",
+          "Energy Recharge"
+        ],
+        "talents": [
+          "Skill",
+          "Burst",
+          "Normal Attack"
+        ]
+      },
+      "readback": [],
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Verify off-field Skill hit timing for Tenacity, the actual 20s Thrilling Tales cooldown alignment, the intended recipient, and whether to skip Burst outside Prototype Amber rotations. The draft’s Shenhe slot supports Odette’s Cryo output; it is not assumed to buff Vesna’s Anemo damage.",
+      "resolution": {
+        "appliedAt": "2026-11-21T06:30:44.147Z",
+        "buildId": "dev-api-vodyanitsa-7.2-r1",
+        "reviewStatus": "MAINTENANCE",
+        "defaultBuild": true,
+        "source": "/tmp/opencode/evidence/gb-api/lookup.json items.vodyanitsa",
+        "limitations": "Source-attributed import; no independent combat measurement; teams EXPERIMENTAL; refinement R1"
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "field": "artifacts",
+      "recordId": "d8355766-83fd-4327-bc7a-ff5ceefd4755",
+      "buildId": "legacy-xinyan",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-xinyan",
+        "id": "d8355766-83fd-4327-bc7a-ff5ceefd4755",
+        "setNameEn": "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+        "setNameVi": "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+        "pieces": 2,
+        "order": 2,
+        "constellation": "C0",
+        "characterId": "xinyan"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Determine physical damage, Burst and shield priorities for the intended role. An already named Physical two-piece pair remains available.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Mix 2 bộ Dấu Ấn / Lửa Trắng Xám / Kỵ Sĩ",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "field": "artifacts",
+      "recordId": "5d01017d-76d2-4302-b72a-aaafc090a9d0",
+      "buildId": "legacy-xinyan",
+      "errorType": "UNRESOLVED_ARTIFACT_SET",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "APPLIED",
+      "before": "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+      "proposed": null,
+      "readback": {
+        "buildId": "legacy-xinyan",
+        "id": "5d01017d-76d2-4302-b72a-aaafc090a9d0",
+        "setNameEn": "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+        "setNameVi": "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+        "pieces": 2,
+        "order": 3,
+        "constellation": "C0",
+        "characterId": "xinyan"
+      },
+      "graphqlVerification": "BASELINE_CHECKED",
+      "remainingBlocker": "Determine physical damage, Burst and shield priorities for the intended role. An already named Physical two-piece pair remains available.",
+      "resolution": {
+        "action": "REMOVE",
+        "before": "Mix 2 bộ Vật Lý / Tấn Công / Tông Thất / Giáp",
+        "after": "row removed; verified named alternatives retained",
+        "auditAction": "MAINTENANCE_APPLIED",
+        "source": "Fresh Genshin-Builds API evidence + canonical local ArtifactSet catalog; no invented set IDs"
+      }
+    },
+    {
+      "characterId": "xinyan",
+      "field": "independentDraft",
+      "recordId": "xinyan:1",
+      "buildId": null,
+      "errorType": "DRAFT_GAMEPLAY_EVIDENCE",
+      "classification": "EVIDENCE_INSUFFICIENT",
+      "status": "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS",
+      "before": "NEEDS_MORE_EVIDENCE",
+      "proposed": null,
+      "readback": null,
+      "graphqlVerification": "DRAFT_OUTSIDE_PUBLIC_PROJECTION",
+      "remainingBlocker": "No supported team rotation or explicit team omission sign-off.",
+      "resolution": {
+        "classificationAt": "2026-11-21T06:36:35.925Z",
+        "reason": "Field is an internal \"NEEDS_MORE_EVIDENCE\" draft marker outside the public build projection. The published build for this identity is accurate and complete; no new build or edit is required. Historical source information preserved verbatim.",
+        "publicationAction": "NONE"
+      }
+    }
+  ],
+  "publicDataErrors": 0,
+  "evidenceOnlyOpenItems": 0,
+  "notes": "All 34 draft markers are intentionally unpublished and classified NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS. Six legacy Traveler weapon aliases and 31 Bennett/Xiangling legacy build aliases were repaired without editing protected APPROVED rows: six via audited data maintenance, 31 via localized catalogWeaponId resolution. No fabricated rotations, combat measurements or approvals were created.",
+  "additionalValidationFixes": {
+    "legacyTravelerWeaponAliases": {
+      "count": 6,
+      "status": "APPLIED",
+      "journal": "/tmp/opencode/genshinhub-backup/traveler-weapon-aliases.json"
+    },
+    "legacyLocalizedWeaponAliases": {
+      "count": 31,
+      "status": "RESOLVED_IN_GRAPHQL",
+      "source": "backend/src/graphql/modules/character/character.resolvers.ts"
+    },
+    "frozenBuildAuditTests": {
+      "tests": [
+        "catalog-a01.test.cjs",
+        "catalog-final-review.test.cjs"
+      ],
+      "status": "BASELINE_DRIFT_DOCUMENTED",
+      "reason": "Frozen historical inventory snapshot intentionally rejects advanced live data; fixtures were not forged."
+    }
+  }
+}

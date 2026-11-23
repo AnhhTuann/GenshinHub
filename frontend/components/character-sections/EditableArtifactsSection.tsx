@@ -5,31 +5,63 @@ import { useAdmin } from '@/hooks/useAdmin';
 import { useState, useEffect } from 'react';
 import FallbackImage from '@/components/ui/FallbackImage';
 import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import { Gem } from 'lucide-react';
 import InlineArtifactEditor from '@/components/admin/InlineArtifactEditor';
 import { fetchGraphQLAdmin } from '@/lib/graphql/client';
 import { fetchGraphQL } from '@/lib/graphql';
 import toast from 'react-hot-toast';
 import { confirmDialog } from '@/utils/confirm';
+import { artifactDisplayName, isUnverifiedArtifact } from '@/lib/artifact-display';
+
+interface CatalogArtifact {
+  id: string;
+  nameEn: string;
+  nameVi?: string;
+  iconUrl?: string | null;
+}
 
 interface Props {
+  readOnly?: boolean;
+  showBestInSlot?: boolean;
   characterId: string;
   bestArtifacts: any[];
   tArtifacts: string;
+  catalog: CatalogArtifact[];
 }
 
 function SectionHeader({ label, accent }: { label: string; accent: string }) {
   return (
-    <div className="flex items-center gap-2.5 mb-5">
-      <span className={`w-[3px] h-5 rounded-full ${accent}`} />
-      <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/40 font-display">{label}</span>
+    <div className="char-guide-section-head">
+      <span className={`char-guide-section-accent ${accent}`} />
+      <span className="char-guide-section-title">{label}</span>
     </div>
   );
 }
 
-export default function EditableArtifactsSection({ characterId, bestArtifacts, tArtifacts }: Props) {
+function ArtifactThumbnail({ image, catalogImage }: { image?: string | null; catalogImage?: string | null }) {
+  const source = image?.trim() || catalogImage;
+  return (
+    <span className="atlas-artifact-thumbnail char-guide-thumb">
+      {source
+        ? <FallbackImage src={source} externalSrc={catalogImage !== source ? catalogImage ?? undefined : undefined}
+            alt="" fill sizes="64px" className="object-contain p-1" />
+        : <Gem size={24} aria-hidden="true" />}
+    </span>
+  );
+}
+
+export default function EditableArtifactsSection({ characterId, bestArtifacts, tArtifacts, catalog, readOnly = false, showBestInSlot = true }: Props) {
+  function findIcon(id: string | undefined, nameEn: string | undefined, nameVi: string | undefined) {
+    const match = catalog.find(set => set.id === id) ?? catalog.find(set =>
+      (nameEn && set.nameEn.trim().toLowerCase() === nameEn.trim().toLowerCase()) ||
+      (nameVi && set.nameVi?.trim().toLowerCase() === nameVi.trim().toLowerCase())
+    );
+    return match?.iconUrl;
+  }
+
   const locale = useLocale();
-  const { isAdmin } = useAdmin();
+  const { isAdmin: admin } = useAdmin();
+  const isAdmin = admin && !readOnly;
   const [isEditing, setIsEditing] = useState(false);
   const [localArtifacts, setLocalArtifacts] = useState(bestArtifacts);
   const [draggedItemIdx, setDraggedItemIdx] = useState<number | null>(null);
@@ -108,14 +140,14 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
   };
 
   return (
-    <section className="bg-[#1c1813]/70 border border-white/[0.06] rounded-2xl p-5 sm:p-6 relative group/section">
+    <section className="atlas-surface p-5 sm:p-6 relative group/section h-full">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <SectionHeader label={tArtifacts} accent="bg-purple-400" />
+        <SectionHeader label={tArtifacts} accent="bg-[var(--accent-primary)]" />
         
         <div className="flex items-center gap-4">
           {/* Constellation Switcher */}
           {(availableConstellations.length > 1 || isAdmin) && (
-            <div className="flex items-center bg-black/40 border border-white/10 rounded-lg p-1">
+            <div className="flex items-center bg-[var(--bg-elevated)] border border-[var(--border-default)] rounded-lg p-1">
               {['C0', 'C1', 'C2', 'C4', 'C6'].map(c => {
                 if (!isAdmin && !availableConstellations.includes(c)) return null;
                 const isActive = activeConstellation === c;
@@ -123,8 +155,8 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
                   <button
                     key={c}
                     onClick={() => setActiveConstellation(c)}
-                    className={`px-3 py-1 text-[10px] font-black uppercase tracking-wider rounded-md transition-colors ${
-                      isActive ? 'bg-purple-400/20 text-purple-300 border border-purple-400/30 shadow-[0_0_10px_rgba(168,85,247,0.2)]' : 'text-white/40 hover:text-white/80 hover:bg-white/5 border border-transparent'
+                    className={`px-3 py-1 text-xs font-black uppercase tracking-wider rounded-md transition-colors ${
+                      isActive ? 'bg-[var(--accent-primary-dim)] text-[var(--accent-primary-light)] border border-[var(--border-accent)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface)] border border-transparent'
                     }`}
                   >
                     {c}
@@ -137,7 +169,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
           {isAdmin && (
             <button 
               onClick={() => setIsEditing(true)}
-              className="opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-purple-500/20 text-purple-300 text-xs font-bold rounded hover:bg-purple-500/30 transition-all border border-purple-500/30"
+              className="atlas-add-action"
             >
               ➕ Add Artifact
             </button>
@@ -154,28 +186,28 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
             onDragEnter={() => isAdmin && handleDragEnter(idx)}
             onDragEnd={isAdmin ? handleDragEnd : undefined}
             onDragOver={(e) => { if(isAdmin) e.preventDefault(); }}
-            className={`relative group/acard bg-[#121109]/50 border hover:border-purple-500/15 rounded-xl p-3 sm:p-4 flex flex-col gap-3 transition-all duration-200 ${isAdmin ? 'cursor-move' : ''} ${
-              dragOverItemIdx === idx ? 'border-purple-500/50 scale-[1.01] shadow-[0_0_15px_rgba(168,85,247,0.15)] z-10' : 'border-white/[0.04]'
+            data-rarity={artifact.rarity ?? 5}
+            className={`char-guide-item relative group/acard p-3 sm:p-4 flex flex-col gap-3 ${isAdmin ? 'cursor-move' : ''} ${
+              dragOverItemIdx === idx ? 'scale-[1.01] z-10' : ''
             } ${draggedItemIdx === idx ? 'opacity-40' : 'opacity-100'}`}
           >
             <div className="flex items-center gap-3">
-              <span className="w-6 h-6 shrink-0 rounded-full bg-purple-500/10 text-purple-400/80 flex items-center justify-center text-xs font-black border border-purple-500/15">
-                {idx + 1}
+              <span className="char-guide-rank">{idx + 1}</span>
+              {(idx !== 0 || (showBestInSlot && !artifact.id?.startsWith('build-'))) && (
+                <span className={`char-guide-badge shrink-0 ${idx === 0 ? 'is-best' : 'is-alt'}`}>
+                  {idx === 0 ? 'Best-in-Slot' : 'Alternative'}
+                </span>
+              )}
+              <span className="char-guide-rarity" aria-label={locale === 'vi' ? `${artifact.rarity ?? 5} sao` : `${artifact.rarity ?? 5} stars`}>
+                {artifact.rarity ?? 5}★
               </span>
-              <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider shrink-0 ${
-                idx === 0 
-                  ? 'bg-purple-400/10 text-purple-400 border border-purple-400/20'
-                  : 'bg-white/5 text-white/40 border border-white/10'
-              }`}>
-                {idx === 0 ? 'Best-in-Slot' : 'Alternative'}
-              </span>
-              <div className="h-[1px] flex-1 bg-white/[0.03]" />
+              <div className="char-guide-divider" />
               {isAdmin && (
                 <div className="opacity-0 group-hover/acard:opacity-100 transition-opacity flex items-center gap-1.5 shrink-0 ml-2">
                   <button
                     onClick={(e) => handleMoveUp(e, idx)}
                     disabled={idx === 0}
-                    className="w-6 h-6 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="w-6 h-6 flex items-center justify-center rounded bg-[var(--bg-surface)] hover:bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] disabled:opacity-30 disabled:cursor-not-allowed"
                     title="Move Up"
                   >
                     ↑
@@ -183,15 +215,15 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
                   <button
                     onClick={(e) => handleMoveDown(e, idx)}
                     disabled={idx === localArtifacts.length - 1}
-                    className="w-6 h-6 flex items-center justify-center rounded bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="w-6 h-6 flex items-center justify-center rounded bg-[var(--bg-surface)] hover:bg-[var(--bg-elevated)] border border-[var(--border-default)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] disabled:opacity-30 disabled:cursor-not-allowed"
                     title="Move Down"
                   >
                     ↓
                   </button>
-                  <div className="w-[1px] h-4 bg-white/10 self-center mx-0.5" />
+                  <div className="w-[1px] h-4 bg-[var(--border-default)] self-center mx-0.5" />
                   <button
                     onClick={() => handleRemove(artifact.id)}
-                    className="w-6 h-6 rounded bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center"
+                    className="w-6 h-6 rounded bg-[color-mix(in_srgb,var(--danger-ink)_12%,var(--bg-surface))] text-[var(--danger-ink)] hover:bg-[var(--danger-ink)] hover:text-[var(--bg-surface)] transition-all flex items-center justify-center"
                     title="Remove Artifact"
                   >
                     ✕
@@ -201,39 +233,28 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
             </div>
 
             {artifact.mixSets && artifact.mixSets.length > 0 ? (
-              <div className="flex flex-col rounded-lg overflow-hidden bg-white/[0.01] border border-white/[0.05]">
+              <div className="char-guide-set-panel">
                 {artifact.mixSets.map((mix: any, mIdx: number) => (
-                  <div key={mIdx} className={`flex items-center gap-3 p-2 ${mIdx !== 0 ? 'border-t border-white/[0.05]' : ''}`}>
-                    <div className="relative w-12 h-12 shrink-0 bg-gradient-to-b from-[#b18361] to-[#8c6b55] rounded flex items-center justify-center overflow-hidden">
-                      {mix.iconUrl && <FallbackImage src={mix.iconUrl} alt={mix.nameEn} fill sizes="48px" className="object-contain drop-shadow-md p-1" />}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-white/90 text-sm leading-tight">{locale === 'en' ? mix.nameEn : (mix.nameVi || mix.nameEn)}</h4>
-                      <p className="text-[10px] sm:text-xs text-purple-300 mt-1 font-semibold flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
-                        {locale === 'en' ? '2-Piece Set' : 'Bộ 2 món'}
-                      </p>
+                  <div key={mIdx} className="char-guide-set-row">
+                    <ArtifactThumbnail image={mix.iconUrl} catalogImage={findIcon(mix.artifactSetId, mix.nameEn, mix.nameVi)} />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="char-guide-set-name">{locale === 'en' ? mix.nameEn : (mix.nameVi || mix.nameEn)}</h4>
+                      <p className="char-guide-pieces">{locale === 'en' ? '2-Piece Set' : 'Bộ 2 món'}</p>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="flex items-center gap-4">
-                <div className={`relative w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-lg border border-white/[0.05] flex items-center justify-center p-1 overflow-hidden ${
-                  artifact.rarity === 5 ? 'bg-gradient-to-b from-[#b18361] to-[#8c6b55]' :
-                  artifact.rarity === 4 ? 'bg-gradient-to-b from-[#8e97a8] to-[#5c5344]' :
-                  artifact.rarity === 3 ? 'bg-gradient-to-b from-[#8e97a8] to-[#6b6152]' :
-                  'bg-white/[0.02]'
-                }`}>
-                  {artifact.iconUrl && (
-                    <FallbackImage src={artifact.iconUrl} alt={artifact.setNameEn} fill sizes="64px" className="object-contain drop-shadow-md p-1" />
-                  )}
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-bold text-white/90 text-sm">{locale === 'en' ? artifact.setNameEn : (artifact.setNameVi || artifact.setNameEn)}</h4>
-                  <p className="text-[10px] sm:text-xs text-purple-300 mt-1 font-semibold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50" />
-                    {artifact.pieces}{locale === 'en' ? '-Piece Set' : ' Món'}
+              <div className="char-guide-set-row">
+                {!isUnverifiedArtifact(artifact.setNameEn) && (
+                  <ArtifactThumbnail image={artifact.iconUrl} catalogImage={findIcon(artifact.artifactSetId, artifact.setNameEn, artifact.setNameVi)} />
+                )}
+                <div className="flex-1 min-w-0">
+                  <h4 className="char-guide-set-name">{artifactDisplayName(artifact.setNameEn, artifact.setNameVi, locale)}</h4>
+                  <p className="char-guide-pieces">
+                    {isUnverifiedArtifact(artifact.setNameEn)
+                      ? (locale === 'en' ? 'No verified recommendation available' : 'Chưa có khuyến nghị đã xác minh')
+                      : `${artifact.pieces}${locale === 'en' ? '-Piece Set' : ' Món'}`}
                   </p>
                 </div>
               </div>
@@ -241,7 +262,7 @@ export default function EditableArtifactsSection({ characterId, bestArtifacts, t
           </div>
         ))}
         {bestArtifacts.length === 0 && (
-          <p className="text-sm text-white/40 italic">No recommended artifacts yet.</p>
+          <p className="text-sm text-[var(--text-secondary)] italic">No recommended artifacts yet.</p>
         )}
       </div>
 

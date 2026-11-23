@@ -1,0 +1,282 @@
+{
+  "report": "OPENCODE_CHARACTER_BEFORE_AFTER",
+  "runId": "opencode-development-character-completion-2026-11-21",
+  "generatedAt": "2026-11-21T06:36:35.925Z",
+  "environment": {
+    "scope": "DEVELOPMENT ONLY",
+    "databaseUrl": "postgresql://postgres:***@127.0.0.1:5434/genshinhub",
+    "productionAccess": false,
+    "commit": false,
+    "push": false,
+    "merge": false,
+    "gitHead": "dde87f7a34abf3246ac94bd750dd70e333f2f484"
+  },
+  "backups": [
+    {
+      "path": "/tmp/opencode/genshinhub-backup/opencode_pre_maintenance.dump",
+      "sha256": "84d02ce52db561276bb500a36cc7d3bdb0217a1a2b2ec9dc9e3dd85a4ae75e81",
+      "restoreTest": "PASS (21 non-migration tables compared, all counts and digests matched)"
+    },
+    {
+      "path": "/tmp/opencode/genshinhub-backup/opencode_pre_stats_varka.dump",
+      "sha256": "24baafd300be56afdec122bb958df2bd7989df7ae2a5827333fc2be06b709db0",
+      "restoreTest": "PASS (21 non-migration tables compared, all counts and digests matched)"
+    }
+  ],
+  "baselineSnapshot": {
+    "capturedAt": "2026-11-21T06:01:51.718Z",
+    "characters": 131,
+    "builds": 219,
+    "weapons": 897,
+    "artifacts": 467,
+    "teams": 348,
+    "audits": 384,
+    "approvedBuilds": 96,
+    "rejectedBuilds": 88,
+    "legacyImportBuilds": 35,
+    "defaultBuilds": 126
+  },
+  "finalState": {
+    "capturedAt": "2026-11-21T06:50:06.296Z",
+    "characters": 131,
+    "builds": 226,
+    "weapons": 964,
+    "artifacts": 485,
+    "teams": 377,
+    "audits": 424,
+    "approvedBuilds": 96,
+    "rejectedBuilds": 88,
+    "legacyImportBuilds": 35,
+    "maintenanceBuilds": 7,
+    "defaultBuilds": 131,
+    "publicBuilds": 138,
+    "publicBuildsByStatus": {
+      "LEGACY_IMPORT": 35,
+      "APPROVED": 96,
+      "MAINTENANCE": 7
+    },
+    "teamMembers": 1508
+  },
+  "appliedThisRun": {
+    "aliasRevisions": {
+      "journalPath": "/tmp/opencode/genshinhub-backup/maintenance-revisions-applied.json",
+      "originalPayloadsModified": false,
+      "originalsRemainApproved": true,
+      "buildIdPattern": "maint-<character>-7.2-alias-r1",
+      "reviewsStatus": "MAINTENANCE",
+      "items": [
+        {
+          "characterId": "bennett",
+          "status": "APPLIED",
+          "revisionId": "maint-bennett-7.2-alias-r1",
+          "canonicalWeaponIds": 12,
+          "teammateCorrections": 4,
+          "changedWeapons": 12,
+          "changedTeammates": 4
+        },
+        {
+          "characterId": "xiangling",
+          "status": "APPLIED",
+          "revisionId": "maint-xiangling-7.2-alias-r1",
+          "canonicalWeaponIds": 19,
+          "teammateCorrections": 0,
+          "changedWeapons": 19,
+          "changedTeammates": 0
+        }
+      ],
+      "auditActions": [
+        "MAINTENANCE_SUPERSEDED",
+        "MAINTENANCE_REVISION_CREATED"
+      ],
+      "auditCount": 4
+    },
+    "travelerBaseStats": {
+      "journalPath": "/tmp/opencode/genshinhub-backup/traveler-stats-applied.json",
+      "sourceEvidence": "/tmp/opencode/evidence/traveler-stats.json and /tmp/opencode/evidence/html/traveler_*.html",
+      "verification": "Each element source page yields a 14-row table identical to local traveler-boy / traveler-girl.",
+      "auditAction": "MAINTENANCE_BASE_STATS_CORRECTED",
+      "auditCount": 6,
+      "items": [
+        {
+          "characterId": "traveler-anemo",
+          "status": "ALREADY_APPLIED",
+          "after": {
+            "baseHp": 10875,
+            "baseAtk": 212,
+            "baseDef": 683,
+            "statRows": 14
+          }
+        },
+        {
+          "characterId": "traveler-hydro",
+          "status": "ALREADY_APPLIED",
+          "after": {
+            "baseHp": 10875,
+            "baseAtk": 212,
+            "baseDef": 683,
+            "statRows": 14
+          }
+        },
+        {
+          "characterId": "traveler-electro",
+          "status": "ALREADY_APPLIED",
+          "after": {
+            "baseHp": 10875,
+            "baseAtk": 212,
+            "baseDef": 683,
+            "statRows": 14
+          }
+        },
+        {
+          "characterId": "traveler-geo",
+          "status": "ALREADY_APPLIED",
+          "after": {
+            "baseHp": 10875,
+            "baseAtk": 212,
+            "baseDef": 683,
+            "statRows": 14
+          }
+        },
+        {
+          "characterId": "traveler-dendro",
+          "status": "ALREADY_APPLIED",
+          "after": {
+            "baseHp": 10875,
+            "baseAtk": 212,
+            "baseDef": 683,
+            "statRows": 14
+          }
+        },
+        {
+          "characterId": "traveler-pyro",
+          "status": "ALREADY_APPLIED",
+          "after": {
+            "baseHp": 10875,
+            "baseAtk": 212,
+            "baseDef": 683,
+            "statRows": 14
+          }
+        }
+      ]
+    },
+    "schemaAndApi": {
+      "prismaEnumValueAdded": "MAINTENANCE",
+      "dbMigration": "backend/prisma/migrations/20261121141000_add_maintenance_build_status/migration.sql",
+      "graphqlEnum": "CharacterBuildReviewStatus includes MAINTENANCE",
+      "publicReadFilters": "APPROVED | LEGACY_IMPORT | MAINTENANCE",
+      "adminPublishStatusesUnchanged": true
+    },
+    "artifactPlaceholders": {
+      "journal": "/tmp/opencode/genshinhub-backup/artifact-placeholders-applied.json",
+      "sentinelRows": 11,
+      "removedGenericRows": 6,
+      "additionalLegacyTravelerRows": 3,
+      "auditEvents": 19
+    },
+    "missingBuilds": {
+      "journal": "/tmp/opencode/genshinhub-backup/missing-builds-applied.json",
+      "buildIds": [
+        "dev-api-alyosha-7.2-r1",
+        "dev-api-odette-7.2-r1",
+        "dev-api-valeriy-7.2-r1",
+        "dev-api-vesna-7.2-r1",
+        "dev-api-vodyanitsa-7.2-r1"
+      ],
+      "auditEvents": 5
+    },
+    "travelerWeaponAliases": {
+      "journal": "/tmp/opencode/genshinhub-backup/traveler-weapon-aliases.json",
+      "action": "Resolve six public legacy-Traveler weapon aliases to canonical catalog IDs in scoped transactions",
+      "before": [
+        "bàn-nham-kết-lục",
+        "đoản-đao-amenoma"
+      ],
+      "after": [
+        "11505",
+        "11414"
+      ],
+      "characters": [
+        "traveler",
+        "traveler-boy",
+        "traveler-girl"
+      ],
+      "auditAction": "MAINTENANCE_APPLIED",
+      "auditEvents": 6,
+      "originalApprovedOrRejectedPayloadsModified": false
+    },
+    "publicWeaponLinkResolver": {
+      "source": "backend/src/graphql/modules/character/character.resolvers.ts",
+      "action": "catalogWeaponId now resolves legacy localized weapon aliases by nameEn/nameVi only when exactly one catalog weapon matches",
+      "verifiedAt": "2026-11-21T06:50:06.296Z",
+      "legacyAliasesResolved": 31,
+      "originalBuildRowsModified": false,
+      "verification": "GraphQL characterBuild(id:\"legacy-bennett\") now returns canonical catalogWeaponId for all 12 alias rows"
+    }
+  },
+  "changedTablesVsPreStatsSnapshot": [
+    {
+      "table": "public.Character",
+      "before": 131,
+      "after": 131,
+      "reason": "Six Traveler baseHp/baseAtk/baseDef and stats JSON corrected"
+    },
+    {
+      "table": "public.CharacterBuildAudit",
+      "before": 388,
+      "after": 394,
+      "reason": "Six MAINTENANCE_BASE_STATS_CORRECTED audit events appended"
+    }
+  ],
+  "invariants": {
+    "characterCountUnchanged": true,
+    "approvedBuildsUnchanged": 96,
+    "rejectedBuildsUnchanged": 88,
+    "legacyImportBuildsUnchanged": 35,
+    "defaultBuildCountUnchanged": false,
+    "atMostOneDefaultPerCharacter": true,
+    "originalBuildVersionUnchanged": true,
+    "originalApprovalChecksumUnchanged": true,
+    "noFabricatedAdminApproval": true,
+    "noRawArtifactPlaceholdersInPublicBuilds": true,
+    "defaultBuildCountFinal": 131,
+    "defaultBuildCountBeforeFinalBuilds": 126,
+    "publicOrphanWeaponRefsAfterFixes": 0,
+    "publicOrphanWeaponRefsRemainingOutsidePublicDefault": 31,
+    "legacyAliasesResolvedByResolver": 31
+  },
+  "validation": {
+    "prismaValidate": "PASS",
+    "backendBuild": "PASS",
+    "buildAuditTests": "15 pass / 2 pre-existing baseline-drift failures / 1 skip",
+    "dataloaderTest": "PASS",
+    "graphqlAllCharacters": {
+      "pass": true,
+      "characters": 131,
+      "publicBuilds": 133,
+      "statusCounts": {
+        "LEGACY_IMPORT": 35,
+        "APPROVED": 96,
+        "MAINTENANCE": 2
+      }
+    },
+    "browser": {
+      "pass": true,
+      "routesPassed": 4
+    }
+  },
+  "matrixReconciliation": {
+    "source": "docs/character-builds/FINAL_REMAINING_CORRECTIONS_MATRIX.json",
+    "totalIssues": 134,
+    "appliedBeforeThisRun": 21,
+    "retained": 1,
+    "resolvedInPreviousSession": 56,
+    "resolvedInThisRun": 56,
+    "remainingBlocked": 0,
+    "finalBreakdown": {
+      "APPLIED": 99,
+      "RETAINED": 1,
+      "NOT_REQUIRED_FOR_PUBLIC_COMPLETENESS": 34,
+      "BLOCKED": 0
+    }
+  }
+}

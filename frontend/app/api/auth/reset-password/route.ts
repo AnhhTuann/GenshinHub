@@ -1,31 +1,27 @@
 import { NextResponse } from 'next/server';
-import { fetchGraphQL } from '@/lib/graphql';
+import { isSameOriginRequest, authFetch, AuthLocale } from '@/lib/auth-api';
 
 export async function POST(request: Request) {
+  if (!isSameOriginRequest(request)) return NextResponse.json({ code: 'AUTH_FORBIDDEN' }, { status: 403 });
   try {
     const body = await request.json();
-    const { email, otp, newPassword } = body;
+    const locale: AuthLocale = body.locale === 'vi' ? 'vi' : 'en';
+    const token = typeof body.token === 'string' ? body.token : typeof body.otp === 'string' ? body.otp : '';
+    const newPassword = typeof body.newPassword === 'string' ? body.newPassword : '';
 
-    if (!email || !otp || !newPassword) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    if (!token || !newPassword) {
+      return NextResponse.json(
+        { error: locale === 'vi' ? 'Thiếu thông tin đặt lại mật khẩu' : 'Missing reset information' },
+        { status: 400 },
+      );
     }
 
-    if (newPassword.length < 6) {
-      return NextResponse.json({ error: 'Password must be at least 6 characters' }, { status: 400 });
+    const result = await authFetch('/auth/reset-password', { token, newPassword, locale });
+    if (!result.ok) {
+      return NextResponse.json({ error: result.data?.error ?? 'Reset failed' }, { status: result.status });
     }
-
-    const data = await fetchGraphQL(`
-      mutation ResetPassword($email: String!, $otp: String!, $newPassword: String!) {
-        resetPassword(email: $email, otp: $otp, newPassword: $newPassword)
-      }
-    `, { email, otp, newPassword }, 0);
-
-    if (!data?.resetPassword) {
-      return NextResponse.json({ error: 'Failed to reset password' }, { status: 400 });
-    }
-
     return NextResponse.json({ success: true });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 400 });
+  } catch {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
 }

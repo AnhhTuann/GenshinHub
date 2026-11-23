@@ -1,0 +1,46 @@
+# Dependabot — tự động kiểm tra phiên bản dependency hằng ngày.
+#
+# Lưu ý: PR do Dependabot tạo CHỈ nâng cấp thư viện (kể cả genshin-db),
+# KHÔNG tự động merge và KHÔNG tự động sync dữ liệu vào database.
+# Sau khi merge PR nâng cấp genshin-db, chạy workflow
+# "Genshin Data Sync" (dry-run) để phát hiện diff dữ liệu mới.
+
+version: 2
+updates:
+  # Backend — quan trọng nhất: genshin-db (nguồn dữ liệu game)
+  - package-ecosystem: "npm"
+    directory: "/backend"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "backend"
+    # Không auto-merge: mọi PR đều cần review + CI pass
+    groups:
+      genshin-db:
+        patterns:
+          - "genshin-db"
+      production-deps:
+        dependency-type: "production"
+        exclude-patterns:
+          - "genshin-db"
+
+  # Frontend
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "frontend"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "ci"

@@ -245,7 +245,7 @@ export default function SettingsPage() {
             {/* ── Profile Details ── */}
             {activeTab === 'profile' && (
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                <h1 className="text-2xl font-black uppercase tracking-widest text-[#ffdf9e] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
+                <h1 className="atlas-section-title mb-6 border-b border-[var(--border-default)] pb-4">
                   Profile Details
                 </h1>
                 <form onSubmit={handleProfileSubmit} className="space-y-6">
@@ -307,7 +307,7 @@ export default function SettingsPage() {
             {/* ── Security ── */}
             {activeTab === 'security' && (
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                <h1 className="text-2xl font-black uppercase tracking-widest text-[#ffdf9e] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
+                <h1 className="atlas-section-title mb-6 border-b border-[var(--border-default)] pb-4">
                   Security
                 </h1>
                 <form onSubmit={handlePasswordSubmit} className="space-y-6">
@@ -394,7 +394,7 @@ export default function SettingsPage() {
             {/* ── Email Address ── */}
             {activeTab === 'email' && (
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
-                <h1 className="text-2xl font-black uppercase tracking-widest text-[#ffdf9e] mb-8 font-[family-name:var(--font-cinzel)] border-b border-white/10 pb-4">
+                <h1 className="atlas-section-title mb-6 border-b border-[var(--border-default)] pb-4">
                   Email Address
                 </h1>
 

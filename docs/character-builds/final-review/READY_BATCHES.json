@@ -1,0 +1,2678 @@
+{
+  "state": "REVIEW_READY",
+  "authorization": "NONE",
+  "counts": {
+    "A": {
+      "builds": 12,
+      "characters": 12,
+      "roles": {
+        "SUB_DPS": 7,
+        "SUPPORT": 4,
+        "MAIN_DPS": 2
+      }
+    },
+    "B": {
+      "builds": 115,
+      "characters": 111,
+      "roles": {
+        "SUB_DPS": 35,
+        "MAIN_DPS": 43,
+        "SUPPORT": 63
+      }
+    },
+    "C": {
+      "builds": 6,
+      "characters": 6,
+      "roles": {
+        "SUPPORT": 3,
+        "SUB_DPS": 2,
+        "MAIN_DPS": 2
+      }
+    }
+  },
+  "batches": [
+    {
+      "id": "A01",
+      "candidates": [
+        {
+          "characterId": "bennett",
+          "candidateId": "bennett:1",
+          "role": [
+            "SUPPORT"
+          ],
+          "version": "character-build-catalog-7.2-r3-a01",
+          "checksum": "6c5527ba0bf9fc768bb41db2e2313ddd277fa3c85824f56c19b99e9bbced5744",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "ER first, HP% only once covered. Keep all three current collections.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/bennett",
+            "https://keqingmains.com/q/bennett-quickguide/",
+            "https://library.keqingmains.com/bennett/"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-bennett",
+          "expectedBaseline": {
+            "buildId": "legacy-bennett",
+            "version": 1,
+            "checksum": "42516bd8f7deeb62d85a20127b17a9af2d5db2e0a778a9853229c743b3ef057f",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Burst buffer and heal"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUPPORT"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Use an Energy Recharge Sands until Fantastic Voyage is available on each planned rotation. HP% Sands is a healing alternative only after that requirement is met. The Burst ATK bonus uses Bennett’s innate Base ATK plus the sword’s Base ATK; artifact ATK% does not increase it. At C0 the active character needs above 70% HP for the buff. Use Healing Bonus normally or CRIT Rate when relying on an on-field Favonius crit. Shortlist: Sapwood Blade for craftable ER and base ATK, Aquila Favonia for base ATK only if ER is covered, Skyward Blade for ER plus base ATK, and Favonius Sword when team energy outweighs the smaller ATK buff. Assign one Noblesse holder; Instructor is a four-star alternative when Bennett triggers a reaction on field and the team values EM. The Xiangling–Xingqiu–Sucrose rotation is an optional example, not a replacement for existing teams."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r3-a01"
+            },
+            "sands": {
+              "before": [
+                "Hiệu Quả Nạp",
+                "Tấn Công%",
+                "HP%"
+              ],
+              "after": [
+                "Energy Recharge",
+                "HP%"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Sát Thương Nguyên Tố Hỏa",
+                "HP%"
+              ],
+              "after": [
+                "HP%"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "Tỷ Lệ Bạo Kích",
+                "HP%",
+                "Tăng Trị Liệu"
+              ],
+              "after": [
+                "Healing Bonus",
+                "CRIT Rate"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "Energy Recharge",
+                "CRIT Rate",
+                "CRIT DMG",
+                "HP%",
+                "ATK%",
+                "HP"
+              ],
+              "after": [
+                "Energy Recharge",
+                "HP%",
+                "CRIT Rate"
+              ]
+            },
+            "talentPriority": {
+              "before": null,
+              "after": [
+                "Burst",
+                "Skill",
+                "Normal Attack"
+              ]
+            }
+          },
+          "preservation": {
+            "teams": [
+              8,
+              8
+            ],
+            "weapons": [
+              12,
+              12
+            ],
+            "artifacts": [
+              4,
+              4
+            ]
+          },
+          "collectionPolicy": "PRESERVE_TEAMS_WEAPONS_ARTIFACTS"
+        },
+        {
+          "characterId": "fischl",
+          "candidateId": "fischl:1",
+          "role": [
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r3-a01",
+          "checksum": "1207015e89a97db353d5331a1b0ad8dc7b21e48e3b0226fd0dc54a8c93759744",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Add a conditional Aggravate sands, document Oz weapon setup, keep both existing bow choices canonically, and retain experimental status.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/fischl",
+            "https://keqingmains.com/q/fischl-quickguide/",
+            "https://keqingmains.com/q/keqing-quickguide/"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-fischl",
+          "expectedBaseline": {
+            "buildId": "legacy-fischl",
+            "version": 1,
+            "checksum": "99fd470d9f00bc3d94b8b84e87a04ffdc40ebfd279b0be5a8df33aec2b144d9a",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Off-field Oz in Aggravate"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "ATK% Sands is the general off-field default. Consider EM Sands in a stable Quicken/Aggravate rotation only if the weapon, team buffs and substats support it; compare with ATK rather than assuming it wins. Electro goblet, CRIT circlet and Skill > Burst > Normal Attack remain. Meet the chosen Oz renewal cadence with ER; no fixed target is assumed. Song of Stillness needs actual healing on Fischl before creating or resummoning Oz to snapshot its damage buff. At C0 Fischl cannot rely on her own C4 heal. A later Yaoyao heal can trigger or refresh the weapon buff even off field, but does not retroactively update existing Oz. Polar Star stack types are independent; set up inexpensive Normal/Aimed hits when practical, avoid assuming four stacks, and establish desired stacks before the Oz snapshot. Keqing drives Electro application, Nahida maintains Dendro and Yaoyao adds healing; the named team remains experimental."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r3-a01"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "tuyệt-huyền",
+                  "refinement": 5,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "cánh-thiên-không",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "15507",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15402",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15425",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15410",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15501",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    null
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15032"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15005",
+                    "15001"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": null,
+              "after": [
+                "ATK%",
+                "Elemental Mastery"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "Electro DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "CRIT Rate"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%",
+                "Elemental Mastery",
+                "Energy Recharge"
+              ]
+            },
+            "talentPriority": {
+              "before": [
+                "Normal Attack",
+                "Elemental Skill",
+                "Elemental Burst"
+              ],
+              "after": [
+                "Skill",
+                "Burst",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [],
+              "after": [
+                {
+                  "name": "Off-field Oz in Aggravate",
+                  "description": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "fischl",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Oz and Aggravate follow-up"
+                    },
+                    {
+                      "characterId": "keqing",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "quick-swap Electro attacker"
+                    },
+                    {
+                      "characterId": "nahida",
+                      "role": "SUB_DPS",
+                      "roleDesc": "ongoing Dendro application"
+                    },
+                    {
+                      "characterId": "yaoyao",
+                      "role": "SUPPORT",
+                      "roleDesc": "healing and Dendro application"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "preservation": {
+            "teams": [
+              0,
+              1
+            ],
+            "weapons": [
+              2,
+              5
+            ],
+            "artifacts": [
+              1,
+              2
+            ]
+          },
+          "collectionPolicy": "REPLACE_GEAR_WITH_CANONICAL_OPTIONS_AND_ADD_ONE_EXPERIMENTAL_TEAM"
+        },
+        {
+          "characterId": "xiangling",
+          "candidateId": "xiangling:1",
+          "role": [
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r3-a01",
+          "checksum": "774f141372764dccc0ea67ea042012939be490d80d1b152d901eee875fc62056",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Add ATK% and EM only after Energy needs are satisfied. Keep all three current collections.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/xiangling",
+            "https://keqingmains.com/xiangling/",
+            "https://keqingmains.com/q/xiangling-quickguide/"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-xiangling",
+          "expectedBaseline": {
+            "buildId": "legacy-xiangling",
+            "version": 1,
+            "checksum": "dbb703b9a08c7dac715fc74ff809d5599b8d7f3c6738f00c41a5636cf4e07206",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Off-field Vaporize Burst"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Use Energy Recharge Sands until the 80-Energy Pyronado is ready on the intended rotation. Once Energy is covered, ATK% is a straightforward option for raw Pyro damage or inconsistent Vaporize; EM is conditional on Xiangling owning frequent reactions. Cast Pyronado after applicable Bennett buffs are active and catch Bennett Skill particles on Xiangling for the next Burst. Pyronado snapshots eligible character stats; enemy-state effects such as Dragon’s Bane depend on the aura at each hit. The Catch R5 adds ER and Burst damage/CRIT and is obtainable through fishing. Engulfing Lightning converts excess ER to ATK and grants temporary ER after Burst. Favonius needs a critical hit while Xiangling is on field. Dragon’s Bane is for reliable Hydro/Pyro aura once Energy is covered. Emblem is the general Burst set; mixed sets and Crimson Witch remain situational. Xingqiu needs normal-attack triggers and Bennett supplies Pyro particles. The Sucrose lineup is one example alongside retained Melt, Vaporize, Overvape and mono-Pyro teams."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r3-a01"
+            },
+            "sands": {
+              "before": [
+                "Hiệu Quả Nạp",
+                "Tấn Công%",
+                "Tinh Thông Nguyên Tố"
+              ],
+              "after": [
+                "Energy Recharge",
+                "ATK%",
+                "Elemental Mastery"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Sát Thương Nguyên Tố Hỏa"
+              ],
+              "after": [
+                "Pyro DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "Tỷ Lệ Bạo Kích",
+                "Sát Thương Bạo Kích"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "Energy Recharge",
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%",
+                "Elemental Mastery"
+              ],
+              "after": [
+                "Energy Recharge",
+                "CRIT Rate",
+                "CRIT DMG",
+                "Elemental Mastery",
+                "ATK%"
+              ]
+            },
+            "talentPriority": {
+              "before": null,
+              "after": [
+                "Burst",
+                "Skill",
+                "Normal Attack"
+              ]
+            }
+          },
+          "preservation": {
+            "teams": [
+              8,
+              8
+            ],
+            "weapons": [
+              19,
+              19
+            ],
+            "artifacts": [
+              5,
+              5
+            ]
+          },
+          "collectionPolicy": "PRESERVE_TEAMS_WEAPONS_ARTIFACTS"
+        }
+      ],
+      "checksum": "0cddce86d77d542f15cbc6ad59a9282591b5db1033efa70c6728e27f31f58ae1"
+    },
+    {
+      "id": "A02",
+      "candidates": [
+        {
+          "characterId": "albedo",
+          "candidateId": "albedo:1",
+          "role": [
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r3-a02",
+          "checksum": "a23feb828657d1ba053aca5fd53b5bd3a60813de382dfc271877c2b800cefd20",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Correct the accessible Harbinger option and disclose HP, DEF, Geo and artifact conditions. Archive the placeholder roster and retain valid legacy choices as situational.",
+          "evidenceReferences": [
+            "https://genshin-builds.com/en/character/albedo",
+            "https://keqingmains.com/q/albedo-quickguide/",
+            "genshin-db@5.2.15"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-albedo",
+          "expectedBaseline": {
+            "buildId": "legacy-albedo",
+            "version": 1,
+            "checksum": "54078ff392c9436610c6e6a99aaa8f5efb2e677f69bbedad4edd758636da307f",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Off-field Geo Skill"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Transient Blossoms scale with DEF and deal Skill damage. Use DEF sands, Geo DMG goblet and a CRIT circlet. Favor CRIT and DEF; ER matters only if casting Burst on purpose. Harbinger of Dawn is a free R5 option if owned and its CRIT Rate passive needs HP above 90%. Flute of Ezpitzal makes DEF easier to meet and avoids the HP condition. Uraku benefits from nearby party Geo damage; Primordial Jade Cutter is an owned CRIT stat stick. Golden Troupe rewards off-field Skill damage and Husk rewards building DEF and Geo stacks. Archaic Petra is situational for elemental teammates when Albedo can collect the matching Crystallize shard; skip it in the listed mono-Geo team. Gorou buffs DEF and Geo, Zhongli shields, and Itto drives; this lineup does not assume the two-character Hexerei team bonus."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r3-a02"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "thương-diệu",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "đoản-đao-amenoma",
+                  "refinement": 5,
+                  "isF2P": true,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "bàn-nham-kết-lục",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "11514",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "11431",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "11302",
+                  "isF2P": true,
+                  "refinement": 5,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "11505",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    "15014"
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15032"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15021"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15014"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": [
+                "ATK%",
+                "DEF%",
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "DEF%"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "Geo DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "Elemental DMG Bonus",
+                "Energy Recharge",
+                "DEF%"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "DEF%"
+              ]
+            },
+            "talentPriority": {
+              "before": [
+                "Normal Attack",
+                "Elemental Skill",
+                "Elemental Burst"
+              ],
+              "after": [
+                "Skill",
+                "Burst",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [
+                {
+                  "name": "sdasd",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "albedo"
+                    },
+                    {
+                      "characterId": "aino"
+                    },
+                    {
+                      "characterId": "aloy"
+                    },
+                    {
+                      "characterId": "alhaitham"
+                    }
+                  ]
+                }
+              ],
+              "after": [
+                {
+                  "name": "Off-field Geo Skill",
+                  "description": "Transient Blossoms scale with DEF and deal Skill damage. Use DEF sands, Geo DMG goblet and a CRIT circlet. Favor CRIT and DEF; ER matters only if casting Burst on purpose. Harbinger of Dawn is a free R5 option if owned and its CRIT Rate passive needs HP above 90%. Flute of Ezpitzal makes DEF easier to meet and avoids the HP condition. Uraku benefits from nearby party Geo damage; Primordial Jade Cutter is an owned CRIT stat stick. Golden Troupe rewards off-field Skill damage and Husk rewards building DEF and Geo stacks. Archaic Petra is situational for elemental teammates when Albedo can collect the matching Crystallize shard; skip it in the listed mono-Geo team. Gorou buffs DEF and Geo, Zhongli shields, and Itto drives; this lineup does not assume the two-character Hexerei team bonus.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "albedo",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Geo Skill damage"
+                    },
+                    {
+                      "characterId": "arataki-itto",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "on-field charged Geo damage"
+                    },
+                    {
+                      "characterId": "gorou",
+                      "role": "SUPPORT",
+                      "roleDesc": "DEF and Geo buffs"
+                    },
+                    {
+                      "characterId": "zhongli",
+                      "role": "SUPPORT",
+                      "roleDesc": "shield and nearby resistance reduction"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "collectionPolicy": "ARCHIVE_LEGACY_ROWS_REPLACE_EXPLICIT_ACTIVE_COLLECTIONS",
+          "preservation": {
+            "teams": [
+              1,
+              1
+            ],
+            "weapons": [
+              3,
+              4
+            ],
+            "artifacts": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "characterId": "baizhu",
+          "candidateId": "baizhu:1",
+          "role": [
+            "SUPPORT"
+          ],
+          "version": "character-build-catalog-7.2-r3-a02",
+          "checksum": "6c75ee5fc2b1c5fabc88700b2eb36ea2f9ad37453e52781c825fb436e156ff4c",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Align sustain stats and Energy conditions with C0 Quicken/Quickbloom; preserve the old Favonius option canonically.",
+          "evidenceReferences": [
+            "https://genshin-builds.com/en/character/baizhu",
+            "https://keqingmains.com/q/baizhu-quickguide/",
+            "genshin-db@5.2.15"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-baizhu",
+          "expectedBaseline": {
+            "buildId": "legacy-baizhu",
+            "version": 1,
+            "checksum": "726a8ea9b5111b46cac430cdc2ee5c10fe62745ab09dc777ec803ab5c0b3ad50",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Burst healer and Dendro support"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUPPORT"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Meet the 80-Energy Burst requirement first: use ER sands until the planned rotation works, then consider HP%. Use an HP% goblet; an HP% circlet supports healing and the reaction buff up to 50,000 Max HP, Healing Bonus prioritizes sustain, and CRIT Rate is situational for Favonius. Favonius Codex needs an on-field CRIT hit; Prototype Amber refunds personal Energy and heals the party after Burst, while Jadefall restores Energy after Burst or shield creation. Skill heals the team; Burst sustains the active character. Use Deepwood when the team needs a holder and his hits cover the target, or Noblesse when Nahida holds Deepwood and an ATK buff is useful. In Cyno Quickbloom, Nahida supplies Dendro, Xingqiu needs normal-attack triggers and Baizhu sustains. Check Energy and new-wave Dendro application before extending Cyno’s field time."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r3-a02"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "chương-nhạc-lang-thang",
+                  "refinement": 5,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "điển-tích-tây-phong",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "14505",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "14406",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "14401",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    null
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15025"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15007"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": [
+                "ATK%"
+              ],
+              "after": [
+                "Energy Recharge",
+                "HP%"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "HP%"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "CRIT Rate"
+              ],
+              "after": [
+                "HP%",
+                "Healing Bonus",
+                "CRIT Rate"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%"
+              ],
+              "after": [
+                "Energy Recharge",
+                "HP%",
+                "CRIT Rate"
+              ]
+            },
+            "talentPriority": {
+              "before": [
+                "Normal Attack",
+                "Elemental Skill",
+                "Elemental Burst"
+              ],
+              "after": [
+                "Burst",
+                "Skill",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [],
+              "after": [
+                {
+                  "name": "Burst healer and Dendro support",
+                  "description": "Meet the 80-Energy Burst requirement first: use ER sands until the planned rotation works, then consider HP%. Use an HP% goblet; an HP% circlet supports healing and the reaction buff up to 50,000 Max HP, Healing Bonus prioritizes sustain, and CRIT Rate is situational for Favonius. Favonius Codex needs an on-field CRIT hit; Prototype Amber refunds personal Energy and heals the party after Burst, while Jadefall restores Energy after Burst or shield creation. Skill heals the team; Burst sustains the active character. Use Deepwood when the team needs a holder and his hits cover the target, or Noblesse when Nahida holds Deepwood and an ATK buff is useful. In Cyno Quickbloom, Nahida supplies Dendro, Xingqiu needs normal-attack triggers and Baizhu sustains. Check Energy and new-wave Dendro application before extending Cyno’s field time.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "baizhu",
+                      "role": "SUPPORT",
+                      "roleDesc": "healing and Dendro sustain"
+                    },
+                    {
+                      "characterId": "cyno",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "long-field Electro carry"
+                    },
+                    {
+                      "characterId": "nahida",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Dendro marking"
+                    },
+                    {
+                      "characterId": "xingqiu",
+                      "role": "SUB_DPS",
+                      "roleDesc": "Hydro via normal-attack triggers"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "collectionPolicy": "ARCHIVE_LEGACY_ROWS_REPLACE_EXPLICIT_ACTIVE_COLLECTIONS",
+          "preservation": {
+            "teams": [
+              0,
+              1
+            ],
+            "weapons": [
+              2,
+              3
+            ],
+            "artifacts": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "characterId": "beidou",
+          "candidateId": "beidou:1",
+          "role": [
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r3-a02",
+          "checksum": "1f0da966b7c3756c5c1d8c9d6c12ad569fd9229b423a33064908edb94bb6b6f7",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Retain the existing craftable refinement and document Burst driver, Energy, snapshot and weapon conditions.",
+          "evidenceReferences": [
+            "https://genshin-builds.com/en/character/beidou",
+            "https://keqingmains.com/beidou/",
+            "genshin-db@5.2.15"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-beidou",
+          "expectedBaseline": {
+            "buildId": "legacy-beidou",
+            "version": 1,
+            "checksum": "82b2f122809b75b777ecef2bfc2a0063a535bd26f2be8841ab4ce3871049e1c1",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Off-field multi-target Electro"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Stormbreaker favors enemies close enough for bounces. Sucrose drives with normal-attack hits and Swirls, Fischl supplies Electro particles and Xingqiu applies Hydro through normal attacks. The lineup relies on damage reduction and limited sustain; C0 has no C1 shield, and Raiden’s Burst attacks do not trigger Stormbreaker. Meet the 80-Energy Burst requirement first; use ER sands if needed or ATK% once uptime is covered. Electro goblet and CRIT circlet support Burst damage. Emblem rewards ER and Burst damage; mixed Burst DMG and ATK sets are a fallback. Wolf’s Gravestone remains useful without its low-HP proc; Serpent Spine needs maintained stacks, Favonius needs on-field CRIT hits, and Prototype Archaic R5 is a craftable ATK option without assuming its normal-attack proc."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r3-a02"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "mẫu-cổ-hoa",
+                  "refinement": 5,
+                  "isF2P": true,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "đường-cùng-của-sói",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "12502",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "12409",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "12401",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "12406",
+                  "isF2P": true,
+                  "refinement": 5,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    null
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15020"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15007",
+                    "15001"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": [
+                "ATK%"
+              ],
+              "after": [
+                "Energy Recharge",
+                "ATK%"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "Electro DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "CRIT Rate"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%"
+              ],
+              "after": [
+                "Energy Recharge",
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%"
+              ]
+            },
+            "talentPriority": {
+              "before": [
+                "Normal Attack",
+                "Elemental Skill",
+                "Elemental Burst"
+              ],
+              "after": [
+                "Burst",
+                "Skill",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [],
+              "after": [
+                {
+                  "name": "Off-field multi-target Electro",
+                  "description": "Stormbreaker favors enemies close enough for bounces. Sucrose drives with normal-attack hits and Swirls, Fischl supplies Electro particles and Xingqiu applies Hydro through normal attacks. The lineup relies on damage reduction and limited sustain; C0 has no C1 shield, and Raiden’s Burst attacks do not trigger Stormbreaker. Meet the 80-Energy Burst requirement first; use ER sands if needed or ATK% once uptime is covered. Electro goblet and CRIT circlet support Burst damage. Emblem rewards ER and Burst damage; mixed Burst DMG and ATK sets are a fallback. Wolf’s Gravestone remains useful without its low-HP proc; Serpent Spine needs maintained stacks, Favonius needs on-field CRIT hits, and Prototype Archaic R5 is a craftable ATK option without assuming its normal-attack proc.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "beidou",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Stormbreaker"
+                    },
+                    {
+                      "characterId": "sucrose",
+                      "role": "SUPPORT",
+                      "roleDesc": "on-field Swirl driver"
+                    },
+                    {
+                      "characterId": "fischl",
+                      "role": "SUB_DPS",
+                      "roleDesc": "Oz and Electro battery"
+                    },
+                    {
+                      "characterId": "xingqiu",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "collectionPolicy": "ARCHIVE_LEGACY_ROWS_REPLACE_EXPLICIT_ACTIVE_COLLECTIONS",
+          "preservation": {
+            "teams": [
+              0,
+              1
+            ],
+            "weapons": [
+              2,
+              4
+            ],
+            "artifacts": [
+              1,
+              2
+            ]
+          }
+        }
+      ],
+      "checksum": "38b2f279e6e23699bfbcd46cb4de94b5106ad242b22dc96354754b5954aefc34"
+    },
+    {
+      "id": "A03",
+      "candidates": [
+        {
+          "characterId": "ganyu",
+          "candidateId": "ganyu:2",
+          "role": [
+            "MAIN_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r2",
+          "checksum": "1f3daa1c3186ac3a15277c431c605ca19ebb58a2631456e646b94ed257130265",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Keep Pyro aura and protect aiming time. Use Hamayumi with a set that preserves full Energy, and treat Burst as rotation-dependent.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/ganyu",
+            "https://keqingmains.com/q/ganyu-quickguide/"
+          ],
+          "databaseOperation": "CREATE_SEPARATE_DRAFT_THEN_STAGE",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": null,
+          "expectedBaseline": null,
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": null,
+              "after": "C0 Reverse Melt charged carry"
+            },
+            "playstyles": {
+              "before": null,
+              "after": [
+                "MAIN_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": null,
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Maintain Pyro aura and protect charged shots. Limit Burst if its hits steal Melt. Hamayumi wants full Energy, which conflicts with Shimenawa's consumption."
+            },
+            "source": {
+              "before": null,
+              "after": "character-build-catalog-7.2-r2"
+            },
+            "weapons": {
+              "before": null,
+              "after": [
+                {
+                  "weaponId": "15511",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15502",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15414",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": null,
+              "after": [
+                {
+                  "setIds": [
+                    "15003"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15003",
+                    "14001"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": null,
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "goblet": {
+              "before": null,
+              "after": [
+                "Cryo DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": null,
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": null,
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "Elemental Mastery",
+                "ATK%"
+              ]
+            },
+            "talentPriority": {
+              "before": null,
+              "after": [
+                "Normal Attack",
+                "Skill",
+                "Burst"
+              ]
+            },
+            "teams": {
+              "before": null,
+              "after": [
+                {
+                  "name": "Reverse Melt charged carry",
+                  "description": "Maintain Pyro aura and protect charged shots. Limit Burst if its hits steal Melt. Hamayumi wants full Energy, which conflicts with Shimenawa's consumption.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "ganyu",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "charged-shot reverse Melt"
+                    },
+                    {
+                      "characterId": "xiangling",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Pyro aura"
+                    },
+                    {
+                      "characterId": "bennett",
+                      "role": "SUPPORT",
+                      "roleDesc": "buff, heal and Pyro battery"
+                    },
+                    {
+                      "characterId": "zhongli",
+                      "role": "SUPPORT",
+                      "roleDesc": "shield and interruption protection"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "characterId": "raiden-shogun",
+          "candidateId": "raiden-shogun:2",
+          "role": [
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r2",
+          "checksum": "c8954331c8a123a6c16c34191aa11bb15e501f66797793dee4583524f186aeb5",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Skill hits trigger Dendro cores when there is a damageable target. Character level and EM govern Hyperbloom damage.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/raiden_shogun",
+            "https://keqingmains.com/q/raiden-quickguide/"
+          ],
+          "databaseOperation": "CREATE_SEPARATE_DRAFT_THEN_STAGE",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": null,
+          "expectedBaseline": null,
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": null,
+              "after": "C0 Off-field Hyperbloom trigger"
+            },
+            "playstyles": {
+              "before": null,
+              "after": [
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": null,
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Skill triggers cores off field when a damageable target is hit. Her Burst is optional for this role. Shields can prevent coordinated Skill triggers. Raise Raiden to level 90 first. Skill ranks help its utility, while the reaction itself does not scale with talent level."
+            },
+            "source": {
+              "before": null,
+              "after": "character-build-catalog-7.2-r2"
+            },
+            "weapons": {
+              "before": null,
+              "after": [
+                {
+                  "weaponId": "13414",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "13401",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "13417",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": null,
+              "after": [
+                {
+                  "setIds": [
+                    "15028"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15026"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": null,
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "goblet": {
+              "before": null,
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "circlet": {
+              "before": null,
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "subStatsPriority": {
+              "before": null,
+              "after": [
+                "Elemental Mastery",
+                "HP%"
+              ]
+            },
+            "talentPriority": {
+              "before": null,
+              "after": [
+                "Skill"
+              ]
+            },
+            "teams": {
+              "before": null,
+              "after": [
+                {
+                  "name": "Off-field Hyperbloom trigger",
+                  "description": "Skill triggers cores off field when a damageable target is hit. Her Burst is optional for this role. Shields can prevent coordinated Skill triggers.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "raiden-shogun",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hyperbloom trigger"
+                    },
+                    {
+                      "characterId": "nahida",
+                      "role": "SUPPORT",
+                      "roleDesc": "Dendro application"
+                    },
+                    {
+                      "characterId": "xingqiu",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro"
+                    },
+                    {
+                      "characterId": "sangonomiya-kokomi",
+                      "role": "SUPPORT",
+                      "roleDesc": "Hydro sustain and normal-attack driver"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "characterId": "sucrose",
+          "candidateId": "sucrose:1",
+          "role": [
+            "SUPPORT",
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r2",
+          "checksum": "52e22b811c2fb6e04aa22891b7e309bd00e1f1d148d89ca24dab0f73821c21d0",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "On-field normal attacks drive both off-field Bursts. Prioritize level and EM for Swirl, with sufficient ER for the chosen Burst cadence.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/sucrose",
+            "https://keqingmains.com/q/sucrose-quickguide/"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-sucrose",
+          "expectedBaseline": {
+            "buildId": "legacy-sucrose",
+            "version": 1,
+            "checksum": "45da895ab90ed2498261cd7b51fb691ed12603c9b246d9e823cba0330c133913",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Swirl driver and EM share"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUPPORT",
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Level and EM drive Swirl. On-field elemental reactions trigger Viridescent. Sacrificial Fragments adds Skill casts and Thrilling Tales trades EM for a targeted buff."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r2"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "chương-nhạc-lang-thang",
+                  "refinement": 5,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "điển-tích-tây-phong",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "14403",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "14301",
+                  "isF2P": true,
+                  "refinement": 5,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "14302",
+                  "isF2P": true,
+                  "refinement": 5,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    null
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15002"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "10007"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": [
+                "ATK%"
+              ],
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "CRIT Rate"
+              ],
+              "after": [
+                "Elemental Mastery"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%"
+              ],
+              "after": [
+                "Elemental Mastery",
+                "Energy Recharge"
+              ]
+            },
+            "talentPriority": {
+              "before": [
+                "Normal Attack",
+                "Elemental Skill",
+                "Elemental Burst"
+              ],
+              "after": [
+                "Skill",
+                "Burst",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [],
+              "after": [
+                {
+                  "name": "Swirl driver and EM share",
+                  "description": "Level and EM drive Swirl. On-field elemental reactions trigger Viridescent. Sacrificial Fragments adds Skill casts and Thrilling Tales trades EM for a targeted buff.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "sucrose",
+                      "role": "SUPPORT",
+                      "roleDesc": "on-field Swirl driver"
+                    },
+                    {
+                      "characterId": "fischl",
+                      "role": "SUB_DPS",
+                      "roleDesc": "Oz and Electro battery"
+                    },
+                    {
+                      "characterId": "beidou",
+                      "role": "SUB_DPS",
+                      "roleDesc": "multi-target Stormbreaker damage"
+                    },
+                    {
+                      "characterId": "xingqiu",
+                      "role": "SUB_DPS",
+                      "roleDesc": "Hydro and defensive utility"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "checksum": "8e15184e94a6f1f3187ccc59bae1e85e91f200c57f8c828cdd9b89057f216293"
+    },
+    {
+      "id": "A04",
+      "candidates": [
+        {
+          "characterId": "varesa",
+          "candidateId": "varesa:1",
+          "role": [
+            "MAIN_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r2",
+          "checksum": "40a836e36441636afab8747636c4aa5f7bc2e4452a87c28435b147f1f8410f84",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Plunge and special Burst are the core of this setup; Skill primarily enables the attack sequence. Team healing supports Fanfare.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/varesa",
+            "https://keqingmains.com/q/varesa-quickguide/"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-varesa",
+          "expectedBaseline": {
+            "buildId": "legacy-varesa",
+            "version": 1,
+            "checksum": "9ff174a7aaea5e2299f9a79db64e9d5a476589f643904887762b831f06d52e5c",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Electro plunge carry"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "MAIN_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Normal talent governs plunge scaling. Xianyun enables the plunge support package and Furina wants team healing."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r2"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "chương-nhạc-lang-thang",
+                  "refinement": 5,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "điển-tích-tây-phong",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "14519",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "14402",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "14425",
+                  "isF2P": true,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    null
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15039"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15038"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": null,
+              "after": [
+                "ATK%"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Elemental DMG Bonus"
+              ],
+              "after": [
+                "Electro DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "CRIT Rate"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG",
+                "ATK%",
+                "Energy Recharge"
+              ]
+            },
+            "talentPriority": {
+              "before": [
+                "Normal Attack",
+                "Elemental Skill",
+                "Elemental Burst"
+              ],
+              "after": [
+                "Normal Attack",
+                "Burst",
+                "Skill"
+              ]
+            },
+            "teams": {
+              "before": [],
+              "after": [
+                {
+                  "name": "Electro plunge carry",
+                  "description": "Normal talent governs plunge scaling. Xianyun enables the plunge support package and Furina wants team healing.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "varesa",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "on-field plunge and Burst"
+                    },
+                    {
+                      "characterId": "iansan",
+                      "role": "SUPPORT",
+                      "roleDesc": "movement-sensitive ATK buff"
+                    },
+                    {
+                      "characterId": "xianyun",
+                      "role": "SUPPORT",
+                      "roleDesc": "plunge support and team healing"
+                    },
+                    {
+                      "characterId": "furina",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro and Fanfare"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "characterId": "yelan",
+          "candidateId": "yelan:1",
+          "role": [
+            "SUB_DPS"
+          ],
+          "version": "character-build-catalog-7.2-r2",
+          "checksum": "e5b2bdf37df5cf9aae69f4a7a395348e0c1c69caf6e690edd065ab0496f7ae8e",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Yelan and Xingqiu can trade Hydro particles while Hu Tao drives normal-attack triggers. Slingshot adds CRIT Rate without needing refinement for Burst.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/yelan",
+            "https://keqingmains.com/q/yelan-quickguide/"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-yelan",
+          "expectedBaseline": {
+            "buildId": "legacy-yelan",
+            "version": 1,
+            "checksum": "99b0aca6a3981a5241fd182509aa14f0630faca4f613a99123c85896dd2aa64d",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 Off-field HP Hydro damage"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUB_DPS"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Burst relies on normal-attack triggers. Favonius is the energy option. Slingshot is primarily a CRIT stat stick for this role."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r2"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "tiếng-thở-dài-vô-tận",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "cung-tây-phong",
+                  "refinement": 5,
+                  "isF2P": true,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "nhược-thủy",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "cung-tế-lễ",
+                  "refinement": 3,
+                  "isF2P": false,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "15508",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15401",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "15304",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    "15020"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    null
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15031"
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15020"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15017",
+                    "15016"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": [
+                "Hiệu Quả Nạp",
+                "HP%"
+              ],
+              "after": [
+                "Energy Recharge"
+              ]
+            },
+            "goblet": {
+              "before": [
+                "Sát Thương Nguyên Tố Thủy",
+                "HP%"
+              ],
+              "after": [
+                "Hydro DMG Bonus"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "Tỷ Lệ Bạo Kích",
+                "Sát Thương Bạo Kích",
+                "HP%"
+              ],
+              "after": [
+                "CRIT Rate",
+                "CRIT DMG"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "Energy Recharge",
+                "HP%",
+                "CRIT Rate",
+                "CRIT DMG",
+                "HP"
+              ],
+              "after": [
+                "Energy Recharge",
+                "CRIT Rate",
+                "CRIT DMG",
+                "HP%"
+              ]
+            },
+            "talentPriority": {
+              "before": null,
+              "after": [
+                "Burst",
+                "Skill",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [
+                {
+                  "name": "Yelan Pure Vaporization Team #3",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "xiangling"
+                    },
+                    {
+                      "characterId": "kazuha"
+                    },
+                    {
+                      "characterId": "bennett"
+                    }
+                  ]
+                },
+                {
+                  "name": "Yelan Vaporization Team #1",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "arlecchino"
+                    },
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    },
+                    {
+                      "characterId": "bennett"
+                    }
+                  ]
+                },
+                {
+                  "name": "Yelan Wanderer Team #1",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "wanderer"
+                    },
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "thoma"
+                    },
+                    {
+                      "characterId": "faruzan"
+                    }
+                  ]
+                },
+                {
+                  "name": "Yelan Blooming Team #1",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "nilou"
+                    },
+                    {
+                      "characterId": "nahida"
+                    },
+                    {
+                      "characterId": "baizhu"
+                    }
+                  ]
+                },
+                {
+                  "name": "Yelan Pure Hydro Team #2",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "furina"
+                    },
+                    {
+                      "characterId": "jean"
+                    },
+                    {
+                      "characterId": "kazuha"
+                    }
+                  ]
+                },
+                {
+                  "name": "Yelan Quickbloom Team #1",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "cyno"
+                    },
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "nahida"
+                    },
+                    {
+                      "characterId": "baizhu"
+                    }
+                  ]
+                },
+                {
+                  "name": "Hu Tao Double Hydro Vap",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "hu-tao"
+                    },
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    },
+                    {
+                      "characterId": "xingqiu"
+                    }
+                  ]
+                },
+                {
+                  "name": "Yelan National Team #1",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "raiden-shogun"
+                    },
+                    {
+                      "characterId": "xiangling"
+                    },
+                    {
+                      "characterId": "yelan"
+                    },
+                    {
+                      "characterId": "bennett"
+                    }
+                  ]
+                }
+              ],
+              "after": [
+                {
+                  "name": "Off-field HP Hydro damage",
+                  "description": "Burst relies on normal-attack triggers. Favonius is the energy option. Slingshot is primarily a CRIT stat stick for this role.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "yelan",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro and HP-scaled Burst"
+                    },
+                    {
+                      "characterId": "hu-tao",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "Pyro carry weaving normal attacks"
+                    },
+                    {
+                      "characterId": "xingqiu",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro and Hydro battery"
+                    },
+                    {
+                      "characterId": "zhongli",
+                      "role": "SUPPORT",
+                      "roleDesc": "shield and interruption protection"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "characterId": "zhongli",
+          "candidateId": "zhongli:1",
+          "role": [
+            "SUPPORT"
+          ],
+          "version": "character-build-catalog-7.2-r2",
+          "checksum": "9bae40b0ea84b658ae89b3a46645ab2fcfad33a2faca781d3639f6f7aa3841a1",
+          "approvalRequirement": "Explicit user authorization for this ID and checksum, then authenticated Admin review of the exact staged patch",
+          "evidenceSummary": "Held Skill shield and nearby resistance reduction are the focus. Tenacity needs pillar hits, so a two-piece HP mix is the predictable fallback.",
+          "evidenceReferences": [
+            "genshin-db@5.2.15",
+            "https://genshin-builds.com/en/character/zhongli"
+          ],
+          "databaseOperation": "STAGE_PATCH_ON_EXISTING_LEGACY_BUILD",
+          "conflictStatus": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+          "existingBuildId": "legacy-zhongli",
+          "expectedBaseline": {
+            "buildId": "legacy-zhongli",
+            "version": 1,
+            "checksum": "366f324d2e5d2b28fa584e16591a1e801a6b1e7aa06c897f1f0bea368fbb235d",
+            "status": "LEGACY_IMPORT"
+          },
+          "preserveDefault": true,
+          "state": "REVIEW_READY",
+          "preview": {
+            "name": {
+              "before": "Legacy build",
+              "after": "C0 HP shield support"
+            },
+            "playstyles": {
+              "before": [],
+              "after": [
+                "SUPPORT"
+              ]
+            },
+            "constellationAssumptions": {
+              "before": [],
+              "after": [
+                "C0"
+              ]
+            },
+            "notesEn": {
+              "before": null,
+              "after": "Use held Skill for the HP shield and universal nearby resistance reduction. Tenacity depends on pillar contact, and Burst is optional in strict shield rotations."
+            },
+            "source": {
+              "before": "Legacy development build",
+              "after": "character-build-catalog-7.2-r2"
+            },
+            "weapons": {
+              "before": [
+                {
+                  "weaponId": "trượng-hộ-ma",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "bi-ca-lumidouce",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "hòa-phát-diên",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "xương-sống-thiên-không",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "giáo-nịnh-thần",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "hủy-diệt",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "lao-xiên-cá",
+                  "refinement": 5,
+                  "isF2P": true,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "thương-quyết-chiến",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "đoạn-thảo-kính-phạt",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "thương-thiên-nham",
+                  "refinement": 5,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "thương-hắc-nham",
+                  "refinement": 1,
+                  "isF2P": false,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "mũi-nhọn-của-gió",
+                  "refinement": 5,
+                  "isF2P": true,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "thương-tây-phong",
+                  "refinement": 5,
+                  "isF2P": true,
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "weaponId": "13303",
+                  "isF2P": true,
+                  "refinement": 5,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "13407",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                },
+                {
+                  "weaponId": "13501",
+                  "isF2P": false,
+                  "refinement": 1,
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "artifacts": {
+              "before": [
+                {
+                  "setIds": [
+                    "10007"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15014"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15037"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15017"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    null,
+                    null
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15025"
+                  ],
+                  "constellation": "C0"
+                }
+              ],
+              "after": [
+                {
+                  "setIds": [
+                    "15017"
+                  ],
+                  "constellation": "C0"
+                },
+                {
+                  "setIds": [
+                    "15017",
+                    "15030"
+                  ],
+                  "constellation": "C0"
+                }
+              ]
+            },
+            "sands": {
+              "before": null,
+              "after": [
+                "HP%"
+              ]
+            },
+            "goblet": {
+              "before": null,
+              "after": [
+                "HP%"
+              ]
+            },
+            "circlet": {
+              "before": [
+                "HP%",
+                "Tỷ Lệ Bạo Kích"
+              ],
+              "after": [
+                "HP%"
+              ]
+            },
+            "subStatsPriority": {
+              "before": [
+                "HP%",
+                "HP",
+                "Energy Recharge"
+              ],
+              "after": [
+                "HP%",
+                "CRIT Rate",
+                "Energy Recharge"
+              ]
+            },
+            "talentPriority": {
+              "before": null,
+              "after": [
+                "Skill",
+                "Burst",
+                "Normal Attack"
+              ]
+            },
+            "teams": {
+              "before": [
+                {
+                  "name": "Zhongli Melt Team",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "ganyu"
+                    },
+                    {
+                      "characterId": "xiangling"
+                    },
+                    {
+                      "characterId": "bennett"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    }
+                  ]
+                },
+                {
+                  "name": "Zhongli Xiao-Jean Team",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "xiao"
+                    },
+                    {
+                      "characterId": "albedo"
+                    },
+                    {
+                      "characterId": "jean"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    }
+                  ]
+                },
+                {
+                  "name": "Zhongli Vaporize Team",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "hu-tao"
+                    },
+                    {
+                      "characterId": "xingqiu"
+                    },
+                    {
+                      "characterId": "kazuha"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    }
+                  ]
+                },
+                {
+                  "name": "Zhongli Superconduct Team",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "eula"
+                    },
+                    {
+                      "characterId": "fischl"
+                    },
+                    {
+                      "characterId": "chongyun"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    }
+                  ]
+                },
+                {
+                  "name": "Ayaka Permafrost Team",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "ayaka"
+                    },
+                    {
+                      "characterId": "kazuha"
+                    },
+                    {
+                      "characterId": "mona"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    }
+                  ]
+                },
+                {
+                  "name": "Zhongli Catalyze Team",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "keqing"
+                    },
+                    {
+                      "characterId": "traveler"
+                    },
+                    {
+                      "characterId": "fischl"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    }
+                  ]
+                },
+                {
+                  "name": "Zhongli Permafrost Team #1",
+                  "reviewStatus": null,
+                  "members": [
+                    {
+                      "characterId": "ganyu"
+                    },
+                    {
+                      "characterId": "venti"
+                    },
+                    {
+                      "characterId": "zhongli"
+                    },
+                    {
+                      "characterId": "mona"
+                    }
+                  ]
+                }
+              ],
+              "after": [
+                {
+                  "name": "HP shield support",
+                  "description": "Use held Skill for the HP shield and universal nearby resistance reduction. Tenacity depends on pillar contact, and Burst is optional in strict shield rotations.",
+                  "reviewStatus": "EXPERIMENTAL",
+                  "members": [
+                    {
+                      "characterId": "zhongli",
+                      "role": "SUPPORT",
+                      "roleDesc": "shield and resistance reduction"
+                    },
+                    {
+                      "characterId": "hu-tao",
+                      "role": "MAIN_DPS",
+                      "roleDesc": "Pyro Vape carry"
+                    },
+                    {
+                      "characterId": "xingqiu",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro and resistance to interruption"
+                    },
+                    {
+                      "characterId": "yelan",
+                      "role": "SUB_DPS",
+                      "roleDesc": "off-field Hydro and damage buff"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "checksum": "cf2a0518b04047015a14205490059b50673a08f2dd7fa23a3881570c508ebb22"
+    }
+  ]
+}

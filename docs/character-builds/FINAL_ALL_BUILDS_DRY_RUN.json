@@ -1,0 +1,1184 @@
+{
+  "revision": "character-build-catalog-7.2-r4-final-all",
+  "mode": "DRY_RUN",
+  "writes": 0,
+  "selection": {
+    "batch": "ALL_CONSOLIDATED",
+    "subsetSupported": true
+  },
+  "manifestChecksum": "e53479a44866447690d10980ebea83ed714109eaf4839a9ae29e1e5870016365",
+  "inventoryChecksum": "a05db225b6a1b43a476946027f9300094a37bec4314e0ac903d51576a5f54ef3",
+  "candidateCount": 133,
+  "candidates": [
+    {
+      "candidateId": "albedo:1",
+      "characterId": "albedo",
+      "revision": "character-build-catalog-7.2-r3-a02",
+      "checksum": "a23feb828657d1ba053aca5fd53b5bd3a60813de382dfc271877c2b800cefd20",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-albedo"
+    },
+    {
+      "candidateId": "alhaitham:1",
+      "characterId": "alhaitham",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "dfd039170488be2b293e02582b6f040b8273f84c968d68c0a039e76ab222467e",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-alhaitham"
+    },
+    {
+      "candidateId": "arataki-itto:1",
+      "characterId": "arataki-itto",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "6548d742a65f76c515cdec733180c81a3fe24775f71e374891cddf56473928f2",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-arataki-itto"
+    },
+    {
+      "candidateId": "arlecchino:1",
+      "characterId": "arlecchino",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "a71465096744d0d03cf0676970a74a4fb700e83e6efac2fff3412251826f83c5",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-arlecchino"
+    },
+    {
+      "candidateId": "baizhu:1",
+      "characterId": "baizhu",
+      "revision": "character-build-catalog-7.2-r3-a02",
+      "checksum": "6c75ee5fc2b1c5fabc88700b2eb36ea2f9ad37453e52781c825fb436e156ff4c",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-baizhu"
+    },
+    {
+      "candidateId": "beidou:1",
+      "characterId": "beidou",
+      "revision": "character-build-catalog-7.2-r3-a02",
+      "checksum": "1f0da966b7c3756c5c1d8c9d6c12ad569fd9229b423a33064908edb94bb6b6f7",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-beidou"
+    },
+    {
+      "candidateId": "charlotte:1",
+      "characterId": "charlotte",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "c658733797839e51b64ca24f2422d91b02abdf21c56eadcc508022d285860f72",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-charlotte"
+    },
+    {
+      "candidateId": "chasca:1",
+      "characterId": "chasca",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "4e51057b12e55bcad635d0264d7ac2ad291b4aab08321af6d352d34ad0ac289b",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-chasca"
+    },
+    {
+      "candidateId": "chevreuse:1",
+      "characterId": "chevreuse",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "c50b61da910f123e706f43914c3ca16686fb331faf041eeb86139d1490ed16a0",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-chevreuse"
+    },
+    {
+      "candidateId": "chiori:1",
+      "characterId": "chiori",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "3e95142855b2040f877685fd6bf5d5a81d3be524322c1bf1d298284a65cde623",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-chiori"
+    },
+    {
+      "candidateId": "chongyun:1",
+      "characterId": "chongyun",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "6c328da7269b4f027acc1ec88cf181a2464c5ef875cf1ada3304bfe969d0cb88",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-chongyun"
+    },
+    {
+      "candidateId": "clorinde:1",
+      "characterId": "clorinde",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "49d94fa871117ef4de1c1493df9871cc02c31ffb0dce4135211f9886c4a9f908",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-clorinde"
+    },
+    {
+      "candidateId": "collei:1",
+      "characterId": "collei",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "38148acd8103b362328ada1ffa81ae1c82ff95cc7c2a47fe05f31ba4e6252b41",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-collei"
+    },
+    {
+      "candidateId": "cyno:1",
+      "characterId": "cyno",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "e76c45268fcc836ef13bfca3a44417021340b0781b9524f4b4320e77cbb90ca3",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-cyno"
+    },
+    {
+      "candidateId": "dehya:1",
+      "characterId": "dehya",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "ce4426a2b7aad195c4dce147697c9125f333829675ae84d1f2999fff53410570",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-dehya"
+    },
+    {
+      "candidateId": "dehya:2",
+      "characterId": "dehya",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "5aa07c6c779350c90c5d3494af2c97d7ec83803de979e6a1528d5d6f54917cbd",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-dehya"
+    },
+    {
+      "candidateId": "diluc:1",
+      "characterId": "diluc",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "dc41f4cfc8b48a0fc91013802d904b10d20c645634290a63348213f563acd363",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-diluc"
+    },
+    {
+      "candidateId": "diona:1",
+      "characterId": "diona",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "a38aa90e43d9746efe225b785447ff060f64a58e4b2a19618e6cab19aabfcd1d",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-diona"
+    },
+    {
+      "candidateId": "emilie:1",
+      "characterId": "emilie",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "8f0b3360a543dc3f94a9525afb41f5cbf29121e483bf7c7a973c8acdab41ad8e",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-emilie"
+    },
+    {
+      "candidateId": "escoffier:1",
+      "characterId": "escoffier",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "3d9b50c5e0c115817b168f70b28972b2ebaeb340c624d577c60b2ab15566dfe1",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-escoffier"
+    },
+    {
+      "candidateId": "eula:1",
+      "characterId": "eula",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "f68f81ff49d07e3c94889f379305099e51d33a9d50568e26edecaebcf69c238e",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-eula"
+    },
+    {
+      "candidateId": "faruzan:1",
+      "characterId": "faruzan",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0cafac0028236ca6a56a915c34c98f8d2f6cc34fe0bdf9536dd88ac9f5054cf7",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-faruzan"
+    },
+    {
+      "candidateId": "flins:1",
+      "characterId": "flins",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "2e217b8be78dc692fa290e5f8b445301e22015ab566387944441afbe5c1f48f2",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-flins"
+    },
+    {
+      "candidateId": "freminet:1",
+      "characterId": "freminet",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "76ec92c43e3104a01607fb8d3c402bbdf0ba58d87c2c920b3441fe3d9629825f",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-freminet"
+    },
+    {
+      "candidateId": "furina:1",
+      "characterId": "furina",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "a884571710ff96ec511a5c321c7e86416002667a505cd7072af32a91aae4614a",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-furina"
+    },
+    {
+      "candidateId": "gaming:1",
+      "characterId": "gaming",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "a51abd18e8e45bbb7e4b9d3d23f0ec7e6e9f82fb980d0e787d8af3d2366addfc",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-gaming"
+    },
+    {
+      "candidateId": "ganyu:1",
+      "characterId": "ganyu",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "616936217460697986fc2c2dfe6e1b26d300de1db117d04fd5d873a3ff5f97f1",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-ganyu"
+    },
+    {
+      "candidateId": "ganyu:2",
+      "characterId": "ganyu",
+      "revision": "character-build-catalog-7.2-r2",
+      "checksum": "1f3daa1c3186ac3a15277c431c605ca19ebb58a2631456e646b94ed257130265",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-ganyu"
+    },
+    {
+      "candidateId": "gorou:1",
+      "characterId": "gorou",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "2dc8c2f88625340586f753207386c6ad95e89268c12d682653079539244d2d60",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-gorou"
+    },
+    {
+      "candidateId": "hu-tao:1",
+      "characterId": "hu-tao",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "3e3379e1b89bc3160a1b98c5ca00d1487f2ce5f12949cbb0a5a26a5cbb2415bd",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-hu-tao"
+    },
+    {
+      "candidateId": "ifa:1",
+      "characterId": "ifa",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "926d2ec3a6579ced6b1ddd1e3f4d44bb6bb56acb785634a76d271192b8b887fd",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-ifa"
+    },
+    {
+      "candidateId": "ineffa:1",
+      "characterId": "ineffa",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "73d96797538d728fb5ebb41c101450e52e9207265b48efa51571d59e47b2a7ca",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-ineffa"
+    },
+    {
+      "candidateId": "jean:1",
+      "characterId": "jean",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0571466e3fa75d9f5dd933c06f85b90194a20ac1e21a77d447ca688b5ab42f3f",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-jean"
+    },
+    {
+      "candidateId": "kaedehara-kazuha:1",
+      "characterId": "kaedehara-kazuha",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "80aec5f799953f1bd05f781abae73271a0631292aa25142555da9f75b4bbfb4f",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kaedehara-kazuha"
+    },
+    {
+      "candidateId": "kaeya:1",
+      "characterId": "kaeya",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "efd9ed7c0356f4d0f5499b71d5ed9e10574fa157892fc7b04050f0baa97221b4",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kaeya"
+    },
+    {
+      "candidateId": "kamisato-ayaka:1",
+      "characterId": "kamisato-ayaka",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "5d26a508098c47aea9c5e20d7077eae641bf1495a79f4106273aa1ea4e5144b0",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kamisato-ayaka"
+    },
+    {
+      "candidateId": "kamisato-ayato:1",
+      "characterId": "kamisato-ayato",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "d00837952c0112e2a5c16cee9628e344be595af9ab3a28c8ca7db06917a5d67c",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kamisato-ayato"
+    },
+    {
+      "candidateId": "keqing:1",
+      "characterId": "keqing",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "1ae419157f2ef6def6e3bc88b70d63000d79bfc0a7df35755a759ca181cccc9b",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-keqing"
+    },
+    {
+      "candidateId": "kinich:1",
+      "characterId": "kinich",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "e0741d33936c73014e9c24a79ccc49d4f3c6a27f4c27d8dd1a242290981e0a59",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kinich"
+    },
+    {
+      "candidateId": "klee:1",
+      "characterId": "klee",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "edada7d7e10e5e2e3de8a50795ae74ecbe2b21e47feedec2de5bb81d005da2bc",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-klee"
+    },
+    {
+      "candidateId": "kujou-sara:1",
+      "characterId": "kujou-sara",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "b56b7852bc336b301619587f48c942673b4a3ac27dc6dcfbd5c9a25e39a0301f",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kujou-sara"
+    },
+    {
+      "candidateId": "kuki-shinobu:1",
+      "characterId": "kuki-shinobu",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "16d4ee1cd1c8844813a4edf38921e167f5555a9793753c711b02727ed8ff31d4",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-kuki-shinobu"
+    },
+    {
+      "candidateId": "lauma:1",
+      "characterId": "lauma",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "89cad38b55cfe6f6b5ae3965585fe9aad1bb91909f611373055cf26487816926",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-lauma"
+    },
+    {
+      "candidateId": "lisa:1",
+      "characterId": "lisa",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "809c152998dc4d512612e12a3d3875cb0a03a24a8c021635ccee82b64b2dd93a",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-lisa"
+    },
+    {
+      "candidateId": "lyney:1",
+      "characterId": "lyney",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "faff27a93c08e96ada73e6d6566ded1e1d053e6b22474d9ece4784650f00ef46",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-lyney"
+    },
+    {
+      "candidateId": "mavuika:1",
+      "characterId": "mavuika",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "6f2e3fce372e599f20206b8b78a475fff39d2c8a5b3a4bc3df241bd0f17a715b",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-mavuika"
+    },
+    {
+      "candidateId": "mika:1",
+      "characterId": "mika",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "86639c96dfda1b27b3093972165dc578ed01c01d6f10f683ab61cd1b70478336",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-mika"
+    },
+    {
+      "candidateId": "momoka:1",
+      "characterId": "momoka",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "cc97a0d2467414a5184485aeed576c227411abeac5befe4fc758cf028974adff",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-momoka"
+    },
+    {
+      "candidateId": "mona:1",
+      "characterId": "mona",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "4e54e8b3d766584627dc8ba49ac8c896513a3a1ff9cd760501aabe22d119c000",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-mona"
+    },
+    {
+      "candidateId": "mualani:1",
+      "characterId": "mualani",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "1eaad92136bf770512479981617b2cb216cf3a320b47637ef4061a4639683447",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-mualani"
+    },
+    {
+      "candidateId": "nahida:1",
+      "characterId": "nahida",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "26acd40a946087a45f313b60c26386c0d64e6d432ae00431be25816541a24b66",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-nahida"
+    },
+    {
+      "candidateId": "navia:1",
+      "characterId": "navia",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0a42b98f2e50c3cd2f0d366ed958b2b96f251bb4ea3f679b142c7b3d4f0b69eb",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-navia"
+    },
+    {
+      "candidateId": "nefer:1",
+      "characterId": "nefer",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "c0274a104125ea6afc19c176c65c768d562ce2ab07f37ffa1439ae2c65b7f004",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-nefer"
+    },
+    {
+      "candidateId": "ningguang:1",
+      "characterId": "ningguang",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "89ae382790f50e185534d66a540c1cab1951533a4c2de7f5cda315b8ea194fe2",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-ningguang"
+    },
+    {
+      "candidateId": "noelle:1",
+      "characterId": "noelle",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "fff76dde319bdb62b616cb742705dd978803ce886f5d45e8601483f3ac325481",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-noelle"
+    },
+    {
+      "candidateId": "ororon:1",
+      "characterId": "ororon",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0edb59e7db50b34cab94ea44f76110774bc4cab9836495d513eb0638b7cee1c9",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-ororon"
+    },
+    {
+      "candidateId": "qiqi:1",
+      "characterId": "qiqi",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "2a46446ab74718a2cd4a13d7a3dba29df10a483ddc581a6a6b99409ce6f55140",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-qiqi"
+    },
+    {
+      "candidateId": "raiden-shogun:1",
+      "characterId": "raiden-shogun",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "9b6f38bd1ee608976c94d86551bc7c67f1adf01dc3204bdd1a87dcce5621dc2a",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-raiden-shogun"
+    },
+    {
+      "candidateId": "raiden-shogun:2",
+      "characterId": "raiden-shogun",
+      "revision": "character-build-catalog-7.2-r2",
+      "checksum": "c8954331c8a123a6c16c34191aa11bb15e501f66797793dee4583524f186aeb5",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-raiden-shogun"
+    },
+    {
+      "candidateId": "razor:1",
+      "characterId": "razor",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "d9df582ebd3b15bd5f219d29382caed3905861b810fe24cfd843efa4127a932f",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-razor"
+    },
+    {
+      "candidateId": "rosaria:1",
+      "characterId": "rosaria",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "ed05da930c41d5e2c92487b4af4f596e7f73da3ab6915aba8b5d5e3187654fd0",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-rosaria"
+    },
+    {
+      "candidateId": "sangonomiya-kokomi:1",
+      "characterId": "sangonomiya-kokomi",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "139759d8c1b9d686741528a3565d62e32579aca29c9abadb5b599d2f1eb04eea",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-sangonomiya-kokomi"
+    },
+    {
+      "candidateId": "sethos:1",
+      "characterId": "sethos",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "03c828a39cec2ccfafd0be48b2281c94f7bb555cf4e24172240594ea8dec26ae",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-sethos"
+    },
+    {
+      "candidateId": "shenhe:1",
+      "characterId": "shenhe",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "d1fb063116bc9d6e4b5066362c0566d91ef103ac0120fe58222793ab8fb7fca8",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-shenhe"
+    },
+    {
+      "candidateId": "shikanoin-heizou:1",
+      "characterId": "shikanoin-heizou",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "ffba3d116d66a28e6e02e67e88e7818abdd3158c6d616f644f5b105a0cb43ac8",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-shikanoin-heizou"
+    },
+    {
+      "candidateId": "sigewinne:1",
+      "characterId": "sigewinne",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "a33afe7cfd05832d43ca60590d071f4e775a2f8a0ba5509d555ca59dbba8775b",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-sigewinne"
+    },
+    {
+      "candidateId": "skirk:1",
+      "characterId": "skirk",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "6210afbb3bb587536465cd45973b7a6ce35b892b887e33356df4cb7b0f383677",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-skirk"
+    },
+    {
+      "candidateId": "sucrose:1",
+      "characterId": "sucrose",
+      "revision": "character-build-catalog-7.2-r2",
+      "checksum": "52e22b811c2fb6e04aa22891b7e309bd00e1f1d148d89ca24dab0f73821c21d0",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-sucrose"
+    },
+    {
+      "candidateId": "tartaglia:1",
+      "characterId": "tartaglia",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "d068feac75c110529aa11a08072013f170d78983a997730b50b0f4e3ab780e14",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-tartaglia"
+    },
+    {
+      "candidateId": "thoma:1",
+      "characterId": "thoma",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "5b6a937b2794119d64d3c3ab4e0d055b2cea1fbb2ef844fd237f5322fd4bd45f",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-thoma"
+    },
+    {
+      "candidateId": "thoma:2",
+      "characterId": "thoma",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "646b7688b713422b4be0eab43eafa5103f06de8542b5b4534a8608efa6fb8af0",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-thoma"
+    },
+    {
+      "candidateId": "tighnari:1",
+      "characterId": "tighnari",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "16ddf6a3d8b720552b818b160f1b36870a294374dda152a9a96f3d8c7d3f542e",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-tighnari"
+    },
+    {
+      "candidateId": "traveler-dendro:1",
+      "characterId": "traveler-dendro",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "9974c1244f43e0982ce4f9760c3011ac9859ca3c8fb8180dfc8d0cc98ff456dc",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-traveler-dendro"
+    },
+    {
+      "candidateId": "traveler-geo:1",
+      "characterId": "traveler-geo",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "2befcdf7a55de2b3a29d2dc919ca645dbc22cad8be683d90905d72f760caa373",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-traveler-geo"
+    },
+    {
+      "candidateId": "varesa:1",
+      "characterId": "varesa",
+      "revision": "character-build-catalog-7.2-r2",
+      "checksum": "40a836e36441636afab8747636c4aa5f7bc2e4452a87c28435b147f1f8410f84",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-varesa"
+    },
+    {
+      "candidateId": "venti:1",
+      "characterId": "venti",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "960604a027b22f4f8c739a9608231c307107beb0ee7d397c06106a9ef826853b",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-venti"
+    },
+    {
+      "candidateId": "wanderer:1",
+      "characterId": "wanderer",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "3d23b873ed396ef05bf53a5666cccec7e8b3b336bed56637d6e7d605a9699dda",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-wanderer"
+    },
+    {
+      "candidateId": "wriothesley:1",
+      "characterId": "wriothesley",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0dc0cbc4a8a4713ea99acb500872c2e7b198c195b7d4b3c5aaa93712b504ee63",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-wriothesley"
+    },
+    {
+      "candidateId": "xianyun:1",
+      "characterId": "xianyun",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "c49f98b6d08fcb624f3cc64badda6a1415a923346219439e04d379721260b9c1",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-xianyun"
+    },
+    {
+      "candidateId": "xiao:1",
+      "characterId": "xiao",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "70bb288616ab1fde2b732f23edacc7c4bdd7654724cc2ada276a0afe66a9074d",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-xiao"
+    },
+    {
+      "candidateId": "xilonen:1",
+      "characterId": "xilonen",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "ce31b0e2c2837fc87bc8ec57237612b2d75c0537fdd4feb52ff946468b2f2e36",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-xilonen"
+    },
+    {
+      "candidateId": "xingqiu:1",
+      "characterId": "xingqiu",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "a22b200941d570e29da222977b7d5c6f9a539f01301dc0f2e8ba2888dda9ab4c",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-xingqiu"
+    },
+    {
+      "candidateId": "yae-miko:1",
+      "characterId": "yae-miko",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "8d8a37c26c26292ad3e24d14a4caba7ab351f5a96d6e9e133466a22a3d57d3c3",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yae-miko"
+    },
+    {
+      "candidateId": "yanfei:1",
+      "characterId": "yanfei",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "f309c03b10611c872c4e7f216b8b79c5ab40d3ce16c5f7cdf8107eadc5b1fe38",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yanfei"
+    },
+    {
+      "candidateId": "yaoyao:1",
+      "characterId": "yaoyao",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "c4e3314f0cc2937f87fe268a0ad1098c0b02f0d78d1a3ba735b4211e73ebe720",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yaoyao"
+    },
+    {
+      "candidateId": "yelan:1",
+      "characterId": "yelan",
+      "revision": "character-build-catalog-7.2-r2",
+      "checksum": "e5b2bdf37df5cf9aae69f4a7a395348e0c1c69caf6e690edd065ab0496f7ae8e",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yelan"
+    },
+    {
+      "candidateId": "yoimiya:1",
+      "characterId": "yoimiya",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "80efd32785b30413c9a7537e83911ca925942220d29cb0d6327827f663dbc11a",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yoimiya"
+    },
+    {
+      "candidateId": "yumemizu:1",
+      "characterId": "yumemizu",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "9ad9cf1327e8c7c676c5e41fdb4964595494a4a259ed9388e4f81eee2bb3f42b",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yumemizu"
+    },
+    {
+      "candidateId": "yun-jin:1",
+      "characterId": "yun-jin",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0ef1bd599b2914268ef3568b5cdc32490a15d62fee81fe584b2c66b39eeb1f79",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-yun-jin"
+    },
+    {
+      "candidateId": "zhongli:1",
+      "characterId": "zhongli",
+      "revision": "character-build-catalog-7.2-r2",
+      "checksum": "9bae40b0ea84b658ae89b3a46645ab2fcfad33a2faca781d3639f6f7aa3841a1",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-zhongli"
+    },
+    {
+      "candidateId": "zibai:1",
+      "characterId": "zibai",
+      "revision": "character-build-catalog-7.2-r4-final-all",
+      "checksum": "0f7b28d9099f2e6a3630fbc2300b331883d043f5dd5c36855d3220b02069577a",
+      "state": "REVIEW_READY",
+      "outcome": "REQUIRES_EXPLICIT_ADMIN_REVIEW",
+      "writeEligible": false,
+      "existingDefault": "legacy-zibai"
+    },
+    {
+      "candidateId": "aino:1",
+      "characterId": "aino",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "aloy:1",
+      "characterId": "aloy",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "alyosha:1",
+      "characterId": "alyosha",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "amber:1",
+      "characterId": "amber",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "barbara:1",
+      "characterId": "barbara",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "bennett:1",
+      "characterId": "bennett",
+      "state": "ALREADY_IMPORTED",
+      "reason": "A01 R3 was approved and imported at version 3. Preserved unchanged and excluded from this import set."
+    },
+    {
+      "candidateId": "candace:1",
+      "characterId": "candace",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "citlali:1",
+      "characterId": "citlali",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Model Cryo application versus Arlecchino attack timing and the assigned Scroll holder."
+    },
+    {
+      "candidateId": "dahlia:1",
+      "characterId": "dahlia",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "dori:1",
+      "characterId": "dori",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "fischl:1",
+      "characterId": "fischl",
+      "state": "ALREADY_IMPORTED",
+      "reason": "A01 R3 was approved and imported at version 3. Preserved unchanged and excluded from this import set."
+    },
+    {
+      "candidateId": "kachina:1",
+      "characterId": "kachina",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "layla:1",
+      "characterId": "layla",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "mavuika:2",
+      "characterId": "mavuika",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Check Mualani bite timing and Pyro application after Xilonen takes Scroll."
+    },
+    {
+      "candidateId": "neuvillette:1",
+      "characterId": "neuvillette",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "nilou:1",
+      "characterId": "nilou",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "odette:1",
+      "characterId": "odette",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "sangonomiya-kokomi:2",
+      "characterId": "sangonomiya-kokomi",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "valeriy:1",
+      "characterId": "valeriy",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "vesna:1",
+      "characterId": "vesna",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "vodyanitsa:1",
+      "characterId": "vodyanitsa",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "xiangling:1",
+      "characterId": "xiangling",
+      "state": "ALREADY_IMPORTED",
+      "reason": "A01 R3 was approved and imported at version 3. Preserved unchanged and excluded from this import set."
+    },
+    {
+      "candidateId": "columbina:1",
+      "characterId": "columbina",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "durin:1",
+      "characterId": "durin",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "iansan:1",
+      "characterId": "iansan",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "illuga:1",
+      "characterId": "illuga",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "jahoda:1",
+      "characterId": "jahoda",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "kaveh:1",
+      "characterId": "kaveh",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "Specific rotation evidence remains open."
+    },
+    {
+      "candidateId": "lanyan:1",
+      "characterId": "lanyan",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "linnea:1",
+      "characterId": "linnea",
+      "state": "BLOCKED",
+      "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+    },
+    {
+      "candidateId": "lohen:1",
+      "characterId": "lohen",
+      "state": "BLOCKED",
+      "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+    },
+    {
+      "candidateId": "lynette:1",
+      "characterId": "lynette",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "nicole:1",
+      "characterId": "nicole",
+      "state": "BLOCKED",
+      "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+    },
+    {
+      "candidateId": "prune:1",
+      "characterId": "prune",
+      "state": "BLOCKED",
+      "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+    },
+    {
+      "candidateId": "sandrone:1",
+      "characterId": "sandrone",
+      "state": "BLOCKED",
+      "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+    },
+    {
+      "candidateId": "sayu:1",
+      "characterId": "sayu",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "traveler-anemo:1",
+      "characterId": "traveler-anemo",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "traveler-electro:1",
+      "characterId": "traveler-electro",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "traveler-hydro:1",
+      "characterId": "traveler-hydro",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "traveler-pyro:1",
+      "characterId": "traveler-pyro",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    },
+    {
+      "candidateId": "varka:1",
+      "characterId": "varka",
+      "state": "BLOCKED",
+      "reason": "Equipment-only hold: scaling, main stats, talent priorities and a usable rotation remain unverified."
+    },
+    {
+      "candidateId": "xinyan:1",
+      "characterId": "xinyan",
+      "state": "NEEDS_MORE_EVIDENCE",
+      "reason": "No supported team rotation or explicit team omission sign-off."
+    }
+  ],
+  "developmentIntegrity": {
+    "writes": 0,
+    "database": "genshinhub",
+    "identity": {
+      "database": "genshinhub",
+      "mode": "on"
+    }
+  }
+}

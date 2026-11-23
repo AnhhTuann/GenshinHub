@@ -1,0 +1,244 @@
+version: 2.1
+
+# =================================================================
+# GenshinHub — CircleCI Temporary CI
+# =================================================================
+# Mục đích : Thay thế GitHub Actions khi billing bị khóa.
+# Trigger  : push bất kỳ branch | mở/update PR → tất cả branch.
+# Không    : deploy, truy cập production DB, thay đổi workflow GH.
+# =================================================================
+
+orbs:
+  node: circleci/node@6.1.0
+
+# -----------------------------------------------------------------
+# Executors — Docker images tái sử dụng
+# -----------------------------------------------------------------
+executors:
+  # Executor thông thường: chỉ Node.js
+  node-executor:
+    docker:
+      - image: cimg/node:20.19
+    resource_class: medium
+    working_directory: ~/project
+
+  # Executor E2E: Node.js + PostgreSQL sidecar (TEST DB độc lập)
+  node-postgres:
+    docker:
+      - image: cimg/node:20.19
+      - image: cimg/postgres:15.3
+        environment:
+          POSTGRES_USER: ci_user
+          POSTGRES_PASSWORD: ci_password
+          POSTGRES_DB: genshinhub_test   # DB test riêng, không phải production
+    resource_class: medium
+    working_directory: ~/project
+
+# -----------------------------------------------------------------
+# Jobs
+# -----------------------------------------------------------------
+jobs:
+
+  # ── Job 1: Backend TypeScript build + Prisma generate ─────────
+  backend-build:
+    executor: node-executor
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - backend-deps-v1-{{ checksum "backend/package-lock.json" }}
+            - backend-deps-v1-
+
+      - run:
+          name: Install backend dependencies
+          working_directory: backend
+          command: npm ci
+
+      - save_cache:
+          key: backend-deps-v1-{{ checksum "backend/package-lock.json" }}
+          paths:
+            - backend/node_modules
+
+      - run:
+          name: Generate Prisma Client
+          working_directory: backend
+          # prisma generate chỉ đọc schema.prisma, không cần DB thật
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npx prisma generate
+
+      - run:
+          name: TypeScript build (tsc + prisma generate)
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npm run build
+
+      - run:
+          name: Validate Prisma schema
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npx prisma validate
+
+      - run:
+          name: Run source version checker tests
+          working_directory: backend
+          command: npm run test:sync:version
+
+      # Chia sẻ node_modules + dist cho các job phụ thuộc
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - backend/node_modules
+            - backend/dist
+
+  # ── Job 2: Frontend ESLint + TypeScript type-check ────────────
+  frontend-lint:
+    executor: node-executor
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - frontend-deps-v1-{{ checksum "frontend/package-lock.json" }}
+            - frontend-deps-v1-
+
+      - run:
+          name: Install frontend dependencies
+          working_directory: frontend
+          # legacy-peer-deps theo .npmrc của project
+          command: npm ci --legacy-peer-deps
+
+      - save_cache:
+          key: frontend-deps-v1-{{ checksum "frontend/package-lock.json" }}
+          paths:
+            - frontend/node_modules
+
+      - run:
+          name: ESLint (next lint)
+          working_directory: frontend
+          command: npm run lint
+
+      - run:
+          name: TypeScript type-check (tsc --noEmit)
+          working_directory: frontend
+          # tsconfig.json đã cấu hình "noEmit": true
+          command: npx tsc --noEmit
+
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - frontend/node_modules
+
+  # ── Job 3: Asset integration tests (không cần DB) ─────────
+  asset-integration-tests:
+    executor: node-executor
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/project
+
+      - run:
+          name: Regenerate Prisma Client (sau workspace restore)
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npx prisma generate
+
+      - run:
+          name: Run asset integration tests
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+            NODE_ENV: test
+          # Script: npx ts-node scripts/sync/asset.test.ts
+          # Test: mock CDN local, temp dir, không đụng DB thật, không ghi frontend/public
+          command: npm run test:assets
+          no_output_timeout: 3m
+
+  # ── Job 4: Data sync E2E tests (PostgreSQL test + GraphQL server) ────
+  e2e-tests:
+    executor: node-postgres
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/project
+
+      - run:
+          name: Wait for PostgreSQL sidecar
+          # dockerize có sẵn trên cimg/node
+          command: dockerize -wait tcp://localhost:5432 -timeout 60s
+
+      - run:
+          name: Regenerate Prisma Client cho test DB
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npx prisma generate
+
+      - run:
+          name: Prisma db push (test DB — schema-push, không có migrations)
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          # Project chưa dùng prisma migrate → dùng db push trên test DB
+          command: npx prisma db push --force-reset --accept-data-loss
+
+      - run:
+          name: Start GraphQL server trên port 4000 (background)
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+            PORT: "4000"
+            NODE_ENV: test
+            # Chỉ dùng làm khoá HMAC cho evidence (KHÔNG phải secret đăng nhập).
+            ADMIN_JWT_SECRET: ci-test-evidence-hmac-not-production
+            FRONTEND_URL: http://localhost:3000
+          command: node dist/src/index.js
+          background: true
+
+      - run:
+          name: Wait for GraphQL server (:4000)
+          command: dockerize -wait tcp://localhost:4000 -timeout 30s
+
+      - run:
+          name: Run Data sync E2E tests
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+            GRAPHQL_URL: http://localhost:4000/graphql
+            NODE_ENV: test
+          # Script: npx ts-node scripts/sync/e2e.test.ts
+          # Test: fixture E2E- prefix, rollback sau test, không dùng data thật
+          command: npm run sync:e2e
+          no_output_timeout: 5m
+
+# -----------------------------------------------------------------
+# Workflows — Điều phối thứ tự chạy
+# -----------------------------------------------------------------
+workflows:
+  genshinhub-ci:
+    jobs:
+      # Job 1 & 2 chạy song song ngay lập tức
+      - backend-build:
+          filters:
+            branches:
+              only: /.*/   # tất cả branch
+
+      - frontend-lint:
+          filters:
+            branches:
+              only: /.*/
+
+      # Job 3 & 4 chờ backend-build hoàn thành (cần node_modules + dist)
+      - asset-integration-tests:
+          requires:
+            - backend-build
+
+      - e2e-tests:
+          requires:
+            - backend-build

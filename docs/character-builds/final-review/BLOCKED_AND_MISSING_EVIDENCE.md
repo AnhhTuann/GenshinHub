@@ -1,0 +1,130 @@
+# Evidence holds
+
+## Catalog entries outside the draft set
+
+- Generic Traveler, Manekin and Manekina lack a supported combat context and remain blocked.
+- Mitya is protected. Both approved builds and the existing default remain unchanged.
+
+## Drafts
+
+- **aino:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **alhaitham:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **aloy:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **alyosha:1 · B** — Measure Polestar timing and determine whether its buff can be handed to Mitya without losing Burst uptime.
+- **amber:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **arataki-itto:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **arlecchino:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **barbara:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **candace:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **charlotte:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **chasca:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **chevreuse:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **chiori:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **chongyun:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **citlali:1 · B** — Model Cryo application versus Arlecchino attack timing and the assigned Scroll holder.
+- **clorinde:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **collei:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **dahlia:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **dehya:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **dehya:2 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **diluc:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **diona:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **dori:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **emilie:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **escoffier:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **eula:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **faruzan:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **furina:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **gaming:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **ganyu:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **gorou:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **hu-tao:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **jean:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kachina:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **kaedehara-kazuha:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kamisato-ayaka:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kamisato-ayato:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **keqing:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kinich:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kuki-shinobu:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **layla:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **mavuika:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **mavuika:2 · B** — Check Mualani bite timing and Pyro application after Xilonen takes Scroll.
+- **mona:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **mualani:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **nahida:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **navia:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **neuvillette:1 · B** — Check C0 reaction stacks and interruption behavior in this double Hydro composition.
+- **nilou:1 · B** — Confirm who owns Bountiful Cores before retaining the EM set or Iron Sting alternative.
+- **odette:1 · B** — Verify whether the double and special Skill preserve Cryo aura through the two Anemo slots.
+- **raiden-shogun:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **rosaria:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **sangonomiya-kokomi:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **sangonomiya-kokomi:2 · B** — Measure Bloom ownership and the amount of healing needed before recommending an EM sands.
+- **shenhe:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **thoma:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **thoma:2 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **tighnari:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **valeriy:1 · B** — Measure Momentum generation with the actual Electro field-time order before assigning a directive sequence.
+- **venti:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **vesna:1 · B** — Confirm Cryo aura ownership and Scarlet Proof uptime in the proposed Stellar Swirl rotation.
+- **vodyanitsa:1 · B** — Test Wandering Vortex production and shield/sustain needs in the proposed Cryo/Anemo team.
+- **wanderer:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **xingqiu:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **yae-miko:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **yaoyao:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **yoimiya:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **yun-jin:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **columbina:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **cyno:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **durin:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **flins:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **freminet:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **iansan:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **ifa:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **illuga:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **ineffa:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **jahoda:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **kaeya:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kaveh:1 · B** — Confirm core ownership and field-time requirements before claiming EM value.
+- **klee:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **kujou-sara:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **lanyan:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **lauma:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **linnea:1 · C** — Equipment only. Scaling, main stats, talent priorities and a useful rotation remain open.
+- **lisa:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **lohen:1 · C** — Equipment only. Scaling, main stats, talent priorities and a useful rotation remain open.
+- **lynette:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **lyney:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **mika:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **momoka:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **nefer:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **nicole:1 · C** — Equipment only. Scaling, main stats, talent priorities and a useful rotation remain open.
+- **ningguang:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **noelle:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **ororon:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **prune:1 · C** — Equipment only. Scaling, main stats, talent priorities and a useful rotation remain open.
+- **qiqi:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **razor:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **sandrone:1 · C** — Equipment only. Scaling, main stats, talent priorities and a useful rotation remain open.
+- **sayu:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **sethos:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **shikanoin-heizou:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **sigewinne:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **skirk:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **tartaglia:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **traveler-anemo:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **traveler-dendro:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **traveler-electro:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **traveler-geo:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **traveler-hydro:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **traveler-pyro:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **varka:1 · C** — Equipment only. Scaling, main stats, talent priorities and a useful rotation remain open.
+- **wriothesley:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **xianyun:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **xiao:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **xilonen:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **xinyan:1 · B** — No supported team rotation or explicit team omission sign-off.
+- **yanfei:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **yumemizu:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.
+- **zibai:1 · B** — Confirm reaction ownership, role assignments and Energy cadence for the listed lineup before review-ready classification.

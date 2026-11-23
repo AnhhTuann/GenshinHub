@@ -1,0 +1,300 @@
+{
+  "source": "genshin-db@5.2.15 local package",
+  "purpose": "Exact game facts for Phase B2.6 candidate validation. Facts never auto-derive a tier.",
+  "records": [
+    {
+      "weaponId": "11401",
+      "name": "Favonius Sword",
+      "effectName": "Windfall",
+      "subStatType": "FIGHT_PROP_CHARGE_EFFICIENCY",
+      "rarity": 4,
+      "r1": {
+        "description": "CRIT Hits have a 60% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 12s.",
+        "values": [
+          "60%",
+          "12"
+        ]
+      },
+      "r5": {
+        "description": "CRIT Hits have a 100% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 6s.",
+        "values": [
+          "100%",
+          "6"
+        ]
+      }
+    },
+    {
+      "weaponId": "11403",
+      "name": "Sacrificial Sword",
+      "effectName": "Composed",
+      "subStatType": "FIGHT_PROP_CHARGE_EFFICIENCY",
+      "rarity": 4,
+      "r1": {
+        "description": "After damaging an opponent with an Elemental Skill, the skill has a 40% chance to end its own CD. Can only occur once every 30s.",
+        "values": [
+          "40%",
+          "30"
+        ]
+      },
+      "r5": {
+        "description": "After damaging an opponent with an Elemental Skill, the skill has a 80% chance to end its own CD. Can only occur once every 16s.",
+        "values": [
+          "80%",
+          "16s"
+        ]
+      }
+    },
+    {
+      "weaponId": "11418",
+      "name": "Xiphos' Moonlight",
+      "effectName": "Jinni's Whisper",
+      "subStatType": "FIGHT_PROP_ELEMENT_MASTERY",
+      "rarity": 4,
+      "r1": {
+        "description": "The following effect will trigger every 10s: The equipping character will gain 0.036% Energy Recharge for each point of Elemental Mastery they possess for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "values": [
+          "0.036%"
+        ]
+      },
+      "r5": {
+        "description": "The following effect will trigger every 10s: The equipping character will gain 0.072% Energy Recharge for each point of Elemental Mastery they possess for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+        "values": [
+          "0.072%"
+        ]
+      }
+    },
+    {
+      "weaponId": "11512",
+      "name": "Light of Foliar Incision",
+      "effectName": "Whitemoon Bristle",
+      "subStatType": "FIGHT_PROP_CRITICAL_HURT",
+      "rarity": 5,
+      "r1": {
+        "description": "CRIT Rate is increased by 4%. After Normal Attacks deal Elemental DMG, the Foliar Incision effect will be obtained, increasing DMG dealt by Normal Attacks and Elemental Skills by 120% of Elemental Mastery. This effect will disappear after 28 DMG instances or 12s. You can obtain Foliar Incision once every 12s.",
+        "values": [
+          "4%",
+          "120%"
+        ]
+      },
+      "r5": {
+        "description": "CRIT Rate is increased by 8%. After Normal Attacks deal Elemental DMG, the Foliar Incision effect will be obtained, increasing DMG dealt by Normal Attacks and Elemental Skills by 240% of Elemental Mastery. This effect will disappear after 28 DMG instances or 12s. You can obtain Foliar Incision once every 12s.",
+        "values": [
+          "8%",
+          "240%"
+        ]
+      }
+    },
+    {
+      "weaponId": "12401",
+      "name": "Favonius Greatsword",
+      "effectName": "Windfall",
+      "subStatType": "FIGHT_PROP_CHARGE_EFFICIENCY",
+      "rarity": 4,
+      "r1": {
+        "description": "CRIT Hits have a 60% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 12s.",
+        "values": [
+          "60%",
+          "12"
+        ]
+      },
+      "r5": {
+        "description": "CRIT Hits have a 100% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 6s.",
+        "values": [
+          "100%",
+          "6"
+        ]
+      }
+    },
+    {
+      "weaponId": "12502",
+      "name": "Wolf's Gravestone",
+      "effectName": "Wolfish Tracker",
+      "subStatType": "FIGHT_PROP_ATTACK_PERCENT",
+      "rarity": 5,
+      "r1": {
+        "description": "Increases ATK by 20%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by 40% for 12s. Can only occur once every 30s.",
+        "values": [
+          "20%",
+          "40%"
+        ]
+      },
+      "r5": {
+        "description": "Increases ATK by 40%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by 80% for 12s. Can only occur once every 30s.",
+        "values": [
+          "40%",
+          "80%"
+        ]
+      }
+    },
+    {
+      "weaponId": "13407",
+      "name": "Favonius Lance",
+      "effectName": "Windfall",
+      "subStatType": "FIGHT_PROP_CHARGE_EFFICIENCY",
+      "rarity": 4,
+      "r1": {
+        "description": "CRIT Hits have a 60% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 12s.",
+        "values": [
+          "60%",
+          "12"
+        ]
+      },
+      "r5": {
+        "description": "CRIT Hits have a 100% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 6s.",
+        "values": [
+          "100%",
+          "6"
+        ]
+      }
+    },
+    {
+      "weaponId": "13501",
+      "name": "Staff of Homa",
+      "effectName": "Reckless Cinnabar",
+      "subStatType": "FIGHT_PROP_CRITICAL_HURT",
+      "rarity": 5,
+      "r1": {
+        "description": "HP increased by 20%. Additionally, provides an ATK Bonus based on 0.8% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional 1% of Max HP.",
+        "values": [
+          "20%",
+          "0.8%",
+          "1%"
+        ]
+      },
+      "r5": {
+        "description": "HP increased by 40%. Additionally, provides an ATK Bonus based on 1.6% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional 1.8% of Max HP.",
+        "values": [
+          "40%",
+          "1.6%",
+          "1.8%"
+        ]
+      }
+    },
+    {
+      "weaponId": "14302",
+      "name": "Thrilling Tales of Dragon Slayers",
+      "effectName": "Heritage",
+      "subStatType": "FIGHT_PROP_HP_PERCENT",
+      "rarity": 3,
+      "r1": {
+        "description": "When switching characters, the new character taking the field has their ATK increased by 24% for 10s. This effect can only occur once every 20s.",
+        "values": [
+          "24%"
+        ]
+      },
+      "r5": {
+        "description": "When switching characters, the new character taking the field has their ATK increased by 48% for 10s. This effect can only occur once every 20s.",
+        "values": [
+          "48%"
+        ]
+      }
+    },
+    {
+      "weaponId": "14402",
+      "name": "The Widsith",
+      "effectName": "Debut",
+      "subStatType": "FIGHT_PROP_CRITICAL_HURT",
+      "rarity": 4,
+      "r1": {
+        "description": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by 60%. Aria: Increases all Elemental DMG by 48%. Interlude: Elemental Mastery is increased by 240.",
+        "values": [
+          "60%",
+          "48%",
+          "240"
+        ]
+      },
+      "r5": {
+        "description": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by 120%. Aria: Increases all Elemental DMG by 96%. Interlude: Elemental Mastery is increased by 480.",
+        "values": [
+          "120%",
+          "96%",
+          "480"
+        ]
+      }
+    },
+    {
+      "weaponId": "14406",
+      "name": "Prototype Amber",
+      "effectName": "Gilding",
+      "subStatType": "FIGHT_PROP_HP_PERCENT",
+      "rarity": 4,
+      "r1": {
+        "description": "Using an Elemental Burst regenerates 4 Energy every 2s for 6s. All party members will regenerate 4% HP every 2s for this duration.",
+        "values": [
+          "4",
+          "4%"
+        ]
+      },
+      "r5": {
+        "description": "Using an Elemental Burst regenerates 6 Energy every 2s for 6s. All party members will regenerate 6% HP every 2s for this duration.",
+        "values": [
+          "6",
+          "6%"
+        ]
+      }
+    },
+    {
+      "weaponId": "14509",
+      "name": "Kagura's Verity",
+      "effectName": "Kagura Dance of the Sacred Sakura",
+      "subStatType": "FIGHT_PROP_CRITICAL_HURT",
+      "rarity": 5,
+      "r1": {
+        "description": "Using an Elemental Skill grants the Kagura Dance effect, increasing the wielding character's Elemental Skill DMG by 12% as well as their Stellar-Conduct DMG by 12% for 24s. Max 3 stacks. This character will gain a 12% All Elemental DMG Bonus when they possess 3 stacks.",
+        "values": [
+          "12%",
+          "12%",
+          "12%"
+        ]
+      },
+      "r5": {
+        "description": "Using an Elemental Skill grants the Kagura Dance effect, increasing the wielding character's Elemental Skill DMG by 24% as well as their Stellar-Conduct DMG by 24% for 24s. Max 3 stacks. This character will gain a 24% All Elemental DMG Bonus when they possess 3 stacks.",
+        "values": [
+          "24%",
+          "24%",
+          "24%"
+        ]
+      }
+    },
+    {
+      "weaponId": "15402",
+      "name": "The Stringless",
+      "effectName": "Arrowless Song",
+      "subStatType": "FIGHT_PROP_ELEMENT_MASTERY",
+      "rarity": 4,
+      "r1": {
+        "description": "Increases Elemental Skill and Elemental Burst DMG by 24%.",
+        "values": [
+          "24%"
+        ]
+      },
+      "r5": {
+        "description": "Increases Elemental Skill and Elemental Burst DMG by 48%.",
+        "values": [
+          "48%"
+        ]
+      }
+    },
+    {
+      "weaponId": "15508",
+      "name": "Aqua Simulacra",
+      "effectName": "The Cleansing Form",
+      "subStatType": "FIGHT_PROP_CRITICAL_HURT",
+      "rarity": 5,
+      "r1": {
+        "description": "HP is increased by 16%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by 20%. This will take effect whether the character is on-field or not.",
+        "values": [
+          "16%",
+          "20%"
+        ]
+      },
+      "r5": {
+        "description": "HP is increased by 32%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by 40%. This will take effect whether the character is on-field or not.",
+        "values": [
+          "32%",
+          "40%"
+        ]
+      }
+    }
+  ]
+}

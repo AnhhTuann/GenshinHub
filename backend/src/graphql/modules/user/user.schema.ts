@@ -108,6 +108,7 @@ export const userSchema = `
   extend type Mutation {
     register(input: RegisterInput!): AuthPayload!
     login(email: String!, password: String!): AuthPayload!
+    logout: Boolean!
     socialLogin(provider: String!, providerId: String!, email: String!, username: String, displayName: String, avatarUrl: String, gender: String): AuthPayload!
     updateProfile(input: UpdateProfileInput!): User!
     syncGachaUrl(url: String!): GachaStats!
@@ -122,6 +123,7 @@ export const userSchema = `
     verifyEmailChangeOtp(newEmail: String!, otp: String!): User!
     # Forgot / Reset Password (no auth required)
     forgotPassword(email: String!): Boolean!
-    resetPassword(email: String!, otp: String!, newPassword: String!): Boolean!
+    resetPassword(email: String!, otp: String!, newPassword: String!): Boolean! @deprecated(reason: "Use resetPasswordWithToken with the one-time link token")
+    resetPasswordWithToken(token: String!, newPassword: String!): Boolean!
   }
 `;

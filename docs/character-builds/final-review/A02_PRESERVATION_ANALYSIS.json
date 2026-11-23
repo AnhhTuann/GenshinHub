@@ -1,0 +1,336 @@
+{
+  "revision": "character-build-catalog-7.2-r3-a02",
+  "originalBatch": "07c4298b06cc15b03ad354499559477068a170ef88795ea5d882f232b160192d",
+  "finalBatch": "38b2f279e6e23699bfbcd46cb4de94b5106ad242b22dc96354754b5954aefc34",
+  "records": [
+    {
+      "candidateId": "albedo:1",
+      "baseline": {
+        "buildId": "legacy-albedo",
+        "version": 1,
+        "checksum": "54078ff392c9436610c6e6a99aaa8f5efb2e677f69bbedad4edd758636da307f",
+        "status": "LEGACY_IMPORT"
+      },
+      "default": true,
+      "archivedBuildId": "baseline-albedo",
+      "archivedRows": {
+        "weapons": [
+          {
+            "buildId": "legacy-albedo",
+            "id": "b85514cb-204b-456a-af83-3e859f3a3fe6",
+            "weaponId": "thương-diệu",
+            "nameEn": "Azurelight",
+            "nameVi": "Thương Diệu",
+            "rank": 1,
+            "isF2P": false,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Sword_OuterSword.webp",
+            "subStat": "Tỷ Lệ Bạo Kích",
+            "passiveDescEn": null,
+            "passiveDescVi": null,
+            "refinement": 1,
+            "constellation": "C0",
+            "order": 0,
+            "characterId": "albedo"
+          },
+          {
+            "buildId": "legacy-albedo",
+            "id": "0ed8070c-b94a-45c9-b3f3-f9d61a2a97ca",
+            "weaponId": "đoản-đao-amenoma",
+            "nameEn": "Amenoma Kageuchi",
+            "nameVi": "Đoản Đao Amenoma",
+            "rank": 4,
+            "isF2P": true,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Sword_Bakufu.webp",
+            "subStat": "Tấn Công%",
+            "passiveDescEn": "Hồi năng lượng sau khi dùng Nộ.",
+            "passiveDescVi": "Hồi năng lượng sau khi dùng Nộ.",
+            "refinement": 5,
+            "constellation": "C0",
+            "order": 1,
+            "characterId": "albedo"
+          },
+          {
+            "buildId": "legacy-albedo",
+            "id": "a6e32faa-a7af-471c-b77f-b528207f6df0",
+            "weaponId": "bàn-nham-kết-lục",
+            "nameEn": "Primordial Jade Cutter",
+            "nameVi": "Bàn Nham Kết Lục",
+            "rank": 5,
+            "isF2P": false,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Sword_Morax.webp",
+            "subStat": "Tỷ Lệ Bạo Kích",
+            "passiveDescEn": "Tăng HP và Tấn Công.",
+            "passiveDescVi": "Tăng HP và Tấn Công.",
+            "refinement": 1,
+            "constellation": "C0",
+            "order": 2,
+            "characterId": "albedo"
+          }
+        ],
+        "artifacts": [
+          {
+            "buildId": "legacy-albedo",
+            "id": "ce843986-beff-4d65-8b43-ae0b97613477",
+            "setNameEn": "Archaic Petra",
+            "setNameVi": "Phiến Đá Lâu Đời",
+            "pieces": 4,
+            "order": 0,
+            "constellation": "C0",
+            "characterId": "albedo"
+          }
+        ],
+        "teams": [
+          {
+            "buildId": "legacy-albedo",
+            "reviewStatus": null,
+            "id": "268f1329-b6d6-471d-9f90-ff093c718464",
+            "name": "sdasd",
+            "rank": "SS",
+            "description": "ádad",
+            "order": 0,
+            "characterId": "albedo",
+            "members": [
+              {
+                "id": "3af68aaa-44b1-4a23-a65a-257b8dc3587a",
+                "characterId": "albedo",
+                "role": "Main DPS",
+                "roleDesc": "",
+                "weapons": [],
+                "artifacts": [],
+                "substats": [],
+                "order": 0,
+                "teamId": "268f1329-b6d6-471d-9f90-ff093c718464"
+              },
+              {
+                "id": "3f2f0b39-1b1e-407a-824e-d983a5e0a23a",
+                "characterId": "aino",
+                "role": "Sub DPS",
+                "roleDesc": "",
+                "weapons": [],
+                "artifacts": [],
+                "substats": [],
+                "order": 1,
+                "teamId": "268f1329-b6d6-471d-9f90-ff093c718464"
+              },
+              {
+                "id": "c3717945-369c-4382-99a5-431e96cde330",
+                "characterId": "aloy",
+                "role": "Healer",
+                "roleDesc": "",
+                "weapons": [],
+                "artifacts": [],
+                "substats": [],
+                "order": 2,
+                "teamId": "268f1329-b6d6-471d-9f90-ff093c718464"
+              },
+              {
+                "id": "ceb6bee9-c5f3-4a74-aa20-37923c42cde8",
+                "characterId": "alhaitham",
+                "role": "Support",
+                "roleDesc": "",
+                "weapons": [],
+                "artifacts": [],
+                "substats": [],
+                "order": 3,
+                "teamId": "268f1329-b6d6-471d-9f90-ff093c718464"
+              }
+            ]
+          }
+        ]
+      },
+      "legacyDisposition": {
+        "weapons": [
+          "Azurelight archived: ATK does little for C0 Blossoms, and its zero-Energy condition is not assumed.",
+          "Amenoma Kageuchi R5 archived: ATK and Burst refund do not serve the default off-field Skill role.",
+          "Primordial Jade Cutter R1 retained as a canonical situational option."
+        ],
+        "artifacts": "Archaic Petra retained canonically as a situational option.",
+        "teams": "The placeholder sdasd roster uses four valid IDs but has no documented rotation or Albedo-focused synergy. Its rows are archived, and the experimental Itto/Gorou/Zhongli roster takes the active slot."
+      },
+      "activeCounts": {
+        "teams": [
+          1,
+          1
+        ],
+        "weapons": [
+          3,
+          4
+        ],
+        "artifacts": [
+          1,
+          3
+        ]
+      },
+      "invalidTeamMemberIds": []
+    },
+    {
+      "candidateId": "baizhu:1",
+      "baseline": {
+        "buildId": "legacy-baizhu",
+        "version": 1,
+        "checksum": "726a8ea9b5111b46cac430cdc2ee5c10fe62745ab09dc777ec803ab5c0b3ad50",
+        "status": "LEGACY_IMPORT"
+      },
+      "default": true,
+      "archivedBuildId": "baseline-baizhu",
+      "archivedRows": {
+        "weapons": [
+          {
+            "buildId": "legacy-baizhu",
+            "id": "c49a3ee7-43ee-4d6c-9cf1-16c401250fac",
+            "weaponId": "chương-nhạc-lang-thang",
+            "nameEn": "Chương Nhạc Lang Thang",
+            "nameVi": "Chương Nhạc Lang Thang",
+            "rank": 4,
+            "isF2P": false,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Catalyst_Troupe.webp",
+            "subStat": "Sát Thương Bạo Kích",
+            "passiveDescEn": "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
+            "passiveDescVi": "Nhận ngẫu nhiên 1 trong 3 buff cực mạnh khi ra trận.",
+            "refinement": 5,
+            "constellation": "C0",
+            "order": 0,
+            "characterId": "baizhu"
+          },
+          {
+            "buildId": "legacy-baizhu",
+            "id": "75a97104-dff1-4fd9-9166-9565726484dc",
+            "weaponId": "điển-tích-tây-phong",
+            "nameEn": "Điển Tích Tây Phong",
+            "nameVi": "Điển Tích Tây Phong",
+            "rank": 5,
+            "isF2P": false,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Catalyst_Fourwinds.webp",
+            "subStat": "Tỷ Lệ Bạo Kích",
+            "passiveDescEn": "Tăng tốc độ di chuyển và sát thương nguyên tố.",
+            "passiveDescVi": "Tăng tốc độ di chuyển và sát thương nguyên tố.",
+            "refinement": 1,
+            "constellation": "C0",
+            "order": 1,
+            "characterId": "baizhu"
+          }
+        ],
+        "artifacts": [
+          {
+            "buildId": "legacy-baizhu",
+            "id": "dedea744-e9a2-4145-99de-01cd122517cf",
+            "setNameEn": "Thánh Di Vật Đề Cử",
+            "setNameVi": "Thánh Di Vật Đề Cử",
+            "pieces": 4,
+            "order": 0,
+            "constellation": "C0",
+            "characterId": "baizhu"
+          }
+        ],
+        "teams": []
+      },
+      "legacyDisposition": {
+        "weapons": [
+          "The Widsith R5 archived: random on-field offensive buffs do not support C0 healing or Burst uptime.",
+          "Favonius Codex R1 retained canonically."
+        ],
+        "artifacts": "The unnamed legacy artifact recommendation is archived and has no set ID.",
+        "teams": "No existing team rows; add one experimental Cyno Quickbloom roster."
+      },
+      "activeCounts": {
+        "teams": [
+          0,
+          1
+        ],
+        "weapons": [
+          2,
+          3
+        ],
+        "artifacts": [
+          1,
+          2
+        ]
+      },
+      "invalidTeamMemberIds": []
+    },
+    {
+      "candidateId": "beidou:1",
+      "baseline": {
+        "buildId": "legacy-beidou",
+        "version": 1,
+        "checksum": "82b2f122809b75b777ecef2bfc2a0063a535bd26f2be8841ab4ce3871049e1c1",
+        "status": "LEGACY_IMPORT"
+      },
+      "default": true,
+      "archivedBuildId": "baseline-beidou",
+      "archivedRows": {
+        "weapons": [
+          {
+            "buildId": "legacy-beidou",
+            "id": "69d59e77-aa3f-4e2b-8265-c5bb7aeb4ca8",
+            "weaponId": "mẫu-cổ-hoa",
+            "nameEn": "Mẫu Cổ Hoa",
+            "nameVi": "Mẫu Cổ Hoa",
+            "rank": 4,
+            "isF2P": true,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Claymore_Proto.webp",
+            "subStat": "Tấn Công%",
+            "passiveDescEn": "Có xác suất gây sát thương AoE.",
+            "passiveDescVi": "Có xác suất gây sát thương AoE.",
+            "refinement": 5,
+            "constellation": "C0",
+            "order": 0,
+            "characterId": "beidou"
+          },
+          {
+            "buildId": "legacy-beidou",
+            "id": "757082e4-89a8-4467-899f-7dc036de9028",
+            "weaponId": "đường-cùng-của-sói",
+            "nameEn": "Đường Cùng Của Sói",
+            "nameVi": "Đường Cùng Của Sói",
+            "rank": 5,
+            "isF2P": false,
+            "iconUrl": "/assets/weapons/UI_EquipIcon_Claymore_Wolfmound.webp",
+            "subStat": "Tấn Công%",
+            "passiveDescEn": "Tăng mạnh Tấn Công.",
+            "passiveDescVi": "Tăng mạnh Tấn Công.",
+            "refinement": 1,
+            "constellation": "C0",
+            "order": 1,
+            "characterId": "beidou"
+          }
+        ],
+        "artifacts": [
+          {
+            "buildId": "legacy-beidou",
+            "id": "1ec84c23-7771-4dc9-98c2-50efc2d0d18c",
+            "setNameEn": "Thánh Di Vật Đề Cử",
+            "setNameVi": "Thánh Di Vật Đề Cử",
+            "pieces": 4,
+            "order": 0,
+            "constellation": "C0",
+            "characterId": "beidou"
+          }
+        ],
+        "teams": []
+      },
+      "legacyDisposition": {
+        "weapons": [
+          "Prototype Archaic R5 and Wolf’s Gravestone R1 retained canonically."
+        ],
+        "artifacts": "The unnamed legacy artifact recommendation is archived and has no set ID.",
+        "teams": "No existing team rows; add one experimental Sucrose Taser roster."
+      },
+      "activeCounts": {
+        "teams": [
+          0,
+          1
+        ],
+        "weapons": [
+          2,
+          4
+        ],
+        "artifacts": [
+          1,
+          2
+        ]
+      },
+      "invalidTeamMemberIds": []
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "passed": 54,
+  "total": 54,
+  "failed": [],
+  "checks": [
+    {
+      "check": "desktop-1440/vi/no-legacy-source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/vi/pending-notice",
+      "pass": true,
+      "detail": "GENSHINHUB\nTEYVAT FIELD GUIDE\nNhân Vật\nVũ Khí\nThánh Di Vật\nBảng Xếp Hạng\nKhám phá\nTìm kiếm\nCtrl+K\nLogin\nVI\nBẢNG XẾP HẠNG\n\nBảng xếp hạng sức mạnh các nhân vật và vũ khí trong meta hiện tại.\n\nNguồn: xếp"
+    },
+    {
+      "check": "desktop-1440/vi/no-fabrication/Favonius Greatsword",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/vi/no-fabrication/Thrilling Tales",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/vi/no-fabrication/The Widsith",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/vi/no-fabrication/Xiangling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/vi/no-fabrication/Hu Tao",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/en/no-legacy-source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/en/pending-notice",
+      "pass": true,
+      "detail": "GENSHINHUB\nTEYVAT FIELD GUIDE\nCharacters\nWeapons\nArtifacts\nTier List\nExplore\nSearch\nCtrl+K\nLogin\nEN\nTIER LIST\n\nRankings of all characters and weapons in the current meta.\n\nSource: Admin-approved ranki"
+    },
+    {
+      "check": "desktop-1440/en/no-fabrication/Favonius Greatsword",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/en/no-fabrication/Thrilling Tales",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/en/no-fabrication/The Widsith",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/en/no-fabrication/Xiangling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/en/no-fabrication/Hu Tao",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin/anon-redirect",
+      "pass": true,
+      "detail": "http://127.0.0.1:3100/en/admin/login"
+    },
+    {
+      "check": "desktop-1440/admin-char/title",
+      "pass": true,
+      "detail": "Không tải được danh sách draft: Admin GraphQL HTTP Error: 500\nGENSHINHUB\nTEYVAT FIELD GUIDE\nCharacters\nWeapons\nArtifacts"
+    },
+    {
+      "check": "desktop-1440/admin-char/9-ready",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-char/6-excluded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-char/checksum-shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-char/no-actor-input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-weapon/title",
+      "pass": true,
+      "detail": "Không tải được danh sách draft vũ khí: Admin GraphQL HTTP Error: 500\nGENSHINHUB\nTEYVAT FIELD GUIDE\nCharacters\nWeapons\nAr"
+    },
+    {
+      "check": "desktop-1440/admin-weapon/13-reviewable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-weapon/favonius-blocked",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-weapon/tier-change-ss-s",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-weapon/tier-change-s-a",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/admin-weapon/no-actor-input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "desktop-1440/no-page-errors",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "mobile-390/vi/no-legacy-source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/vi/pending-notice",
+      "pass": true,
+      "detail": "Login\nVI\nBẢNG XẾP HẠNG\n\nBảng xếp hạng sức mạnh các nhân vật và vũ khí trong meta hiện tại.\n\nNguồn: xếp hạng đã được Admin phê duyệt (APPROVED + INDEPENDENT)\nPhiên bản game: unknown\nTierRank config: em"
+    },
+    {
+      "check": "mobile-390/vi/no-fabrication/Favonius Greatsword",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/vi/no-fabrication/Thrilling Tales",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/vi/no-fabrication/The Widsith",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/vi/no-fabrication/Xiangling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/vi/no-fabrication/Hu Tao",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/en/no-legacy-source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/en/pending-notice",
+      "pass": true,
+      "detail": "Login\nEN\nTIER LIST\n\nRankings of all characters and weapons in the current meta.\n\nSource: Admin-approved rankings (APPROVED + INDEPENDENT)\nGame version: unknown\nTierRank config: empty · using default o"
+    },
+    {
+      "check": "mobile-390/en/no-fabrication/Favonius Greatsword",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/en/no-fabrication/Thrilling Tales",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/en/no-fabrication/The Widsith",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/en/no-fabrication/Xiangling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/en/no-fabrication/Hu Tao",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin/anon-redirect",
+      "pass": true,
+      "detail": "http://127.0.0.1:3100/en/admin/login"
+    },
+    {
+      "check": "mobile-390/admin-char/title",
+      "pass": true,
+      "detail": "Không tải được danh sách draft: Admin GraphQL HTTP Error: 500\nLogin\nEN\nKhông tải được danh sách draft: Admin GraphQL HTT"
+    },
+    {
+      "check": "mobile-390/admin-char/9-ready",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-char/6-excluded",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-char/checksum-shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-char/no-actor-input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-weapon/title",
+      "pass": true,
+      "detail": "Không tải được danh sách draft vũ khí: Admin GraphQL HTTP Error: 500\nLogin\nEN\nKhông tải được danh sách draft vũ khí: Adm"
+    },
+    {
+      "check": "mobile-390/admin-weapon/13-reviewable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-weapon/favonius-blocked",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-weapon/tier-change-ss-s",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-weapon/tier-change-s-a",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/admin-weapon/no-actor-input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile-390/no-page-errors",
+      "pass": true,
+      "detail": "[]"
+    }
+  ]
+}

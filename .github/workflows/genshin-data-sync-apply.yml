@@ -1,0 +1,155 @@
+name: Genshin Data Sync — Apply (production)
+
+# Workflow GHI DỮ LIỆU — TÁCH RIÊNG khỏi workflow kiểm tra.
+#
+# Chỉ chạy thủ công (workflow_dispatch) và BẮT BUỘC qua GitHub
+# Environment "production" — hãy cấu hình Required reviewers trong
+# repo Settings > Environments để đảm bảo có người phê duyệt trước
+# khi job chạy (tức là trước khi chạm production database).
+#
+# Các bước an toàn:
+#   1. pg_dump backup toàn bộ DB -> upload artifact (không commit).
+#   2. Snapshot JSON tự động bởi syncEngine vào backend/backups/.
+#   3. Chạy sync:run (upsert non-destructive + assets).
+#   4. POST /api/revalidate để làm mới ISR Next.js.
+#
+# KHÔNG có trigger schedule/pull_request — production không bị động
+# bởi code chưa review.
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Hành động'
+        required: true
+        default: 'sync-and-revalidate'
+        type: choice
+        options:
+          - sync-and-revalidate
+
+permissions:
+  contents: read
+
+jobs:
+  apply:
+    name: Sync DB + revalidate frontend
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: ./backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Install PostgreSQL client (pg_dump)
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Backup database (pg_dump + encrypt)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+          BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+        run: |
+          # Lưu ý: nếu DATABASE_URL đi qua connection pooler (pgbouncer),
+          # pg_dump cần DIRECT_URL — workflow ưu tiên DIRECT_URL cho dump.
+          DUMP_URL="${DIRECT_URL:-$DATABASE_URL}"
+          DUMP_FILE="db_backup_$(date +%Y%m%d_%H%M%S).sql"
+          pg_dump "$DUMP_URL" --no-owner --no-privileges -f "$DUMP_FILE"
+          ls -lh "$DUMP_FILE"
+          # Bắt buộc mã hóa trước khi upload artifact — DB dump chứa toàn bộ
+          # dữ liệu production, không được lưu plaintext trên artifact storage.
+          if [ -z "$BACKUP_ENCRYPTION_KEY" ]; then
+            echo "❌ BACKUP_ENCRYPTION_KEY chưa được cấu hình — từ chối upload backup không mã hóa."
+            exit 1
+          fi
+          openssl enc -aes-256-cbc -pbkdf2 -salt \
+            -pass "pass:$BACKUP_ENCRYPTION_KEY" \
+            -in "$DUMP_FILE" -out "${DUMP_FILE}.enc"
+          rm -f "$DUMP_FILE"
+          ls -lh "${DUMP_FILE}.enc"
+
+      - name: Upload encrypted DB backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-backup-before-sync
+          path: backend/db_backup_*.sql.enc
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Run sync (upsert + assets)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # Assets tải về ASSET_STORAGE_PATH — artifact để restore lên VPS
+          ASSET_STORAGE_PATH: ${{ github.workspace }}/assets-prod
+        run: npm run sync:run -- --report reports/sync_report_prod.md
+
+      - name: Package downloaded assets
+        run: |
+          # ASSET_STORAGE_PATH trỏ tới repo root (github.workspace), không phải ./backend
+          if [ -d "${{ github.workspace }}/assets-prod" ]; then
+            tar -czf "${{ github.workspace }}/backend/assets_prod_$(date +%Y%m%d_%H%M%S).tar.gz" \
+              -C "${{ github.workspace }}/assets-prod" .
+            ls -lh "${{ github.workspace }}"/backend/assets_prod_*.tar.gz
+          else
+            echo "Không có assets mới — bỏ qua package."
+          fi
+
+      - name: Upload assets artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets-downloaded-prod
+          path: backend/assets_prod_*.tar.gz
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Upload production sync report
+        uses: actions/upload-artifact@v4
+        with:
+          name: genshin-sync-report-prod
+          path: backend/reports/sync_report_prod.md
+          retention-days: 90
+
+      - name: Upload JSON snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-snapshots
+          path: backend/backups/snapshot_*.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Revalidate Next.js frontend
+        env:
+          REVALIDATE_URL: ${{ secrets.FRONTEND_REVALIDATE_URL }}
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          if [ -z "$REVALIDATE_URL" ] || [ -z "$REVALIDATE_SECRET" ]; then
+            echo "⚠️  FRONTEND_REVALIDATE_URL hoặc REVALIDATE_SECRET chưa được cấu hình — bỏ qua revalidate."
+            exit 0
+          fi
+          curl -fsS -X POST "$REVALIDATE_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"secret\": \"$REVALIDATE_SECRET\"}" \
+            | tee revalidate_response.json
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -n "$DISCORD_WEBHOOK_URL" ]; then
+            curl -H "Content-Type: application/json" \
+              -d '{"content": "🚨 **GenshinHub data sync FAILED** — check GitHub Actions logs."}' \
+              "$DISCORD_WEBHOOK_URL"
+          fi

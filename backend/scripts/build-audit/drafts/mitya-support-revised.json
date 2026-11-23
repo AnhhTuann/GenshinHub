@@ -1,0 +1,144 @@
+{
+  "status": "PENDING_REVIEW",
+  "characterId": "mitya",
+  "playstyle": "C0 Off-Field Support / Sub DPS",
+  "source": {
+    "kind": "INDEPENDENT",
+    "reference": "GenshinHub original Support/Sub-DPS synthesis from Genshin-Builds v7.2 structured build/team data, GameWith role cross-check, and genshin-db 5.2.15 mechanics; no external tier or editorial rank imported"
+  },
+  "weapons": [
+    {
+      "id": "14525",
+      "isF2P": false,
+      "refinement": 1
+    },
+    {
+      "id": "14521",
+      "isF2P": false,
+      "refinement": 1
+    },
+    {
+      "id": "14416",
+      "isF2P": false,
+      "refinement": 1
+    },
+    {
+      "id": "14403",
+      "isF2P": false,
+      "refinement": 1
+    },
+    {
+      "id": "14432",
+      "isF2P": true,
+      "refinement": 1
+    },
+    {
+      "id": "14302",
+      "isF2P": true,
+      "refinement": 5
+    }
+  ],
+  "artifacts": [
+    [
+      "15017"
+    ],
+    [
+      "15048"
+    ],
+    [
+      "15003",
+      "15026"
+    ]
+  ],
+  "sands": [
+    "Elemental Mastery",
+    "Energy Recharge"
+  ],
+  "goblet": [
+    "Elemental Mastery"
+  ],
+  "circlet": [
+    "CRIT Rate",
+    "CRIT DMG",
+    "Elemental Mastery"
+  ],
+  "subStatsPriority": [
+    "Elemental Mastery",
+    "CRIT Rate",
+    "CRIT DMG",
+    "Energy Recharge"
+  ],
+  "talentPriority": [
+    "Skill",
+    "Burst",
+    "Normal Attack"
+  ],
+  "teams": [
+    {
+      "name": "Stellar-Conduct Reaction Team",
+      "description": "VERIFIED REFERENCE LINEUP. Sandrone is the on-field Main DPS; Mitya is an off-field Sub DPS using Tap Skill; Odette is Cryo Support for reaction conversion and Stellar-Conduct buffs; Alyosha is Electro Support with buffs, healing and Heart of the Furnace. All four slots assume C0 or lower. Party-triggered Superconduct must be converted to Stellar-Conduct. Artifact overlap checked: Alyosha already carries Heart of the Furnace and Odette carries Disenchantment in Deep Shadow, so Mitya should use Tenacity of the Millelith rather than duplicating the unique Heart of the Furnace support slot.",
+      "members": [
+        {
+          "characterId": "sandrone",
+          "role": "Main DPS"
+        },
+        {
+          "characterId": "mitya",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "odette",
+          "role": "Support"
+        },
+        {
+          "characterId": "alyosha",
+          "role": "Support"
+        }
+      ]
+    },
+    {
+      "name": "Mitya Stella-Conduct Team #2",
+      "description": "VERIFIED REFERENCE LINEUP. Cyno is the on-field Main DPS; Mitya is an off-field Sub DPS using Tap Skill; Odette is Cryo Sub DPS for reaction conversion and Stellar-Conduct buffs; Alyosha is Electro Support with buffs, healing and Noblesse Oblige. All four slots assume C0 or lower. Three Electro members enable Electro Resonance; party-triggered Superconduct must be converted to Stellar-Conduct. Artifact overlap checked: Odette carries Heart of the Furnace and Alyosha carries Noblesse Oblige, so Mitya keeps Tenacity of the Millelith as the non-conflicting team-buff option.",
+      "members": [
+        {
+          "characterId": "cyno",
+          "role": "Main DPS"
+        },
+        {
+          "characterId": "mitya",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "odette",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "alyosha",
+          "role": "Support"
+        }
+      ]
+    },
+    {
+      "name": "Wriothesley Cryo-Electro Support (EXPERIMENTAL DRAFT)",
+      "description": "EXPERIMENTAL DRAFT ONLY - NOT VERIFIED META. Wriothesley drives Cryo on-field, Fischl supplies off-field Electro, Diona provides Cryo application and sustain, and Mitya uses Tap Skill off-field to convert party Superconduct into Stellar-Conduct. No tier claim. Diona C6 is not assumed, Fischl A4 aura ownership is not verified, exact rotation and team performance are untested. Use Heart of the Furnace only when no other teammate already carries it. This lineup must not be presented as a verified or ranked recommendation.",
+      "members": [
+        {
+          "characterId": "wriothesley",
+          "role": "Main DPS"
+        },
+        {
+          "characterId": "mitya",
+          "role": "Support"
+        },
+        {
+          "characterId": "fischl",
+          "role": "Sub DPS"
+        },
+        {
+          "characterId": "diona",
+          "role": "Sustain"
+        }
+      ]
+    }
+  ]
+}

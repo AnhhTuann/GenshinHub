@@ -1,0 +1,823 @@
+/* Teyvat Elegance — clean premium fantasy, scoped to the Tier List page. */
+.page {
+  --tl-bg: #0d1128;
+  --tl-surface: #171c37;
+  --tl-surface-raised: #1d2342;
+  --tl-line: rgba(201, 212, 255, 0.12);
+  --tl-line-strong: rgba(201, 212, 255, 0.2);
+  --tl-text: #eef0ff;
+  --tl-muted: #aab4d4;
+  --tl-gold: #e2c58b;
+  min-height: 100vh;
+  padding: 0 0 4.5rem;
+  color: var(--tl-text);
+  background:
+    radial-gradient(ellipse 70% 42% at 12% -6%, rgba(116, 87, 216, 0.2), transparent 70%),
+    radial-gradient(ellipse 55% 32% at 92% 2%, rgba(85, 181, 194, 0.1), transparent 72%),
+    var(--tl-bg);
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.container {
+  width: min(100% - 2rem, 1240px);
+  margin-inline: auto;
+}
+
+/* Character board needs room for three comparable role columns. */
+.wideContainer {
+  width: min(100% - 2rem, 1560px);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 1.5rem 2.5rem;
+  align-items: end;
+  padding: 2.25rem 0 1.5rem;
+  border-bottom: 1px solid var(--tl-line);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display, var(--font-sans, system-ui, sans-serif));
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.description {
+  margin: 0.55rem 0 0;
+  max-width: 62ch;
+  color: var(--tl-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 0.85rem 0 0;
+  color: var(--tl-muted);
+  font-size: 0.78rem;
+}
+
+.meta strong {
+  color: var(--tl-text);
+  font-weight: 600;
+}
+
+.methodology {
+  align-self: stretch;
+  border: 1px solid var(--tl-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.methodologySummary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 1rem;
+  color: var(--tl-gold);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.methodologySummary::-webkit-details-marker {
+  display: none;
+}
+
+.methodologySummary::after {
+  content: '+';
+  float: right;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.methodology[open] .methodologySummary::after {
+  content: '\2212';
+}
+
+.methodologyList {
+  margin: 0;
+  padding: 0 1rem 1rem 1.6rem;
+  color: var(--tl-muted);
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.methodologyList li + li {
+  margin-top: 0.3rem;
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin: 1.5rem 0 1.25rem;
+  padding: 0.3rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tab {
+  min-width: 10.5rem;
+  min-height: 44px;
+  padding: 0.55rem 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--tl-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.tab:hover {
+  color: var(--tl-text);
+}
+
+.tab[aria-selected='true'] {
+  background: rgba(226, 197, 139, 0.14);
+  color: var(--tl-gold);
+  box-shadow: inset 0 0 0 1px rgba(226, 197, 139, 0.35);
+}
+
+.tab:focus-visible,
+.chip:focus-visible,
+.clear:focus-visible,
+.search:focus-visible,
+.select:focus-visible,
+.methodologySummary:focus-visible {
+  outline: 2px solid var(--tl-gold);
+  outline-offset: 2px;
+}
+
+.notice {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(226, 197, 139, 0.22);
+  border-left: 3px solid var(--tl-gold);
+  border-radius: 12px;
+  background: rgba(226, 197, 139, 0.06);
+}
+
+.notice[data-tone='pending'] {
+  border-color: rgba(143, 207, 214, 0.2);
+  border-left-color: #8fcfd6;
+  background: rgba(143, 207, 214, 0.055);
+}
+
+.noticeIcon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(226, 197, 139, 0.14);
+  color: var(--tl-gold);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.noticeTitle {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--tl-text);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.noticeText {
+  display: block;
+  color: var(--tl-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.filters {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 14px;
+  background: rgba(23, 28, 55, 0.78);
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+}
+
+.filterRow + .filterRow {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--tl-line);
+}
+
+.filterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.filterLabel {
+  margin-right: 0.15rem;
+  color: var(--tl-muted);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.chip {
+  min-height: 36px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--tl-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.chip:hover {
+  color: var(--tl-text);
+  border-color: var(--tl-line-strong);
+}
+
+.chip[aria-pressed='true'] {
+  border-color: rgba(226, 197, 139, 0.5);
+  background: rgba(226, 197, 139, 0.13);
+  color: var(--tl-gold);
+}
+
+.search,
+.select {
+  min-height: 40px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 8px;
+  background: #12162e;
+  color: var(--tl-text);
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+.search {
+  min-width: 190px;
+  flex: 1 1 190px;
+}
+
+.search::placeholder {
+  color: #7f8aae;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.clear {
+  min-height: 40px;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--tl-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+}
+
+.clear:hover {
+  color: var(--tl-text);
+  border-color: var(--tl-line-strong);
+}
+
+.clear:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 1.1rem 0 0.7rem;
+  color: var(--tl-muted);
+  font-size: 0.8rem;
+}
+
+.summary strong {
+  color: var(--tl-text);
+  font-weight: 700;
+}
+
+.tierList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+/* ── Character board: TIER → MAIN DPS | SUB DPS | SUPPORT ───────────── */
+.characterBoard {
+  --tl-rail: 88px;
+  --tl-card-size: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.characterBoard[data-view='single'] {
+  --tl-card-size: 124px;
+}
+
+.roleFilterGroup {
+  /* Desktop shows it; narrow screens use the role tabs inside the board. */
+}
+
+.roleTabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.roleTab {
+  flex: 1;
+  min-height: 44px;
+  padding: 0.4rem 0.5rem;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--tl-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.roleTab[aria-selected='true'] {
+  background: rgba(226, 197, 139, 0.14);
+  color: var(--tl-gold);
+  box-shadow: inset 0 0 0 1px rgba(226, 197, 139, 0.3);
+}
+
+.roleTab:focus-visible {
+  outline: 2px solid var(--tl-gold);
+  outline-offset: 2px;
+}
+
+.roleDataNote {
+  margin: 0;
+  color: var(--tl-muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.roleHeader,
+.characterTierRow {
+  display: grid;
+  grid-template-columns: var(--tl-rail) repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.characterBoard[data-view='single'] .roleHeader,
+.characterBoard[data-view='single'] .characterTierRow {
+  grid-template-columns: var(--tl-rail) minmax(0, 1fr);
+}
+
+.roleHeader {
+  align-items: center;
+  /* Match .characterTierRow box model so headers align with their columns. */
+  padding: 0.7rem;
+  border: 1px solid transparent;
+  border-left: 3px solid transparent;
+  border-radius: 14px;
+}
+
+.roleHeaderCell {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--tl-line);
+  color: var(--tl-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.characterTierList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.characterTierRow {
+  --tier-accent: #9aa5c9;
+  padding: 0.7rem;
+  border: 1px solid var(--tl-line);
+  border-left: 3px solid var(--tier-accent);
+  border-radius: 14px;
+  background: var(--tl-surface);
+  overflow: hidden;
+}
+
+/* Character-only tier accents; weapon rows keep their existing palette. */
+.characterTierRow[data-tier='SS'] { --tier-accent: #e7a8d4; }
+.characterTierRow[data-tier='S'] { --tier-accent: #e2c58b; }
+.characterTierRow[data-tier='A'] { --tier-accent: #7fd4c1; }
+.characterTierRow[data-tier='B'] { --tier-accent: #9fb2d8; }
+.characterTierRow[data-tier='C'] { --tier-accent: #a8b5c2; }
+.characterTierRow[data-tier='D'] { --tier-accent: #8d97aa; }
+.characterTierRow[data-tier='Unranked'] { --tier-accent: #6d7796; }
+
+.characterTierRow .tierLabel {
+  border: 1px solid var(--tl-line);
+  border-radius: 10px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tier-accent) 14%, transparent), transparent);
+}
+
+.roleCell {
+  min-width: 0;
+}
+
+.roleCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--tl-card-size));
+  justify-content: start;
+  align-content: start;
+  gap: 0.55rem;
+}
+
+.roleEmpty {
+  display: grid;
+  place-items: center;
+  min-height: calc(var(--tl-card-size) + 52px);
+  padding: 0.5rem;
+  border: 1px dashed var(--tl-line);
+  border-radius: 10px;
+  color: var(--tl-muted);
+  font-size: 0.74rem;
+  text-align: center;
+}
+
+.pendingSection {
+  margin-top: 0.6rem;
+  padding: 1rem;
+  border: 1px solid var(--tl-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.pendingHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.pendingHeading h2 {
+  margin: 0;
+  color: var(--tl-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pendingHeading span {
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(226, 197, 139, 0.14);
+  color: var(--tl-gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.pendingDesc {
+  margin: 0.35rem 0 0.85rem;
+  color: var(--tl-muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.pendingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--tl-card-size));
+  justify-content: start;
+  gap: 0.55rem;
+}
+
+.tierRow {
+  --tier-accent: #9aa5c9;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  border: 1px solid var(--tl-line);
+  border-left: 3px solid var(--tier-accent);
+  border-radius: 14px;
+  background: var(--tl-surface);
+  overflow: hidden;
+}
+
+.tierRow[data-tier='SS'] { --tier-accent: #e8c07d; }
+.tierRow[data-tier='S'] { --tier-accent: #cbb8f4; }
+.tierRow[data-tier='A'] { --tier-accent: #8fcfd6; }
+.tierRow[data-tier='B'] { --tier-accent: #9fb2d8; }
+.tierRow[data-tier='C'] { --tier-accent: #a8b5c2; }
+.tierRow[data-tier='D'] { --tier-accent: #8d97aa; }
+.tierRow[data-tier='Unranked'] { --tier-accent: #6d7796; }
+
+.tierLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.75rem 0.35rem;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tier-accent) 15%, transparent), transparent);
+  border-right: 1px solid var(--tl-line);
+}
+
+.tierName {
+  color: var(--tier-accent);
+  font-family: var(--font-display, var(--font-sans, system-ui, sans-serif));
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tierCount {
+  color: var(--tl-muted);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tierItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  min-height: 108px;
+}
+
+.card {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: var(--tl-card-size, 96px);
+  overflow: hidden;
+  border: 1px solid var(--tl-line);
+  border-radius: 10px;
+  background: var(--tl-surface-raised);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(226, 197, 139, 0.5);
+  background: #242b50;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--tl-gold);
+  outline-offset: 2px;
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-bottom: 1px solid var(--tl-line);
+  background: radial-gradient(circle at 50% 35%, #38406a, #1b2140 72%);
+}
+
+.characterArt,
+.weaponArt {
+  object-fit: contain;
+  padding: 3px;
+}
+
+.weaponArt {
+  padding: 8px;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.45));
+}
+
+.elementBadge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: rgba(13, 17, 40, 0.75);
+  line-height: 0;
+}
+
+.tierBadge {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  min-width: 22px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  background: var(--tier-accent, #9aa5c9);
+  color: #12162e;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-height: 47px;
+  padding: 0.4rem 0.45rem 0.45rem;
+}
+
+.cardName {
+  display: block;
+  overflow: hidden;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.stars {
+  flex: none;
+  font-size: 0.58rem;
+  letter-spacing: -0.06em;
+  color: #8b95b6;
+  white-space: nowrap;
+}
+
+.stars[data-rarity='5'] { color: #ffd978; }
+.stars[data-rarity='4'] { color: #e1b4ff; }
+.stars[data-rarity='3'] { color: #8fe0e8; }
+
+.roleHint {
+  overflow: hidden;
+  color: var(--tl-muted);
+  font-size: 0.58rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.emptyState {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--tl-line-strong);
+  border-radius: 14px;
+  color: var(--tl-muted);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footerNote {
+  margin: 1.25rem 0 0;
+  color: var(--tl-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1199px) {
+  .roleFilterGroup {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .characterBoard {
+    --tl-rail: 76px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container,
+  .wideContainer {
+    width: min(100% - 1.25rem, 1560px);
+  }
+
+  .header {
+    padding-top: 1.4rem;
+  }
+
+  .tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  .tab {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 0.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .filters {
+    padding: 0.8rem;
+  }
+
+  .filterLabel {
+    flex-basis: 100%;
+  }
+
+  .search {
+    min-width: 100%;
+  }
+
+  .tierRow {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .tierName {
+    font-size: 1.15rem;
+  }
+
+  .tierCount {
+    font-size: 0.58rem;
+  }
+
+  .tierItems {
+    gap: 0.45rem;
+    padding: 0.55rem;
+  }
+
+  .tierList .card {
+    width: 84px;
+  }
+
+  .characterBoard {
+    --tl-rail: 58px;
+    --tl-card-size: 104px;
+  }
+
+  .characterBoard[data-view='single'] {
+    --tl-card-size: 104px;
+  }
+
+  .characterTierRow {
+    gap: 0.5rem;
+    padding: 0.55rem;
+  }
+
+  .roleCardGrid,
+  .pendingGrid {
+    gap: 0.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .tab,
+  .chip,
+  .roleTab {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

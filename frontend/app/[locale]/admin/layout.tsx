@@ -1,3 +1,5 @@
+import { cookies } from 'next/headers';
+import { getAdminSession } from '@/lib/adminSession';
 import type { Metadata } from 'next';
 import AdminLayoutClient from './AdminLayoutClient';
 
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  return <AdminLayoutClient>{children}</AdminLayoutClient>;
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  const token = (await cookies()).get('admin_token')?.value;
+  const admin = await getAdminSession(token);
+  return <AdminLayoutClient username={admin?.username}>{children}</AdminLayoutClient>;
 }

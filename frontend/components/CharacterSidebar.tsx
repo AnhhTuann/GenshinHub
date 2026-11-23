@@ -2,35 +2,12 @@
 
 import React, { useState } from "react";
 import FallbackImage from '@/components/ui/FallbackImage';
-import Image from "next/image";
 import { CharacterData } from "@/types/character";
-import { useLocale } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { useAdmin } from "@/hooks/useAdmin";
 import SignatureWeaponFormModal from "./admin/SignatureWeaponFormModal";
 import { fetchGraphQL } from "@/lib/graphql";
 import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast';
-
-const ELEMENT_COLOR: Record<string, string> = {
-  Pyro: "#ff5a45",
-  Hydro: "#3aa8ff",
-  Cryo: "#8fe8f5",
-  Electro: "#cf8fff",
-  Anemo: "#35d6c5",
-  Geo: "#ffd34d",
-  Dendro: "#9ede5f",
-};
-
-const ELEMENT_TEXT: Record<string, string> = {
-  Pyro: "text-[#ff5a45]",
-  Hydro: "text-[#3aa8ff]",
-  Cryo: "text-[#8fe8f5]",
-  Electro: "text-[#cf8fff]",
-  Anemo: "text-[#35d6c5]",
-  Geo: "text-[#ffd34d]",
-  Dendro: "text-[#9ede5f]",
-};
 
 const WEAPON_TYPE_MAP: Record<string, string> = {
   Sword: "Kiếm Đơn",
@@ -51,38 +28,25 @@ function WeaponBadge({
 }) {
   return (
     <div className="flex flex-col items-center gap-2 w-28 shrink-0 group/w text-center">
-      <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 shadow-[0_5px_15px_rgba(0,0,0,0.4)] rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300 ring-1 ring-white/10 group-hover/w:ring-amber-500/50">
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 shadow-[var(--atlas-shadow)] rounded-xl overflow-hidden hover:-translate-y-1 transition-all duration-300 ring-1 ring-[var(--border-default)] group-hover/w:ring-[var(--fantasy-gold)]">
         {/* Soft glow behind the image */}
-        <div className="absolute inset-0 bg-amber-500/20 blur-xl opacity-0 group-hover/w:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-[var(--gold-glow)] blur-xl opacity-0 group-hover/w:opacity-100 transition-opacity duration-500" />
         {icon ? (
           <FallbackImage src={icon} alt={name} fill className="object-cover" />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-white/5 text-[10px] text-white/30">
+          <div className="w-full h-full flex items-center justify-center bg-[var(--bg-elevated)] text-xs text-[var(--text-secondary)]">
             No Icon
           </div>
         )}
       </div>
       <div className="flex flex-col w-full">
-        <span className="text-white font-bold text-[11px] sm:text-[12px] leading-tight break-words drop-shadow-md line-clamp-2">
+        <span className="text-[var(--text-primary)] font-bold text-xs sm:text-sm leading-tight break-words drop-shadow-md line-clamp-2">
           {name}
         </span>
-        <span className="text-amber-400/80 text-[8px] sm:text-[9px] font-black uppercase tracking-wider mt-1">
+        <span className="text-[var(--gold-ink)] text-xs font-black uppercase tracking-wider mt-1">
           {label}
         </span>
       </div>
-    </div>
-  );
-}
-
-function InfoRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between py-2 border-b border-white/[0.04] last:border-0">
-      <span className="text-white/30 text-[10px] font-black uppercase tracking-wider">
-        {label}
-      </span>
-      <span className="text-white/75 font-bold text-xs font-display">
-        {value}
-      </span>
     </div>
   );
 }
@@ -94,15 +58,10 @@ export default function CharacterSidebar({
   character: CharacterData;
   allWeapons?: any[];
 }) {
-  const locale = useLocale();
   const router = useRouter();
-  const name = locale === "en" ? character.nameEn : character.nameVi;
-  const is5Star = character.rarity === 5;
   const { isAdmin } = useAdmin();
 
   const sigWeapons = character.signatureWeapons || [];
-  const elColor = ELEMENT_COLOR[character.element] ?? "#f5f1e6";
-  const borderColor = is5Star ? "border-amber-500/20" : "border-purple-500/20";
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -149,45 +108,20 @@ export default function CharacterSidebar({
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 w-full items-stretch">
-        {/* ── Info Panel (replaces portrait on sidebar) ── */}
-        <div
-          className={`relative bg-[#1c1813]/80 border ${borderColor} rounded-2xl overflow-hidden flex-1 min-w-[250px]`}
-          style={{ boxShadow: `0 8px 24px -12px ${elColor}30` }}
-        >
-          {/* Top element accent bar */}
-          <div
-            className="h-[2px] w-full"
-            style={{
-              background: `linear-gradient(90deg, transparent, ${elColor}80, transparent)`,
-            }}
-          />
-
-          {/* Character info rows */}
-          <div className="p-4">
-            <div className="flex flex-col">
-              <InfoRow label="Element" value={character.element} />
-              <InfoRow label="Weapon" value={character.weapon || "—"} />
-              <InfoRow label="Region" value={character.region || "—"} />
-              <InfoRow label="Birthday" value={character.birthday || "—"} />
-              <InfoRow label="Rarity" value={is5Star ? "★★★★★" : "★★★★"} />
-            </div>
-          </div>
-        </div>
-
+      <div>
         {/* ── Signature Weapon ── */}
         {(sigWeapons.length > 0 || isAdmin) && (
-          <div className="bg-[#1c1813]/80 border border-amber-500/10 p-4 rounded-2xl relative overflow-hidden group flex-[2] min-w-[300px]">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/[0.05] rounded-full blur-3xl pointer-events-none" />
+          <div className="atlas-surface p-4 mt-3 relative overflow-hidden group flex-[2] min-w-0">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--gold-glow)] rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex justify-between items-center mb-2.5">
-              <span className="text-amber-400/70 text-[9px] font-black uppercase tracking-[0.2em]">
+              <span className="text-[var(--accent-primary-light)] text-sm font-bold">
                 Signature Weapon
               </span>
               {isAdmin && (
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 p-1 rounded border border-amber-500/20"
+                  className="opacity-0 group-hover:opacity-100 transition-opacity bg-[var(--gold-glow)] hover:bg-[color-mix(in_srgb,var(--fantasy-gold)_28%,var(--bg-surface))] text-[var(--gold-ink)] p-1 rounded border border-[var(--border-gold)]"
                   title="Edit Signature Weapons"
                 >
                   <svg
@@ -209,7 +143,7 @@ export default function CharacterSidebar({
 
             <div className="flex flex-row flex-wrap gap-4 mt-2">
               {sigWeapons.length === 0 && isAdmin ? (
-                <div className="text-xs text-white/30 italic py-2 w-full text-center">
+                <div className="text-xs text-[var(--text-secondary)] italic py-2 w-full text-center">
                   No signature weapon set
                 </div>
               ) : (
@@ -228,28 +162,6 @@ export default function CharacterSidebar({
           </div>
         )}
 
-        {/* ── Fandom link ── */}
-        {character.fandomUrl && (
-          <div className="flex-1 min-w-[200px] flex items-stretch">
-            <a
-              href={character.fandomUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex flex-col items-center justify-center gap-2 text-xs text-white/30 hover:text-white/60 transition-colors p-4 border border-white/[0.04] hover:border-white/[0.1] rounded-2xl bg-[#1c1813]/60 h-full"
-            >
-              <svg
-                className="w-6 h-6 mb-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-            </svg>
-            <span>View on</span>
-            <span className="font-bold text-white/50">Fandom Wiki</span>
-          </a>
-          </div>
-        )}
       </div>
 
       <SignatureWeaponFormModal

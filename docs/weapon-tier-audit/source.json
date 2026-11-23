@@ -1,0 +1,2942 @@
+{
+  "sourceUrl": "https://genshin-builds.com/en/tier-list-weapons",
+  "sourceUrlVi": "https://genshin-builds.com/vi/tier-list-weapons/",
+  "crosscheckUrl": "https://gamewith.net/genshin-impact/article/show/22376",
+  "gameVersion": null,
+  "gameVersionStatus": "SOURCE_MISSING",
+  "gameVersionNote": "Trang vũ khí của Genshin-Builds không công bố phiên bản game. Không tự gán 7.2 từ trang nhân vật hoặc từ GameWith.",
+  "tierLabels": {
+    "0": "SS",
+    "1": "S",
+    "2": "A",
+    "3": "B",
+    "4": "C"
+  },
+  "unlabelledTierKey": "5",
+  "roleLabels": {
+    "maindps": "MAIN_DPS",
+    "subdps": "SUB_DPS",
+    "support": "SUPPORT"
+  },
+  "typeLabels": {
+    "sword": "SWORD",
+    "claymore": "CLAYMORE",
+    "polearm": "POLEARM",
+    "bow": "BOW",
+    "catalyst": "CATALYST"
+  },
+  "refinement": {
+    "value": null,
+    "assumption": "UNSPECIFIED",
+    "note": "The source publishes no refinement assumption. No R1/R5 default is invented."
+  },
+  "grid": [
+    {
+      "sourceId": "primordial_jade_cutter",
+      "sourceNameEn": "Primordial Jade Cutter",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "mistsplitter_reforged",
+      "sourceNameEn": "Mistsplitter Reforged",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "haran_geppaku_futsu",
+      "sourceNameEn": "Haran Geppaku Futsu",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "uraku_misugiri",
+      "sourceNameEn": "Uraku Misugiri",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "azurelight",
+      "sourceNameEn": "Azurelight",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "lightbearing_moonshard",
+      "sourceNameEn": "Lightbearing Moonshard",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "light_of_foliar_incision",
+      "sourceNameEn": "Light of Foliar Incision",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "splendor_of_tranquil_waters",
+      "sourceNameEn": "Splendor of Tranquil Waters",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "absolution",
+      "sourceNameEn": "Absolution",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "calamity_of_eshu",
+      "sourceNameEn": "Calamity of Eshu",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "wolffang",
+      "sourceNameEn": "Wolf-Fang",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "the_black_sword",
+      "sourceNameEn": "The Black Sword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_blade",
+      "sourceNameEn": "Skyward Blade",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "amenoma_kageuchi",
+      "sourceNameEn": "Amenoma Kageuchi",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "toukabou_shigure",
+      "sourceNameEn": "Toukabou Shigure",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "iron_sting",
+      "sourceNameEn": "Iron Sting",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "harbinger_of_dawn",
+      "sourceNameEn": "Harbinger of Dawn",
+      "sourceRarity": 3,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "summit_shaper",
+      "sourceNameEn": "Summit Shaper",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "aquila_favonia",
+      "sourceNameEn": "Aquila Favonia",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "sturdy_bone",
+      "sourceNameEn": "Sturdy Bone",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "moonweavers_dawn",
+      "sourceNameEn": "Moonweaver's Dawn",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "finale_of_the_deep",
+      "sourceNameEn": "Finale of the Deep",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "lions_roar",
+      "sourceNameEn": "Lion's Roar",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "blackcliff_longsword",
+      "sourceNameEn": "Blackcliff Longsword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "the_flute",
+      "sourceNameEn": "The Flute",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "royal_longsword",
+      "sourceNameEn": "Royal Longsword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "prototype_rancour",
+      "sourceNameEn": "Prototype Rancour",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "dark_iron_sword",
+      "sourceNameEn": "Dark Iron Sword",
+      "sourceRarity": 3,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "skyrider_sword",
+      "sourceNameEn": "Skyrider Sword",
+      "sourceRarity": 3,
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "splendor_of_tranquil_waters",
+      "sourceNameEn": "Splendor of Tranquil Waters",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "freedomsworn",
+      "sourceNameEn": "Freedom-Sworn",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "primordial_jade_cutter",
+      "sourceNameEn": "Primordial Jade Cutter",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "sacrificial_sword",
+      "sourceNameEn": "Sacrificial Sword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "uraku_misugiri",
+      "sourceNameEn": "Uraku Misugiri",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "athame_artis",
+      "sourceNameEn": "Athame Artis",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_blade",
+      "sourceNameEn": "Skyward Blade",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "key_of_khajnisut",
+      "sourceNameEn": "Key of Khaj-Nisut",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "fleuve_cendre_ferryman",
+      "sourceNameEn": "Fleuve Cendre Ferryman",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "favonius_sword",
+      "sourceNameEn": "Favonius Sword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "xiphos_moonlight",
+      "sourceNameEn": "Xiphos' Moonlight",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "harbinger_of_dawn",
+      "sourceNameEn": "Harbinger of Dawn",
+      "sourceRarity": 3,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "wolffang",
+      "sourceNameEn": "Wolf-Fang",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "the_dockhands_assistant",
+      "sourceNameEn": "The Dockhand's Assistant",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "serenitys_call",
+      "sourceNameEn": "Serenity's Call",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "amenoma_kageuchi",
+      "sourceNameEn": "Amenoma Kageuchi",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "iron_sting",
+      "sourceNameEn": "Iron Sting",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "toukabou_shigure",
+      "sourceNameEn": "Toukabou Shigure",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "festering_desire",
+      "sourceNameEn": "Festering Desire",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "flute_of_ezpitzal",
+      "sourceNameEn": "Flute of Ezpitzal",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "lions_roar",
+      "sourceNameEn": "Lion's Roar",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "the_alley_flash",
+      "sourceNameEn": "The Alley Flash",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "cinnabar_spindle",
+      "sourceNameEn": "Cinnabar Spindle",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "dark_iron_sword",
+      "sourceNameEn": "Dark Iron Sword",
+      "sourceRarity": 3,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "cool_steel",
+      "sourceNameEn": "Cool Steel",
+      "sourceRarity": 3,
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "peak_patrol_song",
+      "sourceNameEn": "Peak Patrol Song",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "freedomsworn",
+      "sourceNameEn": "Freedom-Sworn",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "favonius_sword",
+      "sourceNameEn": "Favonius Sword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "xiphos_moonlight",
+      "sourceNameEn": "Xiphos' Moonlight",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "skyward_blade",
+      "sourceNameEn": "Skyward Blade",
+      "sourceRarity": 5,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "fleuve_cendre_ferryman",
+      "sourceNameEn": "Fleuve Cendre Ferryman",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "sacrificial_sword",
+      "sourceNameEn": "Sacrificial Sword",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "sapwood_blade",
+      "sourceNameEn": "Sapwood Blade",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "the_dockhands_assistant",
+      "sourceNameEn": "The Dockhand's Assistant",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "serenitys_call",
+      "sourceNameEn": "Serenity's Call",
+      "sourceRarity": 4,
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "verdict",
+      "sourceNameEn": "Verdict",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "a_thousand_blazing_suns",
+      "sourceNameEn": "A Thousand Blazing Suns",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "gest_of_the_mighty_wolf",
+      "sourceNameEn": "Gest of the Mighty Wolf",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "beacon_of_the_reed_sea",
+      "sourceNameEn": "Beacon of the Reed Sea",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "redhorn_stonethresher",
+      "sourceNameEn": "Redhorn Stonethresher",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "serpent_spine",
+      "sourceNameEn": "Serpent Spine",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "fang_of_the_mountain_king",
+      "sourceNameEn": "Fang of the Mountain King",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "wolfs_gravestone",
+      "sourceNameEn": "Wolf's Gravestone",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "the_unforged",
+      "sourceNameEn": "The Unforged",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "song_of_broken_pines",
+      "sourceNameEn": "Song of Broken Pines",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_pride",
+      "sourceNameEn": "Skyward Pride",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "earth_shaker",
+      "sourceNameEn": "Earth Shaker",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "flameforged_insight",
+      "sourceNameEn": "Flame-Forged Insight",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "ultimate_overlords_mega_magic_sword",
+      "sourceNameEn": "\"Ultimate Overlord's Mega Magic Sword\"",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "rainslasher",
+      "sourceNameEn": "Rainslasher",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "whiteblind",
+      "sourceNameEn": "Whiteblind",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "mailed_flower",
+      "sourceNameEn": "Mailed Flower",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "fruitful_hook",
+      "sourceNameEn": "Fruitful Hook",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "talking_stick",
+      "sourceNameEn": "Talking Stick",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "luxurious_sealord",
+      "sourceNameEn": "Luxurious Sea-Lord",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "akuoumaru",
+      "sourceNameEn": "Akuoumaru",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "prototype_archaic",
+      "sourceNameEn": "Prototype Archaic",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "blackcliff_slasher",
+      "sourceNameEn": "Blackcliff Slasher",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "tidal_shadow",
+      "sourceNameEn": "Tidal Shadow",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "lithic_blade",
+      "sourceNameEn": "Lithic Blade",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "snowtombed_starsilver",
+      "sourceNameEn": "Snow-Tombed Starsilver",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "verdict",
+      "sourceNameEn": "Verdict",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "beacon_of_the_reed_sea",
+      "sourceNameEn": "Beacon of the Reed Sea",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "favonius_greatsword",
+      "sourceNameEn": "Favonius Greatsword",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "sacrificial_greatsword",
+      "sourceNameEn": "Sacrificial Greatsword",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "wolfs_gravestone",
+      "sourceNameEn": "Wolf's Gravestone",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "akuoumaru",
+      "sourceNameEn": "Akuoumaru",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_pride",
+      "sourceNameEn": "Skyward Pride",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "flameforged_insight",
+      "sourceNameEn": "Flame-Forged Insight",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "ultimate_overlords_mega_magic_sword",
+      "sourceNameEn": "\"Ultimate Overlord's Mega Magic Sword\"",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "master_key",
+      "sourceNameEn": "Master Key",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "rainslasher",
+      "sourceNameEn": "Rainslasher",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "katsuragikiri_nagamasa",
+      "sourceNameEn": "Katsuragikiri Nagamasa",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "makhaira_aquamarine",
+      "sourceNameEn": "Makhaira Aquamarine",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "mailed_flower",
+      "sourceNameEn": "Mailed Flower",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "luxurious_sealord",
+      "sourceNameEn": "Luxurious Sea-Lord",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "tidal_shadow",
+      "sourceNameEn": "Tidal Shadow",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "portable_power_saw",
+      "sourceNameEn": "Portable Power Saw",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "lithic_blade",
+      "sourceNameEn": "Lithic Blade",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "wolfs_gravestone",
+      "sourceNameEn": "Wolf's Gravestone",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "beacon_of_the_reed_sea",
+      "sourceNameEn": "Beacon of the Reed Sea",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "favonius_greatsword",
+      "sourceNameEn": "Favonius Greatsword",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "sacrificial_greatsword",
+      "sourceNameEn": "Sacrificial Greatsword",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "makhaira_aquamarine",
+      "sourceNameEn": "Makhaira Aquamarine",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "forest_regalia",
+      "sourceNameEn": "Forest Regalia",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "master_key",
+      "sourceNameEn": "Master Key",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "the_unforged",
+      "sourceNameEn": "The Unforged",
+      "sourceRarity": 5,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "the_bell",
+      "sourceNameEn": "The Bell",
+      "sourceRarity": 4,
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "staff_of_homa",
+      "sourceNameEn": "Staff of Homa",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "primordial_jade_wingedspear",
+      "sourceNameEn": "Primordial Jade Winged-Spear",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "staff_of_the_scarlet_sands",
+      "sourceNameEn": "Staff of the Scarlet Sands",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "engulfing_lightning",
+      "sourceNameEn": "Engulfing Lightning",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "deathmatch",
+      "sourceNameEn": "Deathmatch",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "crimson_moons_semblance",
+      "sourceNameEn": "Crimson Moon's Semblance",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "bloodsoaked_ruins",
+      "sourceNameEn": "Bloodsoaked Ruins",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "vortex_vanquisher",
+      "sourceNameEn": "Vortex Vanquisher",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "calamity_queller",
+      "sourceNameEn": "Calamity Queller",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "skyward_spine",
+      "sourceNameEn": "Skyward Spine",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "ballad_of_the_fjords",
+      "sourceNameEn": "Ballad of the Fjords",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "prospectors_drill",
+      "sourceNameEn": "Prospector's Drill",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "sacrificers_staff",
+      "sourceNameEn": "Sacrificer's Staff",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "missive_windspear",
+      "sourceNameEn": "Missive Windspear",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "prospectors_drill",
+      "sourceNameEn": "Prospector's Drill",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "tamayuratei_no_ohanashi",
+      "sourceNameEn": "Tamayuratei no Ohanashi",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "dragons_bane",
+      "sourceNameEn": "Dragon's Bane",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "blackcliff_pole",
+      "sourceNameEn": "Blackcliff Pole",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "lithic_spear",
+      "sourceNameEn": "Lithic Spear",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "white_tassel",
+      "sourceNameEn": "White Tassel",
+      "sourceRarity": 3,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "crescent_pike",
+      "sourceNameEn": "Crescent Pike",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "prototype_starglitter",
+      "sourceNameEn": "Prototype Starglitter",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "dragonspine_spear",
+      "sourceNameEn": "Dragonspine Spear",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "symphonist_of_scents",
+      "sourceNameEn": "Symphonist of Scents",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "engulfing_lightning",
+      "sourceNameEn": "Engulfing Lightning",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "staff_of_homa",
+      "sourceNameEn": "Staff of Homa",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "staff_of_the_scarlet_sands",
+      "sourceNameEn": "Staff of the Scarlet Sands",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "the_catch",
+      "sourceNameEn": "\"The Catch\"",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "favonius_lance",
+      "sourceNameEn": "Favonius Lance",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "lumidouce_elegy",
+      "sourceNameEn": "Lumidouce Elegy",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_spine",
+      "sourceNameEn": "Skyward Spine",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "ballad_of_the_fjords",
+      "sourceNameEn": "Ballad of the Fjords",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "kitain_cross_spear",
+      "sourceNameEn": "Kitain Cross Spear",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "wavebreakers_fin",
+      "sourceNameEn": "Wavebreaker's Fin",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "fractured_halo",
+      "sourceNameEn": "Fractured Halo",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "calamity_queller",
+      "sourceNameEn": "Calamity Queller",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "mountainbracing_bolt",
+      "sourceNameEn": "Mountain-Bracing Bolt",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "sacrificers_staff",
+      "sourceNameEn": "Sacrificer's Staff",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "prospectors_drill",
+      "sourceNameEn": "Prospector's Drill",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "dragons_bane",
+      "sourceNameEn": "Dragon's Bane",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "deathmatch",
+      "sourceNameEn": "Deathmatch",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "moonpiercer",
+      "sourceNameEn": "Moonpiercer",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "prospectors_drill",
+      "sourceNameEn": "Prospector's Drill",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "tamayuratei_no_ohanashi",
+      "sourceNameEn": "Tamayuratei no Ohanashi",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "missive_windspear",
+      "sourceNameEn": "Missive Windspear",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "lithic_spear",
+      "sourceNameEn": "Lithic Spear",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "footprint_of_the_rainbow",
+      "sourceNameEn": "Footprint of the Rainbow",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "prototype_starglitter",
+      "sourceNameEn": "Prototype Starglitter",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "favonius_lance",
+      "sourceNameEn": "Favonius Lance",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "symphonist_of_scents",
+      "sourceNameEn": "Symphonist of Scents",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "rightful_reward",
+      "sourceNameEn": "Rightful Reward",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "dialogues_of_the_desert_sages",
+      "sourceNameEn": "Dialogues of the Desert Sages",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "black_tassel",
+      "sourceNameEn": "Black Tassel",
+      "sourceRarity": 3,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "fractured_halo",
+      "sourceNameEn": "Fractured Halo",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "calamity_queller",
+      "sourceNameEn": "Calamity Queller",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "moonpiercer",
+      "sourceNameEn": "Moonpiercer",
+      "sourceRarity": 4,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "vortex_vanquisher",
+      "sourceNameEn": "Vortex Vanquisher",
+      "sourceRarity": 5,
+      "weaponType": "POLEARM",
+      "role": "SUPPORT",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "astral_vultures_crimson_plumage",
+      "sourceNameEn": "Astral Vulture's Crimson Plumage",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "the_first_great_magic",
+      "sourceNameEn": "The First Great Magic",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "polar_star",
+      "sourceNameEn": "Polar Star",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "thundering_pulse",
+      "sourceNameEn": "Thundering Pulse",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "aqua_simulacra",
+      "sourceNameEn": "Aqua Simulacra",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "hunters_bow",
+      "sourceNameEn": "Hunter's Bow",
+      "sourceRarity": 1,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "amos_bow",
+      "sourceNameEn": "Amos' Bow",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_harp",
+      "sourceNameEn": "Skyward Harp",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "flowerwreathed_feathers",
+      "sourceNameEn": "Flower-Wreathed Feathers",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "rust",
+      "sourceNameEn": "Rust",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "the_daybreak_chronicles",
+      "sourceNameEn": "The Daybreak Chronicles",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "scion_of_the_blazing_sun",
+      "sourceNameEn": "Scion of the Blazing Sun",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "hamayumi",
+      "sourceNameEn": "Hamayumi",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "mouuns_moon",
+      "sourceNameEn": "Mouun's Moon",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "chain_breaker",
+      "sourceNameEn": "Chain Breaker",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "range_gauge",
+      "sourceNameEn": "Range Gauge",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "cloudforged",
+      "sourceNameEn": "Cloudforged",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "mitternachts_waltz",
+      "sourceNameEn": "Mitternachts Waltz",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "blackcliff_warbow",
+      "sourceNameEn": "Blackcliff Warbow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "the_viridescent_hunt",
+      "sourceNameEn": "The Viridescent Hunt",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "kings_squire",
+      "sourceNameEn": "King's Squire",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "raven_bow",
+      "sourceNameEn": "Raven Bow",
+      "sourceRarity": 3,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "slingshot",
+      "sourceNameEn": "Slingshot",
+      "sourceRarity": 3,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "ibis_piercer",
+      "sourceNameEn": "Ibis Piercer",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "prototype_crescent",
+      "sourceNameEn": "Prototype Crescent",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "compound_bow",
+      "sourceNameEn": "Compound Bow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "sharpshooters_oath",
+      "sourceNameEn": "Sharpshooter's Oath",
+      "sourceRarity": 3,
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "polar_star",
+      "sourceNameEn": "Polar Star",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "aqua_simulacra",
+      "sourceNameEn": "Aqua Simulacra",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "elegy_for_the_end",
+      "sourceNameEn": "Elegy for the End",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "skyward_harp",
+      "sourceNameEn": "Skyward Harp",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "the_stringless",
+      "sourceNameEn": "The Stringless",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "hunters_bow",
+      "sourceNameEn": "Hunter's Bow",
+      "sourceRarity": 1,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "favonius_warbow",
+      "sourceNameEn": "Favonius Warbow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "silvershower_heartstrings",
+      "sourceNameEn": "Silvershower Heartstrings",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "golden_frostbound_oath",
+      "sourceNameEn": "Golden Frostbound Oath",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "song_of_stillness",
+      "sourceNameEn": "Song of Stillness",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "snare_hook",
+      "sourceNameEn": "Snare Hook",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "rainbow_serpents_rain_bow",
+      "sourceNameEn": "Rainbow Serpent's Rain Bow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "alley_hunter",
+      "sourceNameEn": "Alley Hunter",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "mouuns_moon",
+      "sourceNameEn": "Mouun's Moon",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "fading_twilight",
+      "sourceNameEn": "Fading Twilight",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "sacrificial_bow",
+      "sourceNameEn": "Sacrificial Bow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "sequence_of_solitude",
+      "sourceNameEn": "Sequence of Solitude",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "range_gauge",
+      "sourceNameEn": "Range Gauge",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "cloudforged",
+      "sourceNameEn": "Cloudforged",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "windblume_ode",
+      "sourceNameEn": "Windblume Ode",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "kings_squire",
+      "sourceNameEn": "King's Squire",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "end_of_the_line",
+      "sourceNameEn": "End of the Line",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "raven_bow",
+      "sourceNameEn": "Raven Bow",
+      "sourceRarity": 3,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "sharpshooters_oath",
+      "sourceNameEn": "Sharpshooter's Oath",
+      "sourceRarity": 3,
+      "weaponType": "BOW",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "elegy_for_the_end",
+      "sourceNameEn": "Elegy for the End",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "favonius_warbow",
+      "sourceNameEn": "Favonius Warbow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "sacrificial_bow",
+      "sourceNameEn": "Sacrificial Bow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "silvershower_heartstrings",
+      "sourceNameEn": "Silvershower Heartstrings",
+      "sourceRarity": 5,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "chain_breaker",
+      "sourceNameEn": "Chain Breaker",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "sequence_of_solitude",
+      "sourceNameEn": "Sequence of Solitude",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "snare_hook",
+      "sourceNameEn": "Snare Hook",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "rainbow_serpents_rain_bow",
+      "sourceNameEn": "Rainbow Serpent's Rain Bow",
+      "sourceRarity": 4,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "recurve_bow",
+      "sourceNameEn": "Recurve Bow",
+      "sourceRarity": 3,
+      "weaponType": "BOW",
+      "role": "SUPPORT",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "lost_prayer_to_the_sacred_winds",
+      "sourceNameEn": "Lost Prayer to the Sacred Winds",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "tulaytullahs_remembrance",
+      "sourceNameEn": "Tulaytullah's Remembrance",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "the_widsith",
+      "sourceNameEn": "The Widsith",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "surfs_up",
+      "sourceNameEn": "Surf's Up",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "vivid_notions",
+      "sourceNameEn": "Vivid Notions",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "cashflow_supervision",
+      "sourceNameEn": "Cashflow Supervision",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "tome_of_the_eternal_flow",
+      "sourceNameEn": "Tome of the Eternal Flow",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "sunny_morning_sleepin",
+      "sourceNameEn": "Sunny Morning Sleep-In",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "skyward_atlas",
+      "sourceNameEn": "Skyward Atlas",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "kaguras_verity",
+      "sourceNameEn": "Kagura's Verity",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "dawning_frost",
+      "sourceNameEn": "Dawning Frost",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "reliquary_of_truth",
+      "sourceNameEn": "Reliquary of Truth",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "nightweavers_looking_glass",
+      "sourceNameEn": "Nightweaver's Looking Glass",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "memory_of_dust",
+      "sourceNameEn": "Memory of Dust",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "ring_of_yaxche",
+      "sourceNameEn": "Ring of Yaxche",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "etherlight_spindlelute",
+      "sourceNameEn": "Etherlight Spindlelute",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "ballad_of_the_boundless_blue",
+      "sourceNameEn": "Ballad of the Boundless Blue",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "solar_pearl",
+      "sourceNameEn": "Solar Pearl",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "ashgraven_drinking_horn",
+      "sourceNameEn": "Ash-Graven Drinking Horn",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "flowing_purity",
+      "sourceNameEn": "Flowing Purity",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "dodoco_tales",
+      "sourceNameEn": "Dodoco Tales",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "mappa_mare",
+      "sourceNameEn": "Mappa Mare",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "wandering_evenstar",
+      "sourceNameEn": "Wandering Evenstar",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "magic_guide",
+      "sourceNameEn": "Magic Guide",
+      "sourceRarity": 3,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "everlasting_moonglow",
+      "sourceNameEn": "Everlasting Moonglow",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "blackcliff_agate",
+      "sourceNameEn": "Blackcliff Agate",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "sunny_morning_sleepin",
+      "sourceNameEn": "Sunny Morning Sleep-In",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "kaguras_verity",
+      "sourceNameEn": "Kagura's Verity",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "the_widsith",
+      "sourceNameEn": "The Widsith",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "skyward_atlas",
+      "sourceNameEn": "Skyward Atlas",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "sacrificial_fragments",
+      "sourceNameEn": "Sacrificial Fragments",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "nocturnes_curtain_call",
+      "sourceNameEn": "Nocturne's Curtain Call",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "etherlight_spindlelute",
+      "sourceNameEn": "Etherlight Spindlelute",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "fruit_of_fulfillment",
+      "sourceNameEn": "Fruit of Fulfillment",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "blackmarrow_lantern",
+      "sourceNameEn": "Blackmarrow Lantern",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "hakushin_ring",
+      "sourceNameEn": "Hakushin Ring",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "favonius_codex",
+      "sourceNameEn": "Favonius Codex",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "mappa_mare",
+      "sourceNameEn": "Mappa Mare",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "wandering_evenstar",
+      "sourceNameEn": "Wandering Evenstar",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "magic_guide",
+      "sourceNameEn": "Magic Guide",
+      "sourceRarity": 3,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "waveriding_whirl",
+      "sourceNameEn": "Waveriding Whirl",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "flowing_purity",
+      "sourceNameEn": "Flowing Purity",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "sacrificial_jade",
+      "sourceNameEn": "Sacrificial Jade",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "oathsworn_eye",
+      "sourceNameEn": "Oathsworn Eye",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "emerald_orb",
+      "sourceNameEn": "Emerald Orb",
+      "sourceRarity": 3,
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": "C",
+      "sourceTierKey": "4"
+    },
+    {
+      "sourceId": "starcallers_watch",
+      "sourceNameEn": "Starcaller's Watch",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "a_thousand_floating_dreams",
+      "sourceNameEn": "A Thousand Floating Dreams",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "prototype_amber",
+      "sourceNameEn": "Prototype Amber",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "thrilling_tales_of_dragon_slayers",
+      "sourceNameEn": "Thrilling Tales of Dragon Slayers",
+      "sourceRarity": 3,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "SS",
+      "sourceTierKey": "0"
+    },
+    {
+      "sourceId": "cranes_echoing_call",
+      "sourceNameEn": "Crane's Echoing Call",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "sunny_morning_sleepin",
+      "sourceNameEn": "Sunny Morning Sleep-In",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "favonius_codex",
+      "sourceNameEn": "Favonius Codex",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "wandering_evenstar",
+      "sourceNameEn": "Wandering Evenstar",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "S",
+      "sourceTierKey": "1"
+    },
+    {
+      "sourceId": "nocturnes_curtain_call",
+      "sourceNameEn": "Nocturne's Curtain Call",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "etherlight_spindlelute",
+      "sourceNameEn": "Etherlight Spindlelute",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "oathsworn_eye",
+      "sourceNameEn": "Oathsworn Eye",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "hakushin_ring",
+      "sourceNameEn": "Hakushin Ring",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "sacrificial_fragments",
+      "sourceNameEn": "Sacrificial Fragments",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "A",
+      "sourceTierKey": "2"
+    },
+    {
+      "sourceId": "everlasting_moonglow",
+      "sourceNameEn": "Everlasting Moonglow",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "jadefalls_splendor",
+      "sourceNameEn": "Jadefall's Splendor",
+      "sourceRarity": 5,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "waveriding_whirl",
+      "sourceNameEn": "Waveriding Whirl",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    },
+    {
+      "sourceId": "blackmarrow_lantern",
+      "sourceNameEn": "Blackmarrow Lantern",
+      "sourceRarity": 4,
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": "B",
+      "sourceTierKey": "3"
+    }
+  ],
+  "unranked": [
+    {
+      "sourceId": "sword_of_narzissenkreuz",
+      "sourceNameEn": "Sword of Narzissenkreuz",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "sword_of_descension",
+      "sourceNameEn": "Sword of Descension",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "kagotsurube_isshin",
+      "sourceNameEn": "Kagotsurube Isshin",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "fillet_blade",
+      "sourceNameEn": "Fillet Blade",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "cool_steel",
+      "sourceNameEn": "Cool Steel",
+      "weaponType": "SWORD",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "skyrider_sword",
+      "sourceNameEn": "Skyrider Sword",
+      "weaponType": "SWORD",
+      "role": "SUB_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "travelers_handy_sword",
+      "sourceNameEn": "Traveler's Handy Sword",
+      "weaponType": "SWORD",
+      "role": "SUPPORT",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "royal_greatsword",
+      "sourceNameEn": "Royal Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "white_iron_greatsword",
+      "sourceNameEn": "White Iron Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "ferrous_shadow",
+      "sourceNameEn": "Ferrous Shadow",
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "bloodtainted_greatsword",
+      "sourceNameEn": "Bloodtainted Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "debate_club",
+      "sourceNameEn": "Debate Club",
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "skyrider_greatsword",
+      "sourceNameEn": "Skyrider Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "bloodtainted_greatsword",
+      "sourceNameEn": "Bloodtainted Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "SUB_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "white_iron_greatsword",
+      "sourceNameEn": "White Iron Greatsword",
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "ferrous_shadow",
+      "sourceNameEn": "Ferrous Shadow",
+      "weaponType": "CLAYMORE",
+      "role": "SUPPORT",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "royal_spear",
+      "sourceNameEn": "Royal Spear",
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "halberd",
+      "sourceNameEn": "Halberd",
+      "weaponType": "POLEARM",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "black_tassel",
+      "sourceNameEn": "Black Tassel",
+      "weaponType": "POLEARM",
+      "role": "SUB_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "predator",
+      "sourceNameEn": "Predator",
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "royal_bow",
+      "sourceNameEn": "Royal Bow",
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "messenger",
+      "sourceNameEn": "Messenger",
+      "weaponType": "BOW",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "eye_of_perception",
+      "sourceNameEn": "Eye of Perception",
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "royal_grimoire",
+      "sourceNameEn": "Royal Grimoire",
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "frostbearer",
+      "sourceNameEn": "Frostbearer",
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "wine_and_song",
+      "sourceNameEn": "Wine and Song",
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "twin_nephrite",
+      "sourceNameEn": "Twin Nephrite",
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "emerald_orb",
+      "sourceNameEn": "Emerald Orb",
+      "weaponType": "CATALYST",
+      "role": "MAIN_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "otherworldly_story",
+      "sourceNameEn": "Otherworldly Story",
+      "weaponType": "CATALYST",
+      "role": "SUB_DPS",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    },
+    {
+      "sourceId": "otherworldly_story",
+      "sourceNameEn": "Otherworldly Story",
+      "weaponType": "CATALYST",
+      "role": "SUPPORT",
+      "tier": null,
+      "reason": "Nguồn có nhóm tier thứ 6 không được gán nhãn SS–C trong giao diện; không suy diễn tier."
+    }
+  ],
+  "rawChecksum": "42eb4537e9ed2465b6e8512ed2177f3155b5f0f43df61539cf31f4c42b733b38"
+}

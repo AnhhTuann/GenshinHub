@@ -27,21 +27,24 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import axios from 'axios';
-import { PrismaClient } from '@prisma/client';
+import { randomUUID } from 'node:crypto';
+import { Prisma, PrismaClient } from '@prisma/client';
 import * as genshindb from 'genshin-db';
 import { detectChanges, SyncReport, DiffEntry, GENSHIN_DB_VERSION } from './detector';
 import {
   characterSplashPath,
-  assetFolderName,
   normalizeName,
 } from './idMapper';
-import { downloadAndConvertToWebp } from '../../src/utils/imageDownloader';
+import { characterAssetUrls, filenameFromLocalPath, yattaImage } from './assetSync';
+import { loadYattaMaterials } from './yattaMaterials';
+import { downloadWithFallback as downloadAssetWithFallback } from '../../src/utils/imageDownloader';
+import { resolveAssetFilePath, isDecodableImageFile, getAssetStorageRoot } from '../../src/utils/assetStorage';
 
 const prisma = new PrismaClient();
 
 const BACKEND_ROOT = path.join(__dirname, '..', '..');
-const FRONTEND_PUBLIC = path.join(BACKEND_ROOT, '..', 'frontend', 'public');
-const BACKUPS_DIR = path.join(BACKEND_ROOT, 'backups');
+getAssetStorageRoot(); // khởi tạo/validate thư mục assets sớm
+const BACKUPS_DIR = process.env.SYNC_BACKUP_DIR || path.join(BACKEND_ROOT, 'backups');
 const LOGS_DIR = path.join(BACKEND_ROOT, 'logs');
 const ENKA_UI = 'https://enka.network/ui';
 
@@ -68,11 +71,16 @@ function parseArgs(argv: string[]): CliArgs {
       case '--sync': args.sync = true; args.dryRun = false; break;
       case '--download-assets': args.downloadAssets = true; break;
       case '--validate': args.validate = true; break;
-      case '--rollback': args.rollbackFile = argv[++i]; break;
+      case '--rollback': {
+        args.rollbackFile = argv[++i];
+        if (!args.rollbackFile || args.rollbackFile.startsWith('--')) throw new Error('Cần đường dẫn snapshot sau --rollback');
+        break;
+      }
       case '--report': args.reportPath = argv[++i]; break;
       case '--only': {
         const v = argv[++i] as CliArgs['only'];
-        if (['characters', 'weapons', 'artifacts', 'materials'].includes(v as string)) args.only = v;
+        if (!['characters', 'weapons', 'artifacts', 'materials'].includes(v as string)) throw new Error('Danh mục --only không hợp lệ');
+        args.only = v;
         break;
       }
       default:
@@ -101,60 +109,57 @@ interface Snapshot {
 
 async function takeSnapshot(entries: SnapshotEntry[]): Promise<string> {
   fs.mkdirSync(BACKUPS_DIR, { recursive: true });
-  const file = path.join(BACKUPS_DIR, `snapshot_before_sync_${Date.now()}.json`);
+  const file = path.join(BACKUPS_DIR, `snapshot_before_sync_${Date.now()}_${randomUUID()}.json`);
   const snapshot: Snapshot = { createdAt: new Date().toISOString(), genshinDbVersion: GENSHIN_DB_VERSION, entries };
-  fs.writeFileSync(file, JSON.stringify(snapshot, null, 2));
+  fs.writeFileSync(file, JSON.stringify(snapshot, null, 2), { flag: 'wx', mode: 0o600, flush: true });
   return file;
 }
 
-async function rollback(snapshotPath: string): Promise<void> {
+export async function rollback(snapshotPath: string): Promise<void> {
   const snap: Snapshot = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
   console.log(`↩️  Rollback từ snapshot ${snap.createdAt} (${snap.entries.length} entries)...`);
 
-  // Xử lý create trước (xóa), sau đó update (restore)
-  const created = snap.entries.filter(e => e.action === 'create');
-  const updated = snap.entries.filter(e => e.action === 'update');
-
-  for (const e of created) {
-    try {
-      if (e.kind === 'character') {
-        await prisma.characterWeapon.deleteMany({ where: { characterId: e.id } });
-        await prisma.characterArtifact.deleteMany({ where: { characterId: e.id } });
-        await prisma.characterTeam.deleteMany({ where: { characterId: e.id } });
-        await prisma.character.delete({ where: { id: e.id } });
-      } else if (e.kind === 'weapon') {
-        await prisma.weapon.delete({ where: { id: e.id } });
-      } else if (e.kind === 'artifactSet') {
-        await prisma.artifactSet.delete({ where: { id: e.id } });
-      } else if (e.kind === 'material') {
-        await prisma.material.delete({ where: { id: e.id } });
+  await prisma.$transaction(async tx => {
+    await lockSync(tx);
+    for (const entry of [...snap.entries].reverse()) {
+      const { id, kind, action, before } = entry;
+      if (!id || !['character', 'weapon', 'artifactSet', 'material'].includes(kind)) {
+        throw new Error('Snapshot chứa bản ghi không hợp lệ');
       }
-      console.log(`  🗑️  Xóa bản ghi tạo mới: ${e.kind} ${e.id}`);
-    } catch (err: any) {
-      console.warn(`  ⚠️  Không xóa được ${e.kind} ${e.id}: ${err.message}`);
-    }
-  }
-
-  for (const e of updated) {
-    try {
-      if (e.kind === 'character') {
-        const { id, ...data } = e.before;
-        await prisma.character.update({ where: { id: e.id }, data });
-      } else if (e.kind === 'weapon') {
-        const { id, ...data } = e.before;
-        await prisma.weapon.update({ where: { id: e.id }, data });
-      } else if (e.kind === 'artifactSet') {
-        const { id, ...data } = e.before;
-        await prisma.artifactSet.update({ where: { id: e.id }, data });
-      } else if (e.kind === 'material') {
-        const { id, ...data } = e.before;
-        await prisma.material.update({ where: { id: e.id }, data });
+      if (action === 'create') {
+        const userReference = { itemId: id, itemType: kind === 'artifactSet' ? 'ARTIFACT' : kind.toUpperCase() };
+        if (kind !== 'material' && (
+          await tx.userFavorite.count({ where: userReference }) ||
+          await tx.userWishlist.count({ where: userReference })
+        )) {
+          throw new Error(`Bản ghi ${id} đang được người dùng lưu`);
+        }
+        // FK restrictions protect existing curated relations.
+        if (kind === 'character') {
+          if (await tx.userTeam.count({ where: { characters: { has: id } } })) {
+            throw new Error(`Character ${id} đang được đội hình người dùng sử dụng`);
+          }
+          await tx.character.delete({ where: { id } });
+        } else if (kind === 'weapon') {
+          if (await tx.characterWeapon.count({ where: { weaponId: id } })) {
+            throw new Error(`Weapon ${id} đang được build sử dụng`);
+          }
+          await tx.weapon.delete({ where: { id } });
+        } else if (kind === 'artifactSet') await tx.artifactSet.delete({ where: { id } });
+        else await tx.material.delete({ where: { id } });
+        continue;
       }
-      console.log(`  ♻️  Restore bản ghi: ${e.kind} ${e.id}`);
-    } catch (err: any) {
-      console.warn(`  ⚠️  Không restore được ${e.kind} ${e.id}: ${err.message}`);
+      if (action !== 'update' || !before || typeof before !== 'object') {
+        throw new Error('Snapshot thiếu dữ liệu trước sync');
+      }
+      const data = Object.fromEntries(Object.entries(before)
+        .filter(([key]) => key !== 'id' && !PROTECTED_KEYS.has(key)));
+      if (kind === 'character') await tx.character.update({ where: { id }, data });
+      else if (kind === 'weapon') await tx.weapon.update({ where: { id }, data });
+      else if (kind === 'artifactSet') await tx.artifactSet.update({ where: { id }, data });
+      else await tx.material.update({ where: { id }, data });
     }
-  }
+  }, { isolationLevel: 'Serializable', timeout: 120000 });
   console.log('✅ Rollback hoàn tất.');
 }
 
@@ -217,12 +222,11 @@ function validateReport(report: SyncReport): string[] {
   };
 
   for (const e of report.characters) {
-    if (e.action === 'create' && e.source.pending) errors.push(`[Character ${e.sourceName}] pending=true`);
-    if (e.action === 'create') {
-      if (!e.source.baseHp || !e.source.baseAtk || !e.source.baseDef)
-        errors.push(`[Character ${e.sourceName}] stats rỗng/0 — từ chối tạo dữ liệu giả`);
-      checkPayload('Character', e.source as any);
-    }
+    if (e.action !== 'create' && e.action !== 'update') continue;
+    if (e.source.pending) errors.push(`[Character ${e.sourceName}] pending=true`);
+    if (!e.source.baseHp || !e.source.baseAtk || !e.source.baseDef)
+      errors.push(`[Character ${e.sourceName}] stats rỗng/0 — từ chối tạo dữ liệu giả`);
+    checkPayload('Character', e.source as any);
   }
   for (const e of report.weapons) {
     if (e.action === 'create' && (!e.source.baseAtk || e.source.rarity < 1))
@@ -234,42 +238,121 @@ function validateReport(report: SyncReport): string[] {
       errors.push(`[Artifact ${e.sourceName}] rarityList rỗng`);
     checkPayload('Artifact', e.source as any);
   }
-  // ID trùng nhau?
-  const ids = [...report.characters, ...report.weapons, ...report.artifacts]
-    .filter(e => e.action === 'create' && e.dbId)
-    .map(e => e.dbId);
-  const dup = ids.filter((v, i) => ids.indexOf(v) !== i);
-  if (dup.length) errors.push(`ID bị trùng giữa các bản ghi create: ${[...new Set(dup)].join(', ')}`);
+  for (const entry of report.materials) checkPayload('Material', entry.source);
+  for (const entries of [report.characters, report.weapons, report.artifacts, report.materials]) {
+    const seen = new Set<string>();
+    for (const entry of entries) {
+      if (!entry.dbId || entry.action === 'pending') continue;
+      if (seen.has(entry.dbId)) errors.push(`ID đích trùng: ${entry.dbId}`);
+      seen.add(entry.dbId);
+    }
+  }
   return errors;
+}
+
+// ------------------------------------------------------------------
+// Material type mapping (best-effort khi yatta không có item)
+// ------------------------------------------------------------------
+
+/**
+ * Map sang `type` camelCase của DB (theo convention gi.yatta.moe).
+ * Chỉ dùng khi tạo material mới không resolve được yatta — typeText
+ * từ genshin-db là phân loại hiển thị, không phải type DB.
+ */
+function mapMaterialType(s: { category?: string; typeText: string }): string {
+  const tt = (s.typeText || '').toLowerCase();
+  const cat = s.category || '';
+  if (tt.includes('weapon') && tt.includes('ascension')) return 'weaponAscensionMaterial';
+  if (tt.includes('adventure')) return 'adventureItem';
+  if (cat === 'WEAPON_EXP_STONE') return 'weaponAscensionMaterial';
+  if (cat === 'ELEM_CRYSTAL') return 'characterLevelUpMaterial';
+  return 'material';
 }
 
 // ------------------------------------------------------------------
 // Apply (sync)
 // ------------------------------------------------------------------
 
-function publicPathExists(rel: string): boolean {
-  return fs.existsSync(path.join(FRONTEND_PUBLIC, rel));
+async function publicPathExists(rel: string): Promise<boolean> {
+  const abs = resolveAssetFilePath(rel);
+  return !!abs && await isDecodableImageFile(abs);
 }
 
-export async function applyReport(report: SyncReport, downloadAssets: boolean): Promise<void> {
+export interface SyncDeps {
+  resolveYattaId?: (kind: 'weapon' | 'reliquary' | 'material', nameEn: string, nameVi: string) => Promise<string | null>;
+}
+
+function assertSameIdentity(
+  id: string,
+  row: { nameEn: string; nameVi: string },
+  source: { nameEn: string; nameVi: string },
+): void {
+  if (normalizeName(row.nameEn) !== normalizeName(source.nameEn) &&
+      normalizeName(row.nameVi) !== normalizeName(source.nameVi)) {
+    throw new Error(`Xung đột ID ${id}: ${row.nameEn} / ${source.nameEn}`);
+  }
+}
+
+async function lockSync(tx: Prisma.TransactionClient): Promise<void> {
+  const [{ locked }] = await tx.$queryRaw<{ locked: boolean }[]>`SELECT pg_try_advisory_xact_lock(383191125) AS locked`;
+  if (!locked) throw new Error('Một tiến trình sync hoặc rollback đang ghi dữ liệu');
+}
+
+export async function applyReport(report: SyncReport, _downloadAssets: boolean, deps: SyncDeps = {}): Promise<string | undefined> {
+  const resolveId = deps.resolveYattaId || resolveYattaId;
+  const errors = validateReport(report);
+  if (errors.length) throw new Error(errors.join('\n'));
+  for (const [kind, entries] of [
+    ['weapon', report.weapons],
+    ['reliquary', report.artifacts],
+    ['material', report.materials],
+  ] as const) {
+    for (const entry of entries) {
+      if (entry.action !== 'create') continue;
+      const sourceId = entry.source.externalId;
+      entry.dbId = (deps.resolveYattaId ? await resolveId(kind, entry.source.nameEn, entry.source.nameVi) : null)
+        || sourceId || await resolveId(kind, entry.source.nameEn, entry.source.nameVi);
+      if (!entry.dbId) {
+        entry.action = 'pending';
+        entry.warnings.push('Không resolve được ID nguồn — giữ pending');
+      }
+    }
+  }
+
+  const resolvedErrors = validateReport(report);
+  if (resolvedErrors.length) throw new Error(resolvedErrors.join('\n'));
+
+  const snapshotFile = await prisma.$transaction(async tx => {
+    await lockSync(tx);
+    const snapshotEntries = await applyEntries(tx, report);
+    return snapshotEntries.length ? takeSnapshot(snapshotEntries) : undefined;
+  }, { isolationLevel: 'Serializable', timeout: 120000 });
+  if (snapshotFile) console.log(`💾 Snapshot: ${snapshotFile}`);
+  return snapshotFile;
+}
+
+async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): Promise<SnapshotEntry[]> {
   const snapshotEntries: SnapshotEntry[] = [];
 
   // ---------- Characters ----------
   for (const e of report.characters) {
-    if (e.action === 'unchanged') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
     if (e.action === 'create') {
       const id = e.dbId!;
-      const exists = await prisma.character.findUnique({ where: { id }, select: { id: true } });
+      const exists = await tx.character.findUnique({ where: { id }, select: { nameEn: true, nameVi: true } });
       if (exists) {
+        assertSameIdentity(id, exists, s);
         console.warn(`⚠️  Character id "${id}" đã tồn tại — bỏ qua create, chuyển sang update.`);
         e.action = 'update';
         e.dbId = id;
       } else {
         snapshotEntries.push({ kind: 'character', action: 'create', id, before: null });
-        const splashArtUrl = publicPathExists(characterSplashPath(s.nameEn)) ? characterSplashPath(s.nameEn) : '';
-        await prisma.character.create({
-          data: {
+        const splashArtUrl = await publicPathExists(characterSplashPath(s.nameEn)) ? characterSplashPath(s.nameEn) : '';
+        await tx.character.upsert({
+          where: { id: id },
+          update: {},
+          create: {
             id,
             nameEn: s.nameEn,
             nameVi: s.nameVi,
@@ -309,14 +392,14 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 
     // update
     const id = e.dbId!;
-    const before = await prisma.character.findUnique({ where: { id } });
+    const before = await tx.character.findUnique({ where: { id } });
     if (!before) { console.warn(`⚠️  Character ${id} không còn trong DB — bỏ qua.`); continue; }
     snapshotEntries.push({ kind: 'character', action: 'update', id, before });
 
     const splashCandidate = characterSplashPath(s.nameEn);
-    const splashArtUrl = publicPathExists(splashCandidate) ? splashCandidate : before.splashArtUrl;
+    const splashArtUrl = before.splashArtUrl || (await publicPathExists(splashCandidate) ? splashCandidate : '');
 
-    await prisma.character.update({
+    await tx.character.update({
       where: { id },
       data: {
         nameEn: s.nameEn,
@@ -327,7 +410,7 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
         element: s.element,
         weapon: s.weapon,
         region: s.region,
-        avatarUrl: s.avatarUrl,
+        avatarUrl: before.avatarUrl || s.avatarUrl,
         splashArtUrl,
         ...(s.descriptionEn ? { descriptionEn: s.descriptionEn } : {}),
         ...(s.descriptionVi ? { descriptionVi: s.descriptionVi } : {}),
@@ -346,20 +429,25 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 
   // ---------- Weapons ----------
   for (const e of report.weapons) {
-    if (e.action === 'unchanged') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
     if (e.action === 'create') {
-      const extId = await resolveYattaId('weapon', s.nameEn, s.nameVi);
+      const extId = e.dbId;
       if (!extId) {
         e.warnings.push('Không resolve được ID yatta — bỏ qua tạo (pending)');
         continue;
       }
-      const exists = await prisma.weapon.findUnique({ where: { id: extId }, select: { id: true } });
-      if (exists) { e.action = 'update'; e.dbId = extId; }
+      const exists = await tx.weapon.findUnique({ where: { id: extId }, select: { nameEn: true, nameVi: true } });
+      if (exists) {
+        assertSameIdentity(extId, exists, s);
+        e.action = 'update';
+      }
       else {
         snapshotEntries.push({ kind: 'weapon', action: 'create', id: extId, before: null });
-        await prisma.weapon.create({
-          data: {
+        await tx.weapon.upsert({
+          where: { id: extId },
+          update: {},
+          create: {
             id: extId,
             nameEn: s.nameEn,
             nameVi: s.nameVi,
@@ -383,11 +471,11 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
     }
 
     const id = e.dbId!;
-    const before = await prisma.weapon.findUnique({ where: { id } });
+    const before = await tx.weapon.findUnique({ where: { id } });
     if (!before) { console.warn(`⚠️  Weapon ${id} không còn trong DB — bỏ qua.`); continue; }
     snapshotEntries.push({ kind: 'weapon', action: 'update', id, before });
 
-    await prisma.weapon.update({
+    await tx.weapon.update({
       where: { id },
       data: {
         nameEn: s.nameEn,
@@ -401,7 +489,7 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
         ...(s.passiveNameVi ? { passiveNameVi: s.passiveNameVi } : {}),
         ...(s.passiveDescEn ? { passiveDescEn: s.passiveDescEn } : {}),
         ...(s.passiveDescVi ? { passiveDescVi: s.passiveDescVi } : {}),
-        ...(s.iconUrl ? { iconUrl: s.iconUrl } : {}),
+        ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
         // KHÔNG đụng: tier, role
       },
     });
@@ -410,20 +498,25 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 
   // ---------- Artifact Sets ----------
   for (const e of report.artifacts) {
-    if (e.action === 'unchanged') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
     if (e.action === 'create') {
-      const extId = await resolveYattaId('reliquary', s.nameEn, s.nameVi);
+      const extId = e.dbId;
       if (!extId) {
         e.warnings.push('Không resolve được ID yatta — bỏ qua tạo (pending)');
         continue;
       }
-      const exists = await prisma.artifactSet.findUnique({ where: { id: extId }, select: { id: true } });
-      if (exists) { e.action = 'update'; e.dbId = extId; }
+      const exists = await tx.artifactSet.findUnique({ where: { id: extId }, select: { nameEn: true, nameVi: true } });
+      if (exists) {
+        assertSameIdentity(extId, exists, s);
+        e.action = 'update';
+      }
       else {
         snapshotEntries.push({ kind: 'artifactSet', action: 'create', id: extId, before: null });
-        await prisma.artifactSet.create({
-          data: {
+        await tx.artifactSet.upsert({
+          where: { id: extId },
+          update: {},
+          create: {
             id: extId,
             nameEn: s.nameEn,
             nameVi: s.nameVi,
@@ -441,11 +534,11 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
     }
 
     const id = e.dbId!;
-    const before = await prisma.artifactSet.findUnique({ where: { id } });
+    const before = await tx.artifactSet.findUnique({ where: { id } });
     if (!before) { console.warn(`⚠️  ArtifactSet ${id} không còn trong DB — bỏ qua.`); continue; }
     snapshotEntries.push({ kind: 'artifactSet', action: 'update', id, before });
 
-    await prisma.artifactSet.update({
+    await tx.artifactSet.update({
       where: { id },
       data: {
         nameEn: s.nameEn,
@@ -455,39 +548,68 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
         ...(s.piece2DescVi ? { piece2DescVi: s.piece2DescVi } : {}),
         ...(s.piece4DescEn ? { piece4DescEn: s.piece4DescEn } : {}),
         ...(s.piece4DescVi ? { piece4DescVi: s.piece4DescVi } : {}),
-        ...(s.iconUrl ? { iconUrl: s.iconUrl } : {}),
+        ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
       },
     });
     console.log(`  ✏️  Artifact set cập nhật: ${s.nameEn} (${id}) — ${e.changes.length} trường`);
   }
 
-  // ---------- Materials: chỉ update, KHÔNG tạo ----------
+  // ---------- Materials ----------
   for (const e of report.materials) {
-    if (e.action !== 'update') continue;
+    if (e.action !== 'create' && e.action !== 'update') continue;
     const s = e.source;
+
+    if (e.action === 'create') {
+      if (!s.rarity) {
+        e.warnings.push('Material thiếu rarity từ nguồn — bỏ qua tạo (pending)');
+        continue;
+      }
+      const extId = e.dbId;
+      if (!extId) {
+        e.warnings.push('Không có ID nguồn (yatta + genshin-db) — bỏ qua tạo');
+        continue;
+      }
+      const exists = await tx.material.findUnique({ where: { id: extId }, select: { nameEn: true, nameVi: true } });
+      if (exists) {
+        assertSameIdentity(extId, exists, s);
+        e.action = 'update';
+      }
+      else {
+        snapshotEntries.push({ kind: 'material', action: 'create', id: extId, before: null });
+        await tx.material.upsert({
+          where: { id: extId },
+          update: {},
+          create: {
+            id: extId,
+            nameEn: s.nameEn,
+            nameVi: s.nameVi,
+            type: s.sourceType ?? mapMaterialType(s),
+            rarity: s.rarity,
+            iconUrl: s.iconUrl,
+          },
+        });
+        console.log(`  ➕ Material mới: ${s.nameEn} (${extId})`);
+        continue;
+      }
+    }
+
     const id = e.dbId!;
-    const before = await prisma.material.findUnique({ where: { id } });
+    const before = await tx.material.findUnique({ where: { id } });
     if (!before) continue;
     snapshotEntries.push({ kind: 'material', action: 'update', id, before });
-    await prisma.material.update({
+    await tx.material.update({
       where: { id },
       data: {
         nameEn: s.nameEn,
         nameVi: s.nameVi,
         ...(s.rarity ? { rarity: s.rarity } : {}),
-        ...(s.iconUrl ? { iconUrl: s.iconUrl } : {}),
-        // type giữ nguyên (mapping yatta <-> genshin-db chưa ổn định)
+        ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
+        // type giữ nguyên (mapping nguồn chưa đủ tin cậy để ghi đè)
       },
     });
   }
 
-  // ---------- Snapshot ----------
-  if (snapshotEntries.length > 0) {
-    const file = await takeSnapshot(snapshotEntries);
-    console.log(`💾 Snapshot: ${file} (${snapshotEntries.length} bản ghi)`);
-  } else {
-    console.log('ℹ️  Không có bản ghi nào bị tác động — không cần snapshot.');
-  }
+  return snapshotEntries;
 }
 
 // ------------------------------------------------------------------
@@ -495,28 +617,17 @@ export async function applyReport(report: SyncReport, downloadAssets: boolean): 
 // ------------------------------------------------------------------
 
 interface GenshinAssetInfo {
-  avatarUrl?: string;   // URL nguồn trực tiếp (mihoyo)
-  splashUrl?: string;   // URL nguồn splash (enka UI)
-  iconUrl?: string;     // URL nguồn icon
+  iconUrls?: string[];    // URL nguồn icon
 }
 
-function genshinCharacterAssetInfo(genshinName: string): GenshinAssetInfo {
-  const en = genshindb.characters(genshinName) as any;
-  if (!en) return {};
-  const imgs = en.images || {};
-  const splashFile = imgs.filename_gachaSplash || imgs.filename_sideIcon;
-  return {
-    avatarUrl: imgs.mihoyo_icon || (imgs.filename_icon ? `${ENKA_UI}/${imgs.filename_icon}.png` : undefined),
-    splashUrl: splashFile ? `${ENKA_UI}/${splashFile}.png` : undefined,
-  };
-}
+const enka = (filename?: string) => (filename ? `${ENKA_UI}/${filename}.png` : undefined);
 
 function genshinWeaponAssetInfo(genshinName: string): GenshinAssetInfo {
   const en = genshindb.weapons(genshinName) as any;
   if (!en) return {};
   const imgs = en.images || {};
   return {
-    iconUrl: imgs.mihoyo_icon || (imgs.filename_icon ? `${ENKA_UI}/${imgs.filename_icon}.png` : undefined),
+    iconUrls: [imgs.mihoyo_icon, enka(imgs.filename_icon), enka(imgs.filename_awakenIcon), yattaImage(imgs.filename_icon)].filter((u): u is string => Boolean(u)),
   };
 }
 
@@ -524,74 +635,94 @@ function genshinArtifactAssetInfo(genshinName: string): GenshinAssetInfo {
   const en = genshindb.artifacts(genshinName) as any;
   if (!en) return {};
   const imgs = en.images || {};
-  const f = imgs.filename_circlet || imgs.filename_goblet || imgs.filename_sands ||
-            imgs.filename_plume || imgs.filename_flower;
-  return { iconUrl: f ? `${ENKA_UI}/${f}.png` : undefined };
+  const f = imgs.filename_flower || imgs.filename_plume || imgs.filename_sands ||
+            imgs.filename_goblet || imgs.filename_circlet;
+  const mihoyoKey = f === imgs.filename_flower ? 'mihoyo_flower'
+    : f === imgs.filename_plume ? 'mihoyo_plume'
+    : f === imgs.filename_sands ? 'mihoyo_sands'
+    : f === imgs.filename_goblet ? 'mihoyo_goblet'
+    : 'mihoyo_circlet';
+  return { iconUrls: [imgs[mihoyoKey], enka(f), yattaImage(f)].filter((u): u is string => Boolean(u)) };
 }
 
 function genshinMaterialAssetInfo(genshinName: string): GenshinAssetInfo {
   const en = genshindb.materials(genshinName) as any;
   if (!en) return {};
-  const f = en.images?.filename_icon;
-  return { iconUrl: f ? `${ENKA_UI}/${f}.png` : undefined };
+  return { iconUrls: [enka(en.images?.filename_icon), yattaImage(en.images?.filename_icon)].filter((u): u is string => Boolean(u)) };
 }
 
-async function downloadMissingAssets(report: SyncReport): Promise<void> {
-  let ok = 0, fail = 0, skipped = 0;
+export interface AssetSyncResult {
+  ok: number;
+  fail: number;
+  skipped: number;
+  unprocessed: { label: string; urls: string[] }[];
+}
 
-  const jobs: { url?: string; dest: string; label: string }[] = [];
+/**
+ * Tải ảnh với fallback: thử lần lượt các URL nguồn; chỉ ghi file khi
+ * download + convert WebP thành công và file kết quả hợp lệ.
+ * KHÔNG ghi đè file đã tồn tại & hợp lệ (no-overwrite trong downloader).
+ */
+async function downloadWithFallback(urls: string[], dest: string, label: string): Promise<boolean> {
+  const res = await downloadAssetWithFallback(urls, dest, { skipExisting: true });
+  if (res.ok) return true;
+  console.log(`     ↳ ${label}: ${res.error} (đã thử ${res.tried.length} nguồn)`);
+  return false;
+}
+
+async function downloadMissingAssets(report: SyncReport): Promise<AssetSyncResult> {
+  const result: AssetSyncResult = { ok: 0, fail: 0, skipped: 0, unprocessed: [] };
+  const jobs: { urls: string[]; dest: string; label: string }[] = [];
+
+  const pushJob = async (urls: string[] | undefined, rel: string | null | undefined, label: string) => {
+    if (!urls || urls.length === 0 || !rel) { result.skipped++; return; }
+    const dest = resolveAssetFilePath(rel);
+    if (!dest) { result.skipped++; return; }
+    if (await isDecodableImageFile(dest)) { result.skipped++; return; }
+    jobs.push({ urls, dest, label });
+  };
 
   for (const e of [...report.characters, ...report.weapons, ...report.artifacts, ...report.materials]) {
-    if (e.action === 'unchanged') continue;
-    const name = (e.source as any).genshinDbName as string;
+    if (e.action !== 'create' && e.action !== 'update') continue;
+    const src = e.source as any;
+    const name = src.genshinDbName as string;
+    if (!name && src.sourceType) {
+      const icon = yattaImage(filenameFromLocalPath(src.iconUrl));
+      await pushJob(icon ? [icon] : undefined, src.iconUrl, `material:${e.sourceName}`);
+      continue;
+    }
     if (!name) continue;
 
-    if ('baseHp' in e.source) {
-      const info = genshinCharacterAssetInfo(name);
-      const avatarDest = path.join(FRONTEND_PUBLIC, (e.source as any).avatarUrl);
-      if (info.avatarUrl && !fs.existsSync(avatarDest)) {
-        jobs.push({ url: info.avatarUrl, dest: avatarDest, label: `avatar:${name}` });
-      } else skipped++;
-      const splashRel = characterSplashPath((e.source as any).nameEn);
-      const splashDest = path.join(FRONTEND_PUBLIC, splashRel);
-      if (info.splashUrl && !fs.existsSync(splashDest)) {
-        jobs.push({ url: info.splashUrl, dest: splashDest, label: `splash:${name}` });
-      }
-    } else if ('baseAtk' in e.source && 'typeVi' in e.source) {
+    if ('baseHp' in src) {
+      const info = await characterAssetUrls(name);
+      await pushJob(info.avatar, src.avatarUrl, `avatar:${name}`);
+      await pushJob(info.splash, characterSplashPath(src.nameEn), `splash:${name}`);
+    } else if ('baseAtk' in src && 'typeVi' in src) {
       const info = genshinWeaponAssetInfo(name);
-      const rel = (e.source as any).iconUrl as string | null;
-      if (info.iconUrl && rel) {
-        const dest = path.join(FRONTEND_PUBLIC, rel);
-        if (!fs.existsSync(dest)) jobs.push({ url: info.iconUrl, dest, label: `weapon:${name}` });
-        else skipped++;
-      } else skipped++;
-    } else if ('rarityList' in e.source) {
+      await pushJob(info.iconUrls, src.iconUrl, `weapon:${name}`);
+    } else if ('rarityList' in src) {
       const info = genshinArtifactAssetInfo(name);
-      const rel = (e.source as any).iconUrl as string | null;
-      if (info.iconUrl && rel) {
-        const dest = path.join(FRONTEND_PUBLIC, rel);
-        if (!fs.existsSync(dest)) jobs.push({ url: info.iconUrl, dest, label: `artifact:${name}` });
-        else skipped++;
-      } else skipped++;
-    } else if ('rarity' in e.source && 'iconUrl' in e.source && !('piece2DescEn' in e.source)) {
+      await pushJob(info.iconUrls, src.iconUrl, `artifact:${name}`);
+    } else if ('typeText' in src) {
       const info = genshinMaterialAssetInfo(name);
-      const rel = (e.source as any).iconUrl as string | null;
-      if (info.iconUrl && rel) {
-        const dest = path.join(FRONTEND_PUBLIC, rel);
-        if (!fs.existsSync(dest)) jobs.push({ url: info.iconUrl, dest, label: `material:${name}` });
-        else skipped++;
-      } else skipped++;
+      await pushJob(info.iconUrls, src.iconUrl, `material:${name}`);
     }
   }
 
-  console.log(`🖼️  Asset jobs: ${jobs.length} cần tải, ${skipped} đã có sẵn.`);
+  console.log(`🖼️  Asset jobs: ${jobs.length} cần tải, ${result.skipped} đã có sẵn.`);
   for (const job of jobs) {
-    if (!job.url) { fail++; continue; }
-    const success = await downloadAndConvertToWebp(job.url, job.dest);
-    if (success) { ok++; console.log(`  ✅ ${job.label}`); }
-    else { fail++; console.log(`  ❌ ${job.label} <- ${job.url}`); }
+    const success = await downloadWithFallback(job.urls, job.dest, job.label);
+    if (success) {
+      result.ok++;
+      console.log(`  ✅ ${job.label}`);
+    } else {
+      result.fail++;
+      result.unprocessed.push({ label: job.label, urls: job.urls });
+      console.log(`  ❌ ${job.label} <- tất cả nguồn thất bại (${job.urls.length} URL)`);
+    }
   }
-  console.log(`🖼️  Assets: ${ok} tải mới, ${fail} lỗi, ${skipped} bỏ qua.`);
+  console.log(`🖼️  Assets: ${result.ok} tải mới, ${result.fail} lỗi, ${result.skipped} bỏ qua.`);
+  return result;
 }
 
 // ------------------------------------------------------------------
@@ -613,7 +744,7 @@ function section(title: string, entries: DiffEntry<any>[]): string {
   return `### ${title}\n\n| Action | DB ID | Tên | Trường thay đổi | Ghi chú |\n|---|---|---|---|---|\n${rows}\n`;
 }
 
-function buildMarkdownReport(report: SyncReport, mode: string): string {
+function buildMarkdownReport(report: SyncReport, mode: string, assetResult?: AssetSyncResult | null): string {
   const count = (kind: keyof SyncReport, action: string) =>
     (report[kind] as DiffEntry<any>[]).filter(e => e.action === action).length;
 
@@ -625,17 +756,17 @@ function buildMarkdownReport(report: SyncReport, mode: string): string {
 
 ## Tổng quan
 
-| Loại | Mới | Cập nhật | Giữ nguyên |
-|---|---|---|---|
-| Nhân vật | ${count('characters', 'create')} | ${count('characters', 'update')} | ${count('characters', 'unchanged')} |
-| Vũ khí | ${count('weapons', 'create')} | ${count('weapons', 'update')} | ${count('weapons', 'unchanged')} |
-| Artifact sets | ${count('artifacts', 'create')} | ${count('artifacts', 'update')} | ${count('artifacts', 'unchanged')} |
-| Materials | ${count('materials', 'create')} | ${count('materials', 'update')} | ${count('materials', 'unchanged')} |
+| Loại | Mới | Cập nhật | Giữ nguyên | Pending |
+|---|---|---|---|---|
+| Nhân vật | ${count('characters', 'create')} | ${count('characters', 'update')} | ${count('characters', 'unchanged')} | ${count('characters', 'pending')} |
+| Vũ khí | ${count('weapons', 'create')} | ${count('weapons', 'update')} | ${count('weapons', 'unchanged')} | ${count('weapons', 'pending')} |
+| Artifact sets | ${count('artifacts', 'create')} | ${count('artifacts', 'update')} | ${count('artifacts', 'unchanged')} | ${count('artifacts', 'pending')} |
+| Materials | ${count('materials', 'create')} | ${count('materials', 'update')} | ${count('materials', 'unchanged')} | ${count('materials', 'pending')} |
 
 ${section('Nhân vật (Characters)', report.characters)}
 ${section('Vũ khí (Weapons)', report.weapons)}
 ${section('Artifact sets', report.artifacts)}
-${section('Materials (chỉ báo cáo)', report.materials)}
+${section('Materials', report.materials)}
 
 ## Bản ghi trong DB không có trong nguồn (KHÔNG bị xóa)
 
@@ -663,7 +794,12 @@ ${report.unmatchedInDb.materials.slice(0, 100).map(x => `- ${x}`).join('\n')}${r
 
 </details>
 
-> *Tài nguyên hình ảnh thuộc bản quyền của miHoYo Co., Ltd.*
+${assetResult ? `## Assets
+
+- Tải mới: ${assetResult.ok} | Lỗi: ${assetResult.fail} | Bỏ qua (đã có): ${assetResult.skipped}
+${assetResult.unprocessed.length ? `\n### Icon chưa xử lý được (${assetResult.unprocessed.length})\n\n${assetResult.unprocessed.map(u => `- ${u.label} — nguồn: ${u.urls.join(', ')}`).join('\n')}` : ''}
+
+` : ''}> *Tài nguyên hình ảnh thuộc bản quyền của miHoYo Co., Ltd.*
 `;
 }
 
@@ -672,6 +808,7 @@ ${report.unmatchedInDb.materials.slice(0, 100).map(x => `- ${x}`).join('\n')}${r
 // ------------------------------------------------------------------
 
 async function main() {
+  if (!process.env.DATABASE_URL) throw new Error('Cần truyền DATABASE_URL rõ ràng qua môi trường');
   const args = parseArgs(process.argv.slice(2));
 
   console.log('==========================================');
@@ -689,7 +826,9 @@ async function main() {
   }
 
   console.log('🔍 Đang so sánh genshin-db ↔ database...');
-  let report = await detectChanges(prisma);
+  const supplementalMaterials = args.only && args.only !== 'materials' ? [] : await loadYattaMaterials();
+  console.log(`📦 Yatta Material/Item catalog: ${supplementalMaterials.length} bản ghi hợp lệ`);
+  const report = await detectChanges(prisma, supplementalMaterials);
 
   if (args.only) {
     const key = { characters: 'characters', weapons: 'weapons', artifacts: 'artifacts', materials: 'materials' }[args.only] as keyof SyncReport;
@@ -705,11 +844,8 @@ async function main() {
       console.error('\n❌ VALIDATION FAILED:');
       errors.slice(0, 50).forEach(e => console.error(`  - ${e}`));
       if (errors.length > 50) console.error(`  ... và ${errors.length - 50} lỗi khác`);
-      if (args.sync) {
-        console.error('⛔ Dừng sync do validation lỗi.');
-        process.exitCode = 1;
-        return;
-      }
+      process.exitCode = 1;
+      return;
     } else {
       console.log('✅ Validation passed.');
     }
@@ -722,7 +858,7 @@ async function main() {
   console.log(`  Characters : +${sum('characters', 'create')} mới | ~${sum('characters', 'update')} cập nhật`);
   console.log(`  Weapons    : +${sum('weapons', 'create')} mới | ~${sum('weapons', 'update')} cập nhật`);
   console.log(`  Artifacts  : +${sum('artifacts', 'create')} mới | ~${sum('artifacts', 'update')} cập nhật`);
-  console.log(`  Materials  : +${sum('materials', 'create')} mới (chỉ báo cáo) | ~${sum('materials', 'update')} cập nhật`);
+  console.log(`  Materials  : +${sum('materials', 'create')} mới | ~${sum('materials', 'update')} cập nhật`);
 
   const warnings = [...report.characters, ...report.weapons, ...report.artifacts, ...report.materials]
     .flatMap(e => e.warnings);
@@ -734,6 +870,7 @@ async function main() {
   // ---------- Report file ----------
   fs.mkdirSync(LOGS_DIR, { recursive: true });
   const reportPath = args.reportPath || path.join(LOGS_DIR, `sync_report_${Date.now()}.md`);
+  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(reportPath, buildMarkdownReport(report, args.sync ? 'sync' : 'dry-run'));
   console.log(`\n📝 Báo cáo: ${reportPath}`);
 
@@ -743,15 +880,15 @@ async function main() {
     return;
   }
 
-  // ---------- Sync ----------
-  console.log('\n💾 Đang đồng bộ vào database...');
-  await applyReport(report, args.downloadAssets);
-
+  let assetResult: AssetSyncResult | null = null;
   if (args.downloadAssets) {
     console.log('\n🖼️  Đang đồng bộ assets...');
-    await downloadMissingAssets(report);
+    assetResult = await downloadMissingAssets(report);
   }
 
+  console.log('\n💾 Đang đồng bộ vào database...');
+  await applyReport(report, args.downloadAssets);
+  fs.writeFileSync(reportPath, buildMarkdownReport(report, 'sync', assetResult));
   console.log('\n✅ SYNC HOÀN TẤT.');
   console.log('   Rollback: npx ts-node scripts/sync/syncEngine.ts --rollback backups/<snapshot>.json');
 }

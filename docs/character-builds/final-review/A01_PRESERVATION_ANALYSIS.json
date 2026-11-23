@@ -1,0 +1,1087 @@
+{
+  "revision": "character-build-catalog-7.2-r3-a01",
+  "originalBatch": "1acfde1c57701c09a90574eab83c969abbd0554bf73e39c1cb083377e418ae36",
+  "finalBatch": "0cddce86d77d542f15cbc6ad59a9282591b5db1033efa70c6728e27f31f58ae1",
+  "records": [
+    {
+      "candidateId": "bennett:1",
+      "source": {
+        "checkedAt": "2026-11-20",
+        "urls": [
+          "https://genshin-builds.com/en/character/bennett",
+          "https://keqingmains.com/q/bennett-quickguide/",
+          "https://library.keqingmains.com/bennett/"
+        ],
+        "claims": "Checked ER/HP healing split, 70% C0 threshold, Base ATK and Sapwood/Favonius tradeoff.",
+        "local": "genshin-db@5.2.15"
+      },
+      "teams": [
+        {
+          "id": "da2ecf60-b0ea-431a-9eef-c644f031961c",
+          "name": "Bennett Vaporize Team #3",
+          "members": [
+            "klee",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Klee can outrun Xingqiu Hydro. Confirm normal triggers and reaction ownership.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "b8140eb3-cdb8-4941-95ee-420f48ee2e0e",
+          "name": "Bennett Pure Pyro",
+          "members": [
+            "klee",
+            "xiangling",
+            "kazuha",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "Mono Pyro core is useful; replace unresolved kazuha alias in a separate reviewed team edit.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "71c8c8fc-5753-4691-bdf5-e240bd61648d",
+          "name": "Bennett Thunder Team",
+          "members": [
+            "raiden-shogun",
+            "kujou-sara",
+            "bennett",
+            "kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "Raiden hypercarry core is useful; replace kazuha alias and avoid assuming Sara C6 in a C0 context.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "6a7f0822-d08f-4c45-aefa-9bc88fc133e4",
+          "name": "Hu Tao Vaporize with Bennett",
+          "members": [
+            "hu-tao",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Bennett healing may trade away Hu Tao below-half-HP effects. Check Hydro uptime and risk.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "26ee8d9a-0fda-4a2a-a738-aad7b9b688ce",
+          "name": "Bennett Vaporize Team #2",
+          "members": [
+            "yoimiya",
+            "xingqiu",
+            "kazuha",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "Yoimiya and Xingqiu are viable; replace kazuha alias and check Pyro Swirl setup and interruption.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "c86479e2-36e3-4db3-8d27-4c5e2fe3e0d7",
+          "name": "Bennett Superconduct Team",
+          "members": [
+            "eula",
+            "fischl",
+            "diona",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Fischl and Cryo enable Superconduct; Bennett C0 does not infuse Eula. Check circle uptime.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "e1556187-170b-45e0-882d-cf4eec9866e4",
+          "name": "Bennett Vaporize Team #1",
+          "members": [
+            "tartaglia",
+            "xiangling",
+            "bennett",
+            "kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "International core is useful; replace unresolved kazuha alias in a separate reviewed team edit.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "575f4f2d-2c60-4d74-8afc-67c6ea936adb",
+          "name": "Bennett Vaporize Team",
+          "members": [
+            "yanfei",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Yanfei can drive Xingqiu with normal attacks before charged attacks. Sucrose supports Swirl.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        }
+      ],
+      "gear": {
+        "weapons": [
+          {
+            "id": "05bf4d00-7572-45f5-b1c6-e5262bd268e8",
+            "storedId": "ánh-sáng-đêm-sương-mù",
+            "name": "Ánh Sáng Đêm Sương Mù",
+            "canonicalId": "11509",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "cd766ed6-18c9-49ef-89b3-8e86c0d1780a",
+            "storedId": "xá-tội",
+            "name": "Xá Tội",
+            "canonicalId": "11515",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "0b9b2890-1d96-41b7-a236-45da456e56b4",
+            "storedId": "thương-diệu",
+            "name": "Thương Diệu",
+            "canonicalId": "11517",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "eb4b3d0f-47cd-4ff8-967e-edd9c8c80391",
+            "storedId": "phong-ưng-kiếm",
+            "name": "Phong Ưng Kiếm",
+            "canonicalId": "11501",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "7a572f9d-c223-48b4-91d1-716a84ac82b7",
+            "storedId": "tia-sáng-nơi-hẻm-tối",
+            "name": "Tia Sáng Nơi Hẻm Tối",
+            "canonicalId": "11410",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "98e7165d-7f4f-4721-b243-7e55a2331cfd",
+            "storedId": "lời-thề-tự-do-cổ-xưa",
+            "name": "Lời Thề Tự Do Cổ Xưa",
+            "canonicalId": "11503",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "e5cd57be-0b54-4eb1-b4d3-0fc98ddb055b",
+            "storedId": "khúc-ca-núi-đá",
+            "name": "Khúc Ca Núi Đá",
+            "canonicalId": "11516",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "3da2b78d-e0b1-4ed0-bfba-809ebbcb14d5",
+            "storedId": "thiên-không-kiếm",
+            "name": "Thiên Không Kiếm",
+            "canonicalId": "11502",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "29cf6f4a-e554-4a29-86b4-9a22e4320ddd",
+            "storedId": "kiếm-gỗ",
+            "name": "Kiếm Gỗ",
+            "canonicalId": "11417",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "61290556-0a0e-4156-8a61-23230e6b1b84",
+            "storedId": "mẫu-trảm-nham",
+            "name": "Mẫu Trảm Nham",
+            "canonicalId": "11406",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "c10572bb-1295-4abb-ba8e-fcb9ca4e243a",
+            "storedId": "tai-họa-eshu",
+            "name": "Tai Họa Eshu",
+            "canonicalId": "11432",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "eafe4cf5-29ec-4933-8d95-011dfcdf9b5a",
+            "storedId": "tây-phong-kiếm",
+            "name": "Tây Phong Kiếm",
+            "canonicalId": "11401",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          }
+        ],
+        "artifacts": [
+          {
+            "id": "e80a52bd-10ee-4143-b726-6804613fec1c",
+            "label": "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+            "pieces": 4,
+            "canonicalIds": [
+              "15037"
+            ],
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "3e2d2bd3-7d2a-46b0-a60d-ab5ad6fdb63e",
+            "label": "Nghi Thức Tông Thất Cổ",
+            "pieces": 4,
+            "canonicalIds": [
+              "15007"
+            ],
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "72e7be97-02fd-423b-b425-030e90e50c37",
+            "label": "Giáo Quan",
+            "pieces": 4,
+            "canonicalIds": [
+              "10007"
+            ],
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "c2655972-a647-427f-9e12-71ddefb6a05f",
+            "label": "Ký Ức Rừng Sâu",
+            "pieces": 4,
+            "canonicalIds": [
+              "15025"
+            ],
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          }
+        ]
+      },
+      "shortlistFacts": [
+        {
+          "weaponId": "11501",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Aquila Favonia",
+          "baseATK90": 674,
+          "passiveName": "Falcon's Defiance"
+        },
+        {
+          "weaponId": "11502",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Skyward Blade",
+          "baseATK90": 608,
+          "passiveName": "Sky-Piercing Fang"
+        },
+        {
+          "weaponId": "11417",
+          "isF2P": true,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Sapwood Blade",
+          "baseATK90": 565,
+          "passiveName": "Forest Sanctuary"
+        },
+        {
+          "weaponId": "11401",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Favonius Sword",
+          "baseATK90": 454,
+          "passiveName": "Windfall"
+        }
+      ],
+      "preservation": {
+        "teams": [
+          8,
+          8
+        ],
+        "weapons": [
+          12,
+          12
+        ],
+        "artifacts": [
+          4,
+          4
+        ]
+      },
+      "desiredTeamCollection": [
+        {
+          "id": "da2ecf60-b0ea-431a-9eef-c644f031961c",
+          "name": "Bennett Vaporize Team #3",
+          "members": [
+            "klee",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Klee can outrun Xingqiu Hydro. Confirm normal triggers and reaction ownership.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "b8140eb3-cdb8-4941-95ee-420f48ee2e0e",
+          "name": "Bennett Pure Pyro",
+          "members": [
+            "klee",
+            "xiangling",
+            "kazuha",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "Mono Pyro core is useful; replace unresolved kazuha alias in a separate reviewed team edit.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "71c8c8fc-5753-4691-bdf5-e240bd61648d",
+          "name": "Bennett Thunder Team",
+          "members": [
+            "raiden-shogun",
+            "kujou-sara",
+            "bennett",
+            "kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "Raiden hypercarry core is useful; replace kazuha alias and avoid assuming Sara C6 in a C0 context.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "6a7f0822-d08f-4c45-aefa-9bc88fc133e4",
+          "name": "Hu Tao Vaporize with Bennett",
+          "members": [
+            "hu-tao",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Bennett healing may trade away Hu Tao below-half-HP effects. Check Hydro uptime and risk.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "26ee8d9a-0fda-4a2a-a738-aad7b9b688ce",
+          "name": "Bennett Vaporize Team #2",
+          "members": [
+            "yoimiya",
+            "xingqiu",
+            "kazuha",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "Yoimiya and Xingqiu are viable; replace kazuha alias and check Pyro Swirl setup and interruption.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "c86479e2-36e3-4db3-8d27-4c5e2fe3e0d7",
+          "name": "Bennett Superconduct Team",
+          "members": [
+            "eula",
+            "fischl",
+            "diona",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Fischl and Cryo enable Superconduct; Bennett C0 does not infuse Eula. Check circle uptime.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "e1556187-170b-45e0-882d-cf4eec9866e4",
+          "name": "Bennett Vaporize Team #1",
+          "members": [
+            "tartaglia",
+            "xiangling",
+            "bennett",
+            "kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "UPDATE",
+          "reason": "International core is useful; replace unresolved kazuha alias in a separate reviewed team edit.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "575f4f2d-2c60-4d74-8afc-67c6ea936adb",
+          "name": "Bennett Vaporize Team",
+          "members": [
+            "yanfei",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Yanfei can drive Xingqiu with normal attacks before charged attacks. Sucrose supports Swirl.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        }
+      ],
+      "activeRemovals": []
+    },
+    {
+      "candidateId": "fischl:1",
+      "source": {
+        "checkedAt": "2026-11-20",
+        "urls": [
+          "https://genshin-builds.com/en/character/fischl",
+          "https://keqingmains.com/q/fischl-quickguide/",
+          "https://keqingmains.com/q/keqing-quickguide/"
+        ],
+        "claims": "Checked ATK/EM tradeoff, off-field Golden Troupe, healing before Oz snapshot and compatible Quicken teammates. Exact injury/healing timing remains experimental.",
+        "local": "genshin-db@5.2.15"
+      },
+      "teams": [],
+      "gear": {
+        "weapons": [
+          {
+            "id": "6326d5ef-e72a-4a39-9974-35ed565b69d6",
+            "storedId": "tuyệt-huyền",
+            "name": "Tuyệt Huyền",
+            "canonicalId": "15402",
+            "classification": "SHORTLIST",
+            "disposition": "NORMALIZE_EXISTING_OPTION"
+          },
+          {
+            "id": "40788531-279f-494e-850e-18e3a61964a1",
+            "storedId": "cánh-thiên-không",
+            "name": "Cánh Thiên Không",
+            "canonicalId": "15501",
+            "classification": "SHORTLIST",
+            "disposition": "NORMALIZE_EXISTING_OPTION"
+          }
+        ],
+        "artifacts": [
+          {
+            "id": "35fbdb10-ffae-4673-b456-f4616a28e588",
+            "label": "Thánh Di Vật Đề Cử",
+            "pieces": 4,
+            "canonicalIds": [
+              null
+            ],
+            "classification": "UNRESOLVED_LABEL",
+            "disposition": "REPLACE_NON_SET_PLACEHOLDER"
+          }
+        ]
+      },
+      "shortlistFacts": [
+        {
+          "weaponId": "15507",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Polar Star",
+          "baseATK90": 608,
+          "passiveName": "Daylight's Augury"
+        },
+        {
+          "weaponId": "15402",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "The Stringless",
+          "baseATK90": 510,
+          "passiveName": "Arrowless Song"
+        },
+        {
+          "weaponId": "15425",
+          "isF2P": true,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Song of Stillness",
+          "baseATK90": 510,
+          "passiveName": "Benthic Pulse"
+        },
+        {
+          "weaponId": "15410",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Alley Hunter",
+          "baseATK90": 565,
+          "passiveName": "Oppidan Ambush"
+        },
+        {
+          "weaponId": "15501",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Skyward Harp",
+          "baseATK90": 674,
+          "passiveName": "Echoing Ballad"
+        }
+      ],
+      "preservation": {
+        "teams": [
+          0,
+          1
+        ],
+        "weapons": [
+          2,
+          5
+        ],
+        "artifacts": [
+          1,
+          2
+        ]
+      },
+      "desiredTeamCollection": [
+        {
+          "name": "Off-field Oz in Aggravate",
+          "description": "Oz damage follows Skill talent. Alternate Skill and Burst to refresh Oz. Use Polar Star only with a rotation that establishes useful stacks.",
+          "reviewStatus": "EXPERIMENTAL",
+          "members": [
+            {
+              "characterId": "fischl",
+              "role": "SUB_DPS",
+              "roleDesc": "off-field Oz and Aggravate follow-up"
+            },
+            {
+              "characterId": "keqing",
+              "role": "MAIN_DPS",
+              "roleDesc": "quick-swap Electro attacker"
+            },
+            {
+              "characterId": "nahida",
+              "role": "SUB_DPS",
+              "roleDesc": "ongoing Dendro application"
+            },
+            {
+              "characterId": "yaoyao",
+              "role": "SUPPORT",
+              "roleDesc": "healing and Dendro application"
+            }
+          ]
+        }
+      ],
+      "activeRemovals": [
+        "Non-set artifact placeholder; bow choices retained by canonical ID"
+      ]
+    },
+    {
+      "candidateId": "xiangling:1",
+      "source": {
+        "checkedAt": "2026-11-20",
+        "urls": [
+          "https://genshin-builds.com/en/character/xiangling",
+          "https://keqingmains.com/xiangling/",
+          "https://keqingmains.com/q/xiangling-quickguide/"
+        ],
+        "claims": "Checked ER gating, conditional ATK/EM, eligible snapshots, Favonius and Bennett particles, and aura-dependent Dragon’s Bane.",
+        "local": "genshin-db@5.2.15"
+      },
+      "teams": [
+        {
+          "id": "49b37bc6-9c48-4cb2-ac74-cc89b2f9340e",
+          "name": "Xiangling Melting Team #1",
+          "members": [
+            "ganyu",
+            "xiangling",
+            "zhongli",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Ganyu reverse Melt, Xiangling Pyro, Bennett battery and Zhongli interruption protection.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "4749323d-b048-48d5-92c0-610eac4dbb7f",
+          "name": "Xiangling Overload Team #2",
+          "members": [
+            "keqing",
+            "xiangling",
+            "beidou",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Possible Overloaded quickswap. Test energy and knockback before endorsing.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "e307a52b-95c1-4920-ab44-cae4ced06b7a",
+          "name": "Xiangling Vaporize Team #3",
+          "members": [
+            "xiangling",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Matches the proposed benchmark roster. Sucrose drives normal triggers; no duplicate needed.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "52c8b1f3-84aa-4799-8a68-baa308b1dbb7",
+          "name": "Xiangling Vaporize Team #1",
+          "members": [
+            "tartaglia",
+            "xiangling",
+            "kaedehara-kazuha",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Tartaglia applies Hydro; Bennett funnels particles and Kazuha can support both elements.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "dd828058-aed0-4e78-9e2e-73dd0d225a1b",
+          "name": "Xiangling Overload Team #1",
+          "members": [
+            "raiden-shogun",
+            "xiangling",
+            "kujou-sara",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Electro/Pyro roster is legal, but no Hydro and timing and Sara constellation affect value.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "25c5490b-3576-440c-8731-3d3a5ca0594d",
+          "name": "Xiangling Vaporize Team #2",
+          "members": [
+            "sangonomiya-kokomi",
+            "xiangling",
+            "bennett",
+            "kaedehara-kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Kokomi can sustain and supply Hydro; align driving time with Pyronado.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "24aa8585-d369-4dce-a0bc-a5b7e6a7ac7e",
+          "name": "Raiden Overload Vaporize",
+          "members": [
+            "raiden-shogun",
+            "xiangling",
+            "xingqiu",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Raiden drives Xingqiu and batteries the team; Pyro, Hydro and Electro support Overvape.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "a4e9f7fd-64b6-41cb-8d35-d73a726b7228",
+          "name": "Xiangling Pure Pyro Team",
+          "members": [
+            "klee",
+            "xiangling",
+            "bennett",
+            "kaedehara-kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Klee, Bennett and Xiangling support mono Pyro with Anemo resistance shred.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        }
+      ],
+      "gear": {
+        "weapons": [
+          {
+            "id": "fa19a40e-941f-4394-a159-e48f7bd9ae83",
+            "storedId": "quyền-trượng-cát-đỏ",
+            "name": "Quyền Trượng Cát Đỏ",
+            "canonicalId": "13511",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "35a664a5-a46d-4969-955a-65847989520a",
+            "storedId": "đoạn-thảo-trường-đao",
+            "name": "Engulfing Lightning",
+            "canonicalId": "13509",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "41ca373d-f2f6-4d67-87ec-f1a88d125c47",
+            "storedId": "hòa-phác-diên",
+            "name": "Primordial Jade Winged-Spear",
+            "canonicalId": "13505",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "7be9c23f-02a7-4d01-8b91-b7bb5841fc91",
+            "storedId": "bi-ca-lumidouce",
+            "name": "Bi Ca Lumidouce",
+            "canonicalId": "13513",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "14e10e8e-a9a8-4a0d-af4a-2bca7a4a4c40",
+            "storedId": "hào-quang-tách-rời",
+            "name": "Hào Quang Tách Rời",
+            "canonicalId": "13515",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "70ac7b58-df12-41e0-9604-d7fdc453f1fa",
+            "storedId": "trượng-hộ-ma",
+            "name": "Trượng Hộ Ma",
+            "canonicalId": "13501",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "b6bd8c7a-2cd5-4870-b158-27c6b9dcb3a3",
+            "storedId": "tai-họa-và-hối-hận",
+            "name": "Tai Họa Và Hối Hận",
+            "canonicalId": "13517",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "663b73ba-5ca4-42bf-9a3e-a59e37e67509",
+            "storedId": "lao-xiên-cá",
+            "name": "Lao Xiên Cá",
+            "canonicalId": "13415",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "45361342-de26-4cbf-b2ab-9f6dd38870e4",
+            "storedId": "thương-quyết-chiến",
+            "name": "Thương Quyết Chiến",
+            "canonicalId": "13405",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "5694ffd1-3529-4a30-aeaa-19e79c6bf502",
+            "storedId": "khúc-ca-vịnh-hẹp",
+            "name": "Khúc Ca Vịnh Hẹp",
+            "canonicalId": "13424",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "d86f49f7-c519-4f4d-be5c-584ce896b08e",
+            "storedId": "hủy-diệt",
+            "name": "Hủy Diệt",
+            "canonicalId": "13507",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "c4d36123-43ea-4c4b-8a39-0b8ac5daa983",
+            "storedId": "giáo-nịnh-thần",
+            "name": "Giáo Nịnh Thần",
+            "canonicalId": "13504",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "6a0bc3c9-878a-47d4-9f0d-1cd47ec916d1",
+            "storedId": "hình-thái-xích-nguyệt",
+            "name": "Hình Thái Xích Nguyệt",
+            "canonicalId": "13512",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "13434f69-7ae5-43f8-83bc-5c8616c901bb",
+            "storedId": "tàn-tích-nhuốm-máu",
+            "name": "Tàn Tích Nhuốm Máu",
+            "canonicalId": "13516",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "2e4f594e-76e9-40fa-92dc-1e3d55406b98",
+            "storedId": "vây-cá-chẻ-sóng",
+            "name": "Vây Cá Chẻ Sóng",
+            "canonicalId": "13416",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "c5c4f028-b844-4ea7-91c8-64681408d186",
+            "storedId": "mũi-nhọn-của-gió",
+            "name": "Mũi Nhọn Của Gió",
+            "canonicalId": "13419",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "c1520faf-ddec-4d6b-bbb3-c4685e4e457f",
+            "storedId": "giáo-thập-tự-kitain",
+            "name": "Giáo Thập Tự Kitain",
+            "canonicalId": "13414",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "a6bd8f9c-a8bc-41ef-b711-c274153460bd",
+            "storedId": "thương-thiên-nham",
+            "name": "Thương Thiên Nham",
+            "canonicalId": "13406",
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "a3375225-f696-4645-a47c-e288c0e33ece",
+            "storedId": "thương-tây-phong",
+            "name": "Thương Tây Phong",
+            "canonicalId": "13407",
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          }
+        ],
+        "artifacts": [
+          {
+            "id": "b180572e-6b1e-4d8b-8c97-8618ac7283b1",
+            "label": "Mix 2-Piece Emblem of Severed Fate & 2-Piece Noblesse Oblige",
+            "pieces": 2,
+            "canonicalIds": [
+              "15020",
+              "15007"
+            ],
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "49ec37d9-7342-4184-9a83-d1adf9e807e3",
+            "label": "Mix 2-Piece Crimson Witch of Flames & 2-Piece Emblem of Severed Fate",
+            "pieces": 2,
+            "canonicalIds": [
+              "15006",
+              "15020"
+            ],
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "256293d6-dd8d-4e81-83ea-08606157910b",
+            "label": "Mix 2-Piece Crimson Witch of Flames & 2-Piece Noblesse Oblige",
+            "pieces": 2,
+            "canonicalIds": [
+              "15006",
+              "15007"
+            ],
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "91204e26-d922-4e3b-8d9e-4a9b23e96fdf",
+            "label": "Dấu Ấn Ngăn Cách",
+            "pieces": 4,
+            "canonicalIds": [
+              "15020"
+            ],
+            "classification": "SHORTLIST",
+            "disposition": "PRESERVE_EXACT_ROW"
+          },
+          {
+            "id": "1429458a-9598-4dad-8367-8b5f15ba2ff8",
+            "label": "Diệm Liệt Ma Nữ Cháy Rực",
+            "pieces": 4,
+            "canonicalIds": [
+              "15006"
+            ],
+            "classification": "SITUATIONAL_OR_LEGACY_RETAINED",
+            "disposition": "PRESERVE_EXACT_ROW"
+          }
+        ]
+      },
+      "shortlistFacts": [
+        {
+          "weaponId": "13415",
+          "isF2P": true,
+          "refinement": 5,
+          "constellation": "C0",
+          "name": "\"The Catch\"",
+          "baseATK90": 510,
+          "passiveName": "Shanty"
+        },
+        {
+          "weaponId": "13509",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Engulfing Lightning",
+          "baseATK90": 608,
+          "passiveName": "Timeless Dream: Eternal Stove"
+        },
+        {
+          "weaponId": "13407",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Favonius Lance",
+          "baseATK90": 565,
+          "passiveName": "Windfall"
+        },
+        {
+          "weaponId": "13401",
+          "isF2P": false,
+          "refinement": 1,
+          "constellation": "C0",
+          "name": "Dragon's Bane",
+          "baseATK90": 454,
+          "passiveName": "Bane of Flame and Water"
+        }
+      ],
+      "preservation": {
+        "teams": [
+          8,
+          8
+        ],
+        "weapons": [
+          19,
+          19
+        ],
+        "artifacts": [
+          5,
+          5
+        ]
+      },
+      "desiredTeamCollection": [
+        {
+          "id": "49b37bc6-9c48-4cb2-ac74-cc89b2f9340e",
+          "name": "Xiangling Melting Team #1",
+          "members": [
+            "ganyu",
+            "xiangling",
+            "zhongli",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Ganyu reverse Melt, Xiangling Pyro, Bennett battery and Zhongli interruption protection.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "4749323d-b048-48d5-92c0-610eac4dbb7f",
+          "name": "Xiangling Overload Team #2",
+          "members": [
+            "keqing",
+            "xiangling",
+            "beidou",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Possible Overloaded quickswap. Test energy and knockback before endorsing.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "e307a52b-95c1-4920-ab44-cae4ced06b7a",
+          "name": "Xiangling Vaporize Team #3",
+          "members": [
+            "xiangling",
+            "xingqiu",
+            "sucrose",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Matches the proposed benchmark roster. Sucrose drives normal triggers; no duplicate needed.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "52c8b1f3-84aa-4799-8a68-baa308b1dbb7",
+          "name": "Xiangling Vaporize Team #1",
+          "members": [
+            "tartaglia",
+            "xiangling",
+            "kaedehara-kazuha",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Tartaglia applies Hydro; Bennett funnels particles and Kazuha can support both elements.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "dd828058-aed0-4e78-9e2e-73dd0d225a1b",
+          "name": "Xiangling Overload Team #1",
+          "members": [
+            "raiden-shogun",
+            "xiangling",
+            "kujou-sara",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "NEEDS_REVIEW",
+          "reason": "Electro/Pyro roster is legal, but no Hydro and timing and Sara constellation affect value.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "25c5490b-3576-440c-8731-3d3a5ca0594d",
+          "name": "Xiangling Vaporize Team #2",
+          "members": [
+            "sangonomiya-kokomi",
+            "xiangling",
+            "bennett",
+            "kaedehara-kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Kokomi can sustain and supply Hydro; align driving time with Pyronado.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "24aa8585-d369-4dce-a0bc-a5b7e6a7ac7e",
+          "name": "Raiden Overload Vaporize",
+          "members": [
+            "raiden-shogun",
+            "xiangling",
+            "xingqiu",
+            "bennett"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Raiden drives Xingqiu and batteries the team; Pyro, Hydro and Electro support Overvape.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        },
+        {
+          "id": "a4e9f7fd-64b6-41cb-8d35-d73a726b7228",
+          "name": "Xiangling Pure Pyro Team",
+          "members": [
+            "klee",
+            "xiangling",
+            "bennett",
+            "kaedehara-kazuha"
+          ],
+          "reviewStatus": null,
+          "classification": "RETAIN",
+          "reason": "Klee, Bennett and Xiangling support mono Pyro with Anemo resistance shred.",
+          "disposition": "PRESERVE_EXACT_ROW"
+        }
+      ],
+      "activeRemovals": []
+    }
+  ]
+}

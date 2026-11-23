@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useMemo, useState, useEffect } from 'react';
+import ElementIcon from '@/components/ui/ElementIcon';
 import FallbackImage from '@/components/ui/FallbackImage';
 import { Link } from '@/i18n/routing';
 import { CharacterData } from '@/types/character';
-import { motion, useReducedMotion } from 'framer-motion';
-import { CalendarDays, Cake, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { CalendarDays, Cake, Sparkles, Star } from 'lucide-react';
 
 interface UpcomingBirthdaysProps {
   characters: CharacterData[];
@@ -13,21 +14,88 @@ interface UpcomingBirthdaysProps {
 }
 
 const EL_COLOR: Record<string, string> = {
-  Pyro: '#ff5a45',
-  Hydro: '#3aa8ff',
-  Cryo: '#8fe8f5',
-  Electro: '#cf8fff',
-  Anemo: '#35d6c5',
-  Geo: '#ffd34d',
-  Dendro: '#9ede5f',
+  Pyro: '#ff5a45', Hydro: '#3aa8ff', Cryo: '#8fe8f5',
+  Electro: '#cf8fff', Anemo: '#35d6c5', Geo: '#ffd34d', Dendro: '#9ede5f',
 };
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const MONTHS_VI = ['Thg 1', 'Thg 2', 'Thg 3', 'Thg 4', 'Thg 5', 'Thg 6', 'Thg 7', 'Thg 8', 'Thg 9', 'Thg 10', 'Thg 11', 'Thg 12'];
 
+type UpcomingChar = CharacterData & { bMonth: number; bDay: number; daysUntil: number; isToday: boolean };
+
+/* ─── Compact character card — same visual language as CharacterCard ───── */
+function BirthdayCharacterCard({
+  char,
+  name,
+  monthLabel,
+  locale,
+}: {
+  char: UpcomingChar;
+  name: string;
+  monthLabel: string;
+  locale: string;
+}) {
+  const el = char.element;
+  const color = EL_COLOR[el] ?? '#a77cf6';
+  const is5 = char.rarity === 5;
+
+  return (
+    <Link
+      href={`/characters/${char.id}`}
+      className={`bday-card group${char.isToday ? ' is-today' : ''}`}
+      data-element={el.toLowerCase()}
+      style={{ '--card-element': color } as React.CSSProperties}
+      aria-label={`${name} — ${monthLabel} ${char.bDay}`}
+    >
+      {/* Artwork — breathing room, no hair/head crop */}
+      <span className="bday-art">
+        <span className="bday-art-inner">
+          <FallbackImage
+            src={char.avatarUrl}
+            alt={name}
+            fill
+            sizes="(max-width: 767px) 44vw, 180px"
+            className="object-contain object-bottom"
+            unoptimized
+          />
+        </span>
+      </span>
+
+      {/* Bottom nameplate scrim */}
+      <span className="bday-scrim" aria-hidden="true" />
+      {is5 && <span className="bday-sparkle" aria-hidden="true" />}
+
+      {/* Element badge */}
+      <span className="bday-element"><ElementIcon element={el} label={el} /></span>
+
+      {/* Birthday ribbon */}
+      {char.isToday && (
+        <span className="bday-ribbon">
+          <Sparkles size={10} aria-hidden="true" /> {locale === 'vi' ? 'Hôm nay' : 'Today'}
+        </span>
+      )}
+
+      {/* Nameplate */}
+      <span className="bday-body">
+        <span className="bday-name">{name}</span>
+        <span className="bday-meta">
+          <span className="character-rarity bday-rarity" data-rarity={char.rarity} aria-label={`${char.rarity}★`}>
+            {Array.from({ length: char.rarity }).map((_, i) => (
+              <Star key={i} size={9} fill="currentColor" stroke="none" aria-hidden="true" />
+            ))}
+          </span>
+          <span className={`bday-date${char.isToday ? ' is-today' : ''}`}>
+            <CalendarDays size={10} aria-hidden="true" />
+            {monthLabel} {char.bDay}
+          </span>
+        </span>
+      </span>
+    </Link>
+  );
+}
+
 export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthdaysProps) {
   const [isMounted, setIsMounted] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     setIsMounted(true);
@@ -75,15 +143,15 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
 
   return (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
       className="upcoming-birthdays-panel relative rounded-2xl p-5 flex flex-col justify-between"
       style={{
-        background: 'rgba(255, 255, 255, 0.92)',
-        border: hasToday ? '1px solid rgba(232, 184, 76, 0.35)' : '1px solid rgba(23, 43, 58, 0.08)',
-        boxShadow: hasToday ? '0 8px 24px rgba(232, 184, 76, 0.12)' : '0 8px 24px rgba(23, 43, 58, 0.05)',
+        background: 'var(--bg-surface)',
+        border: `1px solid ${hasToday ? 'var(--border-gold)' : 'var(--border-subtle)'}`,
+        boxShadow: hasToday ? '0 8px 24px -12px var(--gold-glow-strong)' : 'var(--atlas-shadow)',
       }}
     >
       {/* Top accent line */}
@@ -91,116 +159,48 @@ export default function UpcomingBirthdays({ characters, locale }: UpcomingBirthd
         className="absolute top-0 left-0 right-0 h-[2px]"
         style={{
           background: hasToday
-            ? 'linear-gradient(90deg, transparent, #E8B84C, transparent)'
-            : 'linear-gradient(90deg, transparent, rgba(124, 90, 224, 0.4), transparent)',
+            ? 'linear-gradient(90deg, transparent, var(--fantasy-gold), transparent)'
+            : 'linear-gradient(90deg, transparent, var(--accent-primary), transparent)',
         }}
       />
 
       {/* Header */}
       <div className="flex items-center justify-between mb-3.5">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg bg-violet-500/10 flex items-center justify-center text-[#7C5AE0]">
+          <div className="w-6 h-6 rounded-lg bg-[var(--accent-primary-dim)] flex items-center justify-center text-[var(--accent-primary-light)]">
             <Cake size={14} />
           </div>
-          <h3 className="text-[13px] font-extrabold text-slate-800 flex items-center gap-2">
+          <h3 className="text-base font-bold text-[var(--text-primary)] flex items-center gap-2">
             <span>{locale === 'vi' ? 'Sinh nhật sắp tới' : 'Upcoming Birthdays'}</span>
             {hasToday && (
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-700 border border-amber-300 shadow-xs animate-bounce">
-                <Sparkles size={11} className="text-amber-500" />
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-extrabold bg-[var(--gold-200)] text-[var(--gold-600)] border border-[var(--border-gold)] shadow-xs">
+                <Sparkles size={11} className="text-[var(--fantasy-gold)]" />
                 {locale === 'vi' ? 'Hôm nay!' : 'Today!'}
               </span>
             )}
           </h3>
         </div>
 
-        <span className="text-[10px] font-bold text-slate-400">
+        <span className="text-xs font-bold text-[var(--text-secondary)]">
           {locale === 'vi' ? '8 nhân vật gần nhất' : 'Next 8 birthdays'}
         </span>
       </div>
 
-      {/* Characters Grid: 4 cols x 2 rows */}
-      <div className="grid grid-cols-4 gap-2.5 my-auto">
-        {upcoming.map((char, idx) => {
-          const elColor = EL_COLOR[char.element] ?? '#7C5AE0';
+      {/* Compact character cards */}
+      <div className="bday-grid">
+        {upcoming.map((char) => {
           const name = locale === 'vi' ? char.nameVi || char.nameEn : char.nameEn;
           const monthLabel = locale === 'vi' ? MONTHS_VI[char.bMonth - 1] : MONTHS[char.bMonth - 1];
 
           return (
-            <motion.div
-              key={char.id}
-              whileHover={shouldReduceMotion ? {} : { y: -5, scale: 1.05 }}
-              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Link
-                href={`/characters/${char.id}`}
-                className="group flex flex-col items-center text-center"
-              >
-                {/* Avatar Box */}
-                <div
-                  className={`relative w-full aspect-square rounded-2xl overflow-hidden transition-all duration-300 ${
-                    char.isToday
-                      ? 'ring-2 ring-amber-400 shadow-[0_0_16px_rgba(232,184,76,0.4)]'
-                      : 'group-hover:shadow-[0_8px_18px_rgba(0,0,0,0.12)]'
-                  }`}
-                  style={{
-                    background: `linear-gradient(135deg, ${elColor}20, #f8fafc)`,
-                    border: char.isToday ? '1px solid #E8B84C' : `1px solid ${elColor}30`,
-                  }}
-                >
-                  <FallbackImage
-                    src={char.avatarUrl}
-                    alt={name}
-                    fill
-                    sizes="80px"
-                    className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                    unoptimized
-                  />
-
-                  {/* Today Badge */}
-                  {char.isToday && (
-                    <div
-                      className="absolute bottom-0 left-0 right-0 py-0.5 text-center text-[9px] font-black uppercase tracking-wider text-amber-900"
-                      style={{ background: 'linear-gradient(to right, #fde68a, #fcd34d)' }}
-                    >
-                      🎉 Today
-                    </div>
-                  )}
-                </div>
-
-                {/* Name */}
-                <span className="text-[10px] font-extrabold text-slate-700 group-hover:text-[var(--accent-primary)] transition-colors mt-1.5 truncate w-full px-0.5">
-                  {name.split(' ').slice(-1)[0]}
-                </span>
-
-                {/* Element + Date */}
-                <div className="mt-0.5 flex items-center justify-center gap-1.5">
-                  <div
-                    className="w-6 h-6 shrink-0 rounded-full overflow-hidden flex items-center justify-center shadow-[0_2px_6px_rgba(15,23,42,0.28)]"
-                    style={{
-                      background: '#090d12',
-                      border: `1.5px solid ${elColor}90`,
-                      boxShadow: `0 0 7px ${elColor}45`,
-                    }}
-                    title={char.element}
-                  >
-                    <FallbackImage
-                      src={`/assets/elements/${char.element.toLowerCase()}.webp`}
-                      alt={char.element}
-                      width={18}
-                      height={18}
-                      className="w-4 h-4 object-contain drop-shadow-[0_0_2px_rgba(255,255,255,0.75)]"
-                      unoptimized
-                    />
-                  </div>
-                  <span
-                    className="text-[10px] font-bold tabular-nums"
-                    style={{ color: char.isToday ? '#b45309' : 'rgba(71, 85, 105, 0.9)' }}
-                  >
-                    {monthLabel} {char.bDay}
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
+            <div key={char.id} className="bday-card-shell">
+              <BirthdayCharacterCard
+                char={char}
+                name={name}
+                monthLabel={monthLabel}
+                locale={locale}
+              />
+            </div>
           );
         })}
       </div>

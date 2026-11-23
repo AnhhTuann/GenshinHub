@@ -13,12 +13,12 @@ function ArtifactsSkeleton() {
   return (
     <div className="w-full">
       <div className="mb-8 animate-pulse">
-        <div className="h-10 w-48 bg-white/[0.05] rounded-md mb-2" />
-        <div className="h-5 w-64 bg-white/[0.03] rounded-md pl-6" />
+        <div className="h-10 w-48 bg-[var(--bg-overlay)] rounded-md mb-2" />
+        <div className="h-5 w-64 bg-[var(--bg-overlay)] rounded-md pl-6" />
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="atlas-artifact-grid">
         {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="aspect-[4/3] bg-white/[0.03] animate-pulse rounded-2xl border border-white/5" />
+          <div key={i} className="aspect-square bg-[var(--bg-overlay)] motion-safe:animate-pulse rounded-2xl border border-[var(--border-default)]" />
         ))}
       </div>
     </div>
@@ -50,7 +50,7 @@ export default async function ArtifactsPage() {
     <main className="min-h-screen text-[var(--text-primary)]" style={{ background: 'var(--bg-base)' }}>
       {/* Ambient */}
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 pt-10 pb-24">
+      <div className="atlas-container pt-10 pb-24">
         <Suspense fallback={<ArtifactsSkeleton />}>
           <ArtifactsContent />
         </Suspense>

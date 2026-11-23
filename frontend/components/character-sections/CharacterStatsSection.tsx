@@ -1,7 +1,7 @@
 'use client';
 
 import { useAdmin } from '@/hooks/useAdmin';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import CharacterStatsFormModal from '../admin/CharacterStatsFormModal';
 
@@ -30,7 +30,7 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
   
 
   // Extract unique levels for the tabs
-  const levels = stats ? Array.from(new Set(stats.map(s => s.level))) : ['Lv.1', 'Lv.20', 'Lv.40', 'Lv.50', 'Lv.60', 'Lv.70', 'Lv.80', 'Lv.90'];
+  const levels = Array.isArray(stats) && stats.length > 0 ? Array.from(new Set(stats.map(s => s.level))) : ['Lv.1', 'Lv.20', 'Lv.40', 'Lv.50', 'Lv.60', 'Lv.70', 'Lv.80', 'Lv.90'];
   const [activeLevel, setActiveLevel] = useState(levels[levels.length - 1]);
 
   // If no stats provided, generate mock data based on base stats just to show the UI
@@ -65,7 +65,7 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
     return [before];
   });
 
-  const displayStats = stats && stats.length > 0 ? stats : mockStats;
+  const displayStats = Array.isArray(stats) && stats.length > 0 ? stats : mockStats;
   const currentStats = displayStats.filter(s => s.level === activeLevel);
   const before = currentStats[0];
   const after = currentStats.length > 1 ? currentStats[1] : currentStats[0];
@@ -73,69 +73,54 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
   const specialName = before?.specialStatName || 'Special Stat';
 
   return (
-    <div className="bg-transparent border border-white/5 rounded-2xl p-5 mb-8 relative group/section">
+    <div className="character-stats-guide group/section">
       {isAdmin && (
         <button
           onClick={() => setIsEditing(true)}
-          className="absolute top-5 right-5 z-10 opacity-0 group-hover/section:opacity-100 px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-bold rounded hover:bg-cyan-500/30 transition-all border border-cyan-500/30"
+          className="atlas-add-action mb-3"
         >
           ✏️ Edit Stats
         </button>
       )}
 
       {/* Tabs */}
-      <div className="flex flex-wrap gap-1.5 mb-6">
+      <div className="character-level-selector">
         {levels.map(lv => (
           <button
             key={lv}
             onClick={() => setActiveLevel(lv)}
-            className={`px-4 py-2 rounded-lg font-semibold text-[13px] transition-all ${
-              activeLevel === lv 
-                ? 'bg-[#ecd9a0] text-[#231e17] shadow-md' 
-                : 'bg-[#2b251c]/60 text-white/60 hover:bg-[#2b251c] hover:text-white'
-            }`}
+            type="button"
+            aria-pressed={activeLevel === lv}
+            className="character-level-button"
           >
             {lv}
           </button>
         ))}
       </div>
 
-      {/* Table */}
-      <div className="w-full overflow-hidden rounded-xl border border-white/5">
-        <table className="w-full text-left text-sm">
+      <div className="character-stats-table">
+        <table>
           <thead>
-            <tr className="bg-[#2b251c]/40 text-white font-bold text-[13px] border-b border-white/5">
-              <th className="p-4 w-1/3"></th>
-              <th className="p-4 w-1/3">Before Ascension</th>
-              <th className="p-4 w-1/3">After Ascension</th>
+            <tr>
+              <th scope="col">Stat</th>
+              <th scope="col">Before Ascension</th>
+              <th scope="col">After Ascension</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5 bg-transparent">
-            <tr className="hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 font-bold text-white/70">Ascend</td>
-              <td className="p-4 font-bold text-white">{before?.ascend ?? '-'}</td>
-              <td className="p-4 font-bold text-white">{after?.ascend ?? '-'}</td>
-            </tr>
-            <tr className="hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 font-bold text-white/70">Base HP</td>
-              <td className="p-4 font-bold text-white">{before?.baseHp ?? '-'}</td>
-              <td className="p-4 font-bold text-white">{after?.baseHp ?? '-'}</td>
-            </tr>
-            <tr className="hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 font-bold text-white/70">Base ATK</td>
-              <td className="p-4 font-bold text-white">{before?.baseAtk ?? '-'}</td>
-              <td className="p-4 font-bold text-white">{after?.baseAtk ?? '-'}</td>
-            </tr>
-            <tr className="hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 font-bold text-white/70">Base DEF</td>
-              <td className="p-4 font-bold text-white">{before?.baseDef ?? '-'}</td>
-              <td className="p-4 font-bold text-white">{after?.baseDef ?? '-'}</td>
-            </tr>
-            <tr className="hover:bg-white/[0.02] transition-colors">
-              <td className="p-4 font-bold text-white/70">{specialName}</td>
-              <td className="p-4 font-bold text-white">{before?.specialStatValue ?? '-'}</td>
-              <td className="p-4 font-bold text-white">{after?.specialStatValue ?? '-'}</td>
-            </tr>
+          <tbody>
+            {([
+              ['Ascend', 'ascend'],
+              ['Base HP', 'baseHp'],
+              ['Base ATK', 'baseAtk'],
+              ['Base DEF', 'baseDef'],
+              [specialName, 'specialStatValue'],
+            ] as const).map(([label, key]) => (
+              <tr key={key}>
+                <th scope="row">{label}</th>
+                <td>{before?.[key] ?? '-'}</td>
+                <td data-changed={before?.[key] !== after?.[key]}>{after?.[key] ?? '-'}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

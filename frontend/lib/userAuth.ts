@@ -1,40 +1,29 @@
 import { cookies } from 'next/headers';
-import { jwtVerify } from 'jose';
-
-const USER_SECRET = new TextEncoder().encode(
-  process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod'
-);
+import { authFetch } from './auth-api';
 
 export interface UserSession {
   id: string;
   email: string;
   username: string;
-  gender: 'male' | 'female';
+  gender?: 'male' | 'female';
+  role?: string;
+  status?: string;
 }
 
 /**
- * Retrieves the current logged-in user from the cookies.
- * This can only be used in Server Components or Server Actions.
+ * Reads the current customer from the HttpOnly cookie and verifies it against
+ * the backend session store. Revoked/expired sessions are never accepted.
  */
 export async function getServerUser(): Promise<UserSession | null> {
   const cookieStore = await cookies();
   const token = cookieStore.get('user_token')?.value;
-
   if (!token) return null;
 
-  try {
-    const { payload } = await jwtVerify(token, USER_SECRET);
-    return payload as unknown as UserSession;
-  } catch (err) {
-    // Token invalid or expired
-    return null;
-  }
+  const result = await authFetch('/auth/session', { token });
+  if (!result.ok || !result.data?.valid || result.data.kind !== 'CUSTOMER') return null;
+  return result.data.subject as UserSession;
 }
 
-/**
- * Convenience method to check if user is logged in
- */
 export async function isAuthenticated(): Promise<boolean> {
-  const user = await getServerUser();
-  return !!user;
+  return (await getServerUser()) !== null;
 }

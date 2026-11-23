@@ -33,8 +33,8 @@ export default function TCGClient({ locale }: { locale: string }) {
   }, [filterType, search, locale]);
 
   return (
-    <main className="min-h-screen pt-[100px] pb-24 relative z-10 px-4 sm:px-6" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
-      <div className="max-w-[1400px] mx-auto">
+    <main className="min-h-screen pt-10 pb-24 relative z-10" style={{ background: 'var(--bg-void, #0d0c0a)' }}>
+      <div className="atlas-container">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
           <div>

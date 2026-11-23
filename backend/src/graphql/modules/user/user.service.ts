@@ -1,9 +1,8 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 import { mailerService } from '../../../services/mailer.service';
-
-const USER_JWT_SECRET = process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod';
+import { authService } from '../../../auth/auth.service';
+import { AuthError, validatePassword } from '../../../auth/security';
 
 // ─── Input Sanitization ───────────────────────────────
 function sanitize(str: string | undefined | null): string {
@@ -25,18 +24,6 @@ function validateEmail(email: string): void {
   if (email.length > 254) throw new Error('Email quá dài');
 }
 
-function validatePassword(password: string): void {
-  if (!password || password.length < 6) throw new Error('Mật khẩu phải có ít nhất 6 ký tự');
-  if (password.length > 128) throw new Error('Mật khẩu quá dài');
-}
-
-export interface UserPayload {
-  id: string;
-  email: string;
-  username: string;
-  gender: string;
-}
-
 export const userService = {
   // ─── Auth ──────────────────────────────────────────────────
 
@@ -47,56 +34,11 @@ export const userService = {
     gender: 'male' | 'female';
     displayName?: string;
   }) {
-    // Validate & sanitize
-    validateUsername(input.username);
-    validateEmail(input.email);
-    validatePassword(input.password);
-    const username = sanitize(input.username);
-    const displayName = sanitize(input.displayName) || username;
-
-    const existing = await prisma.user.findFirst({
-      where: { OR: [{ email: input.email.toLowerCase() }, { username }] },
-    });
-    if (existing) {
-      if (existing.email === input.email.toLowerCase()) throw new Error('Email đã được sử dụng');
-      throw new Error('Username đã được sử dụng');
-    }
-
-    const hashedPassword = await bcrypt.hash(input.password, 12);
-    const user = await prisma.user.create({
-      data: {
-        username,
-        email: input.email.toLowerCase(),
-        password: hashedPassword,
-        gender: input.gender,
-        displayName,
-      },
-    });
-
-    const token = jwt.sign(
-      { id: user.id, email: user.email, username: user.username, gender: user.gender },
-      USER_JWT_SECRET,
-      { expiresIn: '30d' }
-    );
-
-    return { token, user };
+    return authService.registerCustomer(prisma, input);
   },
 
   async login(prisma: PrismaClient, email: string, password: string) {
-    if (!email || !password) throw new Error('Email và mật khẩu là bắt buộc');
-    const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
-    if (!user || !user.password) throw new Error('Email hoặc mật khẩu không đúng');
-
-    const valid = await bcrypt.compare(password, user.password);
-    if (!valid) throw new Error('Email hoặc mật khẩu không đúng');
-
-    const token = jwt.sign(
-      { id: user.id, email: user.email, username: user.username, gender: user.gender },
-      USER_JWT_SECRET,
-      { expiresIn: '30d' }
-    );
-
-    return { token, user };
+    return authService.loginCustomer(prisma, { email, password });
   },
 
   async socialLogin(prisma: PrismaClient, input: {
@@ -108,42 +50,7 @@ export const userService = {
     avatarUrl?: string;
     gender?: string;
   }) {
-    let user = await prisma.user.findUnique({ where: { email: input.email } });
-
-    if (user) {
-      // Link provider if not set
-      if (!user.providerId || user.provider === 'local') {
-        user = await prisma.user.update({
-          where: { id: user.id },
-          data: { provider: input.provider, providerId: input.providerId, avatarUrl: user.avatarUrl || input.avatarUrl }
-        });
-      }
-    } else {
-      // Create new social user
-      user = await prisma.user.create({
-        data: {
-          email: input.email,
-          username: input.username || `user_${Date.now()}`,
-          gender: input.gender || 'male',
-          displayName: input.displayName || input.username || 'Traveler',
-          avatarUrl: input.avatarUrl,
-          provider: input.provider,
-          providerId: input.providerId,
-        }
-      });
-    }
-
-    const token = jwt.sign(
-      { id: user.id, email: user.email, username: user.username, gender: user.gender },
-      USER_JWT_SECRET,
-      { expiresIn: '30d' }
-    );
-
-    return { token, user };
-  },
-
-  verifyToken(token: string): UserPayload {
-    return jwt.verify(token, USER_JWT_SECRET) as UserPayload;
+    return authService.loginSocial(prisma, input);
   },
 
   // ─── Profile ───────────────────────────────────────────────
@@ -193,18 +100,24 @@ export const userService = {
   },
 
   async changePassword(prisma: PrismaClient, userId: string, oldPassword: string, newPassword: string) {
+    validatePassword(newPassword);
     const user = await prisma.user.findUnique({ where: { id: userId } });
-    if (!user) throw new Error('Không tìm thấy người dùng');
-    if (!user.password) throw new Error('Tài khoản này đăng nhập qua mạng xã hội, không có mật khẩu');
+    if (!user) throw new AuthError('AUTH_UNAUTHORIZED', 'Account not found');
+    if (!user.password) throw new AuthError('AUTH_ACCOUNT_DISABLED', 'Social accounts have no local password');
 
     const valid = await bcrypt.compare(oldPassword, user.password);
-    if (!valid) throw new Error('Mật khẩu hiện tại không đúng');
+    if (!valid) throw new AuthError('AUTH_INVALID_CREDENTIALS', 'Current password is incorrect');
 
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-    await prisma.user.update({
-      where: { id: userId },
-      data: { password: hashedPassword, updatedAt: new Date() },
-    });
+    await prisma.$transaction([
+      prisma.user.update({
+        where: { id: userId },
+        data: { password: await bcrypt.hash(newPassword, 12), updatedAt: new Date() },
+      }),
+      prisma.authSession.updateMany({
+        where: { customerId: userId, revokedAt: null },
+        data: { revokedAt: new Date() },
+      }),
+    ]);
 
     return true;
   },
@@ -270,68 +183,11 @@ export const userService = {
   // ─── Forgot / Reset Password ───────────────────────────────
 
   async forgotPassword(prisma: PrismaClient, email: string) {
-    // Always return true to avoid email enumeration attacks
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user || !user.password) return true; // Social-only account, silently ignore
-
-    // Rate limiting: 60s cooldown
-    const recentOtp = await prisma.otp.findFirst({
-      where: { email, purpose: 'PASSWORD_RESET' },
-      orderBy: { createdAt: 'desc' }
-    });
-    if (recentOtp && Date.now() - recentOtp.createdAt.getTime() < 60000) {
-      throw new Error('Vui lòng đợi 60 giây trước khi yêu cầu mã mới');
-    }
-
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
-    const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
-
-    await prisma.otp.create({
-      data: { email, code, purpose: 'PASSWORD_RESET', expiresAt }
-    });
-
-    await mailerService.sendOtpEmail(email, code, 'PASSWORD_RESET');
-    return true;
+    return authService.requestPasswordReset(prisma, email);
   },
 
-  async resetPassword(prisma: PrismaClient, email: string, otpCode: string, newPassword: string) {
-    validateEmail(email);
-    validatePassword(newPassword);
-
-    // Check max attempts (5) to prevent brute-force
-    const recentFailed = await prisma.otp.count({
-      where: {
-        email,
-        purpose: 'PASSWORD_RESET',
-        // Count attempts by checking how many OTP records exist (each failed attempt doesn't delete)
-      }
-    });
-    // If somehow more than 5 OTPs exist, something is wrong - clear them
-    if (recentFailed > 5) {
-      await prisma.otp.deleteMany({ where: { email, purpose: 'PASSWORD_RESET' } });
-      throw new Error('Quá nhiều lần thử. Vui lòng yêu cầu mã mới');
-    }
-
-    const otpRecord = await prisma.otp.findFirst({
-      where: { email, code: otpCode, purpose: 'PASSWORD_RESET' },
-      orderBy: { createdAt: 'desc' }
-    });
-
-    if (!otpRecord) throw new Error('Mã OTP không đúng');
-    if (otpRecord.expiresAt < new Date()) throw new Error('Mã OTP đã hết hạn');
-
-    const hashedPassword = await bcrypt.hash(newPassword, 12);
-    await prisma.user.update({
-      where: { email },
-      data: { password: hashedPassword, updatedAt: new Date() },
-    });
-
-    // Clean up all reset OTPs for this email
-    await prisma.otp.deleteMany({
-      where: { email, purpose: 'PASSWORD_RESET' }
-    });
-
-    return true;
+  async resetPassword(prisma: PrismaClient, token: string, newPassword: string) {
+    return authService.resetPassword(prisma, token, newPassword);
   },
 
   // ─── Favorites ─────────────────────────────────────────────

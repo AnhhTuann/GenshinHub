@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Noto_Sans, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
-import AdminModeToggle from "@/components/AdminModeToggle";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
@@ -10,7 +9,6 @@ import CommandPalette from '@/components/shared/CommandPalette';
 import { fetchGraphQL } from '@/lib/graphql';
 import { UserProvider } from '@/context/UserContext';
 import { UISoundProvider } from '@/context/UISoundContext';
-import CustomCursor from '@/components/shared/CustomCursor';
 import PageTransition from '@/components/shared/PageTransition';
 import { ThemeProvider } from '@/context/ThemeContext';
 
@@ -143,28 +141,27 @@ export default async function RootLayout({ children, params }: { children: React
           <ThemeProvider>
             <UISoundProvider>
               <UserProvider>
-              <CustomCursor />
               <Toaster 
               position="bottom-center"
               toastOptions={{
                 className: 'border shadow-xl',
                 style: {
-                  background: 'rgba(255,255,255,0.96)',
+                  background: 'var(--bg-surface)',
                   backdropFilter: 'blur(12px)',
-                  color: '#172b3a',
-                  border: '1px solid rgba(23,43,58,0.12)',
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '16px',
                   padding: '12px 16px',
                   fontSize: '14px',
                   fontWeight: 600,
                 },
                 success: {
-                  iconTheme: { primary: '#7C5AE0', secondary: '#fff' },
-                  style: { borderColor: 'rgba(124,90,224,0.3)' }
+                  iconTheme: { primary: 'var(--accent-primary)', secondary: 'var(--bg-surface)' },
+                  style: { borderColor: 'var(--border-accent)' }
                 },
                 error: {
-                  iconTheme: { primary: '#ef4444', secondary: '#fff' },
-                  style: { borderColor: 'rgba(239,68,68,0.3)' }
+                  iconTheme: { primary: 'var(--danger-ink)', secondary: 'var(--bg-surface)' },
+                  style: { borderColor: 'var(--border-default)' }
                 }
               }}
             />
@@ -190,11 +187,10 @@ export default async function RootLayout({ children, params }: { children: React
                     </svg>
                     <span className="text-[var(--text-secondary)] font-black text-xs tracking-widest uppercase">GenshinHub</span>
                   </div>
-                  <p className="text-[var(--text-tertiary)] text-[11px] font-semibold">© 2026 GenshinHub. All rights reserved.</p>
+                  <p className="text-[var(--text-tertiary)] text-xs font-semibold">© 2026 GenshinHub. All rights reserved.</p>
                 </div>
               </footer>
             </div>
-            <AdminModeToggle />
             </UserProvider>
           </UISoundProvider>
           </ThemeProvider>

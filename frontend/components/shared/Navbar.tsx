@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`site-nav sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? ' is-scrolled shadow-md' : ''}`}
+        className={`site-nav sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? ' is-scrolled' : ''}`}
       >
         <div className="site-nav-inner max-w-[1480px] mx-auto px-4 sm:px-6 h-[68px] sm:h-[72px] flex items-center justify-between gap-4">
 
@@ -81,26 +81,23 @@ export default function Navbar() {
               <span className="site-brand-name text-[15px] sm:text-[16px] font-black tracking-[0.14em] uppercase">
                 GENSHINHUB
               </span>
-              <span className="mt-1 text-[8px] font-extrabold tracking-[0.2em] text-[#7C5AE0]/75 uppercase">
+              <span className="mt-1 text-[11px] font-bold tracking-[0.16em] text-[var(--accent-primary-light)] uppercase">
                 Teyvat field guide
               </span>
             </div>
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <div className="hidden lg:flex items-center gap-1.5 p-1 rounded-full bg-slate-100/60 border border-slate-200/50">
+          <div className="hidden lg:flex items-center site-nav-links">
             {navLinks.slice(0, 4).map((link) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={active ? "page" : undefined}
                   onClick={link.href === '/' ? handleLogoClick : undefined}
-                  className={`site-nav-link relative px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide whitespace-nowrap transition-all duration-200 ${
-                    active
-                      ? 'is-active'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
-                  }`}
+                  className={`site-nav-link relative whitespace-nowrap ${active ? 'is-active' : ''}`}
                 >
                   {link.label}
                 </Link>
@@ -109,17 +106,13 @@ export default function Navbar() {
             <div className="site-nav-more relative">
               <button
                 type="button"
-                className={`site-nav-link inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide transition-all ${
-                  moreOpen
-                    ? 'is-active'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
-                }`}
+                className={`site-nav-link site-nav-explore inline-flex items-center gap-1.5 ${moreOpen ? 'is-active' : ''}`}
                 onClick={() => setMoreOpen(open => !open)}
                 aria-expanded={moreOpen}
                 aria-haspopup="true"
               >
                 <span>{locale === 'en' ? 'Explore' : 'Khám phá'}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`} />
               </button>
               {moreOpen && (
                 <div className="site-nav-menu absolute right-0 top-full mt-3 w-64 p-2 rounded-2xl">
@@ -145,19 +138,19 @@ export default function Navbar() {
             {/* Search Button (Triggers Cmd+K) */}
             <button 
               onClick={handleSearchClick}
-              className="site-search-trigger hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer"
+              className="site-search-trigger site-search-desktop inline-flex items-center gap-2 cursor-pointer"
               aria-label="Search"
             >
-              <Search className="w-3.5 h-3.5 text-slate-400" />
+              <Search className="w-4 h-4 text-current" aria-hidden="true" />
               <span>{locale === 'en' ? 'Search' : 'Tìm kiếm'}</span>
-              <kbd className="ml-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-bold">Ctrl+K</kbd>
+              <kbd className="ml-1 hidden xl:inline px-1.5 py-0.5 rounded text-xs font-mono font-bold">Ctrl+K</kbd>
             </button>
             <button 
               onClick={handleSearchClick}
-              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 site-search-trigger cursor-pointer"
+              className="site-search-mobile site-search-trigger site-search-icon-btn"
               aria-label="Search"
             >
-              <Search className="w-4 h-4 text-slate-500" />
+              <Search className="w-[18px] h-[18px] text-current" aria-hidden="true" />
             </button>
 
             {/* Auth Component */}
@@ -171,12 +164,14 @@ export default function Navbar() {
 
             {/* Hamburger */}
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-9 h-9 rounded-full gap-1.5 bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200/80 transition-all cursor-pointer"
+              className="site-nav-hamburger site-nav-control flex-col gap-1.5"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-site-menu"
             >
               <span
-                className="block h-[1.8px] bg-slate-700 rounded-full"
+                className="block h-[1.8px] bg-current rounded-full"
                 style={{
                   width: '16px',
                   transform: mobileOpen ? 'rotate(45deg) translateY(5px)' : 'none',
@@ -184,7 +179,7 @@ export default function Navbar() {
                 }}
               />
               <span
-                className="block h-[1.8px] bg-slate-700 rounded-full"
+                className="block h-[1.8px] bg-current rounded-full"
                 style={{
                   width: mobileOpen ? '0px' : '16px',
                   opacity: mobileOpen ? 0 : 1,
@@ -192,7 +187,7 @@ export default function Navbar() {
                 }}
               />
               <span
-                className="block h-[1.8px] bg-slate-700 rounded-full"
+                className="block h-[1.8px] bg-current rounded-full"
                 style={{
                   width: '16px',
                   transform: mobileOpen ? 'rotate(-45deg) translateY(-5px)' : 'none',
@@ -208,9 +203,9 @@ export default function Navbar() {
           className="absolute bottom-0 left-0 h-[2.5px] transition-all duration-150"
           style={{
             width: `${scrollPct}%`,
-            background: 'linear-gradient(90deg, #7C5AE0 0%, #9B7AFF 40%, #E8B84C 100%)',
+            background: 'linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-vivid) 40%, var(--fantasy-gold) 100%)',
             opacity: scrollPct > 0 ? 1 : 0,
-            boxShadow: '0 0 8px rgba(124, 90, 224, 0.4)',
+            boxShadow: '0 0 8px -2px var(--accent-primary-glow)',
           }}
         />
       </nav>

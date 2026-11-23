@@ -1,47 +1,40 @@
 import { NextResponse } from 'next/server';
-import { fetchGraphQL } from '@/lib/graphql';
 import { cookies } from 'next/headers';
+import { isSameOriginRequest, authFetch, AuthLocale, toCustomerView } from '@/lib/auth-api';
 
 export async function POST(request: Request) {
+  if (!isSameOriginRequest(request)) return NextResponse.json({ code: 'AUTH_FORBIDDEN' }, { status: 403 });
   try {
     const body = await request.json();
-    const { username, email, password, gender, displayName } = body;
+    const locale: AuthLocale = body.locale === 'vi' ? 'vi' : 'en';
+    const result = await authFetch('/auth/register', {
+      username: body.username,
+      email: body.email,
+      password: body.password,
+      confirmPassword: body.confirmPassword ?? null,
+      gender: body.gender,
+      displayName: body.displayName,
+      locale,
+    });
 
-    const data = await fetchGraphQL(`
-      mutation Register($input: RegisterInput!) {
-        register(input: $input) {
-          token
-          user {
-            id
-            email
-            username
-            gender
-            displayName
-            avatarUrl
-            travelerCharId
-            favoritesCount
-          }
-        }
-      }
-    `, { input: { username, email, password, gender, displayName } }, 0);
-
-    if (!data || !data.register) {
-      return NextResponse.json({ error: 'Registration failed' }, { status: 400 });
+    if (!result.ok || !result.data?.token) {
+      return NextResponse.json(
+        { error: result.data?.error ?? 'Registration failed' },
+        { status: result.status },
+      );
     }
 
-    const { token, user } = data.register;
-
     const cookieStore = await cookies();
-    cookieStore.set('user_token', token, {
+    cookieStore.set('user_token', result.data.token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 30 * 24 * 60 * 60, // 30 days
+      maxAge: result.data.maxAge,
       path: '/',
     });
 
-    return NextResponse.json({ user });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 400 });
+    return NextResponse.json({ user: toCustomerView(result.data.user) });
+  } catch {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
 }

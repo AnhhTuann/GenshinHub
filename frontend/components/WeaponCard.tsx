@@ -53,7 +53,7 @@ export default function WeaponCard({ weapon, index }: { weapon: WeaponBuild; ind
 
   const cardContent = (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}

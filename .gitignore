@@ -7,3 +7,11 @@ coverage/
 !.env.example
 __pycache__/
 *.pyc
+
+# Rebuilt from TypeScript by CI and deployment
+/backend/dist/
+*.tsbuildinfo
+
+# Local database exports
+/backend/*.dump
+/backend/*.sql.gz

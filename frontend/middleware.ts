@@ -51,9 +51,10 @@ export async function middleware(request: NextRequest) {
     const admin = await getAdminSession(token);
 
     if (!isAdminLogin && !admin) {
-      const location = redirectUrl(request, token
-        ? `/${locale}/admin/login?expired=1`
-        : `/${locale}/admin/login`);
+      const customer = await verifyCustomerSession(request.cookies.get('user_token')?.value);
+      const loginPath = `/${locale}/admin/login`;
+      const state = customer ? '?denied=1' : token ? '?expired=1' : '';
+      const location = redirectUrl(request, loginPath + state);
       const response = NextResponse.redirect(location);
       response.headers.set('Location', location.toString());
       if (token) response.cookies.delete('admin_token');
@@ -77,7 +78,7 @@ export async function middleware(request: NextRequest) {
       if (token) response.cookies.delete('user_token');
       return response;
     }
-    if (isAuthRoute && validCustomer) {
+    if (isAuthRoute && validCustomer && localizedPath !== '/auth/reset-password') {
       const location = redirectUrl(request, `/${locale}/profile`);
       const response = NextResponse.redirect(location);
       response.headers.set('Location', location.toString());

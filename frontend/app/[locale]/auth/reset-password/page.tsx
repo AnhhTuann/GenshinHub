@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { useRouter, Link } from '@/i18n/routing';
 import { useParams, useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
-import { Loader2, Lock, KeyRound, Eye, EyeOff, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
+import { Loader2, Lock, Eye, EyeOff, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
 
 function getPasswordStrength(password: string): { score: number; label: string; color: string } {
   if (!password) return { score: 0, label: '', color: '' };
@@ -29,7 +29,6 @@ function ResetPasswordForm() {
   const tokenFromUrl = searchParams.get('token') || '';
 
   const [formData, setFormData] = useState({
-    token: tokenFromUrl,
     newPassword: '',
     confirmPassword: '',
   });
@@ -46,20 +45,16 @@ function ResetPasswordForm() {
     e.preventDefault();
 
     if (formData.newPassword !== formData.confirmPassword) {
-      toast.error("Passwords don't match");
+      toast.error(locale === 'vi' ? 'Mật khẩu không khớp' : "Passwords don't match");
       return;
     }
-    const strong = formData.newPassword.length >= 8 && formData.newPassword.length <= 128
+    const strong = formData.newPassword.length >= 8 && new TextEncoder().encode(formData.newPassword).length <= 72
       && /[a-z]/.test(formData.newPassword) && /[A-Z]/.test(formData.newPassword)
       && /[0-9]/.test(formData.newPassword) && /[^A-Za-z0-9]/.test(formData.newPassword);
     if (!strong) {
       toast.error(locale === 'vi'
-        ? 'Mật khẩu cần 8–128 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt'
-        : 'Use 8–128 characters with upper/lower case, a number, and a symbol');
-      return;
-    }
-    if (!formData.token) {
-      toast.error(locale === 'vi' ? 'Liên kết đặt lại không hợp lệ' : 'Invalid reset link');
+        ? 'Mật khẩu cần ít nhất 8 ký tự và tối đa 72 byte UTF-8, gồm chữ hoa, chữ thường, số và ký tự đặc biệt'
+        : 'Use at least 8 characters and at most 72 UTF-8 bytes, with upper/lower case, a number, and a symbol');
       return;
     }
 
@@ -69,7 +64,7 @@ function ResetPasswordForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          token: formData.token,
+          token: tokenFromUrl,
           newPassword: formData.newPassword,
           locale,
         }),
@@ -79,7 +74,7 @@ function ResetPasswordForm() {
       if (!res.ok) throw new Error(data.error || 'Failed to reset password');
 
       setSuccess(true);
-      toast.success('Password reset successfully!');
+      toast.success(locale === 'vi' ? 'Đã đặt lại mật khẩu!' : 'Password reset successfully!');
       setTimeout(() => router.push('/auth/login'), 2500);
     } catch (err: any) {
       toast.error(err.message);
@@ -94,46 +89,31 @@ function ResetPasswordForm() {
         <div className="w-20 h-20 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-10 h-10 text-green-400" />
         </div>
-        <h2 className="text-xl font-black text-white uppercase tracking-widest">Password Reset!</h2>
-        <p className="text-white/50 text-sm">Redirecting you to login...</p>
+        <h2 className="text-xl font-black text-white uppercase tracking-widest">{locale === 'vi' ? 'Đã đặt lại mật khẩu!' : 'Password Reset!'}</h2>
+        <p className="text-white/50 text-sm">{locale === 'vi' ? 'Đang chuyển đến trang đăng nhập…' : 'Redirecting you to login...'}</p>
         <Loader2 className="w-5 h-5 text-[#e8b64c] animate-spin mx-auto" />
       </div>
     );
   }
 
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      {!tokenFromUrl && (
-        <div>
-          <label htmlFor="reset-token" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">
-            Reset link token
-          </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <KeyRound className="h-5 w-5 text-white/30" />
-            </div>
-            <input
-              id="reset-token"
-              type="text"
-              required
-              value={formData.token}
-              onChange={(e) => setFormData({ ...formData, token: e.target.value.trim() })}
-              className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all font-mono text-sm"
-              placeholder="Paste the token from your reset link"
-            />
-          </div>
-          <p className="text-[10px] text-white/30 mt-1 ml-1">The link from the email fills this in automatically.</p>
-        </div>
-      )}
+  if (!tokenFromUrl) {
+    return <p role="alert" className="text-center text-red-300">
+      {locale === 'vi' ? 'Mở liên kết đặt lại từ email của bạn.' : 'Open the reset link from your email.'}
+    </p>;
+  }
 
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4" aria-busy={loading}>
       {/* New Password */}
       <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">New Password</label>
+        <label htmlFor="new-password" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">{locale === 'vi' ? 'Mật khẩu mới' : 'New Password'}</label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <Lock className="h-5 w-5 text-white/30" />
           </div>
           <input
+            id="new-password"
+            autoComplete="new-password"
             type={showPassword ? 'text' : 'password'}
             required
             value={formData.newPassword}
@@ -146,7 +126,7 @@ function ResetPasswordForm() {
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-            tabIndex={-1}
+            aria-label={showPassword ? (locale === 'vi' ? 'Ẩn mật khẩu' : 'Hide password') : (locale === 'vi' ? 'Hiện mật khẩu' : 'Show password')}
           >
             {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
@@ -169,12 +149,14 @@ function ResetPasswordForm() {
 
       {/* Confirm Password */}
       <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Confirm New Password</label>
+        <label htmlFor="confirm-new-password" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">{locale === 'vi' ? 'Xác nhận mật khẩu mới' : 'Confirm New Password'}</label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <Lock className="h-5 w-5 text-white/30" />
           </div>
           <input
+            id="confirm-new-password"
+            autoComplete="new-password"
             type={showConfirm ? 'text' : 'password'}
             required
             value={formData.confirmPassword}
@@ -190,7 +172,7 @@ function ResetPasswordForm() {
             type="button"
             onClick={() => setShowConfirm(!showConfirm)}
             className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-            tabIndex={-1}
+            aria-label={showConfirm ? (locale === 'vi' ? 'Ẩn mật khẩu' : 'Hide password') : (locale === 'vi' ? 'Hiện mật khẩu' : 'Show password')}
           >
             {showConfirm ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
@@ -204,18 +186,18 @@ function ResetPasswordForm() {
           )}
         </div>
         {passwordsMismatch && (
-          <p className="text-[10px] text-red-400 mt-1 ml-1">Passwords do not match</p>
+          <p className="text-[10px] text-red-400 mt-1 ml-1">{locale === 'vi' ? 'Mật khẩu không khớp' : 'Passwords do not match'}</p>
         )}
       </div>
 
       <button
         type="submit"
-        disabled={loading || passwordsMismatch || formData.newPassword.length < 8 || !formData.token}
+        disabled={loading || passwordsMismatch || formData.newPassword.length < 8 || !tokenFromUrl}
         className="atlas-auth-submit w-full py-3.5 mt-2 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
         <span className="relative flex items-center justify-center gap-2">
-          {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><ShieldCheck className="w-4 h-4" /> Reset Password</>}
+          {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><ShieldCheck className="w-4 h-4" /> {locale === 'vi' ? 'Đặt lại mật khẩu' : 'Reset Password'}</>}
         </span>
       </button>
     </form>
@@ -223,6 +205,7 @@ function ResetPasswordForm() {
 }
 
 export default function ResetPasswordPage() {
+  const locale = useParams()?.locale;
   return (
     <main className="relative min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
 
@@ -235,9 +218,9 @@ export default function ResetPasswordPage() {
             <h1
               className="atlas-section-title mb-2"
             >
-              Reset Password
+              {locale === 'vi' ? 'Đặt lại mật khẩu' : 'Reset Password'}
             </h1>
-            <p className="text-white/40 text-sm">Enter the code from your email and set a new password</p>
+            <p className="text-white/40 text-sm">{locale === 'vi' ? 'Đặt mật khẩu mới bằng liên kết trong email' : 'Enter the code from your email and set a new password'}</p>
           </div>
 
           <Suspense fallback={<div className="flex justify-center py-8"><Loader2 className="w-8 h-8 text-[#e8b64c] animate-spin" /></div>}>
@@ -250,7 +233,7 @@ export default function ResetPasswordPage() {
               className="inline-flex items-center gap-2 text-white/40 hover:text-white text-sm transition-colors font-medium"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Forgot Password
+              {locale === 'vi' ? 'Yêu cầu liên kết mới' : 'Back to Forgot Password'}
             </Link>
           </div>
         </div>

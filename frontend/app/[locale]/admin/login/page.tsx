@@ -15,6 +15,7 @@ const COPY = {
     submit: 'Enter Admin Panel',
     verifying: 'Verifying…',
     expired: 'Your Admin session expired. Please sign in again.',
+    denied: 'This customer account does not have Admin access.',
     note: 'Access is limited to authorized administrators.',
     fail: 'Admin sign-in failed.',
   },
@@ -28,6 +29,7 @@ const COPY = {
     submit: 'Vào bảng Admin',
     verifying: 'Đang xác thực…',
     expired: 'Phiên Admin đã hết hạn. Vui lòng đăng nhập lại.',
+    denied: 'Tài khoản này không có quyền truy cập Admin.',
     note: 'Chỉ quản trị viên được phép truy cập.',
     fail: 'Đăng nhập Admin thất bại.',
   },
@@ -72,6 +74,12 @@ function AdminLoginForm() {
         {searchParams.get('expired') === '1' && (
           <p role="status" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-sm text-amber-200">
             {copy.expired}
+          </p>
+        )}
+
+        {searchParams.get('denied') === '1' && (
+          <p role="status" className="mb-4 rounded-xl border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-sm text-amber-200">
+            {copy.denied}
           </p>
         )}
 

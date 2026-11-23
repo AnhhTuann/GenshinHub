@@ -14,9 +14,10 @@ const pieceSlots = {
   circlet: { icon: Crown, en: 'Circlet of Logos', vi: 'Nón Lý Trí' },
 };
 
+// For staging, dynamic routes are resolved at request time, not from GraphQL at build time.
+export const dynamic = 'force-dynamic';
 export async function generateStaticParams() {
-  const data = await fetchGraphQL(GET_ARTIFACTS);
-  return (data.artifacts || []).map((art: any) => ({ id: art.id }));
+  return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {

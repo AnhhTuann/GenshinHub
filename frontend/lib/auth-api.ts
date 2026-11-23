@@ -11,11 +11,17 @@ export interface AuthFetchResult {
 }
 
 /** Server-side call to the single backend authentication service. */
+function getVercelProtectionHeaders(): Record<string, string> {
+  const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+  if (!bypassSecret) return {};
+  return { 'x-vercel-protection-bypass': bypassSecret };
+}
+
 export async function authFetch(path: string, body: Record<string, unknown>): Promise<AuthFetchResult> {
   try {
     const response = await fetch(`${getAuthBackendUrl()}${path}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...getVercelProtectionHeaders() },
       body: JSON.stringify(body),
       cache: 'no-store',
     });

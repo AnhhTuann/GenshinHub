@@ -16,9 +16,12 @@ export async function POST(request: NextRequest) {
 
   try {
     const formData = await request.formData();
+    const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+    const headers: Record<string, string> = { 'x-admin-session': adminToken };
+    if (bypassSecret) headers['x-vercel-protection-bypass'] = bypassSecret;
     const backendRes = await fetch(`${BACKEND_URL}/upload`, {
       method: 'POST',
-      headers: { 'x-admin-session': adminToken },
+      headers,
       body: formData,
       cache: 'no-store',
     });

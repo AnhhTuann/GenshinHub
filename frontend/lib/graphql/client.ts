@@ -1,7 +1,18 @@
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
+const PUBLIC_GRAPHQL_PROXY = '/api/graphql';
 
 // ISR revalidation: 1 hour for server-side fetches.
 const DEFAULT_REVALIDATE = 3600;
+
+function getVercelProtectionHeaders(): Record<string, string> {
+  const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+  if (!bypassSecret) return {};
+  return { 'x-vercel-protection-bypass': bypassSecret };
+}
+
+function getClientEndpoint(): string {
+  return typeof window === 'undefined' ? GRAPHQL_ENDPOINT : PUBLIC_GRAPHQL_PROXY;
+}
 
 /**
  * Server-side GraphQL fetch with ISR revalidation.
@@ -15,6 +26,11 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
     headers['Authorization'] = `Bearer ${token}`;
   }
 
+  const isServer = typeof window === 'undefined';
+  if (isServer) {
+    Object.assign(headers, getVercelProtectionHeaders());
+  }
+
   const fetchOptions: RequestInit & { next?: { revalidate: number } } = {
     method: 'POST',
     headers,
@@ -22,11 +38,11 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   };
 
   // Apply ISR revalidation for server-side fetches
-  if (typeof window === 'undefined') {
+  if (isServer) {
     fetchOptions.next = { revalidate };
   }
 
-  const res = await fetch(GRAPHQL_ENDPOINT, fetchOptions);
+  const res = await fetch(getClientEndpoint(), fetchOptions);
 
   if (!res.ok) {
     throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
@@ -54,7 +70,7 @@ export async function fetchGraphQLClient(query: string, variables = {}, token?: 
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const res = await fetch(GRAPHQL_ENDPOINT, {
+  const res = await fetch(PUBLIC_GRAPHQL_PROXY, {
     method: 'POST',
     headers,
     body: JSON.stringify({ query, variables }),

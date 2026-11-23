@@ -210,17 +210,31 @@ async function main() {
 
   // ---------- 3. Admin protection: gán tier rồi update -> phải giữ nguyên ----------
   console.log('\n3️⃣  Test bảo vệ trường Admin...');
-  await prisma.character.update({ where: { id: E2E.charId }, data: { tier: 'S', role: 'Main DPS' } });
+  await prisma.character.update({ where: { id: E2E.charId }, data: { tier: 'S', role: 'Main DPS', descriptionVi: 'Manual fixture translation' } });
   const updReport = buildFixtureReport();
   updReport.characters[0].action = 'update';
   updReport.characters[0].dbId = E2E.charId;
+  updReport.characters[0].source.baseAtk = 101;
+  updReport.characters[0].changes = [{ field: 'baseAtk', from: 100, to: 101 }];
   await applyReport(updReport, false, fakeDeps);
   const char2 = await prisma.character.findUnique({ where: { id: E2E.charId } });
   check('tier được bảo vệ sau update', char2?.tier === 'S' && char2?.role === 'Main DPS');
 
+  check('planned field changed', char2?.baseAtk === 101);
+  check('unplanned manual translation preserved', char2?.descriptionVi === 'Manual fixture translation');
+  check('repeating an already applied update writes no snapshot', !(await applyReport(updReport, false, fakeDeps)));
+  await prisma.character.update({ where: { id: E2E.charId }, data: { baseAtk: 102 } });
+  await applyReport(updReport, false, fakeDeps).then(
+    () => check('stale plan rejects intervening changes', false),
+    (error: Error) => check('stale plan rejects intervening changes', /Sync plan changed/.test(error.message)),
+  );
+  check('intervening change was preserved', (await prisma.character.findUnique({
+    where: { id: E2E.charId }, select: { baseAtk: true },
+  }))?.baseAtk === 102);
+
   // ---------- 4. Idempotent: chạy lại create -> không trùng ----------
   console.log('\n4️⃣  Test idempotent (chạy lại cùng report)...');
-  await applyReport(buildFixtureReport(), false, fakeDeps);
+  check('repeating create writes no snapshot', !(await applyReport(buildFixtureReport(), false, fakeDeps)));
   check('character không bị trùng', (await prisma.character.count({ where: { id: E2E.charId } })) === 1);
   check('weapon không bị trùng', (await prisma.weapon.count({ where: { id: E2E.weaponId } })) === 1);
   check('material không bị trùng', (await prisma.material.count({ where: { id: E2E.materialId } })) === 1);

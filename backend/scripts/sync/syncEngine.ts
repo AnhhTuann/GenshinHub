@@ -331,6 +331,26 @@ export async function applyReport(report: SyncReport, _downloadAssets: boolean, 
   return snapshotFile;
 }
 
+function plannedUpdate<T extends object>(
+  before: Record<string, unknown>,
+  candidate: T,
+  changes: DiffEntry<unknown>['changes'],
+): Partial<T> {
+  const patch: Partial<T> = {};
+  const equal = (left: unknown, right: unknown) => JSON.stringify(left ?? null) === JSON.stringify(right ?? null);
+  for (const change of changes) {
+    if (!Object.hasOwn(candidate, change.field)) continue;
+    const key = change.field as keyof T;
+    const current = before[change.field];
+    if (equal(current, candidate[key])) continue;
+    if (!equal(current, change.from) || !equal(candidate[key], change.to)) {
+      throw new Error(`Sync plan changed for ${String(before.id)}.${change.field}; run a new dry-run`);
+    }
+    patch[key] = candidate[key];
+  }
+  return patch;
+}
+
 async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): Promise<SnapshotEntry[]> {
   const snapshotEntries: SnapshotEntry[] = [];
 
@@ -343,9 +363,8 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
       const exists = await tx.character.findUnique({ where: { id }, select: { nameEn: true, nameVi: true } });
       if (exists) {
         assertSameIdentity(id, exists, s);
-        console.warn(`⚠️  Character id "${id}" đã tồn tại — bỏ qua create, chuyển sang update.`);
-        e.action = 'update';
-        e.dbId = id;
+        e.action = 'unchanged';
+        continue;
       } else {
         snapshotEntries.push({ kind: 'character', action: 'create', id, before: null });
         const splashArtUrl = await publicPathExists(characterSplashPath(s.nameEn)) ? characterSplashPath(s.nameEn) : '';
@@ -394,36 +413,35 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
     const id = e.dbId!;
     const before = await tx.character.findUnique({ where: { id } });
     if (!before) { console.warn(`⚠️  Character ${id} không còn trong DB — bỏ qua.`); continue; }
-    snapshotEntries.push({ kind: 'character', action: 'update', id, before });
 
     const splashCandidate = characterSplashPath(s.nameEn);
     const splashArtUrl = before.splashArtUrl || (await publicPathExists(splashCandidate) ? splashCandidate : '');
 
-    await tx.character.update({
-      where: { id },
-      data: {
-        nameEn: s.nameEn,
-        nameVi: s.nameVi,
-        titleEn: s.titleEn,
-        titleVi: s.titleVi,
-        rarity: s.rarity,
-        element: s.element,
-        weapon: s.weapon,
-        region: s.region,
-        avatarUrl: before.avatarUrl || s.avatarUrl,
-        splashArtUrl,
-        ...(s.descriptionEn ? { descriptionEn: s.descriptionEn } : {}),
-        ...(s.descriptionVi ? { descriptionVi: s.descriptionVi } : {}),
-        baseHp: s.baseHp,
-        baseAtk: s.baseAtk,
-        baseDef: s.baseDef,
-        fandomUrl: s.fandomUrl,
-        birthday: s.birthday,
-        // KHÔNG đụng: tier, role, recommendedC, tierNote*, talentPriority,
-        // signatureWeapons, sands, goblet, circlet, subStatsPriority,
-        // stats, ascensionMats, talentMats, bestWeapons, bestArtifacts, teams
-      },
-    });
+    const data = plannedUpdate(before, {
+      nameEn: s.nameEn,
+      nameVi: s.nameVi,
+      titleEn: s.titleEn,
+      titleVi: s.titleVi,
+      rarity: s.rarity,
+      element: s.element,
+      weapon: s.weapon,
+      region: s.region,
+      avatarUrl: before.avatarUrl || s.avatarUrl,
+      splashArtUrl,
+      ...(s.descriptionEn ? { descriptionEn: s.descriptionEn } : {}),
+      ...(s.descriptionVi ? { descriptionVi: s.descriptionVi } : {}),
+      baseHp: s.baseHp,
+      baseAtk: s.baseAtk,
+      baseDef: s.baseDef,
+      fandomUrl: s.fandomUrl,
+      birthday: s.birthday,
+      // KHÔNG đụng: tier, role, recommendedC, tierNote*, talentPriority,
+      // signatureWeapons, sands, goblet, circlet, subStatsPriority,
+      // stats, ascensionMats, talentMats, bestWeapons, bestArtifacts, teams
+    }, e.changes);
+    if (!Object.keys(data).length) continue;
+    snapshotEntries.push({ kind: 'character', action: 'update', id, before });
+    await tx.character.update({ where: { id }, data });
     console.log(`  ✏️  Character cập nhật: ${s.nameEn} (${id}) — ${e.changes.length} trường`);
   }
 
@@ -440,7 +458,8 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
       const exists = await tx.weapon.findUnique({ where: { id: extId }, select: { nameEn: true, nameVi: true } });
       if (exists) {
         assertSameIdentity(extId, exists, s);
-        e.action = 'update';
+        e.action = 'unchanged';
+        continue;
       }
       else {
         snapshotEntries.push({ kind: 'weapon', action: 'create', id: extId, before: null });
@@ -473,26 +492,25 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
     const id = e.dbId!;
     const before = await tx.weapon.findUnique({ where: { id } });
     if (!before) { console.warn(`⚠️  Weapon ${id} không còn trong DB — bỏ qua.`); continue; }
-    snapshotEntries.push({ kind: 'weapon', action: 'update', id, before });
 
-    await tx.weapon.update({
-      where: { id },
-      data: {
-        nameEn: s.nameEn,
-        nameVi: s.nameVi,
-        rarity: s.rarity,
-        type: s.typeVi,
-        baseAtk: s.baseAtk,
-        ...(s.subStat ? { subStat: s.subStat } : {}),
-        ...(s.subStatValue != null ? { subStatValue: s.subStatValue } : {}),
-        ...(s.passiveNameEn ? { passiveNameEn: s.passiveNameEn } : {}),
-        ...(s.passiveNameVi ? { passiveNameVi: s.passiveNameVi } : {}),
-        ...(s.passiveDescEn ? { passiveDescEn: s.passiveDescEn } : {}),
-        ...(s.passiveDescVi ? { passiveDescVi: s.passiveDescVi } : {}),
-        ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
-        // KHÔNG đụng: tier, role
-      },
-    });
+    const data = plannedUpdate(before, {
+      nameEn: s.nameEn,
+      nameVi: s.nameVi,
+      rarity: s.rarity,
+      type: s.typeVi,
+      baseAtk: s.baseAtk,
+      ...(s.subStat ? { subStat: s.subStat } : {}),
+      ...(s.subStatValue != null ? { subStatValue: s.subStatValue } : {}),
+      ...(s.passiveNameEn ? { passiveNameEn: s.passiveNameEn } : {}),
+      ...(s.passiveNameVi ? { passiveNameVi: s.passiveNameVi } : {}),
+      ...(s.passiveDescEn ? { passiveDescEn: s.passiveDescEn } : {}),
+      ...(s.passiveDescVi ? { passiveDescVi: s.passiveDescVi } : {}),
+      ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
+      // KHÔNG đụng: tier, role
+    }, e.changes);
+    if (!Object.keys(data).length) continue;
+    snapshotEntries.push({ kind: 'weapon', action: 'update', id, before });
+    await tx.weapon.update({ where: { id }, data });
     console.log(`  ✏️  Weapon cập nhật: ${s.nameEn} (${id}) — ${e.changes.length} trường`);
   }
 
@@ -509,7 +527,8 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
       const exists = await tx.artifactSet.findUnique({ where: { id: extId }, select: { nameEn: true, nameVi: true } });
       if (exists) {
         assertSameIdentity(extId, exists, s);
-        e.action = 'update';
+        e.action = 'unchanged';
+        continue;
       }
       else {
         snapshotEntries.push({ kind: 'artifactSet', action: 'create', id: extId, before: null });
@@ -536,21 +555,20 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
     const id = e.dbId!;
     const before = await tx.artifactSet.findUnique({ where: { id } });
     if (!before) { console.warn(`⚠️  ArtifactSet ${id} không còn trong DB — bỏ qua.`); continue; }
-    snapshotEntries.push({ kind: 'artifactSet', action: 'update', id, before });
 
-    await tx.artifactSet.update({
-      where: { id },
-      data: {
-        nameEn: s.nameEn,
-        nameVi: s.nameVi,
-        rarityList: s.rarityList.length ? s.rarityList : before.rarityList,
-        ...(s.piece2DescEn ? { piece2DescEn: s.piece2DescEn } : {}),
-        ...(s.piece2DescVi ? { piece2DescVi: s.piece2DescVi } : {}),
-        ...(s.piece4DescEn ? { piece4DescEn: s.piece4DescEn } : {}),
-        ...(s.piece4DescVi ? { piece4DescVi: s.piece4DescVi } : {}),
-        ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
-      },
-    });
+    const data = plannedUpdate(before, {
+      nameEn: s.nameEn,
+      nameVi: s.nameVi,
+      rarityList: s.rarityList.length ? s.rarityList : before.rarityList,
+      ...(s.piece2DescEn ? { piece2DescEn: s.piece2DescEn } : {}),
+      ...(s.piece2DescVi ? { piece2DescVi: s.piece2DescVi } : {}),
+      ...(s.piece4DescEn ? { piece4DescEn: s.piece4DescEn } : {}),
+      ...(s.piece4DescVi ? { piece4DescVi: s.piece4DescVi } : {}),
+      ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
+    }, e.changes);
+    if (!Object.keys(data).length) continue;
+    snapshotEntries.push({ kind: 'artifactSet', action: 'update', id, before });
+    await tx.artifactSet.update({ where: { id }, data });
     console.log(`  ✏️  Artifact set cập nhật: ${s.nameEn} (${id}) — ${e.changes.length} trường`);
   }
 
@@ -572,7 +590,8 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
       const exists = await tx.material.findUnique({ where: { id: extId }, select: { nameEn: true, nameVi: true } });
       if (exists) {
         assertSameIdentity(extId, exists, s);
-        e.action = 'update';
+        e.action = 'unchanged';
+        continue;
       }
       else {
         snapshotEntries.push({ kind: 'material', action: 'create', id: extId, before: null });
@@ -596,17 +615,16 @@ async function applyEntries(tx: Prisma.TransactionClient, report: SyncReport): P
     const id = e.dbId!;
     const before = await tx.material.findUnique({ where: { id } });
     if (!before) continue;
+    const data = plannedUpdate(before, {
+      nameEn: s.nameEn,
+      nameVi: s.nameVi,
+      ...(s.rarity ? { rarity: s.rarity } : {}),
+      ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
+      // type giữ nguyên (mapping nguồn chưa đủ tin cậy để ghi đè)
+    }, e.changes);
+    if (!Object.keys(data).length) continue;
     snapshotEntries.push({ kind: 'material', action: 'update', id, before });
-    await tx.material.update({
-      where: { id },
-      data: {
-        nameEn: s.nameEn,
-        nameVi: s.nameVi,
-        ...(s.rarity ? { rarity: s.rarity } : {}),
-        ...(!before.iconUrl && s.iconUrl ? { iconUrl: s.iconUrl } : {}),
-        // type giữ nguyên (mapping nguồn chưa đủ tin cậy để ghi đè)
-      },
-    });
+    await tx.material.update({ where: { id }, data });
   }
 
   return snapshotEntries;

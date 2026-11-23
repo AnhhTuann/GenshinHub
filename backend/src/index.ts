@@ -19,7 +19,7 @@ import { mailerService } from './services/mailer.service';
 import { registerAuthRoutes } from './auth/auth.routes';
 import { authService } from './auth/auth.service';
 
-async function startServer() {
+export async function createServerApp() {
   // ─── Startup Security Checks ───────────────────────────
   // Authentication is database-backed; no shared Admin password or JWT secret
   // is required at runtime. A bootstrap owner is created explicitly via CLI.
@@ -27,7 +27,7 @@ async function startServer() {
   const missingVars = requiredEnvVars.filter(v => !process.env[v]);
   if (missingVars.length > 0) {
     console.error(`\n⛔ FATAL: Missing required environment variables: ${missingVars.join(', ')}`);
-    process.exit(1);
+    throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
   }
 
   const app = express();
@@ -114,7 +114,12 @@ async function startServer() {
   };
 
   // Upload endpoint (requires admin key)
-  app.post('/upload', requireAdminMiddleware, upload.single('image'), (req, res) => {
+  app.post('/upload', requireAdminMiddleware, (req, res, next) => {
+    if (process.env.VERCEL === '1') {
+      return res.status(503).json({ error: 'Persistent object storage must be configured for uploads' });
+    }
+    next();
+  }, upload.single('image'), (req, res) => {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded' });
     }
@@ -127,6 +132,9 @@ async function startServer() {
   
   // Download a backup file
   app.get('/backups/:id/download', requireAdminMiddleware, (req, res) => {
+    if (process.env.VERCEL === '1') {
+      return res.status(503).json({ error: 'Serverless filesystem cannot store durable backups' });
+    }
     const filePath = getBackupFilePath(req.params.id);
     if (!filePath) {
       return res.status(404).json({ error: 'Backup not found' });
@@ -136,6 +144,9 @@ async function startServer() {
 
   // List all backups (lightweight REST alternative to GraphQL)
   app.get('/backups', requireAdminMiddleware, (_req, res) => {
+    if (process.env.VERCEL === '1') {
+      return res.status(503).json({ error: 'Serverless filesystem cannot store durable backups' });
+    }
     const backups = listBackupFiles();
     res.json({ backups });
   });
@@ -194,6 +205,11 @@ async function startServer() {
     },
   }));
 
+  return app;
+}
+
+async function startServer() {
+  const app = await createServerApp();
   const PORT = Number(process.env.PORT || 4000);
   const httpServer = app.listen(PORT, async () => {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
@@ -238,8 +254,11 @@ async function startServer() {
   process.on('SIGINT',  () => shutdown('SIGINT'));
 }
 
-startServer().catch((err) => {
-  console.error('Failed to start server:', err);
-  process.exit(1);
-});
+// Import-safe for Vercel Functions; CLI still launches the normal HTTP server.
+if (require.main === module) {
+  startServer().catch((err) => {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  });
+}
  

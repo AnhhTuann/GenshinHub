@@ -52,12 +52,13 @@ C_BROWSER = "independent-14302-SUPPORT-R5"   # Thrilling Tales SS -> S (tier cha
 C_API_PLAIN = "independent-11401-SUPPORT-R1"  # plain APPROVE via API
 C_API_TIER = "independent-14402-SUB_DPS-R1"   # The Widsith S -> A (tier change via API)
 C_PENDING = "independent-11512-MAIN_DPS-R1"   # left PENDING -> must stay invisible
+C_REQUEST_CHANGES = "independent-11403-SUB_DPS-R5"
 C_REJECT = "independent-12502-SUPPORT-R1"     # REJECT -> must stay invisible
 C_BLOCKED_A = "independent-13501-MAIN_DPS-R1"  # D2 missing evidence
 C_BLOCKED_B = "independent-12401-SUB_DPS-R1"   # D2 Group B evidence fields
 
 IMPORT_SET = [C_BROWSER, C_API_PLAIN, C_API_TIER]
-INVISIBLE_SET = [C_PENDING, C_REJECT, C_BLOCKED_A, C_BLOCKED_B]
+INVISIBLE_SET = [C_PENDING, C_REQUEST_CHANGES, C_REJECT, C_BLOCKED_A, C_BLOCKED_B]
 
 FIXTURE = "[D3-E2E-TEST-FIXTURE] "
 REASON = FIXTURE + "isolated positive-path review after inspecting the D2 revised dossier."
@@ -90,7 +91,10 @@ def node(script: str, *args: str, cwd: Path = BACKEND, env: dict | None = None) 
 def db_url(name: str) -> str:
     return node(
         "const {loadEnv}=require('./scripts/weapon-tier-audit/db.cjs');"
-        "const u=new URL(loadEnv().DATABASE_URL);u.pathname='/'+process.argv[1];"
+        "const u=new URL(loadEnv().DATABASE_URL);"
+        "if(u.hostname!=='127.0.0.1'||u.port!=='5434'||u.pathname!=='/genshinhub')"
+        "{throw new Error('D3 E2E requires the local development connection');}"
+        "u.pathname='/'+process.argv[1];"
         "process.stdout.write(u.toString())",
         name,
     )
@@ -100,7 +104,6 @@ CREATE_DB = """
 const {PrismaClient}=require('@prisma/client');
 const p=new PrismaClient({datasources:{db:{url:process.argv[1]}}});
 (async()=>{
-  await p.$executeRawUnsafe('DROP DATABASE IF EXISTS '+process.argv[2]);
   await p.$executeRawUnsafe('CREATE DATABASE '+process.argv[2]);
   process.stdout.write(JSON.stringify({created:process.argv[2]}));
   await p.$disconnect();
@@ -378,8 +381,8 @@ def browser_review(admin_password: str, actor: str, by_id: dict) -> None:
         page.locator("aside").get_by_role("link", name="Weapon Review").click()
         page.wait_for_function("() => location.pathname === '/en/admin/weapon-tier-review'", timeout=45000)
         page.get_by_text("Đang tải dữ liệu review...").wait_for(state="hidden", timeout=45000)
-        require(page.get_by_role("heading", name="Weapon Tier Review").is_visible(),
-                "review page heading missing")
+        page.get_by_role("heading", name="Weapon Tier Review", exact=True).wait_for(
+            state="visible", timeout=45000)
 
         # Switch to the authoritative D2 revised version (default is FROZEN).
         page.get_by_role("button", name="D2 Revised").click()
@@ -547,6 +550,18 @@ def api_review(admin_session: str, actor: str, by_id: dict) -> None:
     review(C_API_PLAIN)
     review(C_API_TIER)
     review(C_REJECT, decision="REJECT")
+    row = refresh(C_REQUEST_CHANGES)
+    requested = {
+        "id": C_REQUEST_CHANGES + "::D2", "d": "REQUEST_CHANGES", "reason": REASON,
+        "batch": row["batchSha256"], "record": row["approvalChecksum"],
+        "v": row["version"], "ack": True, "sv": D2,
+    }
+    status, body = gql(DECIDE, requested, session=admin_session)
+    require(status == 200 and not body.get("errors"), "request-changes mutation failed")
+    _, replay = gql(DECIDE, requested, session=admin_session)
+    require(any("CONCURRENT_MODIFICATION" in error["message"] for error in replay.get("errors", [])),
+            "stale request-changes mutation did not fail")
+    res("api review: request-changes and stale decision guard", "PASS", "fixture remains ineligible")
     # If the browser step did not complete, finish it here so the positive path
     # is still exercised end-to-end. The browser section reports its own result.
     review(C_BROWSER)
@@ -560,10 +575,11 @@ def api_review(admin_session: str, actor: str, by_id: dict) -> None:
     for cid in IMPORT_SET:
         require(rows[cid]["decision"] == "APPROVE" and rows[cid]["rightsVerified"] and
                 rows[cid]["importEligible"], f"{cid} not import eligible: {rows[cid]}")
-    for cid in [C_PENDING, C_REJECT] + [C_BLOCKED_A, C_BLOCKED_B]:
+    for cid in INVISIBLE_SET:
         require(not rows[cid]["importEligible"], f"{cid} must not be import eligible")
-    require(rows[C_REJECT]["decision"] == "REJECT" and rows[C_PENDING]["decision"] == "PENDING",
-            "pending/rejected decisions incorrect")
+    require(rows[C_REJECT]["decision"] == "REJECT" and rows[C_PENDING]["decision"] == "PENDING"
+            and rows[C_REQUEST_CHANGES]["decision"] == "REQUEST_CHANGES",
+            "pending, rejected, or requested-changes decisions incorrect")
     res("api review: authoritative importEligible guards", "PASS",
         "only the three approved clean rows are import eligible")
 
@@ -715,6 +731,8 @@ def browser_tierlist(names: dict, by_id: dict) -> None:
 
 
 def main() -> None:
+    require(re.fullmatch(r"genshinhub_d3_e2e_[a-z0-9_]{1,40}", TEST_DB) is not None,
+            "D3 E2E requires a uniquely named disposable database")
     dev_url = db_url("genshinhub")
     test_url = db_url(TEST_DB)
     admin_password = secrets.token_urlsafe(32)
@@ -722,7 +740,6 @@ def main() -> None:
     actor = "pending-bootstrap"
     workspace = Path(tempfile.mkdtemp(prefix="genshinhub-d3-e2e-", dir="/tmp/opencode"))
     print(f"D3 isolated DB: {TEST_DB} | actor: {actor} | workspace: {workspace}", flush=True)
-    require(re.search(r"d3_e2e", TEST_DB), "test DB name must contain d3_e2e")
 
     with ExitStack() as stack:
         super_url = db_url("postgres")

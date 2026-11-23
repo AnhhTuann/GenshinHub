@@ -64,6 +64,8 @@ test('committed proposals regenerate from the catalog with mechanical and equipm
   skip: process.env.BUILD_AUDIT_INVENTORY ? false : 'Requires the read-only catalog snapshot',
 }, () => {
   const snapshot = JSON.parse(fs.readFileSync(process.env.BUILD_AUDIT_INVENTORY,'utf8'));
+  assert.ok(process.env.BUILD_AUDIT_COMPARISON,
+    'EVIDENCE_BLOCKED: supply the original proposal comparison fixture via BUILD_AUDIT_COMPARISON');
   const refs = JSON.parse(fs.readFileSync(process.env.BUILD_AUDIT_COMPARISON,'utf8'));
   const evidence = fs.readFileSync(path.join(root,'recommendation-evidence.tsv'),'utf8');
   const result = generate(snapshot,refs,evidence);

@@ -4,16 +4,21 @@ import { fetchGraphQL, GET_CHARACTERS, GET_ARTIFACTS, GET_WEAPONS } from '@/lib/
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
+// Sitemap queries require the live GraphQL API. Building without a backend
+// must not hang or fail prerendering on Vercel.
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [charactersData, artifactsData, weaponsData] = await Promise.all([
+  // Gracefully include the static navigation URLs when the API is offline.
+  const [charactersResult, artifactsResult, weaponsResult] = await Promise.allSettled([
     fetchGraphQL(GET_CHARACTERS),
     fetchGraphQL(GET_ARTIFACTS),
     fetchGraphQL(GET_WEAPONS),
   ]);
 
-  const characters = charactersData.characters || [];
-  const artifacts = artifactsData.artifacts || [];
-  const weapons = weaponsData.weapons || [];
+  const characters = charactersResult.status === 'fulfilled' ? (charactersResult.value.characters || []) : [];
+  const artifacts = artifactsResult.status === 'fulfilled' ? (artifactsResult.value.artifacts || []) : [];
+  const weapons = weaponsResult.status === 'fulfilled' ? (weaponsResult.value.weapons || []) : [];
   const locales = routing.locales;
 
   const pages = [

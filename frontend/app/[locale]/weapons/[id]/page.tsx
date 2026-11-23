@@ -4,9 +4,10 @@ import { setRequestLocale } from 'next-intl/server';
 import { fetchGraphQL, GET_MATERIALS, GET_WEAPON_BY_ID, GET_WEAPON_GAME_DATA, GET_WEAPON_RECOMMENDED_USERS, GET_WEAPONS } from '@/lib/graphql';
 import WeaponDetailClient from './WeaponDetailClient';
 
+// For staging, dynamic routes are resolved at request time, not from GraphQL at build time.
+export const dynamic = 'force-dynamic';
 export async function generateStaticParams() {
-  const data = await fetchGraphQL(GET_WEAPONS);
-  return (data.weapons || []).map((w: any) => ({ id: w.id }));
+  return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {

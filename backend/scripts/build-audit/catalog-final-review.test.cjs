@@ -10,8 +10,9 @@ const folder=path.resolve(__dirname,'../../../docs/character-builds/final-review
 const read=name=>JSON.parse(fs.readFileSync(path.join(folder,name),'utf8'));
 function r2Manifest(){
   const manifest=read('READY_BATCHES.json');
-  const archived=read('A01_ORIGINAL.json');
-  return {...manifest,batches:manifest.batches.map(row=>row.id==='A01'?archived.batch:row)};
+  // Both R3 reviews intentionally replaced their active batches after this R2 snapshot.
+  const archives=new Map(['A01','A02'].map(id=>[id,read(`${id}_ORIGINAL.json`).batch]));
+  return {...manifest,batches:manifest.batches.map(row=>archives.get(row.id)??row)};
 }
 const current=JSON.parse(fs.readFileSync(process.env.BUILD_AUDIT_INVENTORY,'utf8'));
 

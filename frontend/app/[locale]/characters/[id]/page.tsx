@@ -117,7 +117,7 @@ export default async function CharacterDetail({ params }: { params: Promise<{ id
                 <h2 className="atlas-section-title mb-4">
                   {t('stats')}
                 </h2>
-                <CharacterStatsSection characterId={character.id} stats={character.stats} baseHp={character.baseHp} baseAtk={character.baseAtk} baseDef={character.baseDef} />
+                <CharacterStatsSection characterId={character.id} stats={character.stats} />
               </div>
             </ScrollEntrance>
 

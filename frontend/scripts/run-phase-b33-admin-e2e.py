@@ -67,10 +67,14 @@ def require(condition: bool, message: str) -> None:
 
 
 def node(script: str, *args: str, cwd: Path = BACKEND, env: dict | None = None) -> str:
-    return subprocess.run(
+    result = subprocess.run(
         ["node", "-e", script, *args], cwd=cwd, env=env,
-        text=True, capture_output=True, check=True,
-    ).stdout.strip()
+        text=True, capture_output=True,
+    )
+    if result.returncode:
+        # Do not put connection strings or arbitrary process arguments in tracebacks.
+        raise RuntimeError(f"isolated Node fixture command failed (exit {result.returncode})")
+    return result.stdout.strip()
 
 
 def db_url(name: str) -> str:

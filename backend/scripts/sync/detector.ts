@@ -140,10 +140,23 @@ export interface SyncReport {
 
 const clean = (s: unknown): string => (typeof s === 'string' ? s.trim() : '');
 
-function allNames(folderQuery: (q: string, o?: any) => any): string[] {
-  const res = folderQuery('names', { matchCategories: true });
-  return Array.isArray(res) ? (res as string[]) : [];
+export function validatedCatalogNames(
+  category: string,
+  payload: unknown,
+  version = GENSHIN_DB_VERSION,
+): string[] {
+  if (!/^5\.\d+\.\d+$/.test(version)) {
+    throw new Error('Unsupported genshin-db version; expected a stable v5 catalog');
+  }
+  if (!Array.isArray(payload) || payload.length === 0
+      || payload.some(name => typeof name !== 'string' || !name.trim())) {
+    throw new Error(`Invalid genshin-db ${category} catalog: expected a nonempty names array`);
+  }
+  return payload;
 }
+
+const namesQuery = { matchCategories: true } as const;
+
 
 /** Tên DB chuẩn tương ứng của một entry genshin-db (áp dụng alias). */
 function canonicalDbName(genshinName: string): string {
@@ -410,7 +423,7 @@ export async function detectChanges(prisma: PrismaClient, supplementalMaterials:
   // hồ sơ legacy, còn Manekin/Manekina có hai slug legacy riêng.
   // Giữ quy ước đó để tránh ghi chồng vào các slug đang dùng.
   const SKIP_DUPLICATE_SOURCES = new Set(['Aether', 'Lumine']);
-  for (const name of uniqueNames(allNames((q, o) => genshindb.characters(q, o)))) {
+  for (const name of uniqueNames(validatedCatalogNames('characters', genshindb.characters('names', namesQuery)))) {
     if (SKIP_DUPLICATE_SOURCES.has(name)) continue;
     const mapped = mapCharacter(name);
     if (!mapped) continue;
@@ -455,7 +468,7 @@ export async function detectChanges(prisma: PrismaClient, supplementalMaterials:
   }
 
   // ---------- Weapons ----------
-  for (const name of uniqueNames(allNames((q, o) => genshindb.weapons(q, o)))) {
+  for (const name of uniqueNames(validatedCatalogNames('weapons', genshindb.weapons('names', namesQuery)))) {
     const source = mapWeapon(name);
     if (!source) continue;
     const dbRow = weaponIndex.get(normalizeName(source.nameEn)) ||
@@ -495,7 +508,7 @@ export async function detectChanges(prisma: PrismaClient, supplementalMaterials:
   }
 
   // ---------- Artifact Sets ----------
-  for (const name of uniqueNames(allNames((q, o) => genshindb.artifacts(q, o)))) {
+  for (const name of uniqueNames(validatedCatalogNames('artifacts', genshindb.artifacts('names', namesQuery)))) {
     const source = mapArtifact(name);
     if (!source) continue;
     const dbRow = artIndex.get(normalizeName(source.nameEn)) ||
@@ -533,7 +546,7 @@ export async function detectChanges(prisma: PrismaClient, supplementalMaterials:
 
   // Keep the package mapping for overlapping IDs. Yatta covers the wider item
   // catalog already supported by the legacy Material seed.
-  const materialSources = uniqueNames(allNames((q, o) => genshindb.materials(q, o)))
+  const materialSources = uniqueNames(validatedCatalogNames('materials', genshindb.materials('names', namesQuery)))
     .map(mapMaterial).filter((source): source is MaterialSource => source !== null);
   const primaryIds = new Set(materialSources.map(source => source.externalId));
   const yattaById = new Map(supplementalMaterials.map(source => [source.externalId, source]));

@@ -8,7 +8,8 @@ import nodemailer from 'nodemailer';
 
 function createTransporter() {
   const host = process.env.SMTP_HOST;
-  const port = parseInt(process.env.SMTP_PORT || '587', 10);
+  const portText = process.env.SMTP_PORT ?? '587';
+  const port = Number(portText);
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
   const isProduction = process.env.NODE_ENV === 'production';
@@ -21,15 +22,50 @@ function createTransporter() {
     return null; // Will fall back to console logging in dev
   }
 
+  const secureSetting = process.env.SMTP_SECURE;
+  if (!/^[a-z0-9][a-z0-9.-]*$/i.test(host)
+      || !/^\d+$/.test(portText) || !Number.isSafeInteger(port) || port < 1 || port > 65535
+      || (secureSetting !== undefined && secureSetting !== 'true' && secureSetting !== 'false')
+      || (secureSetting === 'false' && port === 465)) {
+    throw new Error('AUTH_SMTP_INVALID_CONFIG');
+  }
+  const secure = secureSetting === 'true' || port === 465;
   return nodemailer.createTransport({
     host,
     port,
-    secure: process.env.SMTP_SECURE === 'true' || port === 465,
+    secure,
+    requireTLS: !secure,
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 30_000,
     auth: { user, pass },
     tls: {
-      rejectUnauthorized: process.env.NODE_ENV === 'production',
+      rejectUnauthorized: true,
     },
   });
+}
+
+function resetMailOrigin(): URL {
+  const production = process.env.NODE_ENV === 'production';
+  try {
+    const origin = new URL(process.env.FRONTEND_URL ?? (production ? '' : 'http://localhost:3001'));
+    const localHttp = !production && origin.protocol === 'http:'
+      && ['localhost', '127.0.0.1', '[::1]'].includes(origin.hostname);
+    if ((origin.protocol === 'https:' || localHttp) && origin.pathname === '/'
+        && !origin.username && !origin.password && !origin.search && !origin.hash) return origin;
+  } catch {
+    // Report configuration errors without including the configured value.
+  }
+  throw new Error('AUTH_SMTP_INVALID_FRONTEND_URL');
+}
+
+function resetMailSender(): string {
+  const from = process.env.EMAIL_FROM ?? (process.env.NODE_ENV === 'production' ? '' : 'GenshinHub <noreply@genshinhub.com>');
+  const address = from.match(/^[^<>\r\n]*<([^<>\r\n]+)>$/)?.[1] ?? from;
+  if (!/^[^\s<>@,;]+@[^\s<>@,;]+\.[^\s<>@,;]+$/.test(address)) {
+    throw new Error('AUTH_SMTP_INVALID_SENDER');
+  }
+  return from;
 }
 
 // ─── Email Templates ─────────────────────────────────────────────────────────
@@ -172,20 +208,17 @@ export const mailerService = {
    * email; the database stores a SHA-256 hash. Never returned by an API.
    */
   async sendPasswordResetEmail(to: string, token: string, locale: 'en' | 'vi' = 'en'): Promise<boolean> {
-    const baseUrl = (process.env.FRONTEND_URL || 'http://localhost:3001').replace(/\/$/, '');
-    const link = `${baseUrl}/${locale}/auth/reset-password?token=${encodeURIComponent(token)}`;
+    const transporter = createTransporter();
+    if (!transporter) throw new Error('AUTH_SMTP_NOT_CONFIGURED');
+    const from = resetMailSender();
+    const url = new URL(`/${locale}/auth/reset-password`, resetMailOrigin());
+    url.searchParams.set('token', token);
+    const link = url.toString();
     const subject = locale === 'vi' ? 'GenshinHub — Đặt lại mật khẩu' : 'GenshinHub — Reset your password';
     const text = locale === 'vi'
       ? `Mở liên kết này để đặt lại mật khẩu (có hiệu lực 15 phút):\n${link}\n\nNếu bạn không yêu cầu, hãy bỏ qua email này.`
       : `Open this link to reset your password (valid for 15 minutes):\n${link}\n\nIf you did not request this, ignore this email.`;
     const html = `<!doctype html><html lang="${locale}"><body style="background:#04040a;color:#fff;font-family:sans-serif;padding:32px"><h1 style="color:#f0d080">${subject}</h1><p>${locale === 'vi' ? 'Mở liên kết bên dưới để đặt lại mật khẩu. Liên kết hết hạn sau 15 phút.' : 'Open the link below to reset your password. The link expires in 15 minutes.'}</p><p><a href="${link}" style="color:#f0d080">${locale === 'vi' ? 'Đặt lại mật khẩu' : 'Reset password'}</a></p><p style="opacity:.6">${locale === 'vi' ? 'Nếu bạn không yêu cầu, hãy bỏ qua email này.' : 'If you did not request this, ignore this email.'}</p></body></html>`;
-    const from = process.env.EMAIL_FROM || 'GenshinHub <noreply@genshinhub.com>';
-    const transporter = createTransporter();
-
-    if (!transporter) {
-      throw new Error('AUTH_SMTP_NOT_CONFIGURED');
-    }
-
     await transporter.sendMail({ from, to, subject, text, html });
     return true;
   },
@@ -194,17 +227,16 @@ export const mailerService = {
    * Verify SMTP connection on startup (optional, call once in startServer)
    */
   async verifyConnection(): Promise<void> {
-    const transporter = createTransporter();
-    if (!transporter) {
-      console.warn('⚠️  Mailer: SMTP not configured — emails will be logged to console only.');
-      return;
-    }
     try {
+      const transporter = createTransporter();
+      if (!transporter) {
+        console.warn('[Mailer] SMTP is not configured.');
+        return;
+      }
       await transporter.verify();
-      console.log('✅ Mailer: SMTP connection verified successfully.');
-    } catch (error: any) {
-      console.error('❌ Mailer: SMTP connection failed:', error.message);
-      console.error('   Check SMTP_HOST, SMTP_USER, SMTP_PASS in your .env file.');
+      console.log('[Mailer] SMTP connection verified.');
+    } catch {
+      console.warn('[Mailer] SMTP is unavailable. Check host, TLS mode, and credentials.');
     }
   },
 };

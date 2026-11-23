@@ -1,0 +1,13 @@
+# Final Admin review validation
+
+All decision and publication tests used separately named loopback disposable databases. The original development database was queried for before and after digests and inventory only. It received no approvals, ranking publication, or audit changes.
+
+- `python frontend/scripts/run-phase-d3-positive-e2e.py` passed **38** checks. Admin navigation and login, the D2 candidate list and detail, evidence and checksums, the rights gate, reload persistence, request-changes and stale version denial, audit actors, and partial publication ran against the isolated backend. Three eligible test rankings were published. Pending, rejected, request-changes, and evidence-blocked fixtures were excluded from public GraphQL and the localized Tier List. The runner now waits for the real heading and refuses reused database names.
+- `B33_TEST_DB=<fresh disposable fixture> python frontend/scripts/run-phase-b33-admin-e2e.py` passed **46** checks, including browser request-changes, rejection, responsive layouts, history, import previews, and guarded dry-runs. Two pre-existing evidence or cross-phase work items stayed explicitly blocked. That branch of the test produced no public ranking rows.
+- The import, migration integrity, and source review suites passed **38** checks. The backend auth suite independently verified Admin isolation, session revocation, and authorization after logout.
+
+The final CharacterBuild browser test is separate from Weapon Tier. CharacterBuild supports approve and reject for staged revisions. The separate Weapon Tier model implements request-changes. The suite never relies on testing with a production or existing development Admin account.
+
+`python frontend/scripts/run-release-character-review-e2e.py` passed three fixture workflow groups. The fixture Admin logged in, navigated through the Characters dashboard to Aino, staged and approved one synthetic revision and staged and rejected another. The browser verified the audited fixture actor. The proxy rejected the stale edit, declined to make the rejected draft a public default, and denied the request after Admin logout. The existing Aino support default remained selected. To reproduce, start frontend and API services connected only to an isolated restore and supply loopback `RELEASE_REVIEW_URL` / `RELEASE_REVIEW_GRAPHQL_URL` and the disposable `RELEASE_REVIEW_USERNAME`, `RELEASE_REVIEW_PASSWORD`, and `RELEASE_REVIEW_ACTOR` through the environment.
+
+The B3.3 blocks were the Favonius evidence gate and that older importer's FROZEN-only input path. The separate D3 runner exercised the authorized D2 publication path. Character Tier uses a separate Admin surface. Its full decision click-through was outside these browser runs.

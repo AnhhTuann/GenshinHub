@@ -45,5 +45,7 @@ export async function loadYattaMaterials(): Promise<MaterialSource[]> {
     }
     return items as MaterialIndex;
   }));
-  return mapYattaMaterials(en, vi);
+  const materials = mapYattaMaterials(en, vi);
+  if (materials.length === 0) throw new Error('Yatta material index contains no valid identities');
+  return materials;
 }

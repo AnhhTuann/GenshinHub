@@ -28,7 +28,8 @@
     "test:mats": "ts-node scripts/sync/materialBackfill.test.ts",
     "test:auth": "node -r ts-node/register --test src/auth/security.test.ts src/auth/auth.service.integration.test.ts src/services/mailer.service.test.ts",
     "auth:bootstrap-admin": "ts-node src/auth/bootstrap-admin.ts",
-    "seed:ci": "ts-node prisma/seed-ci.ts"
+    "seed:ci": "ts-node prisma/seed-ci.ts",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

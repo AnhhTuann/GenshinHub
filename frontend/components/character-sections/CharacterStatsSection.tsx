@@ -2,6 +2,7 @@
 
 import { useAdmin } from '@/hooks/useAdmin';
 import { useState } from 'react';
+import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import CharacterStatsFormModal from '../admin/CharacterStatsFormModal';
 
@@ -15,58 +16,20 @@ interface StatEntry {
   specialStatValue: string; // e.g., "38.4%"
 }
 
-interface CharacterStatsSectionProps {
+export default function CharacterStatsSection({ stats, characterId }: {
   stats?: StatEntry[] | null;
-  baseHp?: number;
-  baseAtk?: number;
-  baseDef?: number;
-}
-
-export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef, characterId }: CharacterStatsSectionProps & { characterId: string }) {
+  characterId: string;
+}) {
+  const vi = useLocale() === 'vi';
   const router = useRouter();
   const { isAdmin } = useAdmin();
   const [isEditing, setIsEditing] = useState(false);
 
-  
-
-  // Extract unique levels for the tabs
-  const levels = Array.isArray(stats) && stats.length > 0 ? Array.from(new Set(stats.map(s => s.level))) : ['Lv.1', 'Lv.20', 'Lv.40', 'Lv.50', 'Lv.60', 'Lv.70', 'Lv.80', 'Lv.90'];
-  const [activeLevel, setActiveLevel] = useState(levels[levels.length - 1]);
-
-  // If no stats provided, generate mock data based on base stats just to show the UI
-  const mockStats: StatEntry[] = levels.flatMap((lv, idx) => {
-    const ascendBase = Math.floor(idx * 0.8);
-    const hp = (baseHp || 1000) * (1 + idx * 0.5);
-    const atk = (baseAtk || 100) * (1 + idx * 0.5);
-    const def = (baseDef || 50) * (1 + idx * 0.5);
-    
-    const before: StatEntry = {
-      level: lv,
-      ascend: ascendBase,
-      baseHp: Math.round(hp),
-      baseAtk: Math.round(atk),
-      baseDef: Math.round(def),
-      specialStatName: 'CRIT DMG',
-      specialStatValue: `${(50 + idx * 4.8).toFixed(1)}%`
-    };
-    
-    // For levels that can ascend, add an "after ascension" stat
-    if (lv !== 'Lv.1' && lv !== 'Lv.90') {
-      const after: StatEntry = {
-        ...before,
-        ascend: ascendBase + 1,
-        baseHp: Math.round(hp * 1.1),
-        baseAtk: Math.round(atk * 1.1),
-        baseDef: Math.round(def * 1.1),
-        specialStatValue: `${(50 + (idx + 0.5) * 4.8).toFixed(1)}%`
-      };
-      return [before, after];
-    }
-    return [before];
-  });
-
-  const displayStats = Array.isArray(stats) && stats.length > 0 ? stats : mockStats;
-  const currentStats = displayStats.filter(s => s.level === activeLevel);
+  const displayStats = Array.isArray(stats) ? stats : [];
+  const levels = Array.from(new Set(displayStats.map(stat => stat.level)));
+  const [selectedLevel, setSelectedLevel] = useState<string>();
+  const activeLevel = selectedLevel && levels.includes(selectedLevel) ? selectedLevel : levels.at(-1);
+  const currentStats = displayStats.filter(stat => stat.level === activeLevel);
   const before = currentStats[0];
   const after = currentStats.length > 1 ? currentStats[1] : currentStats[0];
 
@@ -83,52 +46,57 @@ export default function CharacterStatsSection({ stats, baseHp, baseAtk, baseDef,
         </button>
       )}
 
-      {/* Tabs */}
-      <div className="character-level-selector">
-        {levels.map(lv => (
-          <button
-            key={lv}
-            onClick={() => setActiveLevel(lv)}
-            type="button"
-            aria-pressed={activeLevel === lv}
-            className="character-level-button"
-          >
-            {lv}
-          </button>
-        ))}
-      </div>
-
-      <div className="character-stats-table">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Stat</th>
-              <th scope="col">Before Ascension</th>
-              <th scope="col">After Ascension</th>
-            </tr>
-          </thead>
-          <tbody>
-            {([
-              ['Ascend', 'ascend'],
-              ['Base HP', 'baseHp'],
-              ['Base ATK', 'baseAtk'],
-              ['Base DEF', 'baseDef'],
-              [specialName, 'specialStatValue'],
-            ] as const).map(([label, key]) => (
-              <tr key={key}>
-                <th scope="row">{label}</th>
-                <td>{before?.[key] ?? '-'}</td>
-                <td data-changed={before?.[key] !== after?.[key]}>{after?.[key] ?? '-'}</td>
-              </tr>
+      {displayStats.length === 0 ? (
+        <p role="status">{vi ? 'Chưa có dữ liệu chỉ số theo cấp.' : 'Level stats are unavailable.'}</p>
+      ) : (
+        <>
+          <div className="character-level-selector" role="group" aria-label={vi ? 'Cấp nhân vật' : 'Character level'}>
+            {levels.map(lv => (
+              <button
+                key={lv}
+                onClick={() => setSelectedLevel(lv)}
+                type="button"
+                aria-pressed={activeLevel === lv}
+                className="character-level-button"
+              >
+                {lv}
+              </button>
             ))}
-          </tbody>
-        </table>
-      </div>
+          </div>
+
+          <div className="character-stats-table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">{vi ? 'Chỉ số' : 'Stat'}</th>
+                  <th scope="col">{vi ? 'Trước đột phá' : 'Before Ascension'}</th>
+                  <th scope="col">{vi ? 'Sau đột phá' : 'After Ascension'}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ['Ascend', 'ascend'],
+                  ['Base HP', 'baseHp'],
+                  ['Base ATK', 'baseAtk'],
+                  ['Base DEF', 'baseDef'],
+                  [specialName, 'specialStatValue'],
+                ] as const).map(([label, key]) => (
+                  <tr key={key}>
+                    <th scope="row">{label}</th>
+                    <td>{before?.[key] ?? '-'}</td>
+                    <td data-changed={before?.[key] !== after?.[key]}>{after?.[key] ?? '-'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
 
       {isEditing && (
         <CharacterStatsFormModal
           characterId={characterId}
-          initialStats={stats || mockStats}
+          initialStats={displayStats}
           onClose={() => setIsEditing(false)}
           onSaved={() => router.refresh()}
         />

@@ -59,6 +59,10 @@ const jsonLd = {
   ],
 };
 
+// Cloud staging: defer all data-dependent server rendering to request time.
+// A backend need not be reachable during the Vercel build.
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "GenshinHub - Genshin Impact Builds & Guides",

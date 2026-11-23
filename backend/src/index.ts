@@ -10,7 +10,7 @@ import helmet from 'helmet';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { typeDefs, resolvers } from './graphql';
 import { createLoaders } from './graphql/dataloaders';
 import { getBackupFilePath, listBackups as listBackupFiles } from './backupService';
@@ -19,7 +19,7 @@ import { mailerService } from './services/mailer.service';
 import { registerAuthRoutes } from './auth/auth.routes';
 import { authService } from './auth/auth.service';
 
-async function startServer() {
+export async function createServerApp() {
   // ─── Startup Security Checks ───────────────────────────
   // Authentication is database-backed; no shared Admin password or JWT secret
   // is required at runtime. A bootstrap owner is created explicitly via CLI.
@@ -27,11 +27,14 @@ async function startServer() {
   const missingVars = requiredEnvVars.filter(v => !process.env[v]);
   if (missingVars.length > 0) {
     console.error(`\n⛔ FATAL: Missing required environment variables: ${missingVars.join(', ')}`);
-    process.exit(1);
+    throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
   }
 
   const app = express();
-  
+  // Vercel sits behind a trusted proxy. Normalize the IP for rate limits.
+  if (process.env.VERCEL === '1') app.set('trust proxy', 1);
+  app.disable('x-powered-by');
+
   app.use(helmet({
     crossOriginEmbedderPolicy: false,
     contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
@@ -48,7 +51,8 @@ async function startServer() {
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 1000, // limit each IP to 1000 requests per windowMs
     skip: (req) => req.ip === '127.0.0.1' || req.ip === '::1' || (req.ip ? req.ip.includes('127.0.0.1') : false),
-    message: { error: 'Too many requests, please try again later.' }
+    message: { error: 'Too many requests, please try again later.' },
+    keyGenerator: (req) => ipKeyGenerator(req.ip || req.socket.remoteAddress || 'unknown'),
   });
   app.use(limiter);
 
@@ -114,7 +118,12 @@ async function startServer() {
   };
 
   // Upload endpoint (requires admin key)
-  app.post('/upload', requireAdminMiddleware, upload.single('image'), (req, res) => {
+  app.post('/upload', requireAdminMiddleware, (req, res, next) => {
+    if (process.env.VERCEL === '1') {
+      return res.status(503).json({ error: 'Persistent object storage must be configured for uploads' });
+    }
+    next();
+  }, upload.single('image'), (req, res) => {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded' });
     }
@@ -127,6 +136,9 @@ async function startServer() {
   
   // Download a backup file
   app.get('/backups/:id/download', requireAdminMiddleware, (req, res) => {
+    if (process.env.VERCEL === '1') {
+      return res.status(503).json({ error: 'Serverless filesystem cannot store durable backups' });
+    }
     const filePath = getBackupFilePath(req.params.id);
     if (!filePath) {
       return res.status(404).json({ error: 'Backup not found' });
@@ -136,6 +148,9 @@ async function startServer() {
 
   // List all backups (lightweight REST alternative to GraphQL)
   app.get('/backups', requireAdminMiddleware, (_req, res) => {
+    if (process.env.VERCEL === '1') {
+      return res.status(503).json({ error: 'Serverless filesystem cannot store durable backups' });
+    }
     const backups = listBackupFiles();
     res.json({ backups });
   });
@@ -194,6 +209,11 @@ async function startServer() {
     },
   }));
 
+  return app;
+}
+
+async function startServer() {
+  const app = await createServerApp();
   const PORT = Number(process.env.PORT || 4000);
   const httpServer = app.listen(PORT, async () => {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
@@ -238,8 +258,27 @@ async function startServer() {
   process.on('SIGINT',  () => shutdown('SIGINT'));
 }
 
-startServer().catch((err) => {
-  console.error('Failed to start server:', err);
-  process.exit(1);
-});
+// Import-safe for Vercel Functions; CLI still launches the normal HTTP server.
+if (require.main === module) {
+  startServer().catch((err) => {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  });
+}
  
+
+// Vercel Express zero-config entrypoint. Keep the CLI startup path separate.
+let vercelAppPromise: ReturnType<typeof createServerApp> | undefined;
+export default async function vercelHandler(req: express.Request, res: express.Response) {
+  try {
+    vercelAppPromise ??= createServerApp().catch((error) => {
+      vercelAppPromise = undefined;
+      throw error;
+    });
+    const app = await vercelAppPromise;
+    return app(req, res);
+  } catch (error) {
+    console.error('[GenshinHub] API startup failed:', error instanceof Error ? error.message : 'unknown');
+    if (!res.headersSent) res.status(503).json({ error: 'API initialization unavailable' });
+  }
+}

@@ -11,9 +11,10 @@ import CharacterTalentMatsSection from '@/components/character-sections/Characte
 import CharacterHero from '@/components/characters/server/CharacterHero';
 import ThemeSetter from '@/context/ThemeSetter';
 
+// For staging, dynamic routes are resolved at request time, not from GraphQL at build time.
+export const dynamic = 'force-dynamic';
 export async function generateStaticParams() {
-  const data = await fetchGraphQL(GET_CHARACTERS);
-  return data.characters.map((c: any) => ({ id: c.id }));
+  return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string; locale: string }> }): Promise<Metadata> {

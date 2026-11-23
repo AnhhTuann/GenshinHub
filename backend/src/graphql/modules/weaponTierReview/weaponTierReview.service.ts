@@ -14,10 +14,13 @@ import {
 
 // Authoritative freeze verifier: recomputes every record, file and batch hash
 // from source artifacts and rejects any tampering with the frozen dossier.
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const freeze = require(findRepoFile('backend/scripts/weapon-tier-independent/freeze.cjs')) as {
-  verify: () => { ok: boolean; issues: string[]; manifest: any };
-};
+// The verifier depends on immutable audit files which may be absent in a
+// serverless deployment. Do not crash unrelated public GraphQL routes on import.
+// Admin review still fails closed if the authoritative files are unavailable.
+function loadFreezeVerifier(): { verify: () => { ok: boolean; issues: string[]; manifest: any } } {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  return require(findRepoFile('backend/scripts/weapon-tier-independent/freeze.cjs'));
+}
 
 /**
  * Phase B3.2 / D3 — real Admin review workflow. FROZEN and D2_REVISED are two
@@ -90,7 +93,7 @@ export class WeaponTierReviewService {
 
   /** Re-reads and re-verifies the frozen sources on every API call. */
   private frozen(): Frozen {
-    const verification = freeze.verify();
+    const verification = loadFreezeVerifier().verify();
     if (!verification.ok) throw new Error(`FROZEN_CONTENT_CHANGED:${verification.issues.join(',')}`);
     const manifest = verification.manifest;
     if (!Array.isArray(manifest.records) || manifest.records.length !== 14) throw new Error('FREEZE_RECORD_COUNT_INVALID');

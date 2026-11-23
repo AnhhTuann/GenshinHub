@@ -10,7 +10,7 @@ import helmet from 'helmet';
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
-import rateLimit from 'express-rate-limit';
+import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { typeDefs, resolvers } from './graphql';
 import { createLoaders } from './graphql/dataloaders';
 import { getBackupFilePath, listBackups as listBackupFiles } from './backupService';
@@ -31,7 +31,10 @@ export async function createServerApp() {
   }
 
   const app = express();
-  
+  // Vercel sits behind a trusted proxy. Normalize the IP for rate limits.
+  if (process.env.VERCEL === '1') app.set('trust proxy', 1);
+  app.disable('x-powered-by');
+
   app.use(helmet({
     crossOriginEmbedderPolicy: false,
     contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
@@ -48,7 +51,8 @@ export async function createServerApp() {
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 1000, // limit each IP to 1000 requests per windowMs
     skip: (req) => req.ip === '127.0.0.1' || req.ip === '::1' || (req.ip ? req.ip.includes('127.0.0.1') : false),
-    message: { error: 'Too many requests, please try again later.' }
+    message: { error: 'Too many requests, please try again later.' },
+    keyGenerator: (req) => ipKeyGenerator(req.ip || req.socket.remoteAddress || 'unknown'),
   });
   app.use(limiter);
 
@@ -262,3 +266,19 @@ if (require.main === module) {
   });
 }
  
+
+// Vercel Express zero-config entrypoint. Keep the CLI startup path separate.
+let vercelAppPromise: ReturnType<typeof createServerApp> | undefined;
+export default async function vercelHandler(req: express.Request, res: express.Response) {
+  try {
+    vercelAppPromise ??= createServerApp().catch((error) => {
+      vercelAppPromise = undefined;
+      throw error;
+    });
+    const app = await vercelAppPromise;
+    return app(req, res);
+  } catch (error) {
+    console.error('[GenshinHub] API startup failed:', error instanceof Error ? error.message : 'unknown');
+    if (!res.headersSent) res.status(503).json({ error: 'API initialization unavailable' });
+  }
+}

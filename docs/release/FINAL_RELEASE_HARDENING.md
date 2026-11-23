@@ -19,10 +19,10 @@ A fresh PostgreSQL backup restored successfully to a disposable database. The du
 | Backend auth / frontend auth | `npm run test:auth` in each package. 21 backend and 10 frontend passed. Backend used `AUTH_TEST_DATABASE_URL` pointing to an isolated local database. |
 | Prisma and builds | `npx prisma validate`, `npx prisma migrate status`, backend `npm run build`, frontend `npm ci && npm run build`, `npx tsc --noEmit --incremental false`, and `npm run lint`. Local logs use the `/tmp/gh-hardening-` prefix. |
 | Migrations, import, and publication guards | `node --test scripts/weapon-tier-independent/{admin-review,import-guard,migration-integrity}.test.cjs scripts/phaseD3/import-d3.test.cjs`. 38 passed. |
-| Sync | `npm run sync:validate` twice, `npm run sync:e2e` on the disposable restore, `npm run test:sync:source`, `npm run test:sync:version`, and `npm run test:mats`. Two isolated `--sync` runs were no-ops. |
+| Sync | `npm run sync:validate` twice, `npm run sync:e2e` on the disposable restore, `npm run test:sync:source`, `npm run test:sync:version`, and `npm run test:mats`. Two isolated `--sync` runs were no-ops. `node scripts/sync/interruption.test.cjs` verified SIGTERM rollback. |
 | Assets and replay | `npm run test:assets` passed 41 checks. `node scripts/character-builds/replay-corrections.test.cjs` passed 10. |
 | Browser, Admin and history | See the separate browser, Admin, and historical reports for exact scope and blocked cases. |
 
 The delivery response records the PR and final verified remote SHA. A merge is subject to the ruleset and regression results.
 
-Counted verification recorded 525 passes across cases and browser scenarios, no unresolved failing product assertions, and five blocked cases or external gates. The blocked count includes the missing original comparison fixture, two explicit legacy B3.3 policy gates, live SMTP, and hosted scheduler database configuration. The original missing-fixture command exits nonzero by design. Coverage gaps outside the executed inventory remain documented separately.
+Counted verification recorded 526 passes across cases and browser scenarios, no unresolved failing product assertions, and five blocked cases or external gates. The blocked count includes the missing original comparison fixture, two explicit legacy B3.3 policy gates, live SMTP, and hosted scheduler database configuration. The original missing-fixture command exits nonzero by design. Coverage gaps outside the executed inventory remain documented separately.

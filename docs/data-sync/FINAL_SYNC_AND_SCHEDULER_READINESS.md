@@ -2,7 +2,7 @@
 
 The npm registry still selects the pinned stable `genshin-db@5.2.15`. The installed package was retained. Both current development dry-runs used the real versioned source and proposed zero creates and zero updates. Two real applies on a fresh disposable restore returned the same plan without creating snapshots. The development database received zero sync writes. [npm package versions](https://www.npmjs.com/package/genshin-db?activeTab=versions)
 
-The detector now fails on an empty, malformed, or unsupported package index. The supplemental loader rejects an index with no usable identities. Missing individual source rows remain unmatched evidence and have no deletion path. The fixture suite passed 34 apply, duplicate, stale-plan, preservation, rollback and GraphQL checks. The tested rollback involved a failed transaction and an explicit snapshot restore. Process termination during an apply was outside this verification.
+The detector now fails on an empty, malformed, or unsupported package index. The supplemental loader rejects an index with no usable identities. Missing individual source rows remain unmatched evidence and have no deletion path. The fixture suite passed 34 apply, duplicate, stale-plan, preservation, rollback and GraphQL checks. The tested rollback covered a failed transaction, explicit snapshot restore, and process interruption. `node scripts/sync/interruption.test.cjs` passed using `SYNC_INTERRUPTION_DATABASE_URL` for a fresh loopback fixture database ending in `_test`. It paused the real engine inside a transaction, sent SIGTERM, and verified zero fixture rows and zero new snapshots. The fixture trigger was removed.
 
 | Exact ID | Material | Canonical result |
 |---|---|---|

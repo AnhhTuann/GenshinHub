@@ -16,18 +16,18 @@ import { createLoaders } from './graphql/dataloaders';
 import { getBackupFilePath, listBackups as listBackupFiles } from './backupService';
 import { prisma } from './prisma';
 import { mailerService } from './services/mailer.service';
+import { registerAuthRoutes } from './auth/auth.routes';
+import { authService } from './auth/auth.service';
 
 async function startServer() {
   // ─── Startup Security Checks ───────────────────────────
-  const requiredEnvVars = ['USER_JWT_SECRET', 'ADMIN_JWT_SECRET', 'ADMIN_PASSWORD', 'DATABASE_URL'];
+  // Authentication is database-backed; no shared Admin password or JWT secret
+  // is required at runtime. A bootstrap owner is created explicitly via CLI.
+  const requiredEnvVars = ['DATABASE_URL'];
   const missingVars = requiredEnvVars.filter(v => !process.env[v]);
-  if (missingVars.length > 0 && process.env.NODE_ENV === 'production') {
-    console.error(`\n⛔ FATAL: Missing required environment variables in production: ${missingVars.join(', ')}`);
-    console.error('Server cannot start without these secrets. Set them in your .env file.');
+  if (missingVars.length > 0) {
+    console.error(`\n⛔ FATAL: Missing required environment variables: ${missingVars.join(', ')}`);
     process.exit(1);
-  } else if (missingVars.length > 0) {
-    console.warn(`\n⚠️  WARNING: Missing env vars (using insecure defaults for dev): ${missingVars.join(', ')}`);
-    console.warn('DO NOT deploy to production without setting these!');
   }
 
   const app = express();
@@ -53,6 +53,9 @@ async function startServer() {
   app.use(limiter);
 
   app.use(express.json({ limit: '1mb' }));
+
+  // Unified DB-backed authentication endpoints (customer + Admin).
+  registerAuthRoutes(app, prisma);
   
   // Removed /env endpoint — was exposing DATABASE_URL publicly (security vulnerability)
 
@@ -88,17 +91,26 @@ async function startServer() {
     }
   });
 
-  // Auth middleware
-  const requireAdminMiddleware = (req: any, res: any, next: any) => {
-    const adminKey = req.headers['x-admin-key'];
-    if (!process.env.ADMIN_PASSWORD) {
-      console.warn("Upload rejected: ADMIN_PASSWORD not configured");
-      return res.status(500).json({ error: 'ADMIN_PASSWORD not configured' });
-    }
-    if (adminKey !== process.env.ADMIN_PASSWORD) {
+  // Auth middleware: only a verified, active DB-backed Admin session grants access.
+  const sessionTokenFromRequest = (req: any): string | undefined => {
+    const headerToken = req.headers['x-admin-session'] ?? req.headers['x-session-token'];
+    if (typeof headerToken === 'string' && headerToken) return headerToken;
+    const authorization = req.headers.authorization;
+    return authorization?.startsWith('Bearer ') ? authorization.substring(7) : undefined;
+  };
+
+  const requireAdminMiddleware = async (req: any, res: any, next: any) => {
+    try {
+      const session = await authService.resolveSession(prisma, sessionTokenFromRequest(req));
+      if (!session?.isAdmin) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+      req.adminSession = session;
+      next();
+    } catch (error) {
+      console.error('[Admin auth] session verification failed:', error);
       return res.status(401).json({ error: 'Unauthorized' });
     }
-    next();
   };
 
   // Upload endpoint (requires admin key)
@@ -137,6 +149,8 @@ async function startServer() {
       console.error('[GraphQL Error]', formattedError.message, error);
       // In production, hide internal error details
       if (process.env.NODE_ENV === 'production') {
+        const authCode = (formattedError.extensions as Record<string, unknown> | undefined)?.code;
+        if (typeof authCode === 'string' && authCode.startsWith('AUTH_')) return formattedError;
         // Allow user-facing errors to pass through
         const message = formattedError.message;
         const isUserFacingError = [
@@ -154,58 +168,31 @@ async function startServer() {
   
   app.use('/graphql', expressMiddleware(server, {
     context: async ({ req }) => {
-      // Admin auth
-      const adminKey = req.headers['x-admin-key'];
-      const isAdmin = !!process.env.ADMIN_PASSWORD && adminKey === process.env.ADMIN_PASSWORD;
-      if (!process.env.ADMIN_PASSWORD) {
-        console.warn("GraphQL admin access denied: ADMIN_PASSWORD not configured");
-      }
+      // One verified DB session supplies both customer and Admin identity.
+      // x-admin-key is no longer accepted anywhere.
+      const sessionToken = sessionTokenFromRequest(req);
+      const session = await authService.resolveSession(prisma, sessionToken);
+      const isAdmin = session?.isAdmin ?? false;
+      const userId = session?.kind === 'CUSTOMER' ? session.customer.id : undefined;
+      const userGender = session?.kind === 'CUSTOMER' ? session.customer.gender : undefined;
 
-      // User auth
-      let userId: string | undefined;
-      let userGender: string | undefined;
-      const authHeader = req.headers.authorization;
-      if (authHeader && authHeader.startsWith('Bearer ')) {
-        const token = authHeader.substring(7);
-        try {
-          const jwt = require('jsonwebtoken');
-          const USER_JWT_SECRET = process.env.USER_JWT_SECRET || 'genshinhub-user-secret-change-in-prod';
-          const decoded = jwt.verify(token, USER_JWT_SECRET) as any;
-          userId = decoded.id;
-          userGender = decoded.gender;
-        } catch (err) {
-          console.warn("Invalid user token", (err as Error).message);
-        }
-      }
+      // Audit actor is derived server-side from the verified Admin record and
+      // is never read from request JSON or logged.
+      const adminActor = session?.kind === 'ADMIN' ? session.admin.id : undefined;
 
-      // Phase D1: the acting Admin identity is derived server-side from the verified
-      // admin key (or an explicit operator-configured actor id). It is never read
-      // from request JSON and never logged.
-      let adminActor: string | undefined;
-      if (isAdmin) {
-        const configured = process.env.ADMIN_ACTOR_ID;
-        if (configured && configured.trim()) {
-          adminActor = configured.trim();
-        } else if (typeof adminKey === 'string' && adminKey) {
-          adminActor = `admin-${require('node:crypto').createHash('sha256').update(adminKey).digest('hex').slice(0, 12)}`;
-        }
-      }
-
-      return { 
+      return {
         prisma,
         dataloaders: createLoaders(prisma),
-        user: { isAdmin },
+        user: { isAdmin, id: adminActor ?? userId },
         isAdmin,
         adminActor,
         userId,
-        userGender
+        userGender,
+        session,
+        sessionToken,
       };
     },
   }));
-
-  if (!process.env.ADMIN_PASSWORD) {
-    console.warn('⚠️  WARNING: ADMIN_PASSWORD environment variable is not set. All admin requests will be rejected.');
-  }
 
   const PORT = Number(process.env.PORT || 4000);
   const httpServer = app.listen(PORT, async () => {

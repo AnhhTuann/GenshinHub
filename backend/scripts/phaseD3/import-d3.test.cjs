@@ -80,6 +80,7 @@ function ctx(extra = {}) {
       { migration_name: '20261120151000_add_character_tier_rankings', checksum: require('../weapon-tier-independent/freeze.cjs').sha(fs.readFileSync(path.join(ROOT, 'backend/prisma/migrations/20261120151000_add_character_tier_rankings/migration.sql'))) },
       { migration_name: '20261120153500_add_weapon_tier_rankings', checksum: require('../weapon-tier-independent/freeze.cjs').sha(fs.readFileSync(path.join(ROOT, 'backend/prisma/migrations/20261120153500_add_weapon_tier_rankings/migration.sql'))) },
       { migration_name: '20261120160000_add_weapon_tier_review_workflow', checksum: require('../weapon-tier-independent/freeze.cjs').sha(fs.readFileSync(path.join(ROOT, 'backend/prisma/migrations/20261120160000_add_weapon_tier_review_workflow/migration.sql'))) },
+      { migration_name: '20261121100452_add_database_backed_auth', checksum: require('../weapon-tier-independent/freeze.cjs').sha(fs.readFileSync(path.join(ROOT, 'backend/prisma/migrations/20261121100452_add_database_backed_auth/migration.sql'))) },
       { migration_name: '20261121141000_add_maintenance_build_status', checksum: require('../weapon-tier-independent/freeze.cjs').sha(fs.readFileSync(path.join(ROOT, 'backend/prisma/migrations/20261121141000_add_maintenance_build_status/migration.sql'))) },
     ],
     weapons: sheet.records.map(r => ({ id: String(r.weaponId), type: r.dbWeaponType, tier: null, role: null })),

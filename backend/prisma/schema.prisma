@@ -450,15 +450,20 @@ model User {
   avatarUrl   String?
   bio         String?
   gachaStats  Json?
+  role        UserRole    @default(CUSTOMER)
+  status      AccountStatus @default(ACTIVE)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  favorites UserFavorite[]
-  wishlist  UserWishlist[]
-  teams     UserTeam[]
+  favorites           UserFavorite[]
+  wishlist            UserWishlist[]
+  teams               UserTeam[]
+  authSessions        AuthSession[]
+  passwordResetTokens PasswordResetToken[]
 
   @@index([email])
   @@index([username])
+  @@index([role, status])
 }
 
 model UserFavorite {
@@ -511,6 +516,95 @@ model Otp {
   createdAt DateTime @default(now())
 
   @@index([email])
+}
+
+// --- Database-backed authentication (additive; no legacy auth data is mutated) ---
+enum UserRole {
+  CUSTOMER
+  ADMIN
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+  DISABLED
+}
+
+enum AuthSubjectType {
+  CUSTOMER
+  ADMIN
+}
+
+enum AdminRole {
+  OWNER
+  ADMIN
+}
+
+enum AdminStatus {
+  ACTIVE
+  SUSPENDED
+  DISABLED
+}
+
+model Admin {
+  id              String      @id @default(uuid())
+  username        String      @unique
+  email           String?     @unique
+  passwordHash    String
+  displayName     String?
+  role            AdminRole   @default(ADMIN)
+  status          AdminStatus @default(ACTIVE)
+  failedLoginCount Int        @default(0)
+  lockedUntil     DateTime?
+  lastLoginAt     DateTime?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  authSessions AuthSession[]
+
+  @@index([status, role])
+}
+
+model AuthSession {
+  id          String          @id @default(uuid())
+  subjectType AuthSubjectType
+  customerId  String?
+  adminId     String?
+  tokenHash   String          @unique
+  expiresAt   DateTime
+  revokedAt   DateTime?
+  lastUsedAt  DateTime?
+  createdAt   DateTime        @default(now())
+  userAgent   String?
+  ipAddress   String?
+
+  customer User?  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  admin    Admin? @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([adminId])
+  @@index([expiresAt])
+}
+
+model PasswordResetToken {
+  id        String    @id @default(uuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, usedAt])
+}
+
+model AuthRateLimit {
+  key          String   @id
+  failedCount  Int      @default(0)
+  firstFailedAt DateTime @default(now())
+  lockedUntil  DateTime?
+  updatedAt    DateTime @updatedAt
 }
 
 enum CharacterBuildPlaystyle {

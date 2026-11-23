@@ -1,33 +1,50 @@
-import { randomBytes } from 'node:crypto';
 import { afterEach, expect, test, vi } from 'vitest';
-import { checkAdminStatus, loginAdmin } from './adminAuth';
+import { authFetch } from './auth-api';
+import { loginAdmin, logoutAdmin } from './adminAuth';
 
-const cookieStore = vi.hoisted(() => ({ get: vi.fn(), set: vi.fn() }));
+const cookieStore = vi.hoisted(() => ({ get: vi.fn(), set: vi.fn(), delete: vi.fn() }));
+
 vi.mock('next/headers', () => ({ cookies: async () => cookieStore }));
+vi.mock('./auth-api', () => ({ authFetch: vi.fn() }));
+
+const mockedFetch = vi.mocked(authFetch);
 
 afterEach(() => {
-  vi.unstubAllEnvs();
   vi.resetAllMocks();
+  cookieStore.get.mockReturnValue(undefined);
 });
 
-test('login cannot set a cookie when signing configuration is missing', async () => {
-  const password = randomBytes(32).toString('hex');
-  vi.stubEnv('ADMIN_PASSWORD', password);
-  vi.stubEnv('ADMIN_JWT_SECRET', undefined);
-  expect(await loginAdmin(password)).toHaveProperty('error');
+test('successful backend Admin login sets an HttpOnly session cookie', async () => {
+  mockedFetch.mockResolvedValue({
+    ok: true,
+    status: 200,
+    data: { token: 'opaque-admin-token', maxAge: 28800, admin: { username: 'owner' } },
+  });
+
+  expect(await loginAdmin('owner', 'correct-password', 'en')).toEqual({});
+  expect(cookieStore.set).toHaveBeenCalledWith('admin_token', 'opaque-admin-token', expect.objectContaining({
+    httpOnly: true,
+    sameSite: 'strict',
+    maxAge: 28800,
+  }));
+});
+
+test('failed backend Admin login never sets a cookie', async () => {
+  mockedFetch.mockResolvedValue({
+    ok: false,
+    status: 401,
+    data: { error: 'Incorrect username or password.', code: 'AUTH_INVALID_CREDENTIALS' },
+  });
+
+  expect(await loginAdmin('owner', 'wrong-password', 'en')).toHaveProperty('error');
   expect(cookieStore.set).not.toHaveBeenCalled();
 });
 
-test('configured login sets a verified HttpOnly Admin session only after checking the password', async () => {
-  const password = randomBytes(32).toString('hex');
-  vi.stubEnv('ADMIN_PASSWORD', password);
-  vi.stubEnv('ADMIN_JWT_SECRET', randomBytes(32).toString('hex'));
-  expect(await loginAdmin('invalid')).toHaveProperty('error');
-  expect(cookieStore.set).not.toHaveBeenCalled();
+test('logout revokes the backend session and deletes the cookie', async () => {
+  cookieStore.get.mockReturnValue({ name: 'admin_token', value: 'opaque-admin-token' });
+  mockedFetch.mockResolvedValue({ ok: true, status: 200, data: { success: true } });
 
-  expect(await loginAdmin(password)).toEqual({});
-  expect(cookieStore.set).toHaveBeenCalledWith('admin_token', expect.any(String),
-    expect.objectContaining({ httpOnly: true, sameSite: 'strict', path: '/' }));
-  cookieStore.get.mockReturnValue({ value: cookieStore.set.mock.calls[0][1] });
-  expect(await checkAdminStatus()).toBe(true);
+  await logoutAdmin('en', false);
+  expect(mockedFetch).toHaveBeenCalledWith('/auth/logout', { token: 'opaque-admin-token', locale: 'en' });
+  expect(cookieStore.delete).toHaveBeenCalledWith('admin_token');
 });

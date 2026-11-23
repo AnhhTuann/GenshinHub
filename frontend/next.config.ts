@@ -11,6 +11,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  skipMiddlewareUrlNormalize: true,
   compress: true,
   eslint: {
     ignoreDuringBuilds: false,

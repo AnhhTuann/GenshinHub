@@ -100,9 +100,8 @@ jobs:
           DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
           PORT: 4000
           NODE_ENV: test
-          USER_JWT_SECRET: ci-test-jwt-secret-user-not-production
-          ADMIN_JWT_SECRET: ci-test-jwt-secret-admin-not-production
-          ADMIN_PASSWORD: ci-test-admin-password-not-production
+          # Evidence HMAC only (not an authentication secret).
+          ADMIN_JWT_SECRET: ci-test-evidence-hmac-not-production
           FRONTEND_URL: http://localhost:3000
         run: |
           node dist/src/index.js &

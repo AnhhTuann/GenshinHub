@@ -35,6 +35,7 @@ const EXPECTED_MIGRATIONS = [
   '20261120151000_add_character_tier_rankings',
   '20261120153500_add_weapon_tier_rankings',
   '20261120160000_add_weapon_tier_review_workflow',
+  '20261121100452_add_database_backed_auth',
   '20261121141000_add_maintenance_build_status',
 ];
 
@@ -151,10 +152,10 @@ function toDecisionRecord(candidate) {
   };
 }
 
-async function gql(endpoint, adminKey, payload) {
+async function gql(endpoint, adminSession, payload) {
   const response = await fetch(endpoint, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', 'x-admin-key': adminKey },
+    headers: { 'content-type': 'application/json', 'x-admin-session': adminSession },
     body: JSON.stringify(payload),
   });
   const body = await response.json();
@@ -162,9 +163,9 @@ async function gql(endpoint, adminKey, payload) {
   return body.data;
 }
 
-async function loadDbDecisions(endpoint, adminKey, sourceVersion = 'D2_REVISED') {
-  if (!adminKey) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_KEY');
-  const data = await gql(endpoint, adminKey, { query: REVIEW_QUEUE, variables: { sourceVersion } });
+async function loadDbDecisions(endpoint, adminSession, sourceVersion = 'D2_REVISED') {
+  if (!adminSession) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_SESSION');
+  const data = await gql(endpoint, adminSession, { query: REVIEW_QUEUE, variables: { sourceVersion } });
   const queue = data.adminWeaponTierReviewQueue;
   if (!Array.isArray(queue) || queue.length !== 14) throw new Error('REVIEW_QUEUE_COUNT_INVALID');
   return { records: queue.map(toDecisionRecord), queue };
@@ -475,10 +476,10 @@ async function run(argv = process.argv.slice(2)) {
   if (apply && !target.test && process.env.ALLOW_DEV_IMPORT !== '1') {
     throw new Error('APPLY_REQUIRES_ALLOW_DEV_IMPORT');
   }
-  if (!process.env.ADMIN_KEY) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_KEY');
+  if (!process.env.ADMIN_SESSION_TOKEN) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_SESSION');
   const endpoint = process.env.GRAPHQL_URL || 'http://127.0.0.1:4000/graphql';
   const state = await readOnlyState();
-  const decisions = await loadDbDecisions(endpoint, process.env.ADMIN_KEY, 'D2_REVISED');
+  const decisions = await loadDbDecisions(endpoint, process.env.ADMIN_SESSION_TOKEN, 'D2_REVISED');
   const result = plan(decisions, {
     sheet: loadJson(SHEET),
     dbState: state.db,
@@ -527,7 +528,7 @@ async function run(argv = process.argv.slice(2)) {
     : createBackup(state.target);
   const written = [];
   for (const op of result.operations) {
-    const { adminPublishWeaponTierReview: published } = await gql(endpoint, process.env.ADMIN_KEY, {
+    const { adminPublishWeaponTierReview: published } = await gql(endpoint, process.env.ADMIN_SESSION_TOKEN, {
       ...op.publish, variables: { ...op.publish.variables, expectedDatabase: state.target.database },
     });
     written.push({
@@ -537,8 +538,8 @@ async function run(argv = process.argv.slice(2)) {
       actor: published.approvedBy,
     });
   }
-  const publicRows = (await gql(endpoint, process.env.ADMIN_KEY, { query: PUBLIC_QUERY })).weaponTierRanks;
-  const adminRows = (await gql(endpoint, process.env.ADMIN_KEY, { query: ADMIN_QUERY })).adminWeaponTierRanks;
+  const publicRows = (await gql(endpoint, process.env.ADMIN_SESSION_TOKEN, { query: PUBLIC_QUERY })).weaponTierRanks;
+  const adminRows = (await gql(endpoint, process.env.ADMIN_SESSION_TOKEN, { query: ADMIN_QUERY })).adminWeaponTierRanks;
   summary.written = written;
   summary.verification = {
     publicCount: publicRows.length,

@@ -1,10 +1,12 @@
 import { userService } from './user.service';
 import { PrismaClient } from '@prisma/client';
+import { authService } from '../../../auth/auth.service';
 
 interface Context {
   prisma: PrismaClient;
   userId?: string;
   userGender?: string;
+  sessionToken?: string;
 }
 
 /** Traveler char ID dựa theo gender */
@@ -110,6 +112,10 @@ export const userResolvers = {
       };
     },
 
+    logout: async (_: unknown, __: unknown, { prisma, sessionToken }: Context) => {
+      return authService.logout(prisma, sessionToken);
+    },
+
     socialLogin: async (_: unknown, args: any, { prisma }: Context) => {
       const { token, user } = await userService.socialLogin(prisma, args);
       const favCount = await prisma.userFavorite.count({ where: { userId: user.id } });
@@ -160,8 +166,13 @@ export const userResolvers = {
       return userService.forgotPassword(prisma, email);
     },
 
-    resetPassword: async (_: unknown, { email, otp, newPassword }: { email: string; otp: string; newPassword: string }, { prisma }: Context) => {
-      return userService.resetPassword(prisma, email, otp, newPassword);
+    resetPassword: async (_: unknown, { otp, newPassword }: { email?: string; otp: string; newPassword: string }, { prisma }: Context) => {
+      // Deprecated field: `otp` is interpreted as the one-time reset token.
+      return userService.resetPassword(prisma, otp, newPassword);
+    },
+
+    resetPasswordWithToken: async (_: unknown, { token, newPassword }: { token: string; newPassword: string }, { prisma }: Context) => {
+      return userService.resetPassword(prisma, token, newPassword);
     },
 
     toggleFavorite: async (_: unknown, { itemId, itemType }: { itemId: string, itemType: string }, { prisma, userId }: Context) => {

@@ -3,7 +3,7 @@ import { Link, usePathname } from '@/i18n/routing';
 import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { logoutAdmin } from '@/lib/adminAuth';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const NAV_GROUPS = [
   {
@@ -37,10 +37,10 @@ const NAV_GROUPS = [
   },
 ];
 
-export default function AdminLayoutClient({ children }: { children: React.ReactNode }) {
+export default function AdminLayoutClient({ children, username }: { children: React.ReactNode; username?: string }) {
   const pathname = usePathname();
   const params   = useParams();
-  const locale   = (params?.locale as string) ?? 'vi';
+  const locale: 'en' | 'vi' = (params?.locale as string) === 'en' ? 'en' : 'vi';
   const [mobileOpen, setMobileOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
 
@@ -52,7 +52,13 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
 
   const handleLogout = async () => {
     setLoggingOut(true);
-    await logoutAdmin(locale);
+    try {
+      await logoutAdmin(locale, false);
+      window.location.assign(`/${locale}/admin/login`);
+    } catch {
+      setLoggingOut(false);
+      toast.error(locale === 'vi' ? 'Không thể đăng xuất. Vui lòng thử lại.' : 'Unable to sign out. Please try again.');
+    }
   };
 
   const sidebarContent = (
@@ -173,7 +179,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             style={{ background: 'rgba(232,182,76,0.08)', border: '1px solid rgba(232,182,76,0.15)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(134,169,143,0.7)] animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-amber-400/70">Admin Mode</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-amber-400/70">{username ?? "Admin"}</span>
           </div>
 
           {/* View Site */}

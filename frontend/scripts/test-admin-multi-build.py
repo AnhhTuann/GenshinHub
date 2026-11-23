@@ -128,7 +128,7 @@ def verify_admin(browser, anonymous, before):
     account = secrets.token_hex(5)
     regular = graphql(anonymous, API, '''mutation ($input:RegisterInput!) {register(input:$input){token}}''',
         {'input': {'username': 'phasec' + account, 'email': f'phasec-{account}@example.test',
-                   'password': secrets.token_urlsafe(24), 'gender': 'male'}})['register']['token']
+                   'password': f'PhaseC-Test-Aa1!{account}', 'gender': 'male'}})['register']['token']
     graphql(anonymous, API, REVIEW, {key: probe[key] for key in ('id','owner','v')},
             headers={'Authorization': 'Bearer ' + regular}, error='Admin access required')
     print('Anonymous and authenticated normal user denied', flush=True)
@@ -137,19 +137,19 @@ def verify_admin(browser, anonymous, before):
     page = context.new_page()
     open_page(page, '/en/admin/login')
     try:
-        password = page.get_by_label('Admin Password')
+        username = page.get_by_label('Admin username')
+        password = page.get_by_label('Admin password')
         page.wait_for_function('''() => {
           const input=document.querySelector('#admin-password');
           return input && Object.keys(input).some(k=>k.startsWith('__reactProps$'));
         }''', timeout=30000)
-        password.press_sequentially(os.environ['ADMIN_PASSWORD'])
+        username.fill('e2e_owner')
+        password.press_sequentially(os.environ['ADMIN_TEST_PASSWORD'])
         expect(page.get_by_role('button', name='Enter Admin Panel')).to_be_enabled(timeout=12000)
         password.press('Enter')
         page.wait_for_url('**/en/admin', timeout=60000)
-    except Exception as exc:
-        print('Login diagnostics:', page.url, page.title(), page.locator('h1').all_text_contents(),
-              any(c['name']=='admin_token' for c in context.cookies()), type(exc).__name__, flush=True)
-        # Never expose Playwright arguments or network headers from the login exchange.
+    except Exception:
+        # Never expose Playwright arguments, cookies or network headers from the login exchange.
         raise AssertionError('Admin login did not reach the dashboard') from None
     expect(page.get_by_role('heading', name='Dashboard', exact=True)).to_be_visible(timeout=30000)
     assert any(c['name']=='admin_token' and c['httpOnly'] for c in context.cookies())

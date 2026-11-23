@@ -7,13 +7,12 @@ import toast from 'react-hot-toast';
 import { useUser } from '@/context/UserContext';
 import { Loader2, Mail, Lock, User, UserPlus, Eye, EyeOff, CheckCircle2, XCircle } from 'lucide-react';
 import FallbackImage from '@/components/ui/FallbackImage';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 // Password strength calculator
 function getPasswordStrength(password: string): { score: number; label: string; color: string } {
   if (!password) return { score: 0, label: '', color: '' };
   let score = 0;
-  if (password.length >= 6) score++;
+  if (password.length >= 8) score++;
   if (password.length >= 10) score++;
   if (/[A-Z]/.test(password)) score++;
   if (/[0-9]/.test(password)) score++;
@@ -51,22 +50,26 @@ export default function RegisterPage() {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      toast.error("Passwords don't match");
+      toast.error(locale === 'vi' ? 'Mật khẩu không khớp' : "Passwords don't match");
       return;
     }
-    if (formData.password.length < 6) {
-      toast.error('Password must be at least 6 characters');
+    const strong = formData.password.length >= 8 && new TextEncoder().encode(formData.password).length <= 72
+      && /[a-z]/.test(formData.password) && /[A-Z]/.test(formData.password)
+      && /[0-9]/.test(formData.password) && /[^A-Za-z0-9]/.test(formData.password);
+    if (!strong) {
+      toast.error(locale === 'vi'
+        ? 'Mật khẩu cần ít nhất 8 ký tự và tối đa 72 byte UTF-8, gồm chữ hoa, chữ thường, số và ký tự đặc biệt'
+        : 'Use at least 8 characters and at most 72 UTF-8 bytes, with upper/lower case, a number, and a symbol');
       return;
     }
 
     setLoading(true);
 
     try {
-      const { confirmPassword, ...payload } = formData;
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...formData, locale }),
       });
 
       const data = await res.json();
@@ -76,7 +79,7 @@ export default function RegisterPage() {
       }
 
       setUser(data.user);
-      toast.success('Registration successful!');
+      toast.success(locale === 'vi' ? 'Đăng ký thành công!' : 'Registration successful!');
       router.push('/profile');
       router.refresh();
     } catch (err: any) {
@@ -85,34 +88,7 @@ export default function RegisterPage() {
     }
   };
 
-  const handleSocialLogin = async (provider: string, token: string) => {
-    setLoading(true);
-    try {
-      const res = await fetch('/api/auth/social', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ provider, token, gender: formData.gender }),
-      });
-
-      const result = await res.json();
-      if (!res.ok) throw new Error(result.error || 'Social login failed');
-
-      setUser(result.user);
-      toast.success('Logged in successfully!');
-      router.push('/profile');
-    } catch (err: any) {
-      toast.error(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleGoogleSuccess = async (credentialResponse: any) => {
-    await handleSocialLogin('google', credentialResponse.credential);
-  };
-
   return (
-    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || 'dummy-client-id'}>
     <main className="relative flex-1 flex items-center justify-center p-4">
 
       <div className="w-full max-w-md">
@@ -124,16 +100,16 @@ export default function RegisterPage() {
             <h1
               className="atlas-section-title mb-2"
             >
-              Join Teyvat
+              {locale === 'vi' ? 'Tham gia Teyvat' : 'Join Teyvat'}
             </h1>
-            <p className="text-white/40 text-sm">Create your GenshinHub traveler profile</p>
+            <p className="text-white/40 text-sm">{locale === 'vi' ? 'Tạo hồ sơ Nhà Lữ Hành trên GenshinHub' : 'Create your GenshinHub traveler profile'}</p>
           </div>
 
           <form onSubmit={handleSubmit} aria-busy={loading} className="fantasy-auth-form space-y-4">
 
             {/* Gender / Traveler Selection */}
             <div>
-              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-3 text-center">Choose your Traveler</label>
+              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-3 text-center">{locale === 'vi' ? 'Chọn Nhà Lữ Hành' : 'Choose your Traveler'}</label>
               <div className="grid grid-cols-2 gap-4 mb-2">
                 <button
                   type="button"
@@ -188,7 +164,7 @@ export default function RegisterPage() {
 
             {/* Username */}
             <div>
-              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1 mt-4">Username</label>
+              <label htmlFor="register-username" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1 mt-4">{locale === 'vi' ? 'Tên đăng nhập' : 'Username'}</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <User className="h-5 w-5 text-white/30" />
@@ -196,6 +172,8 @@ export default function RegisterPage() {
                 <input
                   type="text"
                   required
+                  id="register-username"
+                  autoComplete="username"
                   value={formData.username}
                   onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
@@ -210,7 +188,7 @@ export default function RegisterPage() {
 
             {/* Email */}
             <div>
-              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
+              <label htmlFor="register-email" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <Mail className="h-5 w-5 text-white/30" />
@@ -218,6 +196,8 @@ export default function RegisterPage() {
                 <input
                   type="email"
                   required
+                  id="register-email"
+                  autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
@@ -228,7 +208,7 @@ export default function RegisterPage() {
 
             {/* Password */}
             <div>
-              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Password</label>
+              <label htmlFor="register-password" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">{locale === 'vi' ? 'Mật khẩu' : 'Password'}</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <Lock className="h-5 w-5 text-white/30" />
@@ -236,17 +216,21 @@ export default function RegisterPage() {
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
+                  id="register-password"
+                  autoComplete="new-password"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
                   placeholder="••••••••"
-                  minLength={6}
+                  minLength={8}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-                  tabIndex={-1}
+                  aria-label={showPassword
+                    ? (locale === 'vi' ? 'Ẩn mật khẩu' : 'Hide password')
+                    : (locale === 'vi' ? 'Hiện mật khẩu' : 'Show password')}
                 >
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
@@ -274,7 +258,7 @@ export default function RegisterPage() {
 
             {/* Confirm Password */}
             <div>
-              <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Confirm Password</label>
+              <label htmlFor="register-confirmPassword" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">{locale === 'vi' ? 'Xác nhận mật khẩu' : 'Confirm Password'}</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                   <Lock className="h-5 w-5 text-white/30" />
@@ -282,6 +266,8 @@ export default function RegisterPage() {
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   required
+                  id="register-confirmPassword"
+                  autoComplete="new-password"
                   value={formData.confirmPassword}
                   onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                   className={`w-full bg-white/5 border rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:bg-white/10 transition-all ${
@@ -295,7 +281,9 @@ export default function RegisterPage() {
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/30 hover:text-white/60 transition-colors"
-                  tabIndex={-1}
+                  aria-label={showConfirmPassword
+                    ? (locale === 'vi' ? 'Ẩn mật khẩu xác nhận' : 'Hide password confirmation')
+                    : (locale === 'vi' ? 'Hiện mật khẩu xác nhận' : 'Show password confirmation')}
                 >
                   {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
@@ -310,7 +298,7 @@ export default function RegisterPage() {
                 )}
               </div>
               {passwordsMismatch && (
-                <p className="text-[10px] text-red-400 mt-1 ml-1">Passwords do not match</p>
+                <p className="text-[10px] text-red-400 mt-1 ml-1">{locale === 'vi' ? 'Mật khẩu không khớp' : 'Passwords do not match'}</p>
               )}
             </div>
 
@@ -321,62 +309,21 @@ export default function RegisterPage() {
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative flex items-center justify-center gap-2">
-                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><UserPlus className="w-4 h-4" /> Create Account</>}
+                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <><UserPlus className="w-4 h-4" /> {locale === 'vi' ? 'Tạo tài khoản' : 'Create account'}</>}
               </span>
             </button>
           </form>
 
-          {/* Social */}
-          <div className="mt-6 flex items-center justify-between">
-            <span className="w-1/5 border-b border-white/10 lg:w-1/4"></span>
-            <span className="text-xs text-center text-white/40 uppercase">Or register with</span>
-            <span className="w-1/5 border-b border-white/10 lg:w-1/4"></span>
-          </div>
-
-          <div className="mt-6 flex gap-4">
-            <div className="w-1/2">
-              {process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID && process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID !== 'dummy-client-id' ? (
-                <GoogleLogin
-                  onSuccess={handleGoogleSuccess}
-                  onError={() => toast.error('Google login failed')}
-                  theme="filled_black"
-                  shape="rectangular"
-                  width="100%"
-                  text="signup_with"
-                />
-              ) : (
-                <button
-                  disabled
-                  className="w-full h-[40px] flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white/30 rounded-lg text-sm cursor-not-allowed"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                  Google (N/A)
-                </button>
-              )}
-            </div>
-            <div className="w-1/2">
-              <button
-                disabled
-                className="w-full h-[40px] flex items-center justify-center gap-2 bg-[#1877F2]/20 border border-[#1877F2]/30 text-[#1877F2]/50 rounded-lg text-sm cursor-not-allowed"
-                title="Facebook login coming soon"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook (Soon)
-              </button>
-            </div>
-          </div>
-
           <div className="mt-8 text-center border-t border-white/5 pt-6">
             <p className="text-white/40 text-sm">
-              Already have an account?{' '}
+              {locale === 'vi' ? 'Đã có tài khoản?' : 'Already have an account?'}{' '}
               <Link href="/auth/login" className="text-[#e8b64c] hover:text-[#ffdf9e] font-bold transition-colors">
-                Log in
+                {locale === 'vi' ? 'Đăng nhập' : 'Log in'}
               </Link>
             </p>
           </div>
         </div>
       </div>
     </main>
-    </GoogleOAuthProvider>
   );
 }

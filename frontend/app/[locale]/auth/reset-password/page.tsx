@@ -2,14 +2,14 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, Link } from '@/i18n/routing';
-import { useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { Loader2, Lock, KeyRound, Eye, EyeOff, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from 'lucide-react';
 
 function getPasswordStrength(password: string): { score: number; label: string; color: string } {
   if (!password) return { score: 0, label: '', color: '' };
   let score = 0;
-  if (password.length >= 6) score++;
+  if (password.length >= 8) score++;
   if (password.length >= 10) score++;
   if (/[A-Z]/.test(password)) score++;
   if (/[0-9]/.test(password)) score++;
@@ -23,12 +23,13 @@ function getPasswordStrength(password: string): { score: number; label: string; 
 
 function ResetPasswordForm() {
   const router = useRouter();
+  const params = useParams();
+  const locale: 'en' | 'vi' = (params?.locale as string) === 'vi' ? 'vi' : 'en';
   const searchParams = useSearchParams();
-  const emailFromUrl = searchParams.get('email') || '';
+  const tokenFromUrl = searchParams.get('token') || '';
 
   const [formData, setFormData] = useState({
-    email: emailFromUrl,
-    otp: '',
+    token: tokenFromUrl,
     newPassword: '',
     confirmPassword: '',
   });
@@ -48,12 +49,17 @@ function ResetPasswordForm() {
       toast.error("Passwords don't match");
       return;
     }
-    if (formData.newPassword.length < 6) {
-      toast.error('Password must be at least 6 characters');
+    const strong = formData.newPassword.length >= 8 && formData.newPassword.length <= 128
+      && /[a-z]/.test(formData.newPassword) && /[A-Z]/.test(formData.newPassword)
+      && /[0-9]/.test(formData.newPassword) && /[^A-Za-z0-9]/.test(formData.newPassword);
+    if (!strong) {
+      toast.error(locale === 'vi'
+        ? 'Mật khẩu cần 8–128 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt'
+        : 'Use 8–128 characters with upper/lower case, a number, and a symbol');
       return;
     }
-    if (formData.otp.length !== 6) {
-      toast.error('Please enter the 6-digit code');
+    if (!formData.token) {
+      toast.error(locale === 'vi' ? 'Liên kết đặt lại không hợp lệ' : 'Invalid reset link');
       return;
     }
 
@@ -63,9 +69,9 @@ function ResetPasswordForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: formData.email,
-          otp: formData.otp,
+          token: formData.token,
           newPassword: formData.newPassword,
+          locale,
         }),
       });
 
@@ -97,40 +103,28 @@ function ResetPasswordForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Email (pre-filled, readonly) */}
-      <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">Email</label>
-        <input
-          type="email"
-          required
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white/70 placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 transition-all"
-          placeholder="your@email.com"
-        />
-      </div>
-
-      {/* OTP Code */}
-      <div>
-        <label className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">
-          Verification Code
-        </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <KeyRound className="h-5 w-5 text-white/30" />
+      {!tokenFromUrl && (
+        <div>
+          <label htmlFor="reset-token" className="block text-xs font-bold text-white/60 uppercase tracking-wider mb-2 ml-1">
+            Reset link token
+          </label>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <KeyRound className="h-5 w-5 text-white/30" />
+            </div>
+            <input
+              id="reset-token"
+              type="text"
+              required
+              value={formData.token}
+              onChange={(e) => setFormData({ ...formData, token: e.target.value.trim() })}
+              className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all font-mono text-sm"
+              placeholder="Paste the token from your reset link"
+            />
           </div>
-          <input
-            type="text"
-            required
-            value={formData.otp}
-            onChange={(e) => setFormData({ ...formData, otp: e.target.value.replace(/\D/g, '').slice(0, 6) })}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all tracking-[0.5em] font-mono text-lg text-center"
-            placeholder="000000"
-            maxLength={6}
-          />
+          <p className="text-[10px] text-white/30 mt-1 ml-1">The link from the email fills this in automatically.</p>
         </div>
-        <p className="text-[10px] text-white/30 mt-1 ml-1">Enter the 6-digit code sent to your email</p>
-      </div>
+      )}
 
       {/* New Password */}
       <div>
@@ -146,7 +140,7 @@ function ResetPasswordForm() {
             onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
             className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-11 pr-12 text-white placeholder-white/20 focus:outline-none focus:border-[#e8b64c]/50 focus:bg-white/10 transition-all"
             placeholder="••••••••"
-            minLength={6}
+            minLength={8}
           />
           <button
             type="button"
@@ -216,7 +210,7 @@ function ResetPasswordForm() {
 
       <button
         type="submit"
-        disabled={loading || passwordsMismatch || formData.otp.length < 6}
+        disabled={loading || passwordsMismatch || formData.newPassword.length < 8 || !formData.token}
         className="atlas-auth-submit w-full py-3.5 mt-2 rounded-xl font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />

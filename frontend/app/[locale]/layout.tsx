@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Noto_Sans, JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/shared/Navbar";
-import AdminModeToggle from "@/components/AdminModeToggle";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
@@ -192,7 +191,6 @@ export default async function RootLayout({ children, params }: { children: React
                 </div>
               </footer>
             </div>
-            <AdminModeToggle />
             </UserProvider>
           </UISoundProvider>
           </ThemeProvider>

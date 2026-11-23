@@ -1,29 +1,22 @@
 import { NextResponse } from 'next/server';
-import { fetchGraphQL } from '@/lib/graphql';
+import { isSameOriginRequest, authFetch, AuthLocale } from '@/lib/auth-api';
 
 export async function POST(request: Request) {
+  if (!isSameOriginRequest(request)) return NextResponse.json({ code: 'AUTH_FORBIDDEN' }, { status: 403 });
   try {
     const body = await request.json();
-    const { email } = body;
-
-    if (!email) {
-      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
+    const locale: AuthLocale = body.locale === 'vi' ? 'vi' : 'en';
+    if (!body.email) {
+      return NextResponse.json({ error: locale === 'vi' ? 'Email là bắt buộc' : 'Email is required' }, { status: 400 });
     }
 
-    const data = await fetchGraphQL(`
-      mutation ForgotPassword($email: String!) {
-        forgotPassword(email: $email)
-      }
-    `, { email }, 0);
-
-    // Always return success to prevent email enumeration
+    const result = await authFetch('/auth/forgot-password', { email: body.email, locale });
+    // Always generic to prevent enumeration.
+    if (result.status === 429) {
+      return NextResponse.json({ success: true }, { status: 429 });
+    }
     return NextResponse.json({ success: true });
-  } catch (err: any) {
-    // Rethrow rate-limit errors so the UI can show them
-    if (err.message?.includes('đợi')) {
-      return NextResponse.json({ error: err.message }, { status: 429 });
-    }
-    // Otherwise hide backend errors (security)
+  } catch {
     return NextResponse.json({ success: true });
   }
 }

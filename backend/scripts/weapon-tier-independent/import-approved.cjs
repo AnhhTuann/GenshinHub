@@ -32,13 +32,15 @@ const GROUP_B_EVIDENCE_FIELDS = [
   'rubricJustification',
 ];
 // Phase C1 added the legacy baseline and CharacterBuild migration; B3.2 adds
-// the review-workflow schema. All five are applied locally (schema only).
+// the review-workflow schema and the auth migration is additive. All seven are
+// applied locally (schema only).
 const EXPECTED_MIGRATIONS = [
   '20261120000000_legacy_baseline',
   '20261120145000_add_character_builds',
   '20261120151000_add_character_tier_rankings',
   '20261120153500_add_weapon_tier_rankings',
   '20261120160000_add_weapon_tier_review_workflow',
+  '20261121100452_add_database_backed_auth',
   '20261121141000_add_maintenance_build_status',
 ];
 const RIGHTS_GROUNDS = [
@@ -103,9 +105,9 @@ function toDecisionRecord(candidate) {
 }
 
 /** Fetch the authoritative FROZEN review queue using a real Admin session. */
-async function loadDbDecisions(endpoint, adminKey) {
-  if (!adminKey) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_KEY');
-  const data = await gql(endpoint, adminKey, { query: REVIEW_QUEUE });
+async function loadDbDecisions(endpoint, adminSession) {
+  if (!adminSession) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_SESSION');
+  const data = await gql(endpoint, adminSession, { query: REVIEW_QUEUE });
   const queue = data.adminWeaponTierReviewQueue;
   if (!Array.isArray(queue) || queue.length !== 14) throw new Error('REVIEW_QUEUE_COUNT_INVALID');
   return { records: queue.map(toDecisionRecord), queue };
@@ -344,7 +346,7 @@ function plan(decisions, ctx = {}) {
     decisionSource: ctx.dbBacked ? 'database' : 'in-memory-test-fixture',
     adminAuthorization: {
       jsonActorIsEvidence: false,
-      authorizationSource: 'backend Admin session (x-admin-key verified against ADMIN_PASSWORD)',
+      authorizationSource: 'DB-backed Admin session (x-admin-session)',
       serverDerivedActor: true,
       permissionCheck: true,
       auditLog: true,
@@ -369,10 +371,10 @@ async function gatherReadOnlyState() {
   }
 }
 
-async function gql(endpoint, adminKey, payload) {
+async function gql(endpoint, adminSession, payload) {
   const response = await fetch(endpoint, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', 'x-admin-key': adminKey },
+    headers: { 'content-type': 'application/json', 'x-admin-session': adminSession },
     body: JSON.stringify(payload),
   });
   const body = await response.json();
@@ -385,11 +387,11 @@ async function run(argv = process.argv.slice(2)) {
   if (apply) throw new Error('FROZEN_REVIEW_READ_ONLY_USE_D2_IMPORTER');
   // Authoritative decisions live in the DB review workflow, which is admin-only.
   // Reading them always requires a real Admin key, even for a dry run.
-  if (!process.env.ADMIN_KEY) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_KEY');
+  if (!process.env.ADMIN_SESSION_TOKEN) throw new Error('DB_DECISIONS_REQUIRE_ADMIN_SESSION');
   const endpoint = process.env.GRAPHQL_URL || 'http://127.0.0.1:4000/graphql';
 
   const state = await gatherReadOnlyState();
-  const decisions = await loadDbDecisions(endpoint, process.env.ADMIN_KEY);
+  const decisions = await loadDbDecisions(endpoint, process.env.ADMIN_SESSION_TOKEN);
   const result = plan(decisions, {
     sheet: loadJson(SHEET),
     dbState: state.db,

@@ -49,17 +49,17 @@ const buildRelations = {
   audits: { select: { action: true, version: true }, orderBy: [{ version: 'asc' }, { id: 'asc' }] },
 };
 
-function adminKey() {
+function adminSession() {
   require('dotenv').config({ quiet: true });
-  const value = process.env.ADMIN_PASSWORD;
-  assert.ok(value, 'ADMIN_PASSWORD must be available for authenticated Admin access');
+  const value = process.env.ADMIN_SESSION_TOKEN;
+  assert.ok(value, 'ADMIN_SESSION_TOKEN must be available for authenticated Admin access');
   return value;
 }
 
-async function gql(query, variables, key, label) {
+async function gql(query, variables, token, label) {
   const response = await fetch(ENDPOINT, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', ...(key ? { 'x-admin-key': key } : {}) },
+    headers: { 'content-type': 'application/json', ...(token ? { 'x-admin-session': token } : {}) },
     body: JSON.stringify({ query, variables }),
   });
   const body = await response.json();
@@ -149,7 +149,7 @@ async function checkAdmin(key) {
   try { await gql(probe, {}, null, 'anonymous admin probe'); } catch (error) {
     anonymousDenied = error.code === 'FORBIDDEN' || /Admin access required/.test(error.message);
   }
-  try { await gql(probe, {}, 'definitely-invalid-admin-key', 'wrong-key admin probe'); } catch (error) {
+  try { await gql(probe, {}, 'definitely-invalid-admin-session', 'wrong-key admin probe'); } catch (error) {
     wrongDenied = error.code === 'FORBIDDEN' || /Admin access required/.test(error.message);
   }
   isTrue(anonymousDenied, 'Anonymous Admin access must be denied');
@@ -391,7 +391,7 @@ async function verifyRestored(url, expected) {
 
 async function runBackup() {
   const manifest = checkManifest();
-  const key = adminKey();
+  const key = adminSession();
   await livePreflight(manifest, key);
   fs.mkdirSync(PRIVATE_ROOT, { recursive: true, mode: 0o700 });
   fs.chmodSync(PRIVATE_ROOT, 0o700);
@@ -540,7 +540,7 @@ async function verifyEntry(entry, buildId, expectedVersion, beforeRelations, key
 
 async function importAll() {
   const manifest = checkManifest();
-  const key = adminKey();
+  const key = adminSession();
   await livePreflight(manifest, key); // full-set preflight once, before any write
   const backup = read(BACKUP_META);
   assert.equal(backup.archiveReadable, true, 'Backup archive must be readable');
@@ -627,7 +627,7 @@ async function importAll() {
 
 async function validateAll() {
   const manifest = checkManifest();
-  const key = adminKey();
+  const key = adminSession();
   const checkpoints = read(CHECKPOINTS);
   assert.equal(checkpoints.summary.failed, 0, 'Import had failures');
   assert.equal(checkpoints.summary.verified, 91, 'Not all candidates verified');
@@ -714,7 +714,7 @@ async function validateAll() {
       newBuilds: manifest.candidates.filter(row => !row.baseline).length }));
   } else if (mode === 'preflight') {
     const manifest = checkManifest();
-    const result = await livePreflight(manifest, adminKey());
+    const result = await livePreflight(manifest, adminSession());
     write(PREFLIGHT, result);
     console.log(JSON.stringify({ manifestChecksum: AUTHORIZED_SHA, candidates: manifest.candidates.length,
       baselinesValid: result.baselineCount, newBuilds: result.newBuildCount,

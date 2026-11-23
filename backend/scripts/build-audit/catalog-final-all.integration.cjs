@@ -9,6 +9,7 @@ const { spawn } = require('node:child_process');
 const { randomBytes } = require('node:crypto');
 const { isDeepStrictEqual } = require('node:util');
 const { PrismaClient } = require('@prisma/client');
+const bcrypt = require('bcryptjs');
 const { digest } = require('./catalog-completion.cjs');
 
 const inventory = JSON.parse(fs.readFileSync(process.env.FINAL_ALL_INVENTORY, 'utf8'));
@@ -18,6 +19,7 @@ assert.ok(['127.0.0.1', 'localhost'].includes(url.hostname));
 assert.match(url.pathname, /^\/genshinhub_test_build_final_all_[a-z0-9]+$/);
 const prisma = new PrismaClient({ datasourceUrl: url.href });
 const secret = randomBytes(32).toString('hex');
+let sessionToken = '';
 const endpoint = 'http://127.0.0.1:4023/graphql';
 const stageMutation = 'mutation($id:ID!,$c:String!,$v:Int!,$p:CharacterBuildInput!){updateCharacterBuild(id:$id,characterId:$c,expectedVersion:$v,input:$p){version reviewStatus isDefault}}';
 const reviewMutation = 'mutation($id:ID!,$c:String!,$v:Int!,$d:CharacterBuildReviewDecision!){reviewCharacterBuild(id:$id,characterId:$c,expectedVersion:$v,decision:$d){version reviewStatus isDefault}}';
@@ -27,9 +29,9 @@ const pendingQuery = 'query($id:ID!){characterBuildPending(buildId:$id)}';
 const detailQuery = 'query($id:String!){character(id:$id){id defaultBuild{id name reviewStatus bestWeapons{weaponId} bestArtifacts{setNameEn pieces} teams{name reviewStatus members{characterId role roleDesc}}} builds{id isDefault reviewStatus}}}';
 let child;
 
-async function call(query, variables = {}, credential = secret) {
+async function call(query, variables = {}, credential = sessionToken) {
   const response = await fetch(endpoint, { method: 'POST', headers: {
-    'content-type': 'application/json', ...(credential ? { 'x-admin-key': credential } : {}),
+    'content-type': 'application/json', ...(credential ? { 'x-admin-session': credential } : {}),
   }, body: JSON.stringify({ query, variables }) });
   return response.json();
 }
@@ -99,8 +101,8 @@ async function verifyAll() {
     assert.equal(entry.checksum, checksum, entry.candidateId);
   }
   child = spawn(process.execPath, ['-r', 'ts-node/register', 'src/index.ts'], {
-    env: { ...process.env, PORT: '4023', DATABASE_URL: url.href, ADMIN_PASSWORD: secret,
-      ADMIN_JWT_SECRET: randomBytes(32).toString('hex'), USER_JWT_SECRET: randomBytes(32).toString('hex') },
+    env: { ...process.env, PORT: '4023', DATABASE_URL: url.href,
+      ADMIN_JWT_SECRET: randomBytes(32).toString('hex') },
     stdio: 'ignore',
   });
   for (let i = 0;; i++) {
@@ -108,6 +110,19 @@ async function verifyAll() {
     try { if ((await fetch('http://127.0.0.1:4023/health')).ok) break; } catch {}
     await new Promise(resolve => setTimeout(resolve, 200));
   }
+
+  await prisma.admin.create({ data: {
+    username: 'integration_owner', passwordHash: await bcrypt.hash(secret, 12),
+    role: 'OWNER', status: 'ACTIVE',
+  } });
+  const loginResponse = await fetch('http://127.0.0.1:4023/auth/admin/login', {
+    method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ username: 'integration_owner', password: secret }),
+  });
+  const login = await loginResponse.json();
+  assert.equal(loginResponse.status, 200, JSON.stringify(login));
+  sessionToken = login.token;
+  assert.ok(sessionToken, 'Admin session token required');
 
   const sample = manifest.candidates[0];
   for (const key of [null, 'incorrect-credential']) {

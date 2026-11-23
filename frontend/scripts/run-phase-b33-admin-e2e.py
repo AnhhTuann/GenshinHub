@@ -82,6 +82,25 @@ def db_url(name: str) -> str:
     )
 
 
+def prepare_database(url: str, name: str) -> None:
+    node(RESET_SCHEMA, url, name)
+    subprocess.run(["npx", "prisma", "migrate", "deploy"], cwd=BACKEND,
+                   text=True, capture_output=True, check=True,
+                   env={**os.environ, "DATABASE_URL": url})
+
+
+RESET_SCHEMA = """
+const {PrismaClient}=require('@prisma/client');
+const p=new PrismaClient({datasourceUrl:process.argv[1]});
+(async()=>{
+  const [id]=await p.$queryRawUnsafe('SELECT current_database() AS db');
+  if(id.db!==process.argv[2]) throw new Error('WRONG_DATABASE:'+id.db);
+  await p.$executeRawUnsafe('DROP SCHEMA public CASCADE');
+  await p.$executeRawUnsafe('CREATE SCHEMA public');
+  await p.$disconnect();
+})().catch(e=>{console.error(e.message);process.exit(1)});
+"""
+
 IDENTITY_RESET = """
 const {PrismaClient}=require('@prisma/client');
 const p=new PrismaClient({datasourceUrl:process.argv[1]});
@@ -113,20 +132,27 @@ const p=new PrismaClient({datasourceUrl:process.argv[1]});
 """
 
 QUEUE = """query { adminWeaponTierReviewQueue {
-  candidateId weaponId decision decidedBy decidedAt decisionReason rightsVerified
+  candidateId stableCandidateId weaponId decision decidedBy decidedAt decisionReason rightsVerified
   rightsVerifiedBy rightsBasis tierChangeConfirmed tierChangeConfirmedBy tierChangeConfirmedAt
   evidenceAcknowledged evidenceSupplement
   approvalChecksum batchSha256 reviewGroup importEligible blockedReason version
 } }"""
-AUDIT = "query Audit($id:String!){adminWeaponTierReviewAudit(candidateId:$id){id action actor changes createdAt}}"
-DECIDE = """mutation Decide($id:String!,$d:WeaponTierDecision!,$reason:String!,$batch:String!,$record:String!,$v:Int!,$ack:Boolean,$supp:JSON){
+D2_ACTOR_QUEUE = QUEUE.replace(
+    "query { adminWeaponTierReviewQueue {",
+    "query ($sourceVersion: WeaponTierReviewSource) { "
+    "adminWeaponTierReviewQueue(sourceVersion: $sourceVersion) {",
+)
+AUDIT = "query Audit($id:String!,$sourceVersion:WeaponTierReviewSource){adminWeaponTierReviewAudit(candidateId:$id,sourceVersion:$sourceVersion){id action actor changes createdAt}}"
+DECIDE = """mutation Decide($id:String!,$d:WeaponTierDecision!,$reason:String!,$batch:String!,$record:String!,$v:Int!,$ack:Boolean,$supp:JSON,$sourceVersion:WeaponTierReviewSource){
   adminDecideWeaponTierReview(candidateId:$id,decision:$d,reason:$reason,batchSha256:$batch,
-    recordSha256:$record,expectedVersion:$v,evidenceAcknowledged:$ack,evidenceSupplement:$supp){
+    recordSha256:$record,expectedVersion:$v,evidenceAcknowledged:$ack,evidenceSupplement:$supp,
+    sourceVersion:$sourceVersion){
     candidateId decision decidedBy decidedAt version importEligible blockedReason}}"""
-RIGHTS = """mutation Rights($id:String!,$batch:String!,$record:String!,$v:Int!,$note:String!){
+RIGHTS = """mutation Rights($id:String!,$batch:String!,$record:String!,$v:Int!,$note:String!,$sourceVersion:WeaponTierReviewSource){
   adminVerifyWeaponTierReviewRights(candidateId:$id,batchSha256:$batch,recordSha256:$record,
     expectedVersion:$v,independentRanking:true,originalExplanation:true,
-    noGenshinBuildsEditorialCopy:true,gameFactsAttributionCorrect:true,evidenceValid:true,note:$note){
+    noGenshinBuildsEditorialCopy:true,gameFactsAttributionCorrect:true,evidenceValid:true,note:$note,
+    sourceVersion:$sourceVersion){
     candidateId rightsVerified rightsVerifiedBy rightsVerifiedAt rightsBasis version}}"""
 TIER = """mutation Tier($id:String!,$batch:String!,$record:String!,$v:Int!,$confirmed:Boolean!){
   adminConfirmWeaponTierChange(candidateId:$id,batchSha256:$batch,recordSha256:$record,
@@ -134,11 +160,11 @@ TIER = """mutation Tier($id:String!,$batch:String!,$record:String!,$v:Int!,$conf
 PUBLIC = "{weaponTierRanks(limit:500){id weaponId reviewStatus publishRightsVerified derivation}}"
 
 
-def gql(query: str, variables: dict | None = None, key: str | None = None,
+def gql(query: str, variables: dict | None = None, session: str | None = None,
         endpoint: str = API, cookie: str | None = None):
     headers = {"content-type": "application/json"}
-    if key:
-        headers["x-admin-key"] = key
+    if session:
+        headers["x-admin-session"] = session
     if cookie:
         headers["cookie"] = cookie
     request = urllib.request.Request(
@@ -154,6 +180,27 @@ def gql(query: str, variables: dict | None = None, key: str | None = None,
             return error.code, json.loads(raw)
         except json.JSONDecodeError:
             return error.code, {"raw": raw}
+
+
+def admin_login(username: str, password: str, port: int = B_PORT) -> dict:
+    request = urllib.request.Request(
+        f"http://127.0.0.1:{port}/auth/admin/login",
+        data=json.dumps({"username": username, "password": password}).encode(),
+        headers={"content-type": "application/json"}, method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode())
+
+
+def bootstrap_admin(database_url: str, username: str, password: str) -> str:
+    script = (
+        "const bcrypt=require('bcryptjs');const {PrismaClient}=require('@prisma/client');"
+        "const p=new PrismaClient({datasourceUrl:process.argv[1]});"
+        "(async()=>{const a=await p.admin.create({data:{username:process.argv[2],"
+        "passwordHash:await bcrypt.hash(process.argv[3],12),role:'OWNER',status:'ACTIVE'}});"
+        "process.stdout.write(a.id);await p.$disconnect()})().catch(e=>{console.error(e.message);process.exit(1)})"
+    )
+    return node(script, database_url, username, password)
 
 
 def start(cmd: list[str], cwd: Path, env: dict, log: Path, stack: ExitStack):
@@ -202,7 +249,7 @@ def migration_checks(url: str, dev_url: str) -> None:
     )
     require("empty migration" in diff.stdout or not diff.stdout.strip(),
             "fresh schema differs from development schema")
-    res("fresh bootstrap: 5 migrations / validate / generate / status / diff / client",
+    res("fresh bootstrap: 7 migrations / validate / generate / status / diff / client",
         "PASS", "fresh DB created from zero; schema identical to development; empty diff")
 
 
@@ -231,12 +278,13 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
         page.wait_for_function(
             "() => {const i=document.querySelector('#admin-password');"
             "return i && Object.keys(i).some(k=>k.startsWith('__reactProps$'));}", timeout=30000)
-        password = page.get_by_label("Admin Password")
+        page.get_by_label("Admin username").fill("e2e_owner")
+        password = page.get_by_label("Admin password")
         password.press_sequentially(admin_password)
         password.press("Enter")
         page.wait_for_function("() => location.pathname === '/en/admin'", timeout=60000)
-        require(page.get_by_role("heading", name="Dashboard", exact=True).is_visible(),
-                "admin dashboard heading missing after login")
+        page.get_by_role("heading", name="Dashboard", exact=True).wait_for(
+            state="visible", timeout=30000)
         cookies = {c["name"]: c for c in context.cookies()}
         require("admin_token" in cookies and cookies["admin_token"]["httpOnly"],
                 "admin_token cookie missing or not HttpOnly")
@@ -245,8 +293,8 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
         # Navigate via the actual sidebar link.
         page.locator("aside").get_by_role("link", name="Weapon Review").click()
         page.wait_for_function("() => location.pathname === '/en/admin/weapon-tier-review'", timeout=45000)
-        require(page.get_by_role("heading", name="Weapon Tier Review").is_visible(),
-                "review page heading missing")
+        page.get_by_role("heading", name="Weapon Tier Review").wait_for(
+            state="visible", timeout=30000)
         page.get_by_text("Đang tải dữ liệu review...").wait_for(state="hidden", timeout=45000)
         res("browser: sidebar navigation", "PASS", "Weapon Review link opened the review queue")
 
@@ -254,18 +302,18 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
             return page.get_by_text(label, exact=True).locator("..").inner_text().strip().splitlines()[-1].strip()
 
         require(stat("Tổng ứng viên") == "14", "total candidate stat is not 14")
-        require(stat("Có thể review (A)") == "13", "Group A stat is not 13")
+        require(stat("Có thể review (A)") == "12", "Group A stat is not 12")
         require(stat("Chờ quyết định") == "14", "pending stat is not 14")
         require(stat("Đã APPROVE") == "0", "approved stat is not 0")
-        res("browser: queue stats", "PASS", "14 total / 13 Group A / 14 pending / 0 approved")
+        res("browser: queue stats", "PASS", "14 total / 12 Group A / 14 pending / 0 approved")
 
         candidates = page.locator("section").filter(
             has=page.get_by_role("heading", name="Danh sách ứng viên")).locator("ul > li > button")
         require(candidates.count() == 14, f"expected 14 candidate buttons, got {candidates.count()}")
         texts = [candidates.nth(i).inner_text() for i in range(candidates.count())]
-        require(sum("Nhóm A" in text for text in texts) == 13, "13 Group A rows not found")
-        require(sum("Nhóm B" in text for text in texts) == 1, "1 Group B row not found")
-        res("browser: 14 candidates / 13 A / 1 B", "PASS", "row badges verified in the real DOM")
+        require(sum("Nhóm A" in text for text in texts) == 12, "12 Group A rows not found")
+        require(sum("Nhóm B" in text for text in texts) == 2, "2 Group B rows not found")
+        res("browser: 14 candidates / 12 A / 2 B", "PASS", "row badges verified in the real DOM")
 
         # Empty detail state before selection.
         require(page.get_by_text("Chọn một ứng viên để xem hồ sơ và thực hiện quyết định.").is_visible(),
@@ -426,7 +474,7 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
         rights()
         # verifyRights initialised the row; the queue refetch then exposes the
         # six-field block banner, so wait for it rather than asserting eagerly.
-        page.get_by_text("Bị chặn: GROUP_B_EVIDENCE_INCOMPLETE:").wait_for(
+        page.get_by_text(re.compile(r"Bị chặn: (?:D2_|GROUP_B_)EVIDENCE_INCOMPLETE:")).wait_for(
             state="visible", timeout=20000)
         # Reason + acknowledgement must be valid so the client-side supplement
         # check is the gate exercised here (not the reason-length check).
@@ -450,13 +498,16 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
         }
         page.get_by_label("Bổ sung 6 trường bằng chứng còn thiếu (JSON):").fill(json.dumps(six))
         decide("APPROVE")
-        toast("Đã ghi quyết định APPROVE")
-        wait_row(GROUP_B, "APPROVE")
-        audit_open()
-        wait_audit("EVIDENCE_SUPPLEMENTED")
-        audit_text = audit_details().inner_text()
-        res("browser: Favonius full evidence path (test fixture)", "PASS",
-            "six synthetic fields accepted on isolated DB only; EVIDENCE_SUPPLEMENTED audited")
+        # The D2 revision artifact keeps its six evidence blockers immutable;
+        # supplementing them exercises the persist/audit path but cannot make
+        # the candidate importable. The FROZEN supplement flow is no longer
+        # reachable from the read-only B3.1 UI, so record this as a bridge gap
+        # instead of weakening the server-side guard.
+        toast(re.compile(r"REVISION_EVIDENCE_INCOMPLETE:"))
+        wait_row(GROUP_B, "PENDING")
+        res("browser: Favonius D2 evidence remains blocked", "BLOCKED",
+            "six fields stored but D2_EVIDENCE_INCOMPLETE still blocks APPROVE; "
+            "FROZEN supplement path is read-only in the current review UI")
 
         # Tier re-review: separate confirmation must precede APPROVE.
         for candidate_id, old, new in ((TIER1, "SS", "S"), (TIER2, "S", "A")):
@@ -500,12 +551,23 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
         mpage.wait_for_function(
             "() => {const i=document.querySelector('#admin-password');"
             "return i && Object.keys(i).some(k=>k.startsWith('__reactProps$'));}", timeout=30000)
-        mpassword = mpage.get_by_label("Admin Password")
+        mpage.get_by_label("Admin username").fill("e2e_owner")
+        mpassword = mpage.get_by_label("Admin password")
         mpassword.press_sequentially(admin_password)
         mpassword.press("Enter")
         mpage.wait_for_function("() => location.pathname === '/en/admin'", timeout=60000)
+        mpage.get_by_role("heading", name="Dashboard", exact=True).wait_for(
+            state="visible", timeout=30000)
+        mpage.wait_for_function(
+            "() => {const b=document.querySelector('[aria-label=\"Toggle admin navigation\"]');"
+            "return b && Object.keys(b).some(k=>k.startsWith('__reactProps$'));}", timeout=30000)
         mpage.get_by_role("button", name="Toggle admin navigation").click()
-        mpage.locator("#admin-mobile-navigation").get_by_role("link", name="Weapon Review").click()
+        mpage.wait_for_function(
+            "() => document.querySelector('[aria-label=\"Toggle admin navigation\"]')"
+            "?.getAttribute('aria-expanded') === 'true'", timeout=10000)
+        mobile_link = mpage.locator("#admin-mobile-navigation").get_by_role("link", name="Weapon Review")
+        mobile_link.wait_for(state="visible", timeout=30000)
+        mobile_link.click()
         mpage.wait_for_function("() => location.pathname === '/en/admin/weapon-tier-review'", timeout=45000)
         mpage.get_by_text("Đang tải dữ liệu review...").wait_for(state="hidden", timeout=45000)
         mpage.locator("section").filter(
@@ -525,17 +587,18 @@ def browser_checks(admin_password: str, actor: str, batch: str, sha_by_id: dict)
         res("browser: hydration", "PASS", "no hydration mismatch or console errors")
 
         leaked = [e for e in console_errors if admin_password in e]
-        header_leak = [h for h in request_headers if "x-admin-key" in {k.lower() for k in h}]
-        require(not leaked and not header_leak, "admin secret leaked to browser console or requests")
-        res("browser: admin key confidentiality", "PASS",
-            "secret absent from console/request headers; browser only calls the same-origin proxy")
+        header_leak = [h for h in request_headers
+                       if {"x-admin-key", "x-admin-password"} & {k.lower() for k in h}]
+        require(not leaked and not header_leak, "admin password leaked to browser console or requests")
+        res("browser: admin password confidentiality", "PASS",
+            "password absent from console/request headers; browser only calls the same-origin proxy")
 
         context.close()
         mobile.close()
         browser.close()
 
 
-def api_security_checks(admin_password: str, actor: str, batch: str, active_sha: dict) -> None:
+def api_security_checks(admin_session: str, actor: str, batch: str, active_sha: dict) -> None:
     # Checksums are discovered from the live queue: the active dossier may be a
     # D2 revision bound by the D3 bridge rather than the B3.1 freeze manifest.
     sha_by_id = active_sha
@@ -543,57 +606,83 @@ def api_security_checks(admin_password: str, actor: str, batch: str, active_sha:
     require(status in (200, 400) and "Unauthorized" in json.dumps(body), "anonymous admin query was not rejected")
     res("api: anonymous admin query", "PASS", str(body.get("errors", [{}])[0].get("message", "")))
 
-    status, body = gql(QUEUE, key="wrong-" + secrets.token_urlsafe(8))
-    require("Unauthorized" in json.dumps(body), "invalid Admin key was not rejected")
-    res("api: invalid Admin key", "PASS", "wrong key rejected")
+    status, body = gql(QUEUE, session="wrong-" + secrets.token_urlsafe(8))
+    require("Unauthorized" in json.dumps(body), "invalid Admin session was not rejected")
+    res("api: invalid Admin session", "PASS", "wrong session token rejected")
 
-    status, body = gql(QUEUE, key=admin_password)
+    status, body = gql(QUEUE, session=admin_session)
     require(status == 200 and not body.get("errors"), f"valid admin queue failed: {body}")
     queue = body["data"]["adminWeaponTierReviewQueue"]
     require(len(queue) == 14, "queue does not contain 14 candidates")
     by_id = {row["candidateId"]: row for row in queue}
-    # A_PLAIN was approved through the browser with the shared Admin key.
-    require(by_id[A_PLAIN]["decidedBy"] == actor, "shared-key principal not recorded")
-    require(by_id[A_PLAIN]["rightsBasis"]["verifiedBy"] == actor, "rights verifier not server-derived")
-    require(by_id[A_PLAIN]["rightsBasis"]["recordSha256"] == sha_by_id[A_PLAIN], "rights basis checksum wrong")
-    require(by_id[A_PLAIN]["rightsBasis"]["batchSha256"] == batch, "rights basis batch wrong")
-    require(by_id[TIER1]["tierChangeConfirmedBy"] == actor, "tier confirmation actor wrong")
+    # The browser review page defaults to D2_REVISED, so the UI decisions and
+    # their server-derived actor fields live on the versioned rows.
+    _, d2_body = gql(D2_ACTOR_QUEUE, {"sourceVersion": "D2_REVISED"}, session=admin_session)
+    require(not d2_body.get("errors"), f"D2 queue unavailable: {d2_body}")
+    d2_rows = d2_body["data"]["adminWeaponTierReviewQueue"]
+    require(all("stableCandidateId" in row for row in d2_rows),
+            f"D2 queue missing stableCandidateId: {list(d2_rows[0]) if d2_rows else []}")
+    d2_by_stable_id = {row["stableCandidateId"]: row for row in d2_rows}
+    require(len(d2_by_stable_id) == 14, "D2 queue does not contain 14 candidates")
+    d2_plain = d2_by_stable_id[A_PLAIN]
+    require(d2_plain["decidedBy"] == actor, "session principal not recorded")
+    require(d2_plain["rightsBasis"]["verifiedBy"] == actor, "rights verifier not server-derived")
+    require(d2_plain["rightsBasis"]["recordSha256"] == d2_plain["approvalChecksum"],
+            "rights basis checksum wrong")
+    require(d2_plain["rightsBasis"]["batchSha256"] == d2_plain["batchSha256"],
+            "rights basis batch wrong")
+    require(d2_by_stable_id[TIER1]["tierChangeConfirmedBy"] == actor, "tier confirmation actor wrong")
     res("api: server-derived actor / rights / tier fields", "PASS", f"actor={actor}, checksums bound")
+
+    # FROZEN review mutations are read-only in the current UI; exercise all
+    # mutation security against the D2_REVISED rows the browser actually uses.
+    d_pending = d2_by_stable_id[PENDING]
+    source_version = "D2_REVISED"
 
     # A client cannot supply an actor: the GraphQL schema has no such argument.
     forged = gql(DECIDE.replace("$ack:Boolean", "$ack:Boolean,$decidedBy:String")
                  .replace("evidenceSupplement:$supp", "evidenceSupplement:$supp,decidedBy:$decidedBy"),
-                 {"id": PENDING, "d": "APPROVE", "reason": REASON, "batch": batch,
-                  "record": sha_by_id[PENDING], "v": 1, "ack": True, "decidedBy": "admin"},
-                 key=admin_password)
+                 {"id": d_pending["candidateId"], "d": "APPROVE", "reason": REASON,
+                  "batch": d_pending["batchSha256"], "record": d_pending["approvalChecksum"],
+                  "v": 1, "ack": True, "decidedBy": "admin", "sourceVersion": source_version},
+                 session=admin_session)
     require("errors" in forged[1], "unexpectedly accepted client-supplied decidedBy")
     res("api: client-supplied actor rejected", "PASS", "GraphQL rejects unknown decidedBy argument")
 
     # Checksum binding rejects changed content.
-    _, body = gql(DECIDE, {"id": PENDING, "d": "APPROVE", "reason": REASON, "batch": batch,
-                           "record": "f" * 64, "v": 0, "ack": True}, key=admin_password)
-    require("RECORD_CHECKSUM_MISMATCH" in json.dumps(body), "record checksum mismatch not rejected")
-    _, body = gql(DECIDE, {"id": PENDING, "d": "APPROVE", "reason": REASON, "batch": "f" * 64,
-                           "record": sha_by_id[PENDING], "v": 0, "ack": True}, key=admin_password)
+    _, body = gql(DECIDE, {"id": d_pending["candidateId"], "d": "APPROVE", "reason": REASON,
+                           "batch": d_pending["batchSha256"], "record": "f" * 64,
+                           "v": 0, "ack": True, "sourceVersion": source_version},
+                  session=admin_session)
+    require("RECORD_CHECKSUM_MISMATCH" in json.dumps(body),
+            f"record checksum mismatch not rejected: {json.dumps(body)[:500]}")
+    _, body = gql(DECIDE, {"id": d_pending["candidateId"], "d": "APPROVE", "reason": REASON,
+                           "batch": "f" * 64, "record": d_pending["approvalChecksum"],
+                           "v": 0, "ack": True, "sourceVersion": source_version},
+                  session=admin_session)
     require("BATCH_CHECKSUM_MISMATCH" in json.dumps(body), "batch checksum mismatch not rejected")
     res("api: checksum mismatch", "PASS", "both record and batch checksums enforced")
 
     # Stale version and true concurrent approval (exactly one winner).
-    _, rights_body = gql(RIGHTS, {"id": CONC, "batch": batch, "record": sha_by_id[CONC],
-                                  "v": 0, "note": RIGHTS_NOTE}, key=admin_password)
+    _, rights_body = gql(RIGHTS, {"id": d_pending["candidateId"], "batch": d_pending["batchSha256"],
+                                  "record": d_pending["approvalChecksum"], "v": d_pending["version"],
+                                  "note": RIGHTS_NOTE, "sourceVersion": source_version},
+                         session=admin_session)
     require(not rights_body.get("errors"), f"rights setup failed: {rights_body}")
-    # verifyRights created the row at v0 and advanced it to v1.
-    args = {"id": CONC, "d": "APPROVE", "reason": REASON, "batch": batch,
-            "record": sha_by_id[CONC], "v": 1, "ack": True}
+    version = rights_body["data"]["adminVerifyWeaponTierReviewRights"]["version"]
+    args = {"id": d_pending["candidateId"], "d": "APPROVE", "reason": REASON,
+            "batch": d_pending["batchSha256"], "record": d_pending["approvalChecksum"],
+            "v": version, "ack": True, "sourceVersion": source_version}
     with ThreadPoolExecutor(max_workers=2) as pool:
-        outcomes = list(pool.map(lambda _: gql(DECIDE, args, key=admin_password), range(2)))
+        outcomes = list(pool.map(lambda _: gql(DECIDE, args, session=admin_session), range(2)))
     errors = [o for o in outcomes if o[1].get("errors")]
     wins = [o for o in outcomes if not o[1].get("errors")]
     require(len(wins) == 1 and len(errors) == 1, f"concurrent outcomes unexpected: {outcomes}")
     require("CONCURRENT_MODIFICATION" in json.dumps(errors[0][1]), "lost update not prevented")
-    _, stale = gql(DECIDE, args, key=admin_password)
+    _, stale = gql(DECIDE, args, session=admin_session)
     require("CONCURRENT_MODIFICATION" in json.dumps(stale), "stale version not rejected")
-    _, audit_body = gql(AUDIT, {"id": CONC}, key=admin_password)
+    _, audit_body = gql(AUDIT, {"id": d_pending["candidateId"], "sourceVersion": source_version},
+                        session=admin_session)
     actions = [e["action"] for e in audit_body["data"]["adminWeaponTierReviewAudit"]]
     require(actions.count("DECISION_RECORDED") == 1, "duplicate decision audit from concurrent writes")
     res("api: stale version / concurrency", "PASS", "1 winner, 1 CONCURRENT_MODIFICATION, single audit record")
@@ -605,7 +694,7 @@ def api_security_checks(admin_password: str, actor: str, batch: str, active_sha:
 
     # Admin proxy requires a valid cookie, not a client key.
     status, body = gql(QUEUE, endpoint=f"{ORIGIN}/api/admin/graphql")
-    require(status == 401 and "Admin token required" in json.dumps(body), "proxy accepted anonymous request")
+    require(status == 401 and "Admin session required" in json.dumps(body), "proxy accepted anonymous request")
     status, body = gql(QUEUE, endpoint=f"{ORIGIN}/api/admin/graphql",
                        cookie="admin_token=forged.invalid.token")
     require(status == 401, "proxy accepted forged cookie")
@@ -634,8 +723,8 @@ D2_DECIDE = """mutation($id:String!,$d:WeaponTierDecision!,$reason:String!,$batc
     candidateId decision version importEligible approvalChecksum}}"""
 
 
-def importer_checks(admin_password: str, by_id: dict) -> None:
-    env = {**os.environ, "ADMIN_KEY": admin_password, "GRAPHQL_URL": API}
+def importer_checks(admin_session: str, by_id: dict) -> None:
+    env = {**os.environ, "ADMIN_SESSION_TOKEN": admin_session, "GRAPHQL_URL": API}
 
     def run(*args: str) -> dict:
         proc = subprocess.run(
@@ -650,16 +739,16 @@ def importer_checks(admin_password: str, by_id: dict) -> None:
         return json.loads(text[text.index("{"):text.rindex("}") + 1])
 
     def all_rows() -> list:
-        status, body = gql(QUEUE, key=admin_password)
+        status, body = gql(QUEUE, session=admin_session)
         require(status == 200 and not body.get("errors"), f"queue unavailable: {body}")
         return body["data"]["adminWeaponTierReviewQueue"]
 
     no_key = subprocess.run(["node", "scripts/weapon-tier-independent/import-approved.cjs"],
-                            cwd=BACKEND, env={k: v for k, v in os.environ.items() if k != "ADMIN_KEY"},
+                            cwd=BACKEND, env={k: v for k, v in os.environ.items() if k != "ADMIN_SESSION_TOKEN"},
                             text=True, capture_output=True)
-    require("DB_DECISIONS_REQUIRE_ADMIN_KEY" in no_key.stderr + no_key.stdout,
-            "importer did not fail closed without Admin key")
-    res("importer: admin key required", "PASS", "dry-run without key fails closed")
+    require("DB_DECISIONS_REQUIRE_ADMIN_SESSION" in no_key.stderr + no_key.stdout,
+            "importer did not fail closed without Admin session")
+    res("importer: admin session required", "PASS", "dry-run without session fails closed")
 
     # Full guarded dry-run: the goal is not to import but to prove that no
     # ineligible decision can ever be selected and that dry-run plans no writes.
@@ -722,7 +811,7 @@ def importer_checks(admin_password: str, by_id: dict) -> None:
     reads_d2 = "$sourceVersion" in query_block and "sourceVersion: $sourceVersion" in query_block
 
     def d2_rows() -> dict:
-        status, body = gql(D2_QUEUE, {"v": "D2_REVISED"}, key=admin_password)
+        status, body = gql(D2_QUEUE, {"v": "D2_REVISED"}, session=admin_session)
         require(status == 200 and not body.get("errors"), f"D2 queue unavailable: {body}")
         rows = {r["candidateId"]: r for r in body["data"]["adminWeaponTierReviewQueue"]}
         require(len(rows) == 14, "D2 queue does not expose 14 candidates")
@@ -733,12 +822,12 @@ def importer_checks(admin_password: str, by_id: dict) -> None:
         row = d2_rows()[cid]
         batch, sha, version = row["batchSha256"], row["approvalChecksum"], row["version"]
         status, body = gql(D2_RIGHTS, {"id": cid, "batch": batch, "rec": sha,
-                                       "v": version, "note": RIGHTS_NOTE}, key=admin_password)
+                                       "v": version, "note": RIGHTS_NOTE}, session=admin_session)
         require(status == 200 and not body.get("errors"), f"D2 rights failed: {body}")
         version = body["data"]["adminVerifyWeaponTierReviewRights"]["version"]
         status, body = gql(D2_DECIDE, {"id": cid, "d": "APPROVE", "reason": REASON,
                                       "batch": batch, "rec": sha, "v": version,
-                                      "ack": True}, key=admin_password)
+                                      "ack": True}, session=admin_session)
         require(status == 200 and not body.get("errors"), f"D2 decision failed: {body}")
         single = run("--only", A_PLAIN)
         if single["counts"]["eligible"] == 1:
@@ -762,11 +851,12 @@ def main() -> None:
     dev_url = db_url("genshinhub")
     admin_password = secrets.token_urlsafe(32)
     jwt_secret = secrets.token_urlsafe(48)
-    actor = "admin-" + hashlib.sha256(admin_password.encode()).hexdigest()[:12]
+    actor = "pending-bootstrap"
     workspace = Path(tempfile.mkdtemp(prefix="genshinhub-b33-e2e-", dir="/tmp/opencode"))
     print(f"B3.3 isolated DB: {TEST_DB} | actor: {actor} | workspace: {workspace}", flush=True)
 
     with ExitStack() as stack:
+        prepare_database(test_url, TEST_DB)
         identity = node(IDENTITY_RESET, test_url, TEST_DB)
         res("preflight: isolated database + current_database()", "PASS", identity)
 
@@ -807,13 +897,13 @@ def main() -> None:
 
         base_env = {
             **os.environ,
-            "ADMIN_PASSWORD": admin_password,
             "ADMIN_JWT_SECRET": jwt_secret,
-            "USER_JWT_SECRET": jwt_secret,
             "NODE_ENV": "development",
             "TS_NODE_COMPILER_OPTIONS": '{"rootDir":"."}',
             "NEXT_TELEMETRY_DISABLED": "1",
             "FRONTEND_URL": ORIGIN,
+        "BACKEND_URL": f"http://127.0.0.1:{B_PORT}",
+        "NEXT_PUBLIC_API_URL": f"http://127.0.0.1:{B_PORT}",
         }
         base_env.pop("ADMIN_ACTOR_ID", None)
         backend_env = {**base_env, "DATABASE_URL": test_url, "PORT": str(B_PORT)}
@@ -822,13 +912,18 @@ def main() -> None:
         start(["node", "-r", "ts-node/register/transpile-only", "src/index.ts"],
               BACKEND, backend_env, workspace / "backend.log", stack)
         wait_http(f"http://127.0.0.1:{B_PORT}/health")
+        bootstrap_admin(test_url, "e2e_owner", admin_password)
+        admin_login_result = admin_login("e2e_owner", admin_password)
+        admin_session = admin_login_result["token"]
+        actor = admin_login_result["admin"]["id"]
+        print(f"B3.3 Admin identity: {actor}", flush=True)
         start(["node", str(FRONTEND / "node_modules/next/dist/bin/next"), "dev",
                "--hostname", "127.0.0.1", "--port", str(F_PORT)],
               web, frontend_env, workspace / "frontend.log", stack)
         wait_http(f"{ORIGIN}/en/admin/login")
         res("isolated stack startup", "PASS", f"backend :{B_PORT}, frontend :{F_PORT}, random credentials")
 
-        qstatus, qbody = gql(QUEUE, key=admin_password)
+        qstatus, qbody = gql(QUEUE, session=admin_session)
         require(qstatus == 200 and not qbody.get("errors"), f"live queue unavailable: {qbody}")
         active_rows = qbody["data"]["adminWeaponTierReviewQueue"]
         active_sha = {r["candidateId"]: r["approvalChecksum"] for r in active_rows}
@@ -844,14 +939,14 @@ def main() -> None:
             res("browser E2E", "PASS", "all browser assertions succeeded")
 
         try:
-            api_security_checks(admin_password, actor, batch, active_sha)
+            api_security_checks(admin_session, actor, batch, active_sha)
         except Exception as error:
             res("API security / audit / concurrency", "FAIL", f"{type(error).__name__}: {error}")
         else:
             res("API security / audit / concurrency", "PASS", "all API assertions succeeded")
 
         try:
-            importer_checks(admin_password, sha_by_id)
+            importer_checks(admin_session, sha_by_id)
         except Exception as error:
             res("guarded importer dry-runs", "FAIL", f"{type(error).__name__}: {error}")
         else:

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test:auth": "vitest run lib/adminAuth.test.ts lib/adminSession.test.ts app/api/auth/authRoutes.test.ts",
     "clean": "next clean",
     "optimize:assets": "node scripts/optimize-assets.js",
     "sync:assets": "node scripts/sync-new-assets.js",

@@ -1,57 +1,52 @@
 /**
- * Secure Admin GraphQL Proxy Route
- * 
- * Instead of exposing ADMIN_PASSWORD to the browser via localStorage,
- * this route:
- * 1. Verifies the HttpOnly admin_token cookie (server-side, safe from XSS)
- * 2. Forwards the GraphQL request with x-admin-key to the backend
- * 3. Returns the result to the client
- * 
- * The actual ADMIN_PASSWORD never leaves the server.
+ * Admin GraphQL proxy.
+ *
+ * The HttpOnly admin_token cookie is verified against the backend's database-
+ * backed session service. Only a valid, active Admin session is forwarded;
+ * no shared password is ever forwarded or exposed to the browser.
  */
-
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifyAdminSession } from '@/lib/adminSession';
+import { getAuthBackendUrl, isSameOriginRequest } from '@/lib/auth-api';
 
-const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
+const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || `${getAuthBackendUrl()}/graphql`;
 
 export async function POST(request: NextRequest) {
-  // 1. Verify admin_token cookie
+  if (!isSameOriginRequest(request)) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   const cookieStore = await cookies();
   const adminToken = cookieStore.get('admin_token')?.value;
 
   if (!adminToken) {
-    return NextResponse.json({ errors: [{ message: 'Unauthorized: Admin token required' }] }, { status: 401 });
+    return NextResponse.json({ errors: [{ message: 'Unauthorized: Admin session required' }] }, { status: 401 });
   }
-
   if (!await verifyAdminSession(adminToken)) {
-    return NextResponse.json({ errors: [{ message: 'Unauthorized: Invalid or expired admin token' }] }, { status: 401 });
+    const response = NextResponse.json(
+      { errors: [{ message: 'Unauthorized: Admin session expired' }] },
+      { status: 401 },
+    );
+    response.cookies.delete('admin_token');
+    return response;
   }
 
-  // 2. Get admin password from server env (never exposed to browser)
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) {
-    return NextResponse.json({ errors: [{ message: 'Server configuration error' }] }, { status: 500 });
-  }
-
-  // 3. Forward request to backend with admin key
   try {
-    const body = await request.json();
+    const body = await request.text();
     const backendRes = await fetch(GRAPHQL_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-admin-key': adminPassword,
+        'x-admin-session': adminToken,
       },
-      body: JSON.stringify(body),
+      body,
       cache: 'no-store',
     });
-
-    const data = await backendRes.json();
-    return NextResponse.json(data, { status: backendRes.status });
-  } catch (error: any) {
-    console.error('[Admin GraphQL Proxy Error]', error.message);
-    return NextResponse.json({ errors: [{ message: 'Failed to reach backend' }] }, { status: 502 });
+    const text = await backendRes.text();
+    return new NextResponse(text, {
+      status: backendRes.status,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.error('[Admin GraphQL proxy]', error instanceof Error ? error.message : 'unknown');
+    return NextResponse.json({ errors: [{ message: 'Unable to reach backend' }] }, { status: 502 });
   }
 }

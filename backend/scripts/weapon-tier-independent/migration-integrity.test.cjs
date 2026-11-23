@@ -23,6 +23,7 @@ test('managed migration checksums match the applied records exactly', async () =
       '20261120151000_add_character_tier_rankings',
       '20261120153500_add_weapon_tier_rankings',
       '20261120160000_add_weapon_tier_review_workflow',
+      '20261121100452_add_database_backed_auth',
       '20261121141000_add_maintenance_build_status',
     ]);
     for (const name of names) {

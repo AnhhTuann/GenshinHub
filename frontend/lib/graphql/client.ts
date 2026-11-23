@@ -79,39 +79,18 @@ export async function fetchGraphQLClient(query: string, variables = {}, token?: 
 
 /**
  * Admin GraphQL fetch — routes through /api/admin/graphql proxy.
- * Authenticates via HttpOnly admin_token cookie (never uses localStorage).
- * The ADMIN_PASSWORD secret stays server-side only.
+ * Authenticates via the HttpOnly admin_token cookie, verified against the
+ * backend's database-backed admin session store. Never uses a shared secret.
  */
 export async function fetchGraphQLAdmin(query: string, variables = {}) {
-  // Use the secure server-side proxy instead of direct backend call with localStorage key
-  const ADMIN_PROXY = typeof window !== 'undefined'
-    ? '/api/admin/graphql'
-    : `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'}/graphql`;
-
-  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-
-  // For server-side admin calls (Server Actions), attach the admin key directly
   if (typeof window === 'undefined') {
-    const adminPassword = process.env.ADMIN_PASSWORD;
-    if (adminPassword) {
-      headers['x-admin-key'] = adminPassword;
-    }
-    const res = await fetch(GRAPHQL_ENDPOINT, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({ query, variables }),
-      cache: 'no-store',
-    });
-    const json = await res.json();
-    if (json.errors) {
-      const msg = json.errors[0].message;
-      if (msg.includes('Unauthorized')) {
-        throw new Error('Admin access denied. Check ADMIN_PASSWORD configuration.');
-      }
-      throw new Error('GraphQL Error: ' + msg);
-    }
-    return json.data ?? {};
+    // Server-side callers have no browser cookie; fail closed instead of using
+    // a universal key. Client components use the secure proxy below.
+    throw new Error('Admin GraphQL requires a verified browser session');
   }
+
+  const ADMIN_PROXY = '/api/admin/graphql';
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
 
   // For client-side admin calls — use the secure proxy route
   const res = await fetch(ADMIN_PROXY, {

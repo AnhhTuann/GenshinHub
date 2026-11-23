@@ -6,6 +6,7 @@ const {spawn}=require('node:child_process');
 const {randomBytes}=require('node:crypto');
 const {isDeepStrictEqual}=require('node:util');
 const {PrismaClient}=require('@prisma/client');
+const bcrypt=require('bcryptjs');
 const {digest}=require('./catalog-completion.cjs');
 const {make,frozen}=require('./catalog-a01.cjs');
 
@@ -18,13 +19,14 @@ assert.ok(['127.0.0.1','localhost'].includes(url.hostname));
 assert.match(url.pathname,/^\/genshinhub_test_build_final_review_[a-z0-9]+$/);
 const prisma=new PrismaClient({datasourceUrl:url.href});
 const secret=randomBytes(32).toString('hex');
+let sessionToken='';
 const endpoint='http://127.0.0.1:4021/graphql';
 const selection=batches[0].candidates;
 let child;
 
-async function call(query,variables={}, credential=secret) {
+async function call(query,variables={}, credential=sessionToken) {
   const response=await fetch(endpoint,{method:'POST',headers:{
-    'content-type':'application/json',...(credential?{'x-admin-key':credential}:{}),
+    'content-type':'application/json',...(credential?{'x-admin-session':credential}:{}),
   },body:JSON.stringify({query,variables})});
   return response.json();
 }
@@ -79,8 +81,8 @@ async function run(){
   };
   assert.equal(make(inventory,frozen()).batch.checksum,batches[0].checksum);
   child=spawn(process.execPath,['-r','ts-node/register','src/index.ts'],{
-    env:{...process.env,PORT:'4021',DATABASE_URL:url.href,ADMIN_PASSWORD:secret,
-      ADMIN_JWT_SECRET:randomBytes(32).toString('hex'),USER_JWT_SECRET:randomBytes(32).toString('hex')},
+    env:{...process.env,PORT:'4021',DATABASE_URL:url.href,
+      ADMIN_JWT_SECRET:randomBytes(32).toString('hex')},
     stdio:'ignore',
   });
   for(let i=0;;i++){
@@ -88,6 +90,18 @@ async function run(){
     try{if((await fetch('http://127.0.0.1:4021/health')).ok)break;}catch{}
     await new Promise(r=>setTimeout(r,200));
   }
+  await prisma.admin.create({data:{
+    username:'integration_owner',passwordHash:await bcrypt.hash(secret,12),
+    role:'OWNER',status:'ACTIVE',
+  }});
+  const loginResponse=await fetch('http://127.0.0.1:4021/auth/admin/login',{
+    method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({username:'integration_owner',password:secret}),
+  });
+  const login=await loginResponse.json();
+  assert.equal(loginResponse.status,200,JSON.stringify(login));
+  sessionToken=login.token;
+  assert.ok(sessionToken,'Admin session token required');
   const candidate=selection[0];
   const doc=records.find(row=>row.candidate.candidateId===candidate.candidateId).candidate;
   assert.throws(()=>exactPatch(candidate,{...doc,patch:{...doc.patch,sands:['ATK%']}}),/checksum mismatch/);

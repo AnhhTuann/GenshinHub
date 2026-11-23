@@ -18,9 +18,9 @@ const batch = manifest.batchSha256;
 const now = () => new Date().toISOString();
 let state;
 
-test('setup: read-only dev state with 5 migrations and zero ranking rows', async () => {
+test('setup: read-only dev state with all applied migrations and zero ranking rows', async () => {
   state = await readOnlyState();
-  assert.equal(state.migrationRows.length, 6);
+  assert.equal(state.migrationRows.length, 7);
   const { openReadOnly } = require('../weapon-tier-audit/db.cjs');
   const { prisma } = openReadOnly();
   try {
@@ -90,7 +90,7 @@ test('toDecisionRecord maps only server-persisted fields and ignores injected cl
 
 test('authoritative DB queue cannot be read without a real Admin key', async () => {
   await assert.rejects(() => loadDbDecisions('http://127.0.0.1:4000/graphql', ''),
-    /DB_DECISIONS_REQUIRE_ADMIN_KEY/);
+    /DB_DECISIONS_REQUIRE_ADMIN_SESSION/);
 });
 
 test('all-PENDING DB decisions: 14 blocked, 0 eligible, writeCount 0', () => {

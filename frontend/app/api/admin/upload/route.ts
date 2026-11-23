@@ -1,45 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { verifyAdminSession } from '@/lib/adminSession';
+import { getAuthBackendUrl, isSameOriginRequest } from '@/lib/auth-api';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+const BACKEND_URL = getAuthBackendUrl();
 
 export async function POST(request: NextRequest) {
-  // 1. Verify admin_token cookie
+  if (!isSameOriginRequest(request)) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   const cookieStore = await cookies();
   const adminToken = cookieStore.get('admin_token')?.value;
 
-  if (!adminToken) {
-    return NextResponse.json({ error: 'Unauthorized: Admin token required' }, { status: 401 });
+  if (!adminToken || !await verifyAdminSession(adminToken)) {
+    return NextResponse.json({ error: 'Unauthorized: Admin session required' }, { status: 401 });
   }
 
-  if (!await verifyAdminSession(adminToken)) {
-    return NextResponse.json({ error: 'Unauthorized: Invalid or expired admin token' }, { status: 401 });
-  }
-
-  // 2. Get admin password from server env
-  const adminPassword = process.env.ADMIN_PASSWORD;
-  if (!adminPassword) {
-    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
-  }
-
-  // 3. Forward request to backend upload endpoint
   try {
     const formData = await request.formData();
     const backendRes = await fetch(`${BACKEND_URL}/upload`, {
       method: 'POST',
-      headers: {
-        'x-admin-key': adminPassword,
-        // Don't set Content-Type here; fetch will automatically set it to multipart/form-data with boundary
-      },
+      headers: { 'x-admin-session': adminToken },
       body: formData,
       cache: 'no-store',
     });
-
     const data = await backendRes.json();
     return NextResponse.json(data, { status: backendRes.status });
-  } catch (error: any) {
-    console.error('[Admin Upload Proxy Error]', error.message);
+  } catch (error) {
+    console.error('[Admin Upload Proxy Error]', error instanceof Error ? error.message : 'unknown');
     return NextResponse.json({ error: 'Failed to reach backend' }, { status: 502 });
   }
 }

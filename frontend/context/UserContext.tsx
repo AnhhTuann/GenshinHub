@@ -1,5 +1,7 @@
 "use client";
 
+import { useLocale } from 'next-intl';
+import toast from 'react-hot-toast';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export interface User {
@@ -42,6 +44,7 @@ interface UserContextType {
 export const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export function UserProvider({ children }: { children: React.ReactNode }) {
+  const locale = useLocale();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -66,7 +69,13 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const logout = async () => {
-    await fetch('/api/auth/logout', { method: 'POST' });
+    try {
+      const response = await fetch('/api/auth/logout', { method: 'POST' });
+      if (!response.ok) throw new Error('Logout failed');
+    } catch {
+      toast.error(locale === 'vi' ? 'Không thể đăng xuất. Vui lòng thử lại.' : 'Unable to sign out. Please try again.');
+      return;
+    }
     setUser(null);
     window.location.reload();
   };

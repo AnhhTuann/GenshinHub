@@ -1,39 +1,31 @@
-import { jwtVerify, SignJWT } from 'jose';
+import { authFetch } from './auth-api';
 
-const issuer = 'genshinhub';
-const audience = 'genshinhub-admin';
-
-function signingKey() {
-  const secret = process.env.ADMIN_JWT_SECRET;
-  return secret?.trim() ? new TextEncoder().encode(secret) : null;
+export interface AdminSessionInfo {
+  id: string;
+  username: string;
+  role: 'OWNER' | 'ADMIN';
+  status: 'ACTIVE' | 'SUSPENDED' | 'DISABLED';
+  displayName?: string | null;
 }
 
-export async function issueAdminSession(): Promise<string | null> {
-  const key = signingKey();
-  if (!key) return null;
-
-  return new SignJWT({ role: 'admin' })
-    .setProtectedHeader({ alg: 'HS256' })
-    .setIssuer(issuer)
-    .setAudience(audience)
-    .setIssuedAt()
-    .setExpirationTime('24h')
-    .sign(key);
-}
-
+/**
+ * Admin sessions are opaque DB-backed tokens. Verification always goes to the
+ * backend so revocation, role and status changes take effect immediately.
+ */
 export async function verifyAdminSession(token: string | null | undefined): Promise<boolean> {
-  const key = signingKey();
-  if (!key || !token) return false;
+  return (await getAdminSession(token)) !== null;
+}
 
-  try {
-    const { payload } = await jwtVerify(token, key, {
-      algorithms: ['HS256'],
-      issuer,
-      audience,
-      requiredClaims: ['exp', 'iat', 'role'],
-    });
-    return payload.role === 'admin';
-  } catch {
-    return false;
-  }
+export async function getAdminSession(token: string | null | undefined): Promise<AdminSessionInfo | null> {
+  if (!token) return null;
+  const result = await authFetch('/auth/session', { token });
+  if (!result.ok || !result.data?.valid || result.data.kind !== 'ADMIN') return null;
+  const subject = result.data.subject;
+  return {
+    id: subject.id,
+    username: subject.username,
+    role: subject.role,
+    status: subject.status,
+    displayName: subject.displayName,
+  };
 }

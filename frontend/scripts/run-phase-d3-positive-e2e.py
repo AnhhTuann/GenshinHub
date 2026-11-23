@@ -188,11 +188,11 @@ PUBLIC_RANKS = """query { weaponTierRanks(limit:500) {
 WEAPONS = "{ weapons { id nameEn nameVi type } }"
 
 
-def gql(query: str, variables: dict | None = None, key: str | None = None,
+def gql(query: str, variables: dict | None = None, session: str | None = None,
         endpoint: str = API, cookie: str | None = None):
     headers = {"content-type": "application/json"}
-    if key:
-        headers["x-admin-key"] = key
+    if session:
+        headers["x-admin-session"] = session
     if cookie:
         headers["cookie"] = cookie
     request = urllib.request.Request(
@@ -208,6 +208,27 @@ def gql(query: str, variables: dict | None = None, key: str | None = None,
             return error.code, json.loads(raw)
         except json.JSONDecodeError:
             return error.code, {"raw": raw}
+
+
+def admin_login(username: str, password: str, port: int = B_PORT) -> dict:
+    request = urllib.request.Request(
+        f"http://127.0.0.1:{port}/auth/admin/login",
+        data=json.dumps({"username": username, "password": password}).encode(),
+        headers={"content-type": "application/json"}, method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode())
+
+
+def bootstrap_admin(database_url: str, username: str, password: str) -> str:
+    script = (
+        "const bcrypt=require('bcryptjs');const {PrismaClient}=require('@prisma/client');"
+        "const p=new PrismaClient({datasourceUrl:process.argv[1]});"
+        "(async()=>{const a=await p.admin.create({data:{username:process.argv[2],"
+        "passwordHash:await bcrypt.hash(process.argv[3],12),role:'OWNER',status:'ACTIVE'}});"
+        "process.stdout.write(a.id);await p.$disconnect()})().catch(e=>{console.error(e.message);process.exit(1)})"
+    )
+    return node(script, database_url, username, password)
 
 
 def start(cmd: list[str], cwd: Path, env: dict, log: Path, stack: ExitStack):
@@ -241,7 +262,7 @@ def wait_http(url: str, timeout: float = 180) -> None:
     raise RuntimeError(f"server not ready: {url}")
 
 
-def preflight(url: str, dev_url: str, admin_key: str) -> dict:
+def preflight(url: str, dev_url: str, admin_session: str) -> dict:
     identity = json.loads(node(IDENTITY, url, TEST_DB))
     require(identity["db"] == TEST_DB and not identity["ranks"] and not identity["audits"],
             f"isolated DB not clean: {identity}")
@@ -285,7 +306,7 @@ def preflight(url: str, dev_url: str, admin_key: str) -> dict:
     require(not diff.stdout.strip() or "empty migration" in diff.stdout.lower(),
             "isolated schema differs from development")
     res("preflight: migrations + schema parity", "PASS",
-        "5 migrations applied; schema identical to development")
+        "7 migrations applied; schema identical to development")
 
     dev_state = json.loads(node(
         "const {loadEnv}=require('./scripts/weapon-tier-audit/db.cjs');"
@@ -302,9 +323,9 @@ def preflight(url: str, dev_url: str, admin_key: str) -> dict:
     return d2["checksums"]
 
 
-def queue_preflight(admin_key: str, checksums: dict) -> dict:
+def queue_preflight(admin_session: str, checksums: dict) -> dict:
     """Read the authoritative D2 queue after the isolated backend is running."""
-    qstatus, qbody = gql(QUEUE, {"v": D2}, key=admin_key)
+    qstatus, qbody = gql(QUEUE, {"v": D2}, session=admin_session)
     require(qstatus == 200 and not qbody.get("errors"), f"D2 queue unavailable: {qbody}")
     rows = qbody["data"]["adminWeaponTierReviewQueue"]
     require(len(rows) == 14, f"expected 14 D2 queue rows, got {len(rows)}")
@@ -344,7 +365,8 @@ def browser_review(admin_password: str, actor: str, by_id: dict) -> None:
         page.wait_for_function(
             "() => {const i=document.querySelector('#admin-password');"
             "return i && Object.keys(i).some(k=>k.startsWith('__reactProps$'));}", timeout=30000)
-        password = page.get_by_label("Admin Password")
+        page.get_by_label("Admin username").fill("e2e_owner")
+        password = page.get_by_label("Admin password")
         password.press_sequentially(admin_password)
         password.press("Enter")
         page.wait_for_function("() => location.pathname === '/en/admin'", timeout=60000)
@@ -477,15 +499,15 @@ def browser_review(admin_password: str, actor: str, by_id: dict) -> None:
         browser.close()
 
 
-def api_review(admin_key: str, actor: str, by_id: dict) -> None:
-    status, body = gql(QUEUE, {"v": D2}, key=admin_key)
+def api_review(admin_session: str, actor: str, by_id: dict) -> None:
+    status, body = gql(QUEUE, {"v": D2}, session=admin_session)
     require(status == 200 and not body.get("errors"), f"initial queue refetch failed: {body}")
     rows = {r["candidateId"].replace("::D2", ""): r
             for r in body["data"]["adminWeaponTierReviewQueue"]}
 
     def refresh(cid: str) -> dict:
         nonlocal rows
-        status, body = gql(QUEUE, {"v": D2}, key=admin_key)
+        status, body = gql(QUEUE, {"v": D2}, session=admin_session)
         require(status == 200 and not body.get("errors"), f"queue refetch failed: {body}")
         rows = {r["candidateId"].replace("::D2", ""): r
                 for r in body["data"]["adminWeaponTierReviewQueue"]}
@@ -500,7 +522,7 @@ def api_review(admin_key: str, actor: str, by_id: dict) -> None:
             status, body = gql(RIGHTS, {
                 "id": cid + "::D2", "batch": batch, "record": record, "v": version,
                 "note": RIGHTS_NOTE, "sv": D2,
-            }, key=admin_key)
+            }, session=admin_session)
             require(status == 200 and not body.get("errors"), f"rights failed for {cid}: {body}")
             version = body["data"]["adminVerifyWeaponTierReviewRights"]["version"]
         r = refresh(cid)
@@ -509,7 +531,7 @@ def api_review(admin_key: str, actor: str, by_id: dict) -> None:
             status, body = gql(TIER, {
                 "id": cid + "::D2", "batch": batch, "record": record, "v": version,
                 "confirmed": True, "sv": D2,
-            }, key=admin_key)
+            }, session=admin_session)
             require(status == 200 and not body.get("errors"), f"tier confirm failed for {cid}: {body}")
             version = body["data"]["adminConfirmWeaponTierChange"]["version"]
         r = refresh(cid)
@@ -517,7 +539,7 @@ def api_review(admin_key: str, actor: str, by_id: dict) -> None:
             status, body = gql(DECIDE, {
                 "id": cid + "::D2", "d": decision, "reason": REASON, "batch": batch,
                 "record": record, "v": r["version"], "ack": True, "sv": D2,
-            }, key=admin_key)
+            }, session=admin_session)
             require(status == 200 and not body.get("errors"), f"decision failed for {cid}: {body}")
             require(body["data"]["adminDecideWeaponTierReview"]["decision"] == decision,
                     f"decision not persisted for {cid}")
@@ -531,7 +553,7 @@ def api_review(admin_key: str, actor: str, by_id: dict) -> None:
     res("api review: rights -> tier -> APPROVE / REJECT", "PASS",
         "plain + tier-changed APPROVE and one REJECT written through guarded mutations")
 
-    status, body = gql(QUEUE, {"v": D2}, key=admin_key)
+    status, body = gql(QUEUE, {"v": D2}, session=admin_session)
     require(status == 200 and not body.get("errors"), f"queue refetch failed: {body}")
     rows = {r["candidateId"].replace("::D2", ""): r
             for r in body["data"]["adminWeaponTierReviewQueue"]}
@@ -546,7 +568,7 @@ def api_review(admin_key: str, actor: str, by_id: dict) -> None:
         "only the three approved clean rows are import eligible")
 
     for cid in IMPORT_SET:
-        status, body = gql(AUDIT, {"id": cid + "::D2", "v": D2}, key=admin_key)
+        status, body = gql(AUDIT, {"id": cid + "::D2", "v": D2}, session=admin_session)
         require(status == 200 and not body.get("errors"), f"audit failed for {cid}: {body}")
         actions = {e["action"] for e in body["data"]["adminWeaponTierReviewAudit"]}
         require({"REVIEW_CREATED", "RIGHTS_VERIFIED", "DECISION_RECORDED"} <= actions,
@@ -557,10 +579,10 @@ def api_review(admin_key: str, actor: str, by_id: dict) -> None:
         "REVIEW_CREATED / RIGHTS_VERIFIED / DECISION_RECORDED for every approved row")
 
 
-def run_importer(test_url: str, admin_key: str, by_id: dict) -> dict:
+def run_importer(test_url: str, admin_session: str, by_id: dict) -> dict:
     env = {
         **os.environ,
-        "ADMIN_KEY": admin_key,
+        "ADMIN_SESSION_TOKEN": admin_session,
         "GRAPHQL_URL": API,
         "D3_IMPORT_DATABASE_URL": test_url,
         "ALLOW_TEST_IMPORT": "1",
@@ -589,7 +611,7 @@ def run_importer(test_url: str, admin_key: str, by_id: dict) -> dict:
     return summary
 
 
-def verify_db_and_graphql(test_url: str, admin_key: str, by_id: dict) -> None:
+def verify_db_and_graphql(test_url: str, admin_session: str, by_id: dict) -> None:
     state = json.loads(node(VERIFY_RANK_ROWS, test_url, TEST_DB))
     require(state["count"] == len(IMPORT_SET), f"unexpected DB row count: {state}")
     rows = {r["weaponId"]: r for r in state["rows"]}
@@ -627,7 +649,8 @@ def verify_db_and_graphql(test_url: str, admin_key: str, by_id: dict) -> None:
 
     status, body = gql(WEAPONS)
     require(status == 200 and not body.get("errors"), f"weapons query failed: {body}")
-    names = {w["id"]: (w.get("nameVi") or w.get("nameEn") or "") for w in body["data"]["weapons"]}
+    # The browser checks the English Tier List, so compare against English names.
+    names = {w["id"]: (w.get("nameEn") or w.get("nameVi") or "") for w in body["data"]["weapons"]}
     return names
 
 
@@ -696,7 +719,7 @@ def main() -> None:
     test_url = db_url(TEST_DB)
     admin_password = secrets.token_urlsafe(32)
     jwt_secret = secrets.token_urlsafe(48)
-    actor = "admin-" + hashlib.sha256(admin_password.encode()).hexdigest()[:12]
+    actor = "pending-bootstrap"
     workspace = Path(tempfile.mkdtemp(prefix="genshinhub-d3-e2e-", dir="/tmp/opencode"))
     print(f"D3 isolated DB: {TEST_DB} | actor: {actor} | workspace: {workspace}", flush=True)
     require(re.search(r"d3_e2e", TEST_DB), "test DB name must contain d3_e2e")
@@ -713,7 +736,7 @@ def main() -> None:
                 "applying migration" in deploy.stdout.lower(),
                 f"migration deploy did not succeed: {deploy.stdout[-800:]}")
         res("setup: migrations deployed to isolated DB", "PASS",
-            "all 5 migrations applied from zero")
+            "all 7 migrations applied from zero")
 
         seeded = json.loads(node(SEED_WEAPONS, test_url, TEST_DB))
         require(seeded["db"] == TEST_DB and seeded["seeded"] >= 279,
@@ -734,13 +757,13 @@ def main() -> None:
 
         base_env = {
             **os.environ,
-            "ADMIN_PASSWORD": admin_password,
             "ADMIN_JWT_SECRET": jwt_secret,
-            "USER_JWT_SECRET": jwt_secret,
             "NODE_ENV": "development",
             "TS_NODE_COMPILER_OPTIONS": '{"rootDir":"."}',
             "NEXT_TELEMETRY_DISABLED": "1",
             "FRONTEND_URL": ORIGIN,
+        "BACKEND_URL": f"http://127.0.0.1:{B_PORT}",
+        "NEXT_PUBLIC_API_URL": f"http://127.0.0.1:{B_PORT}",
         }
         base_env.pop("ADMIN_ACTOR_ID", None)
         backend_env = {**base_env, "DATABASE_URL": test_url, "PORT": str(B_PORT)}
@@ -749,6 +772,11 @@ def main() -> None:
         start(["node", "-r", "ts-node/register/transpile-only", "src/index.ts"],
               BACKEND, backend_env, workspace / "backend.log", stack)
         wait_http(f"http://127.0.0.1:{B_PORT}/health")
+        bootstrap_admin(test_url, "e2e_owner", admin_password)
+        admin_login_result = admin_login("e2e_owner", admin_password)
+        admin_session = admin_login_result["token"]
+        actor = admin_login_result["admin"]["id"]
+        print(f"D3 Admin identity: {actor}", flush=True)
         frontend = start(["node", str(FRONTEND / "node_modules/next/dist/bin/next"), "dev",
                           "--hostname", "127.0.0.1", "--port", str(F_PORT)],
                          web, frontend_env, workspace / "frontend.log", stack)
@@ -756,7 +784,7 @@ def main() -> None:
         res("setup: isolated backend + frontend", "PASS",
             f"backend :{B_PORT}, frontend :{F_PORT}, runtime-only credentials")
 
-        by_id = queue_preflight(admin_password, checksums)
+        by_id = queue_preflight(admin_session, checksums)
 
         try:
             browser_review(admin_password, actor, by_id)
@@ -766,21 +794,21 @@ def main() -> None:
             res("browser review E2E", "PASS", "all browser review assertions succeeded")
 
         try:
-            api_review(admin_password, actor, by_id)
+            api_review(admin_session, actor, by_id)
         except Exception as error:
             res("API review E2E", "FAIL", f"{type(error).__name__}: {error}")
         else:
             res("API review E2E", "PASS", "all authoritative review assertions succeeded")
 
         try:
-            run_importer(test_url, admin_password, by_id)
+            run_importer(test_url, admin_session, by_id)
         except Exception as error:
             res("D3 partial import E2E", "FAIL", f"{type(error).__name__}: {error}")
         else:
             res("D3 partial import E2E", "PASS", "guarded partial import applied to isolated DB")
 
         try:
-            names = verify_db_and_graphql(test_url, admin_password, by_id)
+            names = verify_db_and_graphql(test_url, admin_session, by_id)
         except Exception as error:
             res("DB + public GraphQL E2E", "FAIL", f"{type(error).__name__}: {error}")
             names = {}

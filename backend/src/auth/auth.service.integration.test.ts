@@ -151,6 +151,14 @@ if (!testDatabaseUrl || !/^\/genshinhub_auth_test(?:_[a-z0-9]+)?$/.test(new URL(
         (error: any) => error.code === 'AUTH_INVALID_TOKEN',
       );
       assert.equal(await bcrypt.compare(nextPassword, (await prisma.user.findUniqueOrThrow({ where: { email } })).password!), true);
+
+      await authService.requestPasswordReset(prisma, email, { ...meta, ip: '10.0.0.3' });
+      await prisma.passwordResetToken.update({
+        where: { tokenHash: hashToken(deliveredToken!) },
+        data: { expiresAt: new Date(Date.now() - 1000) },
+      });
+      await assert.rejects(authService.resetPassword(prisma, deliveredToken!, password),
+        (error: unknown) => error instanceof AuthError && error.code === 'AUTH_INVALID_TOKEN');
     } finally {
       mailerService.sendPasswordResetEmail = original;
     }

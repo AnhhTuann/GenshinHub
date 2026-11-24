@@ -1,4 +1,4 @@
-import { PrismaClient, CharacterWeapon, CharacterArtifact, CharacterTeam, TeamMember, CharacterBuild, WeaponTierRank } from '@prisma/client';
+import { PrismaClient, CharacterWeapon, CharacterArtifact, CharacterTeam, TeamMember, CharacterBuild, WeaponTierRank, Weapon, ArtifactSet } from '@prisma/client';
 import DataLoader from 'dataloader';
 
 export interface MyLoaders {
@@ -11,6 +11,12 @@ export interface MyLoaders {
   characterTeamsLoader: DataLoader<string, CharacterTeam[]>;
   teamMembersLoader: DataLoader<string, TeamMember[]>;
   weaponTierRanksLoader: DataLoader<string, WeaponTierRank[]>;
+  // Per-row catalog lookups used by build fields. Batched to avoid one SQL
+  // query per weapon/artifact on cold SSR requests.
+  weaponByIdLoader: DataLoader<string, Weapon | null>;
+  weaponByNameEnLoader: DataLoader<string, Weapon[]>;
+  weaponByNameViLoader: DataLoader<string, Weapon[]>;
+  artifactSetByNameLoader: DataLoader<string, ArtifactSet | null>;
 }
 
 export function createLoaders(prisma: PrismaClient): MyLoaders {
@@ -125,5 +131,22 @@ export function createLoaders(prisma: PrismaClient): MyLoaders {
       },
       orderBy: [{ versionKey: 'desc' }, { role: 'asc' }, { refinementContext: 'asc' }],
     }), row => row.weaponId),
+    weaponByIdLoader: new DataLoader<string, Weapon | null>(async ids => {
+      const rows = await prisma.weapon.findMany({ where: { id: { in: [...ids] } } });
+      const byId = new Map(rows.map(row => [row.id, row]));
+      return ids.map(id => byId.get(id) ?? null);
+    }),
+    weaponByNameEnLoader: byKey(keys => prisma.weapon.findMany({
+      where: { nameEn: { in: [...keys] } },
+    }), row => row.nameEn),
+    weaponByNameViLoader: byKey(keys => prisma.weapon.findMany({
+      where: { nameVi: { in: [...keys] } },
+    }), row => row.nameVi),
+    artifactSetByNameLoader: new DataLoader<string, ArtifactSet | null>(async names => {
+      const rows = await prisma.artifactSet.findMany({ where: { nameEn: { in: [...names] } } });
+      const byName = new Map<string, ArtifactSet>();
+      for (const row of rows) if (!byName.has(row.nameEn)) byName.set(row.nameEn, row);
+      return names.map(name => byName.get(name) ?? null);
+    }),
   };
 }

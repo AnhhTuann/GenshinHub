@@ -49,7 +49,9 @@ export const characterResolvers = {
     ) => (await defaultBuild(parent.id, context))?.[field] ?? parent[field]])),
     signatureWeapons: async (parent: any, _: any, context: GraphQLContext) => {
       if (!parent.signatureWeapons || parent.signatureWeapons.length === 0) return [];
-      return context.prisma.weapon.findMany({ where: { nameEn: { in: parent.signatureWeapons } } });
+      const lists = await Promise.all(parent.signatureWeapons.map((name: string) =>
+        context.dataloaders.weaponByNameEnLoader.load(name)));
+      return lists.flat();
     },
     bestWeapons: async (parent: any, _: any, context: GraphQLContext) => {
       const build = await defaultBuild(parent.id, context) ?? await legacyBaseline(parent.id, context);
@@ -93,24 +95,21 @@ export const characterResolvers = {
 
   CharacterWeapon: {
     catalogWeaponId: async (parent: { weaponId: string; nameEn: string; nameVi?: string }, _: unknown, context: GraphQLContext) => {
-      const byId = await context.prisma.weapon.findUnique({ where: { id: parent.weaponId }, select: { id: true } });
+      const byId = await context.dataloaders.weaponByIdLoader.load(parent.weaponId);
       if (byId) return byId.id;
       // Legacy build rows may store a localized weapon alias instead of a catalog ID.
       // Resolve through either localized name, but only when it identifies one catalog weapon.
-      const matches = await context.prisma.weapon.findMany({
-        where: { OR: [{ nameEn: parent.nameEn }, { nameVi: parent.nameEn }, { nameVi: parent.nameVi }] },
-        select: { id: true },
-        take: 2,
-      });
-      const uniqueIds = new Set(matches.map(match => match.id));
+      const [byEn, byViForEn, byVi] = await Promise.all([
+        context.dataloaders.weaponByNameEnLoader.load(parent.nameEn),
+        context.dataloaders.weaponByNameViLoader.load(parent.nameEn),
+        parent.nameVi ? context.dataloaders.weaponByNameViLoader.load(parent.nameVi) : Promise.resolve([]),
+      ]);
+      const uniqueIds = new Set([...byEn, ...byViForEn, ...byVi].map(match => match.id));
       return uniqueIds.size === 1 ? [...uniqueIds][0] : null;
     },
     rarity: async (parent: any, _: any, context: GraphQLContext) => {
-      // Find the weapon in DB to get its rarity
-      const weapon = await context.prisma.weapon.findFirst({
-        where: { nameEn: parent.nameEn }
-      });
-      return weapon?.rarity || 5; // Default to 5-star if not found
+      const weapons = await context.dataloaders.weaponByNameEnLoader.load(parent.nameEn);
+      return weapons[0]?.rarity || 5; // Default to 5-star if not found
     }
   },
 
@@ -119,12 +118,12 @@ export const characterResolvers = {
       if (parent.setNameEn && parent.setNameEn.startsWith('Mix ')) {
         return '/assets/items/UI_RelicIcon_15001_4.webp'; // Hardcode generic icon for Mix sets
       }
-      const set = await context.prisma.artifactSet.findFirst({ where: { nameEn: parent.setNameEn } });
+      const set = await context.dataloaders.artifactSetByNameLoader.load(parent.setNameEn);
       return set?.iconUrl || null;
     },
     rarity: async (parent: any, _: any, context: GraphQLContext) => {
       if (parent.setNameEn && parent.setNameEn.startsWith('Mix ')) return 5;
-      const set = await context.prisma.artifactSet.findFirst({ where: { nameEn: parent.setNameEn } });
+      const set = await context.dataloaders.artifactSetByNameLoader.load(parent.setNameEn);
       if (set?.rarityList && set.rarityList.length > 0) {
         return Math.max(...set.rarityList);
       }
@@ -132,7 +131,7 @@ export const characterResolvers = {
     },
     artifactSetId: async (parent: any, _: any, context: GraphQLContext) => {
       if (parent.setNameEn && parent.setNameEn.startsWith('Mix ')) return null;
-      const set = await context.prisma.artifactSet.findFirst({ where: { nameEn: parent.setNameEn } });
+      const set = await context.dataloaders.artifactSetByNameLoader.load(parent.setNameEn);
       return set?.id || null;
     },
     mixSets: async (parent: any, _: any, context: GraphQLContext) => {
@@ -142,11 +141,10 @@ export const characterResolvers = {
       if (!match) return [];
       const set1Name = match[1];
       const set2Name = match[2];
-      const sets = await context.prisma.artifactSet.findMany({
-        where: { nameEn: { in: [set1Name, set2Name] } }
-      });
-      const mix1 = sets.find(s => s.nameEn === set1Name);
-      const mix2 = sets.find(s => s.nameEn === set2Name);
+      const [mix1, mix2] = await Promise.all([
+        context.dataloaders.artifactSetByNameLoader.load(set1Name),
+        context.dataloaders.artifactSetByNameLoader.load(set2Name),
+      ]);
       
       const result = [];
       if (mix1) result.push({ nameEn: mix1.nameEn, nameVi: mix1.nameVi, iconUrl: mix1.iconUrl, artifactSetId: mix1.id });

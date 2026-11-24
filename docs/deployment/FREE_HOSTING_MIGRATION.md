@@ -135,6 +135,7 @@ untouched.
 | `npm run build` (backend) | PASS |
 | `npm audit fix` | Applied without `--force`. Remaining advisories require breaking majors (Nodemailer ≤10.1.3, Next.js/PostCSS, Tailwind typography); not force-upgraded. |
 | Backend hardening review | CORS allowlist driven by `FRONTEND_URL`; express-rate-limit 1,000/15 min plus DB-backed login/reset locks; single Prisma Client; `/env` secret endpoint removed. |
+| GraphQL N+1 audit | Batched per-row weapon/artifact catalog lookups (`catalogWeaponId`, `rarity`, `iconUrl`, `artifactSetId`, `mixSets`, `signatureWeapons`) through DataLoaders; regression test proves one query per field regardless of key count. Hot-path indexes verified in `schema.prisma`. |
 | `npx opennextjs-cloudflare build` | PASS against the running local backend (`http://127.0.0.1:4000`) with KV incremental + tag cache. |
 | First build attempt against `https://genshinhub-api.onrender.com` | FAILED with GraphQL 404 during prerender — the Render service was not serving at that time. |
 | `npx wrangler deploy --dry-run` | PASS — 2,688 assets, ~9.0 MiB Worker, KV incremental/tag, self-reference and Static Assets bindings present; no R2 binding. |

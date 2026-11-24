@@ -1,0 +1,27 @@
+# Render Free blueprint for the GenshinHub GraphQL/REST backend.
+# Deploy manually from the Render dashboard after supplying DATABASE_URL and
+# FRONTEND_URL. autoDeploy is disabled so pushing this branch cannot trigger an
+# unreviewed production deploy.
+services:
+  - type: web
+    name: genshinhub-api
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Explicit marker: Render Free has no persistent filesystem. The API
+      # fails closed for filesystem uploads/backups instead of silently losing
+      # files. See docs/deployment/FREE_HOSTING_MIGRATION.md.
+      - key: STATELESS_HOST
+        value: "1"
+      - key: DATABASE_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false

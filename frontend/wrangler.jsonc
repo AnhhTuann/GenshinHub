@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "genshinhub-frontend",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // OpenNext cache interception/self-reference. Must match "name" above.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "genshinhub-frontend"
+    }
+  ],
+  // Free-tier R2 (10 GB-month). Caches ISR/Data Cache responses so repeat
+  // requests do not re-render on Workers or re-query Neon. The bucket is a
+  // free-tier resource and is created explicitly with:
+  //   wrangler r2 bucket create genshinhub-frontend-opennext-cache
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "genshinhub-frontend-opennext-cache"
+    }
+  ],
+  "vars": {
+    "NODE_ENV": "production",
+    "NEXT_INC_CACHE_R2_PREFIX": "genshinhub"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

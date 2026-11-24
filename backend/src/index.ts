@@ -18,6 +18,7 @@ import { prisma } from './prisma';
 import { mailerService } from './services/mailer.service';
 import { registerAuthRoutes } from './auth/auth.routes';
 import { authService } from './auth/auth.service';
+import { isStatelessHost, STATELESS_STORAGE_MESSAGE } from './utils/storageMode';
 
 /**
  * Build the Express/Apollo application without binding a TCP port.
@@ -118,11 +119,12 @@ export async function createServerApp() {
     }
   };
 
-  // Upload endpoint (requires an verified DB-backed Admin session).
-  // Serverless has no durable filesystem; fail closed until object storage is configured.
+  // Upload endpoint (requires a verified DB-backed Admin session).
+  // Stateless hosts have no durable filesystem; fail closed instead of
+  // returning a URL that no static-asset deployment can ever serve.
   app.post('/upload', requireAdminMiddleware, (req, res, next) => {
-    if (process.env.VERCEL === '1') {
-      return res.status(503).json({ error: 'Persistent object storage must be configured for uploads' });
+    if (isStatelessHost()) {
+      return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
     }
     next();
   }, upload.single('image'), (req, res) => {
@@ -138,8 +140,8 @@ export async function createServerApp() {
   
   // Download a backup file
   app.get('/backups/:id/download', requireAdminMiddleware, (req, res) => {
-    if (process.env.VERCEL === '1') {
-      return res.status(503).json({ error: 'Serverless filesystem cannot store durable backups' });
+    if (isStatelessHost()) {
+      return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
     }
     const filePath = getBackupFilePath(req.params.id);
     if (!filePath) {
@@ -150,8 +152,8 @@ export async function createServerApp() {
 
   // List all backups (lightweight REST alternative to GraphQL)
   app.get('/backups', requireAdminMiddleware, (_req, res) => {
-    if (process.env.VERCEL === '1') {
-      return res.status(503).json({ error: 'Serverless filesystem cannot store durable backups' });
+    if (isStatelessHost()) {
+      return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
     }
     const backups = listBackupFiles();
     res.json({ backups });

@@ -22,8 +22,10 @@ def check(name, ok, detail=""):
 
 
 with sync_playwright() as playwright:
+    bypass_secret = os.environ.get("VERCEL_AUTOMATION_BYPASS_SECRET", "").strip()
+    extra_headers = {"x-vercel-protection-bypass": bypass_secret} if bypass_secret else {}
     browser = playwright.chromium.launch(headless=True, executable_path=CHROME, args=["--no-sandbox"])
-    context = browser.new_context(locale="en")
+    context = browser.new_context(locale="en", extra_http_headers=extra_headers)
     page = context.new_page()
     page.on("pageerror", lambda err: check("pageerror", False, str(err)))
 

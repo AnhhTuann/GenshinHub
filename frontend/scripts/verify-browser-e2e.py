@@ -35,11 +35,25 @@ def get(page, path, expected=200):
 
 
 def main():
+    bypass_secret = os.environ.get("VERCEL_AUTOMATION_BYPASS_SECRET", "").strip()
+    extra_headers = {"x-vercel-protection-bypass": bypass_secret} if bypass_secret else {}
+
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(
             headless=True, executable_path=CHROME, args=["--no-sandbox"]
         )
-        context = browser.new_context(locale="en")
+        context = browser.new_context(locale="en", extra_http_headers=extra_headers)
+        if bypass_secret:
+            host = urlparse(BASE_URL).hostname or "localhost"
+            context.add_cookies([{
+                "name": "vercel-protection-bypass",
+                "value": bypass_secret,
+                "domain": host,
+                "path": "/",
+                "httpOnly": True,
+                "secure": True,
+                "sameSite": "Lax",
+            }])
         page = context.new_page()
         page.on("pageerror", lambda error: page_errors.append(str(error)))
 

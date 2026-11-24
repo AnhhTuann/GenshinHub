@@ -20,7 +20,10 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
-    unoptimized: false,
+    // Vercel Hobby has a 5K/mo image transformation quota. All catalog assets
+    // are served as pre-optimized local WebP files; bypassing /_next/image
+    // avoids transformation quota exhaustion and HTTP 402 responses.
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400, // 24 hours
     remotePatterns: [
@@ -80,6 +83,19 @@ const nextConfig: NextConfig = {
       {
         source: '/(.*)',
         headers: securityHeaders,
+      },
+      {
+        // Versioned/static catalog assets are pre-optimized WebP; cache aggressively.
+        source: '/assets/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/:path*.webp',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
       },
     ];
   },

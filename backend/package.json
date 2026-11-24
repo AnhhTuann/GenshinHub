@@ -23,6 +23,7 @@
         "sync:mats:apply": "ts-node scripts/sync/materialBackfill.ts --sync --validate",
         "sync:mats:rollback": "ts-node scripts/sync/materialBackfill.ts --rollback",
         "sync:e2e": "ts-node scripts/sync/e2e.test.ts",
+    "sync:staging": "ts-node scripts/staging/syncFromLocal.ts",
         "test:assets": "ts-node scripts/sync/asset.test.ts",
         "test:mats": "ts-node scripts/sync/materialBackfill.test.ts",
         "test:auth": "node -r ts-node/register --test src/auth/security.test.ts src/auth/auth.service.integration.test.ts src/services/mailer.service.test.ts",

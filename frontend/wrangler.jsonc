@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "genshinhub-frontend",
+  // Staging worker only. Production keeps its own reviewed deployment later.
+  "name": "genshinhub-frontend-staging",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -10,26 +11,20 @@
   },
   "services": [
     {
-      // OpenNext cache interception/self-reference. Must match "name" above.
+      // OpenNext self-reference. Must match "name" above.
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "genshinhub-frontend"
+      "service": "genshinhub-frontend-staging"
     }
   ],
-  // Free-tier R2 (10 GB-month). Caches ISR/Data Cache responses so repeat
-  // requests do not re-render on Workers or re-query Neon. The bucket is a
-  // free-tier resource and is created explicitly with:
-  //   wrangler r2 bucket create genshinhub-frontend-opennext-cache
-  "r2_buckets": [
-    {
-      "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "genshinhub-frontend-opennext-cache"
-    }
+  // Free Workers KV namespaces replace R2 because R2 is not enabled on this
+  // account and must not be activated without explicit approval.
+  "kv_namespaces": [
+    { "binding": "NEXT_INC_CACHE_KV", "id": "b68fde2cd0cb4a0aaa47423907a40ae7" },
+    { "binding": "NEXT_TAG_CACHE_KV", "id": "abc5b36dd1f1496f82a643c70e8571fb" }
   ],
   "vars": {
     "NODE_ENV": "production",
-    "NEXT_INC_CACHE_R2_PREFIX": "genshinhub"
+    "NEXT_INC_CACHE_KV_PREFIX": "genshinhub-staging"
   },
-  "observability": {
-    "enabled": true
-  }
+  "observability": { "enabled": true }
 }

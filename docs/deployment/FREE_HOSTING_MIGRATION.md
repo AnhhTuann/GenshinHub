@@ -8,17 +8,19 @@ preparation. Portfolio and Pokédex projects are outside this migration.
 
 | Layer | Platform | Notes |
 | --- | --- | --- |
-| Frontend | Cloudflare Workers Free + OpenNext | Worker `genshinhub-frontend`, Static Assets from `.open-next/assets` |
+| Frontend | Cloudflare Workers Free + OpenNext | Staging Worker `genshinhub-frontend-staging`, Static Assets from `.open-next/assets` |
 | Backend | Render Free (Node.js, Apollo GraphQL, Prisma) | Blueprint `render.yaml`, service `genshinhub-api` |
 | Database | Existing Neon Free | No reset, no destructive migration, no schema rewrite |
 | Catalog assets | Cloudflare Static Assets | 2,350 pre-optimised WebP files, immutable cache headers |
-| ISR / Data Cache | Cloudflare R2 Free | `genshinhub-frontend-opennext-cache`, no paid plan |
+| ISR / Data Cache | Cloudflare Workers KV Free | Two staging namespaces: `genshinhub-frontend-staging-incremental-cache` and `genshinhub-frontend-staging-tag-cache`; no R2 or billing activation |
 
 ## Files added for the migration
 
 - `render.yaml` — manual-deploy Render Free blueprint (`autoDeploy: false`).
-- `frontend/wrangler.jsonc` — Worker, Static Assets, self-reference and R2 cache binding.
-- `frontend/open-next.config.ts` — R2 incremental cache; route preloading disabled to limit cold-start CPU.
+- `frontend/wrangler.jsonc` — staging Worker `genshinhub-frontend-staging`, Static Assets, self-reference and two free KV cache bindings.
+- `frontend/open-next.config.ts` — KV incremental cache plus KV tag cache; route preloading disabled to limit cold-start CPU.
+- `backend/scripts/staging/syncFromLocal.ts` — read-only dry-run, manifest, verified alias normalization and idempotent staging-only upserts.
+- `backend/docs/staging-sync/` — dry-run summary, complete checksum manifest and applied evidence.
 - `backend/src/utils/storageMode.ts` + guards in `backend/src/index.ts` and `backend/src/backupService.ts` — filesystem uploads/backups fail closed on stateless hosts.
 - `.github/workflows/neon-pgdump.yml` — manual, free `pg_dump` to a private 7-day Actions artifact.
 - `.gitignore` — excludes `.open-next/` and `.wrangler/`; build output can contain build-time environment values and must never be committed.
@@ -31,7 +33,7 @@ not a Cloudflare Worker.
 
 - `next.config.ts` keeps `images.unoptimized: true`; every catalog image is already WebP, so no `/_next/image` transformations or Vercel-style image quota are needed.
 - `frontend/public/_headers` gives `/assets/*`, `/_next/static/*` and the two root WebP files `Cache-Control: public, max-age=31536000, immutable` on Cloudflare Static Assets (Next.js `headers()` do not apply to static-asset responses). Asset filenames must change when their content changes; the sync workflow preserves versioned names.
-- GraphQL reads use `next: { revalidate: 3600 }`; repeat SSR requests are served from the R2 incremental cache instead of re-querying Neon.
+- GraphQL reads use `next: { revalidate: 3600 }`; repeat SSR requests are served from the free KV incremental cache instead of re-querying Neon. KV tag cache keeps on-demand revalidation functional; its documented eventual consistency is acceptable for staging.
 - `routePreloadingBehavior: "none"` avoids extra Workers CPU on cold starts.
 - Render Free instances sleep when idle. The `/health` endpoint does not touch the database, so external uptime checks do not open Neon connections. Expect a cold-start delay after inactivity; no paid always-on plan is used.
 - The Neon connection string is only a Render secret / GitHub Actions secret, never a repository file or a browser-exposed `NEXT_PUBLIC_*` variable.
@@ -81,12 +83,18 @@ Use Node 22.12+ for Wrangler:
 export PATH="$HOME/.nvm/versions/node/v22.23.5/bin:$PATH"
 cd frontend
 
-wrangler r2 bucket create genshinhub-frontend-opennext-cache
-wrangler variable put BACKEND_URL https://genshinhub-api.onrender.com
-wrangler variable put NEXT_PUBLIC_GRAPHQL_URL https://genshinhub-api.onrender.com/graphql
-wrangler secret put REVALIDATE_SECRET   # value must match the build-time value
+# The two free KV namespaces and their IDs are already in wrangler.jsonc.
+# Create them once per account with:
+# wrangler kv namespace create genshinhub-frontend-staging-incremental-cache
+# wrangler kv namespace create genshinhub-frontend-staging-tag-cache
 
+export BACKEND_URL=https://genshinhub-api.onrender.com
+export NEXT_PUBLIC_GRAPHQL_URL=https://genshinhub-api.onrender.com/graphql
+export REVALIDATE_SECRET='<same value used in the Worker secret>'
 npx opennextjs-cloudflare build
+
+wrangler secret put REVALIDATE_SECRET
+# Add BACKEND_URL and NEXT_PUBLIC_GRAPHQL_URL to "vars" in wrangler.jsonc.
 npx wrangler deploy
 ```
 
@@ -103,7 +111,7 @@ CORS allows the new origin.
 - Public pages in both locales, character detail/build switches, Tier List, weapons, materials, Admin login and all Admin review routes.
 - Same-origin `/api/graphql`, `/api/admin/graphql`, auth and revalidate routes.
 - Static asset: `Cache-Control: public, max-age=31536000, immutable` on a WebP file.
-- `wrangler tail genshinhub-frontend` and Render logs show no auth failures or cache-binding errors.
+- `wrangler tail genshinhub-frontend-staging` and Render logs show no auth failures or cache-binding errors.
 
 Only after all of the above pass may the two GenshinHub Vercel projects be
 deleted: `genshinhub-staging` (`prj_GCP61fQ0doAO9sUMXQImtiqapNm3`) and
@@ -121,22 +129,39 @@ untouched.
 | `npx vitest run` (frontend) | 21 pass / 21 |
 | Backend GraphQL suites | 76 pass / 84; 8 pre-existing/environment-gated failures (4 documented stale dev-data assertions plus isolated-DB tests with no `*_TEST_DATABASE_URL`) |
 | Local PostgreSQL (read-only) | 131 characters, 279 weapons, 63 artifact sets, 862 materials, 347 builds, 1 Admin; 7 migrations applied and up to date |
-| Neon CLI (read-only) | Authenticated; `genshin-hub` project and `production` / `deploy-staging-2026-11-23` branches listed. No connection string was read or used, no branch was modified |
-| `npx opennextjs-cloudflare build` | PASS against the running local backend (`http://127.0.0.1:4000`) |
-| First build attempt against `https://genshinhub-api.onrender.com` | FAILED with GraphQL 404 during prerender — expected because the Render service does not exist yet |
-| `npx wrangler deploy --dry-run` | PASS — 2,687 assets, 9.0 MiB Worker, R2/self-reference/assets bindings present |
+| Neon CLI | Authenticated. Project `jolly-cell-95415947`; staging branch `br-hidden-frost-aouh1xm1`, fresh recovery branch `br-muddy-recipe-aomvqeho`. 7 migrations found, schema up to date. Production branch untouched. |
+| Neon staging sync (dry run) | PASS — 0 blocked conflicts; 501 legacy/unverifiable rows explicitly excluded; 485 legacy aliases resolved only through repository-verified maps (`enkaNameMap`, `toId`, exact Weapon name matches). |
+| Neon staging sync (apply + verify) | PASS — 8,117 canonical + 485 alias upserts, all `VERIFY PASS` by checksum. Final counts: 131 characters, 279 weapons, 63 sets, 862 materials, 347 builds, 620 teams, 2,478 team members, 1 character ranking, 6 weapon reviews. No deletes, resets, auto-approvals or auth/admin imports. Evidence: `backend/docs/staging-sync/APPLY_RESULTS.md`. |
+| `npm run build` (backend) | PASS |
+| `npm audit fix` | Applied without `--force`. Remaining advisories require breaking majors (Nodemailer ≤10.1.3, Next.js/PostCSS, Tailwind typography); not force-upgraded. |
+| Backend hardening review | CORS allowlist driven by `FRONTEND_URL`; express-rate-limit 1,000/15 min plus DB-backed login/reset locks; single Prisma Client; `/env` secret endpoint removed. |
+| `npx opennextjs-cloudflare build` | PASS against the running local backend (`http://127.0.0.1:4000`) with KV incremental + tag cache. |
+| First build attempt against `https://genshinhub-api.onrender.com` | FAILED with GraphQL 404 during prerender — the Render service was not serving at that time. |
+| `npx wrangler deploy --dry-run` | PASS — 2,688 assets, ~9.0 MiB Worker, KV incremental/tag, self-reference and Static Assets bindings present; no R2 binding. |
 | `wrangler dev --local` | `/` → 307; WebP → `Cache-Control: public, max-age=31536000, immutable`; same-origin `/api/graphql` → 200 |
-| Live `https://genshinhub.onrender.com/health` and `/graphql` | 404 `x-render-routing: no-server` — no Render service is running |
-| Browser E2E scripts | Not run: Playwright is not installed for Node or Python |
-| Vercel project deletion | Not run and intentionally deferred: replacement is not verified |
+| Live `https://genshinhub-api.onrender.com/health` and `/graphql` | BLOCKED — both probes timed out after 120 s with 0 bytes. DNS resolves, but the service does not respond. |
+| Browser E2E scripts | Playwright 1.65.1 + Chromium installed; suites not run because no live frontend/backend exists yet. |
+| Vercel project deletion | Not run and intentionally deferred: replacement is not verified. |
 
 The OpenNext artifact built here is a **verification artifact only**: its
 baked endpoint is the local backend. It must be rebuilt with the verified
 Render URL before any `wrangler deploy`.
 
+## Free-plan limits checked (no billing activation)
+
+| Platform | Relevant limits | Consequence for this project |
+| --- | --- | --- |
+| Cloudflare Workers Free | 100,000 requests/day, 10 ms CPU/invocation, 128 MB memory, subrequest limit per invocation | Keep SSR routes dynamic only where needed; static assets served directly; KV cache avoids repeat SSR queries. |
+| Cloudflare Workers KV Free | 100,000 reads/day, 1,000 writes/day to different keys, 1 write/s to the same key, 1 GB storage | Tag cache is eventually consistent; acceptable for staging revalidation. Do not use KV for per-request private/session data. |
+| Render Free web service | 0.1 CPU, 512 MB RAM, sleeps after 15 min idle (~1 min wake), 750 instance-hours/workspace/month, ephemeral filesystem | Cold starts are expected; no local disk persistence. Uploads/backups need external durable storage or must stay disabled. |
+
+R2 was rejected before activation: `wrangler r2 bucket list` returned
+`Please enable R2 through the Cloudflare Dashboard. [code: 10042]`. No billing
+was enabled.
+
 ## Blockers before live deployment
 
-1. **Render access**: no API key, CLI session or dashboard session is available in this environment. The backend cannot be created, configured with `DATABASE_URL`, deployed or verified.
-2. **Neon connection string for backups**: the repository only has a local `DATABASE_URL`; `NEON_DATABASE_URL` is not present as a GitHub secret.
-3. **Browser E2E**: Playwright packages are absent, so the Python/Node browser suites cannot be executed locally.
-4. **Vercel cleanup**: CLI auth exists, but the two GenshinHub projects must not be deleted until steps 1–3 and live checks pass. Portfolio, Pokédex and other projects are explicitly out of scope.
+1. **Render access**: no API key, CLI session or dashboard session is available in this environment. The existing service `genshinhub-api` (`srv-dc2p4m3ncjis73dkf44g`) cannot be inspected, configured with the Neon staging URL, redeployed or verified. Its public URL currently times out.
+2. **Staging Owner Admin**: username, email, display name and a securely collected password are required for `npm run auth:bootstrap-admin`. No admin/auth rows were copied from local.
+3. **Durable uploads/backups**: Render Free has an ephemeral filesystem, R2 cannot be enabled without billing, and no other durable store is approved. Uploads and local backups therefore remain behind HTTP 503 guards rather than silently losing data.
+4. **Vercel cleanup**: CLI auth exists, but the two GenshinHub projects must not be deleted until live checks pass. Portfolio, Pokédex and other projects are explicitly out of scope.

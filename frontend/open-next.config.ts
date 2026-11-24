@@ -1,19 +1,18 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
-import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";
+import kvIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache";
+import kvTagCache from "@opennextjs/cloudflare/overrides/tag-cache/kv-next-tag-cache";
 
 /**
- * Free-tier Cloudflare deployment:
- * - local WebP catalog assets are served by Static Assets with immutable cache
- *   headers (see next.config.ts), so no image transformation requests or bytes
- *   are spent on resizing;
- * - the R2 incremental cache keeps ISR/Data Cache entries out of the Worker and
- *   away from Neon, reducing CPU time, bandwidth and database connections;
- * - route preloading stays disabled because it increases cold-start CPU on the
- *   Workers Free plan.
- *
- * The R2 binding is declared in wrangler.jsonc and must exist before deploy.
+ * Zero-billing Cloudflare staging config:
+ * - Workers KV (free tier) caches ISR/Data Cache entries, avoiding repeated SSR
+ *   work and repeated Neon queries without enabling R2 billing.
+ * - KV tag cache keeps on-demand revalidation functional (eventual consistency
+ *   is documented by the adapter; acceptable for this staging deployment).
+ * - Local WebP files are served by Static Assets with immutable cache headers.
+ * - Route preloading stays off to limit cold-start CPU on Workers Free.
  */
 export default defineCloudflareConfig({
-  incrementalCache: r2IncrementalCache,
+  incrementalCache: kvIncrementalCache,
+  tagCache: kvTagCache,
   routePreloadingBehavior: "none",
 });

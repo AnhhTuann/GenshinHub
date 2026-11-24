@@ -16,6 +16,15 @@ afterEach(() => {
   }
 });
 
+test('startup SMTP verification is non-fatal while mail sending stays fail-closed', async () => {
+  process.env.NODE_ENV = 'production';
+  delete process.env.SMTP_HOST;
+  delete process.env.SMTP_USER;
+  delete process.env.SMTP_PASS;
+
+  await mailerService.verifyConnection();
+});
+
 test('password reset mail fails closed in production without SMTP', async () => {
   process.env.NODE_ENV = 'production';
   delete process.env.SMTP_HOST;

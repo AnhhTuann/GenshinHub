@@ -194,9 +194,16 @@ export const mailerService = {
    * Verify SMTP connection on startup (optional, call once in startServer)
    */
   async verifyConnection(): Promise<void> {
+    // Startup verification is optional. Do not let a missing SMTP config stop
+    // the whole GraphQL API; actual mail sends still fail closed via
+    // createTransporter() in sendPasswordResetEmail().
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.warn('⚠️  Mailer: SMTP not configured — startup verification skipped.');
+      return;
+    }
     const transporter = createTransporter();
     if (!transporter) {
-      console.warn('⚠️  Mailer: SMTP not configured — emails will be logged to console only.');
+      console.warn('⚠️  Mailer: SMTP not configured — startup verification skipped.');
       return;
     }
     try {

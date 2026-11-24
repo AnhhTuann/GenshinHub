@@ -50,6 +50,18 @@ test('server-side GraphQL fetch omits the bypass header when unconfigured', asyn
   expect(headerValue('x-vercel-protection-bypass')).toBeUndefined();
 });
 
+test('a protected backend 401 reports the missing server-side bypass secret', async () => {
+  delete process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+    ok: false,
+    status: 401,
+    statusText: 'Unauthorized',
+  }));
+  await expect(fetchGraphQL('{ __typename }')).rejects.toThrow(
+    /Set VERCEL_AUTOMATION_BYPASS_SECRET as a server-side/
+  );
+});
+
 test('browser GraphQL calls use the same-origin proxy and never receive the bypass secret', async () => {
   process.env.VERCEL_AUTOMATION_BYPASS_SECRET = BYPASS_SECRET;
   vi.stubGlobal('window', {});

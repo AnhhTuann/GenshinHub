@@ -45,6 +45,13 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   const res = await fetch(getClientEndpoint(), fetchOptions);
 
   if (!res.ok) {
+    if (res.status === 401) {
+      throw new Error(
+        'GraphQL HTTP Error: 401. The backend is protected by Vercel Deployment Protection. ' +
+        'Set VERCEL_AUTOMATION_BYPASS_SECRET as a server-side (non-NEXT_PUBLIC_) environment ' +
+        'variable in the frontend project, available both at build time and runtime.'
+      );
+    }
     throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
   }
 

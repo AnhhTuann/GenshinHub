@@ -588,7 +588,16 @@ export const Mutation = {
   
   generateCharacterAI: async (_: any, { nameEn }: any, context: any) => {
     requireAdmin(context);
-    const { generateCharacterBuild } = require('./aiService');
+    // Optional module is intentionally absent from this repository. Keep the
+    // require dynamic so serverless bundlers do not fail on a missing import;
+    // the Admin feature fails closed with an explicit error until it exists.
+    const aiModulePath: string = './' + 'aiService';
+    let generateCharacterBuild: (name: string, element: string, weapon: string) => Promise<any>;
+    try {
+      ({ generateCharacterBuild } = require(aiModulePath));
+    } catch {
+      throw new Error('AI character generator module is not installed on this deployment');
+    }
     const axios = require('axios');
     const { data: enData } = await axios.get('https://gi.yatta.moe/api/v2/en/avatar');
     const items = enData?.data?.items || {};

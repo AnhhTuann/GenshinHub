@@ -77,7 +77,12 @@ export async function uploadBackupObjects(input: UploadBackupInput): Promise<{
     }));
     const head = await client.send(new HeadObjectCommand({ Bucket: bucket, Key: object.key }));
     if (head?.ContentLength !== object.body.length) {
-      throw new Error(`HeadObject verification failed for ${object.key}`);
+      throw new Error(`HeadObject size verification failed for ${object.key}`);
+    }
+    // The uploaded checksum metadata must round-trip exactly; a mismatch means
+    // the object was altered or the wrong version was stored.
+    if (head?.Metadata?.['content-sha256'] !== checksum) {
+      throw new Error(`HeadObject checksum verification failed for ${object.key}`);
     }
   }
 

@@ -16,6 +16,7 @@ No new service, bucket lifecycle rule, CDN, or paid resource is introduced.
 | Backup bucket | `genshinhub-staging-backups` — **private**, separate from assets |
 | SDK | `@aws-sdk/client-s3` (backend only) |
 | Upload path | `POST /upload` → memory multer (5 MB) → Sharp → WebP → `PutObjectCommand` |
+| Image limits | Decoded input capped at 20 MP and 8192 px per side; Sharp also receives `limitInputPixels` to stop decompression bombs before allocation |
 | Object key | `uploads/YYYY/MM/<uuid>.webp` (generated server-side, never from the filename) |
 | Public URL | `/assets/uploads/YYYY/MM/<uuid>.webp` |
 | Read path | Frontend `/assets/[...path]` → backend `/assets/uploads/*` → `GetObjectCommand`, allowlisted key only |

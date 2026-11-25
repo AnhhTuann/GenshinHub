@@ -4,7 +4,9 @@ import os from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
 import {
+  APPROVED_STAGING_HOST,
   assertBackupSecrets,
+  assertStagingDatabaseUrl,
   buildBackupObjectKey,
   formatBackupLog,
   parsePgRestoreList,
@@ -22,7 +24,9 @@ const ENV = {
 class FakeS3Client {
   calls: Array<{ command: string; input: any }> = [];
   sizes = new Map<string, number>();
+  metadata = new Map<string, Record<string, string>>();
   forceMismatch = false;
+  forceChecksumMismatch = false;
 
   async send(command: any): Promise<any> {
     const name = command.constructor.name;
@@ -30,11 +34,18 @@ class FakeS3Client {
     if (name === 'PutObjectCommand') {
       const body = command.input.Body;
       this.sizes.set(command.input.Key, Buffer.byteLength(typeof body === 'string' ? body : Buffer.from(body)));
+      this.metadata.set(command.input.Key, { ...(command.input.Metadata ?? {}) });
       return {};
     }
     if (name === 'HeadObjectCommand') {
       const size = this.sizes.get(command.input.Key) ?? 0;
-      return { ContentLength: this.forceMismatch ? size + 1 : size, Metadata: { checksum: 'meta-checksum' } };
+      const stored = this.metadata.get(command.input.Key) ?? {};
+      return {
+        ContentLength: this.forceMismatch ? size + 1 : size,
+        Metadata: this.forceChecksumMismatch
+          ? { ...stored, 'content-sha256': 'tampered-checksum' }
+          : stored,
+      };
     }
     return {};
   }
@@ -74,6 +85,42 @@ test('assertBackupSecrets fails safely by naming missing secrets only', () => {
         && !message.includes('genshinhub-staging-backups');
     },
   );
+});
+
+test('assertStagingDatabaseUrl accepts only the exact approved staging hostname', () => {
+  assert.equal(APPROVED_STAGING_HOST, 'ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech');
+  assert.doesNotThrow(() => assertStagingDatabaseUrl(
+    `postgresql://user:secret@${APPROVED_STAGING_HOST}/neondb?sslmode=require`,
+  ));
+  assert.doesNotThrow(() => assertStagingDatabaseUrl(
+    `postgres://user:secret@${APPROVED_STAGING_HOST}/neondb`,
+  ));
+});
+
+test('assertStagingDatabaseUrl rejects other hosts before any pg_dump', () => {
+  const forbidden = [
+    undefined,
+    '',
+    'postgresql://user:secret@ep-some-other-branch.c-2.ap-southeast-1.aws.neon.tech/neondb',
+    `postgresql://user:secret@${APPROVED_STAGING_HOST}.attacker.example/neondb`,
+    `https://${APPROVED_STAGING_HOST}/neondb`,
+    'not-a-url',
+  ];
+  for (const value of forbidden) {
+    assert.throws(
+      () => assertStagingDatabaseUrl(value),
+      (error: unknown) => {
+        const message = error instanceof Error ? error.message : String(error);
+        return !message.includes('user:secret')
+          && !message.includes('attacker.example')
+          && !message.includes('not-a-url');
+      },
+      `expected rejection: ${value}`,
+    );
+  }
+  assert.throws(() => assertStagingDatabaseUrl(
+    'postgresql://user:secret@localhost:5432/genshinhub',
+  ), /approved staging host/i);
 });
 
 test('formatBackupLog includes filename, size, timestamp and checksum', () => {
@@ -124,6 +171,21 @@ test('uploadBackupObjects throws when HeadObject size does not match the local d
   );
 });
 
+test('uploadBackupObjects throws when HeadObject checksum metadata does not match', async () => {
+  const file = tempDump();
+  const client = new FakeS3Client();
+  client.forceChecksumMismatch = true;
+  await assert.rejects(
+    uploadBackupObjects({
+      filePath: file,
+      key: 'pgdump/genshinhub-neon-20261125T070000Z.dump',
+      env: ENV,
+      client: client as any,
+    }),
+    /checksum verification failed/i,
+  );
+});
+
 test('uploadBackupObjects refuses to run without required secrets', async () => {
   const file = tempDump();
   await assert.rejects(
@@ -149,5 +211,10 @@ test('pgdump workflow schedules weekly backups and uses all required secrets', (
   assert.match(workflow, /--no-acl/);
   assert.match(workflow, /pg_restore\s+--list/);
   assert.match(workflow, /sha256sum/);
+  assert.match(workflow, /backup:verify-db/);
   assert.match(workflow, /backup:upload/);
+  const verifyStep = workflow.indexOf('backup:verify-db');
+  const dumpStep = workflow.indexOf('pg_dump --dbname');
+  assert.ok(verifyStep > -1 && dumpStep > -1 && verifyStep < dumpStep,
+    'staging host assertion must run before pg_dump');
 });

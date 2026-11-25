@@ -49,6 +49,11 @@ jobs:
 
       - run: npm ci --prefix backend
 
+      - name: Assert approved staging database host
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: npm --prefix backend run backup:verify-db
+
       - name: Ensure pg_dump is available
         run: |
           if ! command -v pg_dump >/dev/null 2>&1; then

@@ -2,10 +2,13 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import sharp from 'sharp';
 import {
+  assertImageLimits,
   buildS3ClientConfig,
   buildUploadObjectKey,
   chooseUploadMode,
   getUploadedImage,
+  MAX_INPUT_DIMENSION,
+  MAX_INPUT_PIXELS,
   parseUploadPublicPath,
   processImageForUpload,
   putUploadedImage,
@@ -69,6 +72,26 @@ test('validateImageBuffer verifies real image bytes against the declared MIME ty
   await assert.doesNotReject(validateImageBuffer(png, 'image/png'));
   await assert.rejects(validateImageBuffer(Buffer.from('<html>not an image</html>'), 'image/png'), /valid image/i);
   await assert.rejects(validateImageBuffer(png, 'application/pdf'), /MIME/i);
+});
+
+test('assertImageLimits enforces a conservative pixel and dimension budget', () => {
+  assert.equal(MAX_INPUT_PIXELS, 20_000_000);
+  assert.equal(MAX_INPUT_DIMENSION, 8192);
+  assert.doesNotThrow(() => assertImageLimits(4000, 4000));
+  assert.doesNotThrow(() => assertImageLimits(MAX_INPUT_DIMENSION, 1));
+  assert.throws(() => assertImageLimits(MAX_INPUT_DIMENSION + 1, 1), /dimension/i);
+  assert.throws(() => assertImageLimits(1, MAX_INPUT_DIMENSION + 1), /dimension/i);
+  assert.throws(() => assertImageLimits(5000, 5000), /pixel/i);
+  assert.throws(() => assertImageLimits(0, 100), /invalid dimensions/i);
+});
+
+test('validateImageBuffer rejects an oversized image before it is decoded', async () => {
+  // 8200x1 is one row of pixels (well under the pixel budget) but exceeds the
+  // dimension cap, so it can be generated cheaply and still proves the guard.
+  const wide = await sharp({
+    create: { width: 8200, height: 1, channels: 3, background: { r: 10, g: 20, b: 30 } },
+  }).png().toBuffer();
+  await assert.rejects(validateImageBuffer(wide, 'image/png'), /dimension/i);
 });
 
 test('processImageForUpload converts an uploaded image to WebP with Sharp', async () => {

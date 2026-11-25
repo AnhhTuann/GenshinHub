@@ -72,6 +72,26 @@ export function chooseUploadMode(env: NodeJS.ProcessEnv = process.env): UploadMo
   return 'local';
 }
 
+/**
+ * Render Free has 512 MB RAM. A decoded 20 MP RGBA image is ~80 MB and leaves
+ * room for Sharp's pipeline; 8192px per side blocks decompression bombs that
+ * would otherwise be decoded before we can inspect the result.
+ */
+export const MAX_INPUT_PIXELS = 20_000_000;
+export const MAX_INPUT_DIMENSION = 8192;
+
+export function assertImageLimits(width: number, height: number): void {
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) {
+    throw new Error('Uploaded image has invalid dimensions');
+  }
+  if (width > MAX_INPUT_DIMENSION || height > MAX_INPUT_DIMENSION) {
+    throw new Error(`Uploaded image exceeds the ${MAX_INPUT_DIMENSION}px dimension limit`);
+  }
+  if (width * height > MAX_INPUT_PIXELS) {
+    throw new Error(`Uploaded image exceeds the ${MAX_INPUT_PIXELS} pixel limit`);
+  }
+}
+
 const MIME_FORMATS: Record<string, string[]> = {
   'image/jpeg': ['jpeg', 'jpg'],
   'image/png': ['png'],
@@ -84,18 +104,22 @@ export async function validateImageBuffer(buffer: Buffer, declaredMime: string):
   if (!formats) throw new Error(`Unsupported upload MIME type: ${declaredMime || 'unknown'}`);
   let metadata;
   try {
-    metadata = await sharp(buffer, { failOn: 'error' }).metadata();
+    metadata = await sharp(buffer, { limitInputPixels: MAX_INPUT_PIXELS, failOn: 'error' }).metadata();
   } catch {
-    throw new Error('Uploaded file is not a valid image');
+    throw new Error('Uploaded file is not a valid image or exceeds the allowed pixel budget');
   }
   if (!metadata.format || !metadata.width || !metadata.height || !formats.includes(metadata.format)) {
     throw new Error('Uploaded file is not a valid image for the declared MIME type');
   }
+  assertImageLimits(metadata.width, metadata.height);
 }
 
 export async function processImageForUpload(buffer: Buffer, declaredMime: string): Promise<Buffer> {
   await validateImageBuffer(buffer, declaredMime);
-  const webp = await sharp(buffer).rotate().webp({ quality: 80 }).toBuffer();
+  const webp = await sharp(buffer, { limitInputPixels: MAX_INPUT_PIXELS })
+    .rotate()
+    .webp({ quality: 80 })
+    .toBuffer();
   if (webp.length < 50) throw new Error('Processed WebP image is empty');
   return webp;
 }

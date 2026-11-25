@@ -9,6 +9,11 @@
 - Required repository secrets (all six are validated before any work):
   `NEON_DATABASE_URL`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`,
   `AWS_ENDPOINT_URL_S3`, `AWS_REGION`, `BACKUP_BUCKET`.
+- The `NEON_DATABASE_URL` hostname is checked against the **exact** approved
+  staging endpoint `ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech`
+  before `pg_dump`. Any other host, protocol or missing value aborts the job;
+  there is no fallback to a different database URL, and the connection string
+  is never printed.
 - Creates a full logical dump of the staging branch with
   `pg_dump --format=custom --no-owner --no-acl`.
 - Verifies the archive with `pg_restore --list` (must be non-empty) and records
@@ -21,7 +26,8 @@
   | `pgdump/genshinhub-neon-<UTC stamp>.dump.sha256` | SHA-256 sidecar |
   | `pgdump/genshinhub-neon-<UTC stamp>.dump.manifest.json` | filename, size, timestamp, checksum |
 
-- Verifies each object with `HeadObject` and fails if the remote size differs.
+- Verifies each object with `HeadObject`: both `ContentLength` and the
+  round-tripped `content-sha256` metadata must match, otherwise the job fails.
 - Logs only filename, byte size, UTC timestamp, checksum and TOC entry count.
   Secrets and connection strings are never printed.
 

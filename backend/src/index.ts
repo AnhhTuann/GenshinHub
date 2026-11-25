@@ -151,7 +151,7 @@ export async function createServerApp() {
     } catch (uploadError) {
       const message = uploadError instanceof Error ? uploadError.message : String(uploadError);
       console.error('[Upload] object storage write failed:', message);
-      const clientError = /valid image|MIME/i.test(message);
+      const clientError = /valid image|MIME|dimension|pixel|limit/i.test(message);
       return res.status(clientError ? 400 : 502).json({ error: clientError ? message : 'Image upload failed' });
     }
   });

@@ -1,3 +1,28 @@
+/**
+ * The only database this backup workflow is allowed to read. A mismatched
+ * hostname aborts before pg_dump; there is no fallback to another URL.
+ */
+export const APPROVED_STAGING_HOST = 'ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech';
+
+/** Validate without ever echoing the connection string or its credentials. */
+export function assertStagingDatabaseUrl(raw: string | undefined): void {
+  if (!raw || !raw.trim()) {
+    throw new Error('NEON_DATABASE_URL secret is missing');
+  }
+  let url: URL;
+  try {
+    url = new URL(raw);
+  } catch {
+    throw new Error('NEON_DATABASE_URL is not a valid connection string');
+  }
+  if (url.protocol !== 'postgres:' && url.protocol !== 'postgresql:') {
+    throw new Error('NEON_DATABASE_URL must use the postgres or postgresql protocol');
+  }
+  if (url.hostname.toLowerCase() !== APPROVED_STAGING_HOST) {
+    throw new Error(`NEON_DATABASE_URL host is not the approved staging host (expected ${APPROVED_STAGING_HOST})`);
+  }
+}
+
 export const REQUIRED_BACKUP_ENV = [
   'AWS_ACCESS_KEY_ID',
   'AWS_SECRET_ACCESS_KEY',

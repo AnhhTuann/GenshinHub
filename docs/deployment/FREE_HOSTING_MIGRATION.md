@@ -456,9 +456,16 @@ lists a bucket and cannot reach the backup bucket; no automatic restore exists.
 
 ### Verification performed on this branch
 
-Backend `test:storage` (23/23), `tsc` build, existing auth suites, frontend
-Vitest (including the new upload allowlist test), frontend `tsc --noEmit`, and
-`prisma validate` were run locally with mocked S3 clients. No real credentials,
-database writes, restores, deploys, or paid resources were involved. Live
-upload/backup verification is deliberately deferred until the owner configures
-the secrets and authorizes a Render deploy.
+Backend `test:storage` (28/28 after hardening), `tsc` build, existing auth and
+asset suites, frontend Vitest (including the new upload allowlist test),
+frontend `tsc --noEmit`, and `prisma validate` were run locally with mocked S3
+clients. No real credentials, database writes, restores, deploys, or paid
+resources were involved. Live upload/backup verification is deliberately
+deferred until the owner configures the secrets and authorizes a Render deploy.
+
+Hardening applied after review: the backup job only accepts the exact approved
+staging hostname and aborts before `pg_dump` on any mismatch; every uploaded
+object is verified with both `HeadObject` `ContentLength` and round-tripped
+`content-sha256` metadata; and uploaded images are capped at 20 MP / 8192 px
+per side with Sharp's `limitInputPixels` as a decompression-bomb guard for the
+512 MB Render Free container.

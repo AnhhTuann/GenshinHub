@@ -1,5 +1,11 @@
 # Free hosting migration: Cloudflare Workers + Render + Neon
 
+> **Final architecture (2026-11-25): Vercel Hobby + Render Free + Neon Free.**
+> The Cloudflare Workers/OpenNext sections below are retained as historical
+> evidence only. Workers were rejected because Next.js/i18n page rendering
+> exceeds the Free-plan 10 ms CPU budget. The current deployment and verified
+> evidence are recorded in [Final Vercel/Render/Neon release evidence](#final-vercelrenderneon-release-evidence-2026-11-25).
+
 Branch: `deploy/cloudflare-render-free`. This branch contains all six completed
 P1/staging commits (`85b64ba` … `9b992dd`) plus the Cloudflare/OpenNext
 preparation. Portfolio and Pokédex projects are outside this migration.
@@ -297,3 +303,115 @@ Live verification rejected the experiment:
 4. **Production release and Vercel cleanup**: not authorized. Only
    `genshinhub-staging` and `genshinhub-api-staging` may be deleted, and only
    after explicit approval.
+
+## Final Vercel/Render/Neon release evidence (2026-11-25)
+
+This section supersedes the Cloudflare host target and all earlier
+"blocked before live deployment" notes. No framework rewrite, paid plan,
+database reset, destructive migration or new Owner Admin was introduced.
+
+### Deployed stack
+
+| Layer | Live target | Evidence |
+| --- | --- | --- |
+| Frontend | `https://genshinhub-staging.vercel.app` | Vercel project `genshinhub-staging`, `prj_GCP61fQ0doAO9sUMXQImtiqapNm3`, Hobby, deployment protection `vercel_authentication` |
+| Deployment | `dpl_99vMYcUvmZaHcpHTPDxeQtCUrqVw`, unique URL `https://genshinhub-staging-rfwlyhe40-anhhtuanns-projects.vercel.app` | `readyState=READY`, `target=production`; build log `/tmp/opencode/vercel-deploy4-build.log` |
+| Source | commit `2ecc711` on `deploy/cloudflare-render-free` | includes `d723743` and all verified fixes; clean tree before/after docs update |
+| Backend | `https://genshinhub-api.onrender.com` | Render Free service `genshinhub-api`, `srv-dc2p4m3ncjis73dkf44g`, Singapore, 512 MiB; `/health` → 200 |
+| Database | Neon Free project `jolly-cell-95415947`, branch `br-hidden-frost-aouh1xm1`, endpoint `ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech` | 7 applied migrations; read-only audits; no destructive operations |
+| Rollback target | `dpl_8dGNkcd55mFAy8jv8ZNusR4rWuAP` | last known-good previous production deployment |
+
+Vercel build guard output for the final deployment:
+`[build-env] OK: Vercel frontend is configured for the Render backend`,
+`NEXT_PUBLIC_GRAPHQL_URL=SET (Render backend)`, `BACKEND_URL=SET (Render backend)`.
+The Vercel-injected `VERCEL_AUTOMATION_BYPASS_SECRET` is only logged as
+present and is never written to a `NEXT_PUBLIC_*` value or sent to Render.
+The build generated 7,036 static pages in 18 minutes, preserved SSG/ISR/i18n
+and API routes, and contained no HTTP 402 or Render fetch failure.
+
+### Live verification results
+
+| Suite / probe | Result | Evidence |
+| --- | --- | --- |
+| Bounded live HTTP/API checks | **60/60 PASS**, 0 unexpected statuses | `/tmp/opencode/vercel-live-checks-final.log` |
+| Public Playwright E2E | **89/89 PASS** | `/tmp/opencode/e2e-vercel.log` |
+| Authenticated Admin E2E | **18/18 PASS** | `/tmp/opencode/e2e-admin-vercel.log`, screenshots in `/tmp/opencode/e2e-admin-vercel-shots/` |
+| Backend suites (`test:sync:version`, `test:auth`, assets, materials, curated GraphQL, DB integration, script suite) | all PASS — 2/2, 10 pass/1 skip, 50/50, 3/3, 108 pass/1 skip | `/tmp/opencode/backend-tests.log` |
+| Frontend Vitest + TypeScript | 6 files / 22 tests PASS; `tsc --noEmit` PASS | local rerun at final SHA |
+| Prisma | `validate` PASS; 7 migrations applied and up to date | backend suite log and Neon audit |
+| Catalog counts through Vercel → Render → Neon | characters=131, weapons=279, artifacts=63, materials=862 | live GraphQL |
+| Editorial counts | builds=347, teams=620, team members=2,478, character rankings=1, weapon reviews=6 | read-only Neon SQL |
+| Auth / Admin state | admins=1 (`staging_owner`), users=0, sessions=0 after cleanup | read-only Neon SQL |
+| WebP / images | asset 200 with `public, max-age=31536000, immutable`; 0 broken images; 0 `/_next/image` requests; 0 occurrences in SSG HTML | live checks + E2E |
+| Private responses | `/api/auth/*`, `/api/admin/*`, `/api/graphql`, `/api/revalidate` use `Cache-Control: private, no-store` | live checks + E2E |
+| Cross-origin proxy abuse | `/api/graphql` and `/api/admin/graphql` → 403 for foreign `Origin` | live checks + Admin E2E |
+| Revalidation | 401 for wrong secret, 200 for all 14 locales with the configured secret | live checks + E2E |
+| Stability | no unexpected 401/402/404, no 500/502/503, no unexpected console errors or failed requests | bounded live probes and both E2E suites |
+
+A temporary Admin session was created directly in Neon for E2E by hashing a
+random token; no password was requested, printed or stored. The session was
+revoked and deleted after the run; a follow-up request returned 401 and the
+final `AuthSession` count is 0. No additional Owner Admin was created.
+
+GitHub Actions secrets `NEON_DATABASE_URL`, `REVALIDATE_SECRET` and
+`FRONTEND_REVALIDATE_URL` were configured by name only. Values were never
+printed or committed.
+
+### Resource measurements
+
+- Render: production build peaked at 90 MiB RSS at startup and 104 MiB while
+  serving representative `weapons` + `weaponGameData` queries, inside the
+  512 MiB Free container. A separate `--memory=512m --memory-swap=512m`
+  container test returned `/health` 200 and 14 weapon-game-data levels.
+- Vercel: build machine 2 cores / 8 GB, 7,036 static pages, 18-minute build.
+  No billable image transformation was observed (`/_next/image` → 404).
+- Neon: read-only queries only for audit; no connection or data-transfer spike
+  was generated. Exact remaining free-tier capacity is not exposed by the
+  local CLI and was not estimated.
+- No artificial keep-alive traffic and no paid upgrade were used.
+
+### Remaining blockers and exact required actions
+
+1. **Render `FRONTEND_URL` is stale**. It still allows the old Worker origin.
+   A preflight from `https://genshinhub-staging.vercel.app` returns 204 without
+   `access-control-allow-origin`; the old Worker origin is still allowed. The
+   application remains functional because browser calls use same-origin Vercel
+   proxies. Required Render change (execute through the authenticated Render
+   connection): set `FRONTEND_URL=https://genshinhub-staging.vercel.app` on
+   service `genshinhub-api` (`srv-dc2p4m3ncjis73dkf44g`), replacing the Worker
+   origin, then redeploy commit `2ecc711`. Do not add a wildcard origin.
+2. **Durable uploads and backups are not complete**. `/upload` and backup
+   download/list fail closed with 503 on the ephemeral Render host rather than
+   losing data silently. A `custom`-format `pg_dump` of the staging database
+   was created and verified locally (906 KiB, 196 TOC entries,
+   SHA-256 `78b065c0ffe1fc46893d99fec9b53b1e57f307a8dc4cc75f645aa745af330b8c`)
+   and then removed because no approved durable destination exists. The
+   prepared `.github/workflows/neon-pgdump.yml` is on this branch only;
+   `gh workflow run neon-pgdump.yml` returns 404 because the workflow is not on
+   the default branch. Secrets are configured, but enabling the workflow on
+   `main` or approving another durable store requires explicit authorization.
+   No billing was activated.
+3. **Authenticated user flows requiring a real customer account** (email/OTP,
+   password reset delivery, favorites/wishlist/teams persistence) were not
+   exercised end to end because no test customer credentials were supplied and
+   local auth rows must not be imported. Public routes, unauthenticated guards,
+   and Admin routes were verified live.
+4. **Infrastructure cleanup, production release and merge to `main`** remain
+   blocked by explicit-approval rules. `genshinhub-staging`, Render
+   `genshinhub-api`, Neon staging and all unrelated projects are untouched.
+   The obsolete `genshinhub-api-staging` Vercel project and Cloudflare
+   GenshinHub Worker/cache resources were not deleted.
+
+### Rollback procedure
+
+From the repository root (linked to `genshinhub-staging`):
+
+```bash
+export PATH="$HOME/.nvm/versions/node/v22.23.5/bin:$PATH"
+npx vercel rollback dpl_8dGNkcd55mFAy8jv8ZNusR4rWuAP --yes
+```
+
+This restores the previous verified production deployment
+`https://genshinhub-staging-1ejzy63xm-anhhtuanns-projects.vercel.app`. No
+database rollback is needed because this release performed no schema or data
+destruction. If Render is redeployed, keep `DATABASE_URL` unchanged.

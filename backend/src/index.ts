@@ -18,7 +18,13 @@ import { prisma } from './prisma';
 import { mailerService } from './services/mailer.service';
 import { registerAuthRoutes } from './auth/auth.routes';
 import { authService } from './auth/auth.service';
+import { createAdminSessionMiddleware, sessionTokenFromRequest } from './auth/adminHttp';
 import { isStatelessHost, STATELESS_STORAGE_MESSAGE } from './utils/storageMode';
+import {
+  chooseUploadMode,
+  getUploadedImage,
+  putUploadedImage,
+} from './utils/objectStorage';
 
 /**
  * Build the Express/Apollo application without binding a TCP port.
@@ -70,70 +76,101 @@ export async function createServerApp() {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
   });
 
-  // Multer config for image uploads
-  const storage = multer.diskStorage({
-    destination: (_req, _file, cb) => {
-      const uploadPath = path.join(__dirname, '../../../frontend/public/assets/uploads');
-      if (!fs.existsSync(uploadPath)) {
-        fs.mkdirSync(uploadPath, { recursive: true });
-      }
-      cb(null, uploadPath);
-    },
-    filename: (_req, file, cb) => {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-      cb(null, uniqueSuffix + path.extname(file.originalname));
-    }
-  });
-  const upload = multer({ 
-    storage,
-    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max
-    fileFilter: (_req, file, cb) => {
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-      if (allowedTypes.includes(file.mimetype)) {
-        cb(null, true);
-      } else {
-        cb(new Error('Only image files (JPEG, PNG, GIF, WebP) are allowed'));
-      }
-    }
-  });
-
-  // Auth middleware: only a verified, active DB-backed Admin session grants access.
-  const sessionTokenFromRequest = (req: any): string | undefined => {
-    const headerToken = req.headers['x-admin-session'] ?? req.headers['x-session-token'];
-    if (typeof headerToken === 'string' && headerToken) return headerToken;
-    const authorization = req.headers.authorization;
-    return authorization?.startsWith('Bearer ') ? authorization.substring(7) : undefined;
-  };
-
-  const requireAdminMiddleware = async (req: any, res: any, next: any) => {
-    try {
-      const session = await authService.resolveSession(prisma, sessionTokenFromRequest(req));
-      if (!session?.isAdmin) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      }
-      req.adminSession = session;
-      next();
-    } catch (error) {
-      console.error('[Admin auth] session verification failed:', error);
-      return res.status(401).json({ error: 'Unauthorized' });
+  // Upload handling: memory + Neon Object Storage on stateless hosts, with the
+  // original filesystem flow preserved for local development.
+  const uploadLimits = { fileSize: 5 * 1024 * 1024 }; // 5MB max
+  const imageFileFilter = (_req: any, file: any, cb: any) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (allowedTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files (JPEG, PNG, GIF, WebP) are allowed'));
     }
   };
+  const memoryUpload = multer({ storage: multer.memoryStorage(), limits: uploadLimits, fileFilter: imageFileFilter });
+  const diskUpload = multer({
+    storage: multer.diskStorage({
+      destination: (_req, _file, cb) => {
+        const uploadPath = path.join(__dirname, '../../../frontend/public/assets/uploads');
+        if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath, { recursive: true });
+        cb(null, uploadPath);
+      },
+      filename: (_req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname));
+      },
+    }),
+    limits: uploadLimits,
+    fileFilter: imageFileFilter,
+  });
 
-  // Upload endpoint (requires a verified DB-backed Admin session).
-  // Stateless hosts have no durable filesystem; fail closed instead of
-  // returning a URL that no static-asset deployment can ever serve.
-  app.post('/upload', requireAdminMiddleware, (req, res, next) => {
-    if (isStatelessHost()) {
+  // Only a verified, active DB-backed Admin session grants upload/backup access.
+  const requireAdminMiddleware = createAdminSessionMiddleware(
+    (token) => authService.resolveSession(prisma, token),
+  );
+
+  function runUpload(uploader: any, req: any, res: any): Promise<{ file?: any; error?: any }> {
+    return new Promise((resolve) => {
+      uploader.single('image')(req, res, (error: any) => resolve({ file: req.file, error }));
+    });
+  }
+
+  app.post('/upload', requireAdminMiddleware, async (req, res) => {
+    const mode = chooseUploadMode();
+    if (mode === 'stateless') {
       return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
     }
-    next();
-  }, upload.single('image'), (req, res) => {
-    if (!req.file) {
-      return res.status(400).json({ error: 'No file uploaded' });
+
+    const uploader = mode === 'object' ? memoryUpload : diskUpload;
+    const { file, error } = await runUpload(uploader, req, res);
+    if (error) {
+      if (error instanceof multer.MulterError && error.code === 'LIMIT_FILE_SIZE') {
+        return res.status(413).json({ error: 'File exceeds 5 MB limit' });
+      }
+      return res.status(400).json({ error: error.message || 'Invalid upload' });
     }
-    // Return the relative URL to the frontend
-    const fileUrl = `/assets/uploads/${req.file.filename}`;
-    res.json({ url: fileUrl });
+    if (!file) return res.status(400).json({ error: 'No file uploaded' });
+
+    if (mode === 'local') {
+      return res.json({ url: `/assets/uploads/${file.filename}`, storage: 'local-filesystem' });
+    }
+
+    try {
+      const result = await putUploadedImage({
+        buffer: file.buffer,
+        mime: file.mimetype,
+        originalName: file.originalname,
+      });
+      return res.json({
+        url: result.publicPath,
+        storage: 'neon-object-storage',
+        contentType: result.contentType,
+        size: result.size,
+        checksum: result.checksum,
+      });
+    } catch (uploadError) {
+      const message = uploadError instanceof Error ? uploadError.message : String(uploadError);
+      console.error('[Upload] object storage write failed:', message);
+      const clientError = /valid image|MIME/i.test(message);
+      return res.status(clientError ? 400 : 502).json({ error: clientError ? message : 'Image upload failed' });
+    }
+  });
+
+  // Controlled public read proxy for uploaded images. It never lists buckets
+  // and can only read the narrow uploads/ prefix of the private asset bucket.
+  app.use('/assets/uploads', async (req, res, next) => {
+    if (req.method !== 'GET') return next();
+    try {
+      const pathname = new URL(req.originalUrl || req.url, 'http://local').pathname;
+      const object = await getUploadedImage(pathname);
+      if (!object) return res.status(404).end();
+      res.set('Content-Type', object.contentType);
+      res.set('Cache-Control', object.cacheControl);
+      return res.send(object.body);
+    } catch (proxyError) {
+      console.error('[Asset proxy] object read failed:', proxyError instanceof Error ? proxyError.message : String(proxyError));
+      return res.status(502).json({ error: 'Asset retrieval failed' });
+    }
   });
 
   // === Backup REST endpoints ===

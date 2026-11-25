@@ -1,11 +1,14 @@
-# Free-tier durable backup path for the stateless Render backend.
-# Add the Neon connection string as repository secret NEON_DATABASE_URL, then
-# run this workflow manually. The dump is a private Actions artifact that
-# expires after 7 days; copy it to your own storage if you need a longer trail.
+# Authoritative full PostgreSQL backup for the staging Neon branch.
+# The custom-format pg_dump is uploaded to the private Neon Object Storage
+# bucket genshinhub-staging-backups under pgdump/. Nothing is ever restored
+# automatically. Secrets are validated before any database or S3 operation.
 name: Neon pg_dump backup
 
 on:
   workflow_dispatch:
+  schedule:
+    # Every Sunday 03:00 UTC. Scheduled workflows run from the default branch.
+    - cron: '0 3 * * 0'
 
 permissions:
   contents: read
@@ -17,8 +20,35 @@ concurrency:
 jobs:
   dump:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
+      - name: Validate required secrets
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          BACKUP_BUCKET: ${{ secrets.BACKUP_BUCKET }}
+        run: |
+          set -euo pipefail
+          for name in NEON_DATABASE_URL AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_ENDPOINT_URL_S3 AWS_REGION BACKUP_BUCKET; do
+            if [ -z "${!name:-}" ]; then
+              echo "$name secret is missing" >&2
+              exit 1
+            fi
+          done
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a  # v4.2.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - run: npm ci --prefix backend
+
       - name: Ensure pg_dump is available
         run: |
           if ! command -v pg_dump >/dev/null 2>&1; then
@@ -27,26 +57,33 @@ jobs:
           fi
           pg_dump --version
 
-      - name: Create custom-format dump from Neon
+      - name: Create and verify full custom-format dump
         env:
-          DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
-          PGCONNECT_TIMEOUT: "15"
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
           set -euo pipefail
-          if [ -z "${DATABASE_URL:-}" ]; then
-            echo "NEON_DATABASE_URL repository secret is missing" >&2
-            exit 1
-          fi
           mkdir -p backups
           stamp="$(date -u +%Y%m%dT%H%M%SZ)"
-          pg_dump --dbname="$DATABASE_URL" --format=custom --no-owner --no-privileges \
-            --file="backups/genshinhub-neon-${stamp}.dump"
-          ls -lh backups/
+          file="backups/genshinhub-neon-${stamp}.dump"
+          pg_dump --dbname="$NEON_DATABASE_URL" --format=custom --no-owner --no-acl --file="$file"
+          pg_restore --list "$file" > "${file}.list"
+          test -s "${file}.list"
+          sha256sum "$file" > "${file}.sha256"
+          echo "filename=$(basename "$file")"
+          echo "size_bytes=$(stat -c '%s' "$file")"
+          echo "timestamp=${stamp}"
+          cat "${file}.sha256"
+          echo "pg_restore_entries=$(wc -l < "${file}.list")"
 
-      - name: Upload private backup artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
-        with:
-          name: genshinhub-neon-backup
-          path: backups/*.dump
-          retention-days: 7
-          if-no-files-found: error
+      - name: Upload dump and verify objects with HeadObject
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          BACKUP_BUCKET: ${{ secrets.BACKUP_BUCKET }}
+        run: |
+          set -euo pipefail
+          file="$(ls "$GITHUB_WORKSPACE"/backups/*.dump)"
+          key="pgdump/$(basename "$file")"
+          npm --prefix backend run backup:upload -- "$file" "$key"

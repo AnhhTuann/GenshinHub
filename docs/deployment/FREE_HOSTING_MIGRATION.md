@@ -380,17 +380,16 @@ printed or committed.
    connection): set `FRONTEND_URL=https://genshinhub-staging.vercel.app` on
    service `genshinhub-api` (`srv-dc2p4m3ncjis73dkf44g`), replacing the Worker
    origin, then redeploy commit `2ecc711`. Do not add a wildcard origin.
-2. **Durable uploads and backups are not complete**. `/upload` and backup
-   download/list fail closed with 503 on the ephemeral Render host rather than
-   losing data silently. A `custom`-format `pg_dump` of the staging database
+2. **Durable uploads and backups were not complete at the final release**.
+   `/upload` and backup download/list failed closed with 503 on the ephemeral
+   Render host rather than losing data silently. A `custom`-format `pg_dump`
    was created and verified locally (906 KiB, 196 TOC entries,
    SHA-256 `78b065c0ffe1fc46893d99fec9b53b1e57f307a8dc4cc75f645aa745af330b8c`)
-   and then removed because no approved durable destination exists. The
-   prepared `.github/workflows/neon-pgdump.yml` is on this branch only;
-   `gh workflow run neon-pgdump.yml` returns 404 because the workflow is not on
-   the default branch. Secrets are configured, but enabling the workflow on
-   `main` or approving another durable store requires explicit authorization.
-   No billing was activated.
+   and then removed because no approved durable destination existed. The
+   implementation is now on `fix/neon-object-storage`
+   (see [Durable Neon Object Storage uploads and backups](#durable-neon-object-storage-uploads-and-backups-fixneon-object-storage));
+   it still requires the owner to configure Render/GitHub secrets before it
+   becomes live. No billing was activated.
 3. **Authenticated user flows requiring a real customer account** (email/OTP,
    password reset delivery, favorites/wishlist/teams persistence) were not
    exercised end to end because no test customer credentials were supplied and
@@ -415,3 +414,51 @@ This restores the previous verified production deployment
 `https://genshinhub-staging-1ejzy63xm-anhhtuanns-projects.vercel.app`. No
 database rollback is needed because this release performed no schema or data
 destruction. If Render is redeployed, keep `DATABASE_URL` unchanged.
+
+## Durable Neon Object Storage uploads and backups (`fix/neon-object-storage`)
+
+This follow-up branch keeps the same zero-cost stack and changes only the two
+unresolved storage limitations above. It does **not** change the hosting
+architecture, redeploy Vercel/Render, touch `main`, or merge anywhere.
+
+### What changed
+
+| Area | Before | After |
+| --- | --- | --- |
+| Admin image upload | Disk write to `frontend/public/assets/uploads`, 503 on Render | Memory multer (5 MB) → Sharp WebP → `PutObjectCommand` into private `genshinhub-staging-assets` |
+| Upload auth | Verified DB Admin session | Unchanged, shared by `/upload` and the backup guards |
+| Validation | MIME header only | MIME allowlist **and** real decoded-image bytes; generated UUID key, never the client filename |
+| Image retrieval | Direct static file | Allowlisted `/assets/uploads/YYYY/MM/<uuid>.webp` → backend `GetObjectCommand`; local disk first, then read-only proxy |
+| Local dev | Filesystem | Unchanged when no S3 env vars are present |
+| Database backup | 503 guard on Render; workflow only saved an Actions artifact | Weekly + manual `pg_dump` uploaded to private `genshinhub-staging-backups` under `pgdump/`, verified with `HeadObject` and SHA-256 |
+| Path traversal / bucket isolation | Static path checks | Upload regex rejects `..`, encoded separators, wrong extensions and backup keys on both frontend and backend |
+
+Credentials come only from `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`,
+`AWS_ENDPOINT_URL_S3`, `AWS_REGION`, `ASSET_BUCKET` and `BACKUP_BUCKET`.
+Neon requires path-style SigV4 (`forcePathStyle: true`). No credentials are
+hardcoded, logged, committed or sent to the browser. The asset proxy never
+lists a bucket and cannot reach the backup bucket; no automatic restore exists.
+
+### Owner actions still required
+
+1. Create the two private buckets and a scoped Neon storage credential
+   (`storage:read` + `storage:write`) as described in
+   [NEON_OBJECT_STORAGE_SETUP.md](NEON_OBJECT_STORAGE_SETUP.md).
+2. Add the six env vars to Render service `genshinhub-api` and the six GitHub
+   Actions repository secrets. Names are documented in the root `.env.example`
+   and `backend/.env.example`; values are never supplied by the agent.
+3. After the PR is merged into `deploy/cloudflare-render-free`, redeploy Render
+   manually and run the backup workflow by hand once. Scheduled workflows only
+   run from the default branch.
+4. Admin upload instructions and the recovery procedure are in
+   [ADMIN_GUIDE.md](../../ADMIN_GUIDE.md) and
+   [NEON_BACKUP_RESTORE_RUNBOOK.md](NEON_BACKUP_RESTORE_RUNBOOK.md).
+
+### Verification performed on this branch
+
+Backend `test:storage` (23/23), `tsc` build, existing auth suites, frontend
+Vitest (including the new upload allowlist test), frontend `tsc --noEmit`, and
+`prisma validate` were run locally with mocked S3 clients. No real credentials,
+database writes, restores, deploys, or paid resources were involved. Live
+upload/backup verification is deliberately deferred until the owner configures
+the secrets and authorizes a Render deploy.

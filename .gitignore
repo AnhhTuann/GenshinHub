@@ -21,3 +21,4 @@ __pycache__/
 # Local database exports
 /backend/*.dump
 /backend/*.sql.gz
+.vercel

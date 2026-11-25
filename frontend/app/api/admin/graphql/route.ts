@@ -31,12 +31,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.text();
-    const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
       'x-admin-session': adminToken,
     };
-    if (bypassSecret) headers['x-vercel-protection-bypass'] = bypassSecret;
 
     const backendRes = await fetch(GRAPHQL_ENDPOINT, {
       method: 'POST',

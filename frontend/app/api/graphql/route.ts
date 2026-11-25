@@ -1,21 +1,15 @@
 /**
  * Public GraphQL proxy for browser-side reads/mutations.
  *
- * This keeps Vercel Deployment Protection bypass secrets server-side when the
- * backend is protected, while preserving backend auth behavior (Admin still
- * requires a verified x-admin-session token; anonymous/public requests pass
- * through unchanged).
+ * Browser calls stay same-origin so no backend CORS or deployment-protection
+ * bypass credential is required. Backend auth behavior is preserved (Admin
+ * still requires a verified x-admin-session token; anonymous/public requests
+ * pass through unchanged).
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { getAuthBackendUrl, isSameOriginRequest } from '@/lib/auth-api';
 
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || `${getAuthBackendUrl()}/graphql`;
-
-function getVercelProtectionHeaders(): Record<string, string> {
-  const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
-  if (!bypassSecret) return {};
-  return { 'x-vercel-protection-bypass': bypassSecret };
-}
 
 export async function POST(request: NextRequest) {
   if (!isSameOriginRequest(request)) {
@@ -28,7 +22,6 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...getVercelProtectionHeaders(),
       },
       body,
       cache: 'no-store',

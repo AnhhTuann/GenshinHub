@@ -4,12 +4,6 @@ const PUBLIC_GRAPHQL_PROXY = '/api/graphql';
 // ISR revalidation: 1 hour for server-side fetches.
 const DEFAULT_REVALIDATE = 3600;
 
-function getVercelProtectionHeaders(): Record<string, string> {
-  const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
-  if (!bypassSecret) return {};
-  return { 'x-vercel-protection-bypass': bypassSecret };
-}
-
 function getClientEndpoint(): string {
   return typeof window === 'undefined' ? GRAPHQL_ENDPOINT : PUBLIC_GRAPHQL_PROXY;
 }
@@ -27,9 +21,6 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   }
 
   const isServer = typeof window === 'undefined';
-  if (isServer) {
-    Object.assign(headers, getVercelProtectionHeaders());
-  }
 
   const fetchOptions: RequestInit & { next?: { revalidate: number } } = {
     method: 'POST',
@@ -48,17 +39,13 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   // still use Next's ISR cache via fetchOptions.next.revalidate.
   let json: any;
   let lastError: unknown;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 5; attempt++) {
     try {
       const res = await fetch(getClientEndpoint(), fetchOptions);
 
       if (!res.ok) {
         if (res.status === 401) {
-          throw new Error(
-            'GraphQL HTTP Error: 401. The backend is protected by Vercel Deployment Protection. ' +
-            'Set VERCEL_AUTOMATION_BYPASS_SECRET as a server-side (non-NEXT_PUBLIC_) environment ' +
-            'variable in the frontend project, available both at build time and runtime.'
-          );
+          throw new Error('GraphQL HTTP Error: 401. The Render backend rejected the request credentials.');
         }
         throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
       }
@@ -67,19 +54,19 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
       const transientError = json.errors?.some?.((e: any) =>
         /internal server error|timeout|timed out|truncat|unexpected end|socket hang up/i.test(e.message ?? '')
       );
-      if (transientError && attempt < 2) {
+      if (transientError && attempt < 4) {
         throw new Error('GraphQL Error: ' + json.errors[0].message);
       }
       lastError = undefined;
       break;
     } catch (error) {
       lastError = error;
-      if (attempt < 2) {
+      if (attempt < 4) {
         // A malformed body can be cached by Next's persistent fetch cache.
         // Force a fresh network read on retries.
         fetchOptions.cache = 'no-store';
         delete fetchOptions.next;
-        await new Promise(resolve => setTimeout(resolve, 250 * (attempt + 1)));
+        await new Promise(resolve => setTimeout(resolve, 250 * 2 ** attempt));
       }
     }
   }

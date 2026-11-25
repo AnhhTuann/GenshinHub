@@ -4,6 +4,8 @@ import path from 'node:path';
 import { test } from 'vitest';
 
 const script = path.resolve(__dirname, 'verify-build-env.mjs');
+const RENDER_ENDPOINT = 'https://genshinhub-api.onrender.com/graphql';
+const RENDER_BACKEND = 'https://genshinhub-api.onrender.com';
 
 function run(env: Record<string, string | undefined>) {
   const cleanEnv: Record<string, string> = {};
@@ -16,46 +18,49 @@ function run(env: Record<string, string | undefined>) {
   });
 }
 
+function renderEnv(extra: Record<string, string | undefined> = {}) {
+  return {
+    VERCEL: '1',
+    NEXT_PUBLIC_GRAPHQL_URL: RENDER_ENDPOINT,
+    BACKEND_URL: RENDER_BACKEND,
+    BUILD_ENV_SKIP_WARMUP: '1',
+    PATH: process.env.PATH,
+    ...extra,
+  };
+}
+
 test('build guard is inert for local and CI builds', () => {
   const result = run({ VERCEL: undefined, PATH: process.env.PATH });
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /guard skipped/);
 });
 
-test('build guard fails when the protected backend has no server-side bypass secret', () => {
-  const result = run({
-    VERCEL: '1',
-    NEXT_PUBLIC_GRAPHQL_URL: 'https://genshinhub-api-staging-abc123.vercel.app/graphql',
-    BACKEND_URL: 'https://genshinhub-api-staging-abc123.vercel.app',
-    VERCEL_AUTOMATION_BYPASS_SECRET: undefined,
-    PATH: process.env.PATH,
-  });
-  assert.equal(result.status, 1);
-  assert.match(result.stderr, /VERCEL_AUTOMATION_BYPASS_SECRET is missing/);
+test('build guard accepts the final Render backend configuration', () => {
+  const result = run(renderEnv());
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /OK: Vercel frontend is configured for the Render backend/);
 });
 
-test('build guard accepts fully configured server-side credentials', () => {
-  const result = run({
-    VERCEL: '1',
+test('build guard rejects the retired Vercel backend', () => {
+  const result = run(renderEnv({
     NEXT_PUBLIC_GRAPHQL_URL: 'https://genshinhub-api-staging-abc123.vercel.app/graphql',
     BACKEND_URL: 'https://genshinhub-api-staging-abc123.vercel.app',
-    VERCEL_AUTOMATION_BYPASS_SECRET: 'test-only-bypass-value',
-    PATH: process.env.PATH,
-  });
-  assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /OK: server-side Vercel bypass credentials/);
+  }));
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /NEXT_PUBLIC_GRAPHQL_URL must be https:\/\/genshinhub-api\.onrender\.com\/graphql/);
+  assert.match(result.stderr, /BACKEND_URL must be https:\/\/genshinhub-api\.onrender\.com/);
+});
+
+test('build guard rejects an obsolete Vercel bypass secret', () => {
+  const result = run(renderEnv({ VERCEL_AUTOMATION_BYPASS_SECRET: 'test-only-bypass-value' }));
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /VERCEL_AUTOMATION_BYPASS_SECRET is obsolete/);
   assert.doesNotMatch(result.stdout, /test-only-bypass-value/);
   assert.doesNotMatch(result.stderr, /test-only-bypass-value/);
 });
 
-test('build guard rejects a bypass secret exposed through a NEXT_PUBLIC_ variable', () => {
-  const result = run({
-    VERCEL: '1',
-    NEXT_PUBLIC_GRAPHQL_URL: 'test-only-bypass-value',
-    BACKEND_URL: 'https://genshinhub-api-staging-abc123.vercel.app',
-    VERCEL_AUTOMATION_BYPASS_SECRET: 'test-only-bypass-value',
-    PATH: process.env.PATH,
-  });
+test('build guard rejects a missing GraphQL endpoint', () => {
+  const result = run(renderEnv({ NEXT_PUBLIC_GRAPHQL_URL: undefined }));
   assert.equal(result.status, 1);
-  assert.match(result.stderr, /must not contain the Vercel bypass secret/);
+  assert.match(result.stderr, /NEXT_PUBLIC_GRAPHQL_URL must point at the deployed GraphQL endpoint/);
 });

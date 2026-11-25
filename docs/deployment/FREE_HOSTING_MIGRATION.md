@@ -136,6 +136,9 @@ untouched.
 | `npm audit fix` | Applied without `--force`. Remaining advisories require breaking majors (Nodemailer ≤10.1.3, Next.js/PostCSS, Tailwind typography); not force-upgraded. |
 | Backend hardening review | CORS allowlist driven by `FRONTEND_URL`; express-rate-limit 1,000/15 min plus DB-backed login/reset locks; single Prisma Client; `/env` secret endpoint removed. |
 | GraphQL N+1 audit | Batched per-row weapon/artifact catalog lookups (`catalogWeaponId`, `rarity`, `iconUrl`, `artifactSetId`, `mixSets`, `signatureWeapons`) through DataLoaders; regression test proves one query per field regardless of key count. Hot-path indexes verified in `schema.prisma`. |
+| Render OOM root cause | `import 'genshin-db'` alone allocates ~576 MiB RSS (package is 180 MB), above the 512 MiB free limit. Replaced with a committed generated snapshot (`backend/data/weapon-game-data.json`, 1.3 MB) produced by `npm run data:weapon-game-data`; the package is now maintenance-time only. |
+| Startup memory after fix | Production build peaks at 90 MiB RSS; 104 MiB while serving `weapons` + `weaponGameData`. Explicit `app.listen(PORT, '0.0.0.0')` for Render's port scanner. |
+| 512 MiB container test | `docker run --memory=512m --memory-swap=512m` on the production build: `/health` → 200 and `weaponGameData` returns 14 levels, 5 refinements, 6 ascension stages with no errors. |
 | `npx opennextjs-cloudflare build` | PASS against the running local backend (`http://127.0.0.1:4000`) with KV incremental + tag cache. |
 | First build attempt against `https://genshinhub-api.onrender.com` | FAILED with GraphQL 404 during prerender — the Render service was not serving at that time. |
 | `npx wrangler deploy --dry-run` | PASS — 2,688 assets, ~9.0 MiB Worker, KV incremental/tag, self-reference and Static Assets bindings present; no R2 binding. |

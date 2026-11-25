@@ -219,7 +219,9 @@ export async function createServerApp() {
 async function startServer() {
   const app = await createServerApp();
   const PORT = Number(process.env.PORT || 4000);
-  const httpServer = app.listen(PORT, async () => {
+  // Bind explicitly to all IPv4 interfaces: Render's port scanner probes
+  // 0.0.0.0, and Node's implicit `::` bind is not reliably detected there.
+  const httpServer = app.listen(PORT, '0.0.0.0', async () => {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
     // Verify SMTP on startup
     await mailerService.verifyConnection();

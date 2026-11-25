@@ -9,6 +9,7 @@
         "start": "node dist/src/index.js",
         "seed": "prisma db seed",
         "export": "ts-node src/export-cli.ts",
+        "data:weapon-game-data": "ts-node scripts/generate/weaponGameData.ts",
         "sync-assets": "ts-node scripts/sync-assets.ts",
         "sync:assets": "ts-node scripts/sync-assets.ts --sync",
         "sync:assets:check": "ts-node scripts/sync-assets.ts",

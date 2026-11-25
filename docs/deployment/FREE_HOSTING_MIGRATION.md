@@ -220,35 +220,80 @@ Render health and direct GraphQL stayed 200 throughout; no cold-start-related
 
 ### Cache configuration decision
 
-`frontend/open-next.config.ts` now uses:
+After testing both zero-billing variants, `frontend/open-next.config.ts`
+remains at the hybrid baseline from `a3aa465`:
 
 - Static Assets incremental cache for build-time prerendered entries.
 - Workers KV for post-deploy writes and invalidation markers (best-effort).
 - Regional Cache API (`long-lived`) to avoid repeatedly parsing large entries.
 - KV tag cache and the in-memory revalidation queue; no R2 and no billing.
-- `enableCacheInterception: false`.
+- `routePreloadingBehavior: "none"` and `enableCacheInterception: false`.
 
-`enableCacheInterception: true` reduced CPU but broke client-side RSC hydration
-(production console reported a Server Components render error on public
-pages), so it was reverted.
+`enableCacheInterception: true` reduced CPU in the hybrid build but broke
+client-side RSC hydration (production console reported a Server Components
+render error on public pages), so it was reverted.
+
+### Static-first experiment (rejected)
+
+A pure Static Assets cache with `enableCacheInterception: true` and no custom
+KV/regional layer was built and deployed as Worker version
+`97103b94-db0b-4cb3-a4df-91e56e271465`.
+
+Local verification passed:
+
+- `npx opennextjs-cloudflare build` exited 0. `wrangler deploy --dry-run` read
+  3,749 files and reported `9161.42 KiB / gzip 1885.88 KiB` (3,532 assets,
+  1,045 cache assets, 2,216-byte Worker).
+- Local preview returned 200 for public pages, 405 for API GETs, 401 for
+  `/api/auth/me`, redirected unauthenticated admin/profile routes, served WebP
+  with immutable cache headers, and hydrated client navigation with zero
+  unexpected console errors. Frontend Vitest: 21/21 passed.
+- The build emitted **no prerendered `.html` for `/[locale]` pages**:
+  `.next/prerender-manifest.json` listed only `_not-found`, `sitemap.xml`,
+  `icon.png` and `apple-icon.png`, and the 1,045 cache files contained only
+  five route-cache entries. Static Assets therefore could not serve public
+  HTML; Next.js still booted on every page request.
+
+Live verification rejected the experiment:
+
+- Initial 22-request bounded test: 18×200, 4×405, 0×503. Tail: 20 events,
+  0 `exceededCpu`, CPU p50 131 ms / p90 578 ms / max 845 ms. Static WebP
+  assets bypassed the Worker (`asset_events=0`).
+- Extended 60-request test: 36×200, 9×405, 12×503 (plus two truncated tail
+  records). Tail parsed 59 events; 14 had `outcome=exceededCpu`. All 12 HTTP
+  503 responses had `cpuTime` 9–10 ms and `error code: 1102`; successful page
+  invocations still peaked at 665 ms CPU (p50 113 ms, p90 333 ms).
+- The Worker was rolled back to the previous hybrid version
+  `a9d67250-cf21-437f-b418-26068e2d78b1`. No further deployment experiments
+  were run.
+
+### Final live verification on the restored hybrid version
+
+- `wrangler rollback` restored version `a9d67250-cf21-437f-b418-26068e2d78b1`
+  to 100% traffic. A bounded probe returned 200 for `/en/characters`,
+  `/en/weapons`, `/en/tierlist` and `/sitemap.xml`; 405 for `GET /api/graphql`;
+  and 401 for `/api/auth/me`.
+- Full public Playwright E2E: `SUMMARY total=50 pass=50 fail=0`. This included
+  same-origin GraphQL counts 131/279/63/862, 14-locale revalidation accepting
+  the configured secret and rejecting a wrong secret, unauthenticated admin
+  redirect, mobile overflow checks, zero unexpected console errors and zero
+  unexpected failed requests.
 
 ### Remaining blockers
 
-1. **Workers Free CPU budget**: page routes still spend hundreds of ms CPU when
-   Next.js boots on a cache hit. Under sustained traffic this sporadically
-   returns 1102. A durable fix requires a verified architecture change (for
-   example serving prerendered public HTML directly from Static Assets while
-   keeping auth/admin routes on the Worker) and one final rebuild/deploy.
-   No further deploy cycles were run after this diagnosis.
+1. **Workers Free CPU budget is the exact unavoidable blocker**: this
+   Next.js/i18n build does not emit prerendered public HTML, so every public
+   page boots Next.js and spends roughly 9–845 ms CPU per invocation. Workers
+   Free allows 10 ms; sustained traffic terminates invocations with error
+   1102. Removing this requires app/build changes (a real static HTML export
+   or moving page rendering to Render), which exceeds the approved smallest
+   viable architecture change. No paid upgrade is allowed.
 2. **Authenticated Admin E2E**: the hidden-prompt script
    `/tmp/opencode/get-admin-token.cjs` is ready, but
    `/tmp/opencode/admin-token.txt` has not been created. No password was
    printed, stored or committed.
-3. **Full public E2E on the current build**: the last 49/50 run was on the
-   interception-on experiment. The current interception-off build needs a
-   short stability pass before the full suite is authoritative.
-4. **Durable uploads/backups**: unchanged; Render Free is ephemeral and R2 is
+3. **Durable uploads/backups**: unchanged; Render Free is ephemeral and R2 is
    unavailable without billing. HTTP 503 guards remain.
-5. **Production release and Vercel cleanup**: not authorized. Only
+4. **Production release and Vercel cleanup**: not authorized. Only
    `genshinhub-staging` and `genshinhub-api-staging` may be deleted, and only
-   after explicit approval and a clean live E2E.
+   after explicit approval.

@@ -66,11 +66,13 @@ if (!backendUrl) {
   problems.push(`BACKEND_URL must be ${EXPECTED_BACKEND} on Vercel.`);
 }
 
+// Vercel may inject its own deployment-protection bypass secret into the build
+// environment. The Render backend does not use it, but it must never leak into
+// a NEXT_PUBLIC_ variable or the client bundle.
 if (bypassSecret) {
-  problems.push(
-    'VERCEL_AUTOMATION_BYPASS_SECRET is obsolete for the Render backend and must be removed ' +
-    'from the frontend Vercel project.'
-  );
+  console.log('[build-env] VERCEL_AUTOMATION_BYPASS_SECRET=SET (unused for Render backend)');
+} else {
+  console.log('[build-env] VERCEL_AUTOMATION_BYPASS_SECRET=UNSET');
 }
 
 // A bypass secret must never become part of the client bundle.
@@ -83,7 +85,6 @@ for (const key of Object.keys(process.env)) {
 console.log('[build-env] VERCEL=1');
 console.log('[build-env] NEXT_PUBLIC_GRAPHQL_URL=SET (Render backend)');
 console.log('[build-env] BACKEND_URL=SET (Render backend)');
-console.log(`[build-env] VERCEL_AUTOMATION_BYPASS_SECRET=${bypassSecret ? 'SET (must be removed)' : 'UNSET'}`);
 
 if (problems.length) {
   for (const problem of problems) console.error(`[build-env] ERROR: ${problem}`);

@@ -51,10 +51,10 @@ test('build guard rejects the retired Vercel backend', () => {
   assert.match(result.stderr, /BACKEND_URL must be https:\/\/genshinhub-api\.onrender\.com/);
 });
 
-test('build guard rejects an obsolete Vercel bypass secret', () => {
+test('build guard ignores an injected Vercel bypass secret', () => {
   const result = run(renderEnv({ VERCEL_AUTOMATION_BYPASS_SECRET: 'test-only-bypass-value' }));
-  assert.equal(result.status, 1);
-  assert.match(result.stderr, /VERCEL_AUTOMATION_BYPASS_SECRET is obsolete/);
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /VERCEL_AUTOMATION_BYPASS_SECRET=SET \(unused for Render backend\)/);
   assert.doesNotMatch(result.stdout, /test-only-bypass-value/);
   assert.doesNotMatch(result.stderr, /test-only-bypass-value/);
 });

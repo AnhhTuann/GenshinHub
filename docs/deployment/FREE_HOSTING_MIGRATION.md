@@ -169,3 +169,86 @@ was enabled.
 2. **Staging Owner Admin**: username, email, display name and a securely collected password are required for `npm run auth:bootstrap-admin`. No admin/auth rows were copied from local.
 3. **Durable uploads/backups**: Render Free has an ephemeral filesystem, R2 cannot be enabled without billing, and no other durable store is approved. Uploads and local backups therefore remain behind HTTP 503 guards rather than silently losing data.
 4. **Vercel cleanup**: CLI auth exists, but the two GenshinHub projects must not be deleted until live checks pass. Portfolio, Pokédex and other projects are explicitly out of scope.
+
+## Live staging evidence (2026-11-25)
+
+The earlier "pre-deployment only" table is historical. The staging migration is
+now live at:
+
+- Backend: `https://genshinhub-api.onrender.com` (existing Render Free service
+  `genshinhub-api`, deployment `dep-dc35p5m7bikc73c6dig0`, `LIVE`).
+- Frontend: `https://genshinhub-frontend-staging.enshin-ub.workers.dev`
+  (Worker `genshinhub-frontend-staging`, current version
+  `a9d67250-cf21-437f-b418-26068e2d78b1`).
+
+Verified after the Render CORS fix:
+
+| Check | Result |
+| --- | --- |
+| Render `/health` | 200, `{"status":"ok"}` |
+| Render `/graphql` | 200, `characters=131`, `weapons=279`, `artifacts=63`, `materials=862`, no errors |
+| CORS preflight from Worker origin | 204 with `access-control-allow-origin: https://genshinhub-frontend-staging.enshin-ub.workers.dev` |
+| Same-origin Worker `/api/graphql` | 200 with the same four catalog counts |
+| `/api/admin/graphql`, `/api/auth/*` unauthenticated | 401/405 with no public `Cache-Control` |
+| WebP static asset | `public, max-age=31536000, immutable` |
+| `/api/revalidate` | 401 for wrong secret; 200 for the configured secret across 14 locales |
+| Public Playwright sweep (interception-on experiment) | 49/50; the only failure was a client console "Server Components render" error introduced by cache interception |
+| Neon staging Admin | `admin=1`, username `staging_owner`, `user=0`, `authSession=0`; no auth/admin rows copied from local |
+| Staging sync | 0 blocked conflicts; 485 applied records match the manifest; no deletes or production writes |
+
+### HTTP 503 root-cause analysis
+
+The intermittent 503s are **Cloudflare error 1102 (`Worker exceeded CPU time
+limit`)**, not Render outages, KV quota errors or application exceptions.
+
+A 59-invocation `wrangler tail` trace on the current deployment produced:
+
+- 50 × HTTP 200, 6 × HTTP 307, 2 × HTTP 503.
+- Both 503 events had `outcome=exceededCpu` and exceptions named
+  `Worker exceeded CPU time limit`; response body was `error code: 1102`.
+- No `KV put() limit exceeded`, no GraphQL/application exceptions and no
+  Render-fetch failures appeared in that trace.
+- Successful page invocations reported 31–748 ms CPU because Cloudflare grants
+  isolates occasional flexibility above the nominal 10 ms Free-plan budget;
+  sustained probing still terminates some invocations.
+
+Earlier KV-only deployments did show `KV put() limit exceeded for the day`
+during the adapter prefill. The current hybrid cache catches KV write failures,
+so cache quota exhaustion is now best-effort and cannot itself cause a 503.
+Render health and direct GraphQL stayed 200 throughout; no cold-start-related
+503 was observed.
+
+### Cache configuration decision
+
+`frontend/open-next.config.ts` now uses:
+
+- Static Assets incremental cache for build-time prerendered entries.
+- Workers KV for post-deploy writes and invalidation markers (best-effort).
+- Regional Cache API (`long-lived`) to avoid repeatedly parsing large entries.
+- KV tag cache and the in-memory revalidation queue; no R2 and no billing.
+- `enableCacheInterception: false`.
+
+`enableCacheInterception: true` reduced CPU but broke client-side RSC hydration
+(production console reported a Server Components render error on public
+pages), so it was reverted.
+
+### Remaining blockers
+
+1. **Workers Free CPU budget**: page routes still spend hundreds of ms CPU when
+   Next.js boots on a cache hit. Under sustained traffic this sporadically
+   returns 1102. A durable fix requires a verified architecture change (for
+   example serving prerendered public HTML directly from Static Assets while
+   keeping auth/admin routes on the Worker) and one final rebuild/deploy.
+   No further deploy cycles were run after this diagnosis.
+2. **Authenticated Admin E2E**: the hidden-prompt script
+   `/tmp/opencode/get-admin-token.cjs` is ready, but
+   `/tmp/opencode/admin-token.txt` has not been created. No password was
+   printed, stored or committed.
+3. **Full public E2E on the current build**: the last 49/50 run was on the
+   interception-on experiment. The current interception-off build needs a
+   short stability pass before the full suite is authoritative.
+4. **Durable uploads/backups**: unchanged; Render Free is ephemeral and R2 is
+   unavailable without billing. HTTP 503 guards remain.
+5. **Production release and Vercel cleanup**: not authorized. Only
+   `genshinhub-staging` and `genshinhub-api-staging` may be deleted, and only
+   after explicit approval and a clean live E2E.

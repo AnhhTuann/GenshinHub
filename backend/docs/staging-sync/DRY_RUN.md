@@ -1,11 +1,11 @@
 # Neon staging sync — dry run
 
-Generated: 2026-11-24T13:58:32.861Z
+Generated: 2026-11-25T03:35:51.992Z
 
 - Source: local 127.0.0.1/genshinhub
 - Destination: Neon ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech (branch br-hidden-frost-aouh1xm1)
 - Manifest: `backend/docs/staging-sync/manifest.json`
-- Planned writes: **485** (idempotent upserts only)
+- Planned writes: **0** (idempotent upserts only)
 - Blocked conflicts: **0**
 - Excluded unverified/junk/duplicate records: **16**
 - Verified legacy alias remaps: **485**
@@ -19,10 +19,10 @@ Generated: 2026-11-24T13:58:32.861Z
 | material | 862 | 0 | 0 | 862 | 0 | 0 | 862 |
 | tierRank | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | characterBuild | 347 | 0 | 0 | 347 | 0 | 0 | 347 |
-| characterWeapon | 1927 | 441 | 0 | 1470 | 0 | 16 | 2010 |
+| characterWeapon | 1927 | 0 | 0 | 1911 | 0 | 16 | 2451 |
 | characterArtifact | 1201 | 0 | 0 | 1201 | 0 | 0 | 1454 |
 | characterTeam | 620 | 0 | 0 | 620 | 0 | 0 | 620 |
-| teamMember | 2478 | 44 | 0 | 2434 | 0 | 0 | 2434 |
+| teamMember | 2478 | 0 | 0 | 2478 | 0 | 0 | 2478 |
 | characterTierRanking | 1 | 0 | 0 | 1 | 0 | 0 | 1 |
 | weaponTierRank | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | weaponTierReview | 6 | 0 | 0 | 6 | 0 | 0 | 6 |

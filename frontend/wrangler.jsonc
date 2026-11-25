@@ -24,7 +24,9 @@
   ],
   "vars": {
     "NODE_ENV": "production",
-    "NEXT_INC_CACHE_KV_PREFIX": "genshinhub-staging"
+    "NEXT_INC_CACHE_KV_PREFIX": "genshinhub-staging",
+    "BACKEND_URL": "https://genshinhub-api.onrender.com",
+    "NEXT_PUBLIC_GRAPHQL_URL": "https://genshinhub-api.onrender.com/graphql"
   },
   "observability": { "enabled": true }
 }

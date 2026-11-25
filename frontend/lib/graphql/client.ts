@@ -42,20 +42,49 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
     fetchOptions.next = { revalidate };
   }
 
-  const res = await fetch(getClientEndpoint(), fetchOptions);
+  // Render Free can occasionally return a truncated response body during a
+  // build's concurrent prerender requests. Retry transparently so one flaky
+  // response cannot fail the entire static generation. Successful responses
+  // still use Next's ISR cache via fetchOptions.next.revalidate.
+  let json: any;
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(getClientEndpoint(), fetchOptions);
 
-  if (!res.ok) {
-    if (res.status === 401) {
-      throw new Error(
-        'GraphQL HTTP Error: 401. The backend is protected by Vercel Deployment Protection. ' +
-        'Set VERCEL_AUTOMATION_BYPASS_SECRET as a server-side (non-NEXT_PUBLIC_) environment ' +
-        'variable in the frontend project, available both at build time and runtime.'
+      if (!res.ok) {
+        if (res.status === 401) {
+          throw new Error(
+            'GraphQL HTTP Error: 401. The backend is protected by Vercel Deployment Protection. ' +
+            'Set VERCEL_AUTOMATION_BYPASS_SECRET as a server-side (non-NEXT_PUBLIC_) environment ' +
+            'variable in the frontend project, available both at build time and runtime.'
+          );
+        }
+        throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
+      }
+
+      json = await res.json();
+      const transientError = json.errors?.some?.((e: any) =>
+        /internal server error|timeout|timed out|truncat|unexpected end|socket hang up/i.test(e.message ?? '')
       );
+      if (transientError && attempt < 2) {
+        throw new Error('GraphQL Error: ' + json.errors[0].message);
+      }
+      lastError = undefined;
+      break;
+    } catch (error) {
+      lastError = error;
+      if (attempt < 2) {
+        // A malformed body can be cached by Next's persistent fetch cache.
+        // Force a fresh network read on retries.
+        fetchOptions.cache = 'no-store';
+        delete fetchOptions.next;
+        await new Promise(resolve => setTimeout(resolve, 250 * (attempt + 1)));
+      }
     }
-    throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
   }
 
-  const json = await res.json();
+  if (lastError) throw lastError;
 
   if (json.errors) {
     throw new Error('GraphQL Error: ' + json.errors[0].message);

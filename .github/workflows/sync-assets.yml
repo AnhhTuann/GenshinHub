@@ -48,7 +48,7 @@ jobs:
           tail -20 reports/asset_audit.txt
 
       - name: Upload asset audit report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: asset-audit-report
           path: backend/reports/asset_audit.txt

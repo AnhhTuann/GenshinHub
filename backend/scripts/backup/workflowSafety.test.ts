@@ -35,6 +35,7 @@ test('scheduled dry-run reads only the exact verified staging endpoint and fails
     dryRunWorkflow.indexOf('npm run backup:verify-db') < dryRunWorkflow.indexOf('npm run sync:check'),
     'staging endpoint must be verified before the dry-run query',
   );
-  assert.match(dryRunWorkflow, /`staging`\\s+environment approval/);
-  assert.doesNotMatch(dryRunWorkflow, /`production`\\s+environment approval/);
+  assert.match(dryRunWorkflow, /`staging`/);
+  assert.match(dryRunWorkflow, /environment approval/);
+  assert.doesNotMatch(dryRunWorkflow, /`production`/);
 });

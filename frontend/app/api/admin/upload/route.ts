@@ -16,9 +16,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const formData = await request.formData();
+    const headers: Record<string, string> = { 'x-admin-session': adminToken };
     const backendRes = await fetch(`${BACKEND_URL}/upload`, {
       method: 'POST',
-      headers: { 'x-admin-session': adminToken },
+      headers,
       body: formData,
       cache: 'no-store',
     });

@@ -2,8 +2,8 @@ name: Genshin Data Sync — Check (dry-run)
 
 # Workflow KIỂM TRA — an toàn, chỉ đọc database, không ghi gì.
 #
-# - Cron hằng ngày 03:00 UTC (10:00 GMT+7): chạy --dry-run so sánh
-#   genshin-db đã cài trong repo với database.
+# - Cron hằng ngày 03:00 UTC (10:00 GMT+7): kiểm tra phiên bản genshin-db mới
+#   trên npm, rồi chạy --dry-run so sánh thư viện đã cài với database.
 # - Nếu phát hiện create/update THẬT -> commit báo cáo vào
 #   backend/reports/ và mở Pull Request để Admin review.
 # - Nếu KHÔNG có thay đổi -> chỉ upload artifact, KHÔNG tạo PR rỗng.
@@ -38,14 +38,14 @@ jobs:
   dry-run:
     name: Dry-run diff detection
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: ./backend
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a  # v4.2.0
         with:
           node-version: '20'
           cache: 'npm'
@@ -57,31 +57,60 @@ jobs:
       - name: Generate Prisma Client
         run: npx prisma generate
 
+      - name: Check latest genshin-db version
+        id: version
+        run: |
+          set -uo pipefail
+          if npm run sync:version > version.json 2>version.err; then
+            installed="$(jq -r '.installed' version.json)"
+            latest="$(jq -r '.latest' version.json)"
+            update="$(jq -r '.updateAvailable' version.json)"
+            {
+              echo '### genshin-db version'
+              echo "- installed: \`${installed}\`"
+              echo "- latest on npm: \`${latest}\`"
+              echo "- update available: \`${update}\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "installed=${installed}" >> "$GITHUB_OUTPUT"
+            echo "latest=${latest}" >> "$GITHUB_OUTPUT"
+            echo "update_available=${update}" >> "$GITHUB_OUTPUT"
+            if [ "$update" = "true" ]; then
+              echo "::notice::A newer genshin-db (${latest}) is available; Dependabot will open the upgrade PR separately."
+            fi
+          else
+            echo "::warning::Could not query npm for the latest genshin-db version; continuing with the installed version only."
+            cat version.err >&2 || true
+            echo "update_available=unknown" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Run dry-run sync check
         id: check
         env:
-          # Nên trỏ tới read replica / reporting DB, KHÔNG phải production
-          # writer. Workflow này read-only nhưng vẫn cần DB reachable từ runner.
-          DATABASE_URL: ${{ secrets.SYNC_READONLY_DATABASE_URL }}
+          # This is the one approved staging connection string for every DB read.
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
           set -euo pipefail
-          if [ -z "$DATABASE_URL" ]; then
-            echo "⚠️  SYNC_READONLY_DATABASE_URL chưa cấu hình — bỏ qua dry-run (cần read-only DB reachable từ GitHub runner)."
+          if [ -z "${NEON_DATABASE_URL:-}" ]; then
+            echo "NEON_DATABASE_URL is not configured — skipping the read-only staging dry-run."
             echo "has_changes=skip" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # Report ghi vào backend/reports/ (KHÔNG bị gitignore) để có thể
-          # commit vào PR; bản copy cho artifact dùng logs/ cũng được.
-          npm run sync:validate -- --report reports/sync_report_ci.md
-          [ -f reports/sync_report_ci.md ] || { echo "❌ Sync check failed to produce report"; exit 1; }
-          # Chỉ đếm create/update thật — bỏ qua 'pending' (thiếu dữ liệu nguồn)
+          # Verify the exact staging endpoint before exposing it to the sync engine.
+          npm run backup:verify-db
+          export DATABASE_URL="$NEON_DATABASE_URL"
+          # Remove stale output so a failed check cannot reuse an earlier report.
+          rm -f reports/sync_report_ci.md logs/sync_report_ci.md
+          mkdir -p reports logs
+          npm run sync:check -- --report reports/sync_report_ci.md
+          [ -s reports/sync_report_ci.md ] || { echo "Sync check failed to produce a non-empty report"; exit 1; }
+          # Count create/update only; pending entries require manual sourcing.
           count=$(grep -cE '^\| (create|update) \|' reports/sync_report_ci.md || true)
           echo "has_changes=$count" >> "$GITHUB_OUTPUT"
-          echo "Detected $count appliable changed entries."
-          cp reports/sync_report_ci.md logs/sync_report_ci.md 2>/dev/null || true
+          echo "Detected $count applicable changed entries."
+          cp reports/sync_report_ci.md logs/sync_report_ci.md
 
       - name: Upload sync report artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
           name: genshin-sync-report
           path: |
@@ -92,7 +121,7 @@ jobs:
 
       - name: Open Pull Request with sync report
         if: steps.check.outputs.has_changes != '0' && steps.check.outputs.has_changes != 'skip'
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c  # v6.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: chore/genshin-data-sync
@@ -112,8 +141,9 @@ jobs:
             1. Review the report — verify no admin-managed fields are touched
                and no `pending` entries need manual data sourcing.
             2. After approval, run the **Genshin Data Sync — Apply** workflow
-               manually (`sync-and-revalidate`). It requires the `production`
-               environment approval and takes a `pg_dump` backup first.
+               manually (`sync-and-revalidate`). It requires the `staging`
+               environment approval and takes a verified private `pg_dump`
+               backup first.
 
             > *Tài nguyên hình ảnh thuộc bản quyền của miHoYo Co., Ltd.*
           labels: |

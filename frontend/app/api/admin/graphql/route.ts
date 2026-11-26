@@ -31,12 +31,14 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.text();
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'x-admin-session': adminToken,
+    };
+
     const backendRes = await fetch(GRAPHQL_ENDPOINT, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-admin-session': adminToken,
-      },
+      headers,
       body,
       cache: 'no-store',
     });

@@ -11,5 +11,5 @@
     "resolveJsonModule": true,
     "types": ["node"]
   },
-  "include": ["src/**/*", "prisma/**/*.ts"]
+  "include": ["api/**/*.ts", "src/**/*", "prisma/**/*.ts"]
 }

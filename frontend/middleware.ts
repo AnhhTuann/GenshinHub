@@ -37,6 +37,15 @@ function redirectUrl(request: NextRequest, path: string): URL {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // API routes handle cookies/sessions or proxy private backend traffic. Next's
+  // default `public, max-age=0, must-revalidate` must never apply to them.
+  if (pathname.startsWith('/api/')) {
+    const response = NextResponse.next();
+    response.headers.set('Cache-Control', 'private, no-store');
+    return response;
+  }
+
   const match = pathname.match(new RegExp(`^/(${localesPattern})(/|$)`));
   const locale = match ? match[1] : 'en';
   const localizedPath = match ? pathname.slice(match[1].length + 1) : pathname;
@@ -90,5 +99,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  matcher: ['/api/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
 };

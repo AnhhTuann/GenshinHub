@@ -1,0 +1,94 @@
+# Authoritative full PostgreSQL backup for the staging Neon branch.
+# The custom-format pg_dump is uploaded to the private Neon Object Storage
+# bucket genshinhub-staging-backups under pgdump/. Nothing is ever restored
+# automatically. Secrets are validated before any database or S3 operation.
+name: Neon pg_dump backup
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every Sunday 03:00 UTC. Scheduled workflows run from the default branch.
+    - cron: '0 3 * * 0'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neon-pgdump
+  cancel-in-progress: false
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Validate required secrets
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          BACKUP_BUCKET: ${{ secrets.BACKUP_BUCKET }}
+        run: |
+          set -euo pipefail
+          for name in NEON_DATABASE_URL AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_ENDPOINT_URL_S3 AWS_REGION BACKUP_BUCKET; do
+            if [ -z "${!name:-}" ]; then
+              echo "$name secret is missing" >&2
+              exit 1
+            fi
+          done
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a  # v4.2.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - run: npm ci --prefix backend
+
+      - name: Assert approved staging database host
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: npm --prefix backend run backup:verify-db
+
+      - name: Ensure pg_dump is available
+        run: |
+          if ! command -v pg_dump >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client
+          fi
+          pg_dump --version
+
+      - name: Create and verify full custom-format dump
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: |
+          set -euo pipefail
+          mkdir -p backups
+          stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+          file="backups/genshinhub-neon-${stamp}.dump"
+          pg_dump --dbname="$NEON_DATABASE_URL" --format=custom --no-owner --no-acl --file="$file"
+          pg_restore --list "$file" > "${file}.list"
+          test -s "${file}.list"
+          sha256sum "$file" > "${file}.sha256"
+          echo "filename=$(basename "$file")"
+          echo "size_bytes=$(stat -c '%s' "$file")"
+          echo "timestamp=${stamp}"
+          cat "${file}.sha256"
+          echo "pg_restore_entries=$(wc -l < "${file}.list")"
+
+      - name: Upload dump and verify objects with HeadObject
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          BACKUP_BUCKET: ${{ secrets.BACKUP_BUCKET }}
+        run: |
+          set -euo pipefail
+          file="$(ls "$GITHUB_WORKSPACE"/backups/*.dump)"
+          key="pgdump/$(basename "$file")"
+          npm --prefix backend run backup:upload -- "$file" "$key"

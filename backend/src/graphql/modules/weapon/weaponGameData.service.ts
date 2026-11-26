@@ -10,10 +10,12 @@
  */
 
 import { PrismaClient } from '@prisma/client';
-import * as genshinDb from 'genshin-db';
+import fs from 'fs';
+import path from 'path';
 
-const gdb = genshinDb as any;
-
+// `genshin-db` allocates ~576 MiB at import time, which exceeds the 512 MiB
+// Render Free limit. The pinned source values are generated ahead of time into
+// data/weapon-game-data.json; nothing loads the package at server runtime.
 const MORA_ID = 202;
 
 const LEVEL_PLAN: ReadonlyArray<readonly [number, number]> = [
@@ -95,7 +97,7 @@ export interface WeaponRecommendedUser {
   isF2P: boolean;
 }
 
-function slugify(value: string): string {
+export function slugify(value: string): string {
   return value
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -105,31 +107,45 @@ function slugify(value: string): string {
 }
 
 /** Exact source values only; no invented interpolation or guessed caps. */
-function formatSubStat(value: number, percent: boolean): string {
+export function formatSubStat(value: number, percent: boolean): string {
   if (!Number.isFinite(value)) return '—';
   if (!percent) return String(Math.round(value));
   const scaled = value * 100;
   return `${Number.isInteger(scaled) ? scaled.toFixed(0) : scaled.toFixed(1)}%`;
 }
 
-let sourceIndex: Map<string, any> | null = null;
+interface GameDataSnapshotEntry {
+  sourceId: number;
+  aliases: string[];
+  data: WeaponGameData;
+}
 
-function getSourceIndex(): Map<string, any> {
+let sourceIndex: Map<string, GameDataSnapshotEntry> | null = null;
+
+function snapshotPath(): string {
+  const candidates = [
+    path.resolve(process.cwd(), 'data/weapon-game-data.json'),
+    path.resolve(__dirname, '../../../../../data/weapon-game-data.json'),
+    path.resolve(__dirname, '../../../../data/weapon-game-data.json'),
+  ];
+  const found = candidates.find(candidate => fs.existsSync(candidate));
+  if (!found) throw new Error('Weapon game data snapshot is missing. Run npm run data:weapon-game-data.');
+  return found;
+}
+
+function getSourceIndex(): Map<string, GameDataSnapshotEntry> {
   if (sourceIndex) return sourceIndex;
-  const index = new Map<string, any>();
-  const names = (gdb.weapons('names', { matchCategories: true }) as string[] | undefined) || [];
-  for (const name of names) {
-    const record = gdb.weapons(name, { matchName: 'equal' });
-    if (!record) continue;
-    index.set(`id:${String(record.id)}`, record);
-    index.set(`name:${slugify(record.name)}`, record);
-    index.set(`name:${slugify(record.id + '')}`, record);
+  const entries = JSON.parse(fs.readFileSync(snapshotPath(), 'utf8')) as GameDataSnapshotEntry[];
+  const index = new Map<string, GameDataSnapshotEntry>();
+  for (const entry of entries) {
+    index.set(`id:${String(entry.sourceId)}`, entry);
+    for (const alias of entry.aliases) index.set(`name:${alias}`, entry);
   }
   sourceIndex = index;
   return index;
 }
 
-function resolveSource(weapon: { id: string; nameEn: string; nameVi: string }): any | null {
+function resolveSource(weapon: { id: string; nameEn: string; nameVi: string }): GameDataSnapshotEntry | null {
   const index = getSourceIndex();
   return index.get(`id:${weapon.id}`)
     || index.get(`name:${slugify(weapon.nameEn)}`)
@@ -137,7 +153,7 @@ function resolveSource(weapon: { id: string; nameEn: string; nameVi: string }): 
     || null;
 }
 
-function buildLevels(source: any): WeaponGameLevel[] {
+export function buildLevels(source: any): WeaponGameLevel[] {
   const ascensionsByLevel = new Map<number, number[]>();
   for (const [level, ascension] of LEVEL_PLAN) {
     const list = ascensionsByLevel.get(level) || [];
@@ -168,7 +184,7 @@ function buildLevels(source: any): WeaponGameLevel[] {
   return levels;
 }
 
-function buildRefinements(source: any): WeaponGameRefinement[] {
+export function buildRefinements(source: any): WeaponGameRefinement[] {
   const ranks: WeaponGameRefinement[] = [];
   for (let rank = 1; rank <= 5; rank++) {
     const raw = source[`r${rank}`];
@@ -182,7 +198,7 @@ function buildRefinements(source: any): WeaponGameRefinement[] {
   return ranks;
 }
 
-function buildAscension(source: any): WeaponGameAscensionStage[] {
+export function buildAscension(source: any): WeaponGameAscensionStage[] {
   const stages: WeaponGameAscensionStage[] = [];
   for (const key of Object.keys(ASCENSION_LABELS)) {
     const costs = source.costs?.[key];
@@ -217,20 +233,9 @@ export class WeaponGameDataService {
     if (!source) return null;
 
     return {
+      ...source.data,
       id: weapon.id,
-      sourceId: Number(source.id),
-      nameEn: String(source.name || weapon.nameEn),
-      weaponType: String(source.weaponType || ''),
-      weaponText: String(source.weaponText || ''),
-      rarity: Number(source.rarity) || 0,
-      description: source.description ? String(source.description) : null,
-      passiveName: source.effectName ? String(source.effectName) : null,
-      mainStatType: source.mainStatType ? String(source.mainStatType) : null,
-      mainStatText: source.mainStatText ? String(source.mainStatText) : null,
-      version: source.version ? String(source.version) : null,
-      levels: buildLevels(source),
-      refinements: buildRefinements(source),
-      ascension: buildAscension(source),
+      nameEn: String(source.data.nameEn || weapon.nameEn),
     };
   }
 

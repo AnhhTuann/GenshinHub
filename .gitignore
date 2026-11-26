@@ -12,6 +12,13 @@ __pycache__/
 /backend/dist/
 *.tsbuildinfo
 
+# OpenNext/Wrangler build output. Never commit: .open-next can contain
+# build-time environment values (.open-next/cloudflare/next-env.mjs).
+/frontend/.open-next/
+/.wrangler/
+/frontend/.wrangler/
+
 # Local database exports
 /backend/*.dump
 /backend/*.sql.gz
+.vercel

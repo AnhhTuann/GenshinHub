@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { prisma } from './prisma';
+import { isStatelessHost, STATELESS_STORAGE_MESSAGE } from './utils/storageMode';
 
 // ===== Configuration =====
 const BACKUPS_DIR = path.join(__dirname, '../backups');
@@ -8,6 +9,9 @@ const MAX_BACKUPS_DEFAULT = 10;
 
 // Ensure backups directory exists
 function ensureBackupsDir(): void {
+  if (isStatelessHost()) {
+    throw new Error(STATELESS_STORAGE_MESSAGE);
+  }
   if (!fs.existsSync(BACKUPS_DIR)) {
     fs.mkdirSync(BACKUPS_DIR, { recursive: true });
   }

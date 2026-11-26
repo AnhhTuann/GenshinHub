@@ -39,6 +39,7 @@ import { characterAssetUrls, filenameFromLocalPath, yattaImage } from './assetSy
 import { loadYattaMaterials } from './yattaMaterials';
 import { downloadWithFallback as downloadAssetWithFallback } from '../../src/utils/imageDownloader';
 import { resolveAssetFilePath, isDecodableImageFile, getAssetStorageRoot } from '../../src/utils/assetStorage';
+import { putCatalogAsset } from '../../src/utils/objectStorage';
 
 const prisma = new PrismaClient();
 
@@ -56,6 +57,7 @@ interface CliArgs {
   dryRun: boolean;
   sync: boolean;
   downloadAssets: boolean;
+  publishAssets: boolean;
   validate: boolean;
   rollbackFile?: string;
   reportPath?: string;
@@ -63,13 +65,14 @@ interface CliArgs {
 }
 
 function parseArgs(argv: string[]): CliArgs {
-  const args: CliArgs = { dryRun: true, sync: false, downloadAssets: false, validate: false };
+  const args: CliArgs = { dryRun: true, sync: false, downloadAssets: false, publishAssets: false, validate: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     switch (a) {
       case '--dry-run': args.dryRun = true; args.sync = false; break;
       case '--sync': args.sync = true; args.dryRun = false; break;
       case '--download-assets': args.downloadAssets = true; break;
+      case '--publish-assets': args.publishAssets = true; break;
       case '--validate': args.validate = true; break;
       case '--rollback': {
         args.rollbackFile = argv[++i];
@@ -688,16 +691,16 @@ async function downloadWithFallback(urls: string[], dest: string, label: string)
   return false;
 }
 
-async function downloadMissingAssets(report: SyncReport): Promise<AssetSyncResult> {
+async function downloadMissingAssets(report: SyncReport, publishAssets: boolean): Promise<AssetSyncResult> {
   const result: AssetSyncResult = { ok: 0, fail: 0, skipped: 0, unprocessed: [] };
-  const jobs: { urls: string[]; dest: string; label: string }[] = [];
+  const jobs: { urls: string[]; dest: string; rel: string; label: string }[] = [];
 
   const pushJob = async (urls: string[] | undefined, rel: string | null | undefined, label: string) => {
     if (!urls || urls.length === 0 || !rel) { result.skipped++; return; }
     const dest = resolveAssetFilePath(rel);
     if (!dest) { result.skipped++; return; }
     if (await isDecodableImageFile(dest)) { result.skipped++; return; }
-    jobs.push({ urls, dest, label });
+    jobs.push({ urls, dest, rel, label });
   };
 
   for (const e of [...report.characters, ...report.weapons, ...report.artifacts, ...report.materials]) {
@@ -733,6 +736,16 @@ async function downloadMissingAssets(report: SyncReport): Promise<AssetSyncResul
     if (success) {
       result.ok++;
       console.log(`  ✅ ${job.label}`);
+      if (publishAssets) {
+        try {
+          const published = await putCatalogAsset({ filePath: job.dest, publicPath: job.rel });
+          console.log(`  ☁️  ${published.uploaded ? 'published' : 'already published'}: ${published.key}`);
+        } catch (error) {
+          // Abort before the database write: the frontend must be able to serve
+          // every new catalog asset before its URL is committed to PostgreSQL.
+          throw new Error(`Failed to publish ${job.label} to durable storage: ${error instanceof Error ? error.message : String(error)}`);
+        }
+      }
     } else {
       result.fail++;
       result.unprocessed.push({ label: job.label, urls: job.urls });
@@ -828,11 +841,14 @@ ${assetResult.unprocessed.length ? `\n### Icon chưa xử lý được (${assetR
 async function main() {
   if (!process.env.DATABASE_URL) throw new Error('Cần truyền DATABASE_URL rõ ràng qua môi trường');
   const args = parseArgs(process.argv.slice(2));
+  if (args.publishAssets && !args.downloadAssets) {
+    throw new Error('--publish-assets requires --download-assets');
+  }
 
   console.log('==========================================');
   console.log('🔄 GenshinHub Data Sync Engine');
   console.log(`📦 genshin-db version: ${GENSHIN_DB_VERSION}`);
-  console.log(`⚙️  Mode: ${args.rollbackFile ? 'ROLLBACK' : args.sync ? 'SYNC' : 'DRY-RUN'}${args.downloadAssets ? ' + assets' : ''}${args.validate ? ' + validate' : ''}`);
+  console.log(`⚙️  Mode: ${args.rollbackFile ? 'ROLLBACK' : args.sync ? 'SYNC' : 'DRY-RUN'}${args.downloadAssets ? ' + assets' : ''}${args.publishAssets ? ' + publish' : ''}${args.validate ? ' + validate' : ''}`);
   console.log('==========================================\n');
 
   if (args.rollbackFile) {
@@ -901,7 +917,7 @@ async function main() {
   let assetResult: AssetSyncResult | null = null;
   if (args.downloadAssets) {
     console.log('\n🖼️  Đang đồng bộ assets...');
-    assetResult = await downloadMissingAssets(report);
+    assetResult = await downloadMissingAssets(report, args.publishAssets);
   }
 
   console.log('\n💾 Đang đồng bộ vào database...');

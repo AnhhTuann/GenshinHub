@@ -18,16 +18,29 @@ import { prisma } from './prisma';
 import { mailerService } from './services/mailer.service';
 import { registerAuthRoutes } from './auth/auth.routes';
 import { authService } from './auth/auth.service';
+import { createAdminSessionMiddleware, sessionTokenFromRequest } from './auth/adminHttp';
+import { isStatelessHost, STATELESS_STORAGE_MESSAGE } from './utils/storageMode';
+import {
+  chooseUploadMode,
+  getCatalogAsset,
+  getUploadedImage,
+  putUploadedImage,
+} from './utils/objectStorage';
 
-async function startServer() {
+/**
+ * Build the Express/Apollo application without binding a TCP port.
+ * Exported for the Vercel Function entrypoint in `api/index.ts`.
+ */
+export async function createServerApp() {
   // ─── Startup Security Checks ───────────────────────────
   // Authentication is database-backed; no shared Admin password or JWT secret
   // is required at runtime. A bootstrap owner is created explicitly via CLI.
   const requiredEnvVars = ['DATABASE_URL'];
   const missingVars = requiredEnvVars.filter(v => !process.env[v]);
   if (missingVars.length > 0) {
-    console.error(`\n⛔ FATAL: Missing required environment variables: ${missingVars.join(', ')}`);
-    process.exit(1);
+    // A serverless function must not terminate the whole process on bad config;
+    // the entrypoint turns this into an explicit 503.
+    throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
   }
 
   const app = express();
@@ -38,7 +51,11 @@ async function startServer() {
   }));
   app.use(compression());
   
-  const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://genshinhub.onrender.com'];
+  const allowedOrigins = [
+    process.env.FRONTEND_URL || 'http://localhost:3000',
+    'https://genshinhub.duckdns.org',
+    'https://genshinhub.onrender.com',
+  ];
   if (app.get('env') === 'development') {
     allowedOrigins.push('http://localhost:3010', 'http://127.0.0.1:3010');
   }
@@ -64,69 +81,127 @@ async function startServer() {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
   });
 
-  // Multer config for image uploads
-  const storage = multer.diskStorage({
-    destination: (_req, _file, cb) => {
-      const uploadPath = path.join(__dirname, '../../../frontend/public/assets/uploads');
-      if (!fs.existsSync(uploadPath)) {
-        fs.mkdirSync(uploadPath, { recursive: true });
-      }
-      cb(null, uploadPath);
-    },
-    filename: (_req, file, cb) => {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-      cb(null, uniqueSuffix + path.extname(file.originalname));
+  // Upload handling: memory + Neon Object Storage on stateless hosts, with the
+  // original filesystem flow preserved for local development.
+  const uploadLimits = { fileSize: 5 * 1024 * 1024 }; // 5MB max
+  const imageFileFilter = (_req: any, file: any, cb: any) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (allowedTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files (JPEG, PNG, GIF, WebP) are allowed'));
     }
-  });
-  const upload = multer({ 
-    storage,
-    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB max
-    fileFilter: (_req, file, cb) => {
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-      if (allowedTypes.includes(file.mimetype)) {
-        cb(null, true);
-      } else {
-        cb(new Error('Only image files (JPEG, PNG, GIF, WebP) are allowed'));
-      }
-    }
-  });
-
-  // Auth middleware: only a verified, active DB-backed Admin session grants access.
-  const sessionTokenFromRequest = (req: any): string | undefined => {
-    const headerToken = req.headers['x-admin-session'] ?? req.headers['x-session-token'];
-    if (typeof headerToken === 'string' && headerToken) return headerToken;
-    const authorization = req.headers.authorization;
-    return authorization?.startsWith('Bearer ') ? authorization.substring(7) : undefined;
   };
+  const memoryUpload = multer({ storage: multer.memoryStorage(), limits: uploadLimits, fileFilter: imageFileFilter });
+  const diskUpload = multer({
+    storage: multer.diskStorage({
+      destination: (_req, _file, cb) => {
+        const uploadPath = path.join(__dirname, '../../../frontend/public/assets/uploads');
+        if (!fs.existsSync(uploadPath)) fs.mkdirSync(uploadPath, { recursive: true });
+        cb(null, uploadPath);
+      },
+      filename: (_req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + path.extname(file.originalname));
+      },
+    }),
+    limits: uploadLimits,
+    fileFilter: imageFileFilter,
+  });
 
-  const requireAdminMiddleware = async (req: any, res: any, next: any) => {
+  // Only a verified, active DB-backed Admin session grants upload/backup access.
+  const requireAdminMiddleware = createAdminSessionMiddleware(
+    (token) => authService.resolveSession(prisma, token),
+  );
+
+  function runUpload(uploader: any, req: any, res: any): Promise<{ file?: any; error?: any }> {
+    return new Promise((resolve) => {
+      uploader.single('image')(req, res, (error: any) => resolve({ file: req.file, error }));
+    });
+  }
+
+  app.post('/upload', requireAdminMiddleware, async (req, res) => {
+    const mode = chooseUploadMode();
+    if (mode === 'stateless') {
+      return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
+    }
+
+    const uploader = mode === 'object' ? memoryUpload : diskUpload;
+    const { file, error } = await runUpload(uploader, req, res);
+    if (error) {
+      if (error instanceof multer.MulterError && error.code === 'LIMIT_FILE_SIZE') {
+        return res.status(413).json({ error: 'File exceeds 5 MB limit' });
+      }
+      return res.status(400).json({ error: error.message || 'Invalid upload' });
+    }
+    if (!file) return res.status(400).json({ error: 'No file uploaded' });
+
+    if (mode === 'local') {
+      return res.json({ url: `/assets/uploads/${file.filename}`, storage: 'local-filesystem' });
+    }
+
     try {
-      const session = await authService.resolveSession(prisma, sessionTokenFromRequest(req));
-      if (!session?.isAdmin) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      }
-      req.adminSession = session;
-      next();
-    } catch (error) {
-      console.error('[Admin auth] session verification failed:', error);
-      return res.status(401).json({ error: 'Unauthorized' });
+      const result = await putUploadedImage({
+        buffer: file.buffer,
+        mime: file.mimetype,
+        originalName: file.originalname,
+      });
+      return res.json({
+        url: result.publicPath,
+        storage: 'neon-object-storage',
+        contentType: result.contentType,
+        size: result.size,
+        checksum: result.checksum,
+      });
+    } catch (uploadError) {
+      const message = uploadError instanceof Error ? uploadError.message : String(uploadError);
+      console.error('[Upload] object storage write failed:', message);
+      const clientError = /valid image|MIME|dimension|pixel|limit/i.test(message);
+      return res.status(clientError ? 400 : 502).json({ error: clientError ? message : 'Image upload failed' });
     }
-  };
+  });
 
-  // Upload endpoint (requires admin key)
-  app.post('/upload', requireAdminMiddleware, upload.single('image'), (req, res) => {
-    if (!req.file) {
-      return res.status(400).json({ error: 'No file uploaded' });
+  // Controlled public read proxy for uploaded images. It never lists buckets
+  // and can only read the narrow uploads/ prefix of the private asset bucket.
+  app.use('/assets/uploads', async (req, res, next) => {
+    if (req.method !== 'GET') return next();
+    try {
+      const pathname = new URL(req.originalUrl || req.url, 'http://local').pathname;
+      const object = await getUploadedImage(pathname);
+      if (!object) return res.status(404).end();
+      res.set('Content-Type', object.contentType);
+      res.set('Cache-Control', object.cacheControl);
+      return res.send(object.body);
+    } catch (proxyError) {
+      console.error('[Asset proxy] object read failed:', proxyError instanceof Error ? proxyError.message : String(proxyError));
+      return res.status(502).json({ error: 'Asset retrieval failed' });
     }
-    // Return the relative URL to the frontend
-    const fileUrl = `/assets/uploads/${req.file.filename}`;
-    res.json({ url: fileUrl });
+  });
+
+  // Durable catalog assets published by data sync. The key allowlist in
+  // getCatalogAsset rejects backup/upload prefixes and every traversal form.
+  app.use('/assets/catalog', async (req, res, next) => {
+    if (req.method !== 'GET') return next();
+    try {
+      const pathname = new URL(req.originalUrl || req.url, 'http://local').pathname;
+      const object = await getCatalogAsset(pathname);
+      if (!object) return res.status(404).end();
+      res.set('Content-Type', object.contentType);
+      res.set('Cache-Control', object.cacheControl);
+      return res.send(object.body);
+    } catch (proxyError) {
+      console.error('[Catalog proxy] object read failed:', proxyError instanceof Error ? proxyError.message : String(proxyError));
+      return res.status(502).json({ error: 'Catalog asset retrieval failed' });
+    }
   });
 
   // === Backup REST endpoints ===
   
   // Download a backup file
   app.get('/backups/:id/download', requireAdminMiddleware, (req, res) => {
+    if (isStatelessHost()) {
+      return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
+    }
     const filePath = getBackupFilePath(req.params.id);
     if (!filePath) {
       return res.status(404).json({ error: 'Backup not found' });
@@ -136,6 +211,9 @@ async function startServer() {
 
   // List all backups (lightweight REST alternative to GraphQL)
   app.get('/backups', requireAdminMiddleware, (_req, res) => {
+    if (isStatelessHost()) {
+      return res.status(503).json({ error: STATELESS_STORAGE_MESSAGE });
+    }
     const backups = listBackupFiles();
     res.json({ backups });
   });
@@ -194,8 +272,15 @@ async function startServer() {
     },
   }));
 
+  return app;
+}
+
+async function startServer() {
+  const app = await createServerApp();
   const PORT = Number(process.env.PORT || 4000);
-  const httpServer = app.listen(PORT, async () => {
+  // Bind explicitly to all IPv4 interfaces: Render's port scanner probes
+  // 0.0.0.0, and Node's implicit `::` bind is not reliably detected there.
+  const httpServer = app.listen(PORT, '0.0.0.0', async () => {
     console.log(`🚀 Backend GraphQL Server đang chạy tại: http://localhost:${PORT}/graphql`);
     // Verify SMTP on startup
     await mailerService.verifyConnection();
@@ -238,8 +323,12 @@ async function startServer() {
   process.on('SIGINT',  () => shutdown('SIGINT'));
 }
 
-startServer().catch((err) => {
-  console.error('Failed to start server:', err);
-  process.exit(1);
-});
+// Import-safe for Vercel Functions: `api/index.ts` imports this module without
+// starting a TCP listener. The CLI/server container still starts normally.
+if (require.main === module) {
+  startServer().catch((err) => {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  });
+}
  

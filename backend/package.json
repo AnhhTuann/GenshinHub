@@ -16,7 +16,7 @@
     "test:sync:source": "node -r ts-node/register --test scripts/sync/sourceCatalog.test.ts",
     "test:sync:version": "node --test scripts/sync/check-version.test.cjs",
     "sync:check": "ts-node scripts/sync/syncEngine.ts --dry-run",
-    "sync:run": "ts-node scripts/sync/syncEngine.ts --sync --download-assets",
+    "sync:run": "ts-node scripts/sync/syncEngine.ts --sync --download-assets --publish-assets",
     "sync:validate": "ts-node scripts/sync/syncEngine.ts --validate --dry-run",
     "sync:rollback": "ts-node scripts/sync/syncEngine.ts --rollback",
     "sync:mats:check": "ts-node scripts/sync/materialBackfill.ts --dry-run --validate",
@@ -28,7 +28,12 @@
     "test:mats": "ts-node scripts/sync/materialBackfill.test.ts",
     "test:auth": "node -r ts-node/register --test src/auth/security.test.ts src/auth/auth.service.integration.test.ts src/services/mailer.service.test.ts",
     "auth:bootstrap-admin": "ts-node src/auth/bootstrap-admin.ts",
-    "seed:ci": "ts-node prisma/seed-ci.ts"
+    "seed:ci": "ts-node prisma/seed-ci.ts",
+    "data:weapon-game-data": "ts-node scripts/generate/weaponGameData.ts",
+    "sync:staging": "ts-node scripts/staging/syncFromLocal.ts",
+    "test:storage": "node -r ts-node/register --test src/utils/objectStorage.test.ts src/auth/adminHttp.test.ts scripts/backup/backupArtifact.test.ts scripts/backup/workflowSafety.test.ts",
+    "backup:verify-db": "ts-node scripts/backup/verifyStagingDatabase.ts",
+    "backup:upload": "ts-node scripts/backup/uploadBackup.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -67,7 +72,8 @@
     "nodemailer": "^9.0.3",
     "semver": "7.8.6",
     "sharp": "^0.35.2",
-    "xss": "^1.0.15"
+    "xss": "^1.0.15",
+    "@aws-sdk/client-s3": "3.984.0"
   },
   "devDependencies": {
     "@types/compression": "^1.8.1",
@@ -78,6 +84,8 @@
     "nodemon": "^3.1.14",
     "prisma": "^5.10.0",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "@cloudflare/workers-types": "^5.20261124.1",
+    "wrangler": "^4.167.0"
   }
 }

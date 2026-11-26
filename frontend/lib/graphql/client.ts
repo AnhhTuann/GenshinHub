@@ -1,7 +1,12 @@
 const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'http://localhost:4000/graphql';
+const PUBLIC_GRAPHQL_PROXY = '/api/graphql';
 
 // ISR revalidation: 1 hour for server-side fetches.
 const DEFAULT_REVALIDATE = 3600;
+
+function getClientEndpoint(): string {
+  return typeof window === 'undefined' ? GRAPHQL_ENDPOINT : PUBLIC_GRAPHQL_PROXY;
+}
 
 /**
  * Server-side GraphQL fetch with ISR revalidation.
@@ -15,6 +20,8 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
     headers['Authorization'] = `Bearer ${token}`;
   }
 
+  const isServer = typeof window === 'undefined';
+
   const fetchOptions: RequestInit & { next?: { revalidate: number } } = {
     method: 'POST',
     headers,
@@ -22,17 +29,49 @@ export async function fetchGraphQL(query: string, variables = {}, revalidate: nu
   };
 
   // Apply ISR revalidation for server-side fetches
-  if (typeof window === 'undefined') {
+  if (isServer) {
     fetchOptions.next = { revalidate };
   }
 
-  const res = await fetch(GRAPHQL_ENDPOINT, fetchOptions);
+  // Render Free can occasionally return a truncated response body during a
+  // build's concurrent prerender requests. Retry transparently so one flaky
+  // response cannot fail the entire static generation. Successful responses
+  // still use Next's ISR cache via fetchOptions.next.revalidate.
+  let json: any;
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      const res = await fetch(getClientEndpoint(), fetchOptions);
 
-  if (!res.ok) {
-    throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
+      if (!res.ok) {
+        if (res.status === 401) {
+          throw new Error('GraphQL HTTP Error: 401. The Render backend rejected the request credentials.');
+        }
+        throw new Error(`GraphQL HTTP Error: ${res.status} ${res.statusText}`);
+      }
+
+      json = await res.json();
+      const transientError = json.errors?.some?.((e: any) =>
+        /internal server error|timeout|timed out|truncat|unexpected end|socket hang up/i.test(e.message ?? '')
+      );
+      if (transientError && attempt < 4) {
+        throw new Error('GraphQL Error: ' + json.errors[0].message);
+      }
+      lastError = undefined;
+      break;
+    } catch (error) {
+      lastError = error;
+      if (attempt < 4) {
+        // A malformed body can be cached by Next's persistent fetch cache.
+        // Force a fresh network read on retries.
+        fetchOptions.cache = 'no-store';
+        delete fetchOptions.next;
+        await new Promise(resolve => setTimeout(resolve, 250 * 2 ** attempt));
+      }
+    }
   }
 
-  const json = await res.json();
+  if (lastError) throw lastError;
 
   if (json.errors) {
     throw new Error('GraphQL Error: ' + json.errors[0].message);
@@ -54,7 +93,7 @@ export async function fetchGraphQLClient(query: string, variables = {}, token?: 
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const res = await fetch(GRAPHQL_ENDPOINT, {
+  const res = await fetch(PUBLIC_GRAPHQL_PROXY, {
     method: 'POST',
     headers,
     body: JSON.stringify({ query, variables }),

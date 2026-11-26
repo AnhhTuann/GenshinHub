@@ -6,3 +6,4 @@ coverage/
 .env*
 !.env.example
 _raw_assets/
+.vercel

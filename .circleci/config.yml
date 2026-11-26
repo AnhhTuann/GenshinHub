@@ -127,6 +127,11 @@ jobs:
           # tsconfig.json đã cấu hình "noEmit": true
           command: npx tsc --noEmit
 
+      - run:
+          name: Frontend unit tests (Vitest)
+          working_directory: frontend
+          command: npx vitest run
+
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -159,7 +164,39 @@ jobs:
           command: npm run test:assets
           no_output_timeout: 3m
 
-  # ── Job 4: Data sync E2E tests (PostgreSQL test + GraphQL server) ────
+  # ── Job 4: Storage, Admin auth and backup guard unit tests ─────────
+  storage-and-auth-tests:
+    executor: node-executor
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: ~/project
+
+      - run:
+          name: Regenerate Prisma Client
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          command: npx prisma generate
+
+      - run:
+          name: Storage, Admin auth and backup tests (mocked S3)
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+            NODE_ENV: test
+          command: npm run test:storage
+
+      - run:
+          name: Auth security tests (DB integration suite skips without isolated DB)
+          working_directory: backend
+          environment:
+            DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+            NODE_ENV: test
+          command: npm run test:auth
+
+  # ── Job 5: Data sync E2E tests (PostgreSQL test + GraphQL server) ────
   e2e-tests:
     executor: node-postgres
     steps:
@@ -236,6 +273,10 @@ workflows:
 
       # Job 3 & 4 chờ backend-build hoàn thành (cần node_modules + dist)
       - asset-integration-tests:
+          requires:
+            - backend-build
+
+      - storage-and-auth-tests:
           requires:
             - backend-build
 

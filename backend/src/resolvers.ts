@@ -1,8 +1,15 @@
 // Nodemon trigger
 import axios from 'axios';
-import { EnkaClient } from 'enka-network-api';
-
-const enka = new EnkaClient({ defaultLanguage: 'en' });
+// The Enka SDK loads substantial game metadata. Delay that allocation until the
+// showcase resolver is first used so serverless cold starts stay small.
+let enkaClient: import('enka-network-api').EnkaClient | null = null;
+async function getEnkaClient() {
+  if (!enkaClient) {
+    const { EnkaClient } = await import('enka-network-api');
+    enkaClient = new EnkaClient({ defaultLanguage: 'en' });
+  }
+  return enkaClient;
+}
 import { charactersCache, characterCache, weaponsCache, showcaseCache, artifactsCache, materialsCache, clearAllCaches } from './cache';
 import { Mutation } from './mutations';
 import GraphQLJSON from 'graphql-type-json';
@@ -284,7 +291,7 @@ export const resolvers = {
       const cached = showcaseCache.get(args.uid);
       if (cached) return cached;
       try {
-        const user = await enka.fetchUser(args.uid);
+        const user = await (await getEnkaClient()).fetchUser(args.uid);
         if (!user) return null;
 
         const detailedCharacters = user.characters ? user.characters.map((c: any) => {

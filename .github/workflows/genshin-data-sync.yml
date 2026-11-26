@@ -141,7 +141,7 @@ jobs:
             1. Review the report — verify no admin-managed fields are touched
                and no `pending` entries need manual data sourcing.
             2. After approval, run the **Genshin Data Sync — Apply** workflow
-               manually (`sync-and-revalidate`). It requires the `production`
+               manually (`sync-and-revalidate`). It requires the `staging`
                environment approval and takes a verified private `pg_dump`
                backup first.
 

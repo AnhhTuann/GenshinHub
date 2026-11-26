@@ -2,13 +2,18 @@
 
 ## What runs automatically
 
-`.github/workflows/neon-pgdump.yml`:
+The backup step now lives in `.github/workflows/genshin-data-sync-apply.yml`,
+which also performs the reviewed production sync and revalidation. A separate
+standalone `neon-pgdump.yml` exists on this branch; it can be used for manual
+backup-only runs before it is merged to the default branch.
 
-- Triggers: manual `workflow_dispatch` and a weekly schedule
-  (`0 3 * * 0`, Sunday 03:00 UTC).
-- Required repository secrets (all six are validated before any work):
-  `NEON_DATABASE_URL`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`,
-  `AWS_ENDPOINT_URL_S3`, `AWS_REGION`, `BACKUP_BUCKET`.
+- Apply triggers: manual `workflow_dispatch` only, through the GitHub
+  `production` environment with required reviewers configured.
+- Required repository secrets (validated before any work):
+  `NEON_DATABASE_URL`, `DATABASE_URL`, `AWS_ACCESS_KEY_ID`,
+  `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL_S3`, `AWS_REGION`,
+  `ASSET_BUCKET`, `BACKUP_BUCKET`, `FRONTEND_REVALIDATE_URL`,
+  `REVALIDATE_SECRET`.
 - The `NEON_DATABASE_URL` hostname is checked against the **exact** approved
   staging endpoint `ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech`
   before `pg_dump`. Any other host, protocol or missing value aborts the job;
@@ -31,16 +36,31 @@
 - Logs only filename, byte size, UTC timestamp, checksum and TOC entry count.
   Secrets and connection strings are never printed.
 
-Scheduled workflows run from the default branch. Until the workflow is merged
-to the branch that GitHub treats as default, use manual dispatch on a branch
-that contains it. No backup is restored automatically.
+Scheduled workflows run from the default branch. Neither the backup workflow
+nor the apply workflow is scheduled; the apply workflow is manual-only and
+environment-gated. No backup is restored automatically.
 
 ## Manual backup
 
-1. In GitHub, run the **Neon pg_dump backup** workflow (`workflow_dispatch`).
+1. After merge, run **Genshin Data Sync — Apply (production)** with the
+   `production` reviewer approval, or the standalone **Neon pg_dump backup**
+   workflow if it has been merged to the default branch.
 2. Confirm the job log contains `filename=`, `size_bytes=`, `timestamp=`,
    `sha256=` and a non-zero `pg_restore_entries`.
 3. Record the object key from the log. No local dump is kept on the runner.
+
+A real pre-merge backup was also produced locally on 2026-11-26 from the
+approved staging endpoint and uploaded with the same guard:
+
+```
+pgdump/genshinhub-neon-20261126T033908Z.dump
+size=926954 bytes
+pg_restore_entries=196
+sha256=f13d060636979da29ee1cab60a4d5d0c3bd0df8274576199f87226ae9bd022ae
+```
+
+The `.dump`, `.sha256` and `.manifest.json` objects were listed and the
+downloaded dump checksum was re-verified. Nothing was restored or deleted.
 
 ## Restore (explicit, reviewed, destructive)
 
@@ -86,7 +106,8 @@ do not combine it with a deploy, and obtain approval before proceeding.
   different branch.
 - No automatic restore, no application endpoint that lists or downloads
   backups, and no public URL for backup objects.
-- The asset read proxy only accepts `uploads/YYYY/MM/<uuid>.webp`; a backup key
-  can never be requested through `/assets/*`.
+- The asset read proxy only accepts `uploads/YYYY/MM/<uuid>.webp` and the
+  controlled `catalog/<image>` prefix; a backup key can never be requested
+  through `/assets/*`.
 - Backup retention is not automated: do not add lifecycle deletion without an
   explicit owner decision.

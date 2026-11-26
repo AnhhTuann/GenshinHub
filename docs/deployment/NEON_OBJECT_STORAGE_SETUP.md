@@ -19,25 +19,26 @@ No new service, bucket lifecycle rule, CDN, or paid resource is introduced.
 | Image limits | Decoded input capped at 20 MP and 8192 px per side; Sharp also receives `limitInputPixels` to stop decompression bombs before allocation |
 | Object key | `uploads/YYYY/MM/<uuid>.webp` (generated server-side, never from the filename) |
 | Public URL | `/assets/uploads/YYYY/MM/<uuid>.webp` |
-| Read path | Frontend `/assets/[...path]` → backend `/assets/uploads/*` → `GetObjectCommand`, allowlisted key only |
+| Read path | Frontend `/assets/[...path]` → backend `/assets/uploads/*` or `/assets/catalog/*` → `GetObjectCommand`, allowlisted key only |
+| Sync-generated assets | `sync:run --publish-assets` validates each WebP and stores it under `catalog/<public path>`; identical objects are skipped, conflicting objects are never overwritten |
 | Fallback | With no S3 config, local dev still writes to `frontend/public/assets/uploads`; Render/Vercel fail closed with 503 |
 | Backup path | GitHub Actions `pg_dump` → `pgdump/<timestamp>.dump` in the backup bucket, verified with `HeadObject` |
 
 No bucket listing, no public bucket, no destructive restore, and no credentials
 in source, logs, URLs, or browser-exposed `NEXT_PUBLIC_*` variables.
 
-## One-time Neon setup (owner action, not performed by the agent)
+## One-time Neon setup (status)
 
-1. Open the Neon console for project `jolly-cell-95415947`, branch
-   `br-hidden-frost-aouh1xm1`.
-2. Create two **private** buckets: `genshinhub-staging-assets` and
+1. The two required **private** buckets on branch `br-hidden-frost-aouh1xm1`
+   already exist: `genshinhub-staging-assets` and
    `genshinhub-staging-backups`. Do not enable public access.
-3. Create a branch-scoped storage credential with `storage:read` and
-   `storage:write` scopes. Neon maps it to an S3 Access Key ID / Secret Access
-   Key pair. Use the same key pair for uploads and backups, or create a second
-   key restricted to the backup bucket if preferred.
-4. Copy the values into the secret stores below. Never paste them into a file,
-   PR, issue, log, or chat message.
+2. The approved branch-scoped credential is Neon's inherited
+   “Default object storage credential” (`nak_live_4d9d0fb698dd…`), with
+   `storage:read` and `storage:write` scopes. Its values were configured in
+   GitHub repository secrets without printing them.
+3. Render environment variables still require the owner/deployer to apply the
+   same values in the Render service settings before the backend is redeployed.
+   Never paste them into a file, PR, issue, log, or chat message.
 
 ## Secret stores
 
@@ -53,35 +54,45 @@ AWS_REGION=ap-southeast-1
 ASSET_BUCKET=genshinhub-staging-assets
 BACKUP_BUCKET=genshinhub-staging-backups
 DATABASE_URL=<existing Neon staging connection string — unchanged>
-FRONTEND_URL=https://genshinhub-staging.vercel.app
+FRONTEND_URL=https://genshinhub.duckdns.org
 ```
 
+`https://genshinhub.duckdns.org` is now in the backend CORS allowlist alongside
+the Vercel preview hostname, so browser uploads work on the custom domain.
 `BACKUP_BUCKET` is not read by the running API; it is documented here so the
-same six names are available to the backup job. `STATELESS_HOST=1` may stay set:
+same names are available to the backup job. `STATELESS_HOST=1` may stay set:
 object storage is checked **before** the stateless guard, so uploads work on
 Render without relying on the ephemeral filesystem.
 
 ### GitHub Actions repository secrets
 
-Used only by `.github/workflows/neon-pgdump.yml`:
+Used by the backup step in `.github/workflows/genshin-data-sync-apply.yml` and
+by the dry-run check in `.github/workflows/genshin-data-sync.yml`:
 
 ```
 NEON_DATABASE_URL
+DATABASE_URL
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_ENDPOINT_URL_S3
 AWS_REGION
+ASSET_BUCKET
 BACKUP_BUCKET
+FRONTEND_REVALIDATE_URL
+REVALIDATE_SECRET
 ```
 
-The workflow validates all six names before running `pg_dump` or contacting S3,
-and prints only the missing **names** if one is absent. Values are never echoed.
+These names are configured in the repository secret store (values are never
+echoed). `DATABASE_URL` is the approved staging connection string used only for
+read-only dry-run reporting; `NEON_DATABASE_URL` is the same approved endpoint
+used by the backup guard. The apply workflow validates the names before running
+`pg_dump` or contacting S3 and prints only missing **names** if one is absent.
 
 ### Vercel project `genshinhub-staging`
 
 No storage credentials are needed on Vercel. The frontend proxies only the
-allowlisted upload path to the Render backend, which reads the private bucket.
-Keep `BACKEND_URL=https://genshinhub-api.onrender.com`.
+allowlisted upload and catalog paths to the Render backend, which reads the
+private bucket. Keep `BACKEND_URL=https://genshinhub-api.onrender.com`.
 
 ## Verification after configuration (read-only / safe)
 
@@ -90,12 +101,17 @@ Keep `BACKEND_URL=https://genshinhub-api.onrender.com`.
 curl -sS -o /dev/null -w '%{http_code}\n' https://genshinhub-api.onrender.com/health
 curl -sS -o /dev/null -w '%{http_code}\n' \
   https://genshinhub-api.onrender.com/assets/uploads/2026/11/00000000-0000-4000-8000-000000000000.webp
+curl -sS -D - -o /dev/null -H 'Origin: https://genshinhub.duckdns.org' \
+  https://genshinhub-api.onrender.com/health | grep -i access-control-allow-origin
 ```
 
 An authenticated Admin can upload a small PNG/WebP via the character splash
 editor and confirm the returned URL is
-`/assets/uploads/YYYY/MM/<uuid>.webp` and renders through the Vercel domain.
-No bucket listing or backup object is reachable from any `/assets/*` route.
+`/assets/uploads/YYYY/MM/<uuid>.webp` and renders through both the Vercel
+preview domain and the custom domain. Sync-generated catalog images are served
+from the private bucket under `/assets/catalog/<rel>` only after passing the
+same key allowlist. No bucket listing or backup object is reachable from any
+`/assets/*` route.
 
 ## Rollback
 

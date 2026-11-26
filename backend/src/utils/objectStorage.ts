@@ -1,5 +1,6 @@
 import { createHash, randomUUID } from 'node:crypto';
-import { GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import fs from 'node:fs';
+import { GetObjectCommand, HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 
 export interface ObjectStorageEnv {
@@ -158,7 +159,185 @@ export function parseUploadPublicPath(publicPath: string): string | null {
 }
 
 export function objectKeyToPublicPath(key: string): string {
-  return `/assets${key.replace(/^uploads/, '/uploads')}`;
+  if (key.startsWith(CATALOG_KEY_PREFIX)) return `/assets/${key.slice(CATALOG_KEY_PREFIX.length)}`;
+  if (key.startsWith('uploads/')) return `/assets/${key}`;
+  return `/assets/${key}`;
+}
+
+// ---------------------------------------------------------------------------
+// Durable catalog assets (synced WebP files). The bucket stays private; the
+// backend exposes a narrow read-only proxy, so no public bucket URL is used.
+// ---------------------------------------------------------------------------
+
+export const CATALOG_KEY_PREFIX = 'catalog/';
+export const MAX_CATALOG_FILE_BYTES = 10 * 1024 * 1024;
+const CATALOG_IMAGE_RE = /^[A-Za-z0-9][A-Za-z0-9._/-]*\.(?:webp|png|jpe?g)$/i;
+
+function validateCatalogRel(rel: string): string | null {
+  if (!CATALOG_IMAGE_RE.test(rel)) return null;
+  const parts = rel.split('/');
+  if (parts.some((part) => !part || part === '.' || part === '..' || part.includes('\\'))) return null;
+  return rel;
+}
+
+/** Map an existing public catalog URL (/assets/<rel>) to its private bucket key. */
+export function catalogKeyFromAssetPath(publicPath: string): string | null {
+  if (typeof publicPath !== 'string' || !publicPath || publicPath.includes('\0')) return null;
+  if (/%2f|%5c/i.test(publicPath)) return null;
+  let decoded: string;
+  try {
+    decoded = decodeURIComponent(publicPath);
+  } catch {
+    return null;
+  }
+  const rel = decoded.replace(/^\/+/, '');
+  if (!rel.startsWith('assets/')) return null;
+  const candidate = rel.slice('assets/'.length);
+  if (candidate.startsWith('catalog/') || candidate.startsWith('uploads/')) return null;
+  const safe = validateCatalogRel(candidate);
+  return safe ? `${CATALOG_KEY_PREFIX}${safe}` : null;
+}
+
+/** Map the backend read proxy path (/assets/catalog/<rel>) to its bucket key. */
+export function parseCatalogPublicPath(publicPath: string): string | null {
+  if (typeof publicPath !== 'string' || !publicPath || publicPath.includes('\0')) return null;
+  if (/%2f|%5c/i.test(publicPath)) return null;
+  let decoded: string;
+  try {
+    decoded = decodeURIComponent(publicPath);
+  } catch {
+    return null;
+  }
+  if (!decoded.startsWith(`/assets/${CATALOG_KEY_PREFIX}`)) return null;
+  const safe = validateCatalogRel(decoded.slice(`/assets/${CATALOG_KEY_PREFIX}`.length));
+  return safe ? `${CATALOG_KEY_PREFIX}${safe}` : null;
+}
+
+export interface PutCatalogAssetInput {
+  filePath: string;
+  publicPath: string;
+  env?: NodeJS.ProcessEnv;
+  client?: S3Like;
+}
+
+export interface CatalogAssetResult {
+  key: string;
+  publicPath: string;
+  contentType: 'image/webp';
+  size: number;
+  checksum: string;
+  uploaded: boolean;
+}
+
+/**
+ * Publish one sync-generated WebP. Idempotent: an identical object is skipped;
+ * a conflicting object is never overwritten. The checksum metadata round-trips
+ * through HeadObject before the asset is considered published.
+ */
+export async function putCatalogAsset(input: PutCatalogAssetInput): Promise<CatalogAssetResult> {
+  const config = readObjectStorageEnv(input.env);
+  if (!config) throw new Error('Neon object storage credentials are not configured');
+  const key = catalogKeyFromAssetPath(input.publicPath);
+  if (!key) throw new Error('Invalid catalog asset path');
+
+  const body = fs.readFileSync(input.filePath);
+  if (body.length === 0 || body.length > MAX_CATALOG_FILE_BYTES) {
+    throw new Error('Catalog asset size is invalid');
+  }
+  const metadata = await sharp(body, { failOn: 'error', limitInputPixels: MAX_INPUT_PIXELS }).metadata();
+  if (metadata.format !== 'webp' || !metadata.width || !metadata.height) {
+    throw new Error('Catalog asset must be a valid WebP image');
+  }
+  const checksum = createHash('sha256').update(body).digest('hex');
+  const client = input.client ?? getAssetS3Client(input.env);
+
+  let existing: any = null;
+  try {
+    existing = await client.send(new HeadObjectCommand({
+      Bucket: config.ASSET_BUCKET,
+      Key: key,
+    }));
+  } catch (error: any) {
+    const notFound = error?.name === 'NotFound'
+      || error?.name === 'NoSuchKey'
+      || error?.$metadata?.httpStatusCode === 404;
+    if (!notFound) throw error;
+  }
+  if (existing) {
+    const storedChecksum = existing.Metadata?.['content-sha256'];
+    if (storedChecksum && storedChecksum !== checksum) {
+      throw new Error(`Catalog asset ${key} already exists with a different checksum; refusing to overwrite`);
+    }
+    if (existing.ContentLength !== body.length) {
+      throw new Error(`Catalog asset ${key} already exists with a different size; refusing to overwrite`);
+    }
+    return {
+      key,
+      publicPath: objectKeyToPublicPath(key),
+      contentType: 'image/webp',
+      size: body.length,
+      checksum,
+      uploaded: false,
+    };
+  }
+
+  await client.send(new PutObjectCommand({
+    Bucket: config.ASSET_BUCKET,
+    Key: key,
+    Body: body,
+    ContentType: 'image/webp',
+    CacheControl: 'public, max-age=31536000, immutable',
+    Metadata: { 'content-sha256': checksum },
+  }));
+  const verified = await client.send(new HeadObjectCommand({
+    Bucket: config.ASSET_BUCKET,
+    Key: key,
+  }));
+  if (verified?.ContentLength !== body.length || verified?.Metadata?.['content-sha256'] !== checksum) {
+    throw new Error(`HeadObject verification failed for catalog asset ${key}`);
+  }
+  return {
+    key,
+    publicPath: objectKeyToPublicPath(key),
+    contentType: 'image/webp',
+    size: body.length,
+    checksum,
+    uploaded: true,
+  };
+}
+
+export interface GetCatalogAssetInput {
+  env?: NodeJS.ProcessEnv;
+  client?: S3Like;
+}
+
+/** Read a catalog WebP either by its public path or the controlled proxy path. */
+export async function getCatalogAsset(
+  publicPath: string,
+  input: GetCatalogAssetInput = {},
+): Promise<{ body: Buffer; contentType: string; cacheControl: string } | null> {
+  const key = parseCatalogPublicPath(publicPath) ?? catalogKeyFromAssetPath(publicPath);
+  if (!key) return null;
+  const config = readObjectStorageEnv(input.env);
+  if (!config) return null;
+  const client = input.client ?? getAssetS3Client(input.env);
+  const result = await client.send(new GetObjectCommand({
+    Bucket: config.ASSET_BUCKET,
+    Key: key,
+  }));
+  const raw = result?.Body;
+  let body: Buffer | null = null;
+  if (raw && typeof raw.transformToByteArray === 'function') {
+    body = Buffer.from(await raw.transformToByteArray());
+  } else if (raw instanceof Uint8Array) {
+    body = Buffer.from(raw);
+  }
+  if (!body) return null;
+  return {
+    body,
+    contentType: result.ContentType || 'image/webp',
+    cacheControl: result.CacheControl || 'public, max-age=31536000, immutable',
+  };
 }
 
 export interface PutUploadedImageInput {

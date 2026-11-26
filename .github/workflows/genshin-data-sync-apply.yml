@@ -1,20 +1,21 @@
 name: Genshin Data Sync — Apply (production)
 
-# Workflow GHI DỮ LIỆU — TÁCH RIÊNG khỏi workflow kiểm tra.
+# Workflow GHI DỮ LIỆU — TÁCH RIỆNG khỏi workflow kiểm tra.
 #
 # Chỉ chạy thủ công (workflow_dispatch) và BẮT BUỘC qua GitHub
-# Environment "production" — hãy cấu hình Required reviewers trong
-# repo Settings > Environments để đảm bảo có người phê duyệt trước
-# khi job chạy (tức là trước khi chạm production database).
+# Environment "production" — cấu hình Required reviewers trong repo settings
+# để có người phê duyệt trước khi job chạm database.
 #
 # Các bước an toàn:
-#   1. pg_dump backup toàn bộ DB -> upload artifact (không commit).
-#   2. Snapshot JSON tự động bởi syncEngine vào backend/backups/.
-#   3. Chạy sync:run (upsert non-destructive + assets).
-#   4. POST /api/revalidate để làm mới ISR Next.js.
+#   1. Kiểm tra secret + host database staging được phê duyệt (fail-closed).
+#   2. pg_dump custom-format -> pg_restore --list -> SHA-256 -> upload vào
+#      bucket riêng, xác minh HeadObject. Không khôi phục, không xóa backup.
+#   3. Snapshot JSON tự động bởi syncEngine, upsert không phá hủy, assets mới
+#      được validate và đăng lên bucket assets riêng.
+#   4. Revalidate Next.js chỉ khi mọi bước trước đó thành công.
 #
-# KHÔNG có trigger schedule/pull_request — production không bị động
-# bởi code chưa review.
+# KHÔNG có trigger schedule/pull_request — production không bị động bởi code
+# chưa review. Recommendations, Teams và Tier Lists không nằm trong payload sync.
 
 on:
   workflow_dispatch:
@@ -30,18 +31,44 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: genshin-data-sync-apply
+  cancel-in-progress: false
+
 jobs:
   apply:
     name: Sync DB + revalidate frontend
     runs-on: ubuntu-latest
     environment: production
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: ./backend
     steps:
-      - uses: actions/checkout@v4
+      - name: Validate required secrets
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          ASSET_BUCKET: ${{ secrets.ASSET_BUCKET }}
+          BACKUP_BUCKET: ${{ secrets.BACKUP_BUCKET }}
+          FRONTEND_REVALIDATE_URL: ${{ secrets.FRONTEND_REVALIDATE_URL }}
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          set -euo pipefail
+          for name in NEON_DATABASE_URL DATABASE_URL AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_ENDPOINT_URL_S3 AWS_REGION ASSET_BUCKET BACKUP_BUCKET FRONTEND_REVALIDATE_URL REVALIDATE_SECRET; do
+            if [ -z "${!name:-}" ]; then
+              echo "$name secret is missing" >&2
+              exit 1
+            fi
+          done
 
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a  # v4.2.0
         with:
           node-version: '20'
           cache: 'npm'
@@ -53,61 +80,79 @@ jobs:
       - name: Generate Prisma Client
         run: npx prisma generate
 
+      - name: Assert approved staging database branch
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: npm run backup:verify-db
+
       - name: Install PostgreSQL client (pg_dump)
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
 
-      - name: Backup database (pg_dump + encrypt)
+      - name: Create and verify full custom-format backup
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: |
+          set -euo pipefail
+          mkdir -p backups
+          stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+          file="backups/genshinhub-neon-${stamp}.dump"
+          pg_dump --dbname="$NEON_DATABASE_URL" --format=custom --no-owner --no-acl --file="$file"
+          pg_restore --list "$file" > "${file}.list"
+          test -s "${file}.list"
+          sha256sum "$file" > "${file}.sha256"
+          echo "backup_filename=$(basename "$file")"
+          echo "backup_size_bytes=$(stat -c '%s' "$file")"
+          echo "backup_timestamp=${stamp}"
+          echo "pg_restore_entries=$(wc -l < "${file}.list")"
+          cat "${file}.sha256"
+
+      - name: Upload backup to private bucket and verify objects
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          BACKUP_BUCKET: ${{ secrets.BACKUP_BUCKET }}
+        run: |
+          set -euo pipefail
+          file="$(ls backups/*.dump)"
+          key="pgdump/$(basename "$file")"
+          npm run backup:upload -- "$file" "$key"
+
+      - name: Guard Admin-managed editorial fields in the generated report
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL }}
-          BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
         run: |
-          # Lưu ý: nếu DATABASE_URL đi qua connection pooler (pgbouncer),
-          # pg_dump cần DIRECT_URL — workflow ưu tiên DIRECT_URL cho dump.
-          DUMP_URL="${DIRECT_URL:-$DATABASE_URL}"
-          DUMP_FILE="db_backup_$(date +%Y%m%d_%H%M%S).sql"
-          pg_dump "$DUMP_URL" --no-owner --no-privileges -f "$DUMP_FILE"
-          ls -lh "$DUMP_FILE"
-          # Bắt buộc mã hóa trước khi upload artifact — DB dump chứa toàn bộ
-          # dữ liệu production, không được lưu plaintext trên artifact storage.
-          if [ -z "$BACKUP_ENCRYPTION_KEY" ]; then
-            echo "❌ BACKUP_ENCRYPTION_KEY chưa được cấu hình — từ chối upload backup không mã hóa."
+          set -euo pipefail
+          npm run sync:check -- --report reports/sync_report_preapply.md
+          if grep -nE '^\| (create|update) \|.*`(tier|role|recommendedC|tierNoteEn|tierNoteVi|talentPriority|signatureWeapons|sands|goblet|circlet|subStatsPriority|stats|ascensionMats|talentMats|bestWeapons|bestArtifacts|teams)`' reports/sync_report_preapply.md; then
+            echo 'Editorial Admin-managed fields appeared in the sync payload — aborting.' >&2
             exit 1
           fi
-          openssl enc -aes-256-cbc -pbkdf2 -salt \
-            -pass "pass:$BACKUP_ENCRYPTION_KEY" \
-            -in "$DUMP_FILE" -out "${DUMP_FILE}.enc"
-          rm -f "$DUMP_FILE"
-          ls -lh "${DUMP_FILE}.enc"
 
-      - name: Upload encrypted DB backup artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: db-backup-before-sync
-          path: backend/db_backup_*.sql.enc
-          retention-days: 7
-          if-no-files-found: error
-
-      - name: Run sync (upsert + assets)
+      - name: Run validated sync with durable asset publishing
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          # Assets tải về ASSET_STORAGE_PATH — artifact để restore lên VPS
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          ASSET_BUCKET: ${{ secrets.ASSET_BUCKET }}
           ASSET_STORAGE_PATH: ${{ github.workspace }}/assets-prod
         run: npm run sync:run -- --report reports/sync_report_prod.md
 
       - name: Package downloaded assets
         run: |
-          # ASSET_STORAGE_PATH trỏ tới repo root (github.workspace), không phải ./backend
           if [ -d "${{ github.workspace }}/assets-prod" ]; then
             tar -czf "${{ github.workspace }}/backend/assets_prod_$(date +%Y%m%d_%H%M%S).tar.gz" \
               -C "${{ github.workspace }}/assets-prod" .
             ls -lh "${{ github.workspace }}"/backend/assets_prod_*.tar.gz
           else
-            echo "Không có assets mới — bỏ qua package."
+            echo 'Không có assets mới — bỏ qua package.'
           fi
 
       - name: Upload assets artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
           name: assets-downloaded-prod
           path: backend/assets_prod_*.tar.gz
@@ -115,14 +160,14 @@ jobs:
           if-no-files-found: warn
 
       - name: Upload production sync report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
           name: genshin-sync-report-prod
           path: backend/reports/sync_report_prod.md
           retention-days: 90
 
       - name: Upload JSON snapshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
           name: sync-snapshots
           path: backend/backups/snapshot_*.json
@@ -134,14 +179,10 @@ jobs:
           REVALIDATE_URL: ${{ secrets.FRONTEND_REVALIDATE_URL }}
           REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
         run: |
-          if [ -z "$REVALIDATE_URL" ] || [ -z "$REVALIDATE_SECRET" ]; then
-            echo "⚠️  FRONTEND_REVALIDATE_URL hoặc REVALIDATE_SECRET chưa được cấu hình — bỏ qua revalidate."
-            exit 0
-          fi
+          set -euo pipefail
           curl -fsS -X POST "$REVALIDATE_URL" \
-            -H "Content-Type: application/json" \
-            -d "{\"secret\": \"$REVALIDATE_SECRET\"}" \
-            | tee revalidate_response.json
+            -H 'Content-Type: application/json' \
+            -d "{\"secret\": \"$REVALIDATE_SECRET\"}" | tee revalidate_response.json
 
       - name: Notify on failure
         if: failure()
@@ -149,7 +190,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           if [ -n "$DISCORD_WEBHOOK_URL" ]; then
-            curl -H "Content-Type: application/json" \
+            curl -H 'Content-Type: application/json' \
               -d '{"content": "🚨 **GenshinHub data sync FAILED** — check GitHub Actions logs."}' \
               "$DISCORD_WEBHOOK_URL"
           fi

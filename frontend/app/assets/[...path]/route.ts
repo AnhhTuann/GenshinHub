@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { getAuthBackendUrl } from '@/lib/auth-api';
-import { isUploadAssetKey } from '@/lib/uploadAssets';
+import { catalogAssetKeyFromPublicPath, isUploadAssetKey } from '@/lib/uploadAssets';
 
 /**
  * Serves /assets/* for both the committed catalog and Admin uploads.
@@ -98,5 +98,7 @@ export async function GET(
   }
 
   if (isUploadAssetKey(rel)) return proxyUpload(rel);
+  const catalogKey = catalogAssetKeyFromPublicPath(`/assets/${rel}`);
+  if (catalogKey) return proxyUpload(catalogKey);
   return new NextResponse('Not Found', { status: 404 });
 }

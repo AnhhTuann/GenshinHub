@@ -22,6 +22,7 @@ import { createAdminSessionMiddleware, sessionTokenFromRequest } from './auth/ad
 import { isStatelessHost, STATELESS_STORAGE_MESSAGE } from './utils/storageMode';
 import {
   chooseUploadMode,
+  getCatalogAsset,
   getUploadedImage,
   putUploadedImage,
 } from './utils/objectStorage';
@@ -50,7 +51,11 @@ export async function createServerApp() {
   }));
   app.use(compression());
   
-  const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000', 'https://genshinhub.onrender.com'];
+  const allowedOrigins = [
+    process.env.FRONTEND_URL || 'http://localhost:3000',
+    'https://genshinhub.duckdns.org',
+    'https://genshinhub.onrender.com',
+  ];
   if (app.get('env') === 'development') {
     allowedOrigins.push('http://localhost:3010', 'http://127.0.0.1:3010');
   }
@@ -170,6 +175,23 @@ export async function createServerApp() {
     } catch (proxyError) {
       console.error('[Asset proxy] object read failed:', proxyError instanceof Error ? proxyError.message : String(proxyError));
       return res.status(502).json({ error: 'Asset retrieval failed' });
+    }
+  });
+
+  // Durable catalog assets published by data sync. The key allowlist in
+  // getCatalogAsset rejects backup/upload prefixes and every traversal form.
+  app.use('/assets/catalog', async (req, res, next) => {
+    if (req.method !== 'GET') return next();
+    try {
+      const pathname = new URL(req.originalUrl || req.url, 'http://local').pathname;
+      const object = await getCatalogAsset(pathname);
+      if (!object) return res.status(404).end();
+      res.set('Content-Type', object.contentType);
+      res.set('Cache-Control', object.cacheControl);
+      return res.send(object.body);
+    } catch (proxyError) {
+      console.error('[Catalog proxy] object read failed:', proxyError instanceof Error ? proxyError.message : String(proxyError));
+      return res.status(502).json({ error: 'Catalog asset retrieval failed' });
     }
   });
 

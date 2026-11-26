@@ -86,6 +86,20 @@ jobs:
         working-directory: ./backend
         run: npm run test:sync:version
 
+      - name: Run Storage and Backup Tests
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          NODE_ENV: test
+        run: npm run test:storage
+
+      - name: Run Auth Tests
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgresql://ci_user:ci_password@localhost:5432/genshinhub_test
+          NODE_ENV: test
+        run: npm run test:auth
+
       - name: Run Asset Integration Tests
         working-directory: ./backend
         env:
@@ -132,6 +146,10 @@ jobs:
       - name: Type-check Frontend
         working-directory: ./frontend
         run: npx tsc --noEmit
+
+      - name: Run Frontend Unit Tests
+        working-directory: ./frontend
+        run: npx vitest run
 
       - name: Build Frontend (SSG Prerender with Local GraphQL)
         working-directory: ./frontend

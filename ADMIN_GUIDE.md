@@ -59,6 +59,30 @@ GenshinHub lưu trữ một khối lượng dữ liệu khổng lồ (Nhân vậ
 
 - **Quản lý giới hạn:** Hệ thống được cấu hình tự động giữ lại tối đa **10 bản backup mới nhất** để tránh nặng ổ cứng. Các bản cũ sẽ tự động bị xóa đi (auto cleanup).
 
+> **Staging (Render Free):** ổ đĩa của backend không bền vững, nên danh sách/tải
+> backup trên giao diện trả về 503. Dùng workflow GitHub Actions
+> `Neon pg_dump backup` để tạo bản `pg_dump` riêng tư trên Neon Object Storage.
+> Xem [NEON_BACKUP_RESTORE_RUNBOOK.md](docs/deployment/NEON_BACKUP_RESTORE_RUNBOOK.md).
+> Không có tính năng khôi phục tự động; mọi restore phải được duyệt riêng.
+
+---
+
+## 4b. Upload ảnh Admin trên Staging
+
+Khi đã cấu hình Neon Object Storage cho Render, tab chỉnh sửa splash của nhân
+vật vẫn dùng nút chọn file như cũ:
+
+1. Đăng nhập Admin, mở tab **Nhân vật** → chọn nhân vật → dùng ô upload ảnh.
+2. Chọn file JPEG/PNG/GIF/WebP (tối đa **5 MB**). Ảnh được kiểm tra cả MIME lẫn
+   nội dung ảnh thật, sau đó chuyển sang WebP và lưu vào bucket riêng tư.
+3. Kết quả trả về URL dạng `/assets/uploads/YYYY/MM/<uuid>.webp`; ảnh hiển thị
+   ngay cả khi frontend chạy trên Vercel và backend trên Render.
+4. Nếu cấu hình storage chưa có, Render trả lỗi 503 (không ghi vào ổ đĩa tạm).
+   Local development vẫn lưu vào `frontend/public/assets/uploads` như trước.
+
+Chi tiết cấu hình và biến môi trường:
+[NEON_OBJECT_STORAGE_SETUP.md](docs/deployment/NEON_OBJECT_STORAGE_SETUP.md).
+
 ---
 
 ## 5. Command Palette (Tìm Kiếm Nhanh)

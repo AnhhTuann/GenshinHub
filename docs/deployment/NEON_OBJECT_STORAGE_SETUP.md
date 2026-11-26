@@ -33,9 +33,9 @@ in source, logs, URLs, or browser-exposed `NEXT_PUBLIC_*` variables.
    already exist: `genshinhub-staging-assets` and
    `genshinhub-staging-backups`. Do not enable public access.
 2. The approved branch-scoped credential is Neon's inherited
-   “Default object storage credential” (`nak_live_4d9d0fb698dd…`), with
-   `storage:read` and `storage:write` scopes. Its values were configured in
-   GitHub repository secrets without printing them.
+   “Default object storage credential”, with `storage:read` and
+   `storage:write` scopes. Its values are stored only in secret stores and are
+   never printed or committed.
 3. Render environment variables still require the owner/deployer to apply the
    same values in the Render service settings before the backend is redeployed.
    Never paste them into a file, PR, issue, log, or chat message.
@@ -71,7 +71,6 @@ by the dry-run check in `.github/workflows/genshin-data-sync.yml`:
 
 ```
 NEON_DATABASE_URL
-DATABASE_URL
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_ENDPOINT_URL_S3

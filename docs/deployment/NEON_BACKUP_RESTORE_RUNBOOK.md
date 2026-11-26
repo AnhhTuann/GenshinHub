@@ -76,7 +76,9 @@ Restoring overwrites database state. Do **not** run this against production,
 do not combine it with a deploy, and obtain separate owner approval.
 
 1. Create a recovery branch of Neon project `jolly-cell-95415947` from the
-   staging branch. Never restore directly into `br-hidden-frost-aouh1xm1`.
+   staging branch. Never restore directly into the production branch
+   `br-calm-haze-ao435vu3`. The staging branch is
+   `br-hidden-frost-aouh1xm1` (`deploy-staging-2026-11-23`).
 2. Fetch the dump and sidecars from `genshinhub-staging-backups` using an S3
    client with the same path-style endpoint and credentials; verify SHA-256.
 3. Inspect the archive with `pg_restore --list ./restore.dump`.

@@ -86,25 +86,28 @@ jobs:
       - name: Run dry-run sync check
         id: check
         env:
-          # Read-only reporting endpoint; the engine only queries in dry-run.
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # This is the one approved staging connection string for every DB read.
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
-          set +e
-          if [ -z "$DATABASE_URL" ]; then
-            echo "⚠️  DATABASE_URL chưa cấu hình — bỏ qua dry-run (cần read-only DB reachable từ GitHub runner)."
+          set -euo pipefail
+          if [ -z "${NEON_DATABASE_URL:-}" ]; then
+            echo "NEON_DATABASE_URL is not configured — skipping the read-only staging dry-run."
             echo "has_changes=skip" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # Report ghi vào backend/reports/ (KHÔNG bị gitignore) để có thể
-          # commit vào PR; bản copy cho artifact dùng logs/ cũng được.
+          # Verify the exact staging endpoint before exposing it to the sync engine.
+          npm run backup:verify-db
+          export DATABASE_URL="$NEON_DATABASE_URL"
+          # Remove stale output so a failed check cannot reuse an earlier report.
+          rm -f reports/sync_report_ci.md logs/sync_report_ci.md
+          mkdir -p reports logs
           npm run sync:check -- --report reports/sync_report_ci.md
-          set -e
-          [ -f reports/sync_report_ci.md ] || { echo "❌ Sync check failed to produce report"; exit 1; }
-          # Chỉ đếm create/update thật — bỏ qua 'pending' (thiếu dữ liệu nguồn)
+          [ -s reports/sync_report_ci.md ] || { echo "Sync check failed to produce a non-empty report"; exit 1; }
+          # Count create/update only; pending entries require manual sourcing.
           count=$(grep -cE '^\| (create|update) \|' reports/sync_report_ci.md || true)
           echo "has_changes=$count" >> "$GITHUB_OUTPUT"
-          echo "Detected $count appliable changed entries."
-          cp reports/sync_report_ci.md logs/sync_report_ci.md 2>/dev/null || true
+          echo "Detected $count applicable changed entries."
+          cp reports/sync_report_ci.md logs/sync_report_ci.md
 
       - name: Upload sync report artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2

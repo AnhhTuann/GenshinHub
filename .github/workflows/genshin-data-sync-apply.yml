@@ -1,9 +1,9 @@
-name: Genshin Data Sync — Apply (production)
+name: Genshin Data Sync — Apply (staging)
 
 # Workflow GHI DỮ LIỆU — TÁCH RIỆNG khỏi workflow kiểm tra.
 #
 # Chỉ chạy thủ công (workflow_dispatch) và BẮT BUỘC qua GitHub
-# Environment "production" — cấu hình Required reviewers trong repo settings
+# Environment "staging" — cấu hình Required reviewers trong repo settings
 # để có người phê duyệt trước khi job chạm database.
 #
 # Các bước an toàn:
@@ -14,7 +14,7 @@ name: Genshin Data Sync — Apply (production)
 #      được validate và đăng lên bucket assets riêng.
 #   4. Revalidate Next.js chỉ khi mọi bước trước đó thành công.
 #
-# KHÔNG có trigger schedule/pull_request — production không bị động bởi code
+# KHÔNG có trigger schedule/pull_request — staging không bị động bởi code
 # chưa review. Recommendations, Teams và Tier Lists không nằm trong payload sync.
 
 on:
@@ -39,7 +39,7 @@ jobs:
   apply:
     name: Sync DB + revalidate frontend
     runs-on: ubuntu-latest
-    environment: production
+    environment: staging
     timeout-minutes: 30
     defaults:
       run:
@@ -48,7 +48,6 @@ jobs:
       - name: Validate required secrets
         env:
           NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
@@ -59,7 +58,7 @@ jobs:
           REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
         run: |
           set -euo pipefail
-          for name in NEON_DATABASE_URL DATABASE_URL AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_ENDPOINT_URL_S3 AWS_REGION ASSET_BUCKET BACKUP_BUCKET FRONTEND_REVALIDATE_URL REVALIDATE_SECRET; do
+          for name in NEON_DATABASE_URL AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_ENDPOINT_URL_S3 AWS_REGION ASSET_BUCKET BACKUP_BUCKET FRONTEND_REVALIDATE_URL REVALIDATE_SECRET; do
             if [ -z "${!name:-}" ]; then
               echo "$name secret is missing" >&2
               exit 1
@@ -119,9 +118,14 @@ jobs:
           key="pgdump/$(basename "$file")"
           npm run backup:upload -- "$file" "$key"
 
+      - name: Re-assert approved staging database before sync
+        env:
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+        run: npm run backup:verify-db
+
       - name: Guard Admin-managed editorial fields in the generated report
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
           set -euo pipefail
           npm run sync:check -- --report reports/sync_report_preapply.md
@@ -132,21 +136,21 @@ jobs:
 
       - name: Run validated sync with durable asset publishing
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_ENDPOINT_URL_S3: ${{ secrets.AWS_ENDPOINT_URL_S3 }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
           ASSET_BUCKET: ${{ secrets.ASSET_BUCKET }}
-          ASSET_STORAGE_PATH: ${{ github.workspace }}/assets-prod
-        run: npm run sync:run -- --report reports/sync_report_prod.md
+          ASSET_STORAGE_PATH: ${{ github.workspace }}/assets-staging
+        run: npm run sync:run -- --report reports/sync_report_staging.md
 
       - name: Package downloaded assets
         run: |
-          if [ -d "${{ github.workspace }}/assets-prod" ]; then
-            tar -czf "${{ github.workspace }}/backend/assets_prod_$(date +%Y%m%d_%H%M%S).tar.gz" \
-              -C "${{ github.workspace }}/assets-prod" .
-            ls -lh "${{ github.workspace }}"/backend/assets_prod_*.tar.gz
+          if [ -d "${{ github.workspace }}/assets-staging" ]; then
+            tar -czf "${{ github.workspace }}/backend/assets_staging_$(date +%Y%m%d_%H%M%S).tar.gz" \
+              -C "${{ github.workspace }}/assets-staging" .
+            ls -lh "${{ github.workspace }}"/backend/assets_staging_*.tar.gz
           else
             echo 'Không có assets mới — bỏ qua package.'
           fi
@@ -154,16 +158,16 @@ jobs:
       - name: Upload assets artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
-          name: assets-downloaded-prod
-          path: backend/assets_prod_*.tar.gz
+          name: assets-downloaded-staging
+          path: backend/assets_staging_*.tar.gz
           retention-days: 30
           if-no-files-found: warn
 
-      - name: Upload production sync report
+      - name: Upload staging sync report
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
-          name: genshin-sync-report-prod
-          path: backend/reports/sync_report_prod.md
+          name: genshin-sync-report-staging
+          path: backend/reports/sync_report_staging.md
           retention-days: 90
 
       - name: Upload JSON snapshots

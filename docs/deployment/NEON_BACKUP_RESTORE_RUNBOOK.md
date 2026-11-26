@@ -1,56 +1,64 @@
 # Neon pg_dump backup and restore runbook (staging)
 
-## What runs automatically
+## What runs
 
-The backup step now lives in `.github/workflows/genshin-data-sync-apply.yml`,
-which also performs the reviewed production sync and revalidation. A separate
-standalone `neon-pgdump.yml` exists on this branch; it can be used for manual
-backup-only runs before it is merged to the default branch.
+- `.github/workflows/neon-pgdump.yml`: manual and weekly backup-only workflow.
+  The weekly schedule is Sunday 03:00 UTC and runs only after this workflow is
+  present on the repository default branch.
+- `.github/workflows/genshin-data-sync.yml`: daily read-only staging dry-run.
+  It checks the exact staging endpoint, writes no database rows, and opens a PR
+  when validated catalog changes need review.
+- `.github/workflows/genshin-data-sync-apply.yml`: manual staging apply only.
+  It is not scheduled and never targets the production database.
 
-- Apply triggers: manual `workflow_dispatch` only, through the GitHub
-  `production` environment with required reviewers configured.
-- Required repository secrets (validated before any work):
-  `NEON_DATABASE_URL`, `DATABASE_URL`, `AWS_ACCESS_KEY_ID`,
-  `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL_S3`, `AWS_REGION`,
-  `ASSET_BUCKET`, `BACKUP_BUCKET`, `FRONTEND_REVALIDATE_URL`,
-  `REVALIDATE_SECRET`.
-- The `NEON_DATABASE_URL` hostname is checked against the **exact** approved
-  staging endpoint `ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech`
-  before `pg_dump`. Any other host, protocol or missing value aborts the job;
-  there is no fallback to a different database URL, and the connection string
-  is never printed.
-- Creates a full logical dump of the staging branch with
-  `pg_dump --format=custom --no-owner --no-acl`.
-- Verifies the archive with `pg_restore --list` (must be non-empty) and records
-  `sha256sum`.
-- Uploads three objects to the **private** `genshinhub-staging-backups` bucket:
+## Required GitHub Actions secrets
 
-  | Object | Purpose |
-  | --- | --- |
-  | `pgdump/genshinhub-neon-<UTC stamp>.dump` | Custom-format dump |
-  | `pgdump/genshinhub-neon-<UTC stamp>.dump.sha256` | SHA-256 sidecar |
-  | `pgdump/genshinhub-neon-<UTC stamp>.dump.manifest.json` | filename, size, timestamp, checksum |
+- `NEON_DATABASE_URL`: the approved staging connection string. This is the
+  **only** database connection secret used by these workflows.
+- `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL_S3`,
+  `AWS_REGION`, `BACKUP_BUCKET`, and `ASSET_BUCKET`.
+- `FRONTEND_REVALIDATE_URL` and `REVALIDATE_SECRET` for the staging frontend.
 
-- Verifies each object with `HeadObject`: both `ContentLength` and the
-  round-tripped `content-sha256` metadata must match, otherwise the job fails.
-- Logs only filename, byte size, UTC timestamp, checksum and TOC entry count.
-  Secrets and connection strings are never printed.
+The workflow validates `NEON_DATABASE_URL` against the exact approved staging
+host `ep-rapid-cell-ao0wi386.c-2.ap-southeast-1.aws.neon.tech` before any
+database operation. After that guard, the same value is passed to the sync
+engine as `DATABASE_URL`. There is no separate `DATABASE_URL` secret and no
+fallback to another database. The connection string is never printed.
 
-Scheduled workflows run from the default branch. Neither the backup workflow
-nor the apply workflow is scheduled; the apply workflow is manual-only and
-environment-gated. No backup is restored automatically.
+The apply workflow uses the GitHub Environment `staging`. Configure required
+reviewers for that environment before enabling manual apply. Do not use the
+`production` environment or production secrets for this workflow.
 
-## Manual backup
+## Backup integrity
 
-1. After merge, run **Genshin Data Sync — Apply (production)** with the
-   `production` reviewer approval, or the standalone **Neon pg_dump backup**
-   workflow if it has been merged to the default branch.
-2. Confirm the job log contains `filename=`, `size_bytes=`, `timestamp=`,
-   `sha256=` and a non-zero `pg_restore_entries`.
-3. Record the object key from the log. No local dump is kept on the runner.
+The backup workflow creates a custom-format dump using
+`pg_dump --format=custom --no-owner --no-acl`, verifies it with
+`pg_restore --list`, calculates SHA-256, and uploads three objects to the
+**private** `genshinhub-staging-backups` bucket:
 
-A real pre-merge backup was also produced locally on 2026-11-26 from the
-approved staging endpoint and uploaded with the same guard:
+| Object | Purpose |
+| --- | --- |
+| `pgdump/genshinhub-neon-<UTC stamp>.dump` | Custom-format dump |
+| `pgdump/genshinhub-neon-<UTC stamp>.dump.sha256` | SHA-256 sidecar |
+| `pgdump/genshinhub-neon-<UTC stamp>.dump.manifest.json` | filename, size, timestamp, checksum |
+
+Each upload is verified with `HeadObject`: both `ContentLength` and the
+round-tripped `content-sha256` metadata must match. Logs contain only filename,
+byte size, UTC timestamp, checksum and archive TOC entry count.
+
+## Manual backup / staging apply
+
+1. After merge to the default branch, run **Neon pg_dump backup** manually, or
+   allow its weekly schedule to run.
+2. Confirm the job log contains filename, byte size, timestamp, SHA-256 and a
+   non-zero `pg_restore_entries` count.
+3. Record the object key. No local dump is retained on the runner.
+4. To apply a reviewed catalog sync, dispatch **Genshin Data Sync — Apply
+   (staging)** only after the `staging` environment approval. The same
+   staging URL is backed up and then used for the sync.
+
+A real pre-merge backup was produced on 2026-11-26 from the approved staging
+endpoint and uploaded with the same guard:
 
 ```
 pgdump/genshinhub-neon-20261126T033908Z.dump
@@ -65,49 +73,23 @@ downloaded dump checksum was re-verified. Nothing was restored or deleted.
 ## Restore (explicit, reviewed, destructive)
 
 Restoring overwrites database state. Do **not** run this against production,
-do not combine it with a deploy, and obtain approval before proceeding.
+do not combine it with a deploy, and obtain separate owner approval.
 
 1. Create a recovery branch of Neon project `jolly-cell-95415947` from the
    staging branch. Never restore directly into `br-hidden-frost-aouh1xm1`.
 2. Fetch the dump and sidecars from `genshinhub-staging-backups` using an S3
-   client with the same path-style endpoint and credentials:
-
-   ```bash
-   # Values come from the GitHub Actions / Neon secret store, never from source.
-   aws --endpoint-url="$AWS_ENDPOINT_URL_S3" --region "$AWS_REGION" \
-     s3 cp "s3://$BACKUP_BUCKET/pgdump/<object-key>" ./restore.dump
-   aws --endpoint-url="$AWS_ENDPOINT_URL_S3" --region "$AWS_REGION" \
-     s3 cp "s3://$BACKUP_BUCKET/pgdump/<object-key>.sha256" ./restore.dump.sha256
-   sha256sum -c restore.dump.sha256
-   ```
-
-3. Inspect the archive before touching any database:
-
-   ```bash
-   pg_restore --list ./restore.dump | head -40
-   ```
-
-4. Restore into the **recovery branch** connection string:
-
-   ```bash
-   pg_restore --dbname="<recovery-branch connection string>" \
-     --format=custom --no-owner --no-acl --exit-on-error ./restore.dump
-   ```
-
-5. Verify read-only counts on the recovery branch (expected staging values:
-   131 characters, 279 weapons, 63 artifact sets, 862 materials, 347 builds,
-   620 teams, 2,478 team members) before considering any promotion.
-6. Discard the recovery branch only after the review is complete. The original
-   dump remains in the private backup bucket.
+   client with the same path-style endpoint and credentials; verify SHA-256.
+3. Inspect the archive with `pg_restore --list ./restore.dump`.
+4. Restore only into a disposable recovery branch using
+   `pg_restore --format=custom --no-owner --no-acl --exit-on-error`.
+5. Verify read-only counts before considering any further action. Never promote
+   a recovery branch automatically.
 
 ## Guarantees and non-goals
 
-- `--no-owner` / `--no-acl` avoid carrying Render/Neon role objects into a
-  different branch.
 - No automatic restore, no application endpoint that lists or downloads
   backups, and no public URL for backup objects.
-- The asset read proxy only accepts `uploads/YYYY/MM/<uuid>.webp` and the
-  controlled `catalog/<image>` prefix; a backup key can never be requested
-  through `/assets/*`.
+- The asset read proxy only accepts the allowlisted upload and catalog paths;
+  a backup key can never be requested through `/assets/*`.
 - Backup retention is not automated: do not add lifecycle deletion without an
   explicit owner decision.

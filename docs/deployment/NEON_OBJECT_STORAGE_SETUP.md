@@ -83,10 +83,11 @@ REVALIDATE_SECRET
 ```
 
 These names are configured in the repository secret store (values are never
-echoed). `DATABASE_URL` is the approved staging connection string used only for
-read-only dry-run reporting; `NEON_DATABASE_URL` is the same approved endpoint
-used by the backup guard. The apply workflow validates the names before running
-`pg_dump` or contacting S3 and prints only missing **names** if one is absent.
+echoed). `NEON_DATABASE_URL` is the single approved staging connection string
+for both backup and catalog sync. After its exact-host guard passes, the
+workflows expose that same value to the sync engine as `DATABASE_URL`; do not
+create a separate `DATABASE_URL` GitHub secret. The apply workflow validates
+all required secret names before running `pg_dump` or contacting S3.
 
 ### Vercel project `genshinhub-staging`
 

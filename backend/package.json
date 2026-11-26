@@ -28,7 +28,7 @@
         "test:assets": "ts-node scripts/sync/asset.test.ts",
         "test:mats": "ts-node scripts/sync/materialBackfill.test.ts",
         "test:auth": "node -r ts-node/register --test src/auth/security.test.ts src/auth/auth.service.integration.test.ts src/services/mailer.service.test.ts",
-        "test:storage": "node -r ts-node/register --test src/utils/objectStorage.test.ts src/auth/adminHttp.test.ts scripts/backup/backupArtifact.test.ts",
+        "test:storage": "node -r ts-node/register --test src/utils/objectStorage.test.ts src/auth/adminHttp.test.ts scripts/backup/backupArtifact.test.ts scripts/backup/workflowSafety.test.ts",
         "backup:verify-db": "ts-node scripts/backup/verifyStagingDatabase.ts",
         "backup:upload": "ts-node scripts/backup/uploadBackup.ts",
         "auth:bootstrap-admin": "ts-node src/auth/bootstrap-admin.ts",
